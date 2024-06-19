@@ -112,7 +112,7 @@ Property detail
 
 .. py:property:: intercept_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.intercept_mode
-    :type: "INTERCEPT_MODE"
+    :type: INTERCEPT_MODE
 
     Gets or sets the intercept mode.
 
@@ -136,7 +136,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_mode
-    :type: "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"
+    :type: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -160,7 +160,7 @@ Property detail
 
 .. py:property:: closure_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.closure_mode
-    :type: "CLOSURE_MODE"
+    :type: CLOSURE_MODE
 
     Gets or sets the closure mode for the guidance strategy.
 
@@ -184,7 +184,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.position_vel_strategies
-    :type: "IAgAvtrBasicManeuverTargetPosVel"
+    :type: IAgAvtrBasicManeuverTargetPosVel
 
     Get the position velocity strategies for Intercept.
 
@@ -199,7 +199,8 @@ Method detail
 
 
 
-.. py:method:: set_stop_time_to_go(self, enable:bool, time:float) -> None
+.. py:method:: set_stop_time_to_go(self, enable: bool, time: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.set_stop_time_to_go
 
     Set the option to use the stop time from target stopping condition and set the according value.
 
@@ -214,7 +215,8 @@ Method detail
 
 
 
-.. py:method:: set_stop_slant_range(self, enable:bool, range:float) -> None
+.. py:method:: set_stop_slant_range(self, enable: bool, range: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.set_stop_slant_range
 
     Set the option to use the stop slant range stopping condition and set the according value.
 
@@ -239,13 +241,14 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None
+.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitValue: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"`
+    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT`
     **controlLimitValue** : :obj:`~float`
 
     :Returns:
@@ -262,6 +265,7 @@ Method detail
 
 
 .. py:method:: cancel_tgt_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.cancel_tgt_position_vel
 
     Cancel the position velocity strategies for Intercept.
 

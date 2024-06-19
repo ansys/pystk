@@ -3,7 +3,7 @@ CalculationToolParameterSetVector
 
 .. py:class:: CalculationToolParameterSetVector
 
-   ICalculationToolParameterSetVector, ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolParameterSetVector`, py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Vector parameter set contains various representations of a vector in a reference set of axes.
 

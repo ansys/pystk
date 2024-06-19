@@ -3,7 +3,7 @@ VehicleOrbitAttitudeStandard
 
 .. py:class:: VehicleOrbitAttitudeStandard
 
-   IVehicleOrbitAttitudeStandard, IVehicleAttitudeStandard, IVehicleAttitude, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleOrbitAttitudeStandard`, py:obj:`~IVehicleAttitudeStandard`, py:obj:`~IVehicleAttitude`
 
    Standard attitude profile for satellite.
 

@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: position_on_map
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow.position_on_map
-    :type: "IAgFmGfxPositionOnMap"
+    :type: IAgFmGfxPositionOnMap
 
     Position where the contour legend is displayed.
 

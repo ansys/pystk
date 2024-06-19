@@ -3,7 +3,7 @@ AdvancedFixedWingElectricPowerplant
 
 .. py:class:: AdvancedFixedWingElectricPowerplant
 
-   IAdvancedFixedWingElectricPowerplant, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingElectricPowerplant`
 
    Class defining an Electric powerplant in the Advanced Fixed Wing Tool.
 

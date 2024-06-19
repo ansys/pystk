@@ -3,7 +3,7 @@ VectorGeometryToolPointLagrangeLibration
 
 .. py:class:: VectorGeometryToolPointLagrangeLibration
 
-   IVectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointLagrangeLibration`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Libration point using one primary and multiple secondary central bodies. Set the central body, secondary central bodies, and point type.
 

@@ -3,7 +3,7 @@ SiteWaypoint
 
 .. py:class:: SiteWaypoint
 
-   ISiteWaypoint, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteWaypoint`, py:obj:`~ISite`
 
    Class defining a waypoint site.
 

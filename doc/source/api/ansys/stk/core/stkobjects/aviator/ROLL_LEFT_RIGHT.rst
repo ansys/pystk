@@ -11,6 +11,21 @@ ROLL_LEFT_RIGHT
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ROLL_LEFT`
+              - Roll left.
+
+            * - :py:attr:`~ROLL_RIGHT`
+              - Roll right.
+
+
 Import detail
 -------------
 

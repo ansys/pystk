@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownSunSystems
 
 .. py:class:: VectorGeometryToolWellKnownSunSystems
 
-   IVectorGeometryToolWellKnownSunSystems, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolWellKnownSunSystems`
 
    The Sun's well-known coordinate reference systems.
 

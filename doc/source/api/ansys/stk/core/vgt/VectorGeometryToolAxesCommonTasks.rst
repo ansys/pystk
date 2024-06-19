@@ -3,7 +3,7 @@ VectorGeometryToolAxesCommonTasks
 
 .. py:class:: VectorGeometryToolAxesCommonTasks
 
-   IVectorGeometryToolAxesCommonTasks, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesCommonTasks`
 
    Provide methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 

@@ -11,6 +11,21 @@ LAUNCH_DYN_STATE_COORD_FRAME
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~LAUNCH_DYN_STATE_COORD_FRAME_BODY`
+              - The object's body frame.
+
+            * - :py:attr:`~LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL`
+              - The object's local horizontal frame.
+
+
 Import detail
 -------------
 

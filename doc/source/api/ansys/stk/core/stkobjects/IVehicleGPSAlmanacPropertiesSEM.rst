@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: reference_week
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.reference_week
-    :type: "GPS_REFERENCE_WEEK"
+    :type: GPS_REFERENCE_WEEK
 
     Gets or sets the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
 

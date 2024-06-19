@@ -79,25 +79,25 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.filter
-    :type: "IAgRFFilterModel"
+    :type: IAgRFFilterModel
 
     Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.pre_receive_gains_losses
-    :type: "IAgAdditionalGainLossCollection"
+    :type: IAgAdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
 .. py:property:: pre_demod_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.pre_demod_gains_losses
-    :type: "IAgAdditionalGainLossCollection"
+    :type: IAgAdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.link_margin
-    :type: "IAgLinkMargin"
+    :type: IAgLinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 
@@ -127,7 +127,7 @@ Property detail
 
 .. py:property:: demodulator
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.demodulator
-    :type: "IAgDemodulatorModel"
+    :type: IAgDemodulatorModel
 
     Gets the current demodulator model.
 
@@ -175,19 +175,19 @@ Property detail
 
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.system_noise_temperature
-    :type: "IAgSystemNoiseTemperature"
+    :type: IAgSystemNoiseTemperature
 
     Gets the system noise temperature interface.
 
 .. py:property:: antenna_system
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.antenna_system
-    :type: "IAgAntennaSystem"
+    :type: IAgAntennaSystem
 
     Gets the antenna system.
 
 .. py:property:: interference
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.interference
-    :type: "IAgRFInterference"
+    :type: IAgRFInterference
 
     Gets the radio frequency interference.
 
@@ -198,7 +198,8 @@ Method detail
 
 
 
-.. py:method:: set_filter(self, name:str) -> None
+.. py:method:: set_filter(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.set_filter
 
     Set the current filter model by name.
 
@@ -221,7 +222,8 @@ Method detail
 
 
 
-.. py:method:: set_demodulator(self, name:str) -> None
+.. py:method:: set_demodulator(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.set_demodulator
 
     Set the current demodulator model by name.
 

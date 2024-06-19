@@ -66,13 +66,13 @@ Property detail
 
 .. py:property:: camera
     :canonical: ansys.stk.core.graphics.IScene.camera
-    :type: "IAgStkGraphicsCamera"
+    :type: IAgStkGraphicsCamera
 
     Gets the camera associated with the scene, which affects the view that is rendered by the scene.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.graphics.IScene.lighting
-    :type: "IAgStkGraphicsLighting"
+    :type: IAgStkGraphicsLighting
 
     Gets the lighting associated with the scene.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.graphics.IScene.central_bodies
-    :type: "IAgStkGraphicsCentralBodyGraphicsIndexer"
+    :type: IAgStkGraphicsCentralBodyGraphicsIndexer
 
     Gets the central body graphics for a specified central body.
 
@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: globe_overlay_settings
     :canonical: ansys.stk.core.graphics.IScene.globe_overlay_settings
-    :type: "IAgStkGraphicsSceneGlobeOverlaySettings"
+    :type: IAgStkGraphicsSceneGlobeOverlaySettings
 
     Gets the scene globe overlay settings for the scene.
 
@@ -126,19 +126,19 @@ Property detail
 
 .. py:property:: anti_aliasing
     :canonical: ansys.stk.core.graphics.IScene.anti_aliasing
-    :type: "ANTI_ALIASING"
+    :type: ANTI_ALIASING
 
     Gets or sets the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
 
 .. py:property:: visual_effects
     :canonical: ansys.stk.core.graphics.IScene.visual_effects
-    :type: "IAgStkGraphicsVisualEffects"
+    :type: IAgStkGraphicsVisualEffects
 
     Gets the visual  effects associated with the scene.
 
 .. py:property:: clouds
     :canonical: ansys.stk.core.graphics.IScene.clouds
-    :type: "IAgStkGraphicsClouds"
+    :type: IAgStkGraphicsClouds
 
     Gets the clouds for the scene.
 
@@ -165,6 +165,7 @@ Method detail
 
 
 .. py:method:: render(self) -> None
+    :canonical: ansys.stk.core.graphics.IScene.render
 
     Render the scene. To render all the scenes within an application, use the Render method.
 
@@ -172,7 +173,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: pick(self, x:int, y:int) -> "IPickResultCollection"
+.. py:method:: pick(self, x: int, y: int) -> IPickResultCollection
+    :canonical: ansys.stk.core.graphics.IScene.pick
 
     Execute a pick at the given x, y and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method.
 
@@ -183,9 +185,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPickResultCollection"`
+        :obj:`~IPickResultCollection`
 
-.. py:method:: pick_rectangular(self, left:int, bottom:int, right:int, top:int) -> "IPickResultCollection"
+.. py:method:: pick_rectangular(self, left: int, bottom: int, right: int, top: int) -> IPickResultCollection
+    :canonical: ansys.stk.core.graphics.IScene.pick_rectangular
 
     Execute a pick in the given rectangular region and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method.
 
@@ -198,9 +201,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPickResultCollection"`
+        :obj:`~IPickResultCollection`
 
-.. py:method:: pick_screen_overlays(self, x:int, y:int) -> "IScreenOverlayPickResultCollection"
+.. py:method:: pick_screen_overlays(self, x: int, y: int) -> IScreenOverlayPickResultCollection
+    :canonical: ansys.stk.core.graphics.IScene.pick_screen_overlays
 
     Execute a pick on screen overlays at the given x, y and returns a front to back sorted collection of picked overlays. The coordinate origin is top, left. To pick other objects in the scene, use the Pick method.
 
@@ -211,7 +215,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScreenOverlayPickResultCollection"`
+        :obj:`~IScreenOverlayPickResultCollection`
 
 
 

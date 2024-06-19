@@ -48,49 +48,49 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.coordinate_system_type
-    :type: "COORDINATE_SYSTEM"
+    :type: COORDINATE_SYSTEM
 
     Gets or sets the coordinate system being used.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.coordinate_system
-    :type: "IAgOrbitStateCoordinateSystem"
+    :type: IAgOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
 .. py:property:: l_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.l_type
-    :type: "DELAUNAY_L_TYPE"
+    :type: DELAUNAY_L_TYPE
 
     Option for Delaunay L (default or L/SQRT(mu).
 
 .. py:property:: l
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.l
-    :type: "IAgDelaunayActionVariable"
+    :type: IAgDelaunayActionVariable
 
     Value of L or L/SQRT(mu).
 
 .. py:property:: h_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.h_type
-    :type: "DELAUNAY_H_TYPE"
+    :type: DELAUNAY_H_TYPE
 
     Option for Delaunay H (default or H/SQRT(mu).
 
 .. py:property:: h
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.h
-    :type: "IAgDelaunayActionVariable"
+    :type: IAgDelaunayActionVariable
 
     Value of H or H/SQRT(mu).
 
 .. py:property:: g_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.g_type
-    :type: "DELAUNAY_G_TYPE"
+    :type: DELAUNAY_G_TYPE
 
     Option for Delaunay G (default or G/SQRT(mu).
 
 .. py:property:: g
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.g
-    :type: "IAgDelaunayActionVariable"
+    :type: IAgDelaunayActionVariable
 
     Value of G or G/SQRT(mu).
 
@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateDelaunay.state_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

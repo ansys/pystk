@@ -3,7 +3,7 @@ VehicleRealtimePointBuilder
 
 .. py:class:: VehicleRealtimePointBuilder
 
-   IVehicleRealtimePointBuilder, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRealtimePointBuilder`
 
    Allow the user to create vehicle's ephemeris by appending ephemeris points.
 

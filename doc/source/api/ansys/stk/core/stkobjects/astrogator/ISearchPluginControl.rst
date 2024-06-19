@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.plugin_config
-    :type: "IAgVAPluginProperties"
+    :type: IAgVAPluginProperties
 
     Get the properties of the selected plugin.
 

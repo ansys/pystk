@@ -3,7 +3,7 @@ CalcObjectLinkEmbedControlCollection
 
 .. py:class:: CalcObjectLinkEmbedControlCollection
 
-   ICalcObjectLinkEmbedControlCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICalcObjectLinkEmbedControlCollection`
 
    The Calculation Object link/embed component folder.
 

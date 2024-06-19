@@ -3,7 +3,7 @@ KmlNetworkLink
 
 .. py:class:: KmlNetworkLink
 
-   IKmlNetworkLink, IKmlFeature, SupportsDeleteCallback
+   Bases: py:obj:`~IKmlNetworkLink`, py:obj:`~IKmlFeature`
 
    A KML network link.
 

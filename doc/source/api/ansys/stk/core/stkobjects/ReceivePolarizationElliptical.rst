@@ -3,7 +3,7 @@ ReceivePolarizationElliptical
 
 .. py:class:: ReceivePolarizationElliptical
 
-   IPolarizationElliptical, IPolarization, IPolarizationCrossPolLeakage, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarizationElliptical`, py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
 
    Class defining an elliptical polarization.
 

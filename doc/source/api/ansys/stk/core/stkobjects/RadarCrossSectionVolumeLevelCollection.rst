@@ -3,7 +3,7 @@ RadarCrossSectionVolumeLevelCollection
 
 .. py:class:: RadarCrossSectionVolumeLevelCollection
 
-   IRadarCrossSectionVolumeLevelCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionVolumeLevelCollection`
 
    Class defining a collection of radar cross section volume levels.
 

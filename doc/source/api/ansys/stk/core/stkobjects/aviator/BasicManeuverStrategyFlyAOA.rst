@@ -3,7 +3,7 @@ BasicManeuverStrategyFlyAOA
 
 .. py:class:: BasicManeuverStrategyFlyAOA
 
-   IBasicManeuverStrategyFlyAOA, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyFlyAOA`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the fly AOA strategy for a basic maneuver procedure.
 

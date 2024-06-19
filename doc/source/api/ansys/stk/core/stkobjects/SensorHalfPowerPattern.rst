@@ -3,7 +3,7 @@ SensorHalfPowerPattern
 
 .. py:class:: SensorHalfPowerPattern
 
-   ISensorPattern, ISensorHalfPowerPattern, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPattern`, py:obj:`~ISensorHalfPowerPattern`
 
    Class defining the half-power pattern for a Sensor.
 

@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: about_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorConing.about_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a vector around which the the reference vector is revolved.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorConing.reference_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a reference vector.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorConing.mode
-    :type: "CRDN_SWEEP_MODE"
+    :type: CRDN_SWEEP_MODE
 
     Specify either unidirectional or bidirectional mode.
 

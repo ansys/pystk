@@ -3,7 +3,7 @@ SharpenFilter
 
 .. py:class:: SharpenFilter
 
-   ISharpenFilter, IConvolutionFilter, IRasterFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ISharpenFilter`, py:obj:`~IConvolutionFilter`, py:obj:`~IRasterFilter`
 
    Apply a convolution filter to increase the sharpness of the source raster.
 

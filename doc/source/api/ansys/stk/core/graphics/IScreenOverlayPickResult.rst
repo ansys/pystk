@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: overlay
     :canonical: ansys.stk.core.graphics.IScreenOverlayPickResult.overlay
-    :type: "IAgStkGraphicsScreenOverlay"
+    :type: IAgStkGraphicsScreenOverlay
 
     Gets the screen overlay that was picked.
 

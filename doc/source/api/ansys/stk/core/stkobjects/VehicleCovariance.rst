@@ -3,7 +3,7 @@ VehicleCovariance
 
 .. py:class:: VehicleCovariance
 
-   IVehicleCovariance, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleCovariance`
 
    Class defining HPOP covariance.
 

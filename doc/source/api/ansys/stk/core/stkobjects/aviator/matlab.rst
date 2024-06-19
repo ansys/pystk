@@ -10,6 +10,8 @@ Summary
 -------
 
 .. tab-set::
+
+ 
     .. tab-item:: Interfaces
 
         .. list-table::
@@ -75,19 +77,19 @@ Detail
     :maxdepth: 1
     :hidden:
 
-     IStrategyMATLABNav<matlab\IStrategyMATLABNav>
-     IStrategyMATLABProfile<matlab\IStrategyMATLABProfile>
-     IStrategyMATLABFull3D<matlab\IStrategyMATLABFull3D>
-     IStrategyMATLAB3DGuidance<matlab\IStrategyMATLAB3DGuidance>
+     IStrategyMATLABNav<matlab/IStrategyMATLABNav>
+     IStrategyMATLABProfile<matlab/IStrategyMATLABProfile>
+     IStrategyMATLABFull3D<matlab/IStrategyMATLABFull3D>
+     IStrategyMATLAB3DGuidance<matlab/IStrategyMATLAB3DGuidance>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-     StrategyMATLABNav<matlab\StrategyMATLABNav>
-     StrategyMATLABProfile<matlab\StrategyMATLABProfile>
-     StrategyMATLABFull3D<matlab\StrategyMATLABFull3D>
-     StrategyMATLAB3DGuidance<matlab\StrategyMATLAB3DGuidance>
-     BasicManeuverMATLABFactory<matlab\BasicManeuverMATLABFactory>
+     StrategyMATLABNav<matlab/StrategyMATLABNav>
+     StrategyMATLABProfile<matlab/StrategyMATLABProfile>
+     StrategyMATLABFull3D<matlab/StrategyMATLABFull3D>
+     StrategyMATLAB3DGuidance<matlab/StrategyMATLAB3DGuidance>
+     BasicManeuverMATLABFactory<matlab/BasicManeuverMATLABFactory>
 

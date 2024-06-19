@@ -77,7 +77,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_filepath(self, filepath:str) -> str
+.. py:method:: set_filepath(self, filepath: str) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileExternalAero.set_filepath
 
     Set the filepath for the external aero file.
 
@@ -90,6 +91,7 @@ Method detail
         :obj:`~str`
 
 .. py:method:: reload(self) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileExternalAero.reload
 
     Reload the external aero file.
 

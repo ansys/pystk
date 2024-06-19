@@ -3,7 +3,7 @@ AntennaControl
 
 .. py:class:: AntennaControl
 
-   IAntennaControl, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaControl`
 
    Class defining the properties for a antenna control.
 

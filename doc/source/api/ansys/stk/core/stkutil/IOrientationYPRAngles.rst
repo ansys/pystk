@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkutil.IOrientationYPRAngles.sequence
-    :type: "YPR_ANGLES_SEQUENCE"
+    :type: YPR_ANGLES_SEQUENCE
 
     YPR sequence. Must be set before Yaw,Pitch,Roll values. Otherwise the current Yaw,Pitch,Roll values will be converted to the Sequence specified.
 

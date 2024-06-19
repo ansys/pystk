@@ -3,7 +3,7 @@ IntervalCollection
 
 .. py:class:: IntervalCollection
 
-   IIntervalCollection, IDisplayTimesData, IAccessInterval, SupportsDeleteCallback
+   Bases: py:obj:`~IIntervalCollection`, py:obj:`~IDisplayTimesData`, py:obj:`~IAccessInterval`
 
    Class defining display intervals.
 

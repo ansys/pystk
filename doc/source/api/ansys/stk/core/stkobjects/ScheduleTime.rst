@@ -3,7 +3,7 @@ ScheduleTime
 
 .. py:class:: ScheduleTime
 
-   IScheduleTime, SupportsDeleteCallback
+   Bases: py:obj:`~IScheduleTime`
 
    Class for defining Sensor target times in terms of a specified schedule.
 

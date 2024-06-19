@@ -46,25 +46,25 @@ Property detail
 
 .. py:property:: satellite_orbit_normal_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.satellite_orbit_normal_type
-    :type: "CALC_OBJECT_ELEM"
+    :type: CALC_OBJECT_ELEM
 
     Choice of osculating or mean elements for describing the orbit plane.
 
 .. py:property:: reference_satellite_orbit_normal_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.reference_satellite_orbit_normal_type
-    :type: "CALC_OBJECT_ELEM"
+    :type: CALC_OBJECT_ELEM
 
     Choice of osculating or mean elements for describing the orbit plane.
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.reference_selection
-    :type: "CALC_OBJECT_REFERENCE"
+    :type: CALC_OBJECT_REFERENCE
 
     Gets or sets the reference object selection.
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.reference
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the reference object.
 

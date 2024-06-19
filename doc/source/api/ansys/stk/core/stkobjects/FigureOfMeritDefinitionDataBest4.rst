@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataBest4
 
 .. py:class:: FigureOfMeritDefinitionDataBest4
 
-   IFigureOfMeritDefinitionDataBest4, IFigureOfMeritDefinitionData, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionDataBest4`, py:obj:`~IFigureOfMeritDefinitionData`
 
    Navigation accuracy based on best 4 satellites.
 

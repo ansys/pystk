@@ -3,7 +3,7 @@ SiteAirportFromCatalog
 
 .. py:class:: SiteAirportFromCatalog
 
-   ISiteAirportFromCatalog, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteAirportFromCatalog`, py:obj:`~ISite`
 
    Class defining a airport from catalog site.
 

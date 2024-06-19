@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: scan_mode
     :canonical: ansys.stk.core.stkobjects.ISensorPointingSpinning.scan_mode
-    :type: "SENSOR_SCAN_MODE"
+    :type: SENSOR_SCAN_MODE
 
     The scan mode of the sensor, a member of the AgESnScanMode enumeration.
 
@@ -118,7 +118,8 @@ Method detail
 
 
 
-.. py:method:: set_clock_angles(self, start:typing.Any, stop:typing.Any) -> None
+.. py:method:: set_clock_angles(self, start: typing.Any, stop: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorPointingSpinning.set_clock_angles
 
     Set both the start and stop clock angles. Start/Stop use Angle Dimension.
 

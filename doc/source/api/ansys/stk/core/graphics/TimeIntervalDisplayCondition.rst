@@ -3,7 +3,7 @@ TimeIntervalDisplayCondition
 
 .. py:class:: TimeIntervalDisplayCondition
 
-   ITimeIntervalDisplayCondition, IDisplayCondition, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeIntervalDisplayCondition`, py:obj:`~IDisplayCondition`
 
    Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time .
 

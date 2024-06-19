@@ -76,7 +76,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, resultName:str) -> "IComponentInfo"
+.. py:method:: add(self, resultName: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.add
 
     Add a function to the collection.
 
@@ -86,9 +87,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IComponentInfo"
+.. py:method:: item(self, indexOrName: typing.Any) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.item
 
     Allow you to iterate through the collection.
 
@@ -98,9 +100,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.remove
 
     Remove the specified function from the collection.
 
@@ -115,6 +118,7 @@ Method detail
 
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.remove_all
 
     Remove all functions from the collection.
 
@@ -122,7 +126,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.cut
 
     Copy a propagator function to the clipboard and removes the propagator function from the list.
 
@@ -134,27 +139,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IComponentInfo"
+.. py:method:: paste(self) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.paste
 
     Pastes a propagator function from the clipboard into the list.
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: insert_copy(self, propFunc:"IComponentInfo") -> "IComponentInfo"
+.. py:method:: insert_copy(self, propFunc: IComponentInfo) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.insert_copy
 
     Copy a propagator function and inserts the copy into the list.
 
     :Parameters:
 
-    **propFunc** : :obj:`~"IComponentInfo"`
+    **propFunc** : :obj:`~IComponentInfo`
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IComponentInfo"
+.. py:method:: get_item_by_index(self, index: int) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.get_item_by_index
 
     Retrieve a propagator function from the collection by index.
 
@@ -164,9 +172,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IComponentInfo"
+.. py:method:: get_item_by_name(self, name: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.get_item_by_name
 
     Retrieve a propagator function from the collection by name.
 
@@ -176,5 +185,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 

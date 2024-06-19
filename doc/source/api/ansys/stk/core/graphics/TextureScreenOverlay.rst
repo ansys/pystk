@@ -3,7 +3,7 @@ TextureScreenOverlay
 
 .. py:class:: TextureScreenOverlay
 
-   ITextureScreenOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDeleteCallback
+   Bases: py:obj:`~ITextureScreenOverlay`, py:obj:`~IScreenOverlay`, py:obj:`~IOverlay`, py:obj:`~IScreenOverlayContainer`
 
    A rectangular overlay that can be assigned a texture.
 

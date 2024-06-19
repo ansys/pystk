@@ -47,13 +47,13 @@ Property detail
 
 .. py:property:: reference_type
     :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.reference_type
-    :type: "COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE"
+    :type: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE
 
     Gets or sets the component reference type.
 
 .. py:property:: component
     :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.component
-    :type: "IAgComponentInfo"
+    :type: IAgComponentInfo
 
     Get the component interface.
 
@@ -71,7 +71,8 @@ Method detail
 
 
 
-.. py:method:: set_component(self, componentName:str) -> None
+.. py:method:: set_component(self, componentName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.set_component
 
     Set the component by name.
 

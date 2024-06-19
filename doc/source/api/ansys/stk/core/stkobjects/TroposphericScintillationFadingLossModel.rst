@@ -3,7 +3,7 @@ TroposphericScintillationFadingLossModel
 
 .. py:class:: TroposphericScintillationFadingLossModel
 
-   ITroposphericScintillationFadingLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITroposphericScintillationFadingLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a tropospheric scintillation fading loss model.
 

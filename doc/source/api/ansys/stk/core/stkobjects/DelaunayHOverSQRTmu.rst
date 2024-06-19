@@ -3,7 +3,7 @@ DelaunayHOverSQRTmu
 
 .. py:class:: DelaunayHOverSQRTmu
 
-   IDelaunayActionVariable, IDelaunayHOverSQRTmu, SupportsDeleteCallback
+   Bases: py:obj:`~IDelaunayActionVariable`, py:obj:`~IDelaunayHOverSQRTmu`
 
    Delaunay Variable H/SQRT(mu), i.e. H divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 

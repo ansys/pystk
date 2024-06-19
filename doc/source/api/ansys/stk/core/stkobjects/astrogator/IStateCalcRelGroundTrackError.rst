@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.direction
-    :type: "CALC_OBJECT_DIRECTION"
+    :type: CALC_OBJECT_DIRECTION
 
     Gets or sets the direction to search for the desired value.
 
@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.reference_selection
-    :type: "CALC_OBJECT_REFERENCE"
+    :type: CALC_OBJECT_REFERENCE
 
     Gets or sets the reference object selection.
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.reference
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the reference object.
 

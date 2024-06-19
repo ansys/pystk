@@ -11,6 +11,21 @@ VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~POSITION_CARTESIAN`
+              - Cartesian Position.
+
+            * - :py:attr:`~POSITION_POLAR`
+              - Polar Position.
+
+
 Import detail
 -------------
 

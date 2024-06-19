@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: prf_mode
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.prf_mode
-    :type: "RADAR_SAR_PRF_MODE"
+    :type: RADAR_SAR_PRF_MODE
 
     Gets or sets the prf mode enumeration.
 
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: range_resolution_mode
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.range_resolution_mode
-    :type: "RADAR_SAR_RANGE_RESOLUTION_MODE"
+    :type: RADAR_SAR_RANGE_RESOLUTION_MODE
 
     Gets or sets the range resolution mode enumeration.
 
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: pcr_mode
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.pcr_mode
-    :type: "RADAR_SAR_PCR_MODE"
+    :type: RADAR_SAR_PCR_MODE
 
     Gets or sets the pulse compression ratio mode enumeration.
 

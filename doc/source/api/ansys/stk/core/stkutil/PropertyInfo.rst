@@ -3,7 +3,7 @@ PropertyInfo
 
 .. py:class:: PropertyInfo
 
-   IPropertyInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IPropertyInfo`
 
    Property Information coclass.
 

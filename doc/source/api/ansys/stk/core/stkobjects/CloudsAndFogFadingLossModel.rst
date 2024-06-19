@@ -3,7 +3,7 @@ CloudsAndFogFadingLossModel
 
 .. py:class:: CloudsAndFogFadingLossModel
 
-   ICloudsAndFogFadingLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ICloudsAndFogFadingLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a clouds and fog fading loss model.
 

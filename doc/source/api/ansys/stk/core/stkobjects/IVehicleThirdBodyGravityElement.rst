@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: source
     :canonical: ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement.source
-    :type: "THIRD_BODY_GRAV_SOURCE_TYPE"
+    :type: THIRD_BODY_GRAV_SOURCE_TYPE
 
     Source of 3rd-body gravity data.
 

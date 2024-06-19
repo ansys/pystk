@@ -3,7 +3,7 @@ TextOverlayFactory
 
 .. py:class:: TextOverlayFactory
 
-   ITextOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITextOverlayFactory`
 
    A rectangular overlay that contains text.
 

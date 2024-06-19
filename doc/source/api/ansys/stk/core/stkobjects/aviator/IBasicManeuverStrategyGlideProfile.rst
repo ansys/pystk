@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: max_speed_limits
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.max_speed_limits
-    :type: "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS"
+    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
 
     Gets or sets the options of what the procedure will do if the aircraft has exceeded the maximum speed limits.
 
@@ -100,7 +100,7 @@ Property detail
 
 .. py:property:: powered_cruise_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_mode
-    :type: "BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE"
+    :type: BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE
 
     Gets or sets the powered cruise mode.
 
@@ -112,13 +112,13 @@ Property detail
 
 .. py:property:: powered_cruise_thrust_model
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_thrust_model
-    :type: "IAgAvtrPropulsionThrust"
+    :type: IAgAvtrPropulsionThrust
 
     Get the powered cruise thrust model.
 
 .. py:property:: glide_speed_control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.glide_speed_control_mode
-    :type: "BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE"
+    :type: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
 
     Get the glide speed control mode.
 
@@ -142,13 +142,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.set_airspeed
 
     Set the airspeed and airspeed type that the aircraft will attempt to achieve and maintain if the hold initial airspeed option is not enabled.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -164,13 +165,14 @@ Method detail
 
 
 
-.. py:method:: set_glide_speed_control_mode(self, eGSMode:"BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", dControlAlt:float) -> None
+.. py:method:: set_glide_speed_control_mode(self, eGSMode: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE, dControlAlt: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.set_glide_speed_control_mode
 
     Set the glide speed control mode and altitude.
 
     :Parameters:
 
-    **eGSMode** : :obj:`~"BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE"`
+    **eGSMode** : :obj:`~BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE`
     **dControlAlt** : :obj:`~float`
 
     :Returns:

@@ -3,7 +3,7 @@ SensorPointingExternal
 
 .. py:class:: SensorPointingExternal
 
-   ISensorPointing, ISensorPointingExternal, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingExternal`
 
    Class defining the external file-defined pointing type for a Sensor.
 

@@ -61,19 +61,19 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.altitude_options
-    :type: "IAgAvtrAltitudeMSLOptions"
+    :type: IAgAvtrAltitudeMSLOptions
 
     Get the altitude options.
 
 .. py:property:: profile_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.profile_mode
-    :type: "HOLDING_PROFILE_MODE"
+    :type: HOLDING_PROFILE_MODE
 
     Gets or sets the mode defines how the aircraft will perform the holding pattern.
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.level_off_mode
-    :type: "ALTITUDE_CONSTRAINT_MANEUVER_MODE"
+    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
 
     Gets or sets the mode for the level off maneuver.
 
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: entry_maneuver
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.entry_maneuver
-    :type: "HOLDING_ENTRY_MANEUVER"
+    :type: HOLDING_ENTRY_MANEUVER
 
     Defines how the aircraft will enter the holding pattern.
 
@@ -121,31 +121,31 @@ Property detail
 
 .. py:property:: refuel_dump_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.refuel_dump_mode
-    :type: "HOLD_REFUEL_DUMP_MODE"
+    :type: HOLD_REFUEL_DUMP_MODE
 
     Gets or sets the mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation.
 
 .. py:property:: hold_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.hold_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the hold cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_options
-    :type: "IAgAvtrEnrouteAndDelayOptions"
+    :type: IAgAvtrEnrouteAndDelayOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_turn_direction_options
-    :type: "IAgAvtrEnrouteTurnDirectionOptions"
+    :type: IAgAvtrEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
@@ -179,6 +179,7 @@ Method detail
 
 
 .. py:method:: get_minimum_width(self) -> float
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.get_minimum_width
 
     Get the minimum allowable width based on the aircraft's minimum diameter at this altitude.
 
@@ -186,11 +187,12 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

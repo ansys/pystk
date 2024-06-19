@@ -3,7 +3,7 @@ VectorGeometryToolVectorFixedAtTimeInstant
 
 .. py:class:: VectorGeometryToolVectorFixedAtTimeInstant
 
-   IVectorGeometryToolVectorFixedAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorFixedAtTimeInstant`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
 
    Vector fixed relative to reference axes based on another vector evaluated at specified time instant.
 

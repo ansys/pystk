@@ -3,7 +3,7 @@ StateCalcGeodeticMeanRightAscension
 
 .. py:class:: StateCalcGeodeticMeanRightAscension
 
-   IComponentInfo, ICloneable, IStateCalcGeodeticMeanRightAscension, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcGeodeticMeanRightAscension`
 
    GeodeticMeanRightAscension Calc objects.
 

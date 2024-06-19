@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.ephemeris_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
@@ -117,6 +117,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.propagate
 
     Propagates the vehicle's path using the specified time interval.
 

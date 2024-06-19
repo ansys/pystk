@@ -11,6 +11,21 @@ LATTICE_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~TRIANGULAR`
+              - Triangular lattice type.
+
+            * - :py:attr:`~RECTANGULAR`
+              - Rectangular lattice type.
+
+
 Import detail
 -------------
 

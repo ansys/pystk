@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: across_assets
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint.across_assets
-    :type: "FIGURE_OF_MERIT_ACROSS_ASSETS"
+    :type: FIGURE_OF_MERIT_ACROSS_ASSETS
 
     Value of the constraint that is to be selected based on all currently available assets.
 
@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: constraint_name
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint.constraint_name
-    :type: "FIGURE_OF_MERIT_CONSTRAINT_NAME"
+    :type: FIGURE_OF_MERIT_CONSTRAINT_NAME
 
     Name of the access constraint as an enumeration. If the constraint is not in AgEFmConstraintName then use Constraint instead.
 

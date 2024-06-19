@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.IRadarClutterGeometryModelPlugin.plugin_configuration
-    :type: "IAgCRPluginConfiguration"
+    :type: IAgCRPluginConfiguration
 
     This property is deprecated. Use PluginConfiguration on IAgScatteringPointProviderPlugin instead. Gets the plugin configuration interface.
 

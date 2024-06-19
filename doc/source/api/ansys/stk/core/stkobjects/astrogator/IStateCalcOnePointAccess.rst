@@ -52,37 +52,37 @@ Property detail
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.aberration_type
-    :type: "ABERRATION_TYPE"
+    :type: ABERRATION_TYPE
 
     Gets or sets the type of aberration to use, if light time delay is applied.
 
 .. py:property:: base_selection_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.base_selection_type
-    :type: "BASE_SELECTION"
+    :type: BASE_SELECTION
 
     Get the base selection type.
 
 .. py:property:: base_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.base_selection
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the base selection object.
 
 .. py:property:: clock_host
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.clock_host
-    :type: "IV_CLOCK_HOST"
+    :type: IV_CLOCK_HOST
 
     Gets or sets the object whose location is associated with time.
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.signal_sense
-    :type: "IV_TIME_SENSE"
+    :type: IV_TIME_SENSE
 
     Sense of the signal at the base object.
 
 .. py:property:: target_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.target_object
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the target object.
 
@@ -104,13 +104,14 @@ Method detail
 
 
 
-.. py:method:: set_base_selection(self, selection:"BASE_SELECTION") -> None
+.. py:method:: set_base_selection(self, selection: BASE_SELECTION) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.set_base_selection
 
     Set the base selection.
 
     :Parameters:
 
-    **selection** : :obj:`~"BASE_SELECTION"`
+    **selection** : :obj:`~BASE_SELECTION`
 
     :Returns:
 

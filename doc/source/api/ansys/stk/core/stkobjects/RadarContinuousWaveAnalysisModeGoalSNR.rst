@@ -3,7 +3,7 @@ RadarContinuousWaveAnalysisModeGoalSNR
 
 .. py:class:: RadarContinuousWaveAnalysisModeGoalSNR
 
-   IRadarContinuousWaveAnalysisModeGoalSNR, IRadarContinuousWaveAnalysisMode, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarContinuousWaveAnalysisModeGoalSNR`, py:obj:`~IRadarContinuousWaveAnalysisMode`
 
    Class defining the continuous wave goal SNR analysis mode.
 

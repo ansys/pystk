@@ -3,7 +3,7 @@ VehiclePropagatorGreatArc
 
 .. py:class:: VehiclePropagatorGreatArc
 
-   IVehiclePropagatorGreatArc, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorGreatArc`, py:obj:`~IVehiclePropagator`
 
    Class defining the Great Arc propagator for an Aircraft, Ship or GroundVehicle.
 

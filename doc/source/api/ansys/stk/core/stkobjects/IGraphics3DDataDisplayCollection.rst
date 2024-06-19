@@ -78,7 +78,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IGraphics3DDataDisplayElement"
+.. py:method:: item(self, index: int) -> IGraphics3DDataDisplayElement
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -88,10 +89,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DDataDisplayElement"`
+        :obj:`~IGraphics3DDataDisplayElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -104,6 +106,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -111,7 +114,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, name:str) -> "IGraphics3DDataDisplayElement"
+.. py:method:: add(self, name: str) -> IGraphics3DDataDisplayElement
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.add
 
     Add a new element to the collection.
 
@@ -121,10 +125,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DDataDisplayElement"`
+        :obj:`~IGraphics3DDataDisplayElement`
 
 
-.. py:method:: is_pre_data_required(self, dataDisplayName:str) -> bool
+.. py:method:: is_pre_data_required(self, dataDisplayName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.is_pre_data_required
 
     Determine if the data display needs additional data, such as a comparison object for an RIC report or a set of axes for a vector.
 
@@ -136,7 +141,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: add_data_display_requiring_pre_data(self, name:str, preData:str) -> "IGraphics3DDataDisplayElement"
+.. py:method:: add_data_display_requiring_pre_data(self, name: str, preData: str) -> IGraphics3DDataDisplayElement
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.add_data_display_requiring_pre_data
 
     Add a data display using additional data, such as a comparison object for an RIC report or a set of axes for a vector.
 
@@ -147,5 +153,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DDataDisplayElement"`
+        :obj:`~IGraphics3DDataDisplayElement`
 

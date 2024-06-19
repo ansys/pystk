@@ -3,7 +3,7 @@ VehicleGraphics2DRoutePassData
 
 .. py:class:: VehicleGraphics2DRoutePassData
 
-   IVehicleGraphics2DRoutePassData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DRoutePassData`
 
    Great arc route pass data.
 

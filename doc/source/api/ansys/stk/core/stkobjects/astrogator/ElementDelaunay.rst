@@ -3,7 +3,7 @@ ElementDelaunay
 
 .. py:class:: ElementDelaunay
 
-   IElementDelaunay, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementDelaunay`, py:obj:`~IElement`
 
    Delaunay elements.
 

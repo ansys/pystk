@@ -3,7 +3,7 @@ LaserPropagationLossModels
 
 .. py:class:: LaserPropagationLossModels
 
-   ILaserPropagationLossModels, ILaserPropagationChannel, SupportsDeleteCallback
+   Bases: py:obj:`~ILaserPropagationLossModels`, py:obj:`~ILaserPropagationChannel`
 
    Class defining the properties for laser propagatoin models.
 

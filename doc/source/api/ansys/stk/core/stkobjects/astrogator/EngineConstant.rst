@@ -3,7 +3,7 @@ EngineConstant
 
 .. py:class:: EngineConstant
 
-   IEngineConstant, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineConstant`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Constant Thrust engine model.
 

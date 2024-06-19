@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: custom
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues.custom
-    :type: "IAgSpEnvRadEnergyMethodSpecify"
+    :type: IAgSpEnvRadEnergyMethodSpecify
 
     Specify custom energy values that will override the default energy values.
 

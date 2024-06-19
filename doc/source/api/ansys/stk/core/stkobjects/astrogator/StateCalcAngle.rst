@@ -3,7 +3,7 @@ StateCalcAngle
 
 .. py:class:: StateCalcAngle
 
-   IComponentInfo, ICloneable, IStateCalcAngle, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcAngle`
 
    Angle Calc objects.
 

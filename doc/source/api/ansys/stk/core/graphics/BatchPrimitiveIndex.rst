@@ -3,7 +3,7 @@ BatchPrimitiveIndex
 
 .. py:class:: BatchPrimitiveIndex
 
-   IBatchPrimitiveIndex, SupportsDeleteCallback
+   Bases: py:obj:`~IBatchPrimitiveIndex`
 
    Represents an individual item index that is associated with a batch primitive. Provides the Index of the individual item and the Primitive that contains that index...
 

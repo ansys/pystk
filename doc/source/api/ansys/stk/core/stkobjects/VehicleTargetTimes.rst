@@ -3,7 +3,7 @@ VehicleTargetTimes
 
 .. py:class:: VehicleTargetTimes
 
-   IVehicleTargetTimes, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleTargetTimes`
 
    Target times for target pointing attitude.
 

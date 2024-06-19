@@ -3,7 +3,7 @@ AntennaModelRectangularPattern
 
 .. py:class:: AntennaModelRectangularPattern
 
-   IAntennaModelRectangularPattern, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelRectangularPattern`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rectangular pattern antenna model.
 

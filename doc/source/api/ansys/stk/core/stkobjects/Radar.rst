@@ -3,7 +3,7 @@ Radar
 
 .. py:class:: Radar
 
-   IRadar, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IRadar`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Class defining the radar object.
 

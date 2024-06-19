@@ -3,7 +3,7 @@ UnitPreferencesDimension
 
 .. py:class:: UnitPreferencesDimension
 
-   IUnitPreferencesDimension, SupportsDeleteCallback
+   Bases: py:obj:`~IUnitPreferencesDimension`
 
    Object that contains info on the Dimension.
 

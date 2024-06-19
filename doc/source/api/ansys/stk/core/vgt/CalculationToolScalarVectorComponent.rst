@@ -3,7 +3,7 @@ CalculationToolScalarVectorComponent
 
 .. py:class:: CalculationToolScalarVectorComponent
 
-   ICalculationToolScalarVectorComponent, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarVectorComponent`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    The specified component of a vector when resolved in the specified axes.
 

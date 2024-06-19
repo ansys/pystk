@@ -3,7 +3,7 @@ ModelTransformation
 
 .. py:class:: ModelTransformation
 
-   IModelTransformation, SupportsDeleteCallback
+   Bases: py:obj:`~IModelTransformation`
 
    A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation...
 

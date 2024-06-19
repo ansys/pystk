@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IKmlDocument"
+.. py:method:: item(self, index: int) -> IKmlDocument
+    :canonical: ansys.stk.core.graphics.IKmlDocumentCollection.item
 
     Get an element at the specified position in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IKmlDocument"`
+        :obj:`~IKmlDocument`
 
 

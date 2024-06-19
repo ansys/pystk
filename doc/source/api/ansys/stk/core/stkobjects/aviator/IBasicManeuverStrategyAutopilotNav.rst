@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: active_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.active_mode
-    :type: "AUTOPILOT_HORIZ_PLANE_MODE"
+    :type: AUTOPILOT_HORIZ_PLANE_MODE
 
     Gets or sets the autopilot - horizontal plane mode.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_mode
-    :type: "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"
+    :type: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -119,13 +119,14 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None
+.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitValue: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"`
+    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT`
     **controlLimitValue** : :obj:`~float`
 
     :Returns:

@@ -3,7 +3,7 @@ CelestialBodyInfo
 
 .. py:class:: CelestialBodyInfo
 
-   ICelestialBodyInfo, SupportsDeleteCallback
+   Bases: py:obj:`~ICelestialBodyInfo`
 
    Represents a celestial body information.
 

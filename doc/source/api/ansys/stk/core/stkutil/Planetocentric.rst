@@ -3,7 +3,7 @@ Planetocentric
 
 .. py:class:: Planetocentric
 
-   IPlanetocentric, IPosition, SupportsDeleteCallback
+   Bases: py:obj:`~IPlanetocentric`, py:obj:`~IPosition`
 
    Class defining Planetocentric position.
 

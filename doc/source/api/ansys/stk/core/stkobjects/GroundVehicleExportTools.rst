@@ -3,7 +3,7 @@ GroundVehicleExportTools
 
 .. py:class:: GroundVehicleExportTools
 
-   IGroundVehicleExportTools, SupportsDeleteCallback
+   Bases: py:obj:`~IGroundVehicleExportTools`
 
    The GroundVehicle Export Tools.
 

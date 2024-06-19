@@ -3,7 +3,7 @@ AntennaModelScriptPlugin
 
 .. py:class:: AntennaModelScriptPlugin
 
-   IAntennaModelScriptPlugin, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelScriptPlugin`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a script plguin antenna model.
 

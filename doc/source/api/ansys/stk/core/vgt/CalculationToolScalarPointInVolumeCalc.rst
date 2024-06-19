@@ -3,7 +3,7 @@ CalculationToolScalarPointInVolumeCalc
 
 .. py:class:: CalculationToolScalarPointInVolumeCalc
 
-   ICalculationToolScalarPointInVolumeCalc, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarPointInVolumeCalc`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Scalar value of spatial calculation evaluated along trajectory of point.
 

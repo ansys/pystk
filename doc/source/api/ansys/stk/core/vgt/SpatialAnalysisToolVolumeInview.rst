@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeInview
 
 .. py:class:: SpatialAnalysisToolVolumeInview
 
-   ISpatialAnalysisToolVolumeInview, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeInview`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An Inview volume interface.
 

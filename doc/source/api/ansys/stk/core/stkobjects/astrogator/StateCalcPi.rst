@@ -3,7 +3,7 @@ StateCalcPi
 
 .. py:class:: StateCalcPi
 
-   IStateCalcPi, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcPi`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Pi Calc objects.
 

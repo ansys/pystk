@@ -3,7 +3,7 @@ VehicleProfileAlignedAndConstrained
 
 .. py:class:: VehicleProfileAlignedAndConstrained
 
-   IVehicleProfileAlignedAndConstrained, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileAlignedAndConstrained`, py:obj:`~IVehicleAttitudeProfile`
 
    Aligned and Constrained attitude profile.
 

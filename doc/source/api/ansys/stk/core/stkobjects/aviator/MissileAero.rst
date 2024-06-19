@@ -3,7 +3,7 @@ MissileAero
 
 .. py:class:: MissileAero
 
-   IMissileAero, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileAero`
 
    Class defining the aerodynamic options for a missile.
 

@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: best_n_metric
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.best_n_metric
-    :type: "FIGURE_OF_MERIT_METHOD"
+    :type: FIGURE_OF_MERIT_METHOD
 
     Gets or sets the minimization metric for the best N computation.
 
@@ -71,13 +71,14 @@ Method detail
 
 
 
-.. py:method:: is_best_n_metric_supported(self, bestNMetric:"FIGURE_OF_MERIT_METHOD") -> bool
+.. py:method:: is_best_n_metric_supported(self, bestNMetric: FIGURE_OF_MERIT_METHOD) -> bool
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.is_best_n_metric_supported
 
     Is the type of Best N metric supported?
 
     :Parameters:
 
-    **bestNMetric** : :obj:`~"FIGURE_OF_MERIT_METHOD"`
+    **bestNMetric** : :obj:`~FIGURE_OF_MERIT_METHOD`
 
     :Returns:
 

@@ -3,7 +3,7 @@ VehiclePropagatorSP3FileCollection
 
 .. py:class:: VehiclePropagatorSP3FileCollection
 
-   IVehiclePropagatorSP3FileCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorSP3FileCollection`
 
    A collection of SP3 files.
 

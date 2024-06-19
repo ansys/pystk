@@ -61,19 +61,19 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.segments
-    :type: "IAgVAMCSSegmentCollection"
+    :type: IAgVAMCSSegmentCollection
 
     Get the list of segments defined for the sequence.
 
 .. py:property:: sequence_state_to_pass
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.sequence_state_to_pass
-    :type: "SEQUENCE_STATE_TO_PASS"
+    :type: SEQUENCE_STATE_TO_PASS
 
     State To Pass To Next Segment - the state of the sequence to pass.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.scripting_tool
-    :type: "IAgVAScriptingTool"
+    :type: IAgVAScriptingTool
 
     Returns the Scripting tool for the sequence.
 
@@ -90,6 +90,7 @@ Method detail
 
 
 .. py:method:: apply_script(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.apply_script
 
     Apply the script.
 

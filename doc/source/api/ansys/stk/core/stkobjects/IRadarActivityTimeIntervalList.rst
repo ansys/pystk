@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: time_intervals
     :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalList.time_intervals
-    :type: "IAgRadarActivityTimeIntervalListCollection"
+    :type: IAgRadarActivityTimeIntervalListCollection
 
     Gets the time components collection.
 

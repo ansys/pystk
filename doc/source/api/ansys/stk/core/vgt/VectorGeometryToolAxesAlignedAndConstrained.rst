@@ -3,7 +3,7 @@ VectorGeometryToolAxesAlignedAndConstrained
 
 .. py:class:: VectorGeometryToolAxesAlignedAndConstrained
 
-   IVectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesAlignedAndConstrained`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference.
 

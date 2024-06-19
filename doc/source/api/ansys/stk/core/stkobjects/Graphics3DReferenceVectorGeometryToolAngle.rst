@@ -3,7 +3,7 @@ Graphics3DReferenceVectorGeometryToolAngle
 
 .. py:class:: Graphics3DReferenceVectorGeometryToolAngle
 
-   IGraphics3DReferenceVectorGeometryToolAngle, IGraphics3DReferenceAnalysisWorkbenchComponent, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DReferenceVectorGeometryToolAngle`, py:obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~IDisplayTime`
 
    Class defining a reference angle (3D Graphics, Vector Geometry Tool).
 

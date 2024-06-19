@@ -3,7 +3,7 @@ EOIRShapeCone
 
 .. py:class:: EOIRShapeCone
 
-   IEOIRShapeCone, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeCone`, py:obj:`~IEOIRShapeObject`
 
    Cone shape class.
 

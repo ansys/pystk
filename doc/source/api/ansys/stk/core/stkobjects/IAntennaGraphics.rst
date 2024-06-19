@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.IAntennaGraphics.contour_graphics
-    :type: "IAgAntennaContourGraphics"
+    :type: IAgAntennaContourGraphics
 
     Gets the antenna contour graphics interface.
 

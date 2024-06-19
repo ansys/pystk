@@ -3,7 +3,7 @@ MtoGraphics2DLeadTrailTimes
 
 .. py:class:: MtoGraphics2DLeadTrailTimes
 
-   IMtoGraphics2DLeadTrailTimes, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics2DLeadTrailTimes`
 
    MTO track lead/trail times.
 

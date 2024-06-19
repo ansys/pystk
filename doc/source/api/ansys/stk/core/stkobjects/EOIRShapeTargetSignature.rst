@@ -3,7 +3,7 @@ EOIRShapeTargetSignature
 
 .. py:class:: EOIRShapeTargetSignature
 
-   IEOIRShapeTargetSignature, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeTargetSignature`, py:obj:`~IEOIRShapeObject`
 
    TargetSignature shape class.
 

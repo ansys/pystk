@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: error_control
     :canonical: ansys.stk.core.stkobjects.astrogator.IRungeKuttaV8th9th.error_control
-    :type: "ERROR_CONTROL"
+    :type: ERROR_CONTROL
 
     Gets or sets the error control method.
 
@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: coeff_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IRungeKuttaV8th9th.coeff_type
-    :type: "COEFF_RUNGE_KUTTA_V_8TH_9TH"
+    :type: COEFF_RUNGE_KUTTA_V_8TH_9TH
 
     Gets or sets the set of coefficients to use.
 

@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.graphics.IFilteringRasterStream.filter
-    :type: "IAgStkGraphicsRasterFilter"
+    :type: IAgStkGraphicsRasterFilter
 
     Gets the raster filter that will be applied to the raster stream on each update.
 
 .. py:property:: stream
     :canonical: ansys.stk.core.graphics.IFilteringRasterStream.stream
-    :type: "IAgStkGraphicsRasterStream"
+    :type: IAgStkGraphicsRasterStream
 
     Gets the raster stream that will have the raster filter applied on each update.
 

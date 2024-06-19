@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D.control_mode
-    :type: "BALLISTIC_3D_CONTROL_MODE"
+    :type: BALLISTIC_3D_CONTROL_MODE
 
     Gets or sets the control mode for the ballistic 3D strategy.
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D.airspeed_options
-    :type: "IAgAvtrBasicManeuverAirspeedOptions"
+    :type: IAgAvtrBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

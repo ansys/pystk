@@ -3,7 +3,7 @@ VehiclePropagatorBallistic
 
 .. py:class:: VehiclePropagatorBallistic
 
-   IVehiclePropagatorBallistic, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorBallistic`, py:obj:`~IVehiclePropagator`
 
    Class defining the ballistic propagator for a Missile.
 

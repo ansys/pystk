@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DModel.articulation
-    :type: "IAgMtoVOModelArtic"
+    :type: IAgMtoVOModelArtic
 
     Configures the model articulations.
 

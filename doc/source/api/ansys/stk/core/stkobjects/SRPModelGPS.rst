@@ -3,7 +3,7 @@ SRPModelGPS
 
 .. py:class:: SRPModelGPS
 
-   ISRPModelGPS, ISRPModelBase, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPModelGPS`, py:obj:`~ISRPModelBase`
 
    GPS Solar Radiation Pressure Model.
 

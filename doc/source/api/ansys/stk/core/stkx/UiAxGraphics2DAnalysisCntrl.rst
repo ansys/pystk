@@ -3,7 +3,7 @@ UiAxGraphics2DAnalysisCntrl
 
 .. py:class:: UiAxGraphics2DAnalysisCntrl
 
-   IUiAxGraphics2DAnalysisCntrl, SupportsDeleteCallback
+   Bases: py:obj:`~IUiAxGraphics2DAnalysisCntrl`
 
    AGI Graphics Analysis Control.
 

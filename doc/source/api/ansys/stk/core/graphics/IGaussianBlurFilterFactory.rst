@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IGaussianBlurFilter"
+.. py:method:: initialize(self) -> IGaussianBlurFilter
+    :canonical: ansys.stk.core.graphics.IGaussianBlurFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IGaussianBlurFilter"`
+        :obj:`~IGaussianBlurFilter`
 

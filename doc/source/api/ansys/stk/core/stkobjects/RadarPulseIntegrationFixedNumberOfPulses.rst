@@ -3,7 +3,7 @@ RadarPulseIntegrationFixedNumberOfPulses
 
 .. py:class:: RadarPulseIntegrationFixedNumberOfPulses
 
-   IRadarPulseIntegrationFixedNumberOfPulses, IRadarPulseIntegration, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarPulseIntegrationFixedNumberOfPulses`, py:obj:`~IRadarPulseIntegration`
 
    Class defining the fixed number of pulses integration method.
 

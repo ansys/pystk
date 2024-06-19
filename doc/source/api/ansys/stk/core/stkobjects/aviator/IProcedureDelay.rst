@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureDelay.altitude_mode
-    :type: "DELAY_ALTITUDE_MODE"
+    :type: DELAY_ALTITUDE_MODE
 
     Gets or sets the mode for handling the altitude of the aircraft.
 
@@ -52,13 +52,13 @@ Property detail
 
 .. py:property:: cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureDelay.cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the interface for the cruise airspeed options.
 
 .. py:property:: turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureDelay.turn_direction
-    :type: "NAVIGATOR_TURN_DIRECTION"
+    :type: NAVIGATOR_TURN_DIRECTION
 
     Gets or sets the turn direction of the procedure.
 

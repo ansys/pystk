@@ -3,7 +3,7 @@ AnalysisWorkbenchConverge
 
 .. py:class:: AnalysisWorkbenchConverge
 
-   IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchConverge`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Represents a base class for convergence definitions.
 

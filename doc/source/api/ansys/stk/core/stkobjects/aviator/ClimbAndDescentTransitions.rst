@@ -3,7 +3,7 @@ ClimbAndDescentTransitions
 
 .. py:class:: ClimbAndDescentTransitions
 
-   IClimbAndDescentTransitions, SupportsDeleteCallback
+   Bases: py:obj:`~IClimbAndDescentTransitions`
 
    Class defining the climb and descent transition options for an Acceleration performance model of an Aviator aircraft.
 

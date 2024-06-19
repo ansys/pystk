@@ -64,7 +64,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IUnitPreferencesUnit"
+.. py:method:: item(self, indexOrName: typing.Any) -> IUnitPreferencesUnit
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesUnitCollection.item
 
     Return the specific item in the collection given a unit identifier or an index.
 
@@ -74,11 +75,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUnitPreferencesUnit"`
+        :obj:`~IUnitPreferencesUnit`
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IUnitPreferencesUnit"
+.. py:method:: get_item_by_index(self, index: int) -> IUnitPreferencesUnit
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesUnitCollection.get_item_by_index
 
     Retrieve a unit from the collection by index.
 
@@ -88,9 +90,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUnitPreferencesUnit"`
+        :obj:`~IUnitPreferencesUnit`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IUnitPreferencesUnit"
+.. py:method:: get_item_by_name(self, name: str) -> IUnitPreferencesUnit
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesUnitCollection.get_item_by_name
 
     Retrieve a unit from the collection by name.
 
@@ -100,5 +103,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUnitPreferencesUnit"`
+        :obj:`~IUnitPreferencesUnit`
 

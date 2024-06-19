@@ -3,7 +3,7 @@ RasterImageGlobeOverlayFactory
 
 .. py:class:: RasterImageGlobeOverlayFactory
 
-   IRasterImageGlobeOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IRasterImageGlobeOverlayFactory`
 
    A globe image overlay for handling rasters.
 

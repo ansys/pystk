@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridFactory
 
 .. py:class:: SpatialAnalysisToolVolumeGridFactory
 
-   ISpatialAnalysisToolVolumeGridFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridFactory`
 
    The factory is used to create instances of volume grids.
 

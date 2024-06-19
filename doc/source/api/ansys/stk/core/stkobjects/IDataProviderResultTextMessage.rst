@@ -75,7 +75,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> str
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultTextMessage.item
 
     Given an index, returns a string in the collection at the given position.
 

@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesResult.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     The axes' orientation.
 

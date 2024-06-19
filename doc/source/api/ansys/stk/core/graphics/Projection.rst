@@ -3,7 +3,7 @@ Projection
 
 .. py:class:: Projection
 
-   IProjection, SupportsDeleteCallback
+   Bases: py:obj:`~IProjection`
 
    A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical...
 

@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> str
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkx.IDataObjectFiles.item
 
     Get the file name at the specified index (0-based).
 

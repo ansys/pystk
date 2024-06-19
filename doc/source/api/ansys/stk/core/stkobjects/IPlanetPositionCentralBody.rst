@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: ephem_source
     :canonical: ansys.stk.core.stkobjects.IPlanetPositionCentralBody.ephem_source
-    :type: "EPHEM_SOURCE_TYPE"
+    :type: EPHEM_SOURCE_TYPE
 
     The ephemeris source for the selected central body. A member of the AgEEphemSourceType enumeration.
 

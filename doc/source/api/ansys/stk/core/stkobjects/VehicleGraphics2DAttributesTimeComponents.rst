@@ -3,7 +3,7 @@ VehicleGraphics2DAttributesTimeComponents
 
 .. py:class:: VehicleGraphics2DAttributesTimeComponents
 
-   IVehicleGraphics2DAttributesTimeComponents, IVehicleGraphics2DAttributes, IVehicleGraphics2DAttributesDisplayState, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DAttributesTimeComponents`, py:obj:`~IVehicleGraphics2DAttributes`, py:obj:`~IVehicleGraphics2DAttributesDisplayState`
 
    Allow configuring the 2D attributes using the time components.
 

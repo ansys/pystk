@@ -3,7 +3,7 @@ VehicleGraphics3DAttributesIntervals
 
 .. py:class:: VehicleGraphics3DAttributesIntervals
 
-   IVehicleGraphics3DAttributes, IVehicleGraphics3DAttributesIntervals, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DAttributes`, py:obj:`~IVehicleGraphics3DAttributesIntervals`
 
    3D graphics based on intervals for covariance pointing contours.
 

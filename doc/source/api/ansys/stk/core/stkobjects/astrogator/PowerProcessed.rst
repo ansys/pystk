@@ -3,7 +3,7 @@ PowerProcessed
 
 .. py:class:: PowerProcessed
 
-   IPowerProcessed, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IPowerProcessed`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Power - Processed Power Unit.
 

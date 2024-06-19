@@ -3,7 +3,7 @@ VehicleThirdBodyGravity
 
 .. py:class:: VehicleThirdBodyGravity
 
-   IVehicleThirdBodyGravity, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleThirdBodyGravity`
 
    Third body gravity options for Long-range Orbit Predictor (LOP) propagator.
 

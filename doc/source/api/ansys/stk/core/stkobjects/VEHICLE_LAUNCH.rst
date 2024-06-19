@@ -11,6 +11,24 @@ VEHICLE_LAUNCH
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~LAUNCH_UNKNOWN`
+              - Unknown.
+
+            * - :py:attr:`~LAUNCH_LLA`
+              - LLA (geodetic) coordinates.
+
+            * - :py:attr:`~LAUNCH_LLR`
+              - LLR (geocentric) coordinates.
+
+
 Import detail
 -------------
 

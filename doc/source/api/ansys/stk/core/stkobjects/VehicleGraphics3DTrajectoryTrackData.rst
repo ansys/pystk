@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectoryTrackData
 
 .. py:class:: VehicleGraphics3DTrajectoryTrackData
 
-   IVehicleGraphics3DTrajectoryTrackData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DTrajectoryTrackData`
 
    3D leading/trailing track data for launch vehicles and missiles.
 

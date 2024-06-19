@@ -3,7 +3,7 @@ BPlaneCollection
 
 .. py:class:: BPlaneCollection
 
-   IBPlaneCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IBPlaneCollection`
 
    The collection of B-Planes.
 

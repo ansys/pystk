@@ -65,7 +65,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> str
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection.item
 
     Return a central body name at a specified index.
 
@@ -78,7 +79,8 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: add(self, centralBodyName:str) -> bool
+.. py:method:: add(self, centralBodyName: str) -> bool
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection.add
 
     Add a central body to the collection of central bodies. True indicates success.
 
@@ -90,7 +92,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: remove(self, centralBodyName:str) -> None
+.. py:method:: remove(self, centralBodyName: str) -> None
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection.remove
 
     Remove a central body with the specified name from the collection of the central bodies.
 

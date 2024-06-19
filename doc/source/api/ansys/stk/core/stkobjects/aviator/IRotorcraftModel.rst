@@ -174,7 +174,7 @@ Property detail
 
 .. py:property:: max_safe_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the maximum safe airspeed type.
 
@@ -186,7 +186,7 @@ Property detail
 
 .. py:property:: max_safe_translation_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_translation_speed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the maximum safe translation speed type.
 
@@ -198,19 +198,19 @@ Property detail
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.default_configuration
-    :type: "IAgAvtrConfiguration"
+    :type: IAgAvtrConfiguration
 
     Get the aircraft's default configuration as saved in the catalog.
 
 .. py:property:: aerodynamics
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.aerodynamics
-    :type: "IAgAvtrRotorcraftAero"
+    :type: IAgAvtrRotorcraftAero
 
     Get the aerodynamics interface.
 
 .. py:property:: propulsion
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.propulsion
-    :type: "IAgAvtrRotorcraftProp"
+    :type: IAgAvtrRotorcraftProp
 
     Get the propulsion interface.
 
@@ -252,13 +252,14 @@ Method detail
 
 
 
-.. py:method:: set_max_safe_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_max_safe_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.set_max_safe_airspeed
 
     Set the maximum safe airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -267,13 +268,14 @@ Method detail
 
 
 
-.. py:method:: set_max_safe_translation_speed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_max_safe_translation_speed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.set_max_safe_translation_speed
 
     Set the maximum safe translation airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -285,11 +287,12 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

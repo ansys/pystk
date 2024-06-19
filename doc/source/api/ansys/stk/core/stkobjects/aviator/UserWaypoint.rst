@@ -3,7 +3,7 @@ UserWaypoint
 
 .. py:class:: UserWaypoint
 
-   IUserWaypoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IUserWaypoint`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining the user waypoint in the Aviator catalog.
 

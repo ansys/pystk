@@ -3,7 +3,7 @@ ClassicalSizeShapeSemimajorAxis
 
 .. py:class:: ClassicalSizeShapeSemimajorAxis
 
-   IClassicalSizeShapeSemimajorAxis, IClassicalSizeShape, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalSizeShapeSemimajorAxis`, py:obj:`~IClassicalSizeShape`
 
    Orbit size and shape using Semimajor Axis and Eccentricity.
 

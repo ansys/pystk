@@ -3,7 +3,7 @@ TextOverlay
 
 .. py:class:: TextOverlay
 
-   ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDeleteCallback
+   Bases: py:obj:`~ITextOverlay`, py:obj:`~IScreenOverlay`, py:obj:`~IOverlay`, py:obj:`~IScreenOverlayContainer`
 
    A rectangular overlay that contains text.
 

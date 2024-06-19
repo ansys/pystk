@@ -3,7 +3,7 @@ VehicleGraphics3DBearingEllipse
 
 .. py:class:: VehicleGraphics3DBearingEllipse
 
-   IVehicleGraphics3DBearingEllipse, IVehicleGraphics3DProximityAreaObject, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBearingEllipse`, py:obj:`~IVehicleGraphics3DProximityAreaObject`
 
    Define an ellipse, relative to a bearing from the North, around the object.
 

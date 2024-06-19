@@ -3,7 +3,7 @@ DataProviderCollection
 
 .. py:class:: DataProviderCollection
 
-   IDataProviderCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderCollection`
 
    Collection of data providers attached to the current STK object.
 

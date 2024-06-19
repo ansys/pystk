@@ -3,7 +3,7 @@ VehicleJxInitialState
 
 .. py:class:: VehicleJxInitialState
 
-   IVehicleJxInitialState, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleJxInitialState`
 
    Class defining initial state for the J2/4 propagators.
 

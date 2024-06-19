@@ -3,7 +3,7 @@ TransmitterGraphics3D
 
 .. py:class:: TransmitterGraphics3D
 
-   ITransmitterGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterGraphics3D`
 
    Class defining 3D Graphics properties of a Transmitter.
 

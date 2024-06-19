@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentGraphics
 
 .. py:class:: VehicleSpaceEnvironmentGraphics
 
-   IVehicleSpaceEnvironmentGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironmentGraphics`
 
    Graphics settings.
 

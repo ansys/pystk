@@ -10,6 +10,8 @@ Summary
 -------
 
 .. tab-set::
+
+ 
     .. tab-item:: Interfaces
 
         .. list-table::
@@ -601,70 +603,70 @@ Detail
     :maxdepth: 1
     :hidden:
 
-     ISTKXSSLCertificateErrorEventArgs<stkx\ISTKXSSLCertificateErrorEventArgs>
-     ISTKXConControlQuitReceivedEventArgs<stkx\ISTKXConControlQuitReceivedEventArgs>
-     IPickInfoData<stkx\IPickInfoData>
-     IRubberBandPickInfoData<stkx\IRubberBandPickInfoData>
-     ISTKXApplication<stkx\ISTKXApplication>
-     IDataObject<stkx\IDataObject>
-     IObjPathCollection<stkx\IObjPathCollection>
-     IDrawElem<stkx\IDrawElem>
-     IDrawElemRect<stkx\IDrawElemRect>
-     IDrawElemCollection<stkx\IDrawElemCollection>
-     IWinProjectionPosition<stkx\IWinProjectionPosition>
-     IDrawElemLine<stkx\IDrawElemLine>
-     IExecCmdResult<stkx\IExecCmdResult>
-     IExecMultiCmdResult<stkx\IExecMultiCmdResult>
-     IUiAxGraphics3DCntrl<stkx\IUiAxGraphics3DCntrl>
-     IUiAx2DCntrl<stkx\IUiAx2DCntrl>
-     ISTKXApplicationPartnerAccess<stkx\ISTKXApplicationPartnerAccess>
-     IDataObjectFiles<stkx\IDataObjectFiles>
-     IUiAxGraphics2DAnalysisCntrl<stkx\IUiAxGraphics2DAnalysisCntrl>
+     ISTKXSSLCertificateErrorEventArgs<stkx/ISTKXSSLCertificateErrorEventArgs>
+     ISTKXConControlQuitReceivedEventArgs<stkx/ISTKXConControlQuitReceivedEventArgs>
+     IPickInfoData<stkx/IPickInfoData>
+     IRubberBandPickInfoData<stkx/IRubberBandPickInfoData>
+     ISTKXApplication<stkx/ISTKXApplication>
+     IDataObject<stkx/IDataObject>
+     IObjPathCollection<stkx/IObjPathCollection>
+     IDrawElem<stkx/IDrawElem>
+     IDrawElemRect<stkx/IDrawElemRect>
+     IDrawElemCollection<stkx/IDrawElemCollection>
+     IWinProjectionPosition<stkx/IWinProjectionPosition>
+     IDrawElemLine<stkx/IDrawElemLine>
+     IExecCmdResult<stkx/IExecCmdResult>
+     IExecMultiCmdResult<stkx/IExecMultiCmdResult>
+     IUiAxGraphics3DCntrl<stkx/IUiAxGraphics3DCntrl>
+     IUiAx2DCntrl<stkx/IUiAx2DCntrl>
+     ISTKXApplicationPartnerAccess<stkx/ISTKXApplicationPartnerAccess>
+     IDataObjectFiles<stkx/IDataObjectFiles>
+     IUiAxGraphics2DAnalysisCntrl<stkx/IUiAxGraphics2DAnalysisCntrl>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-     ExecCmdResult<stkx\ExecCmdResult>
-     ExecMultiCmdResult<stkx\ExecMultiCmdResult>
-     UiAxGraphics3DCntrl<stkx\UiAxGraphics3DCntrl>
-     UiAx2DCntrl<stkx\UiAx2DCntrl>
-     PickInfoData<stkx\PickInfoData>
-     STKXApplication<stkx\STKXApplication>
-     STKXApplicationPartnerAccess<stkx\STKXApplicationPartnerAccess>
-     DataObject<stkx\DataObject>
-     DataObjectFiles<stkx\DataObjectFiles>
-     RubberBandPickInfoData<stkx\RubberBandPickInfoData>
-     ObjPathCollection<stkx\ObjPathCollection>
-     DrawElemRect<stkx\DrawElemRect>
-     DrawElemCollection<stkx\DrawElemCollection>
-     Draw2DElemRect<stkx\Draw2DElemRect>
-     Draw2DElemCollection<stkx\Draw2DElemCollection>
-     UiAxGraphics2DAnalysisCntrl<stkx\UiAxGraphics2DAnalysisCntrl>
-     WinProjectionPosition<stkx\WinProjectionPosition>
-     DrawElemLine<stkx\DrawElemLine>
-     STKXSSLCertificateErrorEventArgs<stkx\STKXSSLCertificateErrorEventArgs>
-     STKXConControlQuitReceivedEventArgs<stkx\STKXConControlQuitReceivedEventArgs>
+     ExecCmdResult<stkx/ExecCmdResult>
+     ExecMultiCmdResult<stkx/ExecMultiCmdResult>
+     UiAxGraphics3DCntrl<stkx/UiAxGraphics3DCntrl>
+     UiAx2DCntrl<stkx/UiAx2DCntrl>
+     PickInfoData<stkx/PickInfoData>
+     STKXApplication<stkx/STKXApplication>
+     STKXApplicationPartnerAccess<stkx/STKXApplicationPartnerAccess>
+     DataObject<stkx/DataObject>
+     DataObjectFiles<stkx/DataObjectFiles>
+     RubberBandPickInfoData<stkx/RubberBandPickInfoData>
+     ObjPathCollection<stkx/ObjPathCollection>
+     DrawElemRect<stkx/DrawElemRect>
+     DrawElemCollection<stkx/DrawElemCollection>
+     Draw2DElemRect<stkx/Draw2DElemRect>
+     Draw2DElemCollection<stkx/Draw2DElemCollection>
+     UiAxGraphics2DAnalysisCntrl<stkx/UiAxGraphics2DAnalysisCntrl>
+     WinProjectionPosition<stkx/WinProjectionPosition>
+     DrawElemLine<stkx/DrawElemLine>
+     STKXSSLCertificateErrorEventArgs<stkx/STKXSSLCertificateErrorEventArgs>
+     STKXConControlQuitReceivedEventArgs<stkx/STKXConControlQuitReceivedEventArgs>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    ≔ LOG_MSG_TYPE<stkx\LOG_MSG_TYPE>
-    ≔ LOG_MSG_DISP_ID<stkx\LOG_MSG_DISP_ID>
-    ≔ LINE_STYLE<stkx\LINE_STYLE>
-    ≔ EXEC_MULTI_CMD_RESULT_ACTION<stkx\EXEC_MULTI_CMD_RESULT_ACTION>
-    ≔ SHIFT_VALUES<stkx\SHIFT_VALUES>
-    ≔ BUTTON_VALUES<stkx\BUTTON_VALUES>
-    ≔ OLE_DROP_MODE<stkx\OLE_DROP_MODE>
-    ≔ MOUSE_MODE<stkx\MOUSE_MODE>
-    ≔ LOGGING_MODE<stkx\LOGGING_MODE>
-    ≔ GRAPHICS_2D_ANALYSIS_MODE<stkx\GRAPHICS_2D_ANALYSIS_MODE>
-    ≔ GRAPHICS_2D_DRAW_COORDS<stkx\GRAPHICS_2D_DRAW_COORDS>
-    ≔ SHOW_PROGRESS_IMAGE<stkx\SHOW_PROGRESS_IMAGE>
-    ≔ FEATURE_CODES<stkx\FEATURE_CODES>
-    ≔ PROGRESS_IMAGE_X_ORIGIN<stkx\PROGRESS_IMAGE_X_ORIGIN>
-    ≔ PROGRESS_IMAGE_Y_ORIGIN<stkx\PROGRESS_IMAGE_Y_ORIGIN>
+    ≔ LOG_MSG_TYPE<stkx/LOG_MSG_TYPE>
+    ≔ LOG_MSG_DISP_ID<stkx/LOG_MSG_DISP_ID>
+    ≔ LINE_STYLE<stkx/LINE_STYLE>
+    ≔ EXEC_MULTI_CMD_RESULT_ACTION<stkx/EXEC_MULTI_CMD_RESULT_ACTION>
+    ≔ SHIFT_VALUES<stkx/SHIFT_VALUES>
+    ≔ BUTTON_VALUES<stkx/BUTTON_VALUES>
+    ≔ OLE_DROP_MODE<stkx/OLE_DROP_MODE>
+    ≔ MOUSE_MODE<stkx/MOUSE_MODE>
+    ≔ LOGGING_MODE<stkx/LOGGING_MODE>
+    ≔ GRAPHICS_2D_ANALYSIS_MODE<stkx/GRAPHICS_2D_ANALYSIS_MODE>
+    ≔ GRAPHICS_2D_DRAW_COORDS<stkx/GRAPHICS_2D_DRAW_COORDS>
+    ≔ SHOW_PROGRESS_IMAGE<stkx/SHOW_PROGRESS_IMAGE>
+    ≔ FEATURE_CODES<stkx/FEATURE_CODES>
+    ≔ PROGRESS_IMAGE_X_ORIGIN<stkx/PROGRESS_IMAGE_X_ORIGIN>
+    ≔ PROGRESS_IMAGE_Y_ORIGIN<stkx/PROGRESS_IMAGE_Y_ORIGIN>
 

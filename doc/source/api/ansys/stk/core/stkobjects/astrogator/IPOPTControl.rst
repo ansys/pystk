@@ -3,7 +3,7 @@ IPOPTControl
 
 .. py:class:: IPOPTControl
 
-   IIPOPTControl, SupportsDeleteCallback
+   Bases: py:obj:`~IIPOPTControl`
 
    Control parameters for IPOPT optimizer profile.
 

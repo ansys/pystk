@@ -65,37 +65,37 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IAreaTarget.position
-    :type: "IAgPosition"
+    :type: IAgPosition
 
     Get the position of the area target centroid.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IAreaTarget.access_constraints
-    :type: "IAgAccessConstraintCollection"
+    :type: IAgAccessConstraintCollection
 
     Get the constraints imposed on the area target. Basic constraints for area targets apply to all points within or along the area target. If the constraint is satisfied for at least one point, access to the area target is considered valid.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IAreaTarget.graphics
-    :type: "IAgATGraphics"
+    :type: IAgATGraphics
 
     Get the area target's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IAreaTarget.graphics_3d
-    :type: "IAgATVO"
+    :type: IAgATVO
 
     Get the area target's 3D Graphics properties.
 
 .. py:property:: area_type
     :canonical: ansys.stk.core.stkobjects.IAreaTarget.area_type
-    :type: "AREA_TYPE"
+    :type: AREA_TYPE
 
     The method for defining the area target boundary. A member of the AgEAreaType enumeration.
 
 .. py:property:: area_type_data
     :canonical: ansys.stk.core.stkobjects.IAreaTarget.area_type_data
-    :type: "IAgAreaTypeData"
+    :type: IAgAreaTypeData
 
     Get the data defining the boundary with the selected method.
 
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.IAreaTarget.common_tasks
-    :type: "IAgATCommonTasks"
+    :type: IAgATCommonTasks
 
     Common tasks associated with AreaTargets.
 

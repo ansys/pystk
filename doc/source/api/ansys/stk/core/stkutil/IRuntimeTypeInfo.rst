@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkutil.IRuntimeTypeInfo.properties
-    :type: "IAgPropertyInfoCollection"
+    :type: IAgPropertyInfoCollection
 
     Get the collection of properties.
 
@@ -70,7 +70,8 @@ Method detail
 
 
 
-.. py:method:: get_item(self, index:int) -> "IPropertyInfo"
+.. py:method:: get_item(self, index: int) -> IPropertyInfo
+    :canonical: ansys.stk.core.stkutil.IRuntimeTypeInfo.get_item
 
     Return the property of the collection at the given index.
 
@@ -80,5 +81,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPropertyInfo"`
+        :obj:`~IPropertyInfo`
 

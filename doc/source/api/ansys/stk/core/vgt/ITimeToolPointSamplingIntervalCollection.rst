@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ITimeToolPointSamplingInterval"
+.. py:method:: item(self, index: int) -> ITimeToolPointSamplingInterval
+    :canonical: ansys.stk.core.vgt.ITimeToolPointSamplingIntervalCollection.item
 
     Access an element at the specified position.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolPointSamplingInterval"`
+        :obj:`~ITimeToolPointSamplingInterval`
 
 

@@ -3,7 +3,7 @@ AntennaModelItuS672Rectangular
 
 .. py:class:: AntennaModelItuS672Rectangular
 
-   IAntennaModelItuS672Rectangular, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuS672Rectangular`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R S672-4 rectangular antenna model.
 

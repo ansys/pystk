@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: grav_source
     :canonical: ansys.stk.core.stkobjects.astrogator.IPointMassFunction.grav_source
-    :type: "GRAV_PARAM_SOURCE"
+    :type: GRAV_PARAM_SOURCE
 
     Gets or sets the source for the third body's gravitational parameter.
 

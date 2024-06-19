@@ -3,7 +3,7 @@ Configuration
 
 .. py:class:: Configuration
 
-   IConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~IConfiguration`
 
    Class defining the aircraft configuration for an Aviator mission.
 

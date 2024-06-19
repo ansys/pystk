@@ -3,7 +3,7 @@ HPOPPluginFunction
 
 .. py:class:: HPOPPluginFunction
 
-   IHPOPPluginFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IHPOPPluginFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    HPOP Plugin propagator function.
 

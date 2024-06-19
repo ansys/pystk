@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: default_scattering_point_model
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.default_scattering_point_model
-    :type: "IAgComponentLinkEmbedControl"
+    :type: IAgComponentLinkEmbedControl
 
     Gets the link/embed controller for managing the default scattering point model component.
 
 .. py:property:: scattering_points
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.scattering_points
-    :type: "IAgScatteringPointCollection"
+    :type: IAgScatteringPointCollection
 
     Gets the collection of scattering points.
 

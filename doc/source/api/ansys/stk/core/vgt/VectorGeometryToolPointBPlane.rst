@@ -3,7 +3,7 @@ VectorGeometryToolPointBPlane
 
 .. py:class:: VectorGeometryToolPointBPlane
 
-   IVectorGeometryToolPointBPlane, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointBPlane`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    B-Plane point using the selected target body.
 

@@ -98,31 +98,31 @@ Property detail
 
 .. py:property:: size_source
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.size_source
-    :type: "MARKER_BATCH_SIZE_SOURCE"
+    :type: MARKER_BATCH_SIZE_SOURCE
 
     Gets the source used for the size of markers in the batch.
 
 .. py:property:: sort_order
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.sort_order
-    :type: "MARKER_BATCH_SORT_ORDER"
+    :type: MARKER_BATCH_SORT_ORDER
 
     Gets the order in which markers in the marker batch are sorted before rendering.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_hint
-    :type: "SET_HINT"
+    :type: SET_HINT
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: rendering_method
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.rendering_method
-    :type: "MARKER_BATCH_RENDERING_METHOD"
+    :type: MARKER_BATCH_RENDERING_METHOD
 
     Gets the rendering method used to render the marker batch.
 
 .. py:property:: render_pass
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.render_pass
-    :type: "MARKER_BATCH_RENDER_PASS"
+    :type: MARKER_BATCH_RENDER_PASS
 
     Gets or sets the pass during which the marker batch is rendered.
 
@@ -134,19 +134,19 @@ Property detail
 
 .. py:property:: distance_display_condition_per_marker
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.distance_display_condition_per_marker
-    :type: "IAgStkGraphicsDistanceDisplayCondition"
+    :type: IAgStkGraphicsDistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch...
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.texture
-    :type: "IAgStkGraphicsRendererTexture2D"
+    :type: IAgStkGraphicsRendererTexture2D
 
     Gets or sets the per-batch texture, which is applied to each marker in the batch.
 
 .. py:property:: size_unit
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.size_unit
-    :type: "MARKER_BATCH_UNIT"
+    :type: MARKER_BATCH_UNIT
 
     Gets or sets the unit that each marker's size is defined in.
 
@@ -158,7 +158,7 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.origin
-    :type: "ORIGIN"
+    :type: ORIGIN
 
     Gets or sets the per-batch origin, which is applied to each marker in the batch.
 
@@ -200,7 +200,7 @@ Property detail
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.texture_filter
-    :type: "IAgStkGraphicsTextureFilter2D"
+    :type: IAgStkGraphicsTextureFilter2D
 
     Gets or sets the filter used for per-marker or per-batch textures.
 
@@ -252,7 +252,8 @@ Method detail
 
 
 
-.. py:method:: set(self, positions:list) -> None
+.. py:method:: set(self, positions: list) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set
 
     Define the positions of markers in a marker batch. The markers are rendered in the primitive's reference frame.
 
@@ -264,34 +265,37 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_optional_parameters(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters") -> None
+.. py:method:: set_with_optional_parameters(self, positions: list, optionalParameters: IMarkerBatchPrimitiveOptionalParameters) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_with_optional_parameters
 
     Define the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame.
 
     :Parameters:
 
     **positions** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
+    **optionalParameters** : :obj:`~IMarkerBatchPrimitiveOptionalParameters`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_with_optional_parameters_and_render_pass_hint(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_with_optional_parameters_and_render_pass_hint(self, positions: list, optionalParameters: IMarkerBatchPrimitiveOptionalParameters, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_with_optional_parameters_and_render_pass_hint
 
     Define the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
 
     :Parameters:
 
     **positions** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **optionalParameters** : :obj:`~IMarkerBatchPrimitiveOptionalParameters`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_cartographic(self, centralBody:str, positions:list) -> None
+.. py:method:: set_cartographic(self, centralBody: str, positions: list) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_cartographic
 
     For convenience. Defines the positions of markers in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
 
@@ -304,7 +308,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_optional_parameters(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters") -> None
+.. py:method:: set_cartographic_with_optional_parameters(self, centralBody: str, positions: list, optionalParameters: IMarkerBatchPrimitiveOptionalParameters) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_cartographic_with_optional_parameters
 
     For convenience. Defines the positions and optional per-marker parameters of markers in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
 
@@ -312,13 +317,14 @@ Method detail
 
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
+    **optionalParameters** : :obj:`~IMarkerBatchPrimitiveOptionalParameters`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_optional_parameters_and_render_pass_hint(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_cartographic_with_optional_parameters_and_render_pass_hint(self, centralBody: str, positions: list, optionalParameters: IMarkerBatchPrimitiveOptionalParameters, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_cartographic_with_optional_parameters_and_render_pass_hint
 
     For convenience. Defines the positions and optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency...
 
@@ -326,14 +332,15 @@ Method detail
 
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **optionalParameters** : :obj:`~IMarkerBatchPrimitiveOptionalParameters`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial(self, positions:list, indices:list) -> None
+.. py:method:: set_partial(self, positions: list, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial
 
     Update a subset of marker positions in a marker batch.
 
@@ -346,7 +353,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_with_indices_order
 
     Update a subset of marker positions in a marker batch.
 
@@ -354,43 +362,46 @@ Method detail
 
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~"INDICES_ORDER_HINT"`
+    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_optional_parameters(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list) -> None
+.. py:method:: set_partial_with_optional_parameters(self, positions: list, optionalParameters: IMarkerBatchPrimitiveOptionalParameters, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_with_optional_parameters
 
     Update a subset of marker positions and/or per-marker parameters in a marker batch.
 
     :Parameters:
 
     **positions** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
+    **optionalParameters** : :obj:`~IMarkerBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions: list, optionalParameters: IMarkerBatchPrimitiveOptionalParameters, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_with_optional_parameters_indices_order_and_render_pass
 
     Update a subset of marker positions and/or per-marker parameters in a marker batch.
 
     :Parameters:
 
     **positions** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
+    **optionalParameters** : :obj:`~IMarkerBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~"INDICES_ORDER_HINT"`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic(self, centralBody:str, positions:list, indices:list) -> None
+.. py:method:: set_partial_cartographic(self, centralBody: str, positions: list, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_cartographic
 
     For convenience. Updates a subset of positions in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
@@ -404,7 +415,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
@@ -413,13 +425,14 @@ Method detail
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~"INDICES_ORDER_HINT"`
+    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_optional_parameters(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list) -> None
+.. py:method:: set_partial_cartographic_with_optional_parameters(self, centralBody: str, positions: list, optionalParameters: IMarkerBatchPrimitiveOptionalParameters, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_cartographic_with_optional_parameters
 
     For convenience. Updates a subset of positions and/or optional per-marker parameters of markers in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
@@ -427,14 +440,15 @@ Method detail
 
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
+    **optionalParameters** : :obj:`~IMarkerBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, optionalParameters:"IMarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody: str, positions: list, optionalParameters: IMarkerBatchPrimitiveOptionalParameters, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions and/or optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency...
 
@@ -442,22 +456,23 @@ Method detail
 
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
+    **optionalParameters** : :obj:`~IMarkerBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~"INDICES_ORDER_HINT"`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: supported(self, renderingMethod:"MARKER_BATCH_RENDERING_METHOD") -> bool
+.. py:method:: supported(self, renderingMethod: MARKER_BATCH_RENDERING_METHOD) -> bool
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.supported
 
     Determine whether or not the video card supports the marker batch primitive with the given renderingMethod.
 
     :Parameters:
 
-    **renderingMethod** : :obj:`~"MARKER_BATCH_RENDERING_METHOD"`
+    **renderingMethod** : :obj:`~MARKER_BATCH_RENDERING_METHOD`
 
     :Returns:
 
@@ -468,6 +483,7 @@ Method detail
 
 
 .. py:method:: align_to_screen(self) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.align_to_screen
 
     Set the up vector of the markers to always be aligned to the up vector of the camera. This is the default alignment.
 
@@ -475,7 +491,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: align_to_north(self, centralBody:str) -> None
+.. py:method:: align_to_north(self, centralBody: str) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.align_to_north
 
     Set the up vector of the markers to point towards the north axis of centralBody. It will be aligned with the tangent vector of the surface that points north.
 
@@ -487,7 +504,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: align_to_axis(self, centralBody:str, axis:list) -> None
+.. py:method:: align_to_axis(self, centralBody: str, axis: list) -> None
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.align_to_axis
 
     Set the up vector of the markers to point towards the axis of centralBody. It will be aligned with the tangent vector of the surface that points towards the axis...
 

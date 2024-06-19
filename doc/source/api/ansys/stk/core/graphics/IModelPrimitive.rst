@@ -71,13 +71,13 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.graphics.IModelPrimitive.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Gets or sets the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
 
 .. py:property:: articulations
     :canonical: ansys.stk.core.graphics.IModelPrimitive.articulations
-    :type: "IAgStkGraphicsModelArticulationCollection"
+    :type: IAgStkGraphicsModelArticulationCollection
 
     Gets the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
 
@@ -93,7 +93,8 @@ Method detail
 
 
 
-.. py:method:: load_with_string_uri(self, uri:str) -> None
+.. py:method:: load_with_string_uri(self, uri: str) -> None
+    :canonical: ansys.stk.core.graphics.IModelPrimitive.load_with_string_uri
 
     For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
 
@@ -105,20 +106,22 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_with_string_uri_and_up_axis(self, uri:str, upAxis:"MODEL_UP_AXIS") -> None
+.. py:method:: load_with_string_uri_and_up_axis(self, uri: str, upAxis: MODEL_UP_AXIS) -> None
+    :canonical: ansys.stk.core.graphics.IModelPrimitive.load_with_string_uri_and_up_axis
 
     For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
 
     :Parameters:
 
     **uri** : :obj:`~str`
-    **upAxis** : :obj:`~"MODEL_UP_AXIS"`
+    **upAxis** : :obj:`~MODEL_UP_AXIS`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_position_cartographic(self, centralBody:str, position:list) -> None
+.. py:method:: set_position_cartographic(self, centralBody: str, position: list) -> None
+    :canonical: ansys.stk.core.graphics.IModelPrimitive.set_position_cartographic
 
     For convenience. Sets the cartographic position of the model. This also sets position.
 

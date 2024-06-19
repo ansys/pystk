@@ -3,7 +3,7 @@ PctCmpltEventArgs
 
 .. py:class:: PctCmpltEventArgs
 
-   IPctCmpltEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~IPctCmpltEventArgs`
 
    Represents a structure used by the Percent Complete events.
 

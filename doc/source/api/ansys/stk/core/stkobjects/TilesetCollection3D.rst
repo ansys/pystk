@@ -3,7 +3,7 @@ TilesetCollection3D
 
 .. py:class:: TilesetCollection3D
 
-   ITilesetCollection3D, SupportsDeleteCallback
+   Bases: py:obj:`~ITilesetCollection3D`
 
    Collection of 3DTilesets available in the Scenario for analysis.
 

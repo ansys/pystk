@@ -11,6 +11,21 @@ AND_OR
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~AND`
+              - And option.
+
+            * - :py:attr:`~OR`
+              - Or option.
+
+
 Import detail
 -------------
 

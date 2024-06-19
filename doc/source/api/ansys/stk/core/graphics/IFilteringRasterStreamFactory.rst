@@ -36,16 +36,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self, rasterStream:"IRasterStream", filter:"IRasterFilter") -> "IFilteringRasterStream"
+.. py:method:: initialize(self, rasterStream: IRasterStream, filter: IRasterFilter) -> IFilteringRasterStream
+    :canonical: ansys.stk.core.graphics.IFilteringRasterStreamFactory.initialize
 
     Initialize a new instance with a raster stream and the raster filter that will be applied to each update of that stream.
 
     :Parameters:
 
-    **rasterStream** : :obj:`~"IRasterStream"`
-    **filter** : :obj:`~"IRasterFilter"`
+    **rasterStream** : :obj:`~IRasterStream`
+    **filter** : :obj:`~IRasterFilter`
 
     :Returns:
 
-        :obj:`~"IFilteringRasterStream"`
+        :obj:`~IFilteringRasterStream`
 

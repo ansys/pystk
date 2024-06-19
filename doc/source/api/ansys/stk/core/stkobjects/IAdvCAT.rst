@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IAdvCAT.time_period
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the time period for the close approach analysis.
 
@@ -88,19 +88,19 @@ Property detail
 
 .. py:property:: primary_default_class
     :canonical: ansys.stk.core.stkobjects.IAdvCAT.primary_default_class
-    :type: "ADV_CAT_ELLIPSOID_CLASS"
+    :type: ADV_CAT_ELLIPSOID_CLASS
 
     Determine Ellipsoid Sizing method class.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.IAdvCAT.advanced
-    :type: "IAgAdvCATAdvanced"
+    :type: IAgAdvCATAdvanced
 
     Get AdvCAT advanced properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IAdvCAT.graphics_3d
-    :type: "IAgAdvCATVO"
+    :type: IAgAdvCATVO
 
     Get AdvCAT advanced properties.
 
@@ -124,7 +124,7 @@ Property detail
 
 .. py:property:: secondary_default_class
     :canonical: ansys.stk.core.stkobjects.IAdvCAT.secondary_default_class
-    :type: "ADV_CAT_ELLIPSOID_CLASS"
+    :type: ADV_CAT_ELLIPSOID_CLASS
 
     Determine Ellipsoid Sizing method class.
 
@@ -158,6 +158,7 @@ Method detail
 
 
 .. py:method:: compute(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAdvCAT.compute
 
     Launch the close approach analysis.
 
@@ -165,29 +166,32 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_available_objects(self) -> "IAdvCATAvailableObjectCollection"
+.. py:method:: get_available_objects(self) -> IAdvCATAvailableObjectCollection
+    :canonical: ansys.stk.core.stkobjects.IAdvCAT.get_available_objects
 
     Return a collection of available objects.
 
     :Returns:
 
-        :obj:`~"IAdvCATAvailableObjectCollection"`
+        :obj:`~IAdvCATAvailableObjectCollection`
 
-.. py:method:: get_primary_chosen_objects(self) -> "IAdvCATChosenObjectCollection"
+.. py:method:: get_primary_chosen_objects(self) -> IAdvCATChosenObjectCollection
+    :canonical: ansys.stk.core.stkobjects.IAdvCAT.get_primary_chosen_objects
 
     Return a collection of primary objects.
 
     :Returns:
 
-        :obj:`~"IAdvCATChosenObjectCollection"`
+        :obj:`~IAdvCATChosenObjectCollection`
 
-.. py:method:: get_secondary_chosen_objects(self) -> "IAdvCATChosenObjectCollection"
+.. py:method:: get_secondary_chosen_objects(self) -> IAdvCATChosenObjectCollection
+    :canonical: ansys.stk.core.stkobjects.IAdvCAT.get_secondary_chosen_objects
 
     Return a collection of secondary objects.
 
     :Returns:
 
-        :obj:`~"IAdvCATChosenObjectCollection"`
+        :obj:`~IAdvCATChosenObjectCollection`
 
 
 

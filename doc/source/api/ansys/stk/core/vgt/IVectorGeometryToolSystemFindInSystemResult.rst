@@ -46,25 +46,25 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.position
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     A position vector.
 
 .. py:property:: velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.velocity
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     A velocity vector.
 
 .. py:property:: rate
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.rate
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     Rate of change.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Orientation.
 

@@ -3,7 +3,7 @@ AntennaModelApertureCircularBesselEnvelope
 
 .. py:class:: AntennaModelApertureCircularBesselEnvelope
 
-   IAntennaModelApertureCircularBesselEnvelope, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelApertureCircularBesselEnvelope`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a circular bessel envelope aperture antenna model.
 

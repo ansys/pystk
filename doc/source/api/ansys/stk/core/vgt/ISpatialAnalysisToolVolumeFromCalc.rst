@@ -54,13 +54,13 @@ Property detail
 
 .. py:property:: operation
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.operation
-    :type: "CRDN_CONDITION_THRESHOLD_OPTION"
+    :type: CRDN_CONDITION_THRESHOLD_OPTION
 
     Get the operation from the condition that determines how the bounds are considered. The operation can be set to define satisfaction when the scalar is above minimum, below maximum, between minimum and maximum or outside minimum and maximum.
 
 .. py:property:: volume_calc
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.volume_calc
-    :type: "IAgCrdnVolumeCalc"
+    :type: IAgCrdnVolumeCalc
 
     Get the volume calc from the bounds.
 
@@ -72,54 +72,59 @@ Method detail
 
 
 
-.. py:method:: get_minimum(self) -> "IQuantity"
+.. py:method:: get_minimum(self) -> IQuantity
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.get_minimum
 
     Get the minimum bound value from the bounds. Call SetMinimum to apply changes.
 
     :Returns:
 
-        :obj:`~"IQuantity"`
+        :obj:`~IQuantity`
 
-.. py:method:: set_minimum(self, value:"IQuantity") -> None
+.. py:method:: set_minimum(self, value: IQuantity) -> None
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.set_minimum
 
     Set the minimum bound value for the bounds.
 
     :Parameters:
 
-    **value** : :obj:`~"IQuantity"`
+    **value** : :obj:`~IQuantity`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_maximum(self) -> "IQuantity"
+.. py:method:: get_maximum(self) -> IQuantity
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.get_maximum
 
     Get the maximum bound value from the bounds. Call SetMaximum to apply changes.
 
     :Returns:
 
-        :obj:`~"IQuantity"`
+        :obj:`~IQuantity`
 
-.. py:method:: set_maximum(self, value:"IQuantity") -> None
+.. py:method:: set_maximum(self, value: IQuantity) -> None
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.set_maximum
 
     Set the maximum bound value for the condition.
 
     :Parameters:
 
-    **value** : :obj:`~"IQuantity"`
+    **value** : :obj:`~IQuantity`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set(self, min:"IQuantity", max:"IQuantity") -> None
+.. py:method:: set(self, min: IQuantity, max: IQuantity) -> None
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.set
 
     Set the min/max bounds. Throws an exception if the minimum is greater than maximum.
 
     :Parameters:
 
-    **min** : :obj:`~"IQuantity"`
-    **max** : :obj:`~"IQuantity"`
+    **min** : :obj:`~IQuantity`
+    **max** : :obj:`~IQuantity`
 
     :Returns:
 

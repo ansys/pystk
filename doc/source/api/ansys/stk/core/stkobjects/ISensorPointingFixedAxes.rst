@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.ISensorPointingFixedAxes.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Get the sensor's orientation properties.
 

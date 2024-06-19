@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian.reference_system
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Get the reference system in which Cartesian parameters are computed.
 
 .. py:property:: x_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian.x_coordinates
-    :type: "IAgCrdnGridCoordinateDefinition"
+    :type: IAgCrdnGridCoordinateDefinition
 
     Returns X Coordinates parameters for the Cartesian system.
 
 .. py:property:: y_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian.y_coordinates
-    :type: "IAgCrdnGridCoordinateDefinition"
+    :type: IAgCrdnGridCoordinateDefinition
 
     Returns Y Coordinates parameters for the Cartesian system.
 
 .. py:property:: z_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian.z_coordinates
-    :type: "IAgCrdnGridCoordinateDefinition"
+    :type: IAgCrdnGridCoordinateDefinition
 
     Returns Z Coordinates parameters for the Cartesian system.
 

@@ -3,7 +3,7 @@ BMagnitudeCalc
 
 .. py:class:: BMagnitudeCalc
 
-   IComponentInfo, ICloneable, IBMagnitudeCalc, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IBMagnitudeCalc`
 
    BMag Calc objects.
 

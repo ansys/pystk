@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: constraint_type
     :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.constraint_type
-    :type: "ACCESS_CONSTRAINTS"
+    :type: ACCESS_CONSTRAINTS
 
     Gets the constraint type.
 
@@ -122,7 +122,8 @@ Method detail
 -------------
 
 
-.. py:method:: remove_index(self, index:int) -> None
+.. py:method:: remove_index(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.remove_index
 
     Remove an item given an index.
 
@@ -135,6 +136,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.remove_all
 
     Remove all items from the collection.
 
@@ -142,7 +144,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_excl_zone(self, minLat:typing.Any, minLon:typing.Any, maxLat:typing.Any, maxLon:typing.Any) -> None
+.. py:method:: remove_excl_zone(self, minLat: typing.Any, minLon: typing.Any, maxLat: typing.Any, maxLon: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.remove_excl_zone
 
     Remove an Exclusion Zone using the min and max lat/lon values. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
 
@@ -157,7 +160,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: change_excl_zone(self, index:int, minLat:typing.Any, minLon:typing.Any, maxLat:typing.Any, maxLon:typing.Any) -> None
+.. py:method:: change_excl_zone(self, index: int, minLat: typing.Any, minLon: typing.Any, maxLat: typing.Any, maxLon: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.change_excl_zone
 
     Update Exclusion Zone data at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
 
@@ -173,7 +177,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_excl_zone(self, index:int) -> typing.Tuple[typing.Any, typing.Any, typing.Any, typing.Any]
+.. py:method:: get_excl_zone(self, index: int) -> typing.Tuple[typing.Any, typing.Any, typing.Any, typing.Any]
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.get_excl_zone
 
     Return min and max lat/lon values at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
 
@@ -185,7 +190,8 @@ Method detail
 
         :obj:`~typing.Tuple[typing.Any, typing.Any, typing.Any, typing.Any]`
 
-.. py:method:: to_array(self, index:int, length:int) -> list
+.. py:method:: to_array(self, index: int, length: int) -> list
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.to_array
 
     Return a four-dimensional array of min/max lat/lon values beginning at a given position and having specified number of rows.
 
@@ -203,7 +209,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IAccessConstraintZone"
+.. py:method:: item(self, index: int) -> IAccessConstraintZone
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.item
 
     Get an IAgAccessCnstrZone interface using an index.
 
@@ -213,7 +220,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAccessConstraintZone"`
+        :obj:`~IAccessConstraintZone`
 
 
 

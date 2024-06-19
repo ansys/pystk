@@ -3,7 +3,7 @@ DistanceToPrimitiveDisplayConditionFactory
 
 .. py:class:: DistanceToPrimitiveDisplayConditionFactory
 
-   IDistanceToPrimitiveDisplayConditionFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IDistanceToPrimitiveDisplayConditionFactory`
 
    Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive...
 

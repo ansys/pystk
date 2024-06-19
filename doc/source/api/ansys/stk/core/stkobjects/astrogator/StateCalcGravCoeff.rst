@@ -3,7 +3,7 @@ StateCalcGravCoeff
 
 .. py:class:: StateCalcGravCoeff
 
-   IStateCalcGravCoeff, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcGravCoeff`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Gravity Coefficient Calc objects.
 

@@ -3,7 +3,7 @@ RFFilterModelRootRaisedCosine
 
 .. py:class:: RFFilterModelRootRaisedCosine
 
-   IRFFilterModelRootRaisedCosine, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelRootRaisedCosine`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a root raised cosine filter model.
 

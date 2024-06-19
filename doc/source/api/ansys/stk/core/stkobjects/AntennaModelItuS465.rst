@@ -3,7 +3,7 @@ AntennaModelItuS465
 
 .. py:class:: AntennaModelItuS465
 
-   IAntennaModelItuS465, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuS465`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R S465-6 antenna model.
 

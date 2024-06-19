@@ -3,7 +3,7 @@ CentralBodyEphemerisPlanetary
 
 .. py:class:: CentralBodyEphemerisPlanetary
 
-   ICentralBodyEphemerisPlanetary, ICentralBodyEphemeris, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyEphemerisPlanetary`, py:obj:`~ICentralBodyEphemeris`
 
    Central Body Ephemeris - Planetary.
 

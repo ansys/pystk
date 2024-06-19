@@ -3,7 +3,7 @@ StkPreferencesConnect
 
 .. py:class:: StkPreferencesConnect
 
-   IStkPreferencesConnect, SupportsDeleteCallback
+   Bases: py:obj:`~IStkPreferencesConnect`
 
    Allow configuring connect preferences.
 

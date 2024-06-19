@@ -3,7 +3,7 @@ BasicFixedWingFwdFlightLiftHelper
 
 .. py:class:: BasicFixedWingFwdFlightLiftHelper
 
-   IBasicFixedWingLiftHelper, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicFixedWingLiftHelper`
 
    Class defining the Lift Coefficient Helper for Forward Flight in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft.
 

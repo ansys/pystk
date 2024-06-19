@@ -45,19 +45,19 @@ Property detail
 
 .. py:property:: origin_position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.origin_position
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The position of the plane's center point in the specified coordinate system.
 
 .. py:property:: x_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.x_axis
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     X-axis vector in the specified reference system.
 
 .. py:property:: y_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.y_axis
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     Y-axis vector in the specified reference system.
 

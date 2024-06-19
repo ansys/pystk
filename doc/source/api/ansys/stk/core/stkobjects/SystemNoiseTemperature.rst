@@ -3,7 +3,7 @@ SystemNoiseTemperature
 
 .. py:class:: SystemNoiseTemperature
 
-   ISystemNoiseTemperature, SupportsDeleteCallback
+   Bases: py:obj:`~ISystemNoiseTemperature`
 
    Class defining system noise temperature.
 

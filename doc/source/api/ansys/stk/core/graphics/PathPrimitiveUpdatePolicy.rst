@@ -3,7 +3,7 @@ PathPrimitiveUpdatePolicy
 
 .. py:class:: PathPrimitiveUpdatePolicy
 
-   IPathPrimitiveUpdatePolicy, SupportsDeleteCallback
+   Bases: py:obj:`~IPathPrimitiveUpdatePolicy`
 
    A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method.
 

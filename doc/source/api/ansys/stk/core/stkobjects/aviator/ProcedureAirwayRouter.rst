@@ -3,7 +3,7 @@ ProcedureAirwayRouter
 
 .. py:class:: ProcedureAirwayRouter
 
-   IProcedureAirwayRouter, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureAirwayRouter`, py:obj:`~IProcedure`
 
    Class defining an Airway Router procedure.
 

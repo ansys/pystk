@@ -3,7 +3,7 @@ RadarModelMonostatic
 
 .. py:class:: RadarModelMonostatic
 
-   IRadarModelMonostatic, IRadarModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModelMonostatic`, py:obj:`~IRadarModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a monostatic radar model.
 

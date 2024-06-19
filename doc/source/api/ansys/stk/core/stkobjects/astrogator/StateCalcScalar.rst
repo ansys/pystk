@@ -3,7 +3,7 @@ StateCalcScalar
 
 .. py:class:: StateCalcScalar
 
-   IStateCalcScalar, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcScalar`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Scalar Calc objects.
 

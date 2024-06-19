@@ -3,7 +3,7 @@ CommSystemAccessSamplingMethodAdaptive
 
 .. py:class:: CommSystemAccessSamplingMethodAdaptive
 
-   ICommSystemAccessSamplingMethodAdaptive, ICommSystemAccessSamplingMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemAccessSamplingMethodAdaptive`, py:obj:`~ICommSystemAccessSamplingMethod`
 
    Class defining a CommSystem access options.
 

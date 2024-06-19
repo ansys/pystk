@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics3DDropLinePathItem"
+.. py:method:: item(self, index: int) -> IVehicleGraphics3DDropLinePathItem
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItemCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics3DDropLinePathItem"`
+        :obj:`~IVehicleGraphics3DDropLinePathItem`
 
 

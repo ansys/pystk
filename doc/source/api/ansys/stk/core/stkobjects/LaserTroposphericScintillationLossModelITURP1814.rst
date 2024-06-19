@@ -3,7 +3,7 @@ LaserTroposphericScintillationLossModelITURP1814
 
 .. py:class:: LaserTroposphericScintillationLossModelITURP1814
 
-   ILaserTroposphericScintillationLossModelITURP1814, ILaserTroposphericScintillationLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ILaserTroposphericScintillationLossModelITURP1814`, py:obj:`~ILaserTroposphericScintillationLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an ITU-R P.1814 laser tropospheric scintillation loss model.
 

@@ -3,7 +3,7 @@ AdvancedFixedWingExternalAero
 
 .. py:class:: AdvancedFixedWingExternalAero
 
-   IAdvancedFixedWingExternalAero, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingExternalAero`
 
    Class defining the External Aero File aerodynamic strategy in the Advanced Fixed Wing Tool.
 

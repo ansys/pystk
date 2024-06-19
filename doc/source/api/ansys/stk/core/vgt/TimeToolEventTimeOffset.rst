@@ -3,7 +3,7 @@ TimeToolEventTimeOffset
 
 .. py:class:: TimeToolEventTimeOffset
 
-   ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventTimeOffset`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Event at fixed offset from specified reference event.
 

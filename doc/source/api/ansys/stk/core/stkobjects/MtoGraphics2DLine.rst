@@ -3,7 +3,7 @@ MtoGraphics2DLine
 
 .. py:class:: MtoGraphics2DLine
 
-   IMtoGraphics2DLine, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics2DLine`
 
    MTO track line display options.
 

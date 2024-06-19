@@ -90,13 +90,13 @@ Property detail
 
 .. py:property:: update_policy
     :canonical: ansys.stk.core.graphics.IPathPrimitive.update_policy
-    :type: "IAgStkGraphicsPathPrimitiveUpdatePolicy"
+    :type: IAgStkGraphicsPathPrimitiveUpdatePolicy
 
     Gets or sets how the primitive will be updated based on the current animation time.
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.IPathPrimitive.polyline_type
-    :type: "POLYLINE_TYPE"
+    :type: POLYLINE_TYPE
 
     Gets or sets how the primitive interprets the positions.
 
@@ -168,7 +168,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IPathPoint"
+.. py:method:: item(self, index: int) -> IPathPoint
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.item
 
     Return the point at the given zero-based index.
 
@@ -178,22 +179,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPathPoint"`
+        :obj:`~IPathPoint`
 
 
-.. py:method:: add_front(self, pathPoint:"IPathPoint") -> None
+.. py:method:: add_front(self, pathPoint: IPathPoint) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.add_front
 
     Add a path point to the front of the line.
 
     :Parameters:
 
-    **pathPoint** : :obj:`~"IPathPoint"`
+    **pathPoint** : :obj:`~IPathPoint`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_range_to_front(self, positions:list) -> None
+.. py:method:: add_range_to_front(self, positions: list) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.add_range_to_front
 
     Add the range of path points to the front of the line.
 
@@ -205,19 +208,21 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_back(self, pathPoint:"IPathPoint") -> None
+.. py:method:: add_back(self, pathPoint: IPathPoint) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.add_back
 
     Add a path point to the back of the line.
 
     :Parameters:
 
-    **pathPoint** : :obj:`~"IPathPoint"`
+    **pathPoint** : :obj:`~IPathPoint`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_range_to_back(self, positions:list) -> None
+.. py:method:: add_range_to_back(self, positions: list) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.add_range_to_back
 
     Add the range of path points to the back of the line.
 
@@ -230,6 +235,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_front(self) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.remove_front
 
     Remove a path point to the front of the line.
 
@@ -237,7 +243,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_all_before(self, index:int) -> None
+.. py:method:: remove_all_before(self, index: int) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.remove_all_before
 
     Remove all points before index.
 
@@ -250,6 +257,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_back(self) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.remove_back
 
     Remove a path point to the back of the line.
 
@@ -257,7 +265,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_all_after(self, index:int) -> None
+.. py:method:: remove_all_after(self, index: int) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.remove_all_after
 
     Remove all points after index.
 
@@ -269,23 +278,26 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: front(self) -> "IPathPoint"
+.. py:method:: front(self) -> IPathPoint
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.front
 
     Access the path point at the front of the line.
 
     :Returns:
 
-        :obj:`~"IPathPoint"`
+        :obj:`~IPathPoint`
 
-.. py:method:: back(self) -> "IPathPoint"
+.. py:method:: back(self) -> IPathPoint
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.back
 
     Access the path point at the back of the line.
 
     :Returns:
 
-        :obj:`~"IPathPoint"`
+        :obj:`~IPathPoint`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitive.clear
 
     Remove all of the points.
 

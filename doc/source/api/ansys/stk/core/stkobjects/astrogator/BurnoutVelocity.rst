@@ -3,7 +3,7 @@ BurnoutVelocity
 
 .. py:class:: BurnoutVelocity
 
-   IBurnoutVelocity, SupportsDeleteCallback
+   Bases: py:obj:`~IBurnoutVelocity`
 
    The burnout velocity.
 

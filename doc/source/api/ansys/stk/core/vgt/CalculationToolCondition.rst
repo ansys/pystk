@@ -3,7 +3,7 @@ CalculationToolCondition
 
 .. py:class:: CalculationToolCondition
 
-   ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolCondition`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings.
 

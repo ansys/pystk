@@ -3,7 +3,7 @@ VmGridSpatialCalculation
 
 .. py:class:: VmGridSpatialCalculation
 
-   IVmGridDefinition, IVmGridSpatialCalculation, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGridDefinition`, py:obj:`~IVmGridSpatialCalculation`
 
    Class defining the volume grid spatial calculation.
 

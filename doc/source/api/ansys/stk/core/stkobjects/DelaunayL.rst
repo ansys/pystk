@@ -3,7 +3,7 @@ DelaunayL
 
 .. py:class:: DelaunayL
 
-   IDelaunayActionVariable, IDelaunayL, SupportsDeleteCallback
+   Bases: py:obj:`~IDelaunayActionVariable`, py:obj:`~IDelaunayL`
 
    Delaunay Variable L, which is related to the two-body orbital energy.
 

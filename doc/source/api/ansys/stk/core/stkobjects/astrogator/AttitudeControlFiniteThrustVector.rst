@@ -3,7 +3,7 @@ AttitudeControlFiniteThrustVector
 
 .. py:class:: AttitudeControlFiniteThrustVector
 
-   IAttitudeControlFiniteThrustVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlFiniteThrustVector`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The thrust vector attitude control for a finite maneuver.
 

@@ -3,7 +3,7 @@ TimeToolEventInterval
 
 .. py:class:: TimeToolEventInterval
 
-   ITimeToolEventInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A single time interval.
 

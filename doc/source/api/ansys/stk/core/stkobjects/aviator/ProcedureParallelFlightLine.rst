@@ -3,7 +3,7 @@ ProcedureParallelFlightLine
 
 .. py:class:: ProcedureParallelFlightLine
 
-   IProcedureParallelFlightLine, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureParallelFlightLine`, py:obj:`~IProcedure`
 
    Class defining a Parallel Flight Line procedure.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: magnitude_field_line
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentGraphics.magnitude_field_line
-    :type: "IAgVeSpEnvMagFieldLine"
+    :type: IAgVeSpEnvMagFieldLine
 
     Graphics settings for showing magnetic field lines.
 

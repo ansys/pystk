@@ -3,7 +3,7 @@ GeodeticSizeRadius
 
 .. py:class:: GeodeticSizeRadius
 
-   IGeodeticSizeRadius, IGeodeticSize, SupportsDeleteCallback
+   Bases: py:obj:`~IGeodeticSizeRadius`, py:obj:`~IGeodeticSize`
 
    Radius and Radius Rate (for Geodetic coordinate type).
 

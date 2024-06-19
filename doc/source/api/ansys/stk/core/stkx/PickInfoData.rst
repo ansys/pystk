@@ -3,7 +3,7 @@ PickInfoData
 
 .. py:class:: PickInfoData
 
-   IPickInfoData, SupportsDeleteCallback
+   Bases: py:obj:`~IPickInfoData`
 
    Single mouse pick result.
 

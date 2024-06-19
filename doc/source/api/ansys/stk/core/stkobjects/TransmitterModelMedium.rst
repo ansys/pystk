@@ -3,7 +3,7 @@ TransmitterModelMedium
 
 .. py:class:: TransmitterModelMedium
 
-   ITransmitterModelMedium, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModelMedium`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a medium transmitter model.
 

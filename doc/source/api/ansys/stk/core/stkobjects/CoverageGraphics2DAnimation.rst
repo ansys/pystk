@@ -3,7 +3,7 @@ CoverageGraphics2DAnimation
 
 .. py:class:: CoverageGraphics2DAnimation
 
-   ICoverageGraphics2DAnimation, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageGraphics2DAnimation`
 
    2D animation graphics options for the coverage grid.
 

@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_string(self, uri:str, extent:list) -> "IRasterImageGlobeOverlay"
+.. py:method:: initialize_with_string(self, uri: str, extent: list) -> IRasterImageGlobeOverlay
+    :canonical: ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory.initialize_with_string
 
     Initialize a raster image globe overlay with the provided values.
 
@@ -51,9 +52,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRasterImageGlobeOverlay"`
+        :obj:`~IRasterImageGlobeOverlay`
 
-.. py:method:: initialize_with_color(self, color:agcolor.Color, extent:list) -> "IRasterImageGlobeOverlay"
+.. py:method:: initialize_with_color(self, color: agcolor.Color, extent: list) -> IRasterImageGlobeOverlay
+    :canonical: ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory.initialize_with_color
 
     Initialize a raster image globe overlay with the provided values.
 
@@ -64,18 +66,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRasterImageGlobeOverlay"`
+        :obj:`~IRasterImageGlobeOverlay`
 
-.. py:method:: initialize_with_raster(self, raster:"IRaster", extent:list) -> "IRasterImageGlobeOverlay"
+.. py:method:: initialize_with_raster(self, raster: IRaster, extent: list) -> IRasterImageGlobeOverlay
+    :canonical: ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory.initialize_with_raster
 
     Initialize a raster image globe overlay with the provided values.
 
     :Parameters:
 
-    **raster** : :obj:`~"IRaster"`
+    **raster** : :obj:`~IRaster`
     **extent** : :obj:`~list`
 
     :Returns:
 
-        :obj:`~"IRasterImageGlobeOverlay"`
+        :obj:`~IRasterImageGlobeOverlay`
 

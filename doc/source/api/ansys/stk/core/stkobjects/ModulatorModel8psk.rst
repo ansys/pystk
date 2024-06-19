@@ -3,7 +3,7 @@ ModulatorModel8psk
 
 .. py:class:: ModulatorModel8psk
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a 8PSK modulator model.
 

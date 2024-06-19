@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownSystems
 
 .. py:class:: VectorGeometryToolWellKnownSystems
 
-   IVectorGeometryToolWellKnownSystems, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolWellKnownSystems`
 
    Well-known coordinate reference systems.
 

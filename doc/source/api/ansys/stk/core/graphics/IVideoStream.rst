@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: playback
     :canonical: ansys.stk.core.graphics.IVideoStream.playback
-    :type: "VIDEO_PLAYBACK"
+    :type: VIDEO_PLAYBACK
 
     Gets or sets the video playback mode of the video.
 
@@ -88,13 +88,13 @@ Property detail
 
 .. py:property:: interval_start_time
     :canonical: ansys.stk.core.graphics.IVideoStream.interval_start_time
-    :type: "IAgDate"
+    :type: IAgDate
 
     Gets or sets the scene manager time at which the video will begin playing when the playback property is set to time interval.
 
 .. py:property:: interval_end_time
     :canonical: ansys.stk.core.graphics.IVideoStream.interval_end_time
-    :type: "IAgDate"
+    :type: IAgDate
 
     Gets or sets the scene manager time at which the video will stop playing when the playback property is set to time interval.
 
@@ -196,7 +196,8 @@ Method detail
 
 
 
-.. py:method:: reinitialize_with_string_uri(self, uri:str) -> None
+.. py:method:: reinitialize_with_string_uri(self, uri: str) -> None
+    :canonical: ansys.stk.core.graphics.IVideoStream.reinitialize_with_string_uri
 
     Reinitializes the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
 
@@ -209,6 +210,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: play(self) -> None
+    :canonical: ansys.stk.core.graphics.IVideoStream.play
 
     Begins playing the video when the playback property is set to real time.
 
@@ -217,6 +219,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: pause(self) -> None
+    :canonical: ansys.stk.core.graphics.IVideoStream.pause
 
     Pauses the video when the playback property is set to real time.
 
@@ -225,6 +228,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: stop(self) -> None
+    :canonical: ansys.stk.core.graphics.IVideoStream.stop
 
     Stop the video when the playback property is set to real time. Stopping the video will seek to the first frame and pause playback. Use the Play method to begin playing the video again.
 
@@ -233,6 +237,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: reset(self) -> None
+    :canonical: ansys.stk.core.graphics.IVideoStream.reset
 
     Seeks the video to its first frame and begins playing the video when the playback property is set to real time.
 
@@ -241,6 +246,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: close(self) -> None
+    :canonical: ansys.stk.core.graphics.IVideoStream.close
 
     Close the video stream and any associated resources.
 

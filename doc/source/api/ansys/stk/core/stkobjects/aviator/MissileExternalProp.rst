@@ -3,7 +3,7 @@ MissileExternalProp
 
 .. py:class:: MissileExternalProp
 
-   IMissileExternalProp, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileExternalProp`
 
    Class defining the External propulsion options for a missile.
 

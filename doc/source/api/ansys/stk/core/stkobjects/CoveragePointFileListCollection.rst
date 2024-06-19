@@ -3,7 +3,7 @@ CoveragePointFileListCollection
 
 .. py:class:: CoveragePointFileListCollection
 
-   ICoveragePointFileListCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICoveragePointFileListCollection`
 
    Point file list collection.
 

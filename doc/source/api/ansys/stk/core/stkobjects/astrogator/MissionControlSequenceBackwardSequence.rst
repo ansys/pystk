@@ -3,7 +3,7 @@ MissionControlSequenceBackwardSequence
 
 .. py:class:: MissionControlSequenceBackwardSequence
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceBackwardSequence, IMissionControlSequenceSequence, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceBackwardSequence`, py:obj:`~IMissionControlSequenceSequence`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Backward Sequence segment.
 

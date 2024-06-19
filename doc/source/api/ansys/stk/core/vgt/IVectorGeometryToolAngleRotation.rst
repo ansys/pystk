@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: from_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.from_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify an axes to rotate from.
 
 .. py:property:: to_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.to_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify an axes to rotate to.
 
 .. py:property:: reference_direction
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.reference_direction
-    :type: "CRDN_DISPLAY_AXIS_SELECTOR"
+    :type: CRDN_DISPLAY_AXIS_SELECTOR
 
     Specify a rotation direction.
 

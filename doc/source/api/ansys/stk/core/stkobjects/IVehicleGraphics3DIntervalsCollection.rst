@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics3DIntervalsElement"
+.. py:method:: item(self, index: int) -> IVehicleGraphics3DIntervalsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics3DIntervalsElement"`
+        :obj:`~IVehicleGraphics3DIntervalsElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, start:typing.Any, stop:typing.Any) -> "IVehicleGraphics3DIntervalsElement"
+.. py:method:: add(self, start: typing.Any, stop: typing.Any) -> IVehicleGraphics3DIntervalsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsCollection.add
 
     Add a new element to the collection. Start/Stop use DateFormat Dimension.
 
@@ -111,5 +115,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics3DIntervalsElement"`
+        :obj:`~IVehicleGraphics3DIntervalsElement`
 

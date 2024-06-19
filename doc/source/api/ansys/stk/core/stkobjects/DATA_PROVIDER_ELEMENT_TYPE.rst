@@ -11,6 +11,27 @@ DATA_PROVIDER_ELEMENT_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~REAL`
+              - Real number.
+
+            * - :py:attr:`~INT`
+              - Integer.
+
+            * - :py:attr:`~CHAR`
+              - Character.
+
+            * - :py:attr:`~CHAR_OR_REAL`
+              - Character or real number.
+
+
 Import detail
 -------------
 

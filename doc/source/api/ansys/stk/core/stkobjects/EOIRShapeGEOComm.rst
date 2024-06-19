@@ -3,7 +3,7 @@ EOIRShapeGEOComm
 
 .. py:class:: EOIRShapeGEOComm
 
-   IEOIRShapeGEOComm, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeGEOComm`, py:obj:`~IEOIRShapeObject`
 
    GEOComm shape class.
 

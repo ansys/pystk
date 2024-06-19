@@ -3,7 +3,7 @@ VmAnalysisInterval
 
 .. py:class:: VmAnalysisInterval
 
-   IVmAnalysisInterval, SupportsDeleteCallback
+   Bases: py:obj:`~IVmAnalysisInterval`
 
    Class defining the volumetric analysis interval.
 

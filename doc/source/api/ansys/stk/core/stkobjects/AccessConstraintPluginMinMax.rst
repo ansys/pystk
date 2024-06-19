@@ -3,7 +3,7 @@ AccessConstraintPluginMinMax
 
 .. py:class:: AccessConstraintPluginMinMax
 
-   IAccessConstraintPluginMinMax, IAccessConstraintMinMax, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintPluginMinMax`, py:obj:`~IAccessConstraintMinMax`, py:obj:`~IAccessConstraint`
 
    Class related to defining access plugin constraints in terms of minimum and/or maximum values.
 

@@ -3,7 +3,7 @@ TerrainOverlayAddCompleteEventArgs
 
 .. py:class:: TerrainOverlayAddCompleteEventArgs
 
-   ITerrainOverlayAddCompleteEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~ITerrainOverlayAddCompleteEventArgs`
 
    The event is raised when the terrain overlay is displayed for the first time after having been added using AddAsync.
 

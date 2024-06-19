@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: summary_option
     :canonical: ansys.stk.core.stkobjects.IOnePointAccess.summary_option
-    :type: "ONE_POINT_ACCESS_SUMMARY"
+    :type: ONE_POINT_ACCESS_SUMMARY
 
     Summary option that specifies the level of detail to provide in the computed results.
 
@@ -92,15 +92,17 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: compute(self) -> "IOnePointAccessResultCollection"
+.. py:method:: compute(self) -> IOnePointAccessResultCollection
+    :canonical: ansys.stk.core.stkobjects.IOnePointAccess.compute
 
     Compute one point access results using the StartTime, StopTime, StepSize, and SummaryOption.
 
     :Returns:
 
-        :obj:`~"IOnePointAccessResultCollection"`
+        :obj:`~IOnePointAccessResultCollection`
 
 .. py:method:: remove(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IOnePointAccess.remove
 
     Remove the one point access component that was created.
 
@@ -120,7 +122,8 @@ Method detail
 
 
 
-.. py:method:: compute_first_satisfaction(self, startTime:typing.Any, stopTime:typing.Any, maxNumAccessesToFind:int, minDuration:float) -> "IImmutableIntervalCollection"
+.. py:method:: compute_first_satisfaction(self, startTime: typing.Any, stopTime: typing.Any, maxNumAccessesToFind: int, minDuration: float) -> IImmutableIntervalCollection
+    :canonical: ansys.stk.core.stkobjects.IOnePointAccess.compute_first_satisfaction
 
     Compute and reports the first N satisfaction intervals (where N <= MaxNumAccessesToFind) over the specified interval whose spans meet the specified minimum duration. Does not use output file.
 
@@ -133,5 +136,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IImmutableIntervalCollection"`
+        :obj:`~IImmutableIntervalCollection`
 

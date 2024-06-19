@@ -3,7 +3,7 @@ VehicleConsiderAnalysisCollectionElement
 
 .. py:class:: VehicleConsiderAnalysisCollectionElement
 
-   IVehicleConsiderAnalysisCollectionElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleConsiderAnalysisCollectionElement`
 
    Item in Consider Analysis list for HPOP covariance.
 

@@ -3,7 +3,7 @@ AntennaModelIsotropic
 
 .. py:class:: AntennaModelIsotropic
 
-   IAntennaModelIsotropic, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelIsotropic`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a isotropic antenna model.
 

@@ -3,7 +3,7 @@ StateCalcMeanAnomaly
 
 .. py:class:: StateCalcMeanAnomaly
 
-   IComponentInfo, ICloneable, IStateCalcMeanAnomaly, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanAnomaly`
 
    MeanAnomaly Calc objects.
 

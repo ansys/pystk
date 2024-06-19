@@ -119,7 +119,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.control_limit_mode
-    :type: "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"
+    :type: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -143,7 +143,7 @@ Property detail
 
 .. py:property:: closure_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.closure_mode
-    :type: "CLOSURE_MODE"
+    :type: CLOSURE_MODE
 
     Gets or sets the closure mode for the guidance strategy.
 
@@ -173,7 +173,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.position_vel_strategies
-    :type: "IAgAvtrBasicManeuverTargetPosVel"
+    :type: IAgAvtrBasicManeuverTargetPosVel
 
     Get the position velocity strategies for Relative Course.
 
@@ -202,13 +202,14 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None
+.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitValue: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"`
+    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT`
     **controlLimitValue** : :obj:`~float`
 
     :Returns:
@@ -227,6 +228,7 @@ Method detail
 
 
 .. py:method:: cancel_tgt_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.cancel_tgt_position_vel
 
     Cancel the position velocity strategies for Relative Course.
 

@@ -3,7 +3,7 @@ VehicleSolarFluxGeoMagnitudeUseFile
 
 .. py:class:: VehicleSolarFluxGeoMagnitudeUseFile
 
-   IVehicleSolarFluxGeoMagnitude, IVehicleSolarFluxGeoMagnitudeUseFile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSolarFluxGeoMagnitude`, py:obj:`~IVehicleSolarFluxGeoMagnitudeUseFile`
 
    Class defining the option to load a vehicle's solar flux and/or GeoMag properties from an external file.
 

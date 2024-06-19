@@ -3,7 +3,7 @@ ElementConfiguration
 
 .. py:class:: ElementConfiguration
 
-   IElementConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~IElementConfiguration`
 
    Class defining an element configuration.
 

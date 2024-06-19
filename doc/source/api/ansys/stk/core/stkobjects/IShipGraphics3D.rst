@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: proximity
     :canonical: ansys.stk.core.stkobjects.IShipGraphics3D.proximity
-    :type: "IAgVeVORouteProximity"
+    :type: IAgVeVORouteProximity
 
     Get the ship's 3D proximity properties.
 
 .. py:property:: drop_lines
     :canonical: ansys.stk.core.stkobjects.IShipGraphics3D.drop_lines
-    :type: "IAgVeVORouteDropLines"
+    :type: IAgVeVORouteDropLines
 
     Returns an interface allowing to configure vehicle's drop lines.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.IShipGraphics3D.vapor_trail
-    :type: "IAgVOVaporTrail"
+    :type: IAgVOVaporTrail
 
     Vapor trail attributes.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IShipGraphics3D.radar_cross_section
-    :type: "IAgRadarCrossSectionVO"
+    :type: IAgRadarCrossSectionVO
 
     Gets the radar cross section graphics interface.
 

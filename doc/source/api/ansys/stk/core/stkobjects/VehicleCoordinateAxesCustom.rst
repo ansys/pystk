@@ -3,7 +3,7 @@ VehicleCoordinateAxesCustom
 
 .. py:class:: VehicleCoordinateAxesCustom
 
-   IVehicleCoordinateAxesCustom, IVehicleCoordinateAxes, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleCoordinateAxesCustom`, py:obj:`~IVehicleCoordinateAxes`
 
    Custom.
 

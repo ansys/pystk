@@ -3,7 +3,7 @@ VehicleSolarFluxGeoMagnitudeEnterManually
 
 .. py:class:: VehicleSolarFluxGeoMagnitudeEnterManually
 
-   IVehicleSolarFluxGeoMagnitude, IVehicleSolarFluxGeoMagnitudeEnterManually, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSolarFluxGeoMagnitude`, py:obj:`~IVehicleSolarFluxGeoMagnitudeEnterManually`
 
    Class defining the option to enter a vehicle's solar flux and/or GeoMag properties manually, depending on the selected atmospheric density model.
 

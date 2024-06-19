@@ -3,7 +3,7 @@ StateCalcSRPArea
 
 .. py:class:: StateCalcSRPArea
 
-   IComponentInfo, ICloneable, IStateCalcSRPArea, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSRPArea`
 
    SRPArea Calc objects.
 

@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.pre_receive_gains_losses
-    :type: "IAgAdditionalGainLossCollection"
+    :type: IAgAdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.polarization
-    :type: "IAgPolarization"
+    :type: IAgPolarization
 
     Gets the polarization.
 
@@ -150,13 +150,13 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.filter
-    :type: "IAgRFFilterModel"
+    :type: IAgRFFilterModel
 
     Gets the current filter model.
 
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.system_noise_temperature
-    :type: "IAgSystemNoiseTemperature"
+    :type: IAgSystemNoiseTemperature
 
     Gets the system noise temperature interface.
 
@@ -168,7 +168,7 @@ Property detail
 
 .. py:property:: rf_stc
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.rf_stc
-    :type: "IAgRadarStcAttenuation"
+    :type: IAgRadarStcAttenuation
 
     Gets the RF STC.
 
@@ -180,7 +180,7 @@ Property detail
 
 .. py:property:: if_stc
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.if_stc
-    :type: "IAgRadarStcAttenuation"
+    :type: IAgRadarStcAttenuation
 
     Gets the IF STC.
 
@@ -222,13 +222,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, val:"POLARIZATION_TYPE") -> None
+.. py:method:: set_polarization_type(self, val: POLARIZATION_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarReceiver.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **val** : :obj:`~"POLARIZATION_TYPE"`
+    **val** : :obj:`~POLARIZATION_TYPE`
 
     :Returns:
 
@@ -240,7 +241,8 @@ Method detail
 
 
 
-.. py:method:: set_filter(self, name:str) -> None
+.. py:method:: set_filter(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarReceiver.set_filter
 
     Set the current filter model by name.
 
@@ -256,7 +258,8 @@ Method detail
 
 
 
-.. py:method:: set_rf_stc_type(self, typeName:str) -> None
+.. py:method:: set_rf_stc_type(self, typeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarReceiver.set_rf_stc_type
 
     Set the RF STC Type.
 
@@ -271,7 +274,8 @@ Method detail
 
 
 
-.. py:method:: set_if_stc_type(self, typeName:str) -> None
+.. py:method:: set_if_stc_type(self, typeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarReceiver.set_if_stc_type
 
     Set the IF STC Type.
 

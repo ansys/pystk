@@ -3,7 +3,7 @@ SensorCommonTasks
 
 .. py:class:: SensorCommonTasks
 
-   ISensorCommonTasks, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorCommonTasks`
 
    Class defining the Sensor Common class.
 

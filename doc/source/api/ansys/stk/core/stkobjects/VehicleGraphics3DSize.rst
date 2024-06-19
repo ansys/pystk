@@ -3,7 +3,7 @@ VehicleGraphics3DSize
 
 .. py:class:: VehicleGraphics3DSize
 
-   IVehicleGraphics3DSize, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DSize`
 
    3D graphics vector size.
 

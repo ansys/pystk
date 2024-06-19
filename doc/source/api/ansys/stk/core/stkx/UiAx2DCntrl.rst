@@ -3,7 +3,7 @@ UiAx2DCntrl
 
 .. py:class:: UiAx2DCntrl
 
-   IUiAx2DCntrl, SupportsDeleteCallback
+   Bases: py:obj:`~IUiAx2DCntrl`
 
    AGI Map control.
 

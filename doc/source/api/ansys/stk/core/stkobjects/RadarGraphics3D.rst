@@ -3,7 +3,7 @@ RadarGraphics3D
 
 .. py:class:: RadarGraphics3D
 
-   IRadarGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarGraphics3D`
 
    Class defining 3D Graphics properties of a Radar.
 

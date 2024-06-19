@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: property_type
     :canonical: ansys.stk.core.stkutil.IPropertyInfo.property_type
-    :type: "PROPERTY_INFO_VALUE_TYPE"
+    :type: PROPERTY_INFO_VALUE_TYPE
 
     Get the type of property.
 
@@ -93,6 +93,7 @@ Method detail
 
 
 .. py:method:: get_value(self) -> typing.Any
+    :canonical: ansys.stk.core.stkutil.IPropertyInfo.get_value
 
     Get the value of the property. Use PropertyType to determine the type to cast to.
 
@@ -100,7 +101,8 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: set_value(self, propertyInfo:typing.Any) -> None
+.. py:method:: set_value(self, propertyInfo: typing.Any) -> None
+    :canonical: ansys.stk.core.stkutil.IPropertyInfo.set_value
 
     Set the value of the property. Use PropertyType to determine the type to cast to.
 

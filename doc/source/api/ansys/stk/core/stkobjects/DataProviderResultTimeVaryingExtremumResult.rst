@@ -3,7 +3,7 @@ DataProviderResultTimeVaryingExtremumResult
 
 .. py:class:: DataProviderResultTimeVaryingExtremumResult
 
-   IDataProviderResultTimeVaryingExtremumResult, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResultTimeVaryingExtremumResult`
 
    Results returned by time varying extremum computation.
 

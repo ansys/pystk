@@ -3,7 +3,7 @@ CoverageGraphics
 
 .. py:class:: CoverageGraphics
 
-   ICoverageGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageGraphics`
 
    2D graphics display options for the coverage grid.
 

@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: position_type
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position_type
-    :type: "VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION"
+    :type: VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION
 
     Get the position type of the BPlane target point.
 
@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position
-    :type: "IAgVeVOBPlaneTargetPointPosition"
+    :type: IAgVeVOBPlaneTargetPointPosition
 
     Returns the BPlane target point position.
 
@@ -88,25 +88,27 @@ Method detail
 
 
 
-.. py:method:: set_position_type(self, position:"VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION") -> None
+.. py:method:: set_position_type(self, position: VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.set_position_type
 
     Set the position type of the BPlane target point.
 
     :Parameters:
 
-    **position** : :obj:`~"VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION"`
+    **position** : :obj:`~VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_position_type_supported(self, position:"VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION") -> bool
+.. py:method:: is_position_type_supported(self, position: VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.is_position_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **position** : :obj:`~"VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION"`
+    **position** : :obj:`~VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION`
 
     :Returns:
 

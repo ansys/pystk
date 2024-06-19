@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IPolarization.type
-    :type: "POLARIZATION_TYPE"
+    :type: POLARIZATION_TYPE
 
     Gets the polarization type.
 

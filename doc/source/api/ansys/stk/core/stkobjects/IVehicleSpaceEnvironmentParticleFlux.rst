@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: f_10_p7_source
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.f_10_p7_source
-    :type: "VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE"
+    :type: VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE
 
     Mode for computing 13-month average F10.7.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: material
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.material
-    :type: "VEHICLE_SPACE_ENVIRONMENT_MATERIAL"
+    :type: VEHICLE_SPACE_ENVIRONMENT_MATERIAL
 
     Vehicle material.
 
@@ -144,6 +144,7 @@ Method detail
 
 
 .. py:method:: get_particle_mass_array(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.get_particle_mass_array
 
     Return the particle mass array as an array of doubles. Uses Mass Dimension.
 
@@ -151,7 +152,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_meteor_impact_flux(self, time:typing.Any) -> float
+.. py:method:: compute_meteor_impact_flux(self, time: typing.Any) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_meteor_impact_flux
 
     Compute meteor impact flux. Uses DateFormat and Flux Dimensions.
 
@@ -163,7 +165,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: compute_meteor_damage_impact_flux(self, time:typing.Any) -> float
+.. py:method:: compute_meteor_damage_impact_flux(self, time: typing.Any) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_meteor_damage_impact_flux
 
     Compute meteor damage impact flux. Uses DateFormat and Flux Dimensions.
 
@@ -175,7 +178,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: compute_meteor_impact_flux_distribution(self, time:typing.Any) -> list
+.. py:method:: compute_meteor_impact_flux_distribution(self, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_meteor_impact_flux_distribution
 
     Compute meteor impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
 
@@ -187,7 +191,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_meteor_damage_impact_flux_distribution(self, time:typing.Any) -> list
+.. py:method:: compute_meteor_damage_impact_flux_distribution(self, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_meteor_damage_impact_flux_distribution
 
     Compute meteor damage impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
 
@@ -199,7 +204,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_debris_impact_flux(self, time:typing.Any) -> float
+.. py:method:: compute_debris_impact_flux(self, time: typing.Any) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_debris_impact_flux
 
     Compute debris impact flux. Uses DateFormat and Flux Dimensions.
 
@@ -211,7 +217,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: compute_debris_damage_impact_flux(self, time:typing.Any) -> float
+.. py:method:: compute_debris_damage_impact_flux(self, time: typing.Any) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_debris_damage_impact_flux
 
     Compute debris damage impact flux. Uses DateFormat and Flux Dimensions.
 
@@ -223,7 +230,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: compute_debris_impact_flux_distribution(self, time:typing.Any) -> list
+.. py:method:: compute_debris_impact_flux_distribution(self, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_debris_impact_flux_distribution
 
     Compute debris impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
 
@@ -235,7 +243,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_debris_damage_impact_flux_distribution(self, time:typing.Any) -> list
+.. py:method:: compute_debris_damage_impact_flux_distribution(self, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_debris_damage_impact_flux_distribution
 
     Compute debris damage impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
 

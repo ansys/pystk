@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: track_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.track_data
-    :type: "IAgVeVOLeadTrailData"
+    :type: IAgVeVOLeadTrailData
 
     Get the leading/trailing route data.
 
 .. py:property:: waypoint_markers
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.waypoint_markers
-    :type: "IAgVeVOWaypointMarkersCollection"
+    :type: IAgVeVOWaypointMarkersCollection
 
     Get the waypoint markers data.
 

@@ -3,7 +3,7 @@ AGICustomTerrainOverlay
 
 .. py:class:: AGICustomTerrainOverlay
 
-   IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback
+   Bases: py:obj:`~IAGICustomTerrainOverlay`, py:obj:`~ITerrainOverlay`, py:obj:`~IGlobeOverlay`
 
    A terrain overlay for handling AGI Cesium Terrain.
 

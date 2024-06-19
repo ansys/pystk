@@ -3,7 +3,7 @@ RungeKuttaF7th8th
 
 .. py:class:: RungeKuttaF7th8th
 
-   IRungeKuttaF7th8th, INumericalIntegrator, SupportsDeleteCallback
+   Bases: py:obj:`~IRungeKuttaF7th8th`, py:obj:`~INumericalIntegrator`
 
    RKF7th8th Numerical Integrator.
 

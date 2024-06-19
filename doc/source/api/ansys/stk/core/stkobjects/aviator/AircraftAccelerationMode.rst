@@ -3,7 +3,7 @@ AircraftAccelerationMode
 
 .. py:class:: AircraftAccelerationMode
 
-   IAircraftAccelerationMode, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftAccelerationMode`
 
    Class defining the acceleration mode options for an advanced acceleration performance model of an Aviator aircraft.
 

@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: reference_interval
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalTimeOffset.reference_interval
-    :type: "IAgCrdnEventInterval"
+    :type: IAgCrdnEventInterval
 
     The reference interval.
 

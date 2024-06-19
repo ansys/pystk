@@ -3,7 +3,7 @@ VehicleGraphics2DAttributesTrajectory
 
 .. py:class:: VehicleGraphics2DAttributesTrajectory
 
-   IVehicleGraphics2DAttributesTrajectory, IVehicleGraphics2DAttributesBasic, IVehicleGraphics2DAttributes, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DAttributesTrajectory`, py:obj:`~IVehicleGraphics2DAttributesBasic`, py:obj:`~IVehicleGraphics2DAttributes`
 
    2D Graphics attributes for launch vehicles and missiles.
 

@@ -3,7 +3,7 @@ StkCentralBodyEllipsoid
 
 .. py:class:: StkCentralBodyEllipsoid
 
-   IStkCentralBodyEllipsoid, SupportsDeleteCallback
+   Bases: py:obj:`~IStkCentralBodyEllipsoid`
 
    Central body's ellipsoid information.
 

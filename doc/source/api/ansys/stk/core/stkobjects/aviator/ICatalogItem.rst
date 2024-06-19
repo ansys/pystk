@@ -96,15 +96,17 @@ Method detail
 
 
 
-.. py:method:: duplicate(self) -> "ICatalogItem"
+.. py:method:: duplicate(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.duplicate
 
     Duplicates the catalog item.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 
 .. py:method:: remove(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.remove
 
     Remove the catalog item.
 
@@ -113,6 +115,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: save(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.save
 
     Save the catalog item.
 
@@ -122,7 +125,8 @@ Method detail
 
 
 
-.. py:method:: get_child_item_by_name(self, childName:str) -> "ICatalogItem"
+.. py:method:: get_child_item_by_name(self, childName: str) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.get_child_item_by_name
 
     Get the child of the catalog item with the given name.
 
@@ -132,10 +136,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 
 
-.. py:method:: add_default_child(self, childName:str) -> "ICatalogItem"
+.. py:method:: add_default_child(self, childName: str) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.add_default_child
 
     Create a new child with the given name and default type.
 
@@ -145,9 +150,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 
-.. py:method:: add_child_of_type(self, childType:str, childName:str) -> "ICatalogItem"
+.. py:method:: add_child_of_type(self, childType: str, childName: str) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.add_child_of_type
 
     Create a new child with the given name and specified type.
 
@@ -158,9 +164,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 
-.. py:method:: contains_child_item(self, childItem:str) -> bool
+.. py:method:: contains_child_item(self, childItem: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.contains_child_item
 
     Get whether the catalog item is contains the given child item.
 

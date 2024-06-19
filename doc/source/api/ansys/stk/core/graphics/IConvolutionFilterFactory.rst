@@ -42,15 +42,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IConvolutionFilter"
+.. py:method:: initialize(self) -> IConvolutionFilter
+    :canonical: ansys.stk.core.graphics.IConvolutionFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IConvolutionFilter"`
+        :obj:`~IConvolutionFilter`
 
-.. py:method:: initialize_with_kernel(self, kernel:list) -> "IConvolutionFilter"
+.. py:method:: initialize_with_kernel(self, kernel: list) -> IConvolutionFilter
+    :canonical: ansys.stk.core.graphics.IConvolutionFilterFactory.initialize_with_kernel
 
     Initialize a new instance with the specified kernel.
 
@@ -60,9 +62,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IConvolutionFilter"`
+        :obj:`~IConvolutionFilter`
 
-.. py:method:: initialize_with_kernel_and_divisor(self, kernel:list, divisor:float) -> "IConvolutionFilter"
+.. py:method:: initialize_with_kernel_and_divisor(self, kernel: list, divisor: float) -> IConvolutionFilter
+    :canonical: ansys.stk.core.graphics.IConvolutionFilterFactory.initialize_with_kernel_and_divisor
 
     Initialize a new instance with the specified kernel and divisor.
 
@@ -73,9 +76,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IConvolutionFilter"`
+        :obj:`~IConvolutionFilter`
 
-.. py:method:: initialize_with_kernel_divisor_and_offset(self, kernel:list, divisor:float, offset:float) -> "IConvolutionFilter"
+.. py:method:: initialize_with_kernel_divisor_and_offset(self, kernel: list, divisor: float, offset: float) -> IConvolutionFilter
+    :canonical: ansys.stk.core.graphics.IConvolutionFilterFactory.initialize_with_kernel_divisor_and_offset
 
     Initialize a new instance with the specified kernel, divisor, and offset.
 
@@ -87,5 +91,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IConvolutionFilter"`
+        :obj:`~IConvolutionFilter`
 

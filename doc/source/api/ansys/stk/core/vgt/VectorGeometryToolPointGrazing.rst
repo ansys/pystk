@@ -3,7 +3,7 @@ VectorGeometryToolPointGrazing
 
 .. py:class:: VectorGeometryToolPointGrazing
 
-   IVectorGeometryToolPointGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointGrazing`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    The grazing point is the point of closest approach to the surface of the selected central body along a defined direction.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: background
     :canonical: ansys.stk.core.stkobjects.IAccessConstraintBackground.background
-    :type: "CONSTRAINT_BACKGROUND"
+    :type: CONSTRAINT_BACKGROUND
 
     Background for the access constraint.
 

@@ -3,7 +3,7 @@ RotorcraftProp
 
 .. py:class:: RotorcraftProp
 
-   IRotorcraftProp, SupportsDeleteCallback
+   Bases: py:obj:`~IRotorcraftProp`
 
    Class defining the propulsion options for a rotorcraft.
 

@@ -3,7 +3,7 @@ AnalysisWorkbenchTypeInfo
 
 .. py:class:: AnalysisWorkbenchTypeInfo
 
-   IAnalysisWorkbenchTypeInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchTypeInfo`
 
    VGT component info.
 

@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRFFilterModel.type
-    :type: "RF_FILTER_MODEL_TYPE"
+    :type: RF_FILTER_MODEL_TYPE
 
     Gets the filter model type enumeration.
 

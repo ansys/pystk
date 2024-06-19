@@ -3,7 +3,7 @@ VectorGeometryToolPlaneRefTo
 
 .. py:class:: VectorGeometryToolPlaneRefTo
 
-   IVectorGeometryToolPlaneRefTo, IAnalysisWorkbenchRefTo, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlaneRefTo`, py:obj:`~IAnalysisWorkbenchRefTo`
 
    Represents a Plane reference.
 

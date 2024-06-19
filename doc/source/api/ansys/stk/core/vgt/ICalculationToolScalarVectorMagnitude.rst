@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: input_vector
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarVectorMagnitude.input_vector
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Specify any vector in VGT. Note that its magnitude is reference axes independent which is why it is not specified.
 

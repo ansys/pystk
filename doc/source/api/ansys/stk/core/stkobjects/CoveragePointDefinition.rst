@@ -3,7 +3,7 @@ CoveragePointDefinition
 
 .. py:class:: CoveragePointDefinition
 
-   ICoveragePointDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~ICoveragePointDefinition`
 
    Point Definition: methods and parameters for specifying the location of points on the coverage grid.
 

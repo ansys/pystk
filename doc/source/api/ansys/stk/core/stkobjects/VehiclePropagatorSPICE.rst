@@ -3,7 +3,7 @@ VehiclePropagatorSPICE
 
 .. py:class:: VehiclePropagatorSPICE
 
-   IVehiclePropagatorSPICE, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorSPICE`, py:obj:`~IVehiclePropagator`
 
    Class defining the SPICE propagator.
 

@@ -3,7 +3,7 @@ StateCalcGeodeticElem
 
 .. py:class:: StateCalcGeodeticElem
 
-   IComponentInfo, ICloneable, IStateCalcGeodeticElem, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcGeodeticElem`
 
    Geodetic Elements Calc objects.
 

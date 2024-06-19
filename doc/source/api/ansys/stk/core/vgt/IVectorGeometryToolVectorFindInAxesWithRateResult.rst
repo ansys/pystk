@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.vector
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The vector in a specified axes.
 
 .. py:property:: rate
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.rate
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The vector rate in a specified axes.
 

@@ -3,7 +3,7 @@ DelaunayH
 
 .. py:class:: DelaunayH
 
-   IDelaunayActionVariable, IDelaunayH, SupportsDeleteCallback
+   Bases: py:obj:`~IDelaunayActionVariable`, py:obj:`~IDelaunayH`
 
    Value of Delaunay Variable H, which is the Z component of the orbital angular momentum.
 

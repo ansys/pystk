@@ -3,7 +3,7 @@ VehicleGraphics3DBPlanePoint
 
 .. py:class:: VehicleGraphics3DBPlanePoint
 
-   IVehicleGraphics3DBPlanePoint, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlanePoint`
 
    3D BPlane Additional Point.
 

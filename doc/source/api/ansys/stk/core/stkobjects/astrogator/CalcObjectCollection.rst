@@ -3,7 +3,7 @@ CalcObjectCollection
 
 .. py:class:: CalcObjectCollection
 
-   ICalcObjectCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICalcObjectCollection`
 
    The Calculation Object component folder.
 

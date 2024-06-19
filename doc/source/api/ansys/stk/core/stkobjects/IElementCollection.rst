@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IElement"
+.. py:method:: item(self, index: int) -> IElement
+    :canonical: ansys.stk.core.stkobjects.IElementCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IElement"`
+        :obj:`~IElement`
 
 

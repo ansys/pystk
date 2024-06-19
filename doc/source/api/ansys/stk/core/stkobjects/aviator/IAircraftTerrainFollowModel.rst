@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Gets or sets the airspeed type.
 

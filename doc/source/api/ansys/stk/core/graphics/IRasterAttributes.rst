@@ -54,19 +54,19 @@ Property detail
 
 .. py:property:: format
     :canonical: ansys.stk.core.graphics.IRasterAttributes.format
-    :type: "RASTER_FORMAT"
+    :type: RASTER_FORMAT
 
     Gets the raster format associated with the attributes.
 
 .. py:property:: type
     :canonical: ansys.stk.core.graphics.IRasterAttributes.type
-    :type: "RASTER_TYPE"
+    :type: RASTER_TYPE
 
     Gets the raster type associated with the attributes.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.graphics.IRasterAttributes.orientation
-    :type: "RASTER_ORIENTATION"
+    :type: RASTER_ORIENTATION
 
     Gets the raster orientation associated with the attributes.
 
@@ -126,13 +126,14 @@ Method detail
 
 
 
-.. py:method:: has_band(self, band:"RASTER_BAND") -> bool
+.. py:method:: has_band(self, band: RASTER_BAND) -> bool
+    :canonical: ansys.stk.core.graphics.IRasterAttributes.has_band
 
     Get whether the raster contains the given band.
 
     :Parameters:
 
-    **band** : :obj:`~"RASTER_BAND"`
+    **band** : :obj:`~RASTER_BAND`
 
     :Returns:
 

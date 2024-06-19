@@ -64,6 +64,7 @@ Method detail
 
 
 .. py:method:: reset(self) -> None
+    :canonical: ansys.stk.core.graphics.IFrameRate.reset
 
     Reset the frame rate counter back to zero. The frame rate computation begins anew.
 

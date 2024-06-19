@@ -3,7 +3,7 @@ SensorGraphics3DTargetProjectionCollection
 
 .. py:class:: SensorGraphics3DTargetProjectionCollection
 
-   ISensorGraphics3DTargetProjectionCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorGraphics3DTargetProjectionCollection`
 
    Time Dependent Target Projection List.
 

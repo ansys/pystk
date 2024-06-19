@@ -3,7 +3,7 @@ AntennaModelApertureRectangularCosinePedestal
 
 .. py:class:: AntennaModelApertureRectangularCosinePedestal
 
-   IAntennaModelApertureRectangularCosinePedestal, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelApertureRectangularCosinePedestal`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rectangular cosine pedestal aperture antenna model.
 

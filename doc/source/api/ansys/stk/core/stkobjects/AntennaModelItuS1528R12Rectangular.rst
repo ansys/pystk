@@ -3,7 +3,7 @@ AntennaModelItuS1528R12Rectangular
 
 .. py:class:: AntennaModelItuS1528R12Rectangular
 
-   IAntennaModelItuS1528R12Rectangular, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuS1528R12Rectangular`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R S1528 1.2 rectangular antenna model.
 

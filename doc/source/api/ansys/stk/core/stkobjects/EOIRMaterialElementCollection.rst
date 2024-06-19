@@ -3,7 +3,7 @@ EOIRMaterialElementCollection
 
 .. py:class:: EOIRMaterialElementCollection
 
-   IEOIRMaterialElementCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRMaterialElementCollection`
 
    Collection of material elements.
 

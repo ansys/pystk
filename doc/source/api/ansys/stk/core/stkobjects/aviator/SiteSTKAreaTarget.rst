@@ -3,7 +3,7 @@ SiteSTKAreaTarget
 
 .. py:class:: SiteSTKAreaTarget
 
-   ISiteSTKAreaTarget, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteSTKAreaTarget`, py:obj:`~ISite`
 
    Class defining a STK Area Target site.
 

@@ -3,7 +3,7 @@ CalculationToolScalar
 
 .. py:class:: CalculationToolScalar
 
-   ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Any scalar calculation that is not constant by construction.
 

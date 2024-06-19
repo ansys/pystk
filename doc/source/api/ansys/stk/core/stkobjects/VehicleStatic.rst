@@ -3,7 +3,7 @@ VehicleStatic
 
 .. py:class:: VehicleStatic
 
-   IVehicleStatic, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleStatic`
 
    Class defining static force model options for the HPOP propagator.
 

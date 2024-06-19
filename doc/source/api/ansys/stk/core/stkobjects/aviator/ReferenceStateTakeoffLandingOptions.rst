@@ -3,7 +3,7 @@ ReferenceStateTakeoffLandingOptions
 
 .. py:class:: ReferenceStateTakeoffLandingOptions
 
-   IReferenceStateTakeoffLandingOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IReferenceStateTakeoffLandingOptions`
 
    Class defining the Takeoff or Landing options for a Reference State procedure.
 

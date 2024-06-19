@@ -3,7 +3,7 @@ CalculationToolParameterSetTrajectory
 
 .. py:class:: CalculationToolParameterSetTrajectory
 
-   ICalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolParameterSetTrajectory`, py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system.
 

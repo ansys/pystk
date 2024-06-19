@@ -125,13 +125,13 @@ Property detail
 
 .. py:property:: distance_display_condition_per_point
     :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.distance_display_condition_per_point
-    :type: "IAgStkGraphicsDistanceDisplayCondition"
+    :type: IAgStkGraphicsDistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_hint
-    :type: "SET_HINT"
+    :type: SET_HINT
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
@@ -168,7 +168,8 @@ Method detail
 
 
 
-.. py:method:: set(self, positions:list) -> None
+.. py:method:: set(self, positions: list) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set
 
     Define the positions of points in a point batch. The points are rendered in the primitive's reference frame.
 
@@ -180,7 +181,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_colors(self, positions:list, colors:list) -> None
+.. py:method:: set_with_colors(self, positions: list, colors: list) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_with_colors
 
     Define the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame.
 
@@ -193,7 +195,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_colors_and_render_pass(self, positions:list, colors:list, renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_with_colors_and_render_pass(self, positions: list, colors: list, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_with_colors_and_render_pass
 
     Define the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
 
@@ -201,13 +204,14 @@ Method detail
 
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_cartographic(self, centralBody:str, positions:list) -> None
+.. py:method:: set_cartographic(self, centralBody: str, positions: list) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_cartographic
 
     For convenience. Defines the positions of points in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
 
@@ -220,7 +224,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_colors(self, centralBody:str, positions:list, colors:list) -> None
+.. py:method:: set_cartographic_with_colors(self, centralBody: str, positions: list, colors: list) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_cartographic_with_colors
 
     For convenience. Defines the positions and colors of points in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
 
@@ -234,7 +239,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_colors_and_render_pass(self, centralBody:str, positions:list, colors:list, renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_cartographic_with_colors_and_render_pass(self, centralBody: str, positions: list, colors: list, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_cartographic_with_colors_and_render_pass
 
     For convenience. Defines the positions and colors of points in a point batch using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set.
 
@@ -243,13 +249,14 @@ Method detail
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial(self, positions:list, indices:list) -> None
+.. py:method:: set_partial(self, positions: list, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_partial
 
     Update a subset of positions in a point batch.
 
@@ -262,7 +269,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_with_indices_order
 
     Update a subset of positions in a point batch.
 
@@ -270,13 +278,14 @@ Method detail
 
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~"INDICES_ORDER_HINT"`
+    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_colors(self, positions:list, colors:list, indices:list) -> None
+.. py:method:: set_partial_with_colors(self, positions: list, colors: list, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_with_colors
 
     Update a subset of positions and/or colors in a point batch.
 
@@ -290,7 +299,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_colors_indices_order_and_render_pass(self, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_partial_with_colors_indices_order_and_render_pass(self, positions: list, colors: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_with_colors_indices_order_and_render_pass
 
     Update a subset of positions and/or colors in a point batch.
 
@@ -299,14 +309,15 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~"INDICES_ORDER_HINT"`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic(self, centralBody:str, positions:list, indices:list) -> None
+.. py:method:: set_partial_cartographic(self, centralBody: str, positions: list, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_cartographic
 
     For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
@@ -320,7 +331,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
@@ -329,13 +341,14 @@ Method detail
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~"INDICES_ORDER_HINT"`
+    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_colors(self, centralBody:str, positions:list, colors:list, indices:list) -> None
+.. py:method:: set_partial_cartographic_with_colors(self, centralBody: str, positions: list, colors: list, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_cartographic_with_colors
 
     For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
@@ -350,7 +363,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody: str, positions: list, colors: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_cartographic_with_colors_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
@@ -360,8 +374,8 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~"INDICES_ORDER_HINT"`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 
@@ -369,7 +383,8 @@ Method detail
 
 
 
-.. py:method:: set_with_optional_parameters(self, positions:list, colors:list, optionalParameters:"IPointBatchPrimitiveOptionalParameters", renderPassHint:"RENDER_PASS_HINT") -> None
+.. py:method:: set_with_optional_parameters(self, positions: list, colors: list, optionalParameters: IPointBatchPrimitiveOptionalParameters, renderPassHint: RENDER_PASS_HINT) -> None
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.set_with_optional_parameters
 
     Define the positions, colors, and optional parameters of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
 
@@ -377,8 +392,8 @@ Method detail
 
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **optionalParameters** : :obj:`~"IPointBatchPrimitiveOptionalParameters"`
-    **renderPassHint** : :obj:`~"RENDER_PASS_HINT"`
+    **optionalParameters** : :obj:`~IPointBatchPrimitiveOptionalParameters`
+    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
 

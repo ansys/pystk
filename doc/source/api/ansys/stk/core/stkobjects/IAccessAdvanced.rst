@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.aberration_type
-    :type: "ABERRATION_TYPE"
+    :type: ABERRATION_TYPE
 
     Model used for including aberration in apparent direction computations.
 
@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.event_detection
-    :type: "IAgAccessEventDetection"
+    :type: IAgAccessEventDetection
 
     Event detection strategy used in access calculations.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.sampling
-    :type: "IAgAccessSampling"
+    :type: IAgAccessSampling
 
     Sampling method used in access calculations.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeStandard.type
-    :type: "ATTITUDE_STANDARD_TYPE"
+    :type: ATTITUDE_STANDARD_TYPE
 
     Get the standard attitude profile type.
 

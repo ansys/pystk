@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: duration
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.duration
-    :type: "IAgVeDuration"
+    :type: IAgVeDuration
 
     Get look ahead/look behind duration values.
 
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: look_ahead_propagator
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.look_ahead_propagator
-    :type: "LOOK_AHEAD_PROPAGATOR"
+    :type: LOOK_AHEAD_PROPAGATOR
 
     A name of the lookahead propagator.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: point_builder
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.point_builder
-    :type: "IAgVeRealtimePointBuilder"
+    :type: IAgVeRealtimePointBuilder
 
     Gets a object to create ephemeris data for a vehicle by sending it point by point.
 
@@ -98,6 +98,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.propagate
 
     Set the vehicle's propagator to Realtime.
 
@@ -111,13 +112,14 @@ Method detail
 
 
 
-.. py:method:: is_look_ahead_propagator_supported(self, propagator:"LOOK_AHEAD_PROPAGATOR") -> bool
+.. py:method:: is_look_ahead_propagator_supported(self, propagator: LOOK_AHEAD_PROPAGATOR) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.is_look_ahead_propagator_supported
 
     Return whether the specified look ahead propagator is supported.
 
     :Parameters:
 
-    **propagator** : :obj:`~"LOOK_AHEAD_PROPAGATOR"`
+    **propagator** : :obj:`~LOOK_AHEAD_PROPAGATOR`
 
     :Returns:
 

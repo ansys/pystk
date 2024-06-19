@@ -3,7 +3,7 @@ DataProviderResultDataSet
 
 .. py:class:: DataProviderResultDataSet
 
-   IDataProviderResultDataSet, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResultDataSet`
 
    Represents a dataset in the collection of datasets returned by the data providers.
 

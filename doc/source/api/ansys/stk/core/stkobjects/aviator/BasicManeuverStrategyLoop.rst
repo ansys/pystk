@@ -3,7 +3,7 @@ BasicManeuverStrategyLoop
 
 .. py:class:: BasicManeuverStrategyLoop
 
-   IBasicManeuverStrategyLoop, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyLoop`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the loop strategy for a basic maneuver procedure.
 

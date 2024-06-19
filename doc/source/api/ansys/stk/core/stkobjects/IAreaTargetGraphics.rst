@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: boundary_style
     :canonical: ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     The style in which the area target's boundary displays.
 
@@ -132,7 +132,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.IAreaTargetGraphics.label_notes
-    :type: "IAgLabelNoteCollection"
+    :type: IAgLabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 

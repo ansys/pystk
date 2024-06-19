@@ -3,7 +3,7 @@ VehicleGraphics2DLine
 
 .. py:class:: VehicleGraphics2DLine
 
-   IVehicleGraphics2DLine, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DLine`
 
    Line Style and Line Width properties used in displaying vehicle tracks.
 

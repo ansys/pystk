@@ -3,7 +3,7 @@ SensorGraphics3DProjectionElement
 
 .. py:class:: SensorGraphics3DProjectionElement
 
-   ISensorGraphics3DProjectionElement, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorGraphics3DProjectionElement`
 
    Represents elements of the space and target projection collections.
 

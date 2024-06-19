@@ -3,7 +3,7 @@ CruiseAirspeedOptions
 
 .. py:class:: CruiseAirspeedOptions
 
-   ICruiseAirspeedOptions, SupportsDeleteCallback
+   Bases: py:obj:`~ICruiseAirspeedOptions`
 
    Class defining the cruise airspeed options in a procedure.
 

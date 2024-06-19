@@ -3,7 +3,7 @@ AircraftSimpleProp
 
 .. py:class:: AircraftSimpleProp
 
-   IAircraftSimpleProp, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftSimpleProp`
 
    Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft.
 

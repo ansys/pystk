@@ -3,7 +3,7 @@ VehicleSGP4PropagatorSettings
 
 .. py:class:: VehicleSGP4PropagatorSettings
 
-   IVehicleSGP4PropagatorSettings, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4PropagatorSettings`
 
    Encapsulates the SGP4 propagator settings.
 

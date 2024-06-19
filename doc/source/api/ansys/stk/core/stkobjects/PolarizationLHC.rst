@@ -3,7 +3,7 @@ PolarizationLHC
 
 .. py:class:: PolarizationLHC
 
-   IPolarization, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarization`
 
    Class defining a LHC polarization.
 

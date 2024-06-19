@@ -3,7 +3,7 @@ EOIRShapeLEOImaging
 
 .. py:class:: EOIRShapeLEOImaging
 
-   IEOIRShapeLEOImaging, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeLEOImaging`, py:obj:`~IEOIRShapeObject`
 
    LEOImaging shape class.
 

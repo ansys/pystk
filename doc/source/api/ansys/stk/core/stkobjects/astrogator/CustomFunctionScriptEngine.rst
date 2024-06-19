@@ -3,7 +3,7 @@ CustomFunctionScriptEngine
 
 .. py:class:: CustomFunctionScriptEngine
 
-   ICustomFunctionScriptEngine, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ICustomFunctionScriptEngine`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Custom Function Script Engine.
 

@@ -3,7 +3,7 @@ FigureOfMeritSatisfaction
 
 .. py:class:: FigureOfMeritSatisfaction
 
-   IFigureOfMeritSatisfaction, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritSatisfaction`
 
    Satisfaction properties for a Figure of Merit.
 

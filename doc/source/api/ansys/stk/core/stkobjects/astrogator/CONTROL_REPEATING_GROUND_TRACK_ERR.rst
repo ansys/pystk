@@ -11,6 +11,21 @@ CONTROL_REPEATING_GROUND_TRACK_ERR
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~REFERENCE_LON`
+              - The reference longitude.
+
+            * - :py:attr:`~REPEAT_COUNT`
+              - The repeat count.
+
+
 Import detail
 -------------
 

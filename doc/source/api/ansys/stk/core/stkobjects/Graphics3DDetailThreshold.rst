@@ -3,7 +3,7 @@ Graphics3DDetailThreshold
 
 .. py:class:: Graphics3DDetailThreshold
 
-   IGraphics3DDetailThreshold, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DDetailThreshold`
 
    Class defining detail thresholds as an aid for improving performance when viewing in 3D.
 

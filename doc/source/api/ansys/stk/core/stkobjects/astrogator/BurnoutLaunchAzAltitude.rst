@@ -3,7 +3,7 @@ BurnoutLaunchAzAltitude
 
 .. py:class:: BurnoutLaunchAzAltitude
 
-   IBurnoutLaunchAzAltitude, IBurnout, SupportsDeleteCallback
+   Bases: py:obj:`~IBurnoutLaunchAzAltitude`, py:obj:`~IBurnout`
 
    The launch azimuth and altitude burnout point.
 

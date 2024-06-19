@@ -3,7 +3,7 @@ ObjectRFEnvironment
 
 .. py:class:: ObjectRFEnvironment
 
-   IObjectRFEnvironment, SupportsDeleteCallback
+   Bases: py:obj:`~IObjectRFEnvironment`
 
    Class defining the RF environment for an object.
 

@@ -3,7 +3,7 @@ PointingStrategyFixed
 
 .. py:class:: PointingStrategyFixed
 
-   IPointingStrategy, IPointingStrategyFixed, SupportsDeleteCallback
+   Bases: py:obj:`~IPointingStrategy`, py:obj:`~IPointingStrategyFixed`
 
    Class defining a fixed pointing strategy.
 

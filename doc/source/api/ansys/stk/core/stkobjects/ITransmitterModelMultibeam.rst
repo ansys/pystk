@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.post_transmit_gains_losses
-    :type: "IAgAdditionalGainLossCollection"
+    :type: IAgAdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.filter
-    :type: "IAgRFFilterModel"
+    :type: IAgRFFilterModel
 
     Gets the current filter model.
 
@@ -90,13 +90,13 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.modulator
-    :type: "IAgModulatorModel"
+    :type: IAgModulatorModel
 
     Gets the current modulator model.
 
 .. py:property:: antenna_system
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.antenna_system
-    :type: "IAgAntennaSystem"
+    :type: IAgAntennaSystem
 
     Gets the antenna system.
 
@@ -110,7 +110,8 @@ Method detail
 
 
 
-.. py:method:: set_filter(self, name:str) -> None
+.. py:method:: set_filter(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.set_filter
 
     Set the current filter model by name.
 
@@ -124,7 +125,8 @@ Method detail
 
 
 
-.. py:method:: set_modulator(self, name:str) -> None
+.. py:method:: set_modulator(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.set_modulator
 
     Set the current modulator model by name.
 

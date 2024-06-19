@@ -3,7 +3,7 @@ VehiclePropagatorSGP4
 
 .. py:class:: VehiclePropagatorSGP4
 
-   IVehiclePropagatorSGP4, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorSGP4`, py:obj:`~IVehiclePropagator`
 
    Class defining the SGP4 propagator.
 

@@ -3,7 +3,7 @@ AccessConstraintMinMax
 
 .. py:class:: AccessConstraintMinMax
 
-   IAccessConstraintMinMax, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintMinMax`, py:obj:`~IAccessConstraint`
 
    Class related to defining constraints in terms of minimum and/or maximum values.
 

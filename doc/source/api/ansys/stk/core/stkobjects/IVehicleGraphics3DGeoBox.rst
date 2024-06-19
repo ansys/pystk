@@ -101,6 +101,7 @@ Method detail
 
 
 .. py:method:: reposition(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.reposition
 
     Reposition the geostationary box.
 

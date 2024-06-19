@@ -3,7 +3,7 @@ FigureOfMeritNavigationAccuracyMethodConstant
 
 .. py:class:: FigureOfMeritNavigationAccuracyMethodConstant
 
-   IFigureOfMeritNavigationAccuracyMethodConstant, IFigureOfMeritNavigationAccuracyMethod, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritNavigationAccuracyMethodConstant`, py:obj:`~IFigureOfMeritNavigationAccuracyMethod`
 
    Constant Value method for uncertainty in range measurements for the Navigation Accuracy Figure of Merit.
 

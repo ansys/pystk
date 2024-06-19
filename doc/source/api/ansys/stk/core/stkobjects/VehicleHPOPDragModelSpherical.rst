@@ -3,7 +3,7 @@ VehicleHPOPDragModelSpherical
 
 .. py:class:: VehicleHPOPDragModelSpherical
 
-   IVehicleHPOPDragModelSpherical, IVehicleHPOPDragModel, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleHPOPDragModelSpherical`, py:obj:`~IVehicleHPOPDragModel`
 
    Spherical Drag Pressure Model.
 

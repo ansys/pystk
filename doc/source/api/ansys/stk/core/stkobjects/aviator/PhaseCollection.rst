@@ -3,7 +3,7 @@ PhaseCollection
 
 .. py:class:: PhaseCollection
 
-   IPhaseCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IPhaseCollection`
 
    Class defining the collection of phases.
 

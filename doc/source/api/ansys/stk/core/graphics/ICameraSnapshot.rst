@@ -44,27 +44,29 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: save_to_file(self, filename:str, cameraSnapshotFormat:"CAMERA_SNAPSHOT_FILE_FORMAT") -> None
+.. py:method:: save_to_file(self, filename: str, cameraSnapshotFormat: CAMERA_SNAPSHOT_FILE_FORMAT) -> None
+    :canonical: ansys.stk.core.graphics.ICameraSnapshot.save_to_file
 
     Save a snapshot of the 3D window to the filename with the specified format.
 
     :Parameters:
 
     **filename** : :obj:`~str`
-    **cameraSnapshotFormat** : :obj:`~"CAMERA_SNAPSHOT_FILE_FORMAT"`
+    **cameraSnapshotFormat** : :obj:`~CAMERA_SNAPSHOT_FILE_FORMAT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: save_to_file_with_width_and_dpi(self, filename:str, cameraSnapshotFormat:"CAMERA_SNAPSHOT_FILE_FORMAT", widthInInches:float, dotsPerInch:float) -> None
+.. py:method:: save_to_file_with_width_and_dpi(self, filename: str, cameraSnapshotFormat: CAMERA_SNAPSHOT_FILE_FORMAT, widthInInches: float, dotsPerInch: float) -> None
+    :canonical: ansys.stk.core.graphics.ICameraSnapshot.save_to_file_with_width_and_dpi
 
     Save a snapshot of the 3D window to the filename with the specified format at high resolution...
 
     :Parameters:
 
     **filename** : :obj:`~str`
-    **cameraSnapshotFormat** : :obj:`~"CAMERA_SNAPSHOT_FILE_FORMAT"`
+    **cameraSnapshotFormat** : :obj:`~CAMERA_SNAPSHOT_FILE_FORMAT`
     **widthInInches** : :obj:`~float`
     **dotsPerInch** : :obj:`~float`
 
@@ -73,6 +75,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: save_to_clipboard(self) -> None
+    :canonical: ansys.stk.core.graphics.ICameraSnapshot.save_to_clipboard
 
     Save a single frame of the 3D window to the clipboard.
 
@@ -80,19 +83,21 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: save_to_raster(self) -> "IRaster"
+.. py:method:: save_to_raster(self) -> IRaster
+    :canonical: ansys.stk.core.graphics.ICameraSnapshot.save_to_raster
 
     Save a snapshot of the 3D window to a raster.
 
     :Returns:
 
-        :obj:`~"IRaster"`
+        :obj:`~IRaster`
 
-.. py:method:: save_to_texture(self) -> "IRendererTexture2D"
+.. py:method:: save_to_texture(self) -> IRendererTexture2D
+    :canonical: ansys.stk.core.graphics.ICameraSnapshot.save_to_texture
 
     Save a snapshot of the 3D window to a texture 2d.
 
     :Returns:
 
-        :obj:`~"IRendererTexture2D"`
+        :obj:`~IRendererTexture2D`
 

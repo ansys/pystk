@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.ITransmitterGraphics3D.vector
-    :type: "IAgVOVector"
+    :type: IAgVOVector
 
     Get the transmitter's Vector properties.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: volume
     :canonical: ansys.stk.core.stkobjects.ITransmitterGraphics3D.volume
-    :type: "IAgAntennaVolumeGraphics"
+    :type: IAgAntennaVolumeGraphics
 
     Gets the transmitter's antenna volume graphics interface.
 

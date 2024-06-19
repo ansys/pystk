@@ -3,7 +3,7 @@ VectorGeometryToolAngleGroup
 
 .. py:class:: VectorGeometryToolAngleGroup
 
-   IVectorGeometryToolAngleGroup, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAngleGroup`
 
    Access or create VGT angles associated with an object or a central body.
 

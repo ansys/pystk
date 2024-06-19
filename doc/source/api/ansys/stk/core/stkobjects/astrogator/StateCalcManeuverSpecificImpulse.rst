@@ -3,7 +3,7 @@ StateCalcManeuverSpecificImpulse
 
 .. py:class:: StateCalcManeuverSpecificImpulse
 
-   IComponentInfo, ICloneable, IStateCalcManeuverSpecificImpulse, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcManeuverSpecificImpulse`
 
    ManeuverSpecificImpulse Calc objects.
 

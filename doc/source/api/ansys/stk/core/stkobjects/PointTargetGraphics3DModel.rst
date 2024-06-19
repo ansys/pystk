@@ -3,7 +3,7 @@ PointTargetGraphics3DModel
 
 .. py:class:: PointTargetGraphics3DModel
 
-   IPointTargetGraphics3DModel, IGraphics3DModel, SupportsDeleteCallback
+   Bases: py:obj:`~IPointTargetGraphics3DModel`, py:obj:`~IGraphics3DModel`
 
    Point properties for a 3D model.
 

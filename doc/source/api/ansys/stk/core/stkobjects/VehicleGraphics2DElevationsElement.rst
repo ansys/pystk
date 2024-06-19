@@ -3,7 +3,7 @@ VehicleGraphics2DElevationsElement
 
 .. py:class:: VehicleGraphics2DElevationsElement
 
-   IVehicleGraphics2DElevationsElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DElevationsElement`
 
    2D Graphics settings for elevation contours.
 

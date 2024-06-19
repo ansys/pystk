@@ -3,7 +3,7 @@ DrawElemCollection
 
 .. py:class:: DrawElemCollection
 
-   IDrawElemCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IDrawElemCollection`
 
    Collection of elements to draw on the control.
 

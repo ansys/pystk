@@ -3,7 +3,7 @@ VehicleEphemerisCCSDSExportTool
 
 .. py:class:: VehicleEphemerisCCSDSExportTool
 
-   IVehicleEphemerisCCSDSExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEphemerisCCSDSExportTool`
 
    AgVeEphemerisTypeCCSDS Class.
 

@@ -3,7 +3,7 @@ EOIRShapeSphere
 
 .. py:class:: EOIRShapeSphere
 
-   IEOIRShapeSphere, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeSphere`, py:obj:`~IEOIRShapeObject`
 
    Sphere shape class.
 

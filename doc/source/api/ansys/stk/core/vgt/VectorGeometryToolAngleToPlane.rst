@@ -3,7 +3,7 @@ VectorGeometryToolAngleToPlane
 
 .. py:class:: VectorGeometryToolAngleToPlane
 
-   IVectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAngleToPlane`, py:obj:`~IVectorGeometryToolAngle`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An angle between a vector and a plane.
 

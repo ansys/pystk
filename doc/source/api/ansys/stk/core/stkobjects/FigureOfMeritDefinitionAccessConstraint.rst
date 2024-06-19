@@ -3,7 +3,7 @@ FigureOfMeritDefinitionAccessConstraint
 
 .. py:class:: FigureOfMeritDefinitionAccessConstraint
 
-   IFigureOfMeritDefinitionAccessConstraint, IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionAccessConstraint`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
 
    Access Constraint Figure of Merit.
 

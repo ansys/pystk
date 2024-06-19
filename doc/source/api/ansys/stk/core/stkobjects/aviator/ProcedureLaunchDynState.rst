@@ -3,7 +3,7 @@ ProcedureLaunchDynState
 
 .. py:class:: ProcedureLaunchDynState
 
-   IProcedureLaunchDynState, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureLaunchDynState`, py:obj:`~IProcedure`
 
    Class defining a Launch Dyn State procedure.
 

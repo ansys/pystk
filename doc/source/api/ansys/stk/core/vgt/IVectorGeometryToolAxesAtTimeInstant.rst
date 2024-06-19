@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.reference_time_instant
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     A reference time instant. Can be any Time event.
 
 .. py:property:: source_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.source_axes
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     A base axes defining the orientation. Can be any VGT axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.reference_axes
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     A reference axes. Can be any VGT axes.
 

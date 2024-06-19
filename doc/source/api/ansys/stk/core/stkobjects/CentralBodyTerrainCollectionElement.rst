@@ -3,7 +3,7 @@ CentralBodyTerrainCollectionElement
 
 .. py:class:: CentralBodyTerrainCollectionElement
 
-   ICentralBodyTerrainCollectionElement, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyTerrainCollectionElement`
 
    Element of collection of terrain associated with central body.
 

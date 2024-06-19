@@ -11,6 +11,24 @@ GEODETIC_SIZE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNKNOWN`
+              - Represents a value not supported by the Object Model.
+
+            * - :py:attr:`~SIZE_ALTITUDE`
+              - Use altitude.
+
+            * - :py:attr:`~SIZE_RADIUS`
+              - Use radius.
+
+
 Import detail
 -------------
 

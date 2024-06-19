@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ITimePeriodValue.type
-    :type: "TIME_PERIOD_VALUE_TYPE"
+    :type: TIME_PERIOD_VALUE_TYPE
 
     A time value type.
 

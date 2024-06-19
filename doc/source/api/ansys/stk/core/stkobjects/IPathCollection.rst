@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> str
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkobjects.IPathCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -82,7 +83,8 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IPathCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -95,6 +97,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IPathCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -102,7 +105,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, filename:str) -> None
+.. py:method:: add(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IPathCollection.add
 
     Add a new element to the collection. Must be the full path to the file.
 
@@ -114,7 +118,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, filename:str) -> None
+.. py:method:: remove(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IPathCollection.remove
 
     Remove an element from the collection given a filename.
 

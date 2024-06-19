@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IAlphaFromPixelFilter"
+.. py:method:: initialize(self) -> IAlphaFromPixelFilter
+    :canonical: ansys.stk.core.graphics.IAlphaFromPixelFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IAlphaFromPixelFilter"`
+        :obj:`~IAlphaFromPixelFilter`
 

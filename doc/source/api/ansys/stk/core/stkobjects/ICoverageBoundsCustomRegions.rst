@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: region_files
     :canonical: ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.region_files
-    :type: "IAgCvRegionFilesCollection"
+    :type: IAgCvRegionFilesCollection
 
     File containing user-defined points defining a specific grid region.
 
 .. py:property:: area_targets
     :canonical: ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.area_targets
-    :type: "IAgCvAreaTargetsCollection"
+    :type: IAgCvAreaTargetsCollection
 
     Area target to be used as part of the coverage area.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: small_region_algorithm
     :canonical: ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.small_region_algorithm
-    :type: "COVERAGE_CUSTOM_REGION_ALGORITHM"
+    :type: COVERAGE_CUSTOM_REGION_ALGORITHM
 
     Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
 

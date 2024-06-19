@@ -3,7 +3,7 @@ AreaTargetGraphics3D
 
 .. py:class:: AreaTargetGraphics3D
 
-   IAreaTargetGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~IAreaTargetGraphics3D`
 
    Class to define the 3D attributes of an AreaTarget.
 

@@ -117,7 +117,8 @@ Method detail
 
 
 
-.. py:method:: set_start_time(self, time:typing.Any) -> None
+.. py:method:: set_start_time(self, time: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.set_start_time
 
     Set the start time for the procedure.
 
@@ -133,7 +134,8 @@ Method detail
 
 
 
-.. py:method:: set_interrupt_time(self, time:typing.Any) -> None
+.. py:method:: set_interrupt_time(self, time: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.set_interrupt_time
 
     Set the interrupt time for the procedure.
 
@@ -149,7 +151,8 @@ Method detail
 
 
 
-.. py:method:: set_stop_time(self, time:typing.Any) -> None
+.. py:method:: set_stop_time(self, time: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.set_stop_time
 
     Set the stop time for the procedure.
 

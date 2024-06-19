@@ -63,19 +63,19 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IAntenna.model
-    :type: "IAgAntennaModel"
+    :type: IAgAntennaModel
 
     Gets the current antenna model.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IAntenna.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Gets the antenna orientation.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.IAntenna.refraction
-    :type: "SENSOR_REFRACTION_TYPE"
+    :type: SENSOR_REFRACTION_TYPE
 
     Refraction method, a member of the AgESnRefractionType enumeration.
 
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.IAntenna.refraction_model
-    :type: "IAgRfModelBase"
+    :type: IAgRfModelBase
 
     Gets a refraction model.
 
@@ -99,25 +99,25 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IAntenna.graphics_3d
-    :type: "IAgAntennaVO"
+    :type: IAgAntennaVO
 
     Get the 3D Graphics properties for the antenna.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IAntenna.graphics
-    :type: "IAgAntennaGraphics"
+    :type: IAgAntennaGraphics
 
     Get the 2D Graphics properties for the antenna.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IAntenna.rf_environment
-    :type: "IAgObjectRFEnvironment"
+    :type: IAgObjectRFEnvironment
 
     Gets the object RF environment settings.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IAntenna.laser_environment
-    :type: "IAgObjectLaserEnvironment"
+    :type: IAgObjectLaserEnvironment
 
     Gets the object laser environment settings.
 
@@ -126,7 +126,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName:str) -> None
+.. py:method:: set_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntenna.set_model
 
     Set the current antenna model by name.
 
@@ -143,13 +144,14 @@ Method detail
 
 
 
-.. py:method:: is_refraction_type_supported(self, model:"SENSOR_REFRACTION_TYPE") -> bool
+.. py:method:: is_refraction_type_supported(self, model: SENSOR_REFRACTION_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAntenna.is_refraction_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **model** : :obj:`~"SENSOR_REFRACTION_TYPE"`
+    **model** : :obj:`~SENSOR_REFRACTION_TYPE`
 
     :Returns:
 

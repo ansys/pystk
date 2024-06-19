@@ -52,13 +52,13 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.type
-    :type: "VECTOR_GEOMETRY_TOOL_PLANE_TYPE"
+    :type: VECTOR_GEOMETRY_TOOL_PLANE_TYPE
 
     Returns a type of the plane object.
 
 .. py:property:: labels
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.labels
-    :type: "IAgCrdnPlaneLabels"
+    :type: IAgCrdnPlaneLabels
 
     Allows configuring the plane's X and Y axes labels.
 
@@ -67,56 +67,60 @@ Method detail
 -------------
 
 
-.. py:method:: find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolPlaneFindInAxesResult"
+.. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorGeometryToolPlaneFindInAxesResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.find_in_axes
 
     Compute the plane's axes vectors in a specified reference axes.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlaneFindInAxesResult"`
+        :obj:`~IVectorGeometryToolPlaneFindInAxesResult`
 
-.. py:method:: find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolPlaneFindInAxesWithRateResult"
+.. py:method:: find_in_axes_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorGeometryToolPlaneFindInAxesWithRateResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.find_in_axes_with_rate
 
     Compute the plane's axes vectors and their rates in a specified reference axes.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlaneFindInAxesWithRateResult"`
+        :obj:`~IVectorGeometryToolPlaneFindInAxesWithRateResult`
 
-.. py:method:: find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IVectorGeometryToolPlaneFindInSystemResult"
+.. py:method:: find_in_system(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> IVectorGeometryToolPlaneFindInSystemResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.find_in_system
 
     Compute the position and X and Y axes in the specified coordinate system.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **system** : :obj:`~"IVectorGeometryToolSystem"`
+    **system** : :obj:`~IVectorGeometryToolSystem`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlaneFindInSystemResult"`
+        :obj:`~IVectorGeometryToolPlaneFindInSystemResult`
 
-.. py:method:: find_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IVectorGeometryToolPlaneFindInSystemWithRateResult"
+.. py:method:: find_in_system_with_rate(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> IVectorGeometryToolPlaneFindInSystemWithRateResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.find_in_system_with_rate
 
     Compute the position, X and Y axes and their rates of change in the specified coordinate system.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **system** : :obj:`~"IVectorGeometryToolSystem"`
+    **system** : :obj:`~IVectorGeometryToolSystem`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlaneFindInSystemWithRateResult"`
+        :obj:`~IVectorGeometryToolPlaneFindInSystemWithRateResult`
 
 

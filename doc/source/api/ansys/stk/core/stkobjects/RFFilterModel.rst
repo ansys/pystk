@@ -3,7 +3,7 @@ RFFilterModel
 
 .. py:class:: RFFilterModel
 
-   IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a generic RF filter model.
 

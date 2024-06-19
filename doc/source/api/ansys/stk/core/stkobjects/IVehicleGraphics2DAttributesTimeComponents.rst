@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: default
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents.default
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Default 2D attributes.
 
 .. py:property:: time_components
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents.time_components
-    :type: "IAgVeGfxTimeComponentsCollection"
+    :type: IAgVeGfxTimeComponentsCollection
 
     A collection of time components and their 2D attributes.
 

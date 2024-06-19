@@ -71,7 +71,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGroundEllipseElement"
+.. py:method:: item(self, index: int) -> IVehicleGroundEllipseElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGroundEllipsesCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -81,10 +82,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGroundEllipseElement"`
+        :obj:`~IVehicleGroundEllipseElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGroundEllipsesCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -97,6 +99,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGroundEllipsesCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -104,7 +107,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, name:str) -> "IVehicleGroundEllipseElement"
+.. py:method:: add(self, name: str) -> IVehicleGroundEllipseElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGroundEllipsesCollection.add
 
     Add a new element to the collection.
 
@@ -114,9 +118,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGroundEllipseElement"`
+        :obj:`~IVehicleGroundEllipseElement`
 
-.. py:method:: remove_ellipse_set(self, ellipseSetName:str) -> None
+.. py:method:: remove_ellipse_set(self, ellipseSetName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGroundEllipsesCollection.remove_ellipse_set
 
     Remove an element from the collection using the Ellipse Set name.
 
@@ -128,7 +133,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_ellipse_set(self, ellipseSetName:str) -> "IVehicleGroundEllipseElement"
+.. py:method:: get_ellipse_set(self, ellipseSetName: str) -> IVehicleGroundEllipseElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGroundEllipsesCollection.get_ellipse_set
 
     Get an element from the collection using the Ellipse Set name.
 
@@ -138,5 +144,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGroundEllipseElement"`
+        :obj:`~IVehicleGroundEllipseElement`
 

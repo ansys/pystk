@@ -50,31 +50,31 @@ Property detail
 
 .. py:property:: phases
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.phases
-    :type: "IAgAvtrPhaseCollection"
+    :type: IAgAvtrPhaseCollection
 
     Get the mission phases.
 
 .. py:property:: vehicle
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.vehicle
-    :type: "IAgAvtrVehicle"
+    :type: IAgAvtrVehicle
 
     Gets or sets the vehicle used in the mission.
 
 .. py:property:: configuration
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.configuration
-    :type: "IAgAvtrConfiguration"
+    :type: IAgAvtrConfiguration
 
     Get the aircraft's configuration for the mission.
 
 .. py:property:: wind_model
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.wind_model
-    :type: "IAgAvtrWindModel"
+    :type: IAgAvtrWindModel
 
     Get the mission wind model.
 
 .. py:property:: atmosphere_model
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.atmosphere_model
-    :type: "IAgAvtrAtmosphereModel"
+    :type: IAgAvtrAtmosphereModel
 
     Get the mission atmosphere model.
 
@@ -95,11 +95,12 @@ Method detail
 
 
 
-.. py:method:: get_first_invalid_procedure(self) -> "IProcedure"
+.. py:method:: get_first_invalid_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IMission.get_first_invalid_procedure
 
     Get the first invalid procedure in the mission. Calling this method will propagate the mission.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

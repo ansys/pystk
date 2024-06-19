@@ -3,7 +3,7 @@ VehiclePropagatorAviator
 
 .. py:class:: VehiclePropagatorAviator
 
-   IVehiclePropagatorAviator, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorAviator`, py:obj:`~IVehiclePropagator`
 
    Class defining the Mission Modler propagator for an Aircraft.
 

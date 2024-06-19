@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ISensorGraphics3DProjectionElement"
+.. py:method:: item(self, index: int) -> ISensorGraphics3DProjectionElement
+    :canonical: ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorGraphics3DProjectionElement"`
+        :obj:`~ISensorGraphics3DProjectionElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,11 +103,12 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self) -> "ISensorGraphics3DProjectionElement"
+.. py:method:: add(self) -> ISensorGraphics3DProjectionElement
+    :canonical: ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.add
 
     Add a new element to the collection.
 
     :Returns:
 
-        :obj:`~"ISensorGraphics3DProjectionElement"`
+        :obj:`~ISensorGraphics3DProjectionElement`
 

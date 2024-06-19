@@ -3,7 +3,7 @@ BasicManeuverStrategyRelSpeedAltitude
 
 .. py:class:: BasicManeuverStrategyRelSpeedAltitude
 
-   IBasicManeuverStrategyRelSpeedAltitude, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyRelSpeedAltitude`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Relative Speed/Altitude strategy for a basic maneuver procedure.
 

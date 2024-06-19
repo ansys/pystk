@@ -106,31 +106,31 @@ Property detail
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.spacecraft_parameters
-    :type: "IAgVASpacecraftParameters"
+    :type: IAgVASpacecraftParameters
 
     Satellite Properties - the spacecraft's physical properties.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.fuel_tank
-    :type: "IAgVAFuelTank"
+    :type: IAgVAFuelTank
 
     Get the spacecraft's fuel tank properties.
 
 .. py:property:: display_system_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.display_system_type
-    :type: "LAUNCH_DISPLAY_SYSTEM"
+    :type: LAUNCH_DISPLAY_SYSTEM
 
     Get the launch coordinate type.
 
 .. py:property:: display_system
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.display_system
-    :type: "IAgVADisplaySystem"
+    :type: IAgVADisplaySystem
 
     Gets the current Display System.
 
 .. py:property:: ascent_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.ascent_type
-    :type: "ASCENT_TYPE"
+    :type: ASCENT_TYPE
 
     Gets or sets the order of the spline used to generate the motion along the ellipse.
 
@@ -142,19 +142,19 @@ Property detail
 
 .. py:property:: burnout_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout_type
-    :type: "BURNOUT_TYPE"
+    :type: BURNOUT_TYPE
 
     Get the burnout type.
 
 .. py:property:: burnout
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout
-    :type: "IAgVABurnout"
+    :type: IAgVABurnout
 
     Get the burnout point definition.
 
 .. py:property:: burnout_velocity
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout_velocity
-    :type: "IAgVABurnoutVelocity"
+    :type: IAgVABurnoutVelocity
 
     Get the burnout velocity definition.
 
@@ -172,7 +172,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.user_variables
-    :type: "IAgVAUserVariableCollection"
+    :type: IAgVAUserVariableCollection
 
     Interface used to modify user variables for the launch segment.
 
@@ -188,37 +188,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_LAUNCH") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_LAUNCH) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_LAUNCH"`
+    **param** : :obj:`~CONTROL_LAUNCH`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_LAUNCH") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_LAUNCH) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_LAUNCH"`
+    **param** : :obj:`~CONTROL_LAUNCH`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_LAUNCH") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_LAUNCH) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_LAUNCH"`
+    **param** : :obj:`~CONTROL_LAUNCH`
 
     :Returns:
 
@@ -230,13 +233,14 @@ Method detail
 
 
 
-.. py:method:: set_display_system_type(self, displaySystemType:"LAUNCH_DISPLAY_SYSTEM") -> None
+.. py:method:: set_display_system_type(self, displaySystemType: LAUNCH_DISPLAY_SYSTEM) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.set_display_system_type
 
     Set the display system type.
 
     :Parameters:
 
-    **displaySystemType** : :obj:`~"LAUNCH_DISPLAY_SYSTEM"`
+    **displaySystemType** : :obj:`~LAUNCH_DISPLAY_SYSTEM`
 
     :Returns:
 
@@ -248,13 +252,14 @@ Method detail
 
 
 
-.. py:method:: set_burnout_type(self, burnoutType:"BURNOUT_TYPE") -> None
+.. py:method:: set_burnout_type(self, burnoutType: BURNOUT_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.set_burnout_type
 
     Set the burnout type.
 
     :Parameters:
 
-    **burnoutType** : :obj:`~"BURNOUT_TYPE"`
+    **burnoutType** : :obj:`~BURNOUT_TYPE`
 
     :Returns:
 

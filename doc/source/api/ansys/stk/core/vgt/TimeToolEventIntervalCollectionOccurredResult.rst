@@ -3,7 +3,7 @@ TimeToolEventIntervalCollectionOccurredResult
 
 .. py:class:: TimeToolEventIntervalCollectionOccurredResult
 
-   ITimeToolEventIntervalCollectionOccurredResult, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalCollectionOccurredResult`
 
    Contains the results returned with IAgCrdnEventIntervalCollection.Occurred method.
 

@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: coord_frame
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.coord_frame
-    :type: "LAUNCH_DYN_STATE_COORD_FRAME"
+    :type: LAUNCH_DYN_STATE_COORD_FRAME
 
     Gets or sets the reference coordinate frame for the dyn state launch procedure.
 
 .. py:property:: bearing_reference
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.bearing_reference
-    :type: "LAUNCH_DYN_STATE_BEARING_REFERENCE"
+    :type: LAUNCH_DYN_STATE_BEARING_REFERENCE
 
     Gets or sets the bearing reference for the dyn state launch procedure.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: attitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.attitude_mode
-    :type: "LAUNCH_ATTITUDE_MODE"
+    :type: LAUNCH_ATTITUDE_MODE
 
     Gets or sets the attitude mode during the launch.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
@@ -119,7 +119,7 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.fuel_flow_type
-    :type: "FUEL_FLOW_TYPE"
+    :type: FUEL_FLOW_TYPE
 
     Gets or sets the fuel flow type of the aircraft during the launch.
 
@@ -157,13 +157,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.set_airspeed
 
     Set the launch airspeed.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -176,11 +177,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

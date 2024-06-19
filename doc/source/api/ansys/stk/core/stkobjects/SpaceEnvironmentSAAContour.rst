@@ -3,7 +3,7 @@ SpaceEnvironmentSAAContour
 
 .. py:class:: SpaceEnvironmentSAAContour
 
-   ISpaceEnvironmentSAAContour, SupportsDeleteCallback
+   Bases: py:obj:`~ISpaceEnvironmentSAAContour`
 
    SAA settings.
 

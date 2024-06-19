@@ -3,7 +3,7 @@ AnalysisWorkbenchInterp
 
 .. py:class:: AnalysisWorkbenchInterp
 
-   IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchInterp`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Represents a base class for interpolation definitions.
 

@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: definition_type
     :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition_type
-    :type: "FIGURE_OF_MERIT_DEFINITION_TYPE"
+    :type: FIGURE_OF_MERIT_DEFINITION_TYPE
 
     Definition type for the FOM.
 
@@ -66,13 +66,13 @@ Property detail
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition
-    :type: "IAgFmDefinition"
+    :type: IAgFmDefinition
 
     Definition properties of the FOM.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.graphics
-    :type: "IAgFmGraphics"
+    :type: IAgFmGraphics
 
     2D graphics properties of the FOM.
 
@@ -81,25 +81,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_definition_type(self, defn:"FIGURE_OF_MERIT_DEFINITION_TYPE") -> None
+.. py:method:: set_definition_type(self, defn: FIGURE_OF_MERIT_DEFINITION_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.set_definition_type
 
     Set the definition type.
 
     :Parameters:
 
-    **defn** : :obj:`~"FIGURE_OF_MERIT_DEFINITION_TYPE"`
+    **defn** : :obj:`~FIGURE_OF_MERIT_DEFINITION_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_definition_type_supported(self, defn:"FIGURE_OF_MERIT_DEFINITION_TYPE") -> bool
+.. py:method:: is_definition_type_supported(self, defn: FIGURE_OF_MERIT_DEFINITION_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.is_definition_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **defn** : :obj:`~"FIGURE_OF_MERIT_DEFINITION_TYPE"`
+    **defn** : :obj:`~FIGURE_OF_MERIT_DEFINITION_TYPE`
 
     :Returns:
 
@@ -107,20 +109,22 @@ Method detail
 
 
 
-.. py:method:: set_access_constraint_definition(self, constraintName:"FIGURE_OF_MERIT_CONSTRAINT_NAME") -> "IFigureOfMeritDefinitionAccessConstraint"
+.. py:method:: set_access_constraint_definition(self, constraintName: FIGURE_OF_MERIT_CONSTRAINT_NAME) -> IFigureOfMeritDefinitionAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.set_access_constraint_definition
 
     Set the access constraint definition.
 
     :Parameters:
 
-    **constraintName** : :obj:`~"FIGURE_OF_MERIT_CONSTRAINT_NAME"`
+    **constraintName** : :obj:`~FIGURE_OF_MERIT_CONSTRAINT_NAME`
 
     :Returns:
 
-        :obj:`~"IFigureOfMeritDefinitionAccessConstraint"`
+        :obj:`~IFigureOfMeritDefinitionAccessConstraint`
 
 
-.. py:method:: set_access_constraint_definition_name(self, constraintName:str) -> "IFigureOfMeritDefinitionAccessConstraint"
+.. py:method:: set_access_constraint_definition_name(self, constraintName: str) -> IFigureOfMeritDefinitionAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.set_access_constraint_definition_name
 
     Set the access constraint definition by name.
 
@@ -130,5 +134,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IFigureOfMeritDefinitionAccessConstraint"`
+        :obj:`~IFigureOfMeritDefinitionAccessConstraint`
 

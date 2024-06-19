@@ -3,7 +3,7 @@ StateCalcCosOfVerticalFPA
 
 .. py:class:: StateCalcCosOfVerticalFPA
 
-   IComponentInfo, ICloneable, IStateCalcCosOfVerticalFPA, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCosOfVerticalFPA`
 
    CosineOfVerticalFPA Calc objects.
 

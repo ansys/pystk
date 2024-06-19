@@ -3,7 +3,7 @@ Target
 
 .. py:class:: Target
 
-   ITarget, IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~ITarget`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
 
    Class defining the Target object.
 

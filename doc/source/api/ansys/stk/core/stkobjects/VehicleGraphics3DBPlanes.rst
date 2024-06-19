@@ -3,7 +3,7 @@ VehicleGraphics3DBPlanes
 
 .. py:class:: VehicleGraphics3DBPlanes
 
-   IVehicleGraphics3DBPlanes, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlanes`
 
    3D BPlanes properties.
 

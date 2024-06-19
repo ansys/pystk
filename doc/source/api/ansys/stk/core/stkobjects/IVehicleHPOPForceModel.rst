@@ -41,37 +41,37 @@ Property detail
 
 .. py:property:: central_body_gravity
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPForceModel.central_body_gravity
-    :type: "IAgVeHPOPCentralBodyGravity"
+    :type: IAgVeHPOPCentralBodyGravity
 
     Get the central body gravity properties.
 
 .. py:property:: solar_radiation_pressure
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPForceModel.solar_radiation_pressure
-    :type: "IAgVeHPOPSolarRadiationPressure"
+    :type: IAgVeHPOPSolarRadiationPressure
 
     Get the solar radiation pressure properties.
 
 .. py:property:: drag
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPForceModel.drag
-    :type: "IAgVeHPOPForceModelDrag"
+    :type: IAgVeHPOPForceModelDrag
 
     Get the atmospheric drag properties.
 
 .. py:property:: third_body_gravity
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPForceModel.third_body_gravity
-    :type: "IAgVeThirdBodyGravityCollection"
+    :type: IAgVeThirdBodyGravityCollection
 
     Get the 3rd-body gravity properties.
 
 .. py:property:: more_options
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPForceModel.more_options
-    :type: "IAgVeHPOPForceModelMoreOptions"
+    :type: IAgVeHPOPForceModelMoreOptions
 
     Get the additional force model options.
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPForceModel.eclipsing_bodies
-    :type: "IAgVeEclipsingBodies"
+    :type: IAgVeEclipsingBodies
 
     Get the eclipsing bodies.
 

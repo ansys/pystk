@@ -3,7 +3,7 @@ CentralBodyGravityModel
 
 .. py:class:: CentralBodyGravityModel
 
-   ICentralBodyGravityModel, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyGravityModel`
 
    Central Body Gravity Model.
 

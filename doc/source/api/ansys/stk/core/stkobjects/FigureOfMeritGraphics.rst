@@ -3,7 +3,7 @@ FigureOfMeritGraphics
 
 .. py:class:: FigureOfMeritGraphics
 
-   IFigureOfMeritGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics`
 
    AgFmGfxGraphics Class.
 

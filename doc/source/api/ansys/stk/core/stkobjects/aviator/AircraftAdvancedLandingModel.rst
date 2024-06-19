@@ -3,7 +3,7 @@ AircraftAdvancedLandingModel
 
 .. py:class:: AircraftAdvancedLandingModel
 
-   IAircraftAdvancedLandingModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftAdvancedLandingModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the advanced landing performance model for an Aviator aircraft.
 

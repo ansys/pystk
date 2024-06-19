@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: constraint_type
     :canonical: ansys.stk.core.stkobjects.IAccessConstraint.constraint_type
-    :type: "ACCESS_CONSTRAINTS"
+    :type: ACCESS_CONSTRAINTS
 
     Property used to access the constraint type.
 

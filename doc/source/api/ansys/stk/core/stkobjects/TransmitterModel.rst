@@ -3,7 +3,7 @@ TransmitterModel
 
 .. py:class:: TransmitterModel
 
-   ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a generic transmitter model.
 

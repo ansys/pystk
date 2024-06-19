@@ -3,7 +3,7 @@ CalculationToolConditionScalarBounds
 
 .. py:class:: CalculationToolConditionScalarBounds
 
-   ICalculationToolConditionScalarBounds, ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionScalarBounds`, py:obj:`~ICalculationToolCondition`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined by determining if input scalar is within specified bounds; returns +1 if satisfied, -1 if not satisfied and 0 if on boundary.
 

@@ -52,37 +52,37 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.type
-    :type: "SEGMENT_TYPE"
+    :type: SEGMENT_TYPE
 
     Returns the type of segment.
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.properties
-    :type: "IAgVAMCSSegmentProperties"
+    :type: IAgVAMCSSegmentProperties
 
     Returns the properties of the segment.
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.initial_state
-    :type: "IAgVAState"
+    :type: IAgVAState
 
     Get the initial state of the segment.
 
 .. py:property:: final_state
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.final_state
-    :type: "IAgVAState"
+    :type: IAgVAState
 
     Get the final state of the segment.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.results
-    :type: "IAgVACalcObjectCollection"
+    :type: IAgVACalcObjectCollection
 
     Get the results of the segment.
 
 .. py:property:: exec_summary
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.exec_summary
-    :type: "IAgDrResult"
+    :type: IAgDrResult
 
     Get the segment summary report.
 
@@ -94,7 +94,8 @@ Method detail
 
 
 
-.. py:method:: get_result_value(self, resultName:str) -> typing.Any
+.. py:method:: get_result_value(self, resultName: str) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.get_result_value
 
     Return a result value.
 
@@ -106,13 +107,14 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: run(self) -> "IState"
+.. py:method:: run(self) -> IState
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.run
 
     Run the segment in individual segment mode.  See IAgVADriverMCS.
 
     :Returns:
 
-        :obj:`~"IState"`
+        :obj:`~IState`
 
 
 

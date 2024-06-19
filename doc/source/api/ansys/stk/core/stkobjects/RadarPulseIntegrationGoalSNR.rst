@@ -3,7 +3,7 @@ RadarPulseIntegrationGoalSNR
 
 .. py:class:: RadarPulseIntegrationGoalSNR
 
-   IRadarPulseIntegrationGoalSNR, IRadarPulseIntegration, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarPulseIntegrationGoalSNR`, py:obj:`~IRadarPulseIntegration`
 
    Class defining the goal SNR integration method.
 

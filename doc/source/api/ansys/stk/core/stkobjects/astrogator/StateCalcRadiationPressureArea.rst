@@ -3,7 +3,7 @@ StateCalcRadiationPressureArea
 
 .. py:class:: StateCalcRadiationPressureArea
 
-   IComponentInfo, ICloneable, IStateCalcRadiationPressureArea, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRadiationPressureArea`
 
    RadPressureArea Calc objects.
 

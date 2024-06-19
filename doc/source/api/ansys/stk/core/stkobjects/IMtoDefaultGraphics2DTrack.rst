@@ -68,31 +68,31 @@ Property detail
 
 .. py:property:: marker
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.marker
-    :type: "IAgMtoGfxMarker"
+    :type: IAgMtoGfxMarker
 
     Get the display properties for the track marker.
 
 .. py:property:: line
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.line
-    :type: "IAgMtoGfxLine"
+    :type: IAgMtoGfxLine
 
     Get the display properties for the track line.
 
 .. py:property:: fade_times
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.fade_times
-    :type: "IAgMtoGfxFadeTimes"
+    :type: IAgMtoGfxFadeTimes
 
     Get the fade times data.
 
 .. py:property:: lead_trail_times
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.lead_trail_times
-    :type: "IAgMtoGfxLeadTrailTimes"
+    :type: IAgMtoGfxLeadTrailTimes
 
     Get the lead/trail times data.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.range_contours
-    :type: "IAgGfxRangeContours"
+    :type: IAgGfxRangeContours
 
     Get the MTO's 2D range contour graphics.
 

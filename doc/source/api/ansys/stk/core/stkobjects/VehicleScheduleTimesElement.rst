@@ -3,7 +3,7 @@ VehicleScheduleTimesElement
 
 .. py:class:: VehicleScheduleTimesElement
 
-   IVehicleScheduleTimesElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleScheduleTimesElement`
 
    Parameters for scheduled times for target pointing attitude.
 

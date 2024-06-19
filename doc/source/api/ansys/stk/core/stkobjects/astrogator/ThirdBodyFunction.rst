@@ -3,7 +3,7 @@ ThirdBodyFunction
 
 .. py:class:: ThirdBodyFunction
 
-   IThirdBodyFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IThirdBodyFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    ThirdBody propagator function.
 

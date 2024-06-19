@@ -3,7 +3,7 @@ Graphics3DModelCollection
 
 .. py:class:: Graphics3DModelCollection
 
-   IGraphics3DModelData, IGraphics3DModelCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DModelData`, py:obj:`~IGraphics3DModelCollection`
 
    Collection representing 3D model list.
 

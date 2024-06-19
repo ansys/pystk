@@ -3,7 +3,7 @@ TimeToolEventArray
 
 .. py:class:: TimeToolEventArray
 
-   ITimeToolEventArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An ordered array of times, which may or may not be evenly spaced.
 

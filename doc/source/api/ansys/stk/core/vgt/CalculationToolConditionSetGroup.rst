@@ -3,7 +3,7 @@ CalculationToolConditionSetGroup
 
 .. py:class:: CalculationToolConditionSetGroup
 
-   ICalculationToolConditionSetGroup, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionSetGroup`
 
    Allow accessing and creating condition set components.
 

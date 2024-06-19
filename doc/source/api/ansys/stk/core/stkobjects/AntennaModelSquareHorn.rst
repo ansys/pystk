@@ -3,7 +3,7 @@ AntennaModelSquareHorn
 
 .. py:class:: AntennaModelSquareHorn
 
-   IAntennaModel, IComponentInfo, ICloneable, IAntennaModelSquareHorn, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IAntennaModelSquareHorn`
 
    Class defining a square horn antenna model.
 

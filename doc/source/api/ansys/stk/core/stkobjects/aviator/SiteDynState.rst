@@ -3,7 +3,7 @@ SiteDynState
 
 .. py:class:: SiteDynState
 
-   ISiteDynState, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteDynState`, py:obj:`~ISite`
 
    Class defining a Dyn State site.
 

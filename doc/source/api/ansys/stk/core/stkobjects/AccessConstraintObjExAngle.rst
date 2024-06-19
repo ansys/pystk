@@ -3,7 +3,7 @@ AccessConstraintObjExAngle
 
 .. py:class:: AccessConstraintObjExAngle
 
-   IAccessConstraintObjExAngle, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintObjExAngle`, py:obj:`~IAccessConstraint`
 
    Class defining the Object Exclusion Angle constraint.
 

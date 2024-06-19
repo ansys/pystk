@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolIntegralBasic.type
-    :type: "CRDN_INTEGRAL_TYPE"
+    :type: CRDN_INTEGRAL_TYPE
 
     Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto.
 

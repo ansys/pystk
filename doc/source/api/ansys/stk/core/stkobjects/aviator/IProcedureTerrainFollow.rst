@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: navigation_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.navigation_options
-    :type: "IAgAvtrNavigationOptions"
+    :type: IAgAvtrNavigationOptions
 
     Get the navigation options.
 
 .. py:property:: terrain_following_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.terrain_following_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the terrain following airspeed options.
 
@@ -89,11 +89,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

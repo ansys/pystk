@@ -70,7 +70,8 @@ Method detail
 -------------
 
 
-.. py:method:: add(self, start:typing.Any, stop:typing.Any) -> int
+.. py:method:: add(self, start: typing.Any, stop: typing.Any) -> int
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.add
 
     Add an interval to the collection and returns the index. Start/Stop use DateFormat Dimension.
 
@@ -83,7 +84,8 @@ Method detail
 
         :obj:`~int`
 
-.. py:method:: remove_index(self, index:int) -> None
+.. py:method:: remove_index(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.remove_index
 
     Remove an item by the index.
 
@@ -96,6 +98,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.remove_all
 
     Remove all items in the collection.
 
@@ -103,7 +106,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_interval(self, start:typing.Any, stop:typing.Any) -> None
+.. py:method:: remove_interval(self, start: typing.Any, stop: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.remove_interval
 
     Remove an interval using the interval interface. Start/Stop use DateFormat Dimension.
 
@@ -117,6 +121,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: deconflict(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.deconflict
 
     Deconflict display intervals.
 
@@ -124,7 +129,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_intervals(self, filename:str) -> None
+.. py:method:: load_intervals(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.load_intervals
 
     Load an interval file.
 
@@ -136,7 +142,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: change_interval(self, index:int, start:typing.Any, stop:typing.Any) -> None
+.. py:method:: change_interval(self, index: int, start: typing.Any, stop: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.change_interval
 
     Update interval with specified start and stop times at a given index. Start/Stop use DateFormat Dimension.
 
@@ -150,7 +157,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_interval(self, index:int) -> typing.Tuple[typing.Any, typing.Any]
+.. py:method:: get_interval(self, index: int) -> typing.Tuple[typing.Any, typing.Any]
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.get_interval
 
     Return start and stop times of the interval at a given index. Start/Stop use DateFormat Dimension.
 
@@ -162,7 +170,8 @@ Method detail
 
         :obj:`~typing.Tuple[typing.Any, typing.Any]`
 
-.. py:method:: to_array(self, index:int, length:int) -> list
+.. py:method:: to_array(self, index: int, length: int) -> list
+    :canonical: ansys.stk.core.stkobjects.IIntervalCollection.to_array
 
     Return a two-dimensional array of intervals beginning at a given position and having specified number of rows.
 

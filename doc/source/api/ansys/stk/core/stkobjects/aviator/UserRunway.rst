@@ -3,7 +3,7 @@ UserRunway
 
 .. py:class:: UserRunway
 
-   IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint, SupportsDeleteCallback
+   Bases: py:obj:`~IUserRunway`, py:obj:`~ICatalogRunway`, py:obj:`~ICatalogItem`, py:obj:`~ICatalogWaypoint`
 
    Class defining the user runway in the Aviator catalog.
 

@@ -3,7 +3,7 @@ StateCalcMeanRightAscension
 
 .. py:class:: StateCalcMeanRightAscension
 
-   IComponentInfo, ICloneable, IStateCalcMeanRightAscension, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanRightAscension`
 
    MeanRightAscension Calc objects.
 

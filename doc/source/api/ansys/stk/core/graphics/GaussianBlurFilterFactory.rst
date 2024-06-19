@@ -3,7 +3,7 @@ GaussianBlurFilterFactory
 
 .. py:class:: GaussianBlurFilterFactory
 
-   IGaussianBlurFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IGaussianBlurFilterFactory`
 
    Apply a convolution filter to blur the source raster using the Gaussian function.
 

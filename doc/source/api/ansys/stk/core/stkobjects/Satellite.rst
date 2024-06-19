@@ -3,7 +3,7 @@ Satellite
 
 .. py:class:: Satellite
 
-   ISatellite, IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback
+   Bases: py:obj:`~ISatellite`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IProvideSpatialInfo`
 
    Satellite properties.
 

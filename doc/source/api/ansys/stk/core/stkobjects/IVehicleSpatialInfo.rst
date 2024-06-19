@@ -55,7 +55,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_state(self, time:typing.Any) -> "ISpatialState"
+.. py:method:: get_state(self, time: typing.Any) -> ISpatialState
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpatialInfo.get_state
 
     Return a spatial state of the vehicle at specified time.
 
@@ -65,14 +66,15 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialState"`
+        :obj:`~ISpatialState`
 
 
-.. py:method:: get_available_times(self) -> "IImmutableIntervalCollection"
+.. py:method:: get_available_times(self) -> IImmutableIntervalCollection
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpatialInfo.get_available_times
 
     Return a collection of available intervals.
 
     :Returns:
 
-        :obj:`~"IImmutableIntervalCollection"`
+        :obj:`~IImmutableIntervalCollection`
 

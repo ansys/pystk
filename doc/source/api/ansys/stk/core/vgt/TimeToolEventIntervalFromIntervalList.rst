@@ -3,7 +3,7 @@ TimeToolEventIntervalFromIntervalList
 
 .. py:class:: TimeToolEventIntervalFromIntervalList
 
-   ITimeToolEventIntervalFromIntervalList, ITimeToolEventInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalFromIntervalList`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Interval created from specified interval list by using one of several selection methods.
 

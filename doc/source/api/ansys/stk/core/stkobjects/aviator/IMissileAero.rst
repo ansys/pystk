@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: aero_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileAero.aero_strategy
-    :type: "MISSILE_AERO_STRATEGY"
+    :type: MISSILE_AERO_STRATEGY
 
     Gets or sets the aerodynamic strategy type.
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_simple
-    :type: "IAgAvtrMissileSimpleAero"
+    :type: IAgAvtrMissileSimpleAero
 
     Get the interface for a simple aerodynamics strategy.
 
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_external
-    :type: "IAgAvtrMissileExternalAero"
+    :type: IAgAvtrMissileExternalAero
 
     Get the interface for an external file aerodynamics strategy.
 
 .. py:property:: mode_as_advanced
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_advanced
-    :type: "IAgAvtrMissileAdvancedAero"
+    :type: IAgAvtrMissileAdvancedAero
 
     Get the interface for an advanced aerodynamics strategy.
 

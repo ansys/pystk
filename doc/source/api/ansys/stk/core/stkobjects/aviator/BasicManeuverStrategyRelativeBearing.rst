@@ -3,7 +3,7 @@ BasicManeuverStrategyRelativeBearing
 
 .. py:class:: BasicManeuverStrategyRelativeBearing
 
-   IBasicManeuverStrategyRelativeBearing, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyRelativeBearing`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Relative Bearing strategy for a basic maneuver procedure.
 

@@ -3,7 +3,7 @@ RadarActivityAlwaysInactive
 
 .. py:class:: RadarActivityAlwaysInactive
 
-   IRadarActivity, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarActivity`
 
    Class defining radar always active inactivity.
 

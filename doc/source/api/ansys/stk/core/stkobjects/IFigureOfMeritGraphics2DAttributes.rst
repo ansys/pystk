@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: contours
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.contours
-    :type: "IAgFmGfxContours"
+    :type: IAgFmGfxContours
 
     Coverage contours.
 

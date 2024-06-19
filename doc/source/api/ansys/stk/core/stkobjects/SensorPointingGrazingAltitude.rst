@@ -3,7 +3,7 @@ SensorPointingGrazingAltitude
 
 .. py:class:: SensorPointingGrazingAltitude
 
-   ISensorPointing, ISensorPointingGrazingAltitude, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingGrazingAltitude`
 
    Class defining Grazing Altitude pointing type for a Sensor.
 

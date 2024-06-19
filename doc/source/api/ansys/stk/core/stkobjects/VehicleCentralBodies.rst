@@ -3,7 +3,7 @@ VehicleCentralBodies
 
 .. py:class:: VehicleCentralBodies
 
-   IVehicleCentralBodies, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleCentralBodies`
 
    Satellite Central Bodies.
 

@@ -64,7 +64,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IUserVariableUpdate"
+.. py:method:: item(self, indexOrName: typing.Any) -> IUserVariableUpdate
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection.item
 
     Allow you to iterate through the collection.
 
@@ -74,11 +75,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariableUpdate"`
+        :obj:`~IUserVariableUpdate`
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IUserVariableUpdate"
+.. py:method:: get_item_by_index(self, index: int) -> IUserVariableUpdate
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection.get_item_by_index
 
     Retrieve a user variable update in the collection by index.
 
@@ -88,9 +90,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariableUpdate"`
+        :obj:`~IUserVariableUpdate`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IUserVariableUpdate"
+.. py:method:: get_item_by_name(self, name: str) -> IUserVariableUpdate
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection.get_item_by_name
 
     Retrieve a user variable update in the collection by name.
 
@@ -100,5 +103,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariableUpdate"`
+        :obj:`~IUserVariableUpdate`
 

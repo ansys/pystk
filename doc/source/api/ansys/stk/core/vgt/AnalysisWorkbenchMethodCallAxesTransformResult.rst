@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallAxesTransformResult
 
 .. py:class:: AnalysisWorkbenchMethodCallAxesTransformResult
 
-   IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformResult, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolAxesTransformResult`
 
    Contains the results returned with IAgCrdnAxes.TransformFrom method.
 

@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRainLossModel.type
-    :type: "RAIN_LOSS_MODEL_TYPE"
+    :type: RAIN_LOSS_MODEL_TYPE
 
     Gets the rain loss model type enumeration.
 

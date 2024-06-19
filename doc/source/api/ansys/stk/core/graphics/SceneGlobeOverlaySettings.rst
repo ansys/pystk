@@ -3,7 +3,7 @@ SceneGlobeOverlaySettings
 
 .. py:class:: SceneGlobeOverlaySettings
 
-   ISceneGlobeOverlaySettings, SupportsDeleteCallback
+   Bases: py:obj:`~ISceneGlobeOverlaySettings`
 
    Settings used by globe overlay objects. These settings only affect the scene.
 

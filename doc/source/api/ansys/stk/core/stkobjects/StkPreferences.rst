@@ -3,7 +3,7 @@ StkPreferences
 
 .. py:class:: StkPreferences
 
-   IStkPreferences, SupportsDeleteCallback
+   Bases: py:obj:`~IStkPreferences`
 
    Allow configuring STK preferences.
 

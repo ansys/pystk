@@ -3,7 +3,7 @@ VmGraphics3DActiveGridPoints
 
 .. py:class:: VmGraphics3DActiveGridPoints
 
-   IVmGraphics3DActiveGridPoints, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGraphics3DActiveGridPoints`
 
    Class defining Active Grid Points for Volumetric Object.
 

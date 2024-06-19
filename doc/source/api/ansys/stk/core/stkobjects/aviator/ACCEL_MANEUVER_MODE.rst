@@ -11,6 +11,24 @@ ACCEL_MANEUVER_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ACCEL_MANEUVER_MODE_NORMAL`
+              - Constant value (default).
+
+            * - :py:attr:`~ACCEL_MANEUVER_MODE_DENSITY_SCALE`
+              - Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius.
+
+            * - :py:attr:`~ACCEL_MANEUVER_MODE_AERO_PROP`
+              - Aero/Prop maneuver mode.
+
+
 Import detail
 -------------
 

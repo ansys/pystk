@@ -3,7 +3,7 @@ ObjPathCollection
 
 .. py:class:: ObjPathCollection
 
-   IObjPathCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IObjPathCollection`
 
    Collection of object paths.
 

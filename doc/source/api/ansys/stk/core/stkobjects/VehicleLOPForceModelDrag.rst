@@ -3,7 +3,7 @@ VehicleLOPForceModelDrag
 
 .. py:class:: VehicleLOPForceModelDrag
 
-   IVehicleLOPForceModelDrag, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLOPForceModelDrag`
 
    Class defining the atmospheric drag model for the LOP propagator.
 

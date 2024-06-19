@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IMtoTrackPoint.position
-    :type: "IAgPosition"
+    :type: IAgPosition
 
     Whether to interpolate the track's position between each defined point. The track's marker and label position will be linearly interpolated between the track points for the current animation time.
 

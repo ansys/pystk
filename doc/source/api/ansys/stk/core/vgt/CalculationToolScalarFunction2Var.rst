@@ -3,7 +3,7 @@ CalculationToolScalarFunction2Var
 
 .. py:class:: CalculationToolScalarFunction2Var
 
-   ICalculationToolScalarFunction2Var, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarFunction2Var`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined by performing a function(x,y) on two scalar arguments.
 

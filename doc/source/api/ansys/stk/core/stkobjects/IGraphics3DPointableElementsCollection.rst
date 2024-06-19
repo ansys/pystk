@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IGraphics3DPointableElementsElement"
+.. py:method:: item(self, index: int) -> IGraphics3DPointableElementsElement
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DPointableElementsElement"`
+        :obj:`~IGraphics3DPointableElementsElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -95,6 +97,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -102,15 +105,17 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self) -> "IGraphics3DPointableElementsElement"
+.. py:method:: add(self) -> IGraphics3DPointableElementsElement
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.add
 
     Add a new element to the collection.
 
     :Returns:
 
-        :obj:`~"IGraphics3DPointableElementsElement"`
+        :obj:`~IGraphics3DPointableElementsElement`
 
 .. py:method:: sort(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.sort
 
     Re-orders pointable elements.
 

@@ -3,7 +3,7 @@ VehicleAttitudeRealTimeDataReference
 
 .. py:class:: VehicleAttitudeRealTimeDataReference
 
-   IVehicleAttitudeRealTimeDataReference, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeRealTimeDataReference`
 
    Reference attitude profile for the incoming attitude data.
 

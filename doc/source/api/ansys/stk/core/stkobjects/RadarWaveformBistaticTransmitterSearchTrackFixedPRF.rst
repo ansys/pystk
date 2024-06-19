@@ -3,7 +3,7 @@ RadarWaveformBistaticTransmitterSearchTrackFixedPRF
 
 .. py:class:: RadarWaveformBistaticTransmitterSearchTrackFixedPRF
 
-   IRadarWaveformBistaticTransmitterSearchTrackFixedPRF, IRadarWaveformSearchTrack, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarWaveformBistaticTransmitterSearchTrackFixedPRF`, py:obj:`~IRadarWaveformSearchTrack`
 
    Class defining a bistatic transmitter fixed PRF waveform.
 

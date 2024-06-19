@@ -3,7 +3,7 @@ VmGraphics3DSpatialCalculationLevel
 
 .. py:class:: VmGraphics3DSpatialCalculationLevel
 
-   IVmGraphics3DSpatialCalculationLevel, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGraphics3DSpatialCalculationLevel`
 
    Class defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 

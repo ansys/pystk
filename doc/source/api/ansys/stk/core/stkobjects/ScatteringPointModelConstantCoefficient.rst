@@ -3,7 +3,7 @@ ScatteringPointModelConstantCoefficient
 
 .. py:class:: ScatteringPointModelConstantCoefficient
 
-   IScatteringPointModelConstantCoefficient, IScatteringPointModel, IComponentInfo, ICloneable, IRadarClutterMapModelConstantCoefficient, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointModelConstantCoefficient`, py:obj:`~IScatteringPointModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IRadarClutterMapModelConstantCoefficient`
 
    Class defining a constant coefficient scattering point model.
 

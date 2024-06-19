@@ -3,7 +3,7 @@ EngineModelPoly
 
 .. py:class:: EngineModelPoly
 
-   IEngineModelPoly, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineModelPoly`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Polynomial Thrust and Isp engine model.
 

@@ -3,7 +3,7 @@ MtoAnalysisVisibility
 
 .. py:class:: MtoAnalysisVisibility
 
-   IMtoAnalysisVisibility, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoAnalysisVisibility`
 
    MTO Visibility Computation.
 

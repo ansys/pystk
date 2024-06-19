@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData.ground_track
-    :type: "IAgVeGfxLeadTrailData"
+    :type: IAgVeGfxLeadTrailData
 
     Ground track display properties.
 
 .. py:property:: orbit
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData.orbit
-    :type: "IAgVeGfxLeadTrailData"
+    :type: IAgVeGfxLeadTrailData
 
     Orbit pass display properties.
 

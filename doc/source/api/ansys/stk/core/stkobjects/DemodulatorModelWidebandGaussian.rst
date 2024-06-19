@@ -3,7 +3,7 @@ DemodulatorModelWidebandGaussian
 
 .. py:class:: DemodulatorModelWidebandGaussian
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a wideband gaussian modulator model.
 

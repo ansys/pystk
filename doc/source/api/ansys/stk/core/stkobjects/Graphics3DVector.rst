@@ -3,7 +3,7 @@ Graphics3DVector
 
 .. py:class:: Graphics3DVector
 
-   IGraphics3DVector, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DVector`
 
    Class defining 3D vectors.
 

@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: plane_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection.plane_a
-    :type: "IAgCrdnPlaneRefTo"
+    :type: IAgCrdnPlaneRefTo
 
     Specify the first of the two planes which intersection defines the vector.
 
 .. py:property:: plane_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection.plane_b
-    :type: "IAgCrdnPlaneRefTo"
+    :type: IAgCrdnPlaneRefTo
 
     Specify the second of the two planes which intersection defines the vector.
 

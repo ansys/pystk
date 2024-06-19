@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: interpolation_type
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisSpiceExportTool.interpolation_type
-    :type: "SPICE_INTERPOLATION"
+    :type: SPICE_INTERPOLATION
 
     Gets or sets the interpolation type.
 
@@ -75,13 +75,13 @@ Property detail
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisSpiceExportTool.step_size
-    :type: "IAgExportToolStepSize"
+    :type: IAgExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisSpiceExportTool.time_period
-    :type: "IAgExportToolTimePeriod"
+    :type: IAgExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
@@ -105,7 +105,8 @@ Method detail
 
 
 
-.. py:method:: export(self, fileName:str) -> None
+.. py:method:: export(self, fileName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisSpiceExportTool.export
 
     Export the ephemeris file.
 

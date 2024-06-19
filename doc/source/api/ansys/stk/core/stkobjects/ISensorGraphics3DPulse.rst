@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: style
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3DPulse.style
-    :type: "SENSOR_GRAPHICS_3D_PULSE_STYLE"
+    :type: SENSOR_GRAPHICS_3D_PULSE_STYLE
 
     Select an available sine or box style from the AgESnVOPulseStyle enumeration. Box styles display a very sharp transition from enabled to disabled for the sensor's modulation, while the Sine styles display a smooth transition.
 
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: presel_freq
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3DPulse.presel_freq
-    :type: "SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET"
+    :type: SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET
 
     Select a frequency option from the AgESnVOPulseFrequencyPreset enumeration. Here, frequency refers to the rate at which pulses occur.
 
@@ -119,6 +119,7 @@ Method detail
 
 
 .. py:method:: reset_to_defaults(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorGraphics3DPulse.reset_to_defaults
 
     Restore all default values for modulating a sensor's projection.
 

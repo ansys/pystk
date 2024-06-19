@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ISRPModelBase.type
-    :type: "SRP_MODEL"
+    :type: SRP_MODEL
 
     Returns the type of the solar radiation pressure model.
 

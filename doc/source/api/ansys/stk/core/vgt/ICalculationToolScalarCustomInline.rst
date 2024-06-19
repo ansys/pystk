@@ -85,6 +85,7 @@ Method detail
 
 
 .. py:method:: get_all_arguments(self) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarCustomInline.get_all_arguments
 
     Return the list of arguments.
 
@@ -92,7 +93,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: set_all_arguments(self, calcList:list) -> None
+.. py:method:: set_all_arguments(self, calcList: list) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarCustomInline.set_all_arguments
 
     Set the list of arguments.
 

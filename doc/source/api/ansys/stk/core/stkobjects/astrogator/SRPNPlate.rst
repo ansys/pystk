@@ -3,7 +3,7 @@ SRPNPlate
 
 .. py:class:: SRPNPlate
 
-   ISRPNPlate, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPNPlate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    NPlate SRP propagator function.
 

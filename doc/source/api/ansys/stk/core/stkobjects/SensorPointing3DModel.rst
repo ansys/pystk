@@ -3,7 +3,7 @@ SensorPointing3DModel
 
 .. py:class:: SensorPointing3DModel
 
-   ISensorPointing, ISensorPointing3DModel, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointing3DModel`
 
    Class defining the 3D model pointing type for a Sensor.
 

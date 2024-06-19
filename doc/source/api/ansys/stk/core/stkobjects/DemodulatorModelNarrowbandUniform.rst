@@ -3,7 +3,7 @@ DemodulatorModelNarrowbandUniform
 
 .. py:class:: DemodulatorModelNarrowbandUniform
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a narrowband uniform modulator model.
 

@@ -11,6 +11,21 @@ LINE_ORIENTATION
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~FLIGHT_LINE_TO_LEFT`
+              - Left of the previous flight line.
+
+            * - :py:attr:`~FLIGHT_LINE_TO_RIGHT`
+              - Right of the previous flight line.
+
+
 Import detail
 -------------
 

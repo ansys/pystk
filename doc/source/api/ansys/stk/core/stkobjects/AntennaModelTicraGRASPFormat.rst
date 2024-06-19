@@ -3,7 +3,7 @@ AntennaModelTicraGRASPFormat
 
 .. py:class:: AntennaModelTicraGRASPFormat
 
-   IAntennaModelTicraGRASPFormat, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelTicraGRASPFormat`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an antenna pattern Ticra GRASP model.
 

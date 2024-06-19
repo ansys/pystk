@@ -3,7 +3,7 @@ AtmosphericAbsorptionModelITURP676_9
 
 .. py:class:: AtmosphericAbsorptionModelITURP676_9
 
-   IAtmosphericAbsorptionModelITURP676, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphericAbsorptionModelITURP676`, py:obj:`~IAtmosphericAbsorptionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an atmospheric absorption model.
 

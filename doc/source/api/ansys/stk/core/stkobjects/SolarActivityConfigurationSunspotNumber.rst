@@ -3,7 +3,7 @@ SolarActivityConfigurationSunspotNumber
 
 .. py:class:: SolarActivityConfigurationSunspotNumber
 
-   ISolarActivityConfigurationSunspotNumber, ISolarActivityConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~ISolarActivityConfigurationSunspotNumber`, py:obj:`~ISolarActivityConfiguration`
 
    Class defining sunspot number configuration.
 

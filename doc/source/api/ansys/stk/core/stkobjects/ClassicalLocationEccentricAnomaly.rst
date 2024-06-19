@@ -3,7 +3,7 @@ ClassicalLocationEccentricAnomaly
 
 .. py:class:: ClassicalLocationEccentricAnomaly
 
-   IClassicalLocationEccentricAnomaly, IClassicalLocation, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalLocationEccentricAnomaly`, py:obj:`~IClassicalLocation`
 
    Eccentric Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 

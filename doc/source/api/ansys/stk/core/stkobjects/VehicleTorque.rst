@@ -3,7 +3,7 @@ VehicleTorque
 
 .. py:class:: VehicleTorque
 
-   IVehicleTorque, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleTorque`
 
    Torque file to use in defining integrated attitude.
 

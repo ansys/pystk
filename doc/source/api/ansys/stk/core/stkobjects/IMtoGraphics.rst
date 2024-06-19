@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: tracks
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics.tracks
-    :type: "IAgMtoGfxTrackCollection"
+    :type: IAgMtoGfxTrackCollection
 
     Get the collection of MTO 2D graphics properties.
 
 .. py:property:: default_track
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics.default_track
-    :type: "IAgMtoDefaultGfxTrack"
+    :type: IAgMtoDefaultGfxTrack
 
     Get the default track 2D graphics.
 
 .. py:property:: global_track_options
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics.global_track_options
-    :type: "IAgMtoGfxGlobalTrackOptions"
+    :type: IAgMtoGfxGlobalTrackOptions
 
     Get the 2D graphics global settings.
 

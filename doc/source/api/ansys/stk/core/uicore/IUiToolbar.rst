@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: float_state
     :canonical: ansys.stk.core.uicore.IUiToolbar.float_state
-    :type: "FLOAT_STATE"
+    :type: FLOAT_STATE
 
     The float state.
 

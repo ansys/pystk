@@ -3,7 +3,7 @@ VehicleProfileSpinAboutXXX
 
 .. py:class:: VehicleProfileSpinAboutXXX
 
-   IVehicleProfileSpinAboutXXX, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileSpinAboutXXX`, py:obj:`~IVehicleAttitudeProfile`
 
    Shared for Spin About Nadir and Spin About Sun Vector profile parameters.
 

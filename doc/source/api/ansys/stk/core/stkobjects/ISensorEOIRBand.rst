@@ -192,7 +192,7 @@ Property detail
 
 .. py:property:: image_quality
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.image_quality
-    :type: "SENSOR_EOIR_BAND_IMAGE_QUALITY"
+    :type: SENSOR_EOIR_BAND_IMAGE_QUALITY
 
     Discrete level of optical image quality. Aberrations are modeled based on a RMS wavefront error.
 
@@ -210,7 +210,7 @@ Property detail
 
 .. py:property:: wavelength_type
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.wavelength_type
-    :type: "SENSOR_EOIR_BAND_WAVELENGTH_TYPE"
+    :type: SENSOR_EOIR_BAND_WAVELENGTH_TYPE
 
     Gets or sets the relative position within the sensors spectral band to use as the reference wavelength for diffraction modeling calculations.
 
@@ -222,7 +222,7 @@ Property detail
 
 .. py:property:: saturation_mode
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.saturation_mode
-    :type: "SENSOR_EOIR_BAND_SATURATION_MODE"
+    :type: SENSOR_EOIR_BAND_SATURATION_MODE
 
     Gets or sets the radiant energy units for saturation and sensitivity, Irradiance better suited for observing point sources or Radiance better suited for resolved images.
 
@@ -252,25 +252,25 @@ Property detail
 
 .. py:property:: sensitivities
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.sensitivities
-    :type: "IAgSnEOIRSensitivityCollection"
+    :type: IAgSnEOIRSensitivityCollection
 
     Get the collection of Sensitivity time-value pairs.
 
 .. py:property:: saturations
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.saturations
-    :type: "IAgSnEOIRSaturationCollection"
+    :type: IAgSnEOIRSaturationCollection
 
     Get the collection of Saturation time-value pairs.
 
 .. py:property:: spatial_input_mode
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.spatial_input_mode
-    :type: "SENSOR_EOIR_BAND_SPATIAL_INPUT_MODE"
+    :type: SENSOR_EOIR_BAND_SPATIAL_INPUT_MODE
 
     Spatial parameter input mode.
 
 .. py:property:: spectral_shape
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.spectral_shape
-    :type: "SENSOR_EOIR_BAND_SPECTRAL_SHAPE"
+    :type: SENSOR_EOIR_BAND_SPECTRAL_SHAPE
 
     Overall system spectral shape designation.
 
@@ -282,13 +282,13 @@ Property detail
 
 .. py:property:: rsr_units
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.rsr_units
-    :type: "SENSOR_EOIR_BAND_SPECTRAL_RSR_UNITS"
+    :type: SENSOR_EOIR_BAND_SPECTRAL_RSR_UNITS
 
     System custom RSR units.
 
 .. py:property:: optical_input_mode
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.optical_input_mode
-    :type: "SENSOR_EOIR_BAND_OPTICAL_INPUT_MODE"
+    :type: SENSOR_EOIR_BAND_OPTICAL_INPUT_MODE
 
     Optical parameter input mode.
 
@@ -306,7 +306,7 @@ Property detail
 
 .. py:property:: optical_transmission_mode
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.optical_transmission_mode
-    :type: "SENSOR_EOIR_BAND_OPTICAL_TRANSMISSION_MODE"
+    :type: SENSOR_EOIR_BAND_OPTICAL_TRANSMISSION_MODE
 
     Optical transmission input mode.
 
@@ -336,7 +336,7 @@ Property detail
 
 .. py:property:: rad_param_level
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.rad_param_level
-    :type: "SENSOR_EOIR_BAND_RAD_PARAM_LEVEL"
+    :type: SENSOR_EOIR_BAND_RAD_PARAM_LEVEL
 
     Radiometric parameter input level.
 
@@ -348,13 +348,13 @@ Property detail
 
 .. py:property:: qe_mode
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.qe_mode
-    :type: "SENSOR_EOIR_BAND_QE_MODE"
+    :type: SENSOR_EOIR_BAND_QE_MODE
 
     Quantum efficiency input mode.
 
 .. py:property:: quantization_mode
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.quantization_mode
-    :type: "SENSOR_EOIR_BAND_QUANTIZATION_MODE"
+    :type: SENSOR_EOIR_BAND_QUANTIZATION_MODE
 
     Quantization input mode.
 

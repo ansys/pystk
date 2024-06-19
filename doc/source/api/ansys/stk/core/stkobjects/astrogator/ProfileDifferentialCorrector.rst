@@ -3,7 +3,7 @@ ProfileDifferentialCorrector
 
 .. py:class:: ProfileDifferentialCorrector
 
-   IProfileDifferentialCorrector, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileDifferentialCorrector`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Differential Corrector profile.
 

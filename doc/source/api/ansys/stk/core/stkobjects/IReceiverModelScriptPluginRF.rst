@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: interference
     :canonical: ansys.stk.core.stkobjects.IReceiverModelScriptPluginRF.interference
-    :type: "IAgRFInterference"
+    :type: IAgRFInterference
 
     Gets the radio frequency interference.
 

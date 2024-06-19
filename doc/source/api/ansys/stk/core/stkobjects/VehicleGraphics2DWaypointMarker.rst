@@ -3,7 +3,7 @@ VehicleGraphics2DWaypointMarker
 
 .. py:class:: VehicleGraphics2DWaypointMarker
 
-   IVehicleGraphics2DWaypointMarker, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DWaypointMarker`
 
    Display options for waypoint and turn markers in the 2D Graphics window.
 

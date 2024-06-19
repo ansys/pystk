@@ -3,7 +3,7 @@ ModtranPropagationModel
 
 .. py:class:: ModtranPropagationModel
 
-   IModtranPropagationModel, ILaserAtmosphericLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IModtranPropagationModel`, py:obj:`~ILaserAtmosphericLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a MODTRAN propagation model.
 

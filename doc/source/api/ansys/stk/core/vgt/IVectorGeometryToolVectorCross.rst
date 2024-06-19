@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: from_method
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorCross.from_method
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify one of the two vectors which define the vector cross product.
 
 .. py:property:: to
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorCross.to
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify the second of the two vectors which define the vector cross product.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkutil.IRuntimeTypeInfoProvider.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

@@ -3,7 +3,7 @@ SensorEOIRSaturationCollection
 
 .. py:class:: SensorEOIRSaturationCollection
 
-   ISensorEOIRSaturationCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorEOIRSaturationCollection`
 
    Class defining the Saturations collection for an EOIR Sensor.
 

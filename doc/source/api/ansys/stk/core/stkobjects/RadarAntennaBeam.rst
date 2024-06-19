@@ -3,7 +3,7 @@ RadarAntennaBeam
 
 .. py:class:: RadarAntennaBeam
 
-   IRadarAntennaBeam, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarAntennaBeam`
 
    Class defining a radar antenna beam.
 

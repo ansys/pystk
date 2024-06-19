@@ -3,7 +3,7 @@ VehicleVector
 
 .. py:class:: VehicleVector
 
-   IVehicleVector, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleVector`
 
    Aligned and Constrained attitude profile.
 

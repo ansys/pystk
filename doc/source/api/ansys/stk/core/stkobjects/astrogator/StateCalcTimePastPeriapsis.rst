@@ -3,7 +3,7 @@ StateCalcTimePastPeriapsis
 
 .. py:class:: StateCalcTimePastPeriapsis
 
-   IComponentInfo, ICloneable, IStateCalcTimePastPeriapsis, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTimePastPeriapsis`
 
    TimePastPeriapsis Calc objects.
 

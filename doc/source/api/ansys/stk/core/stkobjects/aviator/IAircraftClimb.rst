@@ -42,15 +42,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_built_in_model(self) -> "IAircraftBasicClimbModel"
+.. py:method:: get_built_in_model(self) -> IAircraftBasicClimbModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftClimb.get_built_in_model
 
     Get the built-in model.
 
     :Returns:
 
-        :obj:`~"IAircraftBasicClimbModel"`
+        :obj:`~IAircraftBasicClimbModel`
 
-.. py:method:: get_basic_climb_by_name(self, name:str) -> "IAircraftBasicClimbModel"
+.. py:method:: get_basic_climb_by_name(self, name: str) -> IAircraftBasicClimbModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftClimb.get_basic_climb_by_name
 
     Get the basic climb model with the given name.
 
@@ -60,9 +62,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftBasicClimbModel"`
+        :obj:`~IAircraftBasicClimbModel`
 
-.. py:method:: get_advanced_climb_by_name(self, name:str) -> "IAircraftAdvancedClimbModel"
+.. py:method:: get_advanced_climb_by_name(self, name: str) -> IAircraftAdvancedClimbModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftClimb.get_advanced_climb_by_name
 
     Get the advanced climb model with the given name.
 
@@ -72,13 +75,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftAdvancedClimbModel"`
+        :obj:`~IAircraftAdvancedClimbModel`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftClimb.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

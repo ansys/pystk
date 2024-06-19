@@ -3,7 +3,7 @@ VTOLPointCategory
 
 .. py:class:: VTOLPointCategory
 
-   IVTOLPointCategory, SupportsDeleteCallback
+   Bases: py:obj:`~IVTOLPointCategory`
 
    Class defining the VTOL point category in the Aviator catalog.
 

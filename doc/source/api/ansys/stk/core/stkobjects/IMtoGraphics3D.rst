@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: tracks
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3D.tracks
-    :type: "IAgMtoVOTrackCollection"
+    :type: IAgMtoVOTrackCollection
 
     Get the collection of MTO 3D graphics settings.
 
 .. py:property:: default_track
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3D.default_track
-    :type: "IAgMtoDefaultVOTrack"
+    :type: IAgMtoDefaultVOTrack
 
     Get the default track 3D graphics settings.
 
 .. py:property:: global_track_options
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3D.global_track_options
-    :type: "IAgMtoVOGlobalTrackOptions"
+    :type: IAgMtoVOGlobalTrackOptions
 
     Get the MTO global track 3D options.
 

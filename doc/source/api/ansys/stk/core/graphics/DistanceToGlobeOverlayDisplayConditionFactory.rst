@@ -3,7 +3,7 @@ DistanceToGlobeOverlayDisplayConditionFactory
 
 .. py:class:: DistanceToGlobeOverlayDisplayConditionFactory
 
-   IDistanceToGlobeOverlayDisplayConditionFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IDistanceToGlobeOverlayDisplayConditionFactory`
 
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay...
 

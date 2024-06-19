@@ -3,7 +3,7 @@ VehicleProfileInertial
 
 .. py:class:: VehicleProfileInertial
 
-   IVehicleProfileInertial, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileInertial`, py:obj:`~IVehicleAttitudeProfile`
 
    Inertially fixed attitude profile: maintains a constant orientation of the body-fixed axes with respect to the inertial axes, using the selected coordinate type.
 

@@ -3,7 +3,7 @@ ProcedureFastTimeOptions
 
 .. py:class:: ProcedureFastTimeOptions
 
-   IProcedureFastTimeOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureFastTimeOptions`
 
    Class defining fast operations (without error or constraint checks) for time options for the current procedure.
 

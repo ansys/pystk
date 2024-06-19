@@ -3,7 +3,7 @@ VehicleGPSAlmanacPropertiesSEM
 
 .. py:class:: VehicleGPSAlmanacPropertiesSEM
 
-   IVehicleGPSAlmanacPropertiesSEM, IVehicleGPSAlmanacProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSAlmanacPropertiesSEM`, py:obj:`~IVehicleGPSAlmanacProperties`
 
    SEM almanac properties.
 

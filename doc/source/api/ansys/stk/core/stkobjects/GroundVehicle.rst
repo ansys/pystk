@@ -3,7 +3,7 @@ GroundVehicle
 
 .. py:class:: GroundVehicle
 
-   IGroundVehicle, IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IGroundVehicle`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IGreatArcVehicle`, py:obj:`~IProvideSpatialInfo`
 
    Ground vehicle object.
 

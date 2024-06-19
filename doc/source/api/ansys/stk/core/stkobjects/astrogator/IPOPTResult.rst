@@ -3,7 +3,7 @@ IPOPTResult
 
 .. py:class:: IPOPTResult
 
-   IIPOPTResult, SupportsDeleteCallback
+   Bases: py:obj:`~IIPOPTResult`
 
    Properties for objecvtive and constraints of a IPOPT profile.
 

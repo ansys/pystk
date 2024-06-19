@@ -55,14 +55,15 @@ Method detail
 
 
 
-.. py:method:: update(self, time:"IDate", nextTime:"IDate") -> bool
+.. py:method:: update(self, time: IDate, nextTime: IDate) -> bool
+    :canonical: ansys.stk.core.graphics.IProjectionStream.update
 
     When overridden in a derived class, updates the projection data associated with the projection stream at the specified time. When the Update method is called, the projection stream contains the current projection data...
 
     :Parameters:
 
-    **time** : :obj:`~"IDate"`
-    **nextTime** : :obj:`~"IDate"`
+    **time** : :obj:`~IDate`
+    **nextTime** : :obj:`~IDate`
 
     :Returns:
 

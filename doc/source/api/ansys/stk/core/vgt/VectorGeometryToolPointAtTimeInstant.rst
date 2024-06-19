@@ -3,7 +3,7 @@ VectorGeometryToolPointAtTimeInstant
 
 .. py:class:: VectorGeometryToolPointAtTimeInstant
 
-   IVectorGeometryToolPointAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointAtTimeInstant`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolPoint`
 
    Point fixed relative to reference system based on another point evaluated at specified time instant.
 

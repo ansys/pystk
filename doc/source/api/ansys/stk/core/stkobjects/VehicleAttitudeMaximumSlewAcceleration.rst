@@ -3,7 +3,7 @@ VehicleAttitudeMaximumSlewAcceleration
 
 .. py:class:: VehicleAttitudeMaximumSlewAcceleration
 
-   IVehicleAttitudeMaximumSlewAcceleration, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeMaximumSlewAcceleration`
 
    Define the maximum slew acceleration by entering maximum overall magnitude. You can constrain the slew acceleration in specific directions by selecting one or more Per Axis rates and defining separate maximum rates for those axes.
 

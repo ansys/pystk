@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryDropLines.position
-    :type: "IAgVeVODropLinePosItemCollection"
+    :type: IAgVeVODropLinePosItemCollection
 
     Get the list of droplines from the vehicle's current positions.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryDropLines.trajectory
-    :type: "IAgVeVODropLinePathItemCollection"
+    :type: IAgVeVODropLinePathItemCollection
 
     Get the list of droplines at intervals along the vehicle's trajectory.
 

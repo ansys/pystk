@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: selection
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.selection
-    :type: "VEHICLE_GPS_ELEM_SELECTION"
+    :type: VEHICLE_GPS_ELEM_SELECTION
 
     Whether Automatic Update is active.
 
 .. py:property:: switch_method
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.switch_method
-    :type: "VEHICLE_GPS_SWITCH_METHOD"
+    :type: VEHICLE_GPS_SWITCH_METHOD
 
     When to switch between element sets.
 
 .. py:property:: week_reference_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.week_reference_epoch
-    :type: "GPS_REFERENCE_WEEK"
+    :type: GPS_REFERENCE_WEEK
 
     Week reference epoch.
 

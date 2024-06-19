@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: assigned_target_object
     :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.assigned_target_object
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the assigned target for the pointable element.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.intervals
-    :type: "IAgIntervalCollection"
+    :type: IAgIntervalCollection
 
     Gets a collection of intervals during which an 3d model part points towards selected targets.
 

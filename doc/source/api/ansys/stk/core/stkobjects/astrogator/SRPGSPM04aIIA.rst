@@ -3,7 +3,7 @@ SRPGSPM04aIIA
 
 .. py:class:: SRPGSPM04aIIA
 
-   ISRPGSPM04aIIA, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPGSPM04aIIA`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    GSPM04aIIA SRP propagator function.
 

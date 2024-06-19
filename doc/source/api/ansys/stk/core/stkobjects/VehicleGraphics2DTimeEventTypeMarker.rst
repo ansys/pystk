@@ -3,7 +3,7 @@ VehicleGraphics2DTimeEventTypeMarker
 
 .. py:class:: VehicleGraphics2DTimeEventTypeMarker
 
-   IVehicleGraphics2DTimeEventType, IVehicleGraphics2DTimeEventTypeMarker, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DTimeEventType`, py:obj:`~IVehicleGraphics2DTimeEventTypeMarker`
 
    2D Graphics time event: marker type.
 

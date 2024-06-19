@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IDataProviderInfo"
+.. py:method:: item(self, indexOrName: typing.Any) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.IDataProviders.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderInfo"`
+        :obj:`~IDataProviderInfo`
 
 
-.. py:method:: contains(self, dataProviderName:str) -> bool
+.. py:method:: contains(self, dataProviderName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IDataProviders.contains
 
     Determine whether the collection contains a specific data provider.
 
@@ -92,7 +94,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IDataProviderInfo"
+.. py:method:: get_item_by_index(self, index: int) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.IDataProviders.get_item_by_index
 
     Retrieve a data provider from the collection by index.
 
@@ -102,9 +105,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderInfo"`
+        :obj:`~IDataProviderInfo`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IDataProviderInfo"
+.. py:method:: get_item_by_name(self, name: str) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.IDataProviders.get_item_by_name
 
     Retrieve a data provider from the collection by name.
 
@@ -114,5 +118,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderInfo"`
+        :obj:`~IDataProviderInfo`
 

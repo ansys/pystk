@@ -81,7 +81,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IDataProviderResultDataSet"
+.. py:method:: item(self, index: int) -> IDataProviderResultDataSet
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -91,10 +92,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResultDataSet"`
+        :obj:`~IDataProviderResultDataSet`
 
 
-.. py:method:: get_data_set_by_name(self, dataSetName:str) -> "IDataProviderResultDataSet"
+.. py:method:: get_data_set_by_name(self, dataSetName: str) -> IDataProviderResultDataSet
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.get_data_set_by_name
 
     Return the element, given the name.
 
@@ -104,10 +106,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResultDataSet"`
+        :obj:`~IDataProviderResultDataSet`
 
 
-.. py:method:: get_row(self, index:int) -> list
+.. py:method:: get_row(self, index: int) -> list
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.get_row
 
     Return the specified row.
 
@@ -120,6 +123,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.to_array
 
     Return the entire dataset collection in row format.
 

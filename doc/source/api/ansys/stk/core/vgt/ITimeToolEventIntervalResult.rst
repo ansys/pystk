@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: interval
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalResult.interval
-    :type: "IAgCrdnInterval"
+    :type: IAgCrdnInterval
 
     An interval.
 

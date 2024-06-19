@@ -3,7 +3,7 @@ DAFIFHelipad
 
 .. py:class:: DAFIFHelipad
 
-   IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IDAFIFItem`, py:obj:`~ICatalogVTOLPoint`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining an DAFIF Helipad.
 

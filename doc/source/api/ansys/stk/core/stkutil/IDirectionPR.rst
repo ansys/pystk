@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkutil.IDirectionPR.sequence
-    :type: "PR_SEQUENCE"
+    :type: PR_SEQUENCE
 
     PR direction sequence. Must be set before Pitch,Roll values. Otherwise the current Pitch,Roll values will be converted to the Sequence specified.
 

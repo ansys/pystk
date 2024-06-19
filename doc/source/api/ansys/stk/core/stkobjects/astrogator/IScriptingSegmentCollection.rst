@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -83,7 +83,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IScriptingSegment"
+.. py:method:: item(self, indexOrName: typing.Any) -> IScriptingSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.item
 
     Allow you to iterate through the collection.
 
@@ -93,9 +94,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingSegment"`
+        :obj:`~IScriptingSegment`
 
-.. py:method:: add(self, componentName:str) -> "IScriptingSegment"
+.. py:method:: add(self, componentName: str) -> IScriptingSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.add
 
     Add an object property to the collection.
 
@@ -105,9 +107,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingSegment"`
+        :obj:`~IScriptingSegment`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.remove
 
     Remove a object property.
 
@@ -120,6 +123,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.remove_all
 
     Remove all object properties.
 
@@ -130,7 +134,8 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.cut
 
     Copy the object property into the clipboard and removes the object property from the list.
 
@@ -142,27 +147,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IScriptingSegment"
+.. py:method:: paste(self) -> IScriptingSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.paste
 
     Pastes the object property from the clipboard and inserts into the list.
 
     :Returns:
 
-        :obj:`~"IScriptingSegment"`
+        :obj:`~IScriptingSegment`
 
-.. py:method:: insert_copy(self, objProperty:"IScriptingSegment") -> "IScriptingSegment"
+.. py:method:: insert_copy(self, objProperty: IScriptingSegment) -> IScriptingSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.insert_copy
 
     Copy the object property and inserts the copy into the list.
 
     :Parameters:
 
-    **objProperty** : :obj:`~"IScriptingSegment"`
+    **objProperty** : :obj:`~IScriptingSegment`
 
     :Returns:
 
-        :obj:`~"IScriptingSegment"`
+        :obj:`~IScriptingSegment`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IScriptingSegment"
+.. py:method:: get_item_by_index(self, index: int) -> IScriptingSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.get_item_by_index
 
     Retrieve a scripting segment in the collection by index.
 
@@ -172,9 +180,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingSegment"`
+        :obj:`~IScriptingSegment`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IScriptingSegment"
+.. py:method:: get_item_by_name(self, name: str) -> IScriptingSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.get_item_by_name
 
     Retrieve a scripting segment in the collection by name.
 
@@ -184,5 +193,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingSegment"`
+        :obj:`~IScriptingSegment`
 

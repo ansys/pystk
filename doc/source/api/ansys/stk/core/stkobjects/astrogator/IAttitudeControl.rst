@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: body_axis
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.body_axis
-    :type: "BODY_AXIS"
+    :type: BODY_AXIS
 
     Whether the engine acceleration (the direction opposite the engine's exhaust) is aligned with positive or negative X, Y or Z body axis.
 
 .. py:property:: constraint_sign
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.constraint_sign
-    :type: "CONSTRAINT_SIGN"
+    :type: CONSTRAINT_SIGN
 
     Whether the Constraint Vector is positive or negative.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: custom_function
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.custom_function
-    :type: "CUSTOM_FUNCTION"
+    :type: CUSTOM_FUNCTION
 
     Gets or sets the attitude definition to use for other STK functions.
 

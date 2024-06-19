@@ -40,31 +40,31 @@ Property detail
 
 .. py:property:: color_options
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.color_options
-    :type: "IAgFmGfxColorOptions"
+    :type: IAgFmGfxColorOptions
 
     Color options for contour legend.
 
 .. py:property:: text_options
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.text_options
-    :type: "IAgFmGfxTextOptions"
+    :type: IAgFmGfxTextOptions
 
     Text options for contour legend.
 
 .. py:property:: range_color_options
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.range_color_options
-    :type: "IAgFmGfxRangeColorOptions"
+    :type: IAgFmGfxRangeColorOptions
 
     Range color options for contour legend.
 
 .. py:property:: graphics_2d_window
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.graphics_2d_window
-    :type: "IAgFmGfxLegendWindow"
+    :type: IAgFmGfxLegendWindow
 
     Get the 2D graphics window on which the legend is to display.
 
 .. py:property:: graphics_3d_window
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.graphics_3d_window
-    :type: "IAgFmVOLegendWindow"
+    :type: IAgFmVOLegendWindow
 
     Get the 3D graphics window on which the legend is to display.
 

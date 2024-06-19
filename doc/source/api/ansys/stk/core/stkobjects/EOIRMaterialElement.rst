@@ -3,7 +3,7 @@ EOIRMaterialElement
 
 .. py:class:: EOIRMaterialElement
 
-   IEOIRMaterialElement, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRMaterialElement`
 
    AgEOIRMaterialElement class.
 

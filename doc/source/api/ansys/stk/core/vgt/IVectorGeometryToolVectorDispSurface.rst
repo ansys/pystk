@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: origin_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.origin_point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     An origin point.
 
 .. py:property:: destination_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.destination_point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     Destination point.
 

@@ -3,7 +3,7 @@ VehicleHPOPCentralBodyGravity
 
 .. py:class:: VehicleHPOPCentralBodyGravity
 
-   IVehicleHPOPCentralBodyGravity, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleHPOPCentralBodyGravity`
 
    Class defining Central Body Gravity options for the High Precision Orbit Propagator (HPOP).
 

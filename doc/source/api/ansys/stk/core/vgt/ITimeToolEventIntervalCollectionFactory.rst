@@ -44,7 +44,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name:str, description:str, type:"CRDN_EVENT_INTERVAL_COLLECTION_TYPE") -> "ITimeToolEventIntervalCollection"
+.. py:method:: create(self, name: str, description: str, type: CRDN_EVENT_INTERVAL_COLLECTION_TYPE) -> ITimeToolEventIntervalCollection
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.create
 
     Create and register an event interval collection using specified name, description, and type.
 
@@ -52,13 +53,14 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~"CRDN_EVENT_INTERVAL_COLLECTION_TYPE"`
+    **type** : :obj:`~CRDN_EVENT_INTERVAL_COLLECTION_TYPE`
 
     :Returns:
 
-        :obj:`~"ITimeToolEventIntervalCollection"`
+        :obj:`~ITimeToolEventIntervalCollection`
 
-.. py:method:: create_event_interval_collection_lighting(self, name:str, description:str) -> "ITimeToolEventIntervalCollection"
+.. py:method:: create_event_interval_collection_lighting(self, name: str, description: str) -> ITimeToolEventIntervalCollection
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.create_event_interval_collection_lighting
 
     Create an event interval collection defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
 
@@ -69,9 +71,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEventIntervalCollection"`
+        :obj:`~ITimeToolEventIntervalCollection`
 
-.. py:method:: create_event_interval_collection_signaled(self, name:str, description:str) -> "ITimeToolEventIntervalCollection"
+.. py:method:: create_event_interval_collection_signaled(self, name: str, description: str) -> ITimeToolEventIntervalCollection
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.create_event_interval_collection_signaled
 
     Create an event interval collection recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations.
 
@@ -82,21 +85,23 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEventIntervalCollection"`
+        :obj:`~ITimeToolEventIntervalCollection`
 
-.. py:method:: is_type_supported(self, eType:"CRDN_EVENT_INTERVAL_COLLECTION_TYPE") -> bool
+.. py:method:: is_type_supported(self, eType: CRDN_EVENT_INTERVAL_COLLECTION_TYPE) -> bool
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~"CRDN_EVENT_INTERVAL_COLLECTION_TYPE"`
+    **eType** : :obj:`~CRDN_EVENT_INTERVAL_COLLECTION_TYPE`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: create_event_interval_collection_satisfaction(self, name:str, description:str) -> "ITimeToolEventIntervalCollection"
+.. py:method:: create_event_interval_collection_satisfaction(self, name: str, description: str) -> ITimeToolEventIntervalCollection
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.create_event_interval_collection_satisfaction
 
     Create an event interval collection containing intervals during which condition set is satisfied.
 
@@ -107,5 +112,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEventIntervalCollection"`
+        :obj:`~ITimeToolEventIntervalCollection`
 

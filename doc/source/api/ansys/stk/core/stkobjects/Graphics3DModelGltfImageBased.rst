@@ -3,7 +3,7 @@ Graphics3DModelGltfImageBased
 
 .. py:class:: Graphics3DModelGltfImageBased
 
-   IGraphics3DModelGltfImageBased, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DModelGltfImageBased`
 
    Class defining glTF Reflection Settings.
 

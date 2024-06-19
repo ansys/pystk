@@ -3,7 +3,7 @@ DirectionProviderObject
 
 .. py:class:: DirectionProviderObject
 
-   IDirectionProviderObject, IDirectionProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IDirectionProviderObject`, py:obj:`~IDirectionProvider`
 
    Class defining an object direction provider.
 

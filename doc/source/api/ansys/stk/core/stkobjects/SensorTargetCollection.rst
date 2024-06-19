@@ -3,7 +3,7 @@ SensorTargetCollection
 
 .. py:class:: SensorTargetCollection
 
-   ISensorTargetCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorTargetCollection`
 
    Class defining the target collection for a target-pointing Sensor.
 

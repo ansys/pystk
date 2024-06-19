@@ -3,7 +3,7 @@ ProfileScriptingTool
 
 .. py:class:: ProfileScriptingTool
 
-   IProfileScriptingTool, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileScriptingTool`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Scripting Tool profile.
 

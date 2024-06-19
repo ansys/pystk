@@ -3,7 +3,7 @@ KmlDocumentCollection
 
 .. py:class:: KmlDocumentCollection
 
-   IKmlDocumentCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IKmlDocumentCollection`
 
    A collection of KML documents.
 

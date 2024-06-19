@@ -3,7 +3,7 @@ AGIRoamImageGlobeOverlay
 
 .. py:class:: AGIRoamImageGlobeOverlay
 
-   IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback
+   Bases: py:obj:`~IAGIRoamImageGlobeOverlay`, py:obj:`~IGlobeImageOverlay`, py:obj:`~IGlobeOverlay`
 
    A globe image overlay for handling ROAM (TXM/TXB) files.
 

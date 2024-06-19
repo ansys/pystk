@@ -3,7 +3,7 @@ AGIProcessedImageGlobeOverlayFactory
 
 .. py:class:: AGIProcessedImageGlobeOverlayFactory
 
-   IAGIProcessedImageGlobeOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IAGIProcessedImageGlobeOverlayFactory`
 
    A globe image overlay for handling AGI Processed Image (PDTTX) files.
 

@@ -74,7 +74,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "ISensorTarget"
+.. py:method:: item(self, index: int) -> ISensorTarget
+    :canonical: ansys.stk.core.stkobjects.ISensorTargetCollection.item
 
     Given an index, returns an IAgSnTarget interface.
 
@@ -84,9 +85,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorTarget"`
+        :obj:`~ISensorTarget`
 
-.. py:method:: add(self, name:str) -> None
+.. py:method:: add(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorTargetCollection.add
 
     Add a target.
 
@@ -98,7 +100,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, index:int) -> None
+.. py:method:: remove(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorTargetCollection.remove
 
     Remove a target given an index.
 
@@ -110,7 +113,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_target(self, name:str) -> None
+.. py:method:: remove_target(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorTargetCollection.remove_target
 
     Remove a target given the target's name.
 
@@ -123,6 +127,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorTargetCollection.remove_all
 
     Remove all targets in the collection.
 
@@ -130,25 +135,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_object(self, pObject:"IStkObject") -> None
+.. py:method:: add_object(self, pObject: IStkObject) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorTargetCollection.add_object
 
     Add a target to the collection.
 
     :Parameters:
 
-    **pObject** : :obj:`~"IStkObject"`
+    **pObject** : :obj:`~IStkObject`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_object(self, pObject:"IStkObject") -> None
+.. py:method:: remove_object(self, pObject: IStkObject) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorTargetCollection.remove_object
 
     Remove a target from the collection.
 
     :Parameters:
 
-    **pObject** : :obj:`~"IStkObject"`
+    **pObject** : :obj:`~IStkObject`
 
     :Returns:
 

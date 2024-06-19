@@ -3,7 +3,7 @@ AccessTimePeriod
 
 .. py:class:: AccessTimePeriod
 
-   IAccessTimePeriod, ITimePeriod, IAccessInterval, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessTimePeriod`, py:obj:`~ITimePeriod`, py:obj:`~IAccessInterval`
 
    Allow configuring the object's access interval.
 

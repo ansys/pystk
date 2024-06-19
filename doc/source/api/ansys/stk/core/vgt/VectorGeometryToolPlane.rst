@@ -3,7 +3,7 @@ VectorGeometryToolPlane
 
 .. py:class:: VectorGeometryToolPlane
 
-   IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Base class for VGT axes.
 

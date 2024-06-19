@@ -3,7 +3,7 @@ TimeToolEventIntervalListFiltered
 
 .. py:class:: TimeToolEventIntervalListFiltered
 
-   ITimeToolEventIntervalListFiltered, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalListFiltered`, py:obj:`~ITimeToolEventIntervalList`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined by filtering intervals from original interval list using specified filtering method.
 

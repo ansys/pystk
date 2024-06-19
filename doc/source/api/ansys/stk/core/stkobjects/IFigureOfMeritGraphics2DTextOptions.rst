@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: floating_point_format
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions.floating_point_format
-    :type: "FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT"
+    :type: FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT
 
     Text format for floating point numbers.
 

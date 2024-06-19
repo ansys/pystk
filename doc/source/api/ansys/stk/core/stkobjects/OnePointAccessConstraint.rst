@@ -3,7 +3,7 @@ OnePointAccessConstraint
 
 .. py:class:: OnePointAccessConstraint
 
-   IOnePointAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IOnePointAccessConstraint`
 
    One Point Access Result.
 

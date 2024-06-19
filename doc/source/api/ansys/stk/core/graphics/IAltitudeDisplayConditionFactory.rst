@@ -40,15 +40,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IAltitudeDisplayCondition"
+.. py:method:: initialize(self) -> IAltitudeDisplayCondition
+    :canonical: ansys.stk.core.graphics.IAltitudeDisplayConditionFactory.initialize
 
     Initialize a default altitude display condition. With this constructor, an object is always rendered regardless of the camera's altitude.
 
     :Returns:
 
-        :obj:`~"IAltitudeDisplayCondition"`
+        :obj:`~IAltitudeDisplayCondition`
 
-.. py:method:: initialize_with_altitudes(self, minimumAltitude:float, maximumAltitude:float) -> "IAltitudeDisplayCondition"
+.. py:method:: initialize_with_altitudes(self, minimumAltitude: float, maximumAltitude: float) -> IAltitudeDisplayCondition
+    :canonical: ansys.stk.core.graphics.IAltitudeDisplayConditionFactory.initialize_with_altitudes
 
     Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]...
 
@@ -59,9 +61,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAltitudeDisplayCondition"`
+        :obj:`~IAltitudeDisplayCondition`
 
-.. py:method:: initialize_with_central_body_and_altitudes(self, centralBody:str, minimumAltitude:float, maximumAltitude:float) -> "IAltitudeDisplayCondition"
+.. py:method:: initialize_with_central_body_and_altitudes(self, centralBody: str, minimumAltitude: float, maximumAltitude: float) -> IAltitudeDisplayCondition
+    :canonical: ansys.stk.core.graphics.IAltitudeDisplayConditionFactory.initialize_with_central_body_and_altitudes
 
     Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]...
 
@@ -73,5 +76,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAltitudeDisplayCondition"`
+        :obj:`~IAltitudeDisplayCondition`
 

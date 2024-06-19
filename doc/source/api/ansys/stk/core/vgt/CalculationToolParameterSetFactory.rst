@@ -3,7 +3,7 @@ CalculationToolParameterSetFactory
 
 .. py:class:: CalculationToolParameterSetFactory
 
-   ICalculationToolParameterSetFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolParameterSetFactory`
 
    The factory is used to create instances of available parameter set types.
 

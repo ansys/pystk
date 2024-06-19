@@ -3,7 +3,7 @@ StateCalcRadOfApoapsis
 
 .. py:class:: StateCalcRadOfApoapsis
 
-   IComponentInfo, ICloneable, IStateCalcRadOfApoapsis, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRadOfApoapsis`
 
    RadiusOfApoapsis Calc objects.
 

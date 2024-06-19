@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallPointLocateInSystemResult
 
 .. py:class:: AnalysisWorkbenchMethodCallPointLocateInSystemResult
 
-   IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemResult, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolPointLocateInSystemResult`
 
    Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method.
 

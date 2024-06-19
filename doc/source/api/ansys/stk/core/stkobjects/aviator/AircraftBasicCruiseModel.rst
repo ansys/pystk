@@ -3,7 +3,7 @@ AircraftBasicCruiseModel
 
 .. py:class:: AircraftBasicCruiseModel
 
-   IAircraftBasicCruiseModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftBasicCruiseModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the basic cruise performance model for an Aviator aircraft.
 

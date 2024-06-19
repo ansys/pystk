@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: satisfaction_crossing
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.satisfaction_crossing
-    :type: "CRDN_SATISFACTION_CROSSING"
+    :type: CRDN_SATISFACTION_CROSSING
 
     The direction of interest for satisfaction crossing.
 
 .. py:property:: condition
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.condition
-    :type: "IAgCrdnCondition"
+    :type: IAgCrdnCondition
 
     The condition component.
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.custom_time_limits
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     Specify the interval list within which satisfaction crossing times are sought. The default is set to overall availability of host object. The time limits will be used if UseCustomTimeLimits is set to true.
 
@@ -66,19 +66,19 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.save_data_option
-    :type: "CRDN_SAVE_DATA_OPTION"
+    :type: CRDN_SAVE_DATA_OPTION
 
     Determine if computed satisfaction crossing times are saved/loaded, or recomputed on load if necessary.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.sampling
-    :type: "IAgCrdnSampling"
+    :type: IAgCrdnSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.convergence
-    :type: "IAgCrdnConverge"
+    :type: IAgCrdnConverge
 
     The Convergence definition, which uses time tolerance to determine when crossing times are found.
 

@@ -3,7 +3,7 @@ VectorGeometryToolSystemOnSurface
 
 .. py:class:: VectorGeometryToolSystemOnSurface
 
-   IVectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolSystemOnSurface`, py:obj:`~IVectorGeometryToolSystem`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin.
 

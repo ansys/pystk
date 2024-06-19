@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IGridSearchResult"
+.. py:method:: item(self, index: int) -> IGridSearchResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGridSearchResult"`
+        :obj:`~IGridSearchResult`
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath:str, resultPath:str) -> "IGridSearchResult"
+.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> IGridSearchResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection.get_result_by_paths
 
     Return the result specified by the object/result path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGridSearchResult"`
+        :obj:`~IGridSearchResult`
 

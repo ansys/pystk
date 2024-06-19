@@ -3,7 +3,7 @@ MtoGraphics
 
 .. py:class:: MtoGraphics
 
-   IMtoGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics`
 
    MTO 2D Graphics.
 

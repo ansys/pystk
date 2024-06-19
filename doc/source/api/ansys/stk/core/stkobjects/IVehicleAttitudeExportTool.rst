@@ -54,37 +54,37 @@ Property detail
 
 .. py:property:: coordinate_axes_type
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.coordinate_axes_type
-    :type: "ATTITUDE_COORDINATE_AXES"
+    :type: ATTITUDE_COORDINATE_AXES
 
     Get the coordinate axes to be used in the file.
 
 .. py:property:: coordinate_axes
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.coordinate_axes
-    :type: "IAgVeCoordinateAxes"
+    :type: IAgVeCoordinateAxes
 
     Selects a custom coordinate axes.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.time_period
-    :type: "IAgExportToolTimePeriod"
+    :type: IAgExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 .. py:property:: include
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.include
-    :type: "ATTITUDE_INCLUDE"
+    :type: ATTITUDE_INCLUDE
 
     Gets or sets the details to include in the data file.
 
 .. py:property:: version_format
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.version_format
-    :type: "EXPORT_TOOL_VERSION_FORMAT"
+    :type: EXPORT_TOOL_VERSION_FORMAT
 
     Provides the option to generate files compatible with prior versions of STK.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.step_size
-    :type: "IAgExportToolStepSize"
+    :type: IAgExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 
@@ -105,13 +105,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_coordinate_axes_type(self, coordinateAxes:"ATTITUDE_COORDINATE_AXES") -> None
+.. py:method:: set_coordinate_axes_type(self, coordinateAxes: ATTITUDE_COORDINATE_AXES) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.set_coordinate_axes_type
 
     Select the coordinate axes to be used in the file.
 
     :Parameters:
 
-    **coordinateAxes** : :obj:`~"ATTITUDE_COORDINATE_AXES"`
+    **coordinateAxes** : :obj:`~ATTITUDE_COORDINATE_AXES`
 
     :Returns:
 
@@ -126,7 +127,8 @@ Method detail
 
 
 
-.. py:method:: export(self, fileName:str) -> None
+.. py:method:: export(self, fileName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.export
 
     Export the Attitude file.
 

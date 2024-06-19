@@ -3,7 +3,7 @@ DataObject
 
 .. py:class:: DataObject
 
-   IDataObject, SupportsDeleteCallback
+   Bases: py:obj:`~IDataObject`
 
    Data Object for OLE drag & drop operations.
 

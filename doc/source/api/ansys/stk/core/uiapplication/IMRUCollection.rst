@@ -60,7 +60,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:typing.Any) -> str
+.. py:method:: item(self, index: typing.Any) -> str
+    :canonical: ansys.stk.core.uiapplication.IMRUCollection.item
 
     Get the MRU at the specified index.
 

@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: primitive
     :canonical: ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition.primitive
-    :type: "IAgStkGraphicsPrimitive"
+    :type: IAgStkGraphicsPrimitive
 
     Gets or sets the primitive associated with this instance.
 

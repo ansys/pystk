@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataMinMax
 
 .. py:class:: FigureOfMeritDefinitionDataMinMax
 
-   IFigureOfMeritDefinitionDataMinMax, IFigureOfMeritDefinitionData, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionDataMinMax`, py:obj:`~IFigureOfMeritDefinitionData`
 
    Minimum and maximum data values for navigation accuracy.
 

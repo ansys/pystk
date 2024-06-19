@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: source_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFixedAtEpoch.source_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a source axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFixedAtEpoch.reference_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a reference axes.
 

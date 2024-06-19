@@ -3,7 +3,7 @@ VehiclePropDefinitionExportTool
 
 .. py:class:: VehiclePropDefinitionExportTool
 
-   IVehiclePropDefinitionExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropDefinitionExportTool`
 
    AgVeExternalFileAttitude Class.
 

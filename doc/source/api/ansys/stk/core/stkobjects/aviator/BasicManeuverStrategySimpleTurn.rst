@@ -3,7 +3,7 @@ BasicManeuverStrategySimpleTurn
 
 .. py:class:: BasicManeuverStrategySimpleTurn
 
-   IBasicManeuverStrategySimpleTurn, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategySimpleTurn`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the simple turn strategy for a basic maneuver procedure.
 

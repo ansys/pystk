@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: original_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.original_intervals
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The original interval list.
 
 .. py:property:: filter_factory
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.filter_factory
-    :type: "IAgCrdnPruneFilterFactory"
+    :type: IAgCrdnPruneFilterFactory
 
     Get the prune filter factory.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.filter
-    :type: "IAgCrdnPruneFilter"
+    :type: IAgCrdnPruneFilter
 
     The pruning filter.
 

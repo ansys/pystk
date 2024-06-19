@@ -3,7 +3,7 @@ ModulatorModelWidebandUniform
 
 .. py:class:: ModulatorModelWidebandUniform
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a wideband uniform modulator model.
 

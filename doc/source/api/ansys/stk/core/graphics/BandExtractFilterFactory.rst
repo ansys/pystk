@@ -3,7 +3,7 @@ BandExtractFilterFactory
 
 .. py:class:: BandExtractFilterFactory
 
-   IBandExtractFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IBandExtractFilterFactory`
 
    Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted.
 

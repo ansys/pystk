@@ -3,7 +3,7 @@ CalculationToolScalarCustom
 
 .. py:class:: CalculationToolScalarCustom
 
-   ICalculationToolScalarCustom, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarCustom`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
 

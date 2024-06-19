@@ -3,7 +3,7 @@ BurnoutGeodetic
 
 .. py:class:: BurnoutGeodetic
 
-   IBurnoutGeodetic, IBurnout, SupportsDeleteCallback
+   Bases: py:obj:`~IBurnoutGeodetic`, py:obj:`~IBurnout`
 
    The geodetic burnout point.
 

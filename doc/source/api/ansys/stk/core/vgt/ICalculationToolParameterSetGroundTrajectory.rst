@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetGroundTrajectory.location
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     Get the point for which ground trajectory representations are computed.
 

@@ -51,31 +51,31 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.type
-    :type: "CRDN_EVENT_TYPE"
+    :type: CRDN_EVENT_TYPE
 
     Return the type of time instant.
 
 .. py:property:: today
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.today
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     Return time instant that corresponds to today's GMT midnight.
 
 .. py:property:: tomorrow
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.tomorrow
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     Return time instant that corresponds to tomorrow's GMT midnight.
 
 .. py:property:: noon_today
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.noon_today
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     Return time instant that corresponds to today's GMT noon.
 
 .. py:property:: noon_tomorrow
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.noon_tomorrow
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     Return time instant that corresponds to tomorrow's GMT noon.
 
@@ -88,15 +88,17 @@ Method detail
 
 
 
-.. py:method:: find_occurrence(self) -> "ITimeToolEventFindOccurrenceResult"
+.. py:method:: find_occurrence(self) -> ITimeToolEventFindOccurrenceResult
+    :canonical: ansys.stk.core.vgt.ITimeToolEvent.find_occurrence
 
     Return computed time instance if it occurs.
 
     :Returns:
 
-        :obj:`~"ITimeToolEventFindOccurrenceResult"`
+        :obj:`~ITimeToolEventFindOccurrenceResult`
 
-.. py:method:: occurs_before(self, epoch:typing.Any) -> bool
+.. py:method:: occurs_before(self, epoch: typing.Any) -> bool
+    :canonical: ansys.stk.core.vgt.ITimeToolEvent.occurs_before
 
     Return true if computed time instance occurs before or at specified time, return false otherwise.
 

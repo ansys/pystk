@@ -3,7 +3,7 @@ FlipFilterFactory
 
 .. py:class:: FlipFilterFactory
 
-   IFlipFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IFlipFilterFactory`
 
    Flips the source raster along the given flip axis.
 

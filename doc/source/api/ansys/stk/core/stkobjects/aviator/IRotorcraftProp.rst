@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: powerplant_type
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftProp.powerplant_type
-    :type: "ROTORCRAFT_POWERPLANT_TYPE"
+    :type: ROTORCRAFT_POWERPLANT_TYPE
 
     Gets or sets the rotorcraft's powerplant type.
 

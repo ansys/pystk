@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ISequenceFilter"
+.. py:method:: initialize(self) -> ISequenceFilter
+    :canonical: ansys.stk.core.graphics.ISequenceFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"ISequenceFilter"`
+        :obj:`~ISequenceFilter`
 

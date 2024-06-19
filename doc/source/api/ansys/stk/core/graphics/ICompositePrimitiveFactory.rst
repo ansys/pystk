@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ICompositePrimitive"
+.. py:method:: initialize(self) -> ICompositePrimitive
+    :canonical: ansys.stk.core.graphics.ICompositePrimitiveFactory.initialize
 
     Initialize a default composite primitive.
 
     :Returns:
 
-        :obj:`~"ICompositePrimitive"`
+        :obj:`~ICompositePrimitive`
 

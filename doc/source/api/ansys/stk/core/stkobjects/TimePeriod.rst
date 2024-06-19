@@ -3,7 +3,7 @@ TimePeriod
 
 .. py:class:: TimePeriod
 
-   IAccessInterval, ITimePeriod, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessInterval`, py:obj:`~ITimePeriod`
 
    Provide methods and properties to configure start and stop times.
 

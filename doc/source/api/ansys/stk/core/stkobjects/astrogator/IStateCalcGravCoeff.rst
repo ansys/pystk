@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: coefficient_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.coefficient_type
-    :type: "GRAV_COEFF_COEFFICIENT_TYPE"
+    :type: GRAV_COEFF_COEFFICIENT_TYPE
 
     Coefficient type.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: normalization_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.normalization_type
-    :type: "GRAV_COEFF_NORMALIZATION_TYPE"
+    :type: GRAV_COEFF_NORMALIZATION_TYPE
 
     Normalization type.
 

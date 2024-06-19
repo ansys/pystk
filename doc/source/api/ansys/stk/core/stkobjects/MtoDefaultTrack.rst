@@ -3,7 +3,7 @@ MtoDefaultTrack
 
 .. py:class:: MtoDefaultTrack
 
-   IMtoDefaultTrack, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoDefaultTrack`
 
    Default MTO track.
 

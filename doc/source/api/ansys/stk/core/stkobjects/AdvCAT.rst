@@ -3,7 +3,7 @@ AdvCAT
 
 .. py:class:: AdvCAT
 
-   IAdvCAT, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvCAT`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    AdvCAT properties.
 

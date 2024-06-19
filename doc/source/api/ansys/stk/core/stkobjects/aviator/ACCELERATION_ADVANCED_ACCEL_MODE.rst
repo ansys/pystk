@@ -11,6 +11,21 @@ ACCELERATION_ADVANCED_ACCEL_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ACCEL_MODE_MAX_ACCEL`
+              - Max acceleration.
+
+            * - :py:attr:`~ACCEL_MODE_OVERRIDE_ACCEL`
+              - Manually override the acceleration.
+
+
 Import detail
 -------------
 

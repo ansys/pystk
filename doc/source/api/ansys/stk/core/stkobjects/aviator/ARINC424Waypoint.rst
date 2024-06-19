@@ -3,7 +3,7 @@ ARINC424Waypoint
 
 .. py:class:: ARINC424Waypoint
 
-   IARINC424Item, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IARINC424Item`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining an ARINC424 Waypoint.
 

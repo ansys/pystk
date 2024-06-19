@@ -3,7 +3,7 @@ VehicleProfileYawToNadir
 
 .. py:class:: VehicleProfileYawToNadir
 
-   IVehicleProfileYawToNadir, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileYawToNadir`, py:obj:`~IVehicleAttitudeProfile`
 
    A profile useful for satellites with highly elliptical orbits.
 

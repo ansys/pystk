@@ -77,7 +77,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IScreenOverlay"
+.. py:method:: item(self, index: int) -> IScreenOverlay
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.item
 
     Get the overlay at the specified index.
 
@@ -87,34 +88,37 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScreenOverlay"`
+        :obj:`~IScreenOverlay`
 
 
-.. py:method:: contains(self, item:"IScreenOverlay") -> bool
+.. py:method:: contains(self, item: IScreenOverlay) -> bool
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.contains
 
     Determine whether the collection contains a specific overlay.
 
     :Parameters:
 
-    **item** : :obj:`~"IScreenOverlay"`
+    **item** : :obj:`~IScreenOverlay`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: remove(self, item:"IScreenOverlay") -> bool
+.. py:method:: remove(self, item: IScreenOverlay) -> bool
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.remove
 
     Remove the first occurrence of a specific overlay from the collection.
 
     :Parameters:
 
-    **item** : :obj:`~"IScreenOverlay"`
+    **item** : :obj:`~IScreenOverlay`
 
     :Returns:
 
         :obj:`~bool`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.clear
 
     Remove all overlays from the collection.
 
@@ -122,13 +126,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, item:"IScreenOverlay") -> None
+.. py:method:: add(self, item: IScreenOverlay) -> None
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.add
 
     Add an overlay to the collection.
 
     :Parameters:
 
-    **item** : :obj:`~"IScreenOverlay"`
+    **item** : :obj:`~IScreenOverlay`
 
     :Returns:
 

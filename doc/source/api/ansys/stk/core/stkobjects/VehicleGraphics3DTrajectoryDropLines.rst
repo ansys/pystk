@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectoryDropLines
 
 .. py:class:: VehicleGraphics3DTrajectoryDropLines
 
-   IVehicleGraphics3DTrajectoryDropLines, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DTrajectoryDropLines`
 
    Droplines for launch vehicles and missiles.
 

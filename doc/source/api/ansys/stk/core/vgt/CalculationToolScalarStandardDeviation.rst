@@ -3,7 +3,7 @@ CalculationToolScalarStandardDeviation
 
 .. py:class:: CalculationToolScalarStandardDeviation
 
-   ICalculationToolScalarStandardDeviation, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarStandardDeviation`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
 

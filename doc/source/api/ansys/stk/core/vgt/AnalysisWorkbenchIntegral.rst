@@ -3,7 +3,7 @@ AnalysisWorkbenchIntegral
 
 .. py:class:: AnalysisWorkbenchIntegral
 
-   IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchIntegral`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Represents a base class for integral definitions.
 

@@ -11,6 +11,27 @@ CRDN_VOLUME_OVER_TIME_DURATION_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~STATIC`
+              - Spatial condition over time duration type Static.
+
+            * - :py:attr:`~CUMULATIVE_TO_CURRENT`
+              - Spatial condition over time duration type CumulativeToCurrent.
+
+            * - :py:attr:`~CUMULATIVE_FROM_CURRENT`
+              - Spatial condition over time duration type CumulativeFromCurrent.
+
+            * - :py:attr:`~SLIDING_WINDOW`
+              - Spatial condition over time duration type SlidingWindow.
+
+
 Import detail
 -------------
 

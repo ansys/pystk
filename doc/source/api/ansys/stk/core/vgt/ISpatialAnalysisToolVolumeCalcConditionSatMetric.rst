@@ -45,31 +45,31 @@ Property detail
 
 .. py:property:: spatial_condition
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.spatial_condition
-    :type: "IAgCrdnVolume"
+    :type: IAgCrdnVolume
 
     A spatial condition for satisfaction metric.
 
 .. py:property:: satisfaction_metric
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.satisfaction_metric
-    :type: "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE"
+    :type: CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE
 
     Spatial condition satisfaction metric types.
 
 .. py:property:: accumulation_type
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.accumulation_type
-    :type: "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE"
+    :type: CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE
 
     Spatial condition satisfaction accumulation types.
 
 .. py:property:: duration_type
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.duration_type
-    :type: "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE"
+    :type: CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE
 
     Spatial condition satisfaction duration types.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.filter
-    :type: "CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE"
+    :type: CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE
 
     Spatial condition satisfaction duration types.
 

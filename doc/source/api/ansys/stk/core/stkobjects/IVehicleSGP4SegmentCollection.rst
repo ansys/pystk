@@ -70,13 +70,13 @@ Property detail
 
 .. py:property:: load_method_type
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.load_method_type
-    :type: "LOAD_METHOD_TYPE"
+    :type: LOAD_METHOD_TYPE
 
     File Load Type.
 
 .. py:property:: load_method
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.load_method
-    :type: "IAgVeSGP4LoadData"
+    :type: IAgVeSGP4LoadData
 
     File Load Data.
 
@@ -109,7 +109,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleSGP4Segment"
+.. py:method:: item(self, index: int) -> IVehicleSGP4Segment
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.item
 
     Get the item for the specified index.
 
@@ -119,23 +120,25 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleSGP4Segment"`
+        :obj:`~IVehicleSGP4Segment`
 
 
-.. py:method:: add_seg(self) -> "IVehicleSGP4Segment"
+.. py:method:: add_seg(self) -> IVehicleSGP4Segment
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.add_seg
 
     Add a default segment.
 
     :Returns:
 
-        :obj:`~"IVehicleSGP4Segment"`
+        :obj:`~IVehicleSGP4Segment`
 
 
 
 
 
 
-.. py:method:: remove_seg(self, index:int) -> None
+.. py:method:: remove_seg(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.remove_seg
 
     Remove a Segment given an index.
 
@@ -148,6 +151,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all_segs(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.remove_all_segs
 
     Remove all the segments in the collection.
 

@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: input_vector
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.input_vector
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.reference_axes
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     Axes used to resolve the vector's components.
 
 .. py:property:: component
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.component
-    :type: "VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE"
+    :type: VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE
 
     The component of the vector to return as the value of the scalar.
 

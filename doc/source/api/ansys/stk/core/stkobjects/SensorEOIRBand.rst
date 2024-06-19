@@ -3,7 +3,7 @@ SensorEOIRBand
 
 .. py:class:: SensorEOIRBand
 
-   ISensorEOIRBand, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorEOIRBand`
 
    Class defining an EOIR band.
 

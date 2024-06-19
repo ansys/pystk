@@ -3,7 +3,7 @@ ManeuverOptimalFinitePathBoundaryConditions
 
 .. py:class:: ManeuverOptimalFinitePathBoundaryConditions
 
-   IManeuverOptimalFinitePathBoundaryConditions, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverOptimalFinitePathBoundaryConditions`
 
    Properties of path boundary conditions for optimal finite maneuver.
 

@@ -3,7 +3,7 @@ BeamformerScript
 
 .. py:class:: BeamformerScript
 
-   IBeamformerScript, IBeamformer, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformerScript`, py:obj:`~IBeamformer`
 
    Class defining a beamformer script plugin.
 

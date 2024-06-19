@@ -3,7 +3,7 @@ StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
 
 .. py:class:: StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
 
-   IComponentInfo, ICloneable, IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee`
 
    GeodeticTrueLongitudeAtTimeOfPerigee Calc objects.
 

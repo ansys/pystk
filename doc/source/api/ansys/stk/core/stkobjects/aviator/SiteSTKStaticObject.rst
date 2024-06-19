@@ -3,7 +3,7 @@ SiteSTKStaticObject
 
 .. py:class:: SiteSTKStaticObject
 
-   ISiteSTKStaticObject, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteSTKStaticObject`, py:obj:`~ISite`
 
    Class defining a STK Static Object site.
 

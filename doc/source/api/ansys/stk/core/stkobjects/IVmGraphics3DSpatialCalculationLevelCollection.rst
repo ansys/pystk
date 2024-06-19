@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, level:int) -> "IVmGraphics3DSpatialCalculationLevel"
+.. py:method:: item(self, level: int) -> IVmGraphics3DSpatialCalculationLevel
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevelCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVmGraphics3DSpatialCalculationLevel"`
+        :obj:`~IVmGraphics3DSpatialCalculationLevel`
 
 
-.. py:method:: remove_at(self, level:int) -> None
+.. py:method:: remove_at(self, level: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevelCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevelCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, value:float, color:agcolor.Color, translucency:float) -> "IVmGraphics3DSpatialCalculationLevel"
+.. py:method:: add(self, value: float, color: agcolor.Color, translucency: float) -> IVmGraphics3DSpatialCalculationLevel
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevelCollection.add
 
     Add a new level to the collection. When adding a level with duplicate 'Value', it will update 'Color' and 'Translucency' values of the existing level.
 
@@ -112,5 +116,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVmGraphics3DSpatialCalculationLevel"`
+        :obj:`~IVmGraphics3DSpatialCalculationLevel`
 

@@ -3,7 +3,7 @@ TimeToolEventEpoch
 
 .. py:class:: TimeToolEventEpoch
 
-   ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventEpoch`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Event set at specified date/time.
 

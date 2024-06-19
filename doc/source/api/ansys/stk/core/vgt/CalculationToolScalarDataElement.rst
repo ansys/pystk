@@ -3,7 +3,7 @@ CalculationToolScalarDataElement
 
 .. py:class:: CalculationToolScalarDataElement
 
-   ICalculationToolScalarDataElement, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarDataElement`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Any time-dependent data element from STK data providers available for parent STK object.
 

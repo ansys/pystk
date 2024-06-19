@@ -3,7 +3,7 @@ RadarCrossSectionContourLevel
 
 .. py:class:: RadarCrossSectionContourLevel
 
-   IRadarCrossSectionContourLevel, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionContourLevel`
 
    Class defining an radar cross section contour level.
 

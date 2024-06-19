@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectoryTickMarks
 
 .. py:class:: VehicleGraphics3DTrajectoryTickMarks
 
-   IVehicleGraphics3DTrajectoryTickMarks, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DTrajectoryTickMarks`
 
    Tick mark data for launch vehicles and missiles.
 

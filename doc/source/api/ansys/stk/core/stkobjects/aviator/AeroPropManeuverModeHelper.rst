@@ -3,7 +3,7 @@ AeroPropManeuverModeHelper
 
 .. py:class:: AeroPropManeuverModeHelper
 
-   IAeroPropManeuverModeHelper, SupportsDeleteCallback
+   Bases: py:obj:`~IAeroPropManeuverModeHelper`
 
    Class defining the The calculation mode for the Aero/Prop maneuver mode helper. Helper for a basic acceleration performance model of an Aviator aircraft.
 

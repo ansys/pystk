@@ -3,7 +3,7 @@ AccessConstraintAngle
 
 .. py:class:: AccessConstraintAngle
 
-   IAccessConstraintAngle, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintAngle`, py:obj:`~IAccessConstraint`
 
    Class defining Angle constraints, limiting access to intervals during which the selected angle is within the specified minimum and maximum limits.
 

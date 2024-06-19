@@ -77,6 +77,7 @@ Method detail
 
 
 .. py:method:: is_read_only(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.IComponentInfo.is_read_only
 
     Return true if the component is read-only.
 
@@ -85,6 +86,7 @@ Method detail
         :obj:`~bool`
 
 .. py:method:: export(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IComponentInfo.export
 
     Export the component with default component name as file name and component type as file extension to the scenario directory.
 
@@ -92,7 +94,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: export_with_filename_path(self, filenamePath:str) -> None
+.. py:method:: export_with_filename_path(self, filenamePath: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IComponentInfo.export_with_filename_path
 
     Export the component with specified file name and location.
 

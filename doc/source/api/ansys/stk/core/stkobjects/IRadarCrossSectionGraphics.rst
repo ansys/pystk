@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.polarization
-    :type: "RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION"
+    :type: RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
 
     Gets or sets the polarization.
 
@@ -115,13 +115,13 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
 
 .. py:property:: color_method
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.color_method
-    :type: "FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD"
+    :type: FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
 
     Color method for contours (color ramp or explicit).
 
@@ -139,7 +139,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.levels
-    :type: "IAgRadarCrossSectionContourLevelCollection"
+    :type: IAgRadarCrossSectionContourLevelCollection
 
     Gets the collection of contour levels.
 
@@ -228,7 +228,8 @@ Method detail
 
 
 
-.. py:method:: set_resolution(self, azimuthStart:float, azimuthStop:float, azimuthResolution:float, elevationStart:float, elevationStop:float, elevationResolution:float) -> None
+.. py:method:: set_resolution(self, azimuthStart: float, azimuthStop: float, azimuthResolution: float, elevationStart: float, elevationStop: float, elevationResolution: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.set_resolution
 
     Set the azimuth/elevation ranges and resolution.
 
@@ -245,7 +246,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_num_points(self, azimuthStart:float, azimuthStop:float, azimuthNumPoints:int, elevationStart:float, elevationStop:float, elevationNumPoints:int) -> None
+.. py:method:: set_num_points(self, azimuthStart: float, azimuthStop: float, azimuthNumPoints: int, elevationStart: float, elevationStop: float, elevationNumPoints: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.set_num_points
 
     Set the azimuth/elevation ranges and number of points.
 

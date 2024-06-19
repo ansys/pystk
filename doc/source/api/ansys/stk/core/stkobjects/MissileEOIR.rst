@@ -3,7 +3,7 @@ MissileEOIR
 
 .. py:class:: MissileEOIR
 
-   IMissileEOIR, IEOIR, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileEOIR`, py:obj:`~IEOIR`
 
    AgMsEOIR interface class.
 

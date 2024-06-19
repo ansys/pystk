@@ -3,7 +3,7 @@ SensorPointingAlongVector
 
 .. py:class:: SensorPointingAlongVector
 
-   ISensorPointing, ISensorPointingAlongVector, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingAlongVector`
 
    Class defining the along vector pointing type for a Sensor.
 

@@ -3,7 +3,7 @@ MtoTrack
 
 .. py:class:: MtoTrack
 
-   IMtoTrack, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoTrack`
 
    List of MTO tracks with basic information about each.
 

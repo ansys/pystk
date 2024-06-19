@@ -3,7 +3,7 @@ DataProviderGroup
 
 .. py:class:: DataProviderGroup
 
-   IDataProviderInfo, IDataProviderGroup, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderInfo`, py:obj:`~IDataProviderGroup`
 
    Group of sub data providers (e.g. ``Cartesian Position`` on Satellites).
 

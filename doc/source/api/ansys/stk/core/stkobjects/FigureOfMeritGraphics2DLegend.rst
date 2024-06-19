@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DLegend
 
 .. py:class:: FigureOfMeritGraphics2DLegend
 
-   IFigureOfMeritGraphics2DLegend, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DLegend`
 
    Contour legend properties.
 

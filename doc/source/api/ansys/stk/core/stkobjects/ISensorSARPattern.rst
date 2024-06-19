@@ -105,7 +105,8 @@ Method detail
 
 
 
-.. py:method:: set_elevation_angles(self, min:typing.Any, max:typing.Any) -> None
+.. py:method:: set_elevation_angles(self, min: typing.Any, max: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorSARPattern.set_elevation_angles
 
     Set both the min and max elevation angle. Min/Max use Angle Dimension.
 

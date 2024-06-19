@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: x_unit
     :canonical: ansys.stk.core.graphics.IOverlay.x_unit
-    :type: "SCREEN_OVERLAY_UNIT"
+    :type: SCREEN_OVERLAY_UNIT
 
     Gets or sets the unit of the x property.
 
@@ -119,7 +119,7 @@ Property detail
 
 .. py:property:: y_unit
     :canonical: ansys.stk.core.graphics.IOverlay.y_unit
-    :type: "SCREEN_OVERLAY_UNIT"
+    :type: SCREEN_OVERLAY_UNIT
 
     Gets or sets the unit of the y property.
 
@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: width_unit
     :canonical: ansys.stk.core.graphics.IOverlay.width_unit
-    :type: "SCREEN_OVERLAY_UNIT"
+    :type: SCREEN_OVERLAY_UNIT
 
     Gets or sets the unit of the width property.
 
@@ -149,7 +149,7 @@ Property detail
 
 .. py:property:: height_unit
     :canonical: ansys.stk.core.graphics.IOverlay.height_unit
-    :type: "SCREEN_OVERLAY_UNIT"
+    :type: SCREEN_OVERLAY_UNIT
 
     Gets or sets the unit of the height property.
 
@@ -233,19 +233,19 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.graphics.IOverlay.origin
-    :type: "SCREEN_OVERLAY_ORIGIN"
+    :type: SCREEN_OVERLAY_ORIGIN
 
     Gets or sets the origin from which the overlay's position is defined. By default, the value of this property is bottom left...
 
 .. py:property:: pinning_origin
     :canonical: ansys.stk.core.graphics.IOverlay.pinning_origin
-    :type: "SCREEN_OVERLAY_PINNING_ORIGIN"
+    :type: SCREEN_OVERLAY_PINNING_ORIGIN
 
     Gets or sets the origin of the pinning position property, relative to the overlay...
 
 .. py:property:: parent
     :canonical: ansys.stk.core.graphics.IOverlay.parent
-    :type: "IAgStkGraphicsScreenOverlayContainer"
+    :type: IAgStkGraphicsScreenOverlayContainer
 
     Gets the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager'sscreen overlays collection.
 
@@ -299,13 +299,13 @@ Property detail
 
 .. py:property:: display_condition
     :canonical: ansys.stk.core.graphics.IOverlay.display_condition
-    :type: "IAgStkGraphicsDisplayCondition"
+    :type: IAgStkGraphicsDisplayCondition
 
     Gets or sets the display condition that determines if the overlay should be rendered. Both this and display must evaluate to true for the overlay to be rendered.
 
 .. py:property:: overlays
     :canonical: ansys.stk.core.graphics.IOverlay.overlays
-    :type: "IAgStkGraphicsScreenOverlayCollection"
+    :type: IAgStkGraphicsScreenOverlayCollection
 
     Gets the collection of overlays that are contained within this overlay.
 
@@ -396,6 +396,7 @@ Method detail
 
 
 .. py:method:: bring_to_front(self) -> None
+    :canonical: ansys.stk.core.graphics.IOverlay.bring_to_front
 
     Brings the overlay to the front of the z-order, so it is on top of all other overlays with the same parent.
 
@@ -404,6 +405,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: send_to_back(self) -> None
+    :canonical: ansys.stk.core.graphics.IOverlay.send_to_back
 
     Send the overlay to the back of the z-order, so it is underneath all other overlays with the same parent.
 
@@ -411,7 +413,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: overlay_to_control(self, x:float, y:float) -> list
+.. py:method:: overlay_to_control(self, x: float, y: float) -> list
+    :canonical: ansys.stk.core.graphics.IOverlay.overlay_to_control
 
     Transform a given position, specified relative to the overlay, into coordinates relative to the overall globe control...
 
@@ -424,7 +427,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: control_to_overlay(self, x:float, y:float) -> list
+.. py:method:: control_to_overlay(self, x: float, y: float) -> list
+    :canonical: ansys.stk.core.graphics.IOverlay.control_to_overlay
 
     Transform a given position, specified relative to the overall globe control, into coordinates relative to this overlay...
 

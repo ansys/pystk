@@ -3,7 +3,7 @@ DesignCR3BPSetup
 
 .. py:class:: DesignCR3BPSetup
 
-   IDesignCR3BPSetup, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IDesignCR3BPSetup`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CR3BP Setup Tool.
 

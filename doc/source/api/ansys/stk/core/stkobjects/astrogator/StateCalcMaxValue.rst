@@ -3,7 +3,7 @@ StateCalcMaxValue
 
 .. py:class:: StateCalcMaxValue
 
-   IComponentInfo, ICloneable, IStateCalcMaxValue, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMaxValue`
 
    MaximumValue Calc objects.
 

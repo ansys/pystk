@@ -3,7 +3,7 @@ AntennaModelApertureCircularSincRealPower
 
 .. py:class:: AntennaModelApertureCircularSincRealPower
 
-   IAntennaModelApertureCircularSincRealPower, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelApertureCircularSincRealPower`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a circular sinc real power aperture antenna model.
 

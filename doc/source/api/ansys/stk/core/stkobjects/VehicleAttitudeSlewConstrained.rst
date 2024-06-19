@@ -3,7 +3,7 @@ VehicleAttitudeSlewConstrained
 
 .. py:class:: VehicleAttitudeSlewConstrained
 
-   IVehicleAttitudeSlewConstrained, IVehicleAttitudeSlewBase, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeSlewConstrained`, py:obj:`~IVehicleAttitudeSlewBase`
 
    Constrained slew mode.
 

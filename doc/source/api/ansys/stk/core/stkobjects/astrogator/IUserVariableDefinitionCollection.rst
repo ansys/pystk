@@ -70,7 +70,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IUserVariableDefinition"
+.. py:method:: item(self, indexOrName: typing.Any) -> IUserVariableDefinition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.item
 
     Allow you to iterate through the collection.
 
@@ -80,9 +81,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariableDefinition"`
+        :obj:`~IUserVariableDefinition`
 
-.. py:method:: add(self, parameterName:str) -> "IUserVariableDefinition"
+.. py:method:: add(self, parameterName: str) -> IUserVariableDefinition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.add
 
     Add a user variable to the collection.
 
@@ -92,9 +94,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariableDefinition"`
+        :obj:`~IUserVariableDefinition`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.remove
 
     Remove a user variable.
 
@@ -107,6 +110,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.remove_all
 
     Remove all user variables.
 
@@ -116,7 +120,8 @@ Method detail
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IUserVariableDefinition"
+.. py:method:: get_item_by_index(self, index: int) -> IUserVariableDefinition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.get_item_by_index
 
     Retrieve a user variable definition in the collection by index.
 
@@ -126,9 +131,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariableDefinition"`
+        :obj:`~IUserVariableDefinition`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IUserVariableDefinition"
+.. py:method:: get_item_by_name(self, name: str) -> IUserVariableDefinition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.get_item_by_name
 
     Retrieve a user variable definition in the collection by name.
 
@@ -138,5 +144,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariableDefinition"`
+        :obj:`~IUserVariableDefinition`
 

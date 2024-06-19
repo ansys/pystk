@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: offset_type
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.offset_type
-    :type: "VEHICLE_GRAPHICS_2D_OFFSET"
+    :type: VEHICLE_GRAPHICS_2D_OFFSET
 
     Offset direction: left or right.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: event_interval
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.event_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Event interval.
 
@@ -104,25 +104,27 @@ Method detail
 
 
 
-.. py:method:: set_offset_type(self, offset:"VEHICLE_GRAPHICS_2D_OFFSET") -> None
+.. py:method:: set_offset_type(self, offset: VEHICLE_GRAPHICS_2D_OFFSET) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.set_offset_type
 
     Offset direction: left or right.
 
     :Parameters:
 
-    **offset** : :obj:`~"VEHICLE_GRAPHICS_2D_OFFSET"`
+    **offset** : :obj:`~VEHICLE_GRAPHICS_2D_OFFSET`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_offset_type_supported(self, offset:"VEHICLE_GRAPHICS_2D_OFFSET") -> bool
+.. py:method:: is_offset_type_supported(self, offset: VEHICLE_GRAPHICS_2D_OFFSET) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.is_offset_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **offset** : :obj:`~"VEHICLE_GRAPHICS_2D_OFFSET"`
+    **offset** : :obj:`~VEHICLE_GRAPHICS_2D_OFFSET`
 
     :Returns:
 

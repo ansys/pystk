@@ -11,6 +11,24 @@ LLA_POSITION_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNKNOWN`
+              - Unknown position type.
+
+            * - :py:attr:`~GEOCENTRIC`
+              - Geocentric position type.
+
+            * - :py:attr:`~GEODETIC`
+              - Geodetic position type.
+
+
 Import detail
 -------------
 

@@ -3,7 +3,7 @@ VehicleGraphics3DDataFraction
 
 .. py:class:: VehicleGraphics3DDataFraction
 
-   IVehicleLeadTrailData, IVehicleLeadTrailDataFraction, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLeadTrailData`, py:obj:`~IVehicleLeadTrailDataFraction`
 
    Fraction for 3D track display.
 

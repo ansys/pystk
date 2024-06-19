@@ -69,6 +69,7 @@ Method detail
 
 
 .. py:method:: copy_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserWaypoint.copy_site
 
     Copy the site to the clipboard.
 
@@ -77,6 +78,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserWaypoint.paste_site
 
     Paste the site to the clipboard.
 
@@ -84,11 +86,12 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserWaypoint.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

@@ -3,7 +3,7 @@ Graphics3DAzElMask
 
 .. py:class:: Graphics3DAzElMask
 
-   IGraphics3DAzElMask, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DAzElMask`
 
    Class to define display labels and adjust the translucency of the 3D azimuth-elevation mask for a facility, place or target.
 

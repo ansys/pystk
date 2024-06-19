@@ -3,7 +3,7 @@ TimeToolPruneFilterFactory
 
 .. py:class:: TimeToolPruneFilterFactory
 
-   ITimeToolPruneFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolPruneFilterFactory`
 
    The factory creates pruning filters.
 

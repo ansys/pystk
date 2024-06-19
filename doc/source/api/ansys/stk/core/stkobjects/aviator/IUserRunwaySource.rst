@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_user_runway(self, name:str) -> "IUserRunway"
+.. py:method:: get_user_runway(self, name: str) -> IUserRunway
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserRunwaySource.get_user_runway
 
     Get the user runway with the given name.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserRunway"`
+        :obj:`~IUserRunway`
 
-.. py:method:: add_user_runway(self, name:str) -> "IUserRunway"
+.. py:method:: add_user_runway(self, name: str) -> IUserRunway
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserRunwaySource.add_user_runway
 
     Create a new user runway with the given name.
 
@@ -62,13 +64,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserRunway"`
+        :obj:`~IUserRunway`
 
-.. py:method:: get_as_catalog_source(self) -> "ICatalogSource"
+.. py:method:: get_as_catalog_source(self) -> ICatalogSource
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserRunwaySource.get_as_catalog_source
 
     Get the catalog source interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogSource"`
+        :obj:`~ICatalogSource`
 

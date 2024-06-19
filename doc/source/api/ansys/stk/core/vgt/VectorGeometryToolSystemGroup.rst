@@ -3,7 +3,7 @@ VectorGeometryToolSystemGroup
 
 .. py:class:: VectorGeometryToolSystemGroup
 
-   IVectorGeometryToolSystemGroup, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolSystemGroup`
 
    Access or create VGT systems associated with an object or a central body.
 

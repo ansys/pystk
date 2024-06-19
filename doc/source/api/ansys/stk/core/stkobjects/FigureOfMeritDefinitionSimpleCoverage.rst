@@ -3,7 +3,7 @@ FigureOfMeritDefinitionSimpleCoverage
 
 .. py:class:: FigureOfMeritDefinitionSimpleCoverage
 
-   IFigureOfMeritDefinitionSimpleCoverage, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionSimpleCoverage`, py:obj:`~IFigureOfMeritDefinition`
 
    Simple Coverage Figure of Merit.
 

@@ -3,7 +3,7 @@ ProfileSeedFiniteManeuver
 
 .. py:class:: ProfileSeedFiniteManeuver
 
-   IProfileSeedFiniteManeuver, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileSeedFiniteManeuver`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Seed Finite Maneuver profile.
 

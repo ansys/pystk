@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory.point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     Get the point for which trajectory representations are computed.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory.reference_system
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Get the reference system relative to which trajectory representations are computed.
 

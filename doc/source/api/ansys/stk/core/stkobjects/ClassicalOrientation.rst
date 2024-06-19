@@ -3,7 +3,7 @@ ClassicalOrientation
 
 .. py:class:: ClassicalOrientation
 
-   IClassicalOrientation, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalOrientation`
 
    Orbit orientation in the Classical (Keplerian) system.
 

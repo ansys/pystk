@@ -3,7 +3,7 @@ ProcedureCollection
 
 .. py:class:: ProcedureCollection
 
-   IProcedureCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureCollection`
 
    Class defining the collection of procedures in the phase of an Aviator mission.
 

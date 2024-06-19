@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.data_providers
-    :type: "IAgDataProviderCollection"
+    :type: IAgDataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
@@ -74,19 +74,19 @@ Property detail
 
 .. py:property:: assets
     :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.assets
-    :type: "IAgCvAssetListCollection"
+    :type: IAgCvAssetListCollection
 
     Get the asset list collection.
 
 .. py:property:: figure_of_merit
     :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.figure_of_merit
-    :type: "IAgObjectCoverageFOM"
+    :type: IAgObjectCoverageFOM
 
     Get the figure of merit on the object coverage.
 
 .. py:property:: access_interval
     :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.access_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     The object coverage's access interval.
 
@@ -114,6 +114,7 @@ Method detail
 
 
 .. py:method:: compute(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.compute
 
     Compute the object coverage.
 
@@ -122,6 +123,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.clear
 
     Remove the computation on the object coverage.
 
@@ -135,6 +137,7 @@ Method detail
 
 
 .. py:method:: clear_coverage(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.clear_coverage
 
     Clear object coverage.
 

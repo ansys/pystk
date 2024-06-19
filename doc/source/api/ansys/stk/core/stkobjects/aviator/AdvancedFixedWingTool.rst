@@ -3,7 +3,7 @@ AdvancedFixedWingTool
 
 .. py:class:: AdvancedFixedWingTool
 
-   IAdvancedFixedWingTool, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingTool`
 
    Class defining the options for the Advanced Fixed Wing Tool of an aircraft.
 

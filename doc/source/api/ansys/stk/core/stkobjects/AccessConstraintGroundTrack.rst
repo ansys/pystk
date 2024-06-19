@@ -3,7 +3,7 @@ AccessConstraintGroundTrack
 
 .. py:class:: AccessConstraintGroundTrack
 
-   IAccessConstraintGroundTrack, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintGroundTrack`, py:obj:`~IAccessConstraint`
 
    Class related to the Ground Track constraint, which constrains access to the Ascending or Descending side of the Satellite's ground track.
 

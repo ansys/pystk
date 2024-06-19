@@ -41,19 +41,19 @@ Property detail
 
 .. py:property:: sunlight
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.sunlight
-    :type: "IAgVeGfxLightingElement"
+    :type: IAgVeGfxLightingElement
 
     Get the display options for regions of sunlight.
 
 .. py:property:: penumbra
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.penumbra
-    :type: "IAgVeGfxLightingElement"
+    :type: IAgVeGfxLightingElement
 
     Get the display options for regions of penumbra.
 
 .. py:property:: umbra
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.umbra
-    :type: "IAgVeGfxLightingElement"
+    :type: IAgVeGfxLightingElement
 
     Get the display options for regions of umbra.
 

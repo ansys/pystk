@@ -57,7 +57,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: create(self, axesName:str, description:str, axesType:"VECTOR_GEOMETRY_TOOL_AXES_TYPE") -> "IVectorGeometryToolAxes"
+.. py:method:: create(self, axesName: str, description: str, axesType: VECTOR_GEOMETRY_TOOL_AXES_TYPE) -> IVectorGeometryToolAxes
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFactory.create
 
     Create a VGT axes using specified name, description and type.
 
@@ -65,26 +66,28 @@ Method detail
 
     **axesName** : :obj:`~str`
     **description** : :obj:`~str`
-    **axesType** : :obj:`~"VECTOR_GEOMETRY_TOOL_AXES_TYPE"`
+    **axesType** : :obj:`~VECTOR_GEOMETRY_TOOL_AXES_TYPE`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxes"`
+        :obj:`~IVectorGeometryToolAxes`
 
-.. py:method:: is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_AXES_TYPE") -> bool
+.. py:method:: is_type_supported(self, type: VECTOR_GEOMETRY_TOOL_AXES_TYPE) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFactory.is_type_supported
 
     Return true if the type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~"VECTOR_GEOMETRY_TOOL_AXES_TYPE"`
+    **type** : :obj:`~VECTOR_GEOMETRY_TOOL_AXES_TYPE`
 
     :Returns:
 
         :obj:`~bool`
 
 
-.. py:method:: create_axes_plugin_from_display_name(self, axesName:str, description:str, displayName:str) -> "IVectorGeometryToolAxes"
+.. py:method:: create_axes_plugin_from_display_name(self, axesName: str, description: str, displayName: str) -> IVectorGeometryToolAxes
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFactory.create_axes_plugin_from_display_name
 
     Create an axes component based on a COM axes plugin. For information how to implement and register VGT plugins, see.
 
@@ -96,5 +99,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxes"`
+        :obj:`~IVectorGeometryToolAxes`
 

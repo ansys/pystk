@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar.pulse_definition
-    :type: "IAgRadarWaveformSarPulseDefinition"
+    :type: IAgRadarWaveformSarPulseDefinition
 
     Gets the interface for configuring the SAR waveform pulse definition.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar.modulator
-    :type: "IAgRadarModulator"
+    :type: IAgRadarModulator
 
     Gets the interface for setting the modulator parameters.
 

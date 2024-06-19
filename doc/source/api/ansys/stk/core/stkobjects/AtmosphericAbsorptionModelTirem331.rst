@@ -3,7 +3,7 @@ AtmosphericAbsorptionModelTirem331
 
 .. py:class:: AtmosphericAbsorptionModelTirem331
 
-   IAtmosphericAbsorptionModelTirem, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphericAbsorptionModelTirem`, py:obj:`~IAtmosphericAbsorptionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an atmospheric absorption model.
 

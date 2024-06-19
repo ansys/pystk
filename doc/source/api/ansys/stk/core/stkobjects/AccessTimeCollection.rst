@@ -3,7 +3,7 @@ AccessTimeCollection
 
 .. py:class:: AccessTimeCollection
 
-   IAccessTimeCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessTimeCollection`
 
    Collection of access times.
 

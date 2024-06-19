@@ -38,15 +38,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IGammaCorrectionFilter"
+.. py:method:: initialize(self) -> IGammaCorrectionFilter
+    :canonical: ansys.stk.core.graphics.IGammaCorrectionFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IGammaCorrectionFilter"`
+        :obj:`~IGammaCorrectionFilter`
 
-.. py:method:: initialize_with_gamma(self, gamma:float) -> "IGammaCorrectionFilter"
+.. py:method:: initialize_with_gamma(self, gamma: float) -> IGammaCorrectionFilter
+    :canonical: ansys.stk.core.graphics.IGammaCorrectionFilterFactory.initialize_with_gamma
 
     Initialize a new instance with the specified gamma.
 
@@ -56,5 +58,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGammaCorrectionFilter"`
+        :obj:`~IGammaCorrectionFilter`
 

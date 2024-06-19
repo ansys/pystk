@@ -3,7 +3,7 @@ StoppingCondition
 
 .. py:class:: StoppingCondition
 
-   IStoppingCondition, IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IStoppingCondition`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStoppingConditionComponent`, py:obj:`~IRuntimeTypeInfoProvider`
 
    A stopping condition.
 

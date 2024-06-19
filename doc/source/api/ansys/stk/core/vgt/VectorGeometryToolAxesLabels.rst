@@ -3,7 +3,7 @@ VectorGeometryToolAxesLabels
 
 .. py:class:: VectorGeometryToolAxesLabels
 
-   IVectorGeometryToolAxesLabels, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesLabels`
 
    Allow configuring the VGT axes labels.
 

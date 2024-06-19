@@ -3,7 +3,7 @@ ModulatorModelScriptPluginCustomPsd
 
 .. py:class:: ModulatorModelScriptPluginCustomPsd
 
-   IModulatorModelScriptPlugin, IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModelScriptPlugin`, py:obj:`~IModulatorModel`
 
    Class defining a custom PSD script plugin modulator model.
 

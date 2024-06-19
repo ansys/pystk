@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallPlaneFindInAxesResult
 
 .. py:class:: AnalysisWorkbenchMethodCallPlaneFindInAxesResult
 
-   IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesResult, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolPlaneFindInAxesResult`
 
    Contains the results returned with IAgCrdnPlane.FindInAxes method.
 

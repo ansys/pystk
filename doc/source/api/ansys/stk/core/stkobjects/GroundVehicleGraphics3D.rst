@@ -3,7 +3,7 @@ GroundVehicleGraphics3D
 
 .. py:class:: GroundVehicleGraphics3D
 
-   IGroundVehicleGraphics3D, IGreatArcGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~IGroundVehicleGraphics3D`, py:obj:`~IGreatArcGraphics3D`
 
    AgGvVOVO Class.
 

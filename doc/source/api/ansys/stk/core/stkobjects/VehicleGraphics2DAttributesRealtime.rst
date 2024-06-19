@@ -3,7 +3,7 @@ VehicleGraphics2DAttributesRealtime
 
 .. py:class:: VehicleGraphics2DAttributesRealtime
 
-   IVehicleGraphics2DAttributesRealtime, IVehicleGraphics2DAttributes, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DAttributesRealtime`, py:obj:`~IVehicleGraphics2DAttributes`
 
    2D Graphics attributes for a vehicle based on real time data state.
 

@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_from_display_name(self, displayName:str) -> "IProjectionRasterStreamPluginProxy"
+.. py:method:: create_from_display_name(self, displayName: str) -> IProjectionRasterStreamPluginProxy
+    :canonical: ansys.stk.core.graphics.IProjectionRasterStreamPluginActivator.create_from_display_name
 
     Load a projection/raster COM plugin associated with the specified display name and returns a proxy object that allows accessing the raster and projection streams implemented by the plugin.
 
@@ -48,9 +49,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IProjectionRasterStreamPluginProxy"`
+        :obj:`~IProjectionRasterStreamPluginProxy`
 
 .. py:method:: get_available_display_names(self) -> list
+    :canonical: ansys.stk.core.graphics.IProjectionRasterStreamPluginActivator.get_available_display_names
 
     Get a list of available projection/raster plugins' Display Names (Programmatic Identifiers).
 

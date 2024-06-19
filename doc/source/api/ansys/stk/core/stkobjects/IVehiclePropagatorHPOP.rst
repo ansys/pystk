@@ -56,31 +56,31 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.initial_state
-    :type: "IAgVeInitialState"
+    :type: IAgVeInitialState
 
     Get the satellite's initial state.
 
 .. py:property:: force_model
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.force_model
-    :type: "IAgVeHPOPForceModel"
+    :type: IAgVeHPOPForceModel
 
     Get the force model parameters.
 
 .. py:property:: integrator
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.integrator
-    :type: "IAgVeIntegrator"
+    :type: IAgVeIntegrator
 
     Get the integrator parameters.
 
 .. py:property:: covariance
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.covariance
-    :type: "IAgVeCovariance"
+    :type: IAgVeCovariance
 
     Get the covariance parameters.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.ephemeris_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
@@ -89,6 +89,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.propagate
 
     Propagates the satellite's path using the specified time interval.
 

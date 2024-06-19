@@ -3,7 +3,7 @@ RadarCrossSectionModel
 
 .. py:class:: RadarCrossSectionModel
 
-   IRadarCrossSectionModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a radar cross section model.
 

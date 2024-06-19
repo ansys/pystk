@@ -3,7 +3,7 @@ MRUCollection
 
 .. py:class:: MRUCollection
 
-   IMRUCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IMRUCollection`
 
    Provide information about most recently used (MRU) list.
 

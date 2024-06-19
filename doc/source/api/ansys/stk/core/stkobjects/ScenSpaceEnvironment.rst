@@ -3,7 +3,7 @@ ScenSpaceEnvironment
 
 .. py:class:: ScenSpaceEnvironment
 
-   IScenSpaceEnvironment, SupportsDeleteCallback
+   Bases: py:obj:`~IScenSpaceEnvironment`
 
    SpaceEnvironment settings.
 

@@ -3,7 +3,7 @@ ProcedureHoverTranslate
 
 .. py:class:: ProcedureHoverTranslate
 
-   IProcedureHoverTranslate, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureHoverTranslate`, py:obj:`~IProcedure`
 
    Class defining a hover translate procedure.
 

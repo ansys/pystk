@@ -3,7 +3,7 @@ RadarJamming
 
 .. py:class:: RadarJamming
 
-   IRadarJamming, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarJamming`
 
    Class defining radar jamming.
 

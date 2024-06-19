@@ -3,7 +3,7 @@ SpatialAnalysisToolVolume
 
 .. py:class:: SpatialAnalysisToolVolume
 
-   ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume interface. The methods and properties of the interface provide Volume functions.
 

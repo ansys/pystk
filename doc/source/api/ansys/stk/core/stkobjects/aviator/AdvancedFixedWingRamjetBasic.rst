@@ -3,7 +3,7 @@ AdvancedFixedWingRamjetBasic
 
 .. py:class:: AdvancedFixedWingRamjetBasic
 
-   IAdvancedFixedWingRamjetBasic, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingRamjetBasic`
 
    Class defining the basic Ramjet model.
 

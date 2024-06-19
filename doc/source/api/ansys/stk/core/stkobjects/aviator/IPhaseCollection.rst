@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IPhase"
+.. py:method:: item(self, index: int) -> IPhase
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhaseCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -79,18 +80,20 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPhase"`
+        :obj:`~IPhase`
 
 
-.. py:method:: add(self) -> "IPhase"
+.. py:method:: add(self) -> IPhase
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhaseCollection.add
 
     Add a phase at the end of the mission.
 
     :Returns:
 
-        :obj:`~"IPhase"`
+        :obj:`~IPhase`
 
-.. py:method:: add_at_index(self, index:int) -> "IPhase"
+.. py:method:: add_at_index(self, index: int) -> IPhase
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhaseCollection.add_at_index
 
     Add a phase at the given index.
 
@@ -100,21 +103,23 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPhase"`
+        :obj:`~IPhase`
 
-.. py:method:: remove(self, phase:"IPhase") -> None
+.. py:method:: remove(self, phase: IPhase) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhaseCollection.remove
 
     Remove given phase.
 
     :Parameters:
 
-    **phase** : :obj:`~"IPhase"`
+    **phase** : :obj:`~IPhase`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_at_index(self, index:int) -> None
+.. py:method:: remove_at_index(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhaseCollection.remove_at_index
 
     Remove phase at the given index.
 

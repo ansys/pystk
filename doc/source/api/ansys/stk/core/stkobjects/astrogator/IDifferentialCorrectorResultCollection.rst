@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -69,7 +69,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IDifferentialCorrectorResult"
+.. py:method:: item(self, index: int) -> IDifferentialCorrectorResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.item
 
     Allow you to iterate through the collection.
 
@@ -79,11 +80,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDifferentialCorrectorResult"`
+        :obj:`~IDifferentialCorrectorResult`
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath:str, resultPath:str) -> "IDifferentialCorrectorResult"
+.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> IDifferentialCorrectorResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.get_result_by_paths
 
     Return the result specified by the object/result path.
 
@@ -94,6 +96,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDifferentialCorrectorResult"`
+        :obj:`~IDifferentialCorrectorResult`
 
 

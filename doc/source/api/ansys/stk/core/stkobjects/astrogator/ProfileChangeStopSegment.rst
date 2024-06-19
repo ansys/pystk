@@ -3,7 +3,7 @@ ProfileChangeStopSegment
 
 .. py:class:: ProfileChangeStopSegment
 
-   IProfileChangeStopSegment, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileChangeStopSegment`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Change Stop Segment profile.
 

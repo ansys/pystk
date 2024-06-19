@@ -3,7 +3,7 @@ SensorAzElMaskFile
 
 .. py:class:: SensorAzElMaskFile
 
-   IAzElMaskData, ISensorAzElMaskFile, SupportsDeleteCallback
+   Bases: py:obj:`~IAzElMaskData`, py:obj:`~ISensorAzElMaskFile`
 
    Class to define a Sensor's Azimuth-Elevation mask.
 

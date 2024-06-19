@@ -3,7 +3,7 @@ Atmosphere
 
 .. py:class:: Atmosphere
 
-   IPlatformRFEnvironment, IAtmosphere, SupportsDeleteCallback
+   Bases: py:obj:`~IPlatformRFEnvironment`, py:obj:`~IAtmosphere`
 
    Class defining local atmosphere.
 

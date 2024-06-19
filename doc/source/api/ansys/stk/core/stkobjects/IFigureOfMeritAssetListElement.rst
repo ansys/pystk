@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: method_type
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.method_type
-    :type: "FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE"
+    :type: FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE
 
     Type of method used to specify range uncertainty.
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.method
-    :type: "IAgFmNAMethod"
+    :type: IAgFmNAMethod
 
     Range uncertainty method.
 

@@ -3,7 +3,7 @@ DataProviderResultTimeArrayElements
 
 .. py:class:: DataProviderResultTimeArrayElements
 
-   IDataProviderResultTimeArrayElements, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResultTimeArrayElements`
 
    Provide a array result of element values for each time array value.
 

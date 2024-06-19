@@ -3,7 +3,7 @@ ScreenOverlayCollectionBase
 
 .. py:class:: ScreenOverlayCollectionBase
 
-   IScreenOverlayCollectionBase, SupportsDeleteCallback
+   Bases: py:obj:`~IScreenOverlayCollectionBase`
 
    The common base class for collections of overlays held by screen overlay and by screen overlay manager.
 

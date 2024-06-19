@@ -3,7 +3,7 @@ CR3BPFunc
 
 .. py:class:: CR3BPFunc
 
-   ICR3BPFunc, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ICR3BPFunc`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CR3BP Function.
 

@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.vector
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The output vector in the current axes.
 
 .. py:property:: velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.velocity
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The vector velocity.
 

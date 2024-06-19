@@ -3,7 +3,7 @@ VehicleGraphics3DLineOfBearing
 
 .. py:class:: VehicleGraphics3DLineOfBearing
 
-   IVehicleGraphics3DLineOfBearing, IVehicleGraphics3DProximityAreaObject, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DLineOfBearing`, py:obj:`~IVehicleGraphics3DProximityAreaObject`
 
    Define a line of bearing which is drawn from an origin in the direction of a bearing.
 

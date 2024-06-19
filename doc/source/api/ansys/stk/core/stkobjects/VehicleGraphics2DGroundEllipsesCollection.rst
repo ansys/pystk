@@ -3,7 +3,7 @@ VehicleGraphics2DGroundEllipsesCollection
 
 .. py:class:: VehicleGraphics2DGroundEllipsesCollection
 
-   IVehicleGraphics2DGroundEllipsesCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DGroundEllipsesCollection`
 
    Collection of ground ellipse 2D graphics properties.
 

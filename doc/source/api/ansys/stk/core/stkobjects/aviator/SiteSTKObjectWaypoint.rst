@@ -3,7 +3,7 @@ SiteSTKObjectWaypoint
 
 .. py:class:: SiteSTKObjectWaypoint
 
-   ISiteSTKObjectWaypoint, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteSTKObjectWaypoint`, py:obj:`~ISite`
 
    Class defining a STK Object Waypoint site.
 

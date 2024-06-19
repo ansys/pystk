@@ -36,14 +36,15 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: update(self, pathPrimitive:"IPathPrimitive", date:"IDate") -> None
+.. py:method:: update(self, pathPrimitive: IPathPrimitive, date: IDate) -> None
+    :canonical: ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy.update
 
     Update the pathPrimitive at the specified date.
 
     :Parameters:
 
-    **pathPrimitive** : :obj:`~"IPathPrimitive"`
-    **date** : :obj:`~"IDate"`
+    **pathPrimitive** : :obj:`~IPathPrimitive`
+    **date** : :obj:`~IDate`
 
     :Returns:
 

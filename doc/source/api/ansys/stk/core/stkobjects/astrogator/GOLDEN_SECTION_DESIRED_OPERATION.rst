@@ -11,6 +11,21 @@ GOLDEN_SECTION_DESIRED_OPERATION
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~MINIMIZE_VALUE`
+              - Minimize value.
+
+            * - :py:attr:`~MAXIMIZE_VALUE`
+              - Maximize value.
+
+
 Import detail
 -------------
 

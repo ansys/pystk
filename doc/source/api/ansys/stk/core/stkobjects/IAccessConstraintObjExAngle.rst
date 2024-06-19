@@ -75,7 +75,8 @@ Method detail
 
 
 
-.. py:method:: add_exclusion_object(self, objectName:str) -> None
+.. py:method:: add_exclusion_object(self, objectName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.add_exclusion_object
 
     Add an exclusion object.
 
@@ -87,7 +88,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: is_object_assigned(self, objectName:str) -> bool
+.. py:method:: is_object_assigned(self, objectName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.is_object_assigned
 
     Return true if an exclusion object is assigned.
 
@@ -99,7 +101,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: remove_exclusion_object(self, objectName:str) -> None
+.. py:method:: remove_exclusion_object(self, objectName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.remove_exclusion_object
 
     Remove an exclusion object.
 

@@ -11,6 +11,21 @@ RADAR_SAR_RANGE_RESOLUTION_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~RANGE_RESOLUTION`
+              - Range Resolution.
+
+            * - :py:attr:`~BANDWIDTH`
+              - Bandwidth.
+
+
 Import detail
 -------------
 

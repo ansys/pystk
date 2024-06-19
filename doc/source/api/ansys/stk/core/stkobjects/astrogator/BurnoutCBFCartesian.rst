@@ -3,7 +3,7 @@ BurnoutCBFCartesian
 
 .. py:class:: BurnoutCBFCartesian
 
-   IBurnoutCBFCartesian, IBurnout, SupportsDeleteCallback
+   Bases: py:obj:`~IBurnoutCBFCartesian`, py:obj:`~IBurnout`
 
    The burnout state in CBF Cartesian coordinates.
 

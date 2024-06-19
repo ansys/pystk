@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileYawToNadir.inertial
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Get the body-fixed Z axis is fixed in inertial space using the selected coordinate type. The X axis is then constrained, via motion in the yaw sense about the body-fixed Z axis, toward the nadir direction.
 

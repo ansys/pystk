@@ -76,6 +76,7 @@ Method detail
 
 
 .. py:method:: get_terrain_altitude(self) -> float
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.get_terrain_altitude
 
     Set the VTOL Point altitude to the terrain altitude.
 
@@ -88,6 +89,7 @@ Method detail
 
 
 .. py:method:: copy_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.copy_site
 
     Copy the site to the clipboard.
 
@@ -96,6 +98,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.paste_site
 
     Paste the site to the clipboard.
 
@@ -103,11 +106,12 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

@@ -3,7 +3,7 @@ Jacchia_1970
 
 .. py:class:: Jacchia_1970
 
-   IJacchia_1970, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IJacchia_1970`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Jacchia_1970 atmospheric propagator function.
 

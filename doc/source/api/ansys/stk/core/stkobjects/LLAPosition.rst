@@ -3,7 +3,7 @@ LLAPosition
 
 .. py:class:: LLAPosition
 
-   ILLAPosition, SupportsDeleteCallback
+   Bases: py:obj:`~ILLAPosition`
 
    Class defining position defined in terms of latitude, longitude and altitude (LLA).
 

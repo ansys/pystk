@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: selection
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties.selection
-    :type: "VEHICLE_SGP4TLE_SELECTION"
+    :type: VEHICLE_SGP4TLE_SELECTION
 
     Whether Automatic Update is active.
 
 .. py:property:: switch_method
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties.switch_method
-    :type: "VEHICLE_SGP4_SWITCH_METHOD"
+    :type: VEHICLE_SGP4_SWITCH_METHOD
 
     When to switch between element sets.
 

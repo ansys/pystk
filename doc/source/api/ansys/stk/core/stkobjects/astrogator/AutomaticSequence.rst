@@ -3,7 +3,7 @@ AutomaticSequence
 
 .. py:class:: AutomaticSequence
 
-   IAutomaticSequence, SupportsDeleteCallback
+   Bases: py:obj:`~IAutomaticSequence`
 
    Automatic Sequence.
 

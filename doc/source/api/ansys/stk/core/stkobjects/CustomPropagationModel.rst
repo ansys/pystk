@@ -3,7 +3,7 @@ CustomPropagationModel
 
 .. py:class:: CustomPropagationModel
 
-   ICustomPropagationModel, SupportsDeleteCallback
+   Bases: py:obj:`~ICustomPropagationModel`
 
    Class defining a custom propatation model.
 

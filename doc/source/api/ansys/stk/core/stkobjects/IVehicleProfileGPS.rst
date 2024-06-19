@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: model_type
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileGPS.model_type
-    :type: "GPS_ATTITUDE_MODEL_TYPE"
+    :type: GPS_ATTITUDE_MODEL_TYPE
 
     Gets or sets the GPS attitude model type.
 

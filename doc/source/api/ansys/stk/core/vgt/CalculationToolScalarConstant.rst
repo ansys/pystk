@@ -3,7 +3,7 @@ CalculationToolScalarConstant
 
 .. py:class:: CalculationToolScalarConstant
 
-   ICalculationToolScalarConstant, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarConstant`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Constant scalar value of specified dimension.
 

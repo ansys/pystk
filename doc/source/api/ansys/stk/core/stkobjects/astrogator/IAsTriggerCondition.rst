@@ -52,13 +52,13 @@ Property detail
 
 .. py:property:: criteria
     :canonical: ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.criteria
-    :type: "CRITERIA"
+    :type: CRITERIA
 
     Gets or sets the criteria to be applied to the desired value.
 
 .. py:property:: calc_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.calc_object
-    :type: "IAgComponentInfo"
+    :type: IAgComponentInfo
 
     Gets or sets the calculation object to perform calculation to evaluate condition.
 
@@ -103,6 +103,7 @@ Method detail
 
 
 .. py:method:: copy_calc_object_to_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.copy_calc_object_to_clipboard
 
     Copy calculation object to clipboard.
 
@@ -111,6 +112,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste_calc_object_from_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.paste_calc_object_from_clipboard
 
     Replace calculation object with instance in clipboard.
 

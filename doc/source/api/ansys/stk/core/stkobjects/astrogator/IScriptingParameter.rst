@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameter.type
-    :type: "SCRIPTING_PARAMETER_TYPE"
+    :type: SCRIPTING_PARAMETER_TYPE
 
     Gets or sets the parameter's type.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: enumeration_choices
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameter.enumeration_choices
-    :type: "IAgVAScriptingParameterEnumerationChoiceCollection"
+    :type: IAgVAScriptingParameterEnumerationChoiceCollection
 
     Get the collection of enumerations to use when parameter type is eVAScriptingParameterTypeEnumeration.
 

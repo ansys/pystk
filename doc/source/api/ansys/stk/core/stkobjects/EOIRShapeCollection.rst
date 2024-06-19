@@ -3,7 +3,7 @@ EOIRShapeCollection
 
 .. py:class:: EOIRShapeCollection
 
-   IEOIRShapeCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeCollection`
 
    Collection of shapes.
 

@@ -56,6 +56,7 @@ Method detail
 
 
 .. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DArticulationFile.reload
 
     Reload articulation file.
 

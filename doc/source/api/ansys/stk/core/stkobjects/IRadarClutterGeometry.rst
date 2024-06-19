@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadarClutterGeometry.model
-    :type: "IAgRadarClutterGeometryModel"
+    :type: IAgRadarClutterGeometryModel
 
     This property is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets the current clutter geometry model.
 
@@ -70,7 +70,8 @@ Method detail
 
 
 
-.. py:method:: set_model(self, modelName:str) -> None
+.. py:method:: set_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarClutterGeometry.set_model
 
     Do not use this method, as it is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Sets the current clutter geometry model by name.
 

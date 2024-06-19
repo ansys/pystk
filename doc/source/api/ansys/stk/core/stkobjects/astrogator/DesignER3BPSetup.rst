@@ -3,7 +3,7 @@ DesignER3BPSetup
 
 .. py:class:: DesignER3BPSetup
 
-   IDesignER3BPSetup, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IDesignER3BPSetup`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    ER3BP Setup Tool.
 

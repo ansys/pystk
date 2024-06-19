@@ -3,7 +3,7 @@ AntennaBeamSelectionStrategyMinBoresightAngle
 
 .. py:class:: AntennaBeamSelectionStrategyMinBoresightAngle
 
-   IAntennaBeamSelectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaBeamSelectionStrategy`
 
    Class defining a minimum boresight angle beam selection strategy.
 

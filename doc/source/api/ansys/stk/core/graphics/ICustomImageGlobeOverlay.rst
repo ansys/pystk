@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: projection
     :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlay.projection
-    :type: "MAP_PROJECTION"
+    :type: MAP_PROJECTION
 
     Gets the map projection. Valid values are mercator and equidistant cylindrical.
 
@@ -78,31 +78,34 @@ Method detail
 
 
 
-.. py:method:: start_up(self, scene:"IScene") -> None
+.. py:method:: start_up(self, scene: IScene) -> None
+    :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlay.start_up
 
     Initiate start-up when imagery is being added to the globe.
 
     :Parameters:
 
-    **scene** : :obj:`~"IScene"`
+    **scene** : :obj:`~IScene`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: shut_down(self, scene:"IScene") -> None
+.. py:method:: shut_down(self, scene: IScene) -> None
+    :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlay.shut_down
 
     Initiate shutdown when imagery is being removed from the globe.
 
     :Parameters:
 
-    **scene** : :obj:`~"IScene"`
+    **scene** : :obj:`~IScene`
 
     :Returns:
 
         :obj:`~None`
 
 .. py:method:: clear_cache(self) -> None
+    :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlay.clear_cache
 
     Clear the image data cache associated with this instance. This is equivalent to deleting and re-adding the overlay.
 
@@ -111,6 +114,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlay.reload
 
     Reload the image data associated with this instance. Preserves the current image data until new image data replaces it.
 
@@ -118,7 +122,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: read(self, extent:list, userTileData:typing.Any, image:IPictureDisp) -> bool
+.. py:method:: read(self, extent: list, userTileData: typing.Any, image: IPictureDisp) -> bool
+    :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlay.read
 
     Read a tile from the specified extent, scales it to and stores the result in image.
 

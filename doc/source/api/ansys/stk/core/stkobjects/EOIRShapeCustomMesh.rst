@@ -3,7 +3,7 @@ EOIRShapeCustomMesh
 
 .. py:class:: EOIRShapeCustomMesh
 
-   IEOIRShapeCustomMesh, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeCustomMesh`, py:obj:`~IEOIRShapeObject`
 
    CustomMesh shape class.
 

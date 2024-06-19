@@ -3,7 +3,7 @@ VectorGeometryToolPointGroup
 
 .. py:class:: VectorGeometryToolPointGroup
 
-   IVectorGeometryToolPointGroup, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointGroup`
 
    Access or create VGT points associated with an object or a central body.
 

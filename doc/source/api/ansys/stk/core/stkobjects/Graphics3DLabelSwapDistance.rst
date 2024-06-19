@@ -3,7 +3,7 @@ Graphics3DLabelSwapDistance
 
 .. py:class:: Graphics3DLabelSwapDistance
 
-   IGraphics3DLabelSwapDistance, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DLabelSwapDistance`
 
    Control the level of detail in labels and other screen objects at specified distances.
 

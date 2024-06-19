@@ -106,7 +106,8 @@ Method detail
 
 
 
-.. py:method:: set_position(self, x:float, y:float, z:float) -> None
+.. py:method:: set_position(self, x: float, y: float, z: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IFuelTankInternal.set_position
 
     Set the fuel tank's parent relative position.
 

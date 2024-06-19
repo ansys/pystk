@@ -65,7 +65,8 @@ Method detail
 -------------
 
 
-.. py:method:: is_obstruction_assigned(self, obstruction:str) -> bool
+.. py:method:: is_obstruction_assigned(self, obstruction: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.is_obstruction_assigned
 
     Check whether a central body is already assigned.
 
@@ -77,7 +78,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: add_obstruction(self, obstruction:str) -> None
+.. py:method:: add_obstruction(self, obstruction: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.add_obstruction
 
     Add a Central Body Obstruction by Name.
 
@@ -89,7 +91,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_obstruction(self, obstruction:str) -> None
+.. py:method:: remove_obstruction(self, obstruction: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.remove_obstruction
 
     Remove a Central Body Obstruction by Name.
 

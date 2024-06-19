@@ -3,7 +3,7 @@ ContrastFilter
 
 .. py:class:: ContrastFilter
 
-   IContrastFilter, IRasterFilter, SupportsDeleteCallback
+   Bases: py:obj:`~IContrastFilter`, py:obj:`~IRasterFilter`
 
    Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast.
 

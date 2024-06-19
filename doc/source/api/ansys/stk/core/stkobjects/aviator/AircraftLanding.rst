@@ -3,7 +3,7 @@ AircraftLanding
 
 .. py:class:: AircraftLanding
 
-   IAircraftLanding, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftLanding`, py:obj:`~ICatalogItem`
 
    Class defining the aircraft landing category of an Aviator aircraft.
 

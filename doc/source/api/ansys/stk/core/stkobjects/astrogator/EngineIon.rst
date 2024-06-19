@@ -3,7 +3,7 @@ EngineIon
 
 .. py:class:: EngineIon
 
-   IEngineIon, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineIon`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Ion Engine engine model.
 

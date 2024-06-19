@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.central_body
-    :type: "IAgCrdnCentralBodyRefTo"
+    :type: IAgCrdnCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.reference_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a reference point.
 

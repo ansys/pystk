@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: terrain_collection
     :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.terrain_collection
-    :type: "IAgTerrainCollection"
+    :type: IAgTerrainCollection
 
     Terrain collection.
 
@@ -68,7 +68,8 @@ Method detail
 
 
 
-.. py:method:: get_altitude(self, lat:typing.Any, lon:typing.Any, altRef:"ALTITUDE_REFERENCE_TYPE") -> float
+.. py:method:: get_altitude(self, lat: typing.Any, lon: typing.Any, altRef: ALTITUDE_REFERENCE_TYPE) -> float
+    :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.get_altitude
 
     Return the altitude at the specified position relative to the input reference surface. If the specified position is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is returned.
 
@@ -76,26 +77,28 @@ Method detail
 
     **lat** : :obj:`~typing.Any`
     **lon** : :obj:`~typing.Any`
-    **altRef** : :obj:`~"ALTITUDE_REFERENCE_TYPE"`
+    **altRef** : :obj:`~ALTITUDE_REFERENCE_TYPE`
 
     :Returns:
 
         :obj:`~float`
 
-.. py:method:: get_altitude_batch(self, latLons:list, altRef:"ALTITUDE_REFERENCE_TYPE") -> list
+.. py:method:: get_altitude_batch(self, latLons: list, altRef: ALTITUDE_REFERENCE_TYPE) -> list
+    :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.get_altitude_batch
 
     Return the altitudes at the specified position array relative to the input reference surface. If a specified position is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is used.
 
     :Parameters:
 
     **latLons** : :obj:`~list`
-    **altRef** : :obj:`~"ALTITUDE_REFERENCE_TYPE"`
+    **altRef** : :obj:`~ALTITUDE_REFERENCE_TYPE`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: get_altitudes_between_points_at_resolution(self, sWLatitude:typing.Any, sWLongitude:typing.Any, nELatitude:typing.Any, nELongitude:typing.Any, stepSize:typing.Any, distanceType:"DISTANCE_ON_SPHERE", altRef:"ALTITUDE_REFERENCE_TYPE") -> list
+.. py:method:: get_altitudes_between_points_at_resolution(self, sWLatitude: typing.Any, sWLongitude: typing.Any, nELatitude: typing.Any, nELongitude: typing.Any, stepSize: typing.Any, distanceType: DISTANCE_ON_SPHERE, altRef: ALTITUDE_REFERENCE_TYPE) -> list
+    :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.get_altitudes_between_points_at_resolution
 
     Return the terrain profile at the specified resolution relative to the input reference surface. If a position along the profile is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is used.
 
@@ -106,14 +109,15 @@ Method detail
     **nELatitude** : :obj:`~typing.Any`
     **nELongitude** : :obj:`~typing.Any`
     **stepSize** : :obj:`~typing.Any`
-    **distanceType** : :obj:`~"DISTANCE_ON_SPHERE"`
-    **altRef** : :obj:`~"ALTITUDE_REFERENCE_TYPE"`
+    **distanceType** : :obj:`~DISTANCE_ON_SPHERE`
+    **altRef** : :obj:`~ALTITUDE_REFERENCE_TYPE`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: get_extent_max_resolution(self, sWLatitude:typing.Any, sWLongitude:typing.Any, nELatitude:typing.Any, nELongitude:typing.Any) -> float
+.. py:method:: get_extent_max_resolution(self, sWLatitude: typing.Any, sWLongitude: typing.Any, nELatitude: typing.Any, nELongitude: typing.Any) -> float
+    :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.get_extent_max_resolution
 
     Return the highest resolution for any terrain that overlaps the specified rectangle.
 

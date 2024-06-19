@@ -3,7 +3,7 @@ RadarModeMonostaticSearchTrack
 
 .. py:class:: RadarModeMonostaticSearchTrack
 
-   IRadarModeMonostaticSearchTrack, IRadarModeMonostatic, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModeMonostaticSearchTrack`, py:obj:`~IRadarModeMonostatic`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a monostatic search/track radar mode.
 

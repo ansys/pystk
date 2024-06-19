@@ -3,7 +3,7 @@ TimeToolEventArrayFactory
 
 .. py:class:: TimeToolEventArrayFactory
 
-   ITimeToolEventArrayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventArrayFactory`
 
    The factory creates event arrays.
 

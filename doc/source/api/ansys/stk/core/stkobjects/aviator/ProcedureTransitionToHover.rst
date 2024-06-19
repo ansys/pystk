@@ -3,7 +3,7 @@ ProcedureTransitionToHover
 
 .. py:class:: ProcedureTransitionToHover
 
-   IProcedureTransitionToHover, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureTransitionToHover`, py:obj:`~IProcedure`
 
    Class defining a transition to hover procedure.
 

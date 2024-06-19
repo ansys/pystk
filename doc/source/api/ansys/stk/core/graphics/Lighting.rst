@@ -3,7 +3,7 @@ Lighting
 
 .. py:class:: Lighting
 
-   ILighting, SupportsDeleteCallback
+   Bases: py:obj:`~ILighting`
 
    Lighting in the 3D scene.
 

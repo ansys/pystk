@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.IPositionInterpolator.polyline_type
-    :type: "POLYLINE_TYPE"
+    :type: POLYLINE_TYPE
 
     Gets the polyline type of positions returned from interpolate.
 
@@ -54,7 +54,8 @@ Method detail
 -------------
 
 
-.. py:method:: interpolate(self, positions:list) -> list
+.. py:method:: interpolate(self, positions: list) -> list
+    :canonical: ansys.stk.core.graphics.IPositionInterpolator.interpolate
 
     Compute interpolated positions based on the input positions. Returns an array of positions in the order x, y, z.
 

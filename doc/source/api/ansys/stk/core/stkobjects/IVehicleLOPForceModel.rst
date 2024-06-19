@@ -40,31 +40,31 @@ Property detail
 
 .. py:property:: central_body_gravity
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.central_body_gravity
-    :type: "IAgVeLOPCentralBodyGravity"
+    :type: IAgVeLOPCentralBodyGravity
 
     Get the central body gravity parameters.
 
 .. py:property:: third_body_gravity
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.third_body_gravity
-    :type: "IAgVeThirdBodyGravity"
+    :type: IAgVeThirdBodyGravity
 
     Get the 3rd body gravity parameters.
 
 .. py:property:: drag
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.drag
-    :type: "IAgVeLOPForceModelDrag"
+    :type: IAgVeLOPForceModelDrag
 
     Get the atmospheric drag parameters.
 
 .. py:property:: solar_radiation_pressure
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.solar_radiation_pressure
-    :type: "IAgVeLOPSolarRadiationPressure"
+    :type: IAgVeLOPSolarRadiationPressure
 
     Get the solar radiation pressure parameters.
 
 .. py:property:: physical_data
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.physical_data
-    :type: "IAgVePhysicalData"
+    :type: IAgVePhysicalData
 
     Get the physical data parameters.
 

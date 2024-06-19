@@ -68,7 +68,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IGraphics3DModelTransformation"
+.. py:method:: item(self, index: int) -> IGraphics3DModelTransformation
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection.item
 
     Return a model transformation by name or at a specified position.
 
@@ -78,7 +79,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DModelTransformation"`
+        :obj:`~IGraphics3DModelTransformation`
 
 
 

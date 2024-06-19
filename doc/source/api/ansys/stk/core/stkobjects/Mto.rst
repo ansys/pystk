@@ -3,7 +3,7 @@ Mto
 
 .. py:class:: Mto
 
-   IMto, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IMto`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Multi-Track Object (MTO).
 

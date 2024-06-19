@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: scattering_point_model
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderRangeOverCFARCells.scattering_point_model
-    :type: "IAgComponentLinkEmbedControl"
+    :type: IAgComponentLinkEmbedControl
 
     Gets the link/embed controller for managing the scattering point model component.
 

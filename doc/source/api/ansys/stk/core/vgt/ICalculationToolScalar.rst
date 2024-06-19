@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.type
-    :type: "CRDN_CALC_SCALAR_TYPE"
+    :type: CRDN_CALC_SCALAR_TYPE
 
     Returns the scalar calculation type.
 
@@ -77,7 +77,8 @@ Method detail
 -------------
 
 
-.. py:method:: evaluate(self, epoch:typing.Any) -> "ICalculationToolEvaluateResult"
+.. py:method:: evaluate(self, epoch: typing.Any) -> ICalculationToolEvaluateResult
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.evaluate
 
     Evaluate the scalar calculation at the specified time instant.
 
@@ -87,9 +88,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolEvaluateResult"`
+        :obj:`~ICalculationToolEvaluateResult`
 
-.. py:method:: quick_evaluate(self, epoch:typing.Any) -> list
+.. py:method:: quick_evaluate(self, epoch: typing.Any) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate
 
     Evaluate the scalar calculation at the specified time instant and returns the results as an array with two elements, the first element being of boolean type indicating whether the computation succeeded, followed by a double-precision value representing...
 
@@ -101,7 +103,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: evaluate_with_rate(self, epoch:typing.Any) -> "ICalculationToolEvaluateWithRateResult"
+.. py:method:: evaluate_with_rate(self, epoch: typing.Any) -> ICalculationToolEvaluateWithRateResult
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.evaluate_with_rate
 
     Evaluate the scalar calculation at the specified time instant. The result is a scalar value and its rate of change.
 
@@ -111,9 +114,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolEvaluateWithRateResult"`
+        :obj:`~ICalculationToolEvaluateWithRateResult`
 
-.. py:method:: quick_evaluate_with_rate(self, epoch:typing.Any) -> list
+.. py:method:: quick_evaluate_with_rate(self, epoch: typing.Any) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate
 
     Evaluate the scalar calculation at the specified time instant and returns the results as an array with three elements, the first element being of boolean type indicating whether the computation succeeded, followed by two double-precision values one rep...
 
@@ -125,16 +129,18 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_availability(self) -> "ITimeToolIntervalCollection"
+.. py:method:: get_availability(self) -> ITimeToolIntervalCollection
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.get_availability
 
     Return a list of availability intervals.
 
     :Returns:
 
-        :obj:`~"ITimeToolIntervalCollection"`
+        :obj:`~ITimeToolIntervalCollection`
 
 
-.. py:method:: quick_evaluate_array(self, times:list) -> list
+.. py:method:: quick_evaluate_array(self, times: list) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_array
 
     Evaluate the scalar calculation, and rate, over an array of times, entered as strings in the Scenario date unit. It returns an array corresponding to the input times...
 
@@ -146,7 +152,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: quick_evaluate_with_rate_array(self, times:list) -> list
+.. py:method:: quick_evaluate_with_rate_array(self, times: list) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate_array
 
     Evaluate the scalar calculation over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
 
@@ -158,25 +165,27 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: quick_evaluate_event_array(self, refArray:"ITimeToolEventArray") -> list
+.. py:method:: quick_evaluate_event_array(self, refArray: ITimeToolEventArray) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_event_array
 
     Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
 
     :Parameters:
 
-    **refArray** : :obj:`~"ITimeToolEventArray"`
+    **refArray** : :obj:`~ITimeToolEventArray`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: quick_evaluate_with_rate_event_array(self, refArray:"ITimeToolEventArray") -> list
+.. py:method:: quick_evaluate_with_rate_event_array(self, refArray: ITimeToolEventArray) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate_event_array
 
     Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
 
     :Parameters:
 
-    **refArray** : :obj:`~"ITimeToolEventArray"`
+    **refArray** : :obj:`~ITimeToolEventArray`
 
     :Returns:
 

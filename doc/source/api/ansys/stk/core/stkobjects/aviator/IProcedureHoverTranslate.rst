@@ -60,19 +60,19 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.altitude_options
-    :type: "IAgAvtrHoverAltitudeOptions"
+    :type: IAgAvtrHoverAltitudeOptions
 
     Get the altitude options.
 
 .. py:property:: heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.heading_mode
-    :type: "VTOL_HEADING_MODE"
+    :type: VTOL_HEADING_MODE
 
     Gets or sets the heading mode for the aircraft.
 
 .. py:property:: final_heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.final_heading_mode
-    :type: "VTOL_FINAL_HEADING_MODE"
+    :type: VTOL_FINAL_HEADING_MODE
 
     Get the mode to define the heading at the end of the hover.
 
@@ -96,19 +96,19 @@ Property detail
 
 .. py:property:: final_heading_rate
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.final_heading_rate
-    :type: "VTOL_RATE_MODE"
+    :type: VTOL_RATE_MODE
 
     Gets or sets the options to define the heading rate of the aircraft at the end of the procedure.
 
 .. py:property:: final_course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.final_course_mode
-    :type: "VTOL_TRANSLATION_FINAL_COURSE_MODE"
+    :type: VTOL_TRANSLATION_FINAL_COURSE_MODE
 
     Gets or sets the mode to specify the final course at the end of the hover.
 
 .. py:property:: smooth_translation_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.smooth_translation_mode
-    :type: "VTOL_RATE_MODE"
+    :type: VTOL_RATE_MODE
 
     Gets or sets the translation mode of the aircraft at the end of the procedure.
 
@@ -126,7 +126,8 @@ Method detail
 
 
 
-.. py:method:: set_relative_course(self, headingChange:typing.Any) -> None
+.. py:method:: set_relative_course(self, headingChange: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.set_relative_course
 
     Set the relative heading change.
 
@@ -138,7 +139,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_absolute_course(self, course:typing.Any, isMagnetic:bool) -> None
+.. py:method:: set_absolute_course(self, course: typing.Any, isMagnetic: bool) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.set_absolute_course
 
     Set the absolute heading and reference.
 
@@ -152,6 +154,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: set_final_translation_course(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.set_final_translation_course
 
     Set the option to have the final heading to match the translation bearing.
 
@@ -170,11 +173,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

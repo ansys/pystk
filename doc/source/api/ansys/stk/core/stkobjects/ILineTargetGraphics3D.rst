@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: border_wall
     :canonical: ansys.stk.core.stkobjects.ILineTargetGraphics3D.border_wall
-    :type: "IAgVOBorderWall"
+    :type: IAgVOBorderWall
 
     Retrieve the border wall properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.ILineTargetGraphics3D.vector
-    :type: "IAgVOVector"
+    :type: IAgVOVector
 
     Get the vector.
 

@@ -3,7 +3,7 @@ StarGraphics3D
 
 .. py:class:: StarGraphics3D
 
-   IStarGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~IStarGraphics3D`
 
    Class defining 3D Graphics properties of a Star.
 

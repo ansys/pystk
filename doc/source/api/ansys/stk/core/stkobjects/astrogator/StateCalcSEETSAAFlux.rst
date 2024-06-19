@@ -3,7 +3,7 @@ StateCalcSEETSAAFlux
 
 .. py:class:: StateCalcSEETSAAFlux
 
-   IStateCalcSEETSAAFlux, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcSEETSAAFlux`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass StateCalcSEETSAAFlux.
 

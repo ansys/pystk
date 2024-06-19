@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: inclination_magnitude_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcInclinationX.inclination_magnitude_type
-    :type: "GEO_STATIONARY_INCLINATION_MAGNITUDE"
+    :type: GEO_STATIONARY_INCLINATION_MAGNITUDE
 
     Magnitude to use when computing the inclination vector.
 

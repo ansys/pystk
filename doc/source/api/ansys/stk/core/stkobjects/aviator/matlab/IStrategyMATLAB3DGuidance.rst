@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: closure_mode
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.closure_mode
-    :type: "CLOSURE_MODE"
+    :type: CLOSURE_MODE
 
     Gets or sets the closure mode for the guidance strategy.
 
@@ -150,13 +150,13 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.airspeed_options
-    :type: "IAgAvtrBasicManeuverAirspeedOptions"
+    :type: IAgAvtrBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.position_vel_strategies
-    :type: "IAgAvtrBasicManeuverTargetPosVel"
+    :type: IAgAvtrBasicManeuverTargetPosVel
 
     Get the position velocity strategies for MATLAB 3D Guidance.
 
@@ -171,7 +171,8 @@ Method detail
 
 
 
-.. py:method:: set_stop_time_to_go(self, enable:bool, time:float) -> None
+.. py:method:: set_stop_time_to_go(self, enable: bool, time: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.set_stop_time_to_go
 
     Set the option to use the stop time from target stopping condition and set the according value.
 
@@ -186,7 +187,8 @@ Method detail
 
 
 
-.. py:method:: set_stop_slant_range(self, enable:bool, range:float) -> None
+.. py:method:: set_stop_slant_range(self, enable: bool, range: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.set_stop_slant_range
 
     Set the option to use the stop slant range stopping condition and set the according value.
 
@@ -202,6 +204,7 @@ Method detail
 
 
 .. py:method:: is_function_path_valid(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.is_function_path_valid
 
     Check if the MATLAB function path is valid.
 
@@ -224,6 +227,7 @@ Method detail
 
 
 .. py:method:: cancel_tgt_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.cancel_tgt_position_vel
 
     Cancel the position velocity strategies for MATLAB 3D Guidance.
 

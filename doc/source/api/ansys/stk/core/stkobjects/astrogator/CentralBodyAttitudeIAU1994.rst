@@ -3,7 +3,7 @@ CentralBodyAttitudeIAU1994
 
 .. py:class:: CentralBodyAttitudeIAU1994
 
-   ICentralBodyAttitudeIAU1994, ICentralBodyAttitude, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyAttitudeIAU1994`, py:obj:`~ICentralBodyAttitude`
 
    Central Body Attitude - IAU1994.
 

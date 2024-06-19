@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLagrangeLibration.central_body
-    :type: "IAgCrdnCentralBodyRefTo"
+    :type: IAgCrdnCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: point_type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLagrangeLibration.point_type
-    :type: "CRDN_LAGRANGE_LIBRATION_POINT_TYPE"
+    :type: CRDN_LAGRANGE_LIBRATION_POINT_TYPE
 
     Specify a lagrange point (L1, L2, etc.).
 
 .. py:property:: secondary_central_bodies
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLagrangeLibration.secondary_central_bodies
-    :type: "IAgCrdnCentralBodyCollection"
+    :type: IAgCrdnCentralBodyCollection
 
     Specify multiple secondary central bodies.
 

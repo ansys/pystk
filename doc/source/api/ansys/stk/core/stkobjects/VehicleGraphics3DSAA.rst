@@ -3,7 +3,7 @@ VehicleGraphics3DSAA
 
 .. py:class:: VehicleGraphics3DSAA
 
-   IVehicleGraphics3DSAA, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DSAA`
 
    3D South Atlantic Anomaly contours.
 

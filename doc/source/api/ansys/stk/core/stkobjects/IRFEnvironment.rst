@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.IRFEnvironment.propagation_channel
-    :type: "IAgPropagationChannel"
+    :type: IAgPropagationChannel
 
     Gets the propagation channel.
 

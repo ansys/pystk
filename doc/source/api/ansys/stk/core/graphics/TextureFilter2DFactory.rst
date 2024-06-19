@@ -3,7 +3,7 @@ TextureFilter2DFactory
 
 .. py:class:: TextureFilter2DFactory
 
-   ITextureFilter2DFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITextureFilter2DFactory`
 
    Create texture filters.
 

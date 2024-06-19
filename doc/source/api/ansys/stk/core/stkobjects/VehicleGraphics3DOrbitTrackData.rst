@@ -3,7 +3,7 @@ VehicleGraphics3DOrbitTrackData
 
 .. py:class:: VehicleGraphics3DOrbitTrackData
 
-   IVehicleGraphics3DOrbitTrackData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DOrbitTrackData`
 
    3D leading/trailing track data for satellites.
 

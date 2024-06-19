@@ -3,7 +3,7 @@ CalculationToolSamplingRelativeTolerance
 
 .. py:class:: CalculationToolSamplingRelativeTolerance
 
-   ICalculationToolSamplingRelativeTolerance, ICalculationToolSamplingMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolSamplingRelativeTolerance`, py:obj:`~ICalculationToolSamplingMethod`
 
    Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning.
 

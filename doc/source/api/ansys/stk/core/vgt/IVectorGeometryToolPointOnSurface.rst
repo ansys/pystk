@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.central_body
-    :type: "IAgCrdnCentralBodyRefTo"
+    :type: IAgCrdnCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.reference_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a reference point.
 
 .. py:property:: reference_shape
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.reference_shape
-    :type: "CRDN_REFERENCE_SHAPE_TYPE"
+    :type: CRDN_REFERENCE_SHAPE_TYPE
 
     Specify a reference shape.
 
 .. py:property:: surface_type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.surface_type
-    :type: "CRDN_SURFACE_TYPE"
+    :type: CRDN_SURFACE_TYPE
 
     Specify a surface type.
 

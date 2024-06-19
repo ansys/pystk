@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11Param.ephemeris_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
 .. py:property:: parameter_files
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11Param.parameter_files
-    :type: "IAgVePropagator11ParamDescriptorCollection"
+    :type: IAgVePropagator11ParamDescriptorCollection
 
     Returns a collection of 11-Parameter satellite definitions.
 
@@ -68,6 +68,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11Param.propagate
 
     Propagates the satellite's path using the specified time interval.
 

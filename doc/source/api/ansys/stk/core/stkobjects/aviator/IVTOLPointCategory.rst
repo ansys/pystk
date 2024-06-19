@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: user_vtol_points
     :canonical: ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.user_vtol_points
-    :type: "IAgAvtrUserVTOLPointSource"
+    :type: IAgAvtrUserVTOLPointSource
 
     Get the User VTOL Points.
 
 .. py:property:: arinc424_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.arinc424_helipads
-    :type: "IAgAvtrARINC424Source"
+    :type: IAgAvtrARINC424Source
 
     Get the ARINC-424 helipads.
 
 .. py:property:: dafif_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.dafif_helipads
-    :type: "IAgAvtrDAFIFSource"
+    :type: IAgAvtrDAFIFSource
 
     Get the DAFIF helipads.
 

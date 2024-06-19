@@ -3,7 +3,7 @@ DriverMissionControlSequence
 
 .. py:class:: DriverMissionControlSequence
 
-   IDriverMissionControlSequence, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IDriverMissionControlSequence`, py:obj:`~IVehiclePropagator`
 
    Basic properties of an Astrogator satellite.
 

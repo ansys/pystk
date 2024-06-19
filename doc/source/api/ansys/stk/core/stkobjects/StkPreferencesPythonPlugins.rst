@@ -3,7 +3,7 @@ StkPreferencesPythonPlugins
 
 .. py:class:: StkPreferencesPythonPlugins
 
-   IStkPreferencesPythonPlugins, SupportsDeleteCallback
+   Bases: py:obj:`~IStkPreferencesPythonPlugins`
 
    Allow configuring Python plugin preferences.
 

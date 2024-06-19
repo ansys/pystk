@@ -3,7 +3,7 @@ CROrientationEulerAngles
 
 .. py:class:: CROrientationEulerAngles
 
-   IOrientationEulerAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback
+   Bases: py:obj:`~IOrientationEulerAngles`, py:obj:`~IOrientation`, py:obj:`~IOrientationPositionOffset`
 
    Euler Angles orientation method.
 

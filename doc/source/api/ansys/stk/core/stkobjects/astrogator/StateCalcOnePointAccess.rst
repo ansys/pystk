@@ -3,7 +3,7 @@ StateCalcOnePointAccess
 
 .. py:class:: StateCalcOnePointAccess
 
-   IComponentInfo, ICloneable, IStateCalcOnePointAccess, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcOnePointAccess`
 
    Access Calc objects.
 

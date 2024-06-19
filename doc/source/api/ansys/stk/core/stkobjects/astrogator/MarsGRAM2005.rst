@@ -3,7 +3,7 @@ MarsGRAM2005
 
 .. py:class:: MarsGRAM2005
 
-   IMarsGRAM2005, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMarsGRAM2005`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Mars-GRAM 2005 atmospheric propagator function.
 

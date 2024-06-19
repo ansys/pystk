@@ -109,25 +109,25 @@ Property detail
 
 .. py:property:: efficiencies_and_losses
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.efficiencies_and_losses
-    :type: "IAgAvtrPropulsionEfficiencies"
+    :type: IAgAvtrPropulsionEfficiencies
 
     Get the jet engine's propulsion efficiencies and losses.
 
 .. py:property:: fuel_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.fuel_type
-    :type: "JET_FUEL_TYPE"
+    :type: JET_FUEL_TYPE
 
     Gets or sets the jet engine's fuel type.
 
 .. py:property:: fuel_mode_as_afprop
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.fuel_mode_as_afprop
-    :type: "IAgAvtrFuelModelKeroseneAFPROP"
+    :type: IAgAvtrFuelModelKeroseneAFPROP
 
     Get the interface for a Kerosene - AFPROP fuel mode.
 
 .. py:property:: fuel_mode_as_cea
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.fuel_mode_as_cea
-    :type: "IAgAvtrFuelModelKeroseneCEA"
+    :type: IAgAvtrFuelModelKeroseneCEA
 
     Get the interface for a Kerosene - CEA fuel mode.
 

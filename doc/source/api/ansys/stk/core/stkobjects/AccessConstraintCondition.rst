@@ -3,7 +3,7 @@ AccessConstraintCondition
 
 .. py:class:: AccessConstraintCondition
 
-   IAccessConstraintCondition, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintCondition`, py:obj:`~IAccessConstraint`
 
    Class defining access constraints in terms of lighting conditions.
 

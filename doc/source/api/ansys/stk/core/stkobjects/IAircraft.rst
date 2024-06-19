@@ -46,49 +46,49 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IAircraft.graphics
-    :type: "IAgAcGraphics"
+    :type: IAgAcGraphics
 
     Get the aircraft's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IAircraft.graphics_3d
-    :type: "IAgAcVO"
+    :type: IAgAcVO
 
     Get the aircraft's 3D Graphics properties.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.IAircraft.export_tools
-    :type: "IAgAcExportTools"
+    :type: IAgAcExportTools
 
     Returns the IAgAcExportTools interface.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.IAircraft.atmosphere
-    :type: "IAgAtmosphere"
+    :type: IAgAtmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.IAircraft.radar_clutter_map
-    :type: "IAgRadarClutterMapInheritable"
+    :type: IAgRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IAircraft.radar_cross_section
-    :type: "IAgRadarCrossSectionInheritable"
+    :type: IAgRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IAircraft.laser_environment
-    :type: "IAgPlatformLaserEnvironment"
+    :type: IAgPlatformLaserEnvironment
 
     Gets the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IAircraft.rf_environment
-    :type: "IAgPlatformRFEnvironment"
+    :type: IAgPlatformRFEnvironment
 
     Gets the RF environment.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: get_eoir
     :canonical: ansys.stk.core.stkobjects.IAircraft.get_eoir
-    :type: "IAgEOIR"
+    :type: IAgEOIR
 
     Get the EOIR properties of the aircraft.
 

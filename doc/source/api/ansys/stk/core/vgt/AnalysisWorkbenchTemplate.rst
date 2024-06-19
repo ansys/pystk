@@ -3,7 +3,7 @@ AnalysisWorkbenchTemplate
 
 .. py:class:: AnalysisWorkbenchTemplate
 
-   IAnalysisWorkbenchContext, IAnalysisWorkbenchTemplate, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchContext`, py:obj:`~IAnalysisWorkbenchTemplate`
 
    Enable to obtain information about the STK class that owns the VGT component.
 

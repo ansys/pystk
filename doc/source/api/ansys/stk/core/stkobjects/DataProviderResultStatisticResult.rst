@@ -3,7 +3,7 @@ DataProviderResultStatisticResult
 
 .. py:class:: DataProviderResultStatisticResult
 
-   IDataProviderResultStatisticResult, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResultStatisticResult`
 
    Results returned by statistics computation.
 

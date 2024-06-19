@@ -3,7 +3,7 @@ VectorGeometryToolPlaneFactory
 
 .. py:class:: VectorGeometryToolPlaneFactory
 
-   IVectorGeometryToolPlaneFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlaneFactory`
 
    A Factory object to create VGT planes.
 

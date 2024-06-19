@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: files
     :canonical: ansys.stk.core.stkx.IDataObject.files
-    :type: "IAgDataObjectFiles"
+    :type: IAgDataObjectFiles
 
     Returns a collection of filenames.
 

@@ -3,7 +3,7 @@ SatelliteExportTools
 
 .. py:class:: SatelliteExportTools
 
-   ISatelliteExportTools, SupportsDeleteCallback
+   Bases: py:obj:`~ISatelliteExportTools`
 
    The Satellite Export Tools.
 

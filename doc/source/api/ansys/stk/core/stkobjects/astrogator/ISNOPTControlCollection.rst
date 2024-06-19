@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "ISNOPTControl"
+.. py:method:: item(self, index: int) -> ISNOPTControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISNOPTControl"`
+        :obj:`~ISNOPTControl`
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath:str, controlPath:str) -> "ISNOPTControl"
+.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> ISNOPTControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISNOPTControl"`
+        :obj:`~ISNOPTControl`
 

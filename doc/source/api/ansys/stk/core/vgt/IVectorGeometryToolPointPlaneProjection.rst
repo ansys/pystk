@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: source_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection.source_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a source point.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection.reference_plane
-    :type: "IAgCrdnPlaneRefTo"
+    :type: IAgCrdnPlaneRefTo
 
     Specify a reference plane.
 

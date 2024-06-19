@@ -3,7 +3,7 @@ KmlDocumentLoadedEventArgs
 
 .. py:class:: KmlDocumentLoadedEventArgs
 
-   IKmlDocumentLoadedEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~IKmlDocumentLoadedEventArgs`
 
    The event is raised when a KML document has been loaded.
 

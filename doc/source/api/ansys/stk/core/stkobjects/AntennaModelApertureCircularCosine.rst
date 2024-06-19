@@ -3,7 +3,7 @@ AntennaModelApertureCircularCosine
 
 .. py:class:: AntennaModelApertureCircularCosine
 
-   IAntennaModelApertureCircularCosine, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelApertureCircularCosine`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a circular cosine aperture antenna model.
 

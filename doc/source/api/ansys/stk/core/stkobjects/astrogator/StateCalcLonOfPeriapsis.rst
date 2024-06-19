@@ -3,7 +3,7 @@ StateCalcLonOfPeriapsis
 
 .. py:class:: StateCalcLonOfPeriapsis
 
-   IComponentInfo, ICloneable, IStateCalcLonOfPeriapsis, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcLonOfPeriapsis`
 
    LonOfPeriapsis Calc objects.
 

@@ -3,7 +3,7 @@ VehicleGraphics3DSigmaScaleProbability
 
 .. py:class:: VehicleGraphics3DSigmaScaleProbability
 
-   IVehicleGraphics3DSigmaScale, IVehicleGraphics3DSigmaScaleProbability, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DSigmaScale`, py:obj:`~IVehicleGraphics3DSigmaScaleProbability`
 
    Sigma probability for indirect sizing of covariance pointing contours.
 

@@ -3,7 +3,7 @@ TerrainNormSlopeAzimuth
 
 .. py:class:: TerrainNormSlopeAzimuth
 
-   ITerrainNormData, ITerrainNormSlopeAzimuth, SupportsDeleteCallback
+   Bases: py:obj:`~ITerrainNormData`, py:obj:`~ITerrainNormSlopeAzimuth`
 
    Class defining Slope/Azimuth data for the TerrainNormal.
 

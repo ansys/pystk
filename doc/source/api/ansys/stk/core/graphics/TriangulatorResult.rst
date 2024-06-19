@@ -3,7 +3,7 @@ TriangulatorResult
 
 .. py:class:: TriangulatorResult
 
-   ITriangulatorResult, SupportsDeleteCallback
+   Bases: py:obj:`~ITriangulatorResult`
 
    The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive.
 

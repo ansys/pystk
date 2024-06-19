@@ -3,7 +3,7 @@ BandExtractFilter
 
 .. py:class:: BandExtractFilter
 
-   IBandExtractFilter, IRasterFilter, SupportsDeleteCallback
+   Bases: py:obj:`~IBandExtractFilter`, py:obj:`~IRasterFilter`
 
    Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted.
 

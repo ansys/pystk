@@ -3,7 +3,7 @@ AntennaContourEirp
 
 .. py:class:: AntennaContourEirp
 
-   IAntennaContour, IAntennaContourEirp, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaContour`, py:obj:`~IAntennaContourEirp`
 
    Class defining an antenna eirp contour properties.
 

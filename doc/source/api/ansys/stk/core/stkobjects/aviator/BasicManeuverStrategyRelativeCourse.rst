@@ -3,7 +3,7 @@ BasicManeuverStrategyRelativeCourse
 
 .. py:class:: BasicManeuverStrategyRelativeCourse
 
-   IBasicManeuverStrategyRelativeCourse, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyRelativeCourse`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Relative Course strategy for a basic maneuver procedure.
 

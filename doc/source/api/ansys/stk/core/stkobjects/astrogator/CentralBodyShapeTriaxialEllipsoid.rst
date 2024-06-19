@@ -3,7 +3,7 @@ CentralBodyShapeTriaxialEllipsoid
 
 .. py:class:: CentralBodyShapeTriaxialEllipsoid
 
-   ICentralBodyShapeTriaxialEllipsoid, ICentralBodyShape, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyShapeTriaxialEllipsoid`, py:obj:`~ICentralBodyShape`
 
    Central Body Shape - Triaxial Ellipsoid.
 

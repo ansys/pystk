@@ -3,7 +3,7 @@ RFFilterModelSinc
 
 .. py:class:: RFFilterModelSinc
 
-   IRFFilterModelSinc, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelSinc`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a sinc filter model.
 

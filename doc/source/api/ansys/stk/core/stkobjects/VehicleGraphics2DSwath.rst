@@ -3,7 +3,7 @@ VehicleGraphics2DSwath
 
 .. py:class:: VehicleGraphics2DSwath
 
-   IVehicleGraphics2DSwath, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DSwath`
 
    Vehicle swath.
 

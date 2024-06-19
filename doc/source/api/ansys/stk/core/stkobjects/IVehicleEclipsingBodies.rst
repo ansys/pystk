@@ -68,7 +68,8 @@ Method detail
 
 
 
-.. py:method:: is_eclipsing_body_assigned(self, eclipsingBody:str) -> bool
+.. py:method:: is_eclipsing_body_assigned(self, eclipsingBody: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleEclipsingBodies.is_eclipsing_body_assigned
 
     Return true if the eclipsing body is assigned.
 
@@ -80,7 +81,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: assign_eclipsing_body(self, eclipsingBody:str) -> None
+.. py:method:: assign_eclipsing_body(self, eclipsingBody: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEclipsingBodies.assign_eclipsing_body
 
     Add an eclipsing body.
 
@@ -92,7 +94,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_eclipsing_body(self, eclipsingBody:str) -> None
+.. py:method:: remove_eclipsing_body(self, eclipsingBody: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEclipsingBodies.remove_eclipsing_body
 
     Remove an eclipsing body.
 
@@ -105,6 +108,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all_eclipsing_bodies(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEclipsingBodies.remove_all_eclipsing_bodies
 
     Remove all eclipsing bodies.
 

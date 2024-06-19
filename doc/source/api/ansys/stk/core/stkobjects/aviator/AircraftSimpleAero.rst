@@ -3,7 +3,7 @@ AircraftSimpleAero
 
 .. py:class:: AircraftSimpleAero
 
-   IAircraftSimpleAero, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftSimpleAero`
 
    Class defining the simple aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 

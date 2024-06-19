@@ -90,55 +90,55 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.constraints
-    :type: "IAgVAConstraintCollection"
+    :type: IAgVAConstraintCollection
 
     Further conditions that must be met in order for the stopping condition to be deemed satisfied.
 
 .. py:property:: criterion
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.criterion
-    :type: "ACCESS_CRITERION"
+    :type: ACCESS_CRITERION
 
     Specifies the direction from which the stopping condition value must be achieved.
 
 .. py:property:: before_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.before_conditions
-    :type: "IAgVAStoppingConditionCollection"
+    :type: IAgVAStoppingConditionCollection
 
     A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.aberration_type
-    :type: "ABERRATION_TYPE"
+    :type: ABERRATION_TYPE
 
     Gets or sets the model of aberration to be used in access computations.
 
 .. py:property:: base_selection_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.base_selection_type
-    :type: "BASE_SELECTION"
+    :type: BASE_SELECTION
 
     Get the base object for the access calculation.
 
 .. py:property:: base_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.base_selection
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Returns the base selection object.
 
 .. py:property:: clock_host
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.clock_host
-    :type: "IV_CLOCK_HOST"
+    :type: IV_CLOCK_HOST
 
     Time values are reported with a clock colocated with the clock host object.
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.signal_sense
-    :type: "IV_TIME_SENSE"
+    :type: IV_TIME_SENSE
 
     Gets or sets the direction of the signal.
 
 .. py:property:: target_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.target_object
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the target object for the access calculation.
 
@@ -174,13 +174,14 @@ Method detail
 
 
 
-.. py:method:: set_base_selection(self, selection:"BASE_SELECTION") -> None
+.. py:method:: set_base_selection(self, selection: BASE_SELECTION) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.set_base_selection
 
     BaseSelection.
 
     :Parameters:
 
-    **selection** : :obj:`~"BASE_SELECTION"`
+    **selection** : :obj:`~BASE_SELECTION`
 
     :Returns:
 

@@ -3,7 +3,7 @@ PlanetPositionFile
 
 .. py:class:: PlanetPositionFile
 
-   IPositionSourceData, IPlanetPositionFile, SupportsDeleteCallback
+   Bases: py:obj:`~IPositionSourceData`, py:obj:`~IPlanetPositionFile`
 
    Class defining the planetary ephemeris file.
 

@@ -3,7 +3,7 @@ BulirschStoerIntegrator
 
 .. py:class:: BulirschStoerIntegrator
 
-   IBulirschStoerIntegrator, INumericalIntegrator, SupportsDeleteCallback
+   Bases: py:obj:`~IBulirschStoerIntegrator`, py:obj:`~INumericalIntegrator`
 
    Bulirsch-Stoer Numerical Integrator.
 

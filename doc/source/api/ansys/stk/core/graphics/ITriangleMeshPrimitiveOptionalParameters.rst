@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_texture_coordinates(self, textureCoordinates:list) -> None
+.. py:method:: set_texture_coordinates(self, textureCoordinates: list) -> None
+    :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParameters.set_texture_coordinates
 
     Define a collection of texture coordinates.
 
@@ -50,7 +51,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_per_vertex_colors(self, colors:list) -> None
+.. py:method:: set_per_vertex_colors(self, colors: list) -> None
+    :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParameters.set_per_vertex_colors
 
     Define a collection of colors.
 

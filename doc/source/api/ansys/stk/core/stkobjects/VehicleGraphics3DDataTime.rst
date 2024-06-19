@@ -3,7 +3,7 @@ VehicleGraphics3DDataTime
 
 .. py:class:: VehicleGraphics3DDataTime
 
-   IVehicleLeadTrailData, IVehicleLeadTrailDataTime, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLeadTrailData`, py:obj:`~IVehicleLeadTrailDataTime`
 
    Time.
 

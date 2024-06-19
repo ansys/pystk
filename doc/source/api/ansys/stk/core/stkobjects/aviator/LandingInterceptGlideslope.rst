@@ -3,7 +3,7 @@ LandingInterceptGlideslope
 
 .. py:class:: LandingInterceptGlideslope
 
-   ILandingInterceptGlideslope, SupportsDeleteCallback
+   Bases: py:obj:`~ILandingInterceptGlideslope`
 
    Class defining the intercept glideslope options for a landing procedure.
 

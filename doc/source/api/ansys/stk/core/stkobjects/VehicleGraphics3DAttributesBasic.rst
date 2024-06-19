@@ -3,7 +3,7 @@ VehicleGraphics3DAttributesBasic
 
 .. py:class:: VehicleGraphics3DAttributesBasic
 
-   IVehicleGraphics3DAttributes, IVehicleGraphics3DAttributesBasic, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DAttributes`, py:obj:`~IVehicleGraphics3DAttributesBasic`
 
    Basic 3D graphics for covariance pointing contours.
 

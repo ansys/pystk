@@ -3,7 +3,7 @@ StateCalcLonOfAscNode
 
 .. py:class:: StateCalcLonOfAscNode
 
-   IComponentInfo, ICloneable, IStateCalcLonOfAscNode, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcLonOfAscNode`
 
    LongitudeOfAscendingNode Calc objects.
 

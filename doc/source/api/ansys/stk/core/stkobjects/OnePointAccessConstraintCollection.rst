@@ -3,7 +3,7 @@ OnePointAccessConstraintCollection
 
 .. py:class:: OnePointAccessConstraintCollection
 
-   IOnePointAccessConstraintCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IOnePointAccessConstraintCollection`
 
    Represents the access constraints for the one point access computation.
 

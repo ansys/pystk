@@ -3,7 +3,7 @@ ChainGraphics2DStatic
 
 .. py:class:: ChainGraphics2DStatic
 
-   IChainGraphics2DStatic, SupportsDeleteCallback
+   Bases: py:obj:`~IChainGraphics2DStatic`
 
    2D static graphics for a chain.
 

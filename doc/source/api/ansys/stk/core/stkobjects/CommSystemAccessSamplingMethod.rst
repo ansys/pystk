@@ -3,7 +3,7 @@ CommSystemAccessSamplingMethod
 
 .. py:class:: CommSystemAccessSamplingMethod
 
-   ICommSystemAccessSamplingMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemAccessSamplingMethod`
 
    Class defining a CommSystem access options.
 

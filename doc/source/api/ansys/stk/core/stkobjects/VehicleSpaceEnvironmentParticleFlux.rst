@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentParticleFlux
 
 .. py:class:: VehicleSpaceEnvironmentParticleFlux
 
-   IVehicleSpaceEnvironmentParticleFlux, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironmentParticleFlux`
 
    Particle Flux settings.
 

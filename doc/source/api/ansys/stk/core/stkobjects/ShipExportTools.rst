@@ -3,7 +3,7 @@ ShipExportTools
 
 .. py:class:: ShipExportTools
 
-   IShipExportTools, SupportsDeleteCallback
+   Bases: py:obj:`~IShipExportTools`
 
    The Ship Export Tools.
 

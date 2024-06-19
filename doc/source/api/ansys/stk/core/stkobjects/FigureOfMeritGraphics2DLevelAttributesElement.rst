@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DLevelAttributesElement
 
 .. py:class:: FigureOfMeritGraphics2DLevelAttributesElement
 
-   IFigureOfMeritGraphics2DLevelAttributesElement, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DLevelAttributesElement`
 
    2D graphics attributes of contour levels.
 

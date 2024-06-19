@@ -3,7 +3,7 @@ AntennaModelItuBO1213CoPolar
 
 .. py:class:: AntennaModelItuBO1213CoPolar
 
-   IAntennaModelItuBO1213CoPolar, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuBO1213CoPolar`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R BO1213 co-polar antenna model.
 

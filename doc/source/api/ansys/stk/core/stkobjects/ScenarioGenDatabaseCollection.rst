@@ -3,7 +3,7 @@ ScenarioGenDatabaseCollection
 
 .. py:class:: ScenarioGenDatabaseCollection
 
-   IScenarioGenDatabaseCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IScenarioGenDatabaseCollection`
 
    Collection of Scenario database settings.
 

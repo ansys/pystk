@@ -3,7 +3,7 @@ CalculationToolScalarAngle
 
 .. py:class:: CalculationToolScalarAngle
 
-   ICalculationToolScalarAngle, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarAngle`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Scalar equal to angular displacement obtained from any angle in VGT.
 

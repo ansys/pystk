@@ -61,19 +61,19 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.reference_point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     A reference point. Can be any point from VGT.
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.direction_vector
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     A direction vector. Can be any vector from VGT.
 
 .. py:property:: intersection_surface
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.intersection_surface
-    :type: "CRDN_INTERSECTION_SURFACE"
+    :type: CRDN_INTERSECTION_SURFACE
 
     An intersection surface.
 
@@ -143,7 +143,8 @@ Method detail
 
 
 
-.. py:method:: set_range(self, minimum:float, maximum:float) -> None
+.. py:method:: set_range(self, minimum: float, maximum: float) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.set_range
 
     Set minimum and maximum range. An exception is thrown if Minimum exceeds Maximum. An exception is thrown if UseRangeConstraint is set to true. Applicable only if the range constraint is not used.
 

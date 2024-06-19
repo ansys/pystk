@@ -3,7 +3,7 @@ EventDetectionSubSampling
 
 .. py:class:: EventDetectionSubSampling
 
-   IEventDetectionSubSampling, IEventDetectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IEventDetectionSubSampling`, py:obj:`~IEventDetectionStrategy`
 
    Event detection strategy involving subsampling.
 

@@ -3,7 +3,7 @@ CalculationToolScalarGroup
 
 .. py:class:: CalculationToolScalarGroup
 
-   ICalculationToolScalarGroup, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarGroup`
 
    Access or create VGT calculation scalars associated with an object or a central body.
 

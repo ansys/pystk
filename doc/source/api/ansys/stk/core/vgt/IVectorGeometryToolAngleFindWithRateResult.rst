@@ -59,19 +59,19 @@ Property detail
 
 .. py:property:: vector_from
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_from
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The first of the two vectors the angle is measured.
 
 .. py:property:: vector_to
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_to
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The second of the two vectors the angle is measured.
 
 .. py:property:: vector_about
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_about
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The vector the angle is rotated about.
 

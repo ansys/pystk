@@ -11,6 +11,21 @@ REFERENCE_RADIUS_SOURCE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~CENTRAL_BODY_FILE`
+              - Cb File.
+
+            * - :py:attr:`~GRAVITY_FILE`
+              - Gravity File.
+
+
 Import detail
 -------------
 

@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehiclePropagatorSP3File"
+.. py:method:: item(self, index: int) -> IVehiclePropagatorSP3File
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehiclePropagatorSP3File"`
+        :obj:`~IVehiclePropagatorSP3File`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, filePath:str) -> "IVehiclePropagatorSP3File"
+.. py:method:: add(self, filePath: str) -> IVehiclePropagatorSP3File
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.add
 
     Load an SP3 file using the specified file path and adds the file to a collection of SP3 files.
 
@@ -110,5 +114,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehiclePropagatorSP3File"`
+        :obj:`~IVehiclePropagatorSP3File`
 

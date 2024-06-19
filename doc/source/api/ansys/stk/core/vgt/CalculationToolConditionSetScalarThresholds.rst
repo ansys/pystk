@@ -3,7 +3,7 @@ CalculationToolConditionSetScalarThresholds
 
 .. py:class:: CalculationToolConditionSetScalarThresholds
 
-   ICalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionSetScalarThresholds`, py:obj:`~ICalculationToolConditionSet`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Condition set based on single scalar calculation compared to set of threshold values.
 

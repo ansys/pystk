@@ -3,7 +3,7 @@ VehicleGraphics3DDropLinePathItemCollection
 
 .. py:class:: VehicleGraphics3DDropLinePathItemCollection
 
-   IVehicleGraphics3DDropLinePathItemCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DDropLinePathItemCollection`
 
    Collection of drop lines from the vehicle's orbit or trajectory.
 

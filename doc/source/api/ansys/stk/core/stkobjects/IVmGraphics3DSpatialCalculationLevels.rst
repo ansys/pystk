@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: boundary_levels
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.boundary_levels
-    :type: "IAgVmVOSpatialCalculationLevelCollection"
+    :type: IAgVmVOSpatialCalculationLevelCollection
 
     Access and manipulate the collection of Spatial Calculation Boundary Levels for Volumetric object.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: fill_levels
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.fill_levels
-    :type: "IAgVmVOSpatialCalculationLevelCollection"
+    :type: IAgVmVOSpatialCalculationLevelCollection
 
     Access and manipulate the collection of Spatial Calculation Fill Levels for Volumetric object.
 

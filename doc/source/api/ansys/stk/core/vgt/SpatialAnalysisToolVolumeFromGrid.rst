@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeFromGrid
 
 .. py:class:: SpatialAnalysisToolVolumeFromGrid
 
-   ISpatialAnalysisToolVolumeFromGrid, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeFromGrid`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An over time volume interface.
 

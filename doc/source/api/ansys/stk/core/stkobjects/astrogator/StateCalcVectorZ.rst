@@ -3,7 +3,7 @@ StateCalcVectorZ
 
 .. py:class:: StateCalcVectorZ
 
-   IComponentInfo, ICloneable, IStateCalcVectorZ, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVectorZ`
 
    VectorZ Calc objects.
 

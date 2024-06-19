@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -85,7 +85,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IMissionControlSequenceSegment"
+.. py:method:: item(self, indexOrName: typing.Any) -> IMissionControlSequenceSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.item
 
     Return the specified segment(using segment name or index number).
 
@@ -95,23 +96,25 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMissionControlSequenceSegment"`
+        :obj:`~IMissionControlSequenceSegment`
 
-.. py:method:: insert(self, segmentType:"SEGMENT_TYPE", segmentName:str, segmentToInsertBefore:str) -> "IMissionControlSequenceSegment"
+.. py:method:: insert(self, segmentType: SEGMENT_TYPE, segmentName: str, segmentToInsertBefore: str) -> IMissionControlSequenceSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.insert
 
     Add a segment to the segment collection.
 
     :Parameters:
 
-    **segmentType** : :obj:`~"SEGMENT_TYPE"`
+    **segmentType** : :obj:`~SEGMENT_TYPE`
     **segmentName** : :obj:`~str`
     **segmentToInsertBefore** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"IMissionControlSequenceSegment"`
+        :obj:`~IMissionControlSequenceSegment`
 
-.. py:method:: remove(self, segmentNameToRemove:str) -> None
+.. py:method:: remove(self, segmentNameToRemove: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.remove
 
     Remove a segment; the End segment cannot be deleted.
 
@@ -124,6 +127,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.remove_all
 
     Remove all segments; the End segment cannot be deleted.
 
@@ -133,7 +137,8 @@ Method detail
 
 
 
-.. py:method:: cut(self, segmentNameToCut:str) -> None
+.. py:method:: cut(self, segmentNameToCut: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.cut
 
     Copy the segment into the clipboard and removes the segment from the sequence.
 
@@ -145,7 +150,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self, segmentToPasteBefore:str) -> "IMissionControlSequenceSegment"
+.. py:method:: paste(self, segmentToPasteBefore: str) -> IMissionControlSequenceSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.paste
 
     Pastes the segment from the clipboard and inserts in before the given segment name.
 
@@ -155,22 +161,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMissionControlSequenceSegment"`
+        :obj:`~IMissionControlSequenceSegment`
 
-.. py:method:: insert_copy(self, segment:"IMissionControlSequenceSegment", segmentToInsertBefore:str) -> "IMissionControlSequenceSegment"
+.. py:method:: insert_copy(self, segment: IMissionControlSequenceSegment, segmentToInsertBefore: str) -> IMissionControlSequenceSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.insert_copy
 
     Copy the segment pointer and inserts the copy before the given segment name.
 
     :Parameters:
 
-    **segment** : :obj:`~"IMissionControlSequenceSegment"`
+    **segment** : :obj:`~IMissionControlSequenceSegment`
     **segmentToInsertBefore** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"IMissionControlSequenceSegment"`
+        :obj:`~IMissionControlSequenceSegment`
 
-.. py:method:: insert_by_name(self, segmentName:str, segmentToInsertBefore:str) -> "IMissionControlSequenceSegment"
+.. py:method:: insert_by_name(self, segmentName: str, segmentToInsertBefore: str) -> IMissionControlSequenceSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.insert_by_name
 
     Insert a segment by name to the segment collection.
 
@@ -181,10 +189,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMissionControlSequenceSegment"`
+        :obj:`~IMissionControlSequenceSegment`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IMissionControlSequenceSegment"
+.. py:method:: get_item_by_index(self, index: int) -> IMissionControlSequenceSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.get_item_by_index
 
     Retrieve the specified segment(using segment index number).
 
@@ -194,9 +203,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMissionControlSequenceSegment"`
+        :obj:`~IMissionControlSequenceSegment`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IMissionControlSequenceSegment"
+.. py:method:: get_item_by_name(self, name: str) -> IMissionControlSequenceSegment
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.get_item_by_name
 
     Retrieve the specified segment(using segment name).
 
@@ -206,5 +216,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMissionControlSequenceSegment"`
+        :obj:`~IMissionControlSequenceSegment`
 

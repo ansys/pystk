@@ -3,7 +3,7 @@ VehiclePropagatorSP3
 
 .. py:class:: VehiclePropagatorSP3
 
-   IVehiclePropagatorSP3, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorSP3`, py:obj:`~IVehiclePropagator`
 
    The SP3 propagator reads .sp3 files of type 'a' and 'c' and allows you to use multiple files in sequence. These files are used to provide precise GPS orbits from the National Geodetic Survey (NGS).
 

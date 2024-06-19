@@ -3,7 +3,7 @@ VectorGeometryToolAxesTrajectory
 
 .. py:class:: VectorGeometryToolAxesTrajectory
 
-   IVectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesTrajectory`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Axes based on trajectory of the point relative to the reference coordinate system.
 

@@ -3,7 +3,7 @@ TakeoffDeparturePoint
 
 .. py:class:: TakeoffDeparturePoint
 
-   ITakeoffDeparturePoint, SupportsDeleteCallback
+   Bases: py:obj:`~ITakeoffDeparturePoint`
 
    Class defining the departure point options for a takeoff procedure.
 

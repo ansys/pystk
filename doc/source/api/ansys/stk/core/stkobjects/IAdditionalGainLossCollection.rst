@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IAdditionalGainLoss"
+.. py:method:: item(self, index: int) -> IAdditionalGainLoss
+    :canonical: ansys.stk.core.stkobjects.IAdditionalGainLossCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAdditionalGainLoss"`
+        :obj:`~IAdditionalGainLoss`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IAdditionalGainLossCollection.remove_at
 
     Remove the gain with the supplied index.
 
@@ -92,7 +94,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, value:float) -> "IAdditionalGainLoss"
+.. py:method:: add(self, value: float) -> IAdditionalGainLoss
+    :canonical: ansys.stk.core.stkobjects.IAdditionalGainLossCollection.add
 
     Add and returns a new gain with the corresponding value.
 
@@ -102,9 +105,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAdditionalGainLoss"`
+        :obj:`~IAdditionalGainLoss`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAdditionalGainLossCollection.clear
 
     Clear all gain values from the collection.
 

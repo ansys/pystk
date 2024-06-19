@@ -3,7 +3,7 @@ UiToolbar
 
 .. py:class:: UiToolbar
 
-   IUiToolbar, SupportsDeleteCallback
+   Bases: py:obj:`~IUiToolbar`
 
    Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar.
 

@@ -3,7 +3,7 @@ VehicleAttitudePointing
 
 .. py:class:: VehicleAttitudePointing
 
-   IVehicleAttitudePointing, IVehiclePointing, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudePointing`, py:obj:`~IVehiclePointing`
 
    Target pointing attitude parameters.
 

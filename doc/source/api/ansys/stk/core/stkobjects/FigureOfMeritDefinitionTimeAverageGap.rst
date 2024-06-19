@@ -3,7 +3,7 @@ FigureOfMeritDefinitionTimeAverageGap
 
 .. py:class:: FigureOfMeritDefinitionTimeAverageGap
 
-   IFigureOfMeritDefinitionTimeAverageGap, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionTimeAverageGap`, py:obj:`~IFigureOfMeritDefinition`
 
    Time Average Gap Figure of Merit.
 

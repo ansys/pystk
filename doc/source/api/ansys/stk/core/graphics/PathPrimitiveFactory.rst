@@ -3,7 +3,7 @@ PathPrimitiveFactory
 
 .. py:class:: PathPrimitiveFactory
 
-   IPathPrimitiveFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IPathPrimitiveFactory`
 
    Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line.
 

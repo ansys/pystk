@@ -3,7 +3,7 @@ VehicleInertia
 
 .. py:class:: VehicleInertia
 
-   IVehicleInertia, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleInertia`
 
    Satellite inertia matrix parameters.
 

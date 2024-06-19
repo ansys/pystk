@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: trajectory_type
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.trajectory_type
-    :type: "VEHICLE_PROPAGATOR_TYPE"
+    :type: VEHICLE_PROPAGATOR_TYPE
 
     Get the propagator type used by the launch vehicle.
 
@@ -84,13 +84,13 @@ Property detail
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.trajectory
-    :type: "IAgVePropagator"
+    :type: IAgVePropagator
 
     Get the launch vehicle's trajectory properties.
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.attitude_type
-    :type: "VEHICLE_ATTITUDE"
+    :type: VEHICLE_ATTITUDE
 
     Get the type of attitude profile used by the launch vehicle.
 
@@ -102,67 +102,67 @@ Property detail
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.attitude
-    :type: "IAgVeAttitude"
+    :type: IAgVeAttitude
 
     Get the launch vehicle's attitude profile.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.graphics
-    :type: "IAgLvGraphics"
+    :type: IAgLvGraphics
 
     Get the launch vehicle's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.graphics_3d
-    :type: "IAgLvVO"
+    :type: IAgLvVO
 
     Get the launch vehicle's 3D Graphics properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.ground_ellipses
-    :type: "IAgVeGroundEllipsesCollection"
+    :type: IAgVeGroundEllipsesCollection
 
     Get the launch vehicle's ground ellipses properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.access_constraints
-    :type: "IAgAccessConstraintCollection"
+    :type: IAgAccessConstraintCollection
 
     Get the constraints imposed on the launch vehicle.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.export_tools
-    :type: "IAgLvExportTools"
+    :type: IAgLvExportTools
 
     Returns the IAgLvExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.space_environment
-    :type: "IAgVeSpEnvSpaceEnvironment"
+    :type: IAgVeSpEnvSpaceEnvironment
 
     Returns the launch vehicle's SpaceEnvironment properties.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.atmosphere
-    :type: "IAgAtmosphere"
+    :type: IAgAtmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.radar_clutter_map
-    :type: "IAgRadarClutterMapInheritable"
+    :type: IAgRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.radar_cross_section
-    :type: "IAgRadarCrossSectionInheritable"
+    :type: IAgRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.eclipse_bodies
-    :type: "IAgVeEclipseBodies"
+    :type: IAgVeEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -180,13 +180,13 @@ Property detail
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.laser_environment
-    :type: "IAgPlatformLaserEnvironment"
+    :type: IAgPlatformLaserEnvironment
 
     Gets the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.rf_environment
-    :type: "IAgPlatformRFEnvironment"
+    :type: IAgPlatformRFEnvironment
 
     Gets the RF environment.
 
@@ -207,25 +207,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_trajectory_type(self, trajectory:"VEHICLE_PROPAGATOR_TYPE") -> None
+.. py:method:: set_trajectory_type(self, trajectory: VEHICLE_PROPAGATOR_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.set_trajectory_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **trajectory** : :obj:`~"VEHICLE_PROPAGATOR_TYPE"`
+    **trajectory** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_trajectory_type_supported(self, trajectory:"VEHICLE_PROPAGATOR_TYPE") -> bool
+.. py:method:: is_trajectory_type_supported(self, trajectory: VEHICLE_PROPAGATOR_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.is_trajectory_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **trajectory** : :obj:`~"VEHICLE_PROPAGATOR_TYPE"`
+    **trajectory** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
 
     :Returns:
 
@@ -234,25 +236,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude:"VEHICLE_ATTITUDE") -> None
+.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+    :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.set_attitude_type
 
     Set the type of attitude profile used by the launch vehicle.
 
     :Parameters:
 
-    **attitude** : :obj:`~"VEHICLE_ATTITUDE"`
+    **attitude** : :obj:`~VEHICLE_ATTITUDE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude:"VEHICLE_ATTITUDE") -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+    :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~"VEHICLE_ATTITUDE"`
+    **attitude** : :obj:`~VEHICLE_ATTITUDE`
 
     :Returns:
 

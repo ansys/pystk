@@ -64,7 +64,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IEOIRShape"
+.. py:method:: item(self, index: int) -> IEOIRShape
+    :canonical: ansys.stk.core.stkobjects.IEOIRShapeCollection.item
 
     Given an index, returns an element in the collection. If the index is an integer, then the method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
 
@@ -74,17 +75,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IEOIRShape"`
+        :obj:`~IEOIRShape`
 
-.. py:method:: add(self) -> "IEOIRShape"
+.. py:method:: add(self) -> IEOIRShape
+    :canonical: ansys.stk.core.stkobjects.IEOIRShapeCollection.add
 
     Add an element at the end of the collection.
 
     :Returns:
 
-        :obj:`~"IEOIRShape"`
+        :obj:`~IEOIRShape`
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IEOIRShapeCollection.remove_at
 
     Remove an element at the given index in the collection.
 

@@ -3,7 +3,7 @@ EquinoctialSizeShapeMeanMotion
 
 .. py:class:: EquinoctialSizeShapeMeanMotion
 
-   IEquinoctialSizeShapeMeanMotion, IClassicalSizeShape, SupportsDeleteCallback
+   Bases: py:obj:`~IEquinoctialSizeShapeMeanMotion`, py:obj:`~IClassicalSizeShape`
 
    Mean Motion, an element of the Equinoctial coordinate type.
 

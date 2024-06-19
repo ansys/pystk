@@ -3,7 +3,7 @@ ProcedureSuperProcedure
 
 .. py:class:: ProcedureSuperProcedure
 
-   IProcedureSuperProcedure, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureSuperProcedure`, py:obj:`~IProcedure`
 
    Class defining a super procedure.
 

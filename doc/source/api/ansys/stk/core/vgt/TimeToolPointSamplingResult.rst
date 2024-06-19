@@ -3,7 +3,7 @@ TimeToolPointSamplingResult
 
 .. py:class:: TimeToolPointSamplingResult
 
-   ITimeToolPointSamplingResult, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolPointSamplingResult`
 
    Contains tabulated positions and velocities of a point created by Sample method.
 

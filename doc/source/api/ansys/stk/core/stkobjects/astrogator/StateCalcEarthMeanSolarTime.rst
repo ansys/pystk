@@ -3,7 +3,7 @@ StateCalcEarthMeanSolarTime
 
 .. py:class:: StateCalcEarthMeanSolarTime
 
-   IComponentInfo, ICloneable, IStateCalcEarthMeanSolarTime, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEarthMeanSolarTime`
 
    EarthMeanSolarTime Calc objects.
 

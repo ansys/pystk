@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: final_var
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem.final_var
-    :type: "STM_PERT_VARIABLES"
+    :type: STM_PERT_VARIABLES
 
     Gets or sets the final variation variable.
 
 .. py:property:: init_var
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem.init_var
-    :type: "STM_PERT_VARIABLES"
+    :type: STM_PERT_VARIABLES
 
     Gets or sets the initial variation variable.
 

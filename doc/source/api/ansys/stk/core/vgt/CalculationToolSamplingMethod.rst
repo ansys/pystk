@@ -3,7 +3,7 @@ CalculationToolSamplingMethod
 
 .. py:class:: CalculationToolSamplingMethod
 
-   ICalculationToolSamplingMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolSamplingMethod`
 
    A sampling method.
 

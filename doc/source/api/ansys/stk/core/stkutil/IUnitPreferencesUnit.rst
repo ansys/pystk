@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: dimension
     :canonical: ansys.stk.core.stkutil.IUnitPreferencesUnit.dimension
-    :type: "IAgUnitPrefsDim"
+    :type: IAgUnitPrefsDim
 
     Returns the Dimension for this unit.
 

@@ -3,7 +3,7 @@ StateCalcVectorMagnitude
 
 .. py:class:: StateCalcVectorMagnitude
 
-   IComponentInfo, ICloneable, IStateCalcVectorMagnitude, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVectorMagnitude`
 
    VectorMag Calc objects.
 

@@ -11,6 +11,21 @@ CRDN_SMART_EPOCH_STATE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~EXPLICIT`
+              - Smart epoch is specified explicitly using a time.
+
+            * - :py:attr:`~IMPLICIT`
+              - Smart epoch is specified implicitly.
+
+
 Import detail
 -------------
 

@@ -3,7 +3,7 @@ AnalysisWorkbenchSampling
 
 .. py:class:: AnalysisWorkbenchSampling
 
-   IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchSampling`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Base sampling interface.
 

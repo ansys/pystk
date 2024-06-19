@@ -3,7 +3,7 @@ OrbitStateGeodetic
 
 .. py:class:: OrbitStateGeodetic
 
-   IOrbitStateGeodetic, IOrbitState, SupportsDeleteCallback
+   Bases: py:obj:`~IOrbitStateGeodetic`, py:obj:`~IOrbitState`
 
    Geodetic coordinate type (available only with a Fixed coordinate system).
 

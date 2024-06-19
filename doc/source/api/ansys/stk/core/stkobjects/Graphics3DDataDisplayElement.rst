@@ -3,7 +3,7 @@ Graphics3DDataDisplayElement
 
 .. py:class:: Graphics3DDataDisplayElement
 
-   IGraphics3DDataDisplayElement, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DDataDisplayElement`
 
    Class defining 3D Graphics data display element.
 

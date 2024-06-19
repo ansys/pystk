@@ -40,42 +40,45 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_graphics_font(self, font:"IGraphicsFont") -> "ITextBatchPrimitive"
+.. py:method:: initialize_with_graphics_font(self, font: IGraphicsFont) -> ITextBatchPrimitive
+    :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveFactory.initialize_with_graphics_font
 
     Initialize a marker batch primitive with the specified font. This is equivalent to constructing a text batch with the specified font and a set hint of Frequent.
 
     :Parameters:
 
-    **font** : :obj:`~"IGraphicsFont"`
+    **font** : :obj:`~IGraphicsFont`
 
     :Returns:
 
-        :obj:`~"ITextBatchPrimitive"`
+        :obj:`~ITextBatchPrimitive`
 
-.. py:method:: initialize_with_graphics_font_and_set_hint(self, font:"IGraphicsFont", setHint:"SET_HINT") -> "ITextBatchPrimitive"
+.. py:method:: initialize_with_graphics_font_and_set_hint(self, font: IGraphicsFont, setHint: SET_HINT) -> ITextBatchPrimitive
+    :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveFactory.initialize_with_graphics_font_and_set_hint
 
     Initialize a marker batch primitive with the specified font and setHint.
 
     :Parameters:
 
-    **font** : :obj:`~"IGraphicsFont"`
-    **setHint** : :obj:`~"SET_HINT"`
+    **font** : :obj:`~IGraphicsFont`
+    **setHint** : :obj:`~SET_HINT`
 
     :Returns:
 
-        :obj:`~"ITextBatchPrimitive"`
+        :obj:`~ITextBatchPrimitive`
 
-.. py:method:: initialize_with_graphics_font_and_set_hint_2d(self, font:"IGraphicsFont", setHint:"SET_HINT", renderInScreenSpace:bool) -> "ITextBatchPrimitive"
+.. py:method:: initialize_with_graphics_font_and_set_hint_2d(self, font: IGraphicsFont, setHint: SET_HINT, renderInScreenSpace: bool) -> ITextBatchPrimitive
+    :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveFactory.initialize_with_graphics_font_and_set_hint_2d
 
     Initialize a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering.
 
     :Parameters:
 
-    **font** : :obj:`~"IGraphicsFont"`
-    **setHint** : :obj:`~"SET_HINT"`
+    **font** : :obj:`~IGraphicsFont`
+    **setHint** : :obj:`~SET_HINT`
     **renderInScreenSpace** : :obj:`~bool`
 
     :Returns:
 
-        :obj:`~"ITextBatchPrimitive"`
+        :obj:`~ITextBatchPrimitive`
 

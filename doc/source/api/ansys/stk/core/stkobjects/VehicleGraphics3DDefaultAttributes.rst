@@ -3,7 +3,7 @@ VehicleGraphics3DDefaultAttributes
 
 .. py:class:: VehicleGraphics3DDefaultAttributes
 
-   IVehicleGraphics3DDefaultAttributes, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DDefaultAttributes`
 
    Default graphics attributes for covariance pointing contours.
 

@@ -70,75 +70,81 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IPolylinePrimitive"
+.. py:method:: initialize(self) -> IPolylinePrimitive
+    :canonical: ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize
 
     Initialize a default polyline primitive. This is equivalent to constructing a polyline with a set hint of Frequent and a polyline type of LineStrip.
 
     :Returns:
 
-        :obj:`~"IPolylinePrimitive"`
+        :obj:`~IPolylinePrimitive`
 
-.. py:method:: initialize_with_interpolator_and_set_hint(self, interpolator:"IPositionInterpolator", setHint:"SET_HINT") -> "IPolylinePrimitive"
+.. py:method:: initialize_with_interpolator_and_set_hint(self, interpolator: IPositionInterpolator, setHint: SET_HINT) -> IPolylinePrimitive
+    :canonical: ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_interpolator_and_set_hint
 
     Initialize a polyline primitive with the specified interpolator and setHint.
 
     :Parameters:
 
-    **interpolator** : :obj:`~"IPositionInterpolator"`
-    **setHint** : :obj:`~"SET_HINT"`
+    **interpolator** : :obj:`~IPositionInterpolator`
+    **setHint** : :obj:`~SET_HINT`
 
     :Returns:
 
-        :obj:`~"IPolylinePrimitive"`
+        :obj:`~IPolylinePrimitive`
 
-.. py:method:: initialize_with_type_and_hint(self, polylineType:"POLYLINE_TYPE", setHint:"SET_HINT") -> "IPolylinePrimitive"
+.. py:method:: initialize_with_type_and_hint(self, polylineType: POLYLINE_TYPE, setHint: SET_HINT) -> IPolylinePrimitive
+    :canonical: ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_type_and_hint
 
     Initialize a new instance of a polyline primitive with the specified polylineType and setHint.
 
     :Parameters:
 
-    **polylineType** : :obj:`~"POLYLINE_TYPE"`
-    **setHint** : :obj:`~"SET_HINT"`
+    **polylineType** : :obj:`~POLYLINE_TYPE`
+    **setHint** : :obj:`~SET_HINT`
 
     :Returns:
 
-        :obj:`~"IPolylinePrimitive"`
+        :obj:`~IPolylinePrimitive`
 
-.. py:method:: initialize_with_interpolator(self, interpolator:"IPositionInterpolator") -> "IPolylinePrimitive"
+.. py:method:: initialize_with_interpolator(self, interpolator: IPositionInterpolator) -> IPolylinePrimitive
+    :canonical: ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_interpolator
 
     Initialize a polyline primitive with the specified interpolator. This is equivalent to constructing a polyline with the specified interpolator and a set hint of Frequent.
 
     :Parameters:
 
-    **interpolator** : :obj:`~"IPositionInterpolator"`
+    **interpolator** : :obj:`~IPositionInterpolator`
 
     :Returns:
 
-        :obj:`~"IPolylinePrimitive"`
+        :obj:`~IPolylinePrimitive`
 
-.. py:method:: initialize_with_hint(self, setHint:"SET_HINT") -> "IPolylinePrimitive"
+.. py:method:: initialize_with_hint(self, setHint: SET_HINT) -> IPolylinePrimitive
+    :canonical: ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_hint
 
     Initialize a new instance of a polyline primitive with the specified set hint. This is equivalent to constructing a polyline with a polyline type of LineStrip and the specified set hint.
 
     :Parameters:
 
-    **setHint** : :obj:`~"SET_HINT"`
+    **setHint** : :obj:`~SET_HINT`
 
     :Returns:
 
-        :obj:`~"IPolylinePrimitive"`
+        :obj:`~IPolylinePrimitive`
 
-.. py:method:: initialize_with_type(self, polylineType:"POLYLINE_TYPE") -> "IPolylinePrimitive"
+.. py:method:: initialize_with_type(self, polylineType: POLYLINE_TYPE) -> IPolylinePrimitive
+    :canonical: ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_type
 
     Initialize a polyline primitive with the specified polylineType. This is equivalent to constructing a polyline with the specified polylineType and a set hint of Frequent.
 
     :Parameters:
 
-    **polylineType** : :obj:`~"POLYLINE_TYPE"`
+    **polylineType** : :obj:`~POLYLINE_TYPE`
 
     :Returns:
 
-        :obj:`~"IPolylinePrimitive"`
+        :obj:`~IPolylinePrimitive`
 
 
 

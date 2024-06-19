@@ -3,7 +3,7 @@ SpatialAnalysisToolGridCoordinateDefinition
 
 .. py:class:: SpatialAnalysisToolGridCoordinateDefinition
 
-   ISpatialAnalysisToolGridCoordinateDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolGridCoordinateDefinition`
 
    Define a set of coordinate values.
 

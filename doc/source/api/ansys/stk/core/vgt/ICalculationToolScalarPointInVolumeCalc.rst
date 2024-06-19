@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: trajectory_point
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarPointInVolumeCalc.trajectory_point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     Trajectory point.
 
 .. py:property:: spatial_calculation
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarPointInVolumeCalc.spatial_calculation
-    :type: "IAgCrdnVolumeCalc"
+    :type: IAgCrdnVolumeCalc
 
     Spatial Calculation.
 

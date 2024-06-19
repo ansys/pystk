@@ -3,7 +3,7 @@ Cartesian3Vector
 
 .. py:class:: Cartesian3Vector
 
-   ICartesian3Vector, SupportsDeleteCallback
+   Bases: py:obj:`~ICartesian3Vector`
 
    A 3-D cartesian vector.
 

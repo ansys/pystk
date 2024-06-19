@@ -3,7 +3,7 @@ VehiclePropagatorJ4Perturbation
 
 .. py:class:: VehiclePropagatorJ4Perturbation
 
-   IVehiclePropagatorJ4Perturbation, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorJ4Perturbation`, py:obj:`~IVehiclePropagator`
 
    Class defining the J4 perturbation propagator.
 

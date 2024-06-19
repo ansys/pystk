@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_string(self, uri:str) -> "IAGIProcessedTerrainOverlay"
+.. py:method:: initialize_with_string(self, uri: str) -> IAGIProcessedTerrainOverlay
+    :canonical: ansys.stk.core.graphics.IAGIProcessedTerrainOverlayFactory.initialize_with_string
 
     Initialize an agi processed terrain overlay with the provided values.
 
@@ -46,5 +47,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAGIProcessedTerrainOverlay"`
+        :obj:`~IAGIProcessedTerrainOverlay`
 

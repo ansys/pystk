@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGlint.central_body
-    :type: "IAgCrdnCentralBodyRefTo"
+    :type: IAgCrdnCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: source_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGlint.source_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a source point.
 
 .. py:property:: observer_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGlint.observer_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify an observer point.
 

@@ -3,7 +3,7 @@ AttitudeControlFiniteTimeVarying
 
 .. py:class:: AttitudeControlFiniteTimeVarying
 
-   IAttitudeControlFiniteTimeVarying, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlFiniteTimeVarying`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The time varying attitude control for a finite maneuver.
 

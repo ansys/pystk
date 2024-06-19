@@ -3,7 +3,7 @@ CommSystemAccessSamplingMethodFixed
 
 .. py:class:: CommSystemAccessSamplingMethodFixed
 
-   ICommSystemAccessSamplingMethodFixed, ICommSystemAccessSamplingMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemAccessSamplingMethodFixed`, py:obj:`~ICommSystemAccessSamplingMethod`
 
    Class defining a CommSystem access options.
 

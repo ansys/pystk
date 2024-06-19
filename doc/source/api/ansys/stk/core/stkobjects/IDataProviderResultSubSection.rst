@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IDataProviderResultSubSection.intervals
-    :type: "IAgDrIntervalCollection"
+    :type: IAgDrIntervalCollection
 
     Returns a collection of intervals within the sub-section.
 

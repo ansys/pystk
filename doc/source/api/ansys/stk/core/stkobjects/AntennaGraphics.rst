@@ -3,7 +3,7 @@ AntennaGraphics
 
 .. py:class:: AntennaGraphics
 
-   IAntennaGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaGraphics`
 
    Class defining 2D Graphics properties of a Antenna.
 

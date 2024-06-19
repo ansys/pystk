@@ -3,7 +3,7 @@ EOIR
 
 .. py:class:: EOIR
 
-   IEOIR, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIR`
 
    AgEOIR interface class.
 

@@ -70,7 +70,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_filepath(self, filepath:str) -> str
+.. py:method:: set_filepath(self, filepath: str) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileExternalProp.set_filepath
 
     Set the filepath for the external prop file.
 
@@ -83,6 +84,7 @@ Method detail
         :obj:`~str`
 
 .. py:method:: reload(self) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileExternalProp.reload
 
     Reload the external prop file.
 

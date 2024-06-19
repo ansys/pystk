@@ -56,7 +56,8 @@ Method detail
 -------------
 
 
-.. py:method:: get_interval(self, index:int) -> typing.Tuple[typing.Any, typing.Any]
+.. py:method:: get_interval(self, index: int) -> typing.Tuple[typing.Any, typing.Any]
+    :canonical: ansys.stk.core.stkobjects.IImmutableIntervalCollection.get_interval
 
     Return start and stop times of the interval at a given index. Start/Stop use DateFormat Dimension.
 
@@ -69,6 +70,7 @@ Method detail
         :obj:`~typing.Tuple[typing.Any, typing.Any]`
 
 .. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IImmutableIntervalCollection.to_array
 
     Return a two-dimensional array of intervals.
 

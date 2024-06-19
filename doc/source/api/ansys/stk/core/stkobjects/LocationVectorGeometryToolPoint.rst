@@ -3,7 +3,7 @@ LocationVectorGeometryToolPoint
 
 .. py:class:: LocationVectorGeometryToolPoint
 
-   ILocationVectorGeometryToolPoint, ILocationData, SupportsDeleteCallback
+   Bases: py:obj:`~ILocationVectorGeometryToolPoint`, py:obj:`~ILocationData`
 
    The location based upon a Vector Geometry Tool Point.
 

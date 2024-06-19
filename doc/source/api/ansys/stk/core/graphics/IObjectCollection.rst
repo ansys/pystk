@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> typing.Any
+.. py:method:: item(self, index: int) -> typing.Any
+    :canonical: ansys.stk.core.graphics.IObjectCollection.item
 
     Return an item in the collection at the specified index.
 

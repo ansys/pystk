@@ -3,7 +3,7 @@ ProjectionRasterStreamPluginProxy
 
 .. py:class:: ProjectionRasterStreamPluginProxy
 
-   IProjectionRasterStreamPluginProxy, SupportsDeleteCallback
+   Bases: py:obj:`~IProjectionRasterStreamPluginProxy`
 
    A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator.
 

@@ -3,7 +3,7 @@ ScatteringPointProviderPlugin
 
 .. py:class:: ScatteringPointProviderPlugin
 
-   IScatteringPointProvider, IScatteringPointProviderPlugin, IRadarClutterGeometryModelPlugin, IRadarClutterGeometryModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointProvider`, py:obj:`~IScatteringPointProviderPlugin`, py:obj:`~IRadarClutterGeometryModelPlugin`, py:obj:`~IRadarClutterGeometryModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a plugin scattering point provider.
 

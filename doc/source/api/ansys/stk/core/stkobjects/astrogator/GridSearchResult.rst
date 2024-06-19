@@ -3,7 +3,7 @@ GridSearchResult
 
 .. py:class:: GridSearchResult
 
-   IGridSearchResult, SupportsDeleteCallback
+   Bases: py:obj:`~IGridSearchResult`
 
    Result parameters for Grid Search profile.
 

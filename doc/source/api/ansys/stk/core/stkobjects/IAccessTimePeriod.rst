@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.IAccessTimePeriod.start_time
-    :type: "IAgTimePeriodValue"
+    :type: IAgTimePeriodValue
 
     Gets a start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.IAccessTimePeriod.stop_time
-    :type: "IAgTimePeriodValue"
+    :type: IAgTimePeriodValue
 
     Gets a stop time. Uses DateFormat Dimension.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: access_interval
     :canonical: ansys.stk.core.stkobjects.IAccessTimePeriod.access_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Returns an access interval.
 

@@ -3,7 +3,7 @@ SearchPluginResultCollection
 
 .. py:class:: SearchPluginResultCollection
 
-   ISearchPluginResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISearchPluginResultCollection`
 
    The list of search plugin equality constraints.
 

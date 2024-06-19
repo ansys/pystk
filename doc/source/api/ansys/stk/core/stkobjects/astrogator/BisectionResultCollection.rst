@@ -3,7 +3,7 @@ BisectionResultCollection
 
 .. py:class:: BisectionResultCollection
 
-   IBisectionResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IBisectionResultCollection`
 
    Bisection result collection.
 

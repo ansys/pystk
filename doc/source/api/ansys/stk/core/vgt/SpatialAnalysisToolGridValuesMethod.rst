@@ -3,7 +3,7 @@ SpatialAnalysisToolGridValuesMethod
 
 .. py:class:: SpatialAnalysisToolGridValuesMethod
 
-   ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolGridValuesMethod`
 
    A grid values method.
 

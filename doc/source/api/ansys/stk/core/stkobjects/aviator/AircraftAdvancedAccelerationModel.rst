@@ -3,7 +3,7 @@ AircraftAdvancedAccelerationModel
 
 .. py:class:: AircraftAdvancedAccelerationModel
 
-   IAircraftAdvancedAccelerationModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftAdvancedAccelerationModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the advanced acceleration performance model of an Aviator aircraft.
 

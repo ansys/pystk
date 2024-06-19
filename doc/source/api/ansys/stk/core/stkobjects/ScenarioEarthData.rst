@@ -3,7 +3,7 @@ ScenarioEarthData
 
 .. py:class:: ScenarioEarthData
 
-   IScenarioEarthData, SupportsDeleteCallback
+   Bases: py:obj:`~IScenarioEarthData`
 
    Class defining the Earth Orientation Parameters of a Scenario.
 

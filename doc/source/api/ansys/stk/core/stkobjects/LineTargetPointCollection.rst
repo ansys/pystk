@@ -3,7 +3,7 @@ LineTargetPointCollection
 
 .. py:class:: LineTargetPointCollection
 
-   ILineTargetPointCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ILineTargetPointCollection`
 
    The collection of points for the line target.
 

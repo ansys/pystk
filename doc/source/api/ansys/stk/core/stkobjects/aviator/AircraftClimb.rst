@@ -3,7 +3,7 @@ AircraftClimb
 
 .. py:class:: AircraftClimb
 
-   IAircraftClimb, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftClimb`, py:obj:`~ICatalogItem`
 
    Class defining the aircraft climb category of an Aviator aircraft.
 

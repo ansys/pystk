@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: active_grid_points
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DVolume.active_grid_points
-    :type: "IAgVmVOActiveGridPoints"
+    :type: IAgVmVOActiveGridPoints
 
     Get Active Grid Points values for Volume property in the 3D Graphics properties for Volumetric object.
 
 .. py:property:: spatial_calculation_levels
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DVolume.spatial_calculation_levels
-    :type: "IAgVmVOSpatialCalculationLevels"
+    :type: IAgVmVOSpatialCalculationLevels
 
     Get Spatial Calculation Levels for Volume property in the 3D Graphics properties for Volumetric object.
 

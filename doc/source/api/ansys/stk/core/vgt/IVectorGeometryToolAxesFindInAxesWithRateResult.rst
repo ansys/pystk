@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: angular_velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.angular_velocity
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     Axes' angular velocity.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     The axes' orientation.
 

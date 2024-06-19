@@ -3,7 +3,7 @@ VehicleAccessAdvanced
 
 .. py:class:: VehicleAccessAdvanced
 
-   IVehicleAccessAdvanced, IAccessAdvanced, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAccessAdvanced`, py:obj:`~IAccessAdvanced`
 
    Vehicle advanced targeting access computation properties.
 

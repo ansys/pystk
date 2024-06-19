@@ -3,7 +3,7 @@ AircraftAdvancedCruiseModel
 
 .. py:class:: AircraftAdvancedCruiseModel
 
-   IAircraftAdvancedCruiseModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftAdvancedCruiseModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the advanced cruise performance model for an Aviator aircraft.
 

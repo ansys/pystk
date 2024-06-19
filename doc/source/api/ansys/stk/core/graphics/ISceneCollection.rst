@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IScene"
+.. py:method:: item(self, index: int) -> IScene
+    :canonical: ansys.stk.core.graphics.ISceneCollection.item
 
     Return a scene in the collection at a specified index.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScene"`
+        :obj:`~IScene`
 
 

@@ -3,7 +3,7 @@ WirelessInSite64GeometryData
 
 .. py:class:: WirelessInSite64GeometryData
 
-   IWirelessInSite64GeometryData, SupportsDeleteCallback
+   Bases: py:obj:`~IWirelessInSite64GeometryData`
 
    Class defining the REMCOM Wireless InSite 64 geometry data.
 

@@ -11,6 +11,21 @@ ANIMATION_ACTIONS
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ACTION_PLAY`
+              - Play.
+
+            * - :py:attr:`~ACTION_START`
+              - Start.
+
+
 Import detail
 -------------
 

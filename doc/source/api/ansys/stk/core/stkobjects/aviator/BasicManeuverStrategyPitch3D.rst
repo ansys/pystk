@@ -3,7 +3,7 @@ BasicManeuverStrategyPitch3D
 
 .. py:class:: BasicManeuverStrategyPitch3D
 
-   IBasicManeuverStrategyPitch3D, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyPitch3D`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining Pitch 3D strategy for a Basic Maneuver procedure.
 

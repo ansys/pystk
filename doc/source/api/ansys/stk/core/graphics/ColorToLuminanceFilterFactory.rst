@@ -3,7 +3,7 @@ ColorToLuminanceFilterFactory
 
 .. py:class:: ColorToLuminanceFilterFactory
 
-   IColorToLuminanceFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IColorToLuminanceFilterFactory`
 
    Extract a luminance band derived from the color bands of the source raster.
 

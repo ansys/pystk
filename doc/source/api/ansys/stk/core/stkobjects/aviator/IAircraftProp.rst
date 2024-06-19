@@ -44,25 +44,25 @@ Property detail
 
 .. py:property:: prop_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftProp.prop_strategy
-    :type: "AIRCRAFT_PROP_STRATEGY"
+    :type: AIRCRAFT_PROP_STRATEGY
 
     Gets or sets the propulsion strategy type.
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_simple
-    :type: "IAgAvtrAircraftSimpleProp"
+    :type: IAgAvtrAircraftSimpleProp
 
     Get the interface for a simple propulsion strategy.
 
 .. py:property:: mode_as_basic_fixed_wing
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_basic_fixed_wing
-    :type: "IAgAvtrAircraftBasicFixedWingProp"
+    :type: IAgAvtrAircraftBasicFixedWingProp
 
     Get the interface for a basic fixed wing propulsion strategy.
 
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_external
-    :type: "IAgAvtrAircraftExternalProp"
+    :type: IAgAvtrAircraftExternalProp
 
     Get the interface for an external file propulsion strategy.
 
@@ -80,19 +80,19 @@ Property detail
 
 .. py:property:: mode_as_ramjet
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_ramjet
-    :type: "IAgAvtrMissileRamjetProp"
+    :type: IAgAvtrMissileRamjetProp
 
     Get the interface for a Ramjet propulsion strategy.
 
 .. py:property:: mode_as_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_turbojet
-    :type: "IAgAvtrMissileTurbojetProp"
+    :type: IAgAvtrMissileTurbojetProp
 
     Get the interface for a Turbojet propulsion strategy.
 
 .. py:property:: mode_as_rocket
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_rocket
-    :type: "IAgAvtrMissileRocketProp"
+    :type: IAgAvtrMissileRocketProp
 
     Get the interface for a Rocket propulsion strategy.
 

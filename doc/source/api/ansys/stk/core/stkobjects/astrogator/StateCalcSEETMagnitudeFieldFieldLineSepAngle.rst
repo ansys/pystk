@@ -3,7 +3,7 @@ StateCalcSEETMagnitudeFieldFieldLineSepAngle
 
 .. py:class:: StateCalcSEETMagnitudeFieldFieldLineSepAngle
 
-   IComponentInfo, ICloneable, IStateCalcSEETMagnitudeFieldFieldLineSepAngle, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSEETMagnitudeFieldFieldLineSepAngle`
 
    SEETMagFieldFieldLineSepAngle Calc object.
 

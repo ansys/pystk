@@ -3,7 +3,7 @@ RadarActivity
 
 .. py:class:: RadarActivity
 
-   IRadarActivity, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarActivity`
 
    Class defining radar activity.
 

@@ -3,7 +3,7 @@ ComponentDirectory
 
 .. py:class:: ComponentDirectory
 
-   IComponentDirectory, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentDirectory`
 
    Manages all components.
 

@@ -72,6 +72,7 @@ Method detail
 
 
 .. py:method:: reload_eop(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioEarthData.reload_eop
 
     Reload the EOP file.
 

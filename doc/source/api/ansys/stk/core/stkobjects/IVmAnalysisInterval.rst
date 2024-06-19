@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: evaluation_of_spatial_calc_type
     :canonical: ansys.stk.core.stkobjects.IVmAnalysisInterval.evaluation_of_spatial_calc_type
-    :type: "VM_SPATIAL_CALC_EVAL_TYPE"
+    :type: VM_SPATIAL_CALC_EVAL_TYPE
 
     Get evaluation of spatial calculation type. A member of the AgEVmSpatialCalcEvalType enumeration.
 
@@ -91,13 +91,14 @@ Method detail
 
 
 
-.. py:method:: set_evaluation_of_spatial_calc_type(self, spatialCalcEvalType:"VM_SPATIAL_CALC_EVAL_TYPE") -> None
+.. py:method:: set_evaluation_of_spatial_calc_type(self, spatialCalcEvalType: VM_SPATIAL_CALC_EVAL_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IVmAnalysisInterval.set_evaluation_of_spatial_calc_type
 
     Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
 
     :Parameters:
 
-    **spatialCalcEvalType** : :obj:`~"VM_SPATIAL_CALC_EVAL_TYPE"`
+    **spatialCalcEvalType** : :obj:`~VM_SPATIAL_CALC_EVAL_TYPE`
 
     :Returns:
 

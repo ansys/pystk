@@ -3,7 +3,7 @@ VectorGeometryToolVectorScalarScaled
 
 .. py:class:: VectorGeometryToolVectorScalarScaled
 
-   IVectorGeometryToolVectorScalarScaled, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorScalarScaled`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
 
    Scaled version of the input vector using scalar.
 

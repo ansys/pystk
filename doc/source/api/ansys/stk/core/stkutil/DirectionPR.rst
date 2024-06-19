@@ -3,7 +3,7 @@ DirectionPR
 
 .. py:class:: DirectionPR
 
-   IDirectionPR, IDirection, SupportsDeleteCallback
+   Bases: py:obj:`~IDirectionPR`, py:obj:`~IDirection`
 
    Pitch-Roll (PR) direction sequence.
 

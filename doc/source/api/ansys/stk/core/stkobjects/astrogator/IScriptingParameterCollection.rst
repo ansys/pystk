@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -83,7 +83,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IScriptingParameter"
+.. py:method:: item(self, indexOrName: typing.Any) -> IScriptingParameter
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.item
 
     Allow you to iterate through the collection.
 
@@ -93,9 +94,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingParameter"`
+        :obj:`~IScriptingParameter`
 
-.. py:method:: add(self, parameterName:str) -> "IScriptingParameter"
+.. py:method:: add(self, parameterName: str) -> IScriptingParameter
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.add
 
     Add a parameter to the collection.
 
@@ -105,9 +107,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingParameter"`
+        :obj:`~IScriptingParameter`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.remove
 
     Remove a parameter.
 
@@ -120,6 +123,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.remove_all
 
     Remove all parameters.
 
@@ -130,7 +134,8 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.cut
 
     Copy the parameter into the clipboard and removes the parameter from the list.
 
@@ -142,27 +147,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IScriptingParameter"
+.. py:method:: paste(self) -> IScriptingParameter
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.paste
 
     Pastes the parameter from the clipboard and inserts into the list.
 
     :Returns:
 
-        :obj:`~"IScriptingParameter"`
+        :obj:`~IScriptingParameter`
 
-.. py:method:: insert_copy(self, parameter:"IScriptingParameter") -> "IScriptingParameter"
+.. py:method:: insert_copy(self, parameter: IScriptingParameter) -> IScriptingParameter
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.insert_copy
 
     Copy the parameter and inserts the copy into the list.
 
     :Parameters:
 
-    **parameter** : :obj:`~"IScriptingParameter"`
+    **parameter** : :obj:`~IScriptingParameter`
 
     :Returns:
 
-        :obj:`~"IScriptingParameter"`
+        :obj:`~IScriptingParameter`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IScriptingParameter"
+.. py:method:: get_item_by_index(self, index: int) -> IScriptingParameter
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.get_item_by_index
 
     Retrieve a scripting parameter in the collection by index.
 
@@ -172,9 +180,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingParameter"`
+        :obj:`~IScriptingParameter`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IScriptingParameter"
+.. py:method:: get_item_by_name(self, name: str) -> IScriptingParameter
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.get_item_by_name
 
     Retrieve a scripting parameter in the collection by name.
 
@@ -184,5 +193,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingParameter"`
+        :obj:`~IScriptingParameter`
 

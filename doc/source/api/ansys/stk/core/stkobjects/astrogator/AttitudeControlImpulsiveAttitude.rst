@@ -3,7 +3,7 @@ AttitudeControlImpulsiveAttitude
 
 .. py:class:: AttitudeControlImpulsiveAttitude
 
-   IAttitudeControlImpulsiveAttitude, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlImpulsiveAttitude`, py:obj:`~IAttitudeControlImpulsive`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The attitude attitude control for an impulsive maneuver.
 

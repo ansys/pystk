@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControlCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -69,7 +69,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IDifferentialCorrectorControl"
+.. py:method:: item(self, index: int) -> IDifferentialCorrectorControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControlCollection.item
 
     Allow you to iterate through the collection.
 
@@ -79,11 +80,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDifferentialCorrectorControl"`
+        :obj:`~IDifferentialCorrectorControl`
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath:str, controlPath:str) -> "IDifferentialCorrectorControl"
+.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> IDifferentialCorrectorControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
@@ -94,6 +96,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDifferentialCorrectorControl"`
+        :obj:`~IDifferentialCorrectorControl`
 
 

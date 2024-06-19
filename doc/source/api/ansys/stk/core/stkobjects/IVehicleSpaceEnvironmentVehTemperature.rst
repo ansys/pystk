@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: shape_model
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.shape_model
-    :type: "VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL"
+    :type: VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL
 
     Thermal shape model.
 
@@ -109,7 +109,8 @@ Method detail
 
 
 
-.. py:method:: compute_temperature(self, time:typing.Any) -> float
+.. py:method:: compute_temperature(self, time: typing.Any) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.compute_temperature
 
     Compute vehicle temperature. Uses DateFormat and Temperature Dimensions.
 

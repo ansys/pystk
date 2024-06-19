@@ -3,7 +3,7 @@ TimeToolIntervalsFilter
 
 .. py:class:: TimeToolIntervalsFilter
 
-   ITimeToolIntervalsFilter, ITimeToolPruneFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolIntervalsFilter`, py:obj:`~ITimeToolPruneFilter`
 
    The filter selects intervals of at least/most certain duration.
 

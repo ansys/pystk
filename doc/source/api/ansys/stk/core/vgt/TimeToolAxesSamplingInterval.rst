@@ -3,7 +3,7 @@ TimeToolAxesSamplingInterval
 
 .. py:class:: TimeToolAxesSamplingInterval
 
-   ITimeToolAxesSamplingInterval, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolAxesSamplingInterval`
 
    The interface represents an interval with the time, orientation and velocity arrays.
 

@@ -109,7 +109,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_forward_flight_filepath(self, filepath:str) -> str
+.. py:method:: set_forward_flight_filepath(self, filepath: str) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.set_forward_flight_filepath
 
     Set the filepath for the forward flight aero file.
 
@@ -122,6 +123,7 @@ Method detail
         :obj:`~str`
 
 .. py:method:: reload_forward_flight_file(self) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.reload_forward_flight_file
 
     Reload the forward flight aero file.
 
@@ -134,7 +136,8 @@ Method detail
 
 
 
-.. py:method:: set_takeoff_landing_filepath(self, filepath:str) -> str
+.. py:method:: set_takeoff_landing_filepath(self, filepath: str) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.set_takeoff_landing_filepath
 
     Set the filepath for the takeoff and landing aero file.
 
@@ -147,6 +150,7 @@ Method detail
         :obj:`~str`
 
 .. py:method:: reload_takeoff_landing_file(self) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.reload_takeoff_landing_file
 
     Reload the takeoff and landing aero file.
 

@@ -3,7 +3,7 @@ StateCalcCurvilinearRelMotion
 
 .. py:class:: StateCalcCurvilinearRelMotion
 
-   IComponentInfo, ICloneable, IStateCalcCurvilinearRelMotion, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCurvilinearRelMotion`
 
    Curvilinear Relative Motion objects.
 

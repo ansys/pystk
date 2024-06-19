@@ -3,7 +3,7 @@ TransmitterModelScriptPluginLaser
 
 .. py:class:: TransmitterModelScriptPluginLaser
 
-   ITransmitterModelScriptPlugin, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModelScriptPlugin`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a laser script plugin transmitter model.
 

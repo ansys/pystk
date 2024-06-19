@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: data_display
     :canonical: ansys.stk.core.stkobjects.IChainGraphics3D.data_display
-    :type: "IAgVODataDisplayCollection"
+    :type: IAgVODataDisplayCollection
 
     Get the chains's 3D data display properties.
 

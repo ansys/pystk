@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: computation_mode
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.computation_mode
-    :type: "VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE"
+    :type: VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE
 
     Models that are to be included when modeling radiation.
 
@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: dose_channel
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.dose_channel
-    :type: "VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL"
+    :type: VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL
 
     Measure of the linear energy transfer to model.
 
@@ -95,19 +95,19 @@ Property detail
 
 .. py:property:: detector_type
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.detector_type
-    :type: "VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE"
+    :type: VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE
 
     Detector material.
 
 .. py:property:: shielding_thicknesses
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.shielding_thicknesses
-    :type: "IAgDoublesCollection"
+    :type: IAgDoublesCollection
 
     Get the shielding thicknesses. Dose and dose rate can be computed for each thickness.
 
 .. py:property:: ap_source
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.ap_source
-    :type: "VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE"
+    :type: VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE
 
     Mode for computing 15 day average Ap.
 
@@ -131,7 +131,7 @@ Property detail
 
 .. py:property:: detector_geometry
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.detector_geometry
-    :type: "VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY"
+    :type: VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY
 
     Detector geometry used by CRRES and NASA models.
 
@@ -182,6 +182,7 @@ Method detail
 
 
 .. py:method:: get_electron_energies(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.get_electron_energies
 
     Return electron energies in an array of doubles. Uses ParticleEnergy Dimension.
 
@@ -190,6 +191,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: get_proton_energies(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.get_proton_energies
 
     Return proton energies in an array of doubles. Uses ParticleEnergy Dimension.
 
@@ -197,7 +199,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_electron_fluxes(self, time:typing.Any) -> list
+.. py:method:: compute_electron_fluxes(self, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_electron_fluxes
 
     Compute electron fluxes at the specified time, returned in an array of doubles (1 flux per electron energy). Uses FluxPerParticleEnergy Dimension.
 
@@ -209,7 +212,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_proton_fluxes(self, time:typing.Any) -> list
+.. py:method:: compute_proton_fluxes(self, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_proton_fluxes
 
     Compute proton fluxes at the specified time, returned in an array of doubles (1 flux per proton energy). Uses FluxPerParticleEnergy Dimension.
 
@@ -221,7 +225,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_dose_rates(self, time:typing.Any) -> "IVehicleSpaceEnvironmentRadDoseRateCollection"
+.. py:method:: compute_dose_rates(self, time: typing.Any) -> IVehicleSpaceEnvironmentRadDoseRateCollection
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_dose_rates
 
     Compute dose rate information for each shielding thickness and returns a collection to access the computed data.
 
@@ -231,11 +236,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleSpaceEnvironmentRadDoseRateCollection"`
+        :obj:`~IVehicleSpaceEnvironmentRadDoseRateCollection`
 
 
 
-.. py:method:: compute_electron_integral_fluxes(self, time:typing.Any) -> list
+.. py:method:: compute_electron_integral_fluxes(self, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_electron_integral_fluxes
 
     Compute electron integral fluxes at the specified time, returned in an array of doubles (1 flux per electron energy). Uses FluxPerParticleEnergy Dimension.
 
@@ -247,7 +253,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_proton_integral_fluxes(self, time:typing.Any) -> list
+.. py:method:: compute_proton_integral_fluxes(self, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_proton_integral_fluxes
 
     Compute proton integral fluxes at the specified time, returned in  an array of doubles (1 flux per proton energy). Uses FluxPerParticleEnergy Dimension.
 

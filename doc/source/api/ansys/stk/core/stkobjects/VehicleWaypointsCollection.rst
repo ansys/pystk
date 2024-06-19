@@ -3,7 +3,7 @@ VehicleWaypointsCollection
 
 .. py:class:: VehicleWaypointsCollection
 
-   IVehicleWaypointsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleWaypointsCollection`
 
    Collection of waypoints for a Great Arc vehicle.
 

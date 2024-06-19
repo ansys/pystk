@@ -82,7 +82,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ICoverageAssetListElement"
+.. py:method:: item(self, index: int) -> ICoverageAssetListElement
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -92,10 +93,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICoverageAssetListElement"`
+        :obj:`~ICoverageAssetListElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -108,6 +110,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -115,7 +118,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, objectPath:str) -> "ICoverageAssetListElement"
+.. py:method:: add(self, objectPath: str) -> ICoverageAssetListElement
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListCollection.add
 
     Add a new element to the collection.
 
@@ -125,10 +129,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICoverageAssetListElement"`
+        :obj:`~ICoverageAssetListElement`
 
 
-.. py:method:: remove(self, objectPath:str) -> None
+.. py:method:: remove(self, objectPath: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListCollection.remove
 
     Remove an element from the collection given a ObjectPath.
 
@@ -140,7 +145,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_asset_from_path(self, objectPath:str) -> "ICoverageAssetListElement"
+.. py:method:: get_asset_from_path(self, objectPath: str) -> ICoverageAssetListElement
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListCollection.get_asset_from_path
 
     Retrieve an element, given an object path.
 
@@ -150,9 +156,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICoverageAssetListElement"`
+        :obj:`~ICoverageAssetListElement`
 
-.. py:method:: is_asset_assigned(self, objectPath:str) -> bool
+.. py:method:: is_asset_assigned(self, objectPath: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListCollection.is_asset_assigned
 
     Return true if an asset is already assigned.
 
@@ -164,7 +171,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: can_assign_asset(self, objectPath:str) -> bool
+.. py:method:: can_assign_asset(self, objectPath: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListCollection.can_assign_asset
 
     Return true is you can assign an asset.
 

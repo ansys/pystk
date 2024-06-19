@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: stopping_condition_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent.stopping_condition_type
-    :type: "STOPPING_CONDITION"
+    :type: STOPPING_CONDITION
 
     Get the type of stopping condition.
 

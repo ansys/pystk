@@ -3,7 +3,7 @@ FuelTankExternal
 
 .. py:class:: FuelTankExternal
 
-   IFuelTankExternal, SupportsDeleteCallback
+   Bases: py:obj:`~IFuelTankExternal`
 
    Class defining an external fuel tank for an Aviator aircraft.
 

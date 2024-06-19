@@ -3,7 +3,7 @@ Graphics3DPointableElementsElement
 
 .. py:class:: Graphics3DPointableElementsElement
 
-   IGraphics3DPointableElementsElement, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DPointableElementsElement`
 
    Pointable elements for 3D model pointing.
 

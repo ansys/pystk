@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: thrust_coefficients
     :canonical: ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.thrust_coefficients
-    :type: "IAgVAEngineModelThrustCoefficients"
+    :type: IAgVAEngineModelThrustCoefficients
 
     Get the thrust Coefficients.
 
 .. py:property:: isp_coefficients
     :canonical: ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.isp_coefficients
-    :type: "IAgVAEngineModelIspCoefficients"
+    :type: IAgVAEngineModelIspCoefficients
 
     Get the Isp Coefficients.
 
@@ -82,37 +82,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_ENGINE_MODEL_POLY") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_ENGINE_MODEL_POLY) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_MODEL_POLY"`
+    **param** : :obj:`~CONTROL_ENGINE_MODEL_POLY`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_ENGINE_MODEL_POLY") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_ENGINE_MODEL_POLY) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_MODEL_POLY"`
+    **param** : :obj:`~CONTROL_ENGINE_MODEL_POLY`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_ENGINE_MODEL_POLY") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ENGINE_MODEL_POLY) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_MODEL_POLY"`
+    **param** : :obj:`~CONTROL_ENGINE_MODEL_POLY`
 
     :Returns:
 

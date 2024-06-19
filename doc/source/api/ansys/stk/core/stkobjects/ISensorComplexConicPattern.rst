@@ -91,7 +91,8 @@ Method detail
 
 
 
-.. py:method:: set_clock_angles(self, min:typing.Any, max:typing.Any) -> None
+.. py:method:: set_clock_angles(self, min: typing.Any, max: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorComplexConicPattern.set_clock_angles
 
     Set both the min and max clock angle.
 
@@ -106,7 +107,8 @@ Method detail
 
 
 
-.. py:method:: set_cone_half_angles(self, inner:typing.Any, outer:typing.Any) -> None
+.. py:method:: set_cone_half_angles(self, inner: typing.Any, outer: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorComplexConicPattern.set_cone_half_angles
 
     Set both the inner and outer cone half angles.
 

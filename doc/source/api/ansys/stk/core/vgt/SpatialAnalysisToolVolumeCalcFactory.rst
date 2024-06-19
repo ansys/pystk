@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcFactory
 
 .. py:class:: SpatialAnalysisToolVolumeCalcFactory
 
-   ISpatialAnalysisToolVolumeCalcFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcFactory`
 
    The factory is used to create instances of volume calcs.
 

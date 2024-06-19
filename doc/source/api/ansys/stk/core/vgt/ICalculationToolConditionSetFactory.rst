@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name:str, description:str, type:"CRDN_CONDITION_SET_TYPE") -> "ICalculationToolConditionSet"
+.. py:method:: create(self, name: str, description: str, type: CRDN_CONDITION_SET_TYPE) -> ICalculationToolConditionSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetFactory.create
 
     Create and registers a condition set using specified name, description, and type.
 
@@ -48,13 +49,14 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~"CRDN_CONDITION_SET_TYPE"`
+    **type** : :obj:`~CRDN_CONDITION_SET_TYPE`
 
     :Returns:
 
-        :obj:`~"ICalculationToolConditionSet"`
+        :obj:`~ICalculationToolConditionSet`
 
-.. py:method:: create_scalar_thresholds(self, name:str, description:str) -> "ICalculationToolConditionSet"
+.. py:method:: create_scalar_thresholds(self, name: str, description: str) -> ICalculationToolConditionSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetFactory.create_scalar_thresholds
 
     Create a scalar thresholds condition set.
 
@@ -65,15 +67,16 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolConditionSet"`
+        :obj:`~ICalculationToolConditionSet`
 
-.. py:method:: is_type_supported(self, eType:"CRDN_CONDITION_SET_TYPE") -> bool
+.. py:method:: is_type_supported(self, eType: CRDN_CONDITION_SET_TYPE) -> bool
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~"CRDN_CONDITION_SET_TYPE"`
+    **eType** : :obj:`~CRDN_CONDITION_SET_TYPE`
 
     :Returns:
 

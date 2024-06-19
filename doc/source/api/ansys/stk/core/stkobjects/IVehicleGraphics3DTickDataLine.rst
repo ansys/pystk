@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Width of tick mark line.
 

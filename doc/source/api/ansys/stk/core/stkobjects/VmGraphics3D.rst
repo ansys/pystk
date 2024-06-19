@@ -3,7 +3,7 @@ VmGraphics3D
 
 .. py:class:: VmGraphics3D
 
-   IVmGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGraphics3D`
 
    Class defining 3D graphics properties of volumetric object.
 

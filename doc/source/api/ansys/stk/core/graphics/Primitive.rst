@@ -3,7 +3,7 @@ Primitive
 
 .. py:class:: Primitive
 
-   IPrimitive, SupportsDeleteCallback
+   Bases: py:obj:`~IPrimitive`
 
    Primitives represent objects rendered in the 3D scene.
 

@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcAltitude
 
 .. py:class:: SpatialAnalysisToolVolumeCalcAltitude
 
-   ISpatialAnalysisToolVolumeCalcAltitude, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcAltitude`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume calc altitude interface.
 

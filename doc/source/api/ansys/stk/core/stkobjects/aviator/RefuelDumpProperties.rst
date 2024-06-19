@@ -3,7 +3,7 @@ RefuelDumpProperties
 
 .. py:class:: RefuelDumpProperties
 
-   IRefuelDumpProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IRefuelDumpProperties`
 
    Class defining the refuel/dump properties for the current procedure.
 

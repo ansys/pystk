@@ -3,7 +3,7 @@ VehicleSGP4AutoUpdateProperties
 
 .. py:class:: VehicleSGP4AutoUpdateProperties
 
-   IVehicleSGP4AutoUpdateProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4AutoUpdateProperties`
 
    SGP4 AutoUpdate properties.
 

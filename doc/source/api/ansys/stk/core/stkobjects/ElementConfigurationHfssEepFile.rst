@@ -3,7 +3,7 @@ ElementConfigurationHfssEepFile
 
 .. py:class:: ElementConfigurationHfssEepFile
 
-   IElementConfigurationHfssEepFile, IElementConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~IElementConfigurationHfssEepFile`, py:obj:`~IElementConfiguration`
 
    Class defining an HFSS EEP file element configuration.
 

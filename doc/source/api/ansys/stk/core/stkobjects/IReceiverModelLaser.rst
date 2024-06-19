@@ -84,25 +84,25 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.filter
-    :type: "IAgRFFilterModel"
+    :type: IAgRFFilterModel
 
     Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.pre_receive_gains_losses
-    :type: "IAgAdditionalGainLossCollection"
+    :type: IAgAdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
 .. py:property:: pre_demod_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.pre_demod_gains_losses
-    :type: "IAgAdditionalGainLossCollection"
+    :type: IAgAdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.link_margin
-    :type: "IAgLinkMargin"
+    :type: IAgLinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 
@@ -132,7 +132,7 @@ Property detail
 
 .. py:property:: demodulator
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.demodulator
-    :type: "IAgDemodulatorModel"
+    :type: IAgDemodulatorModel
 
     Gets the current demodulator model.
 
@@ -144,7 +144,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.polarization
-    :type: "IAgPolarization"
+    :type: IAgPolarization
 
     Gets the polarization.
 
@@ -162,7 +162,7 @@ Property detail
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.antenna_control
-    :type: "IAgAntennaControl"
+    :type: IAgAntennaControl
 
     Gets the receiver antenna control.
 
@@ -210,7 +210,7 @@ Property detail
 
 .. py:property:: propagation_loss_models
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.propagation_loss_models
-    :type: "IAgLaserPropagationLossModels"
+    :type: IAgLaserPropagationLossModels
 
     This property is deprecated. The laser propagation loss models can be accessed from the LaserEnvironment property.
 
@@ -221,7 +221,8 @@ Method detail
 
 
 
-.. py:method:: set_filter(self, name:str) -> None
+.. py:method:: set_filter(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.set_filter
 
     Set the current filter model by name.
 
@@ -244,7 +245,8 @@ Method detail
 
 
 
-.. py:method:: set_demodulator(self, name:str) -> None
+.. py:method:: set_demodulator(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.set_demodulator
 
     Set the current demodulator model by name.
 
@@ -259,13 +261,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, val:"POLARIZATION_TYPE") -> None
+.. py:method:: set_polarization_type(self, val: POLARIZATION_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **val** : :obj:`~"POLARIZATION_TYPE"`
+    **val** : :obj:`~POLARIZATION_TYPE`
 
     :Returns:
 

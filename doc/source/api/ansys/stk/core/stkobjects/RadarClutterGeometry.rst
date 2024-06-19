@@ -3,7 +3,7 @@ RadarClutterGeometry
 
 .. py:class:: RadarClutterGeometry
 
-   IRadarClutterGeometry, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarClutterGeometry`
 
    Class defining a radar clutter geometry.
 

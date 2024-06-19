@@ -3,7 +3,7 @@ ProcedureLanding
 
 .. py:class:: ProcedureLanding
 
-   IProcedureLanding, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureLanding`, py:obj:`~IProcedure`
 
    Class defining a landing procedure.
 

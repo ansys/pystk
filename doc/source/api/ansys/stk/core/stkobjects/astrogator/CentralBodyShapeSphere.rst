@@ -3,7 +3,7 @@ CentralBodyShapeSphere
 
 .. py:class:: CentralBodyShapeSphere
 
-   ICentralBodyShapeSphere, ICentralBodyShape, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyShapeSphere`, py:obj:`~ICentralBodyShape`
 
    Central Body Shape - Sphere.
 

@@ -38,24 +38,26 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IDurationPathPrimitiveUpdatePolicy"
+.. py:method:: initialize(self) -> IDurationPathPrimitiveUpdatePolicy
+    :canonical: ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicyFactory.initialize
 
     Construct a default update policy. This is equivalent to constructing a policy with duration set to 0 and a remove location of Front.
 
     :Returns:
 
-        :obj:`~"IDurationPathPrimitiveUpdatePolicy"`
+        :obj:`~IDurationPathPrimitiveUpdatePolicy`
 
-.. py:method:: initialize_with_parameters(self, duration:float, removeLocation:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "IDurationPathPrimitiveUpdatePolicy"
+.. py:method:: initialize_with_parameters(self, duration: float, removeLocation: PATH_PRIMITIVE_REMOVE_LOCATION) -> IDurationPathPrimitiveUpdatePolicy
+    :canonical: ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicyFactory.initialize_with_parameters
 
     Initialize a policy with the specified duration and removeLocation.
 
     :Parameters:
 
     **duration** : :obj:`~float`
-    **removeLocation** : :obj:`~"PATH_PRIMITIVE_REMOVE_LOCATION"`
+    **removeLocation** : :obj:`~PATH_PRIMITIVE_REMOVE_LOCATION`
 
     :Returns:
 
-        :obj:`~"IDurationPathPrimitiveUpdatePolicy"`
+        :obj:`~IDurationPathPrimitiveUpdatePolicy`
 

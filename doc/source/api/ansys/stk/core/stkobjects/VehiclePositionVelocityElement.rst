@@ -3,7 +3,7 @@ VehiclePositionVelocityElement
 
 .. py:class:: VehiclePositionVelocityElement
 
-   IVehiclePositionVelocityElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePositionVelocityElement`
 
    Class defining position and velocity elements for HPOP covariance.
 

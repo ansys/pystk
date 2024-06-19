@@ -3,7 +3,7 @@ StateCalcOrbitDelaunayL
 
 .. py:class:: StateCalcOrbitDelaunayL
 
-   IStateCalcOrbitDelaunayL, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcOrbitDelaunayL`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass AsStateCalcOrbitDelaunayL.
 

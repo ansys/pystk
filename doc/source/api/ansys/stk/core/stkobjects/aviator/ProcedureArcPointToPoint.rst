@@ -3,7 +3,7 @@ ProcedureArcPointToPoint
 
 .. py:class:: ProcedureArcPointToPoint
 
-   IProcedureArcPointToPoint, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureArcPointToPoint`, py:obj:`~IProcedure`
 
    Class defining a arc point to point procedure.
 

@@ -3,7 +3,7 @@ VectorGeometryToolSystemRefTo
 
 .. py:class:: VectorGeometryToolSystemRefTo
 
-   IVectorGeometryToolSystemRefTo, IAnalysisWorkbenchRefTo, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolSystemRefTo`, py:obj:`~IAnalysisWorkbenchRefTo`
 
    Represents a System reference.
 

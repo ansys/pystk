@@ -11,6 +11,24 @@ EPHEM_SHIFT_ROTATE_ALTITUDE_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ALTITUDE_MODE_MSL`
+              - Enumeration AgEAvtrEphemShiftRotateAltMode:eAltModeMSL.
+
+            * - :py:attr:`~ALTITUDE_MODE_WGS`
+              - Enumeration AgEAvtrEphemShiftRotateAltMode:eAltModeWGS.
+
+            * - :py:attr:`~ALTITUDE_MODE_REL`
+              - Enumeration AgEAvtrEphemShiftRotateAltMode:eAltModeRel.
+
+
 Import detail
 -------------
 

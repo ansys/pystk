@@ -3,7 +3,7 @@ EdgeDetectFilterFactory
 
 .. py:class:: EdgeDetectFilterFactory
 
-   IEdgeDetectFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IEdgeDetectFilterFactory`
 
    Apply a convolution filter to detect edges in the source raster.
 

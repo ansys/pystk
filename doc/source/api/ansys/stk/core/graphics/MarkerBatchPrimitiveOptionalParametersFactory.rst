@@ -3,7 +3,7 @@ MarkerBatchPrimitiveOptionalParametersFactory
 
 .. py:class:: MarkerBatchPrimitiveOptionalParametersFactory
 
-   IMarkerBatchPrimitiveOptionalParametersFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IMarkerBatchPrimitiveOptionalParametersFactory`
 
    Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters...
 

@@ -3,7 +3,7 @@ ConstraintCollection
 
 .. py:class:: ConstraintCollection
 
-   IConstraintCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IConstraintCollection`
 
    The Constraint component folder.
 

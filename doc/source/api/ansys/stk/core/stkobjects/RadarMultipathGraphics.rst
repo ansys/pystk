@@ -3,7 +3,7 @@ RadarMultipathGraphics
 
 .. py:class:: RadarMultipathGraphics
 
-   IRadarMultipathGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarMultipathGraphics`
 
    Class defining multipath graphics properties of a Radar.
 

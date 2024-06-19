@@ -72,7 +72,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, vtIndex:typing.Any) -> "ICentralBodyTerrainCollectionElement"
+.. py:method:: item(self, vtIndex: typing.Any) -> ICentralBodyTerrainCollectionElement
+    :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.item
 
     Given an index or a name of a central body, returns an element in the collection.
 
@@ -82,12 +83,13 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICentralBodyTerrainCollectionElement"`
+        :obj:`~ICentralBodyTerrainCollectionElement`
 
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "ICentralBodyTerrainCollectionElement"
+.. py:method:: get_item_by_index(self, index: int) -> ICentralBodyTerrainCollectionElement
+    :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.get_item_by_index
 
     Retrieve a central body terrain from the collection by index.
 
@@ -97,9 +99,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICentralBodyTerrainCollectionElement"`
+        :obj:`~ICentralBodyTerrainCollectionElement`
 
-.. py:method:: get_item_by_name(self, name:str) -> "ICentralBodyTerrainCollectionElement"
+.. py:method:: get_item_by_name(self, name: str) -> ICentralBodyTerrainCollectionElement
+    :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.get_item_by_name
 
     Retrieve a central body terrain from the collection by name.
 
@@ -109,5 +112,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICentralBodyTerrainCollectionElement"`
+        :obj:`~ICentralBodyTerrainCollectionElement`
 

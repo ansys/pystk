@@ -55,7 +55,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_property(self, path:str) -> typing.Any
+.. py:method:: get_property(self, path: str) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.ISRPModelPluginSettings.get_property
 
     Get a property.
 
@@ -67,7 +68,8 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: set_property(self, path:str, val:typing.Any) -> None
+.. py:method:: set_property(self, path: str, val: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ISRPModelPluginSettings.set_property
 
     Set a property.
 

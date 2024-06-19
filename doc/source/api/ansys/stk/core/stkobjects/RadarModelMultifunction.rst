@@ -3,7 +3,7 @@ RadarModelMultifunction
 
 .. py:class:: RadarModelMultifunction
 
-   IRadarModelMultifunction, IRadarModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModelMultifunction`, py:obj:`~IRadarModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a multifunction radar model.
 

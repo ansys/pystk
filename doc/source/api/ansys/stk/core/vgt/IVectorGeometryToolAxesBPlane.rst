@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesBPlane.trajectory
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a trajectory point.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesBPlane.reference_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a reference vector.
 
 .. py:property:: target_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesBPlane.target_body
-    :type: "IAgCrdnCentralBodyRefTo"
+    :type: IAgCrdnCentralBodyRefTo
 
     Specify a target central body.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesBPlane.direction
-    :type: "CRDN_DIRECTION_TYPE"
+    :type: CRDN_DIRECTION_TYPE
 
     Specify a direction (incoming or outgoing).
 

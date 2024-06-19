@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: objects
     :canonical: ansys.stk.core.stkobjects.IConstellation.objects
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Get the collection of objects in the chain.
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.IConstellation.constraints
-    :type: "IAgCnConstraints"
+    :type: IAgCnConstraints
 
     Get the constellation's constraints.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IConstellation.graphics
-    :type: "IAgCnGraphics"
+    :type: IAgCnGraphics
 
     Constellation's 2D graphics settings.
 
 .. py:property:: routing
     :canonical: ansys.stk.core.stkobjects.IConstellation.routing
-    :type: "IAgCnRouting"
+    :type: IAgCnRouting
 
     Constellation's routing settings.
 

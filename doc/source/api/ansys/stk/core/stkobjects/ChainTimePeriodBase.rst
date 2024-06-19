@@ -3,7 +3,7 @@ ChainTimePeriodBase
 
 .. py:class:: ChainTimePeriodBase
 
-   IChainTimePeriodBase, SupportsDeleteCallback
+   Bases: py:obj:`~IChainTimePeriodBase`
 
    Chain time period options.
 

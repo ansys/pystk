@@ -66,13 +66,13 @@ Property detail
 
 .. py:property:: altitude_crossing_sides
     :canonical: ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.altitude_crossing_sides
-    :type: "SENSOR_ALTITUDE_CROSSING_SIDES"
+    :type: SENSOR_ALTITUDE_CROSSING_SIDES
 
     Indicates which crossings are computed and displayed in the 2D Graphics window.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.direction
-    :type: "SENSOR_ALTITUDE_CROSSING_DIRECTION"
+    :type: SENSOR_ALTITUDE_CROSSING_DIRECTION
 
     Indicates the direction in which the sensor's field of view crosses the specified altitude.
 

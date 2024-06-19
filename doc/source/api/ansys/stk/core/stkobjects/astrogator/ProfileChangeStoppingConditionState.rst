@@ -3,7 +3,7 @@ ProfileChangeStoppingConditionState
 
 .. py:class:: ProfileChangeStoppingConditionState
 
-   IProfileChangeStoppingConditionState, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileChangeStoppingConditionState`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Change Stopping Condition State profile.
 

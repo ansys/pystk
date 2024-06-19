@@ -3,7 +3,7 @@ VectorGeometryToolVectorOrbitNormal
 
 .. py:class:: VectorGeometryToolVectorOrbitNormal
 
-   IVectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorOrbitNormal`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body.
 

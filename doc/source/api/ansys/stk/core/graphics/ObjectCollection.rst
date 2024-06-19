@@ -3,7 +3,7 @@ ObjectCollection
 
 .. py:class:: ObjectCollection
 
-   IObjectCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IObjectCollection`
 
    A collection of objects.
 

@@ -3,7 +3,7 @@ AltitudeOptions
 
 .. py:class:: AltitudeOptions
 
-   IAltitudeOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IAltitudeOptions`
 
    Class defining the altitude options in a procedure.
 

@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: logging_mode
     :canonical: ansys.stk.core.stkx.ISTKXApplication.logging_mode
-    :type: "LOGGING_MODE"
+    :type: LOGGING_MODE
 
     Controls the log file generation, and if the log file is deleted or not on application exit.
 
@@ -148,7 +148,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: execute_command(self, command:str) -> "IExecCmdResult"
+.. py:method:: execute_command(self, command: str) -> IExecCmdResult
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.execute_command
 
     Send a connect command to STK X.
 
@@ -158,7 +159,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IExecCmdResult"`
+        :obj:`~IExecCmdResult`
 
 
 
@@ -168,6 +169,7 @@ Method detail
 
 
 .. py:method:: get_licensing_report(self) -> str
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.get_licensing_report
 
     Do not use this method, as it is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document.
 
@@ -177,7 +179,8 @@ Method detail
 
 
 
-.. py:method:: set_online_options(self, useProxy:bool, serverName:str, portNum:int, userName:str, password:str, savePassword:bool) -> bool
+.. py:method:: set_online_options(self, useProxy: bool, serverName: str, portNum: int, userName: str, password: str, savePassword: bool) -> bool
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.set_online_options
 
     Set http proxy online options.
 
@@ -195,6 +198,7 @@ Method detail
         :obj:`~bool`
 
 .. py:method:: get_online_options(self) -> typing.Tuple[bool, str, int, str, bool]
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.get_online_options
 
     Get http proxy online options.
 
@@ -202,7 +206,8 @@ Method detail
 
         :obj:`~typing.Tuple[bool, str, int, str, bool]`
 
-.. py:method:: set_connect_handler(self, commandID:str, progID:str) -> None
+.. py:method:: set_connect_handler(self, commandID: str, progID: str) -> None
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.set_connect_handler
 
     Set callback to handle a certain connect command.
 
@@ -220,26 +225,28 @@ Method detail
 
 
 
-.. py:method:: execute_multiple_commands(self, connectCommands:list, eAction:"EXEC_MULTI_CMD_RESULT_ACTION") -> "IExecMultiCmdResult"
+.. py:method:: execute_multiple_commands(self, connectCommands: list, eAction: EXEC_MULTI_CMD_RESULT_ACTION) -> IExecMultiCmdResult
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.execute_multiple_commands
 
     Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed.
 
     :Parameters:
 
     **connectCommands** : :obj:`~list`
-    **eAction** : :obj:`~"EXEC_MULTI_CMD_RESULT_ACTION"`
+    **eAction** : :obj:`~EXEC_MULTI_CMD_RESULT_ACTION`
 
     :Returns:
 
-        :obj:`~"IExecMultiCmdResult"`
+        :obj:`~IExecMultiCmdResult`
 
-.. py:method:: is_feature_available(self, featureCode:"FEATURE_CODES") -> bool
+.. py:method:: is_feature_available(self, featureCode: FEATURE_CODES) -> bool
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.is_feature_available
 
     Return true if the specified feature is available.
 
     :Parameters:
 
-    **featureCode** : :obj:`~"FEATURE_CODES"`
+    **featureCode** : :obj:`~FEATURE_CODES`
 
     :Returns:
 
@@ -248,6 +255,7 @@ Method detail
 
 
 .. py:method:: terminate(self) -> None
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.terminate
 
     Terminates the use of STK Engine. This must be the last call to STK Engine.
 
@@ -260,6 +268,7 @@ Method detail
 
 
 .. py:method:: use_software_renderer(self) -> None
+    :canonical: ansys.stk.core.stkx.ISTKXApplication.use_software_renderer
 
     Configure engine graphics to use a software renderer in order to meet minimum graphics requirements. Enabling this option will result in significant performance impacts.
 

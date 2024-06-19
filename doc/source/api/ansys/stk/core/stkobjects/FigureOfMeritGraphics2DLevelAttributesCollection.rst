@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DLevelAttributesCollection
 
 .. py:class:: FigureOfMeritGraphics2DLevelAttributesCollection
 
-   IFigureOfMeritGraphics2DLevelAttributesCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DLevelAttributesCollection`
 
    Collection of Level Attributes.
 

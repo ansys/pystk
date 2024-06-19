@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems.earth
-    :type: "IAgCrdnWellKnownEarthSystems"
+    :type: IAgCrdnWellKnownEarthSystems
 
     Earth's coordinate reference systems.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems.sun
-    :type: "IAgCrdnWellKnownSunSystems"
+    :type: IAgCrdnWellKnownSunSystems
 
     The Sun's coordinate reference systems.
 

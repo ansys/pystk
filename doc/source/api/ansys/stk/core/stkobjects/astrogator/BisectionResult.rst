@@ -3,7 +3,7 @@ BisectionResult
 
 .. py:class:: BisectionResult
 
-   IBisectionResult, SupportsDeleteCallback
+   Bases: py:obj:`~IBisectionResult`
 
    Result parameters for Bisection profile.
 

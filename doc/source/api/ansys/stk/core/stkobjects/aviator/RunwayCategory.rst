@@ -3,7 +3,7 @@ RunwayCategory
 
 .. py:class:: RunwayCategory
 
-   IRunwayCategory, SupportsDeleteCallback
+   Bases: py:obj:`~IRunwayCategory`
 
    Class defining the runway category in the Aviator catalog.
 

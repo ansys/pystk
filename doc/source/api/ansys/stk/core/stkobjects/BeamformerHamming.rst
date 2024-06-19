@@ -3,7 +3,7 @@ BeamformerHamming
 
 .. py:class:: BeamformerHamming
 
-   IBeamformer, IBeamformerHamming, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerHamming`
 
    Class defining a Hamming tapered beamformer.
 

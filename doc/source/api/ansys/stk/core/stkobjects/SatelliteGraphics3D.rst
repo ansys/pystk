@@ -3,7 +3,7 @@ SatelliteGraphics3D
 
 .. py:class:: SatelliteGraphics3D
 
-   ISatelliteGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~ISatelliteGraphics3D`
 
    3D Graphics properties of a satellite.
 

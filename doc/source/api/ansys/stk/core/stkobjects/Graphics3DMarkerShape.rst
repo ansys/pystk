@@ -3,7 +3,7 @@ Graphics3DMarkerShape
 
 .. py:class:: Graphics3DMarkerShape
 
-   IGraphics3DMarkerData, IGraphics3DMarkerShape, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DMarkerData`, py:obj:`~IGraphics3DMarkerShape`
 
    Class defining the marker type that represents the object in the 3D Graphics window.
 

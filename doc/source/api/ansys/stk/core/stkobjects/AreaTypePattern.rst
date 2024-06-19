@@ -3,7 +3,7 @@ AreaTypePattern
 
 .. py:class:: AreaTypePattern
 
-   IAreaTypePattern, SupportsDeleteCallback
+   Bases: py:obj:`~IAreaTypePattern`
 
    Class defining coordinates of the AreaTarget AreaType.
 

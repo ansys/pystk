@@ -3,7 +3,7 @@ LandingEnrouteOptions
 
 .. py:class:: LandingEnrouteOptions
 
-   IEnrouteAndDelayOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IEnrouteAndDelayOptions`
 
    Class defining the enroute options in a landing procedure.
 

@@ -3,7 +3,7 @@ ModulatorModelWidebandGaussian
 
 .. py:class:: ModulatorModelWidebandGaussian
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a wideband gaussian modulator model.
 

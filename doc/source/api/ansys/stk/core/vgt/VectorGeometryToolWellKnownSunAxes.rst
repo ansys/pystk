@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownSunAxes
 
 .. py:class:: VectorGeometryToolWellKnownSunAxes
 
-   IVectorGeometryToolWellKnownSunAxes, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolWellKnownSunAxes`
 
    Well-known Sun's axes.
 

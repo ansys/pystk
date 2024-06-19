@@ -3,7 +3,7 @@ Cira72Function
 
 .. py:class:: Cira72Function
 
-   ICira72Function, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ICira72Function`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Cira72 atmospheric propagator function.
 

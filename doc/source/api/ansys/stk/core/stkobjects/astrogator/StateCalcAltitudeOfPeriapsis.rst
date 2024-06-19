@@ -3,7 +3,7 @@ StateCalcAltitudeOfPeriapsis
 
 .. py:class:: StateCalcAltitudeOfPeriapsis
 
-   IComponentInfo, ICloneable, IStateCalcAltitudeOfPeriapsis, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcAltitudeOfPeriapsis`
 
    AltitudeOfPeriapsis Calc objects.
 

@@ -3,7 +3,7 @@ MissionControlSequenceManeuver
 
 .. py:class:: MissionControlSequenceManeuver
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceManeuver, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceManeuver`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Maneuver segment.
 

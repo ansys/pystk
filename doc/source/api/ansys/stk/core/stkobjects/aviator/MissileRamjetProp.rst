@@ -3,7 +3,7 @@ MissileRamjetProp
 
 .. py:class:: MissileRamjetProp
 
-   IMissileRamjetProp, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileRamjetProp`
 
    Class defining the Ramjet propulsion options for a missile.
 

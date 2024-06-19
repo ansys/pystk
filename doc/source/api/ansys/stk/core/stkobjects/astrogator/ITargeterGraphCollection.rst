@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -81,7 +81,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "ITargeterGraph"
+.. py:method:: item(self, indexOrName: typing.Any) -> ITargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.item
 
     Allow you to iterate through the collection.
 
@@ -91,19 +92,21 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITargeterGraph"`
+        :obj:`~ITargeterGraph`
 
 
 
-.. py:method:: add_graph(self) -> "ITargeterGraph"
+.. py:method:: add_graph(self) -> ITargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.add_graph
 
     Add a new targeter graph.
 
     :Returns:
 
-        :obj:`~"ITargeterGraph"`
+        :obj:`~ITargeterGraph`
 
-.. py:method:: remove_graph(self, indexOrName:typing.Any) -> None
+.. py:method:: remove_graph(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.remove_graph
 
     Remove a targeter graph.
 
@@ -116,7 +119,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.cut
 
     Copy a targeter graph to the clipboard and removes the targeter graph from the list.
 
@@ -128,27 +132,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "ITargeterGraph"
+.. py:method:: paste(self) -> ITargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.paste
 
     Pastes a targeter graph from the clipboard into the list.
 
     :Returns:
 
-        :obj:`~"ITargeterGraph"`
+        :obj:`~ITargeterGraph`
 
-.. py:method:: insert_copy(self, graph:"ITargeterGraph") -> "ITargeterGraph"
+.. py:method:: insert_copy(self, graph: ITargeterGraph) -> ITargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.insert_copy
 
     Copy a targeter graph and inserts the copy into the list.
 
     :Parameters:
 
-    **graph** : :obj:`~"ITargeterGraph"`
+    **graph** : :obj:`~ITargeterGraph`
 
     :Returns:
 
-        :obj:`~"ITargeterGraph"`
+        :obj:`~ITargeterGraph`
 
-.. py:method:: get_item_by_index(self, index:int) -> "ITargeterGraph"
+.. py:method:: get_item_by_index(self, index: int) -> ITargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.get_item_by_index
 
     Retrieve a targeter graph from the collection by index.
 
@@ -158,9 +165,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITargeterGraph"`
+        :obj:`~ITargeterGraph`
 
-.. py:method:: get_item_by_name(self, name:str) -> "ITargeterGraph"
+.. py:method:: get_item_by_name(self, name: str) -> ITargeterGraph
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.get_item_by_name
 
     Retrieve a targeter graph from the collection by name.
 
@@ -170,5 +178,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITargeterGraph"`
+        :obj:`~ITargeterGraph`
 

@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: coefficient_data_type
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.coefficient_data_type
-    :type: "VOACAP_COEFFICIENT_DATA_TYPE"
+    :type: VOACAP_COEFFICIENT_DATA_TYPE
 
     Gets or sets the coefficient data type.
 
@@ -79,13 +79,13 @@ Property detail
 
 .. py:property:: solar_activity_configuration_type
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.solar_activity_configuration_type
-    :type: "VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE"
+    :type: VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
 
     Gets or sets the solar activity configuration enumeration.
 
 .. py:property:: solar_activity_configuration
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.solar_activity_configuration
-    :type: "IAgSolarActivityConfiguration"
+    :type: IAgSolarActivityConfiguration
 
     Gets or sets the solar activity configuration.
 

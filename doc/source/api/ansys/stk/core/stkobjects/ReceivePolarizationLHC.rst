@@ -3,7 +3,7 @@ ReceivePolarizationLHC
 
 .. py:class:: ReceivePolarizationLHC
 
-   IPolarization, IPolarizationCrossPolLeakage, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
 
    Class defining a LHC polarization.
 

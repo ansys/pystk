@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ITransmitterModel.type
-    :type: "TRANSMITTER_MODEL_TYPE"
+    :type: TRANSMITTER_MODEL_TYPE
 
     Gets the transmitter model type enumeration.
 

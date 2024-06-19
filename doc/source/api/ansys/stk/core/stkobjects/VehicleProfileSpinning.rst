@@ -3,7 +3,7 @@ VehicleProfileSpinning
 
 .. py:class:: VehicleProfileSpinning
 
-   IVehicleProfileSpinning, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileSpinning`, py:obj:`~IVehicleAttitudeProfile`
 
    Spinning attitude profile.
 

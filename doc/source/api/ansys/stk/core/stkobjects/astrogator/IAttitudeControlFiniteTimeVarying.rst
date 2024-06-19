@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.body_constraint_vector
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 

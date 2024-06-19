@@ -3,7 +3,7 @@ ElementKeplerian
 
 .. py:class:: ElementKeplerian
 
-   IElementKeplerian, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementKeplerian`, py:obj:`~IElement`
 
    Keplerian elements.
 

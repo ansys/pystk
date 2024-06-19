@@ -3,7 +3,7 @@ TimeToolAxesSamplingResult
 
 .. py:class:: TimeToolAxesSamplingResult
 
-   ITimeToolAxesSamplingResult, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolAxesSamplingResult`
 
    Contains tabulated orientations and angular velocities of axes created by Sample method.
 

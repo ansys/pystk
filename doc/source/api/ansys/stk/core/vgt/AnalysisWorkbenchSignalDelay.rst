@@ -3,7 +3,7 @@ AnalysisWorkbenchSignalDelay
 
 .. py:class:: AnalysisWorkbenchSignalDelay
 
-   IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchSignalDelay`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Signal delay definition determines how long it takes for a signal to propagate from one location to another.
 

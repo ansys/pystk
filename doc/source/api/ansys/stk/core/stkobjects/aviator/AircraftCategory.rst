@@ -3,7 +3,7 @@ AircraftCategory
 
 .. py:class:: AircraftCategory
 
-   IAircraftCategory, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftCategory`
 
    Class defining the aircraft category in the Aviator catalog.
 

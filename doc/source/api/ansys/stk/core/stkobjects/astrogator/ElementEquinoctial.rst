@@ -3,7 +3,7 @@ ElementEquinoctial
 
 .. py:class:: ElementEquinoctial
 
-   IElementEquinoctial, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementEquinoctial`, py:obj:`~IElement`
 
    Equinoctial elements.
 

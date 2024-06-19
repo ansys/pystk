@@ -3,7 +3,7 @@ StateCalcEccentricityAnomaly
 
 .. py:class:: StateCalcEccentricityAnomaly
 
-   IComponentInfo, ICloneable, IStateCalcEccentricityAnomaly, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEccentricityAnomaly`
 
    EccAnomaly Calc objects.
 

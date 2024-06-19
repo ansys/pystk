@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: scattering_point_provider
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement.scattering_point_provider
-    :type: "IAgComponentLinkEmbedControl"
+    :type: IAgComponentLinkEmbedControl
 
     Gets the link/embed controller for managing the scattering point provider component.
 

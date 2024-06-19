@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ITimeToolInterval"
+.. py:method:: item(self, index: int) -> ITimeToolInterval
+    :canonical: ansys.stk.core.vgt.ITimeToolIntervalCollection.item
 
     Return an interval at a specified index.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolInterval"`
+        :obj:`~ITimeToolInterval`
 
 

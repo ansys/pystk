@@ -3,7 +3,7 @@ ModelPrimitive
 
 .. py:class:: ModelPrimitive
 
-   IModelPrimitive, IPrimitive, SupportsDeleteCallback
+   Bases: py:obj:`~IModelPrimitive`, py:obj:`~IPrimitive`
 
    The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
 

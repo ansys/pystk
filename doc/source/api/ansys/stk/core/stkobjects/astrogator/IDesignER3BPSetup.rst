@@ -140,13 +140,13 @@ Property detail
 
 .. py:property:: rotating_system_choice
     :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.rotating_system_choice
-    :type: "ROTATING_COORDINATE_SYSTEM"
+    :type: ROTATING_COORDINATE_SYSTEM
 
     Get the rotating coordinate system and associated calculation objects to interact with.
 
 .. py:property:: associated_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.associated_objects
-    :type: "IAgVADesignER3BPObjectCollection"
+    :type: IAgVADesignER3BPObjectCollection
 
     Get the list of associated objects.
 
@@ -179,6 +179,7 @@ Method detail
 
 
 .. py:method:: create_ideal_secondary_cb(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.create_ideal_secondary_cb
 
     Construct the idealized secondary for the three-body system.
 
@@ -187,6 +188,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: reset_ideal_secondary_cb(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.reset_ideal_secondary_cb
 
     Reset the idealized secondary for the three-body system.
 
@@ -195,6 +197,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: update_ideal_secondary_cb(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.update_ideal_secondary_cb
 
     Update the idealized secondary for the three-body system.
 
@@ -203,6 +206,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: create_rotating_coordinate_system(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.create_rotating_coordinate_system
 
     Create the coordinate system for the RotatingSystemChoice selection.
 
@@ -211,6 +215,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: delete_rotating_coordinate_system(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.delete_rotating_coordinate_system
 
     Delete the coordinate system for the RotatingSystemChoice selection.
 
@@ -219,6 +224,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: create_calculation_objects(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.create_calculation_objects
 
     Create the calculation objects for the selected coordinate system.
 
@@ -227,6 +233,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: delete_calculation_objects(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.delete_calculation_objects
 
     Delete the calculation objects for the selected coordinate system.
 
@@ -238,6 +245,7 @@ Method detail
 
 
 .. py:method:: create_propagator(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.create_propagator
 
     Create the propagator for the primary-secondary ER3BP formulation.
 
@@ -246,6 +254,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: delete_propagator(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup.delete_propagator
 
     Delete the propagator for the primary-secondary ER3BP formulation.
 

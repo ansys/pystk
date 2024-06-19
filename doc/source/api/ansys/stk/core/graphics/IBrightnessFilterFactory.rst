@@ -38,15 +38,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IBrightnessFilter"
+.. py:method:: initialize(self) -> IBrightnessFilter
+    :canonical: ansys.stk.core.graphics.IBrightnessFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IBrightnessFilter"`
+        :obj:`~IBrightnessFilter`
 
-.. py:method:: initialize_with_adjustment(self, adjustment:float) -> "IBrightnessFilter"
+.. py:method:: initialize_with_adjustment(self, adjustment: float) -> IBrightnessFilter
+    :canonical: ansys.stk.core.graphics.IBrightnessFilterFactory.initialize_with_adjustment
 
     Initialize a new instance with the adjustment to brightness.
 
@@ -56,5 +58,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBrightnessFilter"`
+        :obj:`~IBrightnessFilter`
 

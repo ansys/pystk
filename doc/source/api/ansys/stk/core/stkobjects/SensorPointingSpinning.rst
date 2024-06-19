@@ -3,7 +3,7 @@ SensorPointingSpinning
 
 .. py:class:: SensorPointingSpinning
 
-   ISensorPointing, ISensorPointingSpinning, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingSpinning`
 
    Class defining the spinning pointing type for a Sensor.
 

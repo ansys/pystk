@@ -41,37 +41,37 @@ Property detail
 
 .. py:property:: aircraft_category
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalog.aircraft_category
-    :type: "IAgAvtrAircraftCategory"
+    :type: IAgAvtrAircraftCategory
 
     Get the aircraft category.
 
 .. py:property:: runway_category
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalog.runway_category
-    :type: "IAgAvtrRunwayCategory"
+    :type: IAgAvtrRunwayCategory
 
     Get the runway category.
 
 .. py:property:: airport_category
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalog.airport_category
-    :type: "IAgAvtrAirportCategory"
+    :type: IAgAvtrAirportCategory
 
     Get the airport category.
 
 .. py:property:: navaid_category
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalog.navaid_category
-    :type: "IAgAvtrNavaidCategory"
+    :type: IAgAvtrNavaidCategory
 
     Get the navaid category.
 
 .. py:property:: vtol_point_category
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalog.vtol_point_category
-    :type: "IAgAvtrVTOLPointCategory"
+    :type: IAgAvtrVTOLPointCategory
 
     Get the vtol point category.
 
 .. py:property:: waypoint_category
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalog.waypoint_category
-    :type: "IAgAvtrWaypointCategory"
+    :type: IAgAvtrWaypointCategory
 
     Get the waypoint category.
 

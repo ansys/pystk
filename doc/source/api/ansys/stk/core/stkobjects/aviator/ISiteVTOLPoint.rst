@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint.altitude_reference
-    :type: "AGL_MSL"
+    :type: AGL_MSL
 
     Gets or sets the altitude reference.
 
@@ -82,11 +82,12 @@ Method detail
 
 
 
-.. py:method:: get_as_site(self) -> "ISite"
+.. py:method:: get_as_site(self) -> ISite
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint.get_as_site
 
     Get the site interface.
 
     :Returns:
 
-        :obj:`~"ISite"`
+        :obj:`~ISite`
 

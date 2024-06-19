@@ -41,7 +41,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.type
-    :type: "VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE"
+    :type: VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE
 
     Get the option for where to end the drop line.
 
@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the line width of the drop line.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Gets or sets the line style of the drop line.
 

@@ -3,7 +3,7 @@ AdvancedFixedWingScramjetBasic
 
 .. py:class:: AdvancedFixedWingScramjetBasic
 
-   IAdvancedFixedWingScramjetBasic, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingScramjetBasic`
 
    Class defining the basic Scramjet model.
 

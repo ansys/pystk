@@ -3,7 +3,7 @@ CalculationToolParameterSetAttitude
 
 .. py:class:: CalculationToolParameterSetAttitude
 
-   ICalculationToolParameterSetAttitude, ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolParameterSetAttitude`, py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Attitude parameter set contains various representations of attitude of one set of axes relative to another.
 

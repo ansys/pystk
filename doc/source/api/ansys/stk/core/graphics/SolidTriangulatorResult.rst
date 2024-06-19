@@ -3,7 +3,7 @@ SolidTriangulatorResult
 
 .. py:class:: SolidTriangulatorResult
 
-   ISolidTriangulatorResult, ITriangulatorResult, SupportsDeleteCallback
+   Bases: py:obj:`~ISolidTriangulatorResult`, py:obj:`~ITriangulatorResult`
 
    The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive...
 

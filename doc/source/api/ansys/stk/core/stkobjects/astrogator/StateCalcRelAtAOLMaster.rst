@@ -3,7 +3,7 @@ StateCalcRelAtAOLMaster
 
 .. py:class:: StateCalcRelAtAOLMaster
 
-   IComponentInfo, ICloneable, IStateCalcRelAtAOLMaster, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelAtAOLMaster`
 
    RelAOLMaster Calc objects.
 

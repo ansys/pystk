@@ -11,6 +11,21 @@ SENSOR_POINTING_TARGETED_BORESIGHT_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~TRACKING`
+              - Tracking: the sensor is aimed at one or more selected targets.
+
+            * - :py:attr:`~FIXED`
+              - Fixed: the sensor always points in a fixed direction.
+
+
 Import detail
 -------------
 

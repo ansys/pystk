@@ -3,7 +3,7 @@ EOIRStagePlume
 
 .. py:class:: EOIRStagePlume
 
-   IEOIRStagePlume, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRStagePlume`
 
    Plume shape class.
 

@@ -3,7 +3,7 @@ ProfileCollection
 
 .. py:class:: ProfileCollection
 
-   IProfileCollection, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileCollection`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Profiles of a Target Sequence.
 

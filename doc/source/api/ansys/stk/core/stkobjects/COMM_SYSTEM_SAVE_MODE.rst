@@ -11,6 +11,24 @@ COMM_SYSTEM_SAVE_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~DO_NOT_SAVE_COMPUTE_DATA`
+              - Don't save compute data.
+
+            * - :py:attr:`~COMPUTE_DATA_ON_LOAD`
+              - Don't save, but compute on load.
+
+            * - :py:attr:`~SAVE_COMPUTE_DATA`
+              - Save compute data.
+
+
 Import detail
 -------------
 

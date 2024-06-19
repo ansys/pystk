@@ -3,7 +3,7 @@ Catalog
 
 .. py:class:: Catalog
 
-   ICatalog, SupportsDeleteCallback
+   Bases: py:obj:`~ICatalog`
 
    Class defining the Aviator Catalog.
 

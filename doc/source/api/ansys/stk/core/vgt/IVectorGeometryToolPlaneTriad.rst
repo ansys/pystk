@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: point_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.point_a
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a point A.
 
 .. py:property:: point_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.point_b
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a point B.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.reference_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a reference point.
 

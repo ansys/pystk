@@ -48,7 +48,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name:str, description:str, type:"CRDN_PARAMETER_SET_TYPE") -> "ICalculationToolParameterSet"
+.. py:method:: create(self, name: str, description: str, type: CRDN_PARAMETER_SET_TYPE) -> ICalculationToolParameterSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create
 
     Create and registers a parameter set using specified name and description.
 
@@ -56,13 +57,14 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~"CRDN_PARAMETER_SET_TYPE"`
+    **type** : :obj:`~CRDN_PARAMETER_SET_TYPE`
 
     :Returns:
 
-        :obj:`~"ICalculationToolParameterSet"`
+        :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: create_parameter_set_attitude(self, name:str, description:str) -> "ICalculationToolParameterSet"
+.. py:method:: create_parameter_set_attitude(self, name: str, description: str) -> ICalculationToolParameterSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_attitude
 
     Create a parameter set defined by identifying one set of axes in reference to another.
 
@@ -73,9 +75,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolParameterSet"`
+        :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: create_parameter_set_ground_trajectory(self, name:str, description:str) -> "ICalculationToolParameterSet"
+.. py:method:: create_parameter_set_ground_trajectory(self, name: str, description: str) -> ICalculationToolParameterSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_ground_trajectory
 
     Create a parameter set defined by identifying location in reference central body.
 
@@ -86,9 +89,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolParameterSet"`
+        :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: create_parameter_set_trajectory(self, name:str, description:str) -> "ICalculationToolParameterSet"
+.. py:method:: create_parameter_set_trajectory(self, name: str, description: str) -> ICalculationToolParameterSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_trajectory
 
     Create a parameter set defined by identifying location in reference coordinate system.
 
@@ -99,9 +103,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolParameterSet"`
+        :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: create_parameter_set_orbit(self, name:str, description:str) -> "ICalculationToolParameterSet"
+.. py:method:: create_parameter_set_orbit(self, name: str, description: str) -> ICalculationToolParameterSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_orbit
 
     Create a parameter set defined by identifying orbiting point and its central body.
 
@@ -112,9 +117,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolParameterSet"`
+        :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: create_parameter_set_vector(self, name:str, description:str) -> "ICalculationToolParameterSet"
+.. py:method:: create_parameter_set_vector(self, name: str, description: str) -> ICalculationToolParameterSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_vector
 
     Create a parameter set defined by identifying vector in reference axes.
 
@@ -125,15 +131,16 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolParameterSet"`
+        :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: is_type_supported(self, eType:"CRDN_PARAMETER_SET_TYPE") -> bool
+.. py:method:: is_type_supported(self, eType: CRDN_PARAMETER_SET_TYPE) -> bool
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~"CRDN_PARAMETER_SET_TYPE"`
+    **eType** : :obj:`~CRDN_PARAMETER_SET_TYPE`
 
     :Returns:
 

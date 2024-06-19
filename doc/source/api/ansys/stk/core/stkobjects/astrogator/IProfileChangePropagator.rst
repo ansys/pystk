@@ -62,13 +62,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSSegment:"IMissionControlSequenceSegment") -> None
+.. py:method:: set_segment(self, pVAMCSSegment: IMissionControlSequenceSegment) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileChangePropagator.set_segment
 
     Set the targeted segment.
 
     :Parameters:
 
-    **pVAMCSSegment** : :obj:`~"IMissionControlSequenceSegment"`
+    **pVAMCSSegment** : :obj:`~IMissionControlSequenceSegment`
 
     :Returns:
 

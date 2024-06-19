@@ -3,7 +3,7 @@ RainLossModelScriptPlugin
 
 .. py:class:: RainLossModelScriptPlugin
 
-   IRainLossModelScriptPlugin, IRainLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRainLossModelScriptPlugin`, py:obj:`~IRainLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rain loss model.
 

@@ -3,7 +3,7 @@ KmlFeatureCollection
 
 .. py:class:: KmlFeatureCollection
 
-   IKmlFeatureCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IKmlFeatureCollection`
 
    A collection of KML features.
 

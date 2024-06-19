@@ -3,7 +3,7 @@ VehicleExpDensModelParams
 
 .. py:class:: VehicleExpDensModelParams
 
-   IVehicleExpDensModelParams, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleExpDensModelParams`
 
    Class defining the Exponential atmospheric density model for the LOP propagator.
 

@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "ISearchPluginControl"
+.. py:method:: item(self, index: int) -> ISearchPluginControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISearchPluginControlCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISearchPluginControl"`
+        :obj:`~ISearchPluginControl`
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath:str, controlPath:str) -> "ISearchPluginControl"
+.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> ISearchPluginControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISearchPluginControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISearchPluginControl"`
+        :obj:`~ISearchPluginControl`
 

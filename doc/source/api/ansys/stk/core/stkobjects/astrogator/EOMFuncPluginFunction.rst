@@ -3,7 +3,7 @@ EOMFuncPluginFunction
 
 .. py:class:: EOMFuncPluginFunction
 
-   IEOMFuncPluginFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IEOMFuncPluginFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    EOM Function Plugin propagator function.
 

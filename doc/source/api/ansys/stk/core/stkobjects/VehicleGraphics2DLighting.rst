@@ -3,7 +3,7 @@ VehicleGraphics2DLighting
 
 .. py:class:: VehicleGraphics2DLighting
 
-   IVehicleGraphics2DLighting, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DLighting`
 
    Lighting.
 

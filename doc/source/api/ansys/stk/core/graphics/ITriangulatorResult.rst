@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.ITriangulatorResult.triangle_winding_order
-    :type: "WINDING_ORDER"
+    :type: WINDING_ORDER
 
     Gets the orientation of front-facing triangles in the mesh.
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.ITriangulatorResult.bounding_sphere
-    :type: "IAgStkGraphicsBoundingSphere"
+    :type: IAgStkGraphicsBoundingSphere
 
     Gets the bounding sphere that encompasses the mesh.
 

@@ -3,7 +3,7 @@ BDotTCalc
 
 .. py:class:: BDotTCalc
 
-   IComponentInfo, ICloneable, IBDotTCalc, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IBDotTCalc`
 
    BDotT Calc objects.
 

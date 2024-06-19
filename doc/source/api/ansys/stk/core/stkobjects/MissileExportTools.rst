@@ -3,7 +3,7 @@ MissileExportTools
 
 .. py:class:: MissileExportTools
 
-   IMissileExportTools, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileExportTools`
 
    The Missile Export Tools.
 

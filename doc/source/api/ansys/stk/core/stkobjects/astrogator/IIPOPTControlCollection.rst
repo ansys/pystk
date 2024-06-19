@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IIPOPTControl"
+.. py:method:: item(self, index: int) -> IIPOPTControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IIPOPTControlCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IIPOPTControl"`
+        :obj:`~IIPOPTControl`
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath:str, controlPath:str) -> "IIPOPTControl"
+.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> IIPOPTControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IIPOPTControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IIPOPTControl"`
+        :obj:`~IIPOPTControl`
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorFixedInAxes
 
 .. py:class:: VectorGeometryToolVectorFixedInAxes
 
-   IVectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorFixedInAxes`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Vector fixed in reference axes.
 

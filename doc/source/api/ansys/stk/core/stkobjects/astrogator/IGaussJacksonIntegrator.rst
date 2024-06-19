@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: corrector_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.corrector_mode
-    :type: "PREDICTOR_CORRECTOR"
+    :type: PREDICTOR_CORRECTOR
 
     Gets or sets the Predictor Corrector scheme.
 
@@ -74,13 +74,13 @@ Property detail
 
 .. py:property:: single_step_integrator
     :canonical: ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.single_step_integrator
-    :type: "IAgVANumericalIntegrator"
+    :type: IAgVANumericalIntegrator
 
     Get the stopping integrator; a single-step integrator.
 
 .. py:property:: single_step_integrator_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.single_step_integrator_type
-    :type: "NUMERICAL_INTEGRATOR"
+    :type: NUMERICAL_INTEGRATOR
 
     Get the stopping integrator type.
 
@@ -98,13 +98,14 @@ Method detail
 
 
 
-.. py:method:: set_single_step_integrator(self, integrator:"NUMERICAL_INTEGRATOR") -> None
+.. py:method:: set_single_step_integrator(self, integrator: NUMERICAL_INTEGRATOR) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.set_single_step_integrator
 
     Change the stopping integrator.
 
     :Parameters:
 
-    **integrator** : :obj:`~"NUMERICAL_INTEGRATOR"`
+    **integrator** : :obj:`~NUMERICAL_INTEGRATOR`
 
     :Returns:
 

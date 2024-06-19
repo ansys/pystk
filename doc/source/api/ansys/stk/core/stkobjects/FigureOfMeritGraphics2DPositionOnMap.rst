@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DPositionOnMap
 
 .. py:class:: FigureOfMeritGraphics2DPositionOnMap
 
-   IFigureOfMeritGraphics2DPositionOnMap, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DPositionOnMap`
 
    Coordinates of contour legend in pixels on 2D map.
 

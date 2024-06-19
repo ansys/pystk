@@ -3,7 +3,7 @@ CalculationToolConditionPointInVolume
 
 .. py:class:: CalculationToolConditionPointInVolume
 
-   ICalculationToolConditionPointInVolume, ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionPointInVolume`, py:obj:`~ICalculationToolCondition`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate.
 

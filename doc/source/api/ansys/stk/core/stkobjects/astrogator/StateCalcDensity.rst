@@ -3,7 +3,7 @@ StateCalcDensity
 
 .. py:class:: StateCalcDensity
 
-   IComponentInfo, ICloneable, IStateCalcDensity, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDensity`
 
    Density  Calc objects.
 

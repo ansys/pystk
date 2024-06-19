@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcFromScalar
 
 .. py:class:: SpatialAnalysisToolVolumeCalcFromScalar
 
-   ISpatialAnalysisToolVolumeCalcFromScalar, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcFromScalar`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume calc scalar to location interface.
 

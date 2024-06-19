@@ -3,7 +3,7 @@ CRLocation
 
 .. py:class:: CRLocation
 
-   ICRLocation, SupportsDeleteCallback
+   Bases: py:obj:`~ICRLocation`
 
    Class defining a location.
 

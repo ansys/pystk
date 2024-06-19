@@ -3,7 +3,7 @@ UserVariableCollection
 
 .. py:class:: UserVariableCollection
 
-   IUserVariableCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IUserVariableCollection`
 
    User Variable Initial Value Collection.
 

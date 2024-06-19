@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ICustomImageGlobeOverlayPluginActivator"
+.. py:method:: initialize(self) -> ICustomImageGlobeOverlayPluginActivator
+    :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginActivatorFactory.initialize
 
     Initialize a new instance of the Activator type.
 
     :Returns:
 
-        :obj:`~"ICustomImageGlobeOverlayPluginActivator"`
+        :obj:`~ICustomImageGlobeOverlayPluginActivator`
 

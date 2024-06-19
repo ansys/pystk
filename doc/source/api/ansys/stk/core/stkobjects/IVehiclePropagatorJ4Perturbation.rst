@@ -55,19 +55,19 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorJ4Perturbation.initial_state
-    :type: "IAgVeJxInitialState"
+    :type: IAgVeJxInitialState
 
     Get the initial state.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorJ4Perturbation.ephemeris_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
 .. py:property:: propagation_frame
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorJ4Perturbation.propagation_frame
-    :type: "VEHICLE_PROPAGATION_FRAME"
+    :type: VEHICLE_PROPAGATION_FRAME
 
     Gets or sets the propagation frame.
 
@@ -82,6 +82,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorJ4Perturbation.propagate
 
     Propagates the satellite's path using the specified time interval.
 

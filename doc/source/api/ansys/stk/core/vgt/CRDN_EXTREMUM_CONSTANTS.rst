@@ -11,6 +11,21 @@ CRDN_EXTREMUM_CONSTANTS
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~MINIMUM`
+              - Find the minimum value.
+
+            * - :py:attr:`~MAXIMUM`
+              - Find the maximum value.
+
+
 Import detail
 -------------
 

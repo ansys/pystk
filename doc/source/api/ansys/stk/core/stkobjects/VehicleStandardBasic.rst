@@ -3,7 +3,7 @@ VehicleStandardBasic
 
 .. py:class:: VehicleStandardBasic
 
-   IVehicleStandardBasic, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleStandardBasic`
 
    Basic attitude profile.
 

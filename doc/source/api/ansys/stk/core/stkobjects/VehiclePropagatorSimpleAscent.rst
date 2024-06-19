@@ -3,7 +3,7 @@ VehiclePropagatorSimpleAscent
 
 .. py:class:: VehiclePropagatorSimpleAscent
 
-   IVehiclePropagatorSimpleAscent, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorSimpleAscent`, py:obj:`~IVehiclePropagator`
 
    Class defining the simple ascent propagator for a launch vehicle.
 

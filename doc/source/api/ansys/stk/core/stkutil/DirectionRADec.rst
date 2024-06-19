@@ -3,7 +3,7 @@ DirectionRADec
 
 .. py:class:: DirectionRADec
 
-   IDirectionRADec, IDirection, SupportsDeleteCallback
+   Bases: py:obj:`~IDirectionRADec`, py:obj:`~IDirection`
 
    Spherical direction (Right Ascension and Declination).
 

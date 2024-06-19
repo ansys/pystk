@@ -3,7 +3,7 @@ Date
 
 .. py:class:: Date
 
-   IDate, SupportsDeleteCallback
+   Bases: py:obj:`~IDate`
 
    Object that contains a date.
 

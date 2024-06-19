@@ -3,7 +3,7 @@ ScatteringPointProviderCollectionElement
 
 .. py:class:: ScatteringPointProviderCollectionElement
 
-   IScatteringPointProviderCollectionElement, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointProviderCollectionElement`
 
    Class defining a scattering point provider collection element.
 

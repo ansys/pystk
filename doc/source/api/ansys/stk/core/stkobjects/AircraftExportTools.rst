@@ -3,7 +3,7 @@ AircraftExportTools
 
 .. py:class:: AircraftExportTools
 
-   IAircraftExportTools, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftExportTools`
 
    The Aircraft Export Tools.
 

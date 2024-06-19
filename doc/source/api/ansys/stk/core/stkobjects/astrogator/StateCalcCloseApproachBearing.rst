@@ -3,7 +3,7 @@ StateCalcCloseApproachBearing
 
 .. py:class:: StateCalcCloseApproachBearing
 
-   IComponentInfo, ICloneable, IStateCalcCloseApproachBearing, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCloseApproachBearing`
 
    CloseApproachBearing Calc objects.
 

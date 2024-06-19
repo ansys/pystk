@@ -81,6 +81,7 @@ Method detail
 -------------
 
 .. py:method:: new_random_engine_seed(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.new_random_engine_seed
 
     Generate a new random engine seed.
 
@@ -97,6 +98,7 @@ Method detail
 
 
 .. py:method:: apply_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.apply_position_vel
 
     Apply the current position velocity strategy.
 
@@ -105,6 +107,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: cancel_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.cancel_position_vel
 
     Cancel the current position velocity strategy.
 
@@ -112,7 +115,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_base_dyn_state_link_name(self, newVal:str) -> None
+.. py:method:: set_base_dyn_state_link_name(self, newVal: str) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.set_base_dyn_state_link_name
 
     Set the BaseDynStateLinkName.
 

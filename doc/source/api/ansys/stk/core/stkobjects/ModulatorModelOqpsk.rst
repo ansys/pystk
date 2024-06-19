@@ -3,7 +3,7 @@ ModulatorModelOqpsk
 
 .. py:class:: ModulatorModelOqpsk
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a OQPSK modulator model.
 

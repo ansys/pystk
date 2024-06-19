@@ -3,7 +3,7 @@ SiteSuperProcedure
 
 .. py:class:: SiteSuperProcedure
 
-   ISiteSuperProcedure, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteSuperProcedure`, py:obj:`~ISite`
 
    Class defining a Super Procedure site.
 

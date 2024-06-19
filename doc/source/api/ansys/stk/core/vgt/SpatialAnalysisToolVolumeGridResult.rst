@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridResult
 
 .. py:class:: SpatialAnalysisToolVolumeGridResult
 
-   ISpatialAnalysisToolVolumeGridResult, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridResult`
 
    An interface that generates Volume Grid results.
 

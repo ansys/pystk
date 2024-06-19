@@ -3,7 +3,7 @@ ARINC424Airport
 
 .. py:class:: ARINC424Airport
 
-   IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IARINC424Item`, py:obj:`~ICatalogAirport`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining an ARINC424 Airport.
 

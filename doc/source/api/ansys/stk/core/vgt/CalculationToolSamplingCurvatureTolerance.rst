@@ -3,7 +3,7 @@ CalculationToolSamplingCurvatureTolerance
 
 .. py:class:: CalculationToolSamplingCurvatureTolerance
 
-   ICalculationToolSamplingCurvatureTolerance, ICalculationToolSamplingMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolSamplingCurvatureTolerance`, py:obj:`~ICalculationToolSamplingMethod`
 
    Curvature tolerance definition includes parameters that determine how scalar data should be sampled based on limits on slope changes between samples.
 

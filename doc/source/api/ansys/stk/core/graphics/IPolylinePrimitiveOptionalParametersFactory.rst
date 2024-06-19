@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IPolylinePrimitiveOptionalParameters"
+.. py:method:: initialize(self) -> IPolylinePrimitiveOptionalParameters
+    :canonical: ansys.stk.core.graphics.IPolylinePrimitiveOptionalParametersFactory.initialize
 
     Initialize default polyline primitive optional parameters. All per-segment parameters are initially empty.
 
     :Returns:
 
-        :obj:`~"IPolylinePrimitiveOptionalParameters"`
+        :obj:`~IPolylinePrimitiveOptionalParameters`
 

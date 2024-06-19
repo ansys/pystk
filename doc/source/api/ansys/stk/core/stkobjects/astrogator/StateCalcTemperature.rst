@@ -3,7 +3,7 @@ StateCalcTemperature
 
 .. py:class:: StateCalcTemperature
 
-   IComponentInfo, ICloneable, IStateCalcTemperature, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTemperature`
 
    Temperature Calc objects.
 

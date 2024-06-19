@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: spin_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.spin_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a spin vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.reference_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a reference axes.
 

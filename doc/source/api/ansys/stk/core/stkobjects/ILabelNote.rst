@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: note_visible
     :canonical: ansys.stk.core.stkobjects.ILabelNote.note_visible
-    :type: "NOTE_SHOW_TYPE"
+    :type: NOTE_SHOW_TYPE
 
     Property specifying when the note is displayed. A member of the AgENoteShowType enumeration.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.ILabelNote.intervals
-    :type: "IAgIntervalCollection"
+    :type: IAgIntervalCollection
 
     Intervals during which the note is displayed. This property is used if the corresponding value is selected for the NoteVisible property.
 

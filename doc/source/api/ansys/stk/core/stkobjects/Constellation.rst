@@ -3,7 +3,7 @@ Constellation
 
 .. py:class:: Constellation
 
-   IConstellation, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IConstellation`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Class represents the STK Constellation.
 

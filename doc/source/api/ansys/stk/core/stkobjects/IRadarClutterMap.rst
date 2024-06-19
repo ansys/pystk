@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.model
-    :type: "IAgRadarClutterMapModel"
+    :type: IAgRadarClutterMapModel
 
     Gets the current clutter map model.
 
@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName:str) -> None
+.. py:method:: set_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.set_model
 
     Set the current clutter map model by name.
 

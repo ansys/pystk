@@ -3,7 +3,7 @@ OrientationAscNodeRAAN
 
 .. py:class:: OrientationAscNodeRAAN
 
-   IOrientationAscNodeRAAN, IOrientationAscNode, SupportsDeleteCallback
+   Bases: py:obj:`~IOrientationAscNodeRAAN`, py:obj:`~IOrientationAscNode`
 
    Angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane.
 

@@ -3,7 +3,7 @@ VehicleLOPForceModel
 
 .. py:class:: VehicleLOPForceModel
 
-   IVehicleLOPForceModel, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLOPForceModel`
 
    Class defining the force model for the LOP propagator.
 

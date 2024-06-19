@@ -3,7 +3,7 @@ FigureOfMeritUncertainties
 
 .. py:class:: FigureOfMeritUncertainties
 
-   IFigureOfMeritUncertainties, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritUncertainties`
 
    Receiver range uncertainty (for Navigation Accuracy FOM).
 

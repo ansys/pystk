@@ -3,7 +3,7 @@ AnalysisWorkbenchRoot
 
 .. py:class:: AnalysisWorkbenchRoot
 
-   IAnalysisWorkbenchRoot, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchRoot`
 
    Represents a VGT root.
 

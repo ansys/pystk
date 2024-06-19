@@ -3,7 +3,7 @@ DisplaySystemGeodetic
 
 .. py:class:: DisplaySystemGeodetic
 
-   IDisplaySystemGeodetic, IDisplaySystem, SupportsDeleteCallback
+   Bases: py:obj:`~IDisplaySystemGeodetic`, py:obj:`~IDisplaySystem`
 
    The geodetic launch location.
 

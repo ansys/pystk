@@ -3,7 +3,7 @@ VectorGeometryToolSystemCommonTasks
 
 .. py:class:: VectorGeometryToolSystemCommonTasks
 
-   IVectorGeometryToolSystemCommonTasks, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolSystemCommonTasks`
 
    Provide methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 

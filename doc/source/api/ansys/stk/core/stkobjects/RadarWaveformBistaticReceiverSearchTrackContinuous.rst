@@ -3,7 +3,7 @@ RadarWaveformBistaticReceiverSearchTrackContinuous
 
 .. py:class:: RadarWaveformBistaticReceiverSearchTrackContinuous
 
-   IRadarWaveformBistaticReceiverSearchTrackContinuous, IRadarWaveformSearchTrack, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarWaveformBistaticReceiverSearchTrackContinuous`, py:obj:`~IRadarWaveformSearchTrack`
 
    Class defining a bistatic receiver continuous waveform.
 

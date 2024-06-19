@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.context
-    :type: "IAgCrdnContext"
+    :type: IAgCrdnContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.factory
-    :type: "IAgCrdnConditionSetFactory"
+    :type: IAgCrdnConditionSetFactory
 
     Returns a factory object used to create condition set components.
 
@@ -82,7 +82,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, eventName:str) -> None
+.. py:method:: remove(self, eventName: str) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.remove
 
     Remove a specified element.
 
@@ -95,7 +96,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.contains
 
     Search for a an element with a given name. Returns false if the specified element does not exist.
 
@@ -109,7 +111,8 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "ICalculationToolConditionSet"
+.. py:method:: item(self, indexOrName: typing.Any) -> ICalculationToolConditionSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.item
 
     Return an element by name or at a specified position.
 
@@ -119,10 +122,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolConditionSet"`
+        :obj:`~ICalculationToolConditionSet`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "ICalculationToolConditionSet"
+.. py:method:: get_item_by_index(self, index: int) -> ICalculationToolConditionSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.get_item_by_index
 
     Retrieve a condition set from the collection by index.
 
@@ -132,9 +136,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolConditionSet"`
+        :obj:`~ICalculationToolConditionSet`
 
-.. py:method:: get_item_by_name(self, name:str) -> "ICalculationToolConditionSet"
+.. py:method:: get_item_by_name(self, name: str) -> ICalculationToolConditionSet
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.get_item_by_name
 
     Retrieve a condition set from the collection by name.
 
@@ -144,5 +149,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolConditionSet"`
+        :obj:`~ICalculationToolConditionSet`
 

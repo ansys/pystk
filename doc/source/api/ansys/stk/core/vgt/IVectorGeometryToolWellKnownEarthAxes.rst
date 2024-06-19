@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: fixed
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.fixed
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     Earth's Fixed axes.
 
 .. py:property:: icrf
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.icrf
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     Earth's ICRF axes.
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.inertial
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     Earth's Inertial axes (as defined in STK).
 
 .. py:property:: j2000
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.j2000
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     The Earth's J2000 axes.
 

@@ -3,7 +3,7 @@ VectorGeometryToolAxesFixedAtEpoch
 
 .. py:class:: VectorGeometryToolAxesFixedAtEpoch
 
-   IVectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesFixedAtEpoch`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Axes based on another set fixed at a specified epoch.
 

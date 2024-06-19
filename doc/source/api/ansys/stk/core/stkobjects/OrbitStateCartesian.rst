@@ -3,7 +3,7 @@ OrbitStateCartesian
 
 .. py:class:: OrbitStateCartesian
 
-   IOrbitStateCartesian, IOrbitState, SupportsDeleteCallback
+   Bases: py:obj:`~IOrbitStateCartesian`, py:obj:`~IOrbitState`
 
    Cartesian coordinate type.
 

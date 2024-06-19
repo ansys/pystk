@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: x
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.x
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The scalar argument X.
 
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: y
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.y
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The scalar argument Y.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: output_dimension_inheritance
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.output_dimension_inheritance
-    :type: "CRDN_DIMENSION_INHERITANCE"
+    :type: CRDN_DIMENSION_INHERITANCE
 
     Specifies whether the output dimension is inherited or explicitly specified using OutputDimension.
 

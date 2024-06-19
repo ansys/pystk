@@ -53,25 +53,25 @@ Property detail
 
 .. py:property:: detail_threshold
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold
-    :type: "IAgVODetailThreshold"
+    :type: IAgVODetailThreshold
 
     Gets the detail threshold attributes.
 
 .. py:property:: model_data
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.model_data
-    :type: "IAgVOModelData"
+    :type: IAgVOModelData
 
     Gets the model data property.
 
 .. py:property:: model_type
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.model_type
-    :type: "MODEL_TYPE"
+    :type: MODEL_TYPE
 
     Gets or sets the model type property. A member of the AgEModelType enumeration.
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation
-    :type: "IAgVOModelArtic"
+    :type: IAgVOModelArtic
 
     Articulation property.
 

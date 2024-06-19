@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownAxes
 
 .. py:class:: VectorGeometryToolWellKnownAxes
 
-   IVectorGeometryToolWellKnownAxes, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolWellKnownAxes`
 
    Represents well-known VGT Axes.
 

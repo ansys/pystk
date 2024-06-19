@@ -3,7 +3,7 @@ SRPAeroT30
 
 .. py:class:: SRPAeroT30
 
-   ISRPAeroT30, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPAeroT30`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    AeroT30 SRP propagator function.
 

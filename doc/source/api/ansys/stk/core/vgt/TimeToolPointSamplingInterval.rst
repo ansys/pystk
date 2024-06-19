@@ -3,7 +3,7 @@ TimeToolPointSamplingInterval
 
 .. py:class:: TimeToolPointSamplingInterval
 
-   ITimeToolPointSamplingInterval, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolPointSamplingInterval`
 
    The interface represents an interval with the time, position and velocity arrays.
 

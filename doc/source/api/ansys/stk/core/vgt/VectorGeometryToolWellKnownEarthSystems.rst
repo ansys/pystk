@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownEarthSystems
 
 .. py:class:: VectorGeometryToolWellKnownEarthSystems
 
-   IVectorGeometryToolWellKnownEarthSystems, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolWellKnownEarthSystems`
 
    Well-known Earth's coordinate systems.
 

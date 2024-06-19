@@ -3,7 +3,7 @@ VehicleRealtimeLLAPoints
 
 .. py:class:: VehicleRealtimeLLAPoints
 
-   IVehicleRealtimeLLAPoints, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRealtimeLLAPoints`
 
    Add one ephemeris point using latitude/longitude/altitude coordinate system.
 

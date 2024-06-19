@@ -38,23 +38,25 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IEdgeDetectFilter"
+.. py:method:: initialize(self) -> IEdgeDetectFilter
+    :canonical: ansys.stk.core.graphics.IEdgeDetectFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IEdgeDetectFilter"`
+        :obj:`~IEdgeDetectFilter`
 
-.. py:method:: initialize_with_method(self, method:"EDGE_DETECT_METHOD") -> "IEdgeDetectFilter"
+.. py:method:: initialize_with_method(self, method: EDGE_DETECT_METHOD) -> IEdgeDetectFilter
+    :canonical: ansys.stk.core.graphics.IEdgeDetectFilterFactory.initialize_with_method
 
     Initialize a new instance with the specified edge detect method.
 
     :Parameters:
 
-    **method** : :obj:`~"EDGE_DETECT_METHOD"`
+    **method** : :obj:`~EDGE_DETECT_METHOD`
 
     :Returns:
 
-        :obj:`~"IEdgeDetectFilter"`
+        :obj:`~IEdgeDetectFilter`
 

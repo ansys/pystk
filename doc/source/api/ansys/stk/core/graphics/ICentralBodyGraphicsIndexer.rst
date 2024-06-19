@@ -49,19 +49,19 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.earth
-    :type: "IAgStkGraphicsCentralBodyGraphics"
+    :type: IAgStkGraphicsCentralBodyGraphics
 
     Gets the central body graphics for the planet Earth. This is equivalent to passing a central body equal to an instance of earth central body to the indexer.
 
 .. py:property:: moon
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.moon
-    :type: "IAgStkGraphicsCentralBodyGraphics"
+    :type: IAgStkGraphicsCentralBodyGraphics
 
     Gets the central body graphics for the Moon.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.sun
-    :type: "IAgStkGraphicsCentralBodyGraphics"
+    :type: IAgStkGraphicsCentralBodyGraphics
 
     Gets the central body graphics for the Sun.
 
@@ -72,7 +72,8 @@ Method detail
 
 
 
-.. py:method:: item(self, centralBody:str) -> "ICentralBodyGraphics"
+.. py:method:: item(self, centralBody: str) -> ICentralBodyGraphics
+    :canonical: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.item
 
     Get the central body graphics for the specified central body.
 
@@ -82,9 +83,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICentralBodyGraphics"`
+        :obj:`~ICentralBodyGraphics`
 
-.. py:method:: get_by_name(self, name:str) -> "ICentralBodyGraphics"
+.. py:method:: get_by_name(self, name: str) -> ICentralBodyGraphics
+    :canonical: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.get_by_name
 
     Return the central body graphics for the central body with the given name.
 
@@ -94,5 +96,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICentralBodyGraphics"`
+        :obj:`~ICentralBodyGraphics`
 

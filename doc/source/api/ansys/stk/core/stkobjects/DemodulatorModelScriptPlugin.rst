@@ -3,7 +3,7 @@ DemodulatorModelScriptPlugin
 
 .. py:class:: DemodulatorModelScriptPlugin
 
-   IDemodulatorModelScriptPlugin, IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModelScriptPlugin`, py:obj:`~IDemodulatorModel`
 
    Class defining a script plugin modulator model.
 

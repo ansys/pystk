@@ -3,7 +3,7 @@ CoverageBoundsCustomRegions
 
 .. py:class:: CoverageBoundsCustomRegions
 
-   ICoverageBoundsCustomRegions, ICoverageBounds, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageBoundsCustomRegions`, py:obj:`~ICoverageBounds`
 
    Custom Regions.
 

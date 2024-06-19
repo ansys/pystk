@@ -3,7 +3,7 @@ PropulsionEfficiencies
 
 .. py:class:: PropulsionEfficiencies
 
-   IPropulsionEfficiencies, SupportsDeleteCallback
+   Bases: py:obj:`~IPropulsionEfficiencies`
 
    Class defining the Propulsion Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool.
 

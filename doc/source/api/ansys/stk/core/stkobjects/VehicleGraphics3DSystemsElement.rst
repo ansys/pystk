@@ -3,7 +3,7 @@ VehicleGraphics3DSystemsElement
 
 .. py:class:: VehicleGraphics3DSystemsElement
 
-   IVehicleGraphics3DSystemsElement, IVehicleGraphics3DSystemsElementBase, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DSystemsElement`, py:obj:`~IVehicleGraphics3DSystemsElementBase`
 
    Element for reference system used for displaying vehicle orbits and trajectories.
 

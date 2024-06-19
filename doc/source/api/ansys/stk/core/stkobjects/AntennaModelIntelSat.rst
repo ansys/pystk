@@ -3,7 +3,7 @@ AntennaModelIntelSat
 
 .. py:class:: AntennaModelIntelSat
 
-   IAntennaModelIntelSat, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelIntelSat`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a IntelSat antenna model.
 

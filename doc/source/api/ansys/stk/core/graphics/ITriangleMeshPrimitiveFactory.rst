@@ -38,23 +38,25 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ITriangleMeshPrimitive"
+.. py:method:: initialize(self) -> ITriangleMeshPrimitive
+    :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitiveFactory.initialize
 
     Initialize a default triangle mesh primitive. This is equivalent to constructing a triangle mesh with a set hint of Frequent.
 
     :Returns:
 
-        :obj:`~"ITriangleMeshPrimitive"`
+        :obj:`~ITriangleMeshPrimitive`
 
-.. py:method:: initialize_with_set_hint(self, setHint:"SET_HINT") -> "ITriangleMeshPrimitive"
+.. py:method:: initialize_with_set_hint(self, setHint: SET_HINT) -> ITriangleMeshPrimitive
+    :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitiveFactory.initialize_with_set_hint
 
     Initialize a triangle mesh primitive with the specified setHint .
 
     :Parameters:
 
-    **setHint** : :obj:`~"SET_HINT"`
+    **setHint** : :obj:`~SET_HINT`
 
     :Returns:
 
-        :obj:`~"ITriangleMeshPrimitive"`
+        :obj:`~ITriangleMeshPrimitive`
 

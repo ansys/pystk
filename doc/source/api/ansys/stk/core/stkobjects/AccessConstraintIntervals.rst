@@ -3,7 +3,7 @@ AccessConstraintIntervals
 
 .. py:class:: AccessConstraintIntervals
 
-   IAccessConstraintIntervals, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintIntervals`, py:obj:`~IAccessConstraint`
 
    Class defining the Intervals constraint.
 

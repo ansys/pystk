@@ -3,7 +3,7 @@ ArcAltitudeAndDelayOptions
 
 .. py:class:: ArcAltitudeAndDelayOptions
 
-   IArcAltitudeAndDelayOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IArcAltitudeAndDelayOptions`
 
    Class defining the altitude and delay options for an arc procedure.
 

@@ -3,7 +3,7 @@ TransferFunctionInputBackOffCOverImTableRow
 
 .. py:class:: TransferFunctionInputBackOffCOverImTableRow
 
-   ITransferFunctionInputBackOffCOverImTableRow, SupportsDeleteCallback
+   Bases: py:obj:`~ITransferFunctionInputBackOffCOverImTableRow`
 
    Class defining a row of an input back off vs C/Im table.
 

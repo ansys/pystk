@@ -3,7 +3,7 @@ OnePointAccessResult
 
 .. py:class:: OnePointAccessResult
 
-   IOnePointAccessResult, SupportsDeleteCallback
+   Bases: py:obj:`~IOnePointAccessResult`
 
    One Point Access Result.
 

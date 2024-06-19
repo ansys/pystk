@@ -3,7 +3,7 @@ StrategyMATLABNav
 
 .. py:class:: StrategyMATLABNav
 
-   IStrategyMATLABNav, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IStrategyMATLABNav`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure.
 

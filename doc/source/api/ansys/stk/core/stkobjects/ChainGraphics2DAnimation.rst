@@ -3,7 +3,7 @@ ChainGraphics2DAnimation
 
 .. py:class:: ChainGraphics2DAnimation
 
-   IChainGraphics2DAnimation, SupportsDeleteCallback
+   Bases: py:obj:`~IChainGraphics2DAnimation`
 
    2D Animation graphics for a chain.
 

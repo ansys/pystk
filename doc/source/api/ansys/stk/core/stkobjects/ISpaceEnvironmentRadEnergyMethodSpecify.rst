@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: electron_energies
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyMethodSpecify.electron_energies
-    :type: "IAgDoublesCollection"
+    :type: IAgDoublesCollection
 
     Electron energies being considered.
 
 .. py:property:: proton_energies
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyMethodSpecify.proton_energies
-    :type: "IAgDoublesCollection"
+    :type: IAgDoublesCollection
 
     Proton energies being considered.
 

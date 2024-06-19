@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcSolarIntensity
 
 .. py:class:: SpatialAnalysisToolVolumeCalcSolarIntensity
 
-   ISpatialAnalysisToolVolumeCalcSolarIntensity, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcSolarIntensity`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume calc solar intensityn interface.
 

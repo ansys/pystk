@@ -3,7 +3,7 @@ CalculationToolEvaluateWithRateResult
 
 .. py:class:: CalculationToolEvaluateWithRateResult
 
-   ICalculationToolEvaluateWithRateResult, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolEvaluateWithRateResult`
 
    Represents the results of evaluating a scalar component.
 

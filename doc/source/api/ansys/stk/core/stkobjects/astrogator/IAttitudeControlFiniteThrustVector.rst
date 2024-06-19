@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: attitude_update
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteThrustVector.attitude_update
-    :type: "ATTITUDE_UPDATE"
+    :type: ATTITUDE_UPDATE
 
     How and when the attitude will be updated.
 
@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteThrustVector.body_constraint_vector
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 
 .. py:property:: thrust_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteThrustVector.thrust_vector
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Defines the thrust vector in the reference axes.
 

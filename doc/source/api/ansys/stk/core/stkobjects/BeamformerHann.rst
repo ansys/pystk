@@ -3,7 +3,7 @@ BeamformerHann
 
 .. py:class:: BeamformerHann
 
-   IBeamformer, IBeamformerHann, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerHann`
 
    Class defining a Hann tapered beamformer.
 

@@ -3,7 +3,7 @@ TimeToolEventStartStopTime
 
 .. py:class:: TimeToolEventStartStopTime
 
-   ITimeToolEventStartStopTime, ITimeToolEvent, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventStartStopTime`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Event is either start or stop time selected from a reference interval.
 

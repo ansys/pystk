@@ -3,7 +3,7 @@ SRPModelPluginSettings
 
 .. py:class:: SRPModelPluginSettings
 
-   ISRPModelPluginSettings, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPModelPluginSettings`
 
    Plugin Light Reflection Model Settings.
 

@@ -3,7 +3,7 @@ SurfaceTriangulatorResult
 
 .. py:class:: SurfaceTriangulatorResult
 
-   ISurfaceTriangulatorResult, ITriangulatorResult, SupportsDeleteCallback
+   Bases: py:obj:`~ISurfaceTriangulatorResult`, py:obj:`~ITriangulatorResult`
 
    The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh...
 

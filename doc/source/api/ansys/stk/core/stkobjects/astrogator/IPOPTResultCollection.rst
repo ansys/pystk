@@ -3,7 +3,7 @@ IPOPTResultCollection
 
 .. py:class:: IPOPTResultCollection
 
-   IIPOPTResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IIPOPTResultCollection`
 
    IPOPT result collection.
 

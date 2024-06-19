@@ -3,7 +3,7 @@ Quantity
 
 .. py:class:: Quantity
 
-   IQuantity, SupportsDeleteCallback
+   Bases: py:obj:`~IQuantity`
 
    Object that contains a quantity.
 

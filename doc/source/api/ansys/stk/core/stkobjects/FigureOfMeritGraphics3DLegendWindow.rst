@@ -3,7 +3,7 @@ FigureOfMeritGraphics3DLegendWindow
 
 .. py:class:: FigureOfMeritGraphics3DLegendWindow
 
-   IFigureOfMeritGraphics3DLegendWindow, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics3DLegendWindow`
 
    3D graphics contours legend.
 

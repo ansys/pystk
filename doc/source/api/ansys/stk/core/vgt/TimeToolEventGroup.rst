@@ -3,7 +3,7 @@ TimeToolEventGroup
 
 .. py:class:: TimeToolEventGroup
 
-   ITimeToolEventGroup, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventGroup`
 
    Access or create VGT events associated with an object.
 

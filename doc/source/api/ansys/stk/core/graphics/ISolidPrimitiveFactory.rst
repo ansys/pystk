@@ -62,25 +62,27 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ISolidPrimitive"
+.. py:method:: initialize(self) -> ISolidPrimitive
+    :canonical: ansys.stk.core.graphics.ISolidPrimitiveFactory.initialize
 
     Initialize a default solid primitive. This is equivalent to constructing a solid primitive with a set hint of Frequent.
 
     :Returns:
 
-        :obj:`~"ISolidPrimitive"`
+        :obj:`~ISolidPrimitive`
 
-.. py:method:: initialize_with_hint(self, setHint:"SET_HINT") -> "ISolidPrimitive"
+.. py:method:: initialize_with_hint(self, setHint: SET_HINT) -> ISolidPrimitive
+    :canonical: ansys.stk.core.graphics.ISolidPrimitiveFactory.initialize_with_hint
 
     Initialize a solid primitive with the specified setHint.
 
     :Parameters:
 
-    **setHint** : :obj:`~"SET_HINT"`
+    **setHint** : :obj:`~SET_HINT`
 
     :Returns:
 
-        :obj:`~"ISolidPrimitive"`
+        :obj:`~ISolidPrimitive`
 
 
 

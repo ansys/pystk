@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: raster
     :canonical: ansys.stk.core.graphics.IAlphaFromRasterFilter.raster
-    :type: "IAgStkGraphicsRaster"
+    :type: IAgStkGraphicsRaster
 
     Gets or sets the raster that the source raster will use to derive an alpha band.
 

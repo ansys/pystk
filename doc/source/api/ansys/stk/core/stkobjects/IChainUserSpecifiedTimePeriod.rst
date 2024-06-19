@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: time_interval
     :canonical: ansys.stk.core.stkobjects.IChainUserSpecifiedTimePeriod.time_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Allows configuring the time interval.
 

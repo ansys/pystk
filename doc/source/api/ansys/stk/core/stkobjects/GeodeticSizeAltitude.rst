@@ -3,7 +3,7 @@ GeodeticSizeAltitude
 
 .. py:class:: GeodeticSizeAltitude
 
-   IGeodeticSizeAltitude, IGeodeticSize, SupportsDeleteCallback
+   Bases: py:obj:`~IGeodeticSizeAltitude`, py:obj:`~IGeodeticSize`
 
    Altitude and Altitude Rate (for Geodetic coordinate type).
 

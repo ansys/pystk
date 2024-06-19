@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: plugin_settings
     :canonical: ansys.stk.core.stkobjects.ISRPModelPlugin.plugin_settings
-    :type: "IAgSRPModelPluginSettings"
+    :type: IAgSRPModelPluginSettings
 
     Get the parameters of the selected plugin.
 

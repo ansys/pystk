@@ -3,7 +3,7 @@ VehicleRadiationPressure
 
 .. py:class:: VehicleRadiationPressure
 
-   IVehicleRadiationPressure, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRadiationPressure`
 
    Class defining solar radiation pressure on a vehicle.
 

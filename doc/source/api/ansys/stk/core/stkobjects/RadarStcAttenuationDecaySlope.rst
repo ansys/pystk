@@ -3,7 +3,7 @@ RadarStcAttenuationDecaySlope
 
 .. py:class:: RadarStcAttenuationDecaySlope
 
-   IRadarStcAttenuation, IRadarStcAttenuationDecaySlope, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarStcAttenuation`, py:obj:`~IRadarStcAttenuationDecaySlope`
 
    Class defining an radar decay slope stc.
 

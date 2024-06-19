@@ -3,7 +3,7 @@ AtmosphereModelBasic
 
 .. py:class:: AtmosphereModelBasic
 
-   IAtmosphereModelBasic, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphereModelBasic`
 
    Class defining the basic atmosphere model.
 

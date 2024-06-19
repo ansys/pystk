@@ -3,7 +3,7 @@ ExtrudedPolylineTriangulatorInitializer
 
 .. py:class:: ExtrudedPolylineTriangulatorInitializer
 
-   IExtrudedPolylineTriangulatorInitializer, SupportsDeleteCallback
+   Bases: py:obj:`~IExtrudedPolylineTriangulatorInitializer`
 
    Triangulates a polyline into an extrusion with bottom and top boundaries.
 

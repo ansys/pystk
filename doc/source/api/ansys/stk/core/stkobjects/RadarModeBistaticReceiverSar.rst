@@ -3,7 +3,7 @@ RadarModeBistaticReceiverSar
 
 .. py:class:: RadarModeBistaticReceiverSar
 
-   IRadarModeBistaticReceiverSar, IRadarModeBistaticReceiver, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModeBistaticReceiverSar`, py:obj:`~IRadarModeBistaticReceiver`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a bistatic receiver sar radar mode.
 

@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: projection_horizontal_datum
     :canonical: ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.projection_horizontal_datum
-    :type: "PROJECTION_HORIZONTAL_DATUM_TYPE"
+    :type: PROJECTION_HORIZONTAL_DATUM_TYPE
 
     Gets or sets the projection / horizontal datum.
 
@@ -73,13 +73,13 @@ Property detail
 
 .. py:property:: building_height_reference_method
     :canonical: ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.building_height_reference_method
-    :type: "BUILD_HEIGHT_REFERENCE_METHOD"
+    :type: BUILD_HEIGHT_REFERENCE_METHOD
 
     Gets or sets the building height reference method.
 
 .. py:property:: building_height_unit
     :canonical: ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.building_height_unit
-    :type: "BUILD_HEIGHT_UNIT"
+    :type: BUILD_HEIGHT_UNIT
 
     Gets or sets the building height unit.
 

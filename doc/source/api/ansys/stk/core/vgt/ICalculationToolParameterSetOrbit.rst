@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: orbiting_point
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.orbiting_point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     Get the point for which orbital parameters are computed.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.reference_system
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Get the reference system in which orbital parameters are computed. Only used if the option to specify reference system is selected.
 

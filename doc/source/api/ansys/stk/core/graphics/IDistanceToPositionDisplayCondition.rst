@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.reference_frame
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Gets or sets the reference frame that position is defined in.
 

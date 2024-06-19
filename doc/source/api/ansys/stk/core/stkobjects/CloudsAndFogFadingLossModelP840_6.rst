@@ -3,7 +3,7 @@ CloudsAndFogFadingLossModelP840_6
 
 .. py:class:: CloudsAndFogFadingLossModelP840_6
 
-   ICloudsAndFogFadingLossModelP840_6, ICloudsAndFogFadingLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ICloudsAndFogFadingLossModelP840_6`, py:obj:`~ICloudsAndFogFadingLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a clouds and fog Loss ITU-R P.840-6 model.
 

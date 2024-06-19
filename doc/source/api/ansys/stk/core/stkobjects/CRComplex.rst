@@ -3,7 +3,7 @@ CRComplex
 
 .. py:class:: CRComplex
 
-   ICRComplex, SupportsDeleteCallback
+   Bases: py:obj:`~ICRComplex`
 
    Class defining a complex number.
 

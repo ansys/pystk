@@ -3,7 +3,7 @@ AntennaModelDipole
 
 .. py:class:: AntennaModelDipole
 
-   IAntennaModelDipole, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelDipole`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a dipole antenna model.
 

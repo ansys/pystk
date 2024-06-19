@@ -3,7 +3,7 @@ ModulatorModelExternalSource
 
 .. py:class:: ModulatorModelExternalSource
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a external source modulator model.
 

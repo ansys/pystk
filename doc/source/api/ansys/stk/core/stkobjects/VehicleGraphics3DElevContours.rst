@@ -3,7 +3,7 @@ VehicleGraphics3DElevContours
 
 .. py:class:: VehicleGraphics3DElevContours
 
-   IVehicleGraphics3DElevContours, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DElevContours`
 
    3D elevation angle contours.
 

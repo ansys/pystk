@@ -3,7 +3,7 @@ ReceiverModel
 
 .. py:class:: ReceiverModel
 
-   IReceiverModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a generic receiver model.
 

@@ -3,7 +3,7 @@ StateCalcSequenceDeltaVSquared
 
 .. py:class:: StateCalcSequenceDeltaVSquared
 
-   IComponentInfo, ICloneable, IStateCalcSequenceDeltaVSquared, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSequenceDeltaVSquared`
 
    Sequence DeltaV Squared Calc objects.
 

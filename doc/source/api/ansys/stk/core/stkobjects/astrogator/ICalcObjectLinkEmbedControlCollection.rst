@@ -74,20 +74,22 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, name:str, refType:"COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE") -> "IComponentLinkEmbedControl"
+.. py:method:: add(self, name: str, refType: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE) -> IComponentLinkEmbedControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.add
 
     Add a link/embed calc object to the collection.
 
     :Parameters:
 
     **name** : :obj:`~str`
-    **refType** : :obj:`~"COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE"`
+    **refType** : :obj:`~COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
 
     :Returns:
 
-        :obj:`~"IComponentLinkEmbedControl"`
+        :obj:`~IComponentLinkEmbedControl`
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IComponentLinkEmbedControl"
+.. py:method:: item(self, indexOrName: typing.Any) -> IComponentLinkEmbedControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.item
 
     Return a link/embed calc object.
 
@@ -97,9 +99,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentLinkEmbedControl"`
+        :obj:`~IComponentLinkEmbedControl`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.remove
 
     Remove a link/embed calc object from the collection.
 
@@ -113,7 +116,8 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.cut
 
     Copy a link/embed calc object to the clipboard and removes the calc object from the list.
 
@@ -125,27 +129,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IComponentLinkEmbedControl"
+.. py:method:: paste(self) -> IComponentLinkEmbedControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.paste
 
     Pastes a link/embed calc object from the clipboard into the list.
 
     :Returns:
 
-        :obj:`~"IComponentLinkEmbedControl"`
+        :obj:`~IComponentLinkEmbedControl`
 
-.. py:method:: insert_copy(self, calcObj:"IComponentLinkEmbedControl") -> "IComponentLinkEmbedControl"
+.. py:method:: insert_copy(self, calcObj: IComponentLinkEmbedControl) -> IComponentLinkEmbedControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.insert_copy
 
     Copy a link/embed calc object and inserts the copy into the list.
 
     :Parameters:
 
-    **calcObj** : :obj:`~"IComponentLinkEmbedControl"`
+    **calcObj** : :obj:`~IComponentLinkEmbedControl`
 
     :Returns:
 
-        :obj:`~"IComponentLinkEmbedControl"`
+        :obj:`~IComponentLinkEmbedControl`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IComponentLinkEmbedControl"
+.. py:method:: get_item_by_index(self, index: int) -> IComponentLinkEmbedControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.get_item_by_index
 
     Retrieve a link/embed calc object found by the index.
 
@@ -155,9 +162,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentLinkEmbedControl"`
+        :obj:`~IComponentLinkEmbedControl`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IComponentLinkEmbedControl"
+.. py:method:: get_item_by_name(self, name: str) -> IComponentLinkEmbedControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.get_item_by_name
 
     Retrieve a link/embed calc object found by the name.
 
@@ -167,5 +175,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentLinkEmbedControl"`
+        :obj:`~IComponentLinkEmbedControl`
 

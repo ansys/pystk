@@ -61,13 +61,13 @@ Property detail
 
 .. py:property:: climb_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.climb_speed_type
-    :type: "CLIMB_SPEED_TYPE"
+    :type: CLIMB_SPEED_TYPE
 
     Gets or sets the mode to calculate the aircraft's airspeed while climbing.
 
 .. py:property:: climb_override_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.climb_override_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the override airspeed type.
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: airspeed_limit_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.airspeed_limit_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed limit type.
 
@@ -133,13 +133,14 @@ Method detail
 
 
 
-.. py:method:: set_climb_override_airspeed(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_climb_override_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.set_climb_override_airspeed
 
     Set the override airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -154,13 +155,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_limit(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_airspeed_limit(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.set_airspeed_limit
 
     Set the airspeed limit and airspeed type below the altitude threshold.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -170,7 +172,8 @@ Method detail
 
 
 
-.. py:method:: set_flight_path_angle(self, angle:typing.Any) -> None
+.. py:method:: set_flight_path_angle(self, angle: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.set_flight_path_angle
 
     Enable the flight path angle limit an set the flight path angle value.
 
@@ -184,11 +187,12 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

@@ -3,7 +3,7 @@ AtmosphericAbsorptionModelCOMPlugin
 
 .. py:class:: AtmosphericAbsorptionModelCOMPlugin
 
-   IAtmosphericAbsorptionModelCOMPlugin, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphericAbsorptionModelCOMPlugin`, py:obj:`~IAtmosphericAbsorptionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an atmospheric absorption model.
 

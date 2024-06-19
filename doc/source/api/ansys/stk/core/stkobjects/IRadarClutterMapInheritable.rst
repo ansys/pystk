@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: clutter_map
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMapInheritable.clutter_map
-    :type: "IAgRadarClutterMap"
+    :type: IAgRadarClutterMap
 
     Gets the radar clutter map.
 

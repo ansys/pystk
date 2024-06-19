@@ -3,7 +3,7 @@ VehicleGraphics2DElevationVehicleHalfAngle
 
 .. py:class:: VehicleGraphics2DElevationVehicleHalfAngle
 
-   IVehicleGraphics2DElevation, IVehicleGraphics2DElevationVehicleHalfAngle, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DElevation`, py:obj:`~IVehicleGraphics2DElevationVehicleHalfAngle`
 
    Half angle for vehicle swath.
 

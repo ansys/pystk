@@ -3,7 +3,7 @@ SpaceEnvironmentScenarioExtGraphics3D
 
 .. py:class:: SpaceEnvironmentScenarioExtGraphics3D
 
-   ISpaceEnvironmentScenarioExtGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~ISpaceEnvironmentScenarioExtGraphics3D`
 
    3D Graphics settings.
 

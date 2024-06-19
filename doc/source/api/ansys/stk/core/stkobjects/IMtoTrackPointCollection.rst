@@ -82,7 +82,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IMtoTrackPoint"
+.. py:method:: item(self, index: int) -> IMtoTrackPoint
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackPointCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -92,10 +93,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrackPoint"`
+        :obj:`~IMtoTrackPoint`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackPointCollection.remove_at
 
     Remove an element from the collection using a specified index.
 
@@ -108,6 +110,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackPointCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -115,7 +118,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, time:typing.Any) -> "IMtoTrackPoint"
+.. py:method:: add(self, time: typing.Any) -> IMtoTrackPoint
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackPointCollection.add
 
     Add a new element to the collection. Time uses DateFormat Dimension.
 
@@ -125,9 +129,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrackPoint"`
+        :obj:`~IMtoTrackPoint`
 
-.. py:method:: add_point(self, time:typing.Any, latitude:float, longitude:float, altitude:float) -> "IMtoTrackPoint"
+.. py:method:: add_point(self, time: typing.Any, latitude: float, longitude: float, altitude: float) -> IMtoTrackPoint
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackPointCollection.add_point
 
     Add a new element to the collection using specified point data. Time uses DateFormat Dimension. Latitude/Longitude use Angle Dimension. Altitude uses Distance Dimension.
 
@@ -140,9 +145,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrackPoint"`
+        :obj:`~IMtoTrackPoint`
 
-.. py:method:: load_points(self, mtoTrackPoints:str) -> None
+.. py:method:: load_points(self, mtoTrackPoints: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackPointCollection.load_points
 
     Load MTO track points.
 
@@ -154,7 +160,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: extend(self, timeVals:list, latVals:list, lonVals:list, altVals:list) -> None
+.. py:method:: extend(self, timeVals: list, latVals: list, lonVals: list, altVals: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackPointCollection.extend
 
     Extend the track with the specified point data.
 
@@ -171,7 +178,8 @@ Method detail
 
 
 
-.. py:method:: insert_point(self, time:typing.Any, latitude:float, longitude:float, altitude:float) -> None
+.. py:method:: insert_point(self, time: typing.Any, latitude: float, longitude: float, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackPointCollection.insert_point
 
     Insert a point into the track point collection. Uses the time to determine where the point should be inserted. This is slower than AddPoint, AddPoints or Extend.
 

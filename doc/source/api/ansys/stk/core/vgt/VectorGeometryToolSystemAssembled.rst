@@ -3,7 +3,7 @@ VectorGeometryToolSystemAssembled
 
 .. py:class:: VectorGeometryToolSystemAssembled
 
-   IVectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolSystemAssembled`, py:obj:`~IVectorGeometryToolSystem`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A system assembled from an origin point and a set of reference axes.
 

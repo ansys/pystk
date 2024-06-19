@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IDataProviderElement.type
-    :type: "DATA_PROVIDER_ELEMENT_TYPE"
+    :type: DATA_PROVIDER_ELEMENT_TYPE
 
     Returns a type of the element.
 

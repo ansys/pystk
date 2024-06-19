@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin.plugin_config
-    :type: "IAgVAPluginProperties"
+    :type: IAgVAPluginProperties
 
     Get the properties of the selected plugin.
 
@@ -60,7 +60,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: select_plugin_by_name(self, name:str) -> None
+.. py:method:: select_plugin_by_name(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin.select_plugin_by_name
 
     Select plugin using the plugin name.
 

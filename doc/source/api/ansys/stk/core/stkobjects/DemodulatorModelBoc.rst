@@ -3,7 +3,7 @@ DemodulatorModelBoc
 
 .. py:class:: DemodulatorModelBoc
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a BOC modulator model.
 

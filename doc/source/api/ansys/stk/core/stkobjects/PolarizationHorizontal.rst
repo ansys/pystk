@@ -3,7 +3,7 @@ PolarizationHorizontal
 
 .. py:class:: PolarizationHorizontal
 
-   IPolarizationHorizontal, IPolarization, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarizationHorizontal`, py:obj:`~IPolarization`
 
    Class defining a horizontal polarization.
 

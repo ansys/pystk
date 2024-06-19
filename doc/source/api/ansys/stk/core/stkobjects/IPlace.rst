@@ -88,13 +88,13 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IPlace.graphics
-    :type: "IAgPlaceGraphics"
+    :type: IAgPlaceGraphics
 
     Get the 2D Graphics properties of the place.
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IPlace.position
-    :type: "IAgPosition"
+    :type: IAgPosition
 
     Get the position of the place.
 
@@ -106,19 +106,19 @@ Property detail
 
 .. py:property:: terrain_norm_data
     :canonical: ansys.stk.core.stkobjects.IPlace.terrain_norm_data
-    :type: "IAgTerrainNormData"
+    :type: IAgTerrainNormData
 
     Data used in specifying terrain slope.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IPlace.graphics_3d
-    :type: "IAgPlaceVO"
+    :type: IAgPlaceVO
 
     Get the 3D Graphics properties of the place.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IPlace.access_constraints
-    :type: "IAgAccessConstraintCollection"
+    :type: IAgAccessConstraintCollection
 
     Get the constraints imposed on the place.
 
@@ -136,19 +136,19 @@ Property detail
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.IPlace.atmosphere
-    :type: "IAgAtmosphere"
+    :type: IAgAtmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.IPlace.radar_clutter_map
-    :type: "IAgRadarClutterMapInheritable"
+    :type: IAgRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IPlace.radar_cross_section
-    :type: "IAgRadarCrossSectionInheritable"
+    :type: IAgRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
@@ -160,7 +160,7 @@ Property detail
 
 .. py:property:: lighting_obstruction_model
     :canonical: ansys.stk.core.stkobjects.IPlace.lighting_obstruction_model
-    :type: "LIGHTING_OBSTRUCTION_MODEL_TYPE"
+    :type: LIGHTING_OBSTRUCTION_MODEL_TYPE
 
     Gets or sets the obstruction model used in lighting computations.
 
@@ -172,13 +172,13 @@ Property detail
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IPlace.laser_environment
-    :type: "IAgPlatformLaserEnvironment"
+    :type: IAgPlatformLaserEnvironment
 
     Gets the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IPlace.rf_environment
-    :type: "IAgPlatformRFEnvironment"
+    :type: IAgPlatformRFEnvironment
 
     Gets the RF environment.
 
@@ -198,13 +198,14 @@ Method detail
 
 
 
-.. py:method:: set_az_el_mask(self, type:"AZ_EL_MASK_TYPE", data:typing.Any) -> None
+.. py:method:: set_az_el_mask(self, type: AZ_EL_MASK_TYPE, data: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IPlace.set_az_el_mask
 
     Set an az-el mask. A member of the AgEAzElMaskType enumeration.
 
     :Parameters:
 
-    **type** : :obj:`~"AZ_EL_MASK_TYPE"`
+    **type** : :obj:`~AZ_EL_MASK_TYPE`
     **data** : :obj:`~typing.Any`
 
     :Returns:
@@ -219,6 +220,7 @@ Method detail
 
 
 .. py:method:: reset_az_el_mask(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IPlace.reset_az_el_mask
 
     Reset the az-el mask.
 
@@ -226,15 +228,17 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_az_el_mask(self) -> "AZ_EL_MASK_TYPE"
+.. py:method:: get_az_el_mask(self) -> AZ_EL_MASK_TYPE
+    :canonical: ansys.stk.core.stkobjects.IPlace.get_az_el_mask
 
     Get the az-el mask. A member of the AgEAzElMaskType enumeration.
 
     :Returns:
 
-        :obj:`~"AZ_EL_MASK_TYPE"`
+        :obj:`~AZ_EL_MASK_TYPE`
 
 .. py:method:: get_az_el_mask_data(self) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.IPlace.get_az_el_mask_data
 
     Get az-el mask data.
 

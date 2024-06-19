@@ -3,7 +3,7 @@ AtmosphericAbsorptionModel
 
 .. py:class:: AtmosphericAbsorptionModel
 
-   IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphericAbsorptionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an atmospheric absorption model.
 

@@ -3,7 +3,7 @@ MtoGlobalTrackOptions
 
 .. py:class:: MtoGlobalTrackOptions
 
-   IMtoGlobalTrackOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGlobalTrackOptions`
 
    Global MTO track options.
 

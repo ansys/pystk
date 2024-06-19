@@ -3,7 +3,7 @@ CommSystemGraphics3D
 
 .. py:class:: CommSystemGraphics3D
 
-   ICommSystemGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemGraphics3D`
 
    Class defining 3D Graphics properties of a CommSystem.
 

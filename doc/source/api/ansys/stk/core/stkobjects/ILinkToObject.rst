@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: linked_object
     :canonical: ansys.stk.core.stkobjects.ILinkToObject.linked_object
-    :type: "IAgStkObject"
+    :type: IAgStkObject
 
     Dereferences the link and returns the linked object.
 
@@ -76,7 +76,8 @@ Method detail
 
 
 
-.. py:method:: bind_to(self, path:str) -> "IStkObject"
+.. py:method:: bind_to(self, path: str) -> IStkObject
+    :canonical: ansys.stk.core.stkobjects.ILinkToObject.bind_to
 
     Binds to existing object instance using the specified object path.
 
@@ -86,7 +87,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStkObject"`
+        :obj:`~IStkObject`
 
 
 

@@ -3,7 +3,7 @@ SphericalFPAHorizontal
 
 .. py:class:: SphericalFPAHorizontal
 
-   ISphericalFPAHorizontal, IFlightPathAngle, SupportsDeleteCallback
+   Bases: py:obj:`~ISphericalFPAHorizontal`, py:obj:`~IFlightPathAngle`
 
    Horizontal Flight Path Angle, an element of the Spherical coordinate type.
 

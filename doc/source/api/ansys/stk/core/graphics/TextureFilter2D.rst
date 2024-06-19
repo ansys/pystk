@@ -3,7 +3,7 @@ TextureFilter2D
 
 .. py:class:: TextureFilter2D
 
-   ITextureFilter2D, SupportsDeleteCallback
+   Bases: py:obj:`~ITextureFilter2D`
 
    A texture filter.
 

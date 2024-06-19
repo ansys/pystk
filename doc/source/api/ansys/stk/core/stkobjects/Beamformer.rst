@@ -3,7 +3,7 @@ Beamformer
 
 .. py:class:: Beamformer
 
-   IBeamformer, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`
 
    Class defining a beamformer.
 

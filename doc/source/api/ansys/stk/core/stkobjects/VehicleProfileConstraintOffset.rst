@@ -3,7 +3,7 @@ VehicleProfileConstraintOffset
 
 .. py:class:: VehicleProfileConstraintOffset
 
-   IVehicleProfileConstraintOffset, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileConstraintOffset`, py:obj:`~IVehicleAttitudeProfile`
 
    Constraint offset for various attitude profiles.
 

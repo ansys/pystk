@@ -79,13 +79,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.ISwath.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Gets or sets the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.ISwath.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
 
@@ -127,7 +127,7 @@ Property detail
 
 .. py:property:: computational_method
     :canonical: ansys.stk.core.stkobjects.ISwath.computational_method
-    :type: "SWATH_COMPUTATIONAL_METHOD"
+    :type: SWATH_COMPUTATIONAL_METHOD
 
     Select the Analytical or Numerical Computaional Method for generating swaths.
 
@@ -143,7 +143,8 @@ Method detail
 
 
 
-.. py:method:: add_time_interval(self, startTime:typing.Any, stopTime:typing.Any) -> None
+.. py:method:: add_time_interval(self, startTime: typing.Any, stopTime: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ISwath.add_time_interval
 
     Add an interval to the list of valid swath intervals. Start/Stop Times use DateFormat Dimension.
 
@@ -156,7 +157,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: modify_time_interval(self, index:int, start:typing.Any, stop:typing.Any) -> None
+.. py:method:: modify_time_interval(self, index: int, start: typing.Any, stop: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ISwath.modify_time_interval
 
     Modify an interval given an index. Start/Stop Times use DateFormat Dimension.
 
@@ -170,7 +172,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_time_interval_index(self, start:typing.Any, stop:typing.Any) -> int
+.. py:method:: get_time_interval_index(self, start: typing.Any, stop: typing.Any) -> int
+    :canonical: ansys.stk.core.stkobjects.ISwath.get_time_interval_index
 
     Retrieve an index given a start and stop time. Start/Stop Times use DateFormat Dimension.
 
@@ -183,7 +186,8 @@ Method detail
 
         :obj:`~int`
 
-.. py:method:: remove_time_interval(self, start:typing.Any, stop:typing.Any) -> None
+.. py:method:: remove_time_interval(self, start: typing.Any, stop: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ISwath.remove_time_interval
 
     Remove the interval given the start and stop times. Start/Stop Times use DateFormat Dimension.
 
@@ -196,7 +200,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_time_interval_index(self, index:int) -> None
+.. py:method:: remove_time_interval_index(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ISwath.remove_time_interval_index
 
     Remove an interval given an index.
 
@@ -209,6 +214,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all_intervals(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ISwath.remove_all_intervals
 
     Remove all intervals.
 
@@ -217,7 +223,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: to_array(self, index:int, length:int) -> list
+.. py:method:: to_array(self, index: int, length: int) -> list
+    :canonical: ansys.stk.core.stkobjects.ISwath.to_array
 
     Return an array of all time intervals.
 

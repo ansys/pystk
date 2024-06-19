@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_rotorcraft(self, name:str) -> "IRotorcraftModel"
+.. py:method:: get_rotorcraft(self, name: str) -> IRotorcraftModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModels.get_rotorcraft
 
     Get the rotorcraft with the given name.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRotorcraftModel"`
+        :obj:`~IRotorcraftModel`
 
-.. py:method:: add_rotorcraft(self, name:str) -> "IRotorcraftModel"
+.. py:method:: add_rotorcraft(self, name: str) -> IRotorcraftModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModels.add_rotorcraft
 
     Create a new rotorcraft with the given name.
 
@@ -62,13 +64,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRotorcraftModel"`
+        :obj:`~IRotorcraftModel`
 
-.. py:method:: get_as_catalog_source(self) -> "ICatalogSource"
+.. py:method:: get_as_catalog_source(self) -> ICatalogSource
+    :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModels.get_as_catalog_source
 
     Get the catalog source interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogSource"`
+        :obj:`~ICatalogSource`
 

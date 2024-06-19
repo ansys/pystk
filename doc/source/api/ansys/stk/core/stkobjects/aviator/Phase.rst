@@ -3,7 +3,7 @@ Phase
 
 .. py:class:: Phase
 
-   IPhase, SupportsDeleteCallback
+   Bases: py:obj:`~IPhase`
 
    Class defining a phase in an Aviator mission.
 

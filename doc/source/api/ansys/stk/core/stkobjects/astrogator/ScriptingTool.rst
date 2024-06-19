@@ -3,7 +3,7 @@ ScriptingTool
 
 .. py:class:: ScriptingTool
 
-   IScriptingTool, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IScriptingTool`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Scripting Tool.
 

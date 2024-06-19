@@ -3,7 +3,7 @@ Graphics3DOffsetAttach
 
 .. py:class:: Graphics3DOffsetAttach
 
-   IGraphics3DOffsetAttach, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DOffsetAttach`
 
    Class defining attach points for the attachment of lines to objects.
 

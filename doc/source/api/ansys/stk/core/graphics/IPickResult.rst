@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: objects
     :canonical: ansys.stk.core.graphics.IPickResult.objects
-    :type: "IAgStkGraphicsObjectCollection"
+    :type: IAgStkGraphicsObjectCollection
 
     Gets a collection of objects that were on the pick stack for the picked object.
 

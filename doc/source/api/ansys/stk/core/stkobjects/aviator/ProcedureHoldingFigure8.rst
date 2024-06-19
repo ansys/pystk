@@ -3,7 +3,7 @@ ProcedureHoldingFigure8
 
 .. py:class:: ProcedureHoldingFigure8
 
-   IProcedureHoldingFigure8, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureHoldingFigure8`, py:obj:`~IProcedure`
 
    Class defining a holding figure 8 procedure.
 

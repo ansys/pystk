@@ -3,7 +3,7 @@ AccessConstraintGrazingAltitude
 
 .. py:class:: AccessConstraintGrazingAltitude
 
-   IAccessConstraintGrazingAltitude, IAccessConstraintMinMax, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintGrazingAltitude`, py:obj:`~IAccessConstraintMinMax`, py:obj:`~IAccessConstraint`
 
    Class defining the Grazing Altidude constraint.
 

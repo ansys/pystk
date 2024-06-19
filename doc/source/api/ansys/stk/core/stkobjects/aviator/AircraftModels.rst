@@ -3,7 +3,7 @@ AircraftModels
 
 .. py:class:: AircraftModels
 
-   IAircraftModels, ICatalogSource, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftModels`, py:obj:`~ICatalogSource`
 
    Class defining the User Aircraft Models in the Aviator Catalog.
 

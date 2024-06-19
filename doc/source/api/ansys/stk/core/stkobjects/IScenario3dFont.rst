@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: point_size
     :canonical: ansys.stk.core.stkobjects.IScenario3dFont.point_size
-    :type: "SCENARIO_3D_POINT_SIZE"
+    :type: SCENARIO_3D_POINT_SIZE
 
     Font size in points.
 
@@ -90,7 +90,8 @@ Method detail
 
 
 
-.. py:method:: is_font_available(self, name:str) -> bool
+.. py:method:: is_font_available(self, name: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IScenario3dFont.is_font_available
 
     Return whether the specified font is installed in the system.
 

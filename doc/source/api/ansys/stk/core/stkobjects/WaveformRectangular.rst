@@ -3,7 +3,7 @@ WaveformRectangular
 
 .. py:class:: WaveformRectangular
 
-   IWaveformRectangular, IWaveform, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IWaveformRectangular`, py:obj:`~IWaveform`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rectangular waveform.
 

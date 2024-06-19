@@ -3,7 +3,7 @@ CoverageBoundsLonLine
 
 .. py:class:: CoverageBoundsLonLine
 
-   ICoverageBoundsLonLine, ICoverageBounds, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageBoundsLonLine`, py:obj:`~ICoverageBounds`
 
    Longitude Line:  Create a set of points along a single meridian, useful when the coverage is only expected to vary with latitude.
 

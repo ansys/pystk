@@ -3,7 +3,7 @@ VectorGeometryToolAngle
 
 .. py:class:: VectorGeometryToolAngle
 
-   IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAngle`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Base class for VGT axes.
 

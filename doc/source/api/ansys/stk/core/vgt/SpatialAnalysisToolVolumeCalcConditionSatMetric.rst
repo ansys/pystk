@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcConditionSatMetric
 
 .. py:class:: SpatialAnalysisToolVolumeCalcConditionSatMetric
 
-   ISpatialAnalysisToolVolumeCalcConditionSatMetric, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcConditionSatMetric`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume calc condition satisfaction interface.
 

@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelCOMPlugin.plugin_configuration
-    :type: "IAgCRPluginConfiguration"
+    :type: IAgCRPluginConfiguration
 
     Gets the plugin configuration interface.
 

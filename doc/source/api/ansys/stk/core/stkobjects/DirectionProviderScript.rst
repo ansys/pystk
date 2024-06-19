@@ -3,7 +3,7 @@ DirectionProviderScript
 
 .. py:class:: DirectionProviderScript
 
-   IDirectionProviderScript, IDirectionProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IDirectionProviderScript`, py:obj:`~IDirectionProvider`
 
    Class defining an script plugin direction provider.
 

@@ -3,7 +3,7 @@ StkCentralBodyCollection
 
 .. py:class:: StkCentralBodyCollection
 
-   IStkCentralBodyCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IStkCentralBodyCollection`
 
    Central body collection coclass.
 

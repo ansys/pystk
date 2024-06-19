@@ -3,7 +3,7 @@ VehicleHPOPSRPModel
 
 .. py:class:: VehicleHPOPSRPModel
 
-   IVehicleHPOPSRPModel, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleHPOPSRPModel`
 
    SRP Model Base CoClass.
 

@@ -40,15 +40,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IModelPrimitive"
+.. py:method:: initialize(self) -> IModelPrimitive
+    :canonical: ansys.stk.core.graphics.IModelPrimitiveFactory.initialize
 
     Initialize a default model primitive.
 
     :Returns:
 
-        :obj:`~"IModelPrimitive"`
+        :obj:`~IModelPrimitive`
 
-.. py:method:: initialize_with_string_uri(self, uri:str) -> "IModelPrimitive"
+.. py:method:: initialize_with_string_uri(self, uri: str) -> IModelPrimitive
+    :canonical: ansys.stk.core.graphics.IModelPrimitiveFactory.initialize_with_string_uri
 
     For convenience. Initializes a model primitive with the specified file path.
 
@@ -58,18 +60,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IModelPrimitive"`
+        :obj:`~IModelPrimitive`
 
-.. py:method:: initialize_with_string_uri_and_up_axis(self, uri:str, upAxis:"MODEL_UP_AXIS") -> "IModelPrimitive"
+.. py:method:: initialize_with_string_uri_and_up_axis(self, uri: str, upAxis: MODEL_UP_AXIS) -> IModelPrimitive
+    :canonical: ansys.stk.core.graphics.IModelPrimitiveFactory.initialize_with_string_uri_and_up_axis
 
     For convenience. Initializes a model primitive with the specified file path and up axis.
 
     :Parameters:
 
     **uri** : :obj:`~str`
-    **upAxis** : :obj:`~"MODEL_UP_AXIS"`
+    **upAxis** : :obj:`~MODEL_UP_AXIS`
 
     :Returns:
 
-        :obj:`~"IModelPrimitive"`
+        :obj:`~IModelPrimitive`
 

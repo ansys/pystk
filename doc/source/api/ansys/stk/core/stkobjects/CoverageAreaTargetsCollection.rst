@@ -3,7 +3,7 @@ CoverageAreaTargetsCollection
 
 .. py:class:: CoverageAreaTargetsCollection
 
-   ICoverageAreaTargetsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageAreaTargetsCollection`
 
    Collection of Area Targets.
 

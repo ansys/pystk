@@ -3,7 +3,7 @@ TriangleMeshPrimitive
 
 .. py:class:: TriangleMeshPrimitive
 
-   ITriangleMeshPrimitive, IPrimitive, SupportsDeleteCallback
+   Bases: py:obj:`~ITriangleMeshPrimitive`, py:obj:`~IPrimitive`
 
    Render a triangle mesh in the 3D scene. Examples of triangle meshes include polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions.
 

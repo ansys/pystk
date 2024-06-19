@@ -3,7 +3,7 @@ UrbanTerrestrialLossModel
 
 .. py:class:: UrbanTerrestrialLossModel
 
-   IUrbanTerrestrialLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IUrbanTerrestrialLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an urban/terrestrial loss model.
 

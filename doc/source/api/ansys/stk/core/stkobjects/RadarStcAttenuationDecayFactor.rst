@@ -3,7 +3,7 @@ RadarStcAttenuationDecayFactor
 
 .. py:class:: RadarStcAttenuationDecayFactor
 
-   IRadarStcAttenuation, IRadarStcAttenuationDecayFactor, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarStcAttenuation`, py:obj:`~IRadarStcAttenuationDecayFactor`
 
    Class defining an radar decay factor stc.
 

@@ -3,7 +3,7 @@ ManeuverFinitePropagator
 
 .. py:class:: ManeuverFinitePropagator
 
-   IManeuverFinitePropagator, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverFinitePropagator`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Propagation for a finite maneuver.
 

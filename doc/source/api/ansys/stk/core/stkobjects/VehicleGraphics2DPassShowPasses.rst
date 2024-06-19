@@ -3,7 +3,7 @@ VehicleGraphics2DPassShowPasses
 
 .. py:class:: VehicleGraphics2DPassShowPasses
 
-   IVehicleGraphics2DPass, IVehicleGraphics2DPassShowPasses, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DPass`, py:obj:`~IVehicleGraphics2DPassShowPasses`
 
    Beginning and end pass numbers to display.
 

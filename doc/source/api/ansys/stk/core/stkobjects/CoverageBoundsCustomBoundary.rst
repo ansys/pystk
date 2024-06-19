@@ -3,7 +3,7 @@ CoverageBoundsCustomBoundary
 
 .. py:class:: CoverageBoundsCustomBoundary
 
-   ICoverageBoundsCustomBoundary, ICoverageBounds, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageBoundsCustomBoundary`, py:obj:`~ICoverageBounds`
 
    Custom Boundary.
 

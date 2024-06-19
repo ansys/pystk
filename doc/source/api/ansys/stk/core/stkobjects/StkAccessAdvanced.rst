@@ -3,7 +3,7 @@ StkAccessAdvanced
 
 .. py:class:: StkAccessAdvanced
 
-   IStkAccessAdvanced, SupportsDeleteCallback
+   Bases: py:obj:`~IStkAccessAdvanced`
 
    Class defining advanced Access settings.
 

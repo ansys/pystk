@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalList.type
-    :type: "CRDN_EVENT_INTERVAL_LIST_TYPE"
+    :type: CRDN_EVENT_INTERVAL_LIST_TYPE
 
     Return the type of interval list.
 
@@ -72,15 +72,17 @@ Method detail
 
 
 
-.. py:method:: find_intervals(self) -> "ITimeToolIntervalListResult"
+.. py:method:: find_intervals(self) -> ITimeToolIntervalListResult
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalList.find_intervals
 
     Return computed interval list that can be empty.
 
     :Returns:
 
-        :obj:`~"ITimeToolIntervalListResult"`
+        :obj:`~ITimeToolIntervalListResult`
 
-.. py:method:: occurred(self, epoch:typing.Any) -> bool
+.. py:method:: occurred(self, epoch: typing.Any) -> bool
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalList.occurred
 
     Determine if specified time falls within computed interval list.
 

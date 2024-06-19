@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: thruster_direction
     :canonical: ansys.stk.core.stkobjects.astrogator.IThruster.thruster_direction
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     A thruster direction value.
 
@@ -105,13 +105,14 @@ Method detail
 
 
 
-.. py:method:: copy(self) -> "IThruster"
+.. py:method:: copy(self) -> IThruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThruster.copy
 
     Make a copy of the specified thruster.
 
     :Returns:
 
-        :obj:`~"IThruster"`
+        :obj:`~IThruster`
 
 
 
@@ -120,37 +121,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_THRUSTERS") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_THRUSTERS) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThruster.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_THRUSTERS"`
+    **param** : :obj:`~CONTROL_THRUSTERS`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_THRUSTERS") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_THRUSTERS) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThruster.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_THRUSTERS"`
+    **param** : :obj:`~CONTROL_THRUSTERS`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_THRUSTERS") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_THRUSTERS) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThruster.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_THRUSTERS"`
+    **param** : :obj:`~CONTROL_THRUSTERS`
 
     :Returns:
 

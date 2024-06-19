@@ -84,7 +84,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IUnitPreferencesDimension"
+.. py:method:: item(self, indexOrName: typing.Any) -> IUnitPreferencesDimension
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.item
 
     Return an IAgUnitPrefsDim given a Dimension name or an index.
 
@@ -94,10 +95,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUnitPreferencesDimension"`
+        :obj:`~IUnitPreferencesDimension`
 
 
-.. py:method:: set_current_unit(self, dimension:str, unitAbbrv:str) -> None
+.. py:method:: set_current_unit(self, dimension: str, unitAbbrv: str) -> None
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.set_current_unit
 
     Return the Current unit for a Dimension.
 
@@ -110,7 +112,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_current_unit_abbrv(self, indexOrDimName:typing.Any) -> str
+.. py:method:: get_current_unit_abbrv(self, indexOrDimName: typing.Any) -> str
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.get_current_unit_abbrv
 
     Return the Current Unit for a Dimension.
 
@@ -128,6 +131,7 @@ Method detail
 
 
 .. py:method:: reset_units(self) -> None
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.reset_units
 
     Reset the unitpreferences to the Default units.
 
@@ -135,7 +139,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IUnitPreferencesDimension"
+.. py:method:: get_item_by_index(self, index: int) -> IUnitPreferencesDimension
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.get_item_by_index
 
     Retrieve a dimension from the collection by index.
 
@@ -145,9 +150,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUnitPreferencesDimension"`
+        :obj:`~IUnitPreferencesDimension`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IUnitPreferencesDimension"
+.. py:method:: get_item_by_name(self, name: str) -> IUnitPreferencesDimension
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.get_item_by_name
 
     Retrieve a dimension from the collection by name.
 
@@ -157,5 +163,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUnitPreferencesDimension"`
+        :obj:`~IUnitPreferencesDimension`
 

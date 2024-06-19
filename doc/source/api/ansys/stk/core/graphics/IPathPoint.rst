@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: date
     :canonical: ansys.stk.core.graphics.IPathPoint.date
-    :type: "IAgDate"
+    :type: IAgDate
 
     A date/time of the path point.
 

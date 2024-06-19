@@ -3,7 +3,7 @@ DemodulatorModelQam1024
 
 .. py:class:: DemodulatorModelQam1024
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a QAM 1024 modulator model.
 

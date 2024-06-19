@@ -37,6 +37,7 @@ Method detail
 -------------
 
 .. py:method:: compute(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ISatelliteCollection.compute
 
     Compute the satellite collection, updating its subgroups.
 

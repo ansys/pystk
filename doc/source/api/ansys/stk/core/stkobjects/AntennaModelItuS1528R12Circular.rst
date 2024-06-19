@@ -3,7 +3,7 @@ AntennaModelItuS1528R12Circular
 
 .. py:class:: AntennaModelItuS1528R12Circular
 
-   IAntennaModelItuS1528R12Circular, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuS1528R12Circular`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R S1528 1.2 circular antenna model.
 

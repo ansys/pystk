@@ -3,7 +3,7 @@ VehicleRepeatGroundTrackNumbering
 
 .. py:class:: VehicleRepeatGroundTrackNumbering
 
-   IVehicleRepeatGroundTrackNumbering, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRepeatGroundTrackNumbering`
 
    Repeat ground track numbering: The path number in the repeat ground track cycle corresponding to the initial conditions and the number of revolutions in the repeat cycle.
 

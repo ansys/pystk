@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: time_period_type
     :canonical: ansys.stk.core.stkobjects.IExportToolTimePeriod.time_period_type
-    :type: "EXPORT_TOOL_TIME_PERIOD"
+    :type: EXPORT_TOOL_TIME_PERIOD
 
     Specifies the time period type to use.
 

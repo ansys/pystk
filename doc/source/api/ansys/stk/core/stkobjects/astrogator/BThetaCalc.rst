@@ -3,7 +3,7 @@ BThetaCalc
 
 .. py:class:: BThetaCalc
 
-   IComponentInfo, ICloneable, IBThetaCalc, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IBThetaCalc`
 
    BTheta Calc objects.
 

@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: directions
     :canonical: ansys.stk.core.stkobjects.IDirectionProviderObject.directions
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Gets the beam steering list.
 
@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: limits_exceeded_behavior_type
     :canonical: ansys.stk.core.stkobjects.IDirectionProviderObject.limits_exceeded_behavior_type
-    :type: "LIMITS_EXCEEDED_BEHAVIOR_TYPE"
+    :type: LIMITS_EXCEEDED_BEHAVIOR_TYPE
 
     Gets or sets the Limits Exceeded Behavior type.
 

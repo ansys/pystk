@@ -3,7 +3,7 @@ DisplayTimesTimeComponent
 
 .. py:class:: DisplayTimesTimeComponent
 
-   IDisplayTimesData, IDisplayTimesTimeComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IDisplayTimesData`, py:obj:`~IDisplayTimesTimeComponent`
 
    Provide methods to configure the display times using Timeline API components.
 

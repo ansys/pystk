@@ -70,25 +70,25 @@ Property detail
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.spacecraft_parameters
-    :type: "IAgVASpacecraftParameters"
+    :type: IAgVASpacecraftParameters
 
     Get the spacecraft  parameters.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.fuel_tank
-    :type: "IAgVAFuelTank"
+    :type: IAgVAFuelTank
 
     Get the fuel tank parameters.
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.element_type
-    :type: "ELEMENT_TYPE"
+    :type: ELEMENT_TYPE
 
     Get the coordinate type.
 
 .. py:property:: element
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.element
-    :type: "IAgVAElement"
+    :type: IAgVAElement
 
     Get the elements of the selected coordinate type.
 
@@ -100,7 +100,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.user_variables
-    :type: "IAgVAUserVariableCollection"
+    :type: IAgVAUserVariableCollection
 
     Interface used to modify user variables for the initial state segment.
 
@@ -115,50 +115,54 @@ Method detail
 
 
 
-.. py:method:: set_element_type(self, elementType:"ELEMENT_TYPE") -> None
+.. py:method:: set_element_type(self, elementType: ELEMENT_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.set_element_type
 
     Select an coordinate type.
 
     :Parameters:
 
-    **elementType** : :obj:`~"ELEMENT_TYPE"`
+    **elementType** : :obj:`~ELEMENT_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_INIT_STATE") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_INIT_STATE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.enable_control_parameter
 
     Enable a control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_INIT_STATE"`
+    **param** : :obj:`~CONTROL_INIT_STATE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_INIT_STATE") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_INIT_STATE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.disable_control_parameter
 
     Disables a control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_INIT_STATE"`
+    **param** : :obj:`~CONTROL_INIT_STATE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_INIT_STATE") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_INIT_STATE) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.is_control_parameter_enabled
 
     Sees if a control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_INIT_STATE"`
+    **param** : :obj:`~CONTROL_INIT_STATE`
 
     :Returns:
 

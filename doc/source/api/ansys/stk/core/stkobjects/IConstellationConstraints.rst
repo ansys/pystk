@@ -52,37 +52,37 @@ Property detail
 
 .. py:property:: from_parent_constraint
     :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.from_parent_constraint
-    :type: "CONSTELLATION_FROM_TO_PARENT_CONSTRAINT"
+    :type: CONSTELLATION_FROM_TO_PARENT_CONSTRAINT
 
     Constrain accesses for constellation objects when used in a chain by parent relationships when in the 'from' access position.
 
 .. py:property:: to_parent_constraint
     :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.to_parent_constraint
-    :type: "CONSTELLATION_FROM_TO_PARENT_CONSTRAINT"
+    :type: CONSTELLATION_FROM_TO_PARENT_CONSTRAINT
 
     Constrain accesses for constellation objects when used in a chain by parent relationships when in the 'to' access position.
 
 .. py:property:: from_restriction_type
     :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.from_restriction_type
-    :type: "CONSTELLATION_CONSTRAINT_RESTRICTION"
+    :type: CONSTELLATION_CONSTRAINT_RESTRICTION
 
     Gets the current restriction type when in the from access position.
 
 .. py:property:: from_restriction
     :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.from_restriction
-    :type: "IAgCnCnstrRestriction"
+    :type: IAgCnCnstrRestriction
 
     Returns a restriction corresponding to the restriction type when in the from access position.
 
 .. py:property:: to_restriction_type
     :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.to_restriction_type
-    :type: "CONSTELLATION_CONSTRAINT_RESTRICTION"
+    :type: CONSTELLATION_CONSTRAINT_RESTRICTION
 
     Gets the current restriction type when in the to access position.
 
 .. py:property:: to_restriction
     :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.to_restriction
-    :type: "IAgCnCnstrRestriction"
+    :type: IAgCnCnstrRestriction
 
     Returns a restriction corresponding to the restriction type when in the to access position.
 
@@ -95,13 +95,14 @@ Method detail
 
 
 
-.. py:method:: set_from_restriction_type(self, restriction:"CONSTELLATION_CONSTRAINT_RESTRICTION") -> None
+.. py:method:: set_from_restriction_type(self, restriction: CONSTELLATION_CONSTRAINT_RESTRICTION) -> None
+    :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.set_from_restriction_type
 
     Set a new restriction type when in the from access position.
 
     :Parameters:
 
-    **restriction** : :obj:`~"CONSTELLATION_CONSTRAINT_RESTRICTION"`
+    **restriction** : :obj:`~CONSTELLATION_CONSTRAINT_RESTRICTION`
 
     :Returns:
 
@@ -109,13 +110,14 @@ Method detail
 
 
 
-.. py:method:: set_to_restriction_type(self, restriction:"CONSTELLATION_CONSTRAINT_RESTRICTION") -> None
+.. py:method:: set_to_restriction_type(self, restriction: CONSTELLATION_CONSTRAINT_RESTRICTION) -> None
+    :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.set_to_restriction_type
 
     Set a new restriction type when in the to access position.
 
     :Parameters:
 
-    **restriction** : :obj:`~"CONSTELLATION_CONSTRAINT_RESTRICTION"`
+    **restriction** : :obj:`~CONSTELLATION_CONSTRAINT_RESTRICTION`
 
     :Returns:
 

@@ -3,7 +3,7 @@ VehicleGraphics3DOrbitTickMarks
 
 .. py:class:: VehicleGraphics3DOrbitTickMarks
 
-   IVehicleGraphics3DOrbitTickMarks, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DOrbitTickMarks`
 
    Tick mark for satellites.
 

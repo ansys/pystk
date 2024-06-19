@@ -3,7 +3,7 @@ VectorGeometryToolSystem
 
 .. py:class:: VectorGeometryToolSystem
 
-   IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolSystem`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Base class for VGT axes.
 

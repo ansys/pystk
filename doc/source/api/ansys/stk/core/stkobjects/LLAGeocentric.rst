@@ -3,7 +3,7 @@ LLAGeocentric
 
 .. py:class:: LLAGeocentric
 
-   ILLAGeocentric, ILLAPosition, SupportsDeleteCallback
+   Bases: py:obj:`~ILLAGeocentric`, py:obj:`~ILLAPosition`
 
    Geocentric LLA position.
 

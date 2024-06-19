@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IBeamformer.type
-    :type: "BEAMFORMER_TYPE"
+    :type: BEAMFORMER_TYPE
 
     Gets the beamformer type enumeration.
 

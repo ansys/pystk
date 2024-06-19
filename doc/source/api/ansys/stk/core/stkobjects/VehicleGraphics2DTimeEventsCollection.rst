@@ -3,7 +3,7 @@ VehicleGraphics2DTimeEventsCollection
 
 .. py:class:: VehicleGraphics2DTimeEventsCollection
 
-   IVehicleGraphics2DTimeEventsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DTimeEventsCollection`
 
    A satellite's time events collection.
 

@@ -3,7 +3,7 @@ CoverageGraphics3DAttributes
 
 .. py:class:: CoverageGraphics3DAttributes
 
-   ICoverageGraphics3DAttributes, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageGraphics3DAttributes`
 
    3D animation or static graphics options.
 

@@ -71,7 +71,8 @@ Method detail
 -------------
 
 
-.. py:method:: remove_index(self, index:int) -> None
+.. py:method:: remove_index(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.remove_index
 
     Remove an item given an index.
 
@@ -84,6 +85,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.remove_all
 
     Remove all items from the collection.
 
@@ -91,45 +93,49 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_constraint(self, type:"ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS", reference:str) -> None
+.. py:method:: remove_constraint(self, type: ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS, reference: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.remove_constraint
 
     Remove a Analysis Workbench using Reference/Component.
 
     :Parameters:
 
-    **type** : :obj:`~"ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS"`
+    **type** : :obj:`~ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS`
     **reference** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_constraint(self, eConstraint:"ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS", reference:str) -> "IAccessConstraint"
+.. py:method:: add_constraint(self, eConstraint: ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS, reference: str) -> IAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.add_constraint
 
     Add a constraint to the AWB Constraint Collection.
 
     :Parameters:
 
-    **eConstraint** : :obj:`~"ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS"`
+    **eConstraint** : :obj:`~ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS`
     **reference** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"IAccessConstraint"`
+        :obj:`~IAccessConstraint`
 
-.. py:method:: get_available_references(self, type:"ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS") -> list
+.. py:method:: get_available_references(self, type: ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS) -> list
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.get_available_references
 
     Return an array of available References.
 
     :Parameters:
 
-    **type** : :obj:`~"ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS"`
+    **type** : :obj:`~ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: item(self, index:int) -> "IAccessConstraintAnalysisWorkbench"
+.. py:method:: item(self, index: int) -> IAccessConstraintAnalysisWorkbench
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.item
 
     Get an IAgAccessCnstrAWB interface using an index.
 
@@ -139,6 +145,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAccessConstraintAnalysisWorkbench"`
+        :obj:`~IAccessConstraintAnalysisWorkbench`
 
 

@@ -3,7 +3,7 @@ ClassicalSizeShapePeriod
 
 .. py:class:: ClassicalSizeShapePeriod
 
-   IClassicalSizeShapePeriod, IClassicalSizeShape, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalSizeShapePeriod`, py:obj:`~IClassicalSizeShape`
 
    Orbit size and shape using Period and Eccentricity.
 

@@ -3,7 +3,7 @@ Cylindrical
 
 .. py:class:: Cylindrical
 
-   ICylindrical, IPosition, SupportsDeleteCallback
+   Bases: py:obj:`~ICylindrical`, py:obj:`~IPosition`
 
    Class defining cylindrical position.
 

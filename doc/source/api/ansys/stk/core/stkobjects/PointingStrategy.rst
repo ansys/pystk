@@ -3,7 +3,7 @@ PointingStrategy
 
 .. py:class:: PointingStrategy
 
-   IPointingStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IPointingStrategy`
 
    Class defining a pointing strategy.
 

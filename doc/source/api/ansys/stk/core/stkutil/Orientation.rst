@@ -3,7 +3,7 @@ Orientation
 
 .. py:class:: Orientation
 
-   IOrientation, SupportsDeleteCallback
+   Bases: py:obj:`~IOrientation`
 
    Class defining the orientation of an orbit.
 

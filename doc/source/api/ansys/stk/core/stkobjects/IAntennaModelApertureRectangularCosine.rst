@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: input_type
     :canonical: ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosine.input_type
-    :type: "RECTANGULAR_APERTURE_INPUT_TYPE"
+    :type: RECTANGULAR_APERTURE_INPUT_TYPE
 
     Gets or sets the input type.
 

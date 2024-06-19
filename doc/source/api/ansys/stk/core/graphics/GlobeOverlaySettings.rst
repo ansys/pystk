@@ -3,7 +3,7 @@ GlobeOverlaySettings
 
 .. py:class:: GlobeOverlaySettings
 
-   IGlobeOverlaySettings, SupportsDeleteCallback
+   Bases: py:obj:`~IGlobeOverlaySettings`
 
    Settings used by globe overlay objects. These setting affect all scenes.
 

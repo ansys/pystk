@@ -38,15 +38,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IContrastFilter"
+.. py:method:: initialize(self) -> IContrastFilter
+    :canonical: ansys.stk.core.graphics.IContrastFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IContrastFilter"`
+        :obj:`~IContrastFilter`
 
-.. py:method:: initialize_with_adjustment(self, adjustment:float) -> "IContrastFilter"
+.. py:method:: initialize_with_adjustment(self, adjustment: float) -> IContrastFilter
+    :canonical: ansys.stk.core.graphics.IContrastFilterFactory.initialize_with_adjustment
 
     Initialize a new instance with the adjustment to contrast.
 
@@ -56,5 +58,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IContrastFilter"`
+        :obj:`~IContrastFilter`
 

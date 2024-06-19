@@ -3,7 +3,7 @@ CRPluginConfiguration
 
 .. py:class:: CRPluginConfiguration
 
-   ICRPluginConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~ICRPluginConfiguration`
 
    Class defining plugin configuration.
 

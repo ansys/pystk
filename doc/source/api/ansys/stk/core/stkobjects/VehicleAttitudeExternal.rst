@@ -3,7 +3,7 @@ VehicleAttitudeExternal
 
 .. py:class:: VehicleAttitudeExternal
 
-   IVehicleAttitudeExternal, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeExternal`
 
    External attitude (.a) file.
 

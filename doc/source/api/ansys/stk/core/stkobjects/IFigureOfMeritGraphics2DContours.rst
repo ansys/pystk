@@ -52,31 +52,31 @@ Property detail
 
 .. py:property:: contour_type
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.contour_type
-    :type: "FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE"
+    :type: FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE
 
     Contour display method (block fill or smooth fill).
 
 .. py:property:: color_method
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.color_method
-    :type: "FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD"
+    :type: FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
 
     Color method for contours (color ramp or explicit).
 
 .. py:property:: ramp_color
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.ramp_color
-    :type: "IAgFmGfxRampColor"
+    :type: IAgFmGfxRampColor
 
     Color ramp colors.
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.level_attributes
-    :type: "IAgFmGfxLevelAttributesCollection"
+    :type: IAgFmGfxLevelAttributesCollection
 
     Contour level display properties.
 
 .. py:property:: legend
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.legend
-    :type: "IAgFmGfxLegend"
+    :type: IAgFmGfxLegend
 
     Contour legend.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Contour lines style.
 

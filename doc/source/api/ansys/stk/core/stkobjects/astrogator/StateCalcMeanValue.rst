@@ -3,7 +3,7 @@ StateCalcMeanValue
 
 .. py:class:: StateCalcMeanValue
 
-   IComponentInfo, ICloneable, IStateCalcMeanValue, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanValue`
 
    MeanValue Calc objects.
 

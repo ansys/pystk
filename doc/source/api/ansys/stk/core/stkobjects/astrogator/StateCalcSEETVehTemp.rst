@@ -3,7 +3,7 @@ StateCalcSEETVehTemp
 
 .. py:class:: StateCalcSEETVehTemp
 
-   IStateCalcSEETVehTemp, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcSEETVehTemp`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass StateCalcSEETVehTemp.
 

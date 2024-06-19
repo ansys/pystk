@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: stk_preferences_vdf
     :canonical: ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_vdf
-    :type: "IAgStkPreferencesVDF"
+    :type: IAgStkPreferencesVDF
 
     Configures STK VDF preferences.
 
 .. py:property:: stk_preferences_connect
     :canonical: ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_connect
-    :type: "IAgStkPreferencesConnect"
+    :type: IAgStkPreferencesConnect
 
     Configures STK connect preferences.
 
 .. py:property:: stk_preferences_python_plugins
     :canonical: ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_python_plugins
-    :type: "IAgStkPreferencesPythonPlugins"
+    :type: IAgStkPreferencesPythonPlugins
 
     Configures STK Python plugin preferences.
 

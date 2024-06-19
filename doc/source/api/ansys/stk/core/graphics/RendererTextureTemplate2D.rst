@@ -3,7 +3,7 @@ RendererTextureTemplate2D
 
 .. py:class:: RendererTextureTemplate2D
 
-   IRendererTextureTemplate2D, SupportsDeleteCallback
+   Bases: py:obj:`~IRendererTextureTemplate2D`
 
    Template object containing attributes required to create a 2D texture.
 

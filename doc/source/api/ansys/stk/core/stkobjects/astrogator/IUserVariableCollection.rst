@@ -64,7 +64,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IUserVariable"
+.. py:method:: item(self, indexOrName: typing.Any) -> IUserVariable
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableCollection.item
 
     Allow you to iterate through the collection.
 
@@ -74,11 +75,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariable"`
+        :obj:`~IUserVariable`
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IUserVariable"
+.. py:method:: get_item_by_index(self, index: int) -> IUserVariable
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableCollection.get_item_by_index
 
     Retrieve a user variable in the collection by index.
 
@@ -88,9 +90,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariable"`
+        :obj:`~IUserVariable`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IUserVariable"
+.. py:method:: get_item_by_name(self, name: str) -> IUserVariable
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableCollection.get_item_by_name
 
     Retrieve a user variable in the collection by name.
 
@@ -100,5 +103,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVariable"`
+        :obj:`~IUserVariable`
 

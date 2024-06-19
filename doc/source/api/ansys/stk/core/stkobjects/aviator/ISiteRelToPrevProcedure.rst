@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: bearing_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.bearing_mode
-    :type: "REL_ABS_BEARING"
+    :type: REL_ABS_BEARING
 
     Gets or sets the bearing reference.
 
@@ -73,11 +73,12 @@ Method detail
 
 
 
-.. py:method:: get_as_site(self) -> "ISite"
+.. py:method:: get_as_site(self) -> ISite
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.get_as_site
 
     Get the site interface.
 
     :Returns:
 
-        :obj:`~"ISite"`
+        :obj:`~ISite`
 

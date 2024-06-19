@@ -65,25 +65,25 @@ Property detail
 
 .. py:property:: quality
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.quality
-    :type: "VM_DISPLAY_QUALITY_TYPE"
+    :type: VM_DISPLAY_QUALITY_TYPE
 
     Sets/gets the quality of the graphics display.
 
 .. py:property:: grid
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.grid
-    :type: "IAgVmVOGrid"
+    :type: IAgVmVOGrid
 
     Get the Grid properties of 3D Graphics window for the volumetric object.
 
 .. py:property:: cross_section
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.cross_section
-    :type: "IAgVmVOCrossSection"
+    :type: IAgVmVOCrossSection
 
     Get the 3D Graphics properties for planar cross-sections through the volumetric grid.
 
 .. py:property:: volume
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.volume
-    :type: "IAgVmVOVolume"
+    :type: IAgVmVOVolume
 
     Get the 3D Graphics properties for Volume.
 
@@ -101,19 +101,19 @@ Property detail
 
 .. py:property:: boundary_legend
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.boundary_legend
-    :type: "IAgVmVOLegend"
+    :type: IAgVmVOLegend
 
     Get the 3D Graphics properties for Volumetric Boundary Legend.
 
 .. py:property:: fill_legend
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.fill_legend
-    :type: "IAgVmVOLegend"
+    :type: IAgVmVOLegend
 
     Get the 3D Graphics properties for Volumetric Fill Legend.
 
 .. py:property:: volume_type
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.volume_type
-    :type: "VM_DISPLAY_VOLUME_TYPE"
+    :type: VM_DISPLAY_VOLUME_TYPE
 
     Sets/gets the graphics volume display type.
 

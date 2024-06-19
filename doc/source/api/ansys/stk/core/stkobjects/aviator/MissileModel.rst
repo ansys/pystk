@@ -3,7 +3,7 @@ MissileModel
 
 .. py:class:: MissileModel
 
-   IMissileModel, IAviatorVehicle, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileModel`, py:obj:`~IAviatorVehicle`, py:obj:`~ICatalogItem`
 
    Class defining a missile in Aviator.
 

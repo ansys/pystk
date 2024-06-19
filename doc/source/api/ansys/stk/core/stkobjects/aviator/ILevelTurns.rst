@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: turn_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_mode
-    :type: "TURN_MODE"
+    :type: TURN_MODE
 
     Get the turn mode.
 
@@ -88,13 +88,13 @@ Property detail
 
 .. py:property:: maneuver_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ILevelTurns.maneuver_mode
-    :type: "ACCEL_MANEUVER_MODE"
+    :type: ACCEL_MANEUVER_MODE
 
     Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.ILevelTurns.maneuver_mode_helper
-    :type: "IAgAvtrAeroPropManeuverModeHelper"
+    :type: IAgAvtrAeroPropManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
@@ -108,13 +108,14 @@ Method detail
 
 
 
-.. py:method:: set_level_turn(self, turnMode:"TURN_MODE", turnValue:typing.Any) -> None
+.. py:method:: set_level_turn(self, turnMode: TURN_MODE, turnValue: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ILevelTurns.set_level_turn
 
     Set the level turn mode and corresponding value.
 
     :Parameters:
 
-    **turnMode** : :obj:`~"TURN_MODE"`
+    **turnMode** : :obj:`~TURN_MODE`
     **turnValue** : :obj:`~typing.Any`
 
     :Returns:

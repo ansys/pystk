@@ -3,7 +3,7 @@ VehicleIntegrator
 
 .. py:class:: VehicleIntegrator
 
-   IVehicleIntegrator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleIntegrator`
 
    Class defining the HPOP integrator.
 

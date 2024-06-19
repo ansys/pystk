@@ -3,7 +3,7 @@ CalculationToolScalarDotProduct
 
 .. py:class:: CalculationToolScalarDotProduct
 
-   ICalculationToolScalarDotProduct, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarDotProduct`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Dot product between two vectors.
 

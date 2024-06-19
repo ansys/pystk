@@ -58,49 +58,49 @@ Property detail
 
 .. py:property:: grid
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.grid
-    :type: "IAgCvGrid"
+    :type: IAgCvGrid
 
     Definition of the coverage grid.
 
 .. py:property:: point_definition
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.point_definition
-    :type: "IAgCvPointDefinition"
+    :type: IAgCvPointDefinition
 
     Location of points on the coverage grid.
 
 .. py:property:: asset_list
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.asset_list
-    :type: "IAgCvAssetListCollection"
+    :type: IAgCvAssetListCollection
 
     List of assets to use in coverage computations.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.advanced
-    :type: "IAgCvAdvanced"
+    :type: IAgCvAdvanced
 
     Advanced properties of the coverage definition.
 
 .. py:property:: interval
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.interval
-    :type: "IAgCvInterval"
+    :type: IAgCvInterval
 
     Coverage interval.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.graphics
-    :type: "IAgCvGraphics"
+    :type: IAgCvGraphics
 
     2D Graphics properties of the coverage definition.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.graphics_3d
-    :type: "IAgCvVO"
+    :type: IAgCvVO
 
     3D Graphics properties of the coverage definition.
 
 .. py:property:: grid_inspector
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.grid_inspector
-    :type: "IAgCvGridInspector"
+    :type: IAgCvGridInspector
 
     Get the grid inspector tool.
 
@@ -116,6 +116,7 @@ Method detail
 
 
 .. py:method:: compute_accesses(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.compute_accesses
 
     Compute accesses between the grid points and the assigned assets.
 
@@ -124,6 +125,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: clear_accesses(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.clear_accesses
 
     Remove access information currently maintained in association with each grid point in the coverage area.
 
@@ -132,6 +134,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: reload_accesses(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.reload_accesses
 
     Reload access data that was previously saved with a coverage definition object.
 
@@ -139,7 +142,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: export_accesses_as_text(self, filename:str) -> None
+.. py:method:: export_accesses_as_text(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.export_accesses_as_text
 
     Export all computed accesses to an ASCII text file.
 

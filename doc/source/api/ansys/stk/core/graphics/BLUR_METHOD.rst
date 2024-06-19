@@ -11,6 +11,21 @@ BLUR_METHOD
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~MEAN`
+              - Provide smoothing and noise reduction through mean filtering.
+
+            * - :py:attr:`~BASIC`
+              - Provide basic blurring.
+
+
 Import detail
 -------------
 

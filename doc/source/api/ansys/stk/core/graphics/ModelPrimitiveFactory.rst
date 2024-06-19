@@ -3,7 +3,7 @@ ModelPrimitiveFactory
 
 .. py:class:: ModelPrimitiveFactory
 
-   IModelPrimitiveFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IModelPrimitiveFactory`
 
    The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
 

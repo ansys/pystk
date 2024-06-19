@@ -3,7 +3,7 @@ StateCalcMeanEarthLon
 
 .. py:class:: StateCalcMeanEarthLon
 
-   IComponentInfo, ICloneable, IStateCalcMeanEarthLon, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanEarthLon`
 
    MeanEarthLon Calc objects.
 

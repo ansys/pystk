@@ -3,7 +3,7 @@ TakeoffLowTransition
 
 .. py:class:: TakeoffLowTransition
 
-   ITakeoffLowTransition, SupportsDeleteCallback
+   Bases: py:obj:`~ITakeoffLowTransition`
 
    Class defining the low transition options for a takeoff procedure.
 

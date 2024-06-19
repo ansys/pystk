@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollection.type
-    :type: "CRDN_EVENT_INTERVAL_COLLECTION_TYPE"
+    :type: CRDN_EVENT_INTERVAL_COLLECTION_TYPE
 
     Return the type of collection of interval lists.
 
@@ -64,15 +64,17 @@ Method detail
 
 
 
-.. py:method:: find_interval_collection(self) -> "ITimeToolIntervalsVectorResult"
+.. py:method:: find_interval_collection(self) -> ITimeToolIntervalsVectorResult
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollection.find_interval_collection
 
     Return computed collection of interval lists.
 
     :Returns:
 
-        :obj:`~"ITimeToolIntervalsVectorResult"`
+        :obj:`~ITimeToolIntervalsVectorResult`
 
-.. py:method:: occurred(self, epoch:typing.Any) -> "ITimeToolEventIntervalCollectionOccurredResult"
+.. py:method:: occurred(self, epoch: typing.Any) -> ITimeToolEventIntervalCollectionOccurredResult
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollection.occurred
 
     Determine if specified time falls within any of the computed interval lists in the collection.
 
@@ -82,5 +84,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEventIntervalCollectionOccurredResult"`
+        :obj:`~ITimeToolEventIntervalCollectionOccurredResult`
 

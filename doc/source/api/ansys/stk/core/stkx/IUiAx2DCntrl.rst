@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.application
-    :type: "IAgSTKXApplication"
+    :type: IAgSTKXApplication
 
     Reference to the STK X application object.
 
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: ole_drop_mode
     :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.ole_drop_mode
-    :type: "OLE_DROP_MODE"
+    :type: OLE_DROP_MODE
 
     How the control handles drop operations.
 
@@ -125,7 +125,7 @@ Property detail
 
 .. py:property:: mouse_mode
     :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.mouse_mode
-    :type: "MOUSE_MODE"
+    :type: MOUSE_MODE
 
     Whether this control responds to mouse events.
 
@@ -149,7 +149,7 @@ Property detail
 
 .. py:property:: show_progress_image
     :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.show_progress_image
-    :type: "SHOW_PROGRESS_IMAGE"
+    :type: SHOW_PROGRESS_IMAGE
 
     The animated progress image type.
 
@@ -173,13 +173,13 @@ Property detail
 
 .. py:property:: progress_image_x_origin
     :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_x_origin
-    :type: "PROGRESS_IMAGE_X_ORIGIN"
+    :type: PROGRESS_IMAGE_X_ORIGIN
 
     The X origin alignment for animated progress image.
 
 .. py:property:: progress_image_y_origin
     :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_y_origin
-    :type: "PROGRESS_IMAGE_Y_ORIGIN"
+    :type: PROGRESS_IMAGE_Y_ORIGIN
 
     The Y origin alignment for animated progress image.
 
@@ -202,7 +202,8 @@ Method detail
 
 
 
-.. py:method:: picture_put_reference(self, pPicture:IPictureDisp) -> None
+.. py:method:: picture_put_reference(self, pPicture: IPictureDisp) -> None
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.picture_put_reference
 
     Set a reference to the splash logo graphic to be displayed in the control.
 
@@ -218,6 +219,7 @@ Method detail
 
 
 .. py:method:: zoom_in(self) -> None
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.zoom_in
 
     Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom.
 
@@ -226,6 +228,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: zoom_out(self) -> None
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.zoom_out
 
     Zoom out to view a larger portion of a previously magnified map.
 
@@ -233,7 +236,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: pick_info(self, x:int, y:int) -> "IPickInfoData"
+.. py:method:: pick_info(self, x: int, y: int) -> IPickInfoData
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.pick_info
 
     Get detailed information about a mouse pick.
 
@@ -244,7 +248,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPickInfoData"`
+        :obj:`~IPickInfoData`
 
 
 
@@ -256,7 +260,8 @@ Method detail
 
 
 
-.. py:method:: copy_from_win_id(self, winID:int) -> None
+.. py:method:: copy_from_win_id(self, winID: int) -> None
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.copy_from_win_id
 
     Copy an existing Window's scene into this control.
 
@@ -268,7 +273,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "IRubberBandPickInfoData"
+.. py:method:: rubber_band_pick_info(self, left: int, top: int, right: int, bottom: int) -> IRubberBandPickInfoData
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.rubber_band_pick_info
 
     Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom).
 
@@ -281,11 +287,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRubberBandPickInfoData"`
+        :obj:`~IRubberBandPickInfoData`
 
 
 
-.. py:method:: get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS_2D_DRAW_COORDS") -> "IWinProjectionPosition"
+.. py:method:: get_window_projected_position(self, lat: float, lon: float, alt: float, drawCoords: GRAPHICS_2D_DRAW_COORDS) -> IWinProjectionPosition
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.get_window_projected_position
 
     Get the window projected position for given values.
 
@@ -294,14 +301,15 @@ Method detail
     **lat** : :obj:`~float`
     **lon** : :obj:`~float`
     **alt** : :obj:`~float`
-    **drawCoords** : :obj:`~"GRAPHICS_2D_DRAW_COORDS"`
+    **drawCoords** : :obj:`~GRAPHICS_2D_DRAW_COORDS`
 
     :Returns:
 
-        :obj:`~"IWinProjectionPosition"`
+        :obj:`~IWinProjectionPosition`
 
 
-.. py:method:: set_mouse_cursor_from_file(self, cursorFileName:str) -> None
+.. py:method:: set_mouse_cursor_from_file(self, cursorFileName: str) -> None
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.set_mouse_cursor_from_file
 
     Set mouse cursor to the selected cursor file.
 
@@ -314,6 +322,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: restore_mouse_cursor(self) -> None
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.restore_mouse_cursor
 
     Restores mouse cursor back to normal.
 
@@ -321,7 +330,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_mouse_cursor_from_handle(self, cursorHandle:int) -> None
+.. py:method:: set_mouse_cursor_from_handle(self, cursorHandle: int) -> None
+    :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.set_mouse_cursor_from_handle
 
     Set mouse cursor to the passed cursor handle.
 

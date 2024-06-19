@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: spin_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.spin_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a spin vector.
 
 .. py:property:: rotation_angle
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.rotation_angle
-    :type: "IAgCrdnAngleRefTo"
+    :type: IAgCrdnAngleRefTo
 
     Specify a rotational angle.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.reference_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a reference axes.
 

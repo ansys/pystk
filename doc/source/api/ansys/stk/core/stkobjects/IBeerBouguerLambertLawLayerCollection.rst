@@ -63,7 +63,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IBeerBouguerLambertLawLayer"
+.. py:method:: item(self, index: int) -> IBeerBouguerLambertLawLayer
+    :canonical: ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -73,10 +74,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBeerBouguerLambertLawLayer"`
+        :obj:`~IBeerBouguerLambertLawLayer`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection.remove_at
 
     Remove the layer with the specified index.
 

@@ -3,7 +3,7 @@ VehicleLaunchControlFixedDeltaV
 
 .. py:class:: VehicleLaunchControlFixedDeltaV
 
-   IVehicleLaunchControl, IVehicleLaunchControlFixedDeltaV, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLaunchControl`, py:obj:`~IVehicleLaunchControlFixedDeltaV`
 
    Class defining the option to set a Missile's flight parameters by specifying a fixed delta V.
 

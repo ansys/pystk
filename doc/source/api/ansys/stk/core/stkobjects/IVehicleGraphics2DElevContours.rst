@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: fill_style
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.fill_style
-    :type: "FILL_STYLE"
+    :type: FILL_STYLE
 
     Gets or sets the type of fill to display.
 
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: elevations
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.elevations
-    :type: "IAgVeGfxElevationsCollection"
+    :type: IAgVeGfxElevationsCollection
 
     Collection of Levels.
 

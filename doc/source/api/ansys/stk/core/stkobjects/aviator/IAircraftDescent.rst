@@ -42,15 +42,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_built_in_model(self) -> "IAircraftBasicDescentModel"
+.. py:method:: get_built_in_model(self) -> IAircraftBasicDescentModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftDescent.get_built_in_model
 
     Get the built-in model.
 
     :Returns:
 
-        :obj:`~"IAircraftBasicDescentModel"`
+        :obj:`~IAircraftBasicDescentModel`
 
-.. py:method:: get_basic_descent_by_name(self, name:str) -> "IAircraftBasicDescentModel"
+.. py:method:: get_basic_descent_by_name(self, name: str) -> IAircraftBasicDescentModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftDescent.get_basic_descent_by_name
 
     Get the basic descent model with the given name.
 
@@ -60,9 +62,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftBasicDescentModel"`
+        :obj:`~IAircraftBasicDescentModel`
 
-.. py:method:: get_advanced_descent_by_name(self, name:str) -> "IAircraftAdvancedDescentModel"
+.. py:method:: get_advanced_descent_by_name(self, name: str) -> IAircraftAdvancedDescentModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftDescent.get_advanced_descent_by_name
 
     Get the advanced descent model with the given name.
 
@@ -72,13 +75,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftAdvancedDescentModel"`
+        :obj:`~IAircraftAdvancedDescentModel`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftDescent.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

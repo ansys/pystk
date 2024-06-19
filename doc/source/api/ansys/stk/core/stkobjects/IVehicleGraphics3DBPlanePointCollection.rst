@@ -81,7 +81,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics3DBPlanePoint"
+.. py:method:: item(self, index: int) -> IVehicleGraphics3DBPlanePoint
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -91,10 +92,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics3DBPlanePoint"`
+        :obj:`~IVehicleGraphics3DBPlanePoint`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -107,6 +109,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -114,13 +117,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self) -> "IVehicleGraphics3DBPlanePoint"
+.. py:method:: add(self) -> IVehicleGraphics3DBPlanePoint
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection.add
 
     Add a new element to the collection.
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics3DBPlanePoint"`
+        :obj:`~IVehicleGraphics3DBPlanePoint`
 
 
 

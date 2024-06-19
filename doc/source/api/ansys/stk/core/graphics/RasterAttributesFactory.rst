@@ -3,7 +3,7 @@ RasterAttributesFactory
 
 .. py:class:: RasterAttributesFactory
 
-   IRasterAttributesFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IRasterAttributesFactory`
 
    The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format...
 

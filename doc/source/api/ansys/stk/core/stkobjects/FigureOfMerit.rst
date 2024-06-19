@@ -3,7 +3,7 @@ FigureOfMerit
 
 .. py:class:: FigureOfMerit
 
-   IFigureOfMerit, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMerit`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Figure of Merit properties.
 

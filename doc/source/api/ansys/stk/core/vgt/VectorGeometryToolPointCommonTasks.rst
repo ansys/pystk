@@ -3,7 +3,7 @@ VectorGeometryToolPointCommonTasks
 
 .. py:class:: VectorGeometryToolPointCommonTasks
 
-   IVectorGeometryToolPointCommonTasks, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointCommonTasks`
 
    Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 

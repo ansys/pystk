@@ -3,7 +3,7 @@ CoverageInterval
 
 .. py:class:: CoverageInterval
 
-   ICoverageInterval, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageInterval`
 
    Coverage interval: the time period over which coverage is computed.
 

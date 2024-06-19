@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: target_coord_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_coord_type
-    :type: "LAMBERT_TARGET_COORD_TYPE"
+    :type: LAMBERT_TARGET_COORD_TYPE
 
     Get the target coordinate type.
 
@@ -273,13 +273,14 @@ Method detail
 
 
 
-.. py:method:: set_target_coord_type(self, elementType:"LAMBERT_TARGET_COORD_TYPE") -> None
+.. py:method:: set_target_coord_type(self, elementType: LAMBERT_TARGET_COORD_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.set_target_coord_type
 
     Select a target coordinate type.
 
     :Parameters:
 
-    **elementType** : :obj:`~"LAMBERT_TARGET_COORD_TYPE"`
+    **elementType** : :obj:`~LAMBERT_TARGET_COORD_TYPE`
 
     :Returns:
 

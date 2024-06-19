@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridBearingAlt
 
 .. py:class:: SpatialAnalysisToolVolumeGridBearingAlt
 
-   ISpatialAnalysisToolVolumeGridBearingAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridBearingAlt`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume grid bearing alt (Surface Bearing) interface.
 

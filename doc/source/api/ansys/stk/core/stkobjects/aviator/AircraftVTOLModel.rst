@@ -3,7 +3,7 @@ AircraftVTOLModel
 
 .. py:class:: AircraftVTOLModel
 
-   IAircraftVTOLModel, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftVTOLModel`
 
    Class defining the VTOL performance model of an aircraft.
 

@@ -41,7 +41,7 @@ Property detail
 
 .. py:property:: category
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.category
-    :type: "DATA_PROVIDER_RESULT_CATEGORIES"
+    :type: DATA_PROVIDER_RESULT_CATEGORIES
 
     Returns a value representing the category of the result.
 
@@ -53,25 +53,25 @@ Property detail
 
 .. py:property:: sections
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.sections
-    :type: "IAgDrSubSectionCollection"
+    :type: IAgDrSubSectionCollection
 
     Returns a collection of sections.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.intervals
-    :type: "IAgDrIntervalCollection"
+    :type: IAgDrIntervalCollection
 
     Returns a collection of intervals.
 
 .. py:property:: data_sets
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.data_sets
-    :type: "IAgDrDataSetCollection"
+    :type: IAgDrDataSetCollection
 
     Returns a collection of Datasets.
 
 .. py:property:: message
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.message
-    :type: "IAgDrTextMessage"
+    :type: IAgDrTextMessage
 
     Returns the message returned with the result.
 

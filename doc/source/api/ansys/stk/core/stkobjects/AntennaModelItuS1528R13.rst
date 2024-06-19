@@ -3,7 +3,7 @@ AntennaModelItuS1528R13
 
 .. py:class:: AntennaModelItuS1528R13
 
-   IAntennaModelItuS1528R13, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuS1528R13`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R S1528 1.3 antenna model.
 

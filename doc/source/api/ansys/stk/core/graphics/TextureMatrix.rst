@@ -3,7 +3,7 @@ TextureMatrix
 
 .. py:class:: TextureMatrix
 
-   ITextureMatrix, SupportsDeleteCallback
+   Bases: py:obj:`~ITextureMatrix`
 
    A 4 by 4 matrix applied to a texture coordinate.
 

@@ -3,7 +3,7 @@ VehicleProfileCoordinatedTurn
 
 .. py:class:: VehicleProfileCoordinatedTurn
 
-   IVehicleProfileCoordinatedTurn, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileCoordinatedTurn`, py:obj:`~IVehicleAttitudeProfile`
 
    Coordinated turn attitude profile for aircraft.
 

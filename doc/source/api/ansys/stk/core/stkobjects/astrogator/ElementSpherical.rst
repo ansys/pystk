@@ -3,7 +3,7 @@ ElementSpherical
 
 .. py:class:: ElementSpherical
 
-   IElementSpherical, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementSpherical`, py:obj:`~IElement`
 
    Spherical elements.
 

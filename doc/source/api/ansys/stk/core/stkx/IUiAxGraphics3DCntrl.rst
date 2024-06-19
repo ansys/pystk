@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.application
-    :type: "IAgSTKXApplication"
+    :type: IAgSTKXApplication
 
     Reference to the STK X application object.
 
@@ -117,7 +117,7 @@ Property detail
 
 .. py:property:: ole_drop_mode
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.ole_drop_mode
-    :type: "OLE_DROP_MODE"
+    :type: OLE_DROP_MODE
 
     How the control handles drop operations.
 
@@ -129,13 +129,13 @@ Property detail
 
 .. py:property:: mouse_mode
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.mouse_mode
-    :type: "MOUSE_MODE"
+    :type: MOUSE_MODE
 
     Whether this control responds to mouse events.
 
 .. py:property:: draw_elements
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.draw_elements
-    :type: "IAgDrawElemCollection"
+    :type: IAgDrawElemCollection
 
     Elements to draw on the control.
 
@@ -171,7 +171,7 @@ Property detail
 
 .. py:property:: show_progress_image
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.show_progress_image
-    :type: "SHOW_PROGRESS_IMAGE"
+    :type: SHOW_PROGRESS_IMAGE
 
     The animated progress image type.
 
@@ -195,13 +195,13 @@ Property detail
 
 .. py:property:: progress_image_x_origin
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.progress_image_x_origin
-    :type: "PROGRESS_IMAGE_X_ORIGIN"
+    :type: PROGRESS_IMAGE_X_ORIGIN
 
     The X origin alignment for animated progress image.
 
 .. py:property:: progress_image_y_origin
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.progress_image_y_origin
-    :type: "PROGRESS_IMAGE_Y_ORIGIN"
+    :type: PROGRESS_IMAGE_Y_ORIGIN
 
     The Y origin alignment for animated progress image.
 
@@ -218,7 +218,8 @@ Method detail
 
 
 
-.. py:method:: picture_put_reference(self, pPicture:IPictureDisp) -> None
+.. py:method:: picture_put_reference(self, pPicture: IPictureDisp) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.picture_put_reference
 
     Set a reference to the splash logo graphic to be displayed in the control.
 
@@ -231,7 +232,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: pick_info(self, x:int, y:int) -> "IPickInfoData"
+.. py:method:: pick_info(self, x: int, y: int) -> IPickInfoData
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.pick_info
 
     Get detailed information about a mouse pick.
 
@@ -242,12 +244,13 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPickInfoData"`
+        :obj:`~IPickInfoData`
 
 
 
 
 .. py:method:: zoom_in(self) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.zoom_in
 
     Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom.
 
@@ -261,7 +264,8 @@ Method detail
 
 
 
-.. py:method:: rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "IRubberBandPickInfoData"
+.. py:method:: rubber_band_pick_info(self, left: int, top: int, right: int, bottom: int) -> IRubberBandPickInfoData
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.rubber_band_pick_info
 
     Get detailed information about a rubber-band mouse pick. The values must be within the VO window (0 to width-1 for left and right, 0 to height-1 for top and bottom).
 
@@ -274,7 +278,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRubberBandPickInfoData"`
+        :obj:`~IRubberBandPickInfoData`
 
 
 
@@ -284,7 +288,8 @@ Method detail
 
 
 
-.. py:method:: copy_from_win_id(self, winID:int) -> None
+.. py:method:: copy_from_win_id(self, winID: int) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.copy_from_win_id
 
     Copy an existing Window's scene into this control.
 
@@ -296,7 +301,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: start_object_editing(self, objEditPath:str) -> None
+.. py:method:: start_object_editing(self, objEditPath: str) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.start_object_editing
 
     Enters into 3D object editing mode.
 
@@ -309,6 +315,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: apply_object_editing(self) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.apply_object_editing
 
     Commit changes when in 3D object editing mode.
 
@@ -316,7 +323,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: stop_object_editing(self, canceled:bool) -> None
+.. py:method:: stop_object_editing(self, canceled: bool) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.stop_object_editing
 
     End 3D object editing mode.
 
@@ -330,7 +338,8 @@ Method detail
 
 
 
-.. py:method:: set_mouse_cursor_from_file(self, cursorFileName:str) -> None
+.. py:method:: set_mouse_cursor_from_file(self, cursorFileName: str) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.set_mouse_cursor_from_file
 
     Set mouse cursor to the selected cursor file.
 
@@ -343,6 +352,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: restore_mouse_cursor(self) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.restore_mouse_cursor
 
     Restores mouse cursor back to normal.
 
@@ -350,7 +360,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_mouse_cursor_from_handle(self, cursorHandle:int) -> None
+.. py:method:: set_mouse_cursor_from_handle(self, cursorHandle: int) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.set_mouse_cursor_from_handle
 
     Set mouse cursor to the passed cursor handle.
 

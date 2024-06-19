@@ -3,7 +3,7 @@ ClassicalLocationArgumentOfLatitude
 
 .. py:class:: ClassicalLocationArgumentOfLatitude
 
-   IClassicalLocationArgumentOfLatitude, IClassicalLocation, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalLocationArgumentOfLatitude`, py:obj:`~IClassicalLocation`
 
    Argument of Latitude, used in specifying the spacecraft's location within its orbit at epoch.
 

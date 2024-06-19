@@ -3,7 +3,7 @@ RadarActivityTimeComponentListCollection
 
 .. py:class:: RadarActivityTimeComponentListCollection
 
-   IRadarActivityTimeComponentListCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarActivityTimeComponentListCollection`
 
    Class defining an radar antenna beam collection.
 

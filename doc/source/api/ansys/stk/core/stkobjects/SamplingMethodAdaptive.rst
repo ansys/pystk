@@ -3,7 +3,7 @@ SamplingMethodAdaptive
 
 .. py:class:: SamplingMethodAdaptive
 
-   ISamplingMethodAdaptive, ISamplingMethodStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~ISamplingMethodAdaptive`, py:obj:`~ISamplingMethodStrategy`
 
    Define an adaptive sampling method.
 

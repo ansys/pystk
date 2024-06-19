@@ -60,19 +60,19 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirway.altitude_options
-    :type: "IAgAvtrAltitudeMSLOptions"
+    :type: IAgAvtrAltitudeMSLOptions
 
     Get the altitude options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirway.enroute_options
-    :type: "IAgAvtrEnrouteOptions"
+    :type: IAgAvtrEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirway.enroute_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
@@ -110,13 +110,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirway.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
 
@@ -126,6 +127,7 @@ Method detail
 
 
 .. py:method:: get_airway_names(self) -> list
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirway.get_airway_names
 
     Get the a list of names of the available airways.
 
@@ -136,6 +138,7 @@ Method detail
 
 
 .. py:method:: get_sequences(self) -> list
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirway.get_sequences
 
     Get a list of sequence options.
 
@@ -148,6 +151,7 @@ Method detail
 
 
 .. py:method:: get_waypoints(self) -> list
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirway.get_waypoints
 
     Get a list of available waypoints for the airway.
 
@@ -156,6 +160,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: copy_procedures(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirway.copy_procedures
 
     Copy the airway route as a set of procedures to the clipboard.
 

@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DRangeColorOptions
 
 .. py:class:: FigureOfMeritGraphics2DRangeColorOptions
 
-   IFigureOfMeritGraphics2DRangeColorOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DRangeColorOptions`
 
    Range color options for contour legend.
 

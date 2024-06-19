@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IColorToLuminanceFilter"
+.. py:method:: initialize(self) -> IColorToLuminanceFilter
+    :canonical: ansys.stk.core.graphics.IColorToLuminanceFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IColorToLuminanceFilter"`
+        :obj:`~IColorToLuminanceFilter`
 

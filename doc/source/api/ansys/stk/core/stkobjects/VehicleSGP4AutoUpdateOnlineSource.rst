@@ -3,7 +3,7 @@ VehicleSGP4AutoUpdateOnlineSource
 
 .. py:class:: VehicleSGP4AutoUpdateOnlineSource
 
-   IVehicleSGP4AutoUpdateOnlineSource, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4AutoUpdateOnlineSource`
 
    Configure the SGP4 automatic updates using online source (AGI server).
 

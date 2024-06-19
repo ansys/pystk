@@ -3,7 +3,7 @@ TimeToolLastIntervalsFilter
 
 .. py:class:: TimeToolLastIntervalsFilter
 
-   ITimeToolLastIntervalsFilter, ITimeToolPruneFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolLastIntervalsFilter`, py:obj:`~ITimeToolPruneFilter`
 
    The filter selects a portion of last intervals.
 

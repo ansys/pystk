@@ -101,17 +101,19 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserRunway.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 
 
 
 .. py:method:: get_terrain_altitude(self) -> float
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserRunway.get_terrain_altitude
 
     Set the runway altitude to the terrain altitude.
 
@@ -132,6 +134,7 @@ Method detail
 
 
 .. py:method:: copy_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserRunway.copy_site
 
     Copy the site to the clipboard.
 
@@ -140,6 +143,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserRunway.paste_site
 
     Paste the site to the clipboard.
 

@@ -3,7 +3,7 @@ VehicleGraphics2DWaypointMarkersCollection
 
 .. py:class:: VehicleGraphics2DWaypointMarkersCollection
 
-   IVehicleGraphics2DWaypointMarkersCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DWaypointMarkersCollection`
 
    A list of 2D definitions for the vehicle way points.
 

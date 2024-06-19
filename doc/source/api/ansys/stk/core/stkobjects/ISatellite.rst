@@ -73,19 +73,19 @@ Property detail
 
 .. py:property:: propagator_type
     :canonical: ansys.stk.core.stkobjects.ISatellite.propagator_type
-    :type: "VEHICLE_PROPAGATOR_TYPE"
+    :type: VEHICLE_PROPAGATOR_TYPE
 
     Get the type of propagator used to define the satellite's orbit.
 
 .. py:property:: propagator
     :canonical: ansys.stk.core.stkobjects.ISatellite.propagator
-    :type: "IAgVePropagator"
+    :type: IAgVePropagator
 
     Get information for the propagator.
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.ISatellite.attitude_type
-    :type: "VEHICLE_ATTITUDE"
+    :type: VEHICLE_ATTITUDE
 
     Get the type of the satellite's attitude.
 
@@ -97,49 +97,49 @@ Property detail
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.ISatellite.attitude
-    :type: "IAgVeAttitude"
+    :type: IAgVeAttitude
 
     Get the Attitude properties of the satellite.
 
 .. py:property:: mass_properties
     :canonical: ansys.stk.core.stkobjects.ISatellite.mass_properties
-    :type: "IAgVeMassProperties"
+    :type: IAgVeMassProperties
 
     Get the Mass properties of the satellite.
 
 .. py:property:: pass_break
     :canonical: ansys.stk.core.stkobjects.ISatellite.pass_break
-    :type: "IAgVePassBreak"
+    :type: IAgVePassBreak
 
     Get the Pass Break properties of the satellite.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.ISatellite.ground_ellipses
-    :type: "IAgVeGroundEllipsesCollection"
+    :type: IAgVeGroundEllipsesCollection
 
     Get the Ground Ellipses properties of the satellite.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ISatellite.graphics
-    :type: "IAgSaGraphics"
+    :type: IAgSaGraphics
 
     Get the 2D Graphics properties of the satellite.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ISatellite.graphics_3d
-    :type: "IAgSaVO"
+    :type: IAgSaVO
 
     Get the 3D Graphics properties of the satellite.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.ISatellite.access_constraints
-    :type: "IAgAccessConstraintCollection"
+    :type: IAgAccessConstraintCollection
 
     Get the constraints imposed on the satellite.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.ISatellite.eclipse_bodies
-    :type: "IAgVeEclipseBodies"
+    :type: IAgVeEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -151,31 +151,31 @@ Property detail
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.ISatellite.export_tools
-    :type: "IAgSaExportTools"
+    :type: IAgSaExportTools
 
     Returns the IAgSaExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.ISatellite.space_environment
-    :type: "IAgVeSpEnvSpaceEnvironment"
+    :type: IAgVeSpEnvSpaceEnvironment
 
     Get the SpaceEnvironment properties of the satellite.
 
 .. py:property:: reference_vehicle
     :canonical: ansys.stk.core.stkobjects.ISatellite.reference_vehicle
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the reference vehicle of the satellite.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.ISatellite.radar_clutter_map
-    :type: "IAgRadarClutterMapInheritable"
+    :type: IAgRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ISatellite.radar_cross_section
-    :type: "IAgRadarCrossSectionInheritable"
+    :type: IAgRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
@@ -205,7 +205,7 @@ Property detail
 
 .. py:property:: get_eoir
     :canonical: ansys.stk.core.stkobjects.ISatellite.get_eoir
-    :type: "IAgEOIR"
+    :type: IAgEOIR
 
     Get the EOIR properties of the satellite.
 
@@ -214,13 +214,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_propagator_type(self, ePropagator:"VEHICLE_PROPAGATOR_TYPE") -> None
+.. py:method:: set_propagator_type(self, ePropagator: VEHICLE_PROPAGATOR_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.ISatellite.set_propagator_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **ePropagator** : :obj:`~"VEHICLE_PROPAGATOR_TYPE"`
+    **ePropagator** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
 
     :Returns:
 
@@ -228,25 +229,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude:"VEHICLE_ATTITUDE") -> None
+.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+    :canonical: ansys.stk.core.stkobjects.ISatellite.set_attitude_type
 
     Set the attitude type.
 
     :Parameters:
 
-    **attitude** : :obj:`~"VEHICLE_ATTITUDE"`
+    **attitude** : :obj:`~VEHICLE_ATTITUDE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude:"VEHICLE_ATTITUDE") -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+    :canonical: ansys.stk.core.stkobjects.ISatellite.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~"VEHICLE_ATTITUDE"`
+    **attitude** : :obj:`~VEHICLE_ATTITUDE`
 
     :Returns:
 
@@ -261,13 +264,14 @@ Method detail
 
 
 
-.. py:method:: is_propagator_type_supported(self, propagator:"VEHICLE_PROPAGATOR_TYPE") -> bool
+.. py:method:: is_propagator_type_supported(self, propagator: VEHICLE_PROPAGATOR_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.ISatellite.is_propagator_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **propagator** : :obj:`~"VEHICLE_PROPAGATOR_TYPE"`
+    **propagator** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
 
     :Returns:
 

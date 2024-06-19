@@ -3,7 +3,7 @@ CommSystem
 
 .. py:class:: CommSystem
 
-   ICommSystem, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystem`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Class defining a CommSystem object.
 

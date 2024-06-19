@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_string_uri(self, uri:str) -> "IRaster"
+.. py:method:: initialize_with_string_uri(self, uri: str) -> IRaster
+    :canonical: ansys.stk.core.graphics.IRasterFactory.initialize_with_string_uri
 
     Initialize a raster from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported formats.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRaster"`
+        :obj:`~IRaster`
 
-.. py:method:: initialize_with_string_uri_xy_width_and_height(self, uri:str, x:int, y:int, width:int, height:int) -> "IRaster"
+.. py:method:: initialize_with_string_uri_xy_width_and_height(self, uri: str, x: int, y: int, width: int, height: int) -> IRaster
+    :canonical: ansys.stk.core.graphics.IRasterFactory.initialize_with_string_uri_xy_width_and_height
 
     Initialize a raster from a Uri. Only the specified subsection of the raster is read. See raster for a list of supported formats.
 
@@ -66,17 +68,18 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRaster"`
+        :obj:`~IRaster`
 
-.. py:method:: initialize_with_raster(self, raster:"IRaster") -> "IRaster"
+.. py:method:: initialize_with_raster(self, raster: IRaster) -> IRaster
+    :canonical: ansys.stk.core.graphics.IRasterFactory.initialize_with_raster
 
     Initialize a raster from another raster.
 
     :Parameters:
 
-    **raster** : :obj:`~"IRaster"`
+    **raster** : :obj:`~IRaster`
 
     :Returns:
 
-        :obj:`~"IRaster"`
+        :obj:`~IRaster`
 

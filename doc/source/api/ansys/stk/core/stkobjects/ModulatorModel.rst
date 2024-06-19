@@ -3,7 +3,7 @@ ModulatorModel
 
 .. py:class:: ModulatorModel
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a modulator model.
 

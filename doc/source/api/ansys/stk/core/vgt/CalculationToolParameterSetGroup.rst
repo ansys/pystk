@@ -3,7 +3,7 @@ CalculationToolParameterSetGroup
 
 .. py:class:: CalculationToolParameterSetGroup
 
-   ICalculationToolParameterSetGroup, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolParameterSetGroup`
 
    Access or create VGT parameter sets associated with an object or a central body.
 

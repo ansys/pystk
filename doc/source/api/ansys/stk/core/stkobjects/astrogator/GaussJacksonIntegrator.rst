@@ -3,7 +3,7 @@ GaussJacksonIntegrator
 
 .. py:class:: GaussJacksonIntegrator
 
-   IGaussJacksonIntegrator, INumericalIntegrator, SupportsDeleteCallback
+   Bases: py:obj:`~IGaussJacksonIntegrator`, py:obj:`~INumericalIntegrator`
 
    Gauss-Jackson Numerical Integrator.
 

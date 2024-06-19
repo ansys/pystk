@@ -3,7 +3,7 @@ VehicleGraphics3DDropLinePathItem
 
 .. py:class:: VehicleGraphics3DDropLinePathItem
 
-   IVehicleGraphics3DDropLinePathItem, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DDropLinePathItem`
 
    Drop lines at intervals along the vehicle's path.
 

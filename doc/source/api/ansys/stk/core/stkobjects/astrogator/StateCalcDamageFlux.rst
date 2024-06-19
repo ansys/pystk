@@ -3,7 +3,7 @@ StateCalcDamageFlux
 
 .. py:class:: StateCalcDamageFlux
 
-   IStateCalcDamageFlux, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcDamageFlux`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass StateCalcDamageFlux.
 

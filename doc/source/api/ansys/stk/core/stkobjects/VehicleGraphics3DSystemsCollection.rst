@@ -3,7 +3,7 @@ VehicleGraphics3DSystemsCollection
 
 .. py:class:: VehicleGraphics3DSystemsCollection
 
-   IVehicleGraphics3DSystemsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DSystemsCollection`
 
    List of Systems.
 

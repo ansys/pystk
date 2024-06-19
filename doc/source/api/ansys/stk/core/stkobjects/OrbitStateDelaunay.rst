@@ -3,7 +3,7 @@ OrbitStateDelaunay
 
 .. py:class:: OrbitStateDelaunay
 
-   IOrbitStateDelaunay, IOrbitState, SupportsDeleteCallback
+   Bases: py:obj:`~IOrbitStateDelaunay`, py:obj:`~IOrbitState`
 
    Delaunay coordinate type, using a set of canonical action-angle variables, which are commonly used in general perturbation theories.
 

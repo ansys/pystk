@@ -3,7 +3,7 @@ NavigationOptions
 
 .. py:class:: NavigationOptions
 
-   INavigationOptions, SupportsDeleteCallback
+   Bases: py:obj:`~INavigationOptions`
 
    Class defining the navigation options in a procedure.
 

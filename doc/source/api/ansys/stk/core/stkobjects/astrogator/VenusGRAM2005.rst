@@ -3,7 +3,7 @@ VenusGRAM2005
 
 .. py:class:: VenusGRAM2005
 
-   IVenusGRAM2005, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IVenusGRAM2005`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Venus-GRAM 2005 atmospheric propagator function.
 

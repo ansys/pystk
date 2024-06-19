@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: display_mode
     :canonical: ansys.stk.core.graphics.IStereoscopic.display_mode
-    :type: "STEREOSCOPIC_DISPLAY_MODE"
+    :type: STEREOSCOPIC_DISPLAY_MODE
 
     Gets or sets the stereoscopic display mode for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled.
 
 .. py:property:: projection_mode
     :canonical: ansys.stk.core.graphics.IStereoscopic.projection_mode
-    :type: "STEREO_PROJECTION_MODE"
+    :type: STEREO_PROJECTION_MODE
 
     Gets or sets whether the type of stereo projection that will be used.
 

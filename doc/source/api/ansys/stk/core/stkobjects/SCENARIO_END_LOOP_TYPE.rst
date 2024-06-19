@@ -11,6 +11,21 @@ SCENARIO_END_LOOP_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~END_TIME`
+              - Stop animation at the specified time.
+
+            * - :py:attr:`~LOOP_AT_TIME`
+              - Loop and continue the animation at the specified time.
+
+
 Import detail
 -------------
 

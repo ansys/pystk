@@ -3,7 +3,7 @@ WindModelADDS
 
 .. py:class:: WindModelADDS
 
-   IWindModelADDS, SupportsDeleteCallback
+   Bases: py:obj:`~IWindModelADDS`
 
    Class defining a wind model using the NOAA ADDS service for a mission.
 

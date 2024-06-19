@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: launch
     :canonical: ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.launch
-    :type: "IAgLLAPosition"
+    :type: IAgLLAPosition
 
     Get the geocentric or geodetic launch position coordinates.
 
@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: burnout
     :canonical: ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.burnout
-    :type: "IAgLLAPosition"
+    :type: IAgLLAPosition
 
     Get the geocentric or geodetic burnout position coordinates.
 
 .. py:property:: trajectory_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.trajectory_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Get the smart epoch component to access the trajectory epoch.
 

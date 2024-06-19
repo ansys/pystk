@@ -3,7 +3,7 @@ MissionControlSequenceReturn
 
 .. py:class:: MissionControlSequenceReturn
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceReturn, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceReturn`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Return segment.
 

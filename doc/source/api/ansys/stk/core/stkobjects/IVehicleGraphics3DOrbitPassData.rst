@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData.ground_track
-    :type: "IAgVeVOLeadTrailData"
+    :type: IAgVeVOLeadTrailData
 
     Get the 3D ground track data.
 
 .. py:property:: orbit
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData.orbit
-    :type: "IAgVeVOLeadTrailData"
+    :type: IAgVeVOLeadTrailData
 
     Get the 3D orbit track data.
 

@@ -50,37 +50,37 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.altitude_options
-    :type: "IAgAvtrArcAltitudeAndDelayOptions"
+    :type: IAgAvtrArcAltitudeAndDelayOptions
 
     Get the altitude options.
 
 .. py:property:: arc_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.arc_options
-    :type: "IAgAvtrArcOptions"
+    :type: IAgAvtrArcOptions
 
     Get the arc options.
 
 .. py:property:: arc_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.arc_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the arc cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.enroute_options
-    :type: "IAgAvtrEnrouteAndDelayOptions"
+    :type: IAgAvtrEnrouteAndDelayOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.enroute_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.enroute_turn_direction_options
-    :type: "IAgAvtrEnrouteTurnDirectionOptions"
+    :type: IAgAvtrEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
@@ -94,11 +94,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

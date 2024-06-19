@@ -3,7 +3,7 @@ ArcOptions
 
 .. py:class:: ArcOptions
 
-   IArcOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IArcOptions`
 
    Class defining the arc options for a procedure.
 

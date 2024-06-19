@@ -3,7 +3,7 @@ LevelTurns
 
 .. py:class:: LevelTurns
 
-   ILevelTurns, SupportsDeleteCallback
+   Bases: py:obj:`~ILevelTurns`
 
    Class defining the level turns options for an acceleration performance model of an Aviator aircraft.
 

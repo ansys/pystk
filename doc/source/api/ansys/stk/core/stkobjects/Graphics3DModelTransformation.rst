@@ -3,7 +3,7 @@ Graphics3DModelTransformation
 
 .. py:class:: Graphics3DModelTransformation
 
-   IGraphics3DModelTransformation, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DModelTransformation`
 
    Class to modify transformation values.
 

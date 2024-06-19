@@ -173,7 +173,7 @@ Property detail
 
 .. py:property:: text_outline_style
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics.text_outline_style
-    :type: "TEXT_OUTLINE_STYLE"
+    :type: TEXT_OUTLINE_STYLE
 
     Default text outline style.
 
@@ -237,7 +237,8 @@ Method detail
 
 
 
-.. py:method:: show_object(self, truncPath:str, windowID:str) -> None
+.. py:method:: show_object(self, truncPath: str, windowID: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics.show_object
 
     Show the object identified by its path in a specified 2D window. Users can specify either a window identifier or a window title or 'all' to show the object in all 2d windows.
 
@@ -250,7 +251,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: show_objects(self, truncObjectPaths:list, windowIdOrTitle:str) -> None
+.. py:method:: show_objects(self, truncObjectPaths: list, windowIdOrTitle: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics.show_objects
 
     Show multiple objects in a specified 2D window. Users can specify either a window identifier or a window title or 'all' to show the objects in all 2d windows.
 
@@ -263,7 +265,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: hide_object(self, truncPath:str, windowID:str) -> None
+.. py:method:: hide_object(self, truncPath: str, windowID: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics.hide_object
 
     Hides the object identified by its path in a specified 2D window. Users can specify either a window identifier or a window title or 'all' to hide the object in all 2d windows.
 
@@ -276,7 +279,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: hide_objects(self, truncObjectPaths:list, windowIdOrTitle:str) -> None
+.. py:method:: hide_objects(self, truncObjectPaths: list, windowIdOrTitle: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics.hide_objects
 
     Hides multiple objects in a specified 2D window. Users can specify either a window identifier or a window title or 'all' to hide objects in all 2d windows.
 

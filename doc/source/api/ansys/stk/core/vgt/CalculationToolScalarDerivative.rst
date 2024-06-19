@@ -3,7 +3,7 @@ CalculationToolScalarDerivative
 
 .. py:class:: CalculationToolScalarDerivative
 
-   ICalculationToolScalarDerivative, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarDerivative`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Derivative of an input scalar calculation.
 

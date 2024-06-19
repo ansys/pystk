@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics2DInterval"
+.. py:method:: item(self, index: int) -> IVehicleGraphics2DInterval
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DInterval"`
+        :obj:`~IVehicleGraphics2DInterval`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, start:typing.Any, stop:typing.Any) -> "IVehicleGraphics2DInterval"
+.. py:method:: add(self, start: typing.Any, stop: typing.Any) -> IVehicleGraphics2DInterval
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.add
 
     Add a new element to the collection. Start/Stop params use DateFormat Dimension.
 
@@ -111,5 +115,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DInterval"`
+        :obj:`~IVehicleGraphics2DInterval`
 

@@ -3,7 +3,7 @@ Graphics3DOffsetRotate
 
 .. py:class:: Graphics3DOffsetRotate
 
-   IGraphics3DOffsetRotate, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DOffsetRotate`
 
    Class defining rotation in the object body frame's X, Y and Z directions.
 

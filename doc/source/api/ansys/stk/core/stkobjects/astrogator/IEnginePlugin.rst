@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.IEnginePlugin.plugin_config
-    :type: "IAgVAPluginProperties"
+    :type: IAgVAPluginProperties
 
     Get the properties of the plugin.
 

@@ -3,7 +3,7 @@ ProcedureAirway
 
 .. py:class:: ProcedureAirway
 
-   IProcedureAirway, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureAirway`, py:obj:`~IProcedure`
 
    Class defining an Airway procedure.
 

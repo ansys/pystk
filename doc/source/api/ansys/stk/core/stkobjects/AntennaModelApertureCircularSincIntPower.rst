@@ -3,7 +3,7 @@ AntennaModelApertureCircularSincIntPower
 
 .. py:class:: AntennaModelApertureCircularSincIntPower
 
-   IAntennaModelApertureCircularSincIntPower, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelApertureCircularSincIntPower`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a circular sinc integer power aperture antenna model.
 

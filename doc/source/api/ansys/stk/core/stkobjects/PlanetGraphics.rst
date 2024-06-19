@@ -3,7 +3,7 @@ PlanetGraphics
 
 .. py:class:: PlanetGraphics
 
-   IPlanetGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IPlanetGraphics`
 
    Class defining 2D Graphics properties of a Planet.
 

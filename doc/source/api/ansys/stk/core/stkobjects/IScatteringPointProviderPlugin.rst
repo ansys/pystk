@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.plugin_configuration
-    :type: "IAgCRPluginConfiguration"
+    :type: IAgCRPluginConfiguration
 
     Gets the plugin configuration interface.
 
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: scattering_point_model
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.scattering_point_model
-    :type: "IAgComponentLinkEmbedControl"
+    :type: IAgComponentLinkEmbedControl
 
     Gets the link/embed controller for managing the default scattering point model component.
 

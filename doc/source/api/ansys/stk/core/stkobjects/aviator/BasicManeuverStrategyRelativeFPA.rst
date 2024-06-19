@@ -3,7 +3,7 @@ BasicManeuverStrategyRelativeFPA
 
 .. py:class:: BasicManeuverStrategyRelativeFPA
 
-   IBasicManeuverStrategyRelativeFPA, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyRelativeFPA`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Relative Flight Path Angle strategy for a basic maneuver procedure.
 

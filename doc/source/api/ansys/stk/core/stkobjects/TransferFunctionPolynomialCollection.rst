@@ -3,7 +3,7 @@ TransferFunctionPolynomialCollection
 
 .. py:class:: TransferFunctionPolynomialCollection
 
-   ITransferFunctionPolynomialCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ITransferFunctionPolynomialCollection`
 
    Class defining a collection of polynomial coefficients.
 

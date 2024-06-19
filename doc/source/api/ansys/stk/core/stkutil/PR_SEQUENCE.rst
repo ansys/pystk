@@ -11,6 +11,18 @@ PR_SEQUENCE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~PR`
+              - PR sequence.
+
+
 Import detail
 -------------
 

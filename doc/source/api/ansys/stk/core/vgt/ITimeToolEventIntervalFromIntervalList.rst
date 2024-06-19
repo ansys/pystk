@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.reference_intervals
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The reference interval list.
 
 .. py:property:: interval_selection
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.interval_selection
-    :type: "CRDN_INTERVAL_SELECTION"
+    :type: CRDN_INTERVAL_SELECTION
 
     The method used to select an interval from the reference interval list.
 

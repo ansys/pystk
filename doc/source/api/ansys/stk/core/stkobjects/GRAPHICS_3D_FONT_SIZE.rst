@@ -11,6 +11,24 @@ GRAPHICS_3D_FONT_SIZE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~LARGE`
+              - Large font.
+
+            * - :py:attr:`~MEDIUM`
+              - Medium font.
+
+            * - :py:attr:`~SMALL`
+              - Small font.
+
+
 Import detail
 -------------
 

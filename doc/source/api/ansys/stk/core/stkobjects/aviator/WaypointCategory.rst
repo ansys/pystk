@@ -3,7 +3,7 @@ WaypointCategory
 
 .. py:class:: WaypointCategory
 
-   IWaypointCategory, SupportsDeleteCallback
+   Bases: py:obj:`~IWaypointCategory`
 
    Class defining the waypoint category in the Aviator catalog.
 

@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: document
     :canonical: ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs.document
-    :type: "IAgStkGraphicsKmlDocument"
+    :type: IAgStkGraphicsKmlDocument
 
     Gets the KML document associated with the load event.
 

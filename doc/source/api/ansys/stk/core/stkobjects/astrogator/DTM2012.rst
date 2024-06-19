@@ -3,7 +3,7 @@ DTM2012
 
 .. py:class:: DTM2012
 
-   IDTM2012, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IDTM2012`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    DTM 2012 atmospheric propagator function.
 

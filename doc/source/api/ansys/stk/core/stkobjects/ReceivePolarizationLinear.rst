@@ -3,7 +3,7 @@ ReceivePolarizationLinear
 
 .. py:class:: ReceivePolarizationLinear
 
-   IPolarizationLinear, IPolarization, IPolarizationCrossPolLeakage, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarizationLinear`, py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
 
    Class defining a linear polarization.
 

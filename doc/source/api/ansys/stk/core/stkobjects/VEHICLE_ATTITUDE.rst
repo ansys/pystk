@@ -11,6 +11,24 @@ VEHICLE_ATTITUDE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ATTITUDE_UNKNOWN`
+              - Unsupported attitude option.
+
+            * - :py:attr:`~ATTITUDE_REAL_TIME`
+              - Real-time: define the vehicle's attitude profile using near-real time attitude data supplied via Connect.
+
+            * - :py:attr:`~ATTITUDE_STANDARD`
+              - Standard: use a basic, targeted or external attitude profile.
+
+
 Import detail
 -------------
 

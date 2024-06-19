@@ -3,7 +3,7 @@ VmAdvanced
 
 .. py:class:: VmAdvanced
 
-   IVmAdvanced, SupportsDeleteCallback
+   Bases: py:obj:`~IVmAdvanced`
 
    Class defining the volumetric Computed Data Save options.
 

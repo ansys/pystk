@@ -3,7 +3,7 @@ SpatialAnalysisToolGridValuesCustom
 
 .. py:class:: SpatialAnalysisToolGridValuesCustom
 
-   ISpatialAnalysisToolGridValuesCustom, ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolGridValuesCustom`, py:obj:`~ISpatialAnalysisToolGridValuesMethod`
 
    Fixed step grid values.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: children
     :canonical: ansys.stk.core.graphics.IKmlContainer.children
-    :type: "IAgStkGraphicsKmlFeatureCollection"
+    :type: IAgStkGraphicsKmlFeatureCollection
 
     The collection of kml features that are children of this container.
 

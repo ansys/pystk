@@ -3,7 +3,7 @@ TimeToolLightTimeDelay
 
 .. py:class:: TimeToolLightTimeDelay
 
-   ITimeToolLightTimeDelay, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolLightTimeDelay`
 
    Manage Light Time Delay options..
 

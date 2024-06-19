@@ -50,13 +50,13 @@ Property detail
 
 .. py:property:: asset_status
     :canonical: ansys.stk.core.stkobjects.ICoverageAssetListElement.asset_status
-    :type: "COVERAGE_ASSET_STATUS"
+    :type: COVERAGE_ASSET_STATUS
 
     Gets or sets the current status of the coverage asset (active or not).
 
 .. py:property:: grouping
     :canonical: ansys.stk.core.stkobjects.ICoverageAssetListElement.grouping
-    :type: "COVERAGE_ASSET_GROUPING"
+    :type: COVERAGE_ASSET_GROUPING
 
     Opt whether to consider the members of a constellation as a group or as separate entities.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: sub_asset_list
     :canonical: ansys.stk.core.stkobjects.ICoverageAssetListElement.sub_asset_list
-    :type: "IAgCvAssetListCollection"
+    :type: IAgCvAssetListCollection
 
     Returns the sub assets for this asset.
 
@@ -94,6 +94,7 @@ Method detail
 
 
 .. py:method:: contains_sub_assets(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.ICoverageAssetListElement.contains_sub_assets
 
     Return whether or not this element has sub assets.
 

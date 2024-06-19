@@ -61,61 +61,61 @@ Property detail
 
 .. py:property:: acceleration
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.acceleration
-    :type: "IAgAvtrAircraftAcceleration"
+    :type: IAgAvtrAircraftAcceleration
 
     Get the acceleration interface.
 
 .. py:property:: climb
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.climb
-    :type: "IAgAvtrAircraftClimb"
+    :type: IAgAvtrAircraftClimb
 
     Get the climb interface.
 
 .. py:property:: cruise
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.cruise
-    :type: "IAgAvtrAircraftCruise"
+    :type: IAgAvtrAircraftCruise
 
     Get the cruise interface.
 
 .. py:property:: descent
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.descent
-    :type: "IAgAvtrAircraftDescent"
+    :type: IAgAvtrAircraftDescent
 
     Get the descent interface.
 
 .. py:property:: landing
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.landing
-    :type: "IAgAvtrAircraftLanding"
+    :type: IAgAvtrAircraftLanding
 
     Get the landing interface.
 
 .. py:property:: takeoff
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.takeoff
-    :type: "IAgAvtrAircraftTakeoff"
+    :type: IAgAvtrAircraftTakeoff
 
     Get the takeoff interface.
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.default_configuration
-    :type: "IAgAvtrConfiguration"
+    :type: IAgAvtrConfiguration
 
     Get the aircraft's default configuration as saved in the catalog.
 
 .. py:property:: advanced_fixed_wing_tool
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.advanced_fixed_wing_tool
-    :type: "IAgAvtrAdvFixedWingTool"
+    :type: IAgAvtrAdvFixedWingTool
 
     Get the Advanced Fixed Wing Tool for the aircraft.
 
 .. py:property:: vtol
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.vtol
-    :type: "IAgAvtrAircraftVTOL"
+    :type: IAgAvtrAircraftVTOL
 
     Get the VTOL interface.
 
 .. py:property:: terrain_follow
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.terrain_follow
-    :type: "IAgAvtrAircraftTerrainFollow"
+    :type: IAgAvtrAircraftTerrainFollow
 
     Get the TerrainFollow interface.
 
@@ -132,13 +132,14 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftModel.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 
 
 

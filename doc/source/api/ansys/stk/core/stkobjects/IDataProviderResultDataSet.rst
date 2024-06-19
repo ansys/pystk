@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: statistics
     :canonical: ansys.stk.core.stkobjects.IDataProviderResultDataSet.statistics
-    :type: "IAgDrStatistics"
+    :type: IAgDrStatistics
 
     Returns an interface for computing statistics on the results.
 
@@ -88,6 +88,7 @@ Method detail
 
 
 .. py:method:: get_values(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultDataSet.get_values
 
     Retrieve an array of values of the elements in the dataset.
 
@@ -96,6 +97,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: get_internal_unit_values(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultDataSet.get_internal_unit_values
 
     Get the Internal Unit Values of the Data.
 

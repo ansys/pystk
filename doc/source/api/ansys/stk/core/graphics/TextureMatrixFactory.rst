@@ -3,7 +3,7 @@ TextureMatrixFactory
 
 .. py:class:: TextureMatrixFactory
 
-   ITextureMatrixFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITextureMatrixFactory`
 
    A 4 by 4 matrix applied to a texture coordinate.
 

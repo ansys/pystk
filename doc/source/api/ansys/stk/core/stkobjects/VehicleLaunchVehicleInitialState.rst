@@ -3,7 +3,7 @@ VehicleLaunchVehicleInitialState
 
 .. py:class:: VehicleLaunchVehicleInitialState
 
-   IVehicleLaunchVehicleInitialState, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLaunchVehicleInitialState`
 
    Class defining launch vehicle initial state.
 

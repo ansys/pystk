@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: reference_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaDec.reference_type
-    :type: "CALC_OBJECT_CENTRAL_BODY_REFERENCE"
+    :type: CALC_OBJECT_CENTRAL_BODY_REFERENCE
 
     Gets or sets the central body's reference type.
 

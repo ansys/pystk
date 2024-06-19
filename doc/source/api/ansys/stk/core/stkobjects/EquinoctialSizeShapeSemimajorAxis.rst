@@ -3,7 +3,7 @@ EquinoctialSizeShapeSemimajorAxis
 
 .. py:class:: EquinoctialSizeShapeSemimajorAxis
 
-   IEquinoctialSizeShapeSemimajorAxis, IClassicalSizeShape, SupportsDeleteCallback
+   Bases: py:obj:`~IEquinoctialSizeShapeSemimajorAxis`, py:obj:`~IClassicalSizeShape`
 
    Semimajor Axis, an element of the Equinoctial coordinate type.
 

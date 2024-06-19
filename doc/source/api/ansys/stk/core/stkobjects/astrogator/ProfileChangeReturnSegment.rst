@@ -3,7 +3,7 @@ ProfileChangeReturnSegment
 
 .. py:class:: ProfileChangeReturnSegment
 
-   IProfileChangeReturnSegment, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileChangeReturnSegment`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Change Return Segment profile.
 

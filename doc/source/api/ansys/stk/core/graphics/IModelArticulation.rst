@@ -75,7 +75,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IModelTransformation"
+.. py:method:: item(self, index: int) -> IModelTransformation
+    :canonical: ansys.stk.core.graphics.IModelArticulation.item
 
     Get the transformation at the given index. The index is zero-based.
 
@@ -85,21 +86,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IModelTransformation"`
+        :obj:`~IModelTransformation`
 
-.. py:method:: get_item_by_string(self, name:str) -> "IModelTransformation"
-
-    Get a transformation by name.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~"IModelTransformation"`
-
-.. py:method:: get_by_name(self, name:str) -> "IModelTransformation"
+.. py:method:: get_item_by_string(self, name: str) -> IModelTransformation
+    :canonical: ansys.stk.core.graphics.IModelArticulation.get_item_by_string
 
     Get a transformation by name.
 
@@ -109,9 +99,23 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IModelTransformation"`
+        :obj:`~IModelTransformation`
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: get_by_name(self, name: str) -> IModelTransformation
+    :canonical: ansys.stk.core.graphics.IModelArticulation.get_by_name
+
+    Get a transformation by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~IModelTransformation`
+
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.graphics.IModelArticulation.contains
 
     Return true if the collection contains the transformation.
 

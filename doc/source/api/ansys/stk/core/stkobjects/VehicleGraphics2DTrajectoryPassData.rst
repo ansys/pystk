@@ -3,7 +3,7 @@ VehicleGraphics2DTrajectoryPassData
 
 .. py:class:: VehicleGraphics2DTrajectoryPassData
 
-   IVehicleGraphics2DTrajectoryPassData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DTrajectoryPassData`
 
    2D Graphics ground track and trajectory properties.
 

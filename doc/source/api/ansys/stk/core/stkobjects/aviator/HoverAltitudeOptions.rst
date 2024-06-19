@@ -3,7 +3,7 @@ HoverAltitudeOptions
 
 .. py:class:: HoverAltitudeOptions
 
-   IHoverAltitudeOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IHoverAltitudeOptions`
 
    Class defining the altitude options for a VTOL procedure.
 

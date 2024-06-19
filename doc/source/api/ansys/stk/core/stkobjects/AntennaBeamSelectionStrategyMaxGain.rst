@@ -3,7 +3,7 @@ AntennaBeamSelectionStrategyMaxGain
 
 .. py:class:: AntennaBeamSelectionStrategyMaxGain
 
-   IAntennaBeamSelectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaBeamSelectionStrategy`
 
    Class defining a maximum gain beam selection strategy.
 

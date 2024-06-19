@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: maneuver_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.maneuver_type
-    :type: "MANEUVER_TYPE"
+    :type: MANEUVER_TYPE
 
     Get the maneuver type.
 
 .. py:property:: maneuver
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.maneuver
-    :type: "IAgVAManeuver"
+    :type: IAgVAManeuver
 
     Get the Maneuver properties.
 
@@ -74,50 +74,54 @@ Method detail
 -------------
 
 
-.. py:method:: set_maneuver_type(self, maneuverType:"MANEUVER_TYPE") -> None
+.. py:method:: set_maneuver_type(self, maneuverType: MANEUVER_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.set_maneuver_type
 
     Set the maneuver type.
 
     :Parameters:
 
-    **maneuverType** : :obj:`~"MANEUVER_TYPE"`
+    **maneuverType** : :obj:`~MANEUVER_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_MANEUVER") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_MANEUVER) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_MANEUVER"`
+    **param** : :obj:`~CONTROL_MANEUVER`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_MANEUVER") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_MANEUVER) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_MANEUVER"`
+    **param** : :obj:`~CONTROL_MANEUVER`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_MANEUVER") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_MANEUVER) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_MANEUVER"`
+    **param** : :obj:`~CONTROL_MANEUVER`
 
     :Returns:
 

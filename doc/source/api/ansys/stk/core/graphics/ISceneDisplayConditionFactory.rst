@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ISceneDisplayCondition"
+.. py:method:: initialize(self) -> ISceneDisplayCondition
+    :canonical: ansys.stk.core.graphics.ISceneDisplayConditionFactory.initialize
 
     Initialize a default scene display condition. When this display condition is assigned to an object, such as a primitive, the object can be restricted to only render in certain scenes. Call set display in scene or display only in scene to limit the scenes.
 
     :Returns:
 
-        :obj:`~"ISceneDisplayCondition"`
+        :obj:`~ISceneDisplayCondition`
 

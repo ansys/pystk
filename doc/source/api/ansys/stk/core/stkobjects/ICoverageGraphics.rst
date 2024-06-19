@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics.static
-    :type: "IAgCvGfxStatic"
+    :type: IAgCvGfxStatic
 
     2D static graphics options.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics.animation
-    :type: "IAgCvGfxAnimation"
+    :type: IAgCvGfxAnimation
 
     2D animation graphics options.
 
 .. py:property:: progress
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics.progress
-    :type: "IAgCvGfxProgress"
+    :type: IAgCvGfxProgress
 
     Access progress graphics options.
 

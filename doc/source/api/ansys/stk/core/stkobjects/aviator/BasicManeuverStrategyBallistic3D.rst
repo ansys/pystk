@@ -3,7 +3,7 @@ BasicManeuverStrategyBallistic3D
 
 .. py:class:: BasicManeuverStrategyBallistic3D
 
-   IBasicManeuverStrategyBallistic3D, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyBallistic3D`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining Ballistic 3D strategy for a Basic Maneuver procedure.
 

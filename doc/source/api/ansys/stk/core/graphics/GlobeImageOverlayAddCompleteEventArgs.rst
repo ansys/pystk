@@ -3,7 +3,7 @@ GlobeImageOverlayAddCompleteEventArgs
 
 .. py:class:: GlobeImageOverlayAddCompleteEventArgs
 
-   IGlobeImageOverlayAddCompleteEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~IGlobeImageOverlayAddCompleteEventArgs`
 
    The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync.
 

@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DAttributes
 
 .. py:class:: FigureOfMeritGraphics2DAttributes
 
-   IFigureOfMeritGraphics2DAttributes, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DAttributes`
 
    Figure of Merit 2D graphics properties.
 

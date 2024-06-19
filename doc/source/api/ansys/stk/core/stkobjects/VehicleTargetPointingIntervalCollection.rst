@@ -3,7 +3,7 @@ VehicleTargetPointingIntervalCollection
 
 .. py:class:: VehicleTargetPointingIntervalCollection
 
-   IVehicleTargetPointingIntervalCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleTargetPointingIntervalCollection`
 
    Represents a collection of scheduled targeting intervals.
 

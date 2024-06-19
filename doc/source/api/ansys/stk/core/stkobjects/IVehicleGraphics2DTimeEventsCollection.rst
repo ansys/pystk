@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics2DTimeEventsElement"
+.. py:method:: item(self, index: int) -> IVehicleGraphics2DTimeEventsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DTimeEventsElement"`
+        :obj:`~IVehicleGraphics2DTimeEventsElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,11 +103,12 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self) -> "IVehicleGraphics2DTimeEventsElement"
+.. py:method:: add(self) -> IVehicleGraphics2DTimeEventsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsCollection.add
 
     Add a new element to the collection.
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DTimeEventsElement"`
+        :obj:`~IVehicleGraphics2DTimeEventsElement`
 

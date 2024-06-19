@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: error_control
     :canonical: ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.error_control
-    :type: "ERROR_CONTROL"
+    :type: ERROR_CONTROL
 
     Gets or sets the error control method.
 

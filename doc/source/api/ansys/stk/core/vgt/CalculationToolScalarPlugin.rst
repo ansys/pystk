@@ -3,7 +3,7 @@ CalculationToolScalarPlugin
 
 .. py:class:: CalculationToolScalarPlugin
 
-   ICalculationToolScalarPlugin, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarPlugin`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Use a scalar calculation plugin.
 

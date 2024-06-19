@@ -3,7 +3,7 @@ ProfileGoldenSection
 
 .. py:class:: ProfileGoldenSection
 
-   IProfileGoldenSection, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileGoldenSection`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Golden Section profile.
 

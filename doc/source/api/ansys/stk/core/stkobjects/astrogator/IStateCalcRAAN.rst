@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRAAN.element_type
-    :type: "CALC_OBJECT_ELEM"
+    :type: CALC_OBJECT_ELEM
 
     Gets or sets the element type.
 

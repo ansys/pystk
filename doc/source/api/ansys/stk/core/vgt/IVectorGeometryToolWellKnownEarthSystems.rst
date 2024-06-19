@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: fixed
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthSystems.fixed
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Earth's Fixed coordinate system.
 
 .. py:property:: icrf
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthSystems.icrf
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Earth's ICRF.
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthSystems.inertial
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Earth's Inertial coordinate system (as defined in STK).
 

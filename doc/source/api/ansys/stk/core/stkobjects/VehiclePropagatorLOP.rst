@@ -3,7 +3,7 @@ VehiclePropagatorLOP
 
 .. py:class:: VehiclePropagatorLOP
 
-   IVehiclePropagatorLOP, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorLOP`, py:obj:`~IVehiclePropagator`
 
    Class defining the Long-term Orbit Predictor (LOP).
 

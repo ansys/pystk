@@ -11,6 +11,21 @@ JET_ENGINE_TURBINE_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNCOOLED`
+              - Uncooled turbine.
+
+            * - :py:attr:`~COOLED`
+              - Cooled turbine.
+
+
 Import detail
 -------------
 

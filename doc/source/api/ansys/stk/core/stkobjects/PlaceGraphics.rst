@@ -3,7 +3,7 @@ PlaceGraphics
 
 .. py:class:: PlaceGraphics
 
-   IPlaceGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IPlaceGraphics`
 
    2D Graphics properties of a Place.
 

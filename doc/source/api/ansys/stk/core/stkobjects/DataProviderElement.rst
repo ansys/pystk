@@ -3,7 +3,7 @@ DataProviderElement
 
 .. py:class:: DataProviderElement
 
-   IDataProviderElement, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderElement`
 
    Class defining a data provider element.
 

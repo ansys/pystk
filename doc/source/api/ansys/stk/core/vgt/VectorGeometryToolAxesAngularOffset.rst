@@ -3,7 +3,7 @@ VectorGeometryToolAxesAngularOffset
 
 .. py:class:: VectorGeometryToolAxesAngularOffset
 
-   IVectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesAngularOffset`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset.
 

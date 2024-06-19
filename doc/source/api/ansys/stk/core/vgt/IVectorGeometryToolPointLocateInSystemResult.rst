@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult.position
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The point position in the specified coordinate system.
 

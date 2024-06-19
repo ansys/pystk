@@ -3,7 +3,7 @@ SpaceEnvironmentRadiationEnvironment
 
 .. py:class:: SpaceEnvironmentRadiationEnvironment
 
-   ISpaceEnvironmentRadiationEnvironment, SupportsDeleteCallback
+   Bases: py:obj:`~ISpaceEnvironmentRadiationEnvironment`
 
    Radiation Environment model settings.
 

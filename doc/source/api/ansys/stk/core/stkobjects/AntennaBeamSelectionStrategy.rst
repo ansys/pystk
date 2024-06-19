@@ -3,7 +3,7 @@ AntennaBeamSelectionStrategy
 
 .. py:class:: AntennaBeamSelectionStrategy
 
-   IAntennaBeamSelectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaBeamSelectionStrategy`
 
    Class defining a beam selection strategy.
 

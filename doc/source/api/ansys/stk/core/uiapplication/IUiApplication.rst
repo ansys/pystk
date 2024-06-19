@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: windows
     :canonical: ansys.stk.core.uiapplication.IUiApplication.windows
-    :type: "IAgUiWindowsCollection"
+    :type: IAgUiWindowsCollection
 
     Returns a collection of windows.
 
@@ -129,13 +129,13 @@ Property detail
 
 .. py:property:: window_state
     :canonical: ansys.stk.core.uiapplication.IUiApplication.window_state
-    :type: "WINDOW_STATE"
+    :type: WINDOW_STATE
 
     Gets/sets the state of the main window.
 
 .. py:property:: mru_list
     :canonical: ansys.stk.core.uiapplication.IUiApplication.mru_list
-    :type: "IAgMRUCollection"
+    :type: IAgMRUCollection
 
     Returns a collection most recently used files.
 
@@ -185,7 +185,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: load_personality(self, persName:str) -> None
+.. py:method:: load_personality(self, persName: str) -> None
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.load_personality
 
     Load a personality by its name.
 
@@ -214,6 +215,7 @@ Method detail
 
 
 .. py:method:: activate(self) -> None
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.activate
 
     Activates the application's main window.
 
@@ -222,7 +224,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: file_open_dialog(self, defaultExt:str, filter:str, initialDir:str) -> str
+.. py:method:: file_open_dialog(self, defaultExt: str, filter: str, initialDir: str) -> str
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.file_open_dialog
 
     Brings up a common File Open dialog and returns the file name selected by the user. If the user canceled, returns an empty file name.
 
@@ -237,7 +240,8 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: create_object(self, progID:str, remoteServer:str) -> typing.Any
+.. py:method:: create_object(self, progID: str, remoteServer: str) -> typing.Any
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.create_object
 
     Only works from local HTML pages and scripts.
 
@@ -250,7 +254,8 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: file_save_as_dialog(self, defaultExt:str, filter:str, initialDir:str) -> str
+.. py:method:: file_save_as_dialog(self, defaultExt: str, filter: str, initialDir: str) -> str
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.file_save_as_dialog
 
     Brings up a common File SaveAs dialog and returns the file name selected by the user. If the user canceled, returns an empty file name.
 
@@ -265,6 +270,7 @@ Method detail
         :obj:`~str`
 
 .. py:method:: quit(self) -> None
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.quit
 
     Shuts down the application.
 
@@ -272,7 +278,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: file_open_dialog_ext(self, allowMultiSelect:bool, defaultExt:str, filter:str, initialDir:str) -> "IUiFileOpenExt"
+.. py:method:: file_open_dialog_ext(self, allowMultiSelect: bool, defaultExt: str, filter: str, initialDir: str) -> IUiFileOpenExt
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.file_open_dialog_ext
 
     Brings up a standard File Open Dialog and returns an object representing the selected file.
 
@@ -285,10 +292,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiFileOpenExt"`
+        :obj:`~IUiFileOpenExt`
 
 
-.. py:method:: directory_picker_dialog(self, title:str, initialDir:str) -> str
+.. py:method:: directory_picker_dialog(self, title: str, initialDir: str) -> str
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.directory_picker_dialog
 
     Brings up the Directory Picker Dialog and returns a selected directory name.
 
@@ -304,26 +312,28 @@ Method detail
 
 
 
-.. py:method:: open_log_file(self, logFileName:str, logFileMode:"OPEN_LOG_FILE_MODE") -> bool
+.. py:method:: open_log_file(self, logFileName: str, logFileMode: OPEN_LOG_FILE_MODE) -> bool
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.open_log_file
 
     Specify the current log file to be written to.
 
     :Parameters:
 
     **logFileName** : :obj:`~str`
-    **logFileMode** : :obj:`~"OPEN_LOG_FILE_MODE"`
+    **logFileMode** : :obj:`~OPEN_LOG_FILE_MODE`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: log_msg(self, msgType:"UI_LOG_MSG_TYPE", msg:str) -> None
+.. py:method:: log_msg(self, msgType: UI_LOG_MSG_TYPE, msg: str) -> None
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.log_msg
 
     Log the Message specified.
 
     :Parameters:
 
-    **msgType** : :obj:`~"UI_LOG_MSG_TYPE"`
+    **msgType** : :obj:`~UI_LOG_MSG_TYPE`
     **msg** : :obj:`~str`
 
     :Returns:
@@ -333,12 +343,13 @@ Method detail
 
 
 
-.. py:method:: create_application(self) -> "IUiApplication"
+.. py:method:: create_application(self) -> IUiApplication
+    :canonical: ansys.stk.core.uiapplication.IUiApplication.create_application
 
     Create a new instance of the application model root object.
 
     :Returns:
 
-        :obj:`~"IUiApplication"`
+        :obj:`~IUiApplication`
 
 

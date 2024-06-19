@@ -83,13 +83,13 @@ Property detail
 
 .. py:property:: antenna_model
     :canonical: ansys.stk.core.stkobjects.IAntennaBeam.antenna_model
-    :type: "IAgAntennaModel"
+    :type: IAgAntennaModel
 
     Gets the current antenna model.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IAntennaBeam.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Gets the antenna orientation.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IAntennaBeam.polarization
-    :type: "IAgPolarization"
+    :type: IAgPolarization
 
     Gets the polarization.
 
@@ -123,13 +123,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, val:"POLARIZATION_TYPE") -> None
+.. py:method:: set_polarization_type(self, val: POLARIZATION_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntennaBeam.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **val** : :obj:`~"POLARIZATION_TYPE"`
+    **val** : :obj:`~POLARIZATION_TYPE`
 
     :Returns:
 

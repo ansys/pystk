@@ -3,7 +3,7 @@ VehicleGraphics2DSAA
 
 .. py:class:: VehicleGraphics2DSAA
 
-   IVehicleGraphics2DSAA, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DSAA`
 
    South Atlantic Anomaly contour settings.
 

@@ -3,7 +3,7 @@ CentralBodyShapeOblateSpheroid
 
 .. py:class:: CentralBodyShapeOblateSpheroid
 
-   ICentralBodyShapeOblateSpheroid, ICentralBodyShape, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyShapeOblateSpheroid`, py:obj:`~ICentralBodyShape`
 
    Central Body Shape - Spheroid.
 

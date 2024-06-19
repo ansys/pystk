@@ -3,7 +3,7 @@ ManeuverOptimalFiniteSNOPTOptimizer
 
 .. py:class:: ManeuverOptimalFiniteSNOPTOptimizer
 
-   IManeuverOptimalFiniteSNOPTOptimizer, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverOptimalFiniteSNOPTOptimizer`
 
    Properties of SNOPT Optimizer options for optimal finite maneuver.
 

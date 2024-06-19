@@ -3,7 +3,7 @@ Overlay
 
 .. py:class:: Overlay
 
-   IOverlay, IScreenOverlayContainer, SupportsDeleteCallback
+   Bases: py:obj:`~IOverlay`, py:obj:`~IScreenOverlayContainer`
 
    A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
 

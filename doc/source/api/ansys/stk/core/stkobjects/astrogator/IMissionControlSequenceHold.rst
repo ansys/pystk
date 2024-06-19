@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: stopping_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.stopping_conditions
-    :type: "IAgVAStoppingConditionCollection"
+    :type: IAgVAStoppingConditionCollection
 
     Get the stopping conditions defined for the segment.
 
@@ -142,37 +142,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_ADVANCED") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_ADVANCED) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.enable_control_parameter
 
     Enable or disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ADVANCED"`
+    **param** : :obj:`~CONTROL_ADVANCED`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_ADVANCED") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_ADVANCED) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ADVANCED"`
+    **param** : :obj:`~CONTROL_ADVANCED`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_ADVANCED") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ADVANCED) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ADVANCED"`
+    **param** : :obj:`~CONTROL_ADVANCED`
 
     :Returns:
 

@@ -11,6 +11,21 @@ VOACAP_COEFFICIENT_DATA_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~CCIR`
+              - CCIR.
+
+            * - :py:attr:`~URSI`
+              - URSI.
+
+
 Import detail
 -------------
 

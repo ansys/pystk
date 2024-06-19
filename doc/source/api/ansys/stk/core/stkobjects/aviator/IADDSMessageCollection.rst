@@ -65,7 +65,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IADDSMessage"
+.. py:method:: item(self, index: int) -> IADDSMessage
+    :canonical: ansys.stk.core.stkobjects.aviator.IADDSMessageCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -75,22 +76,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IADDSMessage"`
+        :obj:`~IADDSMessage`
 
 
-.. py:method:: remove_message(self, message:"IADDSMessage") -> None
+.. py:method:: remove_message(self, message: IADDSMessage) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IADDSMessageCollection.remove_message
 
     Remove this message from the forecast.
 
     :Parameters:
 
-    **message** : :obj:`~"IADDSMessage"`
+    **message** : :obj:`~IADDSMessage`
 
     :Returns:
 
         :obj:`~None`
 
 .. py:method:: clear_messages(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IADDSMessageCollection.clear_messages
 
     Clear all of the messages in the collection.
 

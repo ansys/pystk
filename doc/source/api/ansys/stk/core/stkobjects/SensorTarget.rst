@@ -3,7 +3,7 @@ SensorTarget
 
 .. py:class:: SensorTarget
 
-   ISensorTarget, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorTarget`
 
    Class defining a Sensor target.
 

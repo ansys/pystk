@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSet.type
-    :type: "CRDN_PARAMETER_SET_TYPE"
+    :type: CRDN_PARAMETER_SET_TYPE
 
     Get the type of parameter set.
 
@@ -80,7 +80,8 @@ Method detail
 
 
 
-.. py:method:: calculate(self, epoch:typing.Any) -> list
+.. py:method:: calculate(self, epoch: typing.Any) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSet.calculate
 
     Return results of computing individual scalars within parameter set at the specified time.
 
@@ -92,7 +93,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: calculate_with_derivative(self, epoch:typing.Any) -> list
+.. py:method:: calculate_with_derivative(self, epoch: typing.Any) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolParameterSet.calculate_with_derivative
 
     Return results of computing individual scalars and their time derivatives within parameter set at the specified time.
 

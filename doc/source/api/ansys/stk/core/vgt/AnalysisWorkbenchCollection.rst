@@ -3,7 +3,7 @@ AnalysisWorkbenchCollection
 
 .. py:class:: AnalysisWorkbenchCollection
 
-   IAnalysisWorkbenchCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchCollection`
 
    A collection of VGT objects.
 

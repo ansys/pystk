@@ -50,67 +50,75 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_ephemeris_ccsds_export_tool(self) -> "IVehicleEphemerisCCSDSExportTool"
+.. py:method:: get_ephemeris_ccsds_export_tool(self) -> IVehicleEphemerisCCSDSExportTool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_ccsds_export_tool
 
     Return an Ephemeris file of the CCSDS ephemeris type for export.
 
     :Returns:
 
-        :obj:`~"IVehicleEphemerisCCSDSExportTool"`
+        :obj:`~IVehicleEphemerisCCSDSExportTool`
 
-.. py:method:: get_ephemeris_stk_export_tool(self) -> "IVehicleEphemerisStkExportTool"
+.. py:method:: get_ephemeris_stk_export_tool(self) -> IVehicleEphemerisStkExportTool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_stk_export_tool
 
     Return an Ephemeris file of the STK ephemeris type for export.
 
     :Returns:
 
-        :obj:`~"IVehicleEphemerisStkExportTool"`
+        :obj:`~IVehicleEphemerisStkExportTool`
 
-.. py:method:: get_ephemeris_spice_export_tool(self) -> "IVehicleEphemerisSpiceExportTool"
+.. py:method:: get_ephemeris_spice_export_tool(self) -> IVehicleEphemerisSpiceExportTool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_spice_export_tool
 
     Return an Ephemeris file of the Spice ephemeris type for export.
 
     :Returns:
 
-        :obj:`~"IVehicleEphemerisSpiceExportTool"`
+        :obj:`~IVehicleEphemerisSpiceExportTool`
 
-.. py:method:: get_ephemeris_code500_export_tool(self) -> "IVehicleEphemerisCode500ExportTool"
+.. py:method:: get_ephemeris_code500_export_tool(self) -> IVehicleEphemerisCode500ExportTool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_code500_export_tool
 
     Return an Ephemeris file of the Code500Ephem ephemeris type for export; AgAsCode500.dll must be copied to your install data's 'Modules' directory.
 
     :Returns:
 
-        :obj:`~"IVehicleEphemerisCode500ExportTool"`
+        :obj:`~IVehicleEphemerisCode500ExportTool`
 
-.. py:method:: get_prop_definition_export_tool(self) -> "IVehiclePropDefinitionExportTool"
+.. py:method:: get_prop_definition_export_tool(self) -> IVehiclePropDefinitionExportTool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteExportTools.get_prop_definition_export_tool
 
     Return a Propagator (Prop Def) file for export.
 
     :Returns:
 
-        :obj:`~"IVehiclePropDefinitionExportTool"`
+        :obj:`~IVehiclePropDefinitionExportTool`
 
-.. py:method:: get_attitude_export_tool(self) -> "IVehicleAttitudeExportTool"
+.. py:method:: get_attitude_export_tool(self) -> IVehicleAttitudeExportTool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteExportTools.get_attitude_export_tool
 
     Return an Attitude file for export.
 
     :Returns:
 
-        :obj:`~"IVehicleAttitudeExportTool"`
+        :obj:`~IVehicleAttitudeExportTool`
 
-.. py:method:: get_ephemeris_stk_binary_export_tool(self) -> "IVehicleEphemerisStkBinaryExportTool"
+.. py:method:: get_ephemeris_stk_binary_export_tool(self) -> IVehicleEphemerisStkBinaryExportTool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_stk_binary_export_tool
 
     Return an Ephemeris file of the STK Binary ephemeris type for export.
 
     :Returns:
 
-        :obj:`~"IVehicleEphemerisStkBinaryExportTool"`
+        :obj:`~IVehicleEphemerisStkBinaryExportTool`
 
-.. py:method:: get_ephemeris_ccsd_sv2_export_tool(self) -> "IVehicleEphemerisCCSDSv2ExportTool"
+.. py:method:: get_ephemeris_ccsd_sv2_export_tool(self) -> IVehicleEphemerisCCSDSv2ExportTool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_ccsd_sv2_export_tool
 
     Return an Ephemeris file of the CCSDS v2 ephemeris type for export.
 
     :Returns:
 
-        :obj:`~"IVehicleEphemerisCCSDSv2ExportTool"`
+        :obj:`~IVehicleEphemerisCCSDSv2ExportTool`
 

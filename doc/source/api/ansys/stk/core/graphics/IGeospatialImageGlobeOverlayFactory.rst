@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_string(self, uri:str) -> "IGeospatialImageGlobeOverlay"
+.. py:method:: initialize_with_string(self, uri: str) -> IGeospatialImageGlobeOverlay
+    :canonical: ansys.stk.core.graphics.IGeospatialImageGlobeOverlayFactory.initialize_with_string
 
     Initialize a geospatial image globe overlay with the provided values.
 
@@ -46,5 +47,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGeospatialImageGlobeOverlay"`
+        :obj:`~IGeospatialImageGlobeOverlay`
 

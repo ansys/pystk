@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IGoldenSectionControl"
+.. py:method:: item(self, index: int) -> IGoldenSectionControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGoldenSectionControlCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGoldenSectionControl"`
+        :obj:`~IGoldenSectionControl`
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath:str, controlPath:str) -> "IGoldenSectionControl"
+.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> IGoldenSectionControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGoldenSectionControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGoldenSectionControl"`
+        :obj:`~IGoldenSectionControl`
 

@@ -3,7 +3,7 @@ ScriptingSegment
 
 .. py:class:: ScriptingSegment
 
-   IScriptingSegment, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IScriptingSegment`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Scripting Segment.
 

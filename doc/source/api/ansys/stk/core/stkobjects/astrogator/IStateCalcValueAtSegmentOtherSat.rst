@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: segment_state_to_use
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegmentOtherSat.segment_state_to_use
-    :type: "SEGMENT_STATE"
+    :type: SEGMENT_STATE
 
     Gets or sets the segment state to use in the calculation.
 
 .. py:property:: reference_sat
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegmentOtherSat.reference_sat
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the Astrogator satellite on which the segment to be compared exists.
 

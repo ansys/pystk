@@ -3,7 +3,7 @@ AdvancedFixedWingSubSuperHypersonicProp
 
 .. py:class:: AdvancedFixedWingSubSuperHypersonicProp
 
-   IAdvancedFixedWingSubSuperHypersonicProp, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingSubSuperHypersonicProp`
 
    Class defining a Sub/Super/Hypersonic powerplant in the Advanced Fixed Wing Tool.
 

@@ -3,7 +3,7 @@ LaserTroposphericScintillationLossModel
 
 .. py:class:: LaserTroposphericScintillationLossModel
 
-   ILaserTroposphericScintillationLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ILaserTroposphericScintillationLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an laser tropospheric scintillation loss model.
 

@@ -138,7 +138,7 @@ Property detail
 
 .. py:property:: outline_appearance
     :canonical: ansys.stk.core.graphics.ISolidPrimitive.outline_appearance
-    :type: "OUTLINE_APPEARANCE"
+    :type: OUTLINE_APPEARANCE
 
     Gets or sets the outline's appearance.
 
@@ -162,7 +162,7 @@ Property detail
 
 .. py:property:: rotation
     :canonical: ansys.stk.core.graphics.ISolidPrimitive.rotation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Gets or sets the rotation applied to the solid before rendering.
 
@@ -180,7 +180,7 @@ Property detail
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.ISolidPrimitive.set_hint
-    :type: "SET_HINT"
+    :type: SET_HINT
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
@@ -225,19 +225,21 @@ Method detail
 
 
 
-.. py:method:: set_with_result(self, solidTriangulatorResult:"ISolidTriangulatorResult") -> None
+.. py:method:: set_with_result(self, solidTriangulatorResult: ISolidTriangulatorResult) -> None
+    :canonical: ansys.stk.core.graphics.ISolidPrimitive.set_with_result
 
     Define the solid using the specified solidTriangulatorResult. The solid is rendered in the primitive's reference frame.
 
     :Parameters:
 
-    **solidTriangulatorResult** : :obj:`~"ISolidTriangulatorResult"`
+    **solidTriangulatorResult** : :obj:`~ISolidTriangulatorResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set(self, positions:list, normals:list, indices:list, outlineIndices:list, windingOrder:"WINDING_ORDER", boundingSphere:"IBoundingSphere", closed:bool) -> None
+.. py:method:: set(self, positions: list, normals: list, indices: list, outlineIndices: list, windingOrder: WINDING_ORDER, boundingSphere: IBoundingSphere, closed: bool) -> None
+    :canonical: ansys.stk.core.graphics.ISolidPrimitive.set
 
     Define the solid using the specified parameters. The solid is rendered in the primitive's reference frame.
 
@@ -247,8 +249,8 @@ Method detail
     **normals** : :obj:`~list`
     **indices** : :obj:`~list`
     **outlineIndices** : :obj:`~list`
-    **windingOrder** : :obj:`~"WINDING_ORDER"`
-    **boundingSphere** : :obj:`~"IBoundingSphere"`
+    **windingOrder** : :obj:`~WINDING_ORDER`
+    **boundingSphere** : :obj:`~IBoundingSphere`
     **closed** : :obj:`~bool`
 
     :Returns:

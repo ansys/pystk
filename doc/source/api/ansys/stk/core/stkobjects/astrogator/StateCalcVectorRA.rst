@@ -3,7 +3,7 @@ StateCalcVectorRA
 
 .. py:class:: StateCalcVectorRA
 
-   IComponentInfo, ICloneable, IStateCalcVectorRA, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVectorRA`
 
    VectorRA Calc objects.
 

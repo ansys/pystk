@@ -3,7 +3,7 @@ VehicleAttitudeTrendControlAviator
 
 .. py:class:: VehicleAttitudeTrendControlAviator
 
-   IVehicleAttitudeTrendControlAviator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeTrendControlAviator`
 
    Trending controls for Aviator attitude.
 

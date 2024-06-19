@@ -3,7 +3,7 @@ GridSearchResultCollection
 
 .. py:class:: GridSearchResultCollection
 
-   IGridSearchResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IGridSearchResultCollection`
 
    Properties for the list of Grid Search result parameters.
 

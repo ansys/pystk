@@ -3,7 +3,7 @@ EngineThrottleTable
 
 .. py:class:: EngineThrottleTable
 
-   IEngineThrottleTable, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineThrottleTable`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Throttle Table engine model.
 

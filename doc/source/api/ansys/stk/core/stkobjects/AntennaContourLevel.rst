@@ -3,7 +3,7 @@ AntennaContourLevel
 
 .. py:class:: AntennaContourLevel
 
-   IAntennaContourLevel, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaContourLevel`
 
    Class defining an antenna contour level.
 

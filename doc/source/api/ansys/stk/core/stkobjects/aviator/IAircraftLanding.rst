@@ -42,15 +42,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_built_in_model(self) -> "IAircraftBasicLandingModel"
+.. py:method:: get_built_in_model(self) -> IAircraftBasicLandingModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftLanding.get_built_in_model
 
     Get the built-in model.
 
     :Returns:
 
-        :obj:`~"IAircraftBasicLandingModel"`
+        :obj:`~IAircraftBasicLandingModel`
 
-.. py:method:: get_basic_landing_by_name(self, name:str) -> "IAircraftBasicLandingModel"
+.. py:method:: get_basic_landing_by_name(self, name: str) -> IAircraftBasicLandingModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftLanding.get_basic_landing_by_name
 
     Get the basic Landing model with the given name.
 
@@ -60,9 +62,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftBasicLandingModel"`
+        :obj:`~IAircraftBasicLandingModel`
 
-.. py:method:: get_advanced_landing_by_name(self, name:str) -> "IAircraftAdvancedLandingModel"
+.. py:method:: get_advanced_landing_by_name(self, name: str) -> IAircraftAdvancedLandingModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftLanding.get_advanced_landing_by_name
 
     Get the advanced Landing model with the given name.
 
@@ -72,13 +75,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftAdvancedLandingModel"`
+        :obj:`~IAircraftAdvancedLandingModel`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftLanding.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

@@ -3,7 +3,7 @@ ReceivePolarizationVertical
 
 .. py:class:: ReceivePolarizationVertical
 
-   IPolarizationVertical, IPolarization, IPolarizationCrossPolLeakage, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarizationVertical`, py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
 
    Class defining a receive vertical polarization.
 

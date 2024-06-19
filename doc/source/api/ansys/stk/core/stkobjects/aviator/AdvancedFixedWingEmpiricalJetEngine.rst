@@ -3,7 +3,7 @@ AdvancedFixedWingEmpiricalJetEngine
 
 .. py:class:: AdvancedFixedWingEmpiricalJetEngine
 
-   IAdvancedFixedWingEmpiricalJetEngine, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingEmpiricalJetEngine`
 
    Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool.
 

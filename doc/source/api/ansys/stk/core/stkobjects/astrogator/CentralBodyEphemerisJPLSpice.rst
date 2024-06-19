@@ -3,7 +3,7 @@ CentralBodyEphemerisJPLSpice
 
 .. py:class:: CentralBodyEphemerisJPLSpice
 
-   ICentralBodyEphemerisJPLSpice, ICentralBodyEphemeris, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyEphemerisJPLSpice`, py:obj:`~ICentralBodyEphemeris`
 
    Central Body Ephemeris - JPLSpice.
 

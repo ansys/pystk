@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: atmosphere_model_source
     :canonical: ansys.stk.core.stkobjects.aviator.IAtmosphereModel.atmosphere_model_source
-    :type: "WIND_ATMOS_MODEL_SOURCE"
+    :type: WIND_ATMOS_MODEL_SOURCE
 
     Gets or sets the atmosphere model source.
 
 .. py:property:: mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.IAtmosphereModel.mode_as_basic
-    :type: "IAgAvtrAtmosphereModelBasic"
+    :type: IAgAvtrAtmosphereModelBasic
 
     Get the options for a Basic Atmosphere model.
 
@@ -75,6 +75,7 @@ Method detail
 
 
 .. py:method:: copy(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAtmosphereModel.copy
 
     Copy the atmosphere model.
 
@@ -83,6 +84,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAtmosphereModel.paste
 
     Paste the atmosphere model.
 

@@ -3,7 +3,7 @@ VehicleGraphics3DLeadTrailData
 
 .. py:class:: VehicleGraphics3DLeadTrailData
 
-   IVehicleGraphics3DLeadTrailData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DLeadTrailData`
 
    AgLvVOTrajectory2 Class.
 

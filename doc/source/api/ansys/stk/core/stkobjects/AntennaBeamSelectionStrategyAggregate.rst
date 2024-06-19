@@ -3,7 +3,7 @@ AntennaBeamSelectionStrategyAggregate
 
 .. py:class:: AntennaBeamSelectionStrategyAggregate
 
-   IAntennaBeamSelectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaBeamSelectionStrategy`
 
    Class defining a aggregated beam selection strategy.
 

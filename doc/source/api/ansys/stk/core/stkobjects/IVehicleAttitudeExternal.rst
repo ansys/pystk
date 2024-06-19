@@ -92,13 +92,13 @@ Property detail
 
 .. py:property:: attitude_start_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExternal.attitude_start_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     If overriding the times contained in the external file, specifies the time of the first attitude point.
 
 .. py:property:: message_level
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExternal.message_level
-    :type: "STK_EXTERNAL_FILE_MESSAGE_LEVEL"
+    :type: STK_EXTERNAL_FILE_MESSAGE_LEVEL
 
     Message level used to report messages during file loading.
 
@@ -111,6 +111,7 @@ Method detail
 
 
 .. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExternal.reload
 
     Reload the file.
 
@@ -118,7 +119,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load(self, filename:str) -> None
+.. py:method:: load(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExternal.load
 
     Load the file.
 
@@ -131,6 +133,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: disable(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExternal.disable
 
     Unload the file.
 

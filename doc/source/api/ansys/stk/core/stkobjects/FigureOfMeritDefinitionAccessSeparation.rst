@@ -3,7 +3,7 @@ FigureOfMeritDefinitionAccessSeparation
 
 .. py:class:: FigureOfMeritDefinitionAccessSeparation
 
-   IFigureOfMeritDefinitionAccessSeparation, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionAccessSeparation`, py:obj:`~IFigureOfMeritDefinition`
 
    Access Separation Figure of Merit.
 

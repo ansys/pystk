@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: min_ex
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.min_ex
-    :type: "IAgQuantity"
+    :type: IAgQuantity
 
     Minimum coordinate value as IAgQuantity.
 
 .. py:property:: max_ex
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.max_ex
-    :type: "IAgQuantity"
+    :type: IAgQuantity
 
     Maximum coordinate value as IAgQuantity.
 

@@ -3,7 +3,7 @@ NRLMSISE_2000
 
 .. py:class:: NRLMSISE_2000
 
-   INRLMSISE_2000, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~INRLMSISE_2000`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    NRLMSISE 2000 atmospheric propagator function.
 

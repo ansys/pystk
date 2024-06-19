@@ -85,7 +85,8 @@ Method detail
 
 
 
-.. py:method:: set_position(self, x:float, y:float, z:float) -> None
+.. py:method:: set_position(self, x: float, y: float, z: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPayloadStation.set_position
 
     Set the payload station's parent relative position.
 
@@ -100,6 +101,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_sub_item(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPayloadStation.remove_sub_item
 
     Remove any sub item that may be attached to the payload station.
 
@@ -107,19 +109,21 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_external_fuel_tank(self) -> "IFuelTankExternal"
+.. py:method:: add_external_fuel_tank(self) -> IFuelTankExternal
+    :canonical: ansys.stk.core.stkobjects.aviator.IPayloadStation.add_external_fuel_tank
 
     Add an external fuel tank to the payload station.
 
     :Returns:
 
-        :obj:`~"IFuelTankExternal"`
+        :obj:`~IFuelTankExternal`
 
-.. py:method:: get_external_fuel_tank(self) -> "IFuelTankExternal"
+.. py:method:: get_external_fuel_tank(self) -> IFuelTankExternal
+    :canonical: ansys.stk.core.stkobjects.aviator.IPayloadStation.get_external_fuel_tank
 
     Get the external fuel tank attached to the payload station.
 
     :Returns:
 
-        :obj:`~"IFuelTankExternal"`
+        :obj:`~IFuelTankExternal`
 

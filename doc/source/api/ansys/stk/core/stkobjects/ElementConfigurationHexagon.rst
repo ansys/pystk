@@ -3,7 +3,7 @@ ElementConfigurationHexagon
 
 .. py:class:: ElementConfigurationHexagon
 
-   IElementConfigurationPolygon, IElementConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~IElementConfigurationPolygon`, py:obj:`~IElementConfiguration`
 
    Class defining a hexagon element configuration.
 

@@ -3,7 +3,7 @@ AntennaContourGain
 
 .. py:class:: AntennaContourGain
 
-   IAntennaContour, IAntennaContourGain, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaContour`, py:obj:`~IAntennaContourGain`
 
    Class defining an antenna gain contour properties.
 

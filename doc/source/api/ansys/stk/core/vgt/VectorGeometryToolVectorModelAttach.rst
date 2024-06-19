@@ -3,7 +3,7 @@ VectorGeometryToolVectorModelAttach
 
 .. py:class:: VectorGeometryToolVectorModelAttach
 
-   IVectorGeometryToolVectorModelAttach, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorModelAttach`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element.
 

@@ -3,7 +3,7 @@ DataObjectFiles
 
 .. py:class:: DataObjectFiles
 
-   IDataObjectFiles, SupportsDeleteCallback
+   Bases: py:obj:`~IDataObjectFiles`
 
    Collection of files for OLE drag & drop operations.
 

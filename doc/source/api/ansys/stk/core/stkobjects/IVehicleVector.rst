@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: body
     :canonical: ansys.stk.core.stkobjects.IVehicleVector.body
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Get the body-fixed vector that is aligned or constrained with respect to the reference vector.
 

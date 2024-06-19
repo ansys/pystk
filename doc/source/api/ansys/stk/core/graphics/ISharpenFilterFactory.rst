@@ -38,23 +38,25 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ISharpenFilter"
+.. py:method:: initialize(self) -> ISharpenFilter
+    :canonical: ansys.stk.core.graphics.ISharpenFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"ISharpenFilter"`
+        :obj:`~ISharpenFilter`
 
-.. py:method:: initialize_with_method(self, method:"SHARPEN_METHOD") -> "ISharpenFilter"
+.. py:method:: initialize_with_method(self, method: SHARPEN_METHOD) -> ISharpenFilter
+    :canonical: ansys.stk.core.graphics.ISharpenFilterFactory.initialize_with_method
 
     Initialize a new instance with the specified sharpen method.
 
     :Parameters:
 
-    **method** : :obj:`~"SHARPEN_METHOD"`
+    **method** : :obj:`~SHARPEN_METHOD`
 
     :Returns:
 
-        :obj:`~"ISharpenFilter"`
+        :obj:`~ISharpenFilter`
 

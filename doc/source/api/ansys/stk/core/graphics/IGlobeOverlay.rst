@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: role
     :canonical: ansys.stk.core.graphics.IGlobeOverlay.role
-    :type: "GLOBE_OVERLAY_ROLE"
+    :type: GLOBE_OVERLAY_ROLE
 
     Gets the globe overlay role of the globe overlay.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: display_condition
     :canonical: ansys.stk.core.graphics.IGlobeOverlay.display_condition
-    :type: "IAgStkGraphicsDisplayCondition"
+    :type: IAgStkGraphicsDisplayCondition
 
     Gets or sets the display condition that controls whether or not the globe overlay is displayed.
 

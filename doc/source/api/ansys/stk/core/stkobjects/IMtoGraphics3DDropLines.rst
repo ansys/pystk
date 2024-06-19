@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DDropLines.position
-    :type: "IAgVeVODropLinePosItemCollection"
+    :type: IAgVeVODropLinePosItemCollection
 
     Get a list of droplines from the MTO's current positions.
 
 .. py:property:: ephemeris
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DDropLines.ephemeris
-    :type: "IAgVeVODropLinePathItemCollection"
+    :type: IAgVeVODropLinePathItemCollection
 
     Get a list of droplines at intervals along the MTO's ephemeris.
 

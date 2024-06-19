@@ -3,7 +3,7 @@ Graphics3DOffset
 
 .. py:class:: Graphics3DOffset
 
-   IGraphics3DOffset, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DOffset`
 
    Class defining 3D offset attributes.
 

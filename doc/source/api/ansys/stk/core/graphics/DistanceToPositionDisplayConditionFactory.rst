@@ -3,7 +3,7 @@ DistanceToPositionDisplayConditionFactory
 
 .. py:class:: DistanceToPositionDisplayConditionFactory
 
-   IDistanceToPositionDisplayConditionFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IDistanceToPositionDisplayConditionFactory`
 
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame.
 

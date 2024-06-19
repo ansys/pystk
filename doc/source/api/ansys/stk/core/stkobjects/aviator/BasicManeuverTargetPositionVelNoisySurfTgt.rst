@@ -3,7 +3,7 @@ BasicManeuverTargetPositionVelNoisySurfTgt
 
 .. py:class:: BasicManeuverTargetPositionVelNoisySurfTgt
 
-   IBasicManeuverTargetPositionVelNoisySurfTgt, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverTargetPositionVelNoisySurfTgt`
 
    Class defining the position and velocity strategy, Noisy Surface Target.
 

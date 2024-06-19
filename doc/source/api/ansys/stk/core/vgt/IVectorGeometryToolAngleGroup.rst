@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.context
-    :type: "IAgCrdnContext"
+    :type: IAgCrdnContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.factory
-    :type: "IAgCrdnAngleFactory"
+    :type: IAgCrdnAngleFactory
 
     Returns a Factory object used to create custom angles.
 
@@ -82,7 +82,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, angleName:str) -> None
+.. py:method:: remove(self, angleName: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.remove
 
     Remove a specified Angle.
 
@@ -95,7 +96,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.contains
 
     Search for a an element with a given name. Returns false if the specified element does not exist.
 
@@ -109,7 +111,8 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IVectorGeometryToolAngle"
+.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolAngle
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.item
 
     Return an angle by name or at a specified position.
 
@@ -119,10 +122,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAngle"`
+        :obj:`~IVectorGeometryToolAngle`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IVectorGeometryToolAngle"
+.. py:method:: get_item_by_index(self, index: int) -> IVectorGeometryToolAngle
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.get_item_by_index
 
     Retrieve an angle from the collection by index.
 
@@ -132,9 +136,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAngle"`
+        :obj:`~IVectorGeometryToolAngle`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IVectorGeometryToolAngle"
+.. py:method:: get_item_by_name(self, name: str) -> IVectorGeometryToolAngle
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.get_item_by_name
 
     Retrieve an angle from the collection by name.
 
@@ -144,5 +149,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAngle"`
+        :obj:`~IVectorGeometryToolAngle`
 

@@ -90,6 +90,7 @@ Method detail
 
 
 .. py:method:: electron_dose_rate(self) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.electron_dose_rate
 
     Return electron dose rate if it is valid. Uses RadDoseRate Dimension.
 
@@ -99,6 +100,7 @@ Method detail
 
 
 .. py:method:: electron_bremsstrahlung_dose_rate(self) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.electron_bremsstrahlung_dose_rate
 
     Return electron bremsstrahlung dose rate if it is valid. Uses RadDoseRate Dimension.
 
@@ -108,6 +110,7 @@ Method detail
 
 
 .. py:method:: proton_dose_rate(self) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.proton_dose_rate
 
     Return proton dose rate if it is valid. Uses RadDoseRate Dimension.
 
@@ -117,6 +120,7 @@ Method detail
 
 
 .. py:method:: total_dose_rate(self) -> float
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.total_dose_rate
 
     Return total dose rate if it is valid. Uses RadDoseRate Dimension.
 

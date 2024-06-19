@@ -3,7 +3,7 @@ VehicleHPOPDragModelPlugin
 
 .. py:class:: VehicleHPOPDragModelPlugin
 
-   IVehicleHPOPDragModelPlugin, IVehicleHPOPDragModel, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleHPOPDragModelPlugin`, py:obj:`~IVehicleHPOPDragModel`
 
    Plugin Drag Model.
 

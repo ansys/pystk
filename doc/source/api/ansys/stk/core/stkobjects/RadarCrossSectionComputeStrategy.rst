@@ -3,7 +3,7 @@ RadarCrossSectionComputeStrategy
 
 .. py:class:: RadarCrossSectionComputeStrategy
 
-   IRadarCrossSectionComputeStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 

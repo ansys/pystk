@@ -3,7 +3,7 @@ ScriptingParameterCollection
 
 .. py:class:: ScriptingParameterCollection
 
-   IScriptingParameterCollection, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IScriptingParameterCollection`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Scripting Parameter Collection.
 

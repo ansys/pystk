@@ -3,7 +3,7 @@ VehicleGraphics3DVelCovariance
 
 .. py:class:: VehicleGraphics3DVelCovariance
 
-   IVehicleGraphics3DVelCovariance, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DVelCovariance`
 
    3D velocity covariance ellipsoids.
 

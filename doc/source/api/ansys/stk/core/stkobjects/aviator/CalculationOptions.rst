@@ -3,7 +3,7 @@ CalculationOptions
 
 .. py:class:: CalculationOptions
 
-   ICalculationOptions, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationOptions`
 
    Class defining the calculation options for a procedure or phase.
 

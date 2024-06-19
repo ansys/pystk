@@ -3,7 +3,7 @@ VehicleSGP4AutoUpdate
 
 .. py:class:: VehicleSGP4AutoUpdate
 
-   IVehicleSGP4AutoUpdate, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4AutoUpdate`
 
    SGP4 AutoUpdate.
 

@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: shape_type
     :canonical: ansys.stk.core.stkobjects.IEOIRShape.shape_type
-    :type: "EOIR_SHAPE_TYPE"
+    :type: EOIR_SHAPE_TYPE
 
     Property used to access the shape type.
 
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: shape_object
     :canonical: ansys.stk.core.stkobjects.IEOIRShape.shape_object
-    :type: "IAgEOIRShapeObject"
+    :type: IAgEOIRShapeObject
 
     Property used to access the shape object.
 
@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: material_specification_type
     :canonical: ansys.stk.core.stkobjects.IEOIRShape.material_specification_type
-    :type: "EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE"
+    :type: EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE
 
     Property used to access the shape material specification type.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: material_elements
     :canonical: ansys.stk.core.stkobjects.IEOIRShape.material_elements
-    :type: "IAgEOIRMaterialElementCollection"
+    :type: IAgEOIRMaterialElementCollection
 
     Property used to access the material element collection.
 

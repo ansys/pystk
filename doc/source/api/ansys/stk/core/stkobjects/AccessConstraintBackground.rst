@@ -3,7 +3,7 @@ AccessConstraintBackground
 
 .. py:class:: AccessConstraintBackground
 
-   IAccessConstraintBackground, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintBackground`, py:obj:`~IAccessConstraint`
 
    Class related to the Background constraint, which constrains access periods based on whether the Earth is or is not in the background.
 

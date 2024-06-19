@@ -3,7 +3,7 @@ VectorGeometryToolPointFixedInSystem
 
 .. py:class:: VectorGeometryToolPointFixedInSystem
 
-   IVectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointFixedInSystem`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Point fixed in a reference coordinate system using the selected coordinate type.
 

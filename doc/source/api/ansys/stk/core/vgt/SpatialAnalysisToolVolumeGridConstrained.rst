@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridConstrained
 
 .. py:class:: SpatialAnalysisToolVolumeGridConstrained
 
-   ISpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridConstrained`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume grid constrained interface.
 

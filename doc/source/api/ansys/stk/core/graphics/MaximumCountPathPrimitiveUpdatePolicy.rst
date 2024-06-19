@@ -3,7 +3,7 @@ MaximumCountPathPrimitiveUpdatePolicy
 
 .. py:class:: MaximumCountPathPrimitiveUpdatePolicy
 
-   IMaximumCountPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy, SupportsDeleteCallback
+   Bases: py:obj:`~IMaximumCountPathPrimitiveUpdatePolicy`, py:obj:`~IPathPrimitiveUpdatePolicy`
 
    path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count.
 

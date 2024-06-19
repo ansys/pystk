@@ -3,7 +3,7 @@ AtmosphericTurbulenceModelHufnagelValley
 
 .. py:class:: AtmosphericTurbulenceModelHufnagelValley
 
-   IAtmosphericTurbulenceModelHufnagelValley, IAtmosphericTurbulenceModel, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphericTurbulenceModelHufnagelValley`, py:obj:`~IAtmosphericTurbulenceModel`
 
    Class defining a Hufnagel Valley atmospheric turbulence model.
 

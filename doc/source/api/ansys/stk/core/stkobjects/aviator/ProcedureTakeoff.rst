@@ -3,7 +3,7 @@ ProcedureTakeoff
 
 .. py:class:: ProcedureTakeoff
 
-   IProcedureTakeoff, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureTakeoff`, py:obj:`~IProcedure`
 
    Class defining a takeoff procedure.
 

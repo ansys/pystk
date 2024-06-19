@@ -42,7 +42,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_path(self, path:str) -> None
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo.set_path
 
     Set a new vector.
 
@@ -54,33 +55,36 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_vector(self, vector:"IVectorGeometryToolVector") -> None
+.. py:method:: set_vector(self, vector: IVectorGeometryToolVector) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo.set_vector
 
     Set a new vector.
 
     :Parameters:
 
-    **vector** : :obj:`~"IVectorGeometryToolVector"`
+    **vector** : :obj:`~IVectorGeometryToolVector`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_vector(self) -> "IVectorGeometryToolVector"
+.. py:method:: get_vector(self) -> IVectorGeometryToolVector
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo.get_vector
 
     Return the actual vector object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolVector"`
+        :obj:`~IVectorGeometryToolVector`
 
-.. py:method:: has_cyclic_dependency(self, vector:"IVectorGeometryToolVector") -> bool
+.. py:method:: has_cyclic_dependency(self, vector: IVectorGeometryToolVector) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo.has_cyclic_dependency
 
     Test whether the input component and the target component form a cyclic dependency.
 
     :Parameters:
 
-    **vector** : :obj:`~"IVectorGeometryToolVector"`
+    **vector** : :obj:`~IVectorGeometryToolVector`
 
     :Returns:
 

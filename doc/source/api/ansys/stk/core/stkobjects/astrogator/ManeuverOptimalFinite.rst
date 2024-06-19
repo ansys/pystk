@@ -3,7 +3,7 @@ ManeuverOptimalFinite
 
 .. py:class:: ManeuverOptimalFinite
 
-   IManeuverOptimalFinite, IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverOptimalFinite`, py:obj:`~IManeuver`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Optimal Finite Maneuver.
 

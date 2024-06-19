@@ -3,7 +3,7 @@ AGIProcessedTerrainOverlayFactory
 
 .. py:class:: AGIProcessedTerrainOverlayFactory
 
-   IAGIProcessedTerrainOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IAGIProcessedTerrainOverlayFactory`
 
    A terrain overlay for handling AGI Processed Terrain (PDTT) files.
 

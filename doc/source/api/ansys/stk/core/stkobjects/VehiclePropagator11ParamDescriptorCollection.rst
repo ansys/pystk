@@ -3,7 +3,7 @@ VehiclePropagator11ParamDescriptorCollection
 
 .. py:class:: VehiclePropagator11ParamDescriptorCollection
 
-   IVehiclePropagator11ParamDescriptorCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagator11ParamDescriptorCollection`
 
    A collection of 11-Parameter files.
 

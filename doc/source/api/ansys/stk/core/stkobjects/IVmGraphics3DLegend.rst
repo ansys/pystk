@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: notation
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.notation
-    :type: "VM_LEGEND_NUMERIC_NOTATION"
+    :type: VM_LEGEND_NUMERIC_NOTATION
 
     Set the legend numeric notation. A member of the AgEVmLegendNumericNotation enumeration.
 
@@ -95,7 +95,7 @@ Property detail
 
 .. py:property:: level_order
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.level_order
-    :type: "VM_LEVEL_ORDER"
+    :type: VM_LEVEL_ORDER
 
     Set the legend numeric notation. A member of the AgEVmLevelOrder enumeration.
 

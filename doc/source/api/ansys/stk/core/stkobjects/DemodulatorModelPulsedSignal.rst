@@ -3,7 +3,7 @@ DemodulatorModelPulsedSignal
 
 .. py:class:: DemodulatorModelPulsedSignal
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a pulsed signal modulator model.
 

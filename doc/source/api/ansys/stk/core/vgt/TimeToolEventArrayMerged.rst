@@ -3,7 +3,7 @@ TimeToolEventArrayMerged
 
 .. py:class:: TimeToolEventArrayMerged
 
-   ITimeToolEventArrayMerged, ITimeToolEventArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventArrayMerged`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays. If some intervals overlap, then within overlap times from both arrays are merged together.
 

@@ -3,7 +3,7 @@ ScatteringPointModel
 
 .. py:class:: ScatteringPointModel
 
-   IScatteringPointModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a scattering point model.
 

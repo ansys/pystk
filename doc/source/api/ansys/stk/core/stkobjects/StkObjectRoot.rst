@@ -3,7 +3,7 @@ StkObjectRoot
 
 .. py:class:: StkObjectRoot
 
-   IStkObjectRoot, IStkObject, ILifetimeInformation, IAnimation, SupportsDeleteCallback
+   Bases: py:obj:`~IStkObjectRoot`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IAnimation`
 
    Top-level object in the Object Model Hierarchy.
 

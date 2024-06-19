@@ -3,7 +3,7 @@ LevelAttribute
 
 .. py:class:: LevelAttribute
 
-   ILevelAttribute, SupportsDeleteCallback
+   Bases: py:obj:`~ILevelAttribute`
 
    Properties defining display of contour levels.
 

@@ -3,7 +3,7 @@ ElementConfigurationLinear
 
 .. py:class:: ElementConfigurationLinear
 
-   IElementConfigurationLinear, IElementConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~IElementConfigurationLinear`, py:obj:`~IElementConfiguration`
 
    Class defining a linear element configuration.
 

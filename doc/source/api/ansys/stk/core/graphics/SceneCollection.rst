@@ -3,7 +3,7 @@ SceneCollection
 
 .. py:class:: SceneCollection
 
-   ISceneCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISceneCollection`
 
    A collection of scenes.
 

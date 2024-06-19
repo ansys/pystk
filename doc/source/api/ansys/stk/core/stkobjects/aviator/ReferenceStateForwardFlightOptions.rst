@@ -3,7 +3,7 @@ ReferenceStateForwardFlightOptions
 
 .. py:class:: ReferenceStateForwardFlightOptions
 
-   IReferenceStateForwardFlightOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IReferenceStateForwardFlightOptions`
 
    Class defining the Forward Flight options for a Reference State procedure.
 

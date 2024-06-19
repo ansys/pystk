@@ -3,7 +3,7 @@ StateCalcMinValue
 
 .. py:class:: StateCalcMinValue
 
-   IComponentInfo, ICloneable, IStateCalcMinValue, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMinValue`
 
    MinimumValue Calc objects.
 

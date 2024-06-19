@@ -3,7 +3,7 @@ MtoAnalysis
 
 .. py:class:: MtoAnalysis
 
-   IMtoAnalysis, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoAnalysis`
 
    MTO Spatial State Info.
 

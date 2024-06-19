@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IFigureOfMeritAssetListElement"
+.. py:method:: item(self, index: int) -> IFigureOfMeritAssetListElement
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IFigureOfMeritAssetListElement"`
+        :obj:`~IFigureOfMeritAssetListElement`
 
 

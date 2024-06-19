@@ -68,13 +68,13 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.constraints
-    :type: "IAgVAConstraintCollection"
+    :type: IAgVAConstraintCollection
 
     Further conditions that must be met in order for the stopping condition to be deemed satisfied.
 
 .. py:property:: before_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.before_conditions
-    :type: "IAgVAStoppingConditionCollection"
+    :type: IAgVAStoppingConditionCollection
 
     A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
 
@@ -92,13 +92,13 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.condition
-    :type: "LIGHTING_CONDITION"
+    :type: LIGHTING_CONDITION
 
     Specifies the direction from which the stopping condition value must be achieved.
 
 .. py:property:: eclipsing_bodies_list_source
     :canonical: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.eclipsing_bodies_list_source
-    :type: "ECLIPSING_BODIES_SOURCE"
+    :type: ECLIPSING_BODIES_SOURCE
 
     Eclipsing Bodies List Source.
 
@@ -132,7 +132,8 @@ Method detail
 
 
 
-.. py:method:: add_eclipsing_body(self, eclipsingBody:str) -> None
+.. py:method:: add_eclipsing_body(self, eclipsingBody: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.add_eclipsing_body
 
     Add an eclipsing body.
 
@@ -144,7 +145,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_eclipsing_body(self, eclipsingBody:str) -> None
+.. py:method:: remove_eclipsing_body(self, eclipsingBody: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.remove_eclipsing_body
 
     Remove an eclipsing body.
 

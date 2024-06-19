@@ -3,7 +3,7 @@ MtoAnalysisRange
 
 .. py:class:: MtoAnalysisRange
 
-   IMtoAnalysisRange, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoAnalysisRange`
 
    MTO Range Computation.
 

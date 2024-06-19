@@ -3,7 +3,7 @@ StateCalcTrueLongitude
 
 .. py:class:: StateCalcTrueLongitude
 
-   IComponentInfo, ICloneable, IStateCalcTrueLongitude, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTrueLongitude`
 
    TrueLongitude Calc objects.
 

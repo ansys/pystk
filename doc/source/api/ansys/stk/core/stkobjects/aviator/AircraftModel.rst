@@ -3,7 +3,7 @@ AircraftModel
 
 .. py:class:: AircraftModel
 
-   IAircraftModel, IAviatorVehicle, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftModel`, py:obj:`~IAviatorVehicle`, py:obj:`~ICatalogItem`
 
    Class defining an aircraft in Aviator.
 

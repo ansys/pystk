@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.IAnimation.mode
-    :type: "ANIMATION_MODES"
+    :type: ANIMATION_MODES
 
     Animation mode.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: animation_options
     :canonical: ansys.stk.core.stkobjects.IAnimation.animation_options
-    :type: "ANIMATION_OPTIONS"
+    :type: ANIMATION_OPTIONS
 
     Animation options.
 
@@ -96,6 +96,7 @@ Method detail
 -------------
 
 .. py:method:: play_forward(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.play_forward
 
     Animate forward.
 
@@ -104,6 +105,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: play_backward(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.play_backward
 
     Animate backward.
 
@@ -112,6 +114,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: pause(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.pause
 
     Pause the animation.
 
@@ -120,6 +123,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: rewind(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.rewind
 
     Stop and reset the animation.
 
@@ -128,6 +132,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: step_forward(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.step_forward
 
     Advance the animation one step forward.
 
@@ -136,6 +141,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: step_backward(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.step_backward
 
     Reverse the animation one step backward.
 
@@ -144,6 +150,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: faster(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.faster
 
     Increase the speed of the animation.
 
@@ -152,6 +159,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: slower(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAnimation.slower
 
     Decrease the speed of the animation.
 

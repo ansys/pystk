@@ -3,7 +3,7 @@ AccessConstraintTimeSlipRange
 
 .. py:class:: AccessConstraintTimeSlipRange
 
-   IAccessConstraintTimeSlipRange, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintTimeSlipRange`, py:obj:`~IAccessConstraint`
 
    Class for controlling the use the Time Slip constraint for a missile or launch vehicle, used with the Close Approach Tool.
 

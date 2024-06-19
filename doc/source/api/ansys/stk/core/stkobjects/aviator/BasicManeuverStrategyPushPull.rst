@@ -3,7 +3,7 @@ BasicManeuverStrategyPushPull
 
 .. py:class:: BasicManeuverStrategyPushPull
 
-   IBasicManeuverStrategyPushPull, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyPushPull`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Push/Pull strategy for a basic maneuver procedure.
 

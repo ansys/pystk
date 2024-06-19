@@ -3,7 +3,7 @@ LaunchVehicleGraphics3D
 
 .. py:class:: LaunchVehicleGraphics3D
 
-   ILaunchVehicleGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~ILaunchVehicleGraphics3D`
 
    3D Graphics for a launch vehicle.
 

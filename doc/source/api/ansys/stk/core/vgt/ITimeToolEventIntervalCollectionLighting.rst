@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionLighting.location
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     The location point to compute sunlight, penumbra and umbra.
 

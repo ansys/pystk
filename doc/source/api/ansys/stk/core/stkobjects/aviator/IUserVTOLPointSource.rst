@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_user_vtol_point(self, name:str) -> "IUserVTOLPoint"
+.. py:method:: get_user_vtol_point(self, name: str) -> IUserVTOLPoint
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserVTOLPointSource.get_user_vtol_point
 
     Get the user VTOL Point with the given name.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVTOLPoint"`
+        :obj:`~IUserVTOLPoint`
 
-.. py:method:: add_user_vtol_point(self, name:str) -> "IUserVTOLPoint"
+.. py:method:: add_user_vtol_point(self, name: str) -> IUserVTOLPoint
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserVTOLPointSource.add_user_vtol_point
 
     Create a new user VTOL Point with the given name.
 
@@ -62,13 +64,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserVTOLPoint"`
+        :obj:`~IUserVTOLPoint`
 
-.. py:method:: get_as_catalog_source(self) -> "ICatalogSource"
+.. py:method:: get_as_catalog_source(self) -> ICatalogSource
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserVTOLPointSource.get_as_catalog_source
 
     Get the catalog source interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogSource"`
+        :obj:`~ICatalogSource`
 

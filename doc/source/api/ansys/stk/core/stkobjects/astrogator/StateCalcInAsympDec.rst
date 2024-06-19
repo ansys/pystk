@@ -3,7 +3,7 @@ StateCalcInAsympDec
 
 .. py:class:: StateCalcInAsympDec
 
-   IComponentInfo, ICloneable, IStateCalcInAsympDec, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcInAsympDec`
 
    InAsymptoteDec Calc objects.
 

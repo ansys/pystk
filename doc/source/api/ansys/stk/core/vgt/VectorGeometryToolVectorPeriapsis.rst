@@ -3,7 +3,7 @@ VectorGeometryToolVectorPeriapsis
 
 .. py:class:: VectorGeometryToolVectorPeriapsis
 
-   IVectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorPeriapsis`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point.
 

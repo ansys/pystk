@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.ITimeToolFindTimesResult.intervals
-    :type: "IAgCrdnIntervalCollection"
+    :type: IAgCrdnIntervalCollection
 
     A collection of found intervals.
 

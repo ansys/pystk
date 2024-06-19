@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: inertia
     :canonical: ansys.stk.core.stkobjects.IVehicleMassProperties.inertia
-    :type: "IAgVeInertia"
+    :type: IAgVeInertia
 
     Get the satellite inertia matrix.
 

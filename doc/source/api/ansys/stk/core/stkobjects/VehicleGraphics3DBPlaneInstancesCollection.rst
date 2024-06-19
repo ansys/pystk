@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneInstancesCollection
 
 .. py:class:: VehicleGraphics3DBPlaneInstancesCollection
 
-   IVehicleGraphics3DBPlaneInstancesCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneInstancesCollection`
 
    A list of available b-plane instances.
 

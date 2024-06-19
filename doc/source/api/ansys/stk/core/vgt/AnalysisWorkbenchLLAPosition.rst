@@ -3,7 +3,7 @@ AnalysisWorkbenchLLAPosition
 
 .. py:class:: AnalysisWorkbenchLLAPosition
 
-   IAnalysisWorkbenchLLAPosition, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchLLAPosition`
 
    A position represented by the Latitude, longtitude and Latitude.
 

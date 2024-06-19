@@ -3,7 +3,7 @@ BeerBouguerLambertLawLayer
 
 .. py:class:: BeerBouguerLambertLawLayer
 
-   IBeerBouguerLambertLawLayer, SupportsDeleteCallback
+   Bases: py:obj:`~IBeerBouguerLambertLawLayer`
 
    Class defining a row of an input back off vs output back off table.
 

@@ -3,7 +3,7 @@ EOIRShapeCylinder
 
 .. py:class:: EOIRShapeCylinder
 
-   IEOIRShapeCylinder, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeCylinder`, py:obj:`~IEOIRShapeObject`
 
    Cylinder shape class.
 

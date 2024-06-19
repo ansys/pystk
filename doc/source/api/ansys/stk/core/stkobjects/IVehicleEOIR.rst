@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: shape
     :canonical: ansys.stk.core.stkobjects.IVehicleEOIR.shape
-    :type: "IAgEOIRShape"
+    :type: IAgEOIRShape
 
     Property used to access the EOIR interface.
 

@@ -3,7 +3,7 @@ SatelliteCollection
 
 .. py:class:: SatelliteCollection
 
-   ISatelliteCollection, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~ISatelliteCollection`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    The AgSatelliteCollection class.
 

@@ -3,7 +3,7 @@ CalculationToolScalarFactory
 
 .. py:class:: CalculationToolScalarFactory
 
-   ICalculationToolScalarFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarFactory`
 
    The factory creates scalar calculation components.
 

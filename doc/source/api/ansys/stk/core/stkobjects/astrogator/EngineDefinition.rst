@@ -3,7 +3,7 @@ EngineDefinition
 
 .. py:class:: EngineDefinition
 
-   IEngineDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineDefinition`
 
    Engine definition.
 

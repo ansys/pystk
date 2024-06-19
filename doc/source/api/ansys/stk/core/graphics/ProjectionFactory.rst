@@ -3,7 +3,7 @@ ProjectionFactory
 
 .. py:class:: ProjectionFactory
 
-   IProjectionFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IProjectionFactory`
 
    A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical...
 

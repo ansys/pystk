@@ -3,7 +3,7 @@ ThrusterSetCollection
 
 .. py:class:: ThrusterSetCollection
 
-   IThrusterSetCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IThrusterSetCollection`
 
    Thruster Set Collection.
 

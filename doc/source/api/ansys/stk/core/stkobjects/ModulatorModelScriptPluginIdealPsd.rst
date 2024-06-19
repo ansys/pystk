@@ -3,7 +3,7 @@ ModulatorModelScriptPluginIdealPsd
 
 .. py:class:: ModulatorModelScriptPluginIdealPsd
 
-   IModulatorModelScriptPlugin, IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModelScriptPlugin`, py:obj:`~IModulatorModel`
 
    Class defining a ideal PSD script plugin modulator model.
 

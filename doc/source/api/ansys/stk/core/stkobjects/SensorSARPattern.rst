@@ -3,7 +3,7 @@ SensorSARPattern
 
 .. py:class:: SensorSARPattern
 
-   ISensorPattern, ISensorSARPattern, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPattern`, py:obj:`~ISensorSARPattern`
 
    Class defining the Synthetic Aperture Radar (SAR) pattern for a Sensor.
 

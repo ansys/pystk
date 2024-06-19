@@ -3,7 +3,7 @@ AntennaVolumeLevel
 
 .. py:class:: AntennaVolumeLevel
 
-   IAntennaVolumeLevel, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaVolumeLevel`
 
    Class defining an antenna volume level.
 

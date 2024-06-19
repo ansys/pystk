@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IOnePointAccessResult"
+.. py:method:: item(self, index: int) -> IOnePointAccessResult
+    :canonical: ansys.stk.core.stkobjects.IOnePointAccessResultCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IOnePointAccessResult"`
+        :obj:`~IOnePointAccessResult`
 
 

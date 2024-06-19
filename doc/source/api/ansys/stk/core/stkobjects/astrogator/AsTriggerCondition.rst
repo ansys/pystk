@@ -3,7 +3,7 @@ AsTriggerCondition
 
 .. py:class:: AsTriggerCondition
 
-   IAsTriggerCondition, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAsTriggerCondition`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Constraint.
 

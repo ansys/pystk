@@ -3,7 +3,7 @@ VehicleTargetPointingCollection
 
 .. py:class:: VehicleTargetPointingCollection
 
-   IVehicleTargetPointingCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleTargetPointingCollection`
 
    List of Attitude Targets.
 

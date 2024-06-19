@@ -52,19 +52,19 @@ Property detail
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.vgt.ITimeToolLightTimeDelay.aberration_type
-    :type: "CRDN_VOLUME_ABERRATION_TYPE"
+    :type: CRDN_VOLUME_ABERRATION_TYPE
 
     Method used to Aberration Type.
 
 .. py:property:: clock_host
     :canonical: ansys.stk.core.vgt.ITimeToolLightTimeDelay.clock_host
-    :type: "CRDN_VOLUME_CLOCK_HOST_TYPE"
+    :type: CRDN_VOLUME_CLOCK_HOST_TYPE
 
     Indicates whether object1 or object2 of an Access instance holds the clock for Access times.
 
 .. py:property:: time_sense
     :canonical: ansys.stk.core.vgt.ITimeToolLightTimeDelay.time_sense
-    :type: "CRDN_VOLUME_TIME_SENSE_TYPE"
+    :type: CRDN_VOLUME_TIME_SENSE_TYPE
 
     Indicates whether apparent position is computed in a transmit or receive sense.
 

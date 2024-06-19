@@ -3,7 +3,7 @@ BlurFilter
 
 .. py:class:: BlurFilter
 
-   IBlurFilter, IConvolutionFilter, IRasterFilter, SupportsDeleteCallback
+   Bases: py:obj:`~IBlurFilter`, py:obj:`~IConvolutionFilter`, py:obj:`~IRasterFilter`
 
    Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster.
 

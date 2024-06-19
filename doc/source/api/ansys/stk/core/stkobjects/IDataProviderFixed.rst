@@ -38,15 +38,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: exec(self) -> "IDataProviderResult"
+.. py:method:: exec(self) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderFixed.exec
 
     Compute the data; fixed data providers do not require arguments.
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_elements(self, elementNames:list) -> "IDataProviderResult"
+.. py:method:: exec_elements(self, elementNames: list) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderFixed.exec_elements
 
     Compute the data and returns just the indicated data elements; fixed data providers do not require arguments.
 
@@ -56,5 +58,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 

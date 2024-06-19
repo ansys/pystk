@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: atmospheric_turbulence_model
     :canonical: ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModelITURP1814.atmospheric_turbulence_model
-    :type: "IAgAtmosphericTurbulenceModel"
+    :type: IAgAtmosphericTurbulenceModel
 
     Gets the atmospheric turbulence model.
 
@@ -53,13 +53,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: set_atmospheric_turbulence_model_type(self, val:"ATMOSPHERIC_TURBULENCE_MODEL_TYPE") -> None
+.. py:method:: set_atmospheric_turbulence_model_type(self, val: ATMOSPHERIC_TURBULENCE_MODEL_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModelITURP1814.set_atmospheric_turbulence_model_type
 
     Set the atmospheric turbulence model type.
 
     :Parameters:
 
-    **val** : :obj:`~"ATMOSPHERIC_TURBULENCE_MODEL_TYPE"`
+    **val** : :obj:`~ATMOSPHERIC_TURBULENCE_MODEL_TYPE`
 
     :Returns:
 

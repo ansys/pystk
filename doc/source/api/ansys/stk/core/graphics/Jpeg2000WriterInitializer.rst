@@ -3,7 +3,7 @@ Jpeg2000WriterInitializer
 
 .. py:class:: Jpeg2000WriterInitializer
 
-   IJpeg2000WriterInitializer, SupportsDeleteCallback
+   Bases: py:obj:`~IJpeg2000WriterInitializer`
 
    Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay.
 

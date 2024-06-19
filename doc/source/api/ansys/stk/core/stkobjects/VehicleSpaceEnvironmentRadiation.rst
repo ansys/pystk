@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentRadiation
 
 .. py:class:: VehicleSpaceEnvironmentRadiation
 
-   IVehicleSpaceEnvironmentRadiation, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironmentRadiation`
 
    Radiation model settings.
 

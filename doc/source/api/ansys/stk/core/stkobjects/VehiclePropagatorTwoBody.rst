@@ -3,7 +3,7 @@ VehiclePropagatorTwoBody
 
 .. py:class:: VehiclePropagatorTwoBody
 
-   IVehiclePropagatorTwoBody, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorTwoBody`, py:obj:`~IVehiclePropagator`
 
    Class defining the two body propagator.
 

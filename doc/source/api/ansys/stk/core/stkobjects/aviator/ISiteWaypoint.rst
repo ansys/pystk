@@ -64,11 +64,12 @@ Method detail
 
 
 
-.. py:method:: get_as_site(self) -> "ISite"
+.. py:method:: get_as_site(self) -> ISite
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteWaypoint.get_as_site
 
     Get the site interface.
 
     :Returns:
 
-        :obj:`~"ISite"`
+        :obj:`~ISite`
 

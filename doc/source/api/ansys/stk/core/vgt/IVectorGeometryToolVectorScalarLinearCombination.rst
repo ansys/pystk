@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: vector_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.vector_a
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Vector A can be any VGT vector.
 
@@ -77,19 +77,19 @@ Property detail
 
 .. py:property:: scalar_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scalar_a
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     Scalar scale A. Can be any Scalar calculation.
 
 .. py:property:: scalar_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scalar_b
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     Scalar scale B. Can be any Scalar calculation.
 
 .. py:property:: vector_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.vector_b
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Vector B can be any VGT vector.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: output_dimension_inheritance
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.output_dimension_inheritance
-    :type: "CRDN_DIMENSION_INHERITANCE"
+    :type: CRDN_DIMENSION_INHERITANCE
 
     Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
 

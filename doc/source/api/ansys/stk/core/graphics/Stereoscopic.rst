@@ -3,7 +3,7 @@ Stereoscopic
 
 .. py:class:: Stereoscopic
 
-   IStereoscopic, SupportsDeleteCallback
+   Bases: py:obj:`~IStereoscopic`
 
    Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled.
 

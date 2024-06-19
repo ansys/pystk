@@ -3,7 +3,7 @@ StateCalcScript
 
 .. py:class:: StateCalcScript
 
-   IComponentInfo, ICloneable, IStateCalcScript, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcScript`
 
    Script Calc objects.
 

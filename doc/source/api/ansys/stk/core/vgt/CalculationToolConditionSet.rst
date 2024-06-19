@@ -3,7 +3,7 @@ CalculationToolConditionSet
 
 .. py:class:: CalculationToolConditionSet
 
-   ICalculationToolConditionSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionSet`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for...
 

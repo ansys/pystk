@@ -3,7 +3,7 @@ VmGraphics3DLegend
 
 .. py:class:: VmGraphics3DLegend
 
-   IVmGraphics3DLegend, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGraphics3DLegend`
 
    Class defining Boundary/Fill legend for volumetric object.
 

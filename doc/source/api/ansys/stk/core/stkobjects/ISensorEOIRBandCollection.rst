@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ISensorEOIRBand"
+.. py:method:: item(self, index: int) -> ISensorEOIRBand
+    :canonical: ansys.stk.core.stkobjects.ISensorEOIRBandCollection.item
 
     Given an index, returns an IAgSnEOIRBand interface.
 
@@ -77,18 +78,20 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorEOIRBand"`
+        :obj:`~ISensorEOIRBand`
 
 
-.. py:method:: add(self) -> "ISensorEOIRBand"
+.. py:method:: add(self) -> ISensorEOIRBand
+    :canonical: ansys.stk.core.stkobjects.ISensorEOIRBandCollection.add
 
     Add a target.
 
     :Returns:
 
-        :obj:`~"ISensorEOIRBand"`
+        :obj:`~ISensorEOIRBand`
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorEOIRBandCollection.remove_at
 
     Remove a target given an index.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_item_by_name(self, name:str) -> "ISensorEOIRBand"
+.. py:method:: get_item_by_name(self, name: str) -> ISensorEOIRBand
+    :canonical: ansys.stk.core.stkobjects.ISensorEOIRBandCollection.get_item_by_name
 
     Retrieve an item from the collection by name.
 
@@ -110,5 +114,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorEOIRBand"`
+        :obj:`~ISensorEOIRBand`
 

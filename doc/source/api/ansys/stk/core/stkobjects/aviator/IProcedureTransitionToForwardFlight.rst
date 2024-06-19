@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: transition_course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.transition_course_mode
-    :type: "VTOL_TRANSITION_MODE"
+    :type: VTOL_TRANSITION_MODE
 
     Get the mode to specify the course of the transition maneuver.
 
@@ -89,6 +89,7 @@ Method detail
 
 
 .. py:method:: set_transition_into_wind(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.set_transition_into_wind
 
     Set the option to transition into the wind to true.
 
@@ -96,7 +97,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_absolute_course(self, course:typing.Any, useMagneticCourse:bool) -> None
+.. py:method:: set_absolute_course(self, course: typing.Any, useMagneticCourse: bool) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.set_absolute_course
 
     Set the mode to absolute and specify the course and heading reference.
 
@@ -109,7 +111,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_relative_course(self, headingChange:typing.Any) -> None
+.. py:method:: set_relative_course(self, headingChange: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.set_relative_course
 
     Set the mode to relative and specify the heading change.
 
@@ -126,11 +129,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

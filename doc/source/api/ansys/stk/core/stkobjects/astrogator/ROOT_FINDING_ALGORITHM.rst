@@ -11,6 +11,21 @@ ROOT_FINDING_ALGORITHM
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~SECANT_METHOD`
+              - Secant method.
+
+            * - :py:attr:`~NEWTON_RAPHSON_METHOD`
+              - Newton-Raphson method.
+
+
 Import detail
 -------------
 

@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: fill_style
     :canonical: ansys.stk.core.stkobjects.IGraphics2DRangeContours.fill_style
-    :type: "FILL_STYLE"
+    :type: FILL_STYLE
 
     Gets or sets the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.IGraphics2DRangeContours.level_attributes
-    :type: "IAgLevelAttributeCollection"
+    :type: IAgLevelAttributeCollection
 
     The collection of level attributes defining the way in which the range contours are displayed.
 

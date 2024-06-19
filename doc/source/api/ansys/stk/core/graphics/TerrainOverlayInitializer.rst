@@ -3,7 +3,7 @@ TerrainOverlayInitializer
 
 .. py:class:: TerrainOverlayInitializer
 
-   ITerrainOverlayInitializer, SupportsDeleteCallback
+   Bases: py:obj:`~ITerrainOverlayInitializer`
 
    A globe overlay which shows terrain.
 

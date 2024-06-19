@@ -3,7 +3,7 @@ RendererTexture2D
 
 .. py:class:: RendererTexture2D
 
-   IRendererTexture2D, SupportsDeleteCallback
+   Bases: py:obj:`~IRendererTexture2D`
 
    A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory.
 

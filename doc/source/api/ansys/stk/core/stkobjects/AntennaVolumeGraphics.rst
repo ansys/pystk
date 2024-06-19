@@ -3,7 +3,7 @@ AntennaVolumeGraphics
 
 .. py:class:: AntennaVolumeGraphics
 
-   IAntennaVolumeGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaVolumeGraphics`
 
    Class defining 3D Volume Graphics properties of a Antenna.
 

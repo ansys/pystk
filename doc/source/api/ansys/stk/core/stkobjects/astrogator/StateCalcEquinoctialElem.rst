@@ -3,7 +3,7 @@ StateCalcEquinoctialElem
 
 .. py:class:: StateCalcEquinoctialElem
 
-   IComponentInfo, ICloneable, IStateCalcEquinoctialElem, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEquinoctialElem`
 
    Equinoctial Elements Calc objects.
 

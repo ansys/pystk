@@ -3,7 +3,7 @@ TransmitterModelLaser
 
 .. py:class:: TransmitterModelLaser
 
-   ITransmitterModelLaser, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModelLaser`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a laser transmitter model.
 

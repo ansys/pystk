@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentRadDoseRateElement
 
 .. py:class:: VehicleSpaceEnvironmentRadDoseRateElement
 
-   IVehicleSpaceEnvironmentRadDoseRateElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironmentRadDoseRateElement`
 
    Class defining dose rate information computed for a shielding thickness.
 

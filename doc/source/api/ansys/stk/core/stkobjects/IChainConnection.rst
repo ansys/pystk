@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: from_object
     :canonical: ansys.stk.core.stkobjects.IChainConnection.from_object
-    :type: "IAgStkObject"
+    :type: IAgStkObject
 
     From object for a connection.
 
 .. py:property:: to_object
     :canonical: ansys.stk.core.stkobjects.IChainConnection.to_object
-    :type: "IAgStkObject"
+    :type: IAgStkObject
 
     To object for a connection.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: parent_platform_restriction
     :canonical: ansys.stk.core.stkobjects.IChainConnection.parent_platform_restriction
-    :type: "CHAIN_PARENT_PLATFORM_RESTRICTION"
+    :type: CHAIN_PARENT_PLATFORM_RESTRICTION
 
     Gets or sets the parent platform restriction for a connection.
 

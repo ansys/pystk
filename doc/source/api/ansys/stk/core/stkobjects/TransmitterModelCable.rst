@@ -3,7 +3,7 @@ TransmitterModelCable
 
 .. py:class:: TransmitterModelCable
 
-   ITransmitterModelCable, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModelCable`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a cable transmitter model.
 

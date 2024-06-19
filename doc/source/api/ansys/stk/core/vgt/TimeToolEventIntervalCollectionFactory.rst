@@ -3,7 +3,7 @@ TimeToolEventIntervalCollectionFactory
 
 .. py:class:: TimeToolEventIntervalCollectionFactory
 
-   ITimeToolEventIntervalCollectionFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalCollectionFactory`
 
    The factory creates collections of event interval lists.
 

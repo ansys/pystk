@@ -3,7 +3,7 @@ ReceiverModelLaser
 
 .. py:class:: ReceiverModelLaser
 
-   IReceiverModelLaser, IReceiverModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverModelLaser`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a laser receiver model.
 

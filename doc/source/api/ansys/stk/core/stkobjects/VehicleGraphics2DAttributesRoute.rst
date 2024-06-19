@@ -3,7 +3,7 @@ VehicleGraphics2DAttributesRoute
 
 .. py:class:: VehicleGraphics2DAttributesRoute
 
-   IVehicleGraphics2DAttributesRoute, IVehicleGraphics2DAttributesBasic, IVehicleGraphics2DAttributes, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DAttributesRoute`, py:obj:`~IVehicleGraphics2DAttributesBasic`, py:obj:`~IVehicleGraphics2DAttributes`
 
    2D Graphics attributes for aircraft, ships and ground vehicles.
 

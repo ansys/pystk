@@ -54,19 +54,19 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorLOP.initial_state
-    :type: "IAgVeInitialState"
+    :type: IAgVeInitialState
 
     Get the initial state.
 
 .. py:property:: force_model
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorLOP.force_model
-    :type: "IAgVeLOPForceModel"
+    :type: IAgVeLOPForceModel
 
     Get the force model parameters.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorLOP.ephemeris_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
@@ -75,6 +75,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorLOP.propagate
 
     Propagates the satellite's path using the specified time interval.
 

@@ -58,43 +58,43 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.mode
-    :type: "IAgRadarModeBistaticReceiver"
+    :type: IAgRadarModeBistaticReceiver
 
     Gets the current radar mode.
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.receiver
-    :type: "IAgRadarReceiver"
+    :type: IAgRadarReceiver
 
     Gets the radar receiver.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.clutter_geometry
-    :type: "IAgRadarClutterGeometry"
+    :type: IAgRadarClutterGeometry
 
     This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
 
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.jamming
-    :type: "IAgRadarJamming"
+    :type: IAgRadarJamming
 
     Gets the radar jamming.
 
 .. py:property:: bistatic_transmitters
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.bistatic_transmitters
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Gets the bistatic transmitter collection.
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.antenna_control
-    :type: "IAgAntennaControl"
+    :type: IAgAntennaControl
 
     Gets the radar antenna control.
 
 .. py:property:: clutter
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.clutter
-    :type: "IAgRadarClutter"
+    :type: IAgRadarClutter
 
     Gets the radar clutter settings.
 
@@ -103,7 +103,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_mode(self, modeName:str) -> None
+.. py:method:: set_mode(self, modeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.set_mode
 
     Set the current radar mode by name.
 

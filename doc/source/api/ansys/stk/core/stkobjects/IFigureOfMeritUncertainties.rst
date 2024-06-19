@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: asset_list
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritUncertainties.asset_list
-    :type: "IAgFmAssetListCollection"
+    :type: IAgFmAssetListCollection
 
     Get list of assets for specifying range uncertainty.
 

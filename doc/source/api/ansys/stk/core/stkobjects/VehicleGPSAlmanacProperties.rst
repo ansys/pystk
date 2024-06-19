@@ -3,7 +3,7 @@ VehicleGPSAlmanacProperties
 
 .. py:class:: VehicleGPSAlmanacProperties
 
-   IVehicleGPSAlmanacProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSAlmanacProperties`
 
    A common base for GPS almanac properties.
 

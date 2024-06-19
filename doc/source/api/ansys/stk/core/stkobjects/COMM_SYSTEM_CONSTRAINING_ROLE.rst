@@ -11,6 +11,21 @@ COMM_SYSTEM_CONSTRAINING_ROLE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~TRANSMIT`
+              - Transmit.
+
+            * - :py:attr:`~RECEIVE`
+              - Receive.
+
+
 Import detail
 -------------
 

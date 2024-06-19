@@ -3,7 +3,7 @@ CalculationToolScalarFunction
 
 .. py:class:: CalculationToolScalarFunction
 
-   ICalculationToolScalarFunction, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarFunction`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined by performing the specified function on the input scalar or time instant.
 

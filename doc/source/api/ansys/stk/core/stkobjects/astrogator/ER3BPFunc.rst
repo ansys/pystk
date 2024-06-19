@@ -3,7 +3,7 @@ ER3BPFunc
 
 .. py:class:: ER3BPFunc
 
-   IER3BPFunc, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IER3BPFunc`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    ER3BP Function.
 

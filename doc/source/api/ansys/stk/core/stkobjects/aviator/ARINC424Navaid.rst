@@ -3,7 +3,7 @@ ARINC424Navaid
 
 .. py:class:: ARINC424Navaid
 
-   IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IARINC424Item`, py:obj:`~ICatalogNavaid`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining an ARINC424 Navaid.
 

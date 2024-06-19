@@ -51,43 +51,43 @@ Property detail
 
 .. py:property:: turbine_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode
-    :type: "TURBINE_MODE"
+    :type: TURBINE_MODE
 
     Gets or sets the turbine operating mode.
 
 .. py:property:: turbine_mode_as_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode_as_turbojet
-    :type: "IAgAvtrAdvFixedWingTurbojetBasicABProp"
+    :type: IAgAvtrAdvFixedWingTurbojetBasicABProp
 
     Gets or sets the interface for a Turbojet Basic w/ AB tubrine mode.
 
 .. py:property:: turbine_mode_as_turbofan
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode_as_turbofan
-    :type: "IAgAvtrAdvFixedWingTurbofanBasicABProp"
+    :type: IAgAvtrAdvFixedWingTurbofanBasicABProp
 
     Gets or sets the interface for a Turbojet Basic w/ AB tubrine mode.
 
 .. py:property:: ramjet_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_mode
-    :type: "RAMJET_MODE"
+    :type: RAMJET_MODE
 
     Gets or sets the ramjet operating mode.
 
 .. py:property:: ramjet_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_mode_as_basic
-    :type: "IAgAvtrAdvFixedWingRamjetBasic"
+    :type: IAgAvtrAdvFixedWingRamjetBasic
 
     Get the interface for a Ramjet - Basic.
 
 .. py:property:: scramjet_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_mode
-    :type: "SCRAMJET_MODE"
+    :type: SCRAMJET_MODE
 
     Gets or sets the scramjet operating mode.
 
 .. py:property:: scramjet_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_mode_as_basic
-    :type: "IAgAvtrAdvFixedWingScramjetBasic"
+    :type: IAgAvtrAdvFixedWingScramjetBasic
 
     Get the interface for a Scramjet - Basic.
 

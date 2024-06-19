@@ -3,7 +3,7 @@ CompositePrimitive
 
 .. py:class:: CompositePrimitive
 
-   ICompositePrimitive, IPrimitive, SupportsDeleteCallback
+   Bases: py:obj:`~ICompositePrimitive`, py:obj:`~IPrimitive`
 
    A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions...
 

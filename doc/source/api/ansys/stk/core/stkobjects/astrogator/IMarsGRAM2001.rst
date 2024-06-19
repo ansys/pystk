@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.IMarsGRAM2001.sun_position
-    :type: "SUN_POSITION"
+    :type: SUN_POSITION
 
     Gets or sets the sun position computation.
 
@@ -86,13 +86,13 @@ Property detail
 
 .. py:property:: density_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMarsGRAM2001.density_type
-    :type: "MARS_GRAM_DENSITY_TYPE"
+    :type: MARS_GRAM_DENSITY_TYPE
 
     Low, mean, high or randomly perturbed density type.
 
 .. py:property:: atmos_data_source
     :canonical: ansys.stk.core.stkobjects.astrogator.IMarsGRAM2001.atmos_data_source
-    :type: "ATMOS_DATA_SOURCE"
+    :type: ATMOS_DATA_SOURCE
 
     Gets or sets the atmospheric model data source - data file or constant values.
 
@@ -110,7 +110,7 @@ Property detail
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMarsGRAM2001.drag_model_type
-    :type: "DRAG_MODEL_TYPE"
+    :type: DRAG_MODEL_TYPE
 
     Drag model type.
 
@@ -122,7 +122,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IMarsGRAM2001.drag_model_plugin
-    :type: "IAgVADragModelPlugin"
+    :type: IAgVADragModelPlugin
 
     Drag model plugin properties.
 

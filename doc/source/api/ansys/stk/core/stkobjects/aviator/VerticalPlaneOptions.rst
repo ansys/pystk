@@ -3,7 +3,7 @@ VerticalPlaneOptions
 
 .. py:class:: VerticalPlaneOptions
 
-   IVerticalPlaneOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IVerticalPlaneOptions`
 
    Class defining the vertical plane options in a procedure.
 

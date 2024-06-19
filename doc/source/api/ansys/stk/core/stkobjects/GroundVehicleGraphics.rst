@@ -3,7 +3,7 @@ GroundVehicleGraphics
 
 .. py:class:: GroundVehicleGraphics
 
-   IGroundVehicleGraphics, IGreatArcGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IGroundVehicleGraphics`, py:obj:`~IGreatArcGraphics`
 
    2D Graphics properties for ground vehicles.
 

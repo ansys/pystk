@@ -3,7 +3,7 @@ VehicleGraphics3DEllipsoid
 
 .. py:class:: VehicleGraphics3DEllipsoid
 
-   IVehicleGraphics3DEllipsoid, IVehicleGraphics3DProximityAreaObject, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DEllipsoid`, py:obj:`~IVehicleGraphics3DProximityAreaObject`
 
    Define an ellipsoid around the vehicle object.
 

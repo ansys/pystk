@@ -42,15 +42,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ITextureMatrix"
+.. py:method:: initialize(self) -> ITextureMatrix
+    :canonical: ansys.stk.core.graphics.ITextureMatrixFactory.initialize
 
     Initialize a texture matrix to the identity matrix.
 
     :Returns:
 
-        :obj:`~"ITextureMatrix"`
+        :obj:`~ITextureMatrix`
 
-.. py:method:: initialize_by_values(self, m11:float, m12:float, m13:float, m14:float, m21:float, m22:float, m23:float, m24:float, m31:float, m32:float, m33:float, m34:float, m41:float, m42:float, m43:float, m44:float) -> "ITextureMatrix"
+.. py:method:: initialize_by_values(self, m11: float, m12: float, m13: float, m14: float, m21: float, m22: float, m23: float, m24: float, m31: float, m32: float, m33: float, m34: float, m41: float, m42: float, m43: float, m44: float) -> ITextureMatrix
+    :canonical: ansys.stk.core.graphics.ITextureMatrixFactory.initialize_by_values
 
     Initialize a texture matrix. The subscripts define [row][column].
 
@@ -75,9 +77,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITextureMatrix"`
+        :obj:`~ITextureMatrix`
 
-.. py:method:: initialize_with_affine_transform(self, matrix:list) -> "ITextureMatrix"
+.. py:method:: initialize_with_affine_transform(self, matrix: list) -> ITextureMatrix
+    :canonical: ansys.stk.core.graphics.ITextureMatrixFactory.initialize_with_affine_transform
 
     Initialize a texture matrix from a matrix. The upper left 2x2 matrix defines rotation and scaling. The top two elements of the last column define translation.
 
@@ -87,9 +90,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITextureMatrix"`
+        :obj:`~ITextureMatrix`
 
-.. py:method:: initialize_with_rectangles(self, corner0:list, corner1:list, corner2:list, corner3:list) -> "ITextureMatrix"
+.. py:method:: initialize_with_rectangles(self, corner0: list, corner1: list, corner2: list, corner3: list) -> ITextureMatrix
+    :canonical: ansys.stk.core.graphics.ITextureMatrixFactory.initialize_with_rectangles
 
     Initialize a texture matrix from texture corner points. Normally, a texture is mapped such that the lower left corner is texture coordinate (0, 0), the lower right is (1, 0), the upper right is (1, 1), and the upper left is (0, 1)...
 
@@ -102,5 +106,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITextureMatrix"`
+        :obj:`~ITextureMatrix`
 

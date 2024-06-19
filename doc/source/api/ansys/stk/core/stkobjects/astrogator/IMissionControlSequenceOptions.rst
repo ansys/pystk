@@ -156,13 +156,13 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.user_variables
-    :type: "IAgVAUserVariableDefinitionCollection"
+    :type: IAgVAUserVariableDefinitionCollection
 
     Interface used to add/remove user variables.
 
 .. py:property:: smart_run_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.smart_run_mode
-    :type: "SMART_RUN_MODE"
+    :type: SMART_RUN_MODE
 
     Controls whether the run will attempt to only run changed segments.
 

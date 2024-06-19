@@ -3,7 +3,7 @@ AircraftBasicLandingModel
 
 .. py:class:: AircraftBasicLandingModel
 
-   IAircraftBasicLandingModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftBasicLandingModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the basic landing performance model for an Aviator aircraft.
 

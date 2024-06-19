@@ -3,7 +3,7 @@ VehicleWaypointAltitudeReferenceTerrain
 
 .. py:class:: VehicleWaypointAltitudeReferenceTerrain
 
-   IVehicleWaypointAltitudeReferenceTerrain, IVehicleWaypointAltitudeReference, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleWaypointAltitudeReferenceTerrain`, py:obj:`~IVehicleWaypointAltitudeReference`
 
    Terrain altitude reference.
 

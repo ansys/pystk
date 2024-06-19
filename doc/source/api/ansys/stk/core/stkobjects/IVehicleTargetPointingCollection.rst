@@ -80,7 +80,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleTargetPointingElement"
+.. py:method:: item(self, index: int) -> IVehicleTargetPointingElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -90,10 +91,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleTargetPointingElement"`
+        :obj:`~IVehicleTargetPointingElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -106,6 +108,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -113,7 +116,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, shortPath:str) -> "IVehicleTargetPointingElement"
+.. py:method:: add(self, shortPath: str) -> IVehicleTargetPointingElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.add
 
     Add a new element to the collection.
 
@@ -123,10 +127,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleTargetPointingElement"`
+        :obj:`~IVehicleTargetPointingElement`
 
 
-.. py:method:: contains(self, path:str) -> bool
+.. py:method:: contains(self, path: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.contains
 
     Return true if the collection contains the specified target.
 
@@ -138,7 +143,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: remove(self, path:str) -> None
+.. py:method:: remove(self, path: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.remove
 
     Remove the element using the object path.
 
@@ -150,7 +156,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_position_as_target(self, latitude:float, longitude:float, altitude:float) -> "IVehicleTargetPointingElement"
+.. py:method:: add_position_as_target(self, latitude: float, longitude: float, altitude: float) -> IVehicleTargetPointingElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.add_position_as_target
 
     Add the specified LLA position to the collection of targets. Latitude param uses Latitude Dimension, Longitude param uses Longitude Dimension. Alt param uses Distance Dimension.
 
@@ -162,5 +169,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleTargetPointingElement"`
+        :obj:`~IVehicleTargetPointingElement`
 

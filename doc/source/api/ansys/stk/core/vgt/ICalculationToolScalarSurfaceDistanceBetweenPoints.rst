@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: point1
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.point1
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     Starting point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
 
 .. py:property:: point2
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.point2
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     Terminating point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
 

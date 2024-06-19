@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: from_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenPlanes.from_plane
-    :type: "IAgCrdnPlaneRefTo"
+    :type: IAgCrdnPlaneRefTo
 
     Specify the first of the two planes the angle is measured.
 
 .. py:property:: to_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenPlanes.to_plane
-    :type: "IAgCrdnPlaneRefTo"
+    :type: IAgCrdnPlaneRefTo
 
     Specify the second of the two planes the angle is measured.
 

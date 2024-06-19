@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics3DBPlaneTemplateDisplayElement"
+.. py:method:: item(self, index: int) -> IVehicleGraphics3DBPlaneTemplateDisplayElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics3DBPlaneTemplateDisplayElement"`
+        :obj:`~IVehicleGraphics3DBPlaneTemplateDisplayElement`
 
 

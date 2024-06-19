@@ -3,7 +3,7 @@ AntennaModelGpsGlobal
 
 .. py:class:: AntennaModelGpsGlobal
 
-   IAntennaModelGpsGlobal, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelGpsGlobal`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a GPS global antenna model.
 

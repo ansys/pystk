@@ -3,7 +3,7 @@ RadarTransmitterMultifunction
 
 .. py:class:: RadarTransmitterMultifunction
 
-   IRadarTransmitterMultifunction, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarTransmitterMultifunction`
 
    Class defining the multifunction radar transmitter.
 

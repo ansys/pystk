@@ -3,7 +3,7 @@ PickResult
 
 .. py:class:: PickResult
 
-   IPickResult, SupportsDeleteCallback
+   Bases: py:obj:`~IPickResult`
 
    A single result from Pick.
 

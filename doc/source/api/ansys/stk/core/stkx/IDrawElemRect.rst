@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkx.IDrawElemRect.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Specifies the style of the line.
 
@@ -99,7 +99,8 @@ Method detail
 
 
 
-.. py:method:: set(self, left:int, top:int, right:int, bottom:int) -> None
+.. py:method:: set(self, left: int, top: int, right: int, bottom: int) -> None
+    :canonical: ansys.stk.core.stkx.IDrawElemRect.set
 
     Set the rectangle coordinates.
 

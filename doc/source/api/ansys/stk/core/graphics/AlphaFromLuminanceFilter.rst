@@ -3,7 +3,7 @@ AlphaFromLuminanceFilter
 
 .. py:class:: AlphaFromLuminanceFilter
 
-   IAlphaFromLuminanceFilter, IRasterFilter, SupportsDeleteCallback
+   Bases: py:obj:`~IAlphaFromLuminanceFilter`, py:obj:`~IRasterFilter`
 
    Add an alpha band to the source raster derived from the luminance of the raster's color bands.
 

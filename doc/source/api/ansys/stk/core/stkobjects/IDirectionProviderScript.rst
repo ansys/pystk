@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: members
     :canonical: ansys.stk.core.stkobjects.IDirectionProviderScript.members
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Gets the members list.
 

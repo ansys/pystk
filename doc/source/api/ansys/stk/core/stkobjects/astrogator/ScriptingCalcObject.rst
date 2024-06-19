@@ -3,7 +3,7 @@ ScriptingCalcObject
 
 .. py:class:: ScriptingCalcObject
 
-   IScriptingCalcObject, SupportsDeleteCallback
+   Bases: py:obj:`~IScriptingCalcObject`
 
    Calc Object.
 

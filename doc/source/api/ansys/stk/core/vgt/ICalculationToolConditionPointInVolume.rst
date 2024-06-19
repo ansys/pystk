@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionPointInVolume.point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     Get the trajectory point from the condition.
 
 .. py:property:: constraint
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionPointInVolume.constraint
-    :type: "IAgCrdnVolume"
+    :type: IAgCrdnVolume
 
     Get the volume constraint on trajectory point.
 

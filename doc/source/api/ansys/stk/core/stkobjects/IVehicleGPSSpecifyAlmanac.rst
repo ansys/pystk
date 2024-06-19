@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac.properties
-    :type: "IAgVeGPSAlmanacProperties"
+    :type: IAgVeGPSAlmanacProperties
 
     Gets the almanac properties.
 

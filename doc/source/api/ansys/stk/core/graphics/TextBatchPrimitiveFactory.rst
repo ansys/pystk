@@ -3,7 +3,7 @@ TextBatchPrimitiveFactory
 
 .. py:class:: TextBatchPrimitiveFactory
 
-   ITextBatchPrimitiveFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITextBatchPrimitiveFactory`
 
    Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview.
 

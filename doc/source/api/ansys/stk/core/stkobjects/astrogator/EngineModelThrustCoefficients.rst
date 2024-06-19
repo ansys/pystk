@@ -3,7 +3,7 @@ EngineModelThrustCoefficients
 
 .. py:class:: EngineModelThrustCoefficients
 
-   IEngineModelThrustCoefficients, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineModelThrustCoefficients`
 
    Engine Model Thrust Coefficients.
 

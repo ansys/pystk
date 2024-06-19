@@ -3,7 +3,7 @@ StateCalcInertialDeltaVMagnitude
 
 .. py:class:: StateCalcInertialDeltaVMagnitude
 
-   IComponentInfo, ICloneable, IStateCalcInertialDeltaVMagnitude, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcInertialDeltaVMagnitude`
 
    InertialDeltaVMag Calc objects.
 

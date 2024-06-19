@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehiclePropagator11ParamDescriptor"
+.. py:method:: item(self, index: int) -> IVehiclePropagator11ParamDescriptor
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptorCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehiclePropagator11ParamDescriptor"`
+        :obj:`~IVehiclePropagator11ParamDescriptor`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptorCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -95,6 +97,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptorCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -102,7 +105,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, filePath:str) -> "IVehiclePropagator11ParamDescriptor"
+.. py:method:: add(self, filePath: str) -> IVehiclePropagator11ParamDescriptor
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptorCollection.add
 
     Add a new element to the collection.
 
@@ -112,9 +116,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehiclePropagator11ParamDescriptor"`
+        :obj:`~IVehiclePropagator11ParamDescriptor`
 
-.. py:method:: add_from_array(self, arrayOfFiles:list) -> None
+.. py:method:: add_from_array(self, arrayOfFiles: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptorCollection.add_from_array
 
     Add multiple files to the collection.
 

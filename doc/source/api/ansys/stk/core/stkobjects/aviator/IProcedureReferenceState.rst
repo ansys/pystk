@@ -86,13 +86,13 @@ Property detail
 
 .. py:property:: performance_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.performance_mode
-    :type: "REFERENCE_STATE_PERF_MODE"
+    :type: REFERENCE_STATE_PERF_MODE
 
     Gets or sets the type of motion the aircraft is engaged in.
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.reference_frame
-    :type: "BASIC_MANEUVER_REFERENCE_FRAME"
+    :type: BASIC_MANEUVER_REFERENCE_FRAME
 
     Gets or sets the reference frame the aircraft will use.
 
@@ -104,25 +104,25 @@ Property detail
 
 .. py:property:: mode_as_forward_flight
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_forward_flight
-    :type: "IAgAvtrRefStateForwardFlightOptions"
+    :type: IAgAvtrRefStateForwardFlightOptions
 
     Get the forward flight options.
 
 .. py:property:: mode_as_takeoff_landing
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_takeoff_landing
-    :type: "IAgAvtrRefStateTakeoffLandingOptions"
+    :type: IAgAvtrRefStateTakeoffLandingOptions
 
     Get the takeoff and landing options.
 
 .. py:property:: mode_as_hover
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_hover
-    :type: "IAgAvtrRefStateHoverOptions"
+    :type: IAgAvtrRefStateHoverOptions
 
     Get the hover options.
 
 .. py:property:: mode_as_weight_on_wheels
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_weight_on_wheels
-    :type: "IAgAvtrRefStateWeightOnWheelsOptions"
+    :type: IAgAvtrRefStateWeightOnWheelsOptions
 
     Get the weight on wheels options.
 
@@ -132,13 +132,14 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
 

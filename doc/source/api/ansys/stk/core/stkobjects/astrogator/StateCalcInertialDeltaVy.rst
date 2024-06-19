@@ -3,7 +3,7 @@ StateCalcInertialDeltaVy
 
 .. py:class:: StateCalcInertialDeltaVy
 
-   IComponentInfo, ICloneable, IStateCalcInertialDeltaVy, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcInertialDeltaVy`
 
    InertialDeltaVy Calc objects.
 

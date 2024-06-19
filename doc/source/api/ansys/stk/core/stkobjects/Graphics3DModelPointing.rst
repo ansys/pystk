@@ -3,7 +3,7 @@ Graphics3DModelPointing
 
 .. py:class:: Graphics3DModelPointing
 
-   IGraphics3DModelPointing, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DModelPointing`
 
    List of pointable model elements.
 

@@ -3,7 +3,7 @@ RainLossModelITURP618_13
 
 .. py:class:: RainLossModelITURP618_13
 
-   IRainLossModelITURP618_13, IRainLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRainLossModelITURP618_13`, py:obj:`~IRainLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rain loss model.
 

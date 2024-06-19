@@ -3,7 +3,7 @@ StateCalcUnitAngularMomentumX
 
 .. py:class:: StateCalcUnitAngularMomentumX
 
-   IComponentInfo, ICloneable, IStateCalcUnitAngularMomentumX, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcUnitAngularMomentumX`
 
    UnitAngularMomentumX Calc objects.
 

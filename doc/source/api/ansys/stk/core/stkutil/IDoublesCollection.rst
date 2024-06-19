@@ -70,7 +70,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> float
+.. py:method:: item(self, index: int) -> float
+    :canonical: ansys.stk.core.stkutil.IDoublesCollection.item
 
     Return a double at a specified position.
 
@@ -84,7 +85,8 @@ Method detail
 
 
 
-.. py:method:: add(self, value:float) -> None
+.. py:method:: add(self, value: float) -> None
+    :canonical: ansys.stk.core.stkutil.IDoublesCollection.add
 
     Add a value to the collection of doubles.
 
@@ -96,7 +98,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkutil.IDoublesCollection.remove_at
 
     Remove an element from the collection at a specified position.
 
@@ -109,6 +112,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkutil.IDoublesCollection.remove_all
 
     Clear the collection.
 
@@ -117,6 +121,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.IDoublesCollection.to_array
 
     Return an array of the elements in the collection.
 
@@ -124,7 +129,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: set_at(self, index:int, value:float) -> None
+.. py:method:: set_at(self, index: int, value: float) -> None
+    :canonical: ansys.stk.core.stkutil.IDoublesCollection.set_at
 
     Update an element in the collection at a specified position.
 

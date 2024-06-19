@@ -3,7 +3,7 @@ VectorGeometryToolAxesRefTo
 
 .. py:class:: VectorGeometryToolAxesRefTo
 
-   IVectorGeometryToolAxesRefTo, IAnalysisWorkbenchRefTo, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesRefTo`, py:obj:`~IAnalysisWorkbenchRefTo`
 
    Represents a reference to a VGT axes.
 

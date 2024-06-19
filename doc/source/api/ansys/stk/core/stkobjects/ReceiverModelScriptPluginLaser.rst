@@ -3,7 +3,7 @@ ReceiverModelScriptPluginLaser
 
 .. py:class:: ReceiverModelScriptPluginLaser
 
-   IReceiverModelScriptPlugin, IReceiverModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverModelScriptPlugin`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a laser script plugin receiver model.
 

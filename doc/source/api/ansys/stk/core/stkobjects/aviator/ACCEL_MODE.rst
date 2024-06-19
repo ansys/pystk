@@ -11,6 +11,24 @@ ACCEL_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ACCEL`
+              - Accelerate at specified G.
+
+            * - :py:attr:`~DECEL`
+              - Decelerate at specified G.
+
+            * - :py:attr:`~MAINTAIN_SPEED`
+              - Maintain the initial airspeed.
+
+
 Import detail
 -------------
 

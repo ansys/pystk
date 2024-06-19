@@ -3,7 +3,7 @@ VehicleImpactLocationLaunchAzEl
 
 .. py:class:: VehicleImpactLocationLaunchAzEl
 
-   IVehicleImpactLocation, IVehicleImpactLocationLaunchAzEl, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleImpactLocation`, py:obj:`~IVehicleImpactLocationLaunchAzEl`
 
    Class defining the option to use azimuth and elevation to specify the Missile's impact location.
 

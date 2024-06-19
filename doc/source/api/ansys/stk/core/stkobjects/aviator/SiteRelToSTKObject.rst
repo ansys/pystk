@@ -3,7 +3,7 @@ SiteRelToSTKObject
 
 .. py:class:: SiteRelToSTKObject
 
-   ISiteRelToSTKObject, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteRelToSTKObject`, py:obj:`~ISite`
 
    Class defining a Relative to Stationary STK Object site.
 

@@ -3,7 +3,7 @@ StateCalcSolarBetaAngle
 
 .. py:class:: StateCalcSolarBetaAngle
 
-   IComponentInfo, ICloneable, IStateCalcSolarBetaAngle, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSolarBetaAngle`
 
    Solar Beta Angle objects.
 

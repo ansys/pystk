@@ -3,7 +3,7 @@ SensorCustomPattern
 
 .. py:class:: SensorCustomPattern
 
-   ISensorPattern, ISensorCustomPattern, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPattern`, py:obj:`~ISensorCustomPattern`
 
    Class defining the custom pattern for a Sensor.
 

@@ -3,7 +3,7 @@ CentralBodyEphemerisJPLDesignExplorerOptimizer
 
 .. py:class:: CentralBodyEphemerisJPLDesignExplorerOptimizer
 
-   ICentralBodyEphemerisJPLDesignExplorerOptimizer, ICentralBodyEphemeris, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyEphemerisJPLDesignExplorerOptimizer`, py:obj:`~ICentralBodyEphemeris`
 
    Central Body Ephemeris - JPL DE.
 

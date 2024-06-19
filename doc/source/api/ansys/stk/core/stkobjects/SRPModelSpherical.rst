@@ -3,7 +3,7 @@ SRPModelSpherical
 
 .. py:class:: SRPModelSpherical
 
-   ISRPModelSpherical, ISRPModelBase, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPModelSpherical`, py:obj:`~ISRPModelBase`
 
    Spherical Solar Radiation Pressure Model.
 

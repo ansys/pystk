@@ -55,25 +55,25 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.mode
-    :type: "IAgRadarModeBistaticTransmitter"
+    :type: IAgRadarModeBistaticTransmitter
 
     Gets the current radar mode.
 
 .. py:property:: transmitter
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.transmitter
-    :type: "IAgRadarTransmitter"
+    :type: IAgRadarTransmitter
 
     Gets the radar transmitter.
 
 .. py:property:: bistatic_receivers
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.bistatic_receivers
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Gets the bistatic receiver collection.
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.antenna_control
-    :type: "IAgAntennaControl"
+    :type: IAgAntennaControl
 
     Gets the radar antenna control.
 
@@ -82,7 +82,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_mode(self, modeName:str) -> None
+.. py:method:: set_mode(self, modeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.set_mode
 
     Set the current radar mode by name.
 

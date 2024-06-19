@@ -3,7 +3,7 @@ EnginePlugin
 
 .. py:class:: EnginePlugin
 
-   IEnginePlugin, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IEnginePlugin`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Plugin engine model.
 

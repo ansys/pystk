@@ -3,7 +3,7 @@ AircraftAdvancedTakeoffModel
 
 .. py:class:: AircraftAdvancedTakeoffModel
 
-   IAircraftAdvancedTakeoffModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftAdvancedTakeoffModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the advanced takeoff performance model for an Aviator aircraft.
 

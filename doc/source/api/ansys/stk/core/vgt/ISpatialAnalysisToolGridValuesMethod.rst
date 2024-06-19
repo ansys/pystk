@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: method_type
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod.method_type
-    :type: "CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE"
+    :type: CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE
 
     Grid values method type.
 

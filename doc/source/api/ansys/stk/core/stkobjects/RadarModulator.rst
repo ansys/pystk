@@ -3,7 +3,7 @@ RadarModulator
 
 .. py:class:: RadarModulator
 
-   IRadarModulator, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModulator`
 
    Class defining a radar modulator.
 

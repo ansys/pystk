@@ -40,15 +40,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IDistanceToPositionDisplayCondition"
+.. py:method:: initialize(self) -> IDistanceToPositionDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceToPositionDisplayConditionFactory.initialize
 
     Initialize a default distance to position display condition. With this constructor, an object is always rendered regardless of the camera's distance to the position.
 
     :Returns:
 
-        :obj:`~"IDistanceToPositionDisplayCondition"`
+        :obj:`~IDistanceToPositionDisplayCondition`
 
-.. py:method:: initialize_with_distances(self, position:list, minimumDistance:float, maximumDistance:float) -> "IDistanceToPositionDisplayCondition"
+.. py:method:: initialize_with_distances(self, position: list, minimumDistance: float, maximumDistance: float) -> IDistanceToPositionDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceToPositionDisplayConditionFactory.initialize_with_distances
 
     Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
@@ -60,20 +62,21 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDistanceToPositionDisplayCondition"`
+        :obj:`~IDistanceToPositionDisplayCondition`
 
-.. py:method:: initialize_with_reference_frame_and_distances(self, referenceFrame:"IVectorGeometryToolSystem", position:list, minimumDistance:float, maximumDistance:float) -> "IDistanceToPositionDisplayCondition"
+.. py:method:: initialize_with_reference_frame_and_distances(self, referenceFrame: IVectorGeometryToolSystem, position: list, minimumDistance: float, maximumDistance: float) -> IDistanceToPositionDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceToPositionDisplayConditionFactory.initialize_with_reference_frame_and_distances
 
     Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
     :Parameters:
 
-    **referenceFrame** : :obj:`~"IVectorGeometryToolSystem"`
+    **referenceFrame** : :obj:`~IVectorGeometryToolSystem`
     **position** : :obj:`~list`
     **minimumDistance** : :obj:`~float`
     **maximumDistance** : :obj:`~float`
 
     :Returns:
 
-        :obj:`~"IDistanceToPositionDisplayCondition"`
+        :obj:`~IDistanceToPositionDisplayCondition`
 

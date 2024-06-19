@@ -38,25 +38,27 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IDistanceToGlobeOverlayDisplayCondition"
+.. py:method:: initialize(self) -> IDistanceToGlobeOverlayDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayConditionFactory.initialize
 
     Initialize a default distance to globe overlay display condition. With this constructor, an object is always rendered regardless of the camera's distance to the globe overlay.
 
     :Returns:
 
-        :obj:`~"IDistanceToGlobeOverlayDisplayCondition"`
+        :obj:`~IDistanceToGlobeOverlayDisplayCondition`
 
-.. py:method:: initialize_with_distances(self, globeOverlay:"IGlobeOverlay", minimumDistance:float, maximumDistance:float) -> "IDistanceToGlobeOverlayDisplayCondition"
+.. py:method:: initialize_with_distances(self, globeOverlay: IGlobeOverlay, minimumDistance: float, maximumDistance: float) -> IDistanceToGlobeOverlayDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayConditionFactory.initialize_with_distances
 
     Initialize a distance display condition with the globe overlay and the inclusive distance interval [minimumDistance, maximumDistance]...
 
     :Parameters:
 
-    **globeOverlay** : :obj:`~"IGlobeOverlay"`
+    **globeOverlay** : :obj:`~IGlobeOverlay`
     **minimumDistance** : :obj:`~float`
     **maximumDistance** : :obj:`~float`
 
     :Returns:
 
-        :obj:`~"IDistanceToGlobeOverlayDisplayCondition"`
+        :obj:`~IDistanceToGlobeOverlayDisplayCondition`
 

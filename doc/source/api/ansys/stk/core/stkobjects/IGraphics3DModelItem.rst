@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: graphics_3d_model_file
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModelItem.graphics_3d_model_file
-    :type: "IAgVOModelFile"
+    :type: IAgVOModelFile
 
     Interface to specify model's file.
 

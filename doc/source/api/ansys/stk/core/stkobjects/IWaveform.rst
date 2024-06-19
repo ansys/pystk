@@ -47,13 +47,13 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IWaveform.type
-    :type: "WAVEFORM_TYPE"
+    :type: WAVEFORM_TYPE
 
     Gets the waveform type enumeration.
 
 .. py:property:: frequency_specification
     :canonical: ansys.stk.core.stkobjects.IWaveform.frequency_specification
-    :type: "FREQUENCY_SPEC"
+    :type: FREQUENCY_SPEC
 
     Gets or sets the frequency specification.
 

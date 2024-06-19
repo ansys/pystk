@@ -3,7 +3,7 @@ FigureOfMeritGridInspector
 
 .. py:class:: FigureOfMeritGridInspector
 
-   IFigureOfMeritGridInspector, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGridInspector`
 
    AgFmGridInspector class provides methods to use the grid inspector tool for FOM.
 

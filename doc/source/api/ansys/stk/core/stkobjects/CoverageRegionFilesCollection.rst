@@ -3,7 +3,7 @@ CoverageRegionFilesCollection
 
 .. py:class:: CoverageRegionFilesCollection
 
-   ICoverageRegionFilesCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageRegionFilesCollection`
 
    Collection of Region Files.
 

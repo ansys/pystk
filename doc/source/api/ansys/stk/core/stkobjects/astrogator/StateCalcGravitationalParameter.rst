@@ -3,7 +3,7 @@ StateCalcGravitationalParameter
 
 .. py:class:: StateCalcGravitationalParameter
 
-   IStateCalcGravitationalParameter, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcGravitationalParameter`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    GravitationalParameter Calc objects.
 

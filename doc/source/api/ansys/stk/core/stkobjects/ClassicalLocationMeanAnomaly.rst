@@ -3,7 +3,7 @@ ClassicalLocationMeanAnomaly
 
 .. py:class:: ClassicalLocationMeanAnomaly
 
-   IClassicalLocationMeanAnomaly, IClassicalLocation, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalLocationMeanAnomaly`, py:obj:`~IClassicalLocation`
 
    Mean Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 

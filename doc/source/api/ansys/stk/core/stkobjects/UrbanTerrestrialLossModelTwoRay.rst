@@ -3,7 +3,7 @@ UrbanTerrestrialLossModelTwoRay
 
 .. py:class:: UrbanTerrestrialLossModelTwoRay
 
-   IUrbanTerrestrialLossModelTwoRay, IUrbanTerrestrialLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IUrbanTerrestrialLossModelTwoRay`, py:obj:`~IUrbanTerrestrialLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an urban/terrestrial loss model.
 

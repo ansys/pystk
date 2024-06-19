@@ -3,7 +3,7 @@ TimeToolEventIntervalListFile
 
 .. py:class:: TimeToolEventIntervalListFile
 
-   ITimeToolEventIntervalListFile, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalListFile`, py:obj:`~ITimeToolEventIntervalList`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Interval list loaded from specified interval file - ASCII file with .int extension. See STK help.
 

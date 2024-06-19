@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: marker_type
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DMarker.marker_type
-    :type: "MARKER_TYPE"
+    :type: MARKER_TYPE
 
     Specify a 3D marker type to represent the object at the specified threshold. A member of the AgEMarkerType enumeration.
 
@@ -70,19 +70,19 @@ Property detail
 
 .. py:property:: x_origin
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DMarker.x_origin
-    :type: "GRAPHICS_3D_MARKER_ORIGIN_TYPE"
+    :type: GRAPHICS_3D_MARKER_ORIGIN_TYPE
 
     The horizontal point of origin for the marker (left, center or right).
 
 .. py:property:: y_origin
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DMarker.y_origin
-    :type: "GRAPHICS_3D_MARKER_ORIGIN_TYPE"
+    :type: GRAPHICS_3D_MARKER_ORIGIN_TYPE
 
     The vertical point of origin for the marker (top, center or bottom).
 
 .. py:property:: marker_data
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DMarker.marker_data
-    :type: "IAgVOMarkerData"
+    :type: IAgVOMarkerData
 
     The MarkerData property.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: orientation_mode
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DMarker.orientation_mode
-    :type: "GRAPHICS_3D_MARKER_ORIENTATION"
+    :type: GRAPHICS_3D_MARKER_ORIENTATION
 
     Controls the rotation of the marker.
 
@@ -113,7 +113,8 @@ Method detail
 
 
 
-.. py:method:: set_marker_image_file(self, imageFile:str) -> None
+.. py:method:: set_marker_image_file(self, imageFile: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DMarker.set_marker_image_file
 
     Set the marker image file.
 

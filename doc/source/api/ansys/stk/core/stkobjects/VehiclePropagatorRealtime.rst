@@ -3,7 +3,7 @@ VehiclePropagatorRealtime
 
 .. py:class:: VehiclePropagatorRealtime
 
-   IVehiclePropagatorRealtime, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorRealtime`, py:obj:`~IVehiclePropagator`
 
    Realtime propagator.
 

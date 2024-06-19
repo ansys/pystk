@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, planeName:str, description:str, planeType:"VECTOR_GEOMETRY_TOOL_PLANE_TYPE") -> "IVectorGeometryToolPlane"
+.. py:method:: create(self, planeName: str, description: str, planeType: VECTOR_GEOMETRY_TOOL_PLANE_TYPE) -> IVectorGeometryToolPlane
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFactory.create
 
     Create a VGT plane using the specified name, description and type.
 
@@ -46,19 +47,20 @@ Method detail
 
     **planeName** : :obj:`~str`
     **description** : :obj:`~str`
-    **planeType** : :obj:`~"VECTOR_GEOMETRY_TOOL_PLANE_TYPE"`
+    **planeType** : :obj:`~VECTOR_GEOMETRY_TOOL_PLANE_TYPE`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlane"`
+        :obj:`~IVectorGeometryToolPlane`
 
-.. py:method:: is_type_supported(self, type:"VECTOR_GEOMETRY_TOOL_PLANE_TYPE") -> bool
+.. py:method:: is_type_supported(self, type: VECTOR_GEOMETRY_TOOL_PLANE_TYPE) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFactory.is_type_supported
 
     Return true if the type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~"VECTOR_GEOMETRY_TOOL_PLANE_TYPE"`
+    **type** : :obj:`~VECTOR_GEOMETRY_TOOL_PLANE_TYPE`
 
     :Returns:
 

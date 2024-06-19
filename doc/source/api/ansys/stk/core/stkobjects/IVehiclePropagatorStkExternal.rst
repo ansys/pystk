@@ -83,13 +83,13 @@ Property detail
 
 .. py:property:: file_format
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.file_format
-    :type: "STK_EXTERNAL_EPHEMERIS_FORMAT"
+    :type: STK_EXTERNAL_EPHEMERIS_FORMAT
 
     Ephemeris file format.
 
 .. py:property:: ephemeris_start_epoch
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.ephemeris_start_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     If overriding the times contained in the external file, specify the time of the first ephemeris point.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: message_level
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.message_level
-    :type: "STK_EXTERNAL_FILE_MESSAGE_LEVEL"
+    :type: STK_EXTERNAL_FILE_MESSAGE_LEVEL
 
     Message level used to report messages during file loading.
 
@@ -110,6 +110,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.propagate
 
     Propagates the satellite's path using the specified time interval.
 

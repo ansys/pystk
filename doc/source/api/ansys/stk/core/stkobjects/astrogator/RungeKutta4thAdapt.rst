@@ -3,7 +3,7 @@ RungeKutta4thAdapt
 
 .. py:class:: RungeKutta4thAdapt
 
-   IRungeKutta4thAdapt, INumericalIntegrator, SupportsDeleteCallback
+   Bases: py:obj:`~IRungeKutta4thAdapt`, py:obj:`~INumericalIntegrator`
 
    RK4thAdapt Numerical Integrator.
 

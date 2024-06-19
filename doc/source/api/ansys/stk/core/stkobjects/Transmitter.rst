@@ -3,7 +3,7 @@ Transmitter
 
 .. py:class:: Transmitter
 
-   ITransmitter, IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitter`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
 
    Class defining the transmitter object.
 

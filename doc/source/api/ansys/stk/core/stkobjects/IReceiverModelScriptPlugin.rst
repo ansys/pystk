@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.IReceiverModelScriptPlugin.link_margin
-    :type: "IAgLinkMargin"
+    :type: IAgLinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 

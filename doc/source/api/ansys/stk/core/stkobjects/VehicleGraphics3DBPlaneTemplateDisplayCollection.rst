@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTemplateDisplayCollection
 
 .. py:class:: VehicleGraphics3DBPlaneTemplateDisplayCollection
 
-   IVehicleGraphics3DBPlaneTemplateDisplayCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneTemplateDisplayCollection`
 
    3D DisplayElements collection for BPlane.
 

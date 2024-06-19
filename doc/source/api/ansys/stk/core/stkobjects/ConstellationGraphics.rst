@@ -3,7 +3,7 @@ ConstellationGraphics
 
 .. py:class:: ConstellationGraphics
 
-   IConstellationGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IConstellationGraphics`
 
    2D Graphics properties of the STK Constellation.
 

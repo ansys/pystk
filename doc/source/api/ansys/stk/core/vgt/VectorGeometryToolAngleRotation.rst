@@ -3,7 +3,7 @@ VectorGeometryToolAngleRotation
 
 .. py:class:: VectorGeometryToolAngleRotation
 
-   IVectorGeometryToolAngleRotation, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAngleRotation`, py:obj:`~IVectorGeometryToolAngle`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Angle of the shortest rotation between the specified FromAxes and ToAxes axes.
 

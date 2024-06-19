@@ -11,6 +11,21 @@ SPICE_INTERPOLATION
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~INTERPOLATION09_LANGRANGIAN`
+              - Type 9 (LaGrangian).
+
+            * - :py:attr:`~INTERPOLATION13_HERMITIAN`
+              - Type 13 (Hermitian).
+
+
 Import detail
 -------------
 

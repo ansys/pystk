@@ -69,6 +69,7 @@ Method detail
 
 
 .. py:method:: increase_priority(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.increase_priority
 
     Increase the time component's rendering priority.
 
@@ -77,6 +78,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: decrease_priority(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.decrease_priority
 
     Decrease the time component's rendering priority.
 
@@ -85,6 +87,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: set_highest_priority(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.set_highest_priority
 
     Set the highest time component's rendering priority.
 
@@ -93,6 +96,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: set_lowest_priority(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.set_lowest_priority
 
     Set the lowest time component's rendering priority.
 

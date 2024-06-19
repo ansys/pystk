@@ -11,6 +11,27 @@ AIRSPEED_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~MACH`
+              - Mach number.
+
+            * - :py:attr:`~EAS`
+              - Equivalent airspeed.
+
+            * - :py:attr:`~CAS`
+              - Calibrated airspeed.
+
+            * - :py:attr:`~TAS`
+              - True airspeed.
+
+
 Import detail
 -------------
 

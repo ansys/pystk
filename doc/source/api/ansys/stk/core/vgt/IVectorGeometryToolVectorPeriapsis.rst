@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorPeriapsis.central_body
-    :type: "IAgCrdnCentralBodyRefTo"
+    :type: IAgCrdnCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorPeriapsis.reference_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
 
 .. py:property:: mean_element_type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorPeriapsis.mean_element_type
-    :type: "CRDN_MEAN_ELEMENT_THEORY"
+    :type: CRDN_MEAN_ELEMENT_THEORY
 
     Specify the mean element theory type for approximating motion.
 

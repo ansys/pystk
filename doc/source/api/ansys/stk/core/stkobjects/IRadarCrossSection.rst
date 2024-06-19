@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSection.model
-    :type: "IAgRadarCrossSectionModel"
+    :type: IAgRadarCrossSectionModel
 
     Gets the current RCS model.
 
@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName:str) -> None
+.. py:method:: set_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSection.set_model
 
     Set the current RCS model by name.
 

@@ -3,7 +3,7 @@ CentralBodyEphemerisAnalyticOrbit
 
 .. py:class:: CentralBodyEphemerisAnalyticOrbit
 
-   ICentralBodyEphemerisAnalyticOrbit, ICentralBodyEphemeris, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyEphemerisAnalyticOrbit`, py:obj:`~ICentralBodyEphemeris`
 
    Central Body Ephemeris - Analytic Orbit.
 

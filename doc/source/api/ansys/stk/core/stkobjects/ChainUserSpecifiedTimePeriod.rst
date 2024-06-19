@@ -3,7 +3,7 @@ ChainUserSpecifiedTimePeriod
 
 .. py:class:: ChainUserSpecifiedTimePeriod
 
-   IChainUserSpecifiedTimePeriod, IChainTimePeriodBase, SupportsDeleteCallback
+   Bases: py:obj:`~IChainUserSpecifiedTimePeriod`, py:obj:`~IChainTimePeriodBase`
 
    User-specified time period for the chain.
 

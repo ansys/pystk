@@ -3,7 +3,7 @@ AviatorPropagator
 
 .. py:class:: AviatorPropagator
 
-   IAviatorPropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IAviatorPropagator`
 
    Class defining the Aviator propagator.
 

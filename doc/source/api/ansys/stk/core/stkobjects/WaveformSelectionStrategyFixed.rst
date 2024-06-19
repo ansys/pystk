@@ -3,7 +3,7 @@ WaveformSelectionStrategyFixed
 
 .. py:class:: WaveformSelectionStrategyFixed
 
-   IWaveformSelectionStrategyFixed, IWaveformSelectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IWaveformSelectionStrategyFixed`, py:obj:`~IWaveformSelectionStrategy`
 
    Class defining the waveform selection strategy.
 

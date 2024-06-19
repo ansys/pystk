@@ -3,7 +3,7 @@ ExportToolTimePeriod
 
 .. py:class:: ExportToolTimePeriod
 
-   IExportToolTimePeriod, SupportsDeleteCallback
+   Bases: py:obj:`~IExportToolTimePeriod`
 
    Specify Time Period.
 

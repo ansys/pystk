@@ -3,7 +3,7 @@ AircraftProp
 
 .. py:class:: AircraftProp
 
-   IAircraftProp, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftProp`
 
    Class defining the propulsion options for a basic acceleration performance model of an Aviator aircraft.
 

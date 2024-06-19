@@ -54,49 +54,49 @@ Property detail
 
 .. py:property:: b1950
     :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.b1950
-    :type: "IAgVeRealtimeCartesianPoints"
+    :type: IAgVeRealtimeCartesianPoints
 
     The input values are in the B1950 coordinate frame.
 
 .. py:property:: ecf
     :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.ecf
-    :type: "IAgVeRealtimeCartesianPoints"
+    :type: IAgVeRealtimeCartesianPoints
 
     Origin is at the center of the Earth and axes which are fixed to the Earth.
 
 .. py:property:: eci
     :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.eci
-    :type: "IAgVeRealtimeCartesianPoints"
+    :type: IAgVeRealtimeCartesianPoints
 
     Origin is at the center of the Earth and axes which are fixed in inertial space. The inertial coordinate system is J2000.
 
 .. py:property:: llahps
     :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.llahps
-    :type: "IAgVeRealtimeLLAHPSPoints"
+    :type: IAgVeRealtimeLLAHPSPoints
 
     Lat & Lon are entered in Lat & Lon units. Alt is in Distance unit. Heading & Pitch are in degrees. Speed is in Distance/Time. Heading is entered as degrees from North and is the rotation about the Z-axis; Pitch is the rotation about the Y-axis.
 
 .. py:property:: lla
     :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.lla
-    :type: "IAgVeRealtimeLLAPoints"
+    :type: IAgVeRealtimeLLAPoints
 
     The LLA measures <Alt> from the surface of the Earth, or 0.
 
 .. py:property:: agl_lla
     :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.agl_lla
-    :type: "IAgVeRealtimeLLAPoints"
+    :type: IAgVeRealtimeLLAPoints
 
     The AGL_LLA considers terrain at the specified location when measuring <Alt>.
 
 .. py:property:: msl_lla
     :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.msl_lla
-    :type: "IAgVeRealtimeLLAPoints"
+    :type: IAgVeRealtimeLLAPoints
 
     The MSL_LLA considers mean sea level at the specified location when measuring <Alt>.
 
 .. py:property:: utm
     :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.utm
-    :type: "IAgVeRealtimeUTMPoints"
+    :type: IAgVeRealtimeUTMPoints
 
     Valid values for ZoneStr are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in distance units. LonRate and LatRate are entered in degrees/second. AltRate is entered in units/second.
 
@@ -112,7 +112,8 @@ Method detail
 
 
 
-.. py:method:: get_points_in_frame(self, referenceFrame:str) -> "IVehicleRealtimeCartesianPoints"
+.. py:method:: get_points_in_frame(self, referenceFrame: str) -> IVehicleRealtimeCartesianPoints
+    :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.get_points_in_frame
 
     Allow adding points using specified reference frame.
 
@@ -122,9 +123,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleRealtimeCartesianPoints"`
+        :obj:`~IVehicleRealtimeCartesianPoints`
 
 .. py:method:: remove_all_points(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.remove_all_points
 
     Remove any points add to the vehicle's realtime ephemeris.
 

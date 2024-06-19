@@ -3,7 +3,7 @@ VmGraphics3DCrossSectionPlaneCollection
 
 .. py:class:: VmGraphics3DCrossSectionPlaneCollection
 
-   IVmGraphics3DCrossSectionPlaneCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGraphics3DCrossSectionPlaneCollection`
 
    Class defining collection of cross-section planes for volumetric grid.
 

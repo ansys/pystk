@@ -3,7 +3,7 @@ HarrisPriester
 
 .. py:class:: HarrisPriester
 
-   IHarrisPriester, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IHarrisPriester`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Harris-Priester atmospheric propagator function.
 

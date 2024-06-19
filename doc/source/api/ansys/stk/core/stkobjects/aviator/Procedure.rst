@@ -3,7 +3,7 @@ Procedure
 
 .. py:class:: Procedure
 
-   IProcedure, IConnect, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedure`, py:obj:`~IConnect`
 
    Class defining an unknown procedure type.
 

@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: today
     :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.today
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     Returns Today time instant.
 
 .. py:property:: tomorrow
     :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.tomorrow
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     Returns Tomorrow time instant.
 
@@ -78,7 +78,8 @@ Method detail
 
 
 
-.. py:method:: create(self, name:str, description:str, type:"CRDN_EVENT_TYPE") -> "ITimeToolEvent"
+.. py:method:: create(self, name: str, description: str, type: CRDN_EVENT_TYPE) -> ITimeToolEvent
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.create
 
     Create and registers an event using specified name, description, and type.
 
@@ -86,13 +87,14 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~"CRDN_EVENT_TYPE"`
+    **type** : :obj:`~CRDN_EVENT_TYPE`
 
     :Returns:
 
-        :obj:`~"ITimeToolEvent"`
+        :obj:`~ITimeToolEvent`
 
-.. py:method:: create_event_epoch(self, name:str, description:str) -> "ITimeToolEvent"
+.. py:method:: create_event_epoch(self, name: str, description: str) -> ITimeToolEvent
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.create_event_epoch
 
     Create an event set at a specified date/time.
 
@@ -103,9 +105,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEvent"`
+        :obj:`~ITimeToolEvent`
 
-.. py:method:: create_event_extremum(self, name:str, description:str) -> "ITimeToolEvent"
+.. py:method:: create_event_extremum(self, name: str, description: str) -> ITimeToolEvent
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.create_event_extremum
 
     Create an event that determines the time of global minimum or maximum of specified scalar calculation.
 
@@ -116,9 +119,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEvent"`
+        :obj:`~ITimeToolEvent`
 
-.. py:method:: create_event_start_stop_time(self, name:str, description:str) -> "ITimeToolEvent"
+.. py:method:: create_event_start_stop_time(self, name: str, description: str) -> ITimeToolEvent
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.create_event_start_stop_time
 
     Create an event that is either the start or stop time selected from a reference interval.
 
@@ -129,9 +133,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEvent"`
+        :obj:`~ITimeToolEvent`
 
-.. py:method:: create_event_signaled(self, name:str, description:str) -> "ITimeToolEvent"
+.. py:method:: create_event_signaled(self, name: str, description: str) -> ITimeToolEvent
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.create_event_signaled
 
     Create an event recorded on a specified clock via signal transmission from an original time instant recorded on different clock.
 
@@ -142,9 +147,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEvent"`
+        :obj:`~ITimeToolEvent`
 
-.. py:method:: create_event_time_offset(self, name:str, description:str) -> "ITimeToolEvent"
+.. py:method:: create_event_time_offset(self, name: str, description: str) -> ITimeToolEvent
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.create_event_time_offset
 
     Create an event at fixed offset from specified reference event.
 
@@ -155,9 +161,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEvent"`
+        :obj:`~ITimeToolEvent`
 
-.. py:method:: create_smart_epoch_from_time(self, epoch:typing.Any) -> "ITimeToolEventSmartEpoch"
+.. py:method:: create_smart_epoch_from_time(self, epoch: typing.Any) -> ITimeToolEventSmartEpoch
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.create_smart_epoch_from_time
 
     Create a smart epoch from STK epoch.
 
@@ -167,27 +174,29 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolEventSmartEpoch"`
+        :obj:`~ITimeToolEventSmartEpoch`
 
-.. py:method:: create_smart_epoch_from_event(self, refEvent:"ITimeToolEvent") -> "ITimeToolEventSmartEpoch"
+.. py:method:: create_smart_epoch_from_event(self, refEvent: ITimeToolEvent) -> ITimeToolEventSmartEpoch
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.create_smart_epoch_from_event
 
     Create a smart epoch from an event.
 
     :Parameters:
 
-    **refEvent** : :obj:`~"ITimeToolEvent"`
+    **refEvent** : :obj:`~ITimeToolEvent`
 
     :Returns:
 
-        :obj:`~"ITimeToolEventSmartEpoch"`
+        :obj:`~ITimeToolEventSmartEpoch`
 
-.. py:method:: is_type_supported(self, eType:"CRDN_EVENT_TYPE") -> bool
+.. py:method:: is_type_supported(self, eType: CRDN_EVENT_TYPE) -> bool
+    :canonical: ansys.stk.core.vgt.ITimeToolEventFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~"CRDN_EVENT_TYPE"`
+    **eType** : :obj:`~CRDN_EVENT_TYPE`
 
     :Returns:
 

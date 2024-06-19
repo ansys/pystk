@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridLatLonAlt
 
 .. py:class:: SpatialAnalysisToolVolumeGridLatLonAlt
 
-   ISpatialAnalysisToolVolumeGridLatLonAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridLatLonAlt`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume grid lat lon alt (Cartogrographic) interface.
 

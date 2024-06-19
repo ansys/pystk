@@ -73,7 +73,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IRadarActivityTimeIntervalListElement"
+.. py:method:: item(self, index: int) -> IRadarActivityTimeIntervalListElement
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -83,10 +84,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarActivityTimeIntervalListElement"`
+        :obj:`~IRadarActivityTimeIntervalListElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.remove_at
 
     Remove the element with the specified index.
 
@@ -98,7 +100,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: insert_at(self, index:int) -> "IRadarActivityTimeIntervalListElement"
+.. py:method:: insert_at(self, index: int) -> IRadarActivityTimeIntervalListElement
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.insert_at
 
     Insert a new element at the supplied index.
 
@@ -108,17 +111,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarActivityTimeIntervalListElement"`
+        :obj:`~IRadarActivityTimeIntervalListElement`
 
-.. py:method:: add(self) -> "IRadarActivityTimeIntervalListElement"
+.. py:method:: add(self) -> IRadarActivityTimeIntervalListElement
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.add
 
     Add a new element to the collection.
 
     :Returns:
 
-        :obj:`~"IRadarActivityTimeIntervalListElement"`
+        :obj:`~IRadarActivityTimeIntervalListElement`
 
-.. py:method:: import_from_component(self, identifier:str) -> None
+.. py:method:: import_from_component(self, identifier: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.import_from_component
 
     Import time intervals from specified time component.
 
@@ -130,7 +135,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_from_file(self, path:str) -> None
+.. py:method:: load_from_file(self, path: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.load_from_file
 
     Load time intervals from file.
 
@@ -143,6 +149,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.clear
 
     Clear all elements from the collection.
 

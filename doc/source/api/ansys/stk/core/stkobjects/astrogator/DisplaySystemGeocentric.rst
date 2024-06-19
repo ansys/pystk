@@ -3,7 +3,7 @@ DisplaySystemGeocentric
 
 .. py:class:: DisplaySystemGeocentric
 
-   IDisplaySystemGeocentric, IDisplaySystem, SupportsDeleteCallback
+   Bases: py:obj:`~IDisplaySystemGeocentric`, py:obj:`~IDisplaySystem`
 
    The geocentric launch location.
 

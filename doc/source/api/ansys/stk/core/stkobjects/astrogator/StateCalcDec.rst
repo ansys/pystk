@@ -3,7 +3,7 @@ StateCalcDec
 
 .. py:class:: StateCalcDec
 
-   IComponentInfo, ICloneable, IStateCalcDec, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDec`
 
    Dec Calc objects.
 

@@ -3,7 +3,7 @@ Texture2DFactory
 
 .. py:class:: Texture2DFactory
 
-   ITexture2DFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITexture2DFactory`
 
    A factory for creating texture 2d objects from various sources.
 

@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: error_line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.error_line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the line width of the bearing error lines.
 

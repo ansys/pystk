@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: access_times
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetTimes.access_times
-    :type: "IAgAccessTimeCollection"
+    :type: IAgAccessTimeCollection
 
     Get the access times.
 
 .. py:property:: schedule_times
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetTimes.schedule_times
-    :type: "IAgVeScheduleTimesCollection"
+    :type: IAgVeScheduleTimesCollection
 
     Get the scheduled times.
 
@@ -72,6 +72,7 @@ Method detail
 
 
 .. py:method:: deconflict(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetTimes.deconflict
 
     Deconflict intervals.
 

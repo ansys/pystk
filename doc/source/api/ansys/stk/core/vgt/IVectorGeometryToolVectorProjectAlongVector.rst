@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: source_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector.source_vector
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     A source vector. Can be any VGT vector.
 
 .. py:property:: along_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector.along_vector
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     A vector along which the source vector is projected. Can be any VGT vector.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties.type
-    :type: "VEHICLE_GPS_ALMANAC_TYPE"
+    :type: VEHICLE_GPS_ALMANAC_TYPE
 
     Gets a type of the almanac.
 

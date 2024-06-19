@@ -40,31 +40,31 @@ Property detail
 
 .. py:property:: fixed
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.fixed
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     The Sun's Fixed coordinate system.
 
 .. py:property:: icrf
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.icrf
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     The Sun's International Celestial Reference Frame (ICRF).
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.inertial
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     The Sun's Inertial coordinate system (as defined in STK).
 
 .. py:property:: j2000
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.j2000
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     The Sun's J2000 coordinate system.
 
 .. py:property:: barycenter
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.barycenter
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     The Inertial system at the Sun's barycenter.
 

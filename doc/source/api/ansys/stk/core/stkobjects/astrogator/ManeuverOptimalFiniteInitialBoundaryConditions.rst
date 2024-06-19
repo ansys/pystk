@@ -3,7 +3,7 @@ ManeuverOptimalFiniteInitialBoundaryConditions
 
 .. py:class:: ManeuverOptimalFiniteInitialBoundaryConditions
 
-   IManeuverOptimalFiniteInitialBoundaryConditions, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverOptimalFiniteInitialBoundaryConditions`
 
    Properties of initial boundary conditions for optimal finite maneuver.
 

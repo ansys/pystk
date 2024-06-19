@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DLegendWindow
 
 .. py:class:: FigureOfMeritGraphics2DLegendWindow
 
-   IFigureOfMeritGraphics2DLegendWindow, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DLegendWindow`
 
    Properties of contour legend on 2D map.
 

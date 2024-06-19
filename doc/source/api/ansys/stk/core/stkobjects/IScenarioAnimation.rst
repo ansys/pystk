@@ -93,19 +93,19 @@ Property detail
 
 .. py:property:: anim_cycle_type
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.anim_cycle_type
-    :type: "SCENARIO_END_LOOP_TYPE"
+    :type: SCENARIO_END_LOOP_TYPE
 
     Animation end time or loop-at time. A member of the AgEScEndLoopType enumeration.
 
 .. py:property:: refresh_delta_type
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.refresh_delta_type
-    :type: "SCENARIO_REFRESH_DELTA_TYPE"
+    :type: SCENARIO_REFRESH_DELTA_TYPE
 
     Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
 
 .. py:property:: anim_step_type
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.anim_step_type
-    :type: "SCENARIO_TIME_STEP_TYPE"
+    :type: SCENARIO_TIME_STEP_TYPE
 
     Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
 
@@ -117,7 +117,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.time_period
-    :type: "IAgScAnimationTimePeriod"
+    :type: IAgScAnimationTimePeriod
 
     Allows the user to configure the scenario's animation time period.
 
@@ -152,19 +152,21 @@ Method detail
 
 
 
-.. py:method:: set_time_array_component(self, component:"IAnalysisWorkbenchComponent") -> None
+.. py:method:: set_time_array_component(self, component: IAnalysisWorkbenchComponent) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.set_time_array_component
 
     Configure the time array using the specified time component. Allowed are only event arrays.
 
     :Parameters:
 
-    **component** : :obj:`~"IAnalysisWorkbenchComponent"`
+    **component** : :obj:`~IAnalysisWorkbenchComponent`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_time_array_qualified_path(self, qualifiedPath:str) -> None
+.. py:method:: set_time_array_qualified_path(self, qualifiedPath: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.set_time_array_qualified_path
 
     Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 OneMinuteSampleTimes EventArray\").
 
@@ -176,15 +178,17 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_time_array_component(self) -> "IAnalysisWorkbenchComponent"
+.. py:method:: get_time_array_component(self) -> IAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.get_time_array_component
 
     Return a time array component used to configure the time array or null if component has not been configured yet.
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchComponent"`
+        :obj:`~IAnalysisWorkbenchComponent`
 
 .. py:method:: get_time_array_qualified_path(self) -> str
+    :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.get_time_array_qualified_path
 
     Return the time array component's qualified path or null if no component has been configured yet.
 
@@ -193,6 +197,7 @@ Method detail
         :obj:`~str`
 
 .. py:method:: reset_time_array_component(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.reset_time_array_component
 
     Remove and resets the display configuration by unsetting currently set time array component (if any).
 

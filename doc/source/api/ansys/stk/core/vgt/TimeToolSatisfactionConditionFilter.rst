@@ -3,7 +3,7 @@ TimeToolSatisfactionConditionFilter
 
 .. py:class:: TimeToolSatisfactionConditionFilter
 
-   ITimeToolSatisfactionConditionFilter, ITimeToolPruneFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolSatisfactionConditionFilter`, py:obj:`~ITimeToolPruneFilter`
 
    The filter selects intervals if certain side condition is satisfied at least/most certain duration.
 

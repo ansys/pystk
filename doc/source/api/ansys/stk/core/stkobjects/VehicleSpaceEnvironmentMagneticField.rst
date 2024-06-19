@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentMagneticField
 
 .. py:class:: VehicleSpaceEnvironmentMagneticField
 
-   IVehicleSpaceEnvironmentMagneticField, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironmentMagneticField`
 
    Magnetic field settings.
 

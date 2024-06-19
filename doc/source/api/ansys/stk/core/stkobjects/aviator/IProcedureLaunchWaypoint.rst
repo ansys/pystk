@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.altitude_reference
-    :type: "ALTITUDE_REFERENCE"
+    :type: ALTITUDE_REFERENCE
 
     Gets or sets the launch altitude reference.
 
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.fuel_flow_type
-    :type: "FUEL_FLOW_TYPE"
+    :type: FUEL_FLOW_TYPE
 
     Gets or sets the fuel flow type of the aircraft during the launch.
 
@@ -132,13 +132,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.set_airspeed
 
     Set the launch airspeed.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -149,11 +150,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

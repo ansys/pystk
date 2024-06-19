@@ -159,7 +159,8 @@ Method detail
 
 
 
-.. py:method:: set_empty_cg(self, x:float, y:float, z:float) -> None
+.. py:method:: set_empty_cg(self, x: float, y: float, z: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IConfiguration.set_empty_cg
 
     Set the aircraft's Empty CG position.
 
@@ -179,29 +180,32 @@ Method detail
 
 
 
-.. py:method:: paste_configuration(self, otherConfiguration:"IConfiguration") -> None
+.. py:method:: paste_configuration(self, otherConfiguration: IConfiguration) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IConfiguration.paste_configuration
 
     Paste the aircraft's configuration.
 
     :Parameters:
 
-    **otherConfiguration** : :obj:`~"IConfiguration"`
+    **otherConfiguration** : :obj:`~IConfiguration`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_stations(self) -> "IStationCollection"
+.. py:method:: get_stations(self) -> IStationCollection
+    :canonical: ansys.stk.core.stkobjects.aviator.IConfiguration.get_stations
 
     Get a collection of the aircraft's payload stations.
 
     :Returns:
 
-        :obj:`~"IStationCollection"`
+        :obj:`~IStationCollection`
 
 
 
 .. py:method:: save(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IConfiguration.save
 
     Save.
 

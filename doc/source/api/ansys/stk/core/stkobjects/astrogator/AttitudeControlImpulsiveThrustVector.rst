@@ -3,7 +3,7 @@ AttitudeControlImpulsiveThrustVector
 
 .. py:class:: AttitudeControlImpulsiveThrustVector
 
-   IAttitudeControlImpulsiveThrustVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlImpulsiveThrustVector`, py:obj:`~IAttitudeControlImpulsive`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The thrust vector attitude control for an impulsive maneuver.
 

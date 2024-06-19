@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: desired_operation
     :canonical: ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult.desired_operation
-    :type: "GOLDEN_SECTION_DESIRED_OPERATION"
+    :type: GOLDEN_SECTION_DESIRED_OPERATION
 
     Gets or sets the Desired Operation/Objective of golden section.
 

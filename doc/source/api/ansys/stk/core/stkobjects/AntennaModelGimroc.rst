@@ -3,7 +3,7 @@ AntennaModelGimroc
 
 .. py:class:: AntennaModelGimroc
 
-   IAntennaModelGimroc, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelGimroc`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a GIMROC antenna model.
 

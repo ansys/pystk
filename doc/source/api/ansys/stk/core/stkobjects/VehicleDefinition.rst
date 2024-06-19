@@ -3,7 +3,7 @@ VehicleDefinition
 
 .. py:class:: VehicleDefinition
 
-   IVehicleDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleDefinition`
 
    Pass break definition properties.
 

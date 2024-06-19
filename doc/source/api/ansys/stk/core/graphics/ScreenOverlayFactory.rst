@@ -3,7 +3,7 @@ ScreenOverlayFactory
 
 .. py:class:: ScreenOverlayFactory
 
-   IScreenOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IScreenOverlayFactory`
 
    A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
 

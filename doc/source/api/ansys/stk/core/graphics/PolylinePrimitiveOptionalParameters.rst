@@ -3,7 +3,7 @@ PolylinePrimitiveOptionalParameters
 
 .. py:class:: PolylinePrimitiveOptionalParameters
 
-   IPolylinePrimitiveOptionalParameters, SupportsDeleteCallback
+   Bases: py:obj:`~IPolylinePrimitiveOptionalParameters`
 
    Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters...
 

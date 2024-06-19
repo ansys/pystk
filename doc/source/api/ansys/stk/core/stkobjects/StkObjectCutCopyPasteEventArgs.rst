@@ -3,7 +3,7 @@ StkObjectCutCopyPasteEventArgs
 
 .. py:class:: StkObjectCutCopyPasteEventArgs
 
-   IStkObjectCutCopyPasteEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~IStkObjectCutCopyPasteEventArgs`
 
    Arguments for the OnStkObjectPreCut, OnStkObjectCopy and OnStkObjectPaste events.
 

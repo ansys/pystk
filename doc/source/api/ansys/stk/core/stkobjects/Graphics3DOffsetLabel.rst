@@ -3,7 +3,7 @@ Graphics3DOffsetLabel
 
 .. py:class:: Graphics3DOffsetLabel
 
-   IGraphics3DOffsetLabel, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DOffsetLabel`
 
    Class defining the offset of the position of an object label in the 3D Graphics window.
 

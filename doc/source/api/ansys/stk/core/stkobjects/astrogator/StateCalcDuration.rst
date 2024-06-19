@@ -3,7 +3,7 @@ StateCalcDuration
 
 .. py:class:: StateCalcDuration
 
-   IComponentInfo, ICloneable, IStateCalcDuration, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDuration`
 
    Duration Calc objects.
 

@@ -76,7 +76,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleThirdBodyGravityElement"
+.. py:method:: item(self, index: int) -> IVehicleThirdBodyGravityElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -86,10 +87,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleThirdBodyGravityElement"`
+        :obj:`~IVehicleThirdBodyGravityElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -102,6 +104,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -110,7 +113,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_third_body(self, thirdBody:str) -> "IVehicleThirdBodyGravityElement"
+.. py:method:: add_third_body(self, thirdBody: str) -> IVehicleThirdBodyGravityElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.add_third_body
 
     Add a new element to the collection.
 
@@ -120,9 +124,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleThirdBodyGravityElement"`
+        :obj:`~IVehicleThirdBodyGravityElement`
 
-.. py:method:: remove_third_body(self, thirdBody:str) -> None
+.. py:method:: remove_third_body(self, thirdBody: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.remove_third_body
 
     Remove an element from the collection.
 

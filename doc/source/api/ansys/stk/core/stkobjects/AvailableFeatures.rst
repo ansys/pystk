@@ -3,7 +3,7 @@ AvailableFeatures
 
 .. py:class:: AvailableFeatures
 
-   IAvailableFeatures, SupportsDeleteCallback
+   Bases: py:obj:`~IAvailableFeatures`
 
    Class is used to check the availability of the features such as Astrogator, etc.
 

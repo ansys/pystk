@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: atmosphere_layers
     :canonical: ansys.stk.core.stkobjects.ILaserAtmosphericLossModelBeerBouguerLambertLaw.atmosphere_layers
-    :type: "IAgBeerBouguerLambertLawLayerCollection"
+    :type: IAgBeerBouguerLambertLawLayerCollection
 
     Gets the atmosphere layer collection.
 
@@ -71,7 +71,8 @@ Method detail
 
 
 
-.. py:method:: create_evenly_spaced_layers(self, layerCount:int, maxAltitude:float) -> "IBeerBouguerLambertLawLayerCollection"
+.. py:method:: create_evenly_spaced_layers(self, layerCount: int, maxAltitude: float) -> IBeerBouguerLambertLawLayerCollection
+    :canonical: ansys.stk.core.stkobjects.ILaserAtmosphericLossModelBeerBouguerLambertLaw.create_evenly_spaced_layers
 
     Clear any existing layers in the collection and creates evenly spaced layers from surface of the central body to the maximum altitude.
 
@@ -82,9 +83,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBeerBouguerLambertLawLayerCollection"`
+        :obj:`~IBeerBouguerLambertLawLayerCollection`
 
-.. py:method:: create_unevenly_spaced_layers(self, ppLayerHeights:list) -> "IBeerBouguerLambertLawLayerCollection"
+.. py:method:: create_unevenly_spaced_layers(self, ppLayerHeights: list) -> IBeerBouguerLambertLawLayerCollection
+    :canonical: ansys.stk.core.stkobjects.ILaserAtmosphericLossModelBeerBouguerLambertLaw.create_unevenly_spaced_layers
 
     Clear any existing layers in the collection and creates unevenly spaced layers using the array of supplied layer top heights.
 
@@ -94,6 +96,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBeerBouguerLambertLawLayerCollection"`
+        :obj:`~IBeerBouguerLambertLawLayerCollection`
 
 

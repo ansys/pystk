@@ -3,7 +3,7 @@ OrbitStateCoordinateSystem
 
 .. py:class:: OrbitStateCoordinateSystem
 
-   IOrbitStateCoordinateSystem, SupportsDeleteCallback
+   Bases: py:obj:`~IOrbitStateCoordinateSystem`
 
    Selection of coordinate epoch for coordinate systems that do not have pre-established epochs.
 

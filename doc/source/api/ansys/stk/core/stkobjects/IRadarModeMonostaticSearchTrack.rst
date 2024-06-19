@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: waveform
     :canonical: ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack.waveform
-    :type: "IAgRadarWaveformSearchTrack"
+    :type: IAgRadarWaveformSearchTrack
 
     Gets the interface for configuring the search/track waveform.
 
 .. py:property:: doppler_clutter_filters
     :canonical: ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack.doppler_clutter_filters
-    :type: "IAgRadarDopplerClutterFilters"
+    :type: IAgRadarDopplerClutterFilters
 
     Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 
@@ -60,13 +60,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: set_waveform_type(self, val:"RADAR_WAVEFORM_SEARCH_TRACK_TYPE") -> None
+.. py:method:: set_waveform_type(self, val: RADAR_WAVEFORM_SEARCH_TRACK_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack.set_waveform_type
 
     Set the waveform type.
 
     :Parameters:
 
-    **val** : :obj:`~"RADAR_WAVEFORM_SEARCH_TRACK_TYPE"`
+    **val** : :obj:`~RADAR_WAVEFORM_SEARCH_TRACK_TYPE`
 
     :Returns:
 

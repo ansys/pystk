@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTemplatesCollection
 
 .. py:class:: VehicleGraphics3DBPlaneTemplatesCollection
 
-   IVehicleGraphics3DBPlaneTemplatesCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneTemplatesCollection`
 
    A list of available b-plane templates.
 

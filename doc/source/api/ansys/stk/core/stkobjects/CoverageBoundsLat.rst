@@ -3,7 +3,7 @@ CoverageBoundsLat
 
 .. py:class:: CoverageBoundsLat
 
-   ICoverageBoundsLat, ICoverageBounds, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageBoundsLat`, py:obj:`~ICoverageBounds`
 
    Latitude Bounds: create a grid between user-specified Minimum and Maximum Latitude boundaries.
 

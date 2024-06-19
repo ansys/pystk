@@ -11,6 +11,21 @@ CAMERA_VIDEO_FORMAT
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~H264`
+              - H.264 file format.
+
+            * - :py:attr:`~WMV`
+              - Windows Media Video (WMV) file format.
+
+
 Import detail
 -------------
 

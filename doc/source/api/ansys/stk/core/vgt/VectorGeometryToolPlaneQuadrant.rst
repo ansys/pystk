@@ -3,7 +3,7 @@ VectorGeometryToolPlaneQuadrant
 
 .. py:class:: VectorGeometryToolPlaneQuadrant
 
-   IVectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlaneQuadrant`, py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A plane based on a selected Quadrant of a reference system.
 

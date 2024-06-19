@@ -3,7 +3,7 @@ ClassicalLocationTimePastPerigee
 
 .. py:class:: ClassicalLocationTimePastPerigee
 
-   IClassicalLocationTimePastPerigee, IClassicalLocation, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalLocationTimePastPerigee`, py:obj:`~IClassicalLocation`
 
    Time Past Perigee, used in specifying the spacecraft's location within its orbit at epoch.
 

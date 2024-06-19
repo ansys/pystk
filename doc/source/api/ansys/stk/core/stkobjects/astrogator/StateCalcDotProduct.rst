@@ -3,7 +3,7 @@ StateCalcDotProduct
 
 .. py:class:: StateCalcDotProduct
 
-   IComponentInfo, ICloneable, IStateCalcDotProduct, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDotProduct`
 
    DotProduct Calc objects.
 

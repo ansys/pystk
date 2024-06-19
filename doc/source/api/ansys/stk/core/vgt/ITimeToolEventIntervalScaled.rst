@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: original_interval
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalScaled.original_interval
-    :type: "IAgCrdnEventInterval"
+    :type: IAgCrdnEventInterval
 
     The original interval.
 

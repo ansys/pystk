@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: group
     :canonical: ansys.stk.core.stkobjects.IDataProviderGroup.group
-    :type: "IAgDataProviders"
+    :type: IAgDataProviders
 
     Returns a collection of data providers in the group.
 

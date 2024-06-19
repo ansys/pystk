@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.altitude_mode
-    :type: "AUTOPILOT_ALTITUDE_MODE"
+    :type: AUTOPILOT_ALTITUDE_MODE
 
     Gets or sets the altitude mode of the autopilot - vertical plane strategy.
 
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: altitude_control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.altitude_control_mode
-    :type: "AUTOPILOT_ALTITUDE_CONTROL_MODE"
+    :type: AUTOPILOT_ALTITUDE_CONTROL_MODE
 
     Gets or sets the altitude control mode for the hold initial altitude, specify altitude, and specify altitude change modes.
 
@@ -98,7 +98,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.control_limit_mode
-    :type: "PERF_MODEL_OVERRIDE"
+    :type: PERF_MODEL_OVERRIDE
 
     Gets or sets the control limits mode.
 
@@ -122,7 +122,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.airspeed_options
-    :type: "IAgAvtrBasicManeuverAirspeedOptions"
+    :type: IAgAvtrBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

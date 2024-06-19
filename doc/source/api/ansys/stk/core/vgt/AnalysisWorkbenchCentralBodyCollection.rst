@@ -3,7 +3,7 @@ AnalysisWorkbenchCentralBodyCollection
 
 .. py:class:: AnalysisWorkbenchCentralBodyCollection
 
-   IAnalysisWorkbenchCentralBodyCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchCentralBodyCollection`
 
    A collection of central body names.
 

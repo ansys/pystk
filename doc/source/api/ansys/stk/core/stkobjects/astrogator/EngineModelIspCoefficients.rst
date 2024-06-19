@@ -3,7 +3,7 @@ EngineModelIspCoefficients
 
 .. py:class:: EngineModelIspCoefficients
 
-   IEngineModelIspCoefficients, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineModelIspCoefficients`
 
    Engine Model Isp Coefficients.
 

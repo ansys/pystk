@@ -40,31 +40,34 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_catalog_runway(self) -> "ICatalogRunway"
+.. py:method:: get_catalog_runway(self) -> ICatalogRunway
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteRunwayFromCatalog.get_catalog_runway
 
     Get the catalog runway.
 
     :Returns:
 
-        :obj:`~"ICatalogRunway"`
+        :obj:`~ICatalogRunway`
 
-.. py:method:: set_catalog_runway(self, pVal:"ICatalogRunway") -> None
+.. py:method:: set_catalog_runway(self, pVal: ICatalogRunway) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteRunwayFromCatalog.set_catalog_runway
 
     Set the catalog runway.
 
     :Parameters:
 
-    **pVal** : :obj:`~"ICatalogRunway"`
+    **pVal** : :obj:`~ICatalogRunway`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_as_site(self) -> "ISite"
+.. py:method:: get_as_site(self) -> ISite
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteRunwayFromCatalog.get_as_site
 
     Get the site interface.
 
     :Returns:
 
-        :obj:`~"ISite"`
+        :obj:`~ISite`
 

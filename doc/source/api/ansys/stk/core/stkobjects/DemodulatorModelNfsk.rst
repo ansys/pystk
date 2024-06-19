@@ -3,7 +3,7 @@ DemodulatorModelNfsk
 
 .. py:class:: DemodulatorModelNfsk
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a NFSK modulator model.
 

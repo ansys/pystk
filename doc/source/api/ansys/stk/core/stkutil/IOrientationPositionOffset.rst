@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: position_offset
     :canonical: ansys.stk.core.stkutil.IOrientationPositionOffset.position_offset
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     Gets or sets the position offset cartesian vector.
 

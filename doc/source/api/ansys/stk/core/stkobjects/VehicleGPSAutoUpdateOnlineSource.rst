@@ -3,7 +3,7 @@ VehicleGPSAutoUpdateOnlineSource
 
 .. py:class:: VehicleGPSAutoUpdateOnlineSource
 
-   IVehicleGPSAutoUpdateOnlineSource, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSAutoUpdateOnlineSource`
 
    GPS automatic updates using online source (AGI server).
 

@@ -3,7 +3,7 @@ ScatteringPointModelPlugin
 
 .. py:class:: ScatteringPointModelPlugin
 
-   IScatteringPointModelPlugin, IScatteringPointModel, IComponentInfo, ICloneable, IRadarClutterMapModelPlugin, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointModelPlugin`, py:obj:`~IScatteringPointModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IRadarClutterMapModelPlugin`
 
    Class defining a plugin scattering point model.
 

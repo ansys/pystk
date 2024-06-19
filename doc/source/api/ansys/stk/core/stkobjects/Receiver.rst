@@ -3,7 +3,7 @@ Receiver
 
 .. py:class:: Receiver
 
-   IReceiver, IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiver`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
 
    Class defining the receiver object.
 

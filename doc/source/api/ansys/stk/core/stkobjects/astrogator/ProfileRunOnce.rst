@@ -3,7 +3,7 @@ ProfileRunOnce
 
 .. py:class:: ProfileRunOnce
 
-   IProfileRunOnce, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileRunOnce`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Run Once profile.
 

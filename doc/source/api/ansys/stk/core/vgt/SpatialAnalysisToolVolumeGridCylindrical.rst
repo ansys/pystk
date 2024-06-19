@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridCylindrical
 
 .. py:class:: SpatialAnalysisToolVolumeGridCylindrical
 
-   ISpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridCylindrical`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume grid cylindrical interface.
 

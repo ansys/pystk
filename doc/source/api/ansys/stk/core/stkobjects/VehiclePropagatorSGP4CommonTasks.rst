@@ -3,7 +3,7 @@ VehiclePropagatorSGP4CommonTasks
 
 .. py:class:: VehiclePropagatorSGP4CommonTasks
 
-   IVehiclePropagatorSGP4CommonTasks, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorSGP4CommonTasks`
 
    Most commonly used functionality when working with SGP4 propagator.
 

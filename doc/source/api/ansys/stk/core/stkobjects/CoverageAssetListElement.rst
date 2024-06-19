@@ -3,7 +3,7 @@ CoverageAssetListElement
 
 .. py:class:: CoverageAssetListElement
 
-   ICoverageAssetListElement, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageAssetListElement`
 
    Coverage asset.
 

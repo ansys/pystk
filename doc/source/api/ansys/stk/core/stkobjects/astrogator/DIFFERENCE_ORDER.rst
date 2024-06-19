@@ -11,6 +11,21 @@ DIFFERENCE_ORDER
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~INITIAL_MINUS_CURRENT`
+              - The initial minus current difference.
+
+            * - :py:attr:`~CURRENT_MINUS_INITIAL`
+              - The current minus initial difference.
+
+
 Import detail
 -------------
 

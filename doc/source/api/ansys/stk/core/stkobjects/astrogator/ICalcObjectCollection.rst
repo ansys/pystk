@@ -74,7 +74,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, name:str) -> "IComponentInfo"
+.. py:method:: add(self, name: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.add
 
     Add a calc object to the collection.
 
@@ -84,9 +85,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IComponentInfo"
+.. py:method:: item(self, indexOrName: typing.Any) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.item
 
     Return a calc object.
 
@@ -96,9 +98,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.remove
 
     Remove a calc object from the collection.
 
@@ -112,7 +115,8 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.cut
 
     Copy a calc object to the clipboard and removes the calc object from the list.
 
@@ -124,27 +128,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IComponentInfo"
+.. py:method:: paste(self) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.paste
 
     Pastes a calc object from the clipboard into the list.
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: insert_copy(self, calcObj:"IComponentInfo") -> "IComponentInfo"
+.. py:method:: insert_copy(self, calcObj: IComponentInfo) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.insert_copy
 
     Copy a calc object and inserts the copy into the list.
 
     :Parameters:
 
-    **calcObj** : :obj:`~"IComponentInfo"`
+    **calcObj** : :obj:`~IComponentInfo`
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IComponentInfo"
+.. py:method:: get_item_by_index(self, index: int) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.get_item_by_index
 
     Retrieve a calc object found by the index.
 
@@ -154,9 +161,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IComponentInfo"
+.. py:method:: get_item_by_name(self, name: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.get_item_by_name
 
     Retrieve a calc object found by the name.
 
@@ -166,5 +174,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 

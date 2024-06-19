@@ -3,7 +3,7 @@ StateCalcBetaAngle
 
 .. py:class:: StateCalcBetaAngle
 
-   IComponentInfo, ICloneable, IStateCalcBetaAngle, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcBetaAngle`
 
    BetaAngle Calc objects.
 

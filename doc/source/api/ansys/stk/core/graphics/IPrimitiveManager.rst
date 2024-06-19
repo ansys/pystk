@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: translucent_primitives_sort_order
     :canonical: ansys.stk.core.graphics.IPrimitiveManager.translucent_primitives_sort_order
-    :type: "PRIMITIVES_SORT_ORDER"
+    :type: PRIMITIVES_SORT_ORDER
 
     Gets or sets the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality...
 
@@ -85,43 +85,47 @@ Method detail
 
 
 
-.. py:method:: add(self, primitive:"IPrimitive") -> None
+.. py:method:: add(self, primitive: IPrimitive) -> None
+    :canonical: ansys.stk.core.graphics.IPrimitiveManager.add
 
     Add a primitive to the manager. Primitives must be added to the manager to be rendered.
 
     :Parameters:
 
-    **primitive** : :obj:`~"IPrimitive"`
+    **primitive** : :obj:`~IPrimitive`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, primitive:"IPrimitive") -> None
+.. py:method:: remove(self, primitive: IPrimitive) -> None
+    :canonical: ansys.stk.core.graphics.IPrimitiveManager.remove
 
     Remove a primitive from the manager. The primitive is no longer rendered unless it is added back into the manager.
 
     :Parameters:
 
-    **primitive** : :obj:`~"IPrimitive"`
+    **primitive** : :obj:`~IPrimitive`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: contains(self, primitive:"IPrimitive") -> bool
+.. py:method:: contains(self, primitive: IPrimitive) -> bool
+    :canonical: ansys.stk.core.graphics.IPrimitiveManager.contains
 
     Determine whether the manager contains a primitive.
 
     :Parameters:
 
-    **primitive** : :obj:`~"IPrimitive"`
+    **primitive** : :obj:`~IPrimitive`
 
     :Returns:
 
         :obj:`~bool`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.IPrimitiveManager.clear
 
     Remove all primitives from the manager.
 

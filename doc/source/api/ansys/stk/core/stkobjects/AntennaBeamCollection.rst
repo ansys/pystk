@@ -3,7 +3,7 @@ AntennaBeamCollection
 
 .. py:class:: AntennaBeamCollection
 
-   IAntennaBeamCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaBeamCollection`
 
    Class defining an antenna beam collection.
 

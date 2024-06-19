@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: approach_fix_range_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ILandingInterceptGlideslope.approach_fix_range_mode
-    :type: "LANDING_APPROACH_FIX_RANGE_MODE"
+    :type: LANDING_APPROACH_FIX_RANGE_MODE
 
     Gets or sets the reference point on the runway for the Approach Fix Range.
 

@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IProjectionRasterStreamPluginActivator"
+.. py:method:: initialize(self) -> IProjectionRasterStreamPluginActivator
+    :canonical: ansys.stk.core.graphics.IProjectionRasterStreamPluginActivatorFactory.initialize
 
     Initialize a new instance of the Activator type.
 
     :Returns:
 
-        :obj:`~"IProjectionRasterStreamPluginActivator"`
+        :obj:`~IProjectionRasterStreamPluginActivator`
 

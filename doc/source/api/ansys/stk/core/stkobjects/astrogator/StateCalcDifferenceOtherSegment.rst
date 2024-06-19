@@ -3,7 +3,7 @@ StateCalcDifferenceOtherSegment
 
 .. py:class:: StateCalcDifferenceOtherSegment
 
-   IComponentInfo, ICloneable, IStateCalcDifferenceOtherSegment, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDifferenceOtherSegment`
 
    DifferenceOtherSegment Calc objects.
 

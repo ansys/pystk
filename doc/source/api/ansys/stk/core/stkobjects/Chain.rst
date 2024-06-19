@@ -3,7 +3,7 @@ Chain
 
 .. py:class:: Chain
 
-   IChain, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IChain`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    AgChain Class is used to access the methods and properties of the STK Chain Object.
 

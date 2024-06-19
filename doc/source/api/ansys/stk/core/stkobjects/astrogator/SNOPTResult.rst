@@ -3,7 +3,7 @@ SNOPTResult
 
 .. py:class:: SNOPTResult
 
-   ISNOPTResult, SupportsDeleteCallback
+   Bases: py:obj:`~ISNOPTResult`
 
    Properties for objecvtive and constraints of a SNOPT profile.
 

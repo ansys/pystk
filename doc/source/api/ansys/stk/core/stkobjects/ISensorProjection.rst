@@ -81,19 +81,19 @@ Property detail
 
 .. py:property:: intersection_type
     :canonical: ansys.stk.core.stkobjects.ISensorProjection.intersection_type
-    :type: "INTERSECTION_TYPE"
+    :type: INTERSECTION_TYPE
 
     The type of intersections to be shown. A member of the AgEIntersectionType enumeration.
 
 .. py:property:: distance_type
     :canonical: ansys.stk.core.stkobjects.ISensorProjection.distance_type
-    :type: "SENSOR_PROJECTION_DISTANCE_TYPE"
+    :type: SENSOR_PROJECTION_DISTANCE_TYPE
 
     The criterion used for determining the projection distance. A member of the AgESnProjectionDistanceType enumeration.
 
 .. py:property:: distance_data
     :canonical: ansys.stk.core.stkobjects.ISensorProjection.distance_data
-    :type: "IAgDisplayDistance"
+    :type: IAgDisplayDistance
 
     Value of the criterion used for determining the projection distance.
 
@@ -147,6 +147,7 @@ Method detail
 
 
 .. py:method:: available_constraints(self) -> list
+    :canonical: ansys.stk.core.stkobjects.ISensorProjection.available_constraints
 
     Return the available constraints.
 
@@ -155,6 +156,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: enabled_constraints(self) -> list
+    :canonical: ansys.stk.core.stkobjects.ISensorProjection.enabled_constraints
 
     Return the enabled constraints.
 
@@ -162,7 +164,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: enable_constraint(self, constraintName:str) -> None
+.. py:method:: enable_constraint(self, constraintName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorProjection.enable_constraint
 
     Enable the constraint with the name given.
 
@@ -174,7 +177,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: disable_constraint(self, constraintName:str) -> None
+.. py:method:: disable_constraint(self, constraintName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorProjection.disable_constraint
 
     Disables the constraint with the name given.
 
@@ -187,6 +191,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: available_altitude_objects(self) -> list
+    :canonical: ansys.stk.core.stkobjects.ISensorProjection.available_altitude_objects
 
     Return the available altitude objects.
 

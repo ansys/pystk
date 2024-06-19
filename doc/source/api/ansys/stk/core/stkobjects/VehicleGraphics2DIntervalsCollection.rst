@@ -3,7 +3,7 @@ VehicleGraphics2DIntervalsCollection
 
 .. py:class:: VehicleGraphics2DIntervalsCollection
 
-   IVehicleGraphics2DIntervalsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DIntervalsCollection`
 
    Custom Intervals Graphics List.
 

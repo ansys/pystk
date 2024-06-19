@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.properties
-    :type: "IAgAvtrPerformanceModel"
+    :type: IAgAvtrPerformanceModel
 
     Get the properties of the performance model.
 
@@ -75,7 +75,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: link_to_catalog(self, name:str) -> None
+.. py:method:: link_to_catalog(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.link_to_catalog
 
     Link to the performance model in the catalog with the given name.
 
@@ -87,7 +88,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: copy_from_catalog(self, name:str) -> None
+.. py:method:: copy_from_catalog(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.copy_from_catalog
 
     Create a copy of the performance model in the catalog with the given name.
 
@@ -99,7 +101,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: create_new(self, type:str) -> None
+.. py:method:: create_new(self, type: str) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.create_new
 
     Create a new performance model of the given type.
 
@@ -111,7 +114,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: rename(self, type:str) -> None
+.. py:method:: rename(self, type: str) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.rename
 
     Rename the performance model.
 
@@ -124,6 +128,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: delete(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.delete
 
     Delete the performance model.
 

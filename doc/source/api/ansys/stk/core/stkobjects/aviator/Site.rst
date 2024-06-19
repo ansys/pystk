@@ -3,7 +3,7 @@ Site
 
 .. py:class:: Site
 
-   ISite, ISiteUnknown, SupportsDeleteCallback
+   Bases: py:obj:`~ISite`, py:obj:`~ISiteUnknown`
 
    Class defining an unknown site type.
 

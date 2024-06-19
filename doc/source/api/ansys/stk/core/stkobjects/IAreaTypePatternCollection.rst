@@ -72,7 +72,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IAreaTypePattern"
+.. py:method:: item(self, index: int) -> IAreaTypePattern
+    :canonical: ansys.stk.core.stkobjects.IAreaTypePatternCollection.item
 
     Return the lat lon with the Index.
 
@@ -82,9 +83,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAreaTypePattern"`
+        :obj:`~IAreaTypePattern`
 
-.. py:method:: add(self, lat:typing.Any, lon:typing.Any) -> "IAreaTypePattern"
+.. py:method:: add(self, lat: typing.Any, lon: typing.Any) -> IAreaTypePattern
+    :canonical: ansys.stk.core.stkobjects.IAreaTypePatternCollection.add
 
     Add a lat lon value. Lat parameter uses Latitude Dimension. Lon parameter uses Longitude Dimension.
 
@@ -95,9 +97,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAreaTypePattern"`
+        :obj:`~IAreaTypePattern`
 
-.. py:method:: remove(self, itemIndex:int) -> None
+.. py:method:: remove(self, itemIndex: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IAreaTypePatternCollection.remove
 
     Remove an Item using a given index.
 
@@ -110,6 +113,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAreaTypePatternCollection.remove_all
 
     Remove all the elements of the collection.
 
@@ -117,7 +121,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: insert(self, lat:typing.Any, lon:typing.Any, index:int) -> "IAreaTypePattern"
+.. py:method:: insert(self, lat: typing.Any, lon: typing.Any, index: int) -> IAreaTypePattern
+    :canonical: ansys.stk.core.stkobjects.IAreaTypePatternCollection.insert
 
     Insert a lat lon value (the value is inserted into the specified index without having to remove all elements) Lat parameter uses Latitude Dimension. Lon parameter uses Longitude Dimension.
 
@@ -129,9 +134,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAreaTypePattern"`
+        :obj:`~IAreaTypePattern`
 
 .. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IAreaTypePatternCollection.to_array
 
     Return the lat lons as a two dimensional array.
 

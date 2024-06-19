@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_condition
-    :type: "FORMATION_FLYER_STOP_CONDITION"
+    :type: FORMATION_FLYER_STOP_CONDITION
 
     Get Stop condition.
 
@@ -125,13 +125,14 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
 

@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_time_intervals(self, timeIntervals:list) -> None
+.. py:method:: set_time_intervals(self, timeIntervals: list) -> None
+    :canonical: ansys.stk.core.graphics.IPolylinePrimitiveOptionalParameters.set_time_intervals
 
     Define a collection of TimeIntervals defined by MinimumTime and MaximumTime in Epoch Seconds, one for each point in the Polyline.
 

@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTemplate
 
 .. py:class:: VehicleGraphics3DBPlaneTemplate
 
-   IVehicleGraphics3DBPlaneTemplate, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneTemplate`
 
    An element of IAgVeVOBPlaneTemplatesCollection.
 

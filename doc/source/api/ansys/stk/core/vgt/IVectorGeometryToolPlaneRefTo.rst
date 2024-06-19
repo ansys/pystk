@@ -42,7 +42,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_path(self, path:str) -> None
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo.set_path
 
     Set a new plane using a specified path.
 
@@ -54,33 +55,36 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_plane(self, plane:"IVectorGeometryToolPlane") -> None
+.. py:method:: set_plane(self, plane: IVectorGeometryToolPlane) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo.set_plane
 
     Set a new plane.
 
     :Parameters:
 
-    **plane** : :obj:`~"IVectorGeometryToolPlane"`
+    **plane** : :obj:`~IVectorGeometryToolPlane`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_plane(self) -> "IVectorGeometryToolPlane"
+.. py:method:: get_plane(self) -> IVectorGeometryToolPlane
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo.get_plane
 
     Return the actual plane object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlane"`
+        :obj:`~IVectorGeometryToolPlane`
 
-.. py:method:: has_cyclic_dependency(self, plane:"IVectorGeometryToolPlane") -> bool
+.. py:method:: has_cyclic_dependency(self, plane: IVectorGeometryToolPlane) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo.has_cyclic_dependency
 
     Test whether the input component and the target component form a cyclic dependency.
 
     :Parameters:
 
-    **plane** : :obj:`~"IVectorGeometryToolPlane"`
+    **plane** : :obj:`~IVectorGeometryToolPlane`
 
     :Returns:
 

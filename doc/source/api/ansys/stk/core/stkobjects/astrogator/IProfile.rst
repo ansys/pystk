@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.mode
-    :type: "PROFILE_MODE"
+    :type: PROFILE_MODE
 
     Gets or sets the profile's mode.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.type
-    :type: "PROFILE"
+    :type: PROFILE
 
     Return the current profile type.
 
@@ -81,13 +81,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: copy(self) -> "IProfile"
+.. py:method:: copy(self) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.copy
 
     Make a copy of the profile.
 
     :Returns:
 
-        :obj:`~"IProfile"`
+        :obj:`~IProfile`
 
 
 

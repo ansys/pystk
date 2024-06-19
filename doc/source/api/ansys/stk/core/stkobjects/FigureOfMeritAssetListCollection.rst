@@ -3,7 +3,7 @@ FigureOfMeritAssetListCollection
 
 .. py:class:: FigureOfMeritAssetListCollection
 
-   IFigureOfMeritAssetListCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritAssetListCollection`
 
    List of assets available for specifying range uncertainty (for Navigation Accuracy FOM).
 

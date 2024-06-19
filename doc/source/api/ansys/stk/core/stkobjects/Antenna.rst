@@ -3,7 +3,7 @@ Antenna
 
 .. py:class:: Antenna
 
-   IAntenna, IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IAntenna`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
 
    Class defining the antenna object.
 

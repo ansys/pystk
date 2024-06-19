@@ -86,13 +86,13 @@ Property detail
 
 .. py:property:: active_controls
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraph.active_controls
-    :type: "IAgVATargeterGraphActiveControlCollection"
+    :type: IAgVATargeterGraphActiveControlCollection
 
     Active Controls.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraph.results
-    :type: "IAgVATargeterGraphResultCollection"
+    :type: IAgVATargeterGraphResultCollection
 
     Results.
 

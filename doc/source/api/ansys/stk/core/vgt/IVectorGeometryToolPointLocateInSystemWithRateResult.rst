@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.position
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The point position in the specified coordinate system.
 
 .. py:property:: velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.velocity
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The point velocity in the specified coordinate system.
 

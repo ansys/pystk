@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: reference_grid
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridConstrained.reference_grid
-    :type: "IAgCrdnVolumeGrid"
+    :type: IAgCrdnVolumeGrid
 
     Get the reference system in which spherical parameters are computed.
 
 .. py:property:: constraint
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridConstrained.constraint
-    :type: "IAgCrdnVolume"
+    :type: IAgCrdnVolume
 
     Get the volume constraint on the grid.
 

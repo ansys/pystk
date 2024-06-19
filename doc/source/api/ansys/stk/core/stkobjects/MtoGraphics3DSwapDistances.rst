@@ -3,7 +3,7 @@ MtoGraphics3DSwapDistances
 
 .. py:class:: MtoGraphics3DSwapDistances
 
-   IMtoGraphics3DSwapDistances, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics3DSwapDistances`
 
    MTO track 3D swap distances.
 

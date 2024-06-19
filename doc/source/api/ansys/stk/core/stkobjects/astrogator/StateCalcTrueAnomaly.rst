@@ -3,7 +3,7 @@ StateCalcTrueAnomaly
 
 .. py:class:: StateCalcTrueAnomaly
 
-   IComponentInfo, ICloneable, IStateCalcTrueAnomaly, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTrueAnomaly`
 
    TrueAnomaly Calc objects.
 

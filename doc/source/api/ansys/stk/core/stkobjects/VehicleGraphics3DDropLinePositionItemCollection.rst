@@ -3,7 +3,7 @@ VehicleGraphics3DDropLinePositionItemCollection
 
 .. py:class:: VehicleGraphics3DDropLinePositionItemCollection
 
-   IVehicleGraphics3DDropLinePositionItemCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DDropLinePositionItemCollection`
 
    Lines dropped from the vehicle's position.
 

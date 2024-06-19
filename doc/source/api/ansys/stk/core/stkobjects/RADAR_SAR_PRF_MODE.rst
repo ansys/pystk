@@ -11,6 +11,21 @@ RADAR_SAR_PRF_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~PRF`
+              - PRF.
+
+            * - :py:attr:`~UNAMBIG_RNG`
+              - Unambiguous Range.
+
+
 Import detail
 -------------
 

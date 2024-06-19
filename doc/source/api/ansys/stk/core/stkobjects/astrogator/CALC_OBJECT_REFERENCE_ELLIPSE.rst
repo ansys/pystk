@@ -11,6 +11,21 @@ CALC_OBJECT_REFERENCE_ELLIPSE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~REFERENCE_SAT_ORBIT`
+              - Use the reference satellite orbit.
+
+            * - :py:attr:`~SATELLITE_ORBIT`
+              - Use the satellite orbit.
+
+
 Import detail
 -------------
 

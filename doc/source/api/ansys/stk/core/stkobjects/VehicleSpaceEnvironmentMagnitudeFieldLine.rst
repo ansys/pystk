@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentMagnitudeFieldLine
 
 .. py:class:: VehicleSpaceEnvironmentMagnitudeFieldLine
 
-   IVehicleSpaceEnvironmentMagnitudeFieldLine, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironmentMagnitudeFieldLine`
 
    Graphics settings for displaying magnetic field lines.
 

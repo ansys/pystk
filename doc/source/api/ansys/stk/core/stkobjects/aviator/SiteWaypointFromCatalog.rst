@@ -3,7 +3,7 @@ SiteWaypointFromCatalog
 
 .. py:class:: SiteWaypointFromCatalog
 
-   ISiteWaypointFromCatalog, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteWaypointFromCatalog`, py:obj:`~ISite`
 
    Class defining a waypoint from catalog site.
 

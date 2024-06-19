@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: jammers
     :canonical: ansys.stk.core.stkobjects.IRadarJamming.jammers
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Gets the jammers collection.
 

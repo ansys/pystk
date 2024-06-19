@@ -3,7 +3,7 @@ Graphics3DBorderWall
 
 .. py:class:: Graphics3DBorderWall
 
-   IGraphics3DBorderWall, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DBorderWall`
 
    Class defining 3D Graphics border wall properties.
 

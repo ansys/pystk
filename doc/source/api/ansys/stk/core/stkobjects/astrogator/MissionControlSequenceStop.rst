@@ -3,7 +3,7 @@ MissionControlSequenceStop
 
 .. py:class:: MissionControlSequenceStop
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceStop, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceStop`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Stop segment.
 

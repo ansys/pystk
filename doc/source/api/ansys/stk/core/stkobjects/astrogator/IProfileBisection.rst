@@ -41,25 +41,25 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileBisection.control_parameters
-    :type: "IAgVABisectionControlCollection"
+    :type: IAgVABisectionControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileBisection.results
-    :type: "IAgVABisectionResultCollection"
+    :type: IAgVABisectionResultCollection
 
     Get the list of results defined for the profile.
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileBisection.targeter_graphs
-    :type: "IAgVATargeterGraphCollection"
+    :type: IAgVATargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileBisection.scripting_tool
-    :type: "IAgVAScriptingTool"
+    :type: IAgVAScriptingTool
 
     Returns the Scripting tool for the sequence.
 

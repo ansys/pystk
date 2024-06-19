@@ -66,7 +66,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCollection.contains
 
     Search for a an element with a given name. Returns false if the specified element does not exist.
 
@@ -79,7 +80,8 @@ Method detail
         :obj:`~bool`
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IAnalysisWorkbenchComponent"
+.. py:method:: item(self, indexOrName: typing.Any) -> IAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCollection.item
 
     Retrieve an element of the collection using the name of the element or a position in the collection.
 
@@ -89,10 +91,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchComponent"`
+        :obj:`~IAnalysisWorkbenchComponent`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IAnalysisWorkbenchComponent"
+.. py:method:: get_item_by_index(self, index: int) -> IAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCollection.get_item_by_index
 
     Retrieve an item from the crdn collection by index.
 
@@ -102,9 +105,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchComponent"`
+        :obj:`~IAnalysisWorkbenchComponent`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IAnalysisWorkbenchComponent"
+.. py:method:: get_item_by_name(self, name: str) -> IAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCollection.get_item_by_name
 
     Retrieve an item from the crdn collection by name.
 
@@ -114,5 +118,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchComponent"`
+        :obj:`~IAnalysisWorkbenchComponent`
 

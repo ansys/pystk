@@ -3,7 +3,7 @@ TimeToolRelativeSatisfactionConditionFilter
 
 .. py:class:: TimeToolRelativeSatisfactionConditionFilter
 
-   ITimeToolRelativeSatisfactionConditionFilter, ITimeToolPruneFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolRelativeSatisfactionConditionFilter`, py:obj:`~ITimeToolPruneFilter`
 
    The filter selects intervals if certain side condition is satisfied at least/most certain percentage of time.
 

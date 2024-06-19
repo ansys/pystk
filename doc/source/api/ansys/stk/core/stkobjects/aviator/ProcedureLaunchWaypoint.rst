@@ -3,7 +3,7 @@ ProcedureLaunchWaypoint
 
 .. py:class:: ProcedureLaunchWaypoint
 
-   IProcedureLaunchWaypoint, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureLaunchWaypoint`, py:obj:`~IProcedure`
 
    Class defining a Launch Waypoint procedure.
 

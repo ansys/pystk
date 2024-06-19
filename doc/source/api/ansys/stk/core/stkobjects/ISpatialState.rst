@@ -55,25 +55,25 @@ Property detail
 
 .. py:property:: fixed_position
     :canonical: ansys.stk.core.stkobjects.ISpatialState.fixed_position
-    :type: "IAgPosition"
+    :type: IAgPosition
 
     Returns a position of the vehicle in central body fixed frame.
 
 .. py:property:: inertial_position
     :canonical: ansys.stk.core.stkobjects.ISpatialState.inertial_position
-    :type: "IAgPosition"
+    :type: IAgPosition
 
     Returns a position of the vehicle in central body inertial frame.
 
 .. py:property:: inertial_orientation
     :canonical: ansys.stk.core.stkobjects.ISpatialState.inertial_orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Returns an attitude of the vehicle in central body inertial frame.
 
 .. py:property:: fixed_orientation
     :canonical: ansys.stk.core.stkobjects.ISpatialState.fixed_orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Returns an attitude of the vehicle in central body fixed frame.
 
@@ -121,6 +121,7 @@ Method detail
 
 
 .. py:method:: query_velocity_fixed(self) -> typing.Tuple[float, float, float]
+    :canonical: ansys.stk.core.stkobjects.ISpatialState.query_velocity_fixed
 
     Return a velocity of the vehicle in central body fixed frame.
 
@@ -129,6 +130,7 @@ Method detail
         :obj:`~typing.Tuple[float, float, float]`
 
 .. py:method:: query_velocity_inertial(self) -> typing.Tuple[float, float, float]
+    :canonical: ansys.stk.core.stkobjects.ISpatialState.query_velocity_inertial
 
     Return a velocity of the vehicle in central body inertial frame.
 

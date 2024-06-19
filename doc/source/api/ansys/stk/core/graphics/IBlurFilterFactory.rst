@@ -38,23 +38,25 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IBlurFilter"
+.. py:method:: initialize(self) -> IBlurFilter
+    :canonical: ansys.stk.core.graphics.IBlurFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IBlurFilter"`
+        :obj:`~IBlurFilter`
 
-.. py:method:: initialize_with_method(self, method:"BLUR_METHOD") -> "IBlurFilter"
+.. py:method:: initialize_with_method(self, method: BLUR_METHOD) -> IBlurFilter
+    :canonical: ansys.stk.core.graphics.IBlurFilterFactory.initialize_with_method
 
     Initialize a new instance with the specified blur method.
 
     :Parameters:
 
-    **method** : :obj:`~"BLUR_METHOD"`
+    **method** : :obj:`~BLUR_METHOD`
 
     :Returns:
 
-        :obj:`~"IBlurFilter"`
+        :obj:`~IBlurFilter`
 

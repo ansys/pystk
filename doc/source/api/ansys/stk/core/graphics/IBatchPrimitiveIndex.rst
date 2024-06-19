@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: primitive
     :canonical: ansys.stk.core.graphics.IBatchPrimitiveIndex.primitive
-    :type: "IAgStkGraphicsPrimitive"
+    :type: IAgStkGraphicsPrimitive
 
     The Primitive that contains the item at the Index specified.
 

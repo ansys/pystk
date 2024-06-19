@@ -3,7 +3,7 @@ SceneManager
 
 .. py:class:: SceneManager
 
-   ISceneManager, SupportsDeleteCallback
+   Bases: py:obj:`~ISceneManager`
 
    The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control...
 

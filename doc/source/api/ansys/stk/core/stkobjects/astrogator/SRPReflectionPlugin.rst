@@ -3,7 +3,7 @@ SRPReflectionPlugin
 
 .. py:class:: SRPReflectionPlugin
 
-   ISRPReflectionPlugin, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPReflectionPlugin`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    SRP Reflection Plugin.
 

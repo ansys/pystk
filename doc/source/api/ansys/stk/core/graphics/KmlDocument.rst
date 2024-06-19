@@ -3,7 +3,7 @@ KmlDocument
 
 .. py:class:: KmlDocument
 
-   IKmlDocument, IKmlContainer, IKmlFeature, SupportsDeleteCallback
+   Bases: py:obj:`~IKmlDocument`, py:obj:`~IKmlContainer`, py:obj:`~IKmlFeature`
 
    A KML document.
 

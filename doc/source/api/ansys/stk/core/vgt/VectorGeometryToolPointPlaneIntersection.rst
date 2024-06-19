@@ -3,7 +3,7 @@ VectorGeometryToolPointPlaneIntersection
 
 .. py:class:: VectorGeometryToolPointPlaneIntersection
 
-   IVectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointPlaneIntersection`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Point on a plane located along a given direction looking from a given origin.
 

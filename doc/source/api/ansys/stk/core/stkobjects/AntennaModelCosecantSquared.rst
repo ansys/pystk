@@ -3,7 +3,7 @@ AntennaModelCosecantSquared
 
 .. py:class:: AntennaModelCosecantSquared
 
-   IAntennaModelCosecantSquared, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelCosecantSquared`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a cosecant squared antenna model.
 

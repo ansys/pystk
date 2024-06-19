@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IMtoAnalysis.position
-    :type: "IAgMtoAnalysisPosition"
+    :type: IAgMtoAnalysisPosition
 
     Returns a spatial state of the mto at specified time.
 
 .. py:property:: range
     :canonical: ansys.stk.core.stkobjects.IMtoAnalysis.range
-    :type: "IAgMtoAnalysisRange"
+    :type: IAgMtoAnalysisRange
 
     Returns the range from an Mto track to another object.
 
 .. py:property:: field_of_view
     :canonical: ansys.stk.core.stkobjects.IMtoAnalysis.field_of_view
-    :type: "IAgMtoAnalysisFieldOfView"
+    :type: IAgMtoAnalysisFieldOfView
 
     Returns the field of view from an Mto track to a sensor.
 
 .. py:property:: visibility
     :canonical: ansys.stk.core.stkobjects.IMtoAnalysis.visibility
-    :type: "IAgMtoAnalysisVisibility"
+    :type: IAgMtoAnalysisVisibility
 
     Returns the visibility from an Mto track to another object.
 

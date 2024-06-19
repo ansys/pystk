@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.reference_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a reference point.
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.central_body
-    :type: "IAgCrdnCentralBodyRefTo"
+    :type: IAgCrdnCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: mean_element_type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.mean_element_type
-    :type: "CRDN_MEAN_ELEMENT_THEORY"
+    :type: CRDN_MEAN_ELEMENT_THEORY
 
     Specify the mean element theory type for approximating motion.
 

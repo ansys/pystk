@@ -3,7 +3,7 @@ VehiclePluginSettings
 
 .. py:class:: VehiclePluginSettings
 
-   IVehiclePluginSettings, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePluginSettings`
 
    Class defining force model plugin settings for HPOP.
 

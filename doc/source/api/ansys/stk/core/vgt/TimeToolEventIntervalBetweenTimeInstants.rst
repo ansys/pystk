@@ -3,7 +3,7 @@ TimeToolEventIntervalBetweenTimeInstants
 
 .. py:class:: TimeToolEventIntervalBetweenTimeInstants
 
-   ITimeToolEventIntervalBetweenTimeInstants, ITimeToolEventInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalBetweenTimeInstants`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined.
 

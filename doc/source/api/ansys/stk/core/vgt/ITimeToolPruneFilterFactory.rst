@@ -36,15 +36,16 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, eFilter:"CRDN_PRUNE_FILTER") -> "ITimeToolPruneFilter"
+.. py:method:: create(self, eFilter: CRDN_PRUNE_FILTER) -> ITimeToolPruneFilter
+    :canonical: ansys.stk.core.vgt.ITimeToolPruneFilterFactory.create
 
     Create and initializes a new prune filter using default configuration.
 
     :Parameters:
 
-    **eFilter** : :obj:`~"CRDN_PRUNE_FILTER"`
+    **eFilter** : :obj:`~CRDN_PRUNE_FILTER`
 
     :Returns:
 
-        :obj:`~"ITimeToolPruneFilter"`
+        :obj:`~ITimeToolPruneFilter`
 

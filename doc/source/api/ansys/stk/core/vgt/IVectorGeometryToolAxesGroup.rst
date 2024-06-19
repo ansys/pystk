@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.context
-    :type: "IAgCrdnContext"
+    :type: IAgCrdnContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.factory
-    :type: "IAgCrdnAxesFactory"
+    :type: IAgCrdnAxesFactory
 
     Returns a Factory object used to create custom axes.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.common_tasks
-    :type: "IAgCrdnAxesCommonTasks"
+    :type: IAgCrdnAxesCommonTasks
 
     Provides access to common tasks that allow users quickly carry out tasks such as creating known axes, etc.
 
@@ -89,7 +89,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, axesName:str) -> None
+.. py:method:: remove(self, axesName: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.remove
 
     Remove a specified Axes.
 
@@ -102,7 +103,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.contains
 
     Search for a an element with a given name. Returns false if the specified element does not exist.
 
@@ -116,7 +118,8 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IVectorGeometryToolAxes"
+.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolAxes
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.item
 
     Return an axes by name or at a specified position.
 
@@ -126,11 +129,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxes"`
+        :obj:`~IVectorGeometryToolAxes`
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IVectorGeometryToolAxes"
+.. py:method:: get_item_by_index(self, index: int) -> IVectorGeometryToolAxes
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.get_item_by_index
 
     Retrieve an axes from the collection by index.
 
@@ -140,9 +144,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxes"`
+        :obj:`~IVectorGeometryToolAxes`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IVectorGeometryToolAxes"
+.. py:method:: get_item_by_name(self, name: str) -> IVectorGeometryToolAxes
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.get_item_by_name
 
     Retrieve an axes from the collection by name.
 
@@ -152,5 +157,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxes"`
+        :obj:`~IVectorGeometryToolAxes`
 

@@ -3,7 +3,7 @@ RFFilterModelScriptPlugin
 
 .. py:class:: RFFilterModelScriptPlugin
 
-   IRFFilterModelScriptPlugin, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelScriptPlugin`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a script plugin filter model.
 

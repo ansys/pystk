@@ -3,7 +3,7 @@ StateCalcCloseApproachX
 
 .. py:class:: StateCalcCloseApproachX
 
-   IComponentInfo, ICloneable, IStateCalcCloseApproachX, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCloseApproachX`
 
    CloseApproachX Calc objects.
 

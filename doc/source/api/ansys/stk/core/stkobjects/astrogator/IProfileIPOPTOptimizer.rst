@@ -46,25 +46,25 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.control_parameters
-    :type: "IAgVAIPOPTControlCollection"
+    :type: IAgVAIPOPTControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.results
-    :type: "IAgVAIPOPTResultCollection"
+    :type: IAgVAIPOPTResultCollection
 
     Get the list of results defined for the profile.
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.targeter_graphs
-    :type: "IAgVATargeterGraphCollection"
+    :type: IAgVATargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.scripting_tool
-    :type: "IAgVAScriptingTool"
+    :type: IAgVAScriptingTool
 
     Returns the Scripting tool for the sequence.
 

@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: integrator_type
     :canonical: ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR.integrator_type
-    :type: "RADAR_PULSE_INTEGRATOR_TYPE"
+    :type: RADAR_PULSE_INTEGRATOR_TYPE
 
     Gets or sets the integrator type.
 

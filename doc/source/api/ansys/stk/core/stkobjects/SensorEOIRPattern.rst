@@ -3,7 +3,7 @@ SensorEOIRPattern
 
 .. py:class:: SensorEOIRPattern
 
-   ISensorPattern, ISensorEOIRPattern, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPattern`, py:obj:`~ISensorEOIRPattern`
 
    Class defining the EOIR pattern for a Sensor.
 

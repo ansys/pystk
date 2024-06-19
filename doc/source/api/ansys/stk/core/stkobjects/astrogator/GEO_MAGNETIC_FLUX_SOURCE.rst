@@ -11,6 +11,21 @@ GEO_MAGNETIC_FLUX_SOURCE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~AP`
+              - Read Ap from file.
+
+            * - :py:attr:`~KP`
+              - Read Kp from file.
+
+
 Import detail
 -------------
 

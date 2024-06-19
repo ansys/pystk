@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IAlphaFromLuminanceFilter"
+.. py:method:: initialize(self) -> IAlphaFromLuminanceFilter
+    :canonical: ansys.stk.core.graphics.IAlphaFromLuminanceFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IAlphaFromLuminanceFilter"`
+        :obj:`~IAlphaFromLuminanceFilter`
 

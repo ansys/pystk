@@ -3,7 +3,7 @@ VehicleGraphics3DSigmaScaleScale
 
 .. py:class:: VehicleGraphics3DSigmaScaleScale
 
-   IVehicleGraphics3DSigmaScale, IVehicleGraphics3DSigmaScaleScale, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DSigmaScale`, py:obj:`~IVehicleGraphics3DSigmaScaleScale`
 
    Sigma scale for direct sizing of covariance pointing contours.
 

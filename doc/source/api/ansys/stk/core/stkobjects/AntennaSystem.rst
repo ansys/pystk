@@ -3,7 +3,7 @@ AntennaSystem
 
 .. py:class:: AntennaSystem
 
-   IAntennaSystem, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaSystem`
 
    Class defining an antenna system.
 

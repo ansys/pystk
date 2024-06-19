@@ -3,7 +3,7 @@ RadarWaveformSearchTrackPulseDefinition
 
 .. py:class:: RadarWaveformSearchTrackPulseDefinition
 
-   IRadarWaveformSearchTrackPulseDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarWaveformSearchTrackPulseDefinition`
 
    Class defining the pulse definition for a search track waveform.
 

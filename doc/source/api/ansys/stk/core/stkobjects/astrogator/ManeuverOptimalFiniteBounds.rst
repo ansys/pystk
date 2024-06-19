@@ -3,7 +3,7 @@ ManeuverOptimalFiniteBounds
 
 .. py:class:: ManeuverOptimalFiniteBounds
 
-   IManeuverOptimalFiniteBounds, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverOptimalFiniteBounds`
 
    The elements of the steering node.
 

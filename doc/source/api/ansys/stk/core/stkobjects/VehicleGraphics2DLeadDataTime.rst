@@ -3,7 +3,7 @@ VehicleGraphics2DLeadDataTime
 
 .. py:class:: VehicleGraphics2DLeadDataTime
 
-   IVehicleLeadTrailData, IVehicleLeadTrailDataTime, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLeadTrailData`, py:obj:`~IVehicleLeadTrailDataTime`
 
    2D Graphics pass: time-defined segment of leading portion of vehicle track to display.
 

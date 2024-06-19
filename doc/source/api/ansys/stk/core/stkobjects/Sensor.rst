@@ -3,7 +3,7 @@ Sensor
 
 .. py:class:: Sensor
 
-   ISensor, IStkObject, ILifetimeInformation, IDisplayTime, IProvideSpatialInfo, SupportsDeleteCallback
+   Bases: py:obj:`~ISensor`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`, py:obj:`~IProvideSpatialInfo`
 
    Class defining the Sensor class.
 

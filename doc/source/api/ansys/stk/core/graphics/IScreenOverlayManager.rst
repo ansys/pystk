@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: overlays
     :canonical: ansys.stk.core.graphics.IScreenOverlayManager.overlays
-    :type: "IAgStkGraphicsScreenOverlayCollection"
+    :type: IAgStkGraphicsScreenOverlayCollection
 
     Gets the collection of overlays that are contained within this manager.
 

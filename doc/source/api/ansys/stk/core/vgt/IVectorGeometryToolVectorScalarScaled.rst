@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: input_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.input_vector
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     An input vector scaled by the scalar. Can be any VGT vector.
 
 .. py:property:: input_scalar
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.input_scalar
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     A variable scale applied to the input vector. Can be based on any Scalar calculation.
 
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: dimension_inheritance
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.dimension_inheritance
-    :type: "VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE"
+    :type: VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE
 
     Whether or not to inherit dimension from the input vector or the scalar.
 

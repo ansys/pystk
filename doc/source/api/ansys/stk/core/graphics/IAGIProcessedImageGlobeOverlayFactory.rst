@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_string(self, uri:str) -> "IAGIProcessedImageGlobeOverlay"
+.. py:method:: initialize_with_string(self, uri: str) -> IAGIProcessedImageGlobeOverlay
+    :canonical: ansys.stk.core.graphics.IAGIProcessedImageGlobeOverlayFactory.initialize_with_string
 
     Initialize an agi processed image globe overlay with the provided values.
 
@@ -46,5 +47,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAGIProcessedImageGlobeOverlay"`
+        :obj:`~IAGIProcessedImageGlobeOverlay`
 

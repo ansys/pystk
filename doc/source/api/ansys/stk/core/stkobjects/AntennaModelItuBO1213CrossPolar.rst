@@ -3,7 +3,7 @@ AntennaModelItuBO1213CrossPolar
 
 .. py:class:: AntennaModelItuBO1213CrossPolar
 
-   IAntennaModelItuBO1213CrossPolar, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuBO1213CrossPolar`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R BO1213 cross-polar antenna model.
 

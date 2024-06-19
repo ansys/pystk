@@ -3,7 +3,7 @@ SurfaceShapesResult
 
 .. py:class:: SurfaceShapesResult
 
-   ISurfaceShapesResult, SupportsDeleteCallback
+   Bases: py:obj:`~ISurfaceShapesResult`
 
    Represents the boundary positions of a shape on the surface computed from by a surface shapes method.
 

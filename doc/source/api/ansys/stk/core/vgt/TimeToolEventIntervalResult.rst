@@ -3,7 +3,7 @@ TimeToolEventIntervalResult
 
 .. py:class:: TimeToolEventIntervalResult
 
-   ITimeToolEventIntervalResult, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalResult`
 
    Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method.
 

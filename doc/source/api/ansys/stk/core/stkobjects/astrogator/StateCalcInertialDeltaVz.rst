@@ -3,7 +3,7 @@ StateCalcInertialDeltaVz
 
 .. py:class:: StateCalcInertialDeltaVz
 
-   IComponentInfo, ICloneable, IStateCalcInertialDeltaVz, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcInertialDeltaVz`
 
    InertialDeltaVz Calc objects.
 

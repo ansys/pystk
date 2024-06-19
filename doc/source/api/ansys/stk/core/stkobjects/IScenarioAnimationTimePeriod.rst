@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.start_time
-    :type: "IAgTimePeriodValue"
+    :type: IAgTimePeriodValue
 
     Gets the animation's start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.stop_time
-    :type: "IAgTimePeriodValue"
+    :type: IAgTimePeriodValue
 
     Gets the animation's stop time. Uses DateFormat Dimension.
 

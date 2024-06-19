@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: logic_operation
     :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.logic_operation
-    :type: "BINARY_LOGIC_OPERATION"
+    :type: BINARY_LOGIC_OPERATION
 
     Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
 
@@ -102,7 +102,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IDisplayCondition"
+.. py:method:: item(self, index: int) -> IDisplayCondition
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.item
 
     Return the condition at the given zero-based index.
 
@@ -112,10 +113,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDisplayCondition"`
+        :obj:`~IDisplayCondition`
 
 
-.. py:method:: reserve(self, count:int) -> None
+.. py:method:: reserve(self, count: int) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.reserve
 
     Request enough memory for the composite to contain at least count display conditions. count will not be affected but capacity may be.
 
@@ -127,71 +129,77 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_with_negate(self, displayCondition:"IDisplayCondition", negate:bool) -> None
+.. py:method:: add_with_negate(self, displayCondition: IDisplayCondition, negate: bool) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.add_with_negate
 
     Add a display condition to the end of the composite.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~"IDisplayCondition"`
+    **displayCondition** : :obj:`~IDisplayCondition`
     **negate** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, displayCondition:"IDisplayCondition") -> None
+.. py:method:: add(self, displayCondition: IDisplayCondition) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.add
 
     Add a display condition to the end of the composite.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~"IDisplayCondition"`
+    **displayCondition** : :obj:`~IDisplayCondition`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: insert_with_negate(self, index:int, displayCondition:"IDisplayCondition", negate:bool) -> None
+.. py:method:: insert_with_negate(self, index: int, displayCondition: IDisplayCondition, negate: bool) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.insert_with_negate
 
     Insert a display condition at the given zero-based index, shifting existing display conditions.
 
     :Parameters:
 
     **index** : :obj:`~int`
-    **displayCondition** : :obj:`~"IDisplayCondition"`
+    **displayCondition** : :obj:`~IDisplayCondition`
     **negate** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: insert(self, index:int, displayCondition:"IDisplayCondition") -> None
+.. py:method:: insert(self, index: int, displayCondition: IDisplayCondition) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.insert
 
     Insert a display condition at the given zero-based index, shifting existing display conditions.
 
     :Parameters:
 
     **index** : :obj:`~int`
-    **displayCondition** : :obj:`~"IDisplayCondition"`
+    **displayCondition** : :obj:`~IDisplayCondition`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, displayCondition:"IDisplayCondition") -> None
+.. py:method:: remove(self, displayCondition: IDisplayCondition) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.remove
 
     Remove a display condition from the composite.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~"IDisplayCondition"`
+    **displayCondition** : :obj:`~IDisplayCondition`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.remove_at
 
     Remove the display condition at the given zero-based index, shifting existing display conditions.
 
@@ -204,6 +212,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.clear
 
     Remove all display conditions from the composite.
 
@@ -211,32 +220,35 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_negate(self, displayCondition:"IDisplayCondition") -> bool
+.. py:method:: get_negate(self, displayCondition: IDisplayCondition) -> bool
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.get_negate
 
     Determine if a logical not operation is applied to a display condition in the composite.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~"IDisplayCondition"`
+    **displayCondition** : :obj:`~IDisplayCondition`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: set_negate(self, displayCondition:"IDisplayCondition", negate:bool) -> None
+.. py:method:: set_negate(self, displayCondition: IDisplayCondition, negate: bool) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.set_negate
 
     Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~"IDisplayCondition"`
+    **displayCondition** : :obj:`~IDisplayCondition`
     **negate** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_negate_at(self, index:int) -> bool
+.. py:method:: get_negate_at(self, index: int) -> bool
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.get_negate_at
 
     Determine if a logical not operation is applied to a display condition in the composite.
 
@@ -248,7 +260,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: set_negate_at(self, index:int, negate:bool) -> None
+.. py:method:: set_negate_at(self, index: int, negate: bool) -> None
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayCondition.set_negate_at
 
     Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
 

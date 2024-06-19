@@ -40,38 +40,41 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_display_in_scene(self, scene:"IScene", on:bool) -> None
+.. py:method:: set_display_in_scene(self, scene: IScene, on: bool) -> None
+    :canonical: ansys.stk.core.graphics.ISceneDisplayCondition.set_display_in_scene
 
     Allow or disallows rendering for in a particular scene for.
 
     :Parameters:
 
-    **scene** : :obj:`~"IScene"`
+    **scene** : :obj:`~IScene`
     **on** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_display_in_scene(self, scene:"IScene") -> bool
+.. py:method:: get_display_in_scene(self, scene: IScene) -> bool
+    :canonical: ansys.stk.core.graphics.ISceneDisplayCondition.get_display_in_scene
 
     Determine whether the display condition allows rendering rendering in the given scene.
 
     :Parameters:
 
-    **scene** : :obj:`~"IScene"`
+    **scene** : :obj:`~IScene`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: display_only_in_scene(self, scene:"IScene") -> None
+.. py:method:: display_only_in_scene(self, scene: IScene) -> None
+    :canonical: ansys.stk.core.graphics.ISceneDisplayCondition.display_only_in_scene
 
     Allow rendering only in the given scene. The display condition will not allow rendering in other scenes, including newly created ones.
 
     :Parameters:
 
-    **scene** : :obj:`~"IScene"`
+    **scene** : :obj:`~IScene`
 
     :Returns:
 

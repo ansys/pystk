@@ -11,6 +11,24 @@ POLARIZATION_REFERENCE_AXIS
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~X`
+              - X.
+
+            * - :py:attr:`~Y`
+              - Y.
+
+            * - :py:attr:`~Z`
+              - Z.
+
+
 Import detail
 -------------
 

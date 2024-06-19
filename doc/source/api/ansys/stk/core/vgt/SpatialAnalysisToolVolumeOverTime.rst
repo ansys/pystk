@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeOverTime
 
 .. py:class:: SpatialAnalysisToolVolumeOverTime
 
-   ISpatialAnalysisToolVolumeOverTime, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeOverTime`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An over time volume interface.
 

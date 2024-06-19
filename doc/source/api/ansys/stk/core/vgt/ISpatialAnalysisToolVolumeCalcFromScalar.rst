@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: scalar
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFromScalar.scalar
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The Volume calc scalar to location Type.
 

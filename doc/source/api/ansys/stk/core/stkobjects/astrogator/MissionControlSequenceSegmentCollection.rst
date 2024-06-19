@@ -3,7 +3,7 @@ MissionControlSequenceSegmentCollection
 
 .. py:class:: MissionControlSequenceSegmentCollection
 
-   IMissionControlSequenceSegmentCollection, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegmentCollection`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Mission Control Sequence.
 

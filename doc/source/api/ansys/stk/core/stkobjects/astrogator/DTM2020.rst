@@ -3,7 +3,7 @@ DTM2020
 
 .. py:class:: DTM2020
 
-   IDTM2020, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IDTM2020`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    DTM 2020 atmospheric propagator function.
 

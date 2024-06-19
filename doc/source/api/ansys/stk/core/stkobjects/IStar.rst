@@ -89,25 +89,25 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IStar.graphics
-    :type: "IAgStGraphics"
+    :type: IAgStGraphics
 
     Get the star's 2D Graphics properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IStar.access_constraints
-    :type: "IAgAccessConstraintCollection"
+    :type: IAgAccessConstraintCollection
 
     Get the constraints imposed on the star.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IStar.graphics_3d
-    :type: "IAgStVO"
+    :type: IAgStVO
 
     Get the star's 3D Graphics properties.
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.IStar.reference_frame
-    :type: "STAR_REFERENCE_FRAME"
+    :type: STAR_REFERENCE_FRAME
 
     Returns a reference frame.
 

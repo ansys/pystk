@@ -56,6 +56,7 @@ Method detail
 
 
 .. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVmExternalFile.reload
 
     Reload volume external file.
 

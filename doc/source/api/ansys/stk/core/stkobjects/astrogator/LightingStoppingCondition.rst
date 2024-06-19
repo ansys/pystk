@@ -3,7 +3,7 @@ LightingStoppingCondition
 
 .. py:class:: LightingStoppingCondition
 
-   IComponentInfo, ICloneable, ILightingStoppingCondition, IStoppingConditionComponent, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~ILightingStoppingCondition`, py:obj:`~IStoppingConditionComponent`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Lighting stopping condition.
 

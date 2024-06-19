@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.reference_frame
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     Gets or sets the reference axes that is used to align the ellipsoid.
 

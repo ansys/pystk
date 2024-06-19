@@ -3,7 +3,7 @@ ProcedureEnroute
 
 .. py:class:: ProcedureEnroute
 
-   IProcedureEnroute, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureEnroute`, py:obj:`~IProcedure`
 
    Class defining an enroute procedure.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: input_angle
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarAngle.input_angle
-    :type: "IAgCrdnAngle"
+    :type: IAgCrdnAngle
 
     The input angle, which is a VGT angle component. Note angle computation in VGT may involve more than just angular displacement value: in VGT angles may be drawn in 3D which requires knowledge and evaluation of supporting vectors.
 

@@ -3,7 +3,7 @@ VehicleGraphics3DOrbitPassData
 
 .. py:class:: VehicleGraphics3DOrbitPassData
 
-   IVehicleGraphics3DOrbitPassData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DOrbitPassData`
 
    Satellite 3D ground and orbit track data.
 

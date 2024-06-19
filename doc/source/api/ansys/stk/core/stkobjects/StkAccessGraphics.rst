@@ -3,7 +3,7 @@ StkAccessGraphics
 
 .. py:class:: StkAccessGraphics
 
-   IStkAccessGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IStkAccessGraphics`
 
    Class defining 2D Graphics for Access.
 

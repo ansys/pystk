@@ -3,7 +3,7 @@ Star
 
 .. py:class:: Star
 
-   IStar, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IStar`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Class defining the Star object.
 

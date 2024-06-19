@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.IDataProvider.elements
-    :type: "IAgDataPrvElements"
+    :type: IAgDataPrvElements
 
     Returns a collection of elements associated with a DataProvider or a SubDataProvider.
 
@@ -97,26 +97,28 @@ Method detail
 
 
 
-.. py:method:: is_statistic_available(self, statistic:"STATISTICS", elementName:str) -> bool
+.. py:method:: is_statistic_available(self, statistic: STATISTICS, elementName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IDataProvider.is_statistic_available
 
     Is the supplied statistic available for the provided element name?
 
     :Parameters:
 
-    **statistic** : :obj:`~"STATISTICS"`
+    **statistic** : :obj:`~STATISTICS`
     **elementName** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: is_time_varying_extremum_available(self, timeVarExtremum:"TIME_VARYING_EXTREMUM", elementName:str) -> bool
+.. py:method:: is_time_varying_extremum_available(self, timeVarExtremum: TIME_VARYING_EXTREMUM, elementName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IDataProvider.is_time_varying_extremum_available
 
     Is the supplied time varying extremum available for the provided element name?
 
     :Parameters:
 
-    **timeVarExtremum** : :obj:`~"TIME_VARYING_EXTREMUM"`
+    **timeVarExtremum** : :obj:`~TIME_VARYING_EXTREMUM`
     **elementName** : :obj:`~str`
 
     :Returns:

@@ -3,7 +3,7 @@ SpatialAnalysisToolGridValuesFixedNumberOfSteps
 
 .. py:class:: SpatialAnalysisToolGridValuesFixedNumberOfSteps
 
-   ISpatialAnalysisToolGridValuesFixedNumberOfSteps, ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolGridValuesFixedNumberOfSteps`, py:obj:`~ISpatialAnalysisToolGridValuesMethod`
 
    Fixed step grid values.
 

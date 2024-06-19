@@ -11,6 +11,21 @@ FLOAT_STATE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~FLOATED`
+              - The UI element is floated.
+
+            * - :py:attr:`~DOCKED`
+              - The UI element is docked.
+
+
 Import detail
 -------------
 

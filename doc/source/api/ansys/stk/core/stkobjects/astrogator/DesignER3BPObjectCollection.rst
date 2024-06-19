@@ -3,7 +3,7 @@ DesignER3BPObjectCollection
 
 .. py:class:: DesignER3BPObjectCollection
 
-   IDesignER3BPObjectCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IDesignER3BPObjectCollection`
 
    ER3BP associated object Collection.
 

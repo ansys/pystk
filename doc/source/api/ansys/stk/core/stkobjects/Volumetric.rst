@@ -3,7 +3,7 @@ Volumetric
 
 .. py:class:: Volumetric
 
-   IVolumetric, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IVolumetric`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    The AgVolumetric class.
 

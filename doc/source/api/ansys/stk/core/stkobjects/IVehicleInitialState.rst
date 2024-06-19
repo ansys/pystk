@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: representation
     :canonical: ansys.stk.core.stkobjects.IVehicleInitialState.representation
-    :type: "IAgOrbitState"
+    :type: IAgOrbitState
 
     Representation.
 
 .. py:property:: propagation_frame
     :canonical: ansys.stk.core.stkobjects.IVehicleInitialState.propagation_frame
-    :type: "VEHICLE_PROPAGATION_FRAME"
+    :type: VEHICLE_PROPAGATION_FRAME
 
     This property is deprecated. Use Two-body, J2 and J4 propagators to configure propagation frame. The propagation frame.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: orbit_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleInitialState.orbit_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Get the smart epoch component to configure the orbit state epoch.
 

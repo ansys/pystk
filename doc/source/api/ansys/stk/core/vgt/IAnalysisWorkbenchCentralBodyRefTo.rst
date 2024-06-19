@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_path(self, path:str) -> None
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyRefTo.set_path
 
     Set a new central body using specified path.
 
@@ -52,23 +53,25 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_central_body(self, centralBody:"IAnalysisWorkbenchCentralBody") -> None
+.. py:method:: set_central_body(self, centralBody: IAnalysisWorkbenchCentralBody) -> None
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyRefTo.set_central_body
 
     Set a new central body.
 
     :Parameters:
 
-    **centralBody** : :obj:`~"IAnalysisWorkbenchCentralBody"`
+    **centralBody** : :obj:`~IAnalysisWorkbenchCentralBody`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_central_body(self) -> "IAnalysisWorkbenchCentralBody"
+.. py:method:: get_central_body(self) -> IAnalysisWorkbenchCentralBody
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyRefTo.get_central_body
 
     Return a central body or null if the central body is invalid.
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchCentralBody"`
+        :obj:`~IAnalysisWorkbenchCentralBody`
 

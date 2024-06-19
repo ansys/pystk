@@ -3,7 +3,7 @@ StateCalcSemiMajorAxis
 
 .. py:class:: StateCalcSemiMajorAxis
 
-   IComponentInfo, ICloneable, IStateCalcSemiMajorAxis, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSemiMajorAxis`
 
    SemiMajorAxis Calc objects.
 

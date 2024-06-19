@@ -11,6 +11,21 @@ BASIC_FIXED_WING_PROP_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~SPECIFY_THRUST`
+              - Jet - Specify net thrust.
+
+            * - :py:attr:`~SPECIFY_POWER`
+              - Propeller - Specify net power.
+
+
 Import detail
 -------------
 

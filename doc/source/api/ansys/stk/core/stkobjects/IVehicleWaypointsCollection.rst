@@ -73,7 +73,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleWaypointsElement"
+.. py:method:: item(self, index: int) -> IVehicleWaypointsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleWaypointsCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -83,10 +84,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleWaypointsElement"`
+        :obj:`~IVehicleWaypointsElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleWaypointsCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -99,6 +101,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleWaypointsCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -106,15 +109,17 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self) -> "IVehicleWaypointsElement"
+.. py:method:: add(self) -> IVehicleWaypointsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleWaypointsCollection.add
 
     Add a new element to the collection.
 
     :Returns:
 
-        :obj:`~"IVehicleWaypointsElement"`
+        :obj:`~IVehicleWaypointsElement`
 
-.. py:method:: contains(self, time:typing.Any) -> bool
+.. py:method:: contains(self, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleWaypointsCollection.contains
 
     Determine whether the collection contains the waypoint at the specified time.
 
@@ -126,7 +131,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: index_of(self, time:typing.Any) -> int
+.. py:method:: index_of(self, time: typing.Any) -> int
+    :canonical: ansys.stk.core.stkobjects.IVehicleWaypointsCollection.index_of
 
     Determine whether the collection contains the specified waypoint and returns an index of existing waypoint. The index < 0 indicates the way point is not in the collection.
 
@@ -139,6 +145,7 @@ Method detail
         :obj:`~int`
 
 .. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleWaypointsCollection.to_array
 
     Return a two-dimensional array that contains the way points. Each sub-array represents a waypoint. The order of the elements is Time, Latitude, Longitude, Altitude,Speed,Acceleration,TurnRadius.
 

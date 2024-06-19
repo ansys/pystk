@@ -3,7 +3,7 @@ VectorPrimitiveFactory
 
 .. py:class:: VectorPrimitiveFactory
 
-   IVectorPrimitiveFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorPrimitiveFactory`
 
    Render a vector in the 3D scene. A vector is defined by a source (given by a reference frame) and a direction (given by a vector). Length is auto-calculated or can be set separately.
 

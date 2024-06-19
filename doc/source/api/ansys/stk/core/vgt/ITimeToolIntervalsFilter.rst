@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: duration_kind
     :canonical: ansys.stk.core.vgt.ITimeToolIntervalsFilter.duration_kind
-    :type: "CRDN_INTERVAL_DURATION_KIND"
+    :type: CRDN_INTERVAL_DURATION_KIND
 
     Choose a duration type (at least/at most).
 

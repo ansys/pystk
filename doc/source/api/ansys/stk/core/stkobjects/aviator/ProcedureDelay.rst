@@ -3,7 +3,7 @@ ProcedureDelay
 
 .. py:class:: ProcedureDelay
 
-   IProcedureDelay, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureDelay`, py:obj:`~IProcedure`
 
    Class defining a delay procedure.
 

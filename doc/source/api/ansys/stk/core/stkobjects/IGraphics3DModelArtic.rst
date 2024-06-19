@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: graphics_3d_articulation_file
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModelArtic.graphics_3d_articulation_file
-    :type: "IAgVOArticulationFile"
+    :type: IAgVOArticulationFile
 
     Interface to specify articulation file.
 
@@ -96,7 +96,8 @@ Method detail
 
 
 
-.. py:method:: get_transformation_value(self, lOD:int, articulation:str, trans:str) -> float
+.. py:method:: get_transformation_value(self, lOD: int, articulation: str, trans: str) -> float
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelArtic.get_transformation_value
 
     Get the Transformation Value given the LOD (level of detail), articulation name and the transformation name.
 
@@ -110,7 +111,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: set_transformation_value(self, lOD:int, articulation:str, trans:str, transVal:float) -> None
+.. py:method:: set_transformation_value(self, lOD: int, articulation: str, trans: str, transVal: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelArtic.set_transformation_value
 
     Set the Transformation Value given the LOD and articulation name.
 
@@ -125,7 +127,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_available_articulations(self, lOD:int) -> list
+.. py:method:: get_available_articulations(self, lOD: int) -> list
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelArtic.get_available_articulations
 
     Get the available articulations.
 
@@ -137,7 +140,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_available_transformations(self, lOD:int, articName:str) -> "IGraphics3DModelTransformationCollection"
+.. py:method:: get_available_transformations(self, lOD: int, articName: str) -> IGraphics3DModelTransformationCollection
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelArtic.get_available_transformations
 
     Get the available transformations.
 
@@ -148,7 +152,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DModelTransformationCollection"`
+        :obj:`~IGraphics3DModelTransformationCollection`
 
 
 

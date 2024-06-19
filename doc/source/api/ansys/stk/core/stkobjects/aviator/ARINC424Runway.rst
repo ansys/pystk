@@ -3,7 +3,7 @@ ARINC424Runway
 
 .. py:class:: ARINC424Runway
 
-   IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IARINC424Runway`, py:obj:`~IARINC424Item`, py:obj:`~ICatalogRunway`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining an ARINC424 Runway.
 

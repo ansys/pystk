@@ -3,7 +3,7 @@ SensorEOIRSensitivityCollection
 
 .. py:class:: SensorEOIRSensitivityCollection
 
-   ISensorEOIRSensitivityCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorEOIRSensitivityCollection`
 
    Class defining the Sensitivities collection for an EOIR Sensor.
 

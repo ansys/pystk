@@ -3,7 +3,7 @@ ChainOptimalStrandOpts
 
 .. py:class:: ChainOptimalStrandOpts
 
-   IChainOptimalStrandOpts, SupportsDeleteCallback
+   Bases: py:obj:`~IChainOptimalStrandOpts`
 
    Class defining Chain optimal strand options.
 

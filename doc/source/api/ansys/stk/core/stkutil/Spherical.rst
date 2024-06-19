@@ -3,7 +3,7 @@ Spherical
 
 .. py:class:: Spherical
 
-   ISpherical, IPosition, SupportsDeleteCallback
+   Bases: py:obj:`~ISpherical`, py:obj:`~IPosition`
 
    Class defining spherical position.
 

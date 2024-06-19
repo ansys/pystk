@@ -38,15 +38,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IConstantDisplayCondition"
+.. py:method:: initialize(self) -> IConstantDisplayCondition
+    :canonical: ansys.stk.core.graphics.IConstantDisplayConditionFactory.initialize
 
     Initialize a default constant display condition. display is set to false so when this display condition is assigned to an object, such as a primitive, the object is not rendered.
 
     :Returns:
 
-        :obj:`~"IConstantDisplayCondition"`
+        :obj:`~IConstantDisplayCondition`
 
-.. py:method:: initialize_display(self, display:bool) -> "IConstantDisplayCondition"
+.. py:method:: initialize_display(self, display: bool) -> IConstantDisplayCondition
+    :canonical: ansys.stk.core.graphics.IConstantDisplayConditionFactory.initialize_display
 
     Initialize a constant display condition with the value the display condition evaluates to.
 
@@ -56,5 +58,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IConstantDisplayCondition"`
+        :obj:`~IConstantDisplayCondition`
 

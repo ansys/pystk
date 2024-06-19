@@ -3,7 +3,7 @@ StateCalcInclination
 
 .. py:class:: StateCalcInclination
 
-   IComponentInfo, ICloneable, IStateCalcInclination, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcInclination`
 
    Inclination Calc objects.
 

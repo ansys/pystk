@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IChainTimePeriodBase.type
-    :type: "CHAIN_TIME_PERIOD_TYPE"
+    :type: CHAIN_TIME_PERIOD_TYPE
 
     Get the option used for setting the chain's time period.
 

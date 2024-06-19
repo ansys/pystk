@@ -3,7 +3,7 @@ BeamformerUniform
 
 .. py:class:: BeamformerUniform
 
-   IBeamformer, IBeamformerUniform, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerUniform`
 
    Class defining a uniform tapered beamformer.
 

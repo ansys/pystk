@@ -3,7 +3,7 @@ TakeoffNormal
 
 .. py:class:: TakeoffNormal
 
-   ITakeoffNormal, SupportsDeleteCallback
+   Bases: py:obj:`~ITakeoffNormal`
 
    Class defining the normal options for a takeoff procedure.
 

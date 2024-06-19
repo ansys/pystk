@@ -3,7 +3,7 @@ ScreenOverlayPickResultCollection
 
 .. py:class:: ScreenOverlayPickResultCollection
 
-   IScreenOverlayPickResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IScreenOverlayPickResultCollection`
 
    A collection of pick results.
 

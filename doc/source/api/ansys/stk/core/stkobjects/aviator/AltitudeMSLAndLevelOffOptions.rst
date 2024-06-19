@@ -3,7 +3,7 @@ AltitudeMSLAndLevelOffOptions
 
 .. py:class:: AltitudeMSLAndLevelOffOptions
 
-   IAltitudeMSLAndLevelOffOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IAltitudeMSLAndLevelOffOptions`
 
    Class defining the altitude MSL and Level off options in a procedure.
 

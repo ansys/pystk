@@ -3,7 +3,7 @@ TimeToolEventIntervalList
 
 .. py:class:: TimeToolEventIntervalList
 
-   ITimeToolEventIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalList`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An ordered list of time intervals.
 

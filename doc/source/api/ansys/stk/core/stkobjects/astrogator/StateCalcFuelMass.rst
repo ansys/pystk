@@ -3,7 +3,7 @@ StateCalcFuelMass
 
 .. py:class:: StateCalcFuelMass
 
-   IComponentInfo, ICloneable, IStateCalcFuelMass, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcFuelMass`
 
    FuelMass Calc objects.
 

@@ -3,7 +3,7 @@ StrategyMATLABProfile
 
 .. py:class:: StrategyMATLABProfile
 
-   IStrategyMATLABProfile, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IStrategyMATLABProfile`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure.
 

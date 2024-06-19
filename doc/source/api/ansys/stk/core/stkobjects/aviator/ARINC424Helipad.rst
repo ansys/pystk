@@ -3,7 +3,7 @@ ARINC424Helipad
 
 .. py:class:: ARINC424Helipad
 
-   IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IARINC424Item`, py:obj:`~ICatalogVTOLPoint`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining an ARINC424 Helipad.
 

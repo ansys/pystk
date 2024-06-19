@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: execute_command(self, command:str) -> typing.Any
+.. py:method:: execute_command(self, command: str) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.aviator.IConnect.execute_command
 
     Send a connect command to an Aviator object.
 

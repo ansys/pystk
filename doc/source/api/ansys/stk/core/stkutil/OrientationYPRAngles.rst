@@ -3,7 +3,7 @@ OrientationYPRAngles
 
 .. py:class:: OrientationYPRAngles
 
-   IOrientationYPRAngles, IOrientation, SupportsDeleteCallback
+   Bases: py:obj:`~IOrientationYPRAngles`, py:obj:`~IOrientation`
 
    Yaw-Pitch Roll (YPR) Angles orientation system.
 

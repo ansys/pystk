@@ -3,7 +3,7 @@ CoverageBoundsGlobal
 
 .. py:class:: CoverageBoundsGlobal
 
-   ICoverageBoundsGlobal, ICoverageBounds, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageBoundsGlobal`, py:obj:`~ICoverageBounds`
 
    Global: grid covering the entire globe.
 

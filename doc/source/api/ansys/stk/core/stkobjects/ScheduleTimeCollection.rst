@@ -3,7 +3,7 @@ ScheduleTimeCollection
 
 .. py:class:: ScheduleTimeCollection
 
-   IScheduleTimeCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IScheduleTimeCollection`
 
    Collection of user-scheduled access times.
 

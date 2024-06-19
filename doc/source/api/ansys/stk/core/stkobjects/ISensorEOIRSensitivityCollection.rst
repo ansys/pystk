@@ -66,7 +66,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "ISensorEOIRRadiometricPair"
+.. py:method:: item(self, index: int) -> ISensorEOIRRadiometricPair
+    :canonical: ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection.item
 
     Given an index, returns an IAgSnEOIRRadiometricPair interface.
 
@@ -76,17 +77,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorEOIRRadiometricPair"`
+        :obj:`~ISensorEOIRRadiometricPair`
 
-.. py:method:: add(self) -> "ISensorEOIRRadiometricPair"
+.. py:method:: add(self) -> ISensorEOIRRadiometricPair
+    :canonical: ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection.add
 
     Add a radiometric pair.
 
     :Returns:
 
-        :obj:`~"ISensorEOIRRadiometricPair"`
+        :obj:`~ISensorEOIRRadiometricPair`
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection.remove_at
 
     Remove a radiometric pair given an index.
 

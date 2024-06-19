@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult.vector
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The transformed vector.
 

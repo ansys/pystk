@@ -3,7 +3,7 @@ GoldenSectionControl
 
 .. py:class:: GoldenSectionControl
 
-   IGoldenSectionControl, SupportsDeleteCallback
+   Bases: py:obj:`~IGoldenSectionControl`
 
    Control parameters for Golden Section profile.
 

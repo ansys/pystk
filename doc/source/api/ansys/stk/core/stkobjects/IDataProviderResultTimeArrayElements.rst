@@ -60,7 +60,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_array(self, indexOrName:typing.Any) -> list
+.. py:method:: get_array(self, indexOrName: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements.get_array
 
     Return an array of values at the specified index.  Valid values of index range from 0 to Count-1.
 

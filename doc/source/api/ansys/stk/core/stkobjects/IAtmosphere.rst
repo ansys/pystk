@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: local_atmos_absorption_model
     :canonical: ansys.stk.core.stkobjects.IAtmosphere.local_atmos_absorption_model
-    :type: "IAgAtmosphericAbsorptionModel"
+    :type: IAgAtmosphericAbsorptionModel
 
     This property is deprecated. Use the PropagationChannel property to get the atmospheric absorption model.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.IAtmosphere.propagation_channel
-    :type: "IAgPropagationChannel"
+    :type: IAgPropagationChannel
 
     Gets the propagation channel.
 
@@ -105,7 +105,8 @@ Method detail
 
 
 
-.. py:method:: set_local_atmos_absorption_model(self, modelName:str) -> None
+.. py:method:: set_local_atmos_absorption_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAtmosphere.set_local_atmos_absorption_model
 
     Do not use this method, as it is deprecated. Use the PropagationChannel property to set the atmospheric absorption model.
 

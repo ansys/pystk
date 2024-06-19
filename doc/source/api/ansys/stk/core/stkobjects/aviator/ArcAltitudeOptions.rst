@@ -3,7 +3,7 @@ ArcAltitudeOptions
 
 .. py:class:: ArcAltitudeOptions
 
-   IArcAltitudeOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IArcAltitudeOptions`
 
    Class defining the altitude options for an arc procedure.
 

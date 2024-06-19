@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: trajectory_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.trajectory_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a trajectory point.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.reference_system
-    :type: "IAgCrdnSystemRefTo"
+    :type: IAgCrdnSystemRefTo
 
     Specify a reference system.
 
 .. py:property:: trajectory_axes_type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.trajectory_axes_type
-    :type: "CRDN_TRAJECTORY_AXES_TYPE"
+    :type: CRDN_TRAJECTORY_AXES_TYPE
 
     Specify a type of the trajectory's coordinate frame.
 

@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: route_marker
     :canonical: ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel.route_marker
-    :type: "IAgVOMarker"
+    :type: IAgVOMarker
 
     Represents the vehicle while traveling along its route.
 
@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: gltf_reflection_map_type
     :canonical: ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel.gltf_reflection_map_type
-    :type: "MODEL_GLTF_REFLECTION_MAP_TYPE"
+    :type: MODEL_GLTF_REFLECTION_MAP_TYPE
 
     Gets or sets the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel.gltf_image_based
-    :type: "IAgVOModelGltfImageBased"
+    :type: IAgVOModelGltfImageBased
 
     Gets the glTF Image Based properties.
 

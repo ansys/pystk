@@ -3,7 +3,7 @@ ScatteringPointProviderPointsFile
 
 .. py:class:: ScatteringPointProviderPointsFile
 
-   IScatteringPointProviderPointsFile, IScatteringPointProvider, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointProviderPointsFile`, py:obj:`~IScatteringPointProvider`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a scattring point provider where the points are defined in an ascii text file.
 

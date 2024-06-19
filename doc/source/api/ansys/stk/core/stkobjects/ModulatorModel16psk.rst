@@ -3,7 +3,7 @@ ModulatorModel16psk
 
 .. py:class:: ModulatorModel16psk
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a 16PSK modulator model.
 

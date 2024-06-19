@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag.advanced
-    :type: "IAgVeAdvanced"
+    :type: IAgVeAdvanced
 
     Get the advanced drag parameters.
 

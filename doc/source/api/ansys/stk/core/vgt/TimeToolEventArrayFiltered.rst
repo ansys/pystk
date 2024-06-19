@@ -3,7 +3,7 @@ TimeToolEventArrayFiltered
 
 .. py:class:: TimeToolEventArrayFiltered
 
-   ITimeToolEventArrayFiltered, ITimeToolEventArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventArrayFiltered`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined by filtering times from original time array according to specified filtering method.
 

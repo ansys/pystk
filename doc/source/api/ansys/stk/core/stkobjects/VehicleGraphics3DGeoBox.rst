@@ -3,7 +3,7 @@ VehicleGraphics3DGeoBox
 
 .. py:class:: VehicleGraphics3DGeoBox
 
-   IVehicleGraphics3DGeoBox, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DGeoBox`
 
    Geostationary box, a fixed plane used to visually check that a GEO satellite stays within a certain area.
 

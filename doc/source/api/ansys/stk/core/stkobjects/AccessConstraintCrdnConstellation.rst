@@ -3,7 +3,7 @@ AccessConstraintCrdnConstellation
 
 .. py:class:: AccessConstraintCrdnConstellation
 
-   IAccessConstraintCrdnConstellation, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintCrdnConstellation`, py:obj:`~IAccessConstraint`
 
    Class related to Vector constraints.
 

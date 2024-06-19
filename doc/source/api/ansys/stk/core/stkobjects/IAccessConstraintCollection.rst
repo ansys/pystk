@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: analysis_workbench_constraints
     :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.analysis_workbench_constraints
-    :type: "IAgAccessCnstrAWBCollection"
+    :type: IAgAccessCnstrAWBCollection
 
     Returns a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
 
@@ -106,7 +106,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IAccessConstraint"
+.. py:method:: item(self, index: int) -> IAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.item
 
     Return an AccessConstraint interface using an index.
 
@@ -116,58 +117,63 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAccessConstraint"`
+        :obj:`~IAccessConstraint`
 
 
-.. py:method:: add_constraint(self, eConstraint:"ACCESS_CONSTRAINTS") -> "IAccessConstraint"
+.. py:method:: add_constraint(self, eConstraint: ACCESS_CONSTRAINTS) -> IAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.add_constraint
 
     Add a constraint to the Constraint Collection.
 
     :Parameters:
 
-    **eConstraint** : :obj:`~"ACCESS_CONSTRAINTS"`
+    **eConstraint** : :obj:`~ACCESS_CONSTRAINTS`
 
     :Returns:
 
-        :obj:`~"IAccessConstraint"`
+        :obj:`~IAccessConstraint`
 
-.. py:method:: remove_constraint(self, eConstraint:"ACCESS_CONSTRAINTS") -> None
+.. py:method:: remove_constraint(self, eConstraint: ACCESS_CONSTRAINTS) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.remove_constraint
 
     Remove a constraint from the collection.
 
     :Parameters:
 
-    **eConstraint** : :obj:`~"ACCESS_CONSTRAINTS"`
+    **eConstraint** : :obj:`~ACCESS_CONSTRAINTS`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_active_constraint(self, eConstraint:"ACCESS_CONSTRAINTS") -> "IAccessConstraint"
+.. py:method:: get_active_constraint(self, eConstraint: ACCESS_CONSTRAINTS) -> IAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.get_active_constraint
 
     Retrieve the active constraint.
 
     :Parameters:
 
-    **eConstraint** : :obj:`~"ACCESS_CONSTRAINTS"`
+    **eConstraint** : :obj:`~ACCESS_CONSTRAINTS`
 
     :Returns:
 
-        :obj:`~"IAccessConstraint"`
+        :obj:`~IAccessConstraint`
 
-.. py:method:: is_constraint_active(self, eConstraint:"ACCESS_CONSTRAINTS") -> bool
+.. py:method:: is_constraint_active(self, eConstraint: ACCESS_CONSTRAINTS) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.is_constraint_active
 
     Given an AgEAccessConstraints enum, informs the user if the constraint is active.
 
     :Parameters:
 
-    **eConstraint** : :obj:`~"ACCESS_CONSTRAINTS"`
+    **eConstraint** : :obj:`~ACCESS_CONSTRAINTS`
 
     :Returns:
 
         :obj:`~bool`
 
 .. py:method:: available_constraints(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.available_constraints
 
     Return a rectangular two-dimensional array of available constraints. A row of the array consists of two elements where the first element is a symbolic name of the constraint and the second is a corresponding enumeration value.
 
@@ -175,19 +181,21 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: is_constraint_supported(self, eConstraint:"ACCESS_CONSTRAINTS") -> bool
+.. py:method:: is_constraint_supported(self, eConstraint: ACCESS_CONSTRAINTS) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.is_constraint_supported
 
     Is the constraint supported for this object.
 
     :Parameters:
 
-    **eConstraint** : :obj:`~"ACCESS_CONSTRAINTS"`
+    **eConstraint** : :obj:`~ACCESS_CONSTRAINTS`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: is_named_constraint_supported(self, cnstrName:str) -> bool
+.. py:method:: is_named_constraint_supported(self, cnstrName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.is_named_constraint_supported
 
     Is the named constraint supported for this object.
 
@@ -199,7 +207,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: add_named_constraint(self, cnstrName:str) -> "IAccessConstraint"
+.. py:method:: add_named_constraint(self, cnstrName: str) -> IAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.add_named_constraint
 
     Add a constraint with the given name to the collection.
 
@@ -209,9 +218,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAccessConstraint"`
+        :obj:`~IAccessConstraint`
 
-.. py:method:: remove_named_constraint(self, cnstrName:str) -> None
+.. py:method:: remove_named_constraint(self, cnstrName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.remove_named_constraint
 
     Do not use this method, as it is deprecated. Use RemoveNamedConstraintEx instead. Removes a constraint with the given name from the collection.
 
@@ -223,7 +233,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: is_named_constraint_active(self, cnstrName:str) -> bool
+.. py:method:: is_named_constraint_active(self, cnstrName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.is_named_constraint_active
 
     Given a constraint name, returns whether the specified constraint is active.
 
@@ -235,7 +246,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: get_active_named_constraint(self, cnstrName:str) -> "IAccessConstraint"
+.. py:method:: get_active_named_constraint(self, cnstrName: str) -> IAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.get_active_named_constraint
 
     Retrieve an active constraint with the given name.
 
@@ -245,14 +257,15 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAccessConstraint"`
+        :obj:`~IAccessConstraint`
 
 
 
 
 
 
-.. py:method:: remove_named_constraint_ex(self, cnstrName:str) -> None
+.. py:method:: remove_named_constraint_ex(self, cnstrName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.remove_named_constraint_ex
 
     Remove a constraint with the given name from the collection.
 

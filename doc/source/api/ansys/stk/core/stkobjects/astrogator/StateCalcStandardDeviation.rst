@@ -3,7 +3,7 @@ StateCalcStandardDeviation
 
 .. py:class:: StateCalcStandardDeviation
 
-   IComponentInfo, ICloneable, IStateCalcStandardDeviation, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcStandardDeviation`
 
    StandardDeviation Calc objects.
 

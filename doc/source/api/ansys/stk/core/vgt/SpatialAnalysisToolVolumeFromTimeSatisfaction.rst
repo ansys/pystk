@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeFromTimeSatisfaction
 
 .. py:class:: SpatialAnalysisToolVolumeFromTimeSatisfaction
 
-   ISpatialAnalysisToolVolumeFromTimeSatisfaction, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeFromTimeSatisfaction`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An volume from time satisfaction volume interface.
 

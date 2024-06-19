@@ -3,7 +3,7 @@ StateCalcTimePastAscNode
 
 .. py:class:: StateCalcTimePastAscNode
 
-   IComponentInfo, ICloneable, IStateCalcTimePastAscNode, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTimePastAscNode`
 
    TimePastAscNode Calc objects.
 

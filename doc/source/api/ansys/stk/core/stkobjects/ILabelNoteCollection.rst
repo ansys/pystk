@@ -65,7 +65,8 @@ Method detail
 -------------
 
 
-.. py:method:: add(self, msg:str) -> "ILabelNote"
+.. py:method:: add(self, msg: str) -> ILabelNote
+    :canonical: ansys.stk.core.stkobjects.ILabelNoteCollection.add
 
     Add a label note to the collection.
 
@@ -75,9 +76,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ILabelNote"`
+        :obj:`~ILabelNote`
 
-.. py:method:: remove(self, index:int) -> None
+.. py:method:: remove(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ILabelNoteCollection.remove
 
     Remove an item given an index.
 
@@ -89,7 +91,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: item(self, index:int) -> "ILabelNote"
+.. py:method:: item(self, index: int) -> ILabelNote
+    :canonical: ansys.stk.core.stkobjects.ILabelNoteCollection.item
 
     Get a LabelNote.
 
@@ -99,6 +102,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ILabelNote"`
+        :obj:`~ILabelNote`
 
 

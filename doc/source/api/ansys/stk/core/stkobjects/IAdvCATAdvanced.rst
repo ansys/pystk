@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: advanced_ellipsoid
     :canonical: ansys.stk.core.stkobjects.IAdvCATAdvanced.advanced_ellipsoid
-    :type: "IAgAdvCATAdvEllipsoid"
+    :type: IAgAdvCATAdvEllipsoid
 
     Get AdvCAT advanced ellipsoid properties.
 
 .. py:property:: pre_filters
     :canonical: ansys.stk.core.stkobjects.IAdvCATAdvanced.pre_filters
-    :type: "IAgAdvCATPreFilters"
+    :type: IAgAdvCATPreFilters
 
     Get AdvCAT filter settings.
 
@@ -155,7 +155,7 @@ Property detail
 
 .. py:property:: conjunction_type
     :canonical: ansys.stk.core.stkobjects.IAdvCATAdvanced.conjunction_type
-    :type: "ADV_CAT_CONJUNCTION_TYPE"
+    :type: ADV_CAT_CONJUNCTION_TYPE
 
     Mode for computing events involving conjunction TCA.
 

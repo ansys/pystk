@@ -3,7 +3,7 @@ StateCalcOutVelAzAtPeriapsis
 
 .. py:class:: StateCalcOutVelAzAtPeriapsis
 
-   IComponentInfo, ICloneable, IStateCalcOutVelAzAtPeriapsis, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcOutVelAzAtPeriapsis`
 
    OutVelocityAzAtPeriapsis Calc objects.
 

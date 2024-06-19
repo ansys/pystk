@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: spin_axes_orientation
     :canonical: ansys.stk.core.stkobjects.IPointingStrategySpinning.spin_axes_orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Gets the spin axes orientation.
 

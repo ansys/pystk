@@ -62,7 +62,8 @@ Method detail
 
 
 
-.. py:method:: item(self, nIndex:int) -> str
+.. py:method:: item(self, nIndex: int) -> str
+    :canonical: ansys.stk.core.uiapplication.IUiFileOpenExtCollection.item
 
     Get the file at the specified index.
 

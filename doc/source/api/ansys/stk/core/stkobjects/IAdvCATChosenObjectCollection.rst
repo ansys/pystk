@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IAdvCATChosenObject"
+.. py:method:: item(self, index: int) -> IAdvCATChosenObject
+    :canonical: ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.item
 
     Given an index, returns a chosen object in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAdvCATChosenObject"`
+        :obj:`~IAdvCATChosenObject`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.remove_at
 
     Remove an object from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, object:str) -> "IAdvCATChosenObject"
+.. py:method:: add(self, object: str) -> IAdvCATChosenObject
+    :canonical: ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.add
 
     Add a new chosen object to the collection.
 
@@ -110,5 +114,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAdvCATChosenObject"`
+        :obj:`~IAdvCATChosenObject`
 

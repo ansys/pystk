@@ -3,7 +3,7 @@ RadarCrossSectionComputeStrategyExternalFile
 
 .. py:class:: RadarCrossSectionComputeStrategyExternalFile
 
-   IRadarCrossSectionComputeStrategyExternalFile, IRadarCrossSectionComputeStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionComputeStrategyExternalFile`, py:obj:`~IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 

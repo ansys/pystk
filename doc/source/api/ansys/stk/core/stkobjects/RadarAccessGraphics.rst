@@ -3,7 +3,7 @@ RadarAccessGraphics
 
 .. py:class:: RadarAccessGraphics
 
-   IRadarAccessGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarAccessGraphics`
 
    Class defining access graphics properties of a Radar.
 

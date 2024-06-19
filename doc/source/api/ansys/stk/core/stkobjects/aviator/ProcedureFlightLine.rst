@@ -3,7 +3,7 @@ ProcedureFlightLine
 
 .. py:class:: ProcedureFlightLine
 
-   IProcedureFlightLine, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureFlightLine`, py:obj:`~IProcedure`
 
    Class defining a flight line procedure.
 

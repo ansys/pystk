@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: satisfaction
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinition.satisfaction
-    :type: "IAgFmSatisfaction"
+    :type: IAgFmSatisfaction
 
     Satisfaction criteria for the Figure of Merit.
 

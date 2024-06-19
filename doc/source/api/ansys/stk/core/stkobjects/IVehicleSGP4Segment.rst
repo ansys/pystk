@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: switching_method
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4Segment.switching_method
-    :type: "VEHICLE_SGP4_SWITCH_METHOD"
+    :type: VEHICLE_SGP4_SWITCH_METHOD
 
     Method used to switch between element sets.
 

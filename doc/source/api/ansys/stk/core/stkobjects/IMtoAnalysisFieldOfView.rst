@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: entirety
     :canonical: ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.entirety
-    :type: "MTO_ENTIRETY"
+    :type: MTO_ENTIRETY
 
     Field Of View Entirety.
 
@@ -70,7 +70,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: is_any_track_in_fov(self, time:typing.Any) -> bool
+.. py:method:: is_any_track_in_fov(self, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.is_any_track_in_fov
 
     Return true if any track is in the field of view of the sensor at the given time.
 
@@ -82,7 +83,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: are_all_tracks_in_fov(self, time:typing.Any) -> bool
+.. py:method:: are_all_tracks_in_fov(self, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.are_all_tracks_in_fov
 
     Return true if all tracks are in the field of view of the sensor at the given time.
 
@@ -94,7 +96,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: is_track_in_fov(self, trackId:int, time:typing.Any) -> bool
+.. py:method:: is_track_in_fov(self, trackId: int, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.is_track_in_fov
 
     Return true is the track is in the field of view of the sensor at the given time.
 
@@ -107,13 +110,14 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: compute_tracks(self, mode:"MTO_VISIBILITY_MODE", tracks:list, time:typing.Any) -> list
+.. py:method:: compute_tracks(self, mode: MTO_VISIBILITY_MODE, tracks: list, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.compute_tracks
 
     Return an array of track ids and boolean values.
 
     :Parameters:
 
-    **mode** : :obj:`~"MTO_VISIBILITY_MODE"`
+    **mode** : :obj:`~MTO_VISIBILITY_MODE`
     **tracks** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
@@ -121,13 +125,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_all_tracks(self, mode:"MTO_VISIBILITY_MODE", time:typing.Any) -> list
+.. py:method:: compute_all_tracks(self, mode: MTO_VISIBILITY_MODE, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.compute_all_tracks
 
     Return an array of track ids and boolean values for all tracks.
 
     :Parameters:
 
-    **mode** : :obj:`~"MTO_VISIBILITY_MODE"`
+    **mode** : :obj:`~MTO_VISIBILITY_MODE`
     **time** : :obj:`~typing.Any`
 
     :Returns:
@@ -138,13 +143,14 @@ Method detail
 
 
 
-.. py:method:: are_tracks_in_fov(self, anyOrAll:"MTO_TRACK_EVAL", tracks:list, time:typing.Any) -> bool
+.. py:method:: are_tracks_in_fov(self, anyOrAll: MTO_TRACK_EVAL, tracks: list, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.are_tracks_in_fov
 
     Return an array of track ids and boolean values.
 
     :Parameters:
 
-    **anyOrAll** : :obj:`~"MTO_TRACK_EVAL"`
+    **anyOrAll** : :obj:`~MTO_TRACK_EVAL`
     **tracks** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 

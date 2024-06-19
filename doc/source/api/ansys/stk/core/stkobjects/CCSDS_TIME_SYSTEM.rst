@@ -11,6 +11,30 @@ CCSDS_TIME_SYSTEM
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UTC`
+              - UTC time system.
+
+            * - :py:attr:`~TAI`
+              - TAI time system.
+
+            * - :py:attr:`~GPS`
+              - GPS time system.
+
+            * - :py:attr:`~TT`
+              - TT time system.
+
+            * - :py:attr:`~TDB`
+              - TDB time system.
+
+
 Import detail
 -------------
 

@@ -3,7 +3,7 @@ SensorProjectionObjectAltitude
 
 .. py:class:: SensorProjectionObjectAltitude
 
-   IDisplayDistance, ISensorProjectionObjectAltitude, SupportsDeleteCallback
+   Bases: py:obj:`~IDisplayDistance`, py:obj:`~ISensorProjectionObjectAltitude`
 
    Class defining projection altitude options for object altitude for a sensor.
 

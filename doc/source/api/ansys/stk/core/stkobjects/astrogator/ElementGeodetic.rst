@@ -3,7 +3,7 @@ ElementGeodetic
 
 .. py:class:: ElementGeodetic
 
-   IElementGeodetic, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementGeodetic`, py:obj:`~IElement`
 
    Geodetic elements.
 

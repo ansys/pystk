@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem.type
-    :type: "COORDINATE_SYSTEM"
+    :type: COORDINATE_SYSTEM
 
     Get the coordinate system being used.
 
 .. py:property:: coordinate_system_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem.coordinate_system_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Smart epoch component representing the coordinate epoch. Disabled for coordinate systems with pre-established epochs (e.g. J2000, B1950).
 

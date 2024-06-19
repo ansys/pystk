@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVmGraphics3DCrossSectionPlane"
+.. py:method:: item(self, index: int) -> IVmGraphics3DCrossSectionPlane
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlaneCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVmGraphics3DCrossSectionPlane"`
+        :obj:`~IVmGraphics3DCrossSectionPlane`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlaneCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlaneCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, plane:str) -> "IVmGraphics3DCrossSectionPlane"
+.. py:method:: add(self, plane: str) -> IVmGraphics3DCrossSectionPlane
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlaneCollection.add
 
     Add a new plane to the collection.
 
@@ -110,5 +114,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVmGraphics3DCrossSectionPlane"`
+        :obj:`~IVmGraphics3DCrossSectionPlane`
 

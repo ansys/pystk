@@ -3,7 +3,7 @@ Direction
 
 .. py:class:: Direction
 
-   IDirection, SupportsDeleteCallback
+   Bases: py:obj:`~IDirection`
 
    Class defining direction options for aligned and constrained vectors.
 

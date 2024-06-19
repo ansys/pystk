@@ -3,7 +3,7 @@ VehicleGPSElement
 
 .. py:class:: VehicleGPSElement
 
-   IVehicleGPSElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSElement`
 
    An element of the GPS element collection.
 

@@ -3,7 +3,7 @@ ModulatorModelMsk
 
 .. py:class:: ModulatorModelMsk
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a MSK modulator model.
 

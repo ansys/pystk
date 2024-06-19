@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.context
-    :type: "IAgCrdnContext"
+    :type: IAgCrdnContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.factory
-    :type: "IAgCrdnSystemFactory"
+    :type: IAgCrdnSystemFactory
 
     Returns a Factory object used to create custom VGT systems.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.common_tasks
-    :type: "IAgCrdnSystemCommonTasks"
+    :type: IAgCrdnSystemCommonTasks
 
     Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
 
@@ -89,7 +89,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, systemName:str) -> None
+.. py:method:: remove(self, systemName: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.remove
 
     Remove a specified System.
 
@@ -102,7 +103,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.contains
 
     Search for a an element with a given name. Returns false if the specified element does not exist.
 
@@ -116,7 +118,8 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IVectorGeometryToolSystem"
+.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolSystem
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.item
 
     Return a System by name or at a specified position.
 
@@ -126,11 +129,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolSystem"`
+        :obj:`~IVectorGeometryToolSystem`
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IVectorGeometryToolSystem"
+.. py:method:: get_item_by_index(self, index: int) -> IVectorGeometryToolSystem
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.get_item_by_index
 
     Retrieve a system from the collection by index.
 
@@ -140,9 +144,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolSystem"`
+        :obj:`~IVectorGeometryToolSystem`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IVectorGeometryToolSystem"
+.. py:method:: get_item_by_name(self, name: str) -> IVectorGeometryToolSystem
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.get_item_by_name
 
     Retrieve a system from the collection by name.
 
@@ -152,5 +157,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolSystem"`
+        :obj:`~IVectorGeometryToolSystem`
 

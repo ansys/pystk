@@ -3,7 +3,7 @@ BasicManeuverTargetPositionVel
 
 .. py:class:: BasicManeuverTargetPositionVel
 
-   IBasicManeuverTargetPositionVel, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverTargetPositionVel`
 
    Class defining the target position and velocity strategies for basic maneuvers.
 

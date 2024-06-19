@@ -3,7 +3,7 @@ Planetodetic
 
 .. py:class:: Planetodetic
 
-   IPlanetodetic, IPosition, SupportsDeleteCallback
+   Bases: py:obj:`~IPlanetodetic`, py:obj:`~IPosition`
 
    Class defining Planetodetic position.
 

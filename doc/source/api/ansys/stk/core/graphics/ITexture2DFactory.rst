@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: load_from_string_uri(self, uri:str) -> "IRendererTexture2D"
+.. py:method:: load_from_string_uri(self, uri: str) -> IRendererTexture2D
+    :canonical: ansys.stk.core.graphics.ITexture2DFactory.load_from_string_uri
 
     Create a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats.
 
@@ -48,17 +49,18 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRendererTexture2D"`
+        :obj:`~IRendererTexture2D`
 
-.. py:method:: from_raster(self, raster:"IRaster") -> "IRendererTexture2D"
+.. py:method:: from_raster(self, raster: IRaster) -> IRendererTexture2D
+    :canonical: ansys.stk.core.graphics.ITexture2DFactory.from_raster
 
     Create a new texture from a raster.
 
     :Parameters:
 
-    **raster** : :obj:`~"IRaster"`
+    **raster** : :obj:`~IRaster`
 
     :Returns:
 
-        :obj:`~"IRendererTexture2D"`
+        :obj:`~IRendererTexture2D`
 

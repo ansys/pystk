@@ -75,7 +75,8 @@ Method detail
 
 
 
-.. py:method:: get_segs_from_online(self, SSCNum:str) -> list
+.. py:method:: get_segs_from_online(self, SSCNum: str) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.get_segs_from_online
 
     Return an array with all segments related to the supplied SSC number.
 
@@ -87,7 +88,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: add_segs_from_online(self, segments:list) -> None
+.. py:method:: add_segs_from_online(self, segments: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.add_segs_from_online
 
     Accept an array of segments to add.
 

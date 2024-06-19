@@ -3,7 +3,7 @@ VehicleLaunchLLA
 
 .. py:class:: VehicleLaunchLLA
 
-   IVehicleLaunch, IVehicleLaunchLLA, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLaunch`, py:obj:`~IVehicleLaunchLLA`
 
    Class defining geodetic launch latitude, longitude and altitude for a Missile or LaunchVehicle.
 

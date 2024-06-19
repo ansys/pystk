@@ -3,7 +3,7 @@ FuelTankInternal
 
 .. py:class:: FuelTankInternal
 
-   IFuelTankInternal, IStation, SupportsDeleteCallback
+   Bases: py:obj:`~IFuelTankInternal`, py:obj:`~IStation`
 
    Class defining an internal fuel tank for an Aviator aircraft.
 

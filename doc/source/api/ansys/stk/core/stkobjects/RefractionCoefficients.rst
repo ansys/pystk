@@ -3,7 +3,7 @@ RefractionCoefficients
 
 .. py:class:: RefractionCoefficients
 
-   IRefractionCoefficients, SupportsDeleteCallback
+   Bases: py:obj:`~IRefractionCoefficients`
 
    Coefficients for a polynomial in time_since_year_start that models the refraction index.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: flip_axis
     :canonical: ansys.stk.core.graphics.IFlipFilter.flip_axis
-    :type: "FLIP_AXIS"
+    :type: FLIP_AXIS
 
     Gets or sets the flip axis along which the source raster will be flipped.
 

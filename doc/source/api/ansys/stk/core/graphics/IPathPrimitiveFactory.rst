@@ -62,15 +62,17 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IPathPrimitive"
+.. py:method:: initialize(self) -> IPathPrimitive
+    :canonical: ansys.stk.core.graphics.IPathPrimitiveFactory.initialize
 
     Initialize a default path primitive. This is equivalent to constructing a path primitive with an initial capacity of 16.
 
     :Returns:
 
-        :obj:`~"IPathPrimitive"`
+        :obj:`~IPathPrimitive`
 
-.. py:method:: initialize_with_capacity(self, capacity:int) -> "IPathPrimitive"
+.. py:method:: initialize_with_capacity(self, capacity: int) -> IPathPrimitive
+    :canonical: ansys.stk.core.graphics.IPathPrimitiveFactory.initialize_with_capacity
 
     Initialize a path primitive with the specified capacity.
 
@@ -80,7 +82,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPathPrimitive"`
+        :obj:`~IPathPrimitive`
 
 
 

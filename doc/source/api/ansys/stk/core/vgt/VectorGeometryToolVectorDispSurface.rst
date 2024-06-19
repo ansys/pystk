@@ -3,7 +3,7 @@ VectorGeometryToolVectorDispSurface
 
 .. py:class:: VectorGeometryToolVectorDispSurface
 
-   IVectorGeometryToolVectorDispSurface, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorDispSurface`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
 
    Displacement between origin and destination points using surface distance and altitude difference.
 

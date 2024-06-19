@@ -3,7 +3,7 @@ VectorGeometryToolPointCBFixedOffset
 
 .. py:class:: VectorGeometryToolPointCBFixedOffset
 
-   IVectorGeometryToolPointCBFixedOffset, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointCBFixedOffset`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolPoint`
 
    Point specified by fixed components with respect to central body.
 

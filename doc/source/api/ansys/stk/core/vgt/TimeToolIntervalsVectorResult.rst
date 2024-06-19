@@ -3,7 +3,7 @@ TimeToolIntervalsVectorResult
 
 .. py:class:: TimeToolIntervalsVectorResult
 
-   ITimeToolIntervalsVectorResult, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolIntervalsVectorResult`
 
    Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method.
 

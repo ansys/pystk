@@ -63,13 +63,13 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IState.element_type
-    :type: "ELEMENT_TYPE"
+    :type: ELEMENT_TYPE
 
     Get the element type.
 
 .. py:property:: element
     :canonical: ansys.stk.core.stkobjects.astrogator.IState.element
-    :type: "IAgVAElement"
+    :type: IAgVAElement
 
     Returns the currently selected element type.
 
@@ -168,13 +168,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_element_type(self, elementType:"ELEMENT_TYPE") -> None
+.. py:method:: set_element_type(self, elementType: ELEMENT_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IState.set_element_type
 
     Set the element type.
 
     :Parameters:
 
-    **elementType** : :obj:`~"ELEMENT_TYPE"`
+    **elementType** : :obj:`~ELEMENT_TYPE`
 
     :Returns:
 
@@ -210,7 +211,8 @@ Method detail
 
 
 
-.. py:method:: get_in_frame_name(self, frameName:str) -> "IState"
+.. py:method:: get_in_frame_name(self, frameName: str) -> IState
+    :canonical: ansys.stk.core.stkobjects.astrogator.IState.get_in_frame_name
 
     Get the orbit state in the specified frame.
 
@@ -220,5 +222,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IState"`
+        :obj:`~IState`
 

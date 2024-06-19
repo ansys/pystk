@@ -53,25 +53,25 @@ Property detail
 
 .. py:property:: region_figure_of_merit
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.region_figure_of_merit
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Retrieves the Region FOM data provider.
 
 .. py:property:: region_satisfaction
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.region_satisfaction
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Retrieves the Region Satisfaction data provider.
 
 .. py:property:: point_figure_of_merit
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.point_figure_of_merit
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Retrieves the Point FOM data provider.
 
 .. py:property:: point_satisfaction
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.point_satisfaction
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Retrieves the Point Satisfaction data provider.
 
@@ -85,7 +85,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: select_point(self, lat:typing.Any, lon:typing.Any) -> None
+.. py:method:: select_point(self, lat: typing.Any, lon: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.select_point
 
     Select point.
 
@@ -99,6 +100,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: clear_selection(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.clear_selection
 
     Clear the selected point or region.
 
@@ -106,7 +108,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: select_region(self, regionName:str) -> None
+.. py:method:: select_region(self, regionName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.select_region
 
     Select a region.
 

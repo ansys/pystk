@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF.pulse_definition
-    :type: "IAgRadarWaveformSearchTrackPulseDefinition"
+    :type: IAgRadarWaveformSearchTrackPulseDefinition
 
     Gets the interface for setting the pulse definition parameters.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF.modulator
-    :type: "IAgRadarModulator"
+    :type: IAgRadarModulator
 
     Gets the interface for setting the modulator parameters.
 

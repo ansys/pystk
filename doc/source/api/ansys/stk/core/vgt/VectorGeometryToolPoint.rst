@@ -3,7 +3,7 @@ VectorGeometryToolPoint
 
 .. py:class:: VectorGeometryToolPoint
 
-   IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A generic VGT point class.
 

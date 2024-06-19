@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateSpherical.coordinate_system_type
-    :type: "COORDINATE_SYSTEM"
+    :type: COORDINATE_SYSTEM
 
     Gets or sets the coordinate system being used.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateSpherical.coordinate_system
-    :type: "IAgOrbitStateCoordinateSystem"
+    :type: IAgOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
@@ -76,13 +76,13 @@ Property detail
 
 .. py:property:: fpa_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateSpherical.fpa_type
-    :type: "SPHERICAL_FPA"
+    :type: SPHERICAL_FPA
 
     Gets or sets the Flight Path Angle type can be Vertical or Horizontal.
 
 .. py:property:: fpa
     :canonical: ansys.stk.core.stkobjects.IOrbitStateSpherical.fpa
-    :type: "IAgFlightPathAngle"
+    :type: IAgFlightPathAngle
 
     Get the value of the Vertical or Horizontal Flight Path Angle.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateSpherical.state_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

@@ -3,7 +3,7 @@ ProfileSearchPlugin
 
 .. py:class:: ProfileSearchPlugin
 
-   IProfileSearchPlugin, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileSearchPlugin`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The plugin search profile.
 

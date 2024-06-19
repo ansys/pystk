@@ -3,7 +3,7 @@ OnePointAccess
 
 .. py:class:: OnePointAccess
 
-   IOnePointAccess, SupportsDeleteCallback
+   Bases: py:obj:`~IOnePointAccess`
 
    One Point Access.
 

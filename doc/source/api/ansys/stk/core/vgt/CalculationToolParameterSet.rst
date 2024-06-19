@@ -3,7 +3,7 @@ CalculationToolParameterSet
 
 .. py:class:: CalculationToolParameterSet
 
-   ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Parameter set contains various sets of scalar computations.
 

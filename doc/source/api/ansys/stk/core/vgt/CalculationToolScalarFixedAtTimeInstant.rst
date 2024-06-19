@@ -3,7 +3,7 @@ CalculationToolScalarFixedAtTimeInstant
 
 .. py:class:: CalculationToolScalarFixedAtTimeInstant
 
-   ICalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarFixedAtTimeInstant`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined.
 

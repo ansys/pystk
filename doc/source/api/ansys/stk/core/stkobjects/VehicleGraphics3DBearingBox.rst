@@ -3,7 +3,7 @@ VehicleGraphics3DBearingBox
 
 .. py:class:: VehicleGraphics3DBearingBox
 
-   IVehicleGraphics3DBearingBox, IVehicleGraphics3DProximityAreaObject, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBearingBox`, py:obj:`~IVehicleGraphics3DProximityAreaObject`
 
    Define a volume, relative to a bearing from the North, around an object.
 

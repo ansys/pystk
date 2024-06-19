@@ -42,15 +42,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_built_in_model(self) -> "IAircraftBasicCruiseModel"
+.. py:method:: get_built_in_model(self) -> IAircraftBasicCruiseModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftCruise.get_built_in_model
 
     Get the built-in model.
 
     :Returns:
 
-        :obj:`~"IAircraftBasicCruiseModel"`
+        :obj:`~IAircraftBasicCruiseModel`
 
-.. py:method:: get_basic_cruise_by_name(self, name:str) -> "IAircraftBasicCruiseModel"
+.. py:method:: get_basic_cruise_by_name(self, name: str) -> IAircraftBasicCruiseModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftCruise.get_basic_cruise_by_name
 
     Get the basic cruise model with the given name.
 
@@ -60,9 +62,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftBasicCruiseModel"`
+        :obj:`~IAircraftBasicCruiseModel`
 
-.. py:method:: get_advanced_cruise_by_name(self, name:str) -> "IAircraftAdvancedCruiseModel"
+.. py:method:: get_advanced_cruise_by_name(self, name: str) -> IAircraftAdvancedCruiseModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftCruise.get_advanced_cruise_by_name
 
     Get the advanced cruise model with the given name.
 
@@ -72,13 +75,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftAdvancedCruiseModel"`
+        :obj:`~IAircraftAdvancedCruiseModel`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftCruise.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

@@ -3,7 +3,7 @@ FigureOfMeritAssetListElement
 
 .. py:class:: FigureOfMeritAssetListElement
 
-   IFigureOfMeritAssetListElement, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritAssetListElement`
 
    Asset list item (for Navigation Accuracy FOM).
 

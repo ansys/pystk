@@ -3,7 +3,7 @@ PlanetOrbitDisplayTime
 
 .. py:class:: PlanetOrbitDisplayTime
 
-   IOrbitDisplayData, IPlanetOrbitDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IOrbitDisplayData`, py:obj:`~IPlanetOrbitDisplayTime`
 
    Class defining display time of a planet's orbit.
 

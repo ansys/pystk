@@ -75,6 +75,7 @@ Method detail
 -------------
 
 .. py:method:: get_schema(self) -> str
+    :canonical: ansys.stk.core.stkobjects.IDataProviderCollection.get_schema
 
     Return a string containing the XML representation of the available data providers.
 
@@ -82,7 +83,8 @@ Method detail
 
         :obj:`~str`
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IDataProviderInfo"
+.. py:method:: item(self, indexOrName: typing.Any) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.IDataProviderCollection.item
 
     Given an index, returns the element in the collection. If the index is an integer, then method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
 
@@ -92,11 +94,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderInfo"`
+        :obj:`~IDataProviderInfo`
 
 
 
-.. py:method:: get_data_provider_info_from_path(self, dataProviderPath:str) -> "IDataProviderInfo"
+.. py:method:: get_data_provider_info_from_path(self, dataProviderPath: str) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.IDataProviderCollection.get_data_provider_info_from_path
 
     Return the data provider information specified by the data provider path.
 
@@ -106,9 +109,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderInfo"`
+        :obj:`~IDataProviderInfo`
 
-.. py:method:: get_data_provider_time_varying_from_path(self, dataProviderPath:str) -> "IDataProviderTimeVarying"
+.. py:method:: get_data_provider_time_varying_from_path(self, dataProviderPath: str) -> IDataProviderTimeVarying
+    :canonical: ansys.stk.core.stkobjects.IDataProviderCollection.get_data_provider_time_varying_from_path
 
     Return the time variable data provider specified by the data provider path.
 
@@ -118,9 +122,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderTimeVarying"`
+        :obj:`~IDataProviderTimeVarying`
 
-.. py:method:: get_data_provider_interval_from_path(self, dataProviderPath:str) -> "IDataProviderInterval"
+.. py:method:: get_data_provider_interval_from_path(self, dataProviderPath: str) -> IDataProviderInterval
+    :canonical: ansys.stk.core.stkobjects.IDataProviderCollection.get_data_provider_interval_from_path
 
     Return the interval data provider specified by the data provider path.
 
@@ -130,9 +135,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderInterval"`
+        :obj:`~IDataProviderInterval`
 
-.. py:method:: get_data_provider_fixed_from_path(self, dataProviderPath:str) -> "IDataProviderFixed"
+.. py:method:: get_data_provider_fixed_from_path(self, dataProviderPath: str) -> IDataProviderFixed
+    :canonical: ansys.stk.core.stkobjects.IDataProviderCollection.get_data_provider_fixed_from_path
 
     Return the fixed data provider specified by the data provider path.
 
@@ -142,9 +148,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderFixed"`
+        :obj:`~IDataProviderFixed`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IDataProviderInfo"
+.. py:method:: get_item_by_index(self, index: int) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.IDataProviderCollection.get_item_by_index
 
     Retrieve a data provider from the collection by index.
 
@@ -154,9 +161,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderInfo"`
+        :obj:`~IDataProviderInfo`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IDataProviderInfo"
+.. py:method:: get_item_by_name(self, name: str) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.IDataProviderCollection.get_item_by_name
 
     Retrieve a data provider from the collection by name.
 
@@ -166,5 +174,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderInfo"`
+        :obj:`~IDataProviderInfo`
 

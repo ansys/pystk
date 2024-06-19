@@ -60,7 +60,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IManeuverOptimalFiniteSteeringNodeElement"
+.. py:method:: item(self, index: int) -> IManeuverOptimalFiniteSteeringNodeElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeCollection.item
 
     Allow you to iterate through the collection.
 
@@ -70,7 +71,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IManeuverOptimalFiniteSteeringNodeElement"`
+        :obj:`~IManeuverOptimalFiniteSteeringNodeElement`
 
 
 

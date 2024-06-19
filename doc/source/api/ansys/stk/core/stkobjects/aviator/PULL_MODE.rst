@@ -11,6 +11,21 @@ PULL_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~PULL_TO_ANGLE`
+              - Pull to the specified angle.
+
+            * - :py:attr:`~PULL_TO_HORIZON`
+              - Pull to the horizon plus the additional angle.
+
+
 Import detail
 -------------
 

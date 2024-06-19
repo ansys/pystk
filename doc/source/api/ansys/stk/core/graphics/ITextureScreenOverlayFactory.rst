@@ -44,15 +44,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ITextureScreenOverlay"
+.. py:method:: initialize(self) -> ITextureScreenOverlay
+    :canonical: ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize
 
     Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels.
 
     :Returns:
 
-        :obj:`~"ITextureScreenOverlay"`
+        :obj:`~ITextureScreenOverlay`
 
-.. py:method:: initialize_with_xy_width_height(self, xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "ITextureScreenOverlay"
+.. py:method:: initialize_with_xy_width_height(self, xPixels: float, yPixels: float, widthPixels: float, heightPixels: float) -> ITextureScreenOverlay
+    :canonical: ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize_with_xy_width_height
 
     Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
 
@@ -65,9 +67,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITextureScreenOverlay"`
+        :obj:`~ITextureScreenOverlay`
 
-.. py:method:: initialize_with_position_size(self, position:list, size:list) -> "ITextureScreenOverlay"
+.. py:method:: initialize_with_position_size(self, position: list, size: list) -> ITextureScreenOverlay
+    :canonical: ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize_with_position_size
 
     Initialize the overlay with the specified position and size.
 
@@ -78,9 +81,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITextureScreenOverlay"`
+        :obj:`~ITextureScreenOverlay`
 
-.. py:method:: initialize_with_xy_texture(self, xPixels:float, yPixels:float, texture:"IRendererTexture2D") -> "ITextureScreenOverlay"
+.. py:method:: initialize_with_xy_texture(self, xPixels: float, yPixels: float, texture: IRendererTexture2D) -> ITextureScreenOverlay
+    :canonical: ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize_with_xy_texture
 
     Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture.
 
@@ -88,22 +92,23 @@ Method detail
 
     **xPixels** : :obj:`~float`
     **yPixels** : :obj:`~float`
-    **texture** : :obj:`~"IRendererTexture2D"`
+    **texture** : :obj:`~IRendererTexture2D`
 
     :Returns:
 
-        :obj:`~"ITextureScreenOverlay"`
+        :obj:`~ITextureScreenOverlay`
 
-.. py:method:: initialize_with_position_texture(self, position:list, texture:"IRendererTexture2D") -> "ITextureScreenOverlay"
+.. py:method:: initialize_with_position_texture(self, position: list, texture: IRendererTexture2D) -> ITextureScreenOverlay
+    :canonical: ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize_with_position_texture
 
     Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture.
 
     :Parameters:
 
     **position** : :obj:`~list`
-    **texture** : :obj:`~"IRendererTexture2D"`
+    **texture** : :obj:`~IRendererTexture2D`
 
     :Returns:
 
-        :obj:`~"ITextureScreenOverlay"`
+        :obj:`~ITextureScreenOverlay`
 

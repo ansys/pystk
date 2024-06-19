@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGroup
 
 .. py:class:: SpatialAnalysisToolVolumeGroup
 
-   ISpatialAnalysisToolVolumeGroup, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGroup`
 
    Access or create spatial conditions associated with a volume grid.
 

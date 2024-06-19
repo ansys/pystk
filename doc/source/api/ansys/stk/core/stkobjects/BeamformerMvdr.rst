@@ -3,7 +3,7 @@ BeamformerMvdr
 
 .. py:class:: BeamformerMvdr
 
-   IBeamformer, IBeamformerMvdr, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerMvdr`
 
    Class defining a beamformer mvdr.
 

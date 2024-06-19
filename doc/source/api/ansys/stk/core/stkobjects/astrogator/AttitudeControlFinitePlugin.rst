@@ -3,7 +3,7 @@ AttitudeControlFinitePlugin
 
 .. py:class:: AttitudeControlFinitePlugin
 
-   IAttitudeControlFinitePlugin, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlFinitePlugin`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The plugin attitude control for a finite maneuver.
 

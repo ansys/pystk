@@ -3,7 +3,7 @@ ProcedureVerticalTakeoff
 
 .. py:class:: ProcedureVerticalTakeoff
 
-   IProcedureVerticalTakeoff, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureVerticalTakeoff`, py:obj:`~IProcedure`
 
    Class defining a vertical takeoff procedure.
 

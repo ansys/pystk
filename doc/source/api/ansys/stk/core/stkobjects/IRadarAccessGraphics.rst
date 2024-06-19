@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: snr_contour_type
     :canonical: ansys.stk.core.stkobjects.IRadarAccessGraphics.snr_contour_type
-    :type: "RADAR_SNR_CONTOUR_TYPE"
+    :type: RADAR_SNR_CONTOUR_TYPE
 
     Gets or sets the SNR contour type.
 
@@ -85,13 +85,13 @@ Property detail
 
 .. py:property:: bistatic_rdr_to_target_line_style
     :canonical: ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_rdr_to_target_line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Gets or sets the AgELineStyle enumeration for the Bistatic Radar to Target.
 
 .. py:property:: bistatic_rdr_to_target_line_width
     :canonical: ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_rdr_to_target_line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the AgELineWidth enumeration for the Bistatic Radar to Target.
 
@@ -109,13 +109,13 @@ Property detail
 
 .. py:property:: bistatic_xmtr_to_bistatic_rcvr_line_style
     :canonical: ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Gets or sets the AgELineStyle enumeration for the Bistatic Radar Transmitter to Bistatic Radar Receiver.
 
 .. py:property:: bistatic_xmtr_to_bistatic_rcvr_line_width
     :canonical: ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the AgELineWidth enumeration for the Bistatic Radar Transmitter to Bistatic Radar Receiver.
 

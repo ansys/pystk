@@ -3,7 +3,7 @@ VectorGeometryToolAngleDihedral
 
 .. py:class:: VectorGeometryToolAngleDihedral
 
-   IVectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAngleDihedral`, py:obj:`~IVectorGeometryToolAngle`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An angle between two vectors about an axis.
 

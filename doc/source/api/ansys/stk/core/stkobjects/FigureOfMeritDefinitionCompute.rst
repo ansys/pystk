@@ -3,7 +3,7 @@ FigureOfMeritDefinitionCompute
 
 .. py:class:: FigureOfMeritDefinitionCompute
 
-   IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
 
    Compute options for navigation accuracy.
 

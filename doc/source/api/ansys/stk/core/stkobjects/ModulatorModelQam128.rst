@@ -3,7 +3,7 @@ ModulatorModelQam128
 
 .. py:class:: ModulatorModelQam128
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a QAM 128 modulator model.
 

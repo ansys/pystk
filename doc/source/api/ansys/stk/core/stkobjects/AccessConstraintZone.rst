@@ -3,7 +3,7 @@ AccessConstraintZone
 
 .. py:class:: AccessConstraintZone
 
-   IAccessConstraintZone, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintZone`, py:obj:`~IAccessConstraint`
 
    Class defining the Exclusion Zone constraint.
 

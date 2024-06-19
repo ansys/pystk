@@ -3,7 +3,7 @@ AntennaModelHfssEepArray
 
 .. py:class:: AntennaModelHfssEepArray
 
-   IAntennaModelHfssEepArray, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelHfssEepArray`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an HFSS EEP array antenna model.
 

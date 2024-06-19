@@ -66,13 +66,13 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.method
-    :type: "VEHICLE_WAYPOINT_COMP_METHOD"
+    :type: VEHICLE_WAYPOINT_COMP_METHOD
 
     Compute waypoints.
 
 .. py:property:: altitude_reference_type
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference_type
-    :type: "VEHICLE_ALTITUDE_REFERENCE"
+    :type: VEHICLE_ALTITUDE_REFERENCE
 
     Reference altitude for waypoints.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference
-    :type: "IAgVeWayPtAltitudeRef"
+    :type: IAgVeWayPtAltitudeRef
 
     Get the altitude reference.
 
@@ -96,13 +96,13 @@ Property detail
 
 .. py:property:: waypoints
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.waypoints
-    :type: "IAgVeWaypointsCollection"
+    :type: IAgVeWaypointsCollection
 
     Get the waypoints.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.ephemeris_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
@@ -129,6 +129,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.propagate
 
     Propagates the vehicle's path using the specified time interval.
 
@@ -139,25 +140,27 @@ Method detail
 
 
 
-.. py:method:: set_altitude_reference_type(self, altitudeRef:"VEHICLE_ALTITUDE_REFERENCE") -> None
+.. py:method:: set_altitude_reference_type(self, altitudeRef: VEHICLE_ALTITUDE_REFERENCE) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.set_altitude_reference_type
 
     Specify Waypoint Altitude Reference.
 
     :Parameters:
 
-    **altitudeRef** : :obj:`~"VEHICLE_ALTITUDE_REFERENCE"`
+    **altitudeRef** : :obj:`~VEHICLE_ALTITUDE_REFERENCE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_altitude_reference_type_supported(self, altitudeRef:"VEHICLE_ALTITUDE_REFERENCE") -> bool
+.. py:method:: is_altitude_reference_type_supported(self, altitudeRef: VEHICLE_ALTITUDE_REFERENCE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.is_altitude_reference_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **altitudeRef** : :obj:`~"VEHICLE_ALTITUDE_REFERENCE"`
+    **altitudeRef** : :obj:`~VEHICLE_ALTITUDE_REFERENCE`
 
     :Returns:
 
@@ -168,7 +171,8 @@ Method detail
 
 
 
-.. py:method:: import_waypoints_from_file(self, filename:str) -> None
+.. py:method:: import_waypoints_from_file(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.import_waypoints_from_file
 
     Import waypoints from the filename specified.  The filename must be an absolute path.
 
@@ -180,7 +184,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_points_specify_time_and_propagate(self, arrayOfWayPoints:list) -> None
+.. py:method:: set_points_specify_time_and_propagate(self, arrayOfWayPoints: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.set_points_specify_time_and_propagate
 
     Set waypoints from the array and propagates the route. The array is two-dimensional where each sub-array contains waypoint's Time, Latitude, Longitude, Altitude and Turn Radius. The array must be in non-decreasing order with respect to time.
 
@@ -192,7 +197,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_points_specify_velocity_and_propagate(self, arrayOfWayPoints:list) -> None
+.. py:method:: set_points_specify_velocity_and_propagate(self, arrayOfWayPoints: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.set_points_specify_velocity_and_propagate
 
     Set waypoints from the array and propagates the route. The array is two-dimensional where each sub-array contains waypoint's Latitude, Longitude, Altitude, Velocity, Acceleration and Turn Radius.
 
@@ -204,7 +210,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_points_smooth_rate_and_propagate(self, arrayOfWayPoints:list) -> None
+.. py:method:: set_points_smooth_rate_and_propagate(self, arrayOfWayPoints: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.set_points_smooth_rate_and_propagate
 
     Set waypoints from the array and propagates the route. The array is two-dimensional where each sub-array contains waypoint's Latitude, Longitude, Altitude, Velocity and Turn Radius.
 

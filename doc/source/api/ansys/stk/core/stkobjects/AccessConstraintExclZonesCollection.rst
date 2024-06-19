@@ -3,7 +3,7 @@ AccessConstraintExclZonesCollection
 
 .. py:class:: AccessConstraintExclZonesCollection
 
-   IAccessConstraintExclZonesCollection, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintExclZonesCollection`, py:obj:`~IAccessConstraint`
 
    Collection of Exclusion Zones used in Exclusion Zone constraint.
 

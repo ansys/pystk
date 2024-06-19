@@ -11,6 +11,21 @@ HOVER_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~HOVER_MODE_FIXED_TIME`
+              - Hover in place for a fixed time.
+
+            * - :py:attr:`~HOVER_MODE_MANEUVER`
+              - Perform a hovering maneuver.
+
+
 Import detail
 -------------
 

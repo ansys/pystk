@@ -3,7 +3,7 @@ AccessStoppingCondition
 
 .. py:class:: AccessStoppingCondition
 
-   IComponentInfo, ICloneable, IAccessStoppingCondition, IStoppingConditionComponent, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IAccessStoppingCondition`, py:obj:`~IStoppingConditionComponent`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Access stopping condition.
 

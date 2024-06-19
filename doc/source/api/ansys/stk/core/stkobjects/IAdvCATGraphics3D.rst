@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: show_secondary_ellipsoids_type
     :canonical: ansys.stk.core.stkobjects.IAdvCATGraphics3D.show_secondary_ellipsoids_type
-    :type: "ADV_CAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE"
+    :type: ADV_CAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE
 
     Type of visible Secondary Ellipsoids.
 

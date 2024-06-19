@@ -54,7 +54,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: exec(self, startTime:typing.Any, stopTime:typing.Any, stepTime:float) -> "IDataProviderResult"
+.. py:method:: exec(self, startTime: typing.Any, stopTime: typing.Any, stepTime: float) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec
 
     Compute the data; time-dependent data providers require an interval and a time step. Start/Stop use DateFormat Dimension. StepTime uses Time Dimension.
 
@@ -66,9 +67,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_elements(self, startTime:typing.Any, stopTime:typing.Any, stepTime:float, elementNames:list) -> "IDataProviderResult"
+.. py:method:: exec_elements(self, startTime: typing.Any, stopTime: typing.Any, stepTime: float, elementNames: list) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_elements
 
     Compute the data and return just the indicated data elements; time-dependent data providers require an interval and a time step.
 
@@ -81,9 +83,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_single(self, singleTime:typing.Any) -> "IDataProviderResult"
+.. py:method:: exec_single(self, singleTime: typing.Any) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_single
 
     Compute the data given a single Time. SingleTime uses DateFormat Dimension.
 
@@ -93,9 +96,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_single_elements(self, singleTime:typing.Any, elementNames:list) -> "IDataProviderResult"
+.. py:method:: exec_single_elements(self, singleTime: typing.Any, elementNames: list) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_single_elements
 
     Compute the data given a single Time and return just the indicated data elements. SingleTime uses DateFormat Dimension.
 
@@ -106,9 +110,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_single_elements_array(self, timeArray:list, elementNames:list) -> "IDataProviderResultTimeArrayElements"
+.. py:method:: exec_single_elements_array(self, timeArray: list, elementNames: list) -> IDataProviderResultTimeArrayElements
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_single_elements_array
 
     Compute the data given a single Time array and return just the indicated data elements. If time values without data are requested, null entries will be returned in the data array. SingleTime uses DateFormat Dimension.
 
@@ -119,9 +124,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResultTimeArrayElements"`
+        :obj:`~IDataProviderResultTimeArrayElements`
 
-.. py:method:: exec_native_times(self, startTime:typing.Any, stopTime:typing.Any) -> "IDataProviderResult"
+.. py:method:: exec_native_times(self, startTime: typing.Any, stopTime: typing.Any) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_native_times
 
     Compute the data for default; default time-dependent data providers require an interval. Start/Stop use DateFormat Dimension.
 
@@ -132,9 +138,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_elements_native_times(self, startTime:typing.Any, stopTime:typing.Any, elementNames:list) -> "IDataProviderResult"
+.. py:method:: exec_elements_native_times(self, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_elements_native_times
 
     Compute the data for default; return just the indicated data elements; default time-dependent data providers require an interval. Start/Stop use DateFormat Dimension.
 
@@ -146,47 +153,50 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_event_array(self, pEventArray:"ITimeToolEventArray", startTime:typing.Any, stopTime:typing.Any) -> "IDataProviderResult"
+.. py:method:: exec_event_array(self, pEventArray: ITimeToolEventArray, startTime: typing.Any, stopTime: typing.Any) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_event_array
 
     Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
 
     :Parameters:
 
-    **pEventArray** : :obj:`~"ITimeToolEventArray"`
+    **pEventArray** : :obj:`~ITimeToolEventArray`
     **startTime** : :obj:`~typing.Any`
     **stopTime** : :obj:`~typing.Any`
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_elements_event_array(self, pEventArray:"ITimeToolEventArray", startTime:typing.Any, stopTime:typing.Any, elementNames:list) -> "IDataProviderResult"
+.. py:method:: exec_elements_event_array(self, pEventArray: ITimeToolEventArray, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_elements_event_array
 
     Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
 
     :Parameters:
 
-    **pEventArray** : :obj:`~"ITimeToolEventArray"`
+    **pEventArray** : :obj:`~ITimeToolEventArray`
     **startTime** : :obj:`~typing.Any`
     **stopTime** : :obj:`~typing.Any`
     **elementNames** : :obj:`~list`
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_elements_event_array_only(self, pEventArray:"ITimeToolEventArray", elementNames:list) -> "IDataProviderResult"
+.. py:method:: exec_elements_event_array_only(self, pEventArray: ITimeToolEventArray, elementNames: list) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_elements_event_array_only
 
     Compute the data and returns just the indicated data elements; Input is a Times Array component.
 
     :Parameters:
 
-    **pEventArray** : :obj:`~"ITimeToolEventArray"`
+    **pEventArray** : :obj:`~ITimeToolEventArray`
     **elementNames** : :obj:`~list`
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 

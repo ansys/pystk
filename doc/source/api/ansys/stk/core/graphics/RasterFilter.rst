@@ -3,7 +3,7 @@ RasterFilter
 
 .. py:class:: RasterFilter
 
-   IRasterFilter, SupportsDeleteCallback
+   Bases: py:obj:`~IRasterFilter`
 
    A filter for processing raster datasets. RasterFilter is the base class for all raster filters...
 

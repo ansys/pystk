@@ -74,7 +74,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IStoppingConditionElement"
+.. py:method:: item(self, indexOrName: typing.Any) -> IStoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.item
 
     Allow you to iterate through the collection.
 
@@ -84,9 +85,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStoppingConditionElement"`
+        :obj:`~IStoppingConditionElement`
 
-.. py:method:: add(self, conditionName:str) -> "IStoppingConditionElement"
+.. py:method:: add(self, conditionName: str) -> IStoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.add
 
     Add a stopping condition.
 
@@ -96,9 +98,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStoppingConditionElement"`
+        :obj:`~IStoppingConditionElement`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.remove
 
     Remove a stopping condition.
 
@@ -112,7 +115,8 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.cut
 
     Copy the stopping condition into the clipboard and removes the stopping condition from the list.
 
@@ -124,27 +128,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IStoppingConditionElement"
+.. py:method:: paste(self) -> IStoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.paste
 
     Pastes the stopping condition from the clipboard and inserts into the list.
 
     :Returns:
 
-        :obj:`~"IStoppingConditionElement"`
+        :obj:`~IStoppingConditionElement`
 
-.. py:method:: insert_copy(self, stopCond:"IStoppingConditionElement") -> "IStoppingConditionElement"
+.. py:method:: insert_copy(self, stopCond: IStoppingConditionElement) -> IStoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.insert_copy
 
     Copy the stopping condition and inserts the copy into the list.
 
     :Parameters:
 
-    **stopCond** : :obj:`~"IStoppingConditionElement"`
+    **stopCond** : :obj:`~IStoppingConditionElement`
 
     :Returns:
 
-        :obj:`~"IStoppingConditionElement"`
+        :obj:`~IStoppingConditionElement`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IStoppingConditionElement"
+.. py:method:: get_item_by_index(self, index: int) -> IStoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.get_item_by_index
 
     Retrieve a stopping condition in the collection by index.
 
@@ -154,9 +161,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStoppingConditionElement"`
+        :obj:`~IStoppingConditionElement`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IStoppingConditionElement"
+.. py:method:: get_item_by_name(self, name: str) -> IStoppingConditionElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.get_item_by_name
 
     Retrieve a stopping condition in the collection by name.
 
@@ -166,5 +174,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStoppingConditionElement"`
+        :obj:`~IStoppingConditionElement`
 

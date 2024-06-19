@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetVector.vector
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Get the vector for which representations are computed.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetVector.reference_axes
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     Get the reference axes relative to which representations are computed.
 

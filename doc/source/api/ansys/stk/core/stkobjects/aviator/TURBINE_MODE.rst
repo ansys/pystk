@@ -11,6 +11,24 @@ TURBINE_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~TURBINE_MODE_DISABLED`
+              - Disabled turbine mode.
+
+            * - :py:attr:`~TURBINE_MODE_TURBOJET_BASIC_AB`
+              - Turbojet - Basic w/AB (Thermodynamic model).
+
+            * - :py:attr:`~TURBINE_MODE_TURBOFAN_BASIC_AB`
+              - Turbofan - Basic w/AB (Thermodynamic model).
+
+
 Import detail
 -------------
 

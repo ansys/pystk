@@ -3,7 +3,7 @@ AntennaModelGaussian
 
 .. py:class:: AntennaModelGaussian
 
-   IAntennaModel, IComponentInfo, ICloneable, IAntennaModelGaussian, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IAntennaModelGaussian`
 
    Class defining a gaussian antenna model.
 

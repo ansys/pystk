@@ -3,7 +3,7 @@ VectorGeometryToolVectorApoapsis
 
 .. py:class:: VectorGeometryToolVectorApoapsis
 
-   IVectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorApoapsis`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point.
 

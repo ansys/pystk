@@ -11,6 +11,27 @@ AIRCRAFT_AERO_STRATEGY
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~AIRCRAFT_AERO_SIMPLE`
+              - Simple aerodynamics.
+
+            * - :py:attr:`~AIRCRAFT_AERO_EXTERNAL_FILE`
+              - External file aerodynamics.
+
+            * - :py:attr:`~AIRCRAFT_AERO_BASIC_FIXED_WING`
+              - Basic fixed wing aerodynamics.
+
+            * - :py:attr:`~AIRCRAFT_AERO_ADVANCED_MISSILE`
+              - Advanced missile aerodynamics.
+
+
 Import detail
 -------------
 

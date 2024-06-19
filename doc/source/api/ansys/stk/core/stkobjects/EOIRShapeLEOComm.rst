@@ -3,7 +3,7 @@ EOIRShapeLEOComm
 
 .. py:class:: EOIRShapeLEOComm
 
-   IEOIRShapeLEOComm, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeLEOComm`, py:obj:`~IEOIRShapeObject`
 
    LEOComm shape class.
 

@@ -83,19 +83,19 @@ Property detail
 
 .. py:property:: maneuver_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.maneuver_mode
-    :type: "ACCEL_MANEUVER_MODE"
+    :type: ACCEL_MANEUVER_MODE
 
     Gets or sets the mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius.
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.maneuver_mode_helper
-    :type: "IAgAvtrAeroPropManeuverModeHelper"
+    :type: IAgAvtrAeroPropManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
 .. py:property:: attitude_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.attitude_transitions
-    :type: "IAgAvtrAttitudeTransitions"
+    :type: IAgAvtrAttitudeTransitions
 
     Get the attitude transitions interface.
 
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: climb_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.climb_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the climb airspeed type.
 
@@ -143,7 +143,7 @@ Property detail
 
 .. py:property:: cruise_max_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.cruise_max_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the cruise airspeed type.
 
@@ -161,7 +161,7 @@ Property detail
 
 .. py:property:: descent_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.descent_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the descent airspeed type.
 
@@ -221,19 +221,19 @@ Property detail
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.default_configuration
-    :type: "IAgAvtrConfiguration"
+    :type: IAgAvtrConfiguration
 
     Get the aircraft's default configuration as saved in the catalog.
 
 .. py:property:: aerodynamics
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.aerodynamics
-    :type: "IAgAvtrMissileAero"
+    :type: IAgAvtrMissileAero
 
     Get the aerodynamics interface.
 
 .. py:property:: propulsion
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.propulsion
-    :type: "IAgAvtrMissileProp"
+    :type: IAgAvtrMissileProp
 
     Get the propulsion interface.
 
@@ -251,13 +251,14 @@ Method detail
 
 
 
-.. py:method:: set_climb_airspeed(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_climb_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.set_climb_airspeed
 
     Set the missile's climb airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -272,13 +273,14 @@ Method detail
 
 
 
-.. py:method:: set_cruise_max_airspeed(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_cruise_max_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.set_cruise_max_airspeed
 
     Set the missile's max cruise airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -289,13 +291,14 @@ Method detail
 
 
 
-.. py:method:: set_descent_airspeed(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_descent_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.set_descent_airspeed
 
     Set the missile's descent airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -323,11 +326,12 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

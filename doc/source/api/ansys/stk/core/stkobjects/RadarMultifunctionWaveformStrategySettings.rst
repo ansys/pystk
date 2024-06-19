@@ -3,7 +3,7 @@ RadarMultifunctionWaveformStrategySettings
 
 .. py:class:: RadarMultifunctionWaveformStrategySettings
 
-   IRadarMultifunctionWaveformStrategySettings, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarMultifunctionWaveformStrategySettings`
 
    Class defining the waveform selection strategy settings.
 

@@ -3,7 +3,7 @@ SensorPointingTargetedBoresightTrack
 
 .. py:class:: SensorPointingTargetedBoresightTrack
 
-   ISensorPointingTargetedBoresight, ISensorPointingTargetedBoresightTrack, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointingTargetedBoresight`, py:obj:`~ISensorPointingTargetedBoresightTrack`
 
    Class defining a targeted sensor with tracking boresight.
 

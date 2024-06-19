@@ -3,7 +3,7 @@ SiteRunwayFromCatalog
 
 .. py:class:: SiteRunwayFromCatalog
 
-   ISiteRunwayFromCatalog, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteRunwayFromCatalog`, py:obj:`~ISite`
 
    Class defining a runway from catalog site.
 

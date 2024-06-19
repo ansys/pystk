@@ -3,7 +3,7 @@ BurnoutLaunchAzRadius
 
 .. py:class:: BurnoutLaunchAzRadius
 
-   IBurnoutLaunchAzRadius, IBurnout, SupportsDeleteCallback
+   Bases: py:obj:`~IBurnoutLaunchAzRadius`, py:obj:`~IBurnout`
 
    The launch azimuth and radius burnout point.
 

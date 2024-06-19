@@ -3,7 +3,7 @@ ManeuverOptimalFiniteSteeringNodeCollection
 
 .. py:class:: ManeuverOptimalFiniteSteeringNodeCollection
 
-   IManeuverOptimalFiniteSteeringNodeCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverOptimalFiniteSteeringNodeCollection`
 
    Steering/nodes collection.
 

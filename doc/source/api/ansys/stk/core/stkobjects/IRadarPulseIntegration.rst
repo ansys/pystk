@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarPulseIntegration.type
-    :type: "RADAR_PULSE_INTEGRATION_TYPE"
+    :type: RADAR_PULSE_INTEGRATION_TYPE
 
     Gets the waveform type enumeration.
 

@@ -3,7 +3,7 @@ StateCalcDecRate
 
 .. py:class:: StateCalcDecRate
 
-   IStateCalcDecRate, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcDecRate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    DeclinationRate Calc objects.
 

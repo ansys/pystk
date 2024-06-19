@@ -3,7 +3,7 @@ CompositeDisplayConditionFactory
 
 .. py:class:: CompositeDisplayConditionFactory
 
-   ICompositeDisplayConditionFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ICompositeDisplayConditionFactory`
 
    A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite...
 

@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: display_elements
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.display_elements
-    :type: "IAgVeVOBPlaneTemplateDisplayCollection"
+    :type: IAgVeVOBPlaneTemplateDisplayCollection
 
     Returns the 3D BPlane template display collection.
 

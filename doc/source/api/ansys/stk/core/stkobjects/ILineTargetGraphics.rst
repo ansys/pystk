@@ -60,13 +60,13 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.ILineTargetGraphics.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Line width.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.ILineTargetGraphics.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Line style.
 
@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.ILineTargetGraphics.label_notes
-    :type: "IAgLabelNoteCollection"
+    :type: IAgLabelNoteCollection
 
     Get the label notes collection.
 

@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: integrator_type
     :canonical: ansys.stk.core.stkobjects.aviator.ICalculationOptions.integrator_type
-    :type: "NUMERICAL_INTEGRATOR"
+    :type: NUMERICAL_INTEGRATOR
 
     Gets or sets the integrator type.
 

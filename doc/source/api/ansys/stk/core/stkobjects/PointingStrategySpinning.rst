@@ -3,7 +3,7 @@ PointingStrategySpinning
 
 .. py:class:: PointingStrategySpinning
 
-   IPointingStrategy, IPointingStrategySpinning, SupportsDeleteCallback
+   Bases: py:obj:`~IPointingStrategy`, py:obj:`~IPointingStrategySpinning`
 
    Class defining a spinning pointing strategy.
 

@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDerivative.scalar
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The input scalar component used to compute the derivative.
 

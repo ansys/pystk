@@ -3,7 +3,7 @@ MtoGraphics3DMarker
 
 .. py:class:: MtoGraphics3DMarker
 
-   IMtoGraphics3DMarker, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics3DMarker`
 
    MTO 3D graphics marker options.
 

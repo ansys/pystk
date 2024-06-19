@@ -42,25 +42,25 @@ Property detail
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.targeter_graphs
-    :type: "IAgVATargeterGraphCollection"
+    :type: IAgVATargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.scripting_tool
-    :type: "IAgVAScriptingTool"
+    :type: IAgVAScriptingTool
 
     Returns the Scripting tool for the sequence.
 
 .. py:property:: controls
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.controls
-    :type: "IAgVAGoldenSectionControlCollection"
+    :type: IAgVAGoldenSectionControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.results
-    :type: "IAgVAGoldenSectionResultCollection"
+    :type: IAgVAGoldenSectionResultCollection
 
     Get the list of results defined for the profile.
 

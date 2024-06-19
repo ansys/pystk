@@ -3,7 +3,7 @@ ReferenceStateHoverOptions
 
 .. py:class:: ReferenceStateHoverOptions
 
-   IReferenceStateHoverOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IReferenceStateHoverOptions`
 
    Class defining the Hover options for a Reference State procedure.
 

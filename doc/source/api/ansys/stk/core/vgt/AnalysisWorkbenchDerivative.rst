@@ -3,7 +3,7 @@ AnalysisWorkbenchDerivative
 
 .. py:class:: AnalysisWorkbenchDerivative
 
-   IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchDerivative`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Represents a base class for derivative definitions.
 

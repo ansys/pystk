@@ -75,6 +75,7 @@ Method detail
 -------------
 
 .. py:method:: cancel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IPctCmpltEventArgs.cancel
 
     Cancel a lengthy operation.
 

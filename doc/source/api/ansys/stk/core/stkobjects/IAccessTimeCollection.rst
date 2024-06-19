@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IAccessTime"
+.. py:method:: item(self, index: int) -> IAccessTime
+    :canonical: ansys.stk.core.stkobjects.IAccessTimeCollection.item
 
     Return target times scheme by name or at a specified position.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAccessTime"`
+        :obj:`~IAccessTime`
 
 

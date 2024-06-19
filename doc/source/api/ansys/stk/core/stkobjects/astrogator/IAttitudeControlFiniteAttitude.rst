@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: attitude_update
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.attitude_update
-    :type: "ATTITUDE_UPDATE"
+    :type: ATTITUDE_UPDATE
 
     How and when the attitude will be updated.
 
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Get the orientation of the attitude.
 

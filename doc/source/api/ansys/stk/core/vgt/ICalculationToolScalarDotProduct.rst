@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: vector_a
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDotProduct.vector_a
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     First vector.
 
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: vector_b
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDotProduct.vector_b
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Second vector.
 

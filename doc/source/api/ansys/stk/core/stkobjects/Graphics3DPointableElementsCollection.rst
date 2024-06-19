@@ -3,7 +3,7 @@ Graphics3DPointableElementsCollection
 
 .. py:class:: Graphics3DPointableElementsCollection
 
-   IGraphics3DPointableElementsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DPointableElementsCollection`
 
    List of Pointable Elements.
 

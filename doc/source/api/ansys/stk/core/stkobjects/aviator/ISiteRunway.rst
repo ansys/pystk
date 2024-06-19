@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.ISiteRunway.altitude_reference
-    :type: "AGL_MSL"
+    :type: AGL_MSL
 
     Gets or sets the altitude reference for the runway.
 
@@ -122,7 +122,8 @@ Method detail
 
 
 
-.. py:method:: add_to_catalog(self, overwrite:bool) -> None
+.. py:method:: add_to_catalog(self, overwrite: bool) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteRunway.add_to_catalog
 
     Add the runway to the catalog.
 
@@ -134,23 +135,25 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: copy_from_catalog(self, runway:"ICatalogRunway") -> None
+.. py:method:: copy_from_catalog(self, runway: ICatalogRunway) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteRunway.copy_from_catalog
 
     Copy the information from the runway stored in the catalog.
 
     :Parameters:
 
-    **runway** : :obj:`~"ICatalogRunway"`
+    **runway** : :obj:`~ICatalogRunway`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_as_site(self) -> "ISite"
+.. py:method:: get_as_site(self) -> ISite
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteRunway.get_as_site
 
     Get the site interface.
 
     :Returns:
 
-        :obj:`~"ISite"`
+        :obj:`~ISite`
 

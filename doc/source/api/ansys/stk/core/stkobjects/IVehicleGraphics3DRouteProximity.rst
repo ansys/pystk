@@ -41,37 +41,37 @@ Property detail
 
 .. py:property:: control_box
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.control_box
-    :type: "IAgVeVOControlBox"
+    :type: IAgVeVOControlBox
 
     Get the control box parameters.
 
 .. py:property:: bearing_box
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.bearing_box
-    :type: "IAgVeVOBearingBox"
+    :type: IAgVeVOBearingBox
 
     Get the bearing box parameters.
 
 .. py:property:: bearing_ellipse
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.bearing_ellipse
-    :type: "IAgVeVOBearingEllipse"
+    :type: IAgVeVOBearingEllipse
 
     Get the bearing ellipse parameters.
 
 .. py:property:: line_of_bearing
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.line_of_bearing
-    :type: "IAgVeVOLineOfBearing"
+    :type: IAgVeVOLineOfBearing
 
     Get the line of bearing parameters.
 
 .. py:property:: aou_label_swap_distance
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.aou_label_swap_distance
-    :type: "IAgVOLabelSwapDistance"
+    :type: IAgVOLabelSwapDistance
 
     Area of uncertainty label swap distance.
 
 .. py:property:: ellipsoid
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.ellipsoid
-    :type: "IAgVeVOEllipsoid"
+    :type: IAgVeVOEllipsoid
 
     Defines the ellipsoid parameters.
 

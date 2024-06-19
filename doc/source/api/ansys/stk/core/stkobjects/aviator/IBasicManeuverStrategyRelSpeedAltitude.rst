@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: relative_altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.relative_altitude_mode
-    :type: "RELATIVE_ALTITUDE_MODE"
+    :type: RELATIVE_ALTITUDE_MODE
 
     Gets or sets the mode to define the hold objective for the maneuver.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: airspeed_offset_type
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.airspeed_offset_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
@@ -161,7 +161,7 @@ Property detail
 
 .. py:property:: min_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.min_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
@@ -173,13 +173,13 @@ Property detail
 
 .. py:property:: max_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.max_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.stop_condition
-    :type: "REL_SPEED_ALTITUDE_STOP_CONDITION"
+    :type: REL_SPEED_ALTITUDE_STOP_CONDITION
 
     Gets or sets the stopping condition for the maneuver.
 
@@ -191,7 +191,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.position_vel_strategies
-    :type: "IAgAvtrBasicManeuverTargetPosVel"
+    :type: IAgAvtrBasicManeuverTargetPosVel
 
     Get the position velocity strategies for Rel Speed Alt.
 
@@ -212,13 +212,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_offset(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_airspeed_offset(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.set_airspeed_offset
 
     Set the airspeed offset value and type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -239,13 +240,14 @@ Method detail
 
 
 
-.. py:method:: set_min_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_min_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.set_min_airspeed
 
     Set the minimum airspeed value and type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -254,13 +256,14 @@ Method detail
 
 
 
-.. py:method:: set_max_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_max_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.set_max_airspeed
 
     Set the maximum airspeed value and type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -273,6 +276,7 @@ Method detail
 
 
 .. py:method:: cancel_tgt_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.cancel_tgt_position_vel
 
     Cancel the position velocity strategies for Rel Speed Alt.
 

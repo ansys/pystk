@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IPathPoint"
+.. py:method:: item(self, index: int) -> IPathPoint
+    :canonical: ansys.stk.core.graphics.IPathPointCollection.item
 
     Return a path point at the specified position in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPathPoint"`
+        :obj:`~IPathPoint`
 
 

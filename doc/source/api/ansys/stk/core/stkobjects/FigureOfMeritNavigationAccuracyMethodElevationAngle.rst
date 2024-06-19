@@ -3,7 +3,7 @@ FigureOfMeritNavigationAccuracyMethodElevationAngle
 
 .. py:class:: FigureOfMeritNavigationAccuracyMethodElevationAngle
 
-   IFigureOfMeritNavigationAccuracyMethodElevationAngle, IFigureOfMeritNavigationAccuracyMethod, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritNavigationAccuracyMethodElevationAngle`, py:obj:`~IFigureOfMeritNavigationAccuracyMethod`
 
    Elevation Angle method for uncertainty in range measurements for the Navigation Accuracy Figure of Merit.
 

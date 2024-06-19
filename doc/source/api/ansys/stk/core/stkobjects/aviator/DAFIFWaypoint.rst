@@ -3,7 +3,7 @@ DAFIFWaypoint
 
 .. py:class:: DAFIFWaypoint
 
-   IDAFIFItem, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IDAFIFItem`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining an DAFIF Waypoint.
 

@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.central_body
-    :type: "IAgCrdnCentralBodyRefTo"
+    :type: IAgCrdnCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.reference_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.direction_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie.
 

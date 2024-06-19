@@ -11,6 +11,21 @@ SURFACE_REFERENCE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~WGS84_ELLIPSOID`
+              - WGS84 Ellipsoid.
+
+            * - :py:attr:`~MEAN_SEA_LEVEL`
+              - Mean Sea Level.
+
+
 Import detail
 -------------
 

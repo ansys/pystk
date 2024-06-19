@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ICRComplex"
+.. py:method:: item(self, index: int) -> ICRComplex
+    :canonical: ansys.stk.core.stkobjects.ICRComplexCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICRComplex"`
+        :obj:`~ICRComplex`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ICRComplexCollection.remove_at
 
     Remove the complex value with the supplied index.
 
@@ -94,7 +96,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, real:float, imaginary:float) -> "ICRComplex"
+.. py:method:: add(self, real: float, imaginary: float) -> ICRComplex
+    :canonical: ansys.stk.core.stkobjects.ICRComplexCollection.add
 
     Add and returns a new complex value.
 
@@ -105,9 +108,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICRComplex"`
+        :obj:`~ICRComplex`
 
-.. py:method:: insert_at(self, index:int, real:float, imaginary:float) -> "ICRComplex"
+.. py:method:: insert_at(self, index: int, real: float, imaginary: float) -> ICRComplex
+    :canonical: ansys.stk.core.stkobjects.ICRComplexCollection.insert_at
 
     Insert and returns a new complex value at the supplied index.
 
@@ -119,9 +123,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICRComplex"`
+        :obj:`~ICRComplex`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ICRComplexCollection.clear
 
     Clear all complex values from the collection.
 

@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a trajectory point.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.reference_system
-    :type: "IAgCrdnSystemRefTo"
+    :type: IAgCrdnSystemRefTo
 
     Specify a reference system.
 

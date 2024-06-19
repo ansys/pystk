@@ -3,7 +3,7 @@ StateCalcJacobiConstant
 
 .. py:class:: StateCalcJacobiConstant
 
-   IComponentInfo, ICloneable, IStateCalcJacobiConstant, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcJacobiConstant`
 
    Jacobi Constant Calc objects.
 

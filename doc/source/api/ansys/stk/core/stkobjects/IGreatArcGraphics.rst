@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_type
-    :type: "VEHICLE_GRAPHICS_2D_ATTRIBUTES"
+    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTES
 
     Get the 2D Graphics attributes type for the vehicle: basic, access intervals, custom intervals, or real time.
 
@@ -71,49 +71,49 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.attributes
-    :type: "IAgVeGfxAttributes"
+    :type: IAgVeGfxAttributes
 
     Get the vehicle's 2D Graphics attributes.
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.pass_data
-    :type: "IAgVeGfxRoutePassData"
+    :type: IAgVeGfxRoutePassData
 
     Get the vehicle's 2D route graphics.
 
 .. py:property:: waypoint_marker
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.waypoint_marker
-    :type: "IAgVeGfxWaypointMarker"
+    :type: IAgVeGfxWaypointMarker
 
     Get the vehicle's 2D waypoint marker graphics.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.resolution
-    :type: "IAgVeGfxRouteResolution"
+    :type: IAgVeGfxRouteResolution
 
     Get the vehicle's 2D resolution graphics.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.range_contours
-    :type: "IAgGfxRangeContours"
+    :type: IAgGfxRangeContours
 
     Get the vehicle's 2D range contour graphics.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.lighting
-    :type: "IAgVeGfxLighting"
+    :type: IAgVeGfxLighting
 
     Get the vehicle's 2D lighting graphics.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.ground_ellipses
-    :type: "IAgVeGfxGroundEllipsesCollection"
+    :type: IAgVeGfxGroundEllipsesCollection
 
     Get the vehicle's 2D ground ellipses graphics.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.label_notes
-    :type: "IAgLabelNoteCollection"
+    :type: IAgLabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
@@ -140,25 +140,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes:"VEHICLE_GRAPHICS_2D_ATTRIBUTES") -> None
+.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> None
+    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.set_attributes_type
 
     Set the 2D Graphics attributes type for the vehicle.
 
     :Parameters:
 
-    **attributes** : :obj:`~"VEHICLE_GRAPHICS_2D_ATTRIBUTES"`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes:"VEHICLE_GRAPHICS_2D_ATTRIBUTES") -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> bool
+    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~"VEHICLE_GRAPHICS_2D_ATTRIBUTES"`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
 
     :Returns:
 

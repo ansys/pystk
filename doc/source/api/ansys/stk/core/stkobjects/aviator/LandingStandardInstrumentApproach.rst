@@ -3,7 +3,7 @@ LandingStandardInstrumentApproach
 
 .. py:class:: LandingStandardInstrumentApproach
 
-   ILandingStandardInstrumentApproach, SupportsDeleteCallback
+   Bases: py:obj:`~ILandingStandardInstrumentApproach`
 
    Class defining the standard instrument approach options for a landing procedure.
 

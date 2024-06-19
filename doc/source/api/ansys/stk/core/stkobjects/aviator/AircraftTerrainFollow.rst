@@ -3,7 +3,7 @@ AircraftTerrainFollow
 
 .. py:class:: AircraftTerrainFollow
 
-   IAircraftTerrainFollow, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftTerrainFollow`, py:obj:`~ICatalogItem`
 
    Class defining the TerrainFollow category of an Aviator aircraft.
 

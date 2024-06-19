@@ -3,7 +3,7 @@ VehicleProfileFixedInAxes
 
 .. py:class:: VehicleProfileFixedInAxes
 
-   IVehicleProfileFixedInAxes, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileFixedInAxes`, py:obj:`~IVehicleAttitudeProfile`
 
    Fixed in Axes attitude profile: maintains a constant orientation of the body-fixed axes with respect to the specified reference axes, using the selected coordinate type.
 

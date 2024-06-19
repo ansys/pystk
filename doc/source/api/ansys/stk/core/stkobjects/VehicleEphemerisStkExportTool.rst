@@ -3,7 +3,7 @@ VehicleEphemerisStkExportTool
 
 .. py:class:: VehicleEphemerisStkExportTool
 
-   IVehicleEphemerisStkExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEphemerisStkExportTool`
 
    AgVeEphemerisTypeSTK Class.
 

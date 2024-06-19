@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: boresight
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.boresight
-    :type: "SENSOR_POINTING_TARGETED_BORESIGHT_TYPE"
+    :type: SENSOR_POINTING_TARGETED_BORESIGHT_TYPE
 
     The targeted sensor's boresight type, a member of the AgESnPtTrgtBsightType enumeration.
 
 .. py:property:: boresight_data
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.boresight_data
-    :type: "IAgSnPtTrgtBsight"
+    :type: IAgSnPtTrgtBsight
 
     Get orientation data for the selected boresight type.
 
@@ -62,19 +62,19 @@ Property detail
 
 .. py:property:: access_times
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.access_times
-    :type: "IAgAccessTimeCollection"
+    :type: IAgAccessTimeCollection
 
     Get the access periods between the sensor and its target(s).
 
 .. py:property:: schedule_times
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.schedule_times
-    :type: "IAgScheduleTimeCollection"
+    :type: IAgScheduleTimeCollection
 
     Get the user-scheduled target times.
 
 .. py:property:: targets
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.targets
-    :type: "IAgSnTargetCollection"
+    :type: IAgSnTargetCollection
 
     Get the collection of objects assigned as targets for the sensor.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.advanced
-    :type: "IAgSnAccessAdvanced"
+    :type: IAgSnAccessAdvanced
 
     Get advanced targeting properties used for access computations.
 

@@ -3,7 +3,7 @@ VehicleEclipsingBodies
 
 .. py:class:: VehicleEclipsingBodies
 
-   IVehicleEclipsingBodies, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEclipsingBodies`
 
    Eclipsing bodies.
 

@@ -3,7 +3,7 @@ VehicleInterpolation
 
 .. py:class:: VehicleInterpolation
 
-   IVehicleInterpolation, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleInterpolation`
 
    Class defining interpolation for the HPOP integrator.
 

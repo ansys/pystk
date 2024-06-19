@@ -3,7 +3,7 @@ AntennaModelHemispherical
 
 .. py:class:: AntennaModelHemispherical
 
-   IAntennaModelHemispherical, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelHemispherical`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a hemispherical antenna model.
 

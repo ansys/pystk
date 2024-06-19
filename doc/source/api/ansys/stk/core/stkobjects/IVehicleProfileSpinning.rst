@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: body
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileSpinning.body
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Get the spin axis in the body frame.
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileSpinning.inertial
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Get the spin axis in the inertial frame.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileSpinning.smart_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Epoch of the offset.
 

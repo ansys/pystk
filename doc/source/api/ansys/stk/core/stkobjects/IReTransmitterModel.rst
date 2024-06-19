@@ -47,13 +47,13 @@ Property detail
 
 .. py:property:: frequency_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.frequency_transfer_function_polynomial
-    :type: "IAgTransferFunctionPolynomialCollection"
+    :type: IAgTransferFunctionPolynomialCollection
 
     Gets the frequency transfer function polynomial collection.
 
 .. py:property:: power_back_off_transfer_function_type
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_type
-    :type: "TRANSFER_FUNCTION_TYPE"
+    :type: TRANSFER_FUNCTION_TYPE
 
     Gets or sets the power back off transfer function type.
 
@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: power_back_off_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_polynomial
-    :type: "IAgTransferFunctionPolynomialCollection"
+    :type: IAgTransferFunctionPolynomialCollection
 
     Gets the power back off transfer function polynomial collection.
 
 .. py:property:: power_back_off_transfer_function_table
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_table
-    :type: "IAgTransferFunctionInputBackOffOutputBackOffTable"
+    :type: IAgTransferFunctionInputBackOffOutputBackOffTable
 
     Gets the power back off transfer function table.
 
@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: c_over_im_transfer_function_type
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_type
-    :type: "TRANSFER_FUNCTION_TYPE"
+    :type: TRANSFER_FUNCTION_TYPE
 
     Gets or sets the C/Im transfer function type.
 
@@ -95,13 +95,13 @@ Property detail
 
 .. py:property:: c_over_im_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_polynomial
-    :type: "IAgTransferFunctionPolynomialCollection"
+    :type: IAgTransferFunctionPolynomialCollection
 
     Gets the C/Im transfer function polynomial collection.
 
 .. py:property:: c_over_im_transfer_function_table
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_table
-    :type: "IAgTransferFunctionInputBackOffCOverImTable"
+    :type: IAgTransferFunctionInputBackOffCOverImTable
 
     Gets the C/Im transfer function table.
 
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: operational_mode
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.operational_mode
-    :type: "RE_TRANSMITTER_OP_MODE"
+    :type: RE_TRANSMITTER_OP_MODE
 
     Gets or sets the operational mode.
 

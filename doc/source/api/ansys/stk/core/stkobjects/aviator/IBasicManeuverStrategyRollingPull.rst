@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: active_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.active_mode
-    :type: "ROLLING_PULL_MODE"
+    :type: ROLLING_PULL_MODE
 
     Gets or sets the active mode for the rolling pull basic maneuver strategy.
 
 .. py:property:: turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.turn_direction
-    :type: "ROLL_LEFT_RIGHT"
+    :type: ROLL_LEFT_RIGHT
 
     Gets or sets the turn direction for the active mode.
 
@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: roll_orientation
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.roll_orientation
-    :type: "ROLL_UPRIGHT_INVERTED"
+    :type: ROLL_UPRIGHT_INVERTED
 
     Gets or sets the orientation to roll to for the roll to orientation mode.
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.roll_rate_mode
-    :type: "PERF_MODEL_OVERRIDE"
+    :type: PERF_MODEL_OVERRIDE
 
     Gets or sets the roll rate mode for the rolling pull.
 
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: pull_g_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.pull_g_mode
-    :type: "PERF_MODEL_OVERRIDE"
+    :type: PERF_MODEL_OVERRIDE
 
     Gets or sets the pull G mode for a rolling pull.
 
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.airspeed_options
-    :type: "IAgAvtrBasicManeuverAirspeedOptions"
+    :type: IAgAvtrBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

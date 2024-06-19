@@ -3,7 +3,7 @@ SNOPTResultCollection
 
 .. py:class:: SNOPTResultCollection
 
-   ISNOPTResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISNOPTResultCollection`
 
    SNOPT result collection.
 

@@ -3,7 +3,7 @@ AntennaBeamSelectionStrategyScriptPlugin
 
 .. py:class:: AntennaBeamSelectionStrategyScriptPlugin
 
-   IAntennaBeamSelectionStrategyScriptPlugin, IAntennaBeamSelectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaBeamSelectionStrategyScriptPlugin`, py:obj:`~IAntennaBeamSelectionStrategy`
 
    Class defining a script plugin beam selection strategy.
 

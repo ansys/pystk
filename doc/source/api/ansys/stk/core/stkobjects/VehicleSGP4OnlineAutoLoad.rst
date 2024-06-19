@@ -3,7 +3,7 @@ VehicleSGP4OnlineAutoLoad
 
 .. py:class:: VehicleSGP4OnlineAutoLoad
 
-   IVehicleSGP4OnlineAutoLoad, IVehicleSGP4LoadData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4OnlineAutoLoad`, py:obj:`~IVehicleSGP4LoadData`
 
    Do not use this class, as it is deprecated. Use AgVeSGP4OnlineLoad instead. SGP4 propagator. Allows the user to load the most current segment from online.
 

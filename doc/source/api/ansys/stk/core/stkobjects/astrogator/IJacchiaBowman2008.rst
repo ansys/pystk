@@ -60,13 +60,13 @@ Property detail
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.sun_position
-    :type: "SUN_POSITION"
+    :type: SUN_POSITION
 
     Gets or sets the sun position computation.
 
 .. py:property:: atmos_data_source
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.atmos_data_source
-    :type: "ATMOS_DATA_SOURCE"
+    :type: ATMOS_DATA_SOURCE
 
     Gets or sets the atmospheric model data source - data file or constant values.
 
@@ -138,7 +138,7 @@ Property detail
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.drag_model_type
-    :type: "DRAG_MODEL_TYPE"
+    :type: DRAG_MODEL_TYPE
 
     Drag model type.
 
@@ -150,7 +150,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.drag_model_plugin
-    :type: "IAgVADragModelPlugin"
+    :type: IAgVADragModelPlugin
 
     Drag model plugin properties.
 

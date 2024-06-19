@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleConsiderAnalysisCollectionElement"
+.. py:method:: item(self, index: int) -> IVehicleConsiderAnalysisCollectionElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleConsiderAnalysisCollectionElement"`
+        :obj:`~IVehicleConsiderAnalysisCollectionElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -95,6 +97,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -102,25 +105,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, paramType:"VEHICLE_CONSIDER_ANALYSIS_TYPE") -> "IVehicleConsiderAnalysisCollectionElement"
+.. py:method:: add(self, paramType: VEHICLE_CONSIDER_ANALYSIS_TYPE) -> IVehicleConsiderAnalysisCollectionElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **paramType** : :obj:`~"VEHICLE_CONSIDER_ANALYSIS_TYPE"`
+    **paramType** : :obj:`~VEHICLE_CONSIDER_ANALYSIS_TYPE`
 
     :Returns:
 
-        :obj:`~"IVehicleConsiderAnalysisCollectionElement"`
+        :obj:`~IVehicleConsiderAnalysisCollectionElement`
 
-.. py:method:: remove_by_type(self, eParamType:"VEHICLE_CONSIDER_ANALYSIS_TYPE") -> None
+.. py:method:: remove_by_type(self, eParamType: VEHICLE_CONSIDER_ANALYSIS_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection.remove_by_type
 
     Remove an element from the collection using the AgEVeConsiderAnalysisType type.
 
     :Parameters:
 
-    **eParamType** : :obj:`~"VEHICLE_CONSIDER_ANALYSIS_TYPE"`
+    **eParamType** : :obj:`~VEHICLE_CONSIDER_ANALYSIS_TYPE`
 
     :Returns:
 

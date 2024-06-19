@@ -11,6 +11,24 @@ JET_FUEL_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~KEROSENE_AFPROP`
+              - A kerosene fuel model based on AFPROP.
+
+            * - :py:attr:`~KEROSENE_CEA`
+              - A kerosene fuel model based on NASA CEA.
+
+            * - :py:attr:`~HYDROGEN`
+              - A hydrogen fuel model based on NASA CEA.
+
+
 Import detail
 -------------
 

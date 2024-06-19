@@ -11,6 +11,30 @@ RADAR_SWERLING_CASE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~CASE0`
+              - 0.
+
+            * - :py:attr:`~I`
+              - I.
+
+            * - :py:attr:`~II`
+              - II.
+
+            * - :py:attr:`~III`
+              - III.
+
+            * - :py:attr:`~IV`
+              - IV.
+
+
 Import detail
 -------------
 

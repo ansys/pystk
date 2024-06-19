@@ -3,7 +3,7 @@ GoldenSectionResultCollection
 
 .. py:class:: GoldenSectionResultCollection
 
-   IGoldenSectionResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IGoldenSectionResultCollection`
 
    Properties for the list of Golden Section result parameters.
 

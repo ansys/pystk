@@ -76,13 +76,13 @@ Property detail
 
 .. py:property:: density_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.density_type
-    :type: "VENUS_GRAM_DENSITY_TYPE"
+    :type: VENUS_GRAM_DENSITY_TYPE
 
     Low, mean, high or randomly perturbed density type.
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_type
-    :type: "DRAG_MODEL_TYPE"
+    :type: DRAG_MODEL_TYPE
 
     Drag model type.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_plugin
-    :type: "IAgVADragModelPlugin"
+    :type: IAgVADragModelPlugin
 
     Drag model plugin properties.
 

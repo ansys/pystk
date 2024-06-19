@@ -3,7 +3,7 @@ Graphics3DReferenceVectorGeometryToolPlane
 
 .. py:class:: Graphics3DReferenceVectorGeometryToolPlane
 
-   IGraphics3DReferenceVectorGeometryToolPlane, IGraphics3DReferenceAnalysisWorkbenchComponent, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DReferenceVectorGeometryToolPlane`, py:obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~IDisplayTime`
 
    Class defining a reference plane (3D Graphics, Vector Geometry Tool).
 

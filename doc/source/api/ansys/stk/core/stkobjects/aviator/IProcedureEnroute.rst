@@ -48,25 +48,25 @@ Property detail
 
 .. py:property:: altitude_msl_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.altitude_msl_options
-    :type: "IAgAvtrAltitudeMSLAndLevelOffOptions"
+    :type: IAgAvtrAltitudeMSLAndLevelOffOptions
 
     Get the altitude MSL options.
 
 .. py:property:: navigation_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.navigation_options
-    :type: "IAgAvtrNavigationOptions"
+    :type: IAgAvtrNavigationOptions
 
     Get the navigation options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.enroute_options
-    :type: "IAgAvtrEnrouteAndDelayOptions"
+    :type: IAgAvtrEnrouteAndDelayOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.enroute_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
@@ -78,11 +78,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

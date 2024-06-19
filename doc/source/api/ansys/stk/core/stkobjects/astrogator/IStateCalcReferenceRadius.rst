@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: reference_radius_source
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcReferenceRadius.reference_radius_source
-    :type: "REFERENCE_RADIUS_SOURCE"
+    :type: REFERENCE_RADIUS_SOURCE
 
     Gets or sets the source for the reference radius.
 

@@ -3,7 +3,7 @@ VectorGeometryToolAxesGroup
 
 .. py:class:: VectorGeometryToolAxesGroup
 
-   IVectorGeometryToolAxesGroup, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesGroup`
 
    Access or create VGT axes associated with an object or a central body.
 

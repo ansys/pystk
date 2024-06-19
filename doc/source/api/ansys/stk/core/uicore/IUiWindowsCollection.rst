@@ -68,7 +68,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCaption:typing.Any) -> "IUiWindow"
+.. py:method:: item(self, indexOrCaption: typing.Any) -> IUiWindow
+    :canonical: ansys.stk.core.uicore.IUiWindowsCollection.item
 
     Retrieve a window object.
 
@@ -78,22 +79,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiWindow"`
+        :obj:`~IUiWindow`
 
 
-.. py:method:: arrange(self, arrangeStyle:"ARRANGE_STYLE") -> None
+.. py:method:: arrange(self, arrangeStyle: ARRANGE_STYLE) -> None
+    :canonical: ansys.stk.core.uicore.IUiWindowsCollection.arrange
 
     Arranges the application windows using the specified style.
 
     :Parameters:
 
-    **arrangeStyle** : :obj:`~"ARRANGE_STYLE"`
+    **arrangeStyle** : :obj:`~ARRANGE_STYLE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, pluginID:str, initData:typing.Any) -> "IUiWindow"
+.. py:method:: add(self, pluginID: str, initData: typing.Any) -> IUiWindow
+    :canonical: ansys.stk.core.uicore.IUiWindowsCollection.add
 
     Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin.
 
@@ -104,10 +107,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiWindow"`
+        :obj:`~IUiWindow`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IUiWindow"
+.. py:method:: get_item_by_index(self, index: int) -> IUiWindow
+    :canonical: ansys.stk.core.uicore.IUiWindowsCollection.get_item_by_index
 
     Retrieve a window object by index in collection.
 
@@ -117,9 +121,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiWindow"`
+        :obj:`~IUiWindow`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IUiWindow"
+.. py:method:: get_item_by_name(self, name: str) -> IUiWindow
+    :canonical: ansys.stk.core.uicore.IUiWindowsCollection.get_item_by_name
 
     Retrieve a window object by name of window object.
 
@@ -129,5 +134,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiWindow"`
+        :obj:`~IUiWindow`
 

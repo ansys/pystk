@@ -3,7 +3,7 @@ RotorcraftModels
 
 .. py:class:: RotorcraftModels
 
-   IRotorcraftModels, ICatalogSource, SupportsDeleteCallback
+   Bases: py:obj:`~IRotorcraftModels`, py:obj:`~ICatalogSource`
 
    Class defining the User Rotorcraft Models in the Aviator Catalog.
 

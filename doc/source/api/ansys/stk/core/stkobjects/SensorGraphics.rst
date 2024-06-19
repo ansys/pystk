@@ -3,7 +3,7 @@ SensorGraphics
 
 .. py:class:: SensorGraphics
 
-   ISensorGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorGraphics`
 
    Class defining the 2D Graphics properties of a Sensor.
 

@@ -3,7 +3,7 @@ TimeToolEventFactory
 
 .. py:class:: TimeToolEventFactory
 
-   ITimeToolEventFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventFactory`
 
    The factory creates events.
 

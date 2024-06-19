@@ -3,7 +3,7 @@ CommSystemAccessOptions
 
 .. py:class:: CommSystemAccessOptions
 
-   ICommSystemAccessOptions, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemAccessOptions`
 
    Class defining a CommSystem access options.
 

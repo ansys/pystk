@@ -3,7 +3,7 @@ LaunchVehicleExportTools
 
 .. py:class:: LaunchVehicleExportTools
 
-   ILaunchVehicleExportTools, SupportsDeleteCallback
+   Bases: py:obj:`~ILaunchVehicleExportTools`
 
    The LaunchVehicle Export Tools.
 

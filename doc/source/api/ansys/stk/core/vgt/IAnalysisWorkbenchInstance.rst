@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: template
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchInstance.template
-    :type: "IAgCrdn"
+    :type: IAgCrdn
 
     Returns a template object the VGT component was created from or null if the VGT component was not created from a template.
 

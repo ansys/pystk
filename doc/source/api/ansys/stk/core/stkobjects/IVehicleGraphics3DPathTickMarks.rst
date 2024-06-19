@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: tick_data_type
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data_type
-    :type: "TICK_DATA"
+    :type: TICK_DATA
 
     Get the type of tick marks to display.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: tick_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data
-    :type: "IAgVeVOTickData"
+    :type: IAgVeVOTickData
 
     Get the tick mark data.
 
@@ -79,25 +79,27 @@ Method detail
 
 
 
-.. py:method:: set_tick_data_type(self, tickData:"TICK_DATA") -> None
+.. py:method:: set_tick_data_type(self, tickData: TICK_DATA) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.set_tick_data_type
 
     Set the type of tick marks to display.
 
     :Parameters:
 
-    **tickData** : :obj:`~"TICK_DATA"`
+    **tickData** : :obj:`~TICK_DATA`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_tick_data_type_supported(self, tickData:"TICK_DATA") -> bool
+.. py:method:: is_tick_data_type_supported(self, tickData: TICK_DATA) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.is_tick_data_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **tickData** : :obj:`~"TICK_DATA"`
+    **tickData** : :obj:`~TICK_DATA`
 
     :Returns:
 

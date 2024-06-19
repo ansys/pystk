@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IGoldenSectionResult"
+.. py:method:: item(self, index: int) -> IGoldenSectionResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGoldenSectionResult"`
+        :obj:`~IGoldenSectionResult`
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath:str, resultPath:str) -> "IGoldenSectionResult"
+.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> IGoldenSectionResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection.get_result_by_paths
 
     Return the result specified by the object/result path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGoldenSectionResult"`
+        :obj:`~IGoldenSectionResult`
 

@@ -3,7 +3,7 @@ DensityModelPlugin
 
 .. py:class:: DensityModelPlugin
 
-   IDensityModelPlugin, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IDensityModelPlugin`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Plugin atmospheric density propagator function.
 

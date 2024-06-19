@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -81,7 +81,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IScriptingParameterEnumerationChoice"
+.. py:method:: item(self, indexOrName: typing.Any) -> IScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.item
 
     Allow you to iterate through the collection.
 
@@ -91,9 +92,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingParameterEnumerationChoice"`
+        :obj:`~IScriptingParameterEnumerationChoice`
 
-.. py:method:: add(self, choiceName:str) -> "IScriptingParameterEnumerationChoice"
+.. py:method:: add(self, choiceName: str) -> IScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.add
 
     Add an enumeration choice to the collection.
 
@@ -103,9 +105,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingParameterEnumerationChoice"`
+        :obj:`~IScriptingParameterEnumerationChoice`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.remove
 
     Remove an enumeration choice.
 
@@ -119,7 +122,8 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.cut
 
     Copy the enumeration choice into the clipboard and removes the enumeration choice from the list.
 
@@ -131,28 +135,31 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IScriptingParameterEnumerationChoice"
+.. py:method:: paste(self) -> IScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.paste
 
     Pastes the enumeration choice from the clipboard and inserts into the list.
 
     :Returns:
 
-        :obj:`~"IScriptingParameterEnumerationChoice"`
+        :obj:`~IScriptingParameterEnumerationChoice`
 
-.. py:method:: insert_copy(self, choice:"IScriptingParameterEnumerationChoice") -> "IScriptingParameterEnumerationChoice"
+.. py:method:: insert_copy(self, choice: IScriptingParameterEnumerationChoice) -> IScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.insert_copy
 
     Copy the enumeration choice and inserts the copy into the list.
 
     :Parameters:
 
-    **choice** : :obj:`~"IScriptingParameterEnumerationChoice"`
+    **choice** : :obj:`~IScriptingParameterEnumerationChoice`
 
     :Returns:
 
-        :obj:`~"IScriptingParameterEnumerationChoice"`
+        :obj:`~IScriptingParameterEnumerationChoice`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IScriptingParameterEnumerationChoice"
+.. py:method:: get_item_by_index(self, index: int) -> IScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.get_item_by_index
 
     Retrieve a scripting parameter enumeration choice in the collection by index.
 
@@ -162,9 +169,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingParameterEnumerationChoice"`
+        :obj:`~IScriptingParameterEnumerationChoice`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IScriptingParameterEnumerationChoice"
+.. py:method:: get_item_by_name(self, name: str) -> IScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.get_item_by_name
 
     Retrieve a scripting parameter enumeration choice in the collection by name.
 
@@ -174,5 +182,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScriptingParameterEnumerationChoice"`
+        :obj:`~IScriptingParameterEnumerationChoice`
 

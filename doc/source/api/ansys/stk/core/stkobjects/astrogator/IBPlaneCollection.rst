@@ -66,7 +66,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, bPlaneName:str) -> None
+.. py:method:: add(self, bPlaneName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.add
 
     Add a BPlane.
 
@@ -78,7 +79,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, bPlaneName:str) -> None
+.. py:method:: remove(self, bPlaneName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.remove
 
     Remove a BPlane.
 
@@ -91,6 +93,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.remove_all
 
     Remove all BPlanes.
 
@@ -98,7 +101,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: item(self, index:int) -> str
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.item
 
     Allow you to iterate through the collection.
 

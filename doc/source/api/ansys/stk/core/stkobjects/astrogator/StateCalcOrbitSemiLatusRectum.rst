@@ -3,7 +3,7 @@ StateCalcOrbitSemiLatusRectum
 
 .. py:class:: StateCalcOrbitSemiLatusRectum
 
-   IStateCalcOrbitSemiLatusRectum, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcOrbitSemiLatusRectum`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass AsStateCalcOrbitSemiLatusRectum.
 

@@ -3,7 +3,7 @@ AttitudeControlFiniteAttitude
 
 .. py:class:: AttitudeControlFiniteAttitude
 
-   IAttitudeControlFiniteAttitude, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlFiniteAttitude`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The attitude attitude control for a finite maneuver.
 

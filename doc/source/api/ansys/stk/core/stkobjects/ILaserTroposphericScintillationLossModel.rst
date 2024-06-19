@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.type
-    :type: "LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE"
+    :type: LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE
 
     Gets the model type enumeration.
 

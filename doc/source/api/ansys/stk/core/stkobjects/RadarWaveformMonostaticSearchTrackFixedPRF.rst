@@ -3,7 +3,7 @@ RadarWaveformMonostaticSearchTrackFixedPRF
 
 .. py:class:: RadarWaveformMonostaticSearchTrackFixedPRF
 
-   IRadarWaveformMonostaticSearchTrackFixedPRF, IRadarWaveformSearchTrack, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarWaveformMonostaticSearchTrackFixedPRF`, py:obj:`~IRadarWaveformSearchTrack`
 
    Class defining a monostatic fixed PRF waveform.
 

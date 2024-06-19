@@ -3,7 +3,7 @@ ComponentInfoCollection
 
 .. py:class:: ComponentInfoCollection
 
-   IComponentInfoCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfoCollection`
 
    The collection of components and component folders.
 

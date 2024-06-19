@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: formulation
     :canonical: ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.formulation
-    :type: "FORMULATION"
+    :type: FORMULATION
 
     Retrograde, which has its singularity at an inclination of 0 deg. Posigrade, which has its singularity at an inclination of 180 deg.
 

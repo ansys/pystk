@@ -3,7 +3,7 @@ VehicleAttitudeRealTime
 
 .. py:class:: VehicleAttitudeRealTime
 
-   IVehicleAttitudeRealTime, IVehicleAttitude, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeRealTime`, py:obj:`~IVehicleAttitude`
 
    Real time attitude.
 

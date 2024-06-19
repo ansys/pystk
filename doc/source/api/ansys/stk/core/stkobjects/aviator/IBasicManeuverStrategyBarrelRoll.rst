@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: helix_angle_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.helix_angle_mode
-    :type: "ANGLE_MODE"
+    :type: ANGLE_MODE
 
     Gets or sets the helix angle mode for the barrel roll.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
@@ -124,13 +124,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeeds(self, airspeedType:"AIRSPEED_TYPE", topAirspeed:float, bottomAirspeed:float) -> None
+.. py:method:: set_airspeeds(self, airspeedType: AIRSPEED_TYPE, topAirspeed: float, bottomAirspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.set_airspeeds
 
     Set the speeds at the top and bottom of the loop.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **topAirspeed** : :obj:`~float`
     **bottomAirspeed** : :obj:`~float`
 

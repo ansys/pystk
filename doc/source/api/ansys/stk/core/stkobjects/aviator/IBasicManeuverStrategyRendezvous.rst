@@ -159,7 +159,7 @@ Property detail
 
 .. py:property:: airspeed_control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.airspeed_control_mode
-    :type: "ACCEL_PERF_MODEL_OVERRIDE"
+    :type: ACCEL_PERF_MODEL_OVERRIDE
 
     Gets or sets the method to define the aircraft's acceleration performance in formation.
 
@@ -183,13 +183,13 @@ Property detail
 
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.stop_condition
-    :type: "RENDEZVOUS_STOP_CONDITION"
+    :type: RENDEZVOUS_STOP_CONDITION
 
     Gets or sets the stopping condition for the maneuver.
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.position_vel_strategies
-    :type: "IAgAvtrBasicManeuverTargetPosVel"
+    :type: IAgAvtrBasicManeuverTargetPosVel
 
     Get the position velocity strategies for Rendezvous.
 
@@ -206,7 +206,8 @@ Method detail
 
 
 
-.. py:method:: set_cpa(self, enable:bool, cPA:float) -> None
+.. py:method:: set_cpa(self, enable: bool, cPA: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.set_cpa
 
     Set whether to enable collision avoidance and the corresponding minimum distance between this aircraft and the target aircraft.
 
@@ -243,7 +244,8 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_factor(self, enable:bool, airspeedFactor:float) -> None
+.. py:method:: set_airspeed_factor(self, enable: bool, airspeedFactor: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.set_airspeed_factor
 
     Set whether to enable the option to control how fine the control is and the corresponding dimensionless factor.
 
@@ -260,6 +262,7 @@ Method detail
 
 
 .. py:method:: cancel_tgt_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.cancel_tgt_position_vel
 
     Cancel the position velocity strategies for Rendezvous.
 

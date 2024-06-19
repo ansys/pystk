@@ -3,7 +3,7 @@ BasicManeuverStrategyAutopilotProf
 
 .. py:class:: BasicManeuverStrategyAutopilotProf
 
-   IBasicManeuverStrategyAutopilotProf, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyAutopilotProf`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the autopiloc - vertical plane strategy for a basic maneuver procedure.
 

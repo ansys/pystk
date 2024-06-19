@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: reference_type
     :canonical: ansys.stk.core.stkobjects.IAntennaControl.reference_type
-    :type: "ANTENNA_CONTROL_REFERENCE_TYPE"
+    :type: ANTENNA_CONTROL_REFERENCE_TYPE
 
     Gets or sets the antenna control reference type.
 
@@ -74,13 +74,13 @@ Property detail
 
 .. py:property:: embedded_model
     :canonical: ansys.stk.core.stkobjects.IAntennaControl.embedded_model
-    :type: "IAgAntennaModel"
+    :type: IAgAntennaModel
 
     Gets the current antenna model.
 
 .. py:property:: embedded_model_orientation
     :canonical: ansys.stk.core.stkobjects.IAntennaControl.embedded_model_orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Gets or sets the antenna orientation.
 
@@ -94,7 +94,8 @@ Method detail
 
 
 
-.. py:method:: set_embedded_model(self, modelName:str) -> None
+.. py:method:: set_embedded_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntennaControl.set_embedded_model
 
     Set the current antenna model by name.
 

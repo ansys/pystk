@@ -3,7 +3,7 @@ AdvCATAdvancedEllipsoid
 
 .. py:class:: AdvCATAdvancedEllipsoid
 
-   IAdvCATAdvancedEllipsoid, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvCATAdvancedEllipsoid`
 
    AdvCAT advanced ellipsoid properties.
 

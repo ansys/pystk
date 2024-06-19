@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.control_limit_mode
-    :type: "PROFILE_CONTROL_LIMIT"
+    :type: PROFILE_CONTROL_LIMIT
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.airspeed_options
-    :type: "IAgAvtrBasicManeuverAirspeedOptions"
+    :type: IAgAvtrBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 
@@ -167,13 +167,14 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode:"PROFILE_CONTROL_LIMIT", controlLimitValue:typing.Any) -> None
+.. py:method:: set_control_limit(self, controlLimitMode: PROFILE_CONTROL_LIMIT, controlLimitValue: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~"PROFILE_CONTROL_LIMIT"`
+    **controlLimitMode** : :obj:`~PROFILE_CONTROL_LIMIT`
     **controlLimitValue** : :obj:`~typing.Any`
 
     :Returns:
@@ -183,7 +184,8 @@ Method detail
 
 
 
-.. py:method:: set_min_absolute_altitude(self, enable:bool, altitude:float) -> None
+.. py:method:: set_min_absolute_altitude(self, enable: bool, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.set_min_absolute_altitude
 
     Set whether to enable and a value for the minimum absolute altitude.
 
@@ -198,7 +200,8 @@ Method detail
 
 
 
-.. py:method:: set_max_absolute_altitude(self, enable:bool, altitude:float) -> None
+.. py:method:: set_max_absolute_altitude(self, enable: bool, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.set_max_absolute_altitude
 
     Set whether to enable and a value for the maximum absolute altitude.
 
@@ -213,7 +216,8 @@ Method detail
 
 
 
-.. py:method:: set_min_altitude_rel_anchor(self, enable:bool, altitude:float) -> None
+.. py:method:: set_min_altitude_rel_anchor(self, enable: bool, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.set_min_altitude_rel_anchor
 
     Set whether to enable and a value for the minimum altitude offset from the target.
 
@@ -228,7 +232,8 @@ Method detail
 
 
 
-.. py:method:: set_max_altitude_rel_anchor(self, enable:bool, altitude:float) -> None
+.. py:method:: set_max_altitude_rel_anchor(self, enable: bool, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.set_max_altitude_rel_anchor
 
     Set whether to enable and a value for the maximum altitude offset from the target.
 

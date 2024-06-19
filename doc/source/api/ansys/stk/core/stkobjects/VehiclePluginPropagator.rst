@@ -3,7 +3,7 @@ VehiclePluginPropagator
 
 .. py:class:: VehiclePluginPropagator
 
-   IVehiclePluginPropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePluginPropagator`
 
    Class defining a propagator plugin for HPOP for customization of the accelerations used in the propagation of the satellite trajectory.
 

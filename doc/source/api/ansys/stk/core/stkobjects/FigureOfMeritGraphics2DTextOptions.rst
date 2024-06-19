@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DTextOptions
 
 .. py:class:: FigureOfMeritGraphics2DTextOptions
 
-   IFigureOfMeritGraphics2DTextOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DTextOptions`
 
    Text display options for contour legend.
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorTwoPlanesIntersection
 
 .. py:class:: VectorGeometryToolVectorTwoPlanesIntersection
 
-   IVectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorTwoPlanesIntersection`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined along the intersection of two planes.
 

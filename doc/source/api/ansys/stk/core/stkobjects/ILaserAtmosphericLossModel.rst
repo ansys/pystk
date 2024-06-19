@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ILaserAtmosphericLossModel.type
-    :type: "LASER_PROPAGATION_LOSS_MODEL_TYPE"
+    :type: LASER_PROPAGATION_LOSS_MODEL_TYPE
 
     Gets the model type enumeration.
 

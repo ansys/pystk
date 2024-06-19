@@ -3,7 +3,7 @@ VectorGeometryToolPointRefTo
 
 .. py:class:: VectorGeometryToolPointRefTo
 
-   IVectorGeometryToolPointRefTo, IAnalysisWorkbenchRefTo, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointRefTo`, py:obj:`~IAnalysisWorkbenchRefTo`
 
    Represents a reference to a VGT point.
 

@@ -3,7 +3,7 @@ VehicleSGP4LoadFile
 
 .. py:class:: VehicleSGP4LoadFile
 
-   IVehicleSGP4LoadFile, IVehicleSGP4LoadData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4LoadFile`, py:obj:`~IVehicleSGP4LoadData`
 
    SGP4 propagator. Allows the user to load segments from file.
 

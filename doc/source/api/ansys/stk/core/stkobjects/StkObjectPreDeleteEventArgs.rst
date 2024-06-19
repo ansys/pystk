@@ -3,7 +3,7 @@ StkObjectPreDeleteEventArgs
 
 .. py:class:: StkObjectPreDeleteEventArgs
 
-   IStkObjectPreDeleteEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~IStkObjectPreDeleteEventArgs`
 
    Arguments for the OnStkObjectPreDelete event.
 

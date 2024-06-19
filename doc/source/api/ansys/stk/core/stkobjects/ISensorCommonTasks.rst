@@ -74,7 +74,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_pattern_simple_conic(self, coneAngle:typing.Any, angularResolution:typing.Any) -> "ISensorSimpleConicPattern"
+.. py:method:: set_pattern_simple_conic(self, coneAngle: typing.Any, angularResolution: typing.Any) -> ISensorSimpleConicPattern
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_simple_conic
 
     Define the sensor using a simple conic pattern.
 
@@ -85,9 +86,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorSimpleConicPattern"`
+        :obj:`~ISensorSimpleConicPattern`
 
-.. py:method:: set_pattern_complex_conic(self, innerConeHalfAngle:typing.Any, outerConeHalfAngle:typing.Any, minimumClockAngle:typing.Any, maximumClockAngle:typing.Any) -> "ISensorComplexConicPattern"
+.. py:method:: set_pattern_complex_conic(self, innerConeHalfAngle: typing.Any, outerConeHalfAngle: typing.Any, minimumClockAngle: typing.Any, maximumClockAngle: typing.Any) -> ISensorComplexConicPattern
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_complex_conic
 
     Define the sensor using a complex conic pattern.
 
@@ -100,22 +102,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorComplexConicPattern"`
+        :obj:`~ISensorComplexConicPattern`
 
-.. py:method:: set_pattern_eoir(self, lineOfSiteJitter:float, eProcessingLevel:"SENSOR_EOIR_PROCESSING_LEVELS") -> "ISensorEOIRPattern"
+.. py:method:: set_pattern_eoir(self, lineOfSiteJitter: float, eProcessingLevel: SENSOR_EOIR_PROCESSING_LEVELS) -> ISensorEOIRPattern
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_eoir
 
     Define the sensor using a EOIR pattern.
 
     :Parameters:
 
     **lineOfSiteJitter** : :obj:`~float`
-    **eProcessingLevel** : :obj:`~"SENSOR_EOIR_PROCESSING_LEVELS"`
+    **eProcessingLevel** : :obj:`~SENSOR_EOIR_PROCESSING_LEVELS`
 
     :Returns:
 
-        :obj:`~"ISensorEOIRPattern"`
+        :obj:`~ISensorEOIRPattern`
 
-.. py:method:: set_pattern_half_power(self, frequency:float, antennaDiameter:float, angularResolution:typing.Any) -> "ISensorHalfPowerPattern"
+.. py:method:: set_pattern_half_power(self, frequency: float, antennaDiameter: float, angularResolution: typing.Any) -> ISensorHalfPowerPattern
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_half_power
 
     Define the sensor using a half power pattern.
 
@@ -127,9 +131,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorHalfPowerPattern"`
+        :obj:`~ISensorHalfPowerPattern`
 
-.. py:method:: set_pattern_rectangular(self, verticalHalfAngle:typing.Any, horizontalHalfAngle:typing.Any) -> "ISensorRectangularPattern"
+.. py:method:: set_pattern_rectangular(self, verticalHalfAngle: typing.Any, horizontalHalfAngle: typing.Any) -> ISensorRectangularPattern
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_rectangular
 
     Define the sensor using a rectangular pattern.
 
@@ -140,9 +145,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorRectangularPattern"`
+        :obj:`~ISensorRectangularPattern`
 
-.. py:method:: set_pattern_custom(self, filename:str) -> "ISensorCustomPattern"
+.. py:method:: set_pattern_custom(self, filename: str) -> ISensorCustomPattern
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_custom
 
     Define the sensor using a custom pattern.
 
@@ -152,9 +158,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorCustomPattern"`
+        :obj:`~ISensorCustomPattern`
 
-.. py:method:: set_pattern_sar(self, minElevationAngle:typing.Any, maxElevationAngle:typing.Any, foreExclusionAngle:typing.Any, aftExclusionAngle:typing.Any, parentAltitude:float) -> "ISensorSARPattern"
+.. py:method:: set_pattern_sar(self, minElevationAngle: typing.Any, maxElevationAngle: typing.Any, foreExclusionAngle: typing.Any, aftExclusionAngle: typing.Any, parentAltitude: float) -> ISensorSARPattern
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_sar
 
     Define the sensor using a SAR pattern.
 
@@ -168,9 +175,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorSARPattern"`
+        :obj:`~ISensorSARPattern`
 
-.. py:method:: set_pointing_fixed_az_el(self, azimuth:typing.Any, elevation:typing.Any, aboutBoresight:"AZ_EL_ABOUT_BORESIGHT") -> "ISensorPointingFixed"
+.. py:method:: set_pointing_fixed_az_el(self, azimuth: typing.Any, elevation: typing.Any, aboutBoresight: AZ_EL_ABOUT_BORESIGHT) -> ISensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_az_el
 
     Set the pointing method to Fixed with an AzEl orientation.
 
@@ -178,28 +186,30 @@ Method detail
 
     **azimuth** : :obj:`~typing.Any`
     **elevation** : :obj:`~typing.Any`
-    **aboutBoresight** : :obj:`~"AZ_EL_ABOUT_BORESIGHT"`
+    **aboutBoresight** : :obj:`~AZ_EL_ABOUT_BORESIGHT`
 
     :Returns:
 
-        :obj:`~"ISensorPointingFixed"`
+        :obj:`~ISensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_euler(self, sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> "ISensorPointingFixed"
+.. py:method:: set_pointing_fixed_euler(self, sequence: EULER_ORIENTATION_SEQUENCE, a: typing.Any, b: typing.Any, c: typing.Any) -> ISensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_euler
 
     Set the pointing method to Fixed with a Euler Angles orientation.
 
     :Parameters:
 
-    **sequence** : :obj:`~"EULER_ORIENTATION_SEQUENCE"`
+    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
 
     :Returns:
 
-        :obj:`~"ISensorPointingFixed"`
+        :obj:`~ISensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_quat(self, qx:float, qy:float, qz:float, qs:float) -> "ISensorPointingFixed"
+.. py:method:: set_pointing_fixed_quat(self, qx: float, qy: float, qz: float, qs: float) -> ISensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_quat
 
     Set the pointing method to Fixed with a Quaternion orientation.
 
@@ -212,24 +222,26 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorPointingFixed"`
+        :obj:`~ISensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_ypr(self, sequence:"YPR_ANGLES_SEQUENCE", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> "ISensorPointingFixed"
+.. py:method:: set_pointing_fixed_ypr(self, sequence: YPR_ANGLES_SEQUENCE, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> ISensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_ypr
 
     Set the pointing method to Fixed with a YPR Angles orientation.
 
     :Parameters:
 
-    **sequence** : :obj:`~"YPR_ANGLES_SEQUENCE"`
+    **sequence** : :obj:`~YPR_ANGLES_SEQUENCE`
     **yaw** : :obj:`~typing.Any`
     **pitch** : :obj:`~typing.Any`
     **roll** : :obj:`~typing.Any`
 
     :Returns:
 
-        :obj:`~"ISensorPointingFixed"`
+        :obj:`~ISensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_axes_az_el(self, referenceAxes:str, azimuth:typing.Any, elevation:typing.Any, aboutBoresight:"AZ_EL_ABOUT_BORESIGHT") -> "ISensorPointingFixedAxes"
+.. py:method:: set_pointing_fixed_axes_az_el(self, referenceAxes: str, azimuth: typing.Any, elevation: typing.Any, aboutBoresight: AZ_EL_ABOUT_BORESIGHT) -> ISensorPointingFixedAxes
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_axes_az_el
 
     Set the pointing method to FixedAxes with an AzEl orientation.
 
@@ -238,29 +250,31 @@ Method detail
     **referenceAxes** : :obj:`~str`
     **azimuth** : :obj:`~typing.Any`
     **elevation** : :obj:`~typing.Any`
-    **aboutBoresight** : :obj:`~"AZ_EL_ABOUT_BORESIGHT"`
+    **aboutBoresight** : :obj:`~AZ_EL_ABOUT_BORESIGHT`
 
     :Returns:
 
-        :obj:`~"ISensorPointingFixedAxes"`
+        :obj:`~ISensorPointingFixedAxes`
 
-.. py:method:: set_pointing_fixed_axes_euler(self, referenceAxes:str, sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> "ISensorPointingFixedAxes"
+.. py:method:: set_pointing_fixed_axes_euler(self, referenceAxes: str, sequence: EULER_ORIENTATION_SEQUENCE, a: typing.Any, b: typing.Any, c: typing.Any) -> ISensorPointingFixedAxes
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_axes_euler
 
     Set the pointing method to FixedAxes with a Euler Angles orientation.
 
     :Parameters:
 
     **referenceAxes** : :obj:`~str`
-    **sequence** : :obj:`~"EULER_ORIENTATION_SEQUENCE"`
+    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
 
     :Returns:
 
-        :obj:`~"ISensorPointingFixedAxes"`
+        :obj:`~ISensorPointingFixedAxes`
 
-.. py:method:: set_pointing_fixed_axes_quat(self, referenceAxes:str, qx:float, qy:float, qz:float, qs:float) -> "ISensorPointingFixedAxes"
+.. py:method:: set_pointing_fixed_axes_quat(self, referenceAxes: str, qx: float, qy: float, qz: float, qs: float) -> ISensorPointingFixedAxes
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_axes_quat
 
     Set the pointing method to FixedAxes with a Quaternion orientation.
 
@@ -274,25 +288,27 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorPointingFixedAxes"`
+        :obj:`~ISensorPointingFixedAxes`
 
-.. py:method:: set_pointing_fixed_axes_ypr(self, referenceAxes:str, sequence:"YPR_ANGLES_SEQUENCE", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> "ISensorPointingFixedAxes"
+.. py:method:: set_pointing_fixed_axes_ypr(self, referenceAxes: str, sequence: YPR_ANGLES_SEQUENCE, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> ISensorPointingFixedAxes
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_axes_ypr
 
     Set the pointing method to FixedAxes with a YPR Angles orientation.
 
     :Parameters:
 
     **referenceAxes** : :obj:`~str`
-    **sequence** : :obj:`~"YPR_ANGLES_SEQUENCE"`
+    **sequence** : :obj:`~YPR_ANGLES_SEQUENCE`
     **yaw** : :obj:`~typing.Any`
     **pitch** : :obj:`~typing.Any`
     **roll** : :obj:`~typing.Any`
 
     :Returns:
 
-        :obj:`~"ISensorPointingFixedAxes"`
+        :obj:`~ISensorPointingFixedAxes`
 
-.. py:method:: set_pointing_3d_model(self, attachName:str) -> "ISensorPointing3DModel"
+.. py:method:: set_pointing_3d_model(self, attachName: str) -> ISensorPointing3DModel
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_3d_model
 
     Set the pointing method to 3DModel.
 
@@ -302,9 +318,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorPointing3DModel"`
+        :obj:`~ISensorPointing3DModel`
 
-.. py:method:: set_pointing_grazing_altitude(self, azimuthOffset:typing.Any, grazingAlt:float) -> "ISensorPointingGrazingAltitude"
+.. py:method:: set_pointing_grazing_altitude(self, azimuthOffset: typing.Any, grazingAlt: float) -> ISensorPointingGrazingAltitude
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_grazing_altitude
 
     Set the pointing method to GrazingAlt.
 
@@ -315,9 +332,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorPointingGrazingAltitude"`
+        :obj:`~ISensorPointingGrazingAltitude`
 
-.. py:method:: set_pointing_spinning(self, spinAxisAzimuth:typing.Any, spinAxisElevation:typing.Any, spinAxisConeAngle:typing.Any, scanMode:"SENSOR_SCAN_MODE", spinRate:float, offsetAngle:typing.Any, clockAngleStart:typing.Any, clockAngleStop:typing.Any) -> "ISensorPointingSpinning"
+.. py:method:: set_pointing_spinning(self, spinAxisAzimuth: typing.Any, spinAxisElevation: typing.Any, spinAxisConeAngle: typing.Any, scanMode: SENSOR_SCAN_MODE, spinRate: float, offsetAngle: typing.Any, clockAngleStart: typing.Any, clockAngleStop: typing.Any) -> ISensorPointingSpinning
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_spinning
 
     Set the pointing method to Spinning.
 
@@ -326,7 +344,7 @@ Method detail
     **spinAxisAzimuth** : :obj:`~typing.Any`
     **spinAxisElevation** : :obj:`~typing.Any`
     **spinAxisConeAngle** : :obj:`~typing.Any`
-    **scanMode** : :obj:`~"SENSOR_SCAN_MODE"`
+    **scanMode** : :obj:`~SENSOR_SCAN_MODE`
     **spinRate** : :obj:`~float`
     **offsetAngle** : :obj:`~typing.Any`
     **clockAngleStart** : :obj:`~typing.Any`
@@ -334,23 +352,25 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorPointingSpinning"`
+        :obj:`~ISensorPointingSpinning`
 
-.. py:method:: set_pointing_targeted_tracking(self, trackModeType:"TRACK_MODE_TYPE", aboutBoresightType:"BORESIGHT_TYPE", targetPath:str) -> "ISensorPointingTargeted"
+.. py:method:: set_pointing_targeted_tracking(self, trackModeType: TRACK_MODE_TYPE, aboutBoresightType: BORESIGHT_TYPE, targetPath: str) -> ISensorPointingTargeted
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_targeted_tracking
 
     Set the pointing method to Targeted with Tracking.
 
     :Parameters:
 
-    **trackModeType** : :obj:`~"TRACK_MODE_TYPE"`
-    **aboutBoresightType** : :obj:`~"BORESIGHT_TYPE"`
+    **trackModeType** : :obj:`~TRACK_MODE_TYPE`
+    **aboutBoresightType** : :obj:`~BORESIGHT_TYPE`
     **targetPath** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"ISensorPointingTargeted"`
+        :obj:`~ISensorPointingTargeted`
 
-.. py:method:: set_pointing_along_vector(self, alignmentVector:str, constraintVector:str, clockAngleOffset:typing.Any) -> "ISensorPointingAlongVector"
+.. py:method:: set_pointing_along_vector(self, alignmentVector: str, constraintVector: str, clockAngleOffset: typing.Any) -> ISensorPointingAlongVector
+    :canonical: ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_along_vector
 
     Set the pointing method to Along Vector.
 
@@ -362,5 +382,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISensorPointingAlongVector"`
+        :obj:`~ISensorPointingAlongVector`
 

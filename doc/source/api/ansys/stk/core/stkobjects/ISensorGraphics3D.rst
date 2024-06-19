@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: projection_type
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.projection_type
-    :type: "SENSOR_GRAPHICS_3D_PROJECTION_TYPE"
+    :type: SENSOR_GRAPHICS_3D_PROJECTION_TYPE
 
     Select the projection type from the AgESnVOProjectionType enumeration.
 
@@ -112,25 +112,25 @@ Property detail
 
 .. py:property:: pulse
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.pulse
-    :type: "IAgSnVOPulse"
+    :type: IAgSnVOPulse
 
     Get the sensor's Pulse properties.
 
 .. py:property:: vertex_offset
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.vertex_offset
-    :type: "IAgSnVOOffset"
+    :type: IAgSnVOOffset
 
     Get the sensor's Vertex Offset properties.
 
 .. py:property:: data_displays
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.data_displays
-    :type: "IAgVODataDisplayCollection"
+    :type: IAgVODataDisplayCollection
 
     Get the sensor's Data Display properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.vector
-    :type: "IAgVOVector"
+    :type: IAgVOVector
 
     Get the sensor's Vector properties.
 
@@ -148,7 +148,7 @@ Property detail
 
 .. py:property:: inherit_from_2d
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.inherit_from_2d
-    :type: "SENSOR_GRAPHICS_3D_INHERIT_FROM_2D"
+    :type: SENSOR_GRAPHICS_3D_INHERIT_FROM_2D
 
     Specify how projection distances that are computed based on 2D Graphics projection settings are displayed in the 3D Graphics window.
 
@@ -160,13 +160,13 @@ Property detail
 
 .. py:property:: space_projection_intervals
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.space_projection_intervals
-    :type: "IAgSnVOSpaceProjectionCollection"
+    :type: IAgSnVOSpaceProjectionCollection
 
     Returns time dependent space projection list.
 
 .. py:property:: target_projection_intervals
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.target_projection_intervals
-    :type: "IAgSnVOTargetProjectionCollection"
+    :type: IAgSnVOTargetProjectionCollection
 
     Returns time dependent target projection list.
 
@@ -190,7 +190,7 @@ Property detail
 
 .. py:property:: projection_time_dependency
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.projection_time_dependency
-    :type: "SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE"
+    :type: SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE
 
     Specify how projection distances are determined in the 3D Graphics window. Either using a constant distance at all times or set of user defined intervals and distance values.
 

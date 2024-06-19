@@ -3,7 +3,7 @@ TransmitterModelComplex
 
 .. py:class:: TransmitterModelComplex
 
-   ITransmitterModelComplex, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModelComplex`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a complex transmitter model.
 

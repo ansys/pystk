@@ -3,7 +3,7 @@ StateCalcRARate
 
 .. py:class:: StateCalcRARate
 
-   IStateCalcRARate, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcRARate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    RightAscensionRate Calc objects.
 

@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics.static
-    :type: "IAgFmGfxAttributes"
+    :type: IAgFmGfxAttributes
 
     Get the static graphics.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics.animation
-    :type: "IAgFmGfxAttributesAnimation"
+    :type: IAgFmGfxAttributesAnimation
 
     Get the animation graphics.
 

@@ -3,7 +3,7 @@ StkObject
 
 .. py:class:: StkObject
 
-   IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Represents a generic STK object.
 

@@ -3,7 +3,7 @@ MtoTrackCollection
 
 .. py:class:: MtoTrackCollection
 
-   IMtoTrackCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoTrackCollection`
 
    MTO Track List.
 

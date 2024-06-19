@@ -3,7 +3,7 @@ RadarMultifunctionDetectionProcessing
 
 .. py:class:: RadarMultifunctionDetectionProcessing
 
-   IRadarMultifunctionDetectionProcessing, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarMultifunctionDetectionProcessing`
 
    Class defining multifunction radar detection processing.
 

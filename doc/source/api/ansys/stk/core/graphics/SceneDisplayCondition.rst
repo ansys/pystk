@@ -3,7 +3,7 @@ SceneDisplayCondition
 
 .. py:class:: SceneDisplayCondition
 
-   ISceneDisplayCondition, IDisplayCondition, SupportsDeleteCallback
+   Bases: py:obj:`~ISceneDisplayCondition`, py:obj:`~IDisplayCondition`
 
    A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others.
 

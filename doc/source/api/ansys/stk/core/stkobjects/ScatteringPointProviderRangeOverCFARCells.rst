@@ -3,7 +3,7 @@ ScatteringPointProviderRangeOverCFARCells
 
 .. py:class:: ScatteringPointProviderRangeOverCFARCells
 
-   IScatteringPointProviderRangeOverCFARCells, IScatteringPointProvider, IRadarClutterGeometryModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointProviderRangeOverCFARCells`, py:obj:`~IScatteringPointProvider`, py:obj:`~IRadarClutterGeometryModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a range over CFAR cells scattering point provider.
 

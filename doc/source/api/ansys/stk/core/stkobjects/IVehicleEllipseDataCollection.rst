@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleEllipseDataElement"
+.. py:method:: item(self, index: int) -> IVehicleEllipseDataElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleEllipseDataElement"`
+        :obj:`~IVehicleEllipseDataElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,11 +103,12 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self) -> "IVehicleEllipseDataElement"
+.. py:method:: add(self) -> IVehicleEllipseDataElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.add
 
     Add a new element to the collection.
 
     :Returns:
 
-        :obj:`~"IVehicleEllipseDataElement"`
+        :obj:`~IVehicleEllipseDataElement`
 

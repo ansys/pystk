@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackContinuous.modulator
-    :type: "IAgRadarModulator"
+    :type: IAgRadarModulator
 
     Gets the interface for setting the modulator parameters.
 

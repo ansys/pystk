@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphResultCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -67,7 +67,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "ITargeterGraphResult"
+.. py:method:: item(self, index: int) -> ITargeterGraphResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphResultCollection.item
 
     Allow you to iterate through the collection.
 
@@ -77,7 +78,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITargeterGraphResult"`
+        :obj:`~ITargeterGraphResult`
 
 
 

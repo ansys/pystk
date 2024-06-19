@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.ILevelAttribute.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     The style of the line representing contours at the given level. A member of the AgELineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.ILevelAttribute.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     The width of the line representing contours at the given level.
 

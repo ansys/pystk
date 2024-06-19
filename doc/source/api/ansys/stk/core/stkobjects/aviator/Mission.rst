@@ -3,7 +3,7 @@ Mission
 
 .. py:class:: Mission
 
-   IMission, SupportsDeleteCallback
+   Bases: py:obj:`~IMission`
 
    Class defining the Aviator mission.
 

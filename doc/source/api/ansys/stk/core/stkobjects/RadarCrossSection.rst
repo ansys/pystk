@@ -3,7 +3,7 @@ RadarCrossSection
 
 .. py:class:: RadarCrossSection
 
-   IRadarCrossSection, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSection`
 
    Class defining a radar cross section.
 

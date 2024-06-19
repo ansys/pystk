@@ -3,7 +3,7 @@ RFFilterModelElliptic
 
 .. py:class:: RFFilterModelElliptic
 
-   IRFFilterModelElliptic, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelElliptic`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a elliptic filter model.
 

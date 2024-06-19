@@ -3,7 +3,7 @@ VectorGeometryToolPointGlint
 
 .. py:class:: VectorGeometryToolPointGlint
 
-   IVectorGeometryToolPointGlint, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointGlint`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Point on central body surface that reflects from source to observer.
 

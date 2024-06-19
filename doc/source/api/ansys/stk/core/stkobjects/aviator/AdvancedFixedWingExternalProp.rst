@@ -3,7 +3,7 @@ AdvancedFixedWingExternalProp
 
 .. py:class:: AdvancedFixedWingExternalProp
 
-   IAdvancedFixedWingExternalProp, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingExternalProp`
 
    Class defining an External Prop File powerplant in the Advanced Fixed Wing Tool.
 

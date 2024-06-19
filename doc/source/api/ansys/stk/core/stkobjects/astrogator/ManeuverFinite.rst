@@ -3,7 +3,7 @@ ManeuverFinite
 
 .. py:class:: ManeuverFinite
 
-   IManeuverFinite, IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverFinite`, py:obj:`~IManeuver`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Finite Maneuver.
 

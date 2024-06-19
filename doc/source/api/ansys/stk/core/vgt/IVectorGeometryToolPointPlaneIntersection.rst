@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlaneIntersection.direction_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a direction vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlaneIntersection.reference_plane
-    :type: "IAgCrdnPlaneRefTo"
+    :type: IAgCrdnPlaneRefTo
 
     Specify a reference plane.
 
 .. py:property:: origin_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlaneIntersection.origin_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify the origin point.
 

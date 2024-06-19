@@ -3,7 +3,7 @@ VmGraphics3DSpatialCalculationLevels
 
 .. py:class:: VmGraphics3DSpatialCalculationLevels
 
-   IVmGraphics3DSpatialCalculationLevels, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGraphics3DSpatialCalculationLevels`
 
    Class defining Spatial Calculation Levels for Volumetric Object.
 

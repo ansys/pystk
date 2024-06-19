@@ -3,7 +3,7 @@ AstrogatorCentralBody
 
 .. py:class:: AstrogatorCentralBody
 
-   IAstrogatorCentralBody, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAstrogatorCentralBody`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Central Body.
 

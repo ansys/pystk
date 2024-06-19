@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: time_array_a
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayMerged.time_array_a
-    :type: "IAgCrdnEventArray"
+    :type: IAgCrdnEventArray
 
     The first time array.
 
 .. py:property:: time_array_b
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayMerged.time_array_b
-    :type: "IAgCrdnEventArray"
+    :type: IAgCrdnEventArray
 
     The second time array.
 

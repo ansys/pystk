@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridCartesian
 
 .. py:class:: SpatialAnalysisToolVolumeGridCartesian
 
-   ISpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridCartesian`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume grid Cartesian interface.
 

@@ -11,6 +11,30 @@ FONT_STYLE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~REGULAR`
+              - Regular font.
+
+            * - :py:attr:`~BOLD`
+              - Bold font.
+
+            * - :py:attr:`~ITALIC`
+              - Italic font.
+
+            * - :py:attr:`~UNDERLINE`
+              - Underlined font.
+
+            * - :py:attr:`~STRIKEOUT`
+              - Strike-out style.
+
+
 Import detail
 -------------
 

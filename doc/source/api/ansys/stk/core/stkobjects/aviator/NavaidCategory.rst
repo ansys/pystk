@@ -3,7 +3,7 @@ NavaidCategory
 
 .. py:class:: NavaidCategory
 
-   INavaidCategory, SupportsDeleteCallback
+   Bases: py:obj:`~INavaidCategory`
 
    Class defining the navaid category in the Aviator catalog.
 

@@ -3,7 +3,7 @@ ProfileSNOPTOptimizer
 
 .. py:class:: ProfileSNOPTOptimizer
 
-   IProfileSNOPTOptimizer, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileSNOPTOptimizer`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    SNOPT optimizer profile.
 

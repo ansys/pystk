@@ -3,7 +3,7 @@ ReceiverModelMultibeam
 
 .. py:class:: ReceiverModelMultibeam
 
-   IReceiverModelMultibeam, IReceiverModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverModelMultibeam`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a mutibeam receiver model.
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorConing
 
 .. py:class:: VectorGeometryToolVectorConing
 
-   IVectorGeometryToolVectorConing, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorConing`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Vector created by revolving the Reference vector around the About vector with the specified rate.
 

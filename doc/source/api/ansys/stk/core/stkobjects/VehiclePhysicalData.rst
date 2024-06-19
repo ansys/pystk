@@ -3,7 +3,7 @@ VehiclePhysicalData
 
 .. py:class:: VehiclePhysicalData
 
-   IVehiclePhysicalData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePhysicalData`
 
    Class defining physical data for the LOP force model.
 

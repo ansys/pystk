@@ -3,7 +3,7 @@ RadarWaveformSarPulseIntegration
 
 .. py:class:: RadarWaveformSarPulseIntegration
 
-   IRadarWaveformSarPulseIntegration, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarWaveformSarPulseIntegration`
 
    Class defining the pulse integration for a SAR waveform.
 

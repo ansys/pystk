@@ -3,7 +3,7 @@ VehicleGraphics2DElevationsCollection
 
 .. py:class:: VehicleGraphics2DElevationsCollection
 
-   IVehicleGraphics2DElevationsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DElevationsCollection`
 
    Collection for elevation contours. Used by vehicles.
 

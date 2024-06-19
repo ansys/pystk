@@ -3,7 +3,7 @@ ModelArticulationCollection
 
 .. py:class:: ModelArticulationCollection
 
-   IModelArticulationCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IModelArticulationCollection`
 
    A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry.
 

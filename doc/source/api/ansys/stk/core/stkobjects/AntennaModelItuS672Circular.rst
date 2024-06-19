@@ -3,7 +3,7 @@ AntennaModelItuS672Circular
 
 .. py:class:: AntennaModelItuS672Circular
 
-   IAntennaModelItuS672Circular, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuS672Circular`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R S672 circular antenna model.
 

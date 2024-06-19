@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.altitude_reference
-    :type: "AGL_MSL"
+    :type: AGL_MSL
 
     Gets or sets the altitude reference.
 
@@ -87,25 +87,25 @@ Property detail
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.enroute_options
-    :type: "IAgAvtrEnrouteOptions"
+    :type: IAgAvtrEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.enroute_turn_direction_options
-    :type: "IAgAvtrEnrouteTurnDirectionOptions"
+    :type: IAgAvtrEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
 .. py:property:: vertical_plane_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.vertical_plane_options
-    :type: "IAgAvtrVerticalPlaneAndFlightPathOptions"
+    :type: IAgAvtrVerticalPlaneAndFlightPathOptions
 
     Get the vertical plane options.
 
 .. py:property:: smooth_transition_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.smooth_transition_mode
-    :type: "TRANSITION_TO_HOVER_MODE"
+    :type: TRANSITION_TO_HOVER_MODE
 
     Gets or sets the transition mode of the aircraft at the end of the procedure.
 
@@ -120,7 +120,8 @@ Method detail
 
 
 
-.. py:method:: set_transition_course(self, course:typing.Any, useMagneticCourse:bool) -> None
+.. py:method:: set_transition_course(self, course: typing.Any, useMagneticCourse: bool) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.set_transition_course
 
     Set the course and heading reference.
 
@@ -134,6 +135,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: set_transition_into_wind(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.set_transition_into_wind
 
     Set the option to transition into the wind to true.
 
@@ -146,11 +148,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

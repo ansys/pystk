@@ -3,7 +3,7 @@ StateCalcVectorX
 
 .. py:class:: StateCalcVectorX
 
-   IComponentInfo, ICloneable, IStateCalcVectorX, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVectorX`
 
    VectorX Calc objects.
 

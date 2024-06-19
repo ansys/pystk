@@ -3,7 +3,7 @@ DemodulatorModelExternal
 
 .. py:class:: DemodulatorModelExternal
 
-   IDemodulatorModelExternal, IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModelExternal`, py:obj:`~IDemodulatorModel`
 
    Class defining a external modulator model.
 

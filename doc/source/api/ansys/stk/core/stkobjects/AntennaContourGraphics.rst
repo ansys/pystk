@@ -3,7 +3,7 @@ AntennaContourGraphics
 
 .. py:class:: AntennaContourGraphics
 
-   IAntennaContourGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaContourGraphics`
 
    Class defining contour Graphics properties of a Antenna.
 

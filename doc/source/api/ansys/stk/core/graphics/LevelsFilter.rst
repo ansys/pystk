@@ -3,7 +3,7 @@ LevelsFilter
 
 .. py:class:: LevelsFilter
 
-   ILevelsFilter, IRasterFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ILevelsFilter`, py:obj:`~IRasterFilter`
 
    Adjusts the band levels of the source raster linearly.
 

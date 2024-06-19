@@ -3,7 +3,7 @@ Geodetic
 
 .. py:class:: Geodetic
 
-   IGeodetic, IPosition, SupportsDeleteCallback
+   Bases: py:obj:`~IGeodetic`, py:obj:`~IPosition`
 
    Class defining Geodetic position.
 

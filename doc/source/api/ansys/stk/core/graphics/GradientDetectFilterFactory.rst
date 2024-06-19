@@ -3,7 +3,7 @@ GradientDetectFilterFactory
 
 .. py:class:: GradientDetectFilterFactory
 
-   IGradientDetectFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IGradientDetectFilterFactory`
 
    Apply a convolution filter to detect gradients in the source raster.
 

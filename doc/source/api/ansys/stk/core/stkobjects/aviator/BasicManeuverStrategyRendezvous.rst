@@ -3,7 +3,7 @@ BasicManeuverStrategyRendezvous
 
 .. py:class:: BasicManeuverStrategyRendezvous
 
-   IBasicManeuverStrategyRendezvous, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyRendezvous`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Rendezvous/Formation strategy for a basic maneuver procedure.
 

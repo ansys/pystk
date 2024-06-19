@@ -3,7 +3,7 @@ AdvCATAvailableObjectCollection
 
 .. py:class:: AdvCATAvailableObjectCollection
 
-   IAdvCATAvailableObjectCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvCATAvailableObjectCollection`
 
    Read-only collection of available objects.
 

@@ -3,7 +3,7 @@ STKXConControlQuitReceivedEventArgs
 
 .. py:class:: STKXConControlQuitReceivedEventArgs
 
-   ISTKXConControlQuitReceivedEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~ISTKXConControlQuitReceivedEventArgs`
 
    Arguments for the OnConControlQuitReceived event.
 

@@ -3,7 +3,7 @@ DemodulatorModel
 
 .. py:class:: DemodulatorModel
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a demodulator model.
 

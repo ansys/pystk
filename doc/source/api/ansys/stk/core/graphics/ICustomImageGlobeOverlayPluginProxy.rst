@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: custom_image_globe_overlay
     :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginProxy.custom_image_globe_overlay
-    :type: "IAgStkGraphicsCustomImageGlobeOverlay"
+    :type: IAgStkGraphicsCustomImageGlobeOverlay
 
     Returns a custom image globe overlay.
 

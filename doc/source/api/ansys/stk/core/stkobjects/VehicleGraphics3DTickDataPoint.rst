@@ -3,7 +3,7 @@ VehicleGraphics3DTickDataPoint
 
 .. py:class:: VehicleGraphics3DTickDataPoint
 
-   IVehicleGraphics3DTickData, IVehicleGraphics3DTickDataPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DTickData`, py:obj:`~IVehicleGraphics3DTickDataPoint`
 
    Point type tick mark.
 

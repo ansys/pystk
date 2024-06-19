@@ -55,19 +55,19 @@ Property detail
 
 .. py:property:: ephem_source
     :canonical: ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.ephem_source
-    :type: "EPHEM_SOURCE"
+    :type: EPHEM_SOURCE
 
     Source for the third body's ephemeris.
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.mode
-    :type: "IAgComponentInfo"
+    :type: IAgComponentInfo
 
     Get the third body gravity mode. The IAgComponentInfo object returned by this property can be cast to IAgVAGravityFieldFunction or IAgVAPointMassFunction depending on the selected ModeType.
 
 .. py:property:: mode_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.mode_type
-    :type: "THIRD_BODY_MODE"
+    :type: THIRD_BODY_MODE
 
     Get the third body gravity mode type.
 
@@ -86,13 +86,14 @@ Method detail
 
 
 
-.. py:method:: set_mode_type(self, mode:"THIRD_BODY_MODE") -> None
+.. py:method:: set_mode_type(self, mode: THIRD_BODY_MODE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.set_mode_type
 
     Set the third body gravity mode.
 
     :Parameters:
 
-    **mode** : :obj:`~"THIRD_BODY_MODE"`
+    **mode** : :obj:`~THIRD_BODY_MODE`
 
     :Returns:
 

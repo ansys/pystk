@@ -3,7 +3,7 @@ ProcedureHoldingRacetrack
 
 .. py:class:: ProcedureHoldingRacetrack
 
-   IProcedureHoldingRacetrack, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureHoldingRacetrack`, py:obj:`~IProcedure`
 
    Class defining a holding racetrack procedure.
 

@@ -3,7 +3,7 @@ MtoGraphics3DTrackCollection
 
 .. py:class:: MtoGraphics3DTrackCollection
 
-   IMtoGraphics3DTrackCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics3DTrackCollection`
 
    MTO 3D Graphics Track List.
 

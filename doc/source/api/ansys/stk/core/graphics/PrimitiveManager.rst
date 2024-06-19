@@ -3,7 +3,7 @@ PrimitiveManager
 
 .. py:class:: PrimitiveManager
 
-   IPrimitiveManager, SupportsDeleteCallback
+   Bases: py:obj:`~IPrimitiveManager`
 
    The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered.
 

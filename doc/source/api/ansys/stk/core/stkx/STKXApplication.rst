@@ -3,7 +3,7 @@ STKXApplication
 
 .. py:class:: STKXApplication
 
-   ISTKXApplication, SupportsDeleteCallback
+   Bases: py:obj:`~ISTKXApplication`
 
    STK X Application object.
 

@@ -3,7 +3,7 @@ BasicManeuverAirspeedOptions
 
 .. py:class:: BasicManeuverAirspeedOptions
 
-   IBasicManeuverAirspeedOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverAirspeedOptions`
 
    Class defining the airspeed options for basic maneuver strategies.
 

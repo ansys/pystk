@@ -3,7 +3,7 @@ StrategyMATLABFull3D
 
 .. py:class:: StrategyMATLABFull3D
 
-   IStrategyMATLABFull3D, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IStrategyMATLABFull3D`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure.
 

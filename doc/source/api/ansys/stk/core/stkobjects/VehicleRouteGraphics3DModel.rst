@@ -3,7 +3,7 @@ VehicleRouteGraphics3DModel
 
 .. py:class:: VehicleRouteGraphics3DModel
 
-   IVehicleRouteGraphics3DModel, IGraphics3DModel, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRouteGraphics3DModel`, py:obj:`~IGraphics3DModel`
 
    3D marker for great arc vehicles.
 

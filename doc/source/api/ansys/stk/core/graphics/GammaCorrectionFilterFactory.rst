@@ -3,7 +3,7 @@ GammaCorrectionFilterFactory
 
 .. py:class:: GammaCorrectionFilterFactory
 
-   IGammaCorrectionFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IGammaCorrectionFilterFactory`
 
    Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2.
 

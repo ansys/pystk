@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: grant_partner_access(self, vendor:str, product:str, key:str) -> typing.Any
+.. py:method:: grant_partner_access(self, vendor: str, product: str, key: str) -> typing.Any
+    :canonical: ansys.stk.core.uiapplication.IUiApplicationPartnerAccess.grant_partner_access
 
     Provide object model root for authorized business partners.
 

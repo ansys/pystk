@@ -57,37 +57,37 @@ Property detail
 
 .. py:property:: point_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.point_coverage
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Accesses for the point selected in the graphics window.
 
 .. py:property:: point_daily_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.point_daily_coverage
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Access times for the point selected in the graphics window.
 
 .. py:property:: point_prob_of_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.point_prob_of_coverage
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Get the probability of coverage for the point selected in the graphics window being achieved as a function of the time past a request for coverage.
 
 .. py:property:: region_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.region_coverage
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Summary of coverage for the region selected in the graphics window.
 
 .. py:property:: region_full_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.region_full_coverage
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Summary of the coverage intervals for the selected region, including access start and end times, duration of each interval and the percentage of the region covered during each pass.
 
 .. py:property:: region_pass_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.region_pass_coverage
-    :type: "IAgDataProviderInfo"
+    :type: IAgDataProviderInfo
 
     Detailed information about the intervals of time when each asset can provide coverage to the selected region.
 
@@ -101,7 +101,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: select_point(self, lat:typing.Any, lon:typing.Any) -> None
+.. py:method:: select_point(self, lat: typing.Any, lon: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.select_point
 
     Lat param uses Latitude Dimension. Lon param uses Longitude Dimension.
 
@@ -114,7 +115,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: select_region(self, regionName:str) -> None
+.. py:method:: select_region(self, regionName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.select_region
 
     Select a region.
 
@@ -133,6 +135,7 @@ Method detail
 
 
 .. py:method:: clear_selection(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.clear_selection
 
     Clear the selected point or region.
 
@@ -141,11 +144,12 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: get_grid_point_selection(self) -> "ICoverageGridPointSelection"
+.. py:method:: get_grid_point_selection(self) -> ICoverageGridPointSelection
+    :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.get_grid_point_selection
 
     Return a collection of grid points that allows the user to select points into the grid inspector.
 
     :Returns:
 
-        :obj:`~"ICoverageGridPointSelection"`
+        :obj:`~ICoverageGridPointSelection`
 

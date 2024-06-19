@@ -3,7 +3,7 @@ ConversionUtility
 
 .. py:class:: ConversionUtility
 
-   IConversionUtility, SupportsDeleteCallback
+   Bases: py:obj:`~IConversionUtility`
 
    Object that contains a unit conversion utility.
 

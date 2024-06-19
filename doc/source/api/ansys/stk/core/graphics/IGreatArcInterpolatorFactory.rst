@@ -40,15 +40,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IGreatArcInterpolator"
+.. py:method:: initialize(self) -> IGreatArcInterpolator
+    :canonical: ansys.stk.core.graphics.IGreatArcInterpolatorFactory.initialize
 
     Initialize a default great arc interpolator. This is equivalent to constructing a great arc interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree.
 
     :Returns:
 
-        :obj:`~"IGreatArcInterpolator"`
+        :obj:`~IGreatArcInterpolator`
 
-.. py:method:: initialize_with_central_body(self, centralBody:str) -> "IGreatArcInterpolator"
+.. py:method:: initialize_with_central_body(self, centralBody: str) -> IGreatArcInterpolator
+    :canonical: ansys.stk.core.graphics.IGreatArcInterpolatorFactory.initialize_with_central_body
 
     Initialize a great arc interpolator with the specified centralBody and a granularity of 1 degree.
 
@@ -58,9 +60,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGreatArcInterpolator"`
+        :obj:`~IGreatArcInterpolator`
 
-.. py:method:: initialize_with_central_body_and_granularity(self, centralBody:str, granularity:float) -> "IGreatArcInterpolator"
+.. py:method:: initialize_with_central_body_and_granularity(self, centralBody: str, granularity: float) -> IGreatArcInterpolator
+    :canonical: ansys.stk.core.graphics.IGreatArcInterpolatorFactory.initialize_with_central_body_and_granularity
 
     Initialize a great arc interpolator with the specified centralBody and granularity.
 
@@ -71,5 +74,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGreatArcInterpolator"`
+        :obj:`~IGreatArcInterpolator`
 

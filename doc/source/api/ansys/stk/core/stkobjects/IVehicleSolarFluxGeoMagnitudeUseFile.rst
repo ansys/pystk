@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: geomag_flux_update_rate
     :canonical: ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile.geomag_flux_update_rate
-    :type: "VEHICLE_GEOMAG_FLUX_UPDATE_RATE"
+    :type: VEHICLE_GEOMAG_FLUX_UPDATE_RATE
 
     Select a  method for updating the geomagnetic flux update rate.
 
 .. py:property:: geomag_flux_src
     :canonical: ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile.geomag_flux_src
-    :type: "VEHICLE_GEOMAG_FLUX_SRC"
+    :type: VEHICLE_GEOMAG_FLUX_SRC
 
     Select a  method for updating the geomagnetic flux update rate.
 

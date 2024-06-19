@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics2DGroundEllipsesElement"
+.. py:method:: item(self, index: int) -> IVehicleGraphics2DGroundEllipsesElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DGroundEllipsesElement"`
+        :obj:`~IVehicleGraphics2DGroundEllipsesElement`
 
 

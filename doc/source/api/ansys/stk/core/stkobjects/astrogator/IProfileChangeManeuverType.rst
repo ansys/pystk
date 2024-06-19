@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: segment
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType.segment
-    :type: "IAgVAMCSManeuver"
+    :type: IAgVAMCSManeuver
 
     Gets or sets the targeted maneuver segment.
 
 .. py:property:: maneuver_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType.maneuver_type
-    :type: "MANEUVER_TYPE"
+    :type: MANEUVER_TYPE
 
     Gets or sets the new maneuver type for the targeted segment.
 

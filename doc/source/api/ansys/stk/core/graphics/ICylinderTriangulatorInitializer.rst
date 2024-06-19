@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_simple(self, length:float, radius:float) -> "ISolidTriangulatorResult"
+.. py:method:: create_simple(self, length: float, radius: float) -> ISolidTriangulatorResult
+    :canonical: ansys.stk.core.graphics.ICylinderTriangulatorInitializer.create_simple
 
     Compute the triangulation for a cylinder centered at the origin.
 
@@ -49,9 +50,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISolidTriangulatorResult"`
+        :obj:`~ISolidTriangulatorResult`
 
-.. py:method:: compute(self, length:float, bottomRadius:float, topRadius:float, slices:int, cylinderFill:"CYLINDER_FILL") -> "ISolidTriangulatorResult"
+.. py:method:: compute(self, length: float, bottomRadius: float, topRadius: float, slices: int, cylinderFill: CYLINDER_FILL) -> ISolidTriangulatorResult
+    :canonical: ansys.stk.core.graphics.ICylinderTriangulatorInitializer.compute
 
     Compute the triangulation for a cylinder centered at the origin.
 
@@ -61,9 +63,9 @@ Method detail
     **bottomRadius** : :obj:`~float`
     **topRadius** : :obj:`~float`
     **slices** : :obj:`~int`
-    **cylinderFill** : :obj:`~"CYLINDER_FILL"`
+    **cylinderFill** : :obj:`~CYLINDER_FILL`
 
     :Returns:
 
-        :obj:`~"ISolidTriangulatorResult"`
+        :obj:`~ISolidTriangulatorResult`
 

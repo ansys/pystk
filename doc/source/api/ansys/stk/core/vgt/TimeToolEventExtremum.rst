@@ -3,7 +3,7 @@ TimeToolEventExtremum
 
 .. py:class:: TimeToolEventExtremum
 
-   ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventExtremum`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 

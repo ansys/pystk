@@ -70,7 +70,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IMtoGraphics2DTrack"
+.. py:method:: item(self, index: int) -> IMtoGraphics2DTrack
+    :canonical: ansys.stk.core.stkobjects.IMtoGraphics2DTrackCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -80,10 +81,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoGraphics2DTrack"`
+        :obj:`~IMtoGraphics2DTrack`
 
 
-.. py:method:: get_track_from_id(self, trackId:int) -> "IMtoGraphics2DTrack"
+.. py:method:: get_track_from_id(self, trackId: int) -> IMtoGraphics2DTrack
+    :canonical: ansys.stk.core.stkobjects.IMtoGraphics2DTrackCollection.get_track_from_id
 
     Given a track id, returns an element in the collection.
 
@@ -93,7 +95,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoGraphics2DTrack"`
+        :obj:`~IMtoGraphics2DTrack`
 
 
 

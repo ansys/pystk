@@ -3,7 +3,7 @@ MtoGraphics3DGlobalTrackOptions
 
 .. py:class:: MtoGraphics3DGlobalTrackOptions
 
-   IMtoGraphics3DGlobalTrackOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics3DGlobalTrackOptions`
 
    Global 3D graphics MTO track options.
 

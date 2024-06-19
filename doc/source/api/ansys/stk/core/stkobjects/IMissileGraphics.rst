@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.attributes_type
-    :type: "VEHICLE_GRAPHICS_2D_ATTRIBUTES"
+    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTES
 
     Type of display: basic, during access intervals, during custom intervals, or real time.
 
@@ -74,55 +74,55 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.attributes
-    :type: "IAgVeGfxAttributes"
+    :type: IAgVeGfxAttributes
 
     Get the 2D Graphics attributes.
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.pass_data
-    :type: "IAgVeGfxTrajectoryPassData"
+    :type: IAgVeGfxTrajectoryPassData
 
     Get the 2D trajectory graphics.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.resolution
-    :type: "IAgVeGfxTrajectoryResolution"
+    :type: IAgVeGfxTrajectoryResolution
 
     Get the resolution graphics.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.elev_contours
-    :type: "IAgVeGfxElevContours"
+    :type: IAgVeGfxElevContours
 
     Get the elevation contours graphics.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.ground_ellipses
-    :type: "IAgVeGfxGroundEllipsesCollection"
+    :type: IAgVeGfxGroundEllipsesCollection
 
     Get the ground ellipses graphics.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.range_contours
-    :type: "IAgGfxRangeContours"
+    :type: IAgGfxRangeContours
 
     Get the range contour graphics.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.lighting
-    :type: "IAgVeGfxLighting"
+    :type: IAgVeGfxLighting
 
     Get the lighting graphics.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.swath
-    :type: "IAgVeGfxSwath"
+    :type: IAgVeGfxSwath
 
     Get the swath graphics.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.label_notes
-    :type: "IAgLabelNoteCollection"
+    :type: IAgLabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
@@ -140,7 +140,7 @@ Property detail
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.saa
-    :type: "IAgVeGfxSAA"
+    :type: IAgVeGfxSAA
 
     Get the missile's South Atlantic Anomaly Contour properties.
 
@@ -152,7 +152,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics.radar_cross_section
-    :type: "IAgRadarCrossSectionGraphics"
+    :type: IAgRadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 
@@ -161,25 +161,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes:"VEHICLE_GRAPHICS_2D_ATTRIBUTES") -> None
+.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> None
+    :canonical: ansys.stk.core.stkobjects.IMissileGraphics.set_attributes_type
 
     Set the type of display.
 
     :Parameters:
 
-    **attributes** : :obj:`~"VEHICLE_GRAPHICS_2D_ATTRIBUTES"`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes:"VEHICLE_GRAPHICS_2D_ATTRIBUTES") -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMissileGraphics.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~"VEHICLE_GRAPHICS_2D_ATTRIBUTES"`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
 
     :Returns:
 

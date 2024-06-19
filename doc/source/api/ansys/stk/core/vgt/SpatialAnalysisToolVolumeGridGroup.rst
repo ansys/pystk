@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridGroup
 
 .. py:class:: SpatialAnalysisToolVolumeGridGroup
 
-   ISpatialAnalysisToolVolumeGridGroup, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridGroup`
 
    Access or create VGT volume grids associated with an object or a central body.
 

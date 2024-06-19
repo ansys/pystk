@@ -3,7 +3,7 @@ TerrainCollection
 
 .. py:class:: TerrainCollection
 
-   ITerrainCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ITerrainCollection`
 
    Collection of terrain data files available in the Scenario for visualization and analysis.
 

@@ -3,7 +3,7 @@ EOIRShapeObject
 
 .. py:class:: EOIRShapeObject
 
-   IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeObject`
 
    Represents a generic shape object.
 

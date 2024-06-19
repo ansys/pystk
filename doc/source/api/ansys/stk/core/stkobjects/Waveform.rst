@@ -3,7 +3,7 @@ Waveform
 
 .. py:class:: Waveform
 
-   IWaveform, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IWaveform`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a waveform.
 

@@ -3,7 +3,7 @@ StateCalcGeodeticTrueLongitude
 
 .. py:class:: StateCalcGeodeticTrueLongitude
 
-   IComponentInfo, ICloneable, IStateCalcGeodeticTrueLongitude, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcGeodeticTrueLongitude`
 
    GeodeticTrueLongitude Calc objects.
 

@@ -77,37 +77,37 @@ Property detail
 
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.triangle_winding_order
-    :type: "WINDING_ORDER"
+    :type: WINDING_ORDER
 
     Gets or sets the orientation of front-facing triangles. This is used in combination with cull face for culling.
 
 .. py:property:: cull_face
     :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.cull_face
-    :type: "CULL_FACE"
+    :type: CULL_FACE
 
     Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
 
 .. py:property:: shade_model
     :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.shade_model
-    :type: "RENDERER_SHADE_MODEL"
+    :type: RENDERER_SHADE_MODEL
 
     Gets or sets the shading model for the mesh.
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.texture
-    :type: "IAgStkGraphicsRendererTexture2D"
+    :type: IAgStkGraphicsRendererTexture2D
 
     Gets or sets the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.texture_filter
-    :type: "IAgStkGraphicsTextureFilter2D"
+    :type: IAgStkGraphicsTextureFilter2D
 
     Gets or sets the filter used for the texture associated with this triangle mesh.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.set_hint
-    :type: "SET_HINT"
+    :type: SET_HINT
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
@@ -144,7 +144,8 @@ Method detail
 
 
 
-.. py:method:: set(self, positions:list, normals:list, indices:list) -> None
+.. py:method:: set(self, positions: list, normals: list, indices: list) -> None
+    :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.set
 
     Define the triangle mesh using an indexed triangle list specified by positions, normals, and indices. The mesh is rendered in the primitive's reference frame.
 
@@ -158,7 +159,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_optional_parameters(self, positions:list, normals:list, indices:list, optionalParameters:"ITriangleMeshPrimitiveOptionalParameters") -> None
+.. py:method:: set_with_optional_parameters(self, positions: list, normals: list, indices: list, optionalParameters: ITriangleMeshPrimitiveOptionalParameters) -> None
+    :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.set_with_optional_parameters
 
     Define the triangle mesh using an indexed triangle list specified by positions, normals, indices, and optionalParameters. The mesh is rendered in the primitive's reference frame.
 
@@ -167,19 +169,20 @@ Method detail
     **positions** : :obj:`~list`
     **normals** : :obj:`~list`
     **indices** : :obj:`~list`
-    **optionalParameters** : :obj:`~"ITriangleMeshPrimitiveOptionalParameters"`
+    **optionalParameters** : :obj:`~ITriangleMeshPrimitiveOptionalParameters`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_triangulator(self, triangulator:"ITriangulatorResult") -> None
+.. py:method:: set_triangulator(self, triangulator: ITriangulatorResult) -> None
+    :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.set_triangulator
 
     Define the triangle mesh using the specified triangulator. The mesh is rendered in the primitive's reference frame.
 
     :Parameters:
 
-    **triangulator** : :obj:`~"ITriangulatorResult"`
+    **triangulator** : :obj:`~ITriangulatorResult`
 
     :Returns:
 

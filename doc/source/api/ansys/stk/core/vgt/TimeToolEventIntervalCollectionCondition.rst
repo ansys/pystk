@@ -3,7 +3,7 @@ TimeToolEventIntervalCollectionCondition
 
 .. py:class:: TimeToolEventIntervalCollectionCondition
 
-   ITimeToolEventIntervalCollectionCondition, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalCollectionCondition`, py:obj:`~ITimeToolEventIntervalCollection`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters.
 

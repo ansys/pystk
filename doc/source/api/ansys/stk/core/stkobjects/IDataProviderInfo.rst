@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IDataProviderInfo.type
-    :type: "DATA_PROVIDER_TYPE"
+    :type: DATA_PROVIDER_TYPE
 
     Returns a type of the data provider.
 
@@ -63,6 +63,7 @@ Method detail
 
 
 .. py:method:: is_group(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.IDataProviderInfo.is_group
 
     Determine if the data provider represents a group.
 

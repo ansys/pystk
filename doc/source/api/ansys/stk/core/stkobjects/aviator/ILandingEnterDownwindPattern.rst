@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: approach_fix_range_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.approach_fix_range_mode
-    :type: "LANDING_APPROACH_FIX_RANGE_MODE"
+    :type: LANDING_APPROACH_FIX_RANGE_MODE
 
     Gets or sets the reference point on the runway for the Approach Fix Range.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: final_turn
     :canonical: ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.final_turn
-    :type: "NAVIGATOR_TURN_DIRECTION"
+    :type: NAVIGATOR_TURN_DIRECTION
 
     Gets or sets the direction of the turn that the aircraft will make when it lines up over the runway to land.
 

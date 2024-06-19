@@ -3,7 +3,7 @@ StateCalcDriftRateFactor
 
 .. py:class:: StateCalcDriftRateFactor
 
-   IComponentInfo, ICloneable, IStateCalcDriftRateFactor, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDriftRateFactor`
 
    DriftRateFactor Calc objects.
 

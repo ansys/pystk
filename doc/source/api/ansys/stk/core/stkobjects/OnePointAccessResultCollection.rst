@@ -3,7 +3,7 @@ OnePointAccessResultCollection
 
 .. py:class:: OnePointAccessResultCollection
 
-   IOnePointAccessResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IOnePointAccessResultCollection`
 
    Represents the data sets for one point access.
 

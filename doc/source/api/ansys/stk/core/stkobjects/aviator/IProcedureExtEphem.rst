@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.flight_mode
-    :type: "EXT_EPHEM_FLIGHT_MODE"
+    :type: EXT_EPHEM_FLIGHT_MODE
 
     Get the flight mode.
 
@@ -132,13 +132,13 @@ Property detail
 
 .. py:property:: course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.course_mode
-    :type: "EPHEM_SHIFT_ROTATE_COURSE_MODE"
+    :type: EPHEM_SHIFT_ROTATE_COURSE_MODE
 
     Get the course mode.
 
 .. py:property:: altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.altitude_mode
-    :type: "EPHEM_SHIFT_ROTATE_ALTITUDE_MODE"
+    :type: EPHEM_SHIFT_ROTATE_ALTITUDE_MODE
 
     Get the alt mode.
 
@@ -157,13 +157,14 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
 
@@ -182,6 +183,7 @@ Method detail
 
 
 .. py:method:: shift_rotate_set(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.shift_rotate_set
 
     Shift rotate set values.
 

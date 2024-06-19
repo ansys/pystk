@@ -3,7 +3,7 @@ SensorAccessAdvanced
 
 .. py:class:: SensorAccessAdvanced
 
-   ISensorAccessAdvanced, IAccessAdvanced, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorAccessAdvanced`, py:obj:`~IAccessAdvanced`
 
    Sensor's advanced targeting access computation properties.
 

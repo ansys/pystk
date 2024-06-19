@@ -3,7 +3,7 @@ BasicManeuverStrategyLTAHover
 
 .. py:class:: BasicManeuverStrategyLTAHover
 
-   IBasicManeuverStrategyLTAHover, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyLTAHover`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the lighter than air hover strategy for a basic maneuver procedure.
 

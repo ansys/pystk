@@ -3,7 +3,7 @@ VectorGeometryToolAxesCustomScript
 
 .. py:class:: VectorGeometryToolAxesCustomScript
 
-   IVectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesCustomScript`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Customized axes offset with respect to a set of reference Axes.
 

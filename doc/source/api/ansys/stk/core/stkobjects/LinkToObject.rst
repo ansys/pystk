@@ -3,7 +3,7 @@ LinkToObject
 
 .. py:class:: LinkToObject
 
-   ILinkToObject, SupportsDeleteCallback
+   Bases: py:obj:`~ILinkToObject`
 
    Class defining a link to an STK object.
 

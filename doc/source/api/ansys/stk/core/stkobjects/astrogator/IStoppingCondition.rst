@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.constraints
-    :type: "IAgVAConstraintCollection"
+    :type: IAgVAConstraintCollection
 
     Further conditions that must be met in order for the stopping condition to be deemed satisfied.
 
@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: user_calc_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object
-    :type: "IAgComponentInfo"
+    :type: IAgComponentInfo
 
     A User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on.
 
@@ -128,13 +128,13 @@ Property detail
 
 .. py:property:: criterion
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.criterion
-    :type: "CRITERION"
+    :type: CRITERION
 
     Specifies the direction from which the stopping condition value must be achieved.
 
 .. py:property:: before_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.before_conditions
-    :type: "IAgVAStoppingConditionCollection"
+    :type: IAgVAStoppingConditionCollection
 
     A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
 
@@ -152,7 +152,7 @@ Property detail
 
 .. py:property:: user_calc_object_link_embed_control
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object_link_embed_control
-    :type: "IAgComponentLinkEmbedControl"
+    :type: IAgComponentLinkEmbedControl
 
     Gets the link / embed controller for managing the user calc. object.
 
@@ -188,6 +188,7 @@ Method detail
 
 
 .. py:method:: copy_user_calc_object_to_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.copy_user_calc_object_to_clipboard
 
     Copy the user-defined stopping condition calc object to the clipboard.
 
@@ -196,6 +197,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste_user_calc_object_from_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.paste_user_calc_object_from_clipboard
 
     Replace the user-defined stopping condition calc object with the calc object in the clipboard.
 

@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallSystemFindInSystemResult
 
 .. py:class:: AnalysisWorkbenchMethodCallSystemFindInSystemResult
 
-   IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemFindInSystemResult, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolSystemFindInSystemResult`
 
    Contains the results returned with IAgCrdnSystem.FindInSystem method.
 

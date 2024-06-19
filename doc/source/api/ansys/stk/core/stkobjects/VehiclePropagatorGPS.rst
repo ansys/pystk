@@ -3,7 +3,7 @@ VehiclePropagatorGPS
 
 .. py:class:: VehiclePropagatorGPS
 
-   IVehiclePropagatorGPS, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorGPS`
 
    GPS propagator.
 

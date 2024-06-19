@@ -3,7 +3,7 @@ SphericalFPAVertical
 
 .. py:class:: SphericalFPAVertical
 
-   ISphericalFPAVertical, IFlightPathAngle, SupportsDeleteCallback
+   Bases: py:obj:`~ISphericalFPAVertical`, py:obj:`~IFlightPathAngle`
 
    Vertical Flight Path Angle, an element of the Spherical coordinate type.
 

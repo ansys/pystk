@@ -3,7 +3,7 @@ AdvancedFixedWingTurbopropPowerplant
 
 .. py:class:: AdvancedFixedWingTurbopropPowerplant
 
-   IAdvancedFixedWingTurbopropPowerplant, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingTurbopropPowerplant`
 
    Class defining the Turboprop powerplant in the Advanced Fixed Wing Tool.
 

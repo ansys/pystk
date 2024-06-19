@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IStkObject"
+.. py:method:: item(self, indexOrName: typing.Any) -> IStkObject
+    :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.item
 
     Given an index, returns an element in the collection. If the index is an integer, then the method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStkObject"`
+        :obj:`~IStkObject`
 
 
-.. py:method:: contains(self, instName:str) -> bool
+.. py:method:: contains(self, instName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.contains
 
     Check whether an object with the given name exists.
 
@@ -92,7 +94,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IStkObject"
+.. py:method:: get_item_by_index(self, index: int) -> IStkObject
+    :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.get_item_by_index
 
     Retrieve an Stk object element from the collection by index.
 
@@ -102,9 +105,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStkObject"`
+        :obj:`~IStkObject`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IStkObject"
+.. py:method:: get_item_by_name(self, name: str) -> IStkObject
+    :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.get_item_by_name
 
     Retrieve an Stk object element from the collection by name.
 
@@ -114,5 +118,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStkObject"`
+        :obj:`~IStkObject`
 

@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGrid
 
 .. py:class:: SpatialAnalysisToolVolumeGrid
 
-   ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions.
 

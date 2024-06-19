@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IRadarAntennaBeam"
+.. py:method:: item(self, index: int) -> IRadarAntennaBeam
+    :canonical: ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarAntennaBeam"`
+        :obj:`~IRadarAntennaBeam`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.remove_at
 
     Remove the layer with the specified index.
 
@@ -94,7 +96,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: insert_at(self, index:int) -> "IRadarAntennaBeam"
+.. py:method:: insert_at(self, index: int) -> IRadarAntennaBeam
+    :canonical: ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.insert_at
 
     Insert a new beam at the supplied index.
 
@@ -104,17 +107,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarAntennaBeam"`
+        :obj:`~IRadarAntennaBeam`
 
-.. py:method:: add(self) -> "IRadarAntennaBeam"
+.. py:method:: add(self) -> IRadarAntennaBeam
+    :canonical: ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.add
 
     Add a new beam to the collection.
 
     :Returns:
 
-        :obj:`~"IRadarAntennaBeam"`
+        :obj:`~IRadarAntennaBeam`
 
-.. py:method:: duplicate_beam(self, index:int) -> "IRadarAntennaBeam"
+.. py:method:: duplicate_beam(self, index: int) -> IRadarAntennaBeam
+    :canonical: ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.duplicate_beam
 
     Duplicates the beam at the specified index.
 
@@ -124,5 +129,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarAntennaBeam"`
+        :obj:`~IRadarAntennaBeam`
 

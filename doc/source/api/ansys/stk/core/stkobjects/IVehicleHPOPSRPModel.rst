@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: model_type
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model_type
-    :type: "SRP_MODEL"
+    :type: SRP_MODEL
 
     Returns a type of the active solar radiation pressure model.
 
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model
-    :type: "IAgSRPModelBase"
+    :type: IAgSRPModelBase
 
     Returns the active solar radiation pressure model.
 
@@ -70,25 +70,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_model_type(self, sRPModel:"SRP_MODEL") -> None
+.. py:method:: set_model_type(self, sRPModel: SRP_MODEL) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.set_model_type
 
     Change the active solar radiation pressure model type.
 
     :Parameters:
 
-    **sRPModel** : :obj:`~"SRP_MODEL"`
+    **sRPModel** : :obj:`~SRP_MODEL`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_model_type_supported(self, sRPModel:"SRP_MODEL") -> bool
+.. py:method:: is_model_type_supported(self, sRPModel: SRP_MODEL) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.is_model_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **sRPModel** : :obj:`~"SRP_MODEL"`
+    **sRPModel** : :obj:`~SRP_MODEL`
 
     :Returns:
 

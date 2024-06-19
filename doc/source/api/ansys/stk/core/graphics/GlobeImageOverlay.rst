@@ -3,7 +3,7 @@ GlobeImageOverlay
 
 .. py:class:: GlobeImageOverlay
 
-   IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback
+   Bases: py:obj:`~IGlobeImageOverlay`, py:obj:`~IGlobeOverlay`
 
    A globe overlay that shows an image.
 

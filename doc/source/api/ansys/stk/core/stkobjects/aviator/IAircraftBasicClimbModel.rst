@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
@@ -115,13 +115,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.set_airspeed
 
     Set the airspeed type and value.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -140,11 +141,12 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

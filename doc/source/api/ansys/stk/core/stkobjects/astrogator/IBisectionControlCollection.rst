@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IBisectionControl"
+.. py:method:: item(self, index: int) -> IBisectionControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBisectionControlCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBisectionControl"`
+        :obj:`~IBisectionControl`
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath:str, controlPath:str) -> "IBisectionControl"
+.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> IBisectionControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBisectionControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBisectionControl"`
+        :obj:`~IBisectionControl`
 

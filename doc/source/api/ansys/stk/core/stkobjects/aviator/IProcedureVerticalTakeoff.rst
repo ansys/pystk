@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: final_altitude_rate
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.final_altitude_rate
-    :type: "VTOL_RATE_MODE"
+    :type: VTOL_RATE_MODE
 
     Gets or sets the altitude rate at the end of the procedure.
 
@@ -103,7 +103,8 @@ Method detail
 
 
 
-.. py:method:: set_heading(self, heading:typing.Any, isMagnetic:bool) -> None
+.. py:method:: set_heading(self, heading: typing.Any, isMagnetic: bool) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.set_heading
 
     Set the heading and heading reference.
 
@@ -122,11 +123,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

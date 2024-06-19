@@ -85,7 +85,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IObjectLink"
+.. py:method:: item(self, index: int) -> IObjectLink
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -95,9 +96,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IObjectLink"`
+        :obj:`~IObjectLink`
 
-.. py:method:: add(self, name:str) -> None
+.. py:method:: add(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.add
 
     Add to the collection a link to an STK object with the given object path and name.
 
@@ -109,7 +111,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, index:int) -> None
+.. py:method:: remove(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.remove
 
     Remove from the collection a link to the STK object with the given index.
 
@@ -122,6 +125,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.remove_all
 
     Remove all links from the collection.
 
@@ -129,7 +133,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_name(self, name:str) -> None
+.. py:method:: remove_name(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.remove_name
 
     Remove from the collection a link to an STK object with the given object path and name.
 
@@ -142,31 +147,34 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_object(self, pObject:"IStkObject") -> None
+.. py:method:: add_object(self, pObject: IStkObject) -> None
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.add_object
 
     Add to the collection a link to the given STK object.
 
     :Parameters:
 
-    **pObject** : :obj:`~"IStkObject"`
+    **pObject** : :obj:`~IStkObject`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_object(self, pObject:"IStkObject") -> None
+.. py:method:: remove_object(self, pObject: IStkObject) -> None
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.remove_object
 
     Remove from the collection a link to the given STK object.
 
     :Parameters:
 
-    **pObject** : :obj:`~"IStkObject"`
+    **pObject** : :obj:`~IStkObject`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.contains
 
     Determine whether the object with the given name is in the collection.
 
@@ -178,7 +186,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: index_of(self, name:str) -> int
+.. py:method:: index_of(self, name: str) -> int
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.index_of
 
     Search the collection for the specified object and returns a zero-based index of the first occurrence within the collection, if found; otherwise, -1.
 

@@ -3,7 +3,7 @@ VehicleSGP4SegmentCollection
 
 .. py:class:: VehicleSGP4SegmentCollection
 
-   IVehicleSGP4SegmentCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4SegmentCollection`
 
    Set of Trajectories.
 

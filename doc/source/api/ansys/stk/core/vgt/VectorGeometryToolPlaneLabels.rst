@@ -3,7 +3,7 @@ VectorGeometryToolPlaneLabels
 
 .. py:class:: VectorGeometryToolPlaneLabels
 
-   IVectorGeometryToolPlaneLabels, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlaneLabels`
 
    Allow configuring the X and Y axes labels.
 

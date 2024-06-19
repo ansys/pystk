@@ -3,7 +3,7 @@ SensorUnknownPattern
 
 .. py:class:: SensorUnknownPattern
 
-   ISensorPattern, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPattern`
 
    Unsupported/unknown sensor pattern.
 

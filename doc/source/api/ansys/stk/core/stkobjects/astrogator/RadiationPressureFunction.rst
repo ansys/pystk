@@ -3,7 +3,7 @@ RadiationPressureFunction
 
 .. py:class:: RadiationPressureFunction
 
-   IRadiationPressureFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadiationPressureFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Radiation Pressure Propagator Function.
 

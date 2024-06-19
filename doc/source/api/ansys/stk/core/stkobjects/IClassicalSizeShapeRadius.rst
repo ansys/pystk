@@ -64,7 +64,8 @@ Method detail
 
 
 
-.. py:method:: set_size_shape_radius(self, apogeeRadius:float, perigeeRadius:float) -> None
+.. py:method:: set_size_shape_radius(self, apogeeRadius: float, perigeeRadius: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IClassicalSizeShapeRadius.set_size_shape_radius
 
     Set both the Apogee Radius and the Perigee Radius. Displays an error message if the value for PerigeeRadius exceeds that for ApogeeRadius. ApogeeRadius/PerigeeRadius use Distance Dimension.
 

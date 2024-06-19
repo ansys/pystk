@@ -3,7 +3,7 @@ Scenario
 
 .. py:class:: Scenario
 
-   IScenario, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IScenario`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Class defining the Scenario object.
 

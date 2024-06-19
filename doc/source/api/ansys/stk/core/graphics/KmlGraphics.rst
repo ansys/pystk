@@ -3,7 +3,7 @@ KmlGraphics
 
 .. py:class:: KmlGraphics
 
-   IKmlGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IKmlGraphics`
 
    Provide loading and unloading of kml documents for a particular central body.
 

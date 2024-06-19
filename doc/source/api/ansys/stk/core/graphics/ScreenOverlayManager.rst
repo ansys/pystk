@@ -3,7 +3,7 @@ ScreenOverlayManager
 
 .. py:class:: ScreenOverlayManager
 
-   IScreenOverlayManager, IScreenOverlayCollectionBase, IScreenOverlayContainer, SupportsDeleteCallback
+   Bases: py:obj:`~IScreenOverlayManager`, py:obj:`~IScreenOverlayCollectionBase`, py:obj:`~IScreenOverlayContainer`
 
    The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control.
 

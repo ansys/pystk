@@ -3,7 +3,7 @@ UnitPreferencesUnit
 
 .. py:class:: UnitPreferencesUnit
 
-   IUnitPreferencesUnit, SupportsDeleteCallback
+   Bases: py:obj:`~IUnitPreferencesUnit`
 
    Object that contains info on the unit.
 

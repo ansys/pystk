@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: burnout_option
     :canonical: ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity.burnout_option
-    :type: "BURNOUT_OPTIONS"
+    :type: BURNOUT_OPTIONS
 
     Select to use the fixed or inertial frame.
 

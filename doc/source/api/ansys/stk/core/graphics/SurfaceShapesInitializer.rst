@@ -3,7 +3,7 @@ SurfaceShapesInitializer
 
 .. py:class:: SurfaceShapesInitializer
 
-   ISurfaceShapesInitializer, SupportsDeleteCallback
+   Bases: py:obj:`~ISurfaceShapesInitializer`
 
    Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors.
 

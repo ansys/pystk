@@ -3,7 +3,7 @@ ProcedureTransitionToForwardFlight
 
 .. py:class:: ProcedureTransitionToForwardFlight
 
-   IProcedureTransitionToForwardFlight, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureTransitionToForwardFlight`, py:obj:`~IProcedure`
 
    Class defining a transition to forward flight procedure.
 

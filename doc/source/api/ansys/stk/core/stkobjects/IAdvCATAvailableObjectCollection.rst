@@ -56,7 +56,8 @@ Method detail
 -------------
 
 
-.. py:method:: get_available_object(self, index:int) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
+.. py:method:: get_available_object(self, index: int) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
+    :canonical: ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection.get_available_object
 
     Return name, date and type times of the interval at a given index.
 
@@ -69,6 +70,7 @@ Method detail
         :obj:`~typing.Tuple[typing.Any, typing.Any, typing.Any]`
 
 .. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection.to_array
 
     Return a two-dimensional array of objects.
 

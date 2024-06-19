@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics2DWaypointMarkersElement"
+.. py:method:: item(self, index: int) -> IVehicleGraphics2DWaypointMarkersElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DWaypointMarkersElement"`
+        :obj:`~IVehicleGraphics2DWaypointMarkersElement`
 
 

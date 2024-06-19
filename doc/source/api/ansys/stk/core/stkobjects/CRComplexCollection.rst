@@ -3,7 +3,7 @@ CRComplexCollection
 
 .. py:class:: CRComplexCollection
 
-   ICRComplexCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICRComplexCollection`
 
    Class defining a collection of complex numbers.
 

@@ -3,7 +3,7 @@ PathPointFactory
 
 .. py:class:: PathPointFactory
 
-   IPathPointFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IPathPointFactory`
 
    Factory creates path points.
 

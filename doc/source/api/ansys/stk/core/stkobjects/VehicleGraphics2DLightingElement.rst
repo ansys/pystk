@@ -3,7 +3,7 @@ VehicleGraphics2DLightingElement
 
 .. py:class:: VehicleGraphics2DLightingElement
 
-   IVehicleGraphics2DLightingElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DLightingElement`
 
    Lighting condition properties.
 

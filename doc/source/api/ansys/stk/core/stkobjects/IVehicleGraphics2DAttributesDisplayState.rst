@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_display_intervals(self) -> "IVehicleGraphics2DIntervalsCollection"
+.. py:method:: get_display_intervals(self) -> IVehicleGraphics2DIntervalsCollection
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState.get_display_intervals
 
     Get a read-only collection of computed display intervals.
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DIntervalsCollection"`
+        :obj:`~IVehicleGraphics2DIntervalsCollection`
 

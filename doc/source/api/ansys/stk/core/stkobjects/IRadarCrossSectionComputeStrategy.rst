@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.type
-    :type: "RCS_COMPUTE_STRATEGY"
+    :type: RCS_COMPUTE_STRATEGY
 
     Gets the radar cross section compute strategy enumeration.
 

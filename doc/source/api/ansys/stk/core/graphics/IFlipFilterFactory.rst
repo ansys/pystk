@@ -38,23 +38,25 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IFlipFilter"
+.. py:method:: initialize(self) -> IFlipFilter
+    :canonical: ansys.stk.core.graphics.IFlipFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IFlipFilter"`
+        :obj:`~IFlipFilter`
 
-.. py:method:: initialize_with_flip_axis(self, flipAxis:"FLIP_AXIS") -> "IFlipFilter"
+.. py:method:: initialize_with_flip_axis(self, flipAxis: FLIP_AXIS) -> IFlipFilter
+    :canonical: ansys.stk.core.graphics.IFlipFilterFactory.initialize_with_flip_axis
 
     Initialize a new instance with the specified flip axis.
 
     :Parameters:
 
-    **flipAxis** : :obj:`~"FLIP_AXIS"`
+    **flipAxis** : :obj:`~FLIP_AXIS`
 
     :Returns:
 
-        :obj:`~"IFlipFilter"`
+        :obj:`~IFlipFilter`
 

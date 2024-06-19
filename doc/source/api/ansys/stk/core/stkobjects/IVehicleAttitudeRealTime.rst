@@ -58,19 +58,19 @@ Property detail
 
 .. py:property:: look_ahead_method
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.look_ahead_method
-    :type: "VEHICLE_LOOK_AHEAD_METHOD"
+    :type: VEHICLE_LOOK_AHEAD_METHOD
 
     Look ahead method can be extrapolate or hold.
 
 .. py:property:: duration
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.duration
-    :type: "IAgVeDuration"
+    :type: IAgVeDuration
 
     Get look ahead/look behind duration.
 
 .. py:property:: data_reference
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.data_reference
-    :type: "IAgVeAttitudeRealTimeDataReference"
+    :type: IAgVeAttitudeRealTimeDataReference
 
     Returns a reference attitude profile for incoming attitude data.
 
@@ -87,7 +87,8 @@ Method detail
 
 
 
-.. py:method:: add_cbf_quaternion(self, time:typing.Any, q1:float, q2:float, q3:float, q4:float) -> None
+.. py:method:: add_cbf_quaternion(self, time: typing.Any, q1: float, q2: float, q3: float, q4: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_cbf_quaternion
 
     Add attitude data based on a time-ordered set of quaternions interpreted relative to CBF.
 
@@ -103,7 +104,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_quaternion(self, time:typing.Any, q1:float, q2:float, q3:float, q4:float) -> None
+.. py:method:: add_quaternion(self, time: typing.Any, q1: float, q2: float, q3: float, q4: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_quaternion
 
     Add attitude data based on a time-ordered set of quaternions.
 
@@ -119,7 +121,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_ypr(self, time:typing.Any, sequence:str, yaw:float, pitch:float, roll:float) -> None
+.. py:method:: add_ypr(self, time: typing.Any, sequence: str, yaw: float, pitch: float, roll: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_ypr
 
     Add attitude data based on a time-ordered set of yaw, pitch and roll angles.
 
@@ -135,7 +138,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_eciypr(self, time:typing.Any, sequence:str, yaw:float, pitch:float, roll:float) -> None
+.. py:method:: add_eciypr(self, time: typing.Any, sequence: str, yaw: float, pitch: float, roll: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_eciypr
 
     Add attitude data based on a time-ordered set of yaw, pitch, roll angles in the J2000 ECI coordinate system.
 
@@ -151,7 +155,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_euler(self, time:typing.Any, sequence:str, angle1:float, angle2:float, angle3:float) -> None
+.. py:method:: add_euler(self, time: typing.Any, sequence: str, angle1: float, angle2: float, angle3: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_euler
 
     Add attitude data based on a time-ordered set of Euler angles.
 
@@ -168,6 +173,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: clear_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.clear_all
 
     Clear attitude data created using AddXXX commands.
 

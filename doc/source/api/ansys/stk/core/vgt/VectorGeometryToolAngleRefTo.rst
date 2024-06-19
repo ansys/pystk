@@ -3,7 +3,7 @@ VectorGeometryToolAngleRefTo
 
 .. py:class:: VectorGeometryToolAngleRefTo
 
-   IVectorGeometryToolAngleRefTo, IAnalysisWorkbenchRefTo, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAngleRefTo`, py:obj:`~IAnalysisWorkbenchRefTo`
 
    Represents a reference to a VGT angle.
 

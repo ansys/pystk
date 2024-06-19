@@ -3,7 +3,7 @@ AccessEventDetection
 
 .. py:class:: AccessEventDetection
 
-   IAccessEventDetection, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessEventDetection`
 
    Define properties and methods to configure the event detection strategy used in access computations.
 

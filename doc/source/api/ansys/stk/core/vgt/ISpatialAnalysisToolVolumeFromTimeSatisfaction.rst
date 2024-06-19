@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: time_satisfaction
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromTimeSatisfaction.time_satisfaction
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
 

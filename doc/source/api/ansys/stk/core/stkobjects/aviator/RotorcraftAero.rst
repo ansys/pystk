@@ -3,7 +3,7 @@ RotorcraftAero
 
 .. py:class:: RotorcraftAero
 
-   IRotorcraftAero, SupportsDeleteCallback
+   Bases: py:obj:`~IRotorcraftAero`
 
    Class defining the aerodynamic options for a rotorcraft.
 

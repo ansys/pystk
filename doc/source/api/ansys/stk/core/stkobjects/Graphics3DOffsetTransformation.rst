@@ -3,7 +3,7 @@ Graphics3DOffsetTransformation
 
 .. py:class:: Graphics3DOffsetTransformation
 
-   IGraphics3DOffsetTransformation, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DOffsetTransformation`
 
    Class defining model translation in the object body frame's X, Y and Z directions.
 

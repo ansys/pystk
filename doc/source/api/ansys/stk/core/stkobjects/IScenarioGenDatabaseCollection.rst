@@ -62,7 +62,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IScenarioGenDatabase"
+.. py:method:: item(self, index: int) -> IScenarioGenDatabase
+    :canonical: ansys.stk.core.stkobjects.IScenarioGenDatabaseCollection.item
 
     Return scenario database settings at a specified position.
 
@@ -72,5 +73,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScenarioGenDatabase"`
+        :obj:`~IScenarioGenDatabase`
 

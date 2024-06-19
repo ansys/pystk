@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: position_type
     :canonical: ansys.stk.core.stkutil.IPosition.position_type
-    :type: "POSITION_TYPE"
+    :type: POSITION_TYPE
 
     Gets the type of position currently being used.
 
@@ -96,32 +96,35 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: convert_to(self, type:"POSITION_TYPE") -> "IPosition"
+.. py:method:: convert_to(self, type: POSITION_TYPE) -> IPosition
+    :canonical: ansys.stk.core.stkutil.IPosition.convert_to
 
     Change the position coordinates to type specified.
 
     :Parameters:
 
-    **type** : :obj:`~"POSITION_TYPE"`
+    **type** : :obj:`~POSITION_TYPE`
 
     :Returns:
 
-        :obj:`~"IPosition"`
+        :obj:`~IPosition`
 
 
-.. py:method:: assign(self, pPosition:"IPosition") -> None
+.. py:method:: assign(self, pPosition: IPosition) -> None
+    :canonical: ansys.stk.core.stkutil.IPosition.assign
 
     Assign the coordinates into the system.
 
     :Parameters:
 
-    **pPosition** : :obj:`~"IPosition"`
+    **pPosition** : :obj:`~IPosition`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_geocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None
+.. py:method:: assign_geocentric(self, lat: typing.Any, lon: typing.Any, alt: float) -> None
+    :canonical: ansys.stk.core.stkutil.IPosition.assign_geocentric
 
     Assign the position using the Geocentric representation.
 
@@ -135,7 +138,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_geodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None
+.. py:method:: assign_geodetic(self, lat: typing.Any, lon: typing.Any, alt: float) -> None
+    :canonical: ansys.stk.core.stkutil.IPosition.assign_geodetic
 
     Assign the position using the Geodetic representation.
 
@@ -149,7 +153,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_spherical(self, lat:typing.Any, lon:typing.Any, radius:float) -> None
+.. py:method:: assign_spherical(self, lat: typing.Any, lon: typing.Any, radius: float) -> None
+    :canonical: ansys.stk.core.stkutil.IPosition.assign_spherical
 
     Assign the position using the Spherical representation.
 
@@ -163,7 +168,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_cylindrical(self, radius:float, z:float, lon:typing.Any) -> None
+.. py:method:: assign_cylindrical(self, radius: float, z: float, lon: typing.Any) -> None
+    :canonical: ansys.stk.core.stkutil.IPosition.assign_cylindrical
 
     Assign the position using the Cylindrical representation.
 
@@ -177,7 +183,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_cartesian(self, x:float, y:float, z:float) -> None
+.. py:method:: assign_cartesian(self, x: float, y: float, z: float) -> None
+    :canonical: ansys.stk.core.stkutil.IPosition.assign_cartesian
 
     Assign the position using the Cartesian representation.
 
@@ -191,7 +198,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_planetocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None
+.. py:method:: assign_planetocentric(self, lat: typing.Any, lon: typing.Any, alt: float) -> None
+    :canonical: ansys.stk.core.stkutil.IPosition.assign_planetocentric
 
     Assign the position using the Planetocentric representation.
 
@@ -205,7 +213,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_planetodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None
+.. py:method:: assign_planetodetic(self, lat: typing.Any, lon: typing.Any, alt: float) -> None
+    :canonical: ansys.stk.core.stkutil.IPosition.assign_planetodetic
 
     Assign the position using the Planetodetic representation.
 
@@ -220,6 +229,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: query_planetocentric(self) -> typing.Tuple[typing.Any, typing.Any, float]
+    :canonical: ansys.stk.core.stkutil.IPosition.query_planetocentric
 
     Get the position using the Planetocentric representation.
 
@@ -228,6 +238,7 @@ Method detail
         :obj:`~typing.Tuple[typing.Any, typing.Any, float]`
 
 .. py:method:: query_planetodetic(self) -> typing.Tuple[typing.Any, typing.Any, float]
+    :canonical: ansys.stk.core.stkutil.IPosition.query_planetodetic
 
     Get the position using the Planetodetic representation.
 
@@ -236,6 +247,7 @@ Method detail
         :obj:`~typing.Tuple[typing.Any, typing.Any, float]`
 
 .. py:method:: query_spherical(self) -> typing.Tuple[typing.Any, typing.Any, float]
+    :canonical: ansys.stk.core.stkutil.IPosition.query_spherical
 
     Get the position using the Spherical representation.
 
@@ -244,6 +256,7 @@ Method detail
         :obj:`~typing.Tuple[typing.Any, typing.Any, float]`
 
 .. py:method:: query_cylindrical(self) -> typing.Tuple[float, typing.Any, float]
+    :canonical: ansys.stk.core.stkutil.IPosition.query_cylindrical
 
     Get the position using the Cylindrical representation.
 
@@ -252,6 +265,7 @@ Method detail
         :obj:`~typing.Tuple[float, typing.Any, float]`
 
 .. py:method:: query_cartesian(self) -> typing.Tuple[float, float, float]
+    :canonical: ansys.stk.core.stkutil.IPosition.query_cartesian
 
     Get the position using the Cartesian representation.
 
@@ -261,6 +275,7 @@ Method detail
 
 
 .. py:method:: query_planetocentric_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.IPosition.query_planetocentric_array
 
     Return the Planetocentric elements as an array.
 
@@ -269,6 +284,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: query_planetodetic_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.IPosition.query_planetodetic_array
 
     Return the Planetodetic elements as an array.
 
@@ -277,6 +293,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: query_spherical_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.IPosition.query_spherical_array
 
     Return the Spherical elements as an array.
 
@@ -285,6 +302,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: query_cylindrical_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.IPosition.query_cylindrical_array
 
     Return the Cylindrical elements as an array.
 
@@ -293,6 +311,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: query_cartesian_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.IPosition.query_cartesian_array
 
     Return the Cartesian elements as an array.
 

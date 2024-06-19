@@ -3,7 +3,7 @@ VehiclePassNumberingFirstPassNum
 
 .. py:class:: VehiclePassNumberingFirstPassNum
 
-   IVehiclePassNumberingFirstPassNum, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePassNumberingFirstPassNum`
 
    First pass number.
 

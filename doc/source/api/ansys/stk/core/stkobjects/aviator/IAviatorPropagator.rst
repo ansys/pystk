@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: avtr_mission
     :canonical: ansys.stk.core.stkobjects.aviator.IAviatorPropagator.avtr_mission
-    :type: "IAgAvtrMission"
+    :type: IAgAvtrMission
 
     Get the Aviator mission.
 
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: avtr_catalog
     :canonical: ansys.stk.core.stkobjects.aviator.IAviatorPropagator.avtr_catalog
-    :type: "IAgAvtrCatalog"
+    :type: IAgAvtrCatalog
 
     Get the Aviator catalog.
 
@@ -69,6 +69,7 @@ Method detail
 
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAviatorPropagator.propagate
 
     Apply All Change.
 

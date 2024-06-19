@@ -3,7 +3,7 @@ MissileGraphics
 
 .. py:class:: MissileGraphics
 
-   IMissileGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileGraphics`
 
    2D Graphics for missiles.
 

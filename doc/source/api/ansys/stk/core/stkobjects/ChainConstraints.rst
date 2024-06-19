@@ -3,7 +3,7 @@ ChainConstraints
 
 .. py:class:: ChainConstraints
 
-   IChainConstraints, SupportsDeleteCallback
+   Bases: py:obj:`~IChainConstraints`
 
    Chain constraints.
 

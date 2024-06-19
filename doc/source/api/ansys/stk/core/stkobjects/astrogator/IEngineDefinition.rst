@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: mass_flow_rate_equation_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_equation_type
-    :type: "ENGINE_MODEL_FUNCTION"
+    :type: ENGINE_MODEL_FUNCTION
 
     Gets or sets the independent variable for the mass flow rate equation.
 
@@ -142,7 +142,7 @@ Property detail
 
 .. py:property:: mass_flow_efficiency_independent_var
     :canonical: ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_independent_var
-    :type: "ENGINE_MODEL_FUNCTION"
+    :type: ENGINE_MODEL_FUNCTION
 
     Gets or sets the independent variable for the mass flow efficiency equation.
 
@@ -178,7 +178,7 @@ Property detail
 
 .. py:property:: power_efficiency_independent_var
     :canonical: ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_independent_var
-    :type: "ENGINE_MODEL_FUNCTION"
+    :type: ENGINE_MODEL_FUNCTION
 
     Gets or sets the independent variable for the power efficiency equation.
 

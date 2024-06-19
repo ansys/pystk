@@ -3,7 +3,7 @@ StateCalcAbsoluteValue
 
 .. py:class:: StateCalcAbsoluteValue
 
-   IComponentInfo, ICloneable, IStateCalcAbsoluteValue, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcAbsoluteValue`
 
    AbsoluteValue Calc objects.
 

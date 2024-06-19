@@ -3,7 +3,7 @@ MtoAnalysisPosition
 
 .. py:class:: MtoAnalysisPosition
 
-   IMtoAnalysisPosition, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoAnalysisPosition`
 
    MTO Position Computation.
 

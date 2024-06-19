@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: target_coord_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_coord_type
-    :type: "LAMBERT_TARGET_COORD_TYPE"
+    :type: LAMBERT_TARGET_COORD_TYPE
 
     Get the target coordinate type.
 
@@ -162,7 +162,7 @@ Property detail
 
 .. py:property:: solution_option
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.solution_option
-    :type: "LAMBERT_SOLUTION_OPTION_TYPE"
+    :type: LAMBERT_SOLUTION_OPTION_TYPE
 
     Lambert solution calculation type.
 
@@ -180,13 +180,13 @@ Property detail
 
 .. py:property:: orbital_energy
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.orbital_energy
-    :type: "LAMBERT_ORBITAL_ENERGY_TYPE"
+    :type: LAMBERT_ORBITAL_ENERGY_TYPE
 
     Gets or sets the orbital energy for the Lambert solution.
 
 .. py:property:: direction_of_motion
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.direction_of_motion
-    :type: "LAMBERT_DIRECTION_OF_MOTION_TYPE"
+    :type: LAMBERT_DIRECTION_OF_MOTION_TYPE
 
     Gets or sets the direction of motion (long or short) for the Lambert solution.
 
@@ -245,13 +245,14 @@ Method detail
 
 
 
-.. py:method:: set_target_coord_type(self, elementType:"LAMBERT_TARGET_COORD_TYPE") -> None
+.. py:method:: set_target_coord_type(self, elementType: LAMBERT_TARGET_COORD_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.set_target_coord_type
 
     Select a target coordinate type.
 
     :Parameters:
 
-    **elementType** : :obj:`~"LAMBERT_TARGET_COORD_TYPE"`
+    **elementType** : :obj:`~LAMBERT_TARGET_COORD_TYPE`
 
     :Returns:
 

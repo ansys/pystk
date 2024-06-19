@@ -3,7 +3,7 @@ CustomImageGlobeOverlay
 
 .. py:class:: CustomImageGlobeOverlay
 
-   ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback
+   Bases: py:obj:`~ICustomImageGlobeOverlay`, py:obj:`~IGlobeImageOverlay`, py:obj:`~IGlobeOverlay`
 
    A globe image overlay that allows for a user defined image to be specified.
 

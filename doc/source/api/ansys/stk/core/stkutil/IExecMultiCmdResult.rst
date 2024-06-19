@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IExecCmdResult"
+.. py:method:: item(self, index: int) -> IExecCmdResult
+    :canonical: ansys.stk.core.stkutil.IExecMultiCmdResult.item
 
     Get the element at the specified index (0-based).
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IExecCmdResult"`
+        :obj:`~IExecCmdResult`
 
 

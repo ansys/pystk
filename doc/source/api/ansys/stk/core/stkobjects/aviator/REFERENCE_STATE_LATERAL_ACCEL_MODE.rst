@@ -11,6 +11,21 @@ REFERENCE_STATE_LATERAL_ACCEL_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~SPECIFY_HEADING_DOT`
+              - Specify the heading rate of change.
+
+            * - :py:attr:`~SPECIFY_COURSE_DOT`
+              - Specify the course rate of change.
+
+
 Import detail
 -------------
 

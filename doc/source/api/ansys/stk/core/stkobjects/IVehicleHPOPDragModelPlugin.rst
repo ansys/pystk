@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: plugin_settings
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin.plugin_settings
-    :type: "IAgVeHPOPDragModelPluginSettings"
+    :type: IAgVeHPOPDragModelPluginSettings
 
     Get the parameters of the selected plugin.
 

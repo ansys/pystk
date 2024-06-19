@@ -3,7 +3,7 @@ Ship
 
 .. py:class:: Ship
 
-   IShip, IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IShip`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IGreatArcVehicle`, py:obj:`~IProvideSpatialInfo`
 
    Ship object.
 

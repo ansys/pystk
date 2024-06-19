@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: extremum_type
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.extremum_type
-    :type: "CRDN_EXTREMUM_CONSTANTS"
+    :type: CRDN_EXTREMUM_CONSTANTS
 
     The extremum type of interest (either minimum or maximum) for scalar calculation.
 
@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: calculation
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.calculation
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The scalar calculation.
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.custom_time_limits
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     A custom interval list or a single interval. It is by default set to overall availability of host object. This determines time limits within extrema are sought. The time limits will be used if UseCustomTimeLimits is set to true.
 
@@ -73,19 +73,19 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.save_data_option
-    :type: "CRDN_SAVE_DATA_OPTION"
+    :type: CRDN_SAVE_DATA_OPTION
 
     Specify whether computed times of extrema are saved/loaded, otherwise it is recomputed on load if necessary.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.sampling
-    :type: "IAgCrdnSampling"
+    :type: IAgCrdnSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.convergence
-    :type: "IAgCrdnConverge"
+    :type: IAgCrdnConverge
 
     The Convergence definition, which uses time tolerance to determine when times of extrema are found.
 

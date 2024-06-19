@@ -3,7 +3,7 @@ VehicleGraphics2DTimeEventsElement
 
 .. py:class:: VehicleGraphics2DTimeEventsElement
 
-   IVehicleGraphics2DTimeEventsElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DTimeEventsElement`
 
    2D Graphics time event.
 

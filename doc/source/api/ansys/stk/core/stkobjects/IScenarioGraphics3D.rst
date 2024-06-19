@@ -75,25 +75,25 @@ Property detail
 
 .. py:property:: small_font
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.small_font
-    :type: "IAgSc3dFont"
+    :type: IAgSc3dFont
 
     Retrieves small font metrics.
 
 .. py:property:: medium_font
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.medium_font
-    :type: "IAgSc3dFont"
+    :type: IAgSc3dFont
 
     Retrieves medium font metrics.
 
 .. py:property:: large_font
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.large_font
-    :type: "IAgSc3dFont"
+    :type: IAgSc3dFont
 
     Retrieves large font metrics.
 
 .. py:property:: surface_reference
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.surface_reference
-    :type: "SURFACE_REFERENCE"
+    :type: SURFACE_REFERENCE
 
     Opt to display the globe's surface at the mean sea level (MSL) or at the central body's reference ellipsoid (WGS84).
 
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: text_outline_style
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.text_outline_style
-    :type: "TEXT_OUTLINE_STYLE"
+    :type: TEXT_OUTLINE_STYLE
 
     Default text outline style.
 
@@ -151,6 +151,7 @@ Method detail
 
 
 .. py:method:: available_marker_types(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.available_marker_types
 
     Retrieve the list of available MarkerTypes.
 
@@ -158,7 +159,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: show_object(self, truncPath:str, windowID:str) -> None
+.. py:method:: show_object(self, truncPath: str, windowID: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.show_object
 
     Show the object identified by its path in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to show the object in all 3d windows.
 
@@ -171,7 +173,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: show_objects(self, truncObjectPaths:list, windowIdOrTitle:str) -> None
+.. py:method:: show_objects(self, truncObjectPaths: list, windowIdOrTitle: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.show_objects
 
     Show multiple objects in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to show the objects in all 3d windows.
 
@@ -184,7 +187,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: hide_object(self, truncPath:str, windowID:str) -> None
+.. py:method:: hide_object(self, truncPath: str, windowID: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.hide_object
 
     Hides the object identified by its path in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to hide the object in all 3d windows.
 
@@ -197,7 +201,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: hide_objects(self, truncObjectPaths:list, windowIdOrTitle:str) -> None
+.. py:method:: hide_objects(self, truncObjectPaths: list, windowIdOrTitle: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.hide_objects
 
     Hides multiple objects in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to hide objects in all 3d windows.
 

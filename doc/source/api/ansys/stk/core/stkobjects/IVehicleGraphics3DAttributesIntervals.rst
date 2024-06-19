@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: default_attributes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals.default_attributes
-    :type: "IAgVeVODefaultAttributes"
+    :type: IAgVeVODefaultAttributes
 
     Get the default 3D graphics properties.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals.intervals
-    :type: "IAgVeVOIntervalsCollection"
+    :type: IAgVeVOIntervalsCollection
 
     Get the 3D graphics properties based on intervals.
 

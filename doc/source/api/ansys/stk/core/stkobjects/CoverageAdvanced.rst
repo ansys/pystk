@@ -3,7 +3,7 @@ CoverageAdvanced
 
 .. py:class:: CoverageAdvanced
 
-   ICoverageAdvanced, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageAdvanced`
 
    Advanced Properties.
 

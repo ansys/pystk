@@ -3,7 +3,7 @@ FigureOfMeritDefinitionRevisitTime
 
 .. py:class:: FigureOfMeritDefinitionRevisitTime
 
-   IFigureOfMeritDefinitionRevisitTime, IFigureOfMeritDefinitionResponseTime, IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionRevisitTime`, py:obj:`~IFigureOfMeritDefinitionResponseTime`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
 
    Revisit Time Figure of Merit.
 

@@ -3,7 +3,7 @@ ConstellationRouting
 
 .. py:class:: ConstellationRouting
 
-   IConstellationRouting, SupportsDeleteCallback
+   Bases: py:obj:`~IConstellationRouting`
 
    Routing properties of the STK Constellation.
 

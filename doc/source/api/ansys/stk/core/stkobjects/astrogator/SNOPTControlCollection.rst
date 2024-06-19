@@ -3,7 +3,7 @@ SNOPTControlCollection
 
 .. py:class:: SNOPTControlCollection
 
-   ISNOPTControlCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISNOPTControlCollection`
 
    SNOPT control collection.
 

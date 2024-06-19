@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCondition.condition
-    :type: "IAgCrdnCondition"
+    :type: IAgCrdnCondition
 
     The condition component.
 
@@ -52,19 +52,19 @@ Property detail
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCondition.custom_time_limits
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     A custom interval list or a single interval. It is by default set to overall availability of host object. This determines time limits within extrema are sought. The time limits will be used if UseCustomTimeLimits is set to true.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCondition.sampling
-    :type: "IAgCrdnSampling"
+    :type: IAgCrdnSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCondition.convergence
-    :type: "IAgCrdnConverge"
+    :type: IAgCrdnConverge
 
     The Convergence definition, which uses time tolerance to determine when times of extrema are found.
 

@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: original_time_array
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFiltered.original_time_array
-    :type: "IAgCrdnEventArray"
+    :type: IAgCrdnEventArray
 
     The original time array.
 
 .. py:property:: filter_type
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFiltered.filter_type
-    :type: "CRDN_EVENT_ARRAY_FILTER_TYPE"
+    :type: CRDN_EVENT_ARRAY_FILTER_TYPE
 
     Skip Time Steps filter type omits from filtered time array any times that fall within specified time step of last accepted time sample. Skip Count filter type omits specified number of time samples since last accepted time sample...
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: filter_interval_list
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFiltered.filter_interval_list
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The interval list used to filter samples when FilterType is set to Skip Intervals.
 

@@ -3,7 +3,7 @@ AntennaModel
 
 .. py:class:: AntennaModel
 
-   IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a generic antenna model.
 

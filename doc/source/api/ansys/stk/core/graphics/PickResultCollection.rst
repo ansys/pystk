@@ -3,7 +3,7 @@ PickResultCollection
 
 .. py:class:: PickResultCollection
 
-   IPickResultCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IPickResultCollection`
 
    A collection of picked objects.
 

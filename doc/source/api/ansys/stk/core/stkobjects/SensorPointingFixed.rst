@@ -3,7 +3,7 @@ SensorPointingFixed
 
 .. py:class:: SensorPointingFixed
 
-   ISensorPointing, ISensorPointingFixed, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingFixed`
 
    Class defining the fixed pointing type for a Sensor.
 

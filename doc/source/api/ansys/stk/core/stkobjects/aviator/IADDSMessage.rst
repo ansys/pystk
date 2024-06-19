@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.aviator.IADDSMessage.type
-    :type: "ADDS_FORECAST_TYPE"
+    :type: ADDS_FORECAST_TYPE
 
     Get the ADDS message type.
 

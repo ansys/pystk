@@ -3,7 +3,7 @@ ProcedureFormationRecover
 
 .. py:class:: ProcedureFormationRecover
 
-   IProcedureFormationRecover, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureFormationRecover`, py:obj:`~IProcedure`
 
    Class defining a Formation/Recover procedure.
 

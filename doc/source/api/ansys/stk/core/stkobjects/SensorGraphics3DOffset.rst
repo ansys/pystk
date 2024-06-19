@@ -3,7 +3,7 @@ SensorGraphics3DOffset
 
 .. py:class:: SensorGraphics3DOffset
 
-   ISensorGraphics3DOffset, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorGraphics3DOffset`
 
    Class defining 3D Graphics vertex offset properties of a Sensor.
 

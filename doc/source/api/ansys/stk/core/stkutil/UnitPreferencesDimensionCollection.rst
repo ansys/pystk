@@ -3,7 +3,7 @@ UnitPreferencesDimensionCollection
 
 .. py:class:: UnitPreferencesDimensionCollection
 
-   IUnitPreferencesDimensionCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IUnitPreferencesDimensionCollection`
 
    Object that contains a collection of dimensions.
 

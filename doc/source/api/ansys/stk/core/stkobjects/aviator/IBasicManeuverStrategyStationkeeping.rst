@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.turn_direction
-    :type: "TURN_DIRECTION"
+    :type: TURN_DIRECTION
 
     Define if the aircraft turns left or right into the holding circle.
 
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_condition
-    :type: "STATIONKEEPING_STOP_CONDITION"
+    :type: STATIONKEEPING_STOP_CONDITION
 
     Gets or sets the stopping condition for the maneuver.
 
@@ -157,7 +157,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_mode
-    :type: "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"
+    :type: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -187,7 +187,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.position_vel_strategies
-    :type: "IAgAvtrBasicManeuverTargetPosVel"
+    :type: IAgAvtrBasicManeuverTargetPosVel
 
     Get the position velocity strategies for Station Keeping.
 
@@ -228,13 +228,14 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None
+.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitValue: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"`
+    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT`
     **controlLimitValue** : :obj:`~float`
 
     :Returns:
@@ -245,6 +246,7 @@ Method detail
 
 
 .. py:method:: cancel_tgt_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.cancel_tgt_position_vel
 
     Cancel the position velocity strategies for Station Keeping.
 

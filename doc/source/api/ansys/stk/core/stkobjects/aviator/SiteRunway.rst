@@ -3,7 +3,7 @@ SiteRunway
 
 .. py:class:: SiteRunway
 
-   ISiteRunway, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteRunway`, py:obj:`~ISite`
 
    Class defining a runway site.
 

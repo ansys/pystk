@@ -3,7 +3,7 @@ ReceiverGraphics
 
 .. py:class:: ReceiverGraphics
 
-   IReceiverGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverGraphics`
 
    Class defining 2D Graphics properties of a Receiver.
 

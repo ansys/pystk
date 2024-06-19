@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_position_source_file(self, file:str) -> "IPlanetPositionFile"
+.. py:method:: set_position_source_file(self, file: str) -> IPlanetPositionFile
+    :canonical: ansys.stk.core.stkobjects.IPlanetCommonTasks.set_position_source_file
 
     Specify a planet ephemeris file, with a .pe extension.
 
@@ -48,18 +49,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPlanetPositionFile"`
+        :obj:`~IPlanetPositionFile`
 
-.. py:method:: set_position_source_central_body(self, centralBody:str, ephemSource:"EPHEM_SOURCE_TYPE") -> "IPlanetPositionCentralBody"
+.. py:method:: set_position_source_central_body(self, centralBody: str, ephemSource: EPHEM_SOURCE_TYPE) -> IPlanetPositionCentralBody
+    :canonical: ansys.stk.core.stkobjects.IPlanetCommonTasks.set_position_source_central_body
 
     Specify the planet using a central body and a desired ephemeris source.
 
     :Parameters:
 
     **centralBody** : :obj:`~str`
-    **ephemSource** : :obj:`~"EPHEM_SOURCE_TYPE"`
+    **ephemSource** : :obj:`~EPHEM_SOURCE_TYPE`
 
     :Returns:
 
-        :obj:`~"IPlanetPositionCentralBody"`
+        :obj:`~IPlanetPositionCentralBody`
 

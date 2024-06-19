@@ -3,7 +3,7 @@ FuelModelKeroseneAFPROP
 
 .. py:class:: FuelModelKeroseneAFPROP
 
-   IFuelModelKeroseneAFPROP, SupportsDeleteCallback
+   Bases: py:obj:`~IFuelModelKeroseneAFPROP`
 
    Class defining the Kerosense - AFPROP fuel type for a thermodynamic jet engine model.
 

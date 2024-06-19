@@ -3,7 +3,7 @@ FigureOfMeritGraphics3D
 
 .. py:class:: FigureOfMeritGraphics3D
 
-   IFigureOfMeritGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics3D`
 
    Figure of Merit 3D graphics.
 

@@ -3,7 +3,7 @@ UiWindow
 
 .. py:class:: UiWindow
 
-   IUiWindow, SupportsDeleteCallback
+   Bases: py:obj:`~IUiWindow`
 
    Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 

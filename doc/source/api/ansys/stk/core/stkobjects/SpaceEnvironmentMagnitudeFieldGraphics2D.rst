@@ -3,7 +3,7 @@ SpaceEnvironmentMagnitudeFieldGraphics2D
 
 .. py:class:: SpaceEnvironmentMagnitudeFieldGraphics2D
 
-   ISpaceEnvironmentMagnitudeFieldGraphics2D, SupportsDeleteCallback
+   Bases: py:obj:`~ISpaceEnvironmentMagnitudeFieldGraphics2D`
 
    Geomagnetic field graphics settings.
 

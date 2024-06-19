@@ -55,19 +55,19 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.earth
-    :type: "IAgStkCentralBody"
+    :type: IAgStkCentralBody
 
     Returns the Earth central body.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.sun
-    :type: "IAgStkCentralBody"
+    :type: IAgStkCentralBody
 
     Returns the Sun central body.
 
 .. py:property:: moon
     :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.moon
-    :type: "IAgStkCentralBody"
+    :type: IAgStkCentralBody
 
     Returns the Moon central body.
 
@@ -87,7 +87,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: contains(self, centralName:str) -> bool
+.. py:method:: contains(self, centralName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.contains
 
     Search for a central body with a given name. Returns false if the specified element does not exist.
 
@@ -103,7 +104,8 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IStkCentralBody"
+.. py:method:: item(self, indexOrName: typing.Any) -> IStkCentralBody
+    :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.item
 
     Return a central body by name or at a specified position.
 
@@ -113,10 +115,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStkCentralBody"`
+        :obj:`~IStkCentralBody`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IStkCentralBody"
+.. py:method:: get_item_by_index(self, index: int) -> IStkCentralBody
+    :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.get_item_by_index
 
     Retrieve a central body from the collection by index.
 
@@ -126,9 +129,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStkCentralBody"`
+        :obj:`~IStkCentralBody`
 
-.. py:method:: get_item_by_name(self, cbName:str) -> "IStkCentralBody"
+.. py:method:: get_item_by_name(self, cbName: str) -> IStkCentralBody
+    :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.get_item_by_name
 
     Retrieve a central body from the collection by name.
 
@@ -138,5 +142,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStkCentralBody"`
+        :obj:`~IStkCentralBody`
 

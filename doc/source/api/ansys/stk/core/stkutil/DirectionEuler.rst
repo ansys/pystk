@@ -3,7 +3,7 @@ DirectionEuler
 
 .. py:class:: DirectionEuler
 
-   IDirectionEuler, IDirection, SupportsDeleteCallback
+   Bases: py:obj:`~IDirectionEuler`, py:obj:`~IDirection`
 
    Euler direction sequence.
 

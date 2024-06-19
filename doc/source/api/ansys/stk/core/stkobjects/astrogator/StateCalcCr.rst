@@ -3,7 +3,7 @@ StateCalcCr
 
 .. py:class:: StateCalcCr
 
-   IComponentInfo, ICloneable, IStateCalcCr, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCr`
 
    Cr Calc objects.
 

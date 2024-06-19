@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "ISearchPluginResult"
+.. py:method:: item(self, index: int) -> ISearchPluginResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISearchPluginResult"`
+        :obj:`~ISearchPluginResult`
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath:str, resultPath:str) -> "ISearchPluginResult"
+.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> ISearchPluginResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection.get_result_by_paths
 
     Return the result specified by the object/result path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISearchPluginResult"`
+        :obj:`~ISearchPluginResult`
 

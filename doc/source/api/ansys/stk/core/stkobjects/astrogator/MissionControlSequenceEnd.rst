@@ -3,7 +3,7 @@ MissionControlSequenceEnd
 
 .. py:class:: MissionControlSequenceEnd
 
-   IMissionControlSequenceEnd, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceEnd`, py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IComponentInfo`
 
    The End segment.
 

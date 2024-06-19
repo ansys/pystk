@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: impact_type
     :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact_type
-    :type: "VEHICLE_IMPACT"
+    :type: VEHICLE_IMPACT
 
     Get the impact type.
 
@@ -68,13 +68,13 @@ Property detail
 
 .. py:property:: impact
     :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact
-    :type: "IAgVeImpact"
+    :type: IAgVeImpact
 
     Get the impact point.
 
 .. py:property:: launch_control_type
     :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control_type
-    :type: "VEHICLE_LAUNCH_CONTROL"
+    :type: VEHICLE_LAUNCH_CONTROL
 
     Get the flight parameter type.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: launch_control
     :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control
-    :type: "IAgVeLaunchControl"
+    :type: IAgVeLaunchControl
 
     Get the flight parameters.
 
@@ -95,25 +95,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_impact_type(self, impact:"VEHICLE_IMPACT") -> None
+.. py:method:: set_impact_type(self, impact: VEHICLE_IMPACT) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.set_impact_type
 
     Set the impact type.
 
     :Parameters:
 
-    **impact** : :obj:`~"VEHICLE_IMPACT"`
+    **impact** : :obj:`~VEHICLE_IMPACT`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_impact_type_supported(self, impact:"VEHICLE_IMPACT") -> bool
+.. py:method:: is_impact_type_supported(self, impact: VEHICLE_IMPACT) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.is_impact_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **impact** : :obj:`~"VEHICLE_IMPACT"`
+    **impact** : :obj:`~VEHICLE_IMPACT`
 
     :Returns:
 
@@ -122,25 +124,27 @@ Method detail
 
 
 
-.. py:method:: set_launch_control_type(self, launchControl:"VEHICLE_LAUNCH_CONTROL") -> None
+.. py:method:: set_launch_control_type(self, launchControl: VEHICLE_LAUNCH_CONTROL) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.set_launch_control_type
 
     Set the flight parameter type.
 
     :Parameters:
 
-    **launchControl** : :obj:`~"VEHICLE_LAUNCH_CONTROL"`
+    **launchControl** : :obj:`~VEHICLE_LAUNCH_CONTROL`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_launch_control_type_supported(self, launchControl:"VEHICLE_LAUNCH_CONTROL") -> bool
+.. py:method:: is_launch_control_type_supported(self, launchControl: VEHICLE_LAUNCH_CONTROL) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.is_launch_control_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **launchControl** : :obj:`~"VEHICLE_LAUNCH_CONTROL"`
+    **launchControl** : :obj:`~VEHICLE_LAUNCH_CONTROL`
 
     :Returns:
 

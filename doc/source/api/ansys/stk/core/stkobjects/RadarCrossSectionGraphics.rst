@@ -3,7 +3,7 @@ RadarCrossSectionGraphics
 
 .. py:class:: RadarCrossSectionGraphics
 
-   IRadarCrossSectionGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionGraphics`
 
    Class defining graphics properties of radar cross section.
 

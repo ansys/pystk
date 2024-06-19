@@ -60,6 +60,7 @@ Method detail
 
 
 .. py:method:: get_ssc_nums_from_file(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.get_ssc_nums_from_file
 
     Return an array of SSC Numbers from the file selected.
 
@@ -67,7 +68,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_segs_from_file(self, SSCNum:str) -> list
+.. py:method:: get_segs_from_file(self, SSCNum: str) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.get_segs_from_file
 
     Return an array of available segments from a file using the specified SSC Number.
 
@@ -79,7 +81,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: add_segs_from_file(self, segments:list) -> None
+.. py:method:: add_segs_from_file(self, segments: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.add_segs_from_file
 
     Add multiple segments from the array returned in GetSegsFromFile.
 

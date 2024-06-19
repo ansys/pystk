@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: step_size_type
     :canonical: ansys.stk.core.stkobjects.IExportToolStepSize.step_size_type
-    :type: "EXPORT_TOOL_STEP_SIZE"
+    :type: EXPORT_TOOL_STEP_SIZE
 
     Step Size Type.
 

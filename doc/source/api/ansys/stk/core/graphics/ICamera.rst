@@ -125,13 +125,13 @@ Property detail
 
 .. py:property:: axes
     :canonical: ansys.stk.core.graphics.ICamera.axes
-    :type: "IAgCrdnAxes"
+    :type: IAgCrdnAxes
 
     Gets or sets camera's axes of rotation.
 
 .. py:property:: constrained_up_axis
     :canonical: ansys.stk.core.graphics.ICamera.constrained_up_axis
-    :type: "CONSTRAINED_UP_AXIS"
+    :type: CONSTRAINED_UP_AXIS
 
     Gets or sets the axis to constrain the up vector to.
 
@@ -191,13 +191,13 @@ Property detail
 
 .. py:property:: snapshot
     :canonical: ansys.stk.core.graphics.ICamera.snapshot
-    :type: "IAgStkGraphicsCameraSnapshot"
+    :type: IAgStkGraphicsCameraSnapshot
 
     Gets the camera snapshot settings.
 
 .. py:property:: video_recording
     :canonical: ansys.stk.core.graphics.ICamera.video_recording
-    :type: "IAgStkGraphicsCameraVideoRecording"
+    :type: IAgStkGraphicsCameraVideoRecording
 
     Gets the camera video recorder.
 
@@ -209,13 +209,13 @@ Property detail
 
 .. py:property:: position_reference_frame
     :canonical: ansys.stk.core.graphics.ICamera.position_reference_frame
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Gets the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes.
 
 .. py:property:: reference_point_reference_frame
     :canonical: ansys.stk.core.graphics.ICamera.reference_point_reference_frame
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Gets the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes.
 
@@ -257,20 +257,22 @@ Method detail
 
 
 
-.. py:method:: visibility_test(self, referenceFrame:"IVectorGeometryToolSystem", sphere:"IBoundingSphere") -> "VISIBILITY"
+.. py:method:: visibility_test(self, referenceFrame: IVectorGeometryToolSystem, sphere: IBoundingSphere) -> VISIBILITY
+    :canonical: ansys.stk.core.graphics.ICamera.visibility_test
 
     Get the visibility of a sphere against the view frustum and any occluding central bodies.
 
     :Parameters:
 
-    **referenceFrame** : :obj:`~"IVectorGeometryToolSystem"`
-    **sphere** : :obj:`~"IBoundingSphere"`
+    **referenceFrame** : :obj:`~IVectorGeometryToolSystem`
+    **sphere** : :obj:`~IBoundingSphere`
 
     :Returns:
 
-        :obj:`~"VISIBILITY"`
+        :obj:`~VISIBILITY`
 
-.. py:method:: cartographic_to_window(self, centralBody:str, position:list) -> list
+.. py:method:: cartographic_to_window(self, centralBody: str, position: list) -> list
+    :canonical: ansys.stk.core.graphics.ICamera.cartographic_to_window
 
     Convert a cartographic position to a pixel coordinate relative to the globe control. This method can throw an exception. Returns an array containing the pixel coordinate (in the order x, y) of the cartographic position relative to the globe control...
 
@@ -283,7 +285,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: try_cartographic_to_window(self, centralBody:str, position:list) -> list
+.. py:method:: try_cartographic_to_window(self, centralBody: str, position: list) -> list
+    :canonical: ansys.stk.core.graphics.ICamera.try_cartographic_to_window
 
     Convert a cartographic position to a pixel coordinate relative to the globe control. This method does not throw an exception.
 
@@ -296,7 +299,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: window_to_cartographic(self, centralBody:str, position:list) -> list
+.. py:method:: window_to_cartographic(self, centralBody: str, position: list) -> list
+    :canonical: ansys.stk.core.graphics.ICamera.window_to_cartographic
 
     Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered; if the pixel coordinate does not intersect the ellipsoid, an exception is thrown. Returns the cartographic position...
 
@@ -309,7 +313,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: try_window_to_cartographic(self, centralBody:str, position:list) -> list
+.. py:method:: try_window_to_cartographic(self, centralBody: str, position: list) -> list
+    :canonical: ansys.stk.core.graphics.ICamera.try_window_to_cartographic
 
     Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered. This method does not throw an exception.
 
@@ -322,20 +327,22 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: view_central_body(self, centralBody:str, axes:"IVectorGeometryToolAxes") -> None
+.. py:method:: view_central_body(self, centralBody: str, axes: IVectorGeometryToolAxes) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_central_body
 
     Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body and the camera's position is set so the entire central body is visible.
 
     :Parameters:
 
     **centralBody** : :obj:`~str`
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: view_extent(self, centralBody:str, extent:list) -> None
+.. py:method:: view_extent(self, centralBody: str, extent: list) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_extent
 
     Zooms to a cartographic extent on the centralBody. The camera will be looking straight down at the extent, with the up vector pointing toward local north. The axes is set to an east-north-up axes at the center of extent.
 
@@ -348,7 +355,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: view_rectangular_extent(self, centralBody:str, west:float, south:float, east:float, north:float) -> None
+.. py:method:: view_rectangular_extent(self, centralBody: str, west: float, south: float, east: float, north: float) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_rectangular_extent
 
     Zooms to a rectangular extent composed of west, south, east, north on the centralBody. The camera will be looking straight down at the extent, with the up vector pointing toward local north...
 
@@ -364,72 +372,77 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: view_with_up_axis(self, axes:"IVectorGeometryToolAxes", cameraPosition:"IVectorGeometryToolPoint", referencePoint:"IVectorGeometryToolPoint", upAxis:list) -> None
+.. py:method:: view_with_up_axis(self, axes: IVectorGeometryToolAxes, cameraPosition: IVectorGeometryToolPoint, referencePoint: IVectorGeometryToolPoint, upAxis: list) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_with_up_axis
 
     View from a point to a point. Sets the camera's position and the reference point the camera is looking at.
 
     :Parameters:
 
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **cameraPosition** : :obj:`~"IVectorGeometryToolPoint"`
-    **referencePoint** : :obj:`~"IVectorGeometryToolPoint"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **cameraPosition** : :obj:`~IVectorGeometryToolPoint`
+    **referencePoint** : :obj:`~IVectorGeometryToolPoint`
     **upAxis** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: view(self, axes:"IVectorGeometryToolAxes", cameraPosition:"IVectorGeometryToolPoint", referencePoint:"IVectorGeometryToolPoint") -> None
+.. py:method:: view(self, axes: IVectorGeometryToolAxes, cameraPosition: IVectorGeometryToolPoint, referencePoint: IVectorGeometryToolPoint) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view
 
     View from a point to a point. Sets the camera's position and the reference point the camera is looking at.
 
     :Parameters:
 
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **cameraPosition** : :obj:`~"IVectorGeometryToolPoint"`
-    **referencePoint** : :obj:`~"IVectorGeometryToolPoint"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **cameraPosition** : :obj:`~IVectorGeometryToolPoint`
+    **referencePoint** : :obj:`~IVectorGeometryToolPoint`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: view_direction_with_up_axis(self, axes:"IVectorGeometryToolAxes", cameraPosition:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector", upAxis:list) -> None
+.. py:method:: view_direction_with_up_axis(self, axes: IVectorGeometryToolAxes, cameraPosition: IVectorGeometryToolPoint, direction: IVectorGeometryToolVector, upAxis: list) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_direction_with_up_axis
 
     View from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking.
 
     :Parameters:
 
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **cameraPosition** : :obj:`~"IVectorGeometryToolPoint"`
-    **direction** : :obj:`~"IVectorGeometryToolVector"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **cameraPosition** : :obj:`~IVectorGeometryToolPoint`
+    **direction** : :obj:`~IVectorGeometryToolVector`
     **upAxis** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: view_direction(self, axes:"IVectorGeometryToolAxes", cameraPosition:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector") -> None
+.. py:method:: view_direction(self, axes: IVectorGeometryToolAxes, cameraPosition: IVectorGeometryToolPoint, direction: IVectorGeometryToolVector) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_direction
 
     View from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking.
 
     :Parameters:
 
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **cameraPosition** : :obj:`~"IVectorGeometryToolPoint"`
-    **direction** : :obj:`~"IVectorGeometryToolVector"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **cameraPosition** : :obj:`~IVectorGeometryToolPoint`
+    **direction** : :obj:`~IVectorGeometryToolVector`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: view_offset_with_up_axis(self, axes:"IVectorGeometryToolAxes", referencePoint:"IVectorGeometryToolPoint", offset:list, upAxis:list) -> None
+.. py:method:: view_offset_with_up_axis(self, axes: IVectorGeometryToolAxes, referencePoint: IVectorGeometryToolPoint, offset: list, upAxis: list) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_offset_with_up_axis
 
     Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset.
 
     :Parameters:
 
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **referencePoint** : :obj:`~"IVectorGeometryToolPoint"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **referencePoint** : :obj:`~IVectorGeometryToolPoint`
     **offset** : :obj:`~list`
     **upAxis** : :obj:`~list`
 
@@ -437,44 +450,47 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: view_offset(self, axes:"IVectorGeometryToolAxes", referencePoint:"IVectorGeometryToolPoint", offset:list) -> None
+.. py:method:: view_offset(self, axes: IVectorGeometryToolAxes, referencePoint: IVectorGeometryToolPoint, offset: list) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_offset
 
     Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset.
 
     :Parameters:
 
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **referencePoint** : :obj:`~"IVectorGeometryToolPoint"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **referencePoint** : :obj:`~IVectorGeometryToolPoint`
     **offset** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: view_offset_direction_with_up_axis(self, axes:"IVectorGeometryToolAxes", referencePoint:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector", upAxis:list) -> None
+.. py:method:: view_offset_direction_with_up_axis(self, axes: IVectorGeometryToolAxes, referencePoint: IVectorGeometryToolPoint, direction: IVectorGeometryToolVector, upAxis: list) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_offset_direction_with_up_axis
 
     Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector.
 
     :Parameters:
 
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **referencePoint** : :obj:`~"IVectorGeometryToolPoint"`
-    **direction** : :obj:`~"IVectorGeometryToolVector"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **referencePoint** : :obj:`~IVectorGeometryToolPoint`
+    **direction** : :obj:`~IVectorGeometryToolVector`
     **upAxis** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: view_offset_direction(self, axes:"IVectorGeometryToolAxes", referencePoint:"IVectorGeometryToolPoint", direction:"IVectorGeometryToolVector") -> None
+.. py:method:: view_offset_direction(self, axes: IVectorGeometryToolAxes, referencePoint: IVectorGeometryToolPoint, direction: IVectorGeometryToolVector) -> None
+    :canonical: ansys.stk.core.graphics.ICamera.view_offset_direction
 
     Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector.
 
     :Parameters:
 
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **referencePoint** : :obj:`~"IVectorGeometryToolPoint"`
-    **direction** : :obj:`~"IVectorGeometryToolVector"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **referencePoint** : :obj:`~IVectorGeometryToolPoint`
+    **direction** : :obj:`~IVectorGeometryToolVector`
 
     :Returns:
 

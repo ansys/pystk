@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: track_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectory.track_data
-    :type: "IAgVeVOTrajectoryTrackData"
+    :type: IAgVeVOTrajectoryTrackData
 
     Get the leading/trailing ground track and trajectory data.
 
 .. py:property:: tick_marks
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectory.tick_marks
-    :type: "IAgVeVOTrajectoryTickMarks"
+    :type: IAgVeVOTrajectoryTickMarks
 
     Get the tick mark data.
 

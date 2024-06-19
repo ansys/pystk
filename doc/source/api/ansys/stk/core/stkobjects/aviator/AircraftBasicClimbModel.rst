@@ -3,7 +3,7 @@ AircraftBasicClimbModel
 
 .. py:class:: AircraftBasicClimbModel
 
-   IAircraftBasicClimbModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftBasicClimbModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the basic climb performance model for an Aviator aircraft.
 

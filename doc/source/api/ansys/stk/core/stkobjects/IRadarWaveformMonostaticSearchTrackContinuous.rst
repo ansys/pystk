@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: analysis_mode_type
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.analysis_mode_type
-    :type: "RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE"
+    :type: RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE
 
     Gets or sets the analysis type.
 
 .. py:property:: analysis_mode
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.analysis_mode
-    :type: "IAgRadarContinuousWaveAnalysisMode"
+    :type: IAgRadarContinuousWaveAnalysisMode
 
     Gets the interface for setting analysis parameters.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.modulator
-    :type: "IAgRadarModulator"
+    :type: IAgRadarModulator
 
     Gets the interface for setting the modulator parameters.
 

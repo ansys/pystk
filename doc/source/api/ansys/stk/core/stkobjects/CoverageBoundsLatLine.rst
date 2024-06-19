@@ -3,7 +3,7 @@ CoverageBoundsLatLine
 
 .. py:class:: CoverageBoundsLatLine
 
-   ICoverageBoundsLatLine, ICoverageBounds, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageBoundsLatLine`, py:obj:`~ICoverageBounds`
 
    Latitude Line: Create a set of points along a single latitude line, useful when the coverage is only expected to vary with longitude.
 

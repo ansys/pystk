@@ -3,7 +3,7 @@ StkObjectCoverage
 
 .. py:class:: StkObjectCoverage
 
-   IStkObjectCoverage, SupportsDeleteCallback
+   Bases: py:obj:`~IStkObjectCoverage`
 
    Class defining object coverage.
 

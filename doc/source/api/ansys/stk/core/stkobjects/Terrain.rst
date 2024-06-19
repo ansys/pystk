@@ -3,7 +3,7 @@ Terrain
 
 .. py:class:: Terrain
 
-   ITerrain, SupportsDeleteCallback
+   Bases: py:obj:`~ITerrain`
 
    Class defining terrain data for a Scenario.
 

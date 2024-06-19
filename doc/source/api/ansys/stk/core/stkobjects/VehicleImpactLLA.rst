@@ -3,7 +3,7 @@ VehicleImpactLLA
 
 .. py:class:: VehicleImpactLLA
 
-   IVehicleImpact, IVehicleImpactLLA, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleImpact`, py:obj:`~IVehicleImpactLLA`
 
    Class defining geodetic impact latitude, longitude and altitude for a Missile.
 

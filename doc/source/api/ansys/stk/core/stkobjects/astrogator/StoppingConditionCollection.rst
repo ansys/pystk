@@ -3,7 +3,7 @@ StoppingConditionCollection
 
 .. py:class:: StoppingConditionCollection
 
-   IStoppingConditionCollection, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IStoppingConditionCollection`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The stopping conditions collection.
 

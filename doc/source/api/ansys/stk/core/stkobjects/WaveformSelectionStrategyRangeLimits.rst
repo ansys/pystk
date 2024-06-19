@@ -3,7 +3,7 @@ WaveformSelectionStrategyRangeLimits
 
 .. py:class:: WaveformSelectionStrategyRangeLimits
 
-   IWaveformSelectionStrategyRangeLimits, IWaveformSelectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IWaveformSelectionStrategyRangeLimits`, py:obj:`~IWaveformSelectionStrategy`
 
    Class defining the range limits waveform selection strategy.
 

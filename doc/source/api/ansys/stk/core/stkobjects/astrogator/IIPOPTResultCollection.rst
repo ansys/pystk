@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IIPOPTResult"
+.. py:method:: item(self, index: int) -> IIPOPTResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IIPOPTResultCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IIPOPTResult"`
+        :obj:`~IIPOPTResult`
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath:str, resultPath:str) -> "IIPOPTResult"
+.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> IIPOPTResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IIPOPTResultCollection.get_result_by_paths
 
     Return the result specified by the object/result names.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IIPOPTResult"`
+        :obj:`~IIPOPTResult`
 

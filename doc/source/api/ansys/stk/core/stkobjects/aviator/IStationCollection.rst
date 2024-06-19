@@ -82,7 +82,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IStation"
+.. py:method:: item(self, index: int) -> IStation
+    :canonical: ansys.stk.core.stkobjects.aviator.IStationCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -92,10 +93,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStation"`
+        :obj:`~IStation`
 
 
-.. py:method:: get_internal_fuel_tank_by_name(self, name:str) -> "IFuelTankInternal"
+.. py:method:: get_internal_fuel_tank_by_name(self, name: str) -> IFuelTankInternal
+    :canonical: ansys.stk.core.stkobjects.aviator.IStationCollection.get_internal_fuel_tank_by_name
 
     Get the internal fuel tank with the given name.
 
@@ -105,17 +107,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IFuelTankInternal"`
+        :obj:`~IFuelTankInternal`
 
-.. py:method:: add_internal_fuel_tank(self) -> "IFuelTankInternal"
+.. py:method:: add_internal_fuel_tank(self) -> IFuelTankInternal
+    :canonical: ansys.stk.core.stkobjects.aviator.IStationCollection.add_internal_fuel_tank
 
     Add an internal fuel tank.
 
     :Returns:
 
-        :obj:`~"IFuelTankInternal"`
+        :obj:`~IFuelTankInternal`
 
-.. py:method:: get_payload_station_by_name(self, name:str) -> "IPayloadStation"
+.. py:method:: get_payload_station_by_name(self, name: str) -> IPayloadStation
+    :canonical: ansys.stk.core.stkobjects.aviator.IStationCollection.get_payload_station_by_name
 
     Get the payload station with the given name.
 
@@ -125,17 +129,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPayloadStation"`
+        :obj:`~IPayloadStation`
 
-.. py:method:: add_payload_station(self) -> "IPayloadStation"
+.. py:method:: add_payload_station(self) -> IPayloadStation
+    :canonical: ansys.stk.core.stkobjects.aviator.IStationCollection.add_payload_station
 
     Add a payload station.
 
     :Returns:
 
-        :obj:`~"IPayloadStation"`
+        :obj:`~IPayloadStation`
 
-.. py:method:: contains_station(self, name:str) -> bool
+.. py:method:: contains_station(self, name: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.aviator.IStationCollection.contains_station
 
     Get whether the station list contains an item with the given name.
 
@@ -147,7 +153,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: remove_station_by_name(self, name:str) -> None
+.. py:method:: remove_station_by_name(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IStationCollection.remove_station_by_name
 
     Remove an station by name.
 
@@ -159,7 +166,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_at_index(self, index:int) -> None
+.. py:method:: remove_at_index(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IStationCollection.remove_at_index
 
     Remove procedure at the given index.
 

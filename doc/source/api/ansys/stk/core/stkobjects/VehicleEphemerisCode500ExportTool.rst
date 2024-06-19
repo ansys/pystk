@@ -3,7 +3,7 @@ VehicleEphemerisCode500ExportTool
 
 .. py:class:: VehicleEphemerisCode500ExportTool
 
-   IVehicleEphemerisCode500ExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEphemerisCode500ExportTool`
 
    AgVeEphemerisTypeCode500 Class.
 

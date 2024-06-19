@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCylindrical.reference_system
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Get the reference system in which cylindrical parameters are computed.
 
 .. py:property:: theta_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCylindrical.theta_coordinates
-    :type: "IAgCrdnGridCoordinateDefinition"
+    :type: IAgCrdnGridCoordinateDefinition
 
     Returns theta Coordinates parameters for the Theta system.
 
 .. py:property:: radius_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCylindrical.radius_coordinates
-    :type: "IAgCrdnGridCoordinateDefinition"
+    :type: IAgCrdnGridCoordinateDefinition
 
     Returns radius Coordinates parameters for the Radius system.
 
 .. py:property:: height_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCylindrical.height_coordinates
-    :type: "IAgCrdnGridCoordinateDefinition"
+    :type: IAgCrdnGridCoordinateDefinition
 
     Returns height Coordinates parameters for the Height system.
 

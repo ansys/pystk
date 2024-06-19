@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileInertial.inertial
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Get inertial axes.
 

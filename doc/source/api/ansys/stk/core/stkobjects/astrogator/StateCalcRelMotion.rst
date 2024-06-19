@@ -3,7 +3,7 @@ StateCalcRelMotion
 
 .. py:class:: StateCalcRelMotion
 
-   IComponentInfo, ICloneable, IStateCalcRelMotion, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelMotion`
 
    Relative Motion Calc objects.
 

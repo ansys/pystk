@@ -3,7 +3,7 @@ PlanetCommonTasks
 
 .. py:class:: PlanetCommonTasks
 
-   IPlanetCommonTasks, SupportsDeleteCallback
+   Bases: py:obj:`~IPlanetCommonTasks`
 
    Class defining the Planet Common class.
 

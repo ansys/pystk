@@ -3,7 +3,7 @@ AccessConstraintCentralBodyObstruction
 
 .. py:class:: AccessConstraintCentralBodyObstruction
 
-   IAccessConstraintCentralBodyObstruction, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintCentralBodyObstruction`, py:obj:`~IAccessConstraint`
 
    Class defining constraints in terms of obstruction by a specified central body.
 

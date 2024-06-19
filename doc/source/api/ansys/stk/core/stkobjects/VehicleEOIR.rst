@@ -3,7 +3,7 @@ VehicleEOIR
 
 .. py:class:: VehicleEOIR
 
-   IVehicleEOIR, IEOIR, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEOIR`, py:obj:`~IEOIR`
 
    AgVeEOIR interface class.
 

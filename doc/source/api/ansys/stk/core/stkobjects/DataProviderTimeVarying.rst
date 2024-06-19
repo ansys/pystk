@@ -3,7 +3,7 @@ DataProviderTimeVarying
 
 .. py:class:: DataProviderTimeVarying
 
-   IDataProviderTimeVarying, IDataProvider, IDataProviderInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderTimeVarying`, py:obj:`~IDataProvider`, py:obj:`~IDataProviderInfo`
 
    Support for time-dependent data providers (e.g. Satellite position).
 

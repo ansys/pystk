@@ -3,7 +3,7 @@ ClassicalSizeShapeAltitude
 
 .. py:class:: ClassicalSizeShapeAltitude
 
-   IClassicalSizeShapeAltitude, IClassicalSizeShape, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalSizeShapeAltitude`, py:obj:`~IClassicalSizeShape`
 
    Orbit size and shape using altitude.
 

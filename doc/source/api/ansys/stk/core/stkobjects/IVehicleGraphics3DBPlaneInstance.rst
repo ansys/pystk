@@ -80,13 +80,13 @@ Property detail
 
 .. py:property:: event
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.event
-    :type: "IAgVeVOBPlaneEvent"
+    :type: IAgVeVOBPlaneEvent
 
     Returns the 3D BPlane Event properties.
 
 .. py:property:: target_point
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.target_point
-    :type: "IAgVeVOBPlaneTargetPoint"
+    :type: IAgVeVOBPlaneTargetPoint
 
     Returns the 3D BPlane Target Point properties.
 
@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: connect_point_line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.connect_point_line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the width of the lines connecting the additional points.
 
@@ -134,7 +134,7 @@ Property detail
 
 .. py:property:: additional_points
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.additional_points
-    :type: "IAgVeVOBPlanePointCollection"
+    :type: IAgVeVOBPlanePointCollection
 
     Returns a collection of additional points.
 

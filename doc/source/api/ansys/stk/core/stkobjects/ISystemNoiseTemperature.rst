@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: compute_type
     :canonical: ansys.stk.core.stkobjects.ISystemNoiseTemperature.compute_type
-    :type: "NOISE_TEMP_COMPUTE_TYPE"
+    :type: NOISE_TEMP_COMPUTE_TYPE
 
     Gets or sets the system noise temperature compute type.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: antenna_noise_temperature
     :canonical: ansys.stk.core.stkobjects.ISystemNoiseTemperature.antenna_noise_temperature
-    :type: "IAgAntennaNoiseTemperature"
+    :type: IAgAntennaNoiseTemperature
 
     Gets the interface for setting the antenna noise temperature parameters.
 

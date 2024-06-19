@@ -3,7 +3,7 @@ PowerSolarArray
 
 .. py:class:: PowerSolarArray
 
-   IPowerSolarArray, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IPowerSolarArray`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Power - Solar Array.
 

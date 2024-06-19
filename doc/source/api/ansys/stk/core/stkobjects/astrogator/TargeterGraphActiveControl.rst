@@ -3,7 +3,7 @@ TargeterGraphActiveControl
 
 .. py:class:: TargeterGraphActiveControl
 
-   ITargeterGraphActiveControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~ITargeterGraphActiveControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Targeter Graph Active Control.
 

@@ -62,25 +62,27 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IPointBatchPrimitive"
+.. py:method:: initialize(self) -> IPointBatchPrimitive
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitiveFactory.initialize
 
     Initialize a default point batch primitive. This is equivalent to constructing a point batch with a set hint of Frequent.
 
     :Returns:
 
-        :obj:`~"IPointBatchPrimitive"`
+        :obj:`~IPointBatchPrimitive`
 
-.. py:method:: initialize_with_set_hint(self, setHint:"SET_HINT") -> "IPointBatchPrimitive"
+.. py:method:: initialize_with_set_hint(self, setHint: SET_HINT) -> IPointBatchPrimitive
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitiveFactory.initialize_with_set_hint
 
     Initialize a new instance of a point batch primitive with the specified set hint.
 
     :Parameters:
 
-    **setHint** : :obj:`~"SET_HINT"`
+    **setHint** : :obj:`~SET_HINT`
 
     :Returns:
 
-        :obj:`~"IPointBatchPrimitive"`
+        :obj:`~IPointBatchPrimitive`
 
 
 

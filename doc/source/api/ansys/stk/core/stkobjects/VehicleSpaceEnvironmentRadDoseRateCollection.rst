@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentRadDoseRateCollection
 
 .. py:class:: VehicleSpaceEnvironmentRadDoseRateCollection
 
-   IVehicleSpaceEnvironmentRadDoseRateCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironmentRadDoseRateCollection`
 
    Collection of dose rate elements computed for a shielding thickness.
 

@@ -55,11 +55,12 @@ Method detail
 
 
 
-.. py:method:: preview(self) -> "IVehicleGPSElementCollection"
+.. py:method:: preview(self) -> IVehicleGPSElementCollection
+    :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateFileSource.preview
 
     Preview the GPS elements in the almanac. Only records associated with the current PRN are returned.
 
     :Returns:
 
-        :obj:`~"IVehicleGPSElementCollection"`
+        :obj:`~IVehicleGPSElementCollection`
 

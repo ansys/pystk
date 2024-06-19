@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: user_runways
     :canonical: ansys.stk.core.stkobjects.aviator.IRunwayCategory.user_runways
-    :type: "IAgAvtrUserRunwaySource"
+    :type: IAgAvtrUserRunwaySource
 
     Get the user runways.
 
 .. py:property:: arinc424_runways
     :canonical: ansys.stk.core.stkobjects.aviator.IRunwayCategory.arinc424_runways
-    :type: "IAgAvtrARINC424Source"
+    :type: IAgAvtrARINC424Source
 
     Get the ARINC-424 runways.
 
 .. py:property:: dafif_runways
     :canonical: ansys.stk.core.stkobjects.aviator.IRunwayCategory.dafif_runways
-    :type: "IAgAvtrDAFIFSource"
+    :type: IAgAvtrDAFIFSource
 
     Get the DAFIF runways.
 

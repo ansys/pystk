@@ -3,7 +3,7 @@ SensorPointingSchedule
 
 .. py:class:: SensorPointingSchedule
 
-   ISensorPointing, ISensorPointingSchedule, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingSchedule`
 
    Allow to schedule a sensor to point at a specific location at a specific time.
 

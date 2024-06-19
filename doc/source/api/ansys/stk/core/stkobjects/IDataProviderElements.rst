@@ -64,7 +64,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IDataProviderElement"
+.. py:method:: item(self, indexOrName: typing.Any) -> IDataProviderElement
+    :canonical: ansys.stk.core.stkobjects.IDataProviderElements.item
 
     Return the specific item provided an Index.
 
@@ -74,11 +75,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderElement"`
+        :obj:`~IDataProviderElement`
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IDataProviderElement"
+.. py:method:: get_item_by_index(self, index: int) -> IDataProviderElement
+    :canonical: ansys.stk.core.stkobjects.IDataProviderElements.get_item_by_index
 
     Return the specific item provided an Index.
 
@@ -88,9 +90,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderElement"`
+        :obj:`~IDataProviderElement`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IDataProviderElement"
+.. py:method:: get_item_by_name(self, name: str) -> IDataProviderElement
+    :canonical: ansys.stk.core.stkobjects.IDataProviderElements.get_item_by_name
 
     Return the specific item provided a Name.
 
@@ -100,5 +103,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderElement"`
+        :obj:`~IDataProviderElement`
 

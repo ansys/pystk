@@ -3,7 +3,7 @@ CalculationToolSamplingMethodFactory
 
 .. py:class:: CalculationToolSamplingMethodFactory
 
-   ICalculationToolSamplingMethodFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolSamplingMethodFactory`
 
    The factory creates sampling method components.
 

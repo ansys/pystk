@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.enroute_options
-    :type: "IAgAvtrEnrouteOptions"
+    :type: IAgAvtrEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: delay_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.delay_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the delay cruise airspeed options.
 
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.fuel_flow_type
-    :type: "FUEL_FLOW_TYPE"
+    :type: FUEL_FLOW_TYPE
 
     Gets or sets the source used to calculate the fuel flow for the maneuver.
 
@@ -151,7 +151,7 @@ Property detail
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.flight_mode
-    :type: "PHASE_OF_FLIGHT"
+    :type: PHASE_OF_FLIGHT
 
     Gets or sets the type of performance model that the aircraft will use to fly the maneuver.
 
@@ -175,7 +175,7 @@ Property detail
 
 .. py:property:: delay_turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.delay_turn_direction
-    :type: "DELAY_TURN_DIRECTION"
+    :type: DELAY_TURN_DIRECTION
 
     Gets or sets the turn direction of the delay.
 
@@ -183,17 +183,19 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
 
-.. py:method:: get_minimum_time(self, considerPrevProc:bool) -> typing.Any
+.. py:method:: get_minimum_time(self, considerPrevProc: bool) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.get_minimum_time
 
     Get the minimum time at which formation might be possible. Opt whether to consider previous procedure(s) for the minimum time.
 
@@ -207,7 +209,8 @@ Method detail
 
 
 
-.. py:method:: find_first_valid_start_time(self, minTime:typing.Any, maxTime:typing.Any, stepTime:float) -> typing.Any
+.. py:method:: find_first_valid_start_time(self, minTime: typing.Any, maxTime: typing.Any, stepTime: float) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.find_first_valid_start_time
 
     Have Aviator calculate the earliest valid formation time.
 

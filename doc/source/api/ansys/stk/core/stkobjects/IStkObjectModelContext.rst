@@ -38,19 +38,21 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self) -> "IStkObjectRoot"
+.. py:method:: create(self) -> IStkObjectRoot
+    :canonical: ansys.stk.core.stkobjects.IStkObjectModelContext.create
 
     Create a non-restrictive root object.
 
     :Returns:
 
-        :obj:`~"IStkObjectRoot"`
+        :obj:`~IStkObjectRoot`
 
-.. py:method:: create_restrictive(self) -> "IStkObjectRoot"
+.. py:method:: create_restrictive(self) -> IStkObjectRoot
+    :canonical: ansys.stk.core.stkobjects.IStkObjectModelContext.create_restrictive
 
     Create a restrictive root object.
 
     :Returns:
 
-        :obj:`~"IStkObjectRoot"`
+        :obj:`~IStkObjectRoot`
 

@@ -3,7 +3,7 @@ LineTargetGraphics
 
 .. py:class:: LineTargetGraphics
 
-   ILineTargetGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~ILineTargetGraphics`
 
    The AgLtGraphics class.
 

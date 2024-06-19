@@ -3,7 +3,7 @@ CalculationToolConditionCombined
 
 .. py:class:: CalculationToolConditionCombined
 
-   ICalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionCombined`, py:obj:`~ICalculationToolCondition`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Define a condition which combines multiple conditions.
 

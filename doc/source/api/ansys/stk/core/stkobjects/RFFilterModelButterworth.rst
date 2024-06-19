@@ -3,7 +3,7 @@ RFFilterModelButterworth
 
 .. py:class:: RFFilterModelButterworth
 
-   IRFFilterModelButterworth, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelButterworth`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a butterworth filter model.
 

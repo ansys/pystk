@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: maximum_radius_bounding_sphere
     :canonical: ansys.stk.core.graphics.IBoundingSphereFactory.maximum_radius_bounding_sphere
-    :type: "IAgStkGraphicsBoundingSphere"
+    :type: IAgStkGraphicsBoundingSphere
 
     Gets the bounding sphere of maximum possible radius.
 
@@ -53,7 +53,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: initialize(self, center:list, radius:float) -> "IBoundingSphere"
+.. py:method:: initialize(self, center: list, radius: float) -> IBoundingSphere
+    :canonical: ansys.stk.core.graphics.IBoundingSphereFactory.initialize
 
     Create instances of BoundingSphere.
 
@@ -64,6 +65,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBoundingSphere"`
+        :obj:`~IBoundingSphere`
 
 

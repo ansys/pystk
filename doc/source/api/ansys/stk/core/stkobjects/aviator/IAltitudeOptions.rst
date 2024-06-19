@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.IAltitudeOptions.altitude_reference
-    :type: "AGL_MSL"
+    :type: AGL_MSL
 
     Gets or sets the altitude reference.
 

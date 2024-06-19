@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: objects
     :canonical: ansys.stk.core.stkobjects.IChain.objects
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
 
@@ -88,19 +88,19 @@ Property detail
 
 .. py:property:: time_period_type
     :canonical: ansys.stk.core.stkobjects.IChain.time_period_type
-    :type: "CHAIN_TIME_PERIOD_TYPE"
+    :type: CHAIN_TIME_PERIOD_TYPE
 
     Get the option used to specify the time period for the chain.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IChain.time_period
-    :type: "IAgChTimePeriodBase"
+    :type: IAgChTimePeriodBase
 
     Get the time period for the chain.
 
 .. py:property:: data_save_mode
     :canonical: ansys.stk.core.stkobjects.IChain.data_save_mode
-    :type: "DATA_SAVE_MODE"
+    :type: DATA_SAVE_MODE
 
     Specify the mode for saving or recomputing accesses.
 
@@ -130,31 +130,31 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.IChain.constraints
-    :type: "IAgChConstraints"
+    :type: IAgChConstraints
 
     Get the constraints applicable to the chain.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IChain.graphics
-    :type: "IAgChGraphics"
+    :type: IAgChGraphics
 
     Get the 2D graphics properties of the chain.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IChain.graphics_3d
-    :type: "IAgChVO"
+    :type: IAgChVO
 
     Get the 3D graphics properties of the chain.
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.IChain.event_detection
-    :type: "IAgAccessEventDetection"
+    :type: IAgAccessEventDetection
 
     Event detection strategy used for access calculations.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.stkobjects.IChain.sampling
-    :type: "IAgAccessSampling"
+    :type: IAgAccessSampling
 
     Sampling method used for access calculations.
 
@@ -166,7 +166,7 @@ Property detail
 
 .. py:property:: const_constraints_mode
     :canonical: ansys.stk.core.stkobjects.IChain.const_constraints_mode
-    :type: "CHAIN_CONST_CONSTRAINTS_MODE"
+    :type: CHAIN_CONST_CONSTRAINTS_MODE
 
     Constellation constraints mode, apply to strands or per instance.
 
@@ -184,19 +184,19 @@ Property detail
 
 .. py:property:: cov_asset_mode
     :canonical: ansys.stk.core.stkobjects.IChain.cov_asset_mode
-    :type: "CHAIN_COV_ASSET_MODE"
+    :type: CHAIN_COV_ASSET_MODE
 
     When Computing Coverage and the Chain is used as a coverage asset, append the grid instance to the end of the chain or update the grid instance inside the chain.
 
 .. py:property:: start_object
     :canonical: ansys.stk.core.stkobjects.IChain.start_object
-    :type: "IAgStkObject"
+    :type: IAgStkObject
 
     Start object for the Chain.
 
 .. py:property:: end_object
     :canonical: ansys.stk.core.stkobjects.IChain.end_object
-    :type: "IAgStkObject"
+    :type: IAgStkObject
 
     End object for the Chain.
 
@@ -208,13 +208,13 @@ Property detail
 
 .. py:property:: connections
     :canonical: ansys.stk.core.stkobjects.IChain.connections
-    :type: "IAgChConnectionCollection"
+    :type: IAgChConnectionCollection
 
     Get the collection of connections in the chain.
 
 .. py:property:: optimal_strand_opts
     :canonical: ansys.stk.core.stkobjects.IChain.optimal_strand_opts
-    :type: "IAgChOptimalStrandOpts"
+    :type: IAgChOptimalStrandOpts
 
     Optimal strands settings for the Chain.
 
@@ -226,13 +226,14 @@ Method detail
 
 
 
-.. py:method:: set_time_period_type(self, timePeriodType:"CHAIN_TIME_PERIOD_TYPE") -> None
+.. py:method:: set_time_period_type(self, timePeriodType: CHAIN_TIME_PERIOD_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IChain.set_time_period_type
 
     Set the option used to specify the time period.
 
     :Parameters:
 
-    **timePeriodType** : :obj:`~"CHAIN_TIME_PERIOD_TYPE"`
+    **timePeriodType** : :obj:`~CHAIN_TIME_PERIOD_TYPE`
 
     :Returns:
 
@@ -241,7 +242,8 @@ Method detail
 
 
 
-.. py:method:: set_access_intervals_file(self, filename:str) -> None
+.. py:method:: set_access_intervals_file(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IChain.set_access_intervals_file
 
     Opt to produce an .int file containing the strand access intervals.
 
@@ -254,6 +256,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: reset_access_intervals_file(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IChain.reset_access_intervals_file
 
     Reset the .int file containing the strand access intervals.
 
@@ -272,6 +275,7 @@ Method detail
 
 
 .. py:method:: compute_access(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IChain.compute_access
 
     Compute access for the chain.
 
@@ -280,6 +284,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: clear_access(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IChain.clear_access
 
     Remove all chain accesses.
 

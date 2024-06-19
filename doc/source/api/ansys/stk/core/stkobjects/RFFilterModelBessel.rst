@@ -3,7 +3,7 @@ RFFilterModelBessel
 
 .. py:class:: RFFilterModelBessel
 
-   IRFFilterModelBessel, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelBessel`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a bessel filter model.
 

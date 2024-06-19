@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem.reference
-    :type: "IAgCrdnSystemRefTo"
+    :type: IAgCrdnSystemRefTo
 
     Specify a reference system.
 
 .. py:property:: fixed_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem.fixed_point
-    :type: "IAgPosition"
+    :type: IAgPosition
 
     Specify the point's position. The position is relative with respect to the specified reference system.
 

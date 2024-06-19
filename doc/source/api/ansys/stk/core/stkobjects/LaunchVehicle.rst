@@ -3,7 +3,7 @@ LaunchVehicle
 
 .. py:class:: LaunchVehicle
 
-   ILaunchVehicle, IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback
+   Bases: py:obj:`~ILaunchVehicle`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IProvideSpatialInfo`
 
    Launch vehicle object.
 

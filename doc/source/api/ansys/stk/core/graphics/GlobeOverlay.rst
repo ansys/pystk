@@ -3,7 +3,7 @@ GlobeOverlay
 
 .. py:class:: GlobeOverlay
 
-   IGlobeOverlay, SupportsDeleteCallback
+   Bases: py:obj:`~IGlobeOverlay`
 
    The base class of all terrain overlay and globe image overlay objects.
 

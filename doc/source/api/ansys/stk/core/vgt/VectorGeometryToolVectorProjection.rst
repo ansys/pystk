@@ -3,7 +3,7 @@ VectorGeometryToolVectorProjection
 
 .. py:class:: VectorGeometryToolVectorProjection
 
-   IVectorGeometryToolVectorProjection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorProjection`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A projection of a vector computed with respect to a reference plane.
 

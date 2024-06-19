@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.origin
-    :type: "ORIGIN"
+    :type: ORIGIN
 
     Gets or sets the per-batch origin, which is applied to each string in the text batch.
 
@@ -95,7 +95,8 @@ Method detail
 
 
 
-.. py:method:: set_origins(self, origins:list) -> None
+.. py:method:: set_origins(self, origins: list) -> None
+    :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.set_origins
 
     Define a collection of origins, one for each string in the batch.
 
@@ -107,7 +108,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_eye_offsets(self, eyeOffsets:list) -> None
+.. py:method:: set_eye_offsets(self, eyeOffsets: list) -> None
+    :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.set_eye_offsets
 
     Define a collection of eye offsets, one for each string in the batch.
 
@@ -119,7 +121,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_pixel_offsets(self, pixelOffsets:list) -> None
+.. py:method:: set_pixel_offsets(self, pixelOffsets: list) -> None
+    :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.set_pixel_offsets
 
     Define a collection of pixel offsets, one for each string in the batch.
 
@@ -131,7 +134,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_colors(self, colors:list) -> None
+.. py:method:: set_colors(self, colors: list) -> None
+    :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.set_colors
 
     Define a collection of colors, one for each string in the batch.
 

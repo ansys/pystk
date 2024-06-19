@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileFixedInAxes.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Get the orientation of the body-fixed axes.
 

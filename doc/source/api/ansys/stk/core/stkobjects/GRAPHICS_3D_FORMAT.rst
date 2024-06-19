@@ -11,6 +11,24 @@ GRAPHICS_3D_FORMAT
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~HORIZONTAL`
+              - Horizontal layout.
+
+            * - :py:attr:`~NO_LABELS`
+              - No label display.
+
+            * - :py:attr:`~VERTICAL`
+              - Vertical layout.
+
+
 Import detail
 -------------
 

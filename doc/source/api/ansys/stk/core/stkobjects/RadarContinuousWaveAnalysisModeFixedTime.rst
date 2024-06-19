@@ -3,7 +3,7 @@ RadarContinuousWaveAnalysisModeFixedTime
 
 .. py:class:: RadarContinuousWaveAnalysisModeFixedTime
 
-   IRadarContinuousWaveAnalysisModeFixedTime, IRadarContinuousWaveAnalysisMode, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarContinuousWaveAnalysisModeFixedTime`, py:obj:`~IRadarContinuousWaveAnalysisMode`
 
    Class defining the continuous wave fixed time analysis mode.
 

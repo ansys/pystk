@@ -3,7 +3,7 @@ MissileProp
 
 .. py:class:: MissileProp
 
-   IMissileProp, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileProp`
 
    Class defining the propulsion options for a missile.
 

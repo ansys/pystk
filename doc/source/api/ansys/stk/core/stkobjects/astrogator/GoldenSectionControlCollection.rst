@@ -3,7 +3,7 @@ GoldenSectionControlCollection
 
 .. py:class:: GoldenSectionControlCollection
 
-   IGoldenSectionControlCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IGoldenSectionControlCollection`
 
    Properties for the list of Golden Section control parameters.
 

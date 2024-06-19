@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: grav_source
     :canonical: ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction.grav_source
-    :type: "GRAV_PARAM_SOURCE"
+    :type: GRAV_PARAM_SOURCE
 
     Gets or sets the source for the gravitational parameter.
 

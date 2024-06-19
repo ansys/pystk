@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchia_1960.sun_position
-    :type: "SUN_POSITION"
+    :type: SUN_POSITION
 
     Gets or sets the sun position computation.
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchia_1960.drag_model_type
-    :type: "DRAG_MODEL_TYPE"
+    :type: DRAG_MODEL_TYPE
 
     Drag model type.
 
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchia_1960.drag_model_plugin
-    :type: "IAgVADragModelPlugin"
+    :type: IAgVADragModelPlugin
 
     Drag model plugin properties.
 

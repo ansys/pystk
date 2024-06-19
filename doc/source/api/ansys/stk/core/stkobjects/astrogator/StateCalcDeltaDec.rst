@@ -3,7 +3,7 @@ StateCalcDeltaDec
 
 .. py:class:: StateCalcDeltaDec
 
-   IComponentInfo, ICloneable, IStateCalcDeltaDec, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDeltaDec`
 
    DeltaDec Calc objects.
 

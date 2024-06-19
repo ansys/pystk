@@ -3,7 +3,7 @@ GoldenSectionResult
 
 .. py:class:: GoldenSectionResult
 
-   IGoldenSectionResult, SupportsDeleteCallback
+   Bases: py:obj:`~IGoldenSectionResult`
 
    Result parameters for Golden Section profile.
 

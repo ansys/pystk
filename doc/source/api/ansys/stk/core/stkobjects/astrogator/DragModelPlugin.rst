@@ -3,7 +3,7 @@ DragModelPlugin
 
 .. py:class:: DragModelPlugin
 
-   IDragModelPlugin, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IDragModelPlugin`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Drag Model Plugin.
 

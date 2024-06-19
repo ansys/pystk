@@ -3,7 +3,7 @@ StoppingConditionElement
 
 .. py:class:: StoppingConditionElement
 
-   IStoppingConditionElement, IComponentInfo, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IStoppingConditionElement`, py:obj:`~IComponentInfo`, py:obj:`~IRuntimeTypeInfoProvider`
 
    A stopping condition.
 

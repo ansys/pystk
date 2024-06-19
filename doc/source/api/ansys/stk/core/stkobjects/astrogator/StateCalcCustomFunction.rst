@@ -3,7 +3,7 @@ StateCalcCustomFunction
 
 .. py:class:: StateCalcCustomFunction
 
-   IComponentInfo, ICloneable, IStateCalcCustomFunction, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCustomFunction`
 
    Custom Function Calc objects.
 

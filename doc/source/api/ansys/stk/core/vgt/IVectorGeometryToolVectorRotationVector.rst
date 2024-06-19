@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorRotationVector.axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify the axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorRotationVector.reference_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a reference axes.
 

@@ -3,7 +3,7 @@ ScreenOverlayPickResult
 
 .. py:class:: ScreenOverlayPickResult
 
-   IScreenOverlayPickResult, SupportsDeleteCallback
+   Bases: py:obj:`~IScreenOverlayPickResult`
 
    Describes a picked screen overlay as a result of a call to pick screen overlays.
 

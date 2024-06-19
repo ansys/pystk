@@ -3,7 +3,7 @@ AxesPrimitiveFactory
 
 .. py:class:: AxesPrimitiveFactory
 
-   IAxesPrimitiveFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IAxesPrimitiveFactory`
 
    Render an axes in the 3D scene.
 

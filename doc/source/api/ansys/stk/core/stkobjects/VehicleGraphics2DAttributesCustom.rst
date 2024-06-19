@@ -3,7 +3,7 @@ VehicleGraphics2DAttributesCustom
 
 .. py:class:: VehicleGraphics2DAttributesCustom
 
-   IVehicleGraphics2DAttributesCustom, IVehicleGraphics2DAttributes, IVehicleGraphics2DAttributesDisplayState, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DAttributesCustom`, py:obj:`~IVehicleGraphics2DAttributes`, py:obj:`~IVehicleGraphics2DAttributesDisplayState`
 
    Vehicle 2D graphics display based on custom intervals.
 

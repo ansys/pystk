@@ -3,7 +3,7 @@ ProcedureInFormation
 
 .. py:class:: ProcedureInFormation
 
-   IProcedureInFormation, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureInFormation`, py:obj:`~IProcedure`
 
    Class defining an In Formation procedure.
 

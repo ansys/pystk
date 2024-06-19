@@ -3,7 +3,7 @@ Polarization
 
 .. py:class:: Polarization
 
-   IPolarization, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarization`
 
    Class defining an polarization.
 

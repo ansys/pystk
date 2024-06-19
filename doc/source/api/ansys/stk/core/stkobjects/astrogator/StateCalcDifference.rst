@@ -3,7 +3,7 @@ StateCalcDifference
 
 .. py:class:: StateCalcDifference
 
-   IComponentInfo, ICloneable, IStateCalcDifference, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDifference`
 
    Difference Calc objects.
 

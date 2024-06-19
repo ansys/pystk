@@ -3,7 +3,7 @@ DAFIFSource
 
 .. py:class:: DAFIFSource
 
-   IDAFIFSource, ICatalogSource, SupportsDeleteCallback
+   Bases: py:obj:`~IDAFIFSource`, py:obj:`~ICatalogSource`
 
    Class defining an DAFIF source in the Aviator catalog.
 

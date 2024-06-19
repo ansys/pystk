@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: raster_stream
     :canonical: ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.raster_stream
-    :type: "IAgStkGraphicsRasterStream"
+    :type: IAgStkGraphicsRasterStream
 
     Returns a raster stream.
 
 .. py:property:: projection_stream
     :canonical: ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.projection_stream
-    :type: "IAgStkGraphicsProjectionStream"
+    :type: IAgStkGraphicsProjectionStream
 
     Returns a projection stream.
 

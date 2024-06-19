@@ -3,7 +3,7 @@ StateCalcJacobiOsculating
 
 .. py:class:: StateCalcJacobiOsculating
 
-   IComponentInfo, ICloneable, IStateCalcJacobiOsculating, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcJacobiOsculating`
 
    Osculating Jacobi Integral Calc objects.
 

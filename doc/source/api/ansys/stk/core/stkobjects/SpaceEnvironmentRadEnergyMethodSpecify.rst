@@ -3,7 +3,7 @@ SpaceEnvironmentRadEnergyMethodSpecify
 
 .. py:class:: SpaceEnvironmentRadEnergyMethodSpecify
 
-   ISpaceEnvironmentRadEnergyMethodSpecify, SupportsDeleteCallback
+   Bases: py:obj:`~ISpaceEnvironmentRadEnergyMethodSpecify`
 
    Set the electron and proton energies to consider.
 

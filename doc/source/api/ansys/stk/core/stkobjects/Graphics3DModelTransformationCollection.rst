@@ -3,7 +3,7 @@ Graphics3DModelTransformationCollection
 
 .. py:class:: Graphics3DModelTransformationCollection
 
-   IGraphics3DModelTransformationCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DModelTransformationCollection`
 
    Collection of available transformations in a model.
 

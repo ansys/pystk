@@ -3,7 +3,7 @@ Scenario3dFont
 
 .. py:class:: Scenario3dFont
 
-   IScenario3dFont, SupportsDeleteCallback
+   Bases: py:obj:`~IScenario3dFont`
 
    Font properties for Scenario 3D Graphics.
 

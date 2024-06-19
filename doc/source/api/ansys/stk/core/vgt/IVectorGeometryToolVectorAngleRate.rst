@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: angle
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate.angle
-    :type: "IAgCrdnAngleRefTo"
+    :type: IAgCrdnAngleRefTo
 
     Specify an angle. The angle vector will be perpendicular to the plane in which the angle is defined.
 

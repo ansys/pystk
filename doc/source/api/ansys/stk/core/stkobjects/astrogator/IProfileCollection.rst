@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -92,7 +92,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, profileName:str) -> "IProfile"
+.. py:method:: add(self, profileName: str) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.add
 
     Add a profile.
 
@@ -102,9 +103,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IProfile"`
+        :obj:`~IProfile`
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IProfile"
+.. py:method:: item(self, indexOrName: typing.Any) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.item
 
     Allow you to iterate through the collection.
 
@@ -114,12 +116,13 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IProfile"`
+        :obj:`~IProfile`
 
 
 
 
-.. py:method:: remove(self, indexOrProfileName:typing.Any) -> None
+.. py:method:: remove(self, indexOrProfileName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.remove
 
     Remove an item from the profile collection.
 
@@ -132,6 +135,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.remove_all
 
     Remove all profiles from the profile collection.
 
@@ -140,7 +144,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.cut
 
     Copy the profile into the clipboard and removes profile from the list.
 
@@ -152,34 +157,37 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self, indexOrName:typing.Any, direction:"PROFILE_INSERT_DIRECTION") -> "IProfile"
+.. py:method:: paste(self, indexOrName: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.paste
 
     Pastes the profile from the clipboard and inserts into the list.
 
     :Parameters:
 
     **indexOrName** : :obj:`~typing.Any`
-    **direction** : :obj:`~"PROFILE_INSERT_DIRECTION"`
+    **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
 
     :Returns:
 
-        :obj:`~"IProfile"`
+        :obj:`~IProfile`
 
-.. py:method:: insert_copy(self, profile:"IProfile", indexOrName:typing.Any, direction:"PROFILE_INSERT_DIRECTION") -> "IProfile"
+.. py:method:: insert_copy(self, profile: IProfile, indexOrName: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.insert_copy
 
     Copy the profile and inserts the copy into the list.
 
     :Parameters:
 
-    **profile** : :obj:`~"IProfile"`
+    **profile** : :obj:`~IProfile`
     **indexOrName** : :obj:`~typing.Any`
-    **direction** : :obj:`~"PROFILE_INSERT_DIRECTION"`
+    **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
 
     :Returns:
 
-        :obj:`~"IProfile"`
+        :obj:`~IProfile`
 
-.. py:method:: add2(self, profileName:str, indexOrName:typing.Any, direction:"PROFILE_INSERT_DIRECTION") -> "IProfile"
+.. py:method:: add2(self, profileName: str, indexOrName: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.add2
 
     Add a profile.
 
@@ -187,13 +195,14 @@ Method detail
 
     **profileName** : :obj:`~str`
     **indexOrName** : :obj:`~typing.Any`
-    **direction** : :obj:`~"PROFILE_INSERT_DIRECTION"`
+    **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
 
     :Returns:
 
-        :obj:`~"IProfile"`
+        :obj:`~IProfile`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IProfile"
+.. py:method:: get_item_by_index(self, index: int) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.get_item_by_index
 
     Retrieve a profile from the collection by index.
 
@@ -203,9 +212,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IProfile"`
+        :obj:`~IProfile`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IProfile"
+.. py:method:: get_item_by_name(self, name: str) -> IProfile
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.get_item_by_name
 
     Retrieve a profile from the collection by name.
 
@@ -215,5 +225,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IProfile"`
+        :obj:`~IProfile`
 

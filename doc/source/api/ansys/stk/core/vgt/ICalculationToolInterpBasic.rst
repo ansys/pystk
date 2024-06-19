@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolInterpBasic.type
-    :type: "CRDN_INTERPOLATOR_TYPE"
+    :type: CRDN_INTERPOLATOR_TYPE
 
     Get the interpolation type, which can be Lagrange or Hermite interpolation. See STK help on interpolation for further details.
 

@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: waveform
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack.waveform
-    :type: "IAgRadarWaveformSearchTrack"
+    :type: IAgRadarWaveformSearchTrack
 
     Gets the interface for configuring the search/track waveform.
 
@@ -53,13 +53,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: set_waveform_type(self, val:"RADAR_WAVEFORM_SEARCH_TRACK_TYPE") -> None
+.. py:method:: set_waveform_type(self, val: RADAR_WAVEFORM_SEARCH_TRACK_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack.set_waveform_type
 
     Set the waveform type.
 
     :Parameters:
 
-    **val** : :obj:`~"RADAR_WAVEFORM_SEARCH_TRACK_TYPE"`
+    **val** : :obj:`~RADAR_WAVEFORM_SEARCH_TRACK_TYPE`
 
     :Returns:
 

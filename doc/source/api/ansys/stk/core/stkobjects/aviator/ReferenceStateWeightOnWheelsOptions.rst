@@ -3,7 +3,7 @@ ReferenceStateWeightOnWheelsOptions
 
 .. py:class:: ReferenceStateWeightOnWheelsOptions
 
-   IReferenceStateWeightOnWheelsOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IReferenceStateWeightOnWheelsOptions`
 
    Class defining the Weight on Wheels options for a Reference State procedure.
 

@@ -3,7 +3,7 @@ IPOPTControlCollection
 
 .. py:class:: IPOPTControlCollection
 
-   IIPOPTControlCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IIPOPTControlCollection`
 
    Properties for the list of IPOPT control parameters.
 

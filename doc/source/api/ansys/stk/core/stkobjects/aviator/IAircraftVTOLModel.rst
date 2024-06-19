@@ -123,7 +123,7 @@ Property detail
 
 .. py:property:: forward_flight_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.forward_flight_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the forward flight airspeed type.
 
@@ -159,13 +159,14 @@ Method detail
 
 
 
-.. py:method:: set_forward_flight_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_forward_flight_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.set_forward_flight_airspeed
 
     Set the speed at which the aircraft can begin forward flight.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:

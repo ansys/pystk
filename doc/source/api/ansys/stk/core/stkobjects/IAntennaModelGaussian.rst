@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: input_type
     :canonical: ansys.stk.core.stkobjects.IAntennaModelGaussian.input_type
-    :type: "ANTENNA_MODEL_INPUT_TYPE"
+    :type: ANTENNA_MODEL_INPUT_TYPE
 
     Gets or sets the input type.
 

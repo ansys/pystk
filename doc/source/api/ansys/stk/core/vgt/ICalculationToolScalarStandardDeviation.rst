@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: input_scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.input_scalar
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The input scalar calculation.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: integration_window_type
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.integration_window_type
-    :type: "CRDN_INTEGRATION_WINDOW_TYPE"
+    :type: CRDN_INTEGRATION_WINDOW_TYPE
 
     The integration window, or accumulation, type.
 
@@ -92,31 +92,31 @@ Property detail
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.custom_time_limits
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.save_data_option
-    :type: "CRDN_SAVE_DATA_OPTION"
+    :type: CRDN_SAVE_DATA_OPTION
 
     Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary.
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.interpolation
-    :type: "IAgCrdnInterp"
+    :type: IAgCrdnInterp
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.sampling
-    :type: "IAgCrdnSampling"
+    :type: IAgCrdnSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: integral
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.integral
-    :type: "IAgCrdnIntegral"
+    :type: IAgCrdnIntegral
 
     The numerical integration method.
 
@@ -154,7 +154,8 @@ Method detail
 
 
 
-.. py:method:: set_offsets(self, startOffset:float, stopOffset:float) -> None
+.. py:method:: set_offsets(self, startOffset: float, stopOffset: float) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.set_offsets
 
     Set the offsets with respect to current time to define the start and stop of the sliding window, used when IntegrationWindowType is set to Sliding Window.
 

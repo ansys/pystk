@@ -3,7 +3,7 @@ StateCalcMass
 
 .. py:class:: StateCalcMass
 
-   IComponentInfo, ICloneable, IStateCalcMass, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMass`
 
    Mass Calc objects.
 

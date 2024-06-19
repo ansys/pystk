@@ -3,7 +3,7 @@ VehiclePositionVelocityCollection
 
 .. py:class:: VehiclePositionVelocityCollection
 
-   IVehiclePositionVelocityCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePositionVelocityCollection`
 
    Collection of position and velocity elements for HPOP covariance.
 

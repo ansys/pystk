@@ -63,7 +63,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> str
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkx.IObjPathCollection.item
 
     Get the element at the specified index (0-based).
 
@@ -76,7 +77,8 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: range(self, startIndex:int, stopIndex:int) -> list
+.. py:method:: range(self, startIndex: int, stopIndex: int) -> list
+    :canonical: ansys.stk.core.stkx.IObjPathCollection.range
 
     Return the elements within the specified range.
 

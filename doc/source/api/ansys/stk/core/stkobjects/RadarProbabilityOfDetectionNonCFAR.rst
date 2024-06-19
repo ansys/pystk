@@ -3,7 +3,7 @@ RadarProbabilityOfDetectionNonCFAR
 
 .. py:class:: RadarProbabilityOfDetectionNonCFAR
 
-   IRadarProbabilityOfDetectionNonCFAR, IRadarProbabilityOfDetection, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarProbabilityOfDetectionNonCFAR`, py:obj:`~IRadarProbabilityOfDetection`
 
    Class defining the non CFAR probability of detection cfar.
 

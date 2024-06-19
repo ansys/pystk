@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.sequence
-    :type: "IAgVAMCSSegmentCollection"
+    :type: IAgVAMCSSegmentCollection
 
     Returns the segment collection of the sequence.
 
@@ -67,7 +67,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: make_copy(self, uniqueName:str) -> "IAutomaticSequence"
+.. py:method:: make_copy(self, uniqueName: str) -> IAutomaticSequence
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.make_copy
 
     Make a copy of the sequence.
 
@@ -77,7 +78,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAutomaticSequence"`
+        :obj:`~IAutomaticSequence`
 
 
 

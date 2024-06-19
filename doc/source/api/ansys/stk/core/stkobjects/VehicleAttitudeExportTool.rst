@@ -3,7 +3,7 @@ VehicleAttitudeExportTool
 
 .. py:class:: VehicleAttitudeExportTool
 
-   IVehicleAttitudeExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeExportTool`
 
    AgVeExternalFileAttitude Class.
 

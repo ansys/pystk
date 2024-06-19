@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.shadow_model
-    :type: "SHADOW_MODEL"
+    :type: SHADOW_MODEL
 
     Type of shadow to be used in determining the lighting condition for the satellite - cylincrical, dual cone, or none.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: srp_model
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.srp_model
-    :type: "IAgVeHPOPSRPModel"
+    :type: IAgVeHPOPSRPModel
 
     Returns a solar radiation pressure model.
 

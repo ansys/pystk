@@ -3,7 +3,7 @@ AdvCATGraphics3D
 
 .. py:class:: AdvCATGraphics3D
 
-   IAdvCATGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvCATGraphics3D`
 
    AdvCAT VO properties.
 

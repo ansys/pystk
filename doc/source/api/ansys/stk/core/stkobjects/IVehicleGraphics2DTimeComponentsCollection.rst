@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics2DTimeComponentsElement"
+.. py:method:: item(self, index: int) -> IVehicleGraphics2DTimeComponentsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DTimeComponentsElement"`
+        :obj:`~IVehicleGraphics2DTimeComponentsElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, qualifiedPath:str) -> "IVehicleGraphics2DTimeComponentsElement"
+.. py:method:: add(self, qualifiedPath: str) -> IVehicleGraphics2DTimeComponentsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.add
 
     Add a new element to the collection using the specified fully qualified component's path (i.e. \"Scenario/Scenario1 AnalysisInterval EventInterval\"). Only intervals, interval lists or interval collections are allowed.
 
@@ -110,5 +114,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DTimeComponentsElement"`
+        :obj:`~IVehicleGraphics2DTimeComponentsElement`
 

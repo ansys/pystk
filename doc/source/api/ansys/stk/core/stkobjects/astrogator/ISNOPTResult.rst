@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: goal
     :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.goal
-    :type: "SNOPT_GOAL"
+    :type: SNOPT_GOAL
 
     Gets or sets the purpose of the element in the problem.
 

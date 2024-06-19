@@ -11,6 +11,21 @@ CRDN_DIRECTION_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~INCOMING_ASYMPTOTE`
+              - Incoming direction.
+
+            * - :py:attr:`~OUTGOING_ASYMPTOTE`
+              - Outgoing direction.
+
+
 Import detail
 -------------
 

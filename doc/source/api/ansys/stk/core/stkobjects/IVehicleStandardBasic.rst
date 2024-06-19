@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: profile_type
     :canonical: ansys.stk.core.stkobjects.IVehicleStandardBasic.profile_type
-    :type: "VEHICLE_PROFILE"
+    :type: VEHICLE_PROFILE
 
     Get basic attitude profile type.
 
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: profile
     :canonical: ansys.stk.core.stkobjects.IVehicleStandardBasic.profile
-    :type: "IAgVeAttProfile"
+    :type: IAgVeAttProfile
 
     Returns the profile interface.
 
@@ -70,25 +70,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_profile_type(self, profile:"VEHICLE_PROFILE") -> None
+.. py:method:: set_profile_type(self, profile: VEHICLE_PROFILE) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleStandardBasic.set_profile_type
 
     Set basic attitude profile type.
 
     :Parameters:
 
-    **profile** : :obj:`~"VEHICLE_PROFILE"`
+    **profile** : :obj:`~VEHICLE_PROFILE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_profile_type_supported(self, profile:"VEHICLE_PROFILE") -> bool
+.. py:method:: is_profile_type_supported(self, profile: VEHICLE_PROFILE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleStandardBasic.is_profile_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **profile** : :obj:`~"VEHICLE_PROFILE"`
+    **profile** : :obj:`~VEHICLE_PROFILE`
 
     :Returns:
 

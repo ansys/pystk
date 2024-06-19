@@ -3,7 +3,7 @@ PerformanceModelOptions
 
 .. py:class:: PerformanceModelOptions
 
-   IPerformanceModelOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IPerformanceModelOptions`
 
    Class defining the options for the active performance model in a phase.
 

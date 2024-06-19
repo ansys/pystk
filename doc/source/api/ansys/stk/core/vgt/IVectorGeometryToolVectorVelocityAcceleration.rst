@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.reference_system
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     A reference (coordinate) system. Can be any VGT system.
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     A point which velocity this vector represents. Can be any VGT point.
 

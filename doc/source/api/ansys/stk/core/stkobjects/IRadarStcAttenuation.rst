@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarStcAttenuation.type
-    :type: "RADAR_STC_ATTENUATION_TYPE"
+    :type: RADAR_STC_ATTENUATION_TYPE
 
     Gets the STC type.
 

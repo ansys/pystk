@@ -3,7 +3,7 @@ CalculationToolScalarSurfaceDistanceBetweenPoints
 
 .. py:class:: CalculationToolScalarSurfaceDistanceBetweenPoints
 
-   ICalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarSurfaceDistanceBetweenPoints`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude).
 

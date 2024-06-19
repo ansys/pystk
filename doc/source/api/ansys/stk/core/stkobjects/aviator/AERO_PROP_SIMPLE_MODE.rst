@@ -11,6 +11,21 @@ AERO_PROP_SIMPLE_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~FIXED_WING`
+              - Fixed wing operatiog mode.
+
+            * - :py:attr:`~HELICOPTER`
+              - Helicopter operating mode.
+
+
 Import detail
 -------------
 

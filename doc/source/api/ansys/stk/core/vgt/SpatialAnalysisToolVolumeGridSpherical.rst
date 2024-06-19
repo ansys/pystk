@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridSpherical
 
 .. py:class:: SpatialAnalysisToolVolumeGridSpherical
 
-   ISpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridSpherical`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume grid spherical interface.
 

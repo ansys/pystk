@@ -3,7 +3,7 @@ VectorGeometryToolSystemFactory
 
 .. py:class:: VectorGeometryToolSystemFactory
 
-   IVectorGeometryToolSystemFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolSystemFactory`
 
    A Factory class to create VGT systems.
 

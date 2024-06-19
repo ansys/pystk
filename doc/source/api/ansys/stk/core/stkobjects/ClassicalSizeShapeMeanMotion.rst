@@ -3,7 +3,7 @@ ClassicalSizeShapeMeanMotion
 
 .. py:class:: ClassicalSizeShapeMeanMotion
 
-   IClassicalSizeShapeMeanMotion, IClassicalSizeShape, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalSizeShapeMeanMotion`, py:obj:`~IClassicalSizeShape`
 
    Orbit size and shape using Mean Motion and Eccentricity.
 

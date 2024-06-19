@@ -3,7 +3,7 @@ VectorGeometryToolVector
 
 .. py:class:: VectorGeometryToolVector
 
-   IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A generic vector class.
 

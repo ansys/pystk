@@ -3,7 +3,7 @@ PointMassFunction
 
 .. py:class:: PointMassFunction
 
-   IPointMassFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IPointMassFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Point Mass function.
 

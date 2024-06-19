@@ -3,7 +3,7 @@ VehicleImpactLLR
 
 .. py:class:: VehicleImpactLLR
 
-   IVehicleImpact, IVehicleImpactLLR, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleImpact`, py:obj:`~IVehicleImpactLLR`
 
    Class defining geocentric impact latitude, longitude and radius for a Missile.
 

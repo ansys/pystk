@@ -3,7 +3,7 @@ StkObjectChangedEventArgs
 
 .. py:class:: StkObjectChangedEventArgs
 
-   IStkObjectChangedEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~IStkObjectChangedEventArgs`
 
    Contains information about the changes in the object's state.
 

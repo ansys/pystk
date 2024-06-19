@@ -3,7 +3,7 @@ ExecMultiCmdResult
 
 .. py:class:: ExecMultiCmdResult
 
-   IExecMultiCmdResult, SupportsDeleteCallback
+   Bases: py:obj:`~IExecMultiCmdResult`
 
    Collection of objects returned by the ExecuteMultipleCommands.
 

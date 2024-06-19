@@ -3,7 +3,7 @@ Graphics3DReferenceVectorGeometryToolPoint
 
 .. py:class:: Graphics3DReferenceVectorGeometryToolPoint
 
-   IGraphics3DReferenceVectorGeometryToolPoint, IGraphics3DReferenceAnalysisWorkbenchComponent, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DReferenceVectorGeometryToolPoint`, py:obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~IDisplayTime`
 
    Class defining a reference point (3D Graphics, Vector Geometry Tool).
 

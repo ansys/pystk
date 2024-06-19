@@ -3,7 +3,7 @@ VectorGeometryToolPlaneGroup
 
 .. py:class:: VectorGeometryToolPlaneGroup
 
-   IVectorGeometryToolPlaneGroup, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlaneGroup`
 
    Represents a VGT Plane component.
 

@@ -3,7 +3,7 @@ SatelliteGraphics3DModel
 
 .. py:class:: SatelliteGraphics3DModel
 
-   ISatelliteGraphics3DModel, IGraphics3DModel, SupportsDeleteCallback
+   Bases: py:obj:`~ISatelliteGraphics3DModel`, py:obj:`~IGraphics3DModel`
 
    All Satellite's VO Model properties.
 

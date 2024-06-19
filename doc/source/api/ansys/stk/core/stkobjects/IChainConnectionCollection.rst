@@ -73,7 +73,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IChainConnection"
+.. py:method:: item(self, index: int) -> IChainConnection
+    :canonical: ansys.stk.core.stkobjects.IChainConnectionCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -83,23 +84,25 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IChainConnection"`
+        :obj:`~IChainConnection`
 
 
-.. py:method:: item_by_from_to_objects(self, pFromObject:"IStkObject", pToObject:"IStkObject") -> "IChainConnection"
+.. py:method:: item_by_from_to_objects(self, pFromObject: IStkObject, pToObject: IStkObject) -> IChainConnection
+    :canonical: ansys.stk.core.stkobjects.IChainConnectionCollection.item_by_from_to_objects
 
     Given the From and To objects of a connection, returns the element in the collection.
 
     :Parameters:
 
-    **pFromObject** : :obj:`~"IStkObject"`
-    **pToObject** : :obj:`~"IStkObject"`
+    **pFromObject** : :obj:`~IStkObject`
+    **pToObject** : :obj:`~IStkObject`
 
     :Returns:
 
-        :obj:`~"IChainConnection"`
+        :obj:`~IChainConnection`
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IChainConnectionCollection.remove_at
 
     Remove the connection with the input index.
 
@@ -111,51 +114,55 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, pFromObject:"IStkObject", pToObject:"IStkObject") -> None
+.. py:method:: remove(self, pFromObject: IStkObject, pToObject: IStkObject) -> None
+    :canonical: ansys.stk.core.stkobjects.IChainConnectionCollection.remove
 
     Remove the connection for the input from-to object pair.
 
     :Parameters:
 
-    **pFromObject** : :obj:`~"IStkObject"`
-    **pToObject** : :obj:`~"IStkObject"`
+    **pFromObject** : :obj:`~IStkObject`
+    **pToObject** : :obj:`~IStkObject`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, pFromObject:"IStkObject", pToObject:"IStkObject", minNumUses:int, maxNumUses:int) -> "IChainConnection"
+.. py:method:: add(self, pFromObject: IStkObject, pToObject: IStkObject, minNumUses: int, maxNumUses: int) -> IChainConnection
+    :canonical: ansys.stk.core.stkobjects.IChainConnectionCollection.add
 
     Add and returns a new connection with the corresponding values.
 
     :Parameters:
 
-    **pFromObject** : :obj:`~"IStkObject"`
-    **pToObject** : :obj:`~"IStkObject"`
+    **pFromObject** : :obj:`~IStkObject`
+    **pToObject** : :obj:`~IStkObject`
     **minNumUses** : :obj:`~int`
     **maxNumUses** : :obj:`~int`
 
     :Returns:
 
-        :obj:`~"IChainConnection"`
+        :obj:`~IChainConnection`
 
-.. py:method:: add_with_parent_restriction(self, pFromObject:"IStkObject", pToObject:"IStkObject", minNumUses:int, maxNumUses:int, parentRestriction:"CHAIN_PARENT_PLATFORM_RESTRICTION") -> "IChainConnection"
+.. py:method:: add_with_parent_restriction(self, pFromObject: IStkObject, pToObject: IStkObject, minNumUses: int, maxNumUses: int, parentRestriction: CHAIN_PARENT_PLATFORM_RESTRICTION) -> IChainConnection
+    :canonical: ansys.stk.core.stkobjects.IChainConnectionCollection.add_with_parent_restriction
 
     Add with the option for a parent restriction and returns a new connection with the corresponding values. A Constellation or Subset must be one of the input objects.
 
     :Parameters:
 
-    **pFromObject** : :obj:`~"IStkObject"`
-    **pToObject** : :obj:`~"IStkObject"`
+    **pFromObject** : :obj:`~IStkObject`
+    **pToObject** : :obj:`~IStkObject`
     **minNumUses** : :obj:`~int`
     **maxNumUses** : :obj:`~int`
-    **parentRestriction** : :obj:`~"CHAIN_PARENT_PLATFORM_RESTRICTION"`
+    **parentRestriction** : :obj:`~CHAIN_PARENT_PLATFORM_RESTRICTION`
 
     :Returns:
 
-        :obj:`~"IChainConnection"`
+        :obj:`~IChainConnection`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IChainConnectionCollection.clear
 
     Clear all connections values from the collection.
 

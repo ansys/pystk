@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectory
 
 .. py:class:: VehicleGraphics3DTrajectory
 
-   IVehicleGraphics3DTrajectory, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DTrajectory`
 
    AgLvVOTrajectory Class.
 

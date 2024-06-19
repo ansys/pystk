@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: export(self, fileName:str) -> None
+.. py:method:: export(self, fileName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropDefinitionExportTool.export
 
     Export the Propagator (Prop Def) file.
 

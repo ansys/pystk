@@ -3,7 +3,7 @@ ScatteringPointModelWindTurbine
 
 .. py:class:: ScatteringPointModelWindTurbine
 
-   IScatteringPointModelWindTurbine, IScatteringPointModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointModelWindTurbine`, py:obj:`~IScatteringPointModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a wind turbine scattering point model.
 

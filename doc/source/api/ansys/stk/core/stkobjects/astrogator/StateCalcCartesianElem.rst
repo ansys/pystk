@@ -3,7 +3,7 @@ StateCalcCartesianElem
 
 .. py:class:: StateCalcCartesianElem
 
-   IComponentInfo, ICloneable, IStateCalcCartesianElem, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCartesianElem`
 
    Cartesian Elements Calc objects.
 

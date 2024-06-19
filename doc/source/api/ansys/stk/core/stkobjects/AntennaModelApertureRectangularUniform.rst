@@ -3,7 +3,7 @@ AntennaModelApertureRectangularUniform
 
 .. py:class:: AntennaModelApertureRectangularUniform
 
-   IAntennaModelApertureRectangularUniform, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelApertureRectangularUniform`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rectangular uniform aperture antenna model.
 

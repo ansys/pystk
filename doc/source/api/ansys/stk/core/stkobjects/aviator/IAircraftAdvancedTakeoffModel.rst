@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: takeoff_speed_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.takeoff_speed_mode
-    :type: "TAKEOFF_LANDING_SPEED_MODE"
+    :type: TAKEOFF_LANDING_SPEED_MODE
 
     Gets or sets the mode to calculate the aircraft's airspeed upon leaving the ground.
 
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: departure_speed_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.departure_speed_mode
-    :type: "DEPARTURE_SPEED_MODE"
+    :type: DEPARTURE_SPEED_MODE
 
     Gets or sets the mode to calculate the airspeed upon leaving the ground.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: departure_speed_limit_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.departure_speed_limit_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the departure speed limim type.
 
@@ -111,7 +111,8 @@ Method detail
 
 
 
-.. py:method:: set_stall_speed_ratio(self, stallSpeedRatio:float) -> None
+.. py:method:: set_stall_speed_ratio(self, stallSpeedRatio: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.set_stall_speed_ratio
 
     Set the takeoff speed mode to StallSpeedRatio and specify the stall speed ratio.
 
@@ -124,7 +125,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: set_angle_of_attack(self, angleOfAttack:typing.Any) -> None
+.. py:method:: set_angle_of_attack(self, angleOfAttack: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.set_angle_of_attack
 
     Set the takeoff speed mode to AngleOfAttack and specify the angle of attack.
 
@@ -142,13 +144,14 @@ Method detail
 
 
 
-.. py:method:: set_departure_speed_limit(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_departure_speed_limit(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.set_departure_speed_limit
 
     Set the departure speed limit of the aircraft.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -157,11 +160,12 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

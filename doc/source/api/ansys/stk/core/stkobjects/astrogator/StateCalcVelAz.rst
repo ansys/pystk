@@ -3,7 +3,7 @@ StateCalcVelAz
 
 .. py:class:: StateCalcVelAz
 
-   IComponentInfo, ICloneable, IStateCalcVelAz, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVelAz`
 
    Velocity Azimuth Calc objects.
 

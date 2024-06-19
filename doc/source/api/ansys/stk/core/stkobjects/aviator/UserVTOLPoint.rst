@@ -3,7 +3,7 @@ UserVTOLPoint
 
 .. py:class:: UserVTOLPoint
 
-   IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IUserVTOLPoint`, py:obj:`~ICatalogVTOLPoint`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining the user VTOL Point in the Aviator catalog.
 

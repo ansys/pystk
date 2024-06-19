@@ -74,7 +74,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, resultName:str) -> "IAsTriggerCondition"
+.. py:method:: add(self, resultName: str) -> IAsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IConstraintCollection.add
 
     Add a constraint to the collection.
 
@@ -84,9 +85,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAsTriggerCondition"`
+        :obj:`~IAsTriggerCondition`
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IAsTriggerCondition"
+.. py:method:: item(self, indexOrName: typing.Any) -> IAsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IConstraintCollection.item
 
     Iterate through the collection.
 
@@ -96,9 +98,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAsTriggerCondition"`
+        :obj:`~IAsTriggerCondition`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IConstraintCollection.remove
 
     Remove a specified constraint from the collection.
 
@@ -112,7 +115,8 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IConstraintCollection.cut
 
     Copy the constraint into the clipboard and removes the constraint from the list.
 
@@ -124,27 +128,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IAsTriggerCondition"
+.. py:method:: paste(self) -> IAsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IConstraintCollection.paste
 
     Pastes the constraint from the clipboard and inserts into the list.
 
     :Returns:
 
-        :obj:`~"IAsTriggerCondition"`
+        :obj:`~IAsTriggerCondition`
 
-.. py:method:: insert_copy(self, cond:"IAsTriggerCondition") -> "IAsTriggerCondition"
+.. py:method:: insert_copy(self, cond: IAsTriggerCondition) -> IAsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IConstraintCollection.insert_copy
 
     Copy the constraint and inserts the copy into the list.
 
     :Parameters:
 
-    **cond** : :obj:`~"IAsTriggerCondition"`
+    **cond** : :obj:`~IAsTriggerCondition`
 
     :Returns:
 
-        :obj:`~"IAsTriggerCondition"`
+        :obj:`~IAsTriggerCondition`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IAsTriggerCondition"
+.. py:method:: get_item_by_index(self, index: int) -> IAsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IConstraintCollection.get_item_by_index
 
     Retrieve a constraint from the collection by index.
 
@@ -154,9 +161,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAsTriggerCondition"`
+        :obj:`~IAsTriggerCondition`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IAsTriggerCondition"
+.. py:method:: get_item_by_name(self, name: str) -> IAsTriggerCondition
+    :canonical: ansys.stk.core.stkobjects.astrogator.IConstraintCollection.get_item_by_name
 
     Retrieve a constraint from the collection by name.
 
@@ -166,5 +174,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAsTriggerCondition"`
+        :obj:`~IAsTriggerCondition`
 

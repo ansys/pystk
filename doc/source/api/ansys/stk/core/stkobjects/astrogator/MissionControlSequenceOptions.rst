@@ -3,7 +3,7 @@ MissionControlSequenceOptions
 
 .. py:class:: MissionControlSequenceOptions
 
-   IMissionControlSequenceOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceOptions`
 
    The MCS Options.
 

@@ -3,7 +3,7 @@ AircraftAcceleration
 
 .. py:class:: AircraftAcceleration
 
-   IAircraftAcceleration, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftAcceleration`, py:obj:`~ICatalogItem`
 
    Class defining the aircraft acceleration category of an Aviator aircraft.
 

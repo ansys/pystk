@@ -3,7 +3,7 @@ StateCalcApparentSolarTime
 
 .. py:class:: StateCalcApparentSolarTime
 
-   IComponentInfo, ICloneable, IStateCalcApparentSolarTime, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcApparentSolarTime`
 
    Apparent Solar Time Calc objects.
 

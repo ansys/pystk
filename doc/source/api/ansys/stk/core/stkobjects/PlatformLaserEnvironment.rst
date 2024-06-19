@@ -3,7 +3,7 @@ PlatformLaserEnvironment
 
 .. py:class:: PlatformLaserEnvironment
 
-   IPlatformLaserEnvironment, SupportsDeleteCallback
+   Bases: py:obj:`~IPlatformLaserEnvironment`
 
    Class defining the laser environment for an platform.
 

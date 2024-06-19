@@ -3,7 +3,7 @@ ProcedureHoldingCircular
 
 .. py:class:: ProcedureHoldingCircular
 
-   IProcedureHoldingCircular, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureHoldingCircular`, py:obj:`~IProcedure`
 
    Class defining a holding circular procedure.
 

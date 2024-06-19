@@ -3,7 +3,7 @@ AltitudeDisplayCondition
 
 .. py:class:: AltitudeDisplayCondition
 
-   IAltitudeDisplayCondition, IDisplayCondition, SupportsDeleteCallback
+   Bases: py:obj:`~IAltitudeDisplayCondition`, py:obj:`~IDisplayCondition`
 
    Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body.
 

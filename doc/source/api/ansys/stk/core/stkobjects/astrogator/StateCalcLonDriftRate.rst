@@ -3,7 +3,7 @@ StateCalcLonDriftRate
 
 .. py:class:: StateCalcLonDriftRate
 
-   IComponentInfo, ICloneable, IStateCalcLonDriftRate, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcLonDriftRate`
 
    LongDriftRate Calc objects.
 

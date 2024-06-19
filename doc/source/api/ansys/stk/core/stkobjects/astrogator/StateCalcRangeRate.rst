@@ -3,7 +3,7 @@ StateCalcRangeRate
 
 .. py:class:: StateCalcRangeRate
 
-   IStateCalcRangeRate, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcRangeRate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    RangeRate Calc objects.
 

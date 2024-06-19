@@ -3,7 +3,7 @@ ReceiverModelMedium
 
 .. py:class:: ReceiverModelMedium
 
-   IReceiverModelMedium, IReceiverModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverModelMedium`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a medium receiver model.
 

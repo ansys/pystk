@@ -57,13 +57,13 @@ Property detail
 
 .. py:property:: input_scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction.input_scalar
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The input scalar calculation (used if UseScalar is true). The UseScalar property should be set to true before this property can be set.
 
 .. py:property:: input_time
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction.input_time
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     The input time instant (used if UseScalar is false).
 
@@ -135,13 +135,13 @@ Property detail
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction.sampling
-    :type: "IAgCrdnSampling"
+    :type: IAgCrdnSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction.convergence
-    :type: "IAgCrdnConverge"
+    :type: IAgCrdnConverge
 
     The Convergence definition, which uses time tolerance to determine when time of extremum is found.
 

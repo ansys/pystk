@@ -11,6 +11,21 @@ PROFILE_INSERT_DIRECTION
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~BEFORE`
+              - Insert profile before reference profile.
+
+            * - :py:attr:`~AFTER`
+              - Insert profile after reference profile.
+
+
 Import detail
 -------------
 

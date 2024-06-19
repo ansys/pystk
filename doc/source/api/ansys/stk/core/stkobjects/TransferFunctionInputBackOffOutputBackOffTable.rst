@@ -3,7 +3,7 @@ TransferFunctionInputBackOffOutputBackOffTable
 
 .. py:class:: TransferFunctionInputBackOffOutputBackOffTable
 
-   ITransferFunctionInputBackOffOutputBackOffTable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransferFunctionInputBackOffOutputBackOffTable`
 
    Class defining an input back off vs output back off table.
 

@@ -3,7 +3,7 @@ AircraftBasicDescentModel
 
 .. py:class:: AircraftBasicDescentModel
 
-   IAircraftBasicDescentModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftBasicDescentModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the basic descent performance model for an Aviator aircraft.
 

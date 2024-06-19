@@ -3,7 +3,7 @@ BoundingSphereFactory
 
 .. py:class:: BoundingSphereFactory
 
-   IBoundingSphereFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IBoundingSphereFactory`
 
    Create bounding spheres.
 

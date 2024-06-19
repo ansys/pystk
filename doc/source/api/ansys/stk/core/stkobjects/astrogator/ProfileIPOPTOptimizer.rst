@@ -3,7 +3,7 @@ ProfileIPOPTOptimizer
 
 .. py:class:: ProfileIPOPTOptimizer
 
-   IProfileIPOPTOptimizer, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileIPOPTOptimizer`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    IPOPT optimizer profile.
 

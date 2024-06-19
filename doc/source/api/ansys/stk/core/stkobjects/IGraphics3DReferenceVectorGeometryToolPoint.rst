@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: trajectory_type
     :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.trajectory_type
-    :type: "TRAJECTORY_TYPE"
+    :type: TRAJECTORY_TYPE
 
     Specifies the arrow type used to represent the geometric element.
 

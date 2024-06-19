@@ -75,13 +75,13 @@ Property detail
 
 .. py:property:: color_mode
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.color_mode
-    :type: "SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE"
+    :type: SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE
 
     Mode by which color is assigned.
 
 .. py:property:: color_scale
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.color_scale
-    :type: "SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE"
+    :type: SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE
 
     Scaling of magnetic field to use when assigning color/translucency.
 
@@ -105,13 +105,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Magnetic field line style.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Magnetic field line width.
 
@@ -147,13 +147,13 @@ Property detail
 
 .. py:property:: main_field
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.main_field
-    :type: "SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD"
+    :type: SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD
 
     Gets or sets the main magnetic field.
 
 .. py:property:: external_field
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.external_field
-    :type: "SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD"
+    :type: SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD
 
     External magnetic field.
 
@@ -217,7 +217,8 @@ Method detail
 
 
 
-.. py:method:: compute_b_field_as_array(self, time:typing.Any, lat:float, lon:float, alt:float) -> list
+.. py:method:: compute_b_field_as_array(self, time: typing.Any, lat: float, lon: float, alt: float) -> list
+    :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_field_as_array
 
     Compute geomagnetic field in Earth Fixed components, returned as the array (Bx, By, Bz), at the specified Earth location. Uses Date, Angle, Longitude, Distance, and MagneticField Dimensions.
 
@@ -232,7 +233,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_dipole_l(self, time:typing.Any, lat:float, lon:float, alt:float) -> float
+.. py:method:: compute_dipole_l(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
+    :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.compute_dipole_l
 
     Compute dipole L-shell parameter at the specified Earth location. Uses Date, Angle, Longitude, and Distance Dimensions.
 
@@ -247,7 +249,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: compute_mc_ilwain_l(self, time:typing.Any, lat:float, lon:float, alt:float) -> float
+.. py:method:: compute_mc_ilwain_l(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
+    :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.compute_mc_ilwain_l
 
     Compute McIlwain L-shell parameter at the specified Earth location. Uses Date, Angle, Longitude, and Distance Dimensions.
 
@@ -262,7 +265,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: compute_b_beq(self, time:typing.Any, lat:float, lon:float, alt:float) -> float
+.. py:method:: compute_b_beq(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
+    :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_beq
 
     Compute B/Beq (i.e., the ratio of the magnetic field at the specified Earth location to the minimum field intensity along the field line thru the location). Uses Date, Angle, Longitude, and Distance Dimensions.
 

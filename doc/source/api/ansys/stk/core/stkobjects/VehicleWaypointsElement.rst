@@ -3,7 +3,7 @@ VehicleWaypointsElement
 
 .. py:class:: VehicleWaypointsElement
 
-   IVehicleWaypointsElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleWaypointsElement`
 
    Class defining a waypoint for a Great Arc vehicle.
 

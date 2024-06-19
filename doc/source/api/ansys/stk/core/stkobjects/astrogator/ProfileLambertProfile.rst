@@ -3,7 +3,7 @@ ProfileLambertProfile
 
 .. py:class:: ProfileLambertProfile
 
-   IProfileLambertProfile, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileLambertProfile`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Lambert profile.
 

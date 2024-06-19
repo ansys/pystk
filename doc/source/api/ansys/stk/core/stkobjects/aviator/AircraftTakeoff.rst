@@ -3,7 +3,7 @@ AircraftTakeoff
 
 .. py:class:: AircraftTakeoff
 
-   IAircraftTakeoff, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftTakeoff`, py:obj:`~ICatalogItem`
 
    Class defining the aircraft takeoff category of an Aviator aircraft.
 

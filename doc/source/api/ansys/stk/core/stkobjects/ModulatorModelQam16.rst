@@ -3,7 +3,7 @@ ModulatorModelQam16
 
 .. py:class:: ModulatorModelQam16
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a QAM 16 modulator model.
 

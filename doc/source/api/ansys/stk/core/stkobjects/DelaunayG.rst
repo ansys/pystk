@@ -3,7 +3,7 @@ DelaunayG
 
 .. py:class:: DelaunayG
 
-   IDelaunayActionVariable, IDelaunayG, SupportsDeleteCallback
+   Bases: py:obj:`~IDelaunayActionVariable`, py:obj:`~IDelaunayG`
 
    Delaunay Variable G, the magnitude of the orbital angular momentum.
 

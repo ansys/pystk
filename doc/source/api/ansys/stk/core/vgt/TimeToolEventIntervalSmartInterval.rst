@@ -3,7 +3,7 @@ TimeToolEventIntervalSmartInterval
 
 .. py:class:: TimeToolEventIntervalSmartInterval
 
-   ITimeToolEventIntervalSmartInterval, ITimeToolEventInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalSmartInterval`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A smart interval.
 

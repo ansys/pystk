@@ -3,7 +3,7 @@ BasicManeuverStrategyCruiseProfile
 
 .. py:class:: BasicManeuverStrategyCruiseProfile
 
-   IBasicManeuverStrategyCruiseProfile, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyCruiseProfile`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Cruise profile strategy for a basic maneuver procedure.
 

@@ -3,7 +3,7 @@ GlobeImageOverlayInitializer
 
 .. py:class:: GlobeImageOverlayInitializer
 
-   IGlobeImageOverlayInitializer, SupportsDeleteCallback
+   Bases: py:obj:`~IGlobeImageOverlayInitializer`
 
    A globe overlay that shows an image.
 

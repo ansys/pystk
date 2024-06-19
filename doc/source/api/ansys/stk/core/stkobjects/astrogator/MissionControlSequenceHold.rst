@@ -3,7 +3,7 @@ MissionControlSequenceHold
 
 .. py:class:: MissionControlSequenceHold
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceHold, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceHold`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Hold segment.
 

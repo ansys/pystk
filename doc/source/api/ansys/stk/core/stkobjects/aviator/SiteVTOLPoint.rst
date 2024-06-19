@@ -3,7 +3,7 @@ SiteVTOLPoint
 
 .. py:class:: SiteVTOLPoint
 
-   ISiteVTOLPoint, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteVTOLPoint`, py:obj:`~ISite`
 
    Class defining a VTOL Point site.
 

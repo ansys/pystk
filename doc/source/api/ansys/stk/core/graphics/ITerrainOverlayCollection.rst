@@ -103,7 +103,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "ITerrainOverlay"
+.. py:method:: item(self, index: int) -> ITerrainOverlay
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.item
 
     Get the terrain overlay at the specified index.
 
@@ -113,22 +114,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITerrainOverlay"`
+        :obj:`~ITerrainOverlay`
 
 
-.. py:method:: contains(self, terrainOverlay:"ITerrainOverlay") -> bool
+.. py:method:: contains(self, terrainOverlay: ITerrainOverlay) -> bool
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.contains
 
     Check the presence of a terrain overlay in the collection.
 
     :Parameters:
 
-    **terrainOverlay** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay** : :obj:`~ITerrainOverlay`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: contains_uri_string(self, stringUri:str) -> bool
+.. py:method:: contains_uri_string(self, stringUri: str) -> bool
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.contains_uri_string
 
     Check the presence of a terrain overlay with the specified Uri in the collection.
 
@@ -140,19 +143,21 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: remove(self, terrainOverlay:"ITerrainOverlay") -> bool
+.. py:method:: remove(self, terrainOverlay: ITerrainOverlay) -> bool
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.remove
 
     Remove a terrain overlay from the collection.
 
     :Parameters:
 
-    **terrainOverlay** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay** : :obj:`~ITerrainOverlay`
 
     :Returns:
 
         :obj:`~bool`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.clear
 
     Remove all terrain overlay objects from the collection.
 
@@ -160,43 +165,47 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, terrainOverlay:"ITerrainOverlay") -> None
+.. py:method:: add(self, terrainOverlay: ITerrainOverlay) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.add
 
     Add terrainOverlay to the collection.
 
     :Parameters:
 
-    **terrainOverlay** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay** : :obj:`~ITerrainOverlay`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_async(self, terrainOverlay:"ITerrainOverlay") -> None
+.. py:method:: add_async(self, terrainOverlay: ITerrainOverlay) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.add_async
 
     Add terrainOverlay to the collection asynchronously.
 
     :Parameters:
 
-    **terrainOverlay** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay** : :obj:`~ITerrainOverlay`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: index_of(self, terrainOverlay:"ITerrainOverlay") -> int
+.. py:method:: index_of(self, terrainOverlay: ITerrainOverlay) -> int
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.index_of
 
     Get the index of the specified terrain overlay.
 
     :Parameters:
 
-    **terrainOverlay** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay** : :obj:`~ITerrainOverlay`
 
     :Returns:
 
         :obj:`~int`
 
-.. py:method:: index_of_uri_string(self, stringUri:str) -> int
+.. py:method:: index_of_uri_string(self, stringUri: str) -> int
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.index_of_uri_string
 
     Get the index of the terrain overlay with the specified Uri.
 
@@ -208,7 +217,8 @@ Method detail
 
         :obj:`~int`
 
-.. py:method:: add_uri_string(self, uri:str) -> "ITerrainOverlay"
+.. py:method:: add_uri_string(self, uri: str) -> ITerrainOverlay
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.add_uri_string
 
     Create a terrain overlay from the uri, which represents a uri, and adds it to the collection.
 
@@ -218,9 +228,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITerrainOverlay"`
+        :obj:`~ITerrainOverlay`
 
-.. py:method:: add_async_uri_string(self, uri:str) -> "ITerrainOverlay"
+.. py:method:: add_async_uri_string(self, uri: str) -> ITerrainOverlay
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.add_async_uri_string
 
     Create a terrain overlay from the uri, which represents a uri, and adds it to the collection asynchronously.
 
@@ -230,22 +241,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITerrainOverlay"`
+        :obj:`~ITerrainOverlay`
 
-.. py:method:: swap(self, terrainOverlay1:"ITerrainOverlay", terrainOverlay2:"ITerrainOverlay") -> None
+.. py:method:: swap(self, terrainOverlay1: ITerrainOverlay, terrainOverlay2: ITerrainOverlay) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.swap
 
     Swap the position of two terrain overlay objects.
 
     :Parameters:
 
-    **terrainOverlay1** : :obj:`~"ITerrainOverlay"`
-    **terrainOverlay2** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay1** : :obj:`~ITerrainOverlay`
+    **terrainOverlay2** : :obj:`~ITerrainOverlay`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: swap_by_index(self, index1:int, index2:int) -> None
+.. py:method:: swap_by_index(self, index1: int, index2: int) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.swap_by_index
 
     Swap the position of two terrain overlay objects at the specified indices.
 
@@ -258,20 +271,22 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: move(self, terrainOverlay:"ITerrainOverlay", newPosition:int) -> None
+.. py:method:: move(self, terrainOverlay: ITerrainOverlay, newPosition: int) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.move
 
     Move the terrain overlay to the specified position.
 
     :Parameters:
 
-    **terrainOverlay** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay** : :obj:`~ITerrainOverlay`
     **newPosition** : :obj:`~int`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: move_by_index(self, index:int, newPosition:int) -> None
+.. py:method:: move_by_index(self, index: int, newPosition: int) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.move_by_index
 
     Move the terrain overlay at the specified index to the specified position.
 
@@ -284,25 +299,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: bring_to_front(self, terrainOverlay:"ITerrainOverlay") -> None
+.. py:method:: bring_to_front(self, terrainOverlay: ITerrainOverlay) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.bring_to_front
 
     Brings the terrain overlay to the front of the collection so it is rendered first or on the bottom.
 
     :Parameters:
 
-    **terrainOverlay** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay** : :obj:`~ITerrainOverlay`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: send_to_back(self, terrainOverlay:"ITerrainOverlay") -> None
+.. py:method:: send_to_back(self, terrainOverlay: ITerrainOverlay) -> None
+    :canonical: ansys.stk.core.graphics.ITerrainOverlayCollection.send_to_back
 
     Send the terrain overlay to the back of the collection so it is rendered last or on the top.
 
     :Parameters:
 
-    **terrainOverlay** : :obj:`~"ITerrainOverlay"`
+    **terrainOverlay** : :obj:`~ITerrainOverlay`
 
     :Returns:
 

@@ -3,7 +3,7 @@ LineTarget
 
 .. py:class:: LineTarget
 
-   ILineTarget, IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~ILineTarget`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
 
    Line Target Path properties.
 

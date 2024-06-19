@@ -3,7 +3,7 @@ VehicleGraphics3DTickDataLine
 
 .. py:class:: VehicleGraphics3DTickDataLine
 
-   IVehicleGraphics3DTickData, IVehicleGraphics3DTickDataLine, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DTickData`, py:obj:`~IVehicleGraphics3DTickDataLine`
 
    Line type tick marks.
 

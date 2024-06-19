@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: start_stop_option
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayStartStopTimes.start_stop_option
-    :type: "CRDN_START_STOP_OPTION"
+    :type: CRDN_START_STOP_OPTION
 
     The edge type. At least one of the two edge types must be selected.
 
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayStartStopTimes.reference_intervals
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The reference interval list.
 

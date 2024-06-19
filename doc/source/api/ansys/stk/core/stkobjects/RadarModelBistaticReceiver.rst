@@ -3,7 +3,7 @@ RadarModelBistaticReceiver
 
 .. py:class:: RadarModelBistaticReceiver
 
-   IRadarModelBistaticReceiver, IRadarModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModelBistaticReceiver`, py:obj:`~IRadarModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a bistatic receiver radar model.
 

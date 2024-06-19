@@ -3,7 +3,7 @@ VectorGeometryToolVectorDirectionToStar
 
 .. py:class:: VectorGeometryToolVectorDirectionToStar
 
-   IVectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorDirectionToStar`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined with respect to a star object. For a star object to be available, you must first create one.
 

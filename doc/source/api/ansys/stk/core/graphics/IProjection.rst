@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.graphics.IProjection.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Gets or sets the unit quaternion defining the orientation of the projection in the central body's fixed reference frame.
 

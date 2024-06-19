@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IElementConfiguration.type
-    :type: "ELEMENT_CONFIGURATION_TYPE"
+    :type: ELEMENT_CONFIGURATION_TYPE
 
     Gets the element configuration type enumeration.
 

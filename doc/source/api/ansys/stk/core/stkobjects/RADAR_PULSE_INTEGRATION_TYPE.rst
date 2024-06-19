@@ -11,6 +11,21 @@ RADAR_PULSE_INTEGRATION_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~GOAL_SNR`
+              - Goal SNR.
+
+            * - :py:attr:`~FIXED_NUMBER_OF_PULSES`
+              - Fixed number of pulses.
+
+
 Import detail
 -------------
 

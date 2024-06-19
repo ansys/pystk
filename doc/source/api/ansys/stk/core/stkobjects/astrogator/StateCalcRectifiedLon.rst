@@ -3,7 +3,7 @@ StateCalcRectifiedLon
 
 .. py:class:: StateCalcRectifiedLon
 
-   IComponentInfo, ICloneable, IStateCalcRectifiedLon, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRectifiedLon`
 
    RectifiedLongitude Calc objects.
 

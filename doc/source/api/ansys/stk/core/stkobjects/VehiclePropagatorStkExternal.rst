@@ -3,7 +3,7 @@ VehiclePropagatorStkExternal
 
 .. py:class:: VehiclePropagatorStkExternal
 
-   IVehiclePropagatorStkExternal, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorStkExternal`, py:obj:`~IVehiclePropagator`
 
    Class defining the STK External propagator.
 

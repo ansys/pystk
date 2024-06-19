@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: file_name
     :canonical: ansys.stk.core.uiapplication.IUiFileOpenExt.file_name
-    :type: "IAgUiFileOpenExtCollection"
+    :type: IAgUiFileOpenExtCollection
 
     Gets/sets the multiple file open collection.
 

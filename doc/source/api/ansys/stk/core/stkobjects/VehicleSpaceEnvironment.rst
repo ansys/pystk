@@ -3,7 +3,7 @@ VehicleSpaceEnvironment
 
 .. py:class:: VehicleSpaceEnvironment
 
-   IVehicleSpaceEnvironment, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironment`
 
    SpaceEnvironment settings.
 

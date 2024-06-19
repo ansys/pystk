@@ -3,7 +3,7 @@ StkAccess
 
 .. py:class:: StkAccess
 
-   ILifetimeInformation, IStkAccess, SupportsDeleteCallback
+   Bases: py:obj:`~ILifetimeInformation`, py:obj:`~IStkAccess`
 
    Class defining Access.
 

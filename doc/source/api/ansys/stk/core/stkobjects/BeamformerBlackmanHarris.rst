@@ -3,7 +3,7 @@ BeamformerBlackmanHarris
 
 .. py:class:: BeamformerBlackmanHarris
 
-   IBeamformer, IBeamformerBlackmanHarris, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerBlackmanHarris`
 
    Class defining a Blackman-Harris tapered beamformer.
 

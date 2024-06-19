@@ -3,7 +3,7 @@ VehicleEphemerisSpiceExportTool
 
 .. py:class:: VehicleEphemerisSpiceExportTool
 
-   IVehicleEphemerisSpiceExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEphemerisSpiceExportTool`
 
    AgVeEphemerisTypeSpice Class.
 

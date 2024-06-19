@@ -3,7 +3,7 @@ ProfileChangeManeuverType
 
 .. py:class:: ProfileChangeManeuverType
 
-   IProfileChangeManeuverType, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileChangeManeuverType`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Change Maneuver Type profile.
 

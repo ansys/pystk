@@ -3,7 +3,7 @@ VehicleOceanTides
 
 .. py:class:: VehicleOceanTides
 
-   IVehicleOceanTides, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleOceanTides`
 
    Class defining the contribution of ocean tides.
 

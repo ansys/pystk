@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: add_position(self, time:typing.Any, zoneStr:str, easting:float, northing:float, alt:float) -> None
+.. py:method:: add_position(self, time: typing.Any, zoneStr: str, easting: float, northing: float, alt: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints.add_position
 
     Add an ephemeris point using position only. Valid values for <ZoneStr> are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in Distance.
 
@@ -54,7 +55,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, time:typing.Any, zoneStr:str, easting:float, northing:float, alt:float, lonRate:float, latRate:float, altRate:float) -> None
+.. py:method:: add(self, time: typing.Any, zoneStr: str, easting: float, northing: float, alt: float, lonRate: float, latRate: float, altRate: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints.add
 
     Add an ephemeris point. Valid values for <ZoneStr> are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in Distance. LonRate and LatRate are entered in degrees/second. AltRate is entered in Distance/second.
 

@@ -3,7 +3,7 @@ VehicleGraphics3DPass
 
 .. py:class:: VehicleGraphics3DPass
 
-   IVehicleGraphics3DPass, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DPass`
 
    3D pass for satellites.
 

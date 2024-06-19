@@ -3,7 +3,7 @@ TwoBodyFunction
 
 .. py:class:: TwoBodyFunction
 
-   ITwoBodyFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITwoBodyFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Two Body gravity propagator function.
 

@@ -3,7 +3,7 @@ UserWaypointSource
 
 .. py:class:: UserWaypointSource
 
-   IUserWaypointSource, ICatalogSource, SupportsDeleteCallback
+   Bases: py:obj:`~IUserWaypointSource`, py:obj:`~ICatalogSource`
 
    Class defining the user waypoint source in the Aviator catalog.
 

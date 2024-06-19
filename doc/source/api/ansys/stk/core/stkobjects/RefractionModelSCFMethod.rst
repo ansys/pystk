@@ -3,7 +3,7 @@ RefractionModelSCFMethod
 
 .. py:class:: RefractionModelSCFMethod
 
-   IRefractionModelSCFMethod, SupportsDeleteCallback
+   Bases: py:obj:`~IRefractionModelSCFMethod`
 
    SCF Method.
 

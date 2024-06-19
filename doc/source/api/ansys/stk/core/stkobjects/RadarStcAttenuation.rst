@@ -3,7 +3,7 @@ RadarStcAttenuation
 
 .. py:class:: RadarStcAttenuation
 
-   IRadarStcAttenuation, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarStcAttenuation`
 
    Class defining an radar stc.
 

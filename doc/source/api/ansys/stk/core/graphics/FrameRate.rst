@@ -3,7 +3,7 @@ FrameRate
 
 .. py:class:: FrameRate
 
-   IFrameRate, SupportsDeleteCallback
+   Bases: py:obj:`~IFrameRate`
 
    Keeps track of how many times the scenes are rendered per second.
 

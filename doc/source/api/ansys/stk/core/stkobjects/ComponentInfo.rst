@@ -3,7 +3,7 @@ ComponentInfo
 
 .. py:class:: ComponentInfo
 
-   IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a component.
 

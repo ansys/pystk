@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: operating_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.operating_mode
-    :type: "AERO_PROP_SIMPLE_MODE"
+    :type: AERO_PROP_SIMPLE_MODE
 
     Gets or sets the mode option to treat the aircraft as a helicopter or a fixed wing aircraft when calculating the aircraft's attitude.
 

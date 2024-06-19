@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_string_uri(self, uri:str) -> "IVideoStream"
+.. py:method:: initialize_with_string_uri(self, uri: str) -> IVideoStream
+    :canonical: ansys.stk.core.graphics.IVideoStreamFactory.initialize_with_string_uri
 
     Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVideoStream"`
+        :obj:`~IVideoStream`
 
-.. py:method:: initialize_with_string_uri_and_audio(self, uri:str, loadAudio:bool) -> "IVideoStream"
+.. py:method:: initialize_with_string_uri_and_audio(self, uri: str, loadAudio: bool) -> IVideoStream
+    :canonical: ansys.stk.core.graphics.IVideoStreamFactory.initialize_with_string_uri_and_audio
 
     Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
 
@@ -63,9 +65,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVideoStream"`
+        :obj:`~IVideoStream`
 
-.. py:method:: initialize_audio_video_with_string_uri(self, uri:str, audioUri:str) -> "IVideoStream"
+.. py:method:: initialize_audio_video_with_string_uri(self, uri: str, audioUri: str) -> IVideoStream
+    :canonical: ansys.stk.core.graphics.IVideoStreamFactory.initialize_audio_video_with_string_uri
 
     Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
 
@@ -76,5 +79,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVideoStream"`
+        :obj:`~IVideoStream`
 

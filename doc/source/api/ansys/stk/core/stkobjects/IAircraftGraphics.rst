@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.IAircraftGraphics.elev_contours
-    :type: "IAgVeGfxElevContours"
+    :type: IAgVeGfxElevContours
 
     Get the aircraft's 2D elevation contour graphics.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.IAircraftGraphics.swath
-    :type: "IAgVeGfxSwath"
+    :type: IAgVeGfxSwath
 
     Get the aircraft's 2D swath graphics.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IAircraftGraphics.radar_cross_section
-    :type: "IAgRadarCrossSectionGraphics"
+    :type: IAgRadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

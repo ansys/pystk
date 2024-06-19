@@ -3,7 +3,7 @@ LevelsFilterFactory
 
 .. py:class:: LevelsFilterFactory
 
-   ILevelsFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ILevelsFilterFactory`
 
    Adjusts the band levels of the source raster linearly.
 

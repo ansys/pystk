@@ -3,7 +3,7 @@ CommSystemAccessEventDetectionSubsample
 
 .. py:class:: CommSystemAccessEventDetectionSubsample
 
-   ICommSystemAccessEventDetectionSubsample, ICommSystemAccessEventDetection, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemAccessEventDetectionSubsample`, py:obj:`~ICommSystemAccessEventDetection`
 
    Class defining a CommSystem access options.
 

@@ -36,17 +36,18 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_direction(self, referenceFrame:"IVectorGeometryToolSystem", axes:"IVectorGeometryToolAxes", font:"IGraphicsFont") -> "IAxesPrimitive"
+.. py:method:: initialize_with_direction(self, referenceFrame: IVectorGeometryToolSystem, axes: IVectorGeometryToolAxes, font: IGraphicsFont) -> IAxesPrimitive
+    :canonical: ansys.stk.core.graphics.IAxesPrimitiveFactory.initialize_with_direction
 
     Initialize an axes primitive with the specified reference frame as its source.
 
     :Parameters:
 
-    **referenceFrame** : :obj:`~"IVectorGeometryToolSystem"`
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
-    **font** : :obj:`~"IGraphicsFont"`
+    **referenceFrame** : :obj:`~IVectorGeometryToolSystem`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
+    **font** : :obj:`~IGraphicsFont`
 
     :Returns:
 
-        :obj:`~"IAxesPrimitive"`
+        :obj:`~IAxesPrimitive`
 

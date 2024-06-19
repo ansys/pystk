@@ -11,6 +11,24 @@ VM_DEFINITION_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~GRID_UNKNOWN`
+              - Unknown volumetirc grid option.
+
+            * - :py:attr:`~GRID_SPATIAL_CALCULATION`
+              - Volumetric : volume grid spatial calculations.
+
+            * - :py:attr:`~EXTERNAL_FILE`
+              - Volumetric : volume external file.
+
+
 Import detail
 -------------
 

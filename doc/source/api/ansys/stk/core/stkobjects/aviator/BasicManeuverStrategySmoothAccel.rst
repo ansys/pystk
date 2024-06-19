@@ -3,7 +3,7 @@ BasicManeuverStrategySmoothAccel
 
 .. py:class:: BasicManeuverStrategySmoothAccel
 
-   IBasicManeuverStrategySmoothAccel, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategySmoothAccel`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the smooth accel strategy for a basic maneuver procedure.
 

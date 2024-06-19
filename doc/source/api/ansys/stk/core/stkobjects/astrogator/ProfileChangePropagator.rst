@@ -3,7 +3,7 @@ ProfileChangePropagator
 
 .. py:class:: ProfileChangePropagator
 
-   IProfileChangePropagator, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileChangePropagator`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Change Propagator profile.
 

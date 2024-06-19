@@ -3,7 +3,7 @@ RhumbLineInterpolatorFactory
 
 .. py:class:: RhumbLineInterpolatorFactory
 
-   IRhumbLineInterpolatorFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IRhumbLineInterpolatorFactory`
 
    The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation.
 

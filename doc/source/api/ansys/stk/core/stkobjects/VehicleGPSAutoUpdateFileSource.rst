@@ -3,7 +3,7 @@ VehicleGPSAutoUpdateFileSource
 
 .. py:class:: VehicleGPSAutoUpdateFileSource
 
-   IVehicleGPSAutoUpdateFileSource, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSAutoUpdateFileSource`
 
    GPS automatic updates using almanac file(s).
 

@@ -3,7 +3,7 @@ CentralBodyCollection
 
 .. py:class:: CentralBodyCollection
 
-   ICentralBodyCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyCollection`
 
    Central Body Collection.
 

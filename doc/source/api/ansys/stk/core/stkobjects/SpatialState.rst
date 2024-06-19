@@ -3,7 +3,7 @@ SpatialState
 
 .. py:class:: SpatialState
 
-   ISpatialState, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialState`
 
    Represents a position and an attitude of an object.
 

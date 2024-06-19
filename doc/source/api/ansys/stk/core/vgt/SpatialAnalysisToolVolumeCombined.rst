@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCombined
 
 .. py:class:: SpatialAnalysisToolVolumeCombined
 
-   ISpatialAnalysisToolVolumeCombined, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCombined`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A combined volume interface.
 

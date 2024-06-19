@@ -3,7 +3,7 @@ PolarizationRHC
 
 .. py:class:: PolarizationRHC
 
-   IPolarization, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarization`
 
    Class defining a RHC polarization.
 

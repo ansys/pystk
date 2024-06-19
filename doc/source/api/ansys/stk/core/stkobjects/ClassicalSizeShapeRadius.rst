@@ -3,7 +3,7 @@ ClassicalSizeShapeRadius
 
 .. py:class:: ClassicalSizeShapeRadius
 
-   IClassicalSizeShapeRadius, IClassicalSizeShape, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalSizeShapeRadius`, py:obj:`~IClassicalSizeShape`
 
    Orbit size and shape using Radius.
 

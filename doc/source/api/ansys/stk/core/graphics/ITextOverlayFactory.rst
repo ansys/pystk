@@ -42,25 +42,27 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self, font:"IGraphicsFont") -> "ITextOverlay"
+.. py:method:: initialize(self, font: IGraphicsFont) -> ITextOverlay
+    :canonical: ansys.stk.core.graphics.ITextOverlayFactory.initialize
 
     Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels.
 
     :Parameters:
 
-    **font** : :obj:`~"IGraphicsFont"`
+    **font** : :obj:`~IGraphicsFont`
 
     :Returns:
 
-        :obj:`~"ITextOverlay"`
+        :obj:`~ITextOverlay`
 
-.. py:method:: initialize_with_xy_width_height(self, font:"IGraphicsFont", xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "ITextOverlay"
+.. py:method:: initialize_with_xy_width_height(self, font: IGraphicsFont, xPixels: float, yPixels: float, widthPixels: float, heightPixels: float) -> ITextOverlay
+    :canonical: ansys.stk.core.graphics.ITextOverlayFactory.initialize_with_xy_width_height
 
     Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
 
     :Parameters:
 
-    **font** : :obj:`~"IGraphicsFont"`
+    **font** : :obj:`~IGraphicsFont`
     **xPixels** : :obj:`~float`
     **yPixels** : :obj:`~float`
     **widthPixels** : :obj:`~float`
@@ -68,35 +70,37 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITextOverlay"`
+        :obj:`~ITextOverlay`
 
-.. py:method:: initialize_with_position_size(self, font:"IGraphicsFont", position:list, size:list) -> "ITextOverlay"
+.. py:method:: initialize_with_position_size(self, font: IGraphicsFont, position: list, size: list) -> ITextOverlay
+    :canonical: ansys.stk.core.graphics.ITextOverlayFactory.initialize_with_position_size
 
     Initialize the overlay with the specified position and size.
 
     :Parameters:
 
-    **font** : :obj:`~"IGraphicsFont"`
+    **font** : :obj:`~IGraphicsFont`
     **position** : :obj:`~list`
     **size** : :obj:`~list`
 
     :Returns:
 
-        :obj:`~"ITextOverlay"`
+        :obj:`~ITextOverlay`
 
-.. py:method:: initialize_with_width_height_units(self, font:"IGraphicsFont", width:float, widthUnit:"SCREEN_OVERLAY_UNIT", height:float, heightUnit:"SCREEN_OVERLAY_UNIT") -> "ITextOverlay"
+.. py:method:: initialize_with_width_height_units(self, font: IGraphicsFont, width: float, widthUnit: SCREEN_OVERLAY_UNIT, height: float, heightUnit: SCREEN_OVERLAY_UNIT) -> ITextOverlay
+    :canonical: ansys.stk.core.graphics.ITextOverlayFactory.initialize_with_width_height_units
 
     Initialize the overlay with the specified position and size.
 
     :Parameters:
 
-    **font** : :obj:`~"IGraphicsFont"`
+    **font** : :obj:`~IGraphicsFont`
     **width** : :obj:`~float`
-    **widthUnit** : :obj:`~"SCREEN_OVERLAY_UNIT"`
+    **widthUnit** : :obj:`~SCREEN_OVERLAY_UNIT`
     **height** : :obj:`~float`
-    **heightUnit** : :obj:`~"SCREEN_OVERLAY_UNIT"`
+    **heightUnit** : :obj:`~SCREEN_OVERLAY_UNIT`
 
     :Returns:
 
-        :obj:`~"ITextOverlay"`
+        :obj:`~ITextOverlay`
 

@@ -3,7 +3,7 @@ ReceiverModelScriptPluginRF
 
 .. py:class:: ReceiverModelScriptPluginRF
 
-   IReceiverModelScriptPlugin, IReceiverModelScriptPluginRF, IReceiverModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverModelScriptPlugin`, py:obj:`~IReceiverModelScriptPluginRF`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a RF script plugin receiver model.
 

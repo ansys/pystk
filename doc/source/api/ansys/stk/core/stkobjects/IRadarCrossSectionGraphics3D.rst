@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: volume_graphics
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D.volume_graphics
-    :type: "IAgRadarCrossSectionVolumeGraphics"
+    :type: IAgRadarCrossSectionVolumeGraphics
 
     Gets the radar cross section volume graphics interface.
 

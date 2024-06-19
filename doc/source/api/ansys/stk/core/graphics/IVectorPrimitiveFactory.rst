@@ -36,17 +36,18 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_direction(self, referenceFrame:"IVectorGeometryToolSystem", dir:"IVectorGeometryToolVector", font:"IGraphicsFont") -> "IVectorPrimitive"
+.. py:method:: initialize_with_direction(self, referenceFrame: IVectorGeometryToolSystem, dir: IVectorGeometryToolVector, font: IGraphicsFont) -> IVectorPrimitive
+    :canonical: ansys.stk.core.graphics.IVectorPrimitiveFactory.initialize_with_direction
 
     Initialize a vector primitive with the specified reference frame as its source and pointing in direction dir.
 
     :Parameters:
 
-    **referenceFrame** : :obj:`~"IVectorGeometryToolSystem"`
-    **dir** : :obj:`~"IVectorGeometryToolVector"`
-    **font** : :obj:`~"IGraphicsFont"`
+    **referenceFrame** : :obj:`~IVectorGeometryToolSystem`
+    **dir** : :obj:`~IVectorGeometryToolVector`
+    **font** : :obj:`~IGraphicsFont`
 
     :Returns:
 
-        :obj:`~"IVectorPrimitive"`
+        :obj:`~IVectorPrimitive`
 

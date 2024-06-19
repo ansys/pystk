@@ -3,7 +3,7 @@ EOIRStage
 
 .. py:class:: EOIRStage
 
-   IEOIRStage, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRStage`
 
    Stage base class.
 

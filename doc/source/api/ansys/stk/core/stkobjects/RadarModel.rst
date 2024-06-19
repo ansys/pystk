@@ -3,7 +3,7 @@ RadarModel
 
 .. py:class:: RadarModel
 
-   IRadarModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a generic radar model.
 

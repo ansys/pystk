@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: add(self, time:typing.Any, lat:float, lon:float, alt:float, heading:float, pitch:float, speed:float) -> None
+.. py:method:: add(self, time: typing.Any, lat: float, lon: float, alt: float, heading: float, pitch: float, speed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleRealtimeLLAHPSPoints.add
 
     Add an ephemeris point using position, heading, pitch and speed. Epoch uses DateFormat dimension. Lat uses Latitude dimension. Lon uses Longitude dimension. Alt uses Distance dimension. Heading/Pitch use Angle dimension.
 

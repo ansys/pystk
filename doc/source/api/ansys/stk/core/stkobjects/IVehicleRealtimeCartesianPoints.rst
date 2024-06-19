@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: add_position(self, time:typing.Any, x:float, y:float, z:float) -> None
+.. py:method:: add_position(self, time: typing.Any, x: float, y: float, z: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleRealtimeCartesianPoints.add_position
 
     Add an ephemeris point. Epoch uses DateFormat dimension.
 
@@ -53,7 +54,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, time:typing.Any, x:float, y:float, z:float, vx:float, vy:float, vz:float) -> None
+.. py:method:: add(self, time: typing.Any, x: float, y: float, z: float, vx: float, vy: float, vz: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleRealtimeCartesianPoints.add
 
     Add an ephemeris point using position and velocity. Epoch uses DateFormat dimension.
 

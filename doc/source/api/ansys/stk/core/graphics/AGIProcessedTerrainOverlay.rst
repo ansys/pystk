@@ -3,7 +3,7 @@ AGIProcessedTerrainOverlay
 
 .. py:class:: AGIProcessedTerrainOverlay
 
-   IAGIProcessedTerrainOverlay, ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback
+   Bases: py:obj:`~IAGIProcessedTerrainOverlay`, py:obj:`~ITerrainOverlay`, py:obj:`~IGlobeOverlay`
 
    A terrain overlay for handling AGI Processed Terrain (PDTT) files.
 

@@ -38,15 +38,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IRotateFilter"
+.. py:method:: initialize(self) -> IRotateFilter
+    :canonical: ansys.stk.core.graphics.IRotateFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IRotateFilter"`
+        :obj:`~IRotateFilter`
 
-.. py:method:: initialize_with_angle(self, rotateAngle:float) -> "IRotateFilter"
+.. py:method:: initialize_with_angle(self, rotateAngle: float) -> IRotateFilter
+    :canonical: ansys.stk.core.graphics.IRotateFilterFactory.initialize_with_angle
 
     Initialize a new instance with a counterclockwise rotation angle.
 
@@ -56,5 +58,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRotateFilter"`
+        :obj:`~IRotateFilter`
 

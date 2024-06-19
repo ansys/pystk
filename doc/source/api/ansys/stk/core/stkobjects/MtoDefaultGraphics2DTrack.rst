@@ -3,7 +3,7 @@ MtoDefaultGraphics2DTrack
 
 .. py:class:: MtoDefaultGraphics2DTrack
 
-   IMtoDefaultGraphics2DTrack, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoDefaultGraphics2DTrack`
 
    2D graphics attributes for default MTO tracks.
 

@@ -3,7 +3,7 @@ SpaceEnvironmentRadEnergyValues
 
 .. py:class:: SpaceEnvironmentRadEnergyValues
 
-   ISpaceEnvironmentRadEnergyValues, SupportsDeleteCallback
+   Bases: py:obj:`~ISpaceEnvironmentRadEnergyValues`
 
    Energy values used by the Radiation Environment model.
 

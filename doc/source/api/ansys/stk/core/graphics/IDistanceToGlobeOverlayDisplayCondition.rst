@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: globe_overlay
     :canonical: ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition.globe_overlay
-    :type: "IAgStkGraphicsGlobeOverlay"
+    :type: IAgStkGraphicsGlobeOverlay
 
     Gets or sets the globe overlay associated with this instance.
 

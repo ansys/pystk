@@ -3,7 +3,7 @@ VectorGeometryToolVectorProjectAlongVector
 
 .. py:class:: VectorGeometryToolVectorProjectAlongVector
 
-   IVectorGeometryToolVectorProjectAlongVector, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorProjectAlongVector`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
 
    A projection of a source vector in the direction of another vector.
 

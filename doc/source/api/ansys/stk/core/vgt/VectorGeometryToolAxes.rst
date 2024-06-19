@@ -3,7 +3,7 @@ VectorGeometryToolAxes
 
 .. py:class:: VectorGeometryToolAxes
 
-   IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A generic axes class.
 

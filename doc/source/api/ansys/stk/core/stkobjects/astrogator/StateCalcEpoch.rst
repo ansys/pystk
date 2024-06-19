@@ -3,7 +3,7 @@ StateCalcEpoch
 
 .. py:class:: StateCalcEpoch
 
-   IComponentInfo, ICloneable, IStateCalcEpoch, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEpoch`
 
    Epoch Calc objects.
 

@@ -3,7 +3,7 @@ AntennaModelPhasedArray
 
 .. py:class:: AntennaModelPhasedArray
 
-   IAntennaModelPhasedArray, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelPhasedArray`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a phased array antenna model.
 

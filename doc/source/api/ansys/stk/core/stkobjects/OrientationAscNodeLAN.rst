@@ -3,7 +3,7 @@ OrientationAscNodeLAN
 
 .. py:class:: OrientationAscNodeLAN
 
-   IOrientationAscNodeLAN, IOrientationAscNode, SupportsDeleteCallback
+   Bases: py:obj:`~IOrientationAscNodeLAN`, py:obj:`~IOrientationAscNode`
 
    Earth-fixed longitude where the satellite crosses the inertial equator from south to north.
 

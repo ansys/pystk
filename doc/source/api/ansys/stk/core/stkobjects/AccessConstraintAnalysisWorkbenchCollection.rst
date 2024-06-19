@@ -3,7 +3,7 @@ AccessConstraintAnalysisWorkbenchCollection
 
 .. py:class:: AccessConstraintAnalysisWorkbenchCollection
 
-   IAccessConstraintAnalysisWorkbenchCollection, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintAnalysisWorkbenchCollection`, py:obj:`~IAccessConstraint`
 
    Collection of Analysis Workbench constraints.
 

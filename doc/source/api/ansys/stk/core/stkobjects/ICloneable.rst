@@ -37,6 +37,7 @@ Method detail
 -------------
 
 .. py:method:: clone_object(self) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.ICloneable.clone_object
 
     Make a clone of this component.
 

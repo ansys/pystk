@@ -3,7 +3,7 @@ AircraftDescent
 
 .. py:class:: AircraftDescent
 
-   IAircraftDescent, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftDescent`, py:obj:`~ICatalogItem`
 
    Class defining the aircraft descent category of an Aviator aircraft.
 

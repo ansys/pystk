@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: grant_partner_access(self, vendor:str, product:str, key:str) -> "ISTKXApplication"
+.. py:method:: grant_partner_access(self, vendor: str, product: str, key: str) -> ISTKXApplication
+    :canonical: ansys.stk.core.stkx.ISTKXApplicationPartnerAccess.grant_partner_access
 
     Provide object model root for authorized business partners.
 
@@ -48,5 +49,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISTKXApplication"`
+        :obj:`~ISTKXApplication`
 

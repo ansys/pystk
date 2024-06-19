@@ -3,7 +3,7 @@ ProcedureArcEnroute
 
 .. py:class:: ProcedureArcEnroute
 
-   IProcedureArcEnroute, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureArcEnroute`, py:obj:`~IProcedure`
 
    Class defining a arc enroute procedure.
 

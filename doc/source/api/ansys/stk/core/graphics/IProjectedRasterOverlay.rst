@@ -54,13 +54,13 @@ Property detail
 
 .. py:property:: raster
     :canonical: ansys.stk.core.graphics.IProjectedRasterOverlay.raster
-    :type: "IAgStkGraphicsRaster"
+    :type: IAgStkGraphicsRaster
 
     Gets or sets the raster that is projected.
 
 .. py:property:: projection
     :canonical: ansys.stk.core.graphics.IProjectedRasterOverlay.projection
-    :type: "IAgStkGraphicsProjection"
+    :type: IAgStkGraphicsProjection
 
     Gets or sets the projection that projects the raster.
 

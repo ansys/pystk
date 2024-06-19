@@ -3,7 +3,7 @@ VehicleRealtimeUTMPoints
 
 .. py:class:: VehicleRealtimeUTMPoints
 
-   IVehicleRealtimeUTMPoints, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRealtimeUTMPoints`
 
    Add one ephemeris point.
 

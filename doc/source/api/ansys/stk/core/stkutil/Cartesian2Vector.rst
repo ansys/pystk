@@ -3,7 +3,7 @@ Cartesian2Vector
 
 .. py:class:: Cartesian2Vector
 
-   ICartesian2Vector, SupportsDeleteCallback
+   Bases: py:obj:`~ICartesian2Vector`
 
    A 2-D cartesian vector.
 

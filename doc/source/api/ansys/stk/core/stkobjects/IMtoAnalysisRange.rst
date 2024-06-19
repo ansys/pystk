@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: object_interval
     :canonical: ansys.stk.core.stkobjects.IMtoAnalysisRange.object_interval
-    :type: "MTO_OBJECT_INTERVAL"
+    :type: MTO_OBJECT_INTERVAL
 
     Use Extended to use the last point of the ephemeris span of the object for times past the last point. Default is Normal.
 
@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: entirety
     :canonical: ansys.stk.core.stkobjects.IMtoAnalysisRange.entirety
-    :type: "MTO_ENTIRETY"
+    :type: MTO_ENTIRETY
 
     Range Entirety.
 
@@ -108,7 +108,8 @@ Method detail
 
 
 
-.. py:method:: is_any_track_in_range(self, time:typing.Any) -> bool
+.. py:method:: is_any_track_in_range(self, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisRange.is_any_track_in_range
 
     Return true if any track is in range of the specified object.
 
@@ -120,7 +121,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: are_all_tracks_in_range(self, time:typing.Any) -> bool
+.. py:method:: are_all_tracks_in_range(self, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisRange.are_all_tracks_in_range
 
     Return true if all tracks are in range of the specified object.
 
@@ -132,7 +134,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: is_track_in_range(self, trackId:int, time:typing.Any) -> bool
+.. py:method:: is_track_in_range(self, trackId: int, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisRange.is_track_in_range
 
     Return true is the track id is within range.
 
@@ -145,13 +148,14 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: compute_ranges(self, mode:"MTO_RANGE_MODE", trackIds:list, time:typing.Any) -> list
+.. py:method:: compute_ranges(self, mode: MTO_RANGE_MODE, trackIds: list, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisRange.compute_ranges
 
     Return an array of track ids with a bool value if it's in range of the object.
 
     :Parameters:
 
-    **mode** : :obj:`~"MTO_RANGE_MODE"`
+    **mode** : :obj:`~MTO_RANGE_MODE`
     **trackIds** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
@@ -159,13 +163,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_all_ranges(self, mode:"MTO_RANGE_MODE", time:typing.Any) -> list
+.. py:method:: compute_all_ranges(self, mode: MTO_RANGE_MODE, time: typing.Any) -> list
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisRange.compute_all_ranges
 
     Compute the range of all track ids. Returns an array of track ids with a bool value if it's in range of the object.
 
     :Parameters:
 
-    **mode** : :obj:`~"MTO_RANGE_MODE"`
+    **mode** : :obj:`~MTO_RANGE_MODE`
     **time** : :obj:`~typing.Any`
 
     :Returns:
@@ -174,13 +179,14 @@ Method detail
 
 
 
-.. py:method:: are_tracks_in_range(self, allOrAny:"MTO_TRACK_EVAL", trackIds:list, time:typing.Any) -> bool
+.. py:method:: are_tracks_in_range(self, allOrAny: MTO_TRACK_EVAL, trackIds: list, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisRange.are_tracks_in_range
 
     Return true if any track in the array is visible to the object.
 
     :Parameters:
 
-    **allOrAny** : :obj:`~"MTO_TRACK_EVAL"`
+    **allOrAny** : :obj:`~MTO_TRACK_EVAL`
     **trackIds** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 

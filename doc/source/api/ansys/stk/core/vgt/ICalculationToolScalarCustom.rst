@@ -63,6 +63,7 @@ Method detail
 
 
 .. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarCustom.reload
 
     Reload the file specified with Filename property.
 

@@ -3,7 +3,7 @@ CoverageResolutionDistance
 
 .. py:class:: CoverageResolutionDistance
 
-   ICoverageResolutionDistance, ICoverageResolution, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageResolutionDistance`, py:obj:`~ICoverageResolution`
 
    Distance: Define the location of the grid coordinates by using the specified distance to determine a latitude/longitude spacing scheme at the equator.
 

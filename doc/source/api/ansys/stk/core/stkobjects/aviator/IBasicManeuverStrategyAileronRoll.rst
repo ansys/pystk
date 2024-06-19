@@ -43,19 +43,19 @@ Property detail
 
 .. py:property:: flight_path_option
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.flight_path_option
-    :type: "AILERON_ROLL_FLIGHT_PATH"
+    :type: AILERON_ROLL_FLIGHT_PATH
 
     Gets or sets the flight path option.
 
 .. py:property:: active_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.active_mode
-    :type: "AILERON_ROLL_MODE"
+    :type: AILERON_ROLL_MODE
 
     Gets or sets the aileron roll mode.
 
 .. py:property:: active_turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.active_turn_direction
-    :type: "ROLL_LEFT_RIGHT"
+    :type: ROLL_LEFT_RIGHT
 
     Gets or sets the roll turn direction for the active roll mode.
 
@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: roll_orientation
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.roll_orientation
-    :type: "ROLL_UPRIGHT_INVERTED"
+    :type: ROLL_UPRIGHT_INVERTED
 
     Gets or sets the orientation to roll to for the roll to orientation mode.
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.roll_rate_mode
-    :type: "PERF_MODEL_OVERRIDE"
+    :type: PERF_MODEL_OVERRIDE
 
     Gets or sets the roll rate mode for the aileron roll.
 
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.airspeed_options
-    :type: "IAgAvtrBasicManeuverAirspeedOptions"
+    :type: IAgAvtrBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

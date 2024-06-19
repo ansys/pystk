@@ -94,25 +94,25 @@ Property detail
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.IScenario.animation
-    :type: "IAgScAnimation"
+    :type: IAgScAnimation
 
     Scenario animation settings.
 
 .. py:property:: earth_data
     :canonical: ansys.stk.core.stkobjects.IScenario.earth_data
-    :type: "IAgScEarthData"
+    :type: IAgScEarthData
 
     Scenario Earth Data settings.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IScenario.graphics
-    :type: "IAgScGraphics"
+    :type: IAgScGraphics
 
     Scenario 2D Graphics settings.
 
 .. py:property:: gen_dbs
     :canonical: ansys.stk.core.stkobjects.IScenario.gen_dbs
-    :type: "IAgScGenDbCollection"
+    :type: IAgScGenDbCollection
 
     Scenario database settings.
 
@@ -130,13 +130,13 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IScenario.graphics_3d
-    :type: "IAgScVO"
+    :type: IAgScVO
 
     Scenario 3D Graphics settings.
 
 .. py:property:: aircraft_wgs84_warning
     :canonical: ansys.stk.core.stkobjects.IScenario.aircraft_wgs84_warning
-    :type: "AIRCRAFT_WGS84_WARNING_TYPE"
+    :type: AIRCRAFT_WGS84_WARNING_TYPE
 
     Specify when to display the aircraft mission modeler WGS84 warning.
 
@@ -148,13 +148,13 @@ Property detail
 
 .. py:property:: terrain
     :canonical: ansys.stk.core.stkobjects.IScenario.terrain
-    :type: "IAgCentralBodyTerrainCollection"
+    :type: IAgCentralBodyTerrainCollection
 
     Returns a list of central bodies and their terrains.
 
 .. py:property:: component_directory
     :canonical: ansys.stk.core.stkobjects.IScenario.component_directory
-    :type: "IAgComponentDirectory"
+    :type: IAgComponentDirectory
 
     Get the component directory interface.
 
@@ -178,55 +178,55 @@ Property detail
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.IScenario.space_environment
-    :type: "IAgSpEnvScenSpaceEnvironment"
+    :type: IAgSpEnvScenSpaceEnvironment
 
     Scenario SpaceEnvironment settings.
 
 .. py:property:: scene_manager
     :canonical: ansys.stk.core.stkobjects.IScenario.scene_manager
-    :type: "IAgStkGraphicsSceneManager"
+    :type: IAgStkGraphicsSceneManager
 
     A scene manager.
 
 .. py:property:: analysis_interval
     :canonical: ansys.stk.core.stkobjects.IScenario.analysis_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Allows the user to configure the scenario's analysis time period.
 
 .. py:property:: analysis_epoch
     :canonical: ansys.stk.core.stkobjects.IScenario.analysis_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Allows the user to configure the scenario's analysis epoch.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.IScenario.radar_clutter_map
-    :type: "IAgRadarClutterMap"
+    :type: IAgRadarClutterMap
 
     Returns the global radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IScenario.radar_cross_section
-    :type: "IAgRadarCrossSection"
+    :type: IAgRadarCrossSection
 
     Returns the global radar cross section.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IScenario.rf_environment
-    :type: "IAgRFEnvironment"
+    :type: IAgRFEnvironment
 
     Returns the RF environment.
 
 .. py:property:: tilesets
     :canonical: ansys.stk.core.stkobjects.IScenario.tilesets
-    :type: "IAg3DTilesetCollection"
+    :type: IAg3DTilesetCollection
 
     Returns a list of 3D Tilesets used for Analysis.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IScenario.laser_environment
-    :type: "IAgLaserEnvironment"
+    :type: IAgLaserEnvironment
 
     Returns the laser environment.
 
@@ -238,7 +238,8 @@ Method detail
 
 
 
-.. py:method:: set_time_period(self, startTime:typing.Any, stopTime:typing.Any) -> None
+.. py:method:: set_time_period(self, startTime: typing.Any, stopTime: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenario.set_time_period
 
     Set the Scenario time period. startTime/stopTime use DateFormat Dimension.
 
@@ -273,6 +274,7 @@ Method detail
 
 
 .. py:method:: set_dirty(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IScenario.set_dirty
 
     Set the flag indicating the scenario has been modified.
 
@@ -285,6 +287,7 @@ Method detail
 
 
 .. py:method:: get_existing_accesses(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IScenario.get_existing_accesses
 
     Return an array of existing accesses in the current scenario. The result is a two-dimensional array of triplets where each triplet contains the paths of two objects participating in the access and a flag indicating whether the access is computed.
 
@@ -292,7 +295,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_access_between_objects_by_path(self, objectPath1:str, objectPath2:str) -> "IStkAccess"
+.. py:method:: get_access_between_objects_by_path(self, objectPath1: str, objectPath2: str) -> IStkAccess
+    :canonical: ansys.stk.core.stkobjects.IScenario.get_access_between_objects_by_path
 
     Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
@@ -303,7 +307,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IStkAccess"`
+        :obj:`~IStkAccess`
 
 
 

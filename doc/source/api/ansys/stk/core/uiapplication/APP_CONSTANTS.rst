@@ -11,6 +11,18 @@ APP_CONSTANTS
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~APP_ERROR_BASE`
+              - Error base.
+
+
 Import detail
 -------------
 

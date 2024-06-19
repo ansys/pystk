@@ -3,7 +3,7 @@ UiWindowGlobeObject
 
 .. py:class:: UiWindowGlobeObject
 
-   IUiWindowGlobeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IUiWindowGlobeObject`
 
    Provide methods and properties to manipulate the 3D globe.
 

@@ -3,7 +3,7 @@ AntennaContourSpectralFluxDensity
 
 .. py:class:: AntennaContourSpectralFluxDensity
 
-   IAntennaContour, IAntennaContourSpectralFluxDensity, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaContour`, py:obj:`~IAntennaContourSpectralFluxDensity`
 
    Class defining an antenna spectral flux density contour properties.
 

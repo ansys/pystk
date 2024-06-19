@@ -3,7 +3,7 @@ BasicManeuverStrategyGlideProfile
 
 .. py:class:: BasicManeuverStrategyGlideProfile
 
-   IBasicManeuverStrategyGlideProfile, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyGlideProfile`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Glide profile strategy for a basic maneuver procedure.
 

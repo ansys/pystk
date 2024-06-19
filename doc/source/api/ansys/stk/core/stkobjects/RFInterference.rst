@@ -3,7 +3,7 @@ RFInterference
 
 .. py:class:: RFInterference
 
-   IRFInterference, SupportsDeleteCallback
+   Bases: py:obj:`~IRFInterference`
 
    Class defining radar jamming.
 

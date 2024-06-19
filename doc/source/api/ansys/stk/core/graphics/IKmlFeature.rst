@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.IKmlFeature.bounding_sphere
-    :type: "IAgStkGraphicsBoundingSphere"
+    :type: IAgStkGraphicsBoundingSphere
 
     The bounding sphere encompassing the area associated with this feature.
 
@@ -104,6 +104,7 @@ Method detail
 
 
 .. py:method:: fly_to(self) -> None
+    :canonical: ansys.stk.core.graphics.IKmlFeature.fly_to
 
     Move the camera to the area encompassing this feature.
 

@@ -3,7 +3,7 @@ PolarizationVertical
 
 .. py:class:: PolarizationVertical
 
-   IPolarizationVertical, IPolarization, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarizationVertical`, py:obj:`~IPolarization`
 
    Class defining a vertical polarization.
 

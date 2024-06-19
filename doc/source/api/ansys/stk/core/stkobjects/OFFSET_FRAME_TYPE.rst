@@ -11,6 +11,21 @@ OFFSET_FRAME_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~CARTESIAN`
+              - Use cartesian values to offset the label.
+
+            * - :py:attr:`~PIXEL`
+              - Use pixel values to offset the label.
+
+
 Import detail
 -------------
 

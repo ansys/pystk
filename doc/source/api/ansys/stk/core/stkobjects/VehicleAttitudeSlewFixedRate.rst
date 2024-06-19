@@ -3,7 +3,7 @@ VehicleAttitudeSlewFixedRate
 
 .. py:class:: VehicleAttitudeSlewFixedRate
 
-   IVehicleAttitudeSlewFixedRate, IVehicleAttitudeSlewBase, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeSlewFixedRate`, py:obj:`~IVehicleAttitudeSlewBase`
 
    Fixed rate slew.
 

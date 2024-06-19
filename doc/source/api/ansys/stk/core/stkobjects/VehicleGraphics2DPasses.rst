@@ -3,7 +3,7 @@ VehicleGraphics2DPasses
 
 .. py:class:: VehicleGraphics2DPasses
 
-   IVehicleGraphics2DPasses, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DPasses`
 
    Settings for satellite pass display graphics.
 

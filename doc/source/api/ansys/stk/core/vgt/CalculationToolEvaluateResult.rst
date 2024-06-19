@@ -3,7 +3,7 @@ CalculationToolEvaluateResult
 
 .. py:class:: CalculationToolEvaluateResult
 
-   ICalculationToolEvaluateResult, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolEvaluateResult`
 
    Represents the results of evaluating a scalar component.
 

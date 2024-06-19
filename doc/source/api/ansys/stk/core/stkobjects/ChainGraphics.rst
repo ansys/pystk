@@ -3,7 +3,7 @@ ChainGraphics
 
 .. py:class:: ChainGraphics
 
-   IChainGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IChainGraphics`
 
    2D graphics properties of a chain.
 

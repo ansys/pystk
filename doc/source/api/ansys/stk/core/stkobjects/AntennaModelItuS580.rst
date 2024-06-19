@@ -3,7 +3,7 @@ AntennaModelItuS580
 
 .. py:class:: AntennaModelItuS580
 
-   IAntennaModelItuS580, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuS580`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R S580-6 antenna model.
 

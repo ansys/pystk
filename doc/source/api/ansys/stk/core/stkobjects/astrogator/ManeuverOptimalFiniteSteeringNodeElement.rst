@@ -3,7 +3,7 @@ ManeuverOptimalFiniteSteeringNodeElement
 
 .. py:class:: ManeuverOptimalFiniteSteeringNodeElement
 
-   IManeuverOptimalFiniteSteeringNodeElement, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverOptimalFiniteSteeringNodeElement`
 
    The elements of the steering node.
 

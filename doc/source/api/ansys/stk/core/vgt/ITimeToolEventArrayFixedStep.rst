@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: bounding_interval_list
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.bounding_interval_list
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The bounding interval list.
 
@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: reference_type
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.reference_type
-    :type: "CRDN_SAMPLED_REFERENCE_TIME"
+    :type: CRDN_SAMPLED_REFERENCE_TIME
 
     Specify the time reference from which fixed sampling time steps are taken. Note: selecting Start/Stop of each Interval resets the time reference for each interval, whereas other types maintain single reference for entire array.
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.reference_time_instant
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     The reference time instant. Only applicable if the ReferenceType is set to time instant.
 

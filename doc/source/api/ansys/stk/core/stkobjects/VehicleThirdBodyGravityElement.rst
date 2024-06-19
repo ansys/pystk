@@ -3,7 +3,7 @@ VehicleThirdBodyGravityElement
 
 .. py:class:: VehicleThirdBodyGravityElement
 
-   IVehicleThirdBodyGravityElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleThirdBodyGravityElement`
 
    Class defining third-body gravity options for the LOP propagator.
 

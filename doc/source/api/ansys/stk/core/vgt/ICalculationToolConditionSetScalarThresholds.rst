@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.scalar
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The input scalar calculation.
 
@@ -89,7 +89,8 @@ Method detail
 
 
 
-.. py:method:: set_thresholds_and_labels(self, thresholds:list, thresholdLabels:list) -> None
+.. py:method:: set_thresholds_and_labels(self, thresholds: list, thresholdLabels: list) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.set_thresholds_and_labels
 
     Set thresholds and threshold labels.
 

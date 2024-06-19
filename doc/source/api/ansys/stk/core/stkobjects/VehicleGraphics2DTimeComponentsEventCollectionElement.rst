@@ -3,7 +3,7 @@ VehicleGraphics2DTimeComponentsEventCollectionElement
 
 .. py:class:: VehicleGraphics2DTimeComponentsEventCollectionElement
 
-   IVehicleGraphics2DTimeComponentsEventCollectionElement, IVehicleGraphics2DTimeComponentsElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DTimeComponentsEventCollectionElement`, py:obj:`~IVehicleGraphics2DTimeComponentsElement`
 
    Provide properties to configure the vehicle's appearance in 2D and 3D views. The interface is used with event interval collections only.
 

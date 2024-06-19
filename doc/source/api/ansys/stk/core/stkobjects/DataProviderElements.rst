@@ -3,7 +3,7 @@ DataProviderElements
 
 .. py:class:: DataProviderElements
 
-   IDataProviderElements, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderElements`
 
    Elements returned by the data provider (e.g. ``x``, ``y``, ``z``).
 

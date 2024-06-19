@@ -78,7 +78,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IGraphics3DReferenceAnalysisWorkbenchComponent"
+.. py:method:: item(self, index: int) -> IGraphics3DReferenceAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.item
 
     Return an element of the collection at the specified position.
 
@@ -88,23 +89,25 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DReferenceAnalysisWorkbenchComponent"`
+        :obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`
 
 
-.. py:method:: add(self, type:"GEOMETRIC_ELEM_TYPE", name:str) -> "IGraphics3DReferenceAnalysisWorkbenchComponent"
+.. py:method:: add(self, type: GEOMETRIC_ELEM_TYPE, name: str) -> IGraphics3DReferenceAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.add
 
     Add a VGT component to the collection. The path must refer to a valid VGT component. The method throws an exception if the path is invalid or if the element already exist.
 
     :Parameters:
 
-    **type** : :obj:`~"GEOMETRIC_ELEM_TYPE"`
+    **type** : :obj:`~GEOMETRIC_ELEM_TYPE`
     **name** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"IGraphics3DReferenceAnalysisWorkbenchComponent"`
+        :obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`
 
-.. py:method:: remove(self, index:int) -> None
+.. py:method:: remove(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.remove
 
     Remove an element at the specified position from the collection.
 
@@ -117,6 +120,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -124,13 +128,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_by_name(self, type:"GEOMETRIC_ELEM_TYPE", name:str) -> None
+.. py:method:: remove_by_name(self, type: GEOMETRIC_ELEM_TYPE, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.remove_by_name
 
     Remove an element from the collection using the element's path. The method does not throw an exception if the element with the specified name is not in the collection.
 
     :Parameters:
 
-    **type** : :obj:`~"GEOMETRIC_ELEM_TYPE"`
+    **type** : :obj:`~GEOMETRIC_ELEM_TYPE`
     **name** : :obj:`~str`
 
     :Returns:
@@ -138,16 +143,17 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: get_crdn_by_name(self, type:"GEOMETRIC_ELEM_TYPE", name:str) -> "IGraphics3DReferenceAnalysisWorkbenchComponent"
+.. py:method:: get_crdn_by_name(self, type: GEOMETRIC_ELEM_TYPE, name: str) -> IGraphics3DReferenceAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.get_crdn_by_name
 
     Return an element with the specified name and type. The method throws an exception if the element with the specified name does not exist.
 
     :Parameters:
 
-    **type** : :obj:`~"GEOMETRIC_ELEM_TYPE"`
+    **type** : :obj:`~GEOMETRIC_ELEM_TYPE`
     **name** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"IGraphics3DReferenceAnalysisWorkbenchComponent"`
+        :obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`
 

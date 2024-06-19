@@ -3,7 +3,7 @@ VectorGeometryToolAngleBetweenVectors
 
 .. py:class:: VectorGeometryToolAngleBetweenVectors
 
-   IVectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAngleBetweenVectors`, py:obj:`~IVectorGeometryToolAngle`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    An angle between two vectors.
 

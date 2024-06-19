@@ -3,7 +3,7 @@ JacchiaBowman2008
 
 .. py:class:: JacchiaBowman2008
 
-   IJacchiaBowman2008, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IJacchiaBowman2008`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Jacchia Bowman 2008 atmospheric propagator function.
 

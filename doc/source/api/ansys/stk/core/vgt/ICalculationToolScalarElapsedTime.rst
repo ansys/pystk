@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarElapsedTime.reference_time_instant
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     The reference time instant.
 

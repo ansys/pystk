@@ -38,15 +38,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IPixelSizeDisplayCondition"
+.. py:method:: initialize(self) -> IPixelSizeDisplayCondition
+    :canonical: ansys.stk.core.graphics.IPixelSizeDisplayConditionFactory.initialize
 
     Initialize a default pixel size display condition. minimum pixel size is set to 0 and maximum pixel size is set to Int32.MaxValue. With this interval, an object is always rendered regardless of how many pixels its bounding sphere or rectangle covers.
 
     :Returns:
 
-        :obj:`~"IPixelSizeDisplayCondition"`
+        :obj:`~IPixelSizeDisplayCondition`
 
-.. py:method:: initialize_with_pixel_sizes(self, minimumPixelSize:int, maximumPixelSize:int) -> "IPixelSizeDisplayCondition"
+.. py:method:: initialize_with_pixel_sizes(self, minimumPixelSize: int, maximumPixelSize: int) -> IPixelSizeDisplayCondition
+    :canonical: ansys.stk.core.graphics.IPixelSizeDisplayConditionFactory.initialize_with_pixel_sizes
 
     Initialize a pixel size display condition with the inclusive interval [minimumPixelSize, maximumPixelSize]...
 
@@ -57,5 +59,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPixelSizeDisplayCondition"`
+        :obj:`~IPixelSizeDisplayCondition`
 

@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownEarthAxes
 
 .. py:class:: VectorGeometryToolWellKnownEarthAxes
 
-   IVectorGeometryToolWellKnownEarthAxes, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolWellKnownEarthAxes`
 
    Well-known Earth's axes.
 

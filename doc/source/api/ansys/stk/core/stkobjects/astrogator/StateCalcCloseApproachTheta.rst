@@ -3,7 +3,7 @@ StateCalcCloseApproachTheta
 
 .. py:class:: StateCalcCloseApproachTheta
 
-   IComponentInfo, ICloneable, IStateCalcCloseApproachTheta, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCloseApproachTheta`
 
    CloseApproachTheta Calc objects.
 

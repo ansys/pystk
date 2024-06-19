@@ -3,7 +3,7 @@ VectorGeometryToolAxesPlugin
 
 .. py:class:: VectorGeometryToolAxesPlugin
 
-   IVectorGeometryToolAxesPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesPlugin`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolAxes`
 
    A VGT axes plugin.
 

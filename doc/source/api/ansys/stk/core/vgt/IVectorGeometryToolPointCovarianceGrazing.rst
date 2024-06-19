@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.reference_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.direction_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a direction vector to be used in conjunction with the displacement vector from the selected target object to the reference point to define a plane in which the line will lie.
 

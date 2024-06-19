@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: list_of_intervals
     :canonical: ansys.stk.core.stkobjects.IAccessTimeEventIntervals.list_of_intervals
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     A list of timeline intervals used to define a list of allowed access intervals.
 

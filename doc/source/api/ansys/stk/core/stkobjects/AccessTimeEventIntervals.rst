@@ -3,7 +3,7 @@ AccessTimeEventIntervals
 
 .. py:class:: AccessTimeEventIntervals
 
-   IAccessTimeEventIntervals, IAccessInterval, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessTimeEventIntervals`, py:obj:`~IAccessInterval`
 
    Allow configuring the access time period using a list of timeline intervals.
 

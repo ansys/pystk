@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.ITransmitter.model
-    :type: "IAgTransmitterModel"
+    :type: IAgTransmitterModel
 
     Gets the current transmitter model.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.ITransmitter.refraction
-    :type: "SENSOR_REFRACTION_TYPE"
+    :type: SENSOR_REFRACTION_TYPE
 
     Refraction method, a member of the AgESnRefractionType enumeration.
 
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.ITransmitter.refraction_model
-    :type: "IAgRfModelBase"
+    :type: IAgRfModelBase
 
     Gets a refraction model.
 
@@ -92,25 +92,25 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ITransmitter.graphics_3d
-    :type: "IAgTransmitterVO"
+    :type: IAgTransmitterVO
 
     Get the 3D Graphics properties for the transmitter.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ITransmitter.graphics
-    :type: "IAgTransmitterGraphics"
+    :type: IAgTransmitterGraphics
 
     Get the 2D Graphics properties for the transmitter.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.ITransmitter.rf_environment
-    :type: "IAgObjectRFEnvironment"
+    :type: IAgObjectRFEnvironment
 
     Gets the object RF environment settings.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.ITransmitter.laser_environment
-    :type: "IAgObjectLaserEnvironment"
+    :type: IAgObjectLaserEnvironment
 
     Gets the object laser environment settings.
 
@@ -119,7 +119,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName:str) -> None
+.. py:method:: set_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransmitter.set_model
 
     Set the current transmitter model by name.
 
@@ -134,13 +135,14 @@ Method detail
 
 
 
-.. py:method:: is_refraction_type_supported(self, model:"SENSOR_REFRACTION_TYPE") -> bool
+.. py:method:: is_refraction_type_supported(self, model: SENSOR_REFRACTION_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.ITransmitter.is_refraction_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **model** : :obj:`~"SENSOR_REFRACTION_TYPE"`
+    **model** : :obj:`~SENSOR_REFRACTION_TYPE`
 
     :Returns:
 

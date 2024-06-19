@@ -46,49 +46,49 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.graphics
-    :type: "IAgGvGraphics"
+    :type: IAgGvGraphics
 
     Get the ground vehicle's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.graphics_3d
-    :type: "IAgGvVO"
+    :type: IAgGvVO
 
     Get the ground vehicle's 3D Graphics properties.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.export_tools
-    :type: "IAgGvExportTools"
+    :type: IAgGvExportTools
 
     Returns the IAgGvExportTools interface.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.atmosphere
-    :type: "IAgAtmosphere"
+    :type: IAgAtmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.radar_clutter_map
-    :type: "IAgRadarClutterMapInheritable"
+    :type: IAgRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.radar_cross_section
-    :type: "IAgRadarCrossSectionInheritable"
+    :type: IAgRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.laser_environment
-    :type: "IAgPlatformLaserEnvironment"
+    :type: IAgPlatformLaserEnvironment
 
     Gets the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.rf_environment
-    :type: "IAgPlatformRFEnvironment"
+    :type: IAgPlatformRFEnvironment
 
     Gets the RF environment.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: get_eoir
     :canonical: ansys.stk.core.stkobjects.IGroundVehicle.get_eoir
-    :type: "IAgEOIR"
+    :type: IAgEOIR
 
     Get the EOIR properties of the gound vehicle.
 

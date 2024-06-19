@@ -3,7 +3,7 @@ SearchPluginControlCollection
 
 .. py:class:: SearchPluginControlCollection
 
-   ISearchPluginControlCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISearchPluginControlCollection`
 
    The list of search plugin control parameters.
 

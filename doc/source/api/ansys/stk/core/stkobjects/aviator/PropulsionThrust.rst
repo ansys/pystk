@@ -3,7 +3,7 @@ PropulsionThrust
 
 .. py:class:: PropulsionThrust
 
-   IPropulsionThrust, SupportsDeleteCallback
+   Bases: py:obj:`~IPropulsionThrust`
 
    Class defining the the thrust propulsion used in basic maneuver procedures.
 

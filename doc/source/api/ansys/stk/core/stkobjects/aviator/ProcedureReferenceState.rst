@@ -3,7 +3,7 @@ ProcedureReferenceState
 
 .. py:class:: ProcedureReferenceState
 
-   IProcedureReferenceState, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureReferenceState`, py:obj:`~IProcedure`
 
    Class defining a reference state procedure.
 

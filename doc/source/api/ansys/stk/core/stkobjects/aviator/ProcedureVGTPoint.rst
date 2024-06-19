@@ -3,7 +3,7 @@ ProcedureVGTPoint
 
 .. py:class:: ProcedureVGTPoint
 
-   IProcedureVGTPoint, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureVGTPoint`, py:obj:`~IProcedure`
 
    Class defining a VGT Point procedure.
 

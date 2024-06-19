@@ -3,7 +3,7 @@ CoverageGraphics3D
 
 .. py:class:: CoverageGraphics3D
 
-   ICoverageGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageGraphics3D`
 
    AgCvVOStatic Class.
 

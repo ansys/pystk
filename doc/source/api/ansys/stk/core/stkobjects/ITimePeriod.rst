@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.ITimePeriod.start_time
-    :type: "IAgTimePeriodValue"
+    :type: IAgTimePeriodValue
 
     Gets a start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.ITimePeriod.stop_time
-    :type: "IAgTimePeriodValue"
+    :type: IAgTimePeriodValue
 
     Gets a stop time. Uses DateFormat Dimension.
 

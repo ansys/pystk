@@ -3,7 +3,7 @@ StateCalcRadOfPeriapsis
 
 .. py:class:: StateCalcRadOfPeriapsis
 
-   IComponentInfo, ICloneable, IStateCalcRadOfPeriapsis, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRadOfPeriapsis`
 
    RadiusOfPeriapsis Calc objects.
 

@@ -3,7 +3,7 @@ RotorcraftModel
 
 .. py:class:: RotorcraftModel
 
-   IRotorcraftModel, IAviatorVehicle, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IRotorcraftModel`, py:obj:`~IAviatorVehicle`, py:obj:`~ICatalogItem`
 
    Class defining a rotorcraft in Aviator.
 

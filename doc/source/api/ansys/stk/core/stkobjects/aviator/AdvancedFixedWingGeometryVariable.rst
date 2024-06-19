@@ -3,7 +3,7 @@ AdvancedFixedWingGeometryVariable
 
 .. py:class:: AdvancedFixedWingGeometryVariable
 
-   IAdvancedFixedWingGeometryVariable, IAdvancedFixedWingGeometry, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingGeometryVariable`, py:obj:`~IAdvancedFixedWingGeometry`
 
    Class defining a variable geometry wing in the Advanced Fixed Wing Tool.
 

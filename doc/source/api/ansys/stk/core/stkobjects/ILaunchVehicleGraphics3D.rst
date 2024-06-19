@@ -52,103 +52,103 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.model
-    :type: "IAgVeTrajectoryVOModel"
+    :type: IAgVeTrajectoryVOModel
 
     Get the launch vehicle's 3D model properties.
 
 .. py:property:: trajectory_systems
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.trajectory_systems
-    :type: "IAgVeVOSystemsCollection"
+    :type: IAgVeVOSystemsCollection
 
     Get the launch vehicle's 3D trajectory frame properties.
 
 .. py:property:: proximity
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.proximity
-    :type: "IAgVeVOTrajectoryProximity"
+    :type: IAgVeVOTrajectoryProximity
 
     Get the launch vehicle's 3D proximity properties.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.elev_contours
-    :type: "IAgVeVOElevContours"
+    :type: IAgVeVOElevContours
 
     Get the launch vehicle's 3D elevation contour properties.
 
 .. py:property:: covariance_pointing_contour
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.covariance_pointing_contour
-    :type: "IAgVeVOCovariancePointingContour"
+    :type: IAgVeVOCovariancePointingContour
 
     Get the launch vehicle's 3D covariance pointing properties.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.trajectory
-    :type: "IAgVeVOTrajectory"
+    :type: IAgVeVOTrajectory
 
     Get the launch vehicle's 3D trajectory properties.
 
 .. py:property:: offsets
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.offsets
-    :type: "IAgVOOffset"
+    :type: IAgVOOffset
 
     Get the launch vehicle's 3D offsets properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.range_contours
-    :type: "IAgVORangeContours"
+    :type: IAgVORangeContours
 
     Get the launch vehicle's 3D range contour properties.
 
 .. py:property:: covariance
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.covariance
-    :type: "IAgVeVOCovariance"
+    :type: IAgVeVOCovariance
 
     Get the launch vehicle's 3D covariance properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.vector
-    :type: "IAgVOVector"
+    :type: IAgVOVector
 
     Get the launch vehicle's 3D vector properties.
 
 .. py:property:: data_display
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.data_display
-    :type: "IAgVODataDisplayCollection"
+    :type: IAgVODataDisplayCollection
 
     Get the launch vehicle's 3D data display properties.
 
 .. py:property:: model_pointing
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.model_pointing
-    :type: "IAgVOModelPointing"
+    :type: IAgVOModelPointing
 
     Use to point parts of a launch vehicle's model toward a target, such as the Sun or Earth.
 
 .. py:property:: drop_lines
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.drop_lines
-    :type: "IAgVeVOTrajectoryDropLines"
+    :type: IAgVeVOTrajectoryDropLines
 
     Returns an interface allowing to configure launch vehicle's drop lines.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.vapor_trail
-    :type: "IAgVOVaporTrail"
+    :type: IAgVOVaporTrail
 
     Vapor trail attributes.
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.saa
-    :type: "IAgVeVOSAA"
+    :type: IAgVeVOSAA
 
     Get the launch vehicle's South Atlantic Anomaly Contour properties.
 
 .. py:property:: velocity_covariance
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.velocity_covariance
-    :type: "IAgVeVOVelCovariance"
+    :type: IAgVeVOVelCovariance
 
     Get the launch vehicle's 3D velocity covariance properties.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.radar_cross_section
-    :type: "IAgRadarCrossSectionVO"
+    :type: IAgRadarCrossSectionVO
 
     Gets the radar cross section graphics interface.
 

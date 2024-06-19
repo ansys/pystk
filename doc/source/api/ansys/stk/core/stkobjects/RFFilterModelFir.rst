@@ -3,7 +3,7 @@ RFFilterModelFir
 
 .. py:class:: RFFilterModelFir
 
-   IRFFilterModelFir, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelFir`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a FIR filter model.
 

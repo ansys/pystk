@@ -3,7 +3,7 @@ AtmosphericTurbulenceModel
 
 .. py:class:: AtmosphericTurbulenceModel
 
-   IAtmosphericTurbulenceModel, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphericTurbulenceModel`
 
    Class defining a atmospheric turbulence model.
 

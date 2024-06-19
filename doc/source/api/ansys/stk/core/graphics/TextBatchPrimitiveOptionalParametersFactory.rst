@@ -3,7 +3,7 @@ TextBatchPrimitiveOptionalParametersFactory
 
 .. py:class:: TextBatchPrimitiveOptionalParametersFactory
 
-   ITextBatchPrimitiveOptionalParametersFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITextBatchPrimitiveOptionalParametersFactory`
 
    Optional per-string and per-batch parameters for text batch primitive...
 

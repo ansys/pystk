@@ -3,7 +3,7 @@ GeneralRelativityFunction
 
 .. py:class:: GeneralRelativityFunction
 
-   IGeneralRelativityFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IGeneralRelativityFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    General Relativity Propagator Function.
 

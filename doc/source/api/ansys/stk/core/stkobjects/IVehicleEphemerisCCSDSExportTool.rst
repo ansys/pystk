@@ -81,19 +81,19 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.reference_frame
-    :type: "CCSDS_REFERENCE_FRAME"
+    :type: CCSDS_REFERENCE_FRAME
 
     Gets or sets the reference frame in which to express the ephemeris. Some frames are allowed for use only when the CentralBodyName is Earth or Moon.
 
 .. py:property:: date_format
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.date_format
-    :type: "CCSDS_DATE_FORMAT"
+    :type: CCSDS_DATE_FORMAT
 
     Gets or sets the desired date format.
 
 .. py:property:: ephemeris_format
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.ephemeris_format
-    :type: "CCSDS_EPHEM_FORMAT"
+    :type: CCSDS_EPHEM_FORMAT
 
     Gets or sets the desired format to be used for representing the position and velocity information as either scientific notation or floating point notation. Scientific notation is recommended when possible.
 
@@ -105,13 +105,13 @@ Property detail
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.step_size
-    :type: "IAgExportToolStepSize"
+    :type: IAgExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.time_period
-    :type: "IAgExportToolTimePeriod"
+    :type: IAgExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: time_system
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.time_system
-    :type: "CCSDS_TIME_SYSTEM"
+    :type: CCSDS_TIME_SYSTEM
 
     Gets or sets the time system of the ephemeris.
 
@@ -158,7 +158,8 @@ Method detail
 
 
 
-.. py:method:: export(self, fileName:str) -> None
+.. py:method:: export(self, fileName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.export
 
     Export the ephemeris file.
 

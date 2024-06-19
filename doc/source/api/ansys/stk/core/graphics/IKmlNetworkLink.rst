@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: refresh_mode
     :canonical: ansys.stk.core.graphics.IKmlNetworkLink.refresh_mode
-    :type: "KML_NETWORK_LINK_REFRESH_MODE"
+    :type: KML_NETWORK_LINK_REFRESH_MODE
 
     Gets or sets the refresh mode of the network link. The refresh mode specifies a time-based refresh policy for this link.
 
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: view_refresh_mode
     :canonical: ansys.stk.core.graphics.IKmlNetworkLink.view_refresh_mode
-    :type: "KML_NETWORK_LINK_VIEW_REFRESH_MODE"
+    :type: KML_NETWORK_LINK_VIEW_REFRESH_MODE
 
     Gets or sets the view refresh mode of the network link. The view refresh mode specifies the refresh policy for the when the camera's view changes.
 
@@ -140,6 +140,7 @@ Method detail
 
 
 .. py:method:: refresh(self) -> None
+    :canonical: ansys.stk.core.graphics.IKmlNetworkLink.refresh
 
     Refresh the network link.
 

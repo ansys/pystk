@@ -3,7 +3,7 @@ AntennaModelElevationAzimuthCuts
 
 .. py:class:: AntennaModelElevationAzimuthCuts
 
-   IAntennaModelElevationAzimuthCuts, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelElevationAzimuthCuts`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a pattern elevation/azimuth cuts antenna model.
 

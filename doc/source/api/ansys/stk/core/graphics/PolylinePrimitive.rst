@@ -3,7 +3,7 @@ PolylinePrimitive
 
 .. py:class:: PolylinePrimitive
 
-   IPolylinePrimitive, IPrimitive, SupportsDeleteCallback
+   Bases: py:obj:`~IPolylinePrimitive`, py:obj:`~IPrimitive`
 
    Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines.
 

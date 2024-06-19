@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IScatteringPointCollectionElement"
+.. py:method:: item(self, index: int) -> IScatteringPointCollectionElement
+    :canonical: ansys.stk.core.stkobjects.IScatteringPointCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScatteringPointCollectionElement"`
+        :obj:`~IScatteringPointCollectionElement`
 
 

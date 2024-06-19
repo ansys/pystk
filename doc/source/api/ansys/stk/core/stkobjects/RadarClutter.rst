@@ -3,7 +3,7 @@ RadarClutter
 
 .. py:class:: RadarClutter
 
-   IRadarClutter, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarClutter`
 
    Class defining a radar clutter.
 

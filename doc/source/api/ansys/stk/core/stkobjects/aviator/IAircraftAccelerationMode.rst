@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: accel_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAccelerationMode.accel_mode
-    :type: "ACCELERATION_ADVANCED_ACCEL_MODE"
+    :type: ACCELERATION_ADVANCED_ACCEL_MODE
 
     Opt whether to override the acceleration or deceleration of the aircraft.
 

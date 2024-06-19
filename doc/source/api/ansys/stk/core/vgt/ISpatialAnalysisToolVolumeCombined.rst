@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: combine_operation
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.combine_operation
-    :type: "CRDN_VOLUME_COMBINED_OPERATION_TYPE"
+    :type: CRDN_VOLUME_COMBINED_OPERATION_TYPE
 
     Sets/Returns volume combined operation.
 
@@ -72,6 +72,7 @@ Method detail
 
 
 .. py:method:: get_all_conditions(self) -> list
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.get_all_conditions
 
     Get all spatial conditions.
 
@@ -79,7 +80,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: set_all_conditions(self, conditions:list) -> None
+.. py:method:: set_all_conditions(self, conditions: list) -> None
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.set_all_conditions
 
     Set all spatial conditions.
 
@@ -91,20 +93,22 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_condition(self, ref:"ISpatialAnalysisToolVolume", pos:int) -> None
+.. py:method:: set_condition(self, ref: ISpatialAnalysisToolVolume, pos: int) -> None
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.set_condition
 
     Set spatial conditions at a position.
 
     :Parameters:
 
-    **ref** : :obj:`~"ISpatialAnalysisToolVolume"`
+    **ref** : :obj:`~ISpatialAnalysisToolVolume`
     **pos** : :obj:`~int`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_condition(self, pos:int) -> "ISpatialAnalysisToolVolume"
+.. py:method:: get_condition(self, pos: int) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.get_condition
 
     Get spatial conditions at a position.
 
@@ -114,9 +118,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: remove_condition(self, pos:int) -> None
+.. py:method:: remove_condition(self, pos: int) -> None
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.remove_condition
 
     Remove spatial conditions at a position.
 

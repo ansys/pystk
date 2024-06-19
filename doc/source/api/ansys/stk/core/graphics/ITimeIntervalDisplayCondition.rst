@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: minimum_time
     :canonical: ansys.stk.core.graphics.ITimeIntervalDisplayCondition.minimum_time
-    :type: "IAgDate"
+    :type: IAgDate
 
     Gets or sets the minimum time of the inclusive time interval.
 
 .. py:property:: maximum_time
     :canonical: ansys.stk.core.graphics.ITimeIntervalDisplayCondition.maximum_time
-    :type: "IAgDate"
+    :type: IAgDate
 
     Gets or sets the maximum time of the inclusive time interval.
 

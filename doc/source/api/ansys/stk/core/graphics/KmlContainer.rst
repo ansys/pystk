@@ -3,7 +3,7 @@ KmlContainer
 
 .. py:class:: KmlContainer
 
-   IKmlContainer, IKmlFeature, SupportsDeleteCallback
+   Bases: py:obj:`~IKmlContainer`, py:obj:`~IKmlFeature`
 
    A KmlContainer contains a collection of children kml features.
 

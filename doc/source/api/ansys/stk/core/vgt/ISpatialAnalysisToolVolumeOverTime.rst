@@ -40,19 +40,19 @@ Property detail
 
 .. py:property:: duration_type
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.duration_type
-    :type: "CRDN_VOLUME_OVER_TIME_DURATION_TYPE"
+    :type: CRDN_VOLUME_OVER_TIME_DURATION_TYPE
 
     Sets/Returns the lighting conditions.
 
 .. py:property:: reference_volume
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.reference_volume
-    :type: "IAgCrdnVolume"
+    :type: IAgCrdnVolume
 
     Sets/Returns the reference volume.
 
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.reference_intervals
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The reference interval list for the over time volume.
 

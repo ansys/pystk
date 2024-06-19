@@ -3,7 +3,7 @@ VehicleImpactLocationPoint
 
 .. py:class:: VehicleImpactLocationPoint
 
-   IVehicleImpactLocation, IVehicleImpactLocationPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleImpactLocation`, py:obj:`~IVehicleImpactLocationPoint`
 
    Class defining a Missile's impact location.
 

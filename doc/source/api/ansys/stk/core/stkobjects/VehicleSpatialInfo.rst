@@ -3,7 +3,7 @@ VehicleSpatialInfo
 
 .. py:class:: VehicleSpatialInfo
 
-   IVehicleSpatialInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpatialInfo`
 
    Represents a spatial information of the vehicle.
 

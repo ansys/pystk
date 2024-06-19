@@ -3,7 +3,7 @@ VehicleGPSAlmanacPropertiesSP3
 
 .. py:class:: VehicleGPSAlmanacPropertiesSP3
 
-   IVehicleGPSAlmanacPropertiesSP3, IVehicleGPSAlmanacProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSAlmanacPropertiesSP3`, py:obj:`~IVehicleGPSAlmanacProperties`
 
    SP3 almanac properties.
 

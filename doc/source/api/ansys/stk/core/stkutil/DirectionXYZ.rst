@@ -3,7 +3,7 @@ DirectionXYZ
 
 .. py:class:: DirectionXYZ
 
-   IDirectionXYZ, IDirection, SupportsDeleteCallback
+   Bases: py:obj:`~IDirectionXYZ`, py:obj:`~IDirection`
 
    Cartesian direction.
 

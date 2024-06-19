@@ -3,7 +3,7 @@ TimeToolFirstIntervalsFilter
 
 .. py:class:: TimeToolFirstIntervalsFilter
 
-   ITimeToolFirstIntervalsFilter, ITimeToolPruneFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolFirstIntervalsFilter`, py:obj:`~ITimeToolPruneFilter`
 
    The filter selects a portion of first intervals.
 

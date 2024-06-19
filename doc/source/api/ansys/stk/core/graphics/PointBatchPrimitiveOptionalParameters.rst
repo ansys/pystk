@@ -3,7 +3,7 @@ PointBatchPrimitiveOptionalParameters
 
 .. py:class:: PointBatchPrimitiveOptionalParameters
 
-   IPointBatchPrimitiveOptionalParameters, SupportsDeleteCallback
+   Bases: py:obj:`~IPointBatchPrimitiveOptionalParameters`
 
    Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters...
 

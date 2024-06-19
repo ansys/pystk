@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: interpolation_method
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSP3.interpolation_method
-    :type: "VEHICLE_INTERPOLATION_METHOD"
+    :type: VEHICLE_INTERPOLATION_METHOD
 
     By default, the SP3 propagator uses the standard Lagrange interpolation scheme, interpolating position and velocity separately. Some files may be configured to allow the Hermitian interpolation.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: files
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSP3.files
-    :type: "IAgVePropagatorSP3FileCollection"
+    :type: IAgVePropagatorSP3FileCollection
 
     Access and manipulate the collection of SP3 files. You can add multiple files to a single satellite object and - if there are no gaps between the files - the whole ephemeris will be propagated in sequence.
 
@@ -96,6 +96,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSP3.propagate
 
     Propagates the vehicle's path using the specified time interval.
 

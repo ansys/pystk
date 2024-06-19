@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: file_interpolation_type
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFile.file_interpolation_type
-    :type: "CRDN_FILE_INTERPOLATOR_TYPE"
+    :type: CRDN_FILE_INTERPOLATOR_TYPE
 
     The interpolation method used with the data.
 
@@ -79,6 +79,7 @@ Method detail
 
 
 .. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarFile.reload
 
     Reload the file specified with Filename property.
 
@@ -86,13 +87,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_file_span(self) -> "ITimeToolEventIntervalResult"
+.. py:method:: get_file_span(self) -> ITimeToolEventIntervalResult
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarFile.get_file_span
 
     Compute the interval time span of the file.
 
     :Returns:
 
-        :obj:`~"ITimeToolEventIntervalResult"`
+        :obj:`~ITimeToolEventIntervalResult`
 
 
 

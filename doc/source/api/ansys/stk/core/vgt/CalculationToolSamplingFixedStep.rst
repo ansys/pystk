@@ -3,7 +3,7 @@ CalculationToolSamplingFixedStep
 
 .. py:class:: CalculationToolSamplingFixedStep
 
-   ICalculationToolSamplingFixedStep, ICalculationToolSamplingMethod, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolSamplingFixedStep`, py:obj:`~ICalculationToolSamplingMethod`
 
    Fixed step definition includes parameters that determine how scalar data should be sampled based on fixed steps between samples.
 

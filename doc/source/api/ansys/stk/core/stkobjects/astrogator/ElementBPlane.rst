@@ -3,7 +3,7 @@ ElementBPlane
 
 .. py:class:: ElementBPlane
 
-   IElementBPlane, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementBPlane`, py:obj:`~IElement`
 
    Bplane elements.
 

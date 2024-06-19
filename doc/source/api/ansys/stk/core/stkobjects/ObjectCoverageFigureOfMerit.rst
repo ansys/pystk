@@ -3,7 +3,7 @@ ObjectCoverageFigureOfMerit
 
 .. py:class:: ObjectCoverageFigureOfMerit
 
-   IObjectCoverageFigureOfMerit, SupportsDeleteCallback
+   Bases: py:obj:`~IObjectCoverageFigureOfMerit`
 
    Class defining the fom on the coverage object tool.
 

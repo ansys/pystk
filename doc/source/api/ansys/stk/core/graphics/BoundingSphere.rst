@@ -3,7 +3,7 @@ BoundingSphere
 
 .. py:class:: BoundingSphere
 
-   IBoundingSphere, SupportsDeleteCallback
+   Bases: py:obj:`~IBoundingSphere`
 
    A sphere that encapsulates an object.
 

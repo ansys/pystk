@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeFromCondition
 
 .. py:class:: SpatialAnalysisToolVolumeFromCondition
 
-   ISpatialAnalysisToolVolumeFromCondition, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeFromCondition`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume from conditioninterface.
 

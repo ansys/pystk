@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_vtol_by_name(self, name:str) -> "IAircraftVTOLModel"
+.. py:method:: get_vtol_by_name(self, name: str) -> IAircraftVTOLModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftVTOL.get_vtol_by_name
 
     Get the VTOL model with the given name.
 
@@ -48,13 +49,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftVTOLModel"`
+        :obj:`~IAircraftVTOLModel`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftVTOL.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

@@ -3,7 +3,7 @@ AntennaVolumeLevelCollection
 
 .. py:class:: AntennaVolumeLevelCollection
 
-   IAntennaVolumeLevelCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaVolumeLevelCollection`
 
    Class defining a collection of antenna volume levels.
 

@@ -3,7 +3,7 @@ DifferentialCorrectorControl
 
 .. py:class:: DifferentialCorrectorControl
 
-   IDifferentialCorrectorControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IDifferentialCorrectorControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Control Parameters for a Target Sequence.
 

@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IModulatorModel.type
-    :type: "MODULATOR_MODEL_TYPE"
+    :type: MODULATOR_MODEL_TYPE
 
     Gets the modulator model type enumeration.
 

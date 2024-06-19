@@ -3,7 +3,7 @@ RubberBandPickInfoData
 
 .. py:class:: RubberBandPickInfoData
 
-   IRubberBandPickInfoData, SupportsDeleteCallback
+   Bases: py:obj:`~IRubberBandPickInfoData`
 
    Rubber-band mouse pick result.
 

@@ -3,7 +3,7 @@ EnrouteAndDelayOptions
 
 .. py:class:: EnrouteAndDelayOptions
 
-   IEnrouteAndDelayOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IEnrouteAndDelayOptions`
 
    Class defining the enroute and delay options in a procedure.
 

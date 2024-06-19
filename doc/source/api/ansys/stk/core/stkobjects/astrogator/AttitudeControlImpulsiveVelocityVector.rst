@@ -3,7 +3,7 @@ AttitudeControlImpulsiveVelocityVector
 
 .. py:class:: AttitudeControlImpulsiveVelocityVector
 
-   IAttitudeControlImpulsiveVelocityVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlImpulsiveVelocityVector`, py:obj:`~IAttitudeControlImpulsive`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The velocity vector attitude control for an impulsive maneuver.
 

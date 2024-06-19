@@ -3,7 +3,7 @@ MixedSphericalFPAVertical
 
 .. py:class:: MixedSphericalFPAVertical
 
-   IMixedSphericalFPAVertical, IFlightPathAngle, SupportsDeleteCallback
+   Bases: py:obj:`~IMixedSphericalFPAVertical`, py:obj:`~IFlightPathAngle`
 
    Vertical Flight Path Angle, an element of the Mixed Spherical coordinate type.
 

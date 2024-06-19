@@ -3,7 +3,7 @@ UrbanTerrestrialLossModelWirelessInSite64
 
 .. py:class:: UrbanTerrestrialLossModelWirelessInSite64
 
-   IUrbanTerrestrialLossModelWirelessInSite64, IUrbanTerrestrialLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IUrbanTerrestrialLossModelWirelessInSite64`, py:obj:`~IUrbanTerrestrialLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an urban/terrestrial loss model.
 

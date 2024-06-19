@@ -3,7 +3,7 @@ CentralBodyAttitudeRotationCoefficientsFile
 
 .. py:class:: CentralBodyAttitudeRotationCoefficientsFile
 
-   ICentralBodyAttitudeRotationCoefficientsFile, ICentralBodyAttitude, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyAttitudeRotationCoefficientsFile`, py:obj:`~ICentralBodyAttitude`
 
    Central Body Attitude - Rotation Coefficients File.
 

@@ -100,7 +100,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_prop_filepath(self, filepath:str) -> str
+.. py:method:: set_prop_filepath(self, filepath: str) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.set_prop_filepath
 
     Set the filepath for the prop file.
 
@@ -113,6 +114,7 @@ Method detail
         :obj:`~str`
 
 .. py:method:: reload_prop_file(self) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.reload_prop_file
 
     Reload the prop file.
 
@@ -128,7 +130,8 @@ Method detail
 
 
 
-.. py:method:: set_density_scaling(self, useScaling:bool, exponent:float) -> None
+.. py:method:: set_density_scaling(self, useScaling: bool, exponent: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.set_density_scaling
 
     Set the option to use density scaling and set the density ratio exponent.
 

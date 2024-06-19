@@ -11,6 +11,21 @@ RECTANGULAR_APERTURE_INPUT_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~BEAMWIDTHS`
+              - Beamwidth.
+
+            * - :py:attr:`~DIMENSIONS`
+              - Diameter.
+
+
 Import detail
 -------------
 

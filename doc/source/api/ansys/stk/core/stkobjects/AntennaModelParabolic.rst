@@ -3,7 +3,7 @@ AntennaModelParabolic
 
 .. py:class:: AntennaModelParabolic
 
-   IAntennaModel, IComponentInfo, ICloneable, IAntennaModelParabolic, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IAntennaModelParabolic`
 
    Class defining a parabolic antenna model.
 

@@ -3,7 +3,7 @@ DataProviderResultStatistics
 
 .. py:class:: DataProviderResultStatistics
 
-   IDataProviderResultStatistics, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResultStatistics`
 
    Class used to compute statistics and time varying extremum on data provider result data sets.
 

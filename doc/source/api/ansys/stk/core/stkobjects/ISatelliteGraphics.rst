@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.attributes_type
-    :type: "VEHICLE_GRAPHICS_2D_ATTRIBUTES"
+    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTES
 
     Type of 2D Graphics attributes: basic, access intervals or custom intervals.
 
@@ -77,79 +77,79 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.attributes
-    :type: "IAgVeGfxAttributes"
+    :type: IAgVeGfxAttributes
 
     Get the satellite's 2D Graphics Attributes.
 
 .. py:property:: time_events
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.time_events
-    :type: "IAgVeGfxTimeEventsCollection"
+    :type: IAgVeGfxTimeEventsCollection
 
     Get the satellite's TimeEvents properties.
 
 .. py:property:: passes
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.passes
-    :type: "IAgVeGfxPasses"
+    :type: IAgVeGfxPasses
 
     Get the pass display settings of the satellite's Pass properties.
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.pass_data
-    :type: "IAgVeGfxOrbitPassData"
+    :type: IAgVeGfxOrbitPassData
 
     Get the leading/trailing ground track and orbit settings of the satellite's Pass properties.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.resolution
-    :type: "IAgVeGfxPassResolution"
+    :type: IAgVeGfxPassResolution
 
     Get the path resolution settings of the satellite's Pass properties.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.elev_contours
-    :type: "IAgVeGfxElevContours"
+    :type: IAgVeGfxElevContours
 
     Get the satellite's Elevation Contours properties.
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.saa
-    :type: "IAgVeGfxSAA"
+    :type: IAgVeGfxSAA
 
     Get the satellite's South Atlantic Anomaly Contour properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.range_contours
-    :type: "IAgGfxRangeContours"
+    :type: IAgGfxRangeContours
 
     Get the satellite's Range Contours properties.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.lighting
-    :type: "IAgVeGfxLighting"
+    :type: IAgVeGfxLighting
 
     Get the satellite's Lighting properties.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.swath
-    :type: "IAgVeGfxSwath"
+    :type: IAgVeGfxSwath
 
     Get the satellite's Swath properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.ground_ellipses
-    :type: "IAgVeGfxGroundEllipsesCollection"
+    :type: IAgVeGfxGroundEllipsesCollection
 
     Get the satellite's Ground Ellipses properties.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.label_notes
-    :type: "IAgLabelNoteCollection"
+    :type: IAgLabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
 .. py:property:: ground_track_central_body_display
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.ground_track_central_body_display
-    :type: "IAgVeCentralBodies"
+    :type: IAgVeCentralBodies
 
     Gets the ground track display central bodies.
 
@@ -173,7 +173,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.radar_cross_section
-    :type: "IAgRadarCrossSectionGraphics"
+    :type: IAgRadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 
@@ -182,25 +182,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes:"VEHICLE_GRAPHICS_2D_ATTRIBUTES") -> None
+.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> None
+    :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.set_attributes_type
 
     Set the attributes type.
 
     :Parameters:
 
-    **attributes** : :obj:`~"VEHICLE_GRAPHICS_2D_ATTRIBUTES"`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes:"VEHICLE_GRAPHICS_2D_ATTRIBUTES") -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> bool
+    :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~"VEHICLE_GRAPHICS_2D_ATTRIBUTES"`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
 
     :Returns:
 

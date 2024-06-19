@@ -3,7 +3,7 @@ PathCollection
 
 .. py:class:: PathCollection
 
-   IPathCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IPathCollection`
 
    Allow adding and removing of paths.
 

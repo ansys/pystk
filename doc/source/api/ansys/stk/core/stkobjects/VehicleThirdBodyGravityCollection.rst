@@ -3,7 +3,7 @@ VehicleThirdBodyGravityCollection
 
 .. py:class:: VehicleThirdBodyGravityCollection
 
-   IVehicleThirdBodyGravityCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleThirdBodyGravityCollection`
 
    Collection of third-body gravity options for the LOP propagator.
 

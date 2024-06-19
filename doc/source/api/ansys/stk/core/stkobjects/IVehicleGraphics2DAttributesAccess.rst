@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: access_objects
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesAccess.access_objects
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Returns the collection of objects used for the access.
 
 .. py:property:: during_access
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesAccess.during_access
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Returns the collection of gfx attributes used during the access.
 
 .. py:property:: no_access
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesAccess.no_access
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Returns the collection of gfx attributes used when there is no access.
 

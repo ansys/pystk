@@ -3,7 +3,7 @@ Place
 
 .. py:class:: Place
 
-   IPlace, IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IPlace`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
 
    Class defining the Place object.
 

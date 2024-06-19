@@ -3,7 +3,7 @@ AreaTargetCommonTasks
 
 .. py:class:: AreaTargetCommonTasks
 
-   IAreaTargetCommonTasks, SupportsDeleteCallback
+   Bases: py:obj:`~IAreaTargetCommonTasks`
 
    Class defining the Area Target Common class.
 

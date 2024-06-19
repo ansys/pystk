@@ -3,7 +3,7 @@ BasicManeuverStrategyIntercept
 
 .. py:class:: BasicManeuverStrategyIntercept
 
-   IBasicManeuverStrategyIntercept, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyIntercept`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Intercept strategy for a basic maneuver procedure.
 

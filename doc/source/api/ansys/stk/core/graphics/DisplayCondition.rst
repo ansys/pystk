@@ -3,7 +3,7 @@ DisplayCondition
 
 .. py:class:: DisplayCondition
 
-   IDisplayCondition, SupportsDeleteCallback
+   Bases: py:obj:`~IDisplayCondition`
 
    When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered.
 

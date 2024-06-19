@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: edge_type
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid.edge_type
-    :type: "CRDN_VOLUME_FROM_GRID_EDGE_TYPE"
+    :type: CRDN_VOLUME_FROM_GRID_EDGE_TYPE
 
     Sets/Returns the edge type.
 
 .. py:property:: volume_grid
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid.volume_grid
-    :type: "IAgCrdnVolumeGrid"
+    :type: IAgCrdnVolumeGrid
 
     Sets/Returns the volume grid for bounding.
 

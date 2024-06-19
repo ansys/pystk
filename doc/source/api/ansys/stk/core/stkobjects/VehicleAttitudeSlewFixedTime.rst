@@ -3,7 +3,7 @@ VehicleAttitudeSlewFixedTime
 
 .. py:class:: VehicleAttitudeSlewFixedTime
 
-   IVehicleAttitudeSlewFixedTime, IVehicleAttitudeSlewBase, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeSlewFixedTime`, py:obj:`~IVehicleAttitudeSlewBase`
 
    Fixed time slew.
 

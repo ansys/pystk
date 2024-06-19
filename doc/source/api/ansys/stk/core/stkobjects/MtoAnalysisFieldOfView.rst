@@ -3,7 +3,7 @@ MtoAnalysisFieldOfView
 
 .. py:class:: MtoAnalysisFieldOfView
 
-   IMtoAnalysisFieldOfView, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoAnalysisFieldOfView`
 
    MTO Field Of View Computation.
 

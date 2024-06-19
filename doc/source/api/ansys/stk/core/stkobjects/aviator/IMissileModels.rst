@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_missile(self, name:str) -> "IMissileModel"
+.. py:method:: get_missile(self, name: str) -> IMissileModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileModels.get_missile
 
     Get the missile with the given name.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMissileModel"`
+        :obj:`~IMissileModel`
 
-.. py:method:: add_missile(self, name:str) -> "IMissileModel"
+.. py:method:: add_missile(self, name: str) -> IMissileModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileModels.add_missile
 
     Create a new missile with the given name.
 
@@ -62,13 +64,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMissileModel"`
+        :obj:`~IMissileModel`
 
-.. py:method:: get_as_catalog_source(self) -> "ICatalogSource"
+.. py:method:: get_as_catalog_source(self) -> ICatalogSource
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileModels.get_as_catalog_source
 
     Get the catalog source interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogSource"`
+        :obj:`~ICatalogSource`
 

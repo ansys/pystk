@@ -3,7 +3,7 @@ AircraftCruise
 
 .. py:class:: AircraftCruise
 
-   IAircraftCruise, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftCruise`, py:obj:`~ICatalogItem`
 
    Class defining the aircraft cruise category of an Aviator aircraft.
 

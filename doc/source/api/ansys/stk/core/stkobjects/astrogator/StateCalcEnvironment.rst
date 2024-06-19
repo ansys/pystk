@@ -3,7 +3,7 @@ StateCalcEnvironment
 
 .. py:class:: StateCalcEnvironment
 
-   IComponentInfo, ICloneable, IStateCalcEnvironment, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEnvironment`
 
    Environment Calc objects.
 

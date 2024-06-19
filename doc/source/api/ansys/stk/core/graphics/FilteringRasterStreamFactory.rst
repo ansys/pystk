@@ -3,7 +3,7 @@ FilteringRasterStreamFactory
 
 .. py:class:: FilteringRasterStreamFactory
 
-   IFilteringRasterStreamFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IFilteringRasterStreamFactory`
 
    A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated.
 

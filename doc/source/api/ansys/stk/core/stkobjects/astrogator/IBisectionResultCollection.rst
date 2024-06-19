@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IBisectionResult"
+.. py:method:: item(self, index: int) -> IBisectionResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBisectionResultCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBisectionResult"`
+        :obj:`~IBisectionResult`
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath:str, resultPath:str) -> "IBisectionResult"
+.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> IBisectionResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBisectionResultCollection.get_result_by_paths
 
     Return the result specified by the object/result names.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IBisectionResult"`
+        :obj:`~IBisectionResult`
 

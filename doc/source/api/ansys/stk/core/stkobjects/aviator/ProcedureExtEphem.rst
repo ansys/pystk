@@ -3,7 +3,7 @@ ProcedureExtEphem
 
 .. py:class:: ProcedureExtEphem
 
-   IProcedureExtEphem, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureExtEphem`, py:obj:`~IProcedure`
 
    Class defining an ExtEphem procedure.
 

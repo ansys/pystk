@@ -42,7 +42,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: exec(self, startTime:typing.Any, stopTime:typing.Any) -> "IDataProviderResult"
+.. py:method:: exec(self, startTime: typing.Any, stopTime: typing.Any) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderInterval.exec
 
     Compute the data; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
 
@@ -53,9 +54,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_elements(self, startTime:typing.Any, stopTime:typing.Any, elementNames:list) -> "IDataProviderResult"
+.. py:method:: exec_elements(self, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderInterval.exec_elements
 
     Compute the data and return just the indicated data elements; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
 
@@ -67,34 +69,36 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_event_array(self, pEventArray:"ITimeToolEventArray", startTime:typing.Any, stopTime:typing.Any) -> "IDataProviderResult"
+.. py:method:: exec_event_array(self, pEventArray: ITimeToolEventArray, startTime: typing.Any, stopTime: typing.Any) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderInterval.exec_event_array
 
     Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
 
     :Parameters:
 
-    **pEventArray** : :obj:`~"ITimeToolEventArray"`
+    **pEventArray** : :obj:`~ITimeToolEventArray`
     **startTime** : :obj:`~typing.Any`
     **stopTime** : :obj:`~typing.Any`
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 
-.. py:method:: exec_elements_event_array(self, pEventArray:"ITimeToolEventArray", startTime:typing.Any, stopTime:typing.Any, elementNames:list) -> "IDataProviderResult"
+.. py:method:: exec_elements_event_array(self, pEventArray: ITimeToolEventArray, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> IDataProviderResult
+    :canonical: ansys.stk.core.stkobjects.IDataProviderInterval.exec_elements_event_array
 
     Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
 
     :Parameters:
 
-    **pEventArray** : :obj:`~"ITimeToolEventArray"`
+    **pEventArray** : :obj:`~ITimeToolEventArray`
     **startTime** : :obj:`~typing.Any`
     **stopTime** : :obj:`~typing.Any`
     **elementNames** : :obj:`~list`
 
     :Returns:
 
-        :obj:`~"IDataProviderResult"`
+        :obj:`~IDataProviderResult`
 

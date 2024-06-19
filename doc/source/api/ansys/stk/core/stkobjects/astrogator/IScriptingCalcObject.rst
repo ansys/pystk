@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: calc_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.calc_object
-    :type: "IAgComponentInfo"
+    :type: IAgComponentInfo
 
     Gets or sets the calculation object type.
 
@@ -85,6 +85,7 @@ Method detail
 
 
 .. py:method:: copy_calc_object_to_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.copy_calc_object_to_clipboard
 
     Copy the wrapped calc object to the clipboard.
 
@@ -93,6 +94,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste_calc_object_from_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.paste_calc_object_from_clipboard
 
     Replace the wrapped calc object with the instance in the clipboard.
 

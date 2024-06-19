@@ -3,7 +3,7 @@ ElementCartesian
 
 .. py:class:: ElementCartesian
 
-   IElementCartesian, IElement, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IElementCartesian`, py:obj:`~IElement`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Cartesian elements.
 

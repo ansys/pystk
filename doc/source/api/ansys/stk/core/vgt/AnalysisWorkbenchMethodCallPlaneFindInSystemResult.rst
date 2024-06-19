@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallPlaneFindInSystemResult
 
 .. py:class:: AnalysisWorkbenchMethodCallPlaneFindInSystemResult
 
-   IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemResult, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolPlaneFindInSystemResult`
 
    Contains the results returned with IAgCrdnPlane.FindInSystem method.
 

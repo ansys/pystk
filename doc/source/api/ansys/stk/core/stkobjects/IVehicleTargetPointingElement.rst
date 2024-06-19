@@ -53,19 +53,19 @@ Property detail
 
 .. py:property:: target
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.target
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get a reference to the targeted object.
 
 .. py:property:: aligned_vector
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.aligned_vector
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Get the aligned vector.
 
 .. py:property:: constrained_vector
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.constrained_vector
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Get the constrained vector.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.intervals
-    :type: "IAgVeTargetPointingIntervalCollection"
+    :type: IAgVeTargetPointingIntervalCollection
 
     Returns a list of scheduled time intervals for the current target.
 
@@ -115,6 +115,7 @@ Method detail
 
 
 .. py:method:: reset_constrained_vector_reference(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.reset_constrained_vector_reference
 
     Set the constrained vector reference to a default value. Returns true if succeeded, otherwise return false.
 

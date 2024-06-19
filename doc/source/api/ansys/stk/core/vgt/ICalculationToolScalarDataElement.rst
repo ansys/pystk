@@ -72,13 +72,13 @@ Property detail
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDataElement.interpolation
-    :type: "IAgCrdnInterp"
+    :type: IAgCrdnInterp
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDataElement.sampling
-    :type: "IAgCrdnSampling"
+    :type: IAgCrdnSampling
 
     Relative tolerance uses a combination of relative and absolute changes in scalar values between samples. Curvature tolerance also uses changes in slope between samples.
 
@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDataElement.save_data_option
-    :type: "CRDN_SAVE_DATA_OPTION"
+    :type: CRDN_SAVE_DATA_OPTION
 
     Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
 
@@ -115,7 +115,8 @@ Method detail
 
 
 
-.. py:method:: set(self, dataProvider:str, elementName:str) -> None
+.. py:method:: set(self, dataProvider: str, elementName: str) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarDataElement.set
 
     Set the data provider and the element name.
 
@@ -128,7 +129,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_group(self, dataProvider:str, typeName:str, elementName:str) -> None
+.. py:method:: set_with_group(self, dataProvider: str, typeName: str, elementName: str) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarDataElement.set_with_group
 
     Set the data provider name, the element name, and data provider type name.
 

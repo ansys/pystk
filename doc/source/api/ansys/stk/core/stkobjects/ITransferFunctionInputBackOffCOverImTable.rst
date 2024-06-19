@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ITransferFunctionInputBackOffCOverImTableRow"
+.. py:method:: item(self, index: int) -> ITransferFunctionInputBackOffCOverImTableRow
+    :canonical: ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.item
 
     Given an index, returns the element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITransferFunctionInputBackOffCOverImTableRow"`
+        :obj:`~ITransferFunctionInputBackOffCOverImTableRow`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.remove_at
 
     Remove the row with the supplied index.
 
@@ -92,7 +94,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, inputBackOff:float, cOverIm:float) -> "ITransferFunctionInputBackOffCOverImTableRow"
+.. py:method:: add(self, inputBackOff: float, cOverIm: float) -> ITransferFunctionInputBackOffCOverImTableRow
+    :canonical: ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.add
 
     Add and returns a new row.
 
@@ -103,9 +106,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITransferFunctionInputBackOffCOverImTableRow"`
+        :obj:`~ITransferFunctionInputBackOffCOverImTableRow`
 
-.. py:method:: insert_at(self, index:int, inputBackOff:float, cOverIm:float) -> "ITransferFunctionInputBackOffCOverImTableRow"
+.. py:method:: insert_at(self, index: int, inputBackOff: float, cOverIm: float) -> ITransferFunctionInputBackOffCOverImTableRow
+    :canonical: ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.insert_at
 
     Insert and returns a new row at the supplied index.
 
@@ -117,5 +121,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITransferFunctionInputBackOffCOverImTableRow"`
+        :obj:`~ITransferFunctionInputBackOffCOverImTableRow`
 

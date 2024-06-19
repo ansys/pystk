@@ -3,7 +3,7 @@ LineTargetGraphics3D
 
 .. py:class:: LineTargetGraphics3D
 
-   ILineTargetGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~ILineTargetGraphics3D`
 
    The AgLtVO class.
 

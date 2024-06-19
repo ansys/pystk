@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.origin
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify the vector's origin point.
 
 .. py:property:: destination
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.destination
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify the vector's destination point.
 
@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.signal_sense
-    :type: "CRDN_SIGNAL_SENSE"
+    :type: CRDN_SIGNAL_SENSE
 
     Specify a sense of signal transmission. This property is read-only if Apparent is set to false.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.reference_system
-    :type: "IAgCrdnSystemRefTo"
+    :type: IAgCrdnSystemRefTo
 
     Specify a frame in which the light time delay is computed. This property is read-only if Apparent is set to false.
 

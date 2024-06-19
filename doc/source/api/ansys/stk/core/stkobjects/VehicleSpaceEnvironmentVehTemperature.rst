@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentVehTemperature
 
 .. py:class:: VehicleSpaceEnvironmentVehTemperature
 
-   IVehicleSpaceEnvironmentVehTemperature, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSpaceEnvironmentVehTemperature`
 
    Vehicle Temperature settings.
 

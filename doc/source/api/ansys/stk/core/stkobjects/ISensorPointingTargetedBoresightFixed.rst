@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightFixed.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Get the orientation of the sensor.
 

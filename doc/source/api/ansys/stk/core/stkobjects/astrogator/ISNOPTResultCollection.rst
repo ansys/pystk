@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "ISNOPTResult"
+.. py:method:: item(self, index: int) -> ISNOPTResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResultCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISNOPTResult"`
+        :obj:`~ISNOPTResult`
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath:str, resultPath:str) -> "ISNOPTResult"
+.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> ISNOPTResult
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResultCollection.get_result_by_paths
 
     Return the result specified by the object/result names.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISNOPTResult"`
+        :obj:`~ISNOPTResult`
 

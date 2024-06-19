@@ -11,6 +11,24 @@ CONSTELLATION_FROM_TO_PARENT_CONSTRAINT
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~PARENT_CONSTRAINT_ANY`
+              - Constellation constraint: Parent objects can be the same or different.
+
+            * - :py:attr:`~PARENT_CONSTRAINT_SAME`
+              - Constellation constraint: Parent objects must be the same.
+
+            * - :py:attr:`~PARENT_CONSTRAINT_DIFFERENT`
+              - Constellation constraint: Parent objects must be different.
+
+
 Import detail
 -------------
 

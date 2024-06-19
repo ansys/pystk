@@ -3,7 +3,7 @@ StateCalcOrbitStateValue
 
 .. py:class:: StateCalcOrbitStateValue
 
-   IComponentInfo, ICloneable, IStateCalcOrbitStateValue, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcOrbitStateValue`
 
    OrbitStateValue Calc objects.
 

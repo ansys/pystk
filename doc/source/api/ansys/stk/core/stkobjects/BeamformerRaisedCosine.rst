@@ -3,7 +3,7 @@ BeamformerRaisedCosine
 
 .. py:class:: BeamformerRaisedCosine
 
-   IBeamformer, IBeamformerRaisedCosine, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerRaisedCosine`
 
    Class defining a raised cosine tapered beamformer.
 

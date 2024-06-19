@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleSpaceEnvironmentRadDoseRateElement"
+.. py:method:: item(self, index: int) -> IVehicleSpaceEnvironmentRadDoseRateElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleSpaceEnvironmentRadDoseRateElement"`
+        :obj:`~IVehicleSpaceEnvironmentRadDoseRateElement`
 
 

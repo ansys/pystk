@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTargetPoint
 
 .. py:class:: VehicleGraphics3DBPlaneTargetPoint
 
-   IVehicleGraphics3DBPlaneTargetPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneTargetPoint`
 
    3D BPlane TargetPoint.
 

@@ -3,7 +3,7 @@ AttitudeControlOptimalFiniteLagrange
 
 .. py:class:: AttitudeControlOptimalFiniteLagrange
 
-   IAttitudeControlOptimalFiniteLagrange, IAttitudeControlOptimalFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlOptimalFiniteLagrange`, py:obj:`~IAttitudeControlOptimalFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Lagrange Interpolation attitude control for a optimal finite maneuver.
 

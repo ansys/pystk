@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_from_display_name(self, displayName:str) -> "ICustomImageGlobeOverlayPluginProxy"
+.. py:method:: create_from_display_name(self, displayName: str) -> ICustomImageGlobeOverlayPluginProxy
+    :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginActivator.create_from_display_name
 
     Load a custom image globe overlay COM plugin associated with the specified display name and returns a proxy object that allows accessing the custom image globe overlays implemented by the plugin.
 
@@ -48,9 +49,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICustomImageGlobeOverlayPluginProxy"`
+        :obj:`~ICustomImageGlobeOverlayPluginProxy`
 
 .. py:method:: get_available_display_names(self) -> list
+    :canonical: ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginActivator.get_available_display_names
 
     Get a list of available custom image globe overlay Display Names (Programmatic Identifiers).
 

@@ -3,7 +3,7 @@ BasicManeuverStrategyWeave
 
 .. py:class:: BasicManeuverStrategyWeave
 
-   IBasicManeuverStrategyWeave, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyWeave`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining Weave strategy for a Basic Maneuver procedure.
 

@@ -3,7 +3,7 @@ TimeToolEvent
 
 .. py:class:: TimeToolEvent
 
-   ITimeToolEvent, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Define an event (time instant).
 

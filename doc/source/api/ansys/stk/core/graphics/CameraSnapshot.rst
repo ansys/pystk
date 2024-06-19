@@ -3,7 +3,7 @@ CameraSnapshot
 
 .. py:class:: CameraSnapshot
 
-   ICameraSnapshot, SupportsDeleteCallback
+   Bases: py:obj:`~ICameraSnapshot`
 
    Takes snapshots of the 3D window.
 

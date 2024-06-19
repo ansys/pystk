@@ -3,7 +3,7 @@ BasicAzElMask
 
 .. py:class:: BasicAzElMask
 
-   IBasicAzElMask, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicAzElMask`
 
    The Azimuth-Elevation Mask class.
 

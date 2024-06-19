@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: alignment_reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAlignedAndConstrained.alignment_reference_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify an alignment reference vector.
 
 .. py:property:: constraint_reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAlignedAndConstrained.constraint_reference_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a constraint reference vector.
 
 .. py:property:: alignment_direction
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAlignedAndConstrained.alignment_direction
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Specify a desired alignment direction and the applicable parameters.
 
 .. py:property:: constraint_direction
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAlignedAndConstrained.constraint_direction
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Specify a desired constraint direction and the applicable parameters.
 

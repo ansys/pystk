@@ -3,7 +3,7 @@ LabelNote
 
 .. py:class:: LabelNote
 
-   ILabelNote, SupportsDeleteCallback
+   Bases: py:obj:`~ILabelNote`
 
    Class defining label notes.
 

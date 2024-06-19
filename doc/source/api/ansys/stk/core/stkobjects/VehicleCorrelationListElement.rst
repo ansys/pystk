@@ -3,7 +3,7 @@ VehicleCorrelationListElement
 
 .. py:class:: VehicleCorrelationListElement
 
-   IVehicleCorrelationListElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleCorrelationListElement`
 
    Class representing an element of an HPOP covariance matrix.
 

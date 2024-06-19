@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDilutionOfPrecision
 
 .. py:class:: FigureOfMeritDefinitionDilutionOfPrecision
 
-   IFigureOfMeritDefinitionDilutionOfPrecision, IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionDilutionOfPrecision`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
 
    Dilution Of Precision Figure of Merit.
 

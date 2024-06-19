@@ -3,7 +3,7 @@ BasicManeuverTargetPositionVelNoisyBrgRng
 
 .. py:class:: BasicManeuverTargetPositionVelNoisyBrgRng
 
-   IBasicManeuverTargetPositionVelNoisyBrgRng, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverTargetPositionVelNoisyBrgRng`
 
    Class defining the position and velocity strategy, Noisy Bearing Range.
 

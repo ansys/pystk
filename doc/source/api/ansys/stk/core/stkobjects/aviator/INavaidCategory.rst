@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: arinc424_navaids
     :canonical: ansys.stk.core.stkobjects.aviator.INavaidCategory.arinc424_navaids
-    :type: "IAgAvtrARINC424Source"
+    :type: IAgAvtrARINC424Source
 
     Get the ARINC-424 navaids.
 

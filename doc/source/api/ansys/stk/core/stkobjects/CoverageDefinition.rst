@@ -3,7 +3,7 @@ CoverageDefinition
 
 .. py:class:: CoverageDefinition
 
-   ICoverageDefinition, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageDefinition`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    The AgCoverageDefinition class.
 

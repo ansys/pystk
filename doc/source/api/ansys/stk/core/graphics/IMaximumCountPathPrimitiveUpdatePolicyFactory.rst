@@ -38,24 +38,26 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IMaximumCountPathPrimitiveUpdatePolicy"
+.. py:method:: initialize(self) -> IMaximumCountPathPrimitiveUpdatePolicy
+    :canonical: ansys.stk.core.graphics.IMaximumCountPathPrimitiveUpdatePolicyFactory.initialize
 
     Construct a default update policy. This is equivalent to constructing a policy with maximum count set to 0 and a remove location of Front.
 
     :Returns:
 
-        :obj:`~"IMaximumCountPathPrimitiveUpdatePolicy"`
+        :obj:`~IMaximumCountPathPrimitiveUpdatePolicy`
 
-.. py:method:: initialize_with_parameters(self, maximumCount:int, removeLocation:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "IMaximumCountPathPrimitiveUpdatePolicy"
+.. py:method:: initialize_with_parameters(self, maximumCount: int, removeLocation: PATH_PRIMITIVE_REMOVE_LOCATION) -> IMaximumCountPathPrimitiveUpdatePolicy
+    :canonical: ansys.stk.core.graphics.IMaximumCountPathPrimitiveUpdatePolicyFactory.initialize_with_parameters
 
     Initialize a policy with the specified maximumCount and removeLocation.
 
     :Parameters:
 
     **maximumCount** : :obj:`~int`
-    **removeLocation** : :obj:`~"PATH_PRIMITIVE_REMOVE_LOCATION"`
+    **removeLocation** : :obj:`~PATH_PRIMITIVE_REMOVE_LOCATION`
 
     :Returns:
 
-        :obj:`~"IMaximumCountPathPrimitiveUpdatePolicy"`
+        :obj:`~IMaximumCountPathPrimitiveUpdatePolicy`
 

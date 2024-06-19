@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: emitters
     :canonical: ansys.stk.core.stkobjects.IRFInterference.emitters
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Gets the interference emitters collection.
 

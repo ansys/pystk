@@ -3,7 +3,7 @@ CoverageGridInspector
 
 .. py:class:: CoverageGridInspector
 
-   ICoverageGridInspector, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageGridInspector`
 
    AgCvGridInspector class provides methods to use the grid inspector tool for coverage definition.
 

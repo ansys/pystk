@@ -3,7 +3,7 @@ BrightnessFilterFactory
 
 .. py:class:: BrightnessFilterFactory
 
-   IBrightnessFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IBrightnessFilterFactory`
 
    Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright.
 

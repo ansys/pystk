@@ -3,7 +3,7 @@ Graphics3DArticulationFile
 
 .. py:class:: Graphics3DArticulationFile
 
-   IGraphics3DArticulationFile, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DArticulationFile`
 
    Class defining the vo articulation file.
 

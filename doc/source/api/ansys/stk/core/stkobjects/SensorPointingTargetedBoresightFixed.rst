@@ -3,7 +3,7 @@ SensorPointingTargetedBoresightFixed
 
 .. py:class:: SensorPointingTargetedBoresightFixed
 
-   ISensorPointingTargetedBoresight, ISensorPointingTargetedBoresightFixed, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointingTargetedBoresight`, py:obj:`~ISensorPointingTargetedBoresightFixed`
 
    Class defining a targeted Sensor with fixed boresight.
 

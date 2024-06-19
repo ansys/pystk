@@ -3,7 +3,7 @@ MissileTurbojetProp
 
 .. py:class:: MissileTurbojetProp
 
-   IMissileTurbojetProp, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileTurbojetProp`
 
    Class defining the Turbojet propulsion options for a missile.
 

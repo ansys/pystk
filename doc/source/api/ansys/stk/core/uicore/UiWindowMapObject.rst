@@ -3,7 +3,7 @@ UiWindowMapObject
 
 .. py:class:: UiWindowMapObject
 
-   IUiWindowMapObject, SupportsDeleteCallback
+   Bases: py:obj:`~IUiWindowMapObject`
 
    Provide methods and properties to manipulate the 2D map.
 

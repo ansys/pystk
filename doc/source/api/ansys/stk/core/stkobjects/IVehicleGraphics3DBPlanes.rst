@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: templates
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes.templates
-    :type: "IAgVeVOBPlaneTemplatesCollection"
+    :type: IAgVeVOBPlaneTemplatesCollection
 
     Returns the 3D BPlane templates collection.
 
 .. py:property:: instances
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes.instances
-    :type: "IAgVeVOBPlaneInstancesCollection"
+    :type: IAgVeVOBPlaneInstancesCollection
 
     Returns the 3D BPlane Instance collection.
 

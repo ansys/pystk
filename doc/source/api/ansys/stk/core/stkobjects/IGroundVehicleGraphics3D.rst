@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.IGroundVehicleGraphics3D.vapor_trail
-    :type: "IAgVOVaporTrail"
+    :type: IAgVOVaporTrail
 
     Vapor trail attributes.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IGroundVehicleGraphics3D.radar_cross_section
-    :type: "IAgRadarCrossSectionVO"
+    :type: IAgRadarCrossSectionVO
 
     Gets the radar cross section graphics interface.
 

@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: input_scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFixedAtTimeInstant.input_scalar
-    :type: "IAgCrdnCalcScalar"
+    :type: IAgCrdnCalcScalar
 
     The input scalar component.
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFixedAtTimeInstant.reference_time_instant
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     The reference time instant.
 

@@ -3,7 +3,7 @@ TimeToolEventArrayConditionCrossings
 
 .. py:class:: TimeToolEventArrayConditionCrossings
 
-   ITimeToolEventArrayConditionCrossings, ITimeToolEventArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventArrayConditionCrossings`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters.
 

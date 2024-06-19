@@ -65,7 +65,8 @@ Method detail
 -------------
 
 
-.. py:method:: add(self, time:typing.Any, filename:str) -> "IGraphics3DModelItem"
+.. py:method:: add(self, time: typing.Any, filename: str) -> IGraphics3DModelItem
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelCollection.add
 
     Add a model file at the given time. Time Param uses DateFormat Dimension.
 
@@ -76,9 +77,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DModelItem"`
+        :obj:`~IGraphics3DModelItem`
 
-.. py:method:: remove(self, index:int) -> None
+.. py:method:: remove(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelCollection.remove
 
     Remove an item at the given index.
 
@@ -90,7 +92,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: item(self, index:int) -> "IGraphics3DModelItem"
+.. py:method:: item(self, index: int) -> IGraphics3DModelItem
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelCollection.item
 
     Return an IAgVoModelItem at the given index.
 
@@ -100,6 +103,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGraphics3DModelItem"`
+        :obj:`~IGraphics3DModelItem`
 
 

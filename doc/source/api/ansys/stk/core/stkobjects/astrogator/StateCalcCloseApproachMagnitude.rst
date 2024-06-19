@@ -3,7 +3,7 @@ StateCalcCloseApproachMagnitude
 
 .. py:class:: StateCalcCloseApproachMagnitude
 
-   IComponentInfo, ICloneable, IStateCalcCloseApproachMagnitude, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCloseApproachMagnitude`
 
    CloseApproachMag Calc objects.
 

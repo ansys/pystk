@@ -3,7 +3,7 @@ ReTransmitterModelMedium
 
 .. py:class:: ReTransmitterModelMedium
 
-   IReTransmitterModelMedium, IReTransmitterModel, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReTransmitterModelMedium`, py:obj:`~IReTransmitterModel`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a medium re-transmitter model.
 

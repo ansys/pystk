@@ -3,7 +3,7 @@ RFFilterModelRectangular
 
 .. py:class:: RFFilterModelRectangular
 
-   IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rectangular filter model.
 

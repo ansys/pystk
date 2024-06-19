@@ -3,7 +3,7 @@ VehicleProfileGPS
 
 .. py:class:: VehicleProfileGPS
 
-   IVehicleProfileGPS, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileGPS`, py:obj:`~IVehicleAttitudeProfile`
 
    GPS Attitude profile.
 

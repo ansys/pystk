@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions.altitude_reference
-    :type: "AGL_MSL"
+    :type: AGL_MSL
 
     Gets or sets the altitude reference.
 
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: final_altitude_rate
     :canonical: ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions.final_altitude_rate
-    :type: "VTOL_RATE_MODE"
+    :type: VTOL_RATE_MODE
 
     Gets or sets the altitude rate of the aircraft at the end of the procedure.
 

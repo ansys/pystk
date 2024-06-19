@@ -3,7 +3,7 @@ StateCalcSTMEigenval
 
 .. py:class:: StateCalcSTMEigenval
 
-   IComponentInfo, ICloneable, IStateCalcSTMEigenval, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSTMEigenval`
 
    Cartesian STM Eigenvalues Calc objects.
 

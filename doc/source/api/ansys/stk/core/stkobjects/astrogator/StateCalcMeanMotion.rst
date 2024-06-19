@@ -3,7 +3,7 @@ StateCalcMeanMotion
 
 .. py:class:: StateCalcMeanMotion
 
-   IComponentInfo, ICloneable, IStateCalcMeanMotion, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanMotion`
 
    MeanMotion Calc objects.
 

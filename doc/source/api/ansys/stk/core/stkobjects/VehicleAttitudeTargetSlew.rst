@@ -3,7 +3,7 @@ VehicleAttitudeTargetSlew
 
 .. py:class:: VehicleAttitudeTargetSlew
 
-   IVehicleAttitudeTargetSlew, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAttitudeTargetSlew`
 
    Define the time required for a vehicle to move from its basic attitude to its target pointing attitude, and to change from the target pointing attitude back to the basic attitude.
 

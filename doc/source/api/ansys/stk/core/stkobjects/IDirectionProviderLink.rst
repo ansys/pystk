@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: limits_exceeded_behavior_type
     :canonical: ansys.stk.core.stkobjects.IDirectionProviderLink.limits_exceeded_behavior_type
-    :type: "LIMITS_EXCEEDED_BEHAVIOR_TYPE"
+    :type: LIMITS_EXCEEDED_BEHAVIOR_TYPE
 
     Gets or sets the Limits Exceeded Behavior type.
 

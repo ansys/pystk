@@ -3,7 +3,7 @@ Graphics3DVaporTrail
 
 .. py:class:: Graphics3DVaporTrail
 
-   IGraphics3DVaporTrail, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DVaporTrail`
 
    Vapor trail attributes.
 

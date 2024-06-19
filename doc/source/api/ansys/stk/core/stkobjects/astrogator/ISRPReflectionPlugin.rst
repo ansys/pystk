@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.plugin_config
-    :type: "IAgVAPluginProperties"
+    :type: IAgVAPluginProperties
 
     Get the properties of the selected plugin.
 
@@ -62,19 +62,19 @@ Property detail
 
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.shadow_model
-    :type: "SHADOW_MODEL"
+    :type: SHADOW_MODEL
 
     Gets or sets the shadow model type.
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.sun_position
-    :type: "SUN_POSITION"
+    :type: SUN_POSITION
 
     Gets or sets the sun position computation.
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.eclipsing_bodies
-    :type: "IAgVACentralBodyCollection"
+    :type: IAgVACentralBodyCollection
 
     Other eclipsing bodies.
 

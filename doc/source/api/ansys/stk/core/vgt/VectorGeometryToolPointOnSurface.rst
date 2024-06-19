@@ -3,7 +3,7 @@ VectorGeometryToolPointOnSurface
 
 .. py:class:: VectorGeometryToolPointOnSurface
 
-   IVectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointOnSurface`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    The detic subpoint of the reference point as projected onto the central body.
 

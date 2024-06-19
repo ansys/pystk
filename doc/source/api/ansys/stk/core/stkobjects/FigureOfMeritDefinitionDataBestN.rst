@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataBestN
 
 .. py:class:: FigureOfMeritDefinitionDataBestN
 
-   IFigureOfMeritDefinitionDataBestN, IFigureOfMeritDefinitionData, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionDataBestN`, py:obj:`~IFigureOfMeritDefinitionData`
 
    Navigation accuracy based on best N satellites.
 

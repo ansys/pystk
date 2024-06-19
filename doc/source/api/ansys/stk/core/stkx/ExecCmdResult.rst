@@ -3,7 +3,7 @@ ExecCmdResult
 
 .. py:class:: ExecCmdResult
 
-   IExecCmdResult, SupportsDeleteCallback
+   Bases: py:obj:`~IExecCmdResult`
 
    Collection of strings returned by the ExecuteCommand.
 

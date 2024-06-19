@@ -11,6 +11,33 @@ AIRCRAFT_PROP_STRATEGY
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~AIRCRAFT_PROP_SIMPLE`
+              - Simple propulsion.
+
+            * - :py:attr:`~AIRCRAFT_PROP_EXTERNAL_FILE`
+              - External file propulsion.
+
+            * - :py:attr:`~AIRCRAFT_PROP_BASIC_FIXED_WING`
+              - Basic fixed wing propulsion.
+
+            * - :py:attr:`~AIRCRAFT_PROP_MISSILE_RAMJET`
+              - Missile - Ramjet propulsion.
+
+            * - :py:attr:`~AIRCRAFT_PROP_MISSILE_ROCKET`
+              - Missile - Rocket propulsion.
+
+            * - :py:attr:`~AIRCRAFT_PROP_MISSILE_TURBOJET`
+              - Missile - Turbojet propulsion.
+
+
 Import detail
 -------------
 

@@ -3,7 +3,7 @@ ElementCollection
 
 .. py:class:: ElementCollection
 
-   IElementCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IElementCollection`
 
    Class defining a phased array element collection.
 

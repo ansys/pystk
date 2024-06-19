@@ -3,7 +3,7 @@ Graphics3DDataDisplayCollection
 
 .. py:class:: Graphics3DDataDisplayCollection
 
-   IGraphics3DDataDisplayCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DDataDisplayCollection`
 
    Collection of 3D Graphics data display text.
 

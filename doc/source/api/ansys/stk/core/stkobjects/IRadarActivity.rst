@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarActivity.type
-    :type: "RADAR_ACTIVITY_TYPE"
+    :type: RADAR_ACTIVITY_TYPE
 
     Gets the activity times type.
 

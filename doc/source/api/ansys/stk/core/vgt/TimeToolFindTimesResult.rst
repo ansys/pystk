@@ -3,7 +3,7 @@ TimeToolFindTimesResult
 
 .. py:class:: TimeToolFindTimesResult
 
-   ITimeToolFindTimesResult, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolFindTimesResult`
 
    Return a collection of intervals and an array of times.
 

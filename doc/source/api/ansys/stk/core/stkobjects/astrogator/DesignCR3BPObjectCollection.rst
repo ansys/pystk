@@ -3,7 +3,7 @@ DesignCR3BPObjectCollection
 
 .. py:class:: DesignCR3BPObjectCollection
 
-   IDesignCR3BPObjectCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IDesignCR3BPObjectCollection`
 
    CR3BP associated object Collection.
 

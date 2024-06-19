@@ -3,7 +3,7 @@ DoublesCollection
 
 .. py:class:: DoublesCollection
 
-   IDoublesCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IDoublesCollection`
 
    A collection of doubles.
 

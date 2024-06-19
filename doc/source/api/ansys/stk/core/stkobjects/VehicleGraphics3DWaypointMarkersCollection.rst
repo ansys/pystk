@@ -3,7 +3,7 @@ VehicleGraphics3DWaypointMarkersCollection
 
 .. py:class:: VehicleGraphics3DWaypointMarkersCollection
 
-   IVehicleGraphics3DWaypointMarkersCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DWaypointMarkersCollection`
 
    Collection of Waypoint Markers .
 

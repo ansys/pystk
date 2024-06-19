@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: aircraft_models
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftCategory.aircraft_models
-    :type: "IAgAvtrAircraftModels"
+    :type: IAgAvtrAircraftModels
 
     Get the user aircraft models.
 
 .. py:property:: missile_models
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftCategory.missile_models
-    :type: "IAgAvtrMissileModels"
+    :type: IAgAvtrMissileModels
 
     Get the user missile models.
 
 .. py:property:: rotorcraft_models
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftCategory.rotorcraft_models
-    :type: "IAgAvtrRotorcraftModels"
+    :type: IAgAvtrRotorcraftModels
 
     Get the user rotorcraft models.
 

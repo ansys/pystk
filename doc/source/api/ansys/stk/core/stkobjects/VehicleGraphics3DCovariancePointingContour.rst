@@ -3,7 +3,7 @@ VehicleGraphics3DCovariancePointingContour
 
 .. py:class:: VehicleGraphics3DCovariancePointingContour
 
-   IVehicleGraphics3DCovariancePointingContour, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DCovariancePointingContour`
 
    Covariance pointing contours.
 

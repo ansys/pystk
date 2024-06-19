@@ -3,7 +3,7 @@ YarkovskyFunc
 
 .. py:class:: YarkovskyFunc
 
-   IYarkovskyFunc, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IYarkovskyFunc`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Yarkovsky Effect Propagator Function.
 

@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcAngleOffVector
 
 .. py:class:: SpatialAnalysisToolVolumeCalcAngleOffVector
 
-   ISpatialAnalysisToolVolumeCalcAngleOffVector, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcAngleOffVector`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume calc angle off vector interface.
 

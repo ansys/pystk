@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a base vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.reference_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a reference axes.
 

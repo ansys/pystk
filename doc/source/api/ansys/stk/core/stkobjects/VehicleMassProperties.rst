@@ -3,7 +3,7 @@ VehicleMassProperties
 
 .. py:class:: VehicleMassProperties
 
-   IVehicleMassProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleMassProperties`
 
    Satellite Mass properties.
 

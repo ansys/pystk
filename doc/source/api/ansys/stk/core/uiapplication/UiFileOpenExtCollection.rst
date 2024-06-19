@@ -3,7 +3,7 @@ UiFileOpenExtCollection
 
 .. py:class:: UiFileOpenExtCollection
 
-   IUiFileOpenExtCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IUiFileOpenExtCollection`
 
    Multiple file open collection.
 

@@ -3,7 +3,7 @@ ProcedureBasicManeuver
 
 .. py:class:: ProcedureBasicManeuver
 
-   IProcedureBasicManeuver, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureBasicManeuver`, py:obj:`~IProcedure`
 
    Class defining a Basic Maneuver procedure.
 

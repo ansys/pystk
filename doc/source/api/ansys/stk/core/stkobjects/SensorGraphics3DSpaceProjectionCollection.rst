@@ -3,7 +3,7 @@ SensorGraphics3DSpaceProjectionCollection
 
 .. py:class:: SensorGraphics3DSpaceProjectionCollection
 
-   ISensorGraphics3DSpaceProjectionCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorGraphics3DSpaceProjectionCollection`
 
    Time Dependent Space Projection List.
 

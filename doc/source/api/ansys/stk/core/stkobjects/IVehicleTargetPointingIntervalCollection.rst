@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleScheduleTimesElement"
+.. py:method:: item(self, index: int) -> IVehicleScheduleTimesElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingIntervalCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleScheduleTimesElement"`
+        :obj:`~IVehicleScheduleTimesElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingIntervalCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -93,6 +95,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingIntervalCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -100,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, startTime:typing.Any, stopTime:typing.Any) -> "IVehicleScheduleTimesElement"
+.. py:method:: add(self, startTime: typing.Any, stopTime: typing.Any) -> IVehicleScheduleTimesElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingIntervalCollection.add
 
     Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
 
@@ -111,5 +115,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleScheduleTimesElement"`
+        :obj:`~IVehicleScheduleTimesElement`
 

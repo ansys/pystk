@@ -3,7 +3,7 @@ ReceivePolarizationRHC
 
 .. py:class:: ReceivePolarizationRHC
 
-   IPolarization, IPolarizationCrossPolLeakage, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
 
    Class defining a RHC polarization.
 

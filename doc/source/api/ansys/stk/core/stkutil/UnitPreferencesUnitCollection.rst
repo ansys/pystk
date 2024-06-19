@@ -3,7 +3,7 @@ UnitPreferencesUnitCollection
 
 .. py:class:: UnitPreferencesUnitCollection
 
-   IUnitPreferencesUnitCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IUnitPreferencesUnitCollection`
 
    Object that contains a collection of IAgUnitPrefsUnit.
 

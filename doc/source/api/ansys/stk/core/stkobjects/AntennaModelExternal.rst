@@ -3,7 +3,7 @@ AntennaModelExternal
 
 .. py:class:: AntennaModelExternal
 
-   IAntennaModelExternal, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelExternal`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a external antenna model.
 

@@ -3,7 +3,7 @@ ProfileGridSearch
 
 .. py:class:: ProfileGridSearch
 
-   IProfileGridSearch, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileGridSearch`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Grid Search profile.
 

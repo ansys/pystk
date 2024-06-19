@@ -3,7 +3,7 @@ ElementConfigurationAsciiFile
 
 .. py:class:: ElementConfigurationAsciiFile
 
-   IElementConfigurationAsciiFile, IElementConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~IElementConfigurationAsciiFile`, py:obj:`~IElementConfiguration`
 
    Class defining a ascii file element configuration.
 

@@ -3,7 +3,7 @@ Graphics3DMarkerFile
 
 .. py:class:: Graphics3DMarkerFile
 
-   IGraphics3DMarkerData, IGraphics3DMarkerFile, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DMarkerData`, py:obj:`~IGraphics3DMarkerFile`
 
    Class defining 3D marker file attributes.
 

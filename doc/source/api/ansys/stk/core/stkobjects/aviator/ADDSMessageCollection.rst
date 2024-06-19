@@ -3,7 +3,7 @@ ADDSMessageCollection
 
 .. py:class:: ADDSMessageCollection
 
-   IADDSMessageCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IADDSMessageCollection`
 
    Class defining a collection of messages from the NOAA ADDS service.
 

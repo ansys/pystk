@@ -3,7 +3,7 @@ GreatArcInterpolator
 
 .. py:class:: GreatArcInterpolator
 
-   IGreatArcInterpolator, IPositionInterpolator, SupportsDeleteCallback
+   Bases: py:obj:`~IGreatArcInterpolator`, py:obj:`~IPositionInterpolator`
 
    The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid.
 

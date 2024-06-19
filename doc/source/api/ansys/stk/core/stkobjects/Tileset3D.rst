@@ -3,7 +3,7 @@ Tileset3D
 
 .. py:class:: Tileset3D
 
-   ITileset3D, SupportsDeleteCallback
+   Bases: py:obj:`~ITileset3D`
 
    Class defining Analytical 3DTileset for a Scenario.
 

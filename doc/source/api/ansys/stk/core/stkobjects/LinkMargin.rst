@@ -3,7 +3,7 @@ LinkMargin
 
 .. py:class:: LinkMargin
 
-   ILinkMargin, SupportsDeleteCallback
+   Bases: py:obj:`~ILinkMargin`
 
    Class defining a link margin computation object.
 

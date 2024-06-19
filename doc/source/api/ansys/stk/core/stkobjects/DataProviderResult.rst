@@ -3,7 +3,7 @@ DataProviderResult
 
 .. py:class:: DataProviderResult
 
-   IDataProviderResult, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResult`
 
    Results returned by the data provider.
 

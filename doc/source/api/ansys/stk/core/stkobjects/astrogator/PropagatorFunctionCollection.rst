@@ -3,7 +3,7 @@ PropagatorFunctionCollection
 
 .. py:class:: PropagatorFunctionCollection
 
-   IPropagatorFunctionCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IPropagatorFunctionCollection`
 
    Propagator Function Collection.
 

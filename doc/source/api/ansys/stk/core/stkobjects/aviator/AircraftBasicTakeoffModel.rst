@@ -3,7 +3,7 @@ AircraftBasicTakeoffModel
 
 .. py:class:: AircraftBasicTakeoffModel
 
-   IAircraftBasicTakeoffModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftBasicTakeoffModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the basic takeoff performance model for an Aviator aircraft.
 

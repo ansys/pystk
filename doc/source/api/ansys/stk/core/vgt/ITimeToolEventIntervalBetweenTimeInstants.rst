@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: start_time_instant
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalBetweenTimeInstants.start_time_instant
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     The start time instant of the interval.
 
 .. py:property:: stop_time_instant
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalBetweenTimeInstants.stop_time_instant
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     The stop time instant of the interval.
 

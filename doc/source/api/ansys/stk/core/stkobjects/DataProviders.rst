@@ -3,7 +3,7 @@ DataProviders
 
 .. py:class:: DataProviders
 
-   IDataProviders, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviders`
 
    Class defining data providers.
 

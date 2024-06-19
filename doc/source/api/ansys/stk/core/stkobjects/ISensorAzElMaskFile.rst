@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: boresight_axis
     :canonical: ansys.stk.core.stkobjects.ISensorAzElMaskFile.boresight_axis
-    :type: "SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE"
+    :type: SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE
 
     Boresight Axis, calculated using the body-fixed coordinates of the sensor's parent object.
 

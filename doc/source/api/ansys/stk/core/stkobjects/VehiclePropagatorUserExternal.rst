@@ -3,7 +3,7 @@ VehiclePropagatorUserExternal
 
 .. py:class:: VehiclePropagatorUserExternal
 
-   IVehiclePropagatorUserExternal, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorUserExternal`, py:obj:`~IVehiclePropagator`
 
    Class defining the user-external propagator.
 

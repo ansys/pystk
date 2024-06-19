@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: waypoint_markers
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker.waypoint_markers
-    :type: "IAgVeGfxWaypointMarkersCollection"
+    :type: IAgVeGfxWaypointMarkersCollection
 
     Get the collection of waypoint markers.
 

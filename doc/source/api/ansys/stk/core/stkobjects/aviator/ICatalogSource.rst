@@ -58,7 +58,8 @@ Method detail
 -------------
 
 
-.. py:method:: contains(self, aircraftName:str) -> bool
+.. py:method:: contains(self, aircraftName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogSource.contains
 
     Check whether the catalog source contains the catalog item with the given name.
 
@@ -70,7 +71,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: remove_child(self, childName:str) -> None
+.. py:method:: remove_child(self, childName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogSource.remove_child
 
     Remove the child with the given name.
 
@@ -83,6 +85,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: save(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogSource.save
 
     Save the catalog item.
 

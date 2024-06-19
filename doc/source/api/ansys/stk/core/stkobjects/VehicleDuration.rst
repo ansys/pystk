@@ -3,7 +3,7 @@ VehicleDuration
 
 .. py:class:: VehicleDuration
 
-   IVehicleDuration, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleDuration`
 
    Look ahead and look behind duration options.
 

@@ -3,7 +3,7 @@ BlurFilterFactory
 
 .. py:class:: BlurFilterFactory
 
-   IBlurFilterFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IBlurFilterFactory`
 
    Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster.
 

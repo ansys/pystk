@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: goal
     :canonical: ansys.stk.core.stkobjects.astrogator.IIPOPTResult.goal
-    :type: "IPOPT_GOAL"
+    :type: IPOPT_GOAL
 
     Gets or sets the purpose of the element in the problem.
 

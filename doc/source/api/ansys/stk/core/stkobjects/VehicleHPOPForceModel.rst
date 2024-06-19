@@ -3,7 +3,7 @@ VehicleHPOPForceModel
 
 .. py:class:: VehicleHPOPForceModel
 
-   IVehicleHPOPForceModel, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleHPOPForceModel`
 
    Class defining HPOP force models.
 

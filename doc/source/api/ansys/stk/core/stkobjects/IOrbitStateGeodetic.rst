@@ -45,25 +45,25 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateGeodetic.coordinate_system_type
-    :type: "COORDINATE_SYSTEM"
+    :type: COORDINATE_SYSTEM
 
     Gets or sets the coordinate system being used. Note that the Geodetic coordinate type is available only if a Fixed coordinate system is selected.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateGeodetic.coordinate_system
-    :type: "IAgOrbitStateCoordinateSystem"
+    :type: IAgOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch. Note that with the Fixed coordinate system (required for the Geodetic coordinate type), the coordinate epoch is preset.
 
 .. py:property:: size_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateGeodetic.size_type
-    :type: "GEODETIC_SIZE"
+    :type: GEODETIC_SIZE
 
     Gets or sets the element (altitude or radius) used to specify size.
 
 .. py:property:: size
     :canonical: ansys.stk.core.stkobjects.IOrbitStateGeodetic.size
-    :type: "IAgGeodeticSize"
+    :type: IAgGeodeticSize
 
     Get the value of the altitude or radius.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateGeodetic.state_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

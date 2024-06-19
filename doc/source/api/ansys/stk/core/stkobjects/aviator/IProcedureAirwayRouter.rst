@@ -61,19 +61,19 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.altitude_options
-    :type: "IAgAvtrAltitudeMSLOptions"
+    :type: IAgAvtrAltitudeMSLOptions
 
     Get the altitude options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.enroute_options
-    :type: "IAgAvtrEnrouteOptions"
+    :type: IAgAvtrEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.enroute_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: entry_exit_and_or
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.entry_exit_and_or
-    :type: "AND_OR"
+    :type: AND_OR
 
     Define how the two Entry/Exit Waypoint constraints will be considered.
 
@@ -117,13 +117,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
 
@@ -140,6 +141,7 @@ Method detail
 
 
 .. py:method:: update_route(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.update_route
 
     Recalculate the route.
 
@@ -148,6 +150,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: get_waypoints(self) -> list
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.get_waypoints
 
     Get a list of the current route's waypoints.
 
@@ -156,6 +159,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: get_segments(self) -> list
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.get_segments
 
     Get a list of the current route's individual procedures.
 
@@ -164,6 +168,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: copy_procedures(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.copy_procedures
 
     Copy the route as a set of procedures to the clipboard.
 

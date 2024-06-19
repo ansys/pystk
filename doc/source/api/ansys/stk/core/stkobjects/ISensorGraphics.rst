@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Select the line style in which sensor 2D graphics display from the AgELineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Select the line width in which sensor 2D graphics display from the AgELineWidth enumeration.
 
@@ -95,7 +95,7 @@ Property detail
 
 .. py:property:: projection
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics.projection
-    :type: "IAgSnProjection"
+    :type: IAgSnProjection
 
     Get the 2D Projection properties of the sensor.
 

@@ -3,7 +3,7 @@ AircraftExternalAero
 
 .. py:class:: AircraftExternalAero
 
-   IAircraftExternalAero, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftExternalAero`
 
    Class defining the external file aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 

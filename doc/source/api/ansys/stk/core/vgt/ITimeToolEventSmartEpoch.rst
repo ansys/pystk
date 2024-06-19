@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: reference_event
     :canonical: ansys.stk.core.vgt.ITimeToolEventSmartEpoch.reference_event
-    :type: "IAgCrdnEvent"
+    :type: IAgCrdnEvent
 
     A reference event object used to compute time instant if the state is set to implicit.
 
 .. py:property:: state
     :canonical: ansys.stk.core.vgt.ITimeToolEventSmartEpoch.state
-    :type: "CRDN_SMART_EPOCH_STATE"
+    :type: CRDN_SMART_EPOCH_STATE
 
     State of the event.
 
@@ -73,7 +73,8 @@ Method detail
 
 
 
-.. py:method:: set_explicit_time(self, epoch:typing.Any) -> None
+.. py:method:: set_explicit_time(self, epoch: typing.Any) -> None
+    :canonical: ansys.stk.core.vgt.ITimeToolEventSmartEpoch.set_explicit_time
 
     Set explicit time instant and the smart epoch's state to Explicit.
 
@@ -85,13 +86,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_implicit_time(self, eventEpoch:"ITimeToolEvent") -> None
+.. py:method:: set_implicit_time(self, eventEpoch: ITimeToolEvent) -> None
+    :canonical: ansys.stk.core.vgt.ITimeToolEventSmartEpoch.set_implicit_time
 
     Set the reference event and the smart epoch's state to Implicit.
 
     :Parameters:
 
-    **eventEpoch** : :obj:`~"ITimeToolEvent"`
+    **eventEpoch** : :obj:`~ITimeToolEvent`
 
     :Returns:
 

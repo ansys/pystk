@@ -3,7 +3,7 @@ VmExportTool
 
 .. py:class:: VmExportTool
 
-   IVmExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVmExportTool`
 
    The Volumetric Export Tool.
 

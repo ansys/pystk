@@ -42,15 +42,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_built_in_model(self) -> "IAircraftBasicTakeoffModel"
+.. py:method:: get_built_in_model(self) -> IAircraftBasicTakeoffModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftTakeoff.get_built_in_model
 
     Get the built-in model.
 
     :Returns:
 
-        :obj:`~"IAircraftBasicTakeoffModel"`
+        :obj:`~IAircraftBasicTakeoffModel`
 
-.. py:method:: get_basic_takeoff_by_name(self, name:str) -> "IAircraftBasicTakeoffModel"
+.. py:method:: get_basic_takeoff_by_name(self, name: str) -> IAircraftBasicTakeoffModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftTakeoff.get_basic_takeoff_by_name
 
     Get the basic Takeoff model with the given name.
 
@@ -60,9 +62,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftBasicTakeoffModel"`
+        :obj:`~IAircraftBasicTakeoffModel`
 
-.. py:method:: get_advanced_takeoff_by_name(self, name:str) -> "IAircraftAdvancedTakeoffModel"
+.. py:method:: get_advanced_takeoff_by_name(self, name: str) -> IAircraftAdvancedTakeoffModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftTakeoff.get_advanced_takeoff_by_name
 
     Get the advanced Takeoff model with the given name.
 
@@ -72,13 +75,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftAdvancedTakeoffModel"`
+        :obj:`~IAircraftAdvancedTakeoffModel`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftTakeoff.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

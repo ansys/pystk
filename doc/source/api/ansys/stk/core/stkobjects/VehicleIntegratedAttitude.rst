@@ -3,7 +3,7 @@ VehicleIntegratedAttitude
 
 .. py:class:: VehicleIntegratedAttitude
 
-   IVehicleIntegratedAttitude, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleIntegratedAttitude`
 
    Integrated Attitude generates an external attitude file for a satellite by numerically integrating Euler's equations for the current satellite.
 

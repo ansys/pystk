@@ -3,7 +3,7 @@ MtoGraphics2DMarker
 
 .. py:class:: MtoGraphics2DMarker
 
-   IMtoGraphics2DMarker, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics2DMarker`
 
    Define the 2D graphics attributes of the selected MTO track or tracks.
 

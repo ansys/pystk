@@ -3,7 +3,7 @@ VectorGeometryToolAxesAttitudeFile
 
 .. py:class:: VectorGeometryToolAxesAttitudeFile
 
-   IVectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesAttitudeFile`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Axes specified by data from a file.
 

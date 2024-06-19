@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: lighting_conditions
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting.lighting_conditions
-    :type: "CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE"
+    :type: CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE
 
     Sets/Returns the lighting conditions.
 

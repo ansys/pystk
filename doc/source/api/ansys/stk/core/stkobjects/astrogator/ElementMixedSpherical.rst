@@ -3,7 +3,7 @@ ElementMixedSpherical
 
 .. py:class:: ElementMixedSpherical
 
-   IElementMixedSpherical, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementMixedSpherical`, py:obj:`~IElement`
 
    Mixed Spherical elements.
 

@@ -3,7 +3,7 @@ VehicleTrajectoryAttitudeStandard
 
 .. py:class:: VehicleTrajectoryAttitudeStandard
 
-   IVehicleTrajectoryAttitudeStandard, IVehicleAttitudeStandard, IVehicleAttitude, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleTrajectoryAttitudeStandard`, py:obj:`~IVehicleAttitudeStandard`, py:obj:`~IVehicleAttitude`
 
    Standard attitude profile for launch vehicle or missile.
 

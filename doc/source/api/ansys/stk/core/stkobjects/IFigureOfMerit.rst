@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: definition_type
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.definition_type
-    :type: "FIGURE_OF_MERIT_DEFINITION_TYPE"
+    :type: FIGURE_OF_MERIT_DEFINITION_TYPE
 
     Definition type for the FOM.
 
@@ -70,25 +70,25 @@ Property detail
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.definition
-    :type: "IAgFmDefinition"
+    :type: IAgFmDefinition
 
     Definition properties of the FOM.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.graphics
-    :type: "IAgFmGraphics"
+    :type: IAgFmGraphics
 
     2D graphics properties of the FOM.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.graphics_3d
-    :type: "IAgFmVO"
+    :type: IAgFmVO
 
     3D graphics properties of the FOM.
 
 .. py:property:: grid_inspector
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.grid_inspector
-    :type: "IAgFmGridInspector"
+    :type: IAgFmGridInspector
 
     Get the Grid inspector tool.
 
@@ -97,25 +97,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_definition_type(self, defn:"FIGURE_OF_MERIT_DEFINITION_TYPE") -> None
+.. py:method:: set_definition_type(self, defn: FIGURE_OF_MERIT_DEFINITION_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.set_definition_type
 
     Set the definition type.
 
     :Parameters:
 
-    **defn** : :obj:`~"FIGURE_OF_MERIT_DEFINITION_TYPE"`
+    **defn** : :obj:`~FIGURE_OF_MERIT_DEFINITION_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_definition_type_supported(self, defn:"FIGURE_OF_MERIT_DEFINITION_TYPE") -> bool
+.. py:method:: is_definition_type_supported(self, defn: FIGURE_OF_MERIT_DEFINITION_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.is_definition_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **defn** : :obj:`~"FIGURE_OF_MERIT_DEFINITION_TYPE"`
+    **defn** : :obj:`~FIGURE_OF_MERIT_DEFINITION_TYPE`
 
     :Returns:
 
@@ -123,22 +125,24 @@ Method detail
 
 
 
-.. py:method:: set_access_constraint_definition(self, constraintName:"FIGURE_OF_MERIT_CONSTRAINT_NAME") -> "IFigureOfMeritDefinitionAccessConstraint"
+.. py:method:: set_access_constraint_definition(self, constraintName: FIGURE_OF_MERIT_CONSTRAINT_NAME) -> IFigureOfMeritDefinitionAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.set_access_constraint_definition
 
     Set the access constraint definition.
 
     :Parameters:
 
-    **constraintName** : :obj:`~"FIGURE_OF_MERIT_CONSTRAINT_NAME"`
+    **constraintName** : :obj:`~FIGURE_OF_MERIT_CONSTRAINT_NAME`
 
     :Returns:
 
-        :obj:`~"IFigureOfMeritDefinitionAccessConstraint"`
+        :obj:`~IFigureOfMeritDefinitionAccessConstraint`
 
 
 
 
-.. py:method:: set_access_constraint_definition_name(self, constraintName:str) -> "IFigureOfMeritDefinitionAccessConstraint"
+.. py:method:: set_access_constraint_definition_name(self, constraintName: str) -> IFigureOfMeritDefinitionAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.set_access_constraint_definition_name
 
     Set the access constraint definition by name.
 
@@ -148,9 +152,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IFigureOfMeritDefinitionAccessConstraint"`
+        :obj:`~IFigureOfMeritDefinitionAccessConstraint`
 
-.. py:method:: set_scalar_calculation_definition(self, calcScalar:str) -> "IFigureOfMeritDefinitionScalarCalculation"
+.. py:method:: set_scalar_calculation_definition(self, calcScalar: str) -> IFigureOfMeritDefinitionScalarCalculation
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.set_scalar_calculation_definition
 
     Set the scalar calculation definition.
 
@@ -160,5 +165,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IFigureOfMeritDefinitionScalarCalculation"`
+        :obj:`~IFigureOfMeritDefinitionScalarCalculation`
 

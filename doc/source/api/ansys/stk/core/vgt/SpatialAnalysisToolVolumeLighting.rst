@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeLighting
 
 .. py:class:: SpatialAnalysisToolVolumeLighting
 
-   ISpatialAnalysisToolVolumeLighting, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeLighting`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A lighting volume interface.
 

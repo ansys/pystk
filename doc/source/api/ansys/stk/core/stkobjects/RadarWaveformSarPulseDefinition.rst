@@ -3,7 +3,7 @@ RadarWaveformSarPulseDefinition
 
 .. py:class:: RadarWaveformSarPulseDefinition
 
-   IRadarWaveformSarPulseDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarWaveformSarPulseDefinition`
 
    Class defining the pulse definition for a SAR waveform.
 

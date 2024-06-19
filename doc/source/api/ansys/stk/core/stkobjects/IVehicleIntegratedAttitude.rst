@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Get the initial orientation of the satellite in the Earth Inertial (ECI) frame.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: torque
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.torque
-    :type: "IAgVeTorque"
+    :type: IAgVeTorque
 
     Get the external torque data.
 
@@ -119,6 +119,7 @@ Method detail
 
 
 .. py:method:: init_from_attitude(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.init_from_attitude
 
     Initialize the parameters using a satellite's attitude.
 
@@ -126,7 +127,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: save_to_file(self, filename:str) -> None
+.. py:method:: save_to_file(self, filename: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.save_to_file
 
     Generate an external attitude file for a satellite by numerically integrating Euler's equations for the current satellite and save results to the specified file.
 

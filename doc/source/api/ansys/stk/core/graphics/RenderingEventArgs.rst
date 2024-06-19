@@ -3,7 +3,7 @@ RenderingEventArgs
 
 .. py:class:: RenderingEventArgs
 
-   IRenderingEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~IRenderingEventArgs`
 
    The event is raised when the scene is rendered.
 

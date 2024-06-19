@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.static
-    :type: "IAgFmVOAttributes"
+    :type: IAgFmVOAttributes
 
     Get the static graphics.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.animation
-    :type: "IAgFmVOAttributes"
+    :type: IAgFmVOAttributes
 
     Get the animation graphics:.
 

@@ -3,7 +3,7 @@ AntennaModelOpticalGaussian
 
 .. py:class:: AntennaModelOpticalGaussian
 
-   IAntennaModelOpticalSimple, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelOpticalSimple`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a gaussian optical antenna model.
 

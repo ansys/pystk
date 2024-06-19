@@ -11,6 +11,24 @@ ANIMATION_OPTIONS
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~OPTION_CONTINUE`
+              - Continue animating after the end time is reached.
+
+            * - :py:attr:`~OPTION_LOOP`
+              - Loop when end time is reached.
+
+            * - :py:attr:`~OPTION_STOP`
+              - End when end time is reached.
+
+
 Import detail
 -------------
 

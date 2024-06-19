@@ -3,7 +3,7 @@ AntennaModelRemcomUanFormat
 
 .. py:class:: AntennaModelRemcomUanFormat
 
-   IAntennaModelRemcomUanFormat, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelRemcomUanFormat`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an antenna pattern Remcom uan model.
 

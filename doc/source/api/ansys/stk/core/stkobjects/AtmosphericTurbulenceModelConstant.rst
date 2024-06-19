@@ -3,7 +3,7 @@ AtmosphericTurbulenceModelConstant
 
 .. py:class:: AtmosphericTurbulenceModelConstant
 
-   IAtmosphericTurbulenceModelConstant, IAtmosphericTurbulenceModel, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphericTurbulenceModelConstant`, py:obj:`~IAtmosphericTurbulenceModel`
 
    Class defining a constant atmospheric turbulence model.
 

@@ -48,25 +48,25 @@ Property detail
 
 .. py:property:: level_turns
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.level_turns
-    :type: "IAgAvtrLevelTurns"
+    :type: IAgAvtrLevelTurns
 
     Get the level turns interface.
 
 .. py:property:: attitude_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.attitude_transitions
-    :type: "IAgAvtrAttitudeTransitions"
+    :type: IAgAvtrAttitudeTransitions
 
     Get the attitude transitions interface.
 
 .. py:property:: climb_and_descent_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.climb_and_descent_transitions
-    :type: "IAgAvtrClimbAndDescentTransitions"
+    :type: IAgAvtrClimbAndDescentTransitions
 
     Get the climb and descent transitions interface.
 
 .. py:property:: acceleration_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.acceleration_mode
-    :type: "IAgAvtrAircraftAccelerationMode"
+    :type: IAgAvtrAircraftAccelerationMode
 
     Get the acceleration mode interface.
 
@@ -78,11 +78,12 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

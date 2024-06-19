@@ -3,7 +3,7 @@ RadarStcAttenuationMapAzimuthRange
 
 .. py:class:: RadarStcAttenuationMapAzimuthRange
 
-   IRadarStcAttenuation, IRadarStcAttenuationMap, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarStcAttenuation`, py:obj:`~IRadarStcAttenuationMap`
 
    Class defining an radar stc azimuth-range map.
 

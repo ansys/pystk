@@ -3,7 +3,7 @@ WindModelConstant
 
 .. py:class:: WindModelConstant
 
-   IWindModelConstant, SupportsDeleteCallback
+   Bases: py:obj:`~IWindModelConstant`
 
    Class defining a constant bearing/speed wind model for a mission.
 

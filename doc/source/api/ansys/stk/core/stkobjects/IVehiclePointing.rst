@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: targets
     :canonical: ansys.stk.core.stkobjects.IVehiclePointing.targets
-    :type: "IAgVeTargetPointingCollection"
+    :type: IAgVeTargetPointingCollection
 
     Get the targets used for the attitude profile.
 
 .. py:property:: target_times
     :canonical: ansys.stk.core.stkobjects.IVehiclePointing.target_times
-    :type: "IAgVeTargetTimes"
+    :type: IAgVeTargetTimes
 
     Get the target times.
 

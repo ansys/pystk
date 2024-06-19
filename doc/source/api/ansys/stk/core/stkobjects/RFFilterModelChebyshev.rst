@@ -3,7 +3,7 @@ RFFilterModelChebyshev
 
 .. py:class:: RFFilterModelChebyshev
 
-   IRFFilterModelChebyshev, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelChebyshev`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a Chebyshev filter model.
 

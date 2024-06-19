@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ILevelAttribute"
+.. py:method:: item(self, index: int) -> ILevelAttribute
+    :canonical: ansys.stk.core.stkobjects.ILevelAttributeCollection.item
 
     Return an IAgLevelAttribute given an index number.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ILevelAttribute"`
+        :obj:`~ILevelAttribute`
 
 
-.. py:method:: remove(self, index:int) -> None
+.. py:method:: remove(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ILevelAttributeCollection.remove
 
     Remove an IAgLevelAttribute Item with given index.
 
@@ -95,6 +97,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ILevelAttributeCollection.remove_all
 
     Remove all IAgLevelAttribute.
 
@@ -102,7 +105,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_level(self, level:typing.Any) -> "ILevelAttribute"
+.. py:method:: add_level(self, level: typing.Any) -> ILevelAttribute
+    :canonical: ansys.stk.core.stkobjects.ILevelAttributeCollection.add_level
 
     Add a level.
 
@@ -112,9 +116,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ILevelAttribute"`
+        :obj:`~ILevelAttribute`
 
-.. py:method:: add_level_range(self, start:typing.Any, stop:typing.Any, step:typing.Any) -> None
+.. py:method:: add_level_range(self, start: typing.Any, stop: typing.Any, step: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.ILevelAttributeCollection.add_level_range
 
     Add a level range.
 

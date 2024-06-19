@@ -3,7 +3,7 @@ PlanetPositionCentralBody
 
 .. py:class:: PlanetPositionCentralBody
 
-   IPositionSourceData, IPlanetPositionCentralBody, SupportsDeleteCallback
+   Bases: py:obj:`~IPositionSourceData`, py:obj:`~IPlanetPositionCentralBody`
 
    Class defining central body used to define Planet object.
 

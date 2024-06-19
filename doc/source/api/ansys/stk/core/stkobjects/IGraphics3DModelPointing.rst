@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: pointable_elements
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModelPointing.pointable_elements
-    :type: "IAgVOPointableElementsCollection"
+    :type: IAgVOPointableElementsCollection
 
     Get the list of pointable model elements.
 
@@ -58,7 +58,8 @@ Method detail
 -------------
 
 
-.. py:method:: add_interval(self, attachPointName:str, targetName:str, start:typing.Any, stop:typing.Any) -> None
+.. py:method:: add_interval(self, attachPointName: str, targetName: str, start: typing.Any, stop: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelPointing.add_interval
 
     Add a new element to the collection using specified pointable model part, target name and the time period during which the pointable part targets the specified object.
 
@@ -73,7 +74,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_interval(self, attachPointName:str, targetName:str) -> None
+.. py:method:: remove_interval(self, attachPointName: str, targetName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelPointing.remove_interval
 
     Remove a pointable element from the collection of pointable elements using specified pointable model part and target name.
 
@@ -86,7 +88,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_intervals(self, fileName:str, attachPoint:str) -> None
+.. py:method:: load_intervals(self, fileName: str, attachPoint: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DModelPointing.load_intervals
 
     Add the intervals from the given file.
 

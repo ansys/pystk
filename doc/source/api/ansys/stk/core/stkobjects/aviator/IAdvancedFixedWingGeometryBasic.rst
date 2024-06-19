@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_aspect_ratio(self, aspectRatio:float) -> None
+.. py:method:: set_aspect_ratio(self, aspectRatio: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryBasic.set_aspect_ratio
 
     Set the aspect ratio of the aircraft.
 

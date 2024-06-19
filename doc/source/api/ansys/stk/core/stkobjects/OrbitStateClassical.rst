@@ -3,7 +3,7 @@ OrbitStateClassical
 
 .. py:class:: OrbitStateClassical
 
-   IOrbitStateClassical, IOrbitState, SupportsDeleteCallback
+   Bases: py:obj:`~IOrbitStateClassical`, py:obj:`~IOrbitState`
 
    Classical (Keplerian) coordinate type.
 

@@ -3,7 +3,7 @@ VehicleStepSizeControl
 
 .. py:class:: VehicleStepSizeControl
 
-   IVehicleStepSizeControl, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleStepSizeControl`
 
    Class defining step size control for the HPOP integrator.
 

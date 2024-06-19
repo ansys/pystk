@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX.smart_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Epoch of the offset.
 

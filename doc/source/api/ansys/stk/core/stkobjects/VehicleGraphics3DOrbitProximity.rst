@@ -3,7 +3,7 @@ VehicleGraphics3DOrbitProximity
 
 .. py:class:: VehicleGraphics3DOrbitProximity
 
-   IVehicleGraphics3DOrbitProximity, IVehicleGraphics3DProximity, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DOrbitProximity`, py:obj:`~IVehicleGraphics3DProximity`
 
    Proximity graphics.
 

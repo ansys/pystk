@@ -44,43 +44,43 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.coordinate_system_type
-    :type: "COORDINATE_SYSTEM"
+    :type: COORDINATE_SYSTEM
 
     Coordinate system being used.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.coordinate_system
-    :type: "IAgOrbitStateCoordinateSystem"
+    :type: IAgOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
 .. py:property:: size_shape_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.size_shape_type
-    :type: "CLASSICAL_SIZE_SHAPE"
+    :type: CLASSICAL_SIZE_SHAPE
 
     Gets or sets the pair of elements used for specifying orbit size and shape.
 
 .. py:property:: size_shape
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.size_shape
-    :type: "IAgClassicalSizeShape"
+    :type: IAgClassicalSizeShape
 
     Get the size and shape of the orbit.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.orientation
-    :type: "IAgClassicalOrientation"
+    :type: IAgClassicalOrientation
 
     Get the orbit orientation.
 
 .. py:property:: location_type
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.location_type
-    :type: "CLASSICAL_LOCATION"
+    :type: CLASSICAL_LOCATION
 
     Gets or sets the element used for specifying spacecraft location in the orbit at epoch.
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.location
-    :type: "IAgClassicalLocation"
+    :type: IAgClassicalLocation
 
     Get the location of the spacecraft in the orbit at epoch.
 
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.state_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

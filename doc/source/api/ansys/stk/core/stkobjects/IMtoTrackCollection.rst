@@ -98,7 +98,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IMtoTrack"
+.. py:method:: item(self, index: int) -> IMtoTrack
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -108,10 +109,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrack"`
+        :obj:`~IMtoTrack`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.remove_at
 
     Remove an element from the collection using a specified index.
 
@@ -124,6 +126,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -131,7 +134,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, trackId:int) -> "IMtoTrack"
+.. py:method:: add(self, trackId: int) -> IMtoTrack
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.add
 
     Add a new element to the collection.
 
@@ -141,9 +145,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrack"`
+        :obj:`~IMtoTrack`
 
-.. py:method:: add_track(self, trackId:int, timeVals:list, latVals:list, lonVals:list, altVals:list) -> "IMtoTrack"
+.. py:method:: add_track(self, trackId: int, timeVals: list, latVals: list, lonVals: list, altVals: list) -> IMtoTrack
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.add_track
 
     Add a new track with the specified point data.
 
@@ -157,9 +162,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrack"`
+        :obj:`~IMtoTrack`
 
-.. py:method:: load_command_file(self, commandFile:str) -> None
+.. py:method:: load_command_file(self, commandFile: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.load_command_file
 
     Load Track Command File.
 
@@ -171,7 +177,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_track_from_id(self, trackId:int) -> "IMtoTrack"
+.. py:method:: get_track_from_id(self, trackId: int) -> IMtoTrack
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.get_track_from_id
 
     Given a track id, returns an element in the collection.
 
@@ -181,23 +188,25 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrack"`
+        :obj:`~IMtoTrack`
 
 
 
-.. py:method:: remove(self, pTrack:"IMtoTrack") -> None
+.. py:method:: remove(self, pTrack: IMtoTrack) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.remove
 
     Remove an element from the collection using a specified track.
 
     :Parameters:
 
-    **pTrack** : :obj:`~"IMtoTrack"`
+    **pTrack** : :obj:`~IMtoTrack`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_by_id(self, trackId:int) -> None
+.. py:method:: remove_by_id(self, trackId: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.remove_by_id
 
     Remove an element from the collection using a specified id.
 
@@ -209,7 +218,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_tracks(self, startingTrackId:int, numberofTracks:int) -> list
+.. py:method:: add_tracks(self, startingTrackId: int, numberofTracks: int) -> list
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.add_tracks
 
     Add and returns the desired number of new tracks starting with the desired id.
 
@@ -222,7 +232,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: remove_tracks(self, tracks:list) -> None
+.. py:method:: remove_tracks(self, tracks: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.remove_tracks
 
     Remove the provided tracks.
 
@@ -234,7 +245,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_tracks_by_id(self, trackIds:list) -> None
+.. py:method:: remove_tracks_by_id(self, trackIds: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.remove_tracks_by_id
 
     Remove tracks based on the provided Ids.
 
@@ -246,7 +258,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_tracks_with_position_data(self, trackIdsArray:list, numPtsPerTrackArray:list, datatype:"MTO_INPUT_DATA_TYPE", timesArray:list, xorLatsArray:list, yorLonsArray:list, zorAltsArray:list) -> None
+.. py:method:: add_tracks_with_position_data(self, trackIdsArray: list, numPtsPerTrackArray: list, datatype: MTO_INPUT_DATA_TYPE, timesArray: list, xorLatsArray: list, yorLonsArray: list, zorAltsArray: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.add_tracks_with_position_data
 
     Add new track with the specified position data.
 
@@ -254,7 +267,7 @@ Method detail
 
     **trackIdsArray** : :obj:`~list`
     **numPtsPerTrackArray** : :obj:`~list`
-    **datatype** : :obj:`~"MTO_INPUT_DATA_TYPE"`
+    **datatype** : :obj:`~MTO_INPUT_DATA_TYPE`
     **timesArray** : :obj:`~list`
     **xorLatsArray** : :obj:`~list`
     **yorLonsArray** : :obj:`~list`
@@ -264,7 +277,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: extend_tracks_with_position_data(self, trackIdsArray:list, numPtsPerTrackArray:list, datatype:"MTO_INPUT_DATA_TYPE", timesArray:list, xorLatsArray:list, yorLonsArray:list, zorAltsArray:list) -> None
+.. py:method:: extend_tracks_with_position_data(self, trackIdsArray: list, numPtsPerTrackArray: list, datatype: MTO_INPUT_DATA_TYPE, timesArray: list, xorLatsArray: list, yorLonsArray: list, zorAltsArray: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.extend_tracks_with_position_data
 
     Extend tracks with the specified position data.
 
@@ -272,7 +286,7 @@ Method detail
 
     **trackIdsArray** : :obj:`~list`
     **numPtsPerTrackArray** : :obj:`~list`
-    **datatype** : :obj:`~"MTO_INPUT_DATA_TYPE"`
+    **datatype** : :obj:`~MTO_INPUT_DATA_TYPE`
     **timesArray** : :obj:`~list`
     **xorLatsArray** : :obj:`~list`
     **yorLonsArray** : :obj:`~list`
@@ -282,7 +296,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_input_data_vgt_system(self, commandSystem:str) -> None
+.. py:method:: set_input_data_vgt_system(self, commandSystem: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.set_input_data_vgt_system
 
     Set VGT Data System to MTO tracks.
 
@@ -295,6 +310,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: clear_input_data_vgt_system(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IMtoTrackCollection.clear_input_data_vgt_system
 
     Remove VGT Data System from MTO tracks.
 

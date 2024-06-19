@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.altitude_options
-    :type: "IAgAvtrAltitudeOptions"
+    :type: IAgAvtrAltitudeOptions
 
     Get the altitude options.
 
@@ -68,31 +68,31 @@ Property detail
 
 .. py:property:: flight_line_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.flight_line_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the flight line airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_options
-    :type: "IAgAvtrEnrouteOptions"
+    :type: IAgAvtrEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_turn_direction_options
-    :type: "IAgAvtrEnrouteTurnDirectionOptions"
+    :type: IAgAvtrEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: procedure_type
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.procedure_type
-    :type: "FLIGHT_LINE_PROC_TYPE"
+    :type: FLIGHT_LINE_PROC_TYPE
 
     Gets or sets the procedure methodology used to calculate the flight line.
 
@@ -122,7 +122,7 @@ Property detail
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.level_off_mode
-    :type: "ALTITUDE_CONSTRAINT_MANEUVER_MODE"
+    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
 
     Gets or sets the level off mode. This is only used when the must level off option is on.
 
@@ -149,11 +149,12 @@ Method detail
 
 
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 

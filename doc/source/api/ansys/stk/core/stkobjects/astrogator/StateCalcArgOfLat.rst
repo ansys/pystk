@@ -3,7 +3,7 @@ StateCalcArgOfLat
 
 .. py:class:: StateCalcArgOfLat
 
-   IComponentInfo, ICloneable, IStateCalcArgOfLat, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcArgOfLat`
 
    Argument of Latitude Calc objects.
 

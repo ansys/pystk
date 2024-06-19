@@ -3,7 +3,7 @@ AircraftBasicFixedWingAero
 
 .. py:class:: AircraftBasicFixedWingAero
 
-   IAircraftBasicFixedWingAero, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftBasicFixedWingAero`
 
    Class defining the basic fixed wing aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 

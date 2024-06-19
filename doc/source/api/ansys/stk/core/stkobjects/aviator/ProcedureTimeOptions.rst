@@ -3,7 +3,7 @@ ProcedureTimeOptions
 
 .. py:class:: ProcedureTimeOptions
 
-   IProcedureTimeOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureTimeOptions`
 
    Class defining the time options for the current procedure.
 

@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: children
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.children
-    :type: "IAgVACentralBodyCollection"
+    :type: IAgVACentralBodyCollection
 
     Get the children of this central body.
 
@@ -133,7 +133,7 @@ Property detail
 
 .. py:property:: default_gravity_model_data
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_gravity_model_data
-    :type: "IAgVACbGravityModel"
+    :type: IAgVACbGravityModel
 
     Get the gravity model parameters.
 
@@ -145,7 +145,7 @@ Property detail
 
 .. py:property:: default_shape_data
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_shape_data
-    :type: "IAgVACbShape"
+    :type: IAgVACbShape
 
     Get the parameters of the central body shape.
 
@@ -157,7 +157,7 @@ Property detail
 
 .. py:property:: default_attitude_data
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_attitude_data
-    :type: "IAgVACbAttitude"
+    :type: IAgVACbAttitude
 
     Get the parameters of the central body attitude.
 
@@ -169,7 +169,7 @@ Property detail
 
 .. py:property:: default_ephemeris_data
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_ephemeris_data
-    :type: "IAgVACbEphemeris"
+    :type: IAgVACbEphemeris
 
     Get the parameters of the central body ephemeris.
 
@@ -183,7 +183,8 @@ Method detail
 
 
 
-.. py:method:: set_default_gravity_model_by_name(self, gravityModelName:str) -> None
+.. py:method:: set_default_gravity_model_by_name(self, gravityModelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.set_default_gravity_model_by_name
 
     Select a gravity model.
 
@@ -196,20 +197,22 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_gravity_model(self, eGravityModel:"CENTRAL_BODY_GRAVITY_MODEL", uniqueName:str) -> "ICentralBodyGravityModel"
+.. py:method:: add_gravity_model(self, eGravityModel: CENTRAL_BODY_GRAVITY_MODEL, uniqueName: str) -> ICentralBodyGravityModel
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_gravity_model
 
     Add a central body gravity model type.
 
     :Parameters:
 
-    **eGravityModel** : :obj:`~"CENTRAL_BODY_GRAVITY_MODEL"`
+    **eGravityModel** : :obj:`~CENTRAL_BODY_GRAVITY_MODEL`
     **uniqueName** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"ICentralBodyGravityModel"`
+        :obj:`~ICentralBodyGravityModel`
 
-.. py:method:: remove_gravity_model_by_name(self, gravityModelName:str) -> None
+.. py:method:: remove_gravity_model_by_name(self, gravityModelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.remove_gravity_model_by_name
 
     Remove a central body gravity model type.
 
@@ -223,7 +226,8 @@ Method detail
 
 
 
-.. py:method:: set_default_shape_by_name(self, shapeName:str) -> None
+.. py:method:: set_default_shape_by_name(self, shapeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.set_default_shape_by_name
 
     Select a central body shape.
 
@@ -235,20 +239,22 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_shape(self, eShape:"CENTRAL_BODY_SHAPE", uniqueName:str) -> "ICentralBodyShape"
+.. py:method:: add_shape(self, eShape: CENTRAL_BODY_SHAPE, uniqueName: str) -> ICentralBodyShape
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_shape
 
     Add a central body shape type from the available types.
 
     :Parameters:
 
-    **eShape** : :obj:`~"CENTRAL_BODY_SHAPE"`
+    **eShape** : :obj:`~CENTRAL_BODY_SHAPE`
     **uniqueName** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"ICentralBodyShape"`
+        :obj:`~ICentralBodyShape`
 
-.. py:method:: remove_shape_by_name(self, shapeName:str) -> None
+.. py:method:: remove_shape_by_name(self, shapeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.remove_shape_by_name
 
     Remove a central body shape type.
 
@@ -262,7 +268,8 @@ Method detail
 
 
 
-.. py:method:: set_default_attitude_by_name(self, attitudeName:str) -> None
+.. py:method:: set_default_attitude_by_name(self, attitudeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.set_default_attitude_by_name
 
     Select a central body attitude.
 
@@ -274,20 +281,22 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_attitude(self, eAttitude:"CENTRAL_BODY_ATTITUDE", uniqueName:str) -> "ICentralBodyAttitude"
+.. py:method:: add_attitude(self, eAttitude: CENTRAL_BODY_ATTITUDE, uniqueName: str) -> ICentralBodyAttitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_attitude
 
     Add a central body attitude type from the available types.
 
     :Parameters:
 
-    **eAttitude** : :obj:`~"CENTRAL_BODY_ATTITUDE"`
+    **eAttitude** : :obj:`~CENTRAL_BODY_ATTITUDE`
     **uniqueName** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"ICentralBodyAttitude"`
+        :obj:`~ICentralBodyAttitude`
 
-.. py:method:: remove_attitude_by_name(self, attitudeName:str) -> None
+.. py:method:: remove_attitude_by_name(self, attitudeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.remove_attitude_by_name
 
     Remove a central body attitude type.
 
@@ -300,7 +309,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: set_default_ephemeris_by_name(self, ephemerisName:str) -> None
+.. py:method:: set_default_ephemeris_by_name(self, ephemerisName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.set_default_ephemeris_by_name
 
     Select an ephemeris type.
 
@@ -313,20 +323,22 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_ephemeris(self, eEphemeris:"CENTRAL_BODY_EPHEMERIS", uniqueName:str) -> "ICentralBodyEphemeris"
+.. py:method:: add_ephemeris(self, eEphemeris: CENTRAL_BODY_EPHEMERIS, uniqueName: str) -> ICentralBodyEphemeris
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_ephemeris
 
     Add an ephemeris type from the available types.
 
     :Parameters:
 
-    **eEphemeris** : :obj:`~"CENTRAL_BODY_EPHEMERIS"`
+    **eEphemeris** : :obj:`~CENTRAL_BODY_EPHEMERIS`
     **uniqueName** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~"ICentralBodyEphemeris"`
+        :obj:`~ICentralBodyEphemeris`
 
-.. py:method:: remove_ephemeris_by_name(self, ephemerisName:str) -> None
+.. py:method:: remove_ephemeris_by_name(self, ephemerisName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.remove_ephemeris_by_name
 
     Remove an ephemeris type.
 
@@ -338,7 +350,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: cut_gravity_model_by_name(self, gravityModelName:str) -> None
+.. py:method:: cut_gravity_model_by_name(self, gravityModelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.cut_gravity_model_by_name
 
     Copy a gravity model to the clipboard and removes it from the central body.
 
@@ -350,7 +363,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: copy_gravity_model_by_name(self, gravityModelName:str) -> None
+.. py:method:: copy_gravity_model_by_name(self, gravityModelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.copy_gravity_model_by_name
 
     Copy a gravity model to the clipboard.
 
@@ -362,27 +376,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste_gravity_model(self) -> "ICentralBodyGravityModel"
+.. py:method:: paste_gravity_model(self) -> ICentralBodyGravityModel
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.paste_gravity_model
 
     Add the gravity model in the clipboard to the central body.
 
     :Returns:
 
-        :obj:`~"ICentralBodyGravityModel"`
+        :obj:`~ICentralBodyGravityModel`
 
-.. py:method:: add_copy_of_gravity_model(self, gravityModel:"ICentralBodyGravityModel") -> "ICentralBodyGravityModel"
+.. py:method:: add_copy_of_gravity_model(self, gravityModel: ICentralBodyGravityModel) -> ICentralBodyGravityModel
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_copy_of_gravity_model
 
     Add the gravity model to the central body.
 
     :Parameters:
 
-    **gravityModel** : :obj:`~"ICentralBodyGravityModel"`
+    **gravityModel** : :obj:`~ICentralBodyGravityModel`
 
     :Returns:
 
-        :obj:`~"ICentralBodyGravityModel"`
+        :obj:`~ICentralBodyGravityModel`
 
-.. py:method:: cut_shape_by_name(self, shapeName:str) -> None
+.. py:method:: cut_shape_by_name(self, shapeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.cut_shape_by_name
 
     Copy a central body shape to the clipboard and removes it from the central body.
 
@@ -394,7 +411,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: copy_shape_by_name(self, shapeName:str) -> None
+.. py:method:: copy_shape_by_name(self, shapeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.copy_shape_by_name
 
     Copy a central body shape to the clipboard.
 
@@ -406,27 +424,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste_shape(self) -> "ICentralBodyShape"
+.. py:method:: paste_shape(self) -> ICentralBodyShape
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.paste_shape
 
     Add the central body shape in the clipboard to the central body.
 
     :Returns:
 
-        :obj:`~"ICentralBodyShape"`
+        :obj:`~ICentralBodyShape`
 
-.. py:method:: add_copy_of_shape(self, shape:"ICentralBodyShape") -> "ICentralBodyShape"
+.. py:method:: add_copy_of_shape(self, shape: ICentralBodyShape) -> ICentralBodyShape
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_copy_of_shape
 
     Add the central body shape to the central body.
 
     :Parameters:
 
-    **shape** : :obj:`~"ICentralBodyShape"`
+    **shape** : :obj:`~ICentralBodyShape`
 
     :Returns:
 
-        :obj:`~"ICentralBodyShape"`
+        :obj:`~ICentralBodyShape`
 
-.. py:method:: cut_attitude_by_name(self, attitudeName:str) -> None
+.. py:method:: cut_attitude_by_name(self, attitudeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.cut_attitude_by_name
 
     Copy a central body attitude definition to the clipboard and removes it from the central body.
 
@@ -438,7 +459,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: copy_attitude_by_name(self, attitudeName:str) -> None
+.. py:method:: copy_attitude_by_name(self, attitudeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.copy_attitude_by_name
 
     Copy a central body attitude definition to the clipboard.
 
@@ -450,27 +472,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste_attitude(self) -> "ICentralBodyAttitude"
+.. py:method:: paste_attitude(self) -> ICentralBodyAttitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.paste_attitude
 
     Add the central body attitude definition in the clipboard to the central body.
 
     :Returns:
 
-        :obj:`~"ICentralBodyAttitude"`
+        :obj:`~ICentralBodyAttitude`
 
-.. py:method:: add_copy_of_attitude(self, attitude:"ICentralBodyAttitude") -> "ICentralBodyAttitude"
+.. py:method:: add_copy_of_attitude(self, attitude: ICentralBodyAttitude) -> ICentralBodyAttitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_copy_of_attitude
 
     Add the central body attitude definition to the central body.
 
     :Parameters:
 
-    **attitude** : :obj:`~"ICentralBodyAttitude"`
+    **attitude** : :obj:`~ICentralBodyAttitude`
 
     :Returns:
 
-        :obj:`~"ICentralBodyAttitude"`
+        :obj:`~ICentralBodyAttitude`
 
-.. py:method:: cut_ephemeris_by_name(self, ephemerisName:str) -> None
+.. py:method:: cut_ephemeris_by_name(self, ephemerisName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.cut_ephemeris_by_name
 
     Copy a central body ephemeris definition to the clipboard and removes it from the central body.
 
@@ -482,7 +507,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: copy_ephemeris_by_name(self, ephemerisName:str) -> None
+.. py:method:: copy_ephemeris_by_name(self, ephemerisName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.copy_ephemeris_by_name
 
     Copy a central body ephemeris definition to the clipboard.
 
@@ -494,23 +520,25 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste_ephemeris(self) -> "ICentralBodyEphemeris"
+.. py:method:: paste_ephemeris(self) -> ICentralBodyEphemeris
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.paste_ephemeris
 
     Add the central body ephemeris definition in the clipboard to the central body.
 
     :Returns:
 
-        :obj:`~"ICentralBodyEphemeris"`
+        :obj:`~ICentralBodyEphemeris`
 
-.. py:method:: add_copy_of_ephemeris(self, ephemeris:"ICentralBodyEphemeris") -> "ICentralBodyEphemeris"
+.. py:method:: add_copy_of_ephemeris(self, ephemeris: ICentralBodyEphemeris) -> ICentralBodyEphemeris
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_copy_of_ephemeris
 
     Add the central body ephemeris definition to the central body.
 
     :Parameters:
 
-    **ephemeris** : :obj:`~"ICentralBodyEphemeris"`
+    **ephemeris** : :obj:`~ICentralBodyEphemeris`
 
     :Returns:
 
-        :obj:`~"ICentralBodyEphemeris"`
+        :obj:`~ICentralBodyEphemeris`
 

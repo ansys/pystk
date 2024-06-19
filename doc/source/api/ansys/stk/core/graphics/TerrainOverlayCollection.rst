@@ -3,7 +3,7 @@ TerrainOverlayCollection
 
 .. py:class:: TerrainOverlayCollection
 
-   ITerrainOverlayCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ITerrainOverlayCollection`
 
    A collection of terrain overlay objects.
 

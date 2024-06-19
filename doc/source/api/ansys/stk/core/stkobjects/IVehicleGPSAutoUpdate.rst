@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: selected_source
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.selected_source
-    :type: "VEHICLE_GPS_AUTO_UPDATE_SOURCE"
+    :type: VEHICLE_GPS_AUTO_UPDATE_SOURCE
 
     Gets or sets the source type for element updates.
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.properties
-    :type: "IAgVeGPSAutoUpdateProperties"
+    :type: IAgVeGPSAutoUpdateProperties
 
     Get the Automatic Update selection and method.
 
 .. py:property:: file_source
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.file_source
-    :type: "IAgVeGPSAutoUpdateFileSource"
+    :type: IAgVeGPSAutoUpdateFileSource
 
     A file to be used as the element source.
 
 .. py:property:: online_source
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.online_source
-    :type: "IAgVeGPSAutoUpdateOnlineSource"
+    :type: IAgVeGPSAutoUpdateOnlineSource
 
     AGI server to be used as the element source.
 

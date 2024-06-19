@@ -3,7 +3,7 @@ AnalysisWorkbenchGeneric
 
 .. py:class:: AnalysisWorkbenchGeneric
 
-   IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchComponent`
 
    Generic VGT component.
 

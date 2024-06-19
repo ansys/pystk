@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self, xPixels:float, yPixels:float, widthPixels:float, heightPixels:float) -> "IScreenOverlay"
+.. py:method:: initialize(self, xPixels: float, yPixels: float, widthPixels: float, heightPixels: float) -> IScreenOverlay
+    :canonical: ansys.stk.core.graphics.IScreenOverlayFactory.initialize
 
     Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
 
@@ -51,9 +52,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScreenOverlay"`
+        :obj:`~IScreenOverlay`
 
-.. py:method:: initialize_with_position_and_size(self, position:list, size:list) -> "IScreenOverlay"
+.. py:method:: initialize_with_position_and_size(self, position: list, size: list) -> IScreenOverlay
+    :canonical: ansys.stk.core.graphics.IScreenOverlayFactory.initialize_with_position_and_size
 
     Initialize the overlay with the specified position and size.
 
@@ -64,5 +66,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScreenOverlay"`
+        :obj:`~IScreenOverlay`
 

@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: operation_mode_definition
     :canonical: ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.operation_mode_definition
-    :type: "THROTTLE_TABLE_OPERATION_MODE"
+    :type: THROTTLE_TABLE_OPERATION_MODE
 
     The engine operation mode definition.
 
@@ -120,37 +120,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_ENGINE_THROTTLE_TABLE") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_ENGINE_THROTTLE_TABLE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_THROTTLE_TABLE"`
+    **param** : :obj:`~CONTROL_ENGINE_THROTTLE_TABLE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_ENGINE_THROTTLE_TABLE") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_ENGINE_THROTTLE_TABLE) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_THROTTLE_TABLE"`
+    **param** : :obj:`~CONTROL_ENGINE_THROTTLE_TABLE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_ENGINE_THROTTLE_TABLE") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ENGINE_THROTTLE_TABLE) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_THROTTLE_TABLE"`
+    **param** : :obj:`~CONTROL_ENGINE_THROTTLE_TABLE`
 
     :Returns:
 

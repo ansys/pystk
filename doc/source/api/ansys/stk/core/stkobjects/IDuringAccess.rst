@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: display_intervals
     :canonical: ansys.stk.core.stkobjects.IDuringAccess.display_intervals
-    :type: "IAgIntervalCollection"
+    :type: IAgIntervalCollection
 
     Gets the display intervals property.
 
 .. py:property:: access_objects
     :canonical: ansys.stk.core.stkobjects.IDuringAccess.access_objects
-    :type: "IAgObjectLinkCollection"
+    :type: IAgObjectLinkCollection
 
     Gets the access objects property.
 

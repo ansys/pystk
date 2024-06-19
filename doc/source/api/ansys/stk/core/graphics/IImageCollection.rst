@@ -103,7 +103,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "IGlobeImageOverlay"
+.. py:method:: item(self, index: int) -> IGlobeImageOverlay
+    :canonical: ansys.stk.core.graphics.IImageCollection.item
 
     Get the globe image overlay at the specified index.
 
@@ -113,22 +114,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGlobeImageOverlay"`
+        :obj:`~IGlobeImageOverlay`
 
 
-.. py:method:: contains(self, imageryOverlay:"IGlobeImageOverlay") -> bool
+.. py:method:: contains(self, imageryOverlay: IGlobeImageOverlay) -> bool
+    :canonical: ansys.stk.core.graphics.IImageCollection.contains
 
     Check the presence of a globe image overlay in the collection.
 
     :Parameters:
 
-    **imageryOverlay** : :obj:`~"IGlobeImageOverlay"`
+    **imageryOverlay** : :obj:`~IGlobeImageOverlay`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: contains_uri_string(self, stringUri:str) -> bool
+.. py:method:: contains_uri_string(self, stringUri: str) -> bool
+    :canonical: ansys.stk.core.graphics.IImageCollection.contains_uri_string
 
     Check the presence of a globe image overlay with the specified Uri in the collection.
 
@@ -140,19 +143,21 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: remove(self, globeOverlay:"IGlobeImageOverlay") -> bool
+.. py:method:: remove(self, globeOverlay: IGlobeImageOverlay) -> bool
+    :canonical: ansys.stk.core.graphics.IImageCollection.remove
 
     Remove a globe image overlay from the collection.
 
     :Parameters:
 
-    **globeOverlay** : :obj:`~"IGlobeImageOverlay"`
+    **globeOverlay** : :obj:`~IGlobeImageOverlay`
 
     :Returns:
 
         :obj:`~bool`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.clear
 
     Remove all globe image overlay objects from the collection.
 
@@ -160,43 +165,47 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, imageryOverlay:"IGlobeImageOverlay") -> None
+.. py:method:: add(self, imageryOverlay: IGlobeImageOverlay) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.add
 
     Add imageryOverlay to the collection.
 
     :Parameters:
 
-    **imageryOverlay** : :obj:`~"IGlobeImageOverlay"`
+    **imageryOverlay** : :obj:`~IGlobeImageOverlay`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_async(self, imageryOverlay:"IGlobeImageOverlay") -> None
+.. py:method:: add_async(self, imageryOverlay: IGlobeImageOverlay) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.add_async
 
     Add imageryOverlay to the collection asynchronously.
 
     :Parameters:
 
-    **imageryOverlay** : :obj:`~"IGlobeImageOverlay"`
+    **imageryOverlay** : :obj:`~IGlobeImageOverlay`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: index_of(self, imageryOverlay:"IGlobeImageOverlay") -> int
+.. py:method:: index_of(self, imageryOverlay: IGlobeImageOverlay) -> int
+    :canonical: ansys.stk.core.graphics.IImageCollection.index_of
 
     Get the index of the specified globe image overlay.
 
     :Parameters:
 
-    **imageryOverlay** : :obj:`~"IGlobeImageOverlay"`
+    **imageryOverlay** : :obj:`~IGlobeImageOverlay`
 
     :Returns:
 
         :obj:`~int`
 
-.. py:method:: index_of_uri_string(self, stringUri:str) -> int
+.. py:method:: index_of_uri_string(self, stringUri: str) -> int
+    :canonical: ansys.stk.core.graphics.IImageCollection.index_of_uri_string
 
     Get the index of the globe image overlay with the specified Uri.
 
@@ -208,7 +217,8 @@ Method detail
 
         :obj:`~int`
 
-.. py:method:: add_uri_string(self, uri:str) -> "IGlobeImageOverlay"
+.. py:method:: add_uri_string(self, uri: str) -> IGlobeImageOverlay
+    :canonical: ansys.stk.core.graphics.IImageCollection.add_uri_string
 
     Create a globe overlay from the uri, which represents a uri, and adds it to the collection.
 
@@ -218,9 +228,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGlobeImageOverlay"`
+        :obj:`~IGlobeImageOverlay`
 
-.. py:method:: add_async_uri_string(self, uri:str) -> "IGlobeImageOverlay"
+.. py:method:: add_async_uri_string(self, uri: str) -> IGlobeImageOverlay
+    :canonical: ansys.stk.core.graphics.IImageCollection.add_async_uri_string
 
     Create a globe image overlay from the uri, which represents a uri, and adds it to the collection asynchronously.
 
@@ -230,22 +241,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGlobeImageOverlay"`
+        :obj:`~IGlobeImageOverlay`
 
-.. py:method:: swap(self, imageryOverlay1:"IGlobeImageOverlay", imageryOverlay2:"IGlobeImageOverlay") -> None
+.. py:method:: swap(self, imageryOverlay1: IGlobeImageOverlay, imageryOverlay2: IGlobeImageOverlay) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.swap
 
     Swap the position of two globe image overlay objects.
 
     :Parameters:
 
-    **imageryOverlay1** : :obj:`~"IGlobeImageOverlay"`
-    **imageryOverlay2** : :obj:`~"IGlobeImageOverlay"`
+    **imageryOverlay1** : :obj:`~IGlobeImageOverlay`
+    **imageryOverlay2** : :obj:`~IGlobeImageOverlay`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: swap_by_index(self, index1:int, index2:int) -> None
+.. py:method:: swap_by_index(self, index1: int, index2: int) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.swap_by_index
 
     Swap the position of two globe image overlay objects at the specified indices.
 
@@ -258,20 +271,22 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: move(self, imageryOverlay:"IGlobeImageOverlay", newPosition:int) -> None
+.. py:method:: move(self, imageryOverlay: IGlobeImageOverlay, newPosition: int) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.move
 
     Move the globe image overlay to the specified position.
 
     :Parameters:
 
-    **imageryOverlay** : :obj:`~"IGlobeImageOverlay"`
+    **imageryOverlay** : :obj:`~IGlobeImageOverlay`
     **newPosition** : :obj:`~int`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: move_by_index(self, index:int, newPosition:int) -> None
+.. py:method:: move_by_index(self, index: int, newPosition: int) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.move_by_index
 
     Move the globe image overlay at the specified index to the specified position.
 
@@ -284,25 +299,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: bring_to_front(self, imageryOverlay:"IGlobeImageOverlay") -> None
+.. py:method:: bring_to_front(self, imageryOverlay: IGlobeImageOverlay) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.bring_to_front
 
     Brings the globe image overlay to the front of the collection so it is rendered first or on the bottom.
 
     :Parameters:
 
-    **imageryOverlay** : :obj:`~"IGlobeImageOverlay"`
+    **imageryOverlay** : :obj:`~IGlobeImageOverlay`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: send_to_back(self, imageryOverlay:"IGlobeImageOverlay") -> None
+.. py:method:: send_to_back(self, imageryOverlay: IGlobeImageOverlay) -> None
+    :canonical: ansys.stk.core.graphics.IImageCollection.send_to_back
 
     Send the globe image overlay to the back of the collection so it is rendered last or on the top.
 
     :Parameters:
 
-    **imageryOverlay** : :obj:`~"IGlobeImageOverlay"`
+    **imageryOverlay** : :obj:`~IGlobeImageOverlay`
 
     :Returns:
 

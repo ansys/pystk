@@ -82,19 +82,19 @@ Property detail
 
 .. py:property:: propagator_functions
     :canonical: ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.propagator_functions
-    :type: "IAgVAPropagatorFunctionCollection"
+    :type: IAgVAPropagatorFunctionCollection
 
     Get the list of propagator functions.
 
 .. py:property:: numerical_integrator
     :canonical: ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.numerical_integrator
-    :type: "IAgVANumericalIntegrator"
+    :type: IAgVANumericalIntegrator
 
     Get the numerical integrator.
 
 .. py:property:: numerical_integrator_type
     :canonical: ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.numerical_integrator_type
-    :type: "NUMERICAL_INTEGRATOR"
+    :type: NUMERICAL_INTEGRATOR
 
     Get the single step integrator type.
 
@@ -115,13 +115,14 @@ Method detail
 
 
 
-.. py:method:: set_numerical_integrator(self, integrator:"NUMERICAL_INTEGRATOR") -> None
+.. py:method:: set_numerical_integrator(self, integrator: NUMERICAL_INTEGRATOR) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.set_numerical_integrator
 
     Change the single step integrator.
 
     :Parameters:
 
-    **integrator** : :obj:`~"NUMERICAL_INTEGRATOR"`
+    **integrator** : :obj:`~NUMERICAL_INTEGRATOR`
 
     :Returns:
 

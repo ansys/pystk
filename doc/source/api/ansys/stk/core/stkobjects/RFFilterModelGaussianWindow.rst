@@ -3,7 +3,7 @@ RFFilterModelGaussianWindow
 
 .. py:class:: RFFilterModelGaussianWindow
 
-   IRFFilterModelGaussianWindow, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelGaussianWindow`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a cosine window filter model.
 

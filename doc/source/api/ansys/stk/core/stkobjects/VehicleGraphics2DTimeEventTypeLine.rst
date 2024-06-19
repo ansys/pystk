@@ -3,7 +3,7 @@ VehicleGraphics2DTimeEventTypeLine
 
 .. py:class:: VehicleGraphics2DTimeEventTypeLine
 
-   IVehicleGraphics2DTimeEventType, IVehicleGraphics2DTimeEventTypeLine, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DTimeEventType`, py:obj:`~IVehicleGraphics2DTimeEventTypeLine`
 
    2D Graphics time event: line type.
 

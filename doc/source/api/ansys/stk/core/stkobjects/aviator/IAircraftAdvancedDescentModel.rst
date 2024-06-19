@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: descent_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_speed_type
-    :type: "DESCENT_SPEED_TYPE"
+    :type: DESCENT_SPEED_TYPE
 
     Gets or sets the mode to calculate the aircraft's airspeed while descending .
 
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: descent_override_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_override_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the override airspeed type.
 
@@ -100,7 +100,7 @@ Property detail
 
 .. py:property:: airspeed_limit_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.airspeed_limit_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed limit type.
 
@@ -126,13 +126,14 @@ Method detail
 
 
 
-.. py:method:: set_descent_override_airspeed(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_descent_override_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.set_descent_override_airspeed
 
     Set the override airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -147,13 +148,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_limit(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None
+.. py:method:: set_airspeed_limit(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.set_airspeed_limit
 
     Set the airspeed limit and airspeed type below the altitude threshold.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **aispeed** : :obj:`~float`
 
     :Returns:
@@ -162,11 +164,12 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

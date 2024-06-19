@@ -39,6 +39,7 @@ Method detail
 -------------
 
 .. py:method:: hide_graphics(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IConstellationGraphics.hide_graphics
 
     Remove the graphics for all objects within the constellation from the 2D Graphics window.
 
@@ -47,6 +48,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: restore_graphics(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IConstellationGraphics.restore_graphics
 
     Restore the graphics for all objects within the constellation in the 2D Graphics window.
 

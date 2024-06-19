@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: time_sense
     :canonical: ansys.stk.core.stkobjects.IVehicleAccessAdvanced.time_sense
-    :type: "IV_TIME_SENSE"
+    :type: IV_TIME_SENSE
 
     Signal sense of the clock host.
 

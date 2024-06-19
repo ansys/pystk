@@ -3,7 +3,7 @@ CROrientationAzEl
 
 .. py:class:: CROrientationAzEl
 
-   IOrientationAzEl, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback
+   Bases: py:obj:`~IOrientationAzEl`, py:obj:`~IOrientation`, py:obj:`~IOrientationPositionOffset`
 
    AzEl orientation method.
 

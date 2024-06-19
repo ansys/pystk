@@ -3,7 +3,7 @@ LaserAtmosphericLossModel
 
 .. py:class:: LaserAtmosphericLossModel
 
-   ILaserAtmosphericLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ILaserAtmosphericLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an laser propagation loss model.
 

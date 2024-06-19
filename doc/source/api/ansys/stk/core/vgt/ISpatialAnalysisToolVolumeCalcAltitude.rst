@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: shape_model
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.shape_model
-    :type: "CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE"
+    :type: CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE
 
     The Volume Calc Altitude Reference Type.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.reference_point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     A reference point. Can be any point from VGT.
 

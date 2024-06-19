@@ -56,19 +56,19 @@ Property detail
 
 .. py:property:: point_location_method
     :canonical: ansys.stk.core.stkobjects.ICoveragePointDefinition.point_location_method
-    :type: "COVERAGE_POINT_LOC_METHOD"
+    :type: COVERAGE_POINT_LOC_METHOD
 
     Specify the location of points on the coverage grid.
 
 .. py:property:: point_file_list
     :canonical: ansys.stk.core.stkobjects.ICoveragePointDefinition.point_file_list
-    :type: "IAgCvPointFileListCollection"
+    :type: IAgCvPointFileListCollection
 
     List of point file locations.
 
 .. py:property:: grid_class
     :canonical: ansys.stk.core.stkobjects.ICoveragePointDefinition.grid_class
-    :type: "COVERAGE_GRID_CLASS"
+    :type: COVERAGE_GRID_CLASS
 
     Class of object used to define grid points.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: altitude_method
     :canonical: ansys.stk.core.stkobjects.ICoveragePointDefinition.altitude_method
-    :type: "COVERAGE_ALTITUDE_METHOD"
+    :type: COVERAGE_ALTITUDE_METHOD
 
     Specify the height of a grid point.
 
@@ -110,7 +110,7 @@ Property detail
 
 .. py:property:: ground_altitude_method
     :canonical: ansys.stk.core.stkobjects.ICoveragePointDefinition.ground_altitude_method
-    :type: "COVERAGE_GROUND_ALTITUDE_METHOD"
+    :type: COVERAGE_GROUND_ALTITUDE_METHOD
 
     Specify the height of a grid point.
 
@@ -122,7 +122,7 @@ Property detail
 
 .. py:property:: point_altitude_method
     :canonical: ansys.stk.core.stkobjects.ICoveragePointDefinition.point_altitude_method
-    :type: "COVERAGE_POINT_ALTITUDE_METHOD"
+    :type: COVERAGE_POINT_ALTITUDE_METHOD
 
     Custom point altitude method specifies whether to use the altitude values in the point file (.*pt) or override them using the altitude at a point on terrain.
 
@@ -146,7 +146,8 @@ Method detail
 
 
 
-.. py:method:: set_points_lla(self, lLAPoints:list) -> None
+.. py:method:: set_points_lla(self, lLAPoints: list) -> None
+    :canonical: ansys.stk.core.stkobjects.ICoveragePointDefinition.set_points_lla
 
     Use an array of latitude/longitude/altitude values to define a coverage grid point.
 

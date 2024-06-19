@@ -3,7 +3,7 @@ SiteEndOfPrevProcedure
 
 .. py:class:: SiteEndOfPrevProcedure
 
-   ISiteEndOfPrevProcedure, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteEndOfPrevProcedure`, py:obj:`~ISite`
 
    Class defining an End of Previous Procedure site.
 

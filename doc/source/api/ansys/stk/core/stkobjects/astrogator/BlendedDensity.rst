@@ -3,7 +3,7 @@ BlendedDensity
 
 .. py:class:: BlendedDensity
 
-   IBlendedDensity, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IBlendedDensity`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Blended atmospheric density propagator function.
 

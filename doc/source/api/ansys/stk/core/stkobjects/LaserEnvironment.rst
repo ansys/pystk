@@ -3,7 +3,7 @@ LaserEnvironment
 
 .. py:class:: LaserEnvironment
 
-   ILaserEnvironment, SupportsDeleteCallback
+   Bases: py:obj:`~ILaserEnvironment`
 
    Class defining the laser environment for an object.
 

@@ -3,7 +3,7 @@ VehicleRouteAttitudeStandard
 
 .. py:class:: VehicleRouteAttitudeStandard
 
-   IVehicleRouteAttitudeStandard, IVehicleAttitudeStandard, IVehicleAttitude, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRouteAttitudeStandard`, py:obj:`~IVehicleAttitudeStandard`, py:obj:`~IVehicleAttitude`
 
    Standard attitude profile for aircraft.
 

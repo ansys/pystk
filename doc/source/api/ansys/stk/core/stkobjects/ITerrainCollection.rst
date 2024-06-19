@@ -68,7 +68,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "ITerrain"
+.. py:method:: item(self, index: int) -> ITerrain
+    :canonical: ansys.stk.core.stkobjects.ITerrainCollection.item
 
     Given an index, returns an IAgTerrain interface.
 
@@ -78,22 +79,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITerrain"`
+        :obj:`~ITerrain`
 
-.. py:method:: add(self, location:str, terrainFileType:"TERRAIN_FILE_TYPE") -> "ITerrain"
+.. py:method:: add(self, location: str, terrainFileType: TERRAIN_FILE_TYPE) -> ITerrain
+    :canonical: ansys.stk.core.stkobjects.ITerrainCollection.add
 
     Add a terrain item to the collection.
 
     :Parameters:
 
     **location** : :obj:`~str`
-    **terrainFileType** : :obj:`~"TERRAIN_FILE_TYPE"`
+    **terrainFileType** : :obj:`~TERRAIN_FILE_TYPE`
 
     :Returns:
 
-        :obj:`~"ITerrain"`
+        :obj:`~ITerrain`
 
-.. py:method:: remove(self, index:int) -> None
+.. py:method:: remove(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ITerrainCollection.remove
 
     Remove a given index from the collection.
 
@@ -106,6 +109,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ITerrainCollection.remove_all
 
     Remove all items from the collections.
 

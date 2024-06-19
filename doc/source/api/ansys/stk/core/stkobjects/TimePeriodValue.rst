@@ -3,7 +3,7 @@ TimePeriodValue
 
 .. py:class:: TimePeriodValue
 
-   ITimePeriodValue, SupportsDeleteCallback
+   Bases: py:obj:`~ITimePeriodValue`
 
    Provide methods and properties to configure a time value.
 

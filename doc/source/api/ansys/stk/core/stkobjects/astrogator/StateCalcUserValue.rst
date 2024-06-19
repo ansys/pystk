@@ -3,7 +3,7 @@ StateCalcUserValue
 
 .. py:class:: StateCalcUserValue
 
-   IStateCalcUserValue, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcUserValue`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass StateCalcUserValue.
 

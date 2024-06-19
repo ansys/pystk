@@ -3,7 +3,7 @@ VectorGeometryToolVectorVelocityAcceleration
 
 .. py:class:: VectorGeometryToolVectorVelocityAcceleration
 
-   IVectorGeometryToolVectorVelocityAcceleration, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorVelocityAcceleration`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
 
    Velocity vector of a point in a coordinate system.
 

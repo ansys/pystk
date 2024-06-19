@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedInAxes.reference_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a reference axes.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedInAxes.direction
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Specify the vector direction.
 

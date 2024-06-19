@@ -3,7 +3,7 @@ MissionControlSequencePropagate
 
 .. py:class:: MissionControlSequencePropagate
 
-   IMissionControlSequenceSegment, IMissionControlSequencePropagate, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IMissionControlSequencePropagate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Propagate segment.
 

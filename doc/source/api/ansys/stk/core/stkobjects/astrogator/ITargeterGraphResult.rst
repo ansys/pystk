@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: graph_option
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.graph_option
-    :type: "GRAPH_OPTION"
+    :type: GRAPH_OPTION
 
     Graph option.
 

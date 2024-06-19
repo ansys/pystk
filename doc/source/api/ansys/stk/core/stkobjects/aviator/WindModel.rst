@@ -3,7 +3,7 @@ WindModel
 
 .. py:class:: WindModel
 
-   IWindModel, SupportsDeleteCallback
+   Bases: py:obj:`~IWindModel`
 
    Class defining the wind model for a mission, scenario, or procedure.
 

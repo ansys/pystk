@@ -3,7 +3,7 @@ VehicleLaunchControlFixedTimeOfFlight
 
 .. py:class:: VehicleLaunchControlFixedTimeOfFlight
 
-   IVehicleLaunchControl, IVehicleLaunchControlFixedTimeOfFlight, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLaunchControl`, py:obj:`~IVehicleLaunchControlFixedTimeOfFlight`
 
    Class defining the option to set a Missile's flight parameters by specifying a fixed time of flight.
 

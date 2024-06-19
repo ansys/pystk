@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Gets or sets the type of line that will mark the region representing the selected lighting condition.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the width of the line that will mark the region representing the selected lighting condition.
 

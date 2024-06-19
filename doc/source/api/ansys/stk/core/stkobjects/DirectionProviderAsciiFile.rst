@@ -3,7 +3,7 @@ DirectionProviderAsciiFile
 
 .. py:class:: DirectionProviderAsciiFile
 
-   IDirectionProviderAsciiFile, IDirectionProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IDirectionProviderAsciiFile`, py:obj:`~IDirectionProvider`
 
    Class defining an ascii file direction provider.
 

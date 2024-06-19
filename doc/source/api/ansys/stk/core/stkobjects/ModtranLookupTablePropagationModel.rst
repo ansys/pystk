@@ -3,7 +3,7 @@ ModtranLookupTablePropagationModel
 
 .. py:class:: ModtranLookupTablePropagationModel
 
-   IModtranLookupTablePropagationModel, ILaserAtmosphericLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IModtranLookupTablePropagationModel`, py:obj:`~ILaserAtmosphericLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an MODTRAN-based lookup table propagation model.
 

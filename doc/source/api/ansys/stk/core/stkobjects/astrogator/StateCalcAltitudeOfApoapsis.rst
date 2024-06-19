@@ -3,7 +3,7 @@ StateCalcAltitudeOfApoapsis
 
 .. py:class:: StateCalcAltitudeOfApoapsis
 
-   IComponentInfo, ICloneable, IStateCalcAltitudeOfApoapsis, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcAltitudeOfApoapsis`
 
    AltitudeOfApoapsis Calc objects.
 

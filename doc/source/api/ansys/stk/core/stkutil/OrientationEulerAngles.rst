@@ -3,7 +3,7 @@ OrientationEulerAngles
 
 .. py:class:: OrientationEulerAngles
 
-   IOrientationEulerAngles, IOrientation, SupportsDeleteCallback
+   Bases: py:obj:`~IOrientationEulerAngles`, py:obj:`~IOrientation`
 
    Euler Angles orientation method.
 

@@ -3,7 +3,7 @@ TimeToolEventArrayFixedTimes
 
 .. py:class:: TimeToolEventArrayFixedTimes
 
-   ITimeToolEventArrayFixedTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventArrayFixedTimes`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Array defined by time ordered instants each explicitly specified.
 

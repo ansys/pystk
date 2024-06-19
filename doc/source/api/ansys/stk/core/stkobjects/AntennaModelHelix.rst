@@ -3,7 +3,7 @@ AntennaModelHelix
 
 .. py:class:: AntennaModelHelix
 
-   IAntennaModelHelix, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelHelix`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a helix antenna model.
 

@@ -76,7 +76,8 @@ Method detail
 
 
 
-.. py:method:: is_central_body_assigned(self, centralBody:str) -> bool
+.. py:method:: is_central_body_assigned(self, centralBody: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleEclipseBodies.is_central_body_assigned
 
     Check whether a central body is already assigned.
 
@@ -89,7 +90,8 @@ Method detail
         :obj:`~bool`
 
 
-.. py:method:: assign_central_body(self, centralBody:str) -> None
+.. py:method:: assign_central_body(self, centralBody: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEclipseBodies.assign_central_body
 
     Assign a central body.
 
@@ -101,7 +103,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_central_body(self, centralBody:str) -> None
+.. py:method:: remove_central_body(self, centralBody: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEclipseBodies.remove_central_body
 
     Remove a central body.
 
@@ -114,6 +117,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEclipseBodies.remove_all
 
     Remove all the central bodies.
 

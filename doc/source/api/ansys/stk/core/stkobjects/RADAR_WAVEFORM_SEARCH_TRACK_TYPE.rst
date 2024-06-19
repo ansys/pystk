@@ -11,6 +11,21 @@ RADAR_WAVEFORM_SEARCH_TRACK_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~FIXED_PRF`
+              - Fixed PRF.
+
+            * - :py:attr:`~CONTINUOUS`
+              - Continuous.
+
+
 Import detail
 -------------
 

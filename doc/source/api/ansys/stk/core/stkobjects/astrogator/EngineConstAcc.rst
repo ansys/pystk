@@ -3,7 +3,7 @@ EngineConstAcc
 
 .. py:class:: EngineConstAcc
 
-   IEngineConstAcc, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineConstAcc`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Constant Acceleration engine model.
 

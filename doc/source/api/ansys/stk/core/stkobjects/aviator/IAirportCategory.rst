@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: arinc424_airports
     :canonical: ansys.stk.core.stkobjects.aviator.IAirportCategory.arinc424_airports
-    :type: "IAgAvtrARINC424Source"
+    :type: IAgAvtrARINC424Source
 
     Get the ARINC-424 airports.
 

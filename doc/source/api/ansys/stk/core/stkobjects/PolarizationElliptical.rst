@@ -3,7 +3,7 @@ PolarizationElliptical
 
 .. py:class:: PolarizationElliptical
 
-   IPolarizationElliptical, IPolarization, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarizationElliptical`, py:obj:`~IPolarization`
 
    Class defining an elliptical polarization.
 

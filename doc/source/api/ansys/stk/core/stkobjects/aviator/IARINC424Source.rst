@@ -69,7 +69,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_arinc424_item(self, name:str) -> "IARINC424Item"
+.. py:method:: get_arinc424_item(self, name: str) -> IARINC424Item
+    :canonical: ansys.stk.core.stkobjects.aviator.IARINC424Source.get_arinc424_item
 
     Get the ARINC-424 item with the given name.
 
@@ -79,7 +80,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IARINC424Item"`
+        :obj:`~IARINC424Item`
 
 
 
@@ -87,11 +88,12 @@ Method detail
 
 
 
-.. py:method:: get_as_catalog_source(self) -> "ICatalogSource"
+.. py:method:: get_as_catalog_source(self) -> ICatalogSource
+    :canonical: ansys.stk.core.stkobjects.aviator.IARINC424Source.get_as_catalog_source
 
     Get the catalog source interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogSource"`
+        :obj:`~ICatalogSource`
 

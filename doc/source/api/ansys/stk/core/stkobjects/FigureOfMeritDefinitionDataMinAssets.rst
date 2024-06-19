@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataMinAssets
 
 .. py:class:: FigureOfMeritDefinitionDataMinAssets
 
-   IFigureOfMeritDefinitionDataMinAssets, IFigureOfMeritDefinitionData, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionDataMinAssets`, py:obj:`~IFigureOfMeritDefinitionData`
 
    Minimum number of assets.
 

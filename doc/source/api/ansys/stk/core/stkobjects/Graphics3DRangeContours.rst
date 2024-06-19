@@ -3,7 +3,7 @@ Graphics3DRangeContours
 
 .. py:class:: Graphics3DRangeContours
 
-   IGraphics3DRangeContours, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DRangeContours`
 
    Class defining 3D Graphics range contours: circles comprised of points at a given distance from an object and at the same altitude as that object.
 

@@ -3,7 +3,7 @@ AccessConstraint
 
 .. py:class:: AccessConstraint
 
-   IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraint`
 
    Class defining access constraints.
 

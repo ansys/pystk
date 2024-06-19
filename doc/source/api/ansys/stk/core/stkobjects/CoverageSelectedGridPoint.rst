@@ -3,7 +3,7 @@ CoverageSelectedGridPoint
 
 .. py:class:: CoverageSelectedGridPoint
 
-   ICoverageSelectedGridPoint, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageSelectedGridPoint`
 
    Represents a point selected with the grid inspector.
 

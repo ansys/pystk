@@ -3,7 +3,7 @@ VerticalPlaneAndFlightPathOptions
 
 .. py:class:: VerticalPlaneAndFlightPathOptions
 
-   IVerticalPlaneAndFlightPathOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IVerticalPlaneAndFlightPathOptions`
 
    Class defining the vertical plane options for an arc procedure.
 

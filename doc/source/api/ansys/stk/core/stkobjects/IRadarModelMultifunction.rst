@@ -54,61 +54,61 @@ Property detail
 
 .. py:property:: transmitter
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.transmitter
-    :type: "IAgRadarTransmitterMultifunction"
+    :type: IAgRadarTransmitterMultifunction
 
     Gets the radar transmitter.
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.receiver
-    :type: "IAgRadarReceiver"
+    :type: IAgRadarReceiver
 
     Gets the radar receiver.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.clutter_geometry
-    :type: "IAgRadarClutterGeometry"
+    :type: IAgRadarClutterGeometry
 
     This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
 
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.jamming
-    :type: "IAgRadarJamming"
+    :type: IAgRadarJamming
 
     Gets the radar jamming.
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.location
-    :type: "IAgCRLocation"
+    :type: IAgCRLocation
 
     Gets the radar location object.
 
 .. py:property:: detection_processing
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.detection_processing
-    :type: "IAgRadarMultifunctionDetectionProcessing"
+    :type: IAgRadarMultifunctionDetectionProcessing
 
     Gets the radar detection processing object.
 
 .. py:property:: pointing_strategy
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.pointing_strategy
-    :type: "IAgPointingStrategy"
+    :type: IAgPointingStrategy
 
     Gets the pointing strategy.
 
 .. py:property:: antenna_beams
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.antenna_beams
-    :type: "IAgRadarAntennaBeamCollection"
+    :type: IAgRadarAntennaBeamCollection
 
     Gets the antenna beams collection.
 
 .. py:property:: waveform_strategy_settings
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.waveform_strategy_settings
-    :type: "IAgRadarMultifunctionWaveformStrategySettings"
+    :type: IAgRadarMultifunctionWaveformStrategySettings
 
     Gets the waveform selection strategy settings.
 
 .. py:property:: clutter
     :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.clutter
-    :type: "IAgRadarClutter"
+    :type: IAgRadarClutter
 
     Gets the radar clutter settings.
 
@@ -122,13 +122,14 @@ Method detail
 
 
 
-.. py:method:: set_pointing_strategy_type(self, val:"POINTING_STRATEGY_TYPE") -> None
+.. py:method:: set_pointing_strategy_type(self, val: POINTING_STRATEGY_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarModelMultifunction.set_pointing_strategy_type
 
     Set the current pointing strategy type.
 
     :Parameters:
 
-    **val** : :obj:`~"POINTING_STRATEGY_TYPE"`
+    **val** : :obj:`~POINTING_STRATEGY_TYPE`
 
     :Returns:
 

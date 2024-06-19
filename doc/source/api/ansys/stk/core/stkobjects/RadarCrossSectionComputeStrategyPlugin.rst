@@ -3,7 +3,7 @@ RadarCrossSectionComputeStrategyPlugin
 
 .. py:class:: RadarCrossSectionComputeStrategyPlugin
 
-   IRadarCrossSectionComputeStrategyPlugin, IRadarCrossSectionComputeStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionComputeStrategyPlugin`, py:obj:`~IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 

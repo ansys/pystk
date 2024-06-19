@@ -3,7 +3,7 @@ ProcedureTerrainFollow
 
 .. py:class:: ProcedureTerrainFollow
 
-   IProcedureTerrainFollow, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureTerrainFollow`, py:obj:`~IProcedure`
 
    Class defining a terrain following procedure.
 

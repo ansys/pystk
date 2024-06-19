@@ -3,7 +3,7 @@ AdvCATAdvanced
 
 .. py:class:: AdvCATAdvanced
 
-   IAdvCATAdvanced, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvCATAdvanced`
 
    AdvCAT advanced properties.
 

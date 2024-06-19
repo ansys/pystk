@@ -3,7 +3,7 @@ RunwayHeadingOptions
 
 .. py:class:: RunwayHeadingOptions
 
-   IRunwayHeadingOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IRunwayHeadingOptions`
 
    Class defining the runway heading options in a takeoff or landing procedure.
 

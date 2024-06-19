@@ -64,7 +64,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IDesignER3BPObject"
+.. py:method:: item(self, indexOrName: typing.Any) -> IDesignER3BPObject
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPObjectCollection.item
 
     Iterate through the collection.
 
@@ -74,11 +75,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDesignER3BPObject"`
+        :obj:`~IDesignER3BPObject`
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IDesignER3BPObject"
+.. py:method:: get_item_by_index(self, index: int) -> IDesignER3BPObject
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPObjectCollection.get_item_by_index
 
     Retrieve an associated object from the collection by index.
 
@@ -88,9 +90,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDesignER3BPObject"`
+        :obj:`~IDesignER3BPObject`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IDesignER3BPObject"
+.. py:method:: get_item_by_name(self, name: str) -> IDesignER3BPObject
+    :canonical: ansys.stk.core.stkobjects.astrogator.IDesignER3BPObjectCollection.get_item_by_name
 
     Retrieve an associated object from the collection by name.
 
@@ -100,5 +103,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDesignER3BPObject"`
+        :obj:`~IDesignER3BPObject`
 

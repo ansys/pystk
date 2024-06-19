@@ -3,7 +3,7 @@ WinProjectionPosition
 
 .. py:class:: WinProjectionPosition
 
-   IWinProjectionPosition, SupportsDeleteCallback
+   Bases: py:obj:`~IWinProjectionPosition`
 
    Projected window position result.
 

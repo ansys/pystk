@@ -3,7 +3,7 @@ AdvancedFixedWingSubSuperHypersonicAero
 
 .. py:class:: AdvancedFixedWingSubSuperHypersonicAero
 
-   IAdvancedFixedWingSubSuperHypersonicAero, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingSubSuperHypersonicAero`
 
    Class defining the Sub/Super/Hypersonic aerodynamic strategy in the Advanced Fixed Wing Tool.
 

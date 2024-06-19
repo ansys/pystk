@@ -3,7 +3,7 @@ WaveformPulseDefinition
 
 .. py:class:: WaveformPulseDefinition
 
-   IWaveformPulseDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IWaveformPulseDefinition`
 
    Class defining the pulse definition for a rectangular waveform.
 

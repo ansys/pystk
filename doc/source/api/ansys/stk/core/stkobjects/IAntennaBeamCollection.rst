@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IAntennaBeam"
+.. py:method:: item(self, index: int) -> IAntennaBeam
+    :canonical: ansys.stk.core.stkobjects.IAntennaBeamCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -77,10 +78,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAntennaBeam"`
+        :obj:`~IAntennaBeam`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntennaBeamCollection.remove_at
 
     Remove the layer with the specified index.
 
@@ -92,7 +94,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: insert_at(self, index:int) -> "IAntennaBeam"
+.. py:method:: insert_at(self, index: int) -> IAntennaBeam
+    :canonical: ansys.stk.core.stkobjects.IAntennaBeamCollection.insert_at
 
     Insert a new beam at the supplied index.
 
@@ -102,13 +105,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAntennaBeam"`
+        :obj:`~IAntennaBeam`
 
-.. py:method:: add(self) -> "IAntennaBeam"
+.. py:method:: add(self) -> IAntennaBeam
+    :canonical: ansys.stk.core.stkobjects.IAntennaBeamCollection.add
 
     Add a new beam to the collection.
 
     :Returns:
 
-        :obj:`~"IAntennaBeam"`
+        :obj:`~IAntennaBeam`
 

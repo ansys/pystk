@@ -3,7 +3,7 @@ DifferentialCorrectorResultCollection
 
 .. py:class:: DifferentialCorrectorResultCollection
 
-   IDifferentialCorrectorResultCollection, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IDifferentialCorrectorResultCollection`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The collection of results for a differential corrector.
 

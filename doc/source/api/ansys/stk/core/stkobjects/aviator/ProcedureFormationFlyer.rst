@@ -3,7 +3,7 @@ ProcedureFormationFlyer
 
 .. py:class:: ProcedureFormationFlyer
 
-   IProcedureFormationFlyer, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureFormationFlyer`, py:obj:`~IProcedure`
 
    Class defining an formationflyer procedure.
 

@@ -3,7 +3,7 @@ AnalysisWorkbenchCentralBodyRefTo
 
 .. py:class:: AnalysisWorkbenchCentralBodyRefTo
 
-   IAnalysisWorkbenchCentralBodyRefTo, IAnalysisWorkbenchRefTo, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchCentralBodyRefTo`, py:obj:`~IAnalysisWorkbenchRefTo`
 
    Represents a central body reference.
 

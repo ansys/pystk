@@ -3,7 +3,7 @@ RFFilterModelSincEnvSinc
 
 .. py:class:: RFFilterModelSincEnvSinc
 
-   IRFFilterModelSincEnvSinc, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelSincEnvSinc`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a Sinc Envelope Sinc filter model.
 

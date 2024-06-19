@@ -49,43 +49,43 @@ Property detail
 
 .. py:property:: orbit_plane_source
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.orbit_plane_source
-    :type: "CALC_OBJECT_ORBIT_PLANE_SOURCE"
+    :type: CALC_OBJECT_ORBIT_PLANE_SOURCE
 
     Selection of the satellite that will generate the orbit plane.
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.element_type
-    :type: "CALC_OBJECT_ELEM"
+    :type: CALC_OBJECT_ELEM
 
     Choice of osculating or mean elements.
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.reference_selection
-    :type: "CALC_OBJECT_REFERENCE"
+    :type: CALC_OBJECT_REFERENCE
 
     Gets or sets the reference object selection.
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.reference
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the reference object.
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.sun_position
-    :type: "CALC_OBJECT_SUN_POSITION"
+    :type: CALC_OBJECT_SUN_POSITION
 
     Gets or sets the type of the Sun location.
 
 .. py:property:: counter_clockwise_rotation
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.counter_clockwise_rotation
-    :type: "CALC_OBJECT_ANGLE_SIGN"
+    :type: CALC_OBJECT_ANGLE_SIGN
 
     Sets sign of the angle for counterclockwise rotation about orbit normal.
 
 .. py:property:: reference_direction
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.reference_direction
-    :type: "CALC_OBJECT_REFERENCE_DIRECTION"
+    :type: CALC_OBJECT_REFERENCE_DIRECTION
 
     Direction that establishes the zero value when projected into the orbit plane.
 

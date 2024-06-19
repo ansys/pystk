@@ -11,6 +11,21 @@ RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~PRIMARY`
+              - Primary Polarization.
+
+            * - :py:attr:`~ORTHOGONAL`
+              - Orthogonal Polarization.
+
+
 Import detail
 -------------
 

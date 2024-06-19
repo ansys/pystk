@@ -3,7 +3,7 @@ VectorGeometryToolPlaneTrajectory
 
 .. py:class:: VectorGeometryToolPlaneTrajectory
 
-   IVectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlaneTrajectory`, py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem.
 

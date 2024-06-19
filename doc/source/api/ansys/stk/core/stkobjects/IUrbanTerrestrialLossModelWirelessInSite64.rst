@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: geometry_data
     :canonical: ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.geometry_data
-    :type: "IAgWirelessInSite64GeometryData"
+    :type: IAgWirelessInSite64GeometryData
 
     Gets the geometry data.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: overlay
     :canonical: ansys.stk.core.graphics.ITerrainOverlayAddCompleteEventArgs.overlay
-    :type: "IAgStkGraphicsTerrainOverlay"
+    :type: IAgStkGraphicsTerrainOverlay
 
     The terrain overlay being displayed for the first time.
 

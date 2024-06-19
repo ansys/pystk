@@ -60,19 +60,19 @@ Property detail
 
 .. py:property:: probability_of_detection
     :canonical: ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.probability_of_detection
-    :type: "IAgRadarProbabilityOfDetection"
+    :type: IAgRadarProbabilityOfDetection
 
     Gets the interface for setting the probability of detection parameters.
 
 .. py:property:: pulse_integration_type
     :canonical: ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.pulse_integration_type
-    :type: "RADAR_PULSE_INTEGRATION_TYPE"
+    :type: RADAR_PULSE_INTEGRATION_TYPE
 
     Gets or sets the pulse integration type.
 
 .. py:property:: pulse_integration
     :canonical: ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.pulse_integration
-    :type: "IAgRadarPulseIntegration"
+    :type: IAgRadarPulseIntegration
 
     Gets the interface for setting pulse integration parameters.
 
@@ -117,7 +117,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_probability_of_detection(self, name:str) -> None
+.. py:method:: set_probability_of_detection(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.set_probability_of_detection
 
     Set the probability of detection algorithm by name.
 

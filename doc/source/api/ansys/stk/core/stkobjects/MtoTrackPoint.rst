@@ -3,7 +3,7 @@ MtoTrackPoint
 
 .. py:class:: MtoTrackPoint
 
-   IMtoTrackPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoTrackPoint`
 
    The points defined for the selected track.
 

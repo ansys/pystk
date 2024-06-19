@@ -3,7 +3,7 @@ KeyValueCollection
 
 .. py:class:: KeyValueCollection
 
-   IKeyValueCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IKeyValueCollection`
 
    A collection of keys and values associated with the keys.
 

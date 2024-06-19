@@ -3,7 +3,7 @@ MissionControlSequenceSegmentProperties
 
 .. py:class:: MissionControlSequenceSegmentProperties
 
-   IMissionControlSequenceSegmentProperties, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegmentProperties`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Segment Properties.
 

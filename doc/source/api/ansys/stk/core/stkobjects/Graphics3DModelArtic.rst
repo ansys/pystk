@@ -3,7 +3,7 @@ Graphics3DModelArtic
 
 .. py:class:: Graphics3DModelArtic
 
-   IGraphics3DModelArtic, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DModelArtic`
 
    Class defining 3D model articulations.
 

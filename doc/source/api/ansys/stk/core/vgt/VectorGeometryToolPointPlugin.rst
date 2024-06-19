@@ -3,7 +3,7 @@ VectorGeometryToolPointPlugin
 
 .. py:class:: VectorGeometryToolPointPlugin
 
-   IVectorGeometryToolPointPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointPlugin`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolPoint`
 
    A VGT point plugin.
 

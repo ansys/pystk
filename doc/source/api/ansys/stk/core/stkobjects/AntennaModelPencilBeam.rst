@@ -3,7 +3,7 @@ AntennaModelPencilBeam
 
 .. py:class:: AntennaModelPencilBeam
 
-   IAntennaModelPencilBeam, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelPencilBeam`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a pencil beam antenna model.
 

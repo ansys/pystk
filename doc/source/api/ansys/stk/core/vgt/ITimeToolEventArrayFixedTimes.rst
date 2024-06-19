@@ -54,7 +54,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_array_times(self, times:list) -> None
+.. py:method:: set_array_times(self, times: list) -> None
+    :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFixedTimes.set_array_times
 
     Set array of times.
 

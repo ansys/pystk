@@ -11,6 +11,27 @@ VEHICLE_GPS_ALMANAC_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~GPS_ALMANAC_TYPE_NONE`
+              - Almanac is not selected.
+
+            * - :py:attr:`~GPS_ALMANAC_TYPE_YUMA`
+              - YUMA almanac.
+
+            * - :py:attr:`~GPS_ALMANAC_TYPE_SEM`
+              - SEM almanac.
+
+            * - :py:attr:`~GPS_ALMANAC_TYPE_SP3`
+              - SP3 almanac.
+
+
 Import detail
 -------------
 

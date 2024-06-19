@@ -3,7 +3,7 @@ StateCalcRelPositionInPlaneAngle
 
 .. py:class:: StateCalcRelPositionInPlaneAngle
 
-   IComponentInfo, ICloneable, IStateCalcRelPositionInPlaneAngle, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelPositionInPlaneAngle`
 
    Relative Position Declination Angle objects.
 

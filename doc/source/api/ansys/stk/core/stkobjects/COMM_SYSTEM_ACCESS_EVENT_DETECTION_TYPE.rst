@@ -11,6 +11,24 @@ COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNKNOWN`
+              - Unknown.
+
+            * - :py:attr:`~SUB_SAMPLE`
+              - Sub-sample.
+
+            * - :py:attr:`~SAMPLES_ONLY`
+              - No sub-sample.
+
+
 Import detail
 -------------
 

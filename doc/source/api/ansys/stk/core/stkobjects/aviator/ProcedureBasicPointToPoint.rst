@@ -3,7 +3,7 @@ ProcedureBasicPointToPoint
 
 .. py:class:: ProcedureBasicPointToPoint
 
-   IProcedureBasicPointToPoint, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureBasicPointToPoint`, py:obj:`~IProcedure`
 
    Class defining a basic point to point procedure.
 

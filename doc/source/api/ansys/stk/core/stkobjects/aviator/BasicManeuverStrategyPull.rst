@@ -3,7 +3,7 @@ BasicManeuverStrategyPull
 
 .. py:class:: BasicManeuverStrategyPull
 
-   IBasicManeuverStrategyPull, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyPull`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the pull strategy for a basic maneuver procedure.
 

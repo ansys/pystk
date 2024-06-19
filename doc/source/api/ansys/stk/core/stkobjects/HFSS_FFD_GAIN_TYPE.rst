@@ -11,6 +11,21 @@ HFSS_FFD_GAIN_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~TOTAL_GAIN`
+              - Total Gain.
+
+            * - :py:attr:`~REALIZED_GAIN`
+              - Realized Gain.
+
+
 Import detail
 -------------
 

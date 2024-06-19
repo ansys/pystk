@@ -11,6 +11,21 @@ PROFILE_CONTROL_LIMIT
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~PROFILE_ACCEL_PERF_MODEL`
+              - Use Accel Perf Model.
+
+            * - :py:attr:`~PROFILE_PITCH_RATE`
+              - Specify the pitch rate.
+
+
 Import detail
 -------------
 

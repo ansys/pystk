@@ -3,7 +3,7 @@ VectorGeometryToolPlaneTwoVector
 
 .. py:class:: VectorGeometryToolPlaneTwoVector
 
-   IVectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlaneTwoVector`, py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A plane normal to a vector at a given point.
 

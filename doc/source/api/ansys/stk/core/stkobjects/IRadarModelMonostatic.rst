@@ -58,43 +58,43 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.mode
-    :type: "IAgRadarModeMonostatic"
+    :type: IAgRadarModeMonostatic
 
     Gets the current radar mode.
 
 .. py:property:: transmitter
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.transmitter
-    :type: "IAgRadarTransmitter"
+    :type: IAgRadarTransmitter
 
     Gets the radar transmitter.
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.receiver
-    :type: "IAgRadarReceiver"
+    :type: IAgRadarReceiver
 
     Gets the radar receiver.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.clutter_geometry
-    :type: "IAgRadarClutterGeometry"
+    :type: IAgRadarClutterGeometry
 
     This property is deprecated. Use the Clutter property instead. Gets the radar clutter geometry.
 
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.jamming
-    :type: "IAgRadarJamming"
+    :type: IAgRadarJamming
 
     Gets the radar jamming.
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.antenna_control
-    :type: "IAgAntennaControl"
+    :type: IAgAntennaControl
 
     Gets the radar antenna control.
 
 .. py:property:: clutter
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.clutter
-    :type: "IAgRadarClutter"
+    :type: IAgRadarClutter
 
     Gets the radar clutter settings.
 
@@ -103,7 +103,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_mode(self, modeName:str) -> None
+.. py:method:: set_mode(self, modeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.set_mode
 
     Set the current radar mode by name.
 

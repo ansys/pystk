@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.segments
-    :type: "IAgVeSGP4SegmentCollection"
+    :type: IAgVeSGP4SegmentCollection
 
     Get the element set list.
 
@@ -69,25 +69,25 @@ Property detail
 
 .. py:property:: auto_update
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.auto_update
-    :type: "IAgVeSGP4AutoUpdate"
+    :type: IAgVeSGP4AutoUpdate
 
     Allows configuring the auto-update parameters and settings.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.common_tasks
-    :type: "IAgVePropagatorSGP4CommonTasks"
+    :type: IAgVePropagatorSGP4CommonTasks
 
     Most commonly used tasks such as importing file data, etc.
 
 .. py:property:: settings
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.settings
-    :type: "IAgVeSGP4PropagatorSettings"
+    :type: IAgVeSGP4PropagatorSettings
 
     Propagator settings.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.ephemeris_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
@@ -96,6 +96,7 @@ Method detail
 -------------
 
 .. py:method:: propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.propagate
 
     Propagates the satellite's path using the specified time interval.
 

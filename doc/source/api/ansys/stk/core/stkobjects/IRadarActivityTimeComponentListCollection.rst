@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IRadarActivityTimeComponentListElement"
+.. py:method:: item(self, index: int) -> IRadarActivityTimeComponentListElement
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.item
 
     Given an index, returns the time component element in the collection.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarActivityTimeComponentListElement"`
+        :obj:`~IRadarActivityTimeComponentListElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.remove_at
 
     Remove the time component element with the specified index.
 
@@ -94,7 +96,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: insert_at(self, index:int, componentIdentifier:str) -> "IRadarActivityTimeComponentListElement"
+.. py:method:: insert_at(self, index: int, componentIdentifier: str) -> IRadarActivityTimeComponentListElement
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.insert_at
 
     Insert a new time component element at the supplied index, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
 
@@ -105,9 +108,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarActivityTimeComponentListElement"`
+        :obj:`~IRadarActivityTimeComponentListElement`
 
-.. py:method:: add(self, componentIdentifier:str) -> "IRadarActivityTimeComponentListElement"
+.. py:method:: add(self, componentIdentifier: str) -> IRadarActivityTimeComponentListElement
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.add
 
     Add a new time component element to the collection, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
 
@@ -117,9 +121,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarActivityTimeComponentListElement"`
+        :obj:`~IRadarActivityTimeComponentListElement`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.clear
 
     Clear all time component elements from the collection.
 

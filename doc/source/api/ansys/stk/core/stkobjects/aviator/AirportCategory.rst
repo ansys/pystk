@@ -3,7 +3,7 @@ AirportCategory
 
 .. py:class:: AirportCategory
 
-   IAirportCategory, SupportsDeleteCallback
+   Bases: py:obj:`~IAirportCategory`
 
    Class defining the airport category in the Aviator catalog.
 

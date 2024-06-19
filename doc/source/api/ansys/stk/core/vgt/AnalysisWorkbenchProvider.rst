@@ -3,7 +3,7 @@ AnalysisWorkbenchProvider
 
 .. py:class:: AnalysisWorkbenchProvider
 
-   IAnalysisWorkbenchProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchProvider`
 
    Allow accessing existing Vector Geometry Tool components.
 

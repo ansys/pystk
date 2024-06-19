@@ -3,7 +3,7 @@ SpacecraftParameters
 
 .. py:class:: SpacecraftParameters
 
-   ISpacecraftParameters, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~ISpacecraftParameters`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Spacecraft parameters.
 

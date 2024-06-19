@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: label_swap_distance
     :canonical: ansys.stk.core.stkobjects.IGraphics3DAzElMask.label_swap_distance
-    :type: "IAgVOLabelSwapDistance"
+    :type: IAgVOLabelSwapDistance
 
     Interface to control the level of detail in labels and other screen objects at specified distances.
 

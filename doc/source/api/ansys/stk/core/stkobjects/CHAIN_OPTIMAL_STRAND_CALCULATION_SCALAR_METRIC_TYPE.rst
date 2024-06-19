@@ -11,6 +11,24 @@ CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~STRAND_CALCULATION_SCALAR_METRIC_UNKNOWN`
+              - Unsupported Chain optimal strand calculation scalar metric type.
+
+            * - :py:attr:`~STRAND_CALCULATION_SCALAR_METRIC_FILE`
+              - Chain optimal strand calculation scalar metric using file.
+
+            * - :py:attr:`~STRAND_CALCULATION_SCALAR_METRIC_NAME`
+              - Chain optimal strand calculation scalar metric using component name.
+
+
 Import detail
 -------------
 

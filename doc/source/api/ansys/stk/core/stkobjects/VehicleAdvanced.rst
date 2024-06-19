@@ -3,7 +3,7 @@ VehicleAdvanced
 
 .. py:class:: VehicleAdvanced
 
-   IVehicleAdvanced, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleAdvanced`
 
    Class defining advanced atmospheric density options for the LOP propagator.
 

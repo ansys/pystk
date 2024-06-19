@@ -63,19 +63,19 @@ Property detail
 
 .. py:property:: msg_interpolation_type
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModelADDS.msg_interpolation_type
-    :type: "ADDS_MSG_INTERP_TYPE"
+    :type: ADDS_MSG_INTERP_TYPE
 
     Gets or sets the message interpolation type.
 
 .. py:property:: msg_extrapolation_type
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModelADDS.msg_extrapolation_type
-    :type: "ADDS_MSG_EXTRAP_TYPE"
+    :type: ADDS_MSG_EXTRAP_TYPE
 
     Gets or sets the message extrapolation type.
 
 .. py:property:: missing_msg_type
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModelADDS.missing_msg_type
-    :type: "ADDS_MISSING_MSG_TYPE"
+    :type: ADDS_MISSING_MSG_TYPE
 
     Gets or sets the missing message type.
 
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: messages
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModelADDS.messages
-    :type: "IAgAvtrADDSMessageCollection"
+    :type: IAgAvtrADDSMessageCollection
 
     Get the messages from the current forecast.
 
@@ -108,6 +108,7 @@ Method detail
 
 
 .. py:method:: add_current_forecast(self) -> str
+    :canonical: ansys.stk.core.stkobjects.aviator.IWindModelADDS.add_current_forecast
 
     Add the current forecast from the ADDS service.
 

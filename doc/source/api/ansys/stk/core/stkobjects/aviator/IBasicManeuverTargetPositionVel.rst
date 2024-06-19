@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: target_position_vel_type
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.target_position_vel_type
-    :type: "TARGET_POSITION_VEL_TYPE"
+    :type: TARGET_POSITION_VEL_TYPE
 
     Gets or sets the target pos vel type.
 
@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: mode_as_noisy_brg_rng
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.mode_as_noisy_brg_rng
-    :type: "IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng"
+    :type: IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng
 
     Get the options for a noisy bearing range velocity strategy.
 
 .. py:property:: mode_as_noisy_surf_tgt
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.mode_as_noisy_surf_tgt
-    :type: "IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt"
+    :type: IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt
 
     Get the options for a noisy surface target position velocity strategy.
 
@@ -83,6 +83,7 @@ Method detail
 
 
 .. py:method:: apply_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.apply_position_vel
 
     Apply the current position velocity strategy.
 
@@ -91,6 +92,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: cancel_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.cancel_position_vel
 
     Cancel the current position velocity strategy.
 

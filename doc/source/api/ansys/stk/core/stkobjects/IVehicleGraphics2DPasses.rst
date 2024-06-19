@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: pass_type
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_type
-    :type: "VEHICLE_GRAPHICS_2D_PASS"
+    :type: VEHICLE_GRAPHICS_2D_PASS
 
     Pass display option: show all or those in a user-specified range.
 
@@ -64,13 +64,13 @@ Property detail
 
 .. py:property:: pass_method
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_method
-    :type: "IAgVeGfxPass"
+    :type: IAgVeGfxPass
 
     Get the pass property.
 
 .. py:property:: visible_sides
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.visible_sides
-    :type: "VEHICLE_GRAPHICS_2D_VISIBLE_SIDES"
+    :type: VEHICLE_GRAPHICS_2D_VISIBLE_SIDES
 
     Gets or sets the visible sides option for the pass: ascending, descending, both or none.
 
@@ -91,25 +91,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_pass_type(self, passType:"VEHICLE_GRAPHICS_2D_PASS") -> None
+.. py:method:: set_pass_type(self, passType: VEHICLE_GRAPHICS_2D_PASS) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.set_pass_type
 
     Pass display option: show all or those in a user-specified range.
 
     :Parameters:
 
-    **passType** : :obj:`~"VEHICLE_GRAPHICS_2D_PASS"`
+    **passType** : :obj:`~VEHICLE_GRAPHICS_2D_PASS`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_pass_type_supported(self, passType:"VEHICLE_GRAPHICS_2D_PASS") -> bool
+.. py:method:: is_pass_type_supported(self, passType: VEHICLE_GRAPHICS_2D_PASS) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.is_pass_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **passType** : :obj:`~"VEHICLE_GRAPHICS_2D_PASS"`
+    **passType** : :obj:`~VEHICLE_GRAPHICS_2D_PASS`
 
     :Returns:
 

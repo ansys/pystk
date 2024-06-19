@@ -3,7 +3,7 @@ LLAGeodetic
 
 .. py:class:: LLAGeodetic
 
-   ILLAGeodetic, ILLAPosition, SupportsDeleteCallback
+   Bases: py:obj:`~ILLAGeodetic`, py:obj:`~ILLAPosition`
 
    Geodetic LLA position.
 

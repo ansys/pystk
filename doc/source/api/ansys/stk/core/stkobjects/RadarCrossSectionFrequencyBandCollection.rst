@@ -3,7 +3,7 @@ RadarCrossSectionFrequencyBandCollection
 
 .. py:class:: RadarCrossSectionFrequencyBandCollection
 
-   IRadarCrossSectionFrequencyBandCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionFrequencyBandCollection`
 
    Class defining a inheritable radar cross section frequency band collection.
 

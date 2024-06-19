@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ICompositeDisplayCondition"
+.. py:method:: initialize(self) -> ICompositeDisplayCondition
+    :canonical: ansys.stk.core.graphics.ICompositeDisplayConditionFactory.initialize
 
     Initialize an empty composite display condition.
 
     :Returns:
 
-        :obj:`~"ICompositeDisplayCondition"`
+        :obj:`~ICompositeDisplayCondition`
 

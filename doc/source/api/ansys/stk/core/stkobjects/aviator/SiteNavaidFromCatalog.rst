@@ -3,7 +3,7 @@ SiteNavaidFromCatalog
 
 .. py:class:: SiteNavaidFromCatalog
 
-   ISiteNavaidFromCatalog, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteNavaidFromCatalog`, py:obj:`~ISite`
 
    Class defining a navaid from catalog site.
 

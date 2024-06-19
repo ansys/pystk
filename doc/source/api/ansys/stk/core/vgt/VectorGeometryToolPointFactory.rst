@@ -3,7 +3,7 @@ VectorGeometryToolPointFactory
 
 .. py:class:: VectorGeometryToolPointFactory
 
-   IVectorGeometryToolPointFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointFactory`
 
    A Factory object to create points.
 

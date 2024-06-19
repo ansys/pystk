@@ -3,7 +3,7 @@ TerrainOverlay
 
 .. py:class:: TerrainOverlay
 
-   ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback
+   Bases: py:obj:`~ITerrainOverlay`, py:obj:`~IGlobeOverlay`
 
    A globe overlay which shows terrain.
 

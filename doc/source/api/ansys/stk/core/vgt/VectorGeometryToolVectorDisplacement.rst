@@ -3,7 +3,7 @@ VectorGeometryToolVectorDisplacement
 
 .. py:class:: VectorGeometryToolVectorDisplacement
 
-   IVectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorDisplacement`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Vector defined by its start and end points.
 

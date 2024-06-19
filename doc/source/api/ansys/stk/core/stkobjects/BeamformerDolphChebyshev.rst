@@ -3,7 +3,7 @@ BeamformerDolphChebyshev
 
 .. py:class:: BeamformerDolphChebyshev
 
-   IBeamformer, IBeamformerDolphChebyshev, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerDolphChebyshev`
 
    Class defining a Dolph-Chebyshev tapered beamformer.
 

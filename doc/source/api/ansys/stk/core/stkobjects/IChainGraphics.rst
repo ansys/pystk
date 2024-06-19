@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.IChainGraphics.static
-    :type: "IAgChGfxStatic"
+    :type: IAgChGfxStatic
 
     Get the chain's 2D static graphics properties.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.IChainGraphics.animation
-    :type: "IAgChGfxAnimation"
+    :type: IAgChGfxAnimation
 
     Get the chain's 3D graphics properties.
 

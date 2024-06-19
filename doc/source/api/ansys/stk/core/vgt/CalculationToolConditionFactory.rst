@@ -3,7 +3,7 @@ CalculationToolConditionFactory
 
 .. py:class:: CalculationToolConditionFactory
 
-   ICalculationToolConditionFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionFactory`
 
    The factory creates condition components.
 

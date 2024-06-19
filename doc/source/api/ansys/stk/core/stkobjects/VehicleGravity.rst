@@ -3,7 +3,7 @@ VehicleGravity
 
 .. py:class:: VehicleGravity
 
-   IVehicleGravity, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGravity`
 
    Class defining gravity modeling options for a vehicle.
 

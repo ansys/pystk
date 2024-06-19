@@ -3,7 +3,7 @@ BasicManeuverStrategyAutopilotNav
 
 .. py:class:: BasicManeuverStrategyAutopilotNav
 
-   IBasicManeuverStrategyAutopilotNav, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyAutopilotNav`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the autopilot - horizontal plane strategy for a basic maneuver procedure.
 

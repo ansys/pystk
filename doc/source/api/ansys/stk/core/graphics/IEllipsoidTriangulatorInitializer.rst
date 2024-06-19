@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: compute_simple(self, radii:list) -> "ISolidTriangulatorResult"
+.. py:method:: compute_simple(self, radii: list) -> ISolidTriangulatorResult
+    :canonical: ansys.stk.core.graphics.IEllipsoidTriangulatorInitializer.compute_simple
 
     Compute the triangulation for an ellipsoid with the specified radii, centered at the origin, using 32 slices and 16 stacks.
 
@@ -48,9 +49,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISolidTriangulatorResult"`
+        :obj:`~ISolidTriangulatorResult`
 
-.. py:method:: compute(self, radii:list, slices:int, stacks:int) -> "ISolidTriangulatorResult"
+.. py:method:: compute(self, radii: list, slices: int, stacks: int) -> ISolidTriangulatorResult
+    :canonical: ansys.stk.core.graphics.IEllipsoidTriangulatorInitializer.compute
 
     Compute the triangulation for an ellipsoid with the specified radii, centered at the origin.
 
@@ -62,5 +64,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISolidTriangulatorResult"`
+        :obj:`~ISolidTriangulatorResult`
 

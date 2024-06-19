@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DContours
 
 .. py:class:: FigureOfMeritGraphics2DContours
 
-   IFigureOfMeritGraphics2DContours, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DContours`
 
    Coverage contours.
 

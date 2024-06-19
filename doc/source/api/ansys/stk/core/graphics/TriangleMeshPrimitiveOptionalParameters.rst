@@ -3,7 +3,7 @@ TriangleMeshPrimitiveOptionalParameters
 
 .. py:class:: TriangleMeshPrimitiveOptionalParameters
 
-   ITriangleMeshPrimitiveOptionalParameters, SupportsDeleteCallback
+   Bases: py:obj:`~ITriangleMeshPrimitiveOptionalParameters`
 
    Optional parameters for triangle mesh primitive...
 

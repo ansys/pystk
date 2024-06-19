@@ -3,7 +3,7 @@ DataProviderResultTextMessage
 
 .. py:class:: DataProviderResultTextMessage
 
-   IDataProviderResultTextMessage, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResultTextMessage`
 
    Notification or failure messages returned by the data provider.
 

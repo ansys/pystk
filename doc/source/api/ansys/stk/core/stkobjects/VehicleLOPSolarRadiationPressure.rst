@@ -3,7 +3,7 @@ VehicleLOPSolarRadiationPressure
 
 .. py:class:: VehicleLOPSolarRadiationPressure
 
-   IVehicleLOPSolarRadiationPressure, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLOPSolarRadiationPressure`
 
    Class defining the solar radiation pressure model for the LOP propagator.
 

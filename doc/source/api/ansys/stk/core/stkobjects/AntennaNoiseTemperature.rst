@@ -3,7 +3,7 @@ AntennaNoiseTemperature
 
 .. py:class:: AntennaNoiseTemperature
 
-   IAntennaNoiseTemperature, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaNoiseTemperature`
 
    Class defining antenna noise temperature.
 

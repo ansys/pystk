@@ -3,7 +3,7 @@ DifferentialCorrectorControlCollection
 
 .. py:class:: DifferentialCorrectorControlCollection
 
-   IDifferentialCorrectorControlCollection, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IDifferentialCorrectorControlCollection`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The collection of Control Parameters for a differential corrector profile.
 

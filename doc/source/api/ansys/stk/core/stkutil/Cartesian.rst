@@ -3,7 +3,7 @@ Cartesian
 
 .. py:class:: Cartesian
 
-   ICartesian, IPosition, SupportsDeleteCallback
+   Bases: py:obj:`~ICartesian`, py:obj:`~IPosition`
 
    Class used to access a position using Cartesian Coordinates.
 

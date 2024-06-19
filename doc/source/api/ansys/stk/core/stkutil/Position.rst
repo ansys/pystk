@@ -3,7 +3,7 @@ Position
 
 .. py:class:: Position
 
-   ILocationData, IPosition, SupportsDeleteCallback
+   Bases: py:obj:`~ILocationData`, py:obj:`~IPosition`
 
    The Position class.
 

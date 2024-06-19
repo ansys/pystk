@@ -3,7 +3,7 @@ VehicleGraphics2DLeadTrailData
 
 .. py:class:: VehicleGraphics2DLeadTrailData
 
-   IVehicleGraphics2DLeadTrailData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DLeadTrailData`
 
    2D Graphics pass properties: lead/trail for ground tracks.
 

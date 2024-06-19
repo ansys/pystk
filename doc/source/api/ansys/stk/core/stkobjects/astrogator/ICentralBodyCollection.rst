@@ -70,7 +70,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCbName:typing.Any) -> "IAstrogatorCentralBody"
+.. py:method:: item(self, indexOrCbName: typing.Any) -> IAstrogatorCentralBody
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.item
 
     Allow you to iterate through the collection.
 
@@ -80,11 +81,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAstrogatorCentralBody"`
+        :obj:`~IAstrogatorCentralBody`
 
 
 
-.. py:method:: add(self, cbName:str) -> None
+.. py:method:: add(self, cbName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.add
 
     Add a central body to the collection.
 
@@ -96,7 +98,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.remove
 
     Remove a central body from the collection.
 
@@ -109,6 +112,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.remove_all
 
     Remove all central bodies from the collection.
 
@@ -116,7 +120,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IAstrogatorCentralBody"
+.. py:method:: get_item_by_index(self, index: int) -> IAstrogatorCentralBody
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.get_item_by_index
 
     Retrieve a central body from the collection by index.
 
@@ -126,9 +131,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAstrogatorCentralBody"`
+        :obj:`~IAstrogatorCentralBody`
 
-.. py:method:: get_item_by_name(self, cbName:str) -> "IAstrogatorCentralBody"
+.. py:method:: get_item_by_name(self, cbName: str) -> IAstrogatorCentralBody
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.get_item_by_name
 
     Retrieve a central body from the collection by name.
 
@@ -138,5 +144,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAstrogatorCentralBody"`
+        :obj:`~IAstrogatorCentralBody`
 

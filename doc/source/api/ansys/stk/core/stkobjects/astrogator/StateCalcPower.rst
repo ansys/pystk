@@ -3,7 +3,7 @@ StateCalcPower
 
 .. py:class:: StateCalcPower
 
-   IComponentInfo, ICloneable, IStateCalcPower, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcPower`
 
    Power Calc objects.
 

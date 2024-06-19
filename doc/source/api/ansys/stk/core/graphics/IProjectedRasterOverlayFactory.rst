@@ -53,17 +53,18 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: initialize(self, raster:"IRaster", projection:"IProjection") -> "IProjectedRasterOverlay"
+.. py:method:: initialize(self, raster: IRaster, projection: IProjection) -> IProjectedRasterOverlay
+    :canonical: ansys.stk.core.graphics.IProjectedRasterOverlayFactory.initialize
 
     Initialize a new instance.
 
     :Parameters:
 
-    **raster** : :obj:`~"IRaster"`
-    **projection** : :obj:`~"IProjection"`
+    **raster** : :obj:`~IRaster`
+    **projection** : :obj:`~IProjection`
 
     :Returns:
 
-        :obj:`~"IProjectedRasterOverlay"`
+        :obj:`~IProjectedRasterOverlay`
 
 

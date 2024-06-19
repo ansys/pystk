@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: planes
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DCrossSection.planes
-    :type: "IAgVmVOCrossSectionPlaneCollection"
+    :type: IAgVmVOCrossSectionPlaneCollection
 
     Access and manipulate the collection of cross section planes for Volumetric object.
 

@@ -3,7 +3,7 @@ CalculationToolSamplingBasic
 
 .. py:class:: CalculationToolSamplingBasic
 
-   ICalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolSamplingBasic`, py:obj:`~IAnalysisWorkbenchSampling`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data.
 

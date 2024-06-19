@@ -3,7 +3,7 @@ AttitudeControlFiniteFile
 
 .. py:class:: AttitudeControlFiniteFile
 
-   IAttitudeControlFiniteFile, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlFiniteFile`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The file attitude control for a finite maneuver.
 

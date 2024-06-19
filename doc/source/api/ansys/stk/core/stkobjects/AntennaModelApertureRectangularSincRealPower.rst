@@ -3,7 +3,7 @@ AntennaModelApertureRectangularSincRealPower
 
 .. py:class:: AntennaModelApertureRectangularSincRealPower
 
-   IAntennaModelApertureRectangularSincRealPower, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelApertureRectangularSincRealPower`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rectangular sinc real power aperture antenna model.
 

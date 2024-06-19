@@ -40,28 +40,31 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ITimeIntervalDisplayCondition"
+.. py:method:: initialize(self) -> ITimeIntervalDisplayCondition
+    :canonical: ansys.stk.core.graphics.ITimeIntervalDisplayConditionFactory.initialize
 
     Initialize a default time display condition. minimum time is set to JulianDate.MinValue and maximum time is set to JulianDate.MaxValue. With this interval, an object is always rendered regardless of the current animation time.
 
     :Returns:
 
-        :obj:`~"ITimeIntervalDisplayCondition"`
+        :obj:`~ITimeIntervalDisplayCondition`
 
-.. py:method:: initialize_with_times(self, minimumTime:"IDate", maximumTime:"IDate") -> "ITimeIntervalDisplayCondition"
+.. py:method:: initialize_with_times(self, minimumTime: IDate, maximumTime: IDate) -> ITimeIntervalDisplayCondition
+    :canonical: ansys.stk.core.graphics.ITimeIntervalDisplayConditionFactory.initialize_with_times
 
     Initialize a time display condition with the inclusive time interval [minimumTime, maximumTime]...
 
     :Parameters:
 
-    **minimumTime** : :obj:`~"IDate"`
-    **maximumTime** : :obj:`~"IDate"`
+    **minimumTime** : :obj:`~IDate`
+    **maximumTime** : :obj:`~IDate`
 
     :Returns:
 
-        :obj:`~"ITimeIntervalDisplayCondition"`
+        :obj:`~ITimeIntervalDisplayCondition`
 
-.. py:method:: initialize_with_time_interval(self, timeInterval:list) -> "ITimeIntervalDisplayCondition"
+.. py:method:: initialize_with_time_interval(self, timeInterval: list) -> ITimeIntervalDisplayCondition
+    :canonical: ansys.stk.core.graphics.ITimeIntervalDisplayConditionFactory.initialize_with_time_interval
 
     Initialize a time display condition with a time interval.
 
@@ -71,5 +74,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeIntervalDisplayCondition"`
+        :obj:`~ITimeIntervalDisplayCondition`
 

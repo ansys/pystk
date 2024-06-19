@@ -3,7 +3,7 @@ MissionControlSequenceInitialState
 
 .. py:class:: MissionControlSequenceInitialState
 
-   IMissionControlSequenceInitialState, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceInitialState`, py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Initial State segment.
 

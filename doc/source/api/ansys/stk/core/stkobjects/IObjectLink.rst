@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IObjectLink.type
-    :type: "STK_OBJECT_TYPE"
+    :type: STK_OBJECT_TYPE
 
     Returns STK object type.
 
 .. py:property:: linked_object
     :canonical: ansys.stk.core.stkobjects.IObjectLink.linked_object
-    :type: "IAgStkObject"
+    :type: IAgStkObject
 
     Returns the STK object associated with the instance.
 

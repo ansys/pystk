@@ -3,7 +3,7 @@ AircraftVTOL
 
 .. py:class:: AircraftVTOL
 
-   IAircraftVTOL, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftVTOL`, py:obj:`~ICatalogItem`
 
    Class defining the VTOL category of an Aviator aircraft.
 

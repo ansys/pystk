@@ -3,7 +3,7 @@ VehicleGraphics2DTrailDataFraction
 
 .. py:class:: VehicleGraphics2DTrailDataFraction
 
-   IVehicleLeadTrailData, IVehicleLeadTrailDataFraction, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLeadTrailData`, py:obj:`~IVehicleLeadTrailDataFraction`
 
    2D Graphics pass: fraction of trailing portion of vehicle track to display.
 

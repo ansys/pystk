@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: reference_axis
     :canonical: ansys.stk.core.stkobjects.IPolarizationHorizontal.reference_axis
-    :type: "POLARIZATION_REFERENCE_AXIS"
+    :type: POLARIZATION_REFERENCE_AXIS
 
     Gets or sets the polarization reference axis.
 

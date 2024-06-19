@@ -3,7 +3,7 @@ VehicleGraphics3DControlBox
 
 .. py:class:: VehicleGraphics3DControlBox
 
-   IVehicleGraphics3DControlBox, IVehicleGraphics3DProximityAreaObject, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DControlBox`, py:obj:`~IVehicleGraphics3DProximityAreaObject`
 
    Define a volume around the object that moves with the object.
 

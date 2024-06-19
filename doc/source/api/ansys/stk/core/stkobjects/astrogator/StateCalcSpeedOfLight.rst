@@ -3,7 +3,7 @@ StateCalcSpeedOfLight
 
 .. py:class:: StateCalcSpeedOfLight
 
-   IStateCalcSpeedOfLight, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcSpeedOfLight`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Speed Of Light Calc objects.
 

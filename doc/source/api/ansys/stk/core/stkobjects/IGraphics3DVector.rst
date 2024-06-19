@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: reference_crdns
     :canonical: ansys.stk.core.stkobjects.IGraphics3DVector.reference_crdns
-    :type: "IAgVORefCrdnCollection"
+    :type: IAgVORefCrdnCollection
 
     Gets a collection that manages the 3D VGT visualizations.
 

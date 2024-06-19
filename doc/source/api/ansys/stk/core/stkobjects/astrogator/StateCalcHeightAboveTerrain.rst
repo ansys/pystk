@@ -3,7 +3,7 @@ StateCalcHeightAboveTerrain
 
 .. py:class:: StateCalcHeightAboveTerrain
 
-   IStateCalcHeightAboveTerrain, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcHeightAboveTerrain`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass AsStateCalcHeightAboveTerrain.
 

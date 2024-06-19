@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_user_waypoint(self, name:str) -> "IUserWaypoint"
+.. py:method:: get_user_waypoint(self, name: str) -> IUserWaypoint
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserWaypointSource.get_user_waypoint
 
     Get the user waypoint with the given name.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserWaypoint"`
+        :obj:`~IUserWaypoint`
 
-.. py:method:: add_user_waypoint(self, name:str) -> "IUserWaypoint"
+.. py:method:: add_user_waypoint(self, name: str) -> IUserWaypoint
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserWaypointSource.add_user_waypoint
 
     Create a new user waypoint with the given name.
 
@@ -62,13 +64,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUserWaypoint"`
+        :obj:`~IUserWaypoint`
 
-.. py:method:: get_as_catalog_source(self) -> "ICatalogSource"
+.. py:method:: get_as_catalog_source(self) -> ICatalogSource
+    :canonical: ansys.stk.core.stkobjects.aviator.IUserWaypointSource.get_as_catalog_source
 
     Get the catalog source interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogSource"`
+        :obj:`~ICatalogSource`
 

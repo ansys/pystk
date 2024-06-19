@@ -3,7 +3,7 @@ VehicleLOPCentralBodyGravity
 
 .. py:class:: VehicleLOPCentralBodyGravity
 
-   IVehicleLOPCentralBodyGravity, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLOPCentralBodyGravity`
 
    Class defining gravity options for the LOP propagator.
 

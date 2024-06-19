@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneInstance
 
 .. py:class:: VehicleGraphics3DBPlaneInstance
 
-   IVehicleGraphics3DBPlaneInstance, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneInstance`
 
    An element in the IAgVeVOBPlanePointCollection.
 

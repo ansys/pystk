@@ -58,6 +58,7 @@ Method detail
 
 
 .. py:method:: get_graphics_3d_window_ids(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsSpecialElement.get_graphics_3d_window_ids
 
     Get the selected 3D Graphics window ids.
 
@@ -65,7 +66,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: set_graphics_3d_window_ids(self, windowIds:list) -> None
+.. py:method:: set_graphics_3d_window_ids(self, windowIds: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsSpecialElement.set_graphics_3d_window_ids
 
     Select the 3D Graphics window ids.
 

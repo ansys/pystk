@@ -3,7 +3,7 @@ DataProviderResultInterval
 
 .. py:class:: DataProviderResultInterval
 
-   IDataProviderResultInterval, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResultInterval`
 
    Represents a interval in the collection of intervals returned by the data providers.
 

@@ -64,7 +64,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IPropertyInfo"
+.. py:method:: item(self, indexOrName: typing.Any) -> IPropertyInfo
+    :canonical: ansys.stk.core.stkutil.IPropertyInfoCollection.item
 
     Allow the user to iterate through the properties.
 
@@ -74,11 +75,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPropertyInfo"`
+        :obj:`~IPropertyInfo`
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IPropertyInfo"
+.. py:method:: get_item_by_index(self, index: int) -> IPropertyInfo
+    :canonical: ansys.stk.core.stkutil.IPropertyInfoCollection.get_item_by_index
 
     Retrieve a property from the collection by index.
 
@@ -88,9 +90,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPropertyInfo"`
+        :obj:`~IPropertyInfo`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IPropertyInfo"
+.. py:method:: get_item_by_name(self, name: str) -> IPropertyInfo
+    :canonical: ansys.stk.core.stkutil.IPropertyInfoCollection.get_item_by_name
 
     Retrieve a property from the collection by name.
 
@@ -100,5 +103,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPropertyInfo"`
+        :obj:`~IPropertyInfo`
 

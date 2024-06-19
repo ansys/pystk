@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataPercentLevel
 
 .. py:class:: FigureOfMeritDefinitionDataPercentLevel
 
-   IFigureOfMeritDefinitionDataPercentLevel, IFigureOfMeritDefinitionData, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionDataPercentLevel`, py:obj:`~IFigureOfMeritDefinitionData`
 
    Specified percent level for the 'percent below' Navigation Accuracy compute option.
 

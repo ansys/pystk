@@ -11,6 +11,21 @@ IV_CLOCK_HOST
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~BASE`
+              - Base: Refers to the object from which access is being computed.
+
+            * - :py:attr:`~TARGET`
+              - Target: Refers to an object to which access is being computed.
+
+
 Import detail
 -------------
 

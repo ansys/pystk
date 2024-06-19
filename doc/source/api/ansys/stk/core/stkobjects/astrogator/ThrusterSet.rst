@@ -3,7 +3,7 @@ ThrusterSet
 
 .. py:class:: ThrusterSet
 
-   IThrusterSet, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IThrusterSet`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Thruster Set.
 

@@ -42,7 +42,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_path(self, path:str) -> None
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointRefTo.set_path
 
     Set a new point.
 
@@ -54,33 +55,36 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_point(self, point:"IVectorGeometryToolPoint") -> None
+.. py:method:: set_point(self, point: IVectorGeometryToolPoint) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointRefTo.set_point
 
     Set a new point.
 
     :Parameters:
 
-    **point** : :obj:`~"IVectorGeometryToolPoint"`
+    **point** : :obj:`~IVectorGeometryToolPoint`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_point(self) -> "IVectorGeometryToolPoint"
+.. py:method:: get_point(self) -> IVectorGeometryToolPoint
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointRefTo.get_point
 
     Return the actual point object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPoint"`
+        :obj:`~IVectorGeometryToolPoint`
 
-.. py:method:: has_cyclic_dependency(self, point:"IVectorGeometryToolPoint") -> bool
+.. py:method:: has_cyclic_dependency(self, point: IVectorGeometryToolPoint) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointRefTo.has_cyclic_dependency
 
     Test whether the input component and the target component form a cyclic dependency.
 
     :Parameters:
 
-    **point** : :obj:`~"IVectorGeometryToolPoint"`
+    **point** : :obj:`~IVectorGeometryToolPoint`
 
     :Returns:
 

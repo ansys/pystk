@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: style
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics2DLine.style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Select the style of the line between track points.
 
 .. py:property:: width
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics2DLine.width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Select the width of the line between track points.
 

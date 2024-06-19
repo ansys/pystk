@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: trending_controls
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileAviator.trending_controls
-    :type: "IAgVeAttTrendControlAviator"
+    :type: IAgVeAttTrendControlAviator
 
     Get the attitude trending controls.
 

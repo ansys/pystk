@@ -3,7 +3,7 @@ DataProviderResultSubSection
 
 .. py:class:: DataProviderResultSubSection
 
-   IDataProviderResultSubSection, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderResultSubSection`
 
    Represents a subsection in the data returned by the data providers.
 

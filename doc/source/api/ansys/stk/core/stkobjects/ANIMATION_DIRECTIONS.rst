@@ -11,6 +11,24 @@ ANIMATION_DIRECTIONS
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~NON_AVAIL`
+              - Not available.
+
+            * - :py:attr:`~FORWARD`
+              - Forward.
+
+            * - :py:attr:`~BACKWARD`
+              - Backward.
+
+
 Import detail
 -------------
 

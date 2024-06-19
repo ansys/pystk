@@ -3,7 +3,7 @@ Subset
 
 .. py:class:: Subset
 
-   ISubset, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~ISubset`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    The AgSubset class.
 

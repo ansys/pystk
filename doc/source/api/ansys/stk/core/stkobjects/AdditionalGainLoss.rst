@@ -3,7 +3,7 @@ AdditionalGainLoss
 
 .. py:class:: AdditionalGainLoss
 
-   IAdditionalGainLoss, SupportsDeleteCallback
+   Bases: py:obj:`~IAdditionalGainLoss`
 
    Class defining additional gains and losses.
 

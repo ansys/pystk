@@ -3,7 +3,7 @@ PathPoint
 
 .. py:class:: PathPoint
 
-   IPathPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IPathPoint`
 
    Represents a path point used in conjunction with the Path Primitive.
 

@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: rotational
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffset.rotational
-    :type: "IAgVOOffsetRotate"
+    :type: IAgVOOffsetRotate
 
     Returns the rotational offset attributes.
 
 .. py:property:: translational
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffset.translational
-    :type: "IAgVOOffsetTrans"
+    :type: IAgVOOffsetTrans
 
     Returns the translational offset attributes.
 
 .. py:property:: label
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffset.label
-    :type: "IAgVOOffsetLabel"
+    :type: IAgVOOffsetLabel
 
     Returns the label offset attributes.
 
 .. py:property:: attach_point
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffset.attach_point
-    :type: "IAgVOOffsetAttach"
+    :type: IAgVOOffsetAttach
 
     Returns the attach point offset attributes.
 

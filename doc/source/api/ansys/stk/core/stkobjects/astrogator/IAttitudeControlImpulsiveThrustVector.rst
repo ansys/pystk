@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.body_constraint_vector
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: coord_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.coord_type
-    :type: "IMP_DELTA_V_REP"
+    :type: IMP_DELTA_V_REP
 
     Gets or sets the coordinate representation for the DeltaV.
 
@@ -141,7 +141,8 @@ Method detail
 
 
 
-.. py:method:: assign_cartesian(self, xVal:float, yVal:float, zVal:float) -> None
+.. py:method:: assign_cartesian(self, xVal: float, yVal: float, zVal: float) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.assign_cartesian
 
     Assign all three Cartesian components of the DeltaV vector (dimension: SmallDistance/Time).
 
@@ -156,6 +157,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: query_cartesian(self) -> list
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.query_cartesian
 
     Get all three Cartesian components of the DeltaV vector as an array (dimension: SmallDistance/Time).
 
@@ -163,7 +165,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: assign_spherical(self, azVal:typing.Any, elVal:typing.Any, magVal:float) -> None
+.. py:method:: assign_spherical(self, azVal: typing.Any, elVal: typing.Any, magVal: float) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.assign_spherical
 
     Assign all three spherical components of the DeltaV vector (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time).
 
@@ -178,6 +181,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: query_spherical(self) -> list
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.query_spherical
 
     Get all three spherical components of the DeltaV vector as an array (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time).
 

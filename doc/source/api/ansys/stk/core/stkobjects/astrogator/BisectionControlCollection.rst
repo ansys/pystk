@@ -3,7 +3,7 @@ BisectionControlCollection
 
 .. py:class:: BisectionControlCollection
 
-   IBisectionControlCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IBisectionControlCollection`
 
    Bisection control collection.
 

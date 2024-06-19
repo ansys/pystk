@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: points
     :canonical: ansys.stk.core.stkobjects.IMtoTrack.points
-    :type: "IAgMtoTrackPointCollection"
+    :type: IAgMtoTrackPointCollection
 
     Get the collection of MTO track points.
 

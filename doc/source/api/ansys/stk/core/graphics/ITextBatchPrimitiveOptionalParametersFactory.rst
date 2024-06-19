@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ITextBatchPrimitiveOptionalParameters"
+.. py:method:: initialize(self) -> ITextBatchPrimitiveOptionalParameters
+    :canonical: ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParametersFactory.initialize
 
     Initialize default text batch primitive optional parameters.
 
     :Returns:
 
-        :obj:`~"ITextBatchPrimitiveOptionalParameters"`
+        :obj:`~ITextBatchPrimitiveOptionalParameters`
 

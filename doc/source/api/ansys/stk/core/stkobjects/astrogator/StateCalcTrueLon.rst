@@ -3,7 +3,7 @@ StateCalcTrueLon
 
 .. py:class:: StateCalcTrueLon
 
-   IComponentInfo, ICloneable, IStateCalcTrueLon, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTrueLon`
 
    TrueLong Calc objects.
 

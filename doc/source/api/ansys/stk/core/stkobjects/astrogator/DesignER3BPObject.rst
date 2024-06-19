@@ -3,7 +3,7 @@ DesignER3BPObject
 
 .. py:class:: DesignER3BPObject
 
-   IDesignER3BPObject, SupportsDeleteCallback
+   Bases: py:obj:`~IDesignER3BPObject`
 
    ER3BP associated object definition.
 

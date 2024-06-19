@@ -3,7 +3,7 @@ OrbitStateSpherical
 
 .. py:class:: OrbitStateSpherical
 
-   IOrbitStateSpherical, IOrbitState, SupportsDeleteCallback
+   Bases: py:obj:`~IOrbitStateSpherical`, py:obj:`~IOrbitState`
 
    Spherical coordinate type: defines the path of an orbit using polar coordinates.
 

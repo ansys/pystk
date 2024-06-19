@@ -3,7 +3,7 @@ LineTargetPoint
 
 .. py:class:: LineTargetPoint
 
-   ILineTargetPoint, SupportsDeleteCallback
+   Bases: py:obj:`~ILineTargetPoint`
 
    Line Target Point.
 

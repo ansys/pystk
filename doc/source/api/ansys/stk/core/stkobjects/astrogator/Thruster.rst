@@ -3,7 +3,7 @@ Thruster
 
 .. py:class:: Thruster
 
-   IThruster, SupportsDeleteCallback
+   Bases: py:obj:`~IThruster`
 
    Thruster definition.
 

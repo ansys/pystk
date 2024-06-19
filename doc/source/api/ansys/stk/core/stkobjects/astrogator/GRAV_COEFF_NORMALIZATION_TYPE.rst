@@ -11,6 +11,21 @@ GRAV_COEFF_NORMALIZATION_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~NORMALIZED`
+              - Normalized.
+
+            * - :py:attr:`~UNNORMALIZED`
+              - Unnormalized.
+
+
 Import detail
 -------------
 

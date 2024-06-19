@@ -61,13 +61,13 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadar.model
-    :type: "IAgRadarModel"
+    :type: IAgRadarModel
 
     Gets the current radar model.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.IRadar.refraction
-    :type: "SENSOR_REFRACTION_TYPE"
+    :type: SENSOR_REFRACTION_TYPE
 
     Refraction method, a member of the AgESnRefractionType enumeration.
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.IRadar.refraction_model
-    :type: "IAgRfModelBase"
+    :type: IAgRfModelBase
 
     Gets a refraction model.
 
@@ -91,19 +91,19 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IRadar.graphics_3d
-    :type: "IAgRadarVO"
+    :type: IAgRadarVO
 
     Get the 3D Graphics properties for the radar.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IRadar.graphics
-    :type: "IAgRadarGraphics"
+    :type: IAgRadarGraphics
 
     Get the 2D Graphics properties for the radar.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IRadar.rf_environment
-    :type: "IAgObjectRFEnvironment"
+    :type: IAgObjectRFEnvironment
 
     Gets the object RF Environment settings.
 
@@ -112,7 +112,8 @@ Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName:str) -> None
+.. py:method:: set_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadar.set_model
 
     Set the current radar model by name.
 
@@ -127,13 +128,14 @@ Method detail
 
 
 
-.. py:method:: is_refraction_type_supported(self, model:"SENSOR_REFRACTION_TYPE") -> bool
+.. py:method:: is_refraction_type_supported(self, model: SENSOR_REFRACTION_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IRadar.is_refraction_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **model** : :obj:`~"SENSOR_REFRACTION_TYPE"`
+    **model** : :obj:`~SENSOR_REFRACTION_TYPE`
 
     :Returns:
 

@@ -3,7 +3,7 @@ DurationPathPrimitiveUpdatePolicyFactory
 
 .. py:class:: DurationPathPrimitiveUpdatePolicyFactory
 
-   IDurationPathPrimitiveUpdatePolicyFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IDurationPathPrimitiveUpdatePolicyFactory`
 
    path primitive update policy that removes points from remove location after a given duration.
 

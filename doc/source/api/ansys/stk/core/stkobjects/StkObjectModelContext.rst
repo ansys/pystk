@@ -3,7 +3,7 @@ StkObjectModelContext
 
 .. py:class:: StkObjectModelContext
 
-   IStkObjectModelContext, SupportsDeleteCallback
+   Bases: py:obj:`~IStkObjectModelContext`
 
    AgStkObjectModelContext class provides methods to create instance of AgStkObjectRoot class.
 

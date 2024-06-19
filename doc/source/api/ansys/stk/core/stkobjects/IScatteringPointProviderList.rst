@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderList.type
-    :type: "SCATTERING_POINT_PROVIDER_LIST_TYPE"
+    :type: SCATTERING_POINT_PROVIDER_LIST_TYPE
 
     Gets the scattering point provider list type enumeration.
 
 .. py:property:: point_providers
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderList.point_providers
-    :type: "IAgScatteringPointProviderCollection"
+    :type: IAgScatteringPointProviderCollection
 
     Gets the scattering point provider list collection.
 

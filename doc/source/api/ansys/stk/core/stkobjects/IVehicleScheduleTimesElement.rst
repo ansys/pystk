@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: target
     :canonical: ansys.stk.core.stkobjects.IVehicleScheduleTimesElement.target
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the target.
 

@@ -3,7 +3,7 @@ StateCalcRAAN
 
 .. py:class:: StateCalcRAAN
 
-   IComponentInfo, ICloneable, IStateCalcRAAN, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRAAN`
 
    RAAN Calc objects.
 

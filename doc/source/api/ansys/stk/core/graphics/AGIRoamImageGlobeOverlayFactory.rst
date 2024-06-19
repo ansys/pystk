@@ -3,7 +3,7 @@ AGIRoamImageGlobeOverlayFactory
 
 .. py:class:: AGIRoamImageGlobeOverlayFactory
 
-   IAGIRoamImageGlobeOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IAGIRoamImageGlobeOverlayFactory`
 
    A globe image overlay for handling ROAM (TXM/TXB) files.
 

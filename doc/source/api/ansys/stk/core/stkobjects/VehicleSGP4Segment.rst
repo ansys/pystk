@@ -3,7 +3,7 @@ VehicleSGP4Segment
 
 .. py:class:: VehicleSGP4Segment
 
-   IVehicleSGP4Segment, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4Segment`
 
    SGP4 propagator segment.
 

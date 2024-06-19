@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IModelArticulation"
+.. py:method:: item(self, index: int) -> IModelArticulation
+    :canonical: ansys.stk.core.graphics.IModelArticulationCollection.item
 
     Get the articulation at the given index. The index is zero-based.
 
@@ -77,21 +78,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IModelArticulation"`
+        :obj:`~IModelArticulation`
 
-.. py:method:: get_item_by_string(self, name:str) -> "IModelArticulation"
-
-    Get an articulation by name.
-
-    :Parameters:
-
-    **name** : :obj:`~str`
-
-    :Returns:
-
-        :obj:`~"IModelArticulation"`
-
-.. py:method:: get_by_name(self, name:str) -> "IModelArticulation"
+.. py:method:: get_item_by_string(self, name: str) -> IModelArticulation
+    :canonical: ansys.stk.core.graphics.IModelArticulationCollection.get_item_by_string
 
     Get an articulation by name.
 
@@ -101,9 +91,23 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IModelArticulation"`
+        :obj:`~IModelArticulation`
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: get_by_name(self, name: str) -> IModelArticulation
+    :canonical: ansys.stk.core.graphics.IModelArticulationCollection.get_by_name
+
+    Get an articulation by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~IModelArticulation`
+
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.graphics.IModelArticulationCollection.contains
 
     Return true if the collection contains the articulation.
 

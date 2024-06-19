@@ -11,6 +11,21 @@ PREDICTOR_CORRECTOR
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~FULL`
+              - All force models are re-evaluated at each corrector step.
+
+            * - :py:attr:`~PSEUDO`
+              - Only the two-body acceleration is re-evaluated at each corrector step.
+
+
 Import detail
 -------------
 

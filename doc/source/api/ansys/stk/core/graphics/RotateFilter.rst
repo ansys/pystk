@@ -3,7 +3,7 @@ RotateFilter
 
 .. py:class:: RotateFilter
 
-   IRotateFilter, IRasterFilter, SupportsDeleteCallback
+   Bases: py:obj:`~IRotateFilter`, py:obj:`~IRasterFilter`
 
    Rotate the source raster clockwise by the specified angle.
 

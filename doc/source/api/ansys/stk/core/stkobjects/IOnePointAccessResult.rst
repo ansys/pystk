@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.IOnePointAccessResult.constraints
-    :type: "IAgOnePtAccessConstraintCollection"
+    :type: IAgOnePtAccessConstraintCollection
 
     List of constraints evaluated at this time.
 

@@ -3,7 +3,7 @@ SRPTabAreaVec
 
 .. py:class:: SRPTabAreaVec
 
-   ISRPTabAreaVec, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPTabAreaVec`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Tabulated area vector SRP propagator function.
 

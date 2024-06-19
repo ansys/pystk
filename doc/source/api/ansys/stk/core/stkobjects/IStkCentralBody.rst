@@ -45,13 +45,13 @@ Property detail
 
 .. py:property:: ellipsoid
     :canonical: ansys.stk.core.stkobjects.IStkCentralBody.ellipsoid
-    :type: "IAgStkCentralBodyEllipsoid"
+    :type: IAgStkCentralBodyEllipsoid
 
     The central body ellipsoid.
 
 .. py:property:: vgt
     :canonical: ansys.stk.core.stkobjects.IStkCentralBody.vgt
-    :type: "IAgCrdnProvider"
+    :type: IAgCrdnProvider
 
     Returns the central body's Vector Geometry Tool provider.
 

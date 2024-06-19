@@ -3,7 +3,7 @@ Aircraft
 
 .. py:class:: Aircraft
 
-   IAircraft, IStkObject, ILifetimeInformation, IGreatArcVehicle, IProvideSpatialInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraft`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IGreatArcVehicle`, py:obj:`~IProvideSpatialInfo`
 
    Aircraft object.
 

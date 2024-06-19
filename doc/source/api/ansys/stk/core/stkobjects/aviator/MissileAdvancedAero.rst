@@ -3,7 +3,7 @@ MissileAdvancedAero
 
 .. py:class:: MissileAdvancedAero
 
-   IMissileAdvancedAero, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileAdvancedAero`
 
    Class defining the advanced aerodynamic options for a missile.
 

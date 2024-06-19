@@ -51,37 +51,37 @@ Property detail
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.definition
-    :type: "IAgVeDefinition"
+    :type: IAgVeDefinition
 
     Get the break angle type and, in the case of latitude, the direction at latitiude crossing.
 
 .. py:property:: partial_pass_measurement
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.partial_pass_measurement
-    :type: "VEHICLE_PARTIAL_PASS_MEASUREMENT"
+    :type: VEHICLE_PARTIAL_PASS_MEASUREMENT
 
     Gets or sets the method for calculating partial passes.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.coordinate_system
-    :type: "VEHICLE_COORDINATE_SYSTEM"
+    :type: VEHICLE_COORDINATE_SYSTEM
 
     Gets or sets the coordinate system in which latitude and longitude are to be measured.
 
 .. py:property:: repeat_ground_track_numbering
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.repeat_ground_track_numbering
-    :type: "IAgVeRepeatGroundTrackNumbering"
+    :type: IAgVeRepeatGroundTrackNumbering
 
     Get data on repeat ground track numbering.
 
 .. py:property:: pass_numbering_type
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.pass_numbering_type
-    :type: "VEHICLE_PASS_NUMBERING"
+    :type: VEHICLE_PASS_NUMBERING
 
     Get the criterion for pass numbering.
 
 .. py:property:: pass_numbering
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.pass_numbering
-    :type: "IAgVePassNumbering"
+    :type: IAgVePassNumbering
 
     Get pass numbering data.
 
@@ -102,13 +102,14 @@ Method detail
 
 
 
-.. py:method:: set_pass_numbering_type(self, passNumbering:"VEHICLE_PASS_NUMBERING") -> None
+.. py:method:: set_pass_numbering_type(self, passNumbering: VEHICLE_PASS_NUMBERING) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.set_pass_numbering_type
 
     Set the pass number corresponding to the initial conditions of the satellite.
 
     :Parameters:
 
-    **passNumbering** : :obj:`~"VEHICLE_PASS_NUMBERING"`
+    **passNumbering** : :obj:`~VEHICLE_PASS_NUMBERING`
 
     :Returns:
 

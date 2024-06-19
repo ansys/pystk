@@ -3,7 +3,7 @@ ElementTargetVectorIncomingAsymptote
 
 .. py:class:: ElementTargetVectorIncomingAsymptote
 
-   IElementTargetVectorIncomingAsymptote, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementTargetVectorIncomingAsymptote`, py:obj:`~IElement`
 
    Target Vector Incoming Asymptote elements.
 

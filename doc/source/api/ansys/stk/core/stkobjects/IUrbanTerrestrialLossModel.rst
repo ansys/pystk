@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel.type
-    :type: "URBAN_TERRESTRIAL_LOSS_MODEL_TYPE"
+    :type: URBAN_TERRESTRIAL_LOSS_MODEL_TYPE
 
     Gets the Urban Terrestrial loss model type enumeration.
 

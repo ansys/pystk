@@ -68,7 +68,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ICelestialBodyInfo"
+.. py:method:: item(self, index: int) -> ICelestialBodyInfo
+    :canonical: ansys.stk.core.stkobjects.ICelestialBodyCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -78,7 +79,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICelestialBodyInfo"`
+        :obj:`~ICelestialBodyInfo`
 
 
 

@@ -69,31 +69,34 @@ Method detail
 
 
 
-.. py:method:: add(self, filter:"IRasterFilter") -> None
+.. py:method:: add(self, filter: IRasterFilter) -> None
+    :canonical: ansys.stk.core.graphics.ISequenceFilter.add
 
     Add a filter to the sequence.
 
     :Parameters:
 
-    **filter** : :obj:`~"IRasterFilter"`
+    **filter** : :obj:`~IRasterFilter`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, filter:"IRasterFilter") -> None
+.. py:method:: remove(self, filter: IRasterFilter) -> None
+    :canonical: ansys.stk.core.graphics.ISequenceFilter.remove
 
     Remove a filter from the sequence.
 
     :Parameters:
 
-    **filter** : :obj:`~"IRasterFilter"`
+    **filter** : :obj:`~IRasterFilter`
 
     :Returns:
 
         :obj:`~None`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.ISequenceFilter.clear
 
     Clear all filters from the sequence.
 
@@ -101,13 +104,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: contains(self, filter:"IRasterFilter") -> bool
+.. py:method:: contains(self, filter: IRasterFilter) -> bool
+    :canonical: ansys.stk.core.graphics.ISequenceFilter.contains
 
     Return true if the sequence contains the filter.
 
     :Parameters:
 
-    **filter** : :obj:`~"IRasterFilter"`
+    **filter** : :obj:`~IRasterFilter`
 
     :Returns:
 

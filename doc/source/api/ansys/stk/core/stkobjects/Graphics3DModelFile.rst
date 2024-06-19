@@ -3,7 +3,7 @@ Graphics3DModelFile
 
 .. py:class:: Graphics3DModelFile
 
-   IGraphics3DModelData, IGraphics3DModelFile, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DModelData`, py:obj:`~IGraphics3DModelFile`
 
    Class defining 3D model file.
 

@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: graphics_2d_attributes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DInterval.graphics_2d_attributes
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Get the 2D Graphics attributes for the interval.
 

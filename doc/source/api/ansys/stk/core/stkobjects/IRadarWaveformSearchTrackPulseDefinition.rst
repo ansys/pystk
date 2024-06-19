@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: prf_mode
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformSearchTrackPulseDefinition.prf_mode
-    :type: "RADAR_SEARCH_TRACK_PRF_MODE"
+    :type: RADAR_SEARCH_TRACK_PRF_MODE
 
     Gets or sets the prf mode enumeration.
 
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: pulse_width_mode
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformSearchTrackPulseDefinition.pulse_width_mode
-    :type: "RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE"
+    :type: RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE
 
     Gets or sets the pulse width mode enumeration.
 

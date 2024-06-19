@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: pressure_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.pressure_mode
-    :type: "PRESSURE_MODE"
+    :type: PRESSURE_MODE
 
     Gets or sets the pressure mode.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: thrust_efficiency_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.thrust_efficiency_mode
-    :type: "THRUST_TYPE"
+    :type: THRUST_TYPE
 
     Thrust - the calculations that are effected by the thrust efficiency value.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: seed_method
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.seed_method
-    :type: "OPTIMAL_FINITE_SEED_METHOD"
+    :type: OPTIMAL_FINITE_SEED_METHOD
 
     Initial seed method.
 
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: run_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.run_mode
-    :type: "OPTIMAL_FINITE_RUN_MODE"
+    :type: OPTIMAL_FINITE_RUN_MODE
 
     Run mode.
 
@@ -123,19 +123,19 @@ Property detail
 
 .. py:property:: discretization_strategy
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.discretization_strategy
-    :type: "OPTIMAL_FINITE_DISCRETIZATION_STRATEGY"
+    :type: OPTIMAL_FINITE_DISCRETIZATION_STRATEGY
 
     Discretization Strategy.
 
 .. py:property:: working_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.working_variables
-    :type: "OPTIMAL_FINITE_WORKING_VARIABLES"
+    :type: OPTIMAL_FINITE_WORKING_VARIABLES
 
     Working Variables.
 
 .. py:property:: scaling_options
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.scaling_options
-    :type: "OPTIMAL_FINITE_SCALING_OPTIONS"
+    :type: OPTIMAL_FINITE_SCALING_OPTIONS
 
     Scaling Options.
 
@@ -153,25 +153,25 @@ Property detail
 
 .. py:property:: snopt_optimizer
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.snopt_optimizer
-    :type: "IAgVAManeuverOptimalFiniteSNOPTOptimizer"
+    :type: IAgVAManeuverOptimalFiniteSNOPTOptimizer
 
     SNOPT Optimizer Options.
 
 .. py:property:: initial_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_boundary_conditions
-    :type: "IAgVAManeuverOptimalFiniteInitialBoundaryConditions"
+    :type: IAgVAManeuverOptimalFiniteInitialBoundaryConditions
 
     Initial Boundary Conditions.
 
 .. py:property:: final_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.final_boundary_conditions
-    :type: "IAgVAManeuverOptimalFiniteFinalBoundaryConditions"
+    :type: IAgVAManeuverOptimalFiniteFinalBoundaryConditions
 
     Final Boundary Conditions.
 
 .. py:property:: path_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.path_boundary_conditions
-    :type: "IAgVAManeuverOptimalFinitePathBoundaryConditions"
+    :type: IAgVAManeuverOptimalFinitePathBoundaryConditions
 
     Path Boundary Conditions.
 
@@ -183,19 +183,19 @@ Property detail
 
 .. py:property:: export_format
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.export_format
-    :type: "OPTIMAL_FINITE_EXPORT_NODES_FORMAT"
+    :type: OPTIMAL_FINITE_EXPORT_NODES_FORMAT
 
     Format for exporting collocation control variables.
 
 .. py:property:: steering_nodes
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.steering_nodes
-    :type: "IAgVAManeuverOptimalFiniteSteeringNodeCollection"
+    :type: IAgVAManeuverOptimalFiniteSteeringNodeCollection
 
     Get the list of steering nodes.
 
 .. py:property:: initial_guess_interpolation_method
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_guess_interpolation_method
-    :type: "OPTIMAL_FINITE_GUESS_METHOD"
+    :type: OPTIMAL_FINITE_GUESS_METHOD
 
     Guess interpolation method.
 
@@ -222,6 +222,7 @@ Method detail
 
 
 .. py:method:: run_seed(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.run_seed
 
     Run seed.
 
@@ -251,7 +252,8 @@ Method detail
 
 
 
-.. py:method:: export_nodes(self, fileName:str) -> None
+.. py:method:: export_nodes(self, fileName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.export_nodes
 
     Export the current set of collocation nodes to a file.
 

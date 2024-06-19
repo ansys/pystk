@@ -60,13 +60,13 @@ Property detail
 
 .. py:property:: available_units
     :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimension.available_units
-    :type: "IAgUnitPrefsUnitCollection"
+    :type: IAgUnitPrefsUnitCollection
 
     Returns collection of Units.
 
 .. py:property:: current_unit
     :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimension.current_unit
-    :type: "IAgUnitPrefsUnit"
+    :type: IAgUnitPrefsUnit
 
     Returns the current unit for this dimension.
 
@@ -78,7 +78,8 @@ Method detail
 
 
 
-.. py:method:: set_current_unit(self, unitAbbrv:str) -> None
+.. py:method:: set_current_unit(self, unitAbbrv: str) -> None
+    :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimension.set_current_unit
 
     Set the Unit for this simple dimension.
 

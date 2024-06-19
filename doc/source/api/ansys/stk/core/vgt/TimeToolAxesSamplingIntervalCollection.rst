@@ -3,7 +3,7 @@ TimeToolAxesSamplingIntervalCollection
 
 .. py:class:: TimeToolAxesSamplingIntervalCollection
 
-   ITimeToolAxesSamplingIntervalCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolAxesSamplingIntervalCollection`
 
    A collection of intervals where each interval contains the time, orientation and velocity arrays.
 

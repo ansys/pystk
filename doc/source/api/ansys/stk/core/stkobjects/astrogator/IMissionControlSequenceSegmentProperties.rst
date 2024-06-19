@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: b_planes
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.b_planes
-    :type: "IAgVABPlaneCollection"
+    :type: IAgVABPlaneCollection
 
     Get the B-Plane or B-Planes to which the epoch, position, and velocity of the segment's final state will be applied, according to the B-Plane's definition.
 
 .. py:property:: last_run_code
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.last_run_code
-    :type: "RUN_CODE"
+    :type: RUN_CODE
 
     Get the last run code returned by the segment.
 
@@ -88,6 +88,7 @@ Method detail
 
 
 .. py:method:: apply_final_state_to_b_planes(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.apply_final_state_to_b_planes
 
     Apply the last calculated final state of the segment to all selected B-Planes.
 

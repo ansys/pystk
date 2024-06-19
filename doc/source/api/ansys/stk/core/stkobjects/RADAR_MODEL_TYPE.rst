@@ -11,6 +11,30 @@ RADAR_MODEL_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNKNOWN`
+              - Unknown radar system type.
+
+            * - :py:attr:`~MONOSTATIC`
+              - Monostatic radar system.
+
+            * - :py:attr:`~BISTATIC_TRANSMITTER`
+              - Bistatic transmitter radar system.
+
+            * - :py:attr:`~BISTATIC_RECEIVER`
+              - Bistatic receiver radar system.
+
+            * - :py:attr:`~MULTIFUNCTION`
+              - Multtifunction radar system.
+
+
 Import detail
 -------------
 

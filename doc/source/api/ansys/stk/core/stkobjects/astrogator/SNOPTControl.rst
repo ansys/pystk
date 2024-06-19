@@ -3,7 +3,7 @@ SNOPTControl
 
 .. py:class:: SNOPTControl
 
-   ISNOPTControl, SupportsDeleteCallback
+   Bases: py:obj:`~ISNOPTControl`
 
    Control parameters for SNOPT optimizer profile.
 

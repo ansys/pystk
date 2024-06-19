@@ -3,7 +3,7 @@ RFFilterModelExternal
 
 .. py:class:: RFFilterModelExternal
 
-   IRFFilterModelExternal, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelExternal`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a external filter model.
 

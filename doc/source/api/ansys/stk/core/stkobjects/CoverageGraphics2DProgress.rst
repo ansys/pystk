@@ -3,7 +3,7 @@ CoverageGraphics2DProgress
 
 .. py:class:: CoverageGraphics2DProgress
 
-   ICoverageGraphics2DProgress, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageGraphics2DProgress`
 
    Progress graphics for access calculations.
 

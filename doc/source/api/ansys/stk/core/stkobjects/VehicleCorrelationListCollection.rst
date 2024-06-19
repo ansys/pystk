@@ -3,7 +3,7 @@ VehicleCorrelationListCollection
 
 .. py:class:: VehicleCorrelationListCollection
 
-   IVehicleCorrelationListCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleCorrelationListCollection`
 
    Collection representing HPOP covariance matrix.
 

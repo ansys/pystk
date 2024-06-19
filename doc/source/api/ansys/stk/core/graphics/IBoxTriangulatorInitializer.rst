@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: compute(self, size:list) -> "ISolidTriangulatorResult"
+.. py:method:: compute(self, size: list) -> ISolidTriangulatorResult
+    :canonical: ansys.stk.core.graphics.IBoxTriangulatorInitializer.compute
 
     Compute the triangulation for a box of the specified size, centered at the origin.
 
@@ -46,5 +47,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISolidTriangulatorResult"`
+        :obj:`~ISolidTriangulatorResult`
 

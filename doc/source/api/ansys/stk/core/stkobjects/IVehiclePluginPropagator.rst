@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: plugin_settings
     :canonical: ansys.stk.core.stkobjects.IVehiclePluginPropagator.plugin_settings
-    :type: "IAgVePluginSettings"
+    :type: IAgVePluginSettings
 
     Get the parameters of the selected plugin.
 
@@ -82,6 +82,7 @@ Method detail
 
 
 .. py:method:: get_raw_plugin_object(self) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.IVehiclePluginPropagator.get_raw_plugin_object
 
     Get a raw pointer to the instance of the plugin.
 
@@ -90,6 +91,7 @@ Method detail
         :obj:`~typing.Any`
 
 .. py:method:: apply_plugin_changes(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehiclePluginPropagator.apply_plugin_changes
 
     Apply the changes made to the plugin's configuration.
 

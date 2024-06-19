@@ -3,7 +3,7 @@ AircraftAdvancedClimbModel
 
 .. py:class:: AircraftAdvancedClimbModel
 
-   IAircraftAdvancedClimbModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftAdvancedClimbModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the advanced climb performance model for an Aviator aircraft.
 

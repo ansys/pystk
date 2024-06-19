@@ -52,19 +52,19 @@ Property detail
 
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPNPlate.shadow_model
-    :type: "SHADOW_MODEL"
+    :type: SHADOW_MODEL
 
     Gets or sets the shadow model type.
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPNPlate.sun_position
-    :type: "SUN_POSITION"
+    :type: SUN_POSITION
 
     Gets or sets the sun position computation.
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPNPlate.eclipsing_bodies
-    :type: "IAgVACentralBodyCollection"
+    :type: IAgVACentralBodyCollection
 
     Other eclipsing bodies.
 
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: solar_force_method
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPNPlate.solar_force_method
-    :type: "SOLAR_FORCE_METHOD"
+    :type: SOLAR_FORCE_METHOD
 
     Gets or sets the solar force method.
 

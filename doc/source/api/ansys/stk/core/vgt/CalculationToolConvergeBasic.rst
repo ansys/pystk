@@ -3,7 +3,7 @@ CalculationToolConvergeBasic
 
 .. py:class:: CalculationToolConvergeBasic
 
-   ICalculationToolConvergeBasic, IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConvergeBasic`, py:obj:`~IAnalysisWorkbenchConverge`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations.
 

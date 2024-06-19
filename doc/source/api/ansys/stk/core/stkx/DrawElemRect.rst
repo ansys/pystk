@@ -3,7 +3,7 @@ DrawElemRect
 
 .. py:class:: DrawElemRect
 
-   IDrawElemRect, SupportsDeleteCallback
+   Bases: py:obj:`~IDrawElemRect`
 
    Define a rectangle in window coordinates.
 

@@ -10,6 +10,8 @@ Summary
 -------
 
 .. tab-set::
+
+ 
     .. tab-item:: Interfaces
 
         .. list-table::
@@ -104,33 +106,33 @@ Detail
     :maxdepth: 1
     :hidden:
 
-     IUiToolbar<uicore\IUiToolbar>
-     IUiToolbarCollection<uicore\IUiToolbarCollection>
-     IUiWindow<uicore\IUiWindow>
-     IUiWindowsCollection<uicore\IUiWindowsCollection>
-     IUiWindowMapObject<uicore\IUiWindowMapObject>
-     IUiWindowGlobeObject<uicore\IUiWindowGlobeObject>
+     IUiToolbar<uicore/IUiToolbar>
+     IUiToolbarCollection<uicore/IUiToolbarCollection>
+     IUiWindow<uicore/IUiWindow>
+     IUiWindowsCollection<uicore/IUiWindowsCollection>
+     IUiWindowMapObject<uicore/IUiWindowMapObject>
+     IUiWindowGlobeObject<uicore/IUiWindowGlobeObject>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-     UiWindowsCollection<uicore\UiWindowsCollection>
-     UiWindow<uicore\UiWindow>
-     UiToolbar<uicore\UiToolbar>
-     UiToolbarCollection<uicore\UiToolbarCollection>
-     UiWindowMapObject<uicore\UiWindowMapObject>
-     UiWindowGlobeObject<uicore\UiWindowGlobeObject>
+     UiWindowsCollection<uicore/UiWindowsCollection>
+     UiWindow<uicore/UiWindow>
+     UiToolbar<uicore/UiToolbar>
+     UiToolbarCollection<uicore/UiToolbarCollection>
+     UiWindowMapObject<uicore/UiWindowMapObject>
+     UiWindowGlobeObject<uicore/UiWindowGlobeObject>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    ≔ WINDOW_SERVICE<uicore\WINDOW_SERVICE>
-    ≔ WINDOW_STATE<uicore\WINDOW_STATE>
-    ≔ ARRANGE_STYLE<uicore\ARRANGE_STYLE>
-    ≔ DOCK_STYLE<uicore\DOCK_STYLE>
-    ≔ FLOAT_STATE<uicore\FLOAT_STATE>
+    ≔ WINDOW_SERVICE<uicore/WINDOW_SERVICE>
+    ≔ WINDOW_STATE<uicore/WINDOW_STATE>
+    ≔ ARRANGE_STYLE<uicore/ARRANGE_STYLE>
+    ≔ DOCK_STYLE<uicore/DOCK_STYLE>
+    ≔ FLOAT_STATE<uicore/FLOAT_STATE>
 

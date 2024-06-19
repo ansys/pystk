@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleGraphics2DElevationsElement"
+.. py:method:: item(self, index: int) -> IVehicleGraphics2DElevationsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DElevationsElement"`
+        :obj:`~IVehicleGraphics2DElevationsElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.remove_at
 
     Remove an element from the collection using specified index.
 
@@ -95,6 +97,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -102,7 +105,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_level(self, elevation:float) -> "IVehicleGraphics2DElevationsElement"
+.. py:method:: add_level(self, elevation: float) -> IVehicleGraphics2DElevationsElement
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.add_level
 
     Add a new element to the collection.
 
@@ -112,9 +116,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleGraphics2DElevationsElement"`
+        :obj:`~IVehicleGraphics2DElevationsElement`
 
-.. py:method:: add_level_range(self, start:typing.Any, stop:typing.Any, step:typing.Any) -> None
+.. py:method:: add_level_range(self, start: typing.Any, stop: typing.Any, step: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.add_level_range
 
     Add a range of new levels to the collection.
 

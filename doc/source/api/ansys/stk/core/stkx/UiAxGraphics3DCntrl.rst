@@ -3,7 +3,7 @@ UiAxGraphics3DCntrl
 
 .. py:class:: UiAxGraphics3DCntrl
 
-   IUiAxGraphics3DCntrl, SupportsDeleteCallback
+   Bases: py:obj:`~IUiAxGraphics3DCntrl`
 
    AGI Globe control.
 

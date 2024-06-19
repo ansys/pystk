@@ -3,7 +3,7 @@ CalculationToolConditionGroup
 
 .. py:class:: CalculationToolConditionGroup
 
-   ICalculationToolConditionGroup, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionGroup`
 
    Access or create VGT conditions associated with an object or a central body.
 

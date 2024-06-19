@@ -3,7 +3,7 @@ AircraftBasicAccelerationModel
 
 .. py:class:: AircraftBasicAccelerationModel
 
-   IAircraftBasicAccelerationModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftBasicAccelerationModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the basic acceleration performance model for an Aviator aircraft.
 

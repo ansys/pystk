@@ -3,7 +3,7 @@ ObjectLink
 
 .. py:class:: ObjectLink
 
-   IObjectLink, SupportsDeleteCallback
+   Bases: py:obj:`~IObjectLink`
 
    Class defining name of an STK object.
 

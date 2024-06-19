@@ -3,7 +3,7 @@ StateCalcValueAtSegment
 
 .. py:class:: StateCalcValueAtSegment
 
-   IComponentInfo, ICloneable, IStateCalcValueAtSegment, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcValueAtSegment`
 
    ValueAtSegment Calc objects.
 

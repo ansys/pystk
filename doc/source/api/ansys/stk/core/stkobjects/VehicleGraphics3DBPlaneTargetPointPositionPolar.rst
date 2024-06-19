@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTargetPointPositionPolar
 
 .. py:class:: VehicleGraphics3DBPlaneTargetPointPositionPolar
 
-   IVehicleGraphics3DBPlaneTargetPointPositionPolar, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneTargetPointPositionPolar`
 
    3D BPlane target point position polar.
 

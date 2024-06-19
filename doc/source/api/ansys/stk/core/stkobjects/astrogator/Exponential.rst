@@ -3,7 +3,7 @@ Exponential
 
 .. py:class:: Exponential
 
-   IExponential, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IExponential`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Exponential atmospheric propagator function.
 

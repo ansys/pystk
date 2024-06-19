@@ -3,7 +3,7 @@ SRPSpherical
 
 .. py:class:: SRPSpherical
 
-   ISRPSpherical, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPSpherical`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Spherical SRP propagator function.
 

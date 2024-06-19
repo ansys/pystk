@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: ellipse_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGroundEllipseElement.ellipse_data
-    :type: "IAgVeEllipseDataCollection"
+    :type: IAgVeEllipseDataCollection
 
     Get the ground ellipse data.
 

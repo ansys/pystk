@@ -3,7 +3,7 @@ VehicleLaunchLLR
 
 .. py:class:: VehicleLaunchLLR
 
-   IVehicleLaunch, IVehicleLaunchLLR, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLaunch`, py:obj:`~IVehicleLaunchLLR`
 
    Class defining geocentric launch latitude, longitude and radius for a Missile or LaunchVehicle.
 

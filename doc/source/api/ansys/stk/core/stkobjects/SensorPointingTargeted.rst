@@ -3,7 +3,7 @@ SensorPointingTargeted
 
 .. py:class:: SensorPointingTargeted
 
-   ISensorPointing, ISensorPointingTargeted, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingTargeted`
 
    Class defining the targeted pointing type for a Sensor.
 

@@ -3,7 +3,7 @@ ScatteringPointCollectionElement
 
 .. py:class:: ScatteringPointCollectionElement
 
-   IScatteringPointCollectionElement, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointCollectionElement`
 
    Class defining a scattering point collection element.
 

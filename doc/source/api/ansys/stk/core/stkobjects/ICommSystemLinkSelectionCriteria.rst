@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria.type
-    :type: "COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE"
+    :type: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE
 
     Gets the link selection criteria type.
 

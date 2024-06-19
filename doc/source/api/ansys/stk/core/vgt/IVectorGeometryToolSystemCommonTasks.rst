@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_east_north_up_cartographic(self, latitude:typing.Any, longitude:typing.Any, altitude:float) -> "IVectorGeometryToolSystemAssembled"
+.. py:method:: create_east_north_up_cartographic(self, latitude: typing.Any, longitude: typing.Any, altitude: float) -> IVectorGeometryToolSystemAssembled
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemCommonTasks.create_east_north_up_cartographic
 
     Create a non-persistent East-North-Up (ENU) reference frame with the origin at the specified geodetic location.
 
@@ -50,18 +51,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolSystemAssembled"`
+        :obj:`~IVectorGeometryToolSystemAssembled`
 
-.. py:method:: create_assembled(self, originPoint:"IVectorGeometryToolPoint", referenceAxes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolSystemAssembled"
+.. py:method:: create_assembled(self, originPoint: IVectorGeometryToolPoint, referenceAxes: IVectorGeometryToolAxes) -> IVectorGeometryToolSystemAssembled
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemCommonTasks.create_assembled
 
     Create a non-persistent system component assembled from an origin point and a set of reference axes.
 
     :Parameters:
 
-    **originPoint** : :obj:`~"IVectorGeometryToolPoint"`
-    **referenceAxes** : :obj:`~"IVectorGeometryToolAxes"`
+    **originPoint** : :obj:`~IVectorGeometryToolPoint`
+    **referenceAxes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolSystemAssembled"`
+        :obj:`~IVectorGeometryToolSystemAssembled`
 

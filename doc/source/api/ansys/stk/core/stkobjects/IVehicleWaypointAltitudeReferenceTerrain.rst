@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: interp_method
     :canonical: ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReferenceTerrain.interp_method
-    :type: "VEHICLE_WAYPOINT_INTERP_METHOD"
+    :type: VEHICLE_WAYPOINT_INTERP_METHOD
 
     Gets or sets the terrain interpolation method to be used to define the height of the vehicle with respect to terrain data.
 

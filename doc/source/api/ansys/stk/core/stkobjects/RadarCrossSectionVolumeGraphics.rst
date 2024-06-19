@@ -3,7 +3,7 @@ RadarCrossSectionVolumeGraphics
 
 .. py:class:: RadarCrossSectionVolumeGraphics
 
-   IRadarCrossSectionVolumeGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionVolumeGraphics`
 
    Class defining 3D Volume Graphics properties of radar cross section.
 

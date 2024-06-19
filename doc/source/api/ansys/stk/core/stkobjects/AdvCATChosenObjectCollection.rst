@@ -3,7 +3,7 @@ AdvCATChosenObjectCollection
 
 .. py:class:: AdvCATChosenObjectCollection
 
-   IAdvCATChosenObjectCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvCATChosenObjectCollection`
 
    The chosen object collection.
 

@@ -3,7 +3,7 @@ EOIRShape
 
 .. py:class:: EOIRShape
 
-   IEOIRShape, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShape`
 
    AgEOIRShape class.
 

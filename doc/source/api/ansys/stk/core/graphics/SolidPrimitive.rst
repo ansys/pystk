@@ -3,7 +3,7 @@ SolidPrimitive
 
 .. py:class:: SolidPrimitive
 
-   ISolidPrimitive, IPrimitive, SupportsDeleteCallback
+   Bases: py:obj:`~ISolidPrimitive`, py:obj:`~IPrimitive`
 
    Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid...
 

@@ -3,7 +3,7 @@ AccessConstraintThirdBody
 
 .. py:class:: AccessConstraintThirdBody
 
-   IAccessConstraintThirdBody, IAccessConstraint, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintThirdBody`, py:obj:`~IAccessConstraint`
 
    Do not use this class, as it is deprecated. Use AgAccessCnstrCbObstruction instead. Class defining Central Body Obstruction constraints.
 

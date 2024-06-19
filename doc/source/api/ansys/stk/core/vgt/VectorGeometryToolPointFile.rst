@@ -3,7 +3,7 @@ VectorGeometryToolPointFile
 
 .. py:class:: VectorGeometryToolPointFile
 
-   IVectorGeometryToolPointFile, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointFile`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Point specified by data from a file.
 

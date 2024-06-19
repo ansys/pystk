@@ -3,7 +3,7 @@ StateCalcFPA
 
 .. py:class:: StateCalcFPA
 
-   IComponentInfo, ICloneable, IStateCalcFPA, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcFPA`
 
    FPA Calc objects.
 

@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.context
-    :type: "IAgCrdnContext"
+    :type: IAgCrdnContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.factory
-    :type: "IAgCrdnPlaneFactory"
+    :type: IAgCrdnPlaneFactory
 
     Returns a Factory object used to create custom planes.
 
@@ -82,7 +82,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, planeName:str) -> None
+.. py:method:: remove(self, planeName: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.remove
 
     Remove a specified Plane.
 
@@ -95,7 +96,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.contains
 
     Search for a an element with a given name. Returns false if the specified element does not exist.
 
@@ -109,7 +111,8 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IVectorGeometryToolPlane"
+.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolPlane
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.item
 
     Return an Plane by name or at a specified position.
 
@@ -119,10 +122,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlane"`
+        :obj:`~IVectorGeometryToolPlane`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IVectorGeometryToolPlane"
+.. py:method:: get_item_by_index(self, index: int) -> IVectorGeometryToolPlane
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.get_item_by_index
 
     Retrieve a plane from the collection by index.
 
@@ -132,9 +136,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlane"`
+        :obj:`~IVectorGeometryToolPlane`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IVectorGeometryToolPlane"
+.. py:method:: get_item_by_name(self, name: str) -> IVectorGeometryToolPlane
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.get_item_by_name
 
     Retrieve a plane from the collection by name.
 
@@ -144,5 +149,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolPlane"`
+        :obj:`~IVectorGeometryToolPlane`
 

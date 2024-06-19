@@ -40,31 +40,31 @@ Property detail
 
 .. py:property:: original_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListSignaled.original_intervals
-    :type: "IAgCrdnEventIntervalList"
+    :type: IAgCrdnEventIntervalList
 
     The original time interval list.
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListSignaled.signal_sense
-    :type: "CRDN_SIGNAL_SENSE"
+    :type: CRDN_SIGNAL_SENSE
 
     The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location.
 
 .. py:property:: base_clock_location
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListSignaled.base_clock_location
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     The base clock location, which is a point from VGT.
 
 .. py:property:: target_clock_location
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListSignaled.target_clock_location
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     The target clock location, which is a point from VGT.
 
 .. py:property:: signal_delay
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListSignaled.signal_delay
-    :type: "IAgCrdnSignalDelay"
+    :type: IAgCrdnSignalDelay
 
     The Signal delay definition, which includes signal transmission, time delay convergence and signal path reference system.
 

@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: aerosol_model_type
     :canonical: ansys.stk.core.stkobjects.IModtranPropagationModel.aerosol_model_type
-    :type: "MODTRAN_AEROSOL_MODEL_TYPE"
+    :type: MODTRAN_AEROSOL_MODEL_TYPE
 
     Gets or sets the aerosol model type.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: cloud_model_type
     :canonical: ansys.stk.core.stkobjects.IModtranPropagationModel.cloud_model_type
-    :type: "MODTRAN_CLOUD_MODEL_TYPE"
+    :type: MODTRAN_CLOUD_MODEL_TYPE
 
     Gets or sets the cloud model type.
 
@@ -133,7 +133,8 @@ Method detail
 
 
 
-.. py:method:: set_aerosol_model_type_by_name(self, name:str) -> None
+.. py:method:: set_aerosol_model_type_by_name(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IModtranPropagationModel.set_aerosol_model_type_by_name
 
     Set the aerosol model type by name.
 

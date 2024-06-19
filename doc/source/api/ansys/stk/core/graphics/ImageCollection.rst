@@ -3,7 +3,7 @@ ImageCollection
 
 .. py:class:: ImageCollection
 
-   IImageCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IImageCollection`
 
    A collection of globe image overlay objects.
 

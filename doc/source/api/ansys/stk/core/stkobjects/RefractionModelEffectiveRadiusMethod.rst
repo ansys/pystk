@@ -3,7 +3,7 @@ RefractionModelEffectiveRadiusMethod
 
 .. py:class:: RefractionModelEffectiveRadiusMethod
 
-   IRefractionModelEffectiveRadiusMethod, SupportsDeleteCallback
+   Bases: py:obj:`~IRefractionModelEffectiveRadiusMethod`
 
    Effective Radius Method.
 

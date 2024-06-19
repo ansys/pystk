@@ -3,7 +3,7 @@ SamplingMethodFixedStep
 
 .. py:class:: SamplingMethodFixedStep
 
-   ISamplingMethodFixedStep, ISamplingMethodStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~ISamplingMethodFixedStep`, py:obj:`~ISamplingMethodStrategy`
 
    Define a fixed time-step sampling method.
 

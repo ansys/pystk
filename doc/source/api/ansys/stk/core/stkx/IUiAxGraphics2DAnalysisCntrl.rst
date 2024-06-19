@@ -83,13 +83,13 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.application
-    :type: "IAgSTKXApplication"
+    :type: IAgSTKXApplication
 
     Reference to the STK X application object.
 
 .. py:property:: control_mode
     :canonical: ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.control_mode
-    :type: "GRAPHICS_2D_ANALYSIS_MODE"
+    :type: GRAPHICS_2D_ANALYSIS_MODE
 
     The Graphics control mode.
 
@@ -112,7 +112,8 @@ Method detail
 
 
 
-.. py:method:: picture_put_reference(self, pPicture:IPictureDisp) -> None
+.. py:method:: picture_put_reference(self, pPicture: IPictureDisp) -> None
+    :canonical: ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.picture_put_reference
 
     Set a reference to the splash logo graphic to be displayed in the control.
 

@@ -3,7 +3,7 @@ ImmutableIntervalCollection
 
 .. py:class:: ImmutableIntervalCollection
 
-   IImmutableIntervalCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IImmutableIntervalCollection`
 
    Read-only collection of intervals.
 

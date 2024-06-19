@@ -55,31 +55,31 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.type
-    :type: "VECTOR_GEOMETRY_TOOL_AXES_TYPE"
+    :type: VECTOR_GEOMETRY_TOOL_AXES_TYPE
 
     Returns a type of the axes object.
 
 .. py:property:: labels
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.labels
-    :type: "IAgCrdnAxesLabels"
+    :type: IAgCrdnAxesLabels
 
     Returns an object that allows modifying the axes labels.
 
 .. py:property:: x
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.x
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Returns the X axis of the component.
 
 .. py:property:: y
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.y
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Returns the Y axis of the component.
 
 .. py:property:: z
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.z
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     Returns the Z axis of the component.
 
@@ -88,62 +88,66 @@ Method detail
 -------------
 
 
-.. py:method:: find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAxesFindInAxesWithRateResult"
+.. py:method:: find_in_axes_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorGeometryToolAxesFindInAxesWithRateResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.find_in_axes_with_rate
 
     Find an angular velocity and orientation in the specified axes.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxesFindInAxesWithRateResult"`
+        :obj:`~IVectorGeometryToolAxesFindInAxesWithRateResult`
 
-.. py:method:: find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAxesFindInAxesResult"
+.. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorGeometryToolAxesFindInAxesResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.find_in_axes
 
     Find an orientation in the specified axes.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxesFindInAxesResult"`
+        :obj:`~IVectorGeometryToolAxesFindInAxesResult`
 
 
 
 
 
-.. py:method:: transform(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector") -> "IVectorGeometryToolAxesTransformResult"
+.. py:method:: transform(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector) -> IVectorGeometryToolAxesTransformResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.transform
 
     Transform the input vector from this axes into the output axes.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **outputAxes** : :obj:`~"IVectorGeometryToolAxes"`
-    **vectorInMyAxes** : :obj:`~"ICartesian3Vector"`
+    **outputAxes** : :obj:`~IVectorGeometryToolAxes`
+    **vectorInMyAxes** : :obj:`~ICartesian3Vector`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxesTransformResult"`
+        :obj:`~IVectorGeometryToolAxesTransformResult`
 
-.. py:method:: transform_with_rate(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector", rateInMyAxes:"ICartesian3Vector") -> "IVectorGeometryToolAxesTransformWithRateResult"
+.. py:method:: transform_with_rate(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector, rateInMyAxes: ICartesian3Vector) -> IVectorGeometryToolAxesTransformWithRateResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.transform_with_rate
 
     Transform the input vector and vector's rate from this axes into the output axes.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **outputAxes** : :obj:`~"IVectorGeometryToolAxes"`
-    **vectorInMyAxes** : :obj:`~"ICartesian3Vector"`
-    **rateInMyAxes** : :obj:`~"ICartesian3Vector"`
+    **outputAxes** : :obj:`~IVectorGeometryToolAxes`
+    **vectorInMyAxes** : :obj:`~ICartesian3Vector`
+    **rateInMyAxes** : :obj:`~ICartesian3Vector`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAxesTransformWithRateResult"`
+        :obj:`~IVectorGeometryToolAxesTransformWithRateResult`
 

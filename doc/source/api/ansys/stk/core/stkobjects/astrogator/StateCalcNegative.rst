@@ -3,7 +3,7 @@ StateCalcNegative
 
 .. py:class:: StateCalcNegative
 
-   IComponentInfo, ICloneable, IStateCalcNegative, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcNegative`
 
    Negative Calc objects.
 

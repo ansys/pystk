@@ -3,7 +3,7 @@ AdvancedFixedWingGeometryBasic
 
 .. py:class:: AdvancedFixedWingGeometryBasic
 
-   IAdvancedFixedWingGeometryBasic, IAdvancedFixedWingGeometry, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingGeometryBasic`, py:obj:`~IAdvancedFixedWingGeometry`
 
    Class defining a basic geometry wing in the Advanced Fixed Wing Tool.
 

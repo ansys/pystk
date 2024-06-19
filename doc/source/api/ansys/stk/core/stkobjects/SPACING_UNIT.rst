@@ -11,6 +11,21 @@ SPACING_UNIT
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~WAVELENGTH_RATIO`
+              - Specify element spacing as a Wavelength Ratio.
+
+            * - :py:attr:`~DISTANCE`
+              - Specify element spacing as a Distance.
+
+
 Import detail
 -------------
 

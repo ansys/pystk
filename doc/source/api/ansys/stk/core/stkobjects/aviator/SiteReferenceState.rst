@@ -3,7 +3,7 @@ SiteReferenceState
 
 .. py:class:: SiteReferenceState
 
-   ISiteReferenceState, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteReferenceState`, py:obj:`~ISite`
 
    Class defining a Reference State site.
 

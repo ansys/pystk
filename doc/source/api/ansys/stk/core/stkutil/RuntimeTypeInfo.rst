@@ -3,7 +3,7 @@ RuntimeTypeInfo
 
 .. py:class:: RuntimeTypeInfo
 
-   IRuntimeTypeInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IRuntimeTypeInfo`
 
    Runtime Type info coclass.
 

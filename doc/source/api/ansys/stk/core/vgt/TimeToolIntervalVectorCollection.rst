@@ -3,7 +3,7 @@ TimeToolIntervalVectorCollection
 
 .. py:class:: TimeToolIntervalVectorCollection
 
-   ITimeToolIntervalVectorCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolIntervalVectorCollection`
 
    A collection of interval collections.
 

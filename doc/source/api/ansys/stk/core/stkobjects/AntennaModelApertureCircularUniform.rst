@@ -3,7 +3,7 @@ AntennaModelApertureCircularUniform
 
 .. py:class:: AntennaModelApertureCircularUniform
 
-   IAntennaModelApertureCircularUniform, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelApertureCircularUniform`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a circular uniform aperture antenna model.
 

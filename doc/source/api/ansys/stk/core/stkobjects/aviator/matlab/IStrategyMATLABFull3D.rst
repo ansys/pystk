@@ -70,6 +70,7 @@ Method detail
 
 
 .. py:method:: is_function_path_valid(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D.is_function_path_valid
 
     Check if the MATLAB function path is valid.
 

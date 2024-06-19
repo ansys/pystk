@@ -3,7 +3,7 @@ VisualEffects
 
 .. py:class:: VisualEffects
 
-   IVisualEffects, SupportsDeleteCallback
+   Bases: py:obj:`~IVisualEffects`
 
    Control various post processing effects that can be applied to the scene.
 

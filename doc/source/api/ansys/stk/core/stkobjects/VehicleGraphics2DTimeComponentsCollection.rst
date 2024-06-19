@@ -3,7 +3,7 @@ VehicleGraphics2DTimeComponentsCollection
 
 .. py:class:: VehicleGraphics2DTimeComponentsCollection
 
-   IVehicleGraphics2DTimeComponentsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DTimeComponentsCollection`
 
    A collection of time components used to configure the object appearance in 2D and 3D views.
 

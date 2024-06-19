@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: overlay
     :canonical: ansys.stk.core.graphics.IGlobeImageOverlayAddCompleteEventArgs.overlay
-    :type: "IAgStkGraphicsGlobeImageOverlay"
+    :type: IAgStkGraphicsGlobeImageOverlay
 
     The overlay object that was added earlier using AddAsync.
 

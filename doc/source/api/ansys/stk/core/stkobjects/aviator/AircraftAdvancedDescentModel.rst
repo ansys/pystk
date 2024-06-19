@@ -3,7 +3,7 @@ AircraftAdvancedDescentModel
 
 .. py:class:: AircraftAdvancedDescentModel
 
-   IAircraftAdvancedDescentModel, IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftAdvancedDescentModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining the advanced descent performance model for an Aviator aircraft.
 

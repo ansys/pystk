@@ -11,6 +11,24 @@ SMOOTH_ACCEL_LEFT_RIGHT
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~SMOOTH_ACCEL_LEFT`
+              - Roll left.
+
+            * - :py:attr:`~SMOOTH_ACCEL_RIGHT`
+              - Roll right.
+
+            * - :py:attr:`~SMOOTH_ACCEL_NO_ROLL`
+              - No roll.
+
+
 Import detail
 -------------
 

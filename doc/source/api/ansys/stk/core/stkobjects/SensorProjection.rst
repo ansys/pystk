@@ -3,7 +3,7 @@ SensorProjection
 
 .. py:class:: SensorProjection
 
-   ISensorProjection, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorProjection`
 
    Class defining the projection properties of a Sensor.
 

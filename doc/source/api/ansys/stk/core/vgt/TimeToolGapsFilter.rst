@@ -3,7 +3,7 @@ TimeToolGapsFilter
 
 .. py:class:: TimeToolGapsFilter
 
-   ITimeToolGapsFilter, ITimeToolPruneFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolGapsFilter`, py:obj:`~ITimeToolPruneFilter`
 
    The filter merges intervals unless they are separated by gaps of at least/most certain duration.
 

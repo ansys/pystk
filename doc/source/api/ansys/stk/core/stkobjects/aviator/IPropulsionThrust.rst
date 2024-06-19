@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: min_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IPropulsionThrust.min_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the min airspeed type for a thrust model.
 
@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: max_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IPropulsionThrust.max_airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the max airspeed type for a thrust model.
 
@@ -132,13 +132,14 @@ Method detail
 
 
 
-.. py:method:: set_min_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_min_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPropulsionThrust.set_min_airspeed
 
     Set the min airspeed type and value for a thrust model.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -147,13 +148,14 @@ Method detail
 
 
 
-.. py:method:: set_max_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None
+.. py:method:: set_max_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPropulsionThrust.set_max_airspeed
 
     Set the max airspeed type and value for a thrust model.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:

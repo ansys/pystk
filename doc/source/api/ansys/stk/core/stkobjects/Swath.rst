@@ -3,7 +3,7 @@ Swath
 
 .. py:class:: Swath
 
-   ISwath, SupportsDeleteCallback
+   Bases: py:obj:`~ISwath`
 
    Class defining Swath properties.
 

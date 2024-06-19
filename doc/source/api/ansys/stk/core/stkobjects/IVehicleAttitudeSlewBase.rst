@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase.type
-    :type: "VEHICLE_SLEW_MODE"
+    :type: VEHICLE_SLEW_MODE
 
     An attitude slew mode.
 

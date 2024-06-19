@@ -3,7 +3,7 @@ VehicleGraphics3DRouteProximity
 
 .. py:class:: VehicleGraphics3DRouteProximity
 
-   IVehicleGraphics3DRouteProximity, IVehicleGraphics3DProximity, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DRouteProximity`, py:obj:`~IVehicleGraphics3DProximity`
 
    Proximity graphics for GreatArc Vehicles.
 

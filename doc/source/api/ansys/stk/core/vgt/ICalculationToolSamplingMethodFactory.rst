@@ -40,7 +40,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_fixed_step(self, fixedStep:float) -> "ICalculationToolSamplingMethod"
+.. py:method:: create_fixed_step(self, fixedStep: float) -> ICalculationToolSamplingMethod
+    :canonical: ansys.stk.core.vgt.ICalculationToolSamplingMethodFactory.create_fixed_step
 
     Create a fixed time step sampling definition.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolSamplingMethod"`
+        :obj:`~ICalculationToolSamplingMethod`
 
-.. py:method:: create_curvature_tolerance(self, curvatureTolerance:float) -> "ICalculationToolSamplingMethod"
+.. py:method:: create_curvature_tolerance(self, curvatureTolerance: float) -> ICalculationToolSamplingMethod
+    :canonical: ansys.stk.core.vgt.ICalculationToolSamplingMethodFactory.create_curvature_tolerance
 
     Create a curvature tolerance sampling definition. Curvature tolerance uses changes in slope between samples.
 
@@ -62,9 +64,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolSamplingMethod"`
+        :obj:`~ICalculationToolSamplingMethod`
 
-.. py:method:: create_relative_tolerance(self, relativeTolerance:float) -> "ICalculationToolSamplingMethod"
+.. py:method:: create_relative_tolerance(self, relativeTolerance: float) -> ICalculationToolSamplingMethod
+    :canonical: ansys.stk.core.vgt.ICalculationToolSamplingMethodFactory.create_relative_tolerance
 
     Create a relative tolerance sampling definition. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples.
 
@@ -74,5 +77,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolSamplingMethod"`
+        :obj:`~ICalculationToolSamplingMethod`
 

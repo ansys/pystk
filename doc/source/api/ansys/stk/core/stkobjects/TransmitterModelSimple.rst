@@ -3,7 +3,7 @@ TransmitterModelSimple
 
 .. py:class:: TransmitterModelSimple
 
-   ITransmitterModelSimple, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModelSimple`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a simple transmitter model.
 

@@ -3,7 +3,7 @@ TextureScreenOverlayFactory
 
 .. py:class:: TextureScreenOverlayFactory
 
-   ITextureScreenOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~ITextureScreenOverlayFactory`
 
    A rectangular overlay that can be assigned a texture.
 

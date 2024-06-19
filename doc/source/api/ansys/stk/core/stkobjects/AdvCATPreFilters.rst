@@ -3,7 +3,7 @@ AdvCATPreFilters
 
 .. py:class:: AdvCATPreFilters
 
-   IAdvCATPreFilters, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvCATPreFilters`
 
    AdvCAT pre-filters properties.
 

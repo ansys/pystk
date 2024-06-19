@@ -40,19 +40,19 @@ Property detail
 
 .. py:property:: from_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.from_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a first vector to measure the angle.
 
 .. py:property:: to_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.to_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a second vector to measure the angle.
 
 .. py:property:: pole_about
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.pole_about
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a vector about.
 

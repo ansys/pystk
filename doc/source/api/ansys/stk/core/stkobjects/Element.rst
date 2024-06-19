@@ -3,7 +3,7 @@ Element
 
 .. py:class:: Element
 
-   IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElement`
 
    Class defining a phased array element.
 

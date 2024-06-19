@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTwoVector.reference_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a reference vector.
 
 .. py:property:: vector2
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTwoVector.vector2
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a Normal vector.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTwoVector.reference_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a reference point.
 

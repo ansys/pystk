@@ -42,15 +42,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_built_in_model(self) -> "IAircraftBasicAccelerationModel"
+.. py:method:: get_built_in_model(self) -> IAircraftBasicAccelerationModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAcceleration.get_built_in_model
 
     Get the built-in model.
 
     :Returns:
 
-        :obj:`~"IAircraftBasicAccelerationModel"`
+        :obj:`~IAircraftBasicAccelerationModel`
 
-.. py:method:: get_basic_acceleration_by_name(self, name:str) -> "IAircraftBasicAccelerationModel"
+.. py:method:: get_basic_acceleration_by_name(self, name: str) -> IAircraftBasicAccelerationModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAcceleration.get_basic_acceleration_by_name
 
     Get the basic acceleration model with the given name.
 
@@ -60,9 +62,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftBasicAccelerationModel"`
+        :obj:`~IAircraftBasicAccelerationModel`
 
-.. py:method:: get_advanced_acceleration_by_name(self, name:str) -> "IAircraftAdvancedAccelerationModel"
+.. py:method:: get_advanced_acceleration_by_name(self, name: str) -> IAircraftAdvancedAccelerationModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAcceleration.get_advanced_acceleration_by_name
 
     Get the advanced acceleration model with the given name.
 
@@ -72,13 +75,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftAdvancedAccelerationModel"`
+        :obj:`~IAircraftAdvancedAccelerationModel`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAcceleration.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

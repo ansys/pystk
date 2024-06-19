@@ -3,7 +3,7 @@ VehicleRateOffset
 
 .. py:class:: VehicleRateOffset
 
-   IVehicleRateOffset, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRateOffset`
 
    AgVeSpin Class.
 

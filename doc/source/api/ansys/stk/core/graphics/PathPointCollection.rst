@@ -3,7 +3,7 @@ PathPointCollection
 
 .. py:class:: PathPointCollection
 
-   IPathPointCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IPathPointCollection`
 
    A collection of path points.
 

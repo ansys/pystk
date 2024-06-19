@@ -3,7 +3,7 @@ VehicleHPOPForceModelDragOptions
 
 .. py:class:: VehicleHPOPForceModelDragOptions
 
-   IVehicleHPOPForceModelDragOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleHPOPForceModelDragOptions`
 
    Class defining HPOP atmospheric drag options.
 

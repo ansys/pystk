@@ -3,7 +3,7 @@ MtoDefaultGraphics3DTrack
 
 .. py:class:: MtoDefaultGraphics3DTrack
 
-   IMtoDefaultGraphics3DTrack, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoDefaultGraphics3DTrack`
 
    3D graphics properties for default MTO tracks.
 

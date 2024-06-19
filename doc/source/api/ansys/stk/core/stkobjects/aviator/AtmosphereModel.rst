@@ -3,7 +3,7 @@ AtmosphereModel
 
 .. py:class:: AtmosphereModel
 
-   IAtmosphereModel, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphereModel`
 
    Class defining the atmosphere model for a mission, scenario, or procedure.
 

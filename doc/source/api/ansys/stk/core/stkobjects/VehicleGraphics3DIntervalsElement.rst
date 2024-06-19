@@ -3,7 +3,7 @@ VehicleGraphics3DIntervalsElement
 
 .. py:class:: VehicleGraphics3DIntervalsElement
 
-   IVehicleGraphics3DIntervalsElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DIntervalsElement`
 
    Intervals graphics for covariance pointing contour.
 

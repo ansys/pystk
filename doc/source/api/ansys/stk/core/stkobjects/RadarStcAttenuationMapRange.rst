@@ -3,7 +3,7 @@ RadarStcAttenuationMapRange
 
 .. py:class:: RadarStcAttenuationMapRange
 
-   IRadarStcAttenuation, IRadarStcAttenuationMap, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarStcAttenuation`, py:obj:`~IRadarStcAttenuationMap`
 
    Class defining an radar stc range map.
 

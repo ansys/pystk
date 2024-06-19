@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTrackData.pass_data
-    :type: "IAgVeVOTrajectoryPassData"
+    :type: IAgVeVOTrajectoryPassData
 
     Get the 3D leading/trailing track data.
 

@@ -3,7 +3,7 @@ TimeToolPruneFilter
 
 .. py:class:: TimeToolPruneFilter
 
-   ITimeToolPruneFilter, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolPruneFilter`
 
    A filter used with event interval list pruned class to prune interval lists...
 

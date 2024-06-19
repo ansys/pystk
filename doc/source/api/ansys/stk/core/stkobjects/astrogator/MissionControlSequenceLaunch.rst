@@ -3,7 +3,7 @@ MissionControlSequenceLaunch
 
 .. py:class:: MissionControlSequenceLaunch
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceLaunch, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceLaunch`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Launch segment.
 

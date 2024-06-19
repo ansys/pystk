@@ -3,7 +3,7 @@ SensorGraphics3DPulse
 
 .. py:class:: SensorGraphics3DPulse
 
-   ISensorGraphics3DPulse, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorGraphics3DPulse`
 
    Class defining 3D pulse properties of a Sensor.
 

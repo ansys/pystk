@@ -65,7 +65,8 @@ Method detail
 -------------
 
 
-.. py:method:: is_obstruction_assigned(self, obstruction:str) -> bool
+.. py:method:: is_obstruction_assigned(self, obstruction: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintThirdBody.is_obstruction_assigned
 
     Do not use this method, as it is deprecated. Use IsObstructionAssigned on IAgAccessCnstrCbObstruction instead. Check whether a third body is already assigned.
 
@@ -77,7 +78,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: add_obstruction(self, obstruction:str) -> None
+.. py:method:: add_obstruction(self, obstruction: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintThirdBody.add_obstruction
 
     Do not use this method, as it is deprecated. Use AddObstruction on IAgAccessCnstrCbObstruction instead. Adds an Obstruction by Name.
 
@@ -89,7 +91,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_obstruction(self, obstruction:str) -> None
+.. py:method:: remove_obstruction(self, obstruction: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraintThirdBody.remove_obstruction
 
     Do not use this method, as it is deprecated. Use RemoveObstruction on IAgAccessCnstrCbObstruction instead. Remove an Obstruction by Name.
 

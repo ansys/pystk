@@ -3,7 +3,7 @@ RadarDopplerClutterFilters
 
 .. py:class:: RadarDopplerClutterFilters
 
-   IRadarDopplerClutterFilters, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarDopplerClutterFilters`
 
    Class defining the properties for doppler clutter filters.
 

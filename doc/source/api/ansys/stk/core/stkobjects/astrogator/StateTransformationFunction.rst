@@ -3,7 +3,7 @@ StateTransformationFunction
 
 .. py:class:: StateTransformationFunction
 
-   IStateTransformationFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateTransformationFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    State Transition Propagator Function.
 

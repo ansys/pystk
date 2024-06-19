@@ -3,7 +3,7 @@ VehicleGPSAlmanacPropertiesYUMA
 
 .. py:class:: VehicleGPSAlmanacPropertiesYUMA
 
-   IVehicleGPSAlmanacPropertiesYUMA, IVehicleGPSAlmanacProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSAlmanacPropertiesYUMA`, py:obj:`~IVehicleGPSAlmanacProperties`
 
    YUMA almanac properties.
 

@@ -3,7 +3,7 @@ NumericalPropagatorWrapperCR3BP
 
 .. py:class:: NumericalPropagatorWrapperCR3BP
 
-   INumericalPropagatorWrapperCR3BP, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~INumericalPropagatorWrapperCR3BP`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Numerical CR3BP Propagator.
 

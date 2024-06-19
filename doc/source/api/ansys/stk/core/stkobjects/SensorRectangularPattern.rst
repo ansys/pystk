@@ -3,7 +3,7 @@ SensorRectangularPattern
 
 .. py:class:: SensorRectangularPattern
 
-   ISensorPattern, ISensorRectangularPattern, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPattern`, py:obj:`~ISensorRectangularPattern`
 
    Class defining the rectangular pattern for a Sensor.
 

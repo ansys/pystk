@@ -3,7 +3,7 @@ StateCalcRadiationPressureCoefficient
 
 .. py:class:: StateCalcRadiationPressureCoefficient
 
-   IComponentInfo, ICloneable, IStateCalcRadiationPressureCoefficient, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRadiationPressureCoefficient`
 
    RadiationPressureCoefficient Calc objects.
 

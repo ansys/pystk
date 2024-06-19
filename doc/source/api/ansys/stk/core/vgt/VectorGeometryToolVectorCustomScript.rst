@@ -3,7 +3,7 @@ VectorGeometryToolVectorCustomScript
 
 .. py:class:: VectorGeometryToolVectorCustomScript
 
-   IVectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorCustomScript`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Customized vector components defined with respect to reference axes.
 

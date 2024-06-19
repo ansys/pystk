@@ -3,7 +3,7 @@ RFFilterModelHammingWindow
 
 .. py:class:: RFFilterModelHammingWindow
 
-   IRFFilterModelHammingWindow, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelHammingWindow`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a cosine window filter model.
 

@@ -3,7 +3,7 @@ CalculationToolScalarVectorMagnitude
 
 .. py:class:: CalculationToolScalarVectorMagnitude
 
-   ICalculationToolScalarVectorMagnitude, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarVectorMagnitude`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Scalar equal to the magnitude of a specified vector.
 

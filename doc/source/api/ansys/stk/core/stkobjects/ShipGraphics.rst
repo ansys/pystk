@@ -3,7 +3,7 @@ ShipGraphics
 
 .. py:class:: ShipGraphics
 
-   IShipGraphics, IGreatArcGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IShipGraphics`, py:obj:`~IGreatArcGraphics`
 
    2D Graphics options for a ship.
 

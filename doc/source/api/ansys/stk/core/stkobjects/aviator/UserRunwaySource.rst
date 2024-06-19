@@ -3,7 +3,7 @@ UserRunwaySource
 
 .. py:class:: UserRunwaySource
 
-   IUserRunwaySource, ICatalogSource, SupportsDeleteCallback
+   Bases: py:obj:`~IUserRunwaySource`, py:obj:`~ICatalogSource`
 
    Class defining the user runways in the Aviator catalog.
 

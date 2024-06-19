@@ -66,19 +66,19 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.IRadarGraphics.contour_graphics
-    :type: "IAgAntennaContourGraphics"
+    :type: IAgAntennaContourGraphics
 
     Gets the radar's antenna contour graphics interface.
 
 .. py:property:: access
     :canonical: ansys.stk.core.stkobjects.IRadarGraphics.access
-    :type: "IAgRadarAccessGraphics"
+    :type: IAgRadarAccessGraphics
 
     Gets the radar's access graphics interface.
 
 .. py:property:: multipath
     :canonical: ansys.stk.core.stkobjects.IRadarGraphics.multipath
-    :type: "IAgRadarMultipathGraphics"
+    :type: IAgRadarMultipathGraphics
 
     Gets the radar's multipath graphics interface.
 

@@ -3,7 +3,7 @@ ReceiverModelComplex
 
 .. py:class:: ReceiverModelComplex
 
-   IReceiverModelComplex, IReceiverModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverModelComplex`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a complex receiver model.
 

@@ -3,7 +3,7 @@ MissionControlSequenceFollow
 
 .. py:class:: MissionControlSequenceFollow
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceFollow, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceFollow`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Follow segment.
 

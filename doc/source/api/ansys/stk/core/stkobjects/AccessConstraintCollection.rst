@@ -3,7 +3,7 @@ AccessConstraintCollection
 
 .. py:class:: AccessConstraintCollection
 
-   IAccessConstraintCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessConstraintCollection`
 
    Collection of access constraints.
 

@@ -11,6 +11,21 @@ FLIP_AXIS
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~HORIZONTAL`
+              - The horizontal axis.
+
+            * - :py:attr:`~VERTICAL`
+              - The vertical axis.
+
+
 Import detail
 -------------
 

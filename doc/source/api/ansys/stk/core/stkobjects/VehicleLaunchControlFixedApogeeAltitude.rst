@@ -3,7 +3,7 @@ VehicleLaunchControlFixedApogeeAltitude
 
 .. py:class:: VehicleLaunchControlFixedApogeeAltitude
 
-   IVehicleLaunchControl, IVehicleLaunchControlFixedApogeeAltitude, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleLaunchControl`, py:obj:`~IVehicleLaunchControlFixedApogeeAltitude`
 
    Class defining the option to set a Missile's flight parameters by specifying a fixed apogee altitude.
 

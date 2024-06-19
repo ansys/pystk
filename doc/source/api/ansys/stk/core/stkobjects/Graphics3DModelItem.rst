@@ -3,7 +3,7 @@ Graphics3DModelItem
 
 .. py:class:: Graphics3DModelItem
 
-   IGraphics3DModelItem, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DModelItem`
 
    Class defining selection and display of 3D models.
 

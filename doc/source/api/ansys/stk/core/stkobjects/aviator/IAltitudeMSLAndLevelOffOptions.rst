@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.level_off_mode
-    :type: "ALTITUDE_CONSTRAINT_MANEUVER_MODE"
+    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
 
     Gets or sets the level off mode. This is only used when the must level off option is on.
 

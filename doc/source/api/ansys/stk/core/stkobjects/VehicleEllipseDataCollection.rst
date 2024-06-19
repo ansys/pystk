@@ -3,7 +3,7 @@ VehicleEllipseDataCollection
 
 .. py:class:: VehicleEllipseDataCollection
 
-   IVehicleEllipseDataCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEllipseDataCollection`
 
    Ellipse Data Collection.
 

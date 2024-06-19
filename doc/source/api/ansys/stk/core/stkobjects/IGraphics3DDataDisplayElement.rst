@@ -88,13 +88,13 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.location
-    :type: "GRAPHICS_3D_LOCATION"
+    :type: GRAPHICS_3D_LOCATION
 
     Gets or sets the location where the data display is to appear: 3D window, data display area, or offset from the selected object.
 
 .. py:property:: x_origin
     :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.x_origin
-    :type: "GRAPHICS_3D_X_ORIGIN"
+    :type: GRAPHICS_3D_X_ORIGIN
 
     Gets or sets the horizontal point of origin for the marker (left, center or right).
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: y_origin
     :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.y_origin
-    :type: "GRAPHICS_3D_Y_ORIGIN"
+    :type: GRAPHICS_3D_Y_ORIGIN
 
     Gets or sets the vertical point of origin for the marker (top, center or bottom.).
 
@@ -124,7 +124,7 @@ Property detail
 
 .. py:property:: font_size
     :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.font_size
-    :type: "GRAPHICS_3D_FONT_SIZE"
+    :type: GRAPHICS_3D_FONT_SIZE
 
     Font size of the data display.
 
@@ -136,7 +136,7 @@ Property detail
 
 .. py:property:: format
     :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.format
-    :type: "GRAPHICS_3D_FORMAT"
+    :type: GRAPHICS_3D_FORMAT
 
     Font format of the data display.
 
@@ -237,7 +237,8 @@ Method detail
 
 
 
-.. py:method:: is_displayed_in_window(self, title:str) -> bool
+.. py:method:: is_displayed_in_window(self, title: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.is_displayed_in_window
 
     Opt whether to show the data display in the selected location.
 
@@ -278,7 +279,8 @@ Method detail
 
 
 
-.. py:method:: add_to_window(self, title:str) -> None
+.. py:method:: add_to_window(self, title: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.add_to_window
 
     Add the data display to a 3D window.
 
@@ -290,7 +292,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_from_window(self, title:str) -> None
+.. py:method:: remove_from_window(self, title: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.remove_from_window
 
     Remove the data display from a 3D window.
 
@@ -303,6 +306,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: add_to_all_windows(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.add_to_all_windows
 
     Add the data display to all 3D windows.
 

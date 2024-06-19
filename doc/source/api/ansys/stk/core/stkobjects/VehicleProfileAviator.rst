@@ -3,7 +3,7 @@ VehicleProfileAviator
 
 .. py:class:: VehicleProfileAviator
 
-   IVehicleProfileAviator, IVehicleAttitudeProfile, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleProfileAviator`, py:obj:`~IVehicleAttitudeProfile`
 
    The profile used for Aviator aircraft.
 

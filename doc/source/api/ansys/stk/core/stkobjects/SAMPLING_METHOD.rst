@@ -11,6 +11,24 @@ SAMPLING_METHOD
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNKNOWN`
+              - Unknown sampling method.
+
+            * - :py:attr:`~ADAPTIVE`
+              - Adaptive sampling method.
+
+            * - :py:attr:`~FIXED_STEP`
+              - Fixed-step sampling method.
+
+
 Import detail
 -------------
 

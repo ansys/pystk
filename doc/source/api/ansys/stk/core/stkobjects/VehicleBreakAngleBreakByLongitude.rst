@@ -3,7 +3,7 @@ VehicleBreakAngleBreakByLongitude
 
 .. py:class:: VehicleBreakAngleBreakByLongitude
 
-   IVehicleBreakAngleBreakByLongitude, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleBreakAngleBreakByLongitude`
 
    Pass break longitude.
 

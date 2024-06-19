@@ -3,7 +3,7 @@ VehicleGPSAutoUpdateProperties
 
 .. py:class:: VehicleGPSAutoUpdateProperties
 
-   IVehicleGPSAutoUpdateProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSAutoUpdateProperties`
 
    GPS AutoUpdate properties.
 

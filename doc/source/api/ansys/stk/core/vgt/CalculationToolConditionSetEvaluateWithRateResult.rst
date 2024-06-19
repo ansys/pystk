@@ -3,7 +3,7 @@ CalculationToolConditionSetEvaluateWithRateResult
 
 .. py:class:: CalculationToolConditionSetEvaluateWithRateResult
 
-   ICalculationToolConditionSetEvaluateWithRateResult, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolConditionSetEvaluateWithRateResult`
 
    Represents the results returned by ConditionSet.EvaluateWithRate.
 

@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: satisfaction_type
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.satisfaction_type
-    :type: "FIGURE_OF_MERIT_SATISFACTION_TYPE"
+    :type: FIGURE_OF_MERIT_SATISFACTION_TYPE
 
     Gets or sets the relationship to the specified threshold that must be achieved to satisfy the Figure of Merit.
 

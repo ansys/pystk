@@ -98,7 +98,7 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.fuel_flow_type
-    :type: "FUEL_FLOW_TYPE"
+    :type: FUEL_FLOW_TYPE
 
     Gets or sets the source used to calculate the fuel flow for the maneuver.
 
@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.flight_mode
-    :type: "PHASE_OF_FLIGHT"
+    :type: PHASE_OF_FLIGHT
 
     Gets or sets the type of performance model that the aircraft will use to fly the maneuver.
 
@@ -130,13 +130,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
 

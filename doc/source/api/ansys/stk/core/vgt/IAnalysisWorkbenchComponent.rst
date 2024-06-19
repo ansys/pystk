@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: kind
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.kind
-    :type: "CRDN_KIND"
+    :type: CRDN_KIND
 
     Returns the component kind.
 
@@ -101,13 +101,13 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context
-    :type: "IAgCrdnContext"
+    :type: IAgCrdnContext
 
     Returns the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
 
 .. py:property:: type_info
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_info
-    :type: "IAgCrdnTypeInfo"
+    :type: IAgCrdnTypeInfo
 
     Returns the component type information.
 
@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: embedded_components
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.embedded_components
-    :type: "IAgCrdnCollection"
+    :type: IAgCrdnCollection
 
     Returns a collection of embedded components.
 
@@ -158,7 +158,8 @@ Method detail
 
 
 
-.. py:method:: duplicate(self, newName:str, description:str) -> "IAnalysisWorkbenchComponent"
+.. py:method:: duplicate(self, newName: str, description: str) -> IAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.duplicate
 
     Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded.
 
@@ -169,30 +170,33 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchComponent"`
+        :obj:`~IAnalysisWorkbenchComponent`
 
-.. py:method:: anonymous_duplicate(self) -> "IAnalysisWorkbenchComponent"
+.. py:method:: anonymous_duplicate(self) -> IAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.anonymous_duplicate
 
     Create an anonymous copy of the instance of a VGT component. The new component is not registered and will not be persisted nor restored when a scenario is saved or loaded.
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchComponent"`
+        :obj:`~IAnalysisWorkbenchComponent`
 
-.. py:method:: depends_on(self, component:"IAnalysisWorkbenchComponent") -> bool
+.. py:method:: depends_on(self, component: IAnalysisWorkbenchComponent) -> bool
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.depends_on
 
     Test if the instance depends on another component.
 
     :Parameters:
 
-    **component** : :obj:`~"IAnalysisWorkbenchComponent"`
+    **component** : :obj:`~IAnalysisWorkbenchComponent`
 
     :Returns:
 
         :obj:`~bool`
 
 
-.. py:method:: export(self, filename:str, comments:str) -> None
+.. py:method:: export(self, filename: str, comments: str) -> None
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.export
 
     Export the component to a file.
 
@@ -205,7 +209,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: rename(self, newName:str) -> None
+.. py:method:: rename(self, newName: str) -> None
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.rename
 
     Rename the component.
 

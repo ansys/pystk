@@ -3,7 +3,7 @@ TargeterGraph
 
 .. py:class:: TargeterGraph
 
-   ITargeterGraph, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~ITargeterGraph`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Targeter Graph.
 

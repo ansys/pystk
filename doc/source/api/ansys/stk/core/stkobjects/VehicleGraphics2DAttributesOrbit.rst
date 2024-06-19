@@ -3,7 +3,7 @@ VehicleGraphics2DAttributesOrbit
 
 .. py:class:: VehicleGraphics2DAttributesOrbit
 
-   IVehicleGraphics2DAttributesOrbit, IVehicleGraphics2DAttributesBasic, IVehicleGraphics2DAttributes, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DAttributesOrbit`, py:obj:`~IVehicleGraphics2DAttributesBasic`, py:obj:`~IVehicleGraphics2DAttributes`
 
    2D Graphics attributes for a satellite.
 

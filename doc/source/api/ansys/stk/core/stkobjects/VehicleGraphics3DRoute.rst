@@ -3,7 +3,7 @@ VehicleGraphics3DRoute
 
 .. py:class:: VehicleGraphics3DRoute
 
-   IVehicleGraphics3DRoute, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DRoute`
 
    AgVeVORoute2 Class.
 

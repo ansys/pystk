@@ -3,7 +3,7 @@ DemodulatorModelMsk
 
 .. py:class:: DemodulatorModelMsk
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a MSK modulator model.
 

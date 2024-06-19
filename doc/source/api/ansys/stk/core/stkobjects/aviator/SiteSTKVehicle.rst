@@ -3,7 +3,7 @@ SiteSTKVehicle
 
 .. py:class:: SiteSTKVehicle
 
-   ISiteSTKVehicle, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteSTKVehicle`, py:obj:`~ISite`
 
    Class defining a STK Vehicle site.
 

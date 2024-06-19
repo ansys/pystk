@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IOnePointAccessConstraint"
+.. py:method:: item(self, index: int) -> IOnePointAccessConstraint
+    :canonical: ansys.stk.core.stkobjects.IOnePointAccessConstraintCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IOnePointAccessConstraint"`
+        :obj:`~IOnePointAccessConstraint`
 
 

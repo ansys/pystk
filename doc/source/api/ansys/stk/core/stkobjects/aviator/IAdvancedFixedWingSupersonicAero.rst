@@ -46,19 +46,19 @@ Property detail
 
 .. py:property:: geometry_type
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.geometry_type
-    :type: "ADVANCED_FIXED_WING_GEOMETRY"
+    :type: ADVANCED_FIXED_WING_GEOMETRY
 
     Gets or sets the type of wing geometry for the aircraft.
 
 .. py:property:: geometry_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.geometry_mode_as_basic
-    :type: "IAgAvtrAdvFixedWingGeometryBasic"
+    :type: IAgAvtrAdvFixedWingGeometryBasic
 
     Get the options for a basic geometry wing.
 
 .. py:property:: geometry_mode_as_variable
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.geometry_mode_as_variable
-    :type: "IAgAvtrAdvFixedWingGeometryVariable"
+    :type: IAgAvtrAdvFixedWingGeometryVariable
 
     Get the options for a variable geometry wing.
 

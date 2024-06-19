@@ -3,7 +3,7 @@ VehicleHPOPSolarRadiationPressureOptions
 
 .. py:class:: VehicleHPOPSolarRadiationPressureOptions
 
-   IVehicleHPOPSolarRadiationPressureOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleHPOPSolarRadiationPressureOptions`
 
    Class defining HPOP solar radiation pressure options.
 

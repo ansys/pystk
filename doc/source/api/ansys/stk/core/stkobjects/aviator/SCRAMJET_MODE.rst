@@ -11,6 +11,21 @@ SCRAMJET_MODE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~SCRAMJET_MODE_DISABLED`
+              - Disabled scramjet mode.
+
+            * - :py:attr:`~SCRAMJET_MODE_BASIC`
+              - Scramjet - Basic mode.
+
+
 Import detail
 -------------
 

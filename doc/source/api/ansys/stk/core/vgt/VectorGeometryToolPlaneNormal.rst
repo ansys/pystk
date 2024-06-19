@@ -3,7 +3,7 @@ VectorGeometryToolPlaneNormal
 
 .. py:class:: VectorGeometryToolPlaneNormal
 
-   IVectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPlaneNormal`, py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A plane normal to a vector at a given point.
 

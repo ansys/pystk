@@ -3,7 +3,7 @@ RadarModeBistaticReceiverSearchTrack
 
 .. py:class:: RadarModeBistaticReceiverSearchTrack
 
-   IRadarModeBistaticReceiverSearchTrack, IRadarModeBistaticReceiver, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModeBistaticReceiverSearchTrack`, py:obj:`~IRadarModeBistaticReceiver`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a bistatic receiver search/track radar mode.
 

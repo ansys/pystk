@@ -3,7 +3,7 @@ BasicManeuverStrategyBarrelRoll
 
 .. py:class:: BasicManeuverStrategyBarrelRoll
 
-   IBasicManeuverStrategyBarrelRoll, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyBarrelRoll`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the barrel roll strategy for a basic maneuver procedure.
 

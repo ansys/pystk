@@ -3,7 +3,7 @@ CalculationToolInterpBasic
 
 .. py:class:: CalculationToolInterpBasic
 
-   ICalculationToolInterpBasic, IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolInterpBasic`, py:obj:`~IAnalysisWorkbenchInterp`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details.
 

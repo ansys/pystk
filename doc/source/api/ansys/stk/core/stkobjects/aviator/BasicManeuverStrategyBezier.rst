@@ -3,7 +3,7 @@ BasicManeuverStrategyBezier
 
 .. py:class:: BasicManeuverStrategyBezier
 
-   IBasicManeuverStrategyBezier, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyBezier`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Bezier strategy for a basic maneuver procedure.
 

@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.reference_selection
-    :type: "CALC_OBJECT_REFERENCE"
+    :type: CALC_OBJECT_REFERENCE
 
     Gets or sets the reference object selection.
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.reference
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the reference object.
 

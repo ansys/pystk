@@ -3,7 +3,7 @@ CROrientationOffsetCart
 
 .. py:class:: CROrientationOffsetCart
 
-   ICartesian3Vector, SupportsDeleteCallback
+   Bases: py:obj:`~ICartesian3Vector`
 
    Orientation offset cartesian.
 

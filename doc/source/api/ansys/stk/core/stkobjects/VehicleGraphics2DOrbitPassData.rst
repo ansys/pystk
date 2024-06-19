@@ -3,7 +3,7 @@ VehicleGraphics2DOrbitPassData
 
 .. py:class:: VehicleGraphics2DOrbitPassData
 
-   IVehicleGraphics2DOrbitPassData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DOrbitPassData`
 
    AgVeGfxPassData Class.
 

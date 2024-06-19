@@ -70,43 +70,43 @@ Property detail
 
 .. py:property:: beam_direction_provider_type
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beam_direction_provider_type
-    :type: "DIRECTION_PROVIDER_TYPE"
+    :type: DIRECTION_PROVIDER_TYPE
 
     Gets or sets the beam direction provider type.
 
 .. py:property:: beam_direction_provider
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beam_direction_provider
-    :type: "IAgDirectionProvider"
+    :type: IAgDirectionProvider
 
     Gets the beam direction provider.
 
 .. py:property:: beamformer_type
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer_type
-    :type: "BEAMFORMER_TYPE"
+    :type: BEAMFORMER_TYPE
 
     Gets or sets beamformer type.
 
 .. py:property:: beamformer
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer
-    :type: "IAgBeamformer"
+    :type: IAgBeamformer
 
     Gets the beamformer.
 
 .. py:property:: element_configuration_type
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration_type
-    :type: "ELEMENT_CONFIGURATION_TYPE"
+    :type: ELEMENT_CONFIGURATION_TYPE
 
     Gets the element configuration type.
 
 .. py:property:: element_configuration
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration
-    :type: "IAgElementConfiguration"
+    :type: IAgElementConfiguration
 
     Gets the element configuration.
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.elements
-    :type: "IAgElementCollection"
+    :type: IAgElementCollection
 
     Gets the collection of elements.
 

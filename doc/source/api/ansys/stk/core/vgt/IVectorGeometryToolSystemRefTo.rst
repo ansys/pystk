@@ -42,7 +42,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_path(self, path:str) -> None
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemRefTo.set_path
 
     Set a new system.
 
@@ -54,33 +55,36 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_system(self, system:"IVectorGeometryToolSystem") -> None
+.. py:method:: set_system(self, system: IVectorGeometryToolSystem) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemRefTo.set_system
 
     Set a new system.
 
     :Parameters:
 
-    **system** : :obj:`~"IVectorGeometryToolSystem"`
+    **system** : :obj:`~IVectorGeometryToolSystem`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_system(self) -> "IVectorGeometryToolSystem"
+.. py:method:: get_system(self) -> IVectorGeometryToolSystem
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemRefTo.get_system
 
     Return the actual system object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolSystem"`
+        :obj:`~IVectorGeometryToolSystem`
 
-.. py:method:: has_cyclic_dependency(self, system:"IVectorGeometryToolSystem") -> bool
+.. py:method:: has_cyclic_dependency(self, system: IVectorGeometryToolSystem) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemRefTo.has_cyclic_dependency
 
     Test whether the input component and the target component form a cyclic dependency.
 
     :Parameters:
 
-    **system** : :obj:`~"IVectorGeometryToolSystem"`
+    **system** : :obj:`~IVectorGeometryToolSystem`
 
     :Returns:
 

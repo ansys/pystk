@@ -3,7 +3,7 @@ AircraftTerrainFollowModel
 
 .. py:class:: AircraftTerrainFollowModel
 
-   IAircraftTerrainFollowModel, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftTerrainFollowModel`
 
    Class defining the TerrainFollow performance model of an aircraft.
 

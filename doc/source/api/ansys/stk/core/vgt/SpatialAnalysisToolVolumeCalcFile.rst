@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcFile
 
 .. py:class:: SpatialAnalysisToolVolumeCalcFile
 
-   ISpatialAnalysisToolVolumeCalcFile, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcFile`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Volumetric data loaded from a specified file - A file with .h5 extension. See STK help.
 

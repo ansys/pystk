@@ -3,7 +3,7 @@ VehicleTargetPointingElement
 
 .. py:class:: VehicleTargetPointingElement
 
-   IVehicleTargetPointingElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleTargetPointingElement`
 
    Target pointing data for target pointing attitude.
 

@@ -3,7 +3,7 @@ StateCalcRelativeInclination
 
 .. py:class:: StateCalcRelativeInclination
 
-   IComponentInfo, ICloneable, IStateCalcRelativeInclination, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelativeInclination`
 
    Relative Inclination Angle objects.
 

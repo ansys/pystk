@@ -3,7 +3,7 @@ TimeToolEventIntervalListScaled
 
 .. py:class:: TimeToolEventIntervalListScaled
 
-   ITimeToolEventIntervalListScaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalListScaled`, py:obj:`~ITimeToolEventIntervalList`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list...
 

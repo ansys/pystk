@@ -3,7 +3,7 @@ VehicleGraphics2DTrajectoryResolution
 
 .. py:class:: VehicleGraphics2DTrajectoryResolution
 
-   IVehicleGraphics2DTrajectoryResolution, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DTrajectoryResolution`
 
    Ground track and trajectory resolution for launch vehicles and missiles in terms of ephemeris steps.
 

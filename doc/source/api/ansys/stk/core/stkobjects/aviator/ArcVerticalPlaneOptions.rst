@@ -3,7 +3,7 @@ ArcVerticalPlaneOptions
 
 .. py:class:: ArcVerticalPlaneOptions
 
-   IArcVerticalPlaneOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IArcVerticalPlaneOptions`
 
    Class defining the vertical plane options in a procedure.
 

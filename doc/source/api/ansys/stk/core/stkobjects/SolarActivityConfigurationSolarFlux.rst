@@ -3,7 +3,7 @@ SolarActivityConfigurationSolarFlux
 
 .. py:class:: SolarActivityConfigurationSolarFlux
 
-   ISolarActivityConfigurationSolarFlux, ISolarActivityConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~ISolarActivityConfigurationSolarFlux`, py:obj:`~ISolarActivityConfiguration`
 
    Class defining the solar flux configuration.
 

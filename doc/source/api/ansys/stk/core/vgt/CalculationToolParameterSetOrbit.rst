@@ -3,7 +3,7 @@ CalculationToolParameterSetOrbit
 
 .. py:class:: CalculationToolParameterSetOrbit
 
-   ICalculationToolParameterSetOrbit, ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolParameterSetOrbit`, py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Orbit parameter set contains various trajectory representations of an orbiting point.
 

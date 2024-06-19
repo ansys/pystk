@@ -3,7 +3,7 @@ LabelNoteCollection
 
 .. py:class:: LabelNoteCollection
 
-   ILabelNoteCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ILabelNoteCollection`
 
    Collection representing label notes list.
 

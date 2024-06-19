@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: compute_simple(self, centralBody:str, extent:list) -> "ISurfaceTriangulatorResult"
+.. py:method:: compute_simple(self, centralBody: str, extent: list) -> ISurfaceTriangulatorResult
+    :canonical: ansys.stk.core.graphics.ISurfaceExtentTriangulatorInitializer.compute_simple
 
     Compute a triangulation on the specified centralBody for the specified extent. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree.
 
@@ -49,9 +50,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISurfaceTriangulatorResult"`
+        :obj:`~ISurfaceTriangulatorResult`
 
-.. py:method:: compute(self, centralBody:str, extent:list, altitude:float, granularity:float) -> "ISurfaceTriangulatorResult"
+.. py:method:: compute(self, centralBody: str, extent: list, altitude: float, granularity: float) -> ISurfaceTriangulatorResult
+    :canonical: ansys.stk.core.graphics.ISurfaceExtentTriangulatorInitializer.compute
 
     Compute a triangulation on the specified centralBody for the specified extent.
 
@@ -64,5 +66,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISurfaceTriangulatorResult"`
+        :obj:`~ISurfaceTriangulatorResult`
 

@@ -3,7 +3,7 @@ CalculationToolScalarFile
 
 .. py:class:: CalculationToolScalarFile
 
-   ICalculationToolScalarFile, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarFile`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Tabulated scalar calculation data loaded from specified file - a file with .csc extension.
 

@@ -3,7 +3,7 @@ TimeToolEventIntervalSignaled
 
 .. py:class:: TimeToolEventIntervalSignaled
 
-   ITimeToolEventIntervalSignaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalSignaled`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations.
 

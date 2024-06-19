@@ -3,7 +3,7 @@ Graphics3DMarker
 
 .. py:class:: Graphics3DMarker
 
-   IGraphics3DMarker, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DMarker`
 
    Class defining the 3D marker to represent an object at a specified threshold.
 

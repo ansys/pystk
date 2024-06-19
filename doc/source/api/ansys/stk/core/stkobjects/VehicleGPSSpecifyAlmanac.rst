@@ -3,7 +3,7 @@ VehicleGPSSpecifyAlmanac
 
 .. py:class:: VehicleGPSSpecifyAlmanac
 
-   IVehicleGPSSpecifyAlmanac, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGPSSpecifyAlmanac`
 
    Specify a GPS almanac.
 

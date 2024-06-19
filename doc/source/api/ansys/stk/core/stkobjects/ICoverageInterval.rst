@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: analysis_interval
     :canonical: ansys.stk.core.stkobjects.ICoverageInterval.analysis_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Get the coverage analysis interval.
 

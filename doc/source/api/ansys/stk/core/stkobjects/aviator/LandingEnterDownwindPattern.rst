@@ -3,7 +3,7 @@ LandingEnterDownwindPattern
 
 .. py:class:: LandingEnterDownwindPattern
 
-   ILandingEnterDownwindPattern, SupportsDeleteCallback
+   Bases: py:obj:`~ILandingEnterDownwindPattern`
 
    Class defining the enter downwind pattern options for a landing procedure.
 

@@ -36,15 +36,16 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: construct_strategy(self, pUnk:"IUnknown") -> "IBasicManeuverStrategy"
+.. py:method:: construct_strategy(self, pUnk: IUnknown) -> IBasicManeuverStrategy
+    :canonical: ansys.stk.core.stkobjects.aviator.IAutomationStrategyFactory.construct_strategy
 
     Construct the strategy.
 
     :Parameters:
 
-    **pUnk** : :obj:`~"IUnknown"`
+    **pUnk** : :obj:`~IUnknown`
 
     :Returns:
 
-        :obj:`~"IBasicManeuverStrategy"`
+        :obj:`~IBasicManeuverStrategy`
 

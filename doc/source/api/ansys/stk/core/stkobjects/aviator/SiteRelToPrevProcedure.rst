@@ -3,7 +3,7 @@ SiteRelToPrevProcedure
 
 .. py:class:: SiteRelToPrevProcedure
 
-   ISiteRelToPrevProcedure, ISite, SupportsDeleteCallback
+   Bases: py:obj:`~ISiteRelToPrevProcedure`, py:obj:`~ISite`
 
    Class defining a Relative to Previous Procedure site.
 

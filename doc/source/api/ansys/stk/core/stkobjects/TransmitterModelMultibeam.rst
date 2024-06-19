@@ -3,7 +3,7 @@ TransmitterModelMultibeam
 
 .. py:class:: TransmitterModelMultibeam
 
-   ITransmitterModelMultibeam, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModelMultibeam`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a multibeam transmitter model.
 

@@ -3,7 +3,7 @@ SensorEOIRRadiometricPair
 
 .. py:class:: SensorEOIRRadiometricPair
 
-   ISensorEOIRRadiometricPair, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorEOIRRadiometricPair`
 
    Class defining an Sensitivities item.
 

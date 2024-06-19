@@ -3,7 +3,7 @@ MSISE_1990
 
 .. py:class:: MSISE_1990
 
-   IMSISE_1990, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMSISE_1990`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    MSISE 1990 atmospheric propagator function.
 

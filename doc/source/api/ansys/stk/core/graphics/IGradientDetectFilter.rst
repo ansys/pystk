@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.graphics.IGradientDetectFilter.method
-    :type: "GRADIENT_DETECT_METHOD"
+    :type: GRADIENT_DETECT_METHOD
 
     Gets or sets the method used to detect gradients in the source raster.
 

@@ -3,7 +3,7 @@ ReTransmitterModelComplex
 
 .. py:class:: ReTransmitterModelComplex
 
-   IReTransmitterModelComplex, IReTransmitterModel, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReTransmitterModelComplex`, py:obj:`~IReTransmitterModel`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a complex re-transmitter model.
 

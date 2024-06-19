@@ -3,7 +3,7 @@ CalculationToolScalarElapsedTime
 
 .. py:class:: CalculationToolScalarElapsedTime
 
-   ICalculationToolScalarElapsedTime, ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolScalarElapsedTime`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Time elapsed since the reference time instant. Negative if in the past.
 

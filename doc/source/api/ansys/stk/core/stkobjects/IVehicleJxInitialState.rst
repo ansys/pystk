@@ -40,19 +40,19 @@ Property detail
 
 .. py:property:: ellipse_options
     :canonical: ansys.stk.core.stkobjects.IVehicleJxInitialState.ellipse_options
-    :type: "VEHICLE_ELLIPSE_OPTIONS"
+    :type: VEHICLE_ELLIPSE_OPTIONS
 
     Options for modeling elliptical motion.
 
 .. py:property:: representation
     :canonical: ansys.stk.core.stkobjects.IVehicleJxInitialState.representation
-    :type: "IAgOrbitState"
+    :type: IAgOrbitState
 
     Representation.
 
 .. py:property:: propagation_frame
     :canonical: ansys.stk.core.stkobjects.IVehicleJxInitialState.propagation_frame
-    :type: "VEHICLE_PROPAGATION_FRAME"
+    :type: VEHICLE_PROPAGATION_FRAME
 
     Gets or sets the propagation frame.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: orbit_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleJxInitialState.orbit_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Get the smart epoch component to configure the orbit state epoch.
 

@@ -3,7 +3,7 @@ VehicleEphemerisCCSDSv2ExportTool
 
 .. py:class:: VehicleEphemerisCCSDSv2ExportTool
 
-   IVehicleEphemerisCCSDSv2ExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEphemerisCCSDSv2ExportTool`
 
    The Ephemeris/Attitude Export Tool for CCSDSv2 Ephemeris type.
 

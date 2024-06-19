@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.coordinate_system
-    :type: "STK_EPHEM_COORDINATE_SYSTEM"
+    :type: STK_EPHEM_COORDINATE_SYSTEM
 
     Gets or sets the coordinate system in which to express the ephemeris.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: version_format
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.version_format
-    :type: "EXPORT_TOOL_VERSION_FORMAT"
+    :type: EXPORT_TOOL_VERSION_FORMAT
 
     Provides the option to generate files compatible with prior versions of STK.
 
@@ -76,19 +76,19 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.time_period
-    :type: "IAgExportToolTimePeriod"
+    :type: IAgExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.step_size
-    :type: "IAgExportToolStepSize"
+    :type: IAgExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 
 .. py:property:: covariance_type
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.covariance_type
-    :type: "STK_EPHEM_COVARIANCE_TYPE"
+    :type: STK_EPHEM_COVARIANCE_TYPE
 
     Choose to export position covariance (3x3), position/velocity covariance (6x6), or no covariance information. CovarianceType is valid only if the vehicle has ephemeris with covariance.
 
@@ -114,7 +114,8 @@ Method detail
 
 
 
-.. py:method:: export(self, fileName:str) -> None
+.. py:method:: export(self, fileName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.export
 
     Export the ephemeris file.
 

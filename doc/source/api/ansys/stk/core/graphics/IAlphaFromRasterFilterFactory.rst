@@ -38,23 +38,25 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IAlphaFromRasterFilter"
+.. py:method:: initialize(self) -> IAlphaFromRasterFilter
+    :canonical: ansys.stk.core.graphics.IAlphaFromRasterFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IAlphaFromRasterFilter"`
+        :obj:`~IAlphaFromRasterFilter`
 
-.. py:method:: initialize_with_raster(self, raster:"IRaster") -> "IAlphaFromRasterFilter"
+.. py:method:: initialize_with_raster(self, raster: IRaster) -> IAlphaFromRasterFilter
+    :canonical: ansys.stk.core.graphics.IAlphaFromRasterFilterFactory.initialize_with_raster
 
     Initialize a new instance with the raster that the source raster will use to derive an alpha band.
 
     :Parameters:
 
-    **raster** : :obj:`~"IRaster"`
+    **raster** : :obj:`~IRaster`
 
     :Returns:
 
-        :obj:`~"IAlphaFromRasterFilter"`
+        :obj:`~IAlphaFromRasterFilter`
 

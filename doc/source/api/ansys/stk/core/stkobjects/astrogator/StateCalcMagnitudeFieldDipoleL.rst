@@ -3,7 +3,7 @@ StateCalcMagnitudeFieldDipoleL
 
 .. py:class:: StateCalcMagnitudeFieldDipoleL
 
-   IStateCalcMagnitudeFieldDipoleL, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcMagnitudeFieldDipoleL`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass StateCalcMagFieldDipoleL.
 

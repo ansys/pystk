@@ -3,7 +3,7 @@ VehicleGroundEllipseElement
 
 .. py:class:: VehicleGroundEllipseElement
 
-   IVehicleGroundEllipseElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGroundEllipseElement`
 
    Ground ellipse.
 

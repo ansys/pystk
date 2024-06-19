@@ -3,7 +3,7 @@ ScriptingSegmentCollection
 
 .. py:class:: ScriptingSegmentCollection
 
-   IScriptingSegmentCollection, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IScriptingSegmentCollection`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Scripting Segment Collection.
 

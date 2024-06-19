@@ -3,7 +3,7 @@ CentralBodyEphemerisFile
 
 .. py:class:: CentralBodyEphemerisFile
 
-   ICentralBodyEphemerisFile, ICentralBodyEphemeris, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyEphemerisFile`, py:obj:`~ICentralBodyEphemeris`
 
    Central Body Ephemeris - File.
 

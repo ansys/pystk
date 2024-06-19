@@ -3,7 +3,7 @@ VehicleHPOPDragModel
 
 .. py:class:: VehicleHPOPDragModel
 
-   IVehicleHPOPDragModel, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleHPOPDragModel`
 
    HPOP Drag Model Base CoClass.
 

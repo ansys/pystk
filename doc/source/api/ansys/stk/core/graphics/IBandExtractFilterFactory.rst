@@ -40,35 +40,38 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IBandExtractFilter"
+.. py:method:: initialize(self) -> IBandExtractFilter
+    :canonical: ansys.stk.core.graphics.IBandExtractFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"IBandExtractFilter"`
+        :obj:`~IBandExtractFilter`
 
-.. py:method:: initialize_with_band(self, rasterBand:"RASTER_BAND") -> "IBandExtractFilter"
+.. py:method:: initialize_with_band(self, rasterBand: RASTER_BAND) -> IBandExtractFilter
+    :canonical: ansys.stk.core.graphics.IBandExtractFilterFactory.initialize_with_band
 
     Initialize a new instance with the raster band to be extracted from the source raster.
 
     :Parameters:
 
-    **rasterBand** : :obj:`~"RASTER_BAND"`
+    **rasterBand** : :obj:`~RASTER_BAND`
 
     :Returns:
 
-        :obj:`~"IBandExtractFilter"`
+        :obj:`~IBandExtractFilter`
 
-.. py:method:: initialize_with_format(self, rasterFormat:"RASTER_FORMAT") -> "IBandExtractFilter"
+.. py:method:: initialize_with_format(self, rasterFormat: RASTER_FORMAT) -> IBandExtractFilter
+    :canonical: ansys.stk.core.graphics.IBandExtractFilterFactory.initialize_with_format
 
     Initialize a new instance with the raster format containing the bands to be extracted from the source raster.
 
     :Parameters:
 
-    **rasterFormat** : :obj:`~"RASTER_FORMAT"`
+    **rasterFormat** : :obj:`~RASTER_FORMAT`
 
     :Returns:
 
-        :obj:`~"IBandExtractFilter"`
+        :obj:`~IBandExtractFilter`
 

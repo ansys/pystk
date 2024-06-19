@@ -3,7 +3,7 @@ AccessSampling
 
 .. py:class:: AccessSampling
 
-   IAccessSampling, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessSampling`
 
    Define properties and methods to configure the sampling strategy used in access computations.
 

@@ -3,7 +3,7 @@ StateCalcPressure
 
 .. py:class:: StateCalcPressure
 
-   IComponentInfo, ICloneable, IStateCalcPressure, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcPressure`
 
    Pressure Calc objects.
 

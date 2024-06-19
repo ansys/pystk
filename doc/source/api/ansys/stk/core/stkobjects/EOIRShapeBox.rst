@@ -3,7 +3,7 @@ EOIRShapeBox
 
 .. py:class:: EOIRShapeBox
 
-   IEOIRShapeBox, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeBox`, py:obj:`~IEOIRShapeObject`
 
    Box shape class.
 

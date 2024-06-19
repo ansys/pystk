@@ -71,7 +71,8 @@ Method detail
 -------------
 
 
-.. py:method:: add(self, start:typing.Any, stop:typing.Any, name:str) -> "IScheduleTime"
+.. py:method:: add(self, start: typing.Any, stop: typing.Any, name: str) -> IScheduleTime
+    :canonical: ansys.stk.core.stkobjects.IScheduleTimeCollection.add
 
     Add a schedule time item to the collection. Start/Stop use DateFormat Dimension.
 
@@ -83,9 +84,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScheduleTime"`
+        :obj:`~IScheduleTime`
 
-.. py:method:: remove_index(self, index:int) -> None
+.. py:method:: remove_index(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IScheduleTimeCollection.remove_index
 
     Remove an item given an index.
 
@@ -98,6 +100,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IScheduleTimeCollection.remove_all
 
     Remove all items in the collection.
 
@@ -105,7 +108,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_schedule(self, start:typing.Any, stop:typing.Any, name:str) -> None
+.. py:method:: remove_schedule(self, start: typing.Any, stop: typing.Any, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IScheduleTimeCollection.remove_schedule
 
     Remove an interval using the interval interface. Start/Stop use DateFormat Dimension.
 
@@ -119,7 +123,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: item(self, index:int) -> "IScheduleTime"
+.. py:method:: item(self, index: int) -> IScheduleTime
+    :canonical: ansys.stk.core.stkobjects.IScheduleTimeCollection.item
 
     Retrieve and IAgScheduleTime interface given an index.
 
@@ -129,10 +134,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScheduleTime"`
+        :obj:`~IScheduleTime`
 
 
 .. py:method:: deconflict(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IScheduleTimeCollection.deconflict
 
     Deconflicts the schedule time intervals.
 

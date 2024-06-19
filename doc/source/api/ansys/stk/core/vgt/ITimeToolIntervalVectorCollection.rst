@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "ITimeToolIntervalCollection"
+.. py:method:: item(self, index: int) -> ITimeToolIntervalCollection
+    :canonical: ansys.stk.core.vgt.ITimeToolIntervalVectorCollection.item
 
     Access an element at the specified position.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ITimeToolIntervalCollection"`
+        :obj:`~ITimeToolIntervalCollection`
 
 

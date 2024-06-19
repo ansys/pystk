@@ -56,13 +56,13 @@ Property detail
 
 .. py:property:: marker_type
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.marker_type
-    :type: "ROUTE_GRAPHICS_3D_MARKER_TYPE"
+    :type: ROUTE_GRAPHICS_3D_MARKER_TYPE
 
     Get the marker type of the waypoint.
 
 .. py:property:: shape
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.shape
-    :type: "MARKER_SHAPE_3D"
+    :type: MARKER_SHAPE_3D
 
     Gets or sets the shape of the waypoint marker.
 
@@ -99,7 +99,8 @@ Method detail
 
 
 
-.. py:method:: set_image_file(self, markerFile:str) -> None
+.. py:method:: set_image_file(self, markerFile: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.set_image_file
 
     Set a file name of the image used for the waypoint.
 

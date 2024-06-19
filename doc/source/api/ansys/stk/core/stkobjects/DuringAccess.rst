@@ -3,7 +3,7 @@ DuringAccess
 
 .. py:class:: DuringAccess
 
-   IDisplayTimesData, IDuringAccess, SupportsDeleteCallback
+   Bases: py:obj:`~IDisplayTimesData`, py:obj:`~IDuringAccess`
 
    Class defining display intervals in terms of access to objects.
 

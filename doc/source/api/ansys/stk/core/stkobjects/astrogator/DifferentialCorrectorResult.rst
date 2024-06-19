@@ -3,7 +3,7 @@ DifferentialCorrectorResult
 
 .. py:class:: DifferentialCorrectorResult
 
-   IDifferentialCorrectorResult, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IDifferentialCorrectorResult`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Differential Corrector equality constraints.
 

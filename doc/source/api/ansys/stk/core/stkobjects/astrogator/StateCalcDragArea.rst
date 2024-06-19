@@ -3,7 +3,7 @@ StateCalcDragArea
 
 .. py:class:: StateCalcDragArea
 
-   IComponentInfo, ICloneable, IStateCalcDragArea, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDragArea`
 
    DragArea Calc objects.
 

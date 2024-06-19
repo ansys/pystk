@@ -3,7 +3,7 @@ ClassicalLocationTrueAnomaly
 
 .. py:class:: ClassicalLocationTrueAnomaly
 
-   IClassicalLocationTrueAnomaly, IClassicalLocation, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalLocationTrueAnomaly`, py:obj:`~IClassicalLocation`
 
    True Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 

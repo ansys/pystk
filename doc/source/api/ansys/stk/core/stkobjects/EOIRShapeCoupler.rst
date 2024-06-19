@@ -3,7 +3,7 @@ EOIRShapeCoupler
 
 .. py:class:: EOIRShapeCoupler
 
-   IEOIRShapeCoupler, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeCoupler`, py:obj:`~IEOIRShapeObject`
 
    Coupler shape class.
 

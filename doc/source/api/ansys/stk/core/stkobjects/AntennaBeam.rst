@@ -3,7 +3,7 @@ AntennaBeam
 
 .. py:class:: AntennaBeam
 
-   IAntennaBeam, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaBeam`
 
    Class defining an antenna beam.
 

@@ -3,7 +3,7 @@ TroposphericScintillationFadingLossModelP618_12
 
 .. py:class:: TroposphericScintillationFadingLossModelP618_12
 
-   ITroposphericScintillationFadingLossModelP618_12, ITroposphericScintillationFadingLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITroposphericScintillationFadingLossModelP618_12`, py:obj:`~ITroposphericScintillationFadingLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a tropospheric scintillation fading loss P.618-12 model.
 

@@ -3,7 +3,7 @@ RadarCrossSectionInheritable
 
 .. py:class:: RadarCrossSectionInheritable
 
-   IRadarCrossSectionInheritable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarCrossSectionInheritable`
 
    Class defining a inheritable radar cross section.
 

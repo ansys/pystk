@@ -73,7 +73,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IProcedure"
+.. py:method:: item(self, index: int) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -83,49 +84,53 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
-.. py:method:: add(self, siteType:"SITE_TYPE", procedureType:"PROCEDURE_TYPE") -> "IProcedure"
+.. py:method:: add(self, siteType: SITE_TYPE, procedureType: PROCEDURE_TYPE) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureCollection.add
 
     Add a procedure with the specified site at the end of the current phase.
 
     :Parameters:
 
-    **siteType** : :obj:`~"SITE_TYPE"`
-    **procedureType** : :obj:`~"PROCEDURE_TYPE"`
+    **siteType** : :obj:`~SITE_TYPE`
+    **procedureType** : :obj:`~PROCEDURE_TYPE`
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
-.. py:method:: add_at_index(self, index:int, siteType:"SITE_TYPE", procedureType:"PROCEDURE_TYPE") -> "IProcedure"
+.. py:method:: add_at_index(self, index: int, siteType: SITE_TYPE, procedureType: PROCEDURE_TYPE) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureCollection.add_at_index
 
     Add a procedure with the specified site at the given index.
 
     :Parameters:
 
     **index** : :obj:`~int`
-    **siteType** : :obj:`~"SITE_TYPE"`
-    **procedureType** : :obj:`~"PROCEDURE_TYPE"`
+    **siteType** : :obj:`~SITE_TYPE`
+    **procedureType** : :obj:`~PROCEDURE_TYPE`
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
-.. py:method:: remove(self, procedure:"IProcedure") -> None
+.. py:method:: remove(self, procedure: IProcedure) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureCollection.remove
 
     Remove given procedure.
 
     :Parameters:
 
-    **procedure** : :obj:`~"IProcedure"`
+    **procedure** : :obj:`~IProcedure`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_at_index(self, index:int) -> None
+.. py:method:: remove_at_index(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureCollection.remove_at_index
 
     Remove procedure at the given index.
 
@@ -138,6 +143,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: enable_auto_propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureCollection.enable_auto_propagate
 
     Enable automatically propagating the mission. Aviator will automatically propagate before adding a procedure, ensuring a valid initial state for the new procedure.
 
@@ -146,6 +152,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: disable_auto_propagate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureCollection.disable_auto_propagate
 
     Disable automatically propagating the mission. Use with caution. Aviator will not automatically propagate before adding new procedures.
 

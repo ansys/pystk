@@ -3,7 +3,7 @@ EOIRShapeNone
 
 .. py:class:: EOIRShapeNone
 
-   IEOIRShapeNone, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapeNone`, py:obj:`~IEOIRShapeObject`
 
    None shape class.
 

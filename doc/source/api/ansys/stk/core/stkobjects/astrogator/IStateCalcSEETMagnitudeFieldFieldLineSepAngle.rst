@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: target_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSEETMagnitudeFieldFieldLineSepAngle.target_object
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the reference object.
 

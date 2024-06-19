@@ -3,7 +3,7 @@ StdMilitary2525bSymbols
 
 .. py:class:: StdMilitary2525bSymbols
 
-   IStdMilitary2525bSymbols, SupportsDeleteCallback
+   Bases: py:obj:`~IStdMilitary2525bSymbols`
 
    AgStdMil2525bSymbols class provides methods to create 2525b symbols.
 

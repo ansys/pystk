@@ -3,7 +3,7 @@ UserVTOLPointSource
 
 .. py:class:: UserVTOLPointSource
 
-   IUserVTOLPointSource, ICatalogSource, SupportsDeleteCallback
+   Bases: py:obj:`~IUserVTOLPointSource`, py:obj:`~ICatalogSource`
 
    Class defining the user VTOL Point source in the Aviator catalog.
 

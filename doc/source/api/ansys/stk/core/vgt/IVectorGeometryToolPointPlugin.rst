@@ -75,6 +75,7 @@ Method detail
 
 
 .. py:method:: reset(self) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.reset
 
     Reset the plugin.
 
@@ -82,7 +83,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_property(self, name:str, value:str) -> None
+.. py:method:: set_property(self, name: str, value: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.set_property
 
     Set the plugin properties. This method throws an exception if the specified property does not exist, invalid value was specified or the specified property is read-only.
 
@@ -95,7 +97,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_property(self, name:str) -> str
+.. py:method:: get_property(self, name: str) -> str
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.get_property
 
     Read a value of the specified plugin property. This method throws an exception if the property does not exist.
 

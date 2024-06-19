@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IAntennaModel.type
-    :type: "ANTENNA_MODEL_TYPE"
+    :type: ANTENNA_MODEL_TYPE
 
     Gets the antenna model type enumeration.
 

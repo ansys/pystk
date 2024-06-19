@@ -11,6 +11,18 @@ SENSOR_EOIR_SCAN_MODES
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~FRAMING_ARRAY`
+              - EOIR : 2D framing array sensor.
+
+
 Import detail
 -------------
 

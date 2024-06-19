@@ -93,7 +93,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IComponentInfo"
+.. py:method:: item(self, indexOrName: typing.Any) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.IComponentInfoCollection.item
 
     Allow the user to iterate through the components.
 
@@ -103,11 +104,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
 
 
-.. py:method:: get_folder(self, indexOrName:typing.Any) -> "IComponentInfoCollection"
+.. py:method:: get_folder(self, indexOrName: typing.Any) -> IComponentInfoCollection
+    :canonical: ansys.stk.core.stkobjects.IComponentInfoCollection.get_folder
 
     Return the specified folder.
 
@@ -117,12 +119,13 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfoCollection"`
+        :obj:`~IComponentInfoCollection`
 
 
 
 
-.. py:method:: remove(self, name:str) -> None
+.. py:method:: remove(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IComponentInfoCollection.remove
 
     Remove the named component from the collection.
 
@@ -134,7 +137,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: duplicate_component(self, indexOrComponentName:typing.Any, newComponentName:str) -> "IComponentInfo"
+.. py:method:: duplicate_component(self, indexOrComponentName: typing.Any, newComponentName: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.IComponentInfoCollection.duplicate_component
 
     Duplicates and adds the component, with the supplied name or index, to the collection and then returns the duplicated component.
 
@@ -145,9 +149,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: load_component(self, fileName:str) -> "IComponentInfo"
+.. py:method:: load_component(self, fileName: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.IComponentInfoCollection.load_component
 
     Load a component from a specified file (full path) into the current folder and then returns the loaded component.
 
@@ -157,9 +162,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IComponentInfo"
+.. py:method:: get_item_by_index(self, index: int) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.IComponentInfoCollection.get_item_by_index
 
     Retrieve component info from the collection by index.
 
@@ -169,9 +175,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IComponentInfo"
+.. py:method:: get_item_by_name(self, name: str) -> IComponentInfo
+    :canonical: ansys.stk.core.stkobjects.IComponentInfoCollection.get_item_by_name
 
     Retrieve component info from the collection by name.
 
@@ -181,5 +188,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IComponentInfo"`
+        :obj:`~IComponentInfo`
 

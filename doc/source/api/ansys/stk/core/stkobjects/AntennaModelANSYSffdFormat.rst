@@ -3,7 +3,7 @@ AntennaModelANSYSffdFormat
 
 .. py:class:: AntennaModelANSYSffdFormat
 
-   IAntennaModelANSYSffdFormat, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelANSYSffdFormat`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an antenna pattern ANSYS ffd model.
 

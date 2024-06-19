@@ -3,7 +3,7 @@ DataProviderInterval
 
 .. py:class:: DataProviderInterval
 
-   IDataProviderInterval, IDataProvider, IDataProviderInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderInterval`, py:obj:`~IDataProvider`, py:obj:`~IDataProviderInfo`
 
    Support for interval data providers (e.g. Facility lighting times).
 

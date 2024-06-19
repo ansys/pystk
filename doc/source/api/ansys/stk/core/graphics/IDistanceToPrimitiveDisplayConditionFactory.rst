@@ -38,25 +38,27 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IDistanceToPrimitiveDisplayCondition"
+.. py:method:: initialize(self) -> IDistanceToPrimitiveDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceToPrimitiveDisplayConditionFactory.initialize
 
     Initialize a default distance to primitive display condition. With this constructor, an object is always rendered regardless of the camera's distance to the primitive.
 
     :Returns:
 
-        :obj:`~"IDistanceToPrimitiveDisplayCondition"`
+        :obj:`~IDistanceToPrimitiveDisplayCondition`
 
-.. py:method:: initialize_with_distances(self, primitive:"IPrimitive", minimumDistance:float, maximumDistance:float) -> "IDistanceToPrimitiveDisplayCondition"
+.. py:method:: initialize_with_distances(self, primitive: IPrimitive, minimumDistance: float, maximumDistance: float) -> IDistanceToPrimitiveDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceToPrimitiveDisplayConditionFactory.initialize_with_distances
 
     Initialize a distance to primitive display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
     :Parameters:
 
-    **primitive** : :obj:`~"IPrimitive"`
+    **primitive** : :obj:`~IPrimitive`
     **minimumDistance** : :obj:`~float`
     **maximumDistance** : :obj:`~float`
 
     :Returns:
 
-        :obj:`~"IDistanceToPrimitiveDisplayCondition"`
+        :obj:`~IDistanceToPrimitiveDisplayCondition`
 

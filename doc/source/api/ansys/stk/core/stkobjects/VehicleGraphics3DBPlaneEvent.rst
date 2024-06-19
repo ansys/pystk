@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneEvent
 
 .. py:class:: VehicleGraphics3DBPlaneEvent
 
-   IVehicleGraphics3DBPlaneEvent, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneEvent`
 
    3D BPlane Event.
 

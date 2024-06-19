@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant.reference_system
-    :type: "IAgCrdnSystemRefTo"
+    :type: IAgCrdnSystemRefTo
 
     Specify a reference system.
 
 .. py:property:: quadrant
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant.quadrant
-    :type: "CRDN_QUADRANT_TYPE"
+    :type: CRDN_QUADRANT_TYPE
 
     Specify a quadrant.
 

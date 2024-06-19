@@ -3,7 +3,7 @@ ExportToolStepSize
 
 .. py:class:: ExportToolStepSize
 
-   IExportToolStepSize, SupportsDeleteCallback
+   Bases: py:obj:`~IExportToolStepSize`
 
    AgStepSize Class.
 

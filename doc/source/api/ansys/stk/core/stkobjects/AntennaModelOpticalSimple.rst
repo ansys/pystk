@@ -3,7 +3,7 @@ AntennaModelOpticalSimple
 
 .. py:class:: AntennaModelOpticalSimple
 
-   IAntennaModelOpticalSimple, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelOpticalSimple`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a simple optical antenna model.
 

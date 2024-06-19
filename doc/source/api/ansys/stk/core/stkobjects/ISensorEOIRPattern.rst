@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: processing_level
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRPattern.processing_level
-    :type: "SENSOR_EOIR_PROCESSING_LEVELS"
+    :type: SENSOR_EOIR_PROCESSING_LEVELS
 
     The tap point output ProcessingLevel for the sensor specifying the stage in the imaging pipeline to produce simulated images and output files.
 
@@ -64,13 +64,13 @@ Property detail
 
 .. py:property:: bands
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRPattern.bands
-    :type: "IAgSnEOIRBandCollection"
+    :type: IAgSnEOIRBandCollection
 
     Get the collection of Bands for the sensor.
 
 .. py:property:: jitter_type
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_type
-    :type: "SENSOR_EOIR_JITTER_TYPES"
+    :type: SENSOR_EOIR_JITTER_TYPES
 
     Type of jitter specification.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: scan_mode
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRPattern.scan_mode
-    :type: "SENSOR_EOIR_SCAN_MODES"
+    :type: SENSOR_EOIR_SCAN_MODES
 
     Type of scan mode specification.
 

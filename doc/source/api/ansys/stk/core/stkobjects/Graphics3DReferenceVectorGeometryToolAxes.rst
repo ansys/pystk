@@ -3,7 +3,7 @@ Graphics3DReferenceVectorGeometryToolAxes
 
 .. py:class:: Graphics3DReferenceVectorGeometryToolAxes
 
-   IGraphics3DReferenceVectorGeometryToolAxes, IGraphics3DReferenceAnalysisWorkbenchComponent, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DReferenceVectorGeometryToolAxes`, py:obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~IDisplayTime`
 
    Class defining a set of reference axes (3D Graphics, Vector Geometry Tool).
 

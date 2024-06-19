@@ -3,7 +3,7 @@ ConstellationConstraintObjectRestriction
 
 .. py:class:: ConstellationConstraintObjectRestriction
 
-   IConstellationConstraintObjectRestriction, IConstellationConstraintRestriction, SupportsDeleteCallback
+   Bases: py:obj:`~IConstellationConstraintObjectRestriction`, py:obj:`~IConstellationConstraintRestriction`
 
    Class related to the constellation constraint restrictions.
 

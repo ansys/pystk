@@ -58,6 +58,7 @@ Method detail
 
 
 .. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFile.reload
 
     Reload the interval list file.
 
@@ -65,11 +66,12 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_file_span(self) -> "ITimeToolEventIntervalResult"
+.. py:method:: get_file_span(self) -> ITimeToolEventIntervalResult
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFile.get_file_span
 
     Compute the interval list file span.
 
     :Returns:
 
-        :obj:`~"ITimeToolEventIntervalResult"`
+        :obj:`~ITimeToolEventIntervalResult`
 

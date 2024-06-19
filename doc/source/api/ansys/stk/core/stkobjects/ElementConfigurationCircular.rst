@@ -3,7 +3,7 @@ ElementConfigurationCircular
 
 .. py:class:: ElementConfigurationCircular
 
-   IElementConfigurationCircular, IElementConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~IElementConfigurationCircular`, py:obj:`~IElementConfiguration`
 
    Class defining a circular element configuration.
 

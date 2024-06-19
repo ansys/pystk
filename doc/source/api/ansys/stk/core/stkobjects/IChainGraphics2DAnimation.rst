@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IChainGraphics2DAnimation.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the width of the valid strand lines used in animation graphics.
 
@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: optimal_path_line_width
     :canonical: ansys.stk.core.stkobjects.IChainGraphics2DAnimation.optimal_path_line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Gets or sets the width of the optimal strands lines used in animation graphics.
 

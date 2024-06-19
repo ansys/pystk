@@ -3,7 +3,7 @@ AttitudeTransitions
 
 .. py:class:: AttitudeTransitions
 
-   IAttitudeTransitions, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeTransitions`
 
    Class defining the attitude transition options for an acceleration performance model of an Aviator aircraft.
 

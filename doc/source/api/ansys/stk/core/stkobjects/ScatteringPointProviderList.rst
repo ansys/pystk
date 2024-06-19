@@ -3,7 +3,7 @@ ScatteringPointProviderList
 
 .. py:class:: ScatteringPointProviderList
 
-   IScatteringPointProviderList, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointProviderList`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a scattering point provider list.
 

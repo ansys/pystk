@@ -43,13 +43,13 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.graphics.IPrimitive.reference_frame
-    :type: "IAgCrdnSystem"
+    :type: IAgCrdnSystem
 
     Gets or sets the reference frame this primitive is defined and rendered in.
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.IPrimitive.bounding_sphere
-    :type: "IAgStkGraphicsBoundingSphere"
+    :type: IAgStkGraphicsBoundingSphere
 
     Gets or sets the bounding sphere that encompasses the primitive. The center is defined in the primitive's reference frame.
 
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: display_condition
     :canonical: ansys.stk.core.graphics.IPrimitive.display_condition
-    :type: "IAgStkGraphicsDisplayCondition"
+    :type: IAgStkGraphicsDisplayCondition
 
     Gets or sets the display condition that determines if the primitive should be rendered. Both this and display must evaluate to true for the primitive to be rendered.
 

@@ -39,6 +39,7 @@ Method detail
 -------------
 
 .. py:method:: get_intervals(self) -> list
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFixed.get_intervals
 
     Get intervals with explicitly specified start and stop times from interval list. The method returns a one-dimensional array which elements are 2-tuples of intervals' start/stop times converted according to the current unit preferences.
 
@@ -46,7 +47,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: set_intervals(self, intervals:list) -> None
+.. py:method:: set_intervals(self, intervals: list) -> None
+    :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFixed.set_intervals
 
     Set interval list from intervals with explicitly specified start and stop times. The method takes a one-dimensional array which elements are 2-tuples of intervals' start/stop times converted according to the current unit preferences.
 

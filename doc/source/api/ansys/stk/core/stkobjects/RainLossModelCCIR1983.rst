@@ -3,7 +3,7 @@ RainLossModelCCIR1983
 
 .. py:class:: RainLossModelCCIR1983
 
-   IRainLossModelCCIR1983, IRainLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRainLossModelCCIR1983`, py:obj:`~IRainLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rain loss model.
 

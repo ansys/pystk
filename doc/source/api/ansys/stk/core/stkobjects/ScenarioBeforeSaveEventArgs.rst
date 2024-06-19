@@ -3,7 +3,7 @@ ScenarioBeforeSaveEventArgs
 
 .. py:class:: ScenarioBeforeSaveEventArgs
 
-   IScenarioBeforeSaveEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~IScenarioBeforeSaveEventArgs`
 
    Contains information about the changes in the object's state.
 

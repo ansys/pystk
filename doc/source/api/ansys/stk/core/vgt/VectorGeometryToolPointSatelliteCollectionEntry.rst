@@ -3,7 +3,7 @@ VectorGeometryToolPointSatelliteCollectionEntry
 
 .. py:class:: VectorGeometryToolPointSatelliteCollectionEntry
 
-   IVectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointSatelliteCollectionEntry`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A point placed at the center of mass of a specified satellite of the satellite collection.
 

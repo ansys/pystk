@@ -3,7 +3,7 @@ StateCalcImpactFlux
 
 .. py:class:: StateCalcImpactFlux
 
-   IStateCalcImpactFlux, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcImpactFlux`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    CoClass StateCalcImpactFlux.
 

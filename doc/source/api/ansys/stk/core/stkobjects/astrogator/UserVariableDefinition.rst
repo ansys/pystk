@@ -3,7 +3,7 @@ UserVariableDefinition
 
 .. py:class:: UserVariableDefinition
 
-   IUserVariableDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IUserVariableDefinition`
 
    User Variable Definition.
 

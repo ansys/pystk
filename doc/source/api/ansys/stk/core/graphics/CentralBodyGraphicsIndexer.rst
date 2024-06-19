@@ -3,7 +3,7 @@ CentralBodyGraphicsIndexer
 
 .. py:class:: CentralBodyGraphicsIndexer
 
-   ICentralBodyGraphicsIndexer, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyGraphicsIndexer`
 
    An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body.
 

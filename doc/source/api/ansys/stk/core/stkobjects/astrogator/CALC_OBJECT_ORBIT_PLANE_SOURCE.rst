@@ -11,6 +11,21 @@ CALC_OBJECT_ORBIT_PLANE_SOURCE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~REFERENCE_SATELLITE`
+              - Use the reference satellite to generate the orbit plane.
+
+            * - :py:attr:`~SATELLITE`
+              - Use the satellite to generate the orbit plane.
+
+
 Import detail
 -------------
 

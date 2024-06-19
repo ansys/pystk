@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: numerator_complex_polynomial
     :canonical: ansys.stk.core.stkobjects.IRFFilterModelIir.numerator_complex_polynomial
-    :type: "IAgCRComplexCollection"
+    :type: IAgCRComplexCollection
 
     Gets the numerator complex polynomial.
 
 .. py:property:: denominator_complex_polynomial
     :canonical: ansys.stk.core.stkobjects.IRFFilterModelIir.denominator_complex_polynomial
-    :type: "IAgCRComplexCollection"
+    :type: IAgCRComplexCollection
 
     Gets the denominator complex polynomial.
 

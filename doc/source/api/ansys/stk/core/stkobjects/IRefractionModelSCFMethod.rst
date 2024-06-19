@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: coefficients
     :canonical: ansys.stk.core.stkobjects.IRefractionModelSCFMethod.coefficients
-    :type: "IAgRfCoefficients"
+    :type: IAgRfCoefficients
 
     Gets the polynomial coefficients.
 

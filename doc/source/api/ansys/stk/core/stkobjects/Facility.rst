@@ -3,7 +3,7 @@ Facility
 
 .. py:class:: Facility
 
-   IFacility, IStkObject, ILifetimeInformation, IDisplayTime, SupportsDeleteCallback
+   Bases: py:obj:`~IFacility`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
 
    Class defining the Facility object.
 

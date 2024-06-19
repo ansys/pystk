@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_area_type_ellipse(self, semiMajorAxis:float, semiMinorAxis:float, bearing:typing.Any) -> "IAreaTypeEllipse"
+.. py:method:: set_area_type_ellipse(self, semiMajorAxis: float, semiMinorAxis: float, bearing: typing.Any) -> IAreaTypeEllipse
+    :canonical: ansys.stk.core.stkobjects.IAreaTargetCommonTasks.set_area_type_ellipse
 
     Set the boundary area type to Ellipse.
 
@@ -50,9 +51,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAreaTypeEllipse"`
+        :obj:`~IAreaTypeEllipse`
 
-.. py:method:: set_area_type_pattern(self, latLons:list) -> "IAreaTypePatternCollection"
+.. py:method:: set_area_type_pattern(self, latLons: list) -> IAreaTypePatternCollection
+    :canonical: ansys.stk.core.stkobjects.IAreaTargetCommonTasks.set_area_type_pattern
 
     Set the boundary area type to Pattern.
 
@@ -62,5 +64,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAreaTypePatternCollection"`
+        :obj:`~IAreaTypePatternCollection`
 

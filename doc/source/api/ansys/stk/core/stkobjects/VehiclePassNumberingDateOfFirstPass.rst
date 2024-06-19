@@ -3,7 +3,7 @@ VehiclePassNumberingDateOfFirstPass
 
 .. py:class:: VehiclePassNumberingDateOfFirstPass
 
-   IVehiclePassNumberingDateOfFirstPass, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePassNumberingDateOfFirstPass`
 
    Date of first pass for pass numbering.
 

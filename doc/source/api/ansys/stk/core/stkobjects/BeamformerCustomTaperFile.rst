@@ -3,7 +3,7 @@ BeamformerCustomTaperFile
 
 .. py:class:: BeamformerCustomTaperFile
 
-   IBeamformer, IBeamformerCustomTaperFile, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerCustomTaperFile`
 
    Class defining a custom taper file beamformer.
 

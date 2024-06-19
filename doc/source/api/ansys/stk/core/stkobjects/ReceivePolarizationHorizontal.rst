@@ -3,7 +3,7 @@ ReceivePolarizationHorizontal
 
 .. py:class:: ReceivePolarizationHorizontal
 
-   IPolarizationHorizontal, IPolarization, IPolarizationCrossPolLeakage, SupportsDeleteCallback
+   Bases: py:obj:`~IPolarizationHorizontal`, py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
 
    Class defining a horizontal polarization.
 

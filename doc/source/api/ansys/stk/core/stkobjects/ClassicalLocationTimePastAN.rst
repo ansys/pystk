@@ -3,7 +3,7 @@ ClassicalLocationTimePastAN
 
 .. py:class:: ClassicalLocationTimePastAN
 
-   IClassicalLocationTimePastAN, IClassicalLocation, SupportsDeleteCallback
+   Bases: py:obj:`~IClassicalLocationTimePastAN`, py:obj:`~IClassicalLocation`
 
    Time Past Ascending Node, used in specifying the spacecraft's location within its orbit at epoch.
 

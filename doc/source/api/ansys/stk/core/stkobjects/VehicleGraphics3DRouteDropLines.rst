@@ -3,7 +3,7 @@ VehicleGraphics3DRouteDropLines
 
 .. py:class:: VehicleGraphics3DRouteDropLines
 
-   IVehicleGraphics3DRouteDropLines, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DRouteDropLines`
 
    Droplines for great arc vehicles.
 

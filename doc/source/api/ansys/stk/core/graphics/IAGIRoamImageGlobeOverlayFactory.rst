@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_string(self, uri:str) -> "IAGIRoamImageGlobeOverlay"
+.. py:method:: initialize_with_string(self, uri: str) -> IAGIRoamImageGlobeOverlay
+    :canonical: ansys.stk.core.graphics.IAGIRoamImageGlobeOverlayFactory.initialize_with_string
 
     Initialize an agi roam image globe overlay with the provided values.
 
@@ -46,5 +47,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAGIRoamImageGlobeOverlay"`
+        :obj:`~IAGIRoamImageGlobeOverlay`
 

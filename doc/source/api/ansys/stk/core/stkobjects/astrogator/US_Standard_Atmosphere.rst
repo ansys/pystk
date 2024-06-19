@@ -3,7 +3,7 @@ US_Standard_Atmosphere
 
 .. py:class:: US_Standard_Atmosphere
 
-   IUS_Standard_Atmosphere, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IUS_Standard_Atmosphere`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    US_Standard_Atmosphere atmospheric propagator function.
 

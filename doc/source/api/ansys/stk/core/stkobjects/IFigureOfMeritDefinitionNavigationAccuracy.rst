@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: uncertainties
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionNavigationAccuracy.uncertainties
-    :type: "IAgFmUncertainties"
+    :type: IAgFmUncertainties
 
     A constant value that represents angular standard deviation of measurements away from the direction between the object on which the coverage is defined and a particular asset. Constant values are specified in units of degrees.
 

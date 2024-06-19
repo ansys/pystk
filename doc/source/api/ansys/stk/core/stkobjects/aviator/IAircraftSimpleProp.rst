@@ -80,7 +80,8 @@ Method detail
 
 
 
-.. py:method:: set_density_scaling(self, useScaling:bool, exponent:float) -> None
+.. py:method:: set_density_scaling(self, useScaling: bool, exponent: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftSimpleProp.set_density_scaling
 
     Set the option to use density scaling and set the density ratio exponent.
 

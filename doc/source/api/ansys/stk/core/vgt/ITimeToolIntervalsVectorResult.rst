@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: interval_collections
     :canonical: ansys.stk.core.vgt.ITimeToolIntervalsVectorResult.interval_collections
-    :type: "IAgCrdnIntervalVectorCollection"
+    :type: IAgCrdnIntervalVectorCollection
 
     A collection of interval collections.
 

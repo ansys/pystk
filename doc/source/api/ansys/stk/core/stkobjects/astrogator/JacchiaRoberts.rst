@@ -3,7 +3,7 @@ JacchiaRoberts
 
 .. py:class:: JacchiaRoberts
 
-   IJacchiaRoberts, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IJacchiaRoberts`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Jacchia Roberts atmospheric propagator function.
 

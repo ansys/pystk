@@ -3,7 +3,7 @@ AccessTime
 
 .. py:class:: AccessTime
 
-   IAccessTime, SupportsDeleteCallback
+   Bases: py:obj:`~IAccessTime`
 
    Class for defining Sensor target times in terms of access.
 

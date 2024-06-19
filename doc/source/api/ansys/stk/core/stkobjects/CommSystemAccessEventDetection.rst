@@ -3,7 +3,7 @@ CommSystemAccessEventDetection
 
 .. py:class:: CommSystemAccessEventDetection
 
-   ICommSystemAccessEventDetection, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemAccessEventDetection`
 
    Class defining a CommSystem access options.
 

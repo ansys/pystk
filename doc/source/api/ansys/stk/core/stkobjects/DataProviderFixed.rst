@@ -3,7 +3,7 @@ DataProviderFixed
 
 .. py:class:: DataProviderFixed
 
-   IDataProviderFixed, IDataProvider, IDataProviderInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IDataProviderFixed`, py:obj:`~IDataProvider`, py:obj:`~IDataProviderInfo`
 
    Support for fixed data providers (i.e. non time-dependent like Facility position).
 

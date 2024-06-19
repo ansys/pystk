@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: incoming_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.incoming_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     The reflecting vector.
 
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: normal_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.normal_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     The vector defines the reflection surface.
 

@@ -3,7 +3,7 @@ BisectionControl
 
 .. py:class:: BisectionControl
 
-   IBisectionControl, SupportsDeleteCallback
+   Bases: py:obj:`~IBisectionControl`
 
    Control parameters for  Bisection Seacrh Profile.
 

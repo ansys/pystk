@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.type
-    :type: "VECTOR_GEOMETRY_TOOL_ANGLE_TYPE"
+    :type: VECTOR_GEOMETRY_TOOL_ANGLE_TYPE
 
     Returns a type of the angle object.
 
@@ -60,7 +60,8 @@ Method detail
 -------------
 
 
-.. py:method:: find_angle(self, epoch:typing.Any) -> "IVectorGeometryToolAngleFindAngleResult"
+.. py:method:: find_angle(self, epoch: typing.Any) -> IVectorGeometryToolAngleFindAngleResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.find_angle
 
     Find an angle at the specified epoch.
 
@@ -70,9 +71,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAngleFindAngleResult"`
+        :obj:`~IVectorGeometryToolAngleFindAngleResult`
 
-.. py:method:: find_angle_with_rate(self, epoch:typing.Any) -> "IVectorGeometryToolAngleFindAngleWithRateResult"
+.. py:method:: find_angle_with_rate(self, epoch: typing.Any) -> IVectorGeometryToolAngleFindAngleWithRateResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.find_angle_with_rate
 
     Find an angle and angle rate.
 
@@ -82,31 +84,33 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAngleFindAngleWithRateResult"`
+        :obj:`~IVectorGeometryToolAngleFindAngleWithRateResult`
 
-.. py:method:: find_coordinates(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAngleFindResult"
+.. py:method:: find_coordinates(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorGeometryToolAngleFindResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.find_coordinates
 
     Find the angle value and three vectors that define the angle in a specified input axes.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAngleFindResult"`
+        :obj:`~IVectorGeometryToolAngleFindResult`
 
-.. py:method:: find_coordinates_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorGeometryToolAngleFindWithRateResult"
+.. py:method:: find_coordinates_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorGeometryToolAngleFindWithRateResult
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.find_coordinates_with_rate
 
     Find the angle value, the angle rate and three vectors that define the angle in a specified input axes.
 
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **axes** : :obj:`~"IVectorGeometryToolAxes"`
+    **axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAngleFindWithRateResult"`
+        :obj:`~IVectorGeometryToolAngleFindWithRateResult`
 

@@ -56,6 +56,7 @@ Method detail
 
 
 .. py:method:: reload(self) -> None
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFile.reload
 
     Reload the volume calc file.
 

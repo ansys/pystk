@@ -3,7 +3,7 @@ TimeToolEventIntervalTimeOffset
 
 .. py:class:: TimeToolEventIntervalTimeOffset
 
-   ITimeToolEventIntervalTimeOffset, ITimeToolEventInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventIntervalTimeOffset`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Interval defined by shifting specified reference interval by fixed time offset.
 

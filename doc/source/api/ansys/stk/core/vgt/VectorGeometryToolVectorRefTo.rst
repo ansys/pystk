@@ -3,7 +3,7 @@ VectorGeometryToolVectorRefTo
 
 .. py:class:: VectorGeometryToolVectorRefTo
 
-   IVectorGeometryToolVectorRefTo, IAnalysisWorkbenchRefTo, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorRefTo`, py:obj:`~IAnalysisWorkbenchRefTo`
 
    Represents a vector reference.
 

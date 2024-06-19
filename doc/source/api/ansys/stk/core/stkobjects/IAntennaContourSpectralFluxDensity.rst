@@ -70,7 +70,8 @@ Method detail
 
 
 
-.. py:method:: set_resolution(self, azimuthResolution:float, elevationResolution:float, maxElevation:float) -> None
+.. py:method:: set_resolution(self, azimuthResolution: float, elevationResolution: float, maxElevation: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntennaContourSpectralFluxDensity.set_resolution
 
     Set the azimuth and elevation resolution as well as the maximum elevation angle.
 

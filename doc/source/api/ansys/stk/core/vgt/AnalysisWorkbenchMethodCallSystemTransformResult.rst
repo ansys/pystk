@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallSystemTransformResult
 
 .. py:class:: AnalysisWorkbenchMethodCallSystemTransformResult
 
-   IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformResult, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolSystemTransformResult`
 
    Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods.
 

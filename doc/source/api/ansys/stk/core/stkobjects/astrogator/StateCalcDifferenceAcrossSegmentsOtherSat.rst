@@ -3,7 +3,7 @@ StateCalcDifferenceAcrossSegmentsOtherSat
 
 .. py:class:: StateCalcDifferenceAcrossSegmentsOtherSat
 
-   IComponentInfo, ICloneable, IStateCalcDifferenceAcrossSegmentsOtherSat, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDifferenceAcrossSegmentsOtherSat`
 
    DifferenceAcrossSegmentsOtherSat Calc objects.
 

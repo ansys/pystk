@@ -3,7 +3,7 @@ RadarProbabilityOfDetectionPlugin
 
 .. py:class:: RadarProbabilityOfDetectionPlugin
 
-   IRadarProbabilityOfDetectionPlugin, IRadarProbabilityOfDetection, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarProbabilityOfDetectionPlugin`, py:obj:`~IRadarProbabilityOfDetection`
 
    Class defining the probability of detection plugin.
 

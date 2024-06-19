@@ -3,7 +3,7 @@ VehicleGraphics2DInterval
 
 .. py:class:: VehicleGraphics2DInterval
 
-   IVehicleGraphics2DInterval, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DInterval`
 
    2D Graphics display based on custom intervals.
 

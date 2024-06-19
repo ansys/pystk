@@ -3,7 +3,7 @@ MissionControlSequenceTargetSequence
 
 .. py:class:: MissionControlSequenceTargetSequence
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceTargetSequence, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceTargetSequence`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Target Sequence segment.
 

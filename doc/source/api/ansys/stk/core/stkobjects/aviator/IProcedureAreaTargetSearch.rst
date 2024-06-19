@@ -57,25 +57,25 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.altitude_options
-    :type: "IAgAvtrAltitudeOptions"
+    :type: IAgAvtrAltitudeOptions
 
     Get the altitude options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.enroute_options
-    :type: "IAgAvtrEnrouteOptions"
+    :type: IAgAvtrEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.enroute_cruise_airspeed_options
-    :type: "IAgAvtrCruiseAirspeedOptions"
+    :type: IAgAvtrCruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: procedure_type
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.procedure_type
-    :type: "FLIGHT_LINE_PROC_TYPE"
+    :type: FLIGHT_LINE_PROC_TYPE
 
     Gets or sets the procedure methodology used to calculate the flight line.
 
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.course_mode
-    :type: "SEARCH_PATTERN_COURSE_MODE"
+    :type: SEARCH_PATTERN_COURSE_MODE
 
     Gets or sets the mode to determine the course of the search pattern.
 
@@ -117,7 +117,7 @@ Property detail
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.level_off_mode
-    :type: "ALTITUDE_CONSTRAINT_MANEUVER_MODE"
+    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
 
     Gets or sets the level off mode. This is only used when the must level off option is on.
 
@@ -125,13 +125,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 
 
@@ -153,6 +154,7 @@ Method detail
 
 
 .. py:method:: copy_procedures(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.copy_procedures
 
     Copy the search pattern maneuvers as a set of procedures to the clipboard.
 

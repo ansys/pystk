@@ -3,7 +3,7 @@ PerformanceModel
 
 .. py:class:: PerformanceModel
 
-   IPerformanceModel, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
 
    Class defining an unknown performance model.
 

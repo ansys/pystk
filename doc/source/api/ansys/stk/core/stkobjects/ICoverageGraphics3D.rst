@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics3D.static
-    :type: "IAgCvVOAttributes"
+    :type: IAgCvVOAttributes
 
     3D static graphics options.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics3D.animation
-    :type: "IAgCvVOAttributes"
+    :type: IAgCvVOAttributes
 
     3D animation graphics options.
 
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: draw_at_altitude_mode
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics3D.draw_at_altitude_mode
-    :type: "COVERAGE_3D_DRAW_AT_ALTITUDE_MODE"
+    :type: COVERAGE_3D_DRAW_AT_ALTITUDE_MODE
 
     Draw at Altitude Polygon Mode.
 

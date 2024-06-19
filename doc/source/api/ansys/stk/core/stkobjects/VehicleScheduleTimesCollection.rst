@@ -3,7 +3,7 @@ VehicleScheduleTimesCollection
 
 .. py:class:: VehicleScheduleTimesCollection
 
-   IVehicleScheduleTimesCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleScheduleTimesCollection`
 
    List of scheduled accesses.
 

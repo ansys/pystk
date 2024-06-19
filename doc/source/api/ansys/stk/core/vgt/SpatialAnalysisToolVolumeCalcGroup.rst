@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcGroup
 
 .. py:class:: SpatialAnalysisToolVolumeCalcGroup
 
-   ISpatialAnalysisToolVolumeCalcGroup, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcGroup`
 
    Access or create VGT volume calc associated with an object or a central body.
 

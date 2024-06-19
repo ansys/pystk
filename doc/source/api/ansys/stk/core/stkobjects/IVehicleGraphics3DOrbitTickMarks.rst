@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.ground_track
-    :type: "IAgVeVOPathTickMarks"
+    :type: IAgVeVOPathTickMarks
 
     Get the ground track tick marks.
 
 .. py:property:: orbit
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.orbit
-    :type: "IAgVeVOPathTickMarks"
+    :type: IAgVeVOPathTickMarks
 
     Get the orbit track tick marks.
 

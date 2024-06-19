@@ -3,7 +3,7 @@ AtmosphericAbsorptionModelSimpleSatcom
 
 .. py:class:: AtmosphericAbsorptionModelSimpleSatcom
 
-   IAtmosphericAbsorptionModelSimpleSatcom, IAtmosphericAbsorptionModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAtmosphericAbsorptionModelSimpleSatcom`, py:obj:`~IAtmosphericAbsorptionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining an atmospheric absorption model.
 

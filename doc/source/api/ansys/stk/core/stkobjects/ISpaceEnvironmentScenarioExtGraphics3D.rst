@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: magnetic_field
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentScenarioExtGraphics3D.magnetic_field
-    :type: "IAgSpEnvMagFieldGfx"
+    :type: IAgSpEnvMagFieldGfx
 
     3D Graphics settings for the Geomagnetic field.
 

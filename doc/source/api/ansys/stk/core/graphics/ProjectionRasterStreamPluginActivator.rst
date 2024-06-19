@@ -3,7 +3,7 @@ ProjectionRasterStreamPluginActivator
 
 .. py:class:: ProjectionRasterStreamPluginActivator
 
-   IProjectionRasterStreamPluginActivator, SupportsDeleteCallback
+   Bases: py:obj:`~IProjectionRasterStreamPluginActivator`
 
    The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface.
 

@@ -3,7 +3,7 @@ VehicleGraphics2DWaypointMarkersElement
 
 .. py:class:: VehicleGraphics2DWaypointMarkersElement
 
-   IVehicleGraphics2DWaypointMarkersElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DWaypointMarkersElement`
 
    2D Graphics properties of element of waypoint collection.
 

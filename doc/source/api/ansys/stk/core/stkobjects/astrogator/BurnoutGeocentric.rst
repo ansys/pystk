@@ -3,7 +3,7 @@ BurnoutGeocentric
 
 .. py:class:: BurnoutGeocentric
 
-   IBurnoutGeocentric, IBurnout, SupportsDeleteCallback
+   Bases: py:obj:`~IBurnoutGeocentric`, py:obj:`~IBurnout`
 
    The geocentric burnout point.
 

@@ -3,7 +3,7 @@ DemodulatorModelDpsk
 
 .. py:class:: DemodulatorModelDpsk
 
-   IDemodulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IDemodulatorModel`
 
    Class defining a DPSK modulator model.
 

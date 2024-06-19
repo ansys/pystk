@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallAngleFindAngleResult
 
 .. py:class:: AnalysisWorkbenchMethodCallAngleFindAngleResult
 
-   IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleResult, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolAngleFindAngleResult`
 
    Contains the results returned with IAgCrdnAngle.FindAngle method.
 

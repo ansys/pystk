@@ -65,7 +65,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IRadarCrossSectionFrequencyBand"
+.. py:method:: item(self, index: int) -> IRadarCrossSectionFrequencyBand
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBandCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -75,10 +76,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarCrossSectionFrequencyBand"`
+        :obj:`~IRadarCrossSectionFrequencyBand`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBandCollection.remove_at
 
     Remove the band with the supplied index.
 
@@ -90,7 +92,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, minFrequency:float, maxFrequency:float) -> "IRadarCrossSectionFrequencyBand"
+.. py:method:: add(self, minFrequency: float, maxFrequency: float) -> IRadarCrossSectionFrequencyBand
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBandCollection.add
 
     Add a band with supplied minimum and maximum frequencies.
 
@@ -101,5 +104,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarCrossSectionFrequencyBand"`
+        :obj:`~IRadarCrossSectionFrequencyBand`
 

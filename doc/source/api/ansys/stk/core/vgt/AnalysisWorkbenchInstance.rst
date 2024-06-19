@@ -3,7 +3,7 @@ AnalysisWorkbenchInstance
 
 .. py:class:: AnalysisWorkbenchInstance
 
-   IAnalysisWorkbenchContext, IAnalysisWorkbenchInstance, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchContext`, py:obj:`~IAnalysisWorkbenchInstance`
 
    Enable to obtain information about the parent object that owns the VGT component.
 

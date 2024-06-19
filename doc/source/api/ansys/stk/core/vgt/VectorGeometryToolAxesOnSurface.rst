@@ -3,7 +3,7 @@ VectorGeometryToolAxesOnSurface
 
 .. py:class:: VectorGeometryToolAxesOnSurface
 
-   IVectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesOnSurface`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Topocentric axes located at the reference point's projection on the central body.
 

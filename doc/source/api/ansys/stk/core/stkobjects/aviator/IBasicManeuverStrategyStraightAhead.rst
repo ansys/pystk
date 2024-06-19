@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStraightAhead.reference_frame
-    :type: "STRAIGHT_AHEAD_REFERENCE_FRAME"
+    :type: STRAIGHT_AHEAD_REFERENCE_FRAME
 
     Gets or sets the reference frame the aircraft will use to fly straight ahead.
 

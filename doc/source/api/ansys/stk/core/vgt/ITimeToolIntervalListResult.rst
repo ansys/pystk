@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.ITimeToolIntervalListResult.intervals
-    :type: "IAgCrdnIntervalCollection"
+    :type: IAgCrdnIntervalCollection
 
     A list of intervals.
 

@@ -67,7 +67,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> float
+.. py:method:: item(self, index: int) -> float
+    :canonical: ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -80,7 +81,8 @@ Method detail
         :obj:`~float`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.remove_at
 
     Remove the complex value with the supplied index.
 
@@ -92,7 +94,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, coefficient:float) -> None
+.. py:method:: add(self, coefficient: float) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.add
 
     Add a new coefficient.
 
@@ -104,7 +107,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: insert_at(self, index:int, coefficient:float) -> None
+.. py:method:: insert_at(self, index: int, coefficient: float) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.insert_at
 
     Insert a new coefficient at the supplied index.
 

@@ -3,7 +3,7 @@ VehicleSGP4OnlineLoad
 
 .. py:class:: VehicleSGP4OnlineLoad
 
-   IVehicleSGP4OnlineLoad, IVehicleSGP4LoadData, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4OnlineLoad`, py:obj:`~IVehicleSGP4LoadData`
 
    SGP4 propagator. Allows the user to load segments from online.
 

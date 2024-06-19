@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: procedures
     :canonical: ansys.stk.core.stkobjects.aviator.IPhase.procedures
-    :type: "IAgAvtrProcedureCollection"
+    :type: IAgAvtrProcedureCollection
 
     Returns the procedure collection.
 
@@ -69,7 +69,8 @@ Method detail
 
 
 
-.. py:method:: get_performance_model_by_type(self, type:str) -> "IPerformanceModelOptions"
+.. py:method:: get_performance_model_by_type(self, type: str) -> IPerformanceModelOptions
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhase.get_performance_model_by_type
 
     Get the active performance model for the given category type.
 
@@ -79,9 +80,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPerformanceModelOptions"`
+        :obj:`~IPerformanceModelOptions`
 
 .. py:method:: set_default_perf_models(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhase.set_default_perf_models
 
     Set the phase to use the default performance models of the aircraft.
 
@@ -90,6 +92,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: copy_performance_models(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhase.copy_performance_models
 
     Create a copy of the active performance models for the current phase.
 
@@ -98,6 +101,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste_performance_models(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IPhase.paste_performance_models
 
     Paste the performance models.
 

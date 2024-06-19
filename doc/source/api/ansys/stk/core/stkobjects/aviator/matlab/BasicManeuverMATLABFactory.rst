@@ -3,7 +3,7 @@ BasicManeuverMATLABFactory
 
 .. py:class:: BasicManeuverMATLABFactory
 
-   IAutomationStrategyFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IAutomationStrategyFactory`
 
    Class defining the factory to create the basic maneuver PropNav strategies.
 

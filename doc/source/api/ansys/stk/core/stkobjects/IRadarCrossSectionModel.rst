@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: frequency_bands
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionModel.frequency_bands
-    :type: "IAgRadarCrossSectionFrequencyBandCollection"
+    :type: IAgRadarCrossSectionFrequencyBandCollection
 
     Gets the RCS frequency band collection.
 

@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IDataProviderResultSubSection"
+.. py:method:: item(self, index: int) -> IDataProviderResultSubSection
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResultSubSection"`
+        :obj:`~IDataProviderResultSubSection`
 
 

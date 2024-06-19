@@ -3,7 +3,7 @@ ScenarioAnimationTimePeriod
 
 .. py:class:: ScenarioAnimationTimePeriod
 
-   IScenarioAnimationTimePeriod, SupportsDeleteCallback
+   Bases: py:obj:`~IScenarioAnimationTimePeriod`
 
    Configure the scenario's animation time.
 

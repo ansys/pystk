@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IDataProviderResultInterval"
+.. py:method:: item(self, index: int) -> IDataProviderResultInterval
+    :canonical: ansys.stk.core.stkobjects.IDataProviderResultIntervalCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDataProviderResultInterval"`
+        :obj:`~IDataProviderResultInterval`
 
 

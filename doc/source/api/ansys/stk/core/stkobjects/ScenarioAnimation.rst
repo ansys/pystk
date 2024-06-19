@@ -3,7 +3,7 @@ ScenarioAnimation
 
 .. py:class:: ScenarioAnimation
 
-   IScenarioAnimation, SupportsDeleteCallback
+   Bases: py:obj:`~IScenarioAnimation`
 
    Class defining the animation properties of a Scenario.
 

@@ -3,7 +3,7 @@ CalculationGraphCollection
 
 .. py:class:: CalculationGraphCollection
 
-   ICalculationGraphCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationGraphCollection`
 
    Calculation Graph Collection.
 

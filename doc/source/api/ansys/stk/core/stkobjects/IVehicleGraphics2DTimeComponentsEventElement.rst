@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventElement.attributes
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Returns the 2D attributes used to configure the appearance of ground tracks, orbits, etc. in 2D and 3D views.
 
@@ -54,11 +54,12 @@ Method detail
 -------------
 
 
-.. py:method:: get_time_component(self) -> "IAnalysisWorkbenchComponent"
+.. py:method:: get_time_component(self) -> IAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventElement.get_time_component
 
     Return an instance of a time component which provides the time intervals to control the appearance and visibility of the graphics path. The method may throw an exception if the component is invalid.
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchComponent"`
+        :obj:`~IAnalysisWorkbenchComponent`
 

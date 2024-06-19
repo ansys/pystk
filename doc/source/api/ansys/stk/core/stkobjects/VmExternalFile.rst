@@ -3,7 +3,7 @@ VmExternalFile
 
 .. py:class:: VmExternalFile
 
-   IVmGridDefinition, IVmExternalFile, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGridDefinition`, py:obj:`~IVmExternalFile`
 
    Class defining the volume external file.
 

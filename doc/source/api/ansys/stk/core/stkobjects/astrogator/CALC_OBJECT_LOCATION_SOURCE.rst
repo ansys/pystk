@@ -11,6 +11,21 @@ CALC_OBJECT_LOCATION_SOURCE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~REFERENCE_SAT`
+              - Use the reference satellite.
+
+            * - :py:attr:`~SATELLITE`
+              - Use the satellite.
+
+
 Import detail
 -------------
 

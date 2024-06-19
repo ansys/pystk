@@ -3,7 +3,7 @@ RadarActivityTimeIntervalListElement
 
 .. py:class:: RadarActivityTimeIntervalListElement
 
-   IRadarActivityTimeIntervalListElement, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarActivityTimeIntervalListElement`
 
    Class defining an element of the time components activity list.
 

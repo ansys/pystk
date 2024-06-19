@@ -3,7 +3,7 @@ ScriptingParameterEnumerationChoice
 
 .. py:class:: ScriptingParameterEnumerationChoice
 
-   IScriptingParameterEnumerationChoice, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IScriptingParameterEnumerationChoice`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Scripting Parameter Enumeration Choice.
 

@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: frame
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.frame
-    :type: "VEHICLE_FRAME"
+    :type: VEHICLE_FRAME
 
     Frame in which covariance is input.
 
@@ -71,13 +71,13 @@ Property detail
 
 .. py:property:: gravity
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.gravity
-    :type: "IAgVeGravity"
+    :type: IAgVeGravity
 
     Get the gravity parameters for the covariance.
 
 .. py:property:: position_velocity
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.position_velocity
-    :type: "IAgVePositionVelocityCollection"
+    :type: IAgVePositionVelocityCollection
 
     Get the covariance matrix.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: consider_analysis_list
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.consider_analysis_list
-    :type: "IAgVeConsiderAnalysisCollection"
+    :type: IAgVeConsiderAnalysisCollection
 
     Get the Consider Analysis list.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: correlation_list
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.correlation_list
-    :type: "IAgVeCorrelationListCollection"
+    :type: IAgVeCorrelationListCollection
 
     Get the Consider Cross Correlation list.
 
@@ -123,6 +123,7 @@ Method detail
 
 
 .. py:method:: validate(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.validate
 
     Validate.
 

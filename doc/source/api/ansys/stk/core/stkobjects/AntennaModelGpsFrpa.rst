@@ -3,7 +3,7 @@ AntennaModelGpsFrpa
 
 .. py:class:: AntennaModelGpsFrpa
 
-   IAntennaModelGpsFrpa, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelGpsFrpa`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a GPS FRPA antenna model.
 

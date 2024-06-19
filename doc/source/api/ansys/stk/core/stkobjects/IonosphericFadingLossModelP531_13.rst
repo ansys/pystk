@@ -3,7 +3,7 @@ IonosphericFadingLossModelP531_13
 
 .. py:class:: IonosphericFadingLossModelP531_13
 
-   IIonosphericFadingLossModelP531_13, IIonosphericFadingLossModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IIonosphericFadingLossModelP531_13`, py:obj:`~IIonosphericFadingLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a Ionospheric fading loss P.531-13 model.
 

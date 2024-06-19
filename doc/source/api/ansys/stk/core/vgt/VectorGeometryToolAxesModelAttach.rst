@@ -3,7 +3,7 @@ VectorGeometryToolAxesModelAttach
 
 .. py:class:: VectorGeometryToolAxesModelAttach
 
-   IVectorGeometryToolAxesModelAttach, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesModelAttach`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element.
 

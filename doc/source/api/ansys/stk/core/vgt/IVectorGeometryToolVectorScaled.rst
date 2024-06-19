@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScaled.reference_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     A vector being scaled.
 

@@ -3,7 +3,7 @@ TimeToolEventArrayExtrema
 
 .. py:class:: TimeToolEventArrayExtrema
 
-   ITimeToolEventArrayExtrema, ITimeToolEventArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventArrayExtrema`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 

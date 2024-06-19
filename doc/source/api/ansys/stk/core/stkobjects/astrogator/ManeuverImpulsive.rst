@@ -3,7 +3,7 @@ ManeuverImpulsive
 
 .. py:class:: ManeuverImpulsive
 
-   IManeuverImpulsive, IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IManeuverImpulsive`, py:obj:`~IManeuver`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The Impulsive Maneuver.
 

@@ -3,7 +3,7 @@ RadarActivityTimeComponentList
 
 .. py:class:: RadarActivityTimeComponentList
 
-   IRadarActivity, IRadarActivityTimeComponentList, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarActivity`, py:obj:`~IRadarActivityTimeComponentList`
 
    Class defining a radar time component list activity.
 

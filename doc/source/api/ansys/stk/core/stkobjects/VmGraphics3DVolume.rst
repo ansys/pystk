@@ -3,7 +3,7 @@ VmGraphics3DVolume
 
 .. py:class:: VmGraphics3DVolume
 
-   IVmGraphics3DVolume, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGraphics3DVolume`
 
    Class defining planar cross-sections through the volumetric grid.
 

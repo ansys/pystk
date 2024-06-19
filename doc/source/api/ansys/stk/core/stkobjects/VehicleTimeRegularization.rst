@@ -3,7 +3,7 @@ VehicleTimeRegularization
 
 .. py:class:: VehicleTimeRegularization
 
-   IVehicleTimeRegularization, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleTimeRegularization`
 
    Class defining time regularization for the HPOP integrator, i.e. integration the orbit with respect to regularized time.
 

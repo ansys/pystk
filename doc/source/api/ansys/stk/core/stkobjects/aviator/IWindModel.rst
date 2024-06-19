@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: wind_model_type
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModel.wind_model_type
-    :type: "WIND_MODEL_TYPE"
+    :type: WIND_MODEL_TYPE
 
     Gets or sets the wind model type.
 
@@ -63,19 +63,19 @@ Property detail
 
 .. py:property:: wind_model_source
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModel.wind_model_source
-    :type: "WIND_ATMOS_MODEL_SOURCE"
+    :type: WIND_ATMOS_MODEL_SOURCE
 
     Gets or sets the wind model source.
 
 .. py:property:: mode_as_constant
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModel.mode_as_constant
-    :type: "IAgAvtrWindModelConstant"
+    :type: IAgAvtrWindModelConstant
 
     Get the options for a Constant Bearing/Speed wind model.
 
 .. py:property:: mode_as_adds
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModel.mode_as_adds
-    :type: "IAgAvtrWindModelADDS"
+    :type: IAgAvtrWindModelADDS
 
     Get the options for a NOAA ADDS Service wind model.
 
@@ -92,6 +92,7 @@ Method detail
 
 
 .. py:method:: copy(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IWindModel.copy
 
     Copy the wind model.
 
@@ -100,6 +101,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IWindModel.paste
 
     Paste the wind model.
 

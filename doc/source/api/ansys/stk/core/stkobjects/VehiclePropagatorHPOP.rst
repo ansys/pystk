@@ -3,7 +3,7 @@ VehiclePropagatorHPOP
 
 .. py:class:: VehiclePropagatorHPOP
 
-   IVehiclePropagatorHPOP, IVehiclePropagator, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePropagatorHPOP`, py:obj:`~IVehiclePropagator`
 
    Class defining the High Precision Orbit Propagator (HPOP).
 

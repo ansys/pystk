@@ -3,7 +3,7 @@ RadarModeMonostaticSar
 
 .. py:class:: RadarModeMonostaticSar
 
-   IRadarModeMonostaticSar, IRadarModeMonostatic, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarModeMonostaticSar`, py:obj:`~IRadarModeMonostatic`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a monostatic sar radar mode.
 

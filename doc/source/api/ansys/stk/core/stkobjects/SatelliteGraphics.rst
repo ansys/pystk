@@ -3,7 +3,7 @@ SatelliteGraphics
 
 .. py:class:: SatelliteGraphics
 
-   ISatelliteGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~ISatelliteGraphics`
 
    Satellite 2D Graphics properties.
 

@@ -3,7 +3,7 @@ CelestialBodyCollection
 
 .. py:class:: CelestialBodyCollection
 
-   ICelestialBodyCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICelestialBodyCollection`
 
    Represents a collection of stars.
 

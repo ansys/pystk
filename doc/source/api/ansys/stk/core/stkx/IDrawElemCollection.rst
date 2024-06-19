@@ -74,7 +74,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IDrawElem"
+.. py:method:: item(self, index: int) -> IDrawElem
+    :canonical: ansys.stk.core.stkx.IDrawElemCollection.item
 
     Get the element at the specified index (0-based).
 
@@ -84,10 +85,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDrawElem"`
+        :obj:`~IDrawElem`
 
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkx.IDrawElemCollection.clear
 
     Clear the contents of the collection and updates the display.
 
@@ -95,7 +97,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, elemType:str) -> "IDrawElem"
+.. py:method:: add(self, elemType: str) -> IDrawElem
+    :canonical: ansys.stk.core.stkx.IDrawElemCollection.add
 
     Create and add a new element to the end of the sequence.
 
@@ -105,15 +108,16 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDrawElem"`
+        :obj:`~IDrawElem`
 
-.. py:method:: remove(self, drawElem:"IDrawElem") -> None
+.. py:method:: remove(self, drawElem: IDrawElem) -> None
+    :canonical: ansys.stk.core.stkx.IDrawElemCollection.remove
 
     Remove the specified element.
 
     :Parameters:
 
-    **drawElem** : :obj:`~"IDrawElem"`
+    **drawElem** : :obj:`~IDrawElem`
 
     :Returns:
 

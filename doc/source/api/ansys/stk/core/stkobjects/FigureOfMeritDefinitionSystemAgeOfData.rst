@@ -3,7 +3,7 @@ FigureOfMeritDefinitionSystemAgeOfData
 
 .. py:class:: FigureOfMeritDefinitionSystemAgeOfData
 
-   IFigureOfMeritDefinitionSystemAgeOfData, IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionSystemAgeOfData`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
 
    System Age Of Data Figure of Merit.
 

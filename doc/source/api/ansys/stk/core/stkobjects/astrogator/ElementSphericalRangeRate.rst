@@ -3,7 +3,7 @@ ElementSphericalRangeRate
 
 .. py:class:: ElementSphericalRangeRate
 
-   IElementSphericalRangeRate, IElement, SupportsDeleteCallback
+   Bases: py:obj:`~IElementSphericalRangeRate`, py:obj:`~IElement`
 
    Spherical Range Rate elements.
 

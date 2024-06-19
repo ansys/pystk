@@ -3,7 +3,7 @@ AnalysisWorkbenchCentralBody
 
 .. py:class:: AnalysisWorkbenchCentralBody
 
-   IAnalysisWorkbenchCentralBody, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchCentralBody`
 
    Represents an central body.
 

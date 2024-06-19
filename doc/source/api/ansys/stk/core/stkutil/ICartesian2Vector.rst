@@ -69,6 +69,7 @@ Method detail
 
 
 .. py:method:: get(self) -> typing.Tuple[float, float]
+    :canonical: ansys.stk.core.stkutil.ICartesian2Vector.get
 
     Return cartesian vector.
 
@@ -76,7 +77,8 @@ Method detail
 
         :obj:`~typing.Tuple[float, float]`
 
-.. py:method:: set(self, x:float, y:float) -> None
+.. py:method:: set(self, x: float, y: float) -> None
+    :canonical: ansys.stk.core.stkutil.ICartesian2Vector.set
 
     Set cartesian vector.
 
@@ -90,6 +92,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkutil.ICartesian2Vector.to_array
 
     Return coordinates as an array.
 

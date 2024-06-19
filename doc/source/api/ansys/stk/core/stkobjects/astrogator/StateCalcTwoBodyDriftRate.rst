@@ -3,7 +3,7 @@ StateCalcTwoBodyDriftRate
 
 .. py:class:: StateCalcTwoBodyDriftRate
 
-   IComponentInfo, ICloneable, IStateCalcTwoBodyDriftRate, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTwoBodyDriftRate`
 
    TwoBodyDriftRate Calc objects.
 

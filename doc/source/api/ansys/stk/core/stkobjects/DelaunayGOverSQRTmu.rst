@@ -3,7 +3,7 @@ DelaunayGOverSQRTmu
 
 .. py:class:: DelaunayGOverSQRTmu
 
-   IDelaunayActionVariable, IDelaunayGOverSQRTmu, SupportsDeleteCallback
+   Bases: py:obj:`~IDelaunayActionVariable`, py:obj:`~IDelaunayGOverSQRTmu`
 
    Delaunay Variable G/SQRT(mu), i.e. G divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 

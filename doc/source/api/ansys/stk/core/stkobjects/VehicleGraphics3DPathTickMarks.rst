@@ -3,7 +3,7 @@ VehicleGraphics3DPathTickMarks
 
 .. py:class:: VehicleGraphics3DPathTickMarks
 
-   IVehicleGraphics3DPathTickMarks, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DPathTickMarks`
 
    Tick marks for 3D trajectory graphics. Tick marks represent milestones at specified intervals along the trajectory in the 3D window.
 

@@ -66,7 +66,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> str
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.item
 
     Allow you to iterate through the collection.
 
@@ -79,7 +80,8 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: add(self, graphName:str) -> None
+.. py:method:: add(self, graphName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.add
 
     Add a calculation graph.
 
@@ -91,7 +93,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, graphName:str) -> None
+.. py:method:: remove(self, graphName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.remove
 
     Remove a parameter.
 
@@ -104,6 +107,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.remove_all
 
     Remove all parameters.
 

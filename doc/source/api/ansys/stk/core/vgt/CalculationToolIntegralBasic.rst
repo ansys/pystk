@@ -3,7 +3,7 @@ CalculationToolIntegralBasic
 
 .. py:class:: CalculationToolIntegralBasic
 
-   ICalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolIntegralBasic`, py:obj:`~IAnalysisWorkbenchIntegral`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Integral definition determines how scalar calculation is numerically integrated.
 

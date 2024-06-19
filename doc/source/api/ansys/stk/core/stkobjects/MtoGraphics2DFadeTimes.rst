@@ -3,7 +3,7 @@ MtoGraphics2DFadeTimes
 
 .. py:class:: MtoGraphics2DFadeTimes
 
-   IMtoGraphics2DFadeTimes, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics2DFadeTimes`
 
    MTO track fade times.
 

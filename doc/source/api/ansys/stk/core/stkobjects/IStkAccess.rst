@@ -66,49 +66,49 @@ Property detail
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.IStkAccess.data_providers
-    :type: "IAgDataProviderCollection"
+    :type: IAgDataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
 .. py:property:: access_time_period
     :canonical: ansys.stk.core.stkobjects.IStkAccess.access_time_period
-    :type: "ACCESS_TIME_TYPE"
+    :type: ACCESS_TIME_TYPE
 
     Specifies the time period option. A member of the AgEAccessTimeType enumeration.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IStkAccess.graphics
-    :type: "IAgStkAccessGraphics"
+    :type: IAgStkAccessGraphics
 
     Gets the Graphics properties for the Access computations.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.IStkAccess.advanced
-    :type: "IAgStkAccessAdvanced"
+    :type: IAgStkAccessAdvanced
 
     Gets the Advanced properties for the Access computations.
 
 .. py:property:: data_displays
     :canonical: ansys.stk.core.stkobjects.IStkAccess.data_displays
-    :type: "IAgVODataDisplayCollection"
+    :type: IAgVODataDisplayCollection
 
     Gets the VO Data Display Collection.
 
 .. py:property:: computed_access_interval_times
     :canonical: ansys.stk.core.stkobjects.IStkAccess.computed_access_interval_times
-    :type: "IAgIntervalCollection"
+    :type: IAgIntervalCollection
 
     Returns a list of the computed access interval times.
 
 .. py:property:: access_time_period_data
     :canonical: ansys.stk.core.stkobjects.IStkAccess.access_time_period_data
-    :type: "IAgAccessInterval"
+    :type: IAgAccessInterval
 
     Returns an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
 
 .. py:property:: vgt
     :canonical: ansys.stk.core.stkobjects.IStkAccess.vgt
-    :type: "IAgCrdnProvider"
+    :type: IAgCrdnProvider
 
     Gets a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
 
@@ -120,13 +120,13 @@ Property detail
 
 .. py:property:: base
     :canonical: ansys.stk.core.stkobjects.IStkAccess.base
-    :type: "IAgStkObject"
+    :type: IAgStkObject
 
     Base object used in the access.
 
 .. py:property:: target
     :canonical: ansys.stk.core.stkobjects.IStkAccess.target
-    :type: "IAgStkObject"
+    :type: IAgStkObject
 
     Target object used in the access.
 
@@ -142,6 +142,7 @@ Method detail
 
 
 .. py:method:: remove_access(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkAccess.remove_access
 
     Remove the access that was computed between two objects.
 
@@ -150,6 +151,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: compute_access(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkAccess.compute_access
 
     Recomputes the access between two objects.  Calls to ComputeAccess should not be made between calls to BeginUpdate and EndUpdate.
 
@@ -159,7 +161,8 @@ Method detail
 
 
 
-.. py:method:: specify_access_time_period(self, startTime:typing.Any, stopTime:typing.Any) -> None
+.. py:method:: specify_access_time_period(self, startTime: typing.Any, stopTime: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkAccess.specify_access_time_period
 
     If eUserSpec is selected for AccessTimePeriod, specify the start and stop times for the user-defined period.
 
@@ -175,7 +178,8 @@ Method detail
 
 
 
-.. py:method:: specify_access_intervals(self, accessIntervals:list) -> None
+.. py:method:: specify_access_intervals(self, accessIntervals: list) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkAccess.specify_access_intervals
 
     Allow a list of intervals to be used for the access calculation.
 
@@ -189,19 +193,21 @@ Method detail
 
 
 
-.. py:method:: specify_access_event_intervals(self, pEventIntervalList:"ITimeToolEventIntervalList") -> None
+.. py:method:: specify_access_event_intervals(self, pEventIntervalList: ITimeToolEventIntervalList) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkAccess.specify_access_event_intervals
 
     Access is computed using the intervals in the specified event interval list.
 
     :Parameters:
 
-    **pEventIntervalList** : :obj:`~"ITimeToolEventIntervalList"`
+    **pEventIntervalList** : :obj:`~ITimeToolEventIntervalList`
 
     :Returns:
 
         :obj:`~None`
 
 .. py:method:: clear_access(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IStkAccess.clear_access
 
     Clear the access intervals, but not the definitional settings of the access object itself (like step size, light time delay settings, time interval, etc.).
 

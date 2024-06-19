@@ -90,37 +90,37 @@ Property detail
 
 .. py:property:: base_overlay
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.base_overlay
-    :type: "IAgStkGraphicsGlobeImageOverlay"
+    :type: IAgStkGraphicsGlobeImageOverlay
 
     Gets or sets the base globe image overlay associated with the central body in the scene. The base overlay is always rendered before any other imagery...
 
 .. py:property:: night_overlay
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.night_overlay
-    :type: "IAgStkGraphicsGlobeImageOverlay"
+    :type: IAgStkGraphicsGlobeImageOverlay
 
     Gets or sets the night globe image overlay associated with the central body in the scene. The night overlay is displayed only on parts of the central body that are not in sun light...
 
 .. py:property:: specular_overlay
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.specular_overlay
-    :type: "IAgStkGraphicsGlobeImageOverlay"
+    :type: IAgStkGraphicsGlobeImageOverlay
 
     Gets or sets the specular globe image overlay associated with the central body in the scene. The specular overlay is displayed only in the specular highlight of the central body.
 
 .. py:property:: terrain
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.terrain
-    :type: "IAgStkGraphicsTerrainCollection"
+    :type: IAgStkGraphicsTerrainCollection
 
     Gets the collection of terrain overlay associated with the central body in the scene.
 
 .. py:property:: imagery
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.imagery
-    :type: "IAgStkGraphicsImageCollection"
+    :type: IAgStkGraphicsImageCollection
 
     Gets the collection of imagery associated with the central body in the scene.
 
 .. py:property:: kml
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.kml
-    :type: "IAgStkGraphicsKmlGraphics"
+    :type: IAgStkGraphicsKmlGraphics
 
     Gets the kml graphics associated with the central body in the scene.
 

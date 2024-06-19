@@ -42,25 +42,25 @@ Property detail
 
 .. py:property:: body
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.body
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Get the spin axis in the body frame.
 
 .. py:property:: inertial_precession
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.inertial_precession
-    :type: "IAgDirection"
+    :type: IAgDirection
 
     Get the precession in the inertial frame.
 
 .. py:property:: precession
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.precession
-    :type: "IAgVeRateOffset"
+    :type: IAgVeRateOffset
 
     Get the precession rate and offset.
 
 .. py:property:: spin
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.spin
-    :type: "IAgVeRateOffset"
+    :type: IAgVeRateOffset
 
     Get the spin rate and offset.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.smart_epoch
-    :type: "IAgCrdnEventSmartEpoch"
+    :type: IAgCrdnEventSmartEpoch
 
     Get the epoch of the attitude profile.
 

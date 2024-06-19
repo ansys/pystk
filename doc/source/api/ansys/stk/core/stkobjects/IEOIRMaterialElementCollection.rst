@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IEOIRMaterialElement"
+.. py:method:: item(self, index: int) -> IEOIRMaterialElement
+    :canonical: ansys.stk.core.stkobjects.IEOIRMaterialElementCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IEOIRMaterialElement"`
+        :obj:`~IEOIRMaterialElement`
 
 

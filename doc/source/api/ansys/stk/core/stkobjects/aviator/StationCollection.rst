@@ -3,7 +3,7 @@ StationCollection
 
 .. py:class:: StationCollection
 
-   IStationCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IStationCollection`
 
    Class defining a collection of payload stations for an Aviator aircraft.
 

@@ -3,7 +3,7 @@ StateCalcLocalApparentSolarLon
 
 .. py:class:: StateCalcLocalApparentSolarLon
 
-   IComponentInfo, ICloneable, IStateCalcLocalApparentSolarLon, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcLocalApparentSolarLon`
 
    LocalApparentSolarLon Calc objects.
 

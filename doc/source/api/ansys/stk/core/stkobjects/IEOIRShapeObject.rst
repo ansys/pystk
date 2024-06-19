@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IEOIRShapeObject.type
-    :type: "EOIR_SHAPE_TYPE"
+    :type: EOIR_SHAPE_TYPE
 
     Property used to access the shape type.
 

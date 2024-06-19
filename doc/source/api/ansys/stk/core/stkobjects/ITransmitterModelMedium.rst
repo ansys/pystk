@@ -90,13 +90,13 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.polarization
-    :type: "IAgPolarization"
+    :type: IAgPolarization
 
     Gets the polarization.
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.post_transmit_gains_losses
-    :type: "IAgAdditionalGainLossCollection"
+    :type: IAgAdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 
@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.filter
-    :type: "IAgRFFilterModel"
+    :type: IAgRFFilterModel
 
     Gets the current filter model.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.modulator
-    :type: "IAgModulatorModel"
+    :type: IAgModulatorModel
 
     Gets the current modulator model.
 
@@ -144,13 +144,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, val:"POLARIZATION_TYPE") -> None
+.. py:method:: set_polarization_type(self, val: POLARIZATION_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **val** : :obj:`~"POLARIZATION_TYPE"`
+    **val** : :obj:`~POLARIZATION_TYPE`
 
     :Returns:
 
@@ -161,7 +162,8 @@ Method detail
 
 
 
-.. py:method:: set_filter(self, name:str) -> None
+.. py:method:: set_filter(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.set_filter
 
     Set the current filter model by name.
 
@@ -175,7 +177,8 @@ Method detail
 
 
 
-.. py:method:: set_modulator(self, name:str) -> None
+.. py:method:: set_modulator(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.set_modulator
 
     Set the current modulator model by name.
 

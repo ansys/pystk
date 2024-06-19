@@ -3,7 +3,7 @@ VectorGeometryToolVectorFactory
 
 .. py:class:: VectorGeometryToolVectorFactory
 
-   IVectorGeometryToolVectorFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorFactory`
 
    A Factory object to create vectors.
 

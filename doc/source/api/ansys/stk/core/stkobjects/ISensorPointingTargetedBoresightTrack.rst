@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: about_boresight
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.about_boresight
-    :type: "BORESIGHT_TYPE"
+    :type: BORESIGHT_TYPE
 
     The orientation of the antenna's X and Y axes with respect to the parent's reference frame. (The Z axis always coincides with its boresight direction and is unambiguously defined by the azimuth and elevation.
 
 .. py:property:: track_mode
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.track_mode
-    :type: "TRACK_MODE_TYPE"
+    :type: TRACK_MODE_TYPE
 
     The antenna orientation option for the sensor. A member of the AgETrackModeType enumeration.
 

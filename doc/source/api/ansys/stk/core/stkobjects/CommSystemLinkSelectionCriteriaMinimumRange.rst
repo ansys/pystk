@@ -3,7 +3,7 @@ CommSystemLinkSelectionCriteriaMinimumRange
 
 .. py:class:: CommSystemLinkSelectionCriteriaMinimumRange
 
-   ICommSystemLinkSelectionCriteria, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemLinkSelectionCriteria`
 
    Class defining a CommSystem link selection criteria.
 

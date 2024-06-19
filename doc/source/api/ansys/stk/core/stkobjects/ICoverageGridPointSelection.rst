@@ -64,6 +64,7 @@ Method detail
 
 
 .. py:method:: to_array(self) -> list
+    :canonical: ansys.stk.core.stkobjects.ICoverageGridPointSelection.to_array
 
     Return a jagged array of grid points and their intervals. The elements are single-dimension arrays each containing three elements: latitude, longitude and a jagged array of access intervals.
 
@@ -72,7 +73,8 @@ Method detail
         :obj:`~list`
 
 
-.. py:method:: item(self, index:int) -> "ICoverageSelectedGridPoint"
+.. py:method:: item(self, index: int) -> ICoverageSelectedGridPoint
+    :canonical: ansys.stk.core.stkobjects.ICoverageGridPointSelection.item
 
     Given an index, returns a point in the selection.
 
@@ -82,5 +84,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICoverageSelectedGridPoint"`
+        :obj:`~ICoverageSelectedGridPoint`
 

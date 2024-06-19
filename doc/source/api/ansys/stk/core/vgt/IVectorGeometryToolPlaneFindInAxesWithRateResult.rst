@@ -46,25 +46,25 @@ Property detail
 
 .. py:property:: x_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.x_axis
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     X-axis vector in the specified reference axes.
 
 .. py:property:: x_axis_rate
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.x_axis_rate
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The rate of change of X-axis vector in the specified reference axes.
 
 .. py:property:: y_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.y_axis
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     Y-axis vector in the specified reference axes.
 
 .. py:property:: y_axis_rate
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.y_axis_rate
-    :type: "IAgCartesian3Vector"
+    :type: IAgCartesian3Vector
 
     The rate of change of Y-axis vector in the specified reference axes.
 

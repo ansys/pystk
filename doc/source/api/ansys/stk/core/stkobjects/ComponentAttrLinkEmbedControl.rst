@@ -3,7 +3,7 @@ ComponentAttrLinkEmbedControl
 
 .. py:class:: ComponentAttrLinkEmbedControl
 
-   IComponentLinkEmbedControl, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentLinkEmbedControl`
 
    Attribute based component link/embed control.
 

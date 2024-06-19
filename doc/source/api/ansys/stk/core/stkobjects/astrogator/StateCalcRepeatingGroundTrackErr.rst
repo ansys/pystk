@@ -3,7 +3,7 @@ StateCalcRepeatingGroundTrackErr
 
 .. py:class:: StateCalcRepeatingGroundTrackErr
 
-   IComponentInfo, ICloneable, IStateCalcRepeatingGroundTrackErr, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRepeatingGroundTrackErr`
 
    RepeatingGrTrackErr Calc objects.
 

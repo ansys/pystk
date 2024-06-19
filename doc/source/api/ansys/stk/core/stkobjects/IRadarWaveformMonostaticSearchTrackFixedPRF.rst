@@ -56,13 +56,13 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.pulse_definition
-    :type: "IAgRadarWaveformSearchTrackPulseDefinition"
+    :type: IAgRadarWaveformSearchTrackPulseDefinition
 
     Gets the interface for setting the pulse definition parameters.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.modulator
-    :type: "IAgRadarModulator"
+    :type: IAgRadarModulator
 
     Gets the interface for setting the modulator parameters.
 
@@ -74,19 +74,19 @@ Property detail
 
 .. py:property:: probability_of_detection
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.probability_of_detection
-    :type: "IAgRadarProbabilityOfDetection"
+    :type: IAgRadarProbabilityOfDetection
 
     Gets the interface for setting the probability of detection parameters.
 
 .. py:property:: pulse_integration_type
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.pulse_integration_type
-    :type: "RADAR_PULSE_INTEGRATION_TYPE"
+    :type: RADAR_PULSE_INTEGRATION_TYPE
 
     Gets or sets the pulse integration type.
 
 .. py:property:: pulse_integration
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.pulse_integration
-    :type: "IAgRadarPulseIntegration"
+    :type: IAgRadarPulseIntegration
 
     Gets the interface for setting pulse integration parameters.
 
@@ -133,7 +133,8 @@ Method detail
 
 
 
-.. py:method:: set_probability_of_detection(self, name:str) -> None
+.. py:method:: set_probability_of_detection(self, name: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.set_probability_of_detection
 
     Set the probability of detection algorithm by name.
 

@@ -3,7 +3,7 @@ StkPreferencesVDF
 
 .. py:class:: StkPreferencesVDF
 
-   IStkPreferencesVDF, SupportsDeleteCallback
+   Bases: py:obj:`~IStkPreferencesVDF`
 
    Allow configuring VDF preferences.
 

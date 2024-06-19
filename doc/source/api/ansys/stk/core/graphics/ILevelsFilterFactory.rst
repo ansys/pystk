@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ILevelsFilter"
+.. py:method:: initialize(self) -> ILevelsFilter
+    :canonical: ansys.stk.core.graphics.ILevelsFilterFactory.initialize
 
     Initialize a new instance.
 
     :Returns:
 
-        :obj:`~"ILevelsFilter"`
+        :obj:`~ILevelsFilter`
 

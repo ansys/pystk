@@ -3,7 +3,7 @@ UiWindowsCollection
 
 .. py:class:: UiWindowsCollection
 
-   IUiWindowsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IUiWindowsCollection`
 
    Provide methods and properties to manage the windows.
 

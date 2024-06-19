@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcRange
 
 .. py:class:: SpatialAnalysisToolVolumeCalcRange
 
-   ISpatialAnalysisToolVolumeCalcRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcRange`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume calc distance to location interface.
 

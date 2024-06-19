@@ -3,7 +3,7 @@ AttitudeControlFiniteAntiVelocityVector
 
 .. py:class:: AttitudeControlFiniteAntiVelocityVector
 
-   IAttitudeControlFiniteAntiVelocityVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlFiniteAntiVelocityVector`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The anti-velocity vector attitude control for a finite maneuver.
 

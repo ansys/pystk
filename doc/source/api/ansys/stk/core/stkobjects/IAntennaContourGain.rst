@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IAntennaContourGain.coordinate_system
-    :type: "ANTENNA_GRAPHICS_COORDINATE_SYSTEM"
+    :type: ANTENNA_GRAPHICS_COORDINATE_SYSTEM
 
     Gets or sets the coordinate system for defining the resolution of the antenna graphics.
 
@@ -119,7 +119,8 @@ Method detail
 
 
 
-.. py:method:: set_resolution(self, azimuthStart:float, azimuthStop:float, azimuthResolution:float, elevationStart:float, elevationStop:float, elevationResolution:float) -> None
+.. py:method:: set_resolution(self, azimuthStart: float, azimuthStop: float, azimuthResolution: float, elevationStart: float, elevationStop: float, elevationResolution: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntennaContourGain.set_resolution
 
     Set the azimuth/elevation ranges and resolution.
 
@@ -136,7 +137,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_num_points(self, azimuthStart:float, azimuthStop:float, azimuthNumPoints:int, elevationStart:float, elevationStop:float, elevationNumPoints:int) -> None
+.. py:method:: set_num_points(self, azimuthStart: float, azimuthStop: float, azimuthNumPoints: int, elevationStart: float, elevationStop: float, elevationNumPoints: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntennaContourGain.set_num_points
 
     Set the azimuth/elevation ranges and number of points.
 

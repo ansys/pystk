@@ -3,7 +3,7 @@ SurfaceMeshPrimitive
 
 .. py:class:: SurfaceMeshPrimitive
 
-   ISurfaceMeshPrimitive, IPrimitive, SupportsDeleteCallback
+   Bases: py:obj:`~ISurfaceMeshPrimitive`, py:obj:`~IPrimitive`
 
    A triangle mesh primitive for meshes on the surface that need to conform to terrain.
 

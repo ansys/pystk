@@ -3,7 +3,7 @@ BeerBouguerLambertLawLayerCollection
 
 .. py:class:: BeerBouguerLambertLawLayerCollection
 
-   IBeerBouguerLambertLawLayerCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IBeerBouguerLambertLawLayerCollection`
 
    Class defining collection of Beer-Bouguer-Lamber Law atmosphere layers.
 

@@ -3,7 +3,7 @@ CoverageBoundsLatLonRegion
 
 .. py:class:: CoverageBoundsLatLonRegion
 
-   ICoverageBoundsLatLonRegion, ICoverageBounds, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageBoundsLatLonRegion`, py:obj:`~ICoverageBounds`
 
    LatLon Region: create a region between user-specified Minimum and Maximum Latitude and Longitude boundaries.
 

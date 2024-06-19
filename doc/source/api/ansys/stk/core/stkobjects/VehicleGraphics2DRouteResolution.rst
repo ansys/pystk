@@ -3,7 +3,7 @@ VehicleGraphics2DRouteResolution
 
 .. py:class:: VehicleGraphics2DRouteResolution
 
-   IVehicleGraphics2DRouteResolution, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DRouteResolution`
 
    Route resolution for great arc vehicles defined in terms of ephemeris steps.
 

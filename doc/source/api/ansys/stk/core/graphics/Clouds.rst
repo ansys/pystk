@@ -3,7 +3,7 @@ Clouds
 
 .. py:class:: Clouds
 
-   IClouds, SupportsDeleteCallback
+   Bases: py:obj:`~IClouds`
 
    Load, show and hide clouds in the scene.
 

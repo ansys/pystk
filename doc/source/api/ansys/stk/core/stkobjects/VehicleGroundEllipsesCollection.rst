@@ -3,7 +3,7 @@ VehicleGroundEllipsesCollection
 
 .. py:class:: VehicleGroundEllipsesCollection
 
-   IVehicleGroundEllipsesCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGroundEllipsesCollection`
 
    List of Ground Ellipses.
 

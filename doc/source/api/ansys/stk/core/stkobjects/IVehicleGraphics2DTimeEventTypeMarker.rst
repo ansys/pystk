@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: event_interval
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.event_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Event interval.
 

@@ -3,7 +3,7 @@ FigureOfMeritDefinitionSystemResponseTime
 
 .. py:class:: FigureOfMeritDefinitionSystemResponseTime
 
-   IFigureOfMeritDefinitionSystemResponseTime, IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionSystemResponseTime`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
 
    System Response Time Figure of Merit.
 

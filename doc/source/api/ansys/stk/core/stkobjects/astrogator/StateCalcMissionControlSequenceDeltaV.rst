@@ -3,7 +3,7 @@ StateCalcMissionControlSequenceDeltaV
 
 .. py:class:: StateCalcMissionControlSequenceDeltaV
 
-   IComponentInfo, ICloneable, IStateCalcMissionControlSequenceDeltaV, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMissionControlSequenceDeltaV`
 
    MCS DeltaV Calc objects.
 

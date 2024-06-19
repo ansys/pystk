@@ -59,25 +59,25 @@ Property detail
 
 .. py:property:: segment_properties
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.segment_properties
-    :type: "IAgVAScriptingSegmentCollection"
+    :type: IAgVAScriptingSegmentCollection
 
     Returns the collection of the segment properties.
 
 .. py:property:: calc_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.calc_objects
-    :type: "IAgVAScriptingCalcObjectCollection"
+    :type: IAgVAScriptingCalcObjectCollection
 
     Returns the collection of the calc objects.
 
 .. py:property:: parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.parameters
-    :type: "IAgVAScriptingParameterCollection"
+    :type: IAgVAScriptingParameterCollection
 
     Returns the collection of parameters.
 
 .. py:property:: language_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.language_type
-    :type: "LANGUAGE"
+    :type: LANGUAGE
 
     Gets or sets the scripting language being used.
 
@@ -92,7 +92,8 @@ Method detail
 
 
 
-.. py:method:: script_text(self, script:str) -> None
+.. py:method:: script_text(self, script: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.script_text
 
     Injects the script into the scripting tool.
 
@@ -105,6 +106,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: copy_to_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.copy_to_clipboard
 
     Copy entire scripting tool to clipboard.
 
@@ -113,6 +115,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: paste_from_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.paste_from_clipboard
 
     Replace entire scripting tool with scripting tool in clipboard.
 

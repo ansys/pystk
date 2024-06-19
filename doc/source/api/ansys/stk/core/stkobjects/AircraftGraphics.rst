@@ -3,7 +3,7 @@ AircraftGraphics
 
 .. py:class:: AircraftGraphics
 
-   IAircraftGraphics, IGreatArcGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftGraphics`, py:obj:`~IGreatArcGraphics`
 
    2D Graphics for an aircraft.
 

@@ -3,7 +3,7 @@ MissileSimpleProp
 
 .. py:class:: MissileSimpleProp
 
-   IMissileSimpleProp, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileSimpleProp`
 
    Class defining the Simple propulsion options for a missile.
 

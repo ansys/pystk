@@ -3,7 +3,7 @@ ChainConnectionCollection
 
 .. py:class:: ChainConnectionCollection
 
-   IChainConnectionCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IChainConnectionCollection`
 
    Class defining a collection of Chain connections.
 

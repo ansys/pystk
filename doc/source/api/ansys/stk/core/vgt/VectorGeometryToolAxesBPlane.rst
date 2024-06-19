@@ -3,7 +3,7 @@ VectorGeometryToolAxesBPlane
 
 .. py:class:: VectorGeometryToolAxesBPlane
 
-   IVectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesBPlane`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    B-Plane axes using the selected target body and reference vector.
 

@@ -3,7 +3,7 @@ ReceiverModelCable
 
 .. py:class:: ReceiverModelCable
 
-   IReceiverModelCable, IReceiverModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IReceiverModelCable`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a cable receiver model.
 

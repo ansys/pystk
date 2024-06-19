@@ -11,6 +11,27 @@ BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~NAV_USE_ACCEL_PERF_MODEL`
+              - Use Accel Perf Model.
+
+            * - :py:attr:`~NAV_MIN_TURN_RADIUS`
+              - Specify min turn radius.
+
+            * - :py:attr:`~NAV_MAX_TURN_RATE`
+              - Specify max turn rate.
+
+            * - :py:attr:`~NAV_MAX_HORIZ_ACCEL`
+              - Specify max horiz accel.
+
+
 Import detail
 -------------
 

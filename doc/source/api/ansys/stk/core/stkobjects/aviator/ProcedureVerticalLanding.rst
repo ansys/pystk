@@ -3,7 +3,7 @@ ProcedureVerticalLanding
 
 .. py:class:: ProcedureVerticalLanding
 
-   IProcedureVerticalLanding, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureVerticalLanding`, py:obj:`~IProcedure`
 
    Class defining a vertical landing procedure.
 

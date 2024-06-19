@@ -3,7 +3,7 @@ CoverageResolutionLatLon
 
 .. py:class:: CoverageResolutionLatLon
 
-   ICoverageResolutionLatLon, ICoverageResolution, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageResolutionLatLon`, py:obj:`~ICoverageResolution`
 
    Lat/Lon: Determine the location of grid coordinates by specifying a latitude/longitude resolution value.
 

@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: refuel_dump_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_mode
-    :type: "REFUEL_DUMP_MODE"
+    :type: REFUEL_DUMP_MODE
 
     Get the RefuelDumpMode.
 
@@ -90,13 +90,14 @@ Method detail
 
 
 
-.. py:method:: set_refuel_dump_mode(self, mode:"REFUEL_DUMP_MODE", value:float) -> None
+.. py:method:: set_refuel_dump_mode(self, mode: REFUEL_DUMP_MODE, value: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.set_refuel_dump_mode
 
     Set RefuelDumpMode and RefuelDumpModeValue if applicable.
 
     :Parameters:
 
-    **mode** : :obj:`~"REFUEL_DUMP_MODE"`
+    **mode** : :obj:`~REFUEL_DUMP_MODE`
     **value** : :obj:`~float`
 
     :Returns:

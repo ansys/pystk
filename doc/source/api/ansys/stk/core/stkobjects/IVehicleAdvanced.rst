@@ -41,7 +41,7 @@ Property detail
 
 .. py:property:: atmospheric_density_model
     :canonical: ansys.stk.core.stkobjects.IVehicleAdvanced.atmospheric_density_model
-    :type: "ATMOSPHERIC_DENSITY_MODEL"
+    :type: ATMOSPHERIC_DENSITY_MODEL
 
     This property is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
 
@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: exp_dens_model_params
     :canonical: ansys.stk.core.stkobjects.IVehicleAdvanced.exp_dens_model_params
-    :type: "IAgVeExpDensModelParams"
+    :type: IAgVeExpDensModelParams
 
     Get the exponential density modeling parameters.
 
 .. py:property:: atmos_density_model
     :canonical: ansys.stk.core.stkobjects.IVehicleAdvanced.atmos_density_model
-    :type: "LOP_ATMOSPHERIC_DENSITY_MODEL"
+    :type: LOP_ATMOSPHERIC_DENSITY_MODEL
 
     Atmospheric density model.
 

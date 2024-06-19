@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: translucent_primitives_sort_order
     :canonical: ansys.stk.core.graphics.ICompositePrimitive.translucent_primitives_sort_order
-    :type: "PRIMITIVES_SORT_ORDER"
+    :type: PRIMITIVES_SORT_ORDER
 
     Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
 
@@ -76,43 +76,47 @@ Method detail
 
 
 
-.. py:method:: add(self, primitive:"IPrimitive") -> None
+.. py:method:: add(self, primitive: IPrimitive) -> None
+    :canonical: ansys.stk.core.graphics.ICompositePrimitive.add
 
     Add a primitive to the composite.
 
     :Parameters:
 
-    **primitive** : :obj:`~"IPrimitive"`
+    **primitive** : :obj:`~IPrimitive`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, primitive:"IPrimitive") -> None
+.. py:method:: remove(self, primitive: IPrimitive) -> None
+    :canonical: ansys.stk.core.graphics.ICompositePrimitive.remove
 
     Remove a primitive from the composite.
 
     :Parameters:
 
-    **primitive** : :obj:`~"IPrimitive"`
+    **primitive** : :obj:`~IPrimitive`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: contains(self, primitive:"IPrimitive") -> bool
+.. py:method:: contains(self, primitive: IPrimitive) -> bool
+    :canonical: ansys.stk.core.graphics.ICompositePrimitive.contains
 
     Determine whether the composite contains a primitive.
 
     :Parameters:
 
-    **primitive** : :obj:`~"IPrimitive"`
+    **primitive** : :obj:`~IPrimitive`
 
     :Returns:
 
         :obj:`~bool`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.ICompositePrimitive.clear
 
     Remove all primitives from the composite.
 

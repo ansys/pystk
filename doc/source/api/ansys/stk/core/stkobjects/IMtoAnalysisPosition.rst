@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.IMtoAnalysisPosition.altitude_reference
-    :type: "ALTITUDE_REFERENCE_TYPE"
+    :type: ALTITUDE_REFERENCE_TYPE
 
     Specify the altitude reference. Default is Ellipsoid.
 
@@ -59,7 +59,8 @@ Method detail
 
 
 
-.. py:method:: compute_all_tracks(self, time:typing.Any) -> "IMtoTrackPointCollection"
+.. py:method:: compute_all_tracks(self, time: typing.Any) -> IMtoTrackPointCollection
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisPosition.compute_all_tracks
 
     Compute the position of all tracks at the given time.
 
@@ -69,9 +70,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrackPointCollection"`
+        :obj:`~IMtoTrackPointCollection`
 
-.. py:method:: compute_tracks(self, trackIds:list, time:typing.Any) -> "IMtoTrackPointCollection"
+.. py:method:: compute_tracks(self, trackIds: list, time: typing.Any) -> IMtoTrackPointCollection
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisPosition.compute_tracks
 
     Compute the position of all track of given Id at the given time.
 
@@ -82,9 +84,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrackPointCollection"`
+        :obj:`~IMtoTrackPointCollection`
 
-.. py:method:: compute_track(self, trackId:int, time:typing.Any) -> "IMtoTrackPoint"
+.. py:method:: compute_track(self, trackId: int, time: typing.Any) -> IMtoTrackPoint
+    :canonical: ansys.stk.core.stkobjects.IMtoAnalysisPosition.compute_track
 
     Compute the position of the track Id at the given time.
 
@@ -95,5 +98,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IMtoTrackPoint"`
+        :obj:`~IMtoTrackPoint`
 

@@ -3,7 +3,7 @@ VectorGeometryToolAxesFactory
 
 .. py:class:: VectorGeometryToolAxesFactory
 
-   IVectorGeometryToolAxesFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAxesFactory`
 
    A Factory object to create axes.
 

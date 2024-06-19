@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: integration_model
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegrator.integration_model
-    :type: "VEHICLE_INTEGRATION_MODEL"
+    :type: VEHICLE_INTEGRATION_MODEL
 
     Integration method to be used in propagating the orbit.
 
@@ -56,25 +56,25 @@ Property detail
 
 .. py:property:: predictor_corrector_scheme
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegrator.predictor_corrector_scheme
-    :type: "VEHICLE_PREDICTOR_CORRECTOR_SCHEME"
+    :type: VEHICLE_PREDICTOR_CORRECTOR_SCHEME
 
     Predictor corrector scheme (valid for Gauss-Jackson method only): method for updating acceleration components after corrector has converged.
 
 .. py:property:: step_size_control
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegrator.step_size_control
-    :type: "IAgVeStepSizeControl"
+    :type: IAgVeStepSizeControl
 
     Get the method of integration step size control.
 
 .. py:property:: time_regularization
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegrator.time_regularization
-    :type: "IAgVeTimeRegularization"
+    :type: IAgVeTimeRegularization
 
     Get the time regularization parameters.
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegrator.interpolation
-    :type: "IAgVeInterpolation"
+    :type: IAgVeInterpolation
 
     Get the interpolation parameters.
 

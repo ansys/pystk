@@ -3,7 +3,7 @@ ProcedureLaunch
 
 .. py:class:: ProcedureLaunch
 
-   IProcedureLaunch, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureLaunch`, py:obj:`~IProcedure`
 
    Class defining a launch procedure.
 

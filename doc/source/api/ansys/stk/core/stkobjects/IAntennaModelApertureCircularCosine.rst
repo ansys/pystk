@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: input_type
     :canonical: ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.input_type
-    :type: "CIRCULAR_APERTURE_INPUT_TYPE"
+    :type: CIRCULAR_APERTURE_INPUT_TYPE
 
     Gets or sets the input type.
 

@@ -68,19 +68,19 @@ Property detail
 
 .. py:property:: umbra
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.umbra
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Configure the appearance of the orbit track, the marker, etc. when the vehicle isn't in sunlight at all.
 
 .. py:property:: penumbra
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.penumbra
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Configure the appearance of the orbit track, the marker, etc. when the vehicle is only partially in sunlight.
 
 .. py:property:: sunlight
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.sunlight
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Configure the appearance of the orbit track, the marker, etc. when the vehicle is in complete sunlight.
 
@@ -97,11 +97,12 @@ Method detail
 
 
 
-.. py:method:: get_time_component(self) -> "IAnalysisWorkbenchComponent"
+.. py:method:: get_time_component(self) -> IAnalysisWorkbenchComponent
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.get_time_component
 
     Return an instance of a time component which provides the time intervals to control the appearance and visibility of the graphics path. The method may throw an exception if the component is invalid.
 
     :Returns:
 
-        :obj:`~"IAnalysisWorkbenchComponent"`
+        :obj:`~IAnalysisWorkbenchComponent`
 

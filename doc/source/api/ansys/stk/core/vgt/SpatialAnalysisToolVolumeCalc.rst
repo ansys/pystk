@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalc
 
 .. py:class:: SpatialAnalysisToolVolumeCalc
 
-   ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume calc interface. The methods and properties of the interface provide Volumetric calc functions.
 

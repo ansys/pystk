@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: border_wall
     :canonical: ansys.stk.core.stkobjects.IGraphics3DRangeContours.border_wall
-    :type: "IAgVOBorderWall"
+    :type: IAgVOBorderWall
 
     Retrieve the border wall properties of the range contours.
 
 .. py:property:: label_swap_distance
     :canonical: ansys.stk.core.stkobjects.IGraphics3DRangeContours.label_swap_distance
-    :type: "IAgVOLabelSwapDistance"
+    :type: IAgVOLabelSwapDistance
 
     Interface to control the level of detail in labels and other screen objects at specified distances.
 

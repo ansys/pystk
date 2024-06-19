@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: longitudinal_accel_type
     :canonical: ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.longitudinal_accel_type
-    :type: "REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE"
+    :type: REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE
 
     Get the mode to specify the longitudinal acceleration.
 
@@ -152,7 +152,7 @@ Property detail
 
 .. py:property:: attitude_rate_type
     :canonical: ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.attitude_rate_type
-    :type: "REFERENCE_STATE_ATTITUDE_MODE"
+    :type: REFERENCE_STATE_ATTITUDE_MODE
 
     Get the mode to specify the vertical attitude rate.
 
@@ -167,13 +167,14 @@ Method detail
 
 
 
-.. py:method:: set_longitudinal_accel(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None
+.. py:method:: set_longitudinal_accel(self, accelType: REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE, value: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.set_longitudinal_accel
 
     Set the longitudinal acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~"REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE"`
+    **accelType** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE`
     **value** : :obj:`~float`
 
     :Returns:
@@ -199,13 +200,14 @@ Method detail
 
 
 
-.. py:method:: set_attitude_rate(self, attitudeRateType:"REFERENCE_STATE_ATTITUDE_MODE", value:typing.Any) -> None
+.. py:method:: set_attitude_rate(self, attitudeRateType: REFERENCE_STATE_ATTITUDE_MODE, value: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.set_attitude_rate
 
     Set the vertical attitude rate.
 
     :Parameters:
 
-    **attitudeRateType** : :obj:`~"REFERENCE_STATE_ATTITUDE_MODE"`
+    **attitudeRateType** : :obj:`~REFERENCE_STATE_ATTITUDE_MODE`
     **value** : :obj:`~typing.Any`
 
     :Returns:

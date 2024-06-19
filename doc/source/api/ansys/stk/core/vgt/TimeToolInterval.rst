@@ -3,7 +3,7 @@ TimeToolInterval
 
 .. py:class:: TimeToolInterval
 
-   ITimeToolInterval, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolInterval`
 
    Represents an interval.
 

@@ -3,7 +3,7 @@ CoverageResolutionArea
 
 .. py:class:: CoverageResolutionArea
 
-   ICoverageResolutionArea, ICoverageResolution, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageResolutionArea`, py:obj:`~ICoverageResolution`
 
    Area: Define the location of grid coordinates by using the specified area to determine a latitude/longitude spacing scheme at the equator.
 

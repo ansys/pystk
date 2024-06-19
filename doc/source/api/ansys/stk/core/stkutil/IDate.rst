@@ -89,7 +89,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: format(self, unit:str) -> str
+.. py:method:: format(self, unit: str) -> str
+    :canonical: ansys.stk.core.stkutil.IDate.format
 
     Return the value of the date given the unit.
 
@@ -101,7 +102,8 @@ Method detail
 
         :obj:`~str`
 
-.. py:method:: set_date(self, unit:str, value:str) -> None
+.. py:method:: set_date(self, unit: str, value: str) -> None
+    :canonical: ansys.stk.core.stkutil.IDate.set_date
 
     Set this date with the given date value and unit type.
 
@@ -124,7 +126,8 @@ Method detail
 
 
 
-.. py:method:: add(self, unit:str, value:float) -> "IDate"
+.. py:method:: add(self, unit: str, value: float) -> IDate
+    :canonical: ansys.stk.core.stkutil.IDate.add
 
     Add the value in the given unit and returns a new date interface.
 
@@ -135,9 +138,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDate"`
+        :obj:`~IDate`
 
-.. py:method:: subtract(self, unit:str, value:float) -> "IDate"
+.. py:method:: subtract(self, unit: str, value: float) -> IDate
+    :canonical: ansys.stk.core.stkutil.IDate.subtract
 
     Subtracts the value in the given unit and returns a new date interface.
 
@@ -148,17 +152,18 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDate"`
+        :obj:`~IDate`
 
-.. py:method:: span(self, date:"IDate") -> "IQuantity"
+.. py:method:: span(self, date: IDate) -> IQuantity
+    :canonical: ansys.stk.core.stkutil.IDate.span
 
     Subtracts the value from the IAgDate interface and returns an IAgQuantity.
 
     :Parameters:
 
-    **date** : :obj:`~"IDate"`
+    **date** : :obj:`~IDate`
 
     :Returns:
 
-        :obj:`~"IQuantity"`
+        :obj:`~IQuantity`
 

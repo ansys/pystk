@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: save_computed_data_type
     :canonical: ansys.stk.core.stkobjects.IVmAdvanced.save_computed_data_type
-    :type: "VM_SAVE_COMPUTED_DATA_TYPE"
+    :type: VM_SAVE_COMPUTED_DATA_TYPE
 
     Get save computed data type. A member of the AgEVmSaveComputedDataType enumeration.
 

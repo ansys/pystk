@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: polarization_type
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.polarization_type
-    :type: "TIREM_POLARIZATION_TYPE"
+    :type: TIREM_POLARIZATION_TYPE
 
     Gets or sets the polarization type.
 

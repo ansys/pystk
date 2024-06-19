@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IScreenOverlayPickResult"
+.. py:method:: item(self, index: int) -> IScreenOverlayPickResult
+    :canonical: ansys.stk.core.graphics.IScreenOverlayPickResultCollection.item
 
     Get an element at the specified position in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScreenOverlayPickResult"`
+        :obj:`~IScreenOverlayPickResult`
 
 

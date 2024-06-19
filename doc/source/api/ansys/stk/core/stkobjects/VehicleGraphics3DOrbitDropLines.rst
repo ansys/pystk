@@ -3,7 +3,7 @@ VehicleGraphics3DOrbitDropLines
 
 .. py:class:: VehicleGraphics3DOrbitDropLines
 
-   IVehicleGraphics3DOrbitDropLines, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DOrbitDropLines`
 
    Droplines collections.
 

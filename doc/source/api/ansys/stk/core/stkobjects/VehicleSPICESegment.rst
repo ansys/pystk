@@ -3,7 +3,7 @@ VehicleSPICESegment
 
 .. py:class:: VehicleSPICESegment
 
-   IVehicleSPICESegment, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSPICESegment`
 
    SPICE propagator segment.
 

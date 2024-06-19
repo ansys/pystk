@@ -3,7 +3,7 @@ GeospatialImageGlobeOverlayFactory
 
 .. py:class:: GeospatialImageGlobeOverlayFactory
 
-   IGeospatialImageGlobeOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IGeospatialImageGlobeOverlayFactory`
 
    A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection.
 

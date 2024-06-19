@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarGroup.context
-    :type: "IAgCrdnContext"
+    :type: IAgCrdnContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarGroup.factory
-    :type: "IAgCrdnCalcScalarFactory"
+    :type: IAgCrdnCalcScalarFactory
 
     Returns a factory object used to create calc scalar components.
 
@@ -82,7 +82,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, eventName:str) -> None
+.. py:method:: remove(self, eventName: str) -> None
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarGroup.remove
 
     Remove a specified element.
 
@@ -95,7 +96,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: contains(self, name:str) -> bool
+.. py:method:: contains(self, name: str) -> bool
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarGroup.contains
 
     Search for a an element with a given name. Returns false if the specified element does not exist.
 
@@ -109,7 +111,8 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "ICalculationToolScalar"
+.. py:method:: item(self, indexOrName: typing.Any) -> ICalculationToolScalar
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarGroup.item
 
     Return an element by name or at a specified position.
 
@@ -119,10 +122,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolScalar"`
+        :obj:`~ICalculationToolScalar`
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "ICalculationToolScalar"
+.. py:method:: get_item_by_index(self, index: int) -> ICalculationToolScalar
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarGroup.get_item_by_index
 
     Retrieve an element from the collection by index.
 
@@ -132,9 +136,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolScalar"`
+        :obj:`~ICalculationToolScalar`
 
-.. py:method:: get_item_by_name(self, name:str) -> "ICalculationToolScalar"
+.. py:method:: get_item_by_name(self, name: str) -> ICalculationToolScalar
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarGroup.get_item_by_name
 
     Retrieve an element from the collection by name.
 
@@ -144,5 +149,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolScalar"`
+        :obj:`~ICalculationToolScalar`
 

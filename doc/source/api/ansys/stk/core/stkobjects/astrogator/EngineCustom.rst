@@ -3,7 +3,7 @@ EngineCustom
 
 .. py:class:: EngineCustom
 
-   IEngineCustom, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IEngineCustom`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Custom engine model.
 

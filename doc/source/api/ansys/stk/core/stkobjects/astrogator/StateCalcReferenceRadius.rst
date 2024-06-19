@@ -3,7 +3,7 @@ StateCalcReferenceRadius
 
 .. py:class:: StateCalcReferenceRadius
 
-   IStateCalcReferenceRadius, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IStateCalcReferenceRadius`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Reference Radius Calc objects.
 

@@ -3,7 +3,7 @@ BeamformerAsciiFile
 
 .. py:class:: BeamformerAsciiFile
 
-   IBeamformerAsciiFile, IBeamformer, SupportsDeleteCallback
+   Bases: py:obj:`~IBeamformerAsciiFile`, py:obj:`~IBeamformer`
 
    Class defining a beamformer ascii file.
 

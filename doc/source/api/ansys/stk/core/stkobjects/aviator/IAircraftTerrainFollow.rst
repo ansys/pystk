@@ -38,7 +38,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_terrain_follow_by_name(self, name:str) -> "IAircraftTerrainFollowModel"
+.. py:method:: get_terrain_follow_by_name(self, name: str) -> IAircraftTerrainFollowModel
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollow.get_terrain_follow_by_name
 
     Get the TerrainFollow model with the given name.
 
@@ -48,13 +49,14 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAircraftTerrainFollowModel"`
+        :obj:`~IAircraftTerrainFollowModel`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollow.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

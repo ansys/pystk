@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.ILaserEnvironment.propagation_channel
-    :type: "IAgLaserPropagationChannel"
+    :type: IAgLaserPropagationChannel
 
     Gets the propagation channel.
 

@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: reference_shape
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.reference_shape
-    :type: "CRDN_REFERENCE_SHAPE_TYPE"
+    :type: CRDN_REFERENCE_SHAPE_TYPE
 
     Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level.
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.position
-    :type: "IAgPosition"
+    :type: IAgPosition
 
     A position of the point fixed on the central body.
 

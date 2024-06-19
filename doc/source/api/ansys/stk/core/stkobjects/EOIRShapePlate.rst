@@ -3,7 +3,7 @@ EOIRShapePlate
 
 .. py:class:: EOIRShapePlate
 
-   IEOIRShapePlate, IEOIRShapeObject, SupportsDeleteCallback
+   Bases: py:obj:`~IEOIRShapePlate`, py:obj:`~IEOIRShapeObject`
 
    Plate shape class.
 

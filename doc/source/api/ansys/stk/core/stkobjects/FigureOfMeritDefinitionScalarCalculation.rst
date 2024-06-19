@@ -3,7 +3,7 @@ FigureOfMeritDefinitionScalarCalculation
 
 .. py:class:: FigureOfMeritDefinitionScalarCalculation
 
-   IFigureOfMeritDefinitionScalarCalculation, IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionScalarCalculation`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
 
    Scalar Calculation Figure of Merit.
 

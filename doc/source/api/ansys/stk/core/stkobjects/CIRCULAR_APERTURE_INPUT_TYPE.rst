@@ -11,6 +11,21 @@ CIRCULAR_APERTURE_INPUT_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~BEAMWIDTH`
+              - Beamwidth.
+
+            * - :py:attr:`~DIAMETER`
+              - Diameter.
+
+
 Import detail
 -------------
 

@@ -42,7 +42,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_path(self, path:str) -> None
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo.set_path
 
     Set a new angle.
 
@@ -54,33 +55,36 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_angle(self, angle:"IVectorGeometryToolAngle") -> None
+.. py:method:: set_angle(self, angle: IVectorGeometryToolAngle) -> None
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo.set_angle
 
     Set a new angle.
 
     :Parameters:
 
-    **angle** : :obj:`~"IVectorGeometryToolAngle"`
+    **angle** : :obj:`~IVectorGeometryToolAngle`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_angle(self) -> "IVectorGeometryToolAngle"
+.. py:method:: get_angle(self) -> IVectorGeometryToolAngle
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo.get_angle
 
     Return the actual angle object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
 
     :Returns:
 
-        :obj:`~"IVectorGeometryToolAngle"`
+        :obj:`~IVectorGeometryToolAngle`
 
-.. py:method:: has_cyclic_dependency(self, angle:"IVectorGeometryToolAngle") -> bool
+.. py:method:: has_cyclic_dependency(self, angle: IVectorGeometryToolAngle) -> bool
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo.has_cyclic_dependency
 
     Test whether the input component and the target component form a cyclic dependency.
 
     :Parameters:
 
-    **angle** : :obj:`~"IVectorGeometryToolAngle"`
+    **angle** : :obj:`~IVectorGeometryToolAngle`
 
     :Returns:
 

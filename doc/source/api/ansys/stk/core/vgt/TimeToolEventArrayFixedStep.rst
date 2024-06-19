@@ -3,7 +3,7 @@ TimeToolEventArrayFixedStep
 
 .. py:class:: TimeToolEventArrayFixedStep
 
-   ITimeToolEventArrayFixedStep, ITimeToolEventArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventArrayFixedStep`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list.
 

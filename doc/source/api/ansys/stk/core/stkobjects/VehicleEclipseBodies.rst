@@ -3,7 +3,7 @@ VehicleEclipseBodies
 
 .. py:class:: VehicleEclipseBodies
 
-   IVehicleEclipseBodies, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEclipseBodies`
 
    Satellite Eclipse Bodies, for defining the eclipse central body list used for lighting computations.
 

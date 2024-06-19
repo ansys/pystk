@@ -3,7 +3,7 @@ PayloadStation
 
 .. py:class:: PayloadStation
 
-   IPayloadStation, IStation, SupportsDeleteCallback
+   Bases: py:obj:`~IPayloadStation`, py:obj:`~IStation`
 
    Class defining a payload station for an Aviator aircraft.
 

@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: origin_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled.origin_point
-    :type: "IAgCrdnPointRefTo"
+    :type: IAgCrdnPointRefTo
 
     Specify a point of origin.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled.reference_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a reference axes.
 

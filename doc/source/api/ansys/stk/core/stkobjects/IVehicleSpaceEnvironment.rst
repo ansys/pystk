@@ -41,37 +41,37 @@ Property detail
 
 .. py:property:: saa_contour
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.saa_contour
-    :type: "IAgSpEnvSAAContour"
+    :type: IAgSpEnvSAAContour
 
     SAA Contour settings.
 
 .. py:property:: magnetic_field
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.magnetic_field
-    :type: "IAgVeSpEnvMagneticField"
+    :type: IAgVeSpEnvMagneticField
 
     Magnetic Field settings.
 
 .. py:property:: veh_temperature
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.veh_temperature
-    :type: "IAgVeSpEnvVehTemperature"
+    :type: IAgVeSpEnvVehTemperature
 
     Vehicle Temperature settings.
 
 .. py:property:: particle_flux
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.particle_flux
-    :type: "IAgVeSpEnvParticleFlux"
+    :type: IAgVeSpEnvParticleFlux
 
     Particle Flux settings.
 
 .. py:property:: radiation
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.radiation
-    :type: "IAgVeSpEnvRadiation"
+    :type: IAgVeSpEnvRadiation
 
     Radiation settings.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.graphics
-    :type: "IAgVeSpEnvGraphics"
+    :type: IAgVeSpEnvGraphics
 
     Graphics settings.
 

@@ -3,7 +3,7 @@ ScenarioGraphics
 
 .. py:class:: ScenarioGraphics
 
-   IScenarioGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IScenarioGraphics`
 
    Class defining the 2D Graphics properties of a Scenario.
 

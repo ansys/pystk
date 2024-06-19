@@ -3,7 +3,7 @@ UiFileOpenExt
 
 .. py:class:: UiFileOpenExt
 
-   IUiFileOpenExt, SupportsDeleteCallback
+   Bases: py:obj:`~IUiFileOpenExt`
 
    Access to file open dialog that allows multiple file specifications.
 

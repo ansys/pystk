@@ -3,7 +3,7 @@ RFFilterModelRcLowPass
 
 .. py:class:: RFFilterModelRcLowPass
 
-   IRFFilterModelRcLowPass, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelRcLowPass`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a rc low pass filter model.
 

@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: template
     :canonical: ansys.stk.core.graphics.IRendererTexture2D.template
-    :type: "IAgStkGraphicsRendererTextureTemplate2D"
+    :type: IAgStkGraphicsRendererTextureTemplate2D
 
     Gets a template from which the texture was created.
 

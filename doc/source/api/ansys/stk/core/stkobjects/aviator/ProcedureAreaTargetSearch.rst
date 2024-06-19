@@ -3,7 +3,7 @@ ProcedureAreaTargetSearch
 
 .. py:class:: ProcedureAreaTargetSearch
 
-   IProcedureAreaTargetSearch, IProcedure, SupportsDeleteCallback
+   Bases: py:obj:`~IProcedureAreaTargetSearch`, py:obj:`~IProcedure`
 
    Class defining an Area Target Search procedure.
 

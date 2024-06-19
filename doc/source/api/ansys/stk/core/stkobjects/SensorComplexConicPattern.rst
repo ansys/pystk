@@ -3,7 +3,7 @@ SensorComplexConicPattern
 
 .. py:class:: SensorComplexConicPattern
 
-   ISensorPattern, ISensorComplexConicPattern, SupportsDeleteCallback
+   Bases: py:obj:`~ISensorPattern`, py:obj:`~ISensorComplexConicPattern`
 
    Class defining the complex conic pattern for a Sensor.
 

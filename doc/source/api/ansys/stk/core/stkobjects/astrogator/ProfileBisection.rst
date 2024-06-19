@@ -3,7 +3,7 @@ ProfileBisection
 
 .. py:class:: ProfileBisection
 
-   IProfileBisection, IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IProfileBisection`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Single Parameter Bisection profile.
 

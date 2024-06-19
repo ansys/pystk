@@ -3,7 +3,7 @@ TransmitterModelScriptPluginRF
 
 .. py:class:: TransmitterModelScriptPluginRF
 
-   ITransmitterModelScriptPlugin, ITransmitterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ITransmitterModelScriptPlugin`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a RF script plugin transmitter model.
 

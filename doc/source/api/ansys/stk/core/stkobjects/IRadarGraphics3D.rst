@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.IRadarGraphics3D.vector
-    :type: "IAgVOVector"
+    :type: IAgVOVector
 
     Get the radar's Vector properties.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: volume
     :canonical: ansys.stk.core.stkobjects.IRadarGraphics3D.volume
-    :type: "IAgAntennaVolumeGraphics"
+    :type: IAgAntennaVolumeGraphics
 
     Gets the radar's antenna volume graphics interface.
 

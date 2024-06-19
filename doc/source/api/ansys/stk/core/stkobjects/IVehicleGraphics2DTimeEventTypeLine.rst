@@ -60,13 +60,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.line_style
-    :type: "LINE_STYLE"
+    :type: LINE_STYLE
 
     Line style.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.line_width
-    :type: "LINE_WIDTH"
+    :type: LINE_WIDTH
 
     Line width.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: offset_type
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.offset_type
-    :type: "VEHICLE_GRAPHICS_2D_OFFSET"
+    :type: VEHICLE_GRAPHICS_2D_OFFSET
 
     Offset direction (left or right).
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: event_interval
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.event_interval
-    :type: "IAgCrdnEventIntervalSmartInterval"
+    :type: IAgCrdnEventIntervalSmartInterval
 
     Event interval.
 
@@ -113,25 +113,27 @@ Method detail
 
 
 
-.. py:method:: set_offset_type(self, offset:"VEHICLE_GRAPHICS_2D_OFFSET") -> None
+.. py:method:: set_offset_type(self, offset: VEHICLE_GRAPHICS_2D_OFFSET) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.set_offset_type
 
     Offset direction (left or right).
 
     :Parameters:
 
-    **offset** : :obj:`~"VEHICLE_GRAPHICS_2D_OFFSET"`
+    **offset** : :obj:`~VEHICLE_GRAPHICS_2D_OFFSET`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_offset_type_supported(self, offset:"VEHICLE_GRAPHICS_2D_OFFSET") -> bool
+.. py:method:: is_offset_type_supported(self, offset: VEHICLE_GRAPHICS_2D_OFFSET) -> bool
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.is_offset_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **offset** : :obj:`~"VEHICLE_GRAPHICS_2D_OFFSET"`
+    **offset** : :obj:`~VEHICLE_GRAPHICS_2D_OFFSET`
 
     :Returns:
 

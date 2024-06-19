@@ -76,7 +76,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IThruster"
+.. py:method:: item(self, indexOrName: typing.Any) -> IThruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.item
 
     Iterate through the collection.
 
@@ -86,11 +87,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IThruster"`
+        :obj:`~IThruster`
 
 
 
-.. py:method:: add(self, thrusterName:str) -> "IThruster"
+.. py:method:: add(self, thrusterName: str) -> IThruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.add
 
     Add a new thruster.
 
@@ -100,9 +102,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IThruster"`
+        :obj:`~IThruster`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.remove
 
     Remove a specified thruster.
 
@@ -115,6 +118,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.remove_all
 
     Remove all thrusters.
 
@@ -122,7 +126,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: cut(self, indexOrName:typing.Any) -> None
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.cut
 
     Copy a thruster to the clipboard and removes the thruster from the list.
 
@@ -134,27 +139,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self) -> "IThruster"
+.. py:method:: paste(self) -> IThruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.paste
 
     Pastes a thruster from the clipboard into the list.
 
     :Returns:
 
-        :obj:`~"IThruster"`
+        :obj:`~IThruster`
 
-.. py:method:: insert_copy(self, thruster:"IThruster") -> "IThruster"
+.. py:method:: insert_copy(self, thruster: IThruster) -> IThruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.insert_copy
 
     Copy a thruster and inserts the copy into the list.
 
     :Parameters:
 
-    **thruster** : :obj:`~"IThruster"`
+    **thruster** : :obj:`~IThruster`
 
     :Returns:
 
-        :obj:`~"IThruster"`
+        :obj:`~IThruster`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IThruster"
+.. py:method:: get_item_by_index(self, index: int) -> IThruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.get_item_by_index
 
     Retrieve a thruster from the collection by index.
 
@@ -164,9 +172,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IThruster"`
+        :obj:`~IThruster`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IThruster"
+.. py:method:: get_item_by_name(self, name: str) -> IThruster
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.get_item_by_name
 
     Retrieve a thruster from the collection by name.
 
@@ -176,5 +185,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IThruster"`
+        :obj:`~IThruster`
 

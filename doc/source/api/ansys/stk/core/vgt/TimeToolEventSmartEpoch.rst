@@ -3,7 +3,7 @@ TimeToolEventSmartEpoch
 
 .. py:class:: TimeToolEventSmartEpoch
 
-   ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventSmartEpoch`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A smart epoch.
 

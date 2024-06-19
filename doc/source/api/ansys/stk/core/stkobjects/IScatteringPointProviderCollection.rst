@@ -69,7 +69,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IScatteringPointProviderCollectionElement"
+.. py:method:: item(self, index: int) -> IScatteringPointProviderCollectionElement
+    :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderCollection.item
 
     Given an index, returns the scattering point provider element in the collection.
 
@@ -79,10 +80,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScatteringPointProviderCollectionElement"`
+        :obj:`~IScatteringPointProviderCollectionElement`
 
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderCollection.remove_at
 
     Remove the scattering point provider element with the specified index.
 
@@ -94,7 +96,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: insert_at(self, index:int) -> "IScatteringPointProviderCollectionElement"
+.. py:method:: insert_at(self, index: int) -> IScatteringPointProviderCollectionElement
+    :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderCollection.insert_at
 
     Insert a new scattering point provider element at the supplied index, configured with a component with the supplied identifier.
 
@@ -104,17 +107,19 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IScatteringPointProviderCollectionElement"`
+        :obj:`~IScatteringPointProviderCollectionElement`
 
-.. py:method:: add(self) -> "IScatteringPointProviderCollectionElement"
+.. py:method:: add(self) -> IScatteringPointProviderCollectionElement
+    :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderCollection.add
 
     Add a new default scattering point provider element to the collection.
 
     :Returns:
 
-        :obj:`~"IScatteringPointProviderCollectionElement"`
+        :obj:`~IScatteringPointProviderCollectionElement`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderCollection.clear
 
     Clear all scattering point provider elements from the collection.
 

@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: antenna_beams
     :canonical: ansys.stk.core.stkobjects.IAntennaSystem.antenna_beams
-    :type: "IAgAntennaBeamCollection"
+    :type: IAgAntennaBeamCollection
 
     Gets the antenna beam collection.
 
 .. py:property:: beam_selection_strategy
     :canonical: ansys.stk.core.stkobjects.IAntennaSystem.beam_selection_strategy
-    :type: "IAgAntennaBeamSelectionStrategy"
+    :type: IAgAntennaBeamSelectionStrategy
 
     Gets the beam selection strategy.
 
@@ -61,13 +61,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_beam_selection_strategy_type(self, val:"BEAM_SELECTION_STRATEGY_TYPE") -> None
+.. py:method:: set_beam_selection_strategy_type(self, val: BEAM_SELECTION_STRATEGY_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntennaSystem.set_beam_selection_strategy_type
 
     Set the beam selection strategy type.
 
     :Parameters:
 
-    **val** : :obj:`~"BEAM_SELECTION_STRATEGY_TYPE"`
+    **val** : :obj:`~BEAM_SELECTION_STRATEGY_TYPE`
 
     :Returns:
 

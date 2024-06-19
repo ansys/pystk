@@ -3,7 +3,7 @@ STKXSSLCertificateErrorEventArgs
 
 .. py:class:: STKXSSLCertificateErrorEventArgs
 
-   ISTKXSSLCertificateErrorEventArgs, SupportsDeleteCallback
+   Bases: py:obj:`~ISTKXSSLCertificateErrorEventArgs`
 
    Provide information about an SSL certificate that is expired or invalid.
 

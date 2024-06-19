@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.type
-    :type: "VEHICLE_CONSIDER_ANALYSIS_TYPE"
+    :type: VEHICLE_CONSIDER_ANALYSIS_TYPE
 
     Parameter type.
 

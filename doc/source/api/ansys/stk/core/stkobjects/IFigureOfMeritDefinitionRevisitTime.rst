@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: end_gap_option
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionRevisitTime.end_gap_option
-    :type: "FIGURE_OF_MERIT_END_GAP_OPTION"
+    :type: FIGURE_OF_MERIT_END_GAP_OPTION
 
     Controls consideration of gaps at ends of the analysis interval.
 

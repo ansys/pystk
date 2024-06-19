@@ -3,7 +3,7 @@ ScatteringPointProviderSmoothOblateEarth
 
 .. py:class:: ScatteringPointProviderSmoothOblateEarth
 
-   IScatteringPointProviderSmoothOblateEarth, IScatteringPointProvider, IRadarClutterGeometryModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointProviderSmoothOblateEarth`, py:obj:`~IScatteringPointProvider`, py:obj:`~IRadarClutterGeometryModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a smooth oblate earth scattering point provider.
 

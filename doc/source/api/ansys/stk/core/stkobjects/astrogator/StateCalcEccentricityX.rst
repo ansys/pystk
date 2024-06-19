@@ -3,7 +3,7 @@ StateCalcEccentricityX
 
 .. py:class:: StateCalcEccentricityX
 
-   IComponentInfo, ICloneable, IStateCalcEccentricityX, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEccentricityX`
 
    EccentricityX Calc objects.
 

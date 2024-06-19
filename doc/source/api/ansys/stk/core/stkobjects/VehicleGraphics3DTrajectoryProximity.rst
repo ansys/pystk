@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectoryProximity
 
 .. py:class:: VehicleGraphics3DTrajectoryProximity
 
-   IVehicleGraphics3DTrajectoryProximity, IVehicleGraphics3DProximity, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DTrajectoryProximity`, py:obj:`~IVehicleGraphics3DProximity`
 
    AgVeTrajectoryProximity Class.
 

@@ -3,7 +3,7 @@ RFFilterModelIir
 
 .. py:class:: RFFilterModelIir
 
-   IRFFilterModelIir, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelIir`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a IIR box car filter model.
 

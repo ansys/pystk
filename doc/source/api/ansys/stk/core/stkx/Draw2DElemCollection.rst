@@ -3,7 +3,7 @@ Draw2DElemCollection
 
 .. py:class:: Draw2DElemCollection
 
-   IDrawElemCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IDrawElemCollection`
 
    Collection of elements to draw on map control.
 

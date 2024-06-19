@@ -51,37 +51,37 @@ Property detail
 
 .. py:property:: a
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.a
-    :type: "IAgVAManeuverOptimalFiniteBounds"
+    :type: IAgVAManeuverOptimalFiniteBounds
 
     Bound limits for element a.
 
 .. py:property:: h
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.h
-    :type: "IAgVAManeuverOptimalFiniteBounds"
+    :type: IAgVAManeuverOptimalFiniteBounds
 
     Bound limits for element h.
 
 .. py:property:: k
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.k
-    :type: "IAgVAManeuverOptimalFiniteBounds"
+    :type: IAgVAManeuverOptimalFiniteBounds
 
     Bound limits for element k.
 
 .. py:property:: p
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.p
-    :type: "IAgVAManeuverOptimalFiniteBounds"
+    :type: IAgVAManeuverOptimalFiniteBounds
 
     Bound limits for element p.
 
 .. py:property:: q
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.q
-    :type: "IAgVAManeuverOptimalFiniteBounds"
+    :type: IAgVAManeuverOptimalFiniteBounds
 
     Bound limits for element q.
 
 .. py:property:: l
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.l
-    :type: "IAgVAManeuverOptimalFiniteBounds"
+    :type: IAgVAManeuverOptimalFiniteBounds
 
     Bound limits for element L.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

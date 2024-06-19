@@ -3,7 +3,7 @@ ScatteringPointProviderSinglePoint
 
 .. py:class:: ScatteringPointProviderSinglePoint
 
-   IScatteringPointProviderSinglePoint, IScatteringPointProvider, IRadarClutterGeometryModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IScatteringPointProviderSinglePoint`, py:obj:`~IScatteringPointProvider`, py:obj:`~IRadarClutterGeometryModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a single point scattring point provider.
 

@@ -3,7 +3,7 @@ EventDetectionNoSubSampling
 
 .. py:class:: EventDetectionNoSubSampling
 
-   IEventDetectionNoSubSampling, IEventDetectionStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IEventDetectionNoSubSampling`, py:obj:`~IEventDetectionStrategy`
 
    Define event detection strategy that uses samples only (without sub-sampling).
 

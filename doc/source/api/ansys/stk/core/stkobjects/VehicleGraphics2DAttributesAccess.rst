@@ -3,7 +3,7 @@ VehicleGraphics2DAttributesAccess
 
 .. py:class:: VehicleGraphics2DAttributesAccess
 
-   IVehicleGraphics2DAttributesAccess, IVehicleGraphics2DAttributes, IVehicleGraphics2DAttributesDisplayState, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DAttributesAccess`, py:obj:`~IVehicleGraphics2DAttributes`, py:obj:`~IVehicleGraphics2DAttributesDisplayState`
 
    Vehicle 2D Graphics display based on access intervals.
 

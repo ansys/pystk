@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment.state
-    :type: "STATE"
+    :type: STATE
 
     Gets or sets the new state of the targeted stop segment.
 
@@ -62,13 +62,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSStop:"IMissionControlSequenceStop") -> None
+.. py:method:: set_segment(self, pVAMCSStop: IMissionControlSequenceStop) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment.set_segment
 
     Set the stop segment to target.
 
     :Parameters:
 
-    **pVAMCSStop** : :obj:`~"IMissionControlSequenceStop"`
+    **pVAMCSStop** : :obj:`~IMissionControlSequenceStop`
 
     :Returns:
 

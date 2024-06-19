@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: route_type
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route_type
-    :type: "VEHICLE_PROPAGATOR_TYPE"
+    :type: VEHICLE_PROPAGATOR_TYPE
 
     Get the propagator type.
 
@@ -73,13 +73,13 @@ Property detail
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route
-    :type: "IAgVePropagator"
+    :type: IAgVePropagator
 
     Get the route properties.
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type
-    :type: "VEHICLE_ATTITUDE"
+    :type: VEHICLE_ATTITUDE
 
     Get the type of attitude profile.
 
@@ -91,25 +91,25 @@ Property detail
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude
-    :type: "IAgVeAttitude"
+    :type: IAgVeAttitude
 
     Get the  attitude profile.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses
-    :type: "IAgVeGroundEllipsesCollection"
+    :type: IAgVeGroundEllipsesCollection
 
     Get the  ground ellipses properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.access_constraints
-    :type: "IAgAccessConstraintCollection"
+    :type: IAgAccessConstraintCollection
 
     Get the constraints imposed on the vehicle.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.eclipse_bodies
-    :type: "IAgVeEclipseBodies"
+    :type: IAgVeEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -130,25 +130,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_route_type(self, route:"VEHICLE_PROPAGATOR_TYPE") -> None
+.. py:method:: set_route_type(self, route: VEHICLE_PROPAGATOR_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.set_route_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **route** : :obj:`~"VEHICLE_PROPAGATOR_TYPE"`
+    **route** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_route_type_supported(self, route:"VEHICLE_PROPAGATOR_TYPE") -> bool
+.. py:method:: is_route_type_supported(self, route: VEHICLE_PROPAGATOR_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.is_route_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **route** : :obj:`~"VEHICLE_PROPAGATOR_TYPE"`
+    **route** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
 
     :Returns:
 
@@ -157,25 +159,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude:"VEHICLE_ATTITUDE") -> None
+.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.set_attitude_type
 
     Set the type of attitude profile.
 
     :Parameters:
 
-    **attitude** : :obj:`~"VEHICLE_ATTITUDE"`
+    **attitude** : :obj:`~VEHICLE_ATTITUDE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude:"VEHICLE_ATTITUDE") -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~"VEHICLE_ATTITUDE"`
+    **attitude** : :obj:`~VEHICLE_ATTITUDE`
 
     :Returns:
 

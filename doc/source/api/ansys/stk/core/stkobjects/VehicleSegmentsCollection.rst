@@ -3,7 +3,7 @@ VehicleSegmentsCollection
 
 .. py:class:: VehicleSegmentsCollection
 
-   IVehicleSegmentsCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSegmentsCollection`
 
    Collection of segments for a vehicle.
 

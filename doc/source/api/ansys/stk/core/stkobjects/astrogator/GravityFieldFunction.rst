@@ -3,7 +3,7 @@ GravityFieldFunction
 
 .. py:class:: GravityFieldFunction
 
-   IGravityFieldFunction, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IGravityFieldFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Gravity Field gravity propagator function.
 

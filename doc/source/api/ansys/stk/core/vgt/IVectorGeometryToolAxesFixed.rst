@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFixed.reference_axes
-    :type: "IAgCrdnAxesRefTo"
+    :type: IAgCrdnAxesRefTo
 
     Specify a reference axes.
 
 .. py:property:: fixed_orientation
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFixed.fixed_orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Specify a desired orientation and the applicable parameters.
 

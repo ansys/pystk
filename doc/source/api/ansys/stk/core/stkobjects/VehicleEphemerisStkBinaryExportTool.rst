@@ -3,7 +3,7 @@ VehicleEphemerisStkBinaryExportTool
 
 .. py:class:: VehicleEphemerisStkBinaryExportTool
 
-   IVehicleEphemerisStkBinaryExportTool, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleEphemerisStkBinaryExportTool`
 
    AgVeEphemerisTypeSTKBinary Class.
 

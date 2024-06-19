@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: contour
     :canonical: ansys.stk.core.stkobjects.IAntennaContourGraphics.contour
-    :type: "IAgAntennaContour"
+    :type: IAgAntennaContour
 
     Gets the current contour type's properties.
 
@@ -71,26 +71,28 @@ Method detail
 
 
 
-.. py:method:: is_contour_type_supported(self, val:"ANTENNA_CONTOUR_TYPE") -> bool
+.. py:method:: is_contour_type_supported(self, val: ANTENNA_CONTOUR_TYPE) -> bool
+    :canonical: ansys.stk.core.stkobjects.IAntennaContourGraphics.is_contour_type_supported
 
     Return true if the supplied contour type is supported by this object, false otherwise.
 
     :Parameters:
 
-    **val** : :obj:`~"ANTENNA_CONTOUR_TYPE"`
+    **val** : :obj:`~ANTENNA_CONTOUR_TYPE`
 
     :Returns:
 
         :obj:`~bool`
 
 
-.. py:method:: set_contour_type(self, val:"ANTENNA_CONTOUR_TYPE") -> None
+.. py:method:: set_contour_type(self, val: ANTENNA_CONTOUR_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IAntennaContourGraphics.set_contour_type
 
     Set the current contour type.
 
     :Parameters:
 
-    **val** : :obj:`~"ANTENNA_CONTOUR_TYPE"`
+    **val** : :obj:`~ANTENNA_CONTOUR_TYPE`
 
     :Returns:
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorDerivative
 
 .. py:class:: VectorGeometryToolVectorDerivative
 
-   IVectorGeometryToolVectorDerivative, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorDerivative`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A vector derivative of a vector computed with respect to specified axes.
 

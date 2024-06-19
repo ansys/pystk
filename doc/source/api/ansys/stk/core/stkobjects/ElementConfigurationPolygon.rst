@@ -3,7 +3,7 @@ ElementConfigurationPolygon
 
 .. py:class:: ElementConfigurationPolygon
 
-   IElementConfigurationPolygon, IElementConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~IElementConfigurationPolygon`, py:obj:`~IElementConfiguration`
 
    Class defining a polygon element configuration.
 

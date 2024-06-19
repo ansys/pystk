@@ -3,7 +3,7 @@ VehicleRealtimeCartesianPoints
 
 .. py:class:: VehicleRealtimeCartesianPoints
 
-   IVehicleRealtimeCartesianPoints, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleRealtimeCartesianPoints`
 
    AgVeRealtimeCartesianPoint Class.
 

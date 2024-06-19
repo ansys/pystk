@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: scaling_method
     :canonical: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.scaling_method
-    :type: "DIFFERENTIAL_CORRECTOR_SCALING_METHOD"
+    :type: DIFFERENTIAL_CORRECTOR_SCALING_METHOD
 
     Allows better numerical behavior if the constraints have very different magnitudes. The same scaling method is applied to all constraints.
 

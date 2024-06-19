@@ -3,7 +3,7 @@ VectorGeometryToolVectorAngleRate
 
 .. py:class:: VectorGeometryToolVectorAngleRate
 
-   IVectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorAngleRate`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Angle rate vector perpendicular to the plane in which the angle is defined.
 

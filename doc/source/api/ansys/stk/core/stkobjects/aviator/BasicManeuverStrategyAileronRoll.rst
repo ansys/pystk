@@ -3,7 +3,7 @@ BasicManeuverStrategyAileronRoll
 
 .. py:class:: BasicManeuverStrategyAileronRoll
 
-   IBasicManeuverStrategyAileronRoll, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyAileronRoll`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the aileron roll strategy for a basic maneuver procedure.
 

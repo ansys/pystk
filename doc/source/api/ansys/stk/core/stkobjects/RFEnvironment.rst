@@ -3,7 +3,7 @@ RFEnvironment
 
 .. py:class:: RFEnvironment
 
-   IRFEnvironment, SupportsDeleteCallback
+   Bases: py:obj:`~IRFEnvironment`
 
    Class defining the RF environment.
 

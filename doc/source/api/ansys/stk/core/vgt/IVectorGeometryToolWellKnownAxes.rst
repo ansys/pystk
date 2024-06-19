@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes.earth
-    :type: "IAgCrdnWellKnownEarthAxes"
+    :type: IAgCrdnWellKnownEarthAxes
 
     Earth's well-known axes.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes.sun
-    :type: "IAgCrdnWellKnownSunAxes"
+    :type: IAgCrdnWellKnownSunAxes
 
     The Sun's well-known axes.
 

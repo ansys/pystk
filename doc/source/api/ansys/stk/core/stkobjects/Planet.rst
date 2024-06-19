@@ -3,7 +3,7 @@ Planet
 
 .. py:class:: Planet
 
-   IPlanet, IStkObject, ILifetimeInformation, SupportsDeleteCallback
+   Bases: py:obj:`~IPlanet`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
 
    Class defining the Planet object.
 

@@ -75,7 +75,8 @@ Method detail
 
 
 
-.. py:method:: item(self, index:int) -> "ILineTargetPoint"
+.. py:method:: item(self, index: int) -> ILineTargetPoint
+    :canonical: ansys.stk.core.stkobjects.ILineTargetPointCollection.item
 
     Return the latitude-longitude pair with the specified index.
 
@@ -85,9 +86,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ILineTargetPoint"`
+        :obj:`~ILineTargetPoint`
 
-.. py:method:: add(self, lat:typing.Any, lon:typing.Any) -> "ILineTargetPoint"
+.. py:method:: add(self, lat: typing.Any, lon: typing.Any) -> ILineTargetPoint
+    :canonical: ansys.stk.core.stkobjects.ILineTargetPointCollection.add
 
     Add a latitude-longitude pair. Lat uses Latitude Dimension, Lon Uses Longitude Dimension.
 
@@ -98,9 +100,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ILineTargetPoint"`
+        :obj:`~ILineTargetPoint`
 
-.. py:method:: remove(self, itemIndex:int) -> None
+.. py:method:: remove(self, itemIndex: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ILineTargetPointCollection.remove
 
     Remove an item using a given index.
 
@@ -113,6 +116,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ILineTargetPointCollection.remove_all
 
     Remove all items.
 

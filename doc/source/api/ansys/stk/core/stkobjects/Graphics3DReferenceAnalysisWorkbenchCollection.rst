@@ -3,7 +3,7 @@ Graphics3DReferenceAnalysisWorkbenchCollection
 
 .. py:class:: Graphics3DReferenceAnalysisWorkbenchCollection
 
-   IGraphics3DReferenceAnalysisWorkbenchCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IGraphics3DReferenceAnalysisWorkbenchCollection`
 
    Collection of reference vectors, axes, points, planes and angles (3D Graphics, Vector Geometry Tool).
 

@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.reference_vector
-    :type: "IAgCrdnVectorRefTo"
+    :type: IAgCrdnVectorRefTo
 
     Specify a reference vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.reference_plane
-    :type: "IAgCrdnPlaneRefTo"
+    :type: IAgCrdnPlaneRefTo
 
     Specify a reference plane.
 
 .. py:property:: signed
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.signed
-    :type: "CRDN_SIGNED_ANGLE_TYPE"
+    :type: CRDN_SIGNED_ANGLE_TYPE
 
     Controls whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive.
 

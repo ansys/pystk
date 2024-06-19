@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTargetPointPositionCartesian
 
 .. py:class:: VehicleGraphics3DBPlaneTargetPointPositionCartesian
 
-   IVehicleGraphics3DBPlaneTargetPointPositionCartesian, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlaneTargetPointPositionCartesian`
 
    Cartesian.
 

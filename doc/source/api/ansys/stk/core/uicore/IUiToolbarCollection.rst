@@ -66,7 +66,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCaption:typing.Any) -> "IUiToolbar"
+.. py:method:: item(self, indexOrCaption: typing.Any) -> IUiToolbar
+    :canonical: ansys.stk.core.uicore.IUiToolbarCollection.item
 
     Retrieve a toolbar object.
 
@@ -76,11 +77,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiToolbar"`
+        :obj:`~IUiToolbar`
 
 
 
-.. py:method:: get_toolbar_by_id(self, id:int) -> "IUiToolbar"
+.. py:method:: get_toolbar_by_id(self, id: int) -> IUiToolbar
+    :canonical: ansys.stk.core.uicore.IUiToolbarCollection.get_toolbar_by_id
 
     Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
 
@@ -90,9 +92,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiToolbar"`
+        :obj:`~IUiToolbar`
 
-.. py:method:: get_item_by_index(self, index:int) -> "IUiToolbar"
+.. py:method:: get_item_by_index(self, index: int) -> IUiToolbar
+    :canonical: ansys.stk.core.uicore.IUiToolbarCollection.get_item_by_index
 
     Retrieve a toolbar object based on the index in the collection.
 
@@ -102,9 +105,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiToolbar"`
+        :obj:`~IUiToolbar`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IUiToolbar"
+.. py:method:: get_item_by_name(self, name: str) -> IUiToolbar
+    :canonical: ansys.stk.core.uicore.IUiToolbarCollection.get_item_by_name
 
     Retrieve a toolbar object based on the name of the Toolbar in the collection.
 
@@ -114,5 +118,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IUiToolbar"`
+        :obj:`~IUiToolbar`
 

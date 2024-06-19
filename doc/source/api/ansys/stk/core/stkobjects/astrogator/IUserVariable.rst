@@ -83,6 +83,7 @@ Method detail
 
 
 .. py:method:: enable_control_parameter(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariable.enable_control_parameter
 
     Enable or disables the specified control parameter.
 
@@ -91,6 +92,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: disable_control_parameter(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariable.disable_control_parameter
 
     Disables the specified control parameter.
 
@@ -99,6 +101,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: is_control_parameter_enabled(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariable.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 

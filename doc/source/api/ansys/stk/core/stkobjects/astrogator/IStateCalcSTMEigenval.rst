@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: eigenvalue_number
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval.eigenvalue_number
-    :type: "STM_EIGEN_NUMBER"
+    :type: STM_EIGEN_NUMBER
 
     Gets or sets the number identifying one of the six Eigenvalues.
 
 .. py:property:: eigenvalue_complex_part
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval.eigenvalue_complex_part
-    :type: "COMPLEX_NUMBER"
+    :type: COMPLEX_NUMBER
 
     Whether this value represents the real or imaginary part of the Eigenvalue.
 

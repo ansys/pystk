@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehiclePositionVelocityElement"
+.. py:method:: item(self, index: int) -> IVehiclePositionVelocityElement
+    :canonical: ansys.stk.core.stkobjects.IVehiclePositionVelocityCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehiclePositionVelocityElement"`
+        :obj:`~IVehiclePositionVelocityElement`
 
 

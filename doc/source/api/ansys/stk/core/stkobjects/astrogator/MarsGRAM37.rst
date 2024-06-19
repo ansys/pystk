@@ -3,7 +3,7 @@ MarsGRAM37
 
 .. py:class:: MarsGRAM37
 
-   IMarsGRAM37, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMarsGRAM37`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Mars-GRAM 3.7 atmospheric propagator function.
 

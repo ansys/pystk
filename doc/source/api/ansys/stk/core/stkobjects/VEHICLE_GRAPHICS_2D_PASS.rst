@@ -11,6 +11,24 @@ VEHICLE_GRAPHICS_2D_PASS
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~PASS_UNKNOWN`
+              - Unknown pass.
+
+            * - :py:attr:`~PASS_SHOW_ALL`
+              - Show all passes.
+
+            * - :py:attr:`~PASS_SHOW_PASSES`
+              - Show passes in a user-specified range.
+
+
 Import detail
 -------------
 

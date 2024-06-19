@@ -3,7 +3,7 @@ MissionControlSequenceUpdate
 
 .. py:class:: MissionControlSequenceUpdate
 
-   IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceUpdate, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceUpdate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    The Update segment.
 

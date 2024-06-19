@@ -3,7 +3,7 @@ Geocentric
 
 .. py:class:: Geocentric
 
-   IGeocentric, IPosition, SupportsDeleteCallback
+   Bases: py:obj:`~IGeocentric`, py:obj:`~IPosition`
 
    Class defining Geocentric position.
 

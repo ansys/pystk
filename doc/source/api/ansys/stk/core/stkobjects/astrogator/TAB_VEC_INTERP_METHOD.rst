@@ -11,6 +11,21 @@ TAB_VEC_INTERP_METHOD
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~CARTESIAN_INTERPOLATION`
+              - Bilinear interpolation on the Cartesian grid.
+
+            * - :py:attr:`~MAGNITUDE_DIRECTION_INTERPOLATION`
+              - Bilinear interpolation in magnitude and direction space.
+
+
 Import detail
 -------------
 

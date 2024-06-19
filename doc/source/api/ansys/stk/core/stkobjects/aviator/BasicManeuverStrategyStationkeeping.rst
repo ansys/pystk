@@ -3,7 +3,7 @@ BasicManeuverStrategyStationkeeping
 
 .. py:class:: BasicManeuverStrategyStationkeeping
 
-   IBasicManeuverStrategyStationkeeping, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyStationkeeping`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Stationkeeping strategy for a basic maneuver procedure.
 

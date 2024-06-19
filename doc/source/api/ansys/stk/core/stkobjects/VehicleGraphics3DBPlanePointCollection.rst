@@ -3,7 +3,7 @@ VehicleGraphics3DBPlanePointCollection
 
 .. py:class:: VehicleGraphics3DBPlanePointCollection
 
-   IVehicleGraphics3DBPlanePointCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DBPlanePointCollection`
 
    AgVeVOBPlaneCollection Class.
 

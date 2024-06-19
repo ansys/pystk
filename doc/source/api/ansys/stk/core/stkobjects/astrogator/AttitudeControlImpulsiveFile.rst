@@ -3,7 +3,7 @@ AttitudeControlImpulsiveFile
 
 .. py:class:: AttitudeControlImpulsiveFile
 
-   IAttitudeControlImpulsiveFile, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IAttitudeControlImpulsiveFile`, py:obj:`~IAttitudeControlImpulsive`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
 
    The file attitude control for an impulsive maneuver.
 

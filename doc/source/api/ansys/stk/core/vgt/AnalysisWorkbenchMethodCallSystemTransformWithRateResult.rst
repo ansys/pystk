@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallSystemTransformWithRateResult
 
 .. py:class:: AnalysisWorkbenchMethodCallSystemTransformWithRateResult
 
-   IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformWithRateResult, SupportsDeleteCallback
+   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolSystemTransformWithRateResult`
 
    Contains the results returned with IAgCrdnSystem.TransformFromWithRate and IAgCrdnSystem.TransformToWithRate methods.
 

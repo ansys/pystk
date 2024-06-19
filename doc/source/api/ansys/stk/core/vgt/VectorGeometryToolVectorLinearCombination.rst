@@ -3,7 +3,7 @@ VectorGeometryToolVectorLinearCombination
 
 .. py:class:: VectorGeometryToolVectorLinearCombination
 
-   IVectorGeometryToolVectorLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorLinearCombination`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
 
    Linear combination of two input vectors.
 

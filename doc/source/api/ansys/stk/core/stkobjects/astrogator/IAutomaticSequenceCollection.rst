@@ -68,7 +68,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName:typing.Any) -> "IAutomaticSequence"
+.. py:method:: item(self, indexOrName: typing.Any) -> IAutomaticSequence
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.item
 
     Return the given automatic sequence.
 
@@ -78,9 +79,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAutomaticSequence"`
+        :obj:`~IAutomaticSequence`
 
-.. py:method:: add(self, name:str) -> "IAutomaticSequence"
+.. py:method:: add(self, name: str) -> IAutomaticSequence
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.add
 
     Create a new sequence.
 
@@ -90,9 +92,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAutomaticSequence"`
+        :obj:`~IAutomaticSequence`
 
-.. py:method:: remove(self, indexOrName:typing.Any) -> None
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.remove
 
     Remove a sequence.
 
@@ -106,7 +109,8 @@ Method detail
 
 
 
-.. py:method:: get_item_by_index(self, index:int) -> "IAutomaticSequence"
+.. py:method:: get_item_by_index(self, index: int) -> IAutomaticSequence
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.get_item_by_index
 
     Retrieve the given automatic sequence found by the index.
 
@@ -116,9 +120,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAutomaticSequence"`
+        :obj:`~IAutomaticSequence`
 
-.. py:method:: get_item_by_name(self, name:str) -> "IAutomaticSequence"
+.. py:method:: get_item_by_name(self, name: str) -> IAutomaticSequence
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.get_item_by_name
 
     Retrieve the given automatic sequence found by the name.
 
@@ -128,5 +133,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IAutomaticSequence"`
+        :obj:`~IAutomaticSequence`
 

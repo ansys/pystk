@@ -3,7 +3,7 @@ FigureOfMeritDefinitionNavigationAccuracy
 
 .. py:class:: FigureOfMeritDefinitionNavigationAccuracy
 
-   IFigureOfMeritDefinitionNavigationAccuracy, IFigureOfMeritDefinitionDilutionOfPrecision, IFigureOfMeritDefinitionCompute, IFigureOfMeritDefinition, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritDefinitionNavigationAccuracy`, py:obj:`~IFigureOfMeritDefinitionDilutionOfPrecision`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
 
    Navigation Accuracy.
 

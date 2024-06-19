@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcDelayRange
 
 .. py:class:: SpatialAnalysisToolVolumeCalcDelayRange
 
-   ISpatialAnalysisToolVolumeCalcDelayRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcDelayRange`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
 
    A volume calc propagation delay to location interface.
 

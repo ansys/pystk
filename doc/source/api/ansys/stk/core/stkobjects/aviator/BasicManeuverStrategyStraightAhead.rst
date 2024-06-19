@@ -3,7 +3,7 @@ BasicManeuverStrategyStraightAhead
 
 .. py:class:: BasicManeuverStrategyStraightAhead
 
-   IBasicManeuverStrategyStraightAhead, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IBasicManeuverStrategyStraightAhead`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the Straight Ahead strategy for a basic maneuver procedure.
 

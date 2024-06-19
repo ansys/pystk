@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSet.type
-    :type: "CRDN_CONDITION_SET_TYPE"
+    :type: CRDN_CONDITION_SET_TYPE
 
     Returns the type of condition set.
 
@@ -56,7 +56,8 @@ Method detail
 -------------
 
 
-.. py:method:: evaluate(self, epoch:typing.Any) -> "ICalculationToolConditionSetEvaluateResult"
+.. py:method:: evaluate(self, epoch: typing.Any) -> ICalculationToolConditionSetEvaluateResult
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSet.evaluate
 
     Return an array of results of evaluating continuously varying condition metrics, one for each condition in the set, at the specified time, used for detecting condition crossings.
 
@@ -66,9 +67,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolConditionSetEvaluateResult"`
+        :obj:`~ICalculationToolConditionSetEvaluateResult`
 
-.. py:method:: evaluate_with_rate(self, epoch:typing.Any) -> "ICalculationToolConditionSetEvaluateWithRateResult"
+.. py:method:: evaluate_with_rate(self, epoch: typing.Any) -> ICalculationToolConditionSetEvaluateWithRateResult
+    :canonical: ansys.stk.core.vgt.ICalculationToolConditionSet.evaluate_with_rate
 
     Return an array of results of evaluating continuously varying condition metrics and their rates of change, one for each condition in the set, at the specified time, used for detecting condition crossings.
 
@@ -78,5 +80,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ICalculationToolConditionSetEvaluateWithRateResult"`
+        :obj:`~ICalculationToolConditionSetEvaluateWithRateResult`
 

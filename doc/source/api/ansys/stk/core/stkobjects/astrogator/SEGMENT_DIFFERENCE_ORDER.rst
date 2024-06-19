@@ -11,6 +11,21 @@ SEGMENT_DIFFERENCE_ORDER
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~CURRENT_MINUS_SEGMENT`
+              - The current minus segment difference.
+
+            * - :py:attr:`~SEGMENT_MINUS_CURRENT`
+              - The segment minus current difference.
+
+
 Import detail
 -------------
 

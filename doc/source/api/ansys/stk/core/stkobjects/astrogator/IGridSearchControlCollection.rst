@@ -62,7 +62,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, index:int) -> "IGridSearchControl"
+.. py:method:: item(self, index: int) -> IGridSearchControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGridSearchControlCollection.item
 
     Allow you to iterate through the collection.
 
@@ -72,11 +73,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGridSearchControl"`
+        :obj:`~IGridSearchControl`
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath:str, controlPath:str) -> "IGridSearchControl"
+.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> IGridSearchControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.IGridSearchControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
@@ -87,5 +89,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IGridSearchControl"`
+        :obj:`~IGridSearchControl`
 

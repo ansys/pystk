@@ -56,6 +56,7 @@ Method detail
 
 
 .. py:method:: preview(self) -> list
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateFileSource.preview
 
     Preview the elements.
 

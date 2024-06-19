@@ -3,7 +3,7 @@ AntennaModelItuF1245
 
 .. py:class:: AntennaModelItuF1245
 
-   IAntennaModelItuF1245, IAntennaModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaModelItuF1245`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a ITU-R F1245-3 antenna model.
 

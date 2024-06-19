@@ -3,7 +3,7 @@ RadarStcAttenuationPlugin
 
 .. py:class:: RadarStcAttenuationPlugin
 
-   IRadarStcAttenuation, IRadarStcAttenuationPlugin, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarStcAttenuation`, py:obj:`~IRadarStcAttenuationPlugin`
 
    Class defining an radar stc Com Plugin.
 

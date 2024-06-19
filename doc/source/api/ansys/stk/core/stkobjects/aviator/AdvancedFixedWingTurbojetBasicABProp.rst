@@ -3,7 +3,7 @@ AdvancedFixedWingTurbojetBasicABProp
 
 .. py:class:: AdvancedFixedWingTurbojetBasicABProp
 
-   IAdvancedFixedWingTurbojetBasicABProp, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingTurbojetBasicABProp`
 
    Class defining the Turbojet - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool.
 

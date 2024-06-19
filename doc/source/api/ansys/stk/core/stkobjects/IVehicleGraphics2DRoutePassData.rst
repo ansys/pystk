@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData.route
-    :type: "IAgVeGfxLeadTrailData"
+    :type: IAgVeGfxLeadTrailData
 
     Leading/trailing route pass data.
 

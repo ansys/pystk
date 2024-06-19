@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IPointingStrategyFixed.orientation
-    :type: "IAgOrientation"
+    :type: IAgOrientation
 
     Gets the fixed orientation.
 

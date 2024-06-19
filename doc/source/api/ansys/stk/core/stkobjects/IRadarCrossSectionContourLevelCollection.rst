@@ -73,7 +73,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IRadarCrossSectionContourLevel"
+.. py:method:: item(self, index: int) -> IRadarCrossSectionContourLevel
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.item
 
     Given an index, returns the element in the collection.
 
@@ -83,10 +84,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarCrossSectionContourLevel"`
+        :obj:`~IRadarCrossSectionContourLevel`
 
 
-.. py:method:: contains(self, value:float) -> bool
+.. py:method:: contains(self, value: float) -> bool
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.contains
 
     Check whether the collection contains an object with the given value.
 
@@ -98,7 +100,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: remove(self, value:float) -> None
+.. py:method:: remove(self, value: float) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.remove
 
     Remove the level with the corresponding value.
 
@@ -110,7 +113,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_at(self, index:int) -> None
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.remove_at
 
     Remove the level with the supplied index.
 
@@ -122,7 +126,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, value:float) -> "IRadarCrossSectionContourLevel"
+.. py:method:: add(self, value: float) -> IRadarCrossSectionContourLevel
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.add
 
     Add and returns a new level with the corresponding value.
 
@@ -132,9 +137,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarCrossSectionContourLevel"`
+        :obj:`~IRadarCrossSectionContourLevel`
 
 .. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.clear
 
     Clear all contour levels from the collection.
 
@@ -142,7 +148,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_level(self, value:float) -> "IRadarCrossSectionContourLevel"
+.. py:method:: get_level(self, value: float) -> IRadarCrossSectionContourLevel
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.get_level
 
     Get the level with the specified value.
 
@@ -152,5 +159,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IRadarCrossSectionContourLevel"`
+        :obj:`~IRadarCrossSectionContourLevel`
 

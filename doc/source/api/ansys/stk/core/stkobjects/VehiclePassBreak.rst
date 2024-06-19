@@ -3,7 +3,7 @@ VehiclePassBreak
 
 .. py:class:: VehiclePassBreak
 
-   IVehiclePassBreak, SupportsDeleteCallback
+   Bases: py:obj:`~IVehiclePassBreak`
 
    Satellite Pass Break properties.
 

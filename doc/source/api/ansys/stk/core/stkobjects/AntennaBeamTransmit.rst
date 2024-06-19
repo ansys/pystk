@@ -3,7 +3,7 @@ AntennaBeamTransmit
 
 .. py:class:: AntennaBeamTransmit
 
-   IAntennaBeamTransmit, IAntennaBeam, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaBeamTransmit`, py:obj:`~IAntennaBeam`
 
    Class defining a transmit antenna beam.
 

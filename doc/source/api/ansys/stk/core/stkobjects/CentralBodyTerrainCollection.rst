@@ -3,7 +3,7 @@ CentralBodyTerrainCollection
 
 .. py:class:: CentralBodyTerrainCollection
 
-   ICentralBodyTerrainCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ICentralBodyTerrainCollection`
 
    Represents a collection of terrains associated with central bodies. This collection enables adding terrain to any central bodies and not just to the current scenario's central body.
 

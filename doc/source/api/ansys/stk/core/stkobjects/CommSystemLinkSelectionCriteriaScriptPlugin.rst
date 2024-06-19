@@ -3,7 +3,7 @@ CommSystemLinkSelectionCriteriaScriptPlugin
 
 .. py:class:: CommSystemLinkSelectionCriteriaScriptPlugin
 
-   ICommSystemLinkSelectionCriteriaScriptPlugin, ICommSystemLinkSelectionCriteria, SupportsDeleteCallback
+   Bases: py:obj:`~ICommSystemLinkSelectionCriteriaScriptPlugin`, py:obj:`~ICommSystemLinkSelectionCriteria`
 
    Class defining a CommSystem link selection criteria.
 

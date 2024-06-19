@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "ITriangleMeshPrimitiveOptionalParameters"
+.. py:method:: initialize(self) -> ITriangleMeshPrimitiveOptionalParameters
+    :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParametersFactory.initialize
 
     Initialize default triangle mesh primitive optional parameters.
 
     :Returns:
 
-        :obj:`~"ITriangleMeshPrimitiveOptionalParameters"`
+        :obj:`~ITriangleMeshPrimitiveOptionalParameters`
 

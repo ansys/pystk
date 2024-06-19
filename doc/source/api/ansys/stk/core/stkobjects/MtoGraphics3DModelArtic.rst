@@ -3,7 +3,7 @@ MtoGraphics3DModelArtic
 
 .. py:class:: MtoGraphics3DModelArtic
 
-   IMtoGraphics3DModelArtic, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics3DModelArtic`
 
    Class defining MTO model articulations.
 

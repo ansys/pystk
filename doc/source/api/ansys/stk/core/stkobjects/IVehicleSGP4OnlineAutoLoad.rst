@@ -36,7 +36,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: add_latest_seg_from_online(self, sSCNumber:str) -> None
+.. py:method:: add_latest_seg_from_online(self, sSCNumber: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4OnlineAutoLoad.add_latest_seg_from_online
 
     Do not use this method, as it is deprecated. Use AddSegsFromOnline on IAgVeSGP4OnlineLoad instead. Adds the latest segment from Online given an SSC number.
 

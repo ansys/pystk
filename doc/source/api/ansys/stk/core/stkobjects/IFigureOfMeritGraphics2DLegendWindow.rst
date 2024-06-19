@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: position_on_map
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow.position_on_map
-    :type: "IAgFmGfxPositionOnMap"
+    :type: IAgFmGfxPositionOnMap
 
     Get the position of the contour legend on the 2D map in pixel coordinates.
 

@@ -3,7 +3,7 @@ UiToolbarCollection
 
 .. py:class:: UiToolbarCollection
 
-   IUiToolbarCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IUiToolbarCollection`
 
    Provide methods and properties to manage the toolbars.
 

@@ -3,7 +3,7 @@ PropagationChannel
 
 .. py:class:: PropagationChannel
 
-   IPropagationChannel, SupportsDeleteCallback
+   Bases: py:obj:`~IPropagationChannel`
 
    Class defining the propagation channel.
 

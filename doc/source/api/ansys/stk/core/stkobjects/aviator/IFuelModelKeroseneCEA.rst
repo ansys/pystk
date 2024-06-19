@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: subtype
     :canonical: ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneCEA.subtype
-    :type: "CEA_FUEL_TYPE"
+    :type: CEA_FUEL_TYPE
 
     Gets or sets the fuel subtype.
 

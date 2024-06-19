@@ -3,7 +3,7 @@ KmlFolder
 
 .. py:class:: KmlFolder
 
-   IKmlFolder, IKmlContainer, IKmlFeature, SupportsDeleteCallback
+   Bases: py:obj:`~IKmlFolder`, py:obj:`~IKmlContainer`, py:obj:`~IKmlFeature`
 
    A KML folder.
 

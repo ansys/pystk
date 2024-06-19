@@ -3,7 +3,7 @@ DrawElemLine
 
 .. py:class:: DrawElemLine
 
-   IDrawElemLine, SupportsDeleteCallback
+   Bases: py:obj:`~IDrawElemLine`
 
    Define a line in window coordinates.
 

@@ -3,7 +3,7 @@ RadarTransmitter
 
 .. py:class:: RadarTransmitter
 
-   IRadarTransmitter, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarTransmitter`
 
    Class defining the radar transmitter.
 

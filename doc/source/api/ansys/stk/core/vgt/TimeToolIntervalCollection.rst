@@ -3,7 +3,7 @@ TimeToolIntervalCollection
 
 .. py:class:: TimeToolIntervalCollection
 
-   ITimeToolIntervalCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolIntervalCollection`
 
    Represents a collection of intervals.
 

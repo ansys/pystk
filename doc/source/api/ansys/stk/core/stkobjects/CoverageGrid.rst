@@ -3,7 +3,7 @@ CoverageGrid
 
 .. py:class:: CoverageGrid
 
-   ICoverageGrid, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageGrid`
 
    Grid Definition and resolution.
 

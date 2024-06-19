@@ -3,7 +3,7 @@ AreaTypeEllipse
 
 .. py:class:: AreaTypeEllipse
 
-   IAreaTypeData, IAreaTypeEllipse, SupportsDeleteCallback
+   Bases: py:obj:`~IAreaTypeData`, py:obj:`~IAreaTypeEllipse`
 
    Class defining the AreaTarget AreaType in terms of MajorAxis, MinorAxis and Bearing.
 

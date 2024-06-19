@@ -57,13 +57,13 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.control_parameters
-    :type: "IAgVADCControlCollection"
+    :type: IAgVADCControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.results
-    :type: "IAgVADCResultCollection"
+    :type: IAgVADCResultCollection
 
     Get the list of results defined for the profile.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: convergence_criteria
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.convergence_criteria
-    :type: "CONVERGENCE_CRITERIA"
+    :type: CONVERGENCE_CRITERIA
 
     Gets or sets the convergence criteria.
 
@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: derivative_calc_method
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.derivative_calc_method
-    :type: "DERIVE_CALC_METHOD"
+    :type: DERIVE_CALC_METHOD
 
     Gets or sets the derivative calculation method.
 
@@ -153,19 +153,19 @@ Property detail
 
 .. py:property:: draw_perturbation
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.draw_perturbation
-    :type: "DRAW_PERTURBATION"
+    :type: DRAW_PERTURBATION
 
     Defines the display of perturbations in the 2D and 3D Graphics windows, if you have set Astrogator to draw while calculating.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.scripting_tool
-    :type: "IAgVAScriptingTool"
+    :type: IAgVAScriptingTool
 
     Returns the Scripting tool for the sequence.
 
 .. py:property:: root_finding_algorithm
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.root_finding_algorithm
-    :type: "ROOT_FINDING_ALGORITHM"
+    :type: ROOT_FINDING_ALGORITHM
 
     Gets or sets the root-finding algorithm to use.
 
@@ -177,7 +177,7 @@ Property detail
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.targeter_graphs
-    :type: "IAgVATargeterGraphCollection"
+    :type: IAgVATargeterGraphCollection
 
     Graphs.
 

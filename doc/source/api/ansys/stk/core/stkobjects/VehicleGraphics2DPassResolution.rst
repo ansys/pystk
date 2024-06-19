@@ -3,7 +3,7 @@ VehicleGraphics2DPassResolution
 
 .. py:class:: VehicleGraphics2DPassResolution
 
-   IVehicleGraphics2DPassResolution, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DPassResolution`
 
    Ground track and orbit resolution for satellites defined in terms of ephemeris steps.
 

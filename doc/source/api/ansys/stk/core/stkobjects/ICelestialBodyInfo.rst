@@ -126,11 +126,12 @@ Method detail
 
 
 
-.. py:method:: get_last_computed_direction_in_icrf(self) -> "ICartesian3Vector"
+.. py:method:: get_last_computed_direction_in_icrf(self) -> ICartesian3Vector
+    :canonical: ansys.stk.core.stkobjects.ICelestialBodyInfo.get_last_computed_direction_in_icrf
 
     Return the last computed direction vector in ICRF.
 
     :Returns:
 
-        :obj:`~"ICartesian3Vector"`
+        :obj:`~ICartesian3Vector`
 

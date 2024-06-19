@@ -47,19 +47,19 @@ Property detail
 
 .. py:property:: break_angle_type
     :canonical: ansys.stk.core.stkobjects.IVehicleDefinition.break_angle_type
-    :type: "VEHICLE_BREAK_ANGLE_TYPE"
+    :type: VEHICLE_BREAK_ANGLE_TYPE
 
     Latitude or longitude.
 
 .. py:property:: break_angle
     :canonical: ansys.stk.core.stkobjects.IVehicleDefinition.break_angle
-    :type: "IAgVeBreakAngle"
+    :type: IAgVeBreakAngle
 
     Value of latitude or longitude used for defining pass break.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.IVehicleDefinition.direction
-    :type: "VEHICLE_DIRECTION"
+    :type: VEHICLE_DIRECTION
 
     Descending or ascending.
 
@@ -68,13 +68,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_break_angle_type(self, breakAngleType:"VEHICLE_BREAK_ANGLE_TYPE") -> None
+.. py:method:: set_break_angle_type(self, breakAngleType: VEHICLE_BREAK_ANGLE_TYPE) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleDefinition.set_break_angle_type
 
     Set the Break Angle type.
 
     :Parameters:
 
-    **breakAngleType** : :obj:`~"VEHICLE_BREAK_ANGLE_TYPE"`
+    **breakAngleType** : :obj:`~VEHICLE_BREAK_ANGLE_TYPE`
 
     :Returns:
 

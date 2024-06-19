@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: line
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.line
-    :type: "IAgVeGfxLine"
+    :type: IAgVeGfxLine
 
     Get the line display properties for the vehicle.
 

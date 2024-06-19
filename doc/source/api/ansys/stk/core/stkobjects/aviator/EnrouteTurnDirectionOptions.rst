@@ -3,7 +3,7 @@ EnrouteTurnDirectionOptions
 
 .. py:class:: EnrouteTurnDirectionOptions
 
-   IEnrouteTurnDirectionOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IEnrouteTurnDirectionOptions`
 
    Class defining the enroute turn direction options in a procedure.
 

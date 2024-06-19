@@ -3,7 +3,7 @@ Missile
 
 .. py:class:: Missile
 
-   IMissile, IStkObject, ILifetimeInformation, IProvideSpatialInfo, SupportsDeleteCallback
+   Bases: py:obj:`~IMissile`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IProvideSpatialInfo`
 
    Missile object.
 

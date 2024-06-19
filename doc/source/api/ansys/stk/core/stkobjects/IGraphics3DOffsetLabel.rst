@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: offset_frame
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffsetLabel.offset_frame
-    :type: "OFFSET_FRAME_TYPE"
+    :type: OFFSET_FRAME_TYPE
 
     The frame used in computing the offset. A member of the AgEOffsetFrameType enumeration.
 

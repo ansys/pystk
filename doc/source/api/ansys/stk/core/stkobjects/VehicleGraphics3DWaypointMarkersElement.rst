@@ -3,7 +3,7 @@ VehicleGraphics3DWaypointMarkersElement
 
 .. py:class:: VehicleGraphics3DWaypointMarkersElement
 
-   IVehicleGraphics3DWaypointMarkersElement, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics3DWaypointMarkersElement`
 
    3D waypoint.
 

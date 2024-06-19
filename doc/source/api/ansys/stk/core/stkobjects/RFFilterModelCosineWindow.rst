@@ -3,7 +3,7 @@ RFFilterModelCosineWindow
 
 .. py:class:: RFFilterModelCosineWindow
 
-   IRFFilterModelCosineWindow, IRFFilterModel, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IRFFilterModelCosineWindow`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Class defining a cosine window filter model.
 

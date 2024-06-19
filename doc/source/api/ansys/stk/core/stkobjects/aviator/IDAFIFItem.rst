@@ -44,7 +44,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_value(self, fieldName:str) -> typing.Any
+.. py:method:: get_value(self, fieldName: str) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_value
 
     Get the value of the field with the given name.
 
@@ -57,6 +58,7 @@ Method detail
         :obj:`~typing.Any`
 
 .. py:method:: get_all_fields(self) -> list
+    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_all_fields
 
     Get all the field names.
 
@@ -65,6 +67,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: get_all_fields_and_values(self) -> list
+    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_all_fields_and_values
 
     Get all the field names along with the corresponding value.
 
@@ -73,6 +76,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: copy_site(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.copy_site
 
     Copy the site to the clipboard.
 
@@ -80,11 +84,12 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_as_catalog_item(self) -> "ICatalogItem"
+.. py:method:: get_as_catalog_item(self) -> ICatalogItem
+    :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_as_catalog_item
 
     Get the catalog item interface for this object.
 
     :Returns:
 
-        :obj:`~"ICatalogItem"`
+        :obj:`~ICatalogItem`
 

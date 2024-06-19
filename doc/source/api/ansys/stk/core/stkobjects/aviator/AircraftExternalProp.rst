@@ -3,7 +3,7 @@ AircraftExternalProp
 
 .. py:class:: AircraftExternalProp
 
-   IAircraftExternalProp, SupportsDeleteCallback
+   Bases: py:obj:`~IAircraftExternalProp`
 
    Class defining the external propulsion options for a basic acceleration performance model of an Aviator aircraft.
 

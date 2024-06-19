@@ -3,7 +3,7 @@ StateCalcSolarInPlaneAngle
 
 .. py:class:: StateCalcSolarInPlaneAngle
 
-   IComponentInfo, ICloneable, IStateCalcSolarInPlaneAngle, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSolarInPlaneAngle`
 
    Solar In Plane Angle objects.
 

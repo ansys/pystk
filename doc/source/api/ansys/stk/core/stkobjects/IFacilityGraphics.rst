@@ -72,13 +72,13 @@ Property detail
 
 .. py:property:: az_el_mask
     :canonical: ansys.stk.core.stkobjects.IFacilityGraphics.az_el_mask
-    :type: "IAgBasicAzElMask"
+    :type: IAgBasicAzElMask
 
     The graphics az-el mask properties for the facility, place or target.
 
 .. py:property:: contours
     :canonical: ansys.stk.core.stkobjects.IFacilityGraphics.contours
-    :type: "IAgGfxRangeContours"
+    :type: IAgGfxRangeContours
 
     The range contours properties for the facility, place or target.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.IFacilityGraphics.label_notes
-    :type: "IAgLabelNoteCollection"
+    :type: IAgLabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IFacilityGraphics.radar_cross_section
-    :type: "IAgRadarCrossSectionGraphics"
+    :type: IAgRadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

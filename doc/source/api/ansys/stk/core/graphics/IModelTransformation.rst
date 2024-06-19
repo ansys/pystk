@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.graphics.IModelTransformation.type
-    :type: "MODEL_TRANSFORMATION_TYPE"
+    :type: MODEL_TRANSFORMATION_TYPE
 
     Gets the model transformation type associated with the transformation.
 

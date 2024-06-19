@@ -3,7 +3,7 @@ SolarActivityConfiguration
 
 .. py:class:: SolarActivityConfiguration
 
-   ISolarActivityConfiguration, SupportsDeleteCallback
+   Bases: py:obj:`~ISolarActivityConfiguration`
 
    Class defining a solar activity configuration.
 

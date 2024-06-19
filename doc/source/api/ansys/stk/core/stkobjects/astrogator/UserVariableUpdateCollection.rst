@@ -3,7 +3,7 @@ UserVariableUpdateCollection
 
 .. py:class:: UserVariableUpdateCollection
 
-   IUserVariableUpdateCollection, SupportsDeleteCallback
+   Bases: py:obj:`~IUserVariableUpdateCollection`
 
    User Variable Update Collection.
 

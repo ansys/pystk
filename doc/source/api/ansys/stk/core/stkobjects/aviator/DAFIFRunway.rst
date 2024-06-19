@@ -3,7 +3,7 @@ DAFIFRunway
 
 .. py:class:: DAFIFRunway
 
-   IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback
+   Bases: py:obj:`~IDAFIFItem`, py:obj:`~ICatalogRunway`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
 
    Class defining an DAFIF Runway.
 

@@ -3,7 +3,7 @@ StateCalcOutAsympRA
 
 .. py:class:: StateCalcOutAsympRA
 
-   IComponentInfo, ICloneable, IStateCalcOutAsympRA, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcOutAsympRA`
 
    OutAsymptoteRA Calc objects.
 

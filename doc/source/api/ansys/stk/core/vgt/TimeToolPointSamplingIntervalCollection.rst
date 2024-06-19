@@ -3,7 +3,7 @@ TimeToolPointSamplingIntervalCollection
 
 .. py:class:: TimeToolPointSamplingIntervalCollection
 
-   ITimeToolPointSamplingIntervalCollection, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolPointSamplingIntervalCollection`
 
    A collection of intervals where each interval contains the time, position and velocity arrays.
 

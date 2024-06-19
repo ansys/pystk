@@ -3,7 +3,7 @@ CalculationToolDerivativeBasic
 
 .. py:class:: CalculationToolDerivativeBasic
 
-   ICalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ICalculationToolDerivativeBasic`, py:obj:`~IAnalysisWorkbenchDerivative`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Derivative definition determines how numerical differencing is used to compute derivatives.
 

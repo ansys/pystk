@@ -3,7 +3,7 @@ MSIS_1986
 
 .. py:class:: MSIS_1986
 
-   IMSIS_1986, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~IMSIS_1986`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    MSIS 1986 atmospheric propagator function.
 

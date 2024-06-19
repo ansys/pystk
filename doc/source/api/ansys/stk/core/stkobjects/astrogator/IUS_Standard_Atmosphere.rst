@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.drag_model_type
-    :type: "DRAG_MODEL_TYPE"
+    :type: DRAG_MODEL_TYPE
 
     Drag model type.
 
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.drag_model_plugin
-    :type: "IAgVADragModelPlugin"
+    :type: IAgVADragModelPlugin
 
     Drag model plugin properties.
 

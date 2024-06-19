@@ -80,7 +80,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, key:str) -> str
+.. py:method:: item(self, key: str) -> str
+    :canonical: ansys.stk.core.stkobjects.IKeyValueCollection.item
 
     Given a key, returns associated element.
 
@@ -93,7 +94,8 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: contains(self, key:str) -> bool
+.. py:method:: contains(self, key: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IKeyValueCollection.contains
 
     Determine whether the collection contains the specified key.
 
@@ -106,6 +108,7 @@ Method detail
         :obj:`~bool`
 
 .. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IKeyValueCollection.remove_all
 
     Remove all elements.
 
@@ -113,7 +116,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_key(self, key:str) -> bool
+.. py:method:: remove_key(self, key: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IKeyValueCollection.remove_key
 
     Remove an element associated with specified key.
 
@@ -125,7 +129,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: set(self, key:str, value:str) -> None
+.. py:method:: set(self, key: str, value: str) -> None
+    :canonical: ansys.stk.core.stkobjects.IKeyValueCollection.set
 
     Set the value associated with specified key.
 
@@ -139,7 +144,8 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: get_read_only(self, key:str) -> bool
+.. py:method:: get_read_only(self, key: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.IKeyValueCollection.get_read_only
 
     Given a key, returns read-only flag.
 
@@ -151,7 +157,8 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: set_read_only(self, key:str, isReadOnly:bool) -> None
+.. py:method:: set_read_only(self, key: str, isReadOnly: bool) -> None
+    :canonical: ansys.stk.core.stkobjects.IKeyValueCollection.set_read_only
 
     Given a key, sets read-only flag.
 

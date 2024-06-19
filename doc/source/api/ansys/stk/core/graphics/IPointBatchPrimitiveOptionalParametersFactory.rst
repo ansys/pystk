@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IPointBatchPrimitiveOptionalParameters"
+.. py:method:: initialize(self) -> IPointBatchPrimitiveOptionalParameters
+    :canonical: ansys.stk.core.graphics.IPointBatchPrimitiveOptionalParametersFactory.initialize
 
     Initialize a default point batch primitive optional parameters object.
 
     :Returns:
 
-        :obj:`~"IPointBatchPrimitiveOptionalParameters"`
+        :obj:`~IPointBatchPrimitiveOptionalParameters`
 

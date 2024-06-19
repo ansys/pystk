@@ -3,7 +3,7 @@ StateCalcRelGroundTrackError
 
 .. py:class:: StateCalcRelGroundTrackError
 
-   IComponentInfo, ICloneable, IStateCalcRelGroundTrackError, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelGroundTrackError`
 
    RelGroundTrackError Calc objects.
 

@@ -38,15 +38,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IDistanceDisplayCondition"
+.. py:method:: initialize(self) -> IDistanceDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceDisplayConditionFactory.initialize
 
     Initialize a default distance display condition. minimum distance is set to 0 and maximum distance is set to Double.MaxValue. With this interval, an object is always rendered regardless of its distance to the camera.
 
     :Returns:
 
-        :obj:`~"IDistanceDisplayCondition"`
+        :obj:`~IDistanceDisplayCondition`
 
-.. py:method:: initialize_with_distances(self, minimumDistance:float, maximumDistance:float) -> "IDistanceDisplayCondition"
+.. py:method:: initialize_with_distances(self, minimumDistance: float, maximumDistance: float) -> IDistanceDisplayCondition
+    :canonical: ansys.stk.core.graphics.IDistanceDisplayConditionFactory.initialize_with_distances
 
     Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
@@ -57,5 +59,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IDistanceDisplayCondition"`
+        :obj:`~IDistanceDisplayCondition`
 

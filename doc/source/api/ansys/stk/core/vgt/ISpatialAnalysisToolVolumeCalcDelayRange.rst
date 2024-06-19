@@ -41,31 +41,31 @@ Property detail
 
 .. py:property:: distance
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.distance
-    :type: "CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE"
+    :type: CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE
 
     The Volume Calc range distance types.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.reference_point
-    :type: "IAgCrdnPoint"
+    :type: IAgCrdnPoint
 
     The Volume Calc Range reference point.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.reference_plane
-    :type: "IAgCrdnPlane"
+    :type: IAgCrdnPlane
 
     The Volume Calc Range reference plane.
 
 .. py:property:: along_vector
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.along_vector
-    :type: "IAgCrdnVector"
+    :type: IAgCrdnVector
 
     The Volume Calc Range Along Vector.
 
 .. py:property:: speed_type
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.speed_type
-    :type: "CRDN_VOLUME_CALC_RANGE_SPEED_TYPE"
+    :type: CRDN_VOLUME_CALC_RANGE_SPEED_TYPE
 
     The Volume Calc range speed types.
 

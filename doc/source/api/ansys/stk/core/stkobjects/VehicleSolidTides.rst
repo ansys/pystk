@@ -3,7 +3,7 @@ VehicleSolidTides
 
 .. py:class:: VehicleSolidTides
 
-   IVehicleSolidTides, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSolidTides`
 
    Class defining the contribution of solid tides.
 

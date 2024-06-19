@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: objective
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.objective
-    :type: "OPTIMAL_FINITE_SNOPT_OBJECTIVE"
+    :type: OPTIMAL_FINITE_SNOPT_OBJECTIVE
 
     Objective.
 
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.provide_runtime_type_info
-    :type: "IAgRuntimeTypeInfo"
+    :type: IAgRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: snopt_scaling
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.snopt_scaling
-    :type: "OPTIMAL_FINITE_SNOPT_SCALING"
+    :type: OPTIMAL_FINITE_SNOPT_SCALING
 
     SNOPT scaling option.
 

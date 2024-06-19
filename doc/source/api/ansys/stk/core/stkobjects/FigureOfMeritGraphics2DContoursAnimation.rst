@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DContoursAnimation
 
 .. py:class:: FigureOfMeritGraphics2DContoursAnimation
 
-   IFigureOfMeritGraphics2DContoursAnimation, IFigureOfMeritGraphics2DContours, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DContoursAnimation`, py:obj:`~IFigureOfMeritGraphics2DContours`
 
    Animation contour properties.
 

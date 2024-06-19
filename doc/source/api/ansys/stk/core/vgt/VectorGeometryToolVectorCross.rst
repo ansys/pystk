@@ -3,7 +3,7 @@ VectorGeometryToolVectorCross
 
 .. py:class:: VectorGeometryToolVectorCross
 
-   IVectorGeometryToolVectorCross, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolVectorCross`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
 
    The vector cross product of two vectors.
 

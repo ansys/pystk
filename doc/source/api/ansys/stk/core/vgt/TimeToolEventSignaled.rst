@@ -3,7 +3,7 @@ TimeToolEventSignaled
 
 .. py:class:: TimeToolEventSignaled
 
-   ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWorkbenchComponent, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventSignaled`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
 
    Event recorded on specified clock via signal transmission from original time instant recorded on different clock.
 

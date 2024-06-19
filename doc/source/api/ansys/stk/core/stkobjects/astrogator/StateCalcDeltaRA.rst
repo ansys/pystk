@@ -3,7 +3,7 @@ StateCalcDeltaRA
 
 .. py:class:: StateCalcDeltaRA
 
-   IComponentInfo, ICloneable, IStateCalcDeltaRA, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDeltaRA`
 
    DeltaRA Calc objects.
 

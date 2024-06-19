@@ -3,7 +3,7 @@ VehicleGraphics2DElevationGroundElevation
 
 .. py:class:: VehicleGraphics2DElevationGroundElevation
 
-   IVehicleGraphics2DElevation, IVehicleGraphics2DElevationGroundElevation, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleGraphics2DElevation`, py:obj:`~IVehicleGraphics2DElevationGroundElevation`
 
    Ground elevation for vehicle swath.
 

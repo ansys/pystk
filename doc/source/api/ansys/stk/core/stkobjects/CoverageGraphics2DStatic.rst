@@ -3,7 +3,7 @@ CoverageGraphics2DStatic
 
 .. py:class:: CoverageGraphics2DStatic
 
-   ICoverageGraphics2DStatic, SupportsDeleteCallback
+   Bases: py:obj:`~ICoverageGraphics2DStatic`
 
    Static 2D graphics display options for the coverage grid.
 

@@ -3,7 +3,7 @@ GridSearchControl
 
 .. py:class:: GridSearchControl
 
-   IGridSearchControl, SupportsDeleteCallback
+   Bases: py:obj:`~IGridSearchControl`
 
    Control parameters for Grid Search profile.
 

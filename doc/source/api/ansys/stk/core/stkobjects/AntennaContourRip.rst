@@ -3,7 +3,7 @@ AntennaContourRip
 
 .. py:class:: AntennaContourRip
 
-   IAntennaContour, IAntennaContourRip, SupportsDeleteCallback
+   Bases: py:obj:`~IAntennaContour`, py:obj:`~IAntennaContourRip`
 
    Class defining an antenna rip contour properties.
 

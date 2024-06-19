@@ -3,7 +3,7 @@ MissileModels
 
 .. py:class:: MissileModels
 
-   IMissileModels, ICatalogSource, SupportsDeleteCallback
+   Bases: py:obj:`~IMissileModels`, py:obj:`~ICatalogSource`
 
    Class defining the User Missile Models in the Aviator Catalog.
 

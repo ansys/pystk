@@ -3,7 +3,7 @@ AGICustomTerrainOverlayFactory
 
 .. py:class:: AGICustomTerrainOverlayFactory
 
-   IAGICustomTerrainOverlayFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IAGICustomTerrainOverlayFactory`
 
    A terrain overlay for handling AGI Cesium Terrain.
 

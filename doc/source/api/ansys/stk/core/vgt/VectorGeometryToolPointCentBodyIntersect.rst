@@ -3,7 +3,7 @@ VectorGeometryToolPointCentBodyIntersect
 
 .. py:class:: VectorGeometryToolPointCentBodyIntersect
 
-   IVectorGeometryToolPointCentBodyIntersect, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolPointCentBodyIntersect`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolPoint`
 
    Point on central body surface along direction vector originating at source point.
 

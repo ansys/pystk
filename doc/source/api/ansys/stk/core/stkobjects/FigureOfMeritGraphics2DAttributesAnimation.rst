@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DAttributesAnimation
 
 .. py:class:: FigureOfMeritGraphics2DAttributesAnimation
 
-   IFigureOfMeritGraphics2DAttributesAnimation, IFigureOfMeritGraphics2DAttributes, SupportsDeleteCallback
+   Bases: py:obj:`~IFigureOfMeritGraphics2DAttributesAnimation`, py:obj:`~IFigureOfMeritGraphics2DAttributes`
 
    Animation graphics for a Figure of Merit.
 

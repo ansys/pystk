@@ -54,6 +54,7 @@ Method detail
 -------------
 
 .. py:method:: get_flight_mission(self) -> typing.Any
+    :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorAviator.get_flight_mission
 
     Return the underlying Flight Mission object.
 

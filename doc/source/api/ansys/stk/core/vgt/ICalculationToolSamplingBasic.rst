@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: sampling_method
     :canonical: ansys.stk.core.vgt.ICalculationToolSamplingBasic.sampling_method
-    :type: "IAgCrdnSamplingMethod"
+    :type: IAgCrdnSamplingMethod
 
     Get the sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: method_factory
     :canonical: ansys.stk.core.vgt.ICalculationToolSamplingBasic.method_factory
-    :type: "IAgCrdnSamplingMethodFactory"
+    :type: IAgCrdnSamplingMethodFactory
 
     Creates sampling definitions, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 

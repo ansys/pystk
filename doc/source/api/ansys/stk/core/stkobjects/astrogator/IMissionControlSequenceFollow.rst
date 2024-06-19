@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: leader
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.leader
-    :type: "IAgLinkToObject"
+    :type: IAgLinkToObject
 
     Get the leader object.
 
@@ -85,43 +85,43 @@ Property detail
 
 .. py:property:: separation_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.separation_conditions
-    :type: "IAgVAStoppingConditionCollection"
+    :type: IAgVAStoppingConditionCollection
 
     If separation conditions are specified, the list of separation conditions.
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.spacecraft_parameters
-    :type: "IAgVASpacecraftParameters"
+    :type: IAgVASpacecraftParameters
 
     Get the spacecraft's physical properties.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.fuel_tank
-    :type: "IAgVAFuelTank"
+    :type: IAgVAFuelTank
 
     Get the spacecraft's fuel tank properties.
 
 .. py:property:: joining_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.joining_type
-    :type: "FOLLOW_JOIN"
+    :type: FOLLOW_JOIN
 
     Gets or sets the joining type.
 
 .. py:property:: separation_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.separation_type
-    :type: "FOLLOW_SEPARATION"
+    :type: FOLLOW_SEPARATION
 
     Gets or sets the separation type.
 
 .. py:property:: spacecraft_and_fuel_tank_type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.spacecraft_and_fuel_tank_type
-    :type: "FOLLOW_SPACECRAFT_AND_FUEL_TANK"
+    :type: FOLLOW_SPACECRAFT_AND_FUEL_TANK
 
     Gets or sets the spacecraft snd fuel tank configuration type.
 
 .. py:property:: joining_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.joining_conditions
-    :type: "IAgVAStoppingConditionCollection"
+    :type: IAgVAStoppingConditionCollection
 
     If joining conditions are specified, the list of joining conditions.
 
@@ -133,7 +133,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.user_variables
-    :type: "IAgVAUserVariableCollection"
+    :type: IAgVAUserVariableCollection
 
     Interface used to modify user variables for the follow segment.
 
@@ -158,37 +158,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_FOLLOW") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_FOLLOW) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_FOLLOW"`
+    **param** : :obj:`~CONTROL_FOLLOW`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_FOLLOW") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_FOLLOW) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_FOLLOW"`
+    **param** : :obj:`~CONTROL_FOLLOW`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_FOLLOW") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_FOLLOW) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_FOLLOW"`
+    **param** : :obj:`~CONTROL_FOLLOW`
 
     :Returns:
 

@@ -3,7 +3,7 @@ STKXApplicationPartnerAccess
 
 .. py:class:: STKXApplicationPartnerAccess
 
-   ISTKXApplicationPartnerAccess, SupportsDeleteCallback
+   Bases: py:obj:`~ISTKXApplicationPartnerAccess`
 
    STK X Application Partner Access object.
 

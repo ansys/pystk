@@ -3,7 +3,7 @@ VehicleSGP4AutoUpdateFileSource
 
 .. py:class:: VehicleSGP4AutoUpdateFileSource
 
-   IVehicleSGP4AutoUpdateFileSource, SupportsDeleteCallback
+   Bases: py:obj:`~IVehicleSGP4AutoUpdateFileSource`
 
    Configure the SGP4 automatic updates using file(s).
 

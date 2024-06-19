@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: engine_definition
     :canonical: ansys.stk.core.stkobjects.astrogator.IEngineIon.engine_definition
-    :type: "IAgVAEngineDefinition"
+    :type: IAgVAEngineDefinition
 
     Get the engine definition.
 
@@ -128,37 +128,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param:"CONTROL_ENGINE_ION") -> None
+.. py:method:: enable_control_parameter(self, param: CONTROL_ENGINE_ION) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineIon.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_ION"`
+    **param** : :obj:`~CONTROL_ENGINE_ION`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param:"CONTROL_ENGINE_ION") -> None
+.. py:method:: disable_control_parameter(self, param: CONTROL_ENGINE_ION) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineIon.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_ION"`
+    **param** : :obj:`~CONTROL_ENGINE_ION`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param:"CONTROL_ENGINE_ION") -> bool
+.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ENGINE_ION) -> bool
+    :canonical: ansys.stk.core.stkobjects.astrogator.IEngineIon.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~"CONTROL_ENGINE_ION"`
+    **param** : :obj:`~CONTROL_ENGINE_ION`
 
     :Returns:
 

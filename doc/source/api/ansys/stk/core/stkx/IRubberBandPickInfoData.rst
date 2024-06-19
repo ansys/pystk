@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: obj_paths
     :canonical: ansys.stk.core.stkx.IRubberBandPickInfoData.obj_paths
-    :type: "IAgObjPathCollection"
+    :type: IAgObjPathCollection
 
     List of object paths selected.
 

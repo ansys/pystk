@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IPickResult"
+.. py:method:: item(self, index: int) -> IPickResult
+    :canonical: ansys.stk.core.graphics.IPickResultCollection.item
 
     Return a picked object at the specified position in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IPickResult"`
+        :obj:`~IPickResult`
 
 

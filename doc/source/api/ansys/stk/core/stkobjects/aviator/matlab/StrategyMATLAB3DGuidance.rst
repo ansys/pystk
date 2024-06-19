@@ -3,7 +3,7 @@ StrategyMATLAB3DGuidance
 
 .. py:class:: StrategyMATLAB3DGuidance
 
-   IStrategyMATLAB3DGuidance, IBasicManeuverStrategy, SupportsDeleteCallback
+   Bases: py:obj:`~IStrategyMATLAB3DGuidance`, py:obj:`~IBasicManeuverStrategy`
 
    Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure.
 

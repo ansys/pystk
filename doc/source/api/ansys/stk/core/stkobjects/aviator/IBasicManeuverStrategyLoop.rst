@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: loop_angle_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.loop_angle_mode
-    :type: "ANGLE_MODE"
+    :type: ANGLE_MODE
 
     Gets or sets the loop angle mode for the maneuver.
 
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.airspeed_type
-    :type: "AIRSPEED_TYPE"
+    :type: AIRSPEED_TYPE
 
     Get the airspeed type.
 
@@ -115,13 +115,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeeds(self, airspeedType:"AIRSPEED_TYPE", topAirspeed:float, bottomAirspeed:float) -> None
+.. py:method:: set_airspeeds(self, airspeedType: AIRSPEED_TYPE, topAirspeed: float, bottomAirspeed: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.set_airspeeds
 
     Set the speeds at the top and bottom of the loop.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~"AIRSPEED_TYPE"`
+    **airspeedType** : :obj:`~AIRSPEED_TYPE`
     **topAirspeed** : :obj:`~float`
     **bottomAirspeed** : :obj:`~float`
 

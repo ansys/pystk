@@ -3,7 +3,7 @@ RadarWaveformMonostaticSearchTrackContinuous
 
 .. py:class:: RadarWaveformMonostaticSearchTrackContinuous
 
-   IRadarWaveformMonostaticSearchTrackContinuous, IRadarWaveformSearchTrack, SupportsDeleteCallback
+   Bases: py:obj:`~IRadarWaveformMonostaticSearchTrackContinuous`, py:obj:`~IRadarWaveformSearchTrack`
 
    Class defining a monostatic continuous waveform.
 

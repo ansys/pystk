@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.ITimeToolAxesSamplingResult.intervals
-    :type: "IAgCrdnAxesSamplingIntervalCollection"
+    :type: IAgCrdnAxesSamplingIntervalCollection
 
     A collection of sampling intervals.
 

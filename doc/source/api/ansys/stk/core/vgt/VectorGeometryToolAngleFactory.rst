@@ -3,7 +3,7 @@ VectorGeometryToolAngleFactory
 
 .. py:class:: VectorGeometryToolAngleFactory
 
-   IVectorGeometryToolAngleFactory, SupportsDeleteCallback
+   Bases: py:obj:`~IVectorGeometryToolAngleFactory`
 
    A Factory object to create angles.
 

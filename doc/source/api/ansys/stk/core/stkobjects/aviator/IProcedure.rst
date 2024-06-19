@@ -50,31 +50,31 @@ Property detail
 
 .. py:property:: site
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.site
-    :type: "IAgAvtrSite"
+    :type: IAgAvtrSite
 
     Get the site of the current procedure.
 
 .. py:property:: time_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.time_options
-    :type: "IAgAvtrProcedureTimeOptions"
+    :type: IAgAvtrProcedureTimeOptions
 
     Get the time options for the current procedure.
 
 .. py:property:: wind_model
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.wind_model
-    :type: "IAgAvtrWindModel"
+    :type: IAgAvtrWindModel
 
     Get the wind model for the current procedure.
 
 .. py:property:: atmosphere_model
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.atmosphere_model
-    :type: "IAgAvtrAtmosphereModel"
+    :type: IAgAvtrAtmosphereModel
 
     Get the mission atmosphere model.
 
 .. py:property:: calculation_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.calculation_options
-    :type: "IAgAvtrCalculationOptions"
+    :type: IAgAvtrCalculationOptions
 
     Get the calculation options for the current procedure.
 
@@ -86,13 +86,13 @@ Property detail
 
 .. py:property:: refuel_dump_properties
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.refuel_dump_properties
-    :type: "IAgAvtrRefuelDumpProperties"
+    :type: IAgAvtrRefuelDumpProperties
 
     Get the refuel/dump properties for the current procedure.
 
 .. py:property:: fast_time_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.fast_time_options
-    :type: "IAgAvtrProcedureFastTimeOptions"
+    :type: IAgAvtrProcedureFastTimeOptions
 
     Get the fast time options (without validation or constraints) for the current procedure.
 

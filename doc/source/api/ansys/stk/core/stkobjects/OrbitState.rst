@@ -3,7 +3,7 @@ OrbitState
 
 .. py:class:: OrbitState
 
-   IOrbitState, SupportsDeleteCallback
+   Bases: py:obj:`~IOrbitState`
 
    Class defining orbit state.
 

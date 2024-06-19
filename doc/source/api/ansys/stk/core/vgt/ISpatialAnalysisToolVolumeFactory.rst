@@ -54,7 +54,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name:str, description:str, type:"CRDN_VOLUME_TYPE") -> "ISpatialAnalysisToolVolume"
+.. py:method:: create(self, name: str, description: str, type: CRDN_VOLUME_TYPE) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create
 
     Create and registers a volume using specified name and description.
 
@@ -62,25 +63,27 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~"CRDN_VOLUME_TYPE"`
+    **type** : :obj:`~CRDN_VOLUME_TYPE`
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: is_type_supported(self, eType:"CRDN_VOLUME_TYPE") -> bool
+.. py:method:: is_type_supported(self, eType: CRDN_VOLUME_TYPE) -> bool
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~"CRDN_VOLUME_TYPE"`
+    **eType** : :obj:`~CRDN_VOLUME_TYPE`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: create_volume_combined(self, name:str, description:str) -> "ISpatialAnalysisToolVolume"
+.. py:method:: create_volume_combined(self, name: str, description: str) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_combined
 
     Create a volume type combined.
 
@@ -91,9 +94,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: create_volume_lighting(self, name:str, description:str) -> "ISpatialAnalysisToolVolume"
+.. py:method:: create_volume_lighting(self, name: str, description: str) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_lighting
 
     Create a volume type lighting.
 
@@ -104,9 +108,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: create_volume_over_time(self, name:str, description:str) -> "ISpatialAnalysisToolVolume"
+.. py:method:: create_volume_over_time(self, name: str, description: str) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_over_time
 
     Create a volume type over time.
 
@@ -117,9 +122,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: create_volume_from_grid(self, name:str, description:str) -> "ISpatialAnalysisToolVolume"
+.. py:method:: create_volume_from_grid(self, name: str, description: str) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_from_grid
 
     Create a volume type from grid.
 
@@ -130,9 +136,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: create_volume_from_calc(self, name:str, description:str) -> "ISpatialAnalysisToolVolume"
+.. py:method:: create_volume_from_calc(self, name: str, description: str) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_from_calc
 
     Create a volume type from calc.
 
@@ -143,9 +150,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: create_volume_from_time_satisfaction(self, name:str, description:str) -> "ISpatialAnalysisToolVolume"
+.. py:method:: create_volume_from_time_satisfaction(self, name: str, description: str) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_from_time_satisfaction
 
     Create a volume type from time satisfaction.
 
@@ -156,9 +164,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: create_volume_from_condition(self, name:str, description:str) -> "ISpatialAnalysisToolVolume"
+.. py:method:: create_volume_from_condition(self, name: str, description: str) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_from_condition
 
     Create a volume type condition.
 
@@ -169,9 +178,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: create_volume_inview(self, name:str, description:str) -> "ISpatialAnalysisToolVolume"
+.. py:method:: create_volume_inview(self, name: str, description: str) -> ISpatialAnalysisToolVolume
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_inview
 
     Create a volume type Inview.
 
@@ -182,5 +192,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~"ISpatialAnalysisToolVolume"`
+        :obj:`~ISpatialAnalysisToolVolume`
 

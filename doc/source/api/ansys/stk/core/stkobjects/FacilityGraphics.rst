@@ -3,7 +3,7 @@ FacilityGraphics
 
 .. py:class:: FacilityGraphics
 
-   IFacilityGraphics, SupportsDeleteCallback
+   Bases: py:obj:`~IFacilityGraphics`
 
    2D Graphics properties of a Facility.
 

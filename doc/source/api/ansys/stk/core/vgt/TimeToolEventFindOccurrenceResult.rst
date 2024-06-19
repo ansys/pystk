@@ -3,7 +3,7 @@ TimeToolEventFindOccurrenceResult
 
 .. py:class:: TimeToolEventFindOccurrenceResult
 
-   ITimeToolEventFindOccurrenceResult, SupportsDeleteCallback
+   Bases: py:obj:`~ITimeToolEventFindOccurrenceResult`
 
    Contains the results returned with IAgCrdnEvent.FindOccurrence method.
 

@@ -47,13 +47,13 @@ Property detail
 
 .. py:property:: default
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.default
-    :type: "IAgVeGfxAttributesBasic"
+    :type: IAgVeGfxAttributesBasic
 
     Get the default attributes.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.intervals
-    :type: "IAgVeGfxIntervalsCollection"
+    :type: IAgVeGfxIntervalsCollection
 
     Get the custom intervals.
 
@@ -70,6 +70,7 @@ Method detail
 
 
 .. py:method:: deconflict(self) -> None
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.deconflict
 
     Deconflict the custom intervals.
 

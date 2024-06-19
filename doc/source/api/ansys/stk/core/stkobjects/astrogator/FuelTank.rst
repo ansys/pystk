@@ -3,7 +3,7 @@ FuelTank
 
 .. py:class:: FuelTank
 
-   IFuelTank, IRuntimeTypeInfoProvider, SupportsDeleteCallback
+   Bases: py:obj:`~IFuelTank`, py:obj:`~IRuntimeTypeInfoProvider`
 
    Fuel Tank parameters.
 

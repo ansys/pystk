@@ -3,7 +3,7 @@ StateCalcEarthMeanLocTimeAN
 
 .. py:class:: StateCalcEarthMeanLocTimeAN
 
-   IComponentInfo, ICloneable, IStateCalcEarthMeanLocTimeAN, SupportsDeleteCallback
+   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEarthMeanLocTimeAN`
 
    EarthMeanLocTimeAN Calc objects.
 

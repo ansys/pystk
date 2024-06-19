@@ -3,7 +3,7 @@ TargetGraphics3D
 
 .. py:class:: TargetGraphics3D
 
-   ITargetGraphics3D, SupportsDeleteCallback
+   Bases: py:obj:`~ITargetGraphics3D`
 
    Class defining 3D Graphics for a Target object.
 

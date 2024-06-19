@@ -3,7 +3,7 @@ EnrouteOptions
 
 .. py:class:: EnrouteOptions
 
-   IEnrouteOptions, SupportsDeleteCallback
+   Bases: py:obj:`~IEnrouteOptions`
 
    Class defining the enroute options in a procedure.
 

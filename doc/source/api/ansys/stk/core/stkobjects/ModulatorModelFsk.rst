@@ -3,7 +3,7 @@ ModulatorModelFsk
 
 .. py:class:: ModulatorModelFsk
 
-   IModulatorModel, SupportsDeleteCallback
+   Bases: py:obj:`~IModulatorModel`
 
    Class defining a FSK modulator model.
 

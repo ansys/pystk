@@ -77,7 +77,8 @@ Method detail
 
 
 
-.. py:method:: convert_to_unit(self, unitAbbrv:str) -> None
+.. py:method:: convert_to_unit(self, unitAbbrv: str) -> None
+    :canonical: ansys.stk.core.stkutil.IQuantity.convert_to_unit
 
     Change the value in this quantity to the specified unit.
 
@@ -91,51 +92,55 @@ Method detail
 
 
 
-.. py:method:: add(self, quantity:"IQuantity") -> "IQuantity"
+.. py:method:: add(self, quantity: IQuantity) -> IQuantity
+    :canonical: ansys.stk.core.stkutil.IQuantity.add
 
     Add the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
 
     :Parameters:
 
-    **quantity** : :obj:`~"IQuantity"`
+    **quantity** : :obj:`~IQuantity`
 
     :Returns:
 
-        :obj:`~"IQuantity"`
+        :obj:`~IQuantity`
 
-.. py:method:: subtract(self, quantity:"IQuantity") -> "IQuantity"
+.. py:method:: subtract(self, quantity: IQuantity) -> IQuantity
+    :canonical: ansys.stk.core.stkutil.IQuantity.subtract
 
     Subtracts the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
 
     :Parameters:
 
-    **quantity** : :obj:`~"IQuantity"`
+    **quantity** : :obj:`~IQuantity`
 
     :Returns:
 
-        :obj:`~"IQuantity"`
+        :obj:`~IQuantity`
 
-.. py:method:: multiply_qty(self, quantity:"IQuantity") -> "IQuantity"
+.. py:method:: multiply_qty(self, quantity: IQuantity) -> IQuantity
+    :canonical: ansys.stk.core.stkutil.IQuantity.multiply_qty
 
     Multiplies the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
 
     :Parameters:
 
-    **quantity** : :obj:`~"IQuantity"`
+    **quantity** : :obj:`~IQuantity`
 
     :Returns:
 
-        :obj:`~"IQuantity"`
+        :obj:`~IQuantity`
 
-.. py:method:: divide_qty(self, quantity:"IQuantity") -> "IQuantity"
+.. py:method:: divide_qty(self, quantity: IQuantity) -> IQuantity
+    :canonical: ansys.stk.core.stkutil.IQuantity.divide_qty
 
     Divides the value from the IAgQuantity interface to this interface. The dimensions must be similar.
 
     :Parameters:
 
-    **quantity** : :obj:`~"IQuantity"`
+    **quantity** : :obj:`~IQuantity`
 
     :Returns:
 
-        :obj:`~"IQuantity"`
+        :obj:`~IQuantity`
 

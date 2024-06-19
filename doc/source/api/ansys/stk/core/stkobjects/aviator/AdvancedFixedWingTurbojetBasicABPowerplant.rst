@@ -3,7 +3,7 @@ AdvancedFixedWingTurbojetBasicABPowerplant
 
 .. py:class:: AdvancedFixedWingTurbojetBasicABPowerplant
 
-   IAdvancedFixedWingTurbojetBasicABPowerplant, SupportsDeleteCallback
+   Bases: py:obj:`~IAdvancedFixedWingTurbojetBasicABPowerplant`
 
    Do not use this class, as it is deprecated. Use AgAvtrAdvFixedWingTurbojetBasicABProp instead.
 

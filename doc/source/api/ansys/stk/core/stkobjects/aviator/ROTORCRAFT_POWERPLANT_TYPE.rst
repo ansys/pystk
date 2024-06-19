@@ -11,6 +11,24 @@ ROTORCRAFT_POWERPLANT_TYPE
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ROTORCRAFT_ELECTRIC`
+              - Electric propulsion.
+
+            * - :py:attr:`~ROTORCRAFT_TURBOSHAFT`
+              - Turboshaft propulsion.
+
+            * - :py:attr:`~ROTORCRAFT_PISTON`
+              - Piston propulsion.
+
+
 Import detail
 -------------
 

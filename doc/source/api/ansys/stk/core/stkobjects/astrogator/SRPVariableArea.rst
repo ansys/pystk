@@ -3,7 +3,7 @@ SRPVariableArea
 
 .. py:class:: SRPVariableArea
 
-   ISRPVariableArea, IComponentInfo, ICloneable, SupportsDeleteCallback
+   Bases: py:obj:`~ISRPVariableArea`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
 
    Variable Area SRP propagator function.
 

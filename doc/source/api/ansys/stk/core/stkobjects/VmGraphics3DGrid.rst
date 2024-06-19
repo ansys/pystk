@@ -3,7 +3,7 @@ VmGraphics3DGrid
 
 .. py:class:: VmGraphics3DGrid
 
-   IVmGraphics3DGrid, SupportsDeleteCallback
+   Bases: py:obj:`~IVmGraphics3DGrid`
 
    Class defining grid properties of 3D graphics for volumetric object.
 

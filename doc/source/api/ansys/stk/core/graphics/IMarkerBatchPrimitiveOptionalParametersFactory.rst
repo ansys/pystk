@@ -36,11 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self) -> "IMarkerBatchPrimitiveOptionalParameters"
+.. py:method:: initialize(self) -> IMarkerBatchPrimitiveOptionalParameters
+    :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParametersFactory.initialize
 
     Initialize default marker batch primitive optional parameters. All per-marker parameters are initially empty.
 
     :Returns:
 
-        :obj:`~"IMarkerBatchPrimitiveOptionalParameters"`
+        :obj:`~IMarkerBatchPrimitiveOptionalParameters`
 

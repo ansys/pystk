@@ -40,15 +40,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_as_procedure(self) -> "IProcedure"
+.. py:method:: get_as_procedure(self) -> IProcedure
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureSuperProcedure.get_as_procedure
 
     Get the procedure interface.
 
     :Returns:
 
-        :obj:`~"IProcedure"`
+        :obj:`~IProcedure`
 
 .. py:method:: load_procedures_from_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureSuperProcedure.load_procedures_from_clipboard
 
     Load procedures from the clipboard.
 
@@ -56,7 +58,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_procedures_from_file(self, filepath:str) -> None
+.. py:method:: load_procedures_from_file(self, filepath: str) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.IProcedureSuperProcedure.load_procedures_from_file
 
     Load procedures from a file.
 

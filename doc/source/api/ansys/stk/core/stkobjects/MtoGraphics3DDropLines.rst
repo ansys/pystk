@@ -3,7 +3,7 @@ MtoGraphics3DDropLines
 
 .. py:class:: MtoGraphics3DDropLines
 
-   IMtoGraphics3DDropLines, SupportsDeleteCallback
+   Bases: py:obj:`~IMtoGraphics3DDropLines`
 
    MTO droplines.
 

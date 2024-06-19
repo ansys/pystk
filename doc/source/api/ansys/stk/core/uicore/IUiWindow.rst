@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: window_state
     :canonical: ansys.stk.core.uicore.IUiWindow.window_state
-    :type: "WINDOW_STATE"
+    :type: WINDOW_STATE
 
     The window state.
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: dock_style
     :canonical: ansys.stk.core.uicore.IUiWindow.dock_style
-    :type: "DOCK_STYLE"
+    :type: DOCK_STYLE
 
     The window docking style.
 
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: toolbars
     :canonical: ansys.stk.core.uicore.IUiWindow.toolbars
-    :type: "IAgUiToolbarCollection"
+    :type: IAgUiToolbarCollection
 
     Returns the window's toolbar collection.
 
@@ -132,6 +132,7 @@ Method detail
 
 
 .. py:method:: activate(self) -> None
+    :canonical: ansys.stk.core.uicore.IUiWindow.activate
 
     Activates the window.
 
@@ -142,6 +143,7 @@ Method detail
 
 
 .. py:method:: close(self) -> None
+    :canonical: ansys.stk.core.uicore.IUiWindow.close
 
     Close the window.
 
@@ -165,7 +167,8 @@ Method detail
 
 
 
-.. py:method:: get_service_by_name(self, name:str) -> typing.Any
+.. py:method:: get_service_by_name(self, name: str) -> typing.Any
+    :canonical: ansys.stk.core.uicore.IUiWindow.get_service_by_name
 
     Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name.
 
@@ -177,13 +180,14 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: get_service_by_type(self, serviceType:"WINDOW_SERVICE") -> typing.Any
+.. py:method:: get_service_by_type(self, serviceType: WINDOW_SERVICE) -> typing.Any
+    :canonical: ansys.stk.core.uicore.IUiWindow.get_service_by_type
 
     Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type.
 
     :Parameters:
 
-    **serviceType** : :obj:`~"WINDOW_SERVICE"`
+    **serviceType** : :obj:`~WINDOW_SERVICE`
 
     :Returns:
 

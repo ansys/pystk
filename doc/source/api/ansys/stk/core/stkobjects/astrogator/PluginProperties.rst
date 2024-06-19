@@ -3,7 +3,7 @@ PluginProperties
 
 .. py:class:: PluginProperties
 
-   IPluginProperties, SupportsDeleteCallback
+   Bases: py:obj:`~IPluginProperties`
 
    The plugin attitude control type.
 

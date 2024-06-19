@@ -61,7 +61,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index:int) -> "IVehicleSPICESegment"
+.. py:method:: item(self, index: int) -> IVehicleSPICESegment
+    :canonical: ansys.stk.core.stkobjects.IVehicleSegmentsCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -71,6 +72,6 @@ Method detail
 
     :Returns:
 
-        :obj:`~"IVehicleSPICESegment"`
+        :obj:`~IVehicleSPICESegment`
 
 

@@ -3,7 +3,7 @@ CROrientationQuaternion
 
 .. py:class:: CROrientationQuaternion
 
-   IOrientationQuaternion, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback
+   Bases: py:obj:`~IOrientationQuaternion`, py:obj:`~IOrientation`, py:obj:`~IOrientationPositionOffset`
 
    Quaternion orientation method.
 
