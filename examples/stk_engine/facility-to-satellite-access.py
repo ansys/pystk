@@ -198,7 +198,53 @@ for i in range(0, access_intervals.count):
 
 # Alternately, convert the data provider data sets to a pandas dataframe or numpy array:
 
-data_provider_result.data_sets.to_pandas_dataframe()
+aer_df = data_provider_result.data_sets.to_pandas_dataframe()
+aer_df
+
+# Visualize the data using a line chart:
+
+# +
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as md
+
+
+# convert axes to correct types
+aer_df['time'] = pd.to_datetime(aer_df["time"])
+aer_df.set_index('time')
+cols = ['azimuth', 'elevation', 'range']
+aer_df[cols] = aer_df[cols].apply(pd.to_numeric)
+
+# create plot
+fig, aer_ax1 = plt.subplots(figsize=(8, 8))
+# create second axis
+aer_ax2 = aer_ax1.twinx()
+# plot data
+aer_ax2.plot(aer_df['time'], aer_df['range'], color='#ff73e8', label='range (km)')
+aer_ax1.plot(aer_df['time'], aer_df['azimuth'], color='#63b1ff', label='azimuth (deg)')
+aer_ax1.plot(aer_df['time'], aer_df['elevation'], color='#ffbe30', label='elevation (deg)')
+
+# configure labels and grid
+aer_ax2.set_ylabel('Distance')
+aer_ax1.set_ylabel('Angle')
+aer_ax1.set_xlabel('Time')
+lines, labels = aer_ax1.get_legend_handles_labels()
+lines2, labels2 = aer_ax2.get_legend_handles_labels()
+plt.legend(lines + lines2, labels + labels2, loc='upper right')
+plt.title('AER over Time')
+aer_ax1.set_facecolor('#f7f7f7')
+aer_ax1.grid(visible=True, which='both', linestyle='--')
+formatter = md.DateFormatter('%H:%M')
+aer_ax1.xaxis.set_major_formatter(formatter)
+xlocator_major = md.MinuteLocator(interval = 2)
+aer_ax1.xaxis.set_major_locator(xlocator_major)
+xlocator_minor = md.MinuteLocator(interval = 1)
+aer_ax1.xaxis.set_minor_locator(xlocator_minor)
+
+plt.show()
+# -
+
+# Or, convert the data to a numpy array:
 
 data_provider_result.data_sets.to_numpy_array()[:10]
 

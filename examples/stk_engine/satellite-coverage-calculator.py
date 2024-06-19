@@ -195,9 +195,28 @@ asset_data_provider_results.data_sets.to_numpy_array()
 
 # **Was coverage better or worse near the Equator?**
 
-latitude_data_provider_results.data_sets.to_pandas_dataframe()
+latitude_df = latitude_data_provider_results.data_sets.to_pandas_dataframe()
+
+latitude_df
 
 # **Answer:** Coverage was worse near the equator.
+
+# It is also possible to visualize the data in graph form:
+
+# +
+import matplotlib.pyplot as plt
+
+
+# create plot
+latitude_line = latitude_df.plot.line(x='latitude', y='percent time covered', color='#fd91ff')
+# configure background, legend, title, grid, and labels
+latitude_line.set_facecolor('#f7f7f7')
+latitude_line.get_legend().remove()
+latitude_line.set_title('Coverage by Latitude')
+latitude_line.grid(visible=True, which='both')
+plt.ylabel('percent time covered')
+plt.show()
+# -
 
 # ## Assess the quality of coverage
 
@@ -212,7 +231,7 @@ tropics.graphics.static.is_points_visible = False
 
 # Create a Figure of Merit named TwoEyes:
 
-two_eyes = tropics.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "TwoEyes")
+coverage = tropics.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "TwoEyes")
 
 # ### Define the coverage
 
@@ -222,7 +241,7 @@ two_eyes = tropics.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "TwoEyes")
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_DEFINITION_TYPE
 
 
-two_eyes.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
+coverage.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
 # -
 
 # Set the compute type to Maximum:
@@ -231,7 +250,7 @@ two_eyes.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_COMPUTE
 
 
-two_eyes.definition.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+coverage.definition.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
 # -
 
 # ### Configure the graphics
@@ -242,19 +261,19 @@ two_eyes.definition.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
 
 
-two_eyes.graphics.animation.is_visible = True
-two_eyes.graphics.animation.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME
-two_eyes.graphics.animation.fill_points = False
-two_eyes.graphics.animation.marker_style = "Star"
+coverage.graphics.animation.is_visible = True
+coverage.graphics.animation.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME
+coverage.graphics.animation.fill_points = False
+coverage.graphics.animation.marker_style = "Star"
 # -
 
 # ### Configure the static graphics
 
 # Set some static graphics options:
 
-two_eyes.graphics.static.is_visible = True
-two_eyes.graphics.static.fill_points = False
-two_eyes.graphics.static.marker_style = "Circle"
+coverage.graphics.static.is_visible = True
+coverage.graphics.static.fill_points = False
+coverage.graphics.static.marker_style = "Circle"
 
 # View the figure of merit using the 3d graphics window:
 
@@ -268,9 +287,9 @@ globe_plotter.show()
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_SATISFACTION_TYPE
 
 
-two_eyes.definition.satisfaction.enable_satisfaction = True
-two_eyes.definition.satisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
-two_eyes.definition.satisfaction.satisfaction_threshold = 2
+coverage.definition.satisfaction.enable_satisfaction = True
+coverage.definition.satisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+coverage.definition.satisfaction.satisfaction_threshold = 2
 # -
 
 # The 3D Graphics window immediately reflects the reduction in the amount of the coverage region that satisfies the 'at least 2' criterion.
@@ -284,12 +303,12 @@ from ansys.stk.core.utilities.colors import Color
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
 
 
-two_eyes.graphics.static.is_visible = False
-two_eyes.graphics.animation.contours.is_visible = True
-two_eyes.graphics.animation.contours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
-level1 = two_eyes.graphics.animation.contours.level_attributes.add_level(1)
+coverage.graphics.static.is_visible = False
+coverage.graphics.animation.contours.is_visible = True
+coverage.graphics.animation.contours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+level1 = coverage.graphics.animation.contours.level_attributes.add_level(1)
 level1.color = Color.from_rgb(250, 7, 214)
-level2 = two_eyes.graphics.animation.contours.level_attributes.add_level(2)
+level2 = coverage.graphics.animation.contours.level_attributes.add_level(2)
 level2.color = Color.from_rgb(45, 250, 195)
 # -
 
@@ -297,7 +316,7 @@ level2.color = Color.from_rgb(45, 250, 195)
 
 root.rewind()
 
-globe_plotter.camera.position = [-10290, 33525, 780]
+globe_plotter.camera.position = [-34200, -7780, 340]
 globe_plotter.show()
 
 root.play_forward()
@@ -308,5 +327,28 @@ root.play_forward()
 
 # The Satisfied by Time report summarizes the percentage and true area of the grid that satisfies the Figure Of Merit at each time step:
 
-satisfied_by_time_result = two_eyes.data_providers.item("Satisfied by Time").exec(scenario.start_time, scenario.stop_time, 60.0)
-satisfied_by_time_result.data_sets.to_pandas_dataframe()
+satisfied_by_time_result = coverage.data_providers.item("Satisfied by Time").exec(scenario.start_time, scenario.stop_time, 60.0)
+satisfied_by_time_df = satisfied_by_time_result.data_sets.to_pandas_dataframe()
+satisfied_by_time_df
+
+# Visualize the data with a line chart:
+
+# +
+import pandas as pd
+
+
+# convert data to correct types
+satisfied_by_time_df['time'] = pd.to_datetime(satisfied_by_time_df["time"])
+satisfied_by_time_df.set_index('time')
+satisfied_by_time_df['percent satisfied'] = pd.to_numeric(satisfied_by_time_df['percent satisfied'])
+# plot data
+satisfaction_plot = satisfied_by_time_df.plot(x='time', y='percent satisfied', color='#fd91ff')
+# set legend, label, title, and grid
+satisfaction_plot.get_legend().set_visible(False)
+plt.ylabel('percent satisfied')
+plt.title('Satisfaction over Time')
+satisfaction_plot.set_facecolor('#f7f7f7')
+satisfaction_plot.grid(visible=True, which='both')
+# -
+
+
