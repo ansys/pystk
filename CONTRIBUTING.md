@@ -260,29 +260,34 @@ tox -f docker-rm-{centos,ubuntu,windows}_container-{py38,py39,py310}
 
 ### General guidelines
 
-- Start the example with an explanation of the main topic. For example, if you are discussing a certain orbital maneuver, explain what that maneuver entails. Similarly, if an example is centered around satellite coverage, provide an explanation of what coverage is. Try to use as many keywords as possible in this section.
+- Start the example with an explanation of the main topic. For example, if you are discussing a certain orbital maneuver, explain what that maneuver entails. Similarly, if an example is centered around satellite coverage, provide an explanation of what coverage is. Try to use as many relevant keywords as possible in this section to optimize for Search Engine Optimization.
 - The second section of the example should be a problem statement. This statement should include all of the parameters needed in the example, as well as a description of what the example aims to determine. Write this section in an imperative form.
-- Include an explanation with each code cell. In a Jupyter notebook, this entails adding a markdown cell before each code cell.
+- Include an explanation with each code cell. In a Jupyter notebook, this entails adding a markdown cell before each code cell. The explanations should be included before, not after, the corresponding code.
 - The examples are built with the documentation and included in the help. As part of the build process, screenshots of the STK Engine 2D and 3D graphics are inserted in the document. You do not need to include the screenshots yourself. However, do include the graphics widgets (2D or 3D) at points in your example. When the documentation is built, a screenshot of the widget will be inserted in its place.
     - These widgets are included in `ansys.stk.core.stkengine.experimental.jupyterwidgets`
     - To include a 2D widget run:
 
-        `from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget`
+        ```python
+        from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget
 
-        `map_plotter = MapWidget(root, 640, 480)`
+        map_plotter = MapWidget(root, 640, 480)
 
-        `map_plotter.show()`
+        map_plotter.show()
+        ```
 
     - To include a 3D widget run:
 
-        `from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget`
+        ```python
+        from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
-        ` globe_plotter = GlobeWidget(root, 640, 480)`
+        globe_plotter = GlobeWidget(root, 640, 480)
 
-        `globe_plotter.show()`
+        globe_plotter.show()
+        ```
 
     - At any point where a screenshot should appear, show the plotter.
 - As part of the documentation build process, screenshots of any graphs that are included will also be inserted. At any point where a screenshot of a graph should appear, show the graph using `matplotlib` or another Python plotting library.
+- Designate a fixed time frame for the scenario. This ensures that the scenario will be consistent every time the documentation builds, and will not change per build based on the current date.
 
 ### Set-up
 
@@ -304,7 +309,8 @@ If your example requires any dependencies that are not already present in the `d
 - Avoid first-person pronoun usage, and minimize use of second-person pronouns. Instead, use the imperative voice.
 - Use LaTeX format for things such as latitude and longitude coordinates, angles, and orbital parameters.
 - Insert 2 blank lines between import statements and the first instruction after.
-- Use inline highlights for paths to objects and the names of interfaces, classes, methods, properties, and enumerations. 
+- Use inline highlights for paths to objects and the names of interfaces, classes, methods, properties, and enumerations.
+- Imports should be sorted in 3 groups: standard library, third party, and local packages. Within those groups, use alphabetical order.
 
 ## Additional documentation
 
