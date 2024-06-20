@@ -1,6 +1,6 @@
 # # Satellite coverage area calculator
 #
-# This tutorial demonstrates how to calculate satellite coverage using PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/GetStart_7_Coverage.htm).
+# This tutorial demonstrates how to calculate satellite coverage using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/GetStart_7_Coverage.htm).
 #
 # ## What is satellite coverage?
 #
@@ -207,14 +207,18 @@ latitude_df
 import matplotlib.pyplot as plt
 
 
-# create plot
-latitude_line = latitude_df.plot.line(x='latitude', y='percent time covered', color='#fd91ff')
-# configure background, legend, title, grid, and labels
-latitude_line.set_facecolor('#f7f7f7')
-latitude_line.get_legend().remove()
-latitude_line.set_title('Coverage by Latitude')
-latitude_line.grid(visible=True, which='both')
-plt.ylabel('percent time covered')
+
+ax = latitude_df.plot.line(x="latitude", y="percent time covered", color="royalblue")
+
+# Configure the sytle of the plot
+ax.get_legend().remove()
+ax.set_facecolor("whitesmoke")
+ax.grid(visible=True, which='both')
+
+# Set title and axes labels
+ax.set_title("Coverage by Latitude")
+ax.set_xlabel("Latitude")
+ax.set_ylabel("Percent time covered")
 
 plt.show()
 # -
@@ -230,9 +234,9 @@ tropics.graphics.static.is_points_visible = False
 
 # ### Create a Figure of Merit
 
-# Create a Figure of Merit named TwoEyes:
+# Create a Figure of Merit:
 
-coverage = tropics.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "TwoEyes")
+coverage = tropics.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "Coverage")
 
 # ### Define the coverage
 
@@ -342,14 +346,21 @@ import pandas as pd
 satisfied_by_time_df['time'] = pd.to_datetime(satisfied_by_time_df["time"])
 satisfied_by_time_df.set_index('time')
 satisfied_by_time_df['percent satisfied'] = pd.to_numeric(satisfied_by_time_df['percent satisfied'])
-# plot data
-satisfaction_plot = satisfied_by_time_df.plot(x='time', y='percent satisfied', color='#fd91ff')
-# set legend, label, title, and grid
-satisfaction_plot.get_legend().set_visible(False)
-plt.ylabel('percent satisfied')
-plt.title('Satisfaction over Time')
-satisfaction_plot.set_facecolor('#f7f7f7')
-satisfaction_plot.grid(visible=True, which='both')
+satisfied_by_time_df['percent accum coverage'] = pd.to_numeric(satisfied_by_time_df['percent accum coverage'])
+
+# Plot data
+ax = satisfied_by_time_df.plot(x='time', y='percent satisfied', color='fuchsia', label="Satisfied")
+ax = satisfied_by_time_df.plot(x='time', y='percent accum coverage', color='royalblue', ax=ax, label="Accumulated")
+
+# Set title and axes labels
+ax.set_title('Satisfaction over Time')
+ax.set_xlabel("Time")
+ax.set_ylabel('Percentage %')
+
+# Configure style
+ax.set_facecolor('whitesmoke')
+ax.grid(visible=True, which='both')
+ax.legend(shadow=True)
 
 plt.show()
 # -

@@ -22,7 +22,6 @@ from ansys.stk.core.stkengine import STKEngine
 
 stk = STKEngine.start_application(noGraphics=False)
 print(f"Using {stk.version}")
-root = stk.new_object_root()
 # -
 
 # ## Create a new scenario
@@ -31,7 +30,8 @@ root = stk.new_object_root()
 
 # **Note:** There can be only one scenario open at a time.
 
-root.new_scenario("MyScenario")
+root = stk.new_object_root()
+root.new_scenario("SatelliteAccessScenario")
 
 # Once the scenario is created, it is possible to show a 3D graphics window by running:
 
@@ -71,11 +71,8 @@ facility.position.assign_planetodetic(40, -80, 0)
 
 # Get the current position of the facility:
 
-positions = facility.position.query_planetodetic_array()
-lat = positions[0]
-lon = positions[1]
-alt = positions[2]
-print(f"Latitude:{lat}\nLongitude:{lon}\nAltitude:{alt}")
+latitude, longitude, altitude = facility.position.query_planetodetic_array()
+print(f"{latitude = }", f"{longitude = }", f"{altitude = }", sep="\n")
 
 # The previous code shows how to set and get a cartodetic (latitude, longitude, altitude) position for a static STK object. The ``position`` property is of the type ``IPosition`` located in the STK Utility library (``ansys.stk.core.stkutil``).
 
@@ -86,7 +83,7 @@ print(f"Latitude:{lat}\nLongitude:{lon}\nAltitude:{alt}")
 facility.graphics.use_inst_name_label = False
 facility.graphics.label_name = "My Facility"
 
-# ### Add a child object (sensor) to a facility
+# ### Add a sensor to a facility
 
 # The Sensor object belongs to a group of sub objects. The Sensor object cannot exist by itself. It must be attached to another object, such as a facility or aircraft.
 
@@ -292,6 +289,6 @@ magnitude = parameter_sets.embedded_components.item("From-To-AER(Body).Cartesian
 
 min_times = parameter_sets.embedded_components.item("From-To-AER(Body).Cartesian.Magnitude.TimesOfLocalMin")
 time_array = min_times.find_times().times
-for i in range(0, len(time_array)):
-    result = magnitude.evaluate(time_array[i])
-    print(f"result at time {time_array[i]}: {result.value}")
+for at_time in time_array:
+    result = magnitude.evaluate(at_time)
+    print(f"Result at time {at_time}: {result.value}")
