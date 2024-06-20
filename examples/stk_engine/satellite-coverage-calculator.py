@@ -208,9 +208,9 @@ import matplotlib.pyplot as plt
 
 
 
-ax = latitude_df.plot.line(x="latitude", y="percent time covered", color="royalblue")
+ax = latitude_df.plot.line(x="latitude", y="percent time covered", color="hotpink")
 
-# Configure the sytle of the plot
+# Configure the style of the plot
 ax.get_legend().remove()
 ax.set_facecolor("whitesmoke")
 ax.grid(visible=True, which='both')
@@ -349,8 +349,8 @@ satisfied_by_time_df['percent satisfied'] = pd.to_numeric(satisfied_by_time_df['
 satisfied_by_time_df['percent accum coverage'] = pd.to_numeric(satisfied_by_time_df['percent accum coverage'])
 
 # Plot data
-ax = satisfied_by_time_df.plot(x='time', y='percent satisfied', color='fuchsia', label="Satisfied")
-ax = satisfied_by_time_df.plot(x='time', y='percent accum coverage', color='royalblue', ax=ax, label="Accumulated")
+ax = satisfied_by_time_df.plot(x='time', y='percent satisfied', color='dodgerblue', label="Satisfied")
+ax = satisfied_by_time_df.plot(x='time', y='percent accum coverage', color='firebrick', ax=ax, label="Accumulated")
 
 # Set title and axes labels
 ax.set_title('Satisfaction over Time')
@@ -363,6 +363,3 @@ ax.grid(visible=True, which='both')
 ax.legend(shadow=True)
 
 plt.show()
-# -
-
-

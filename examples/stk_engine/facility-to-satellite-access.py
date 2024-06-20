@@ -43,6 +43,14 @@ plotter = GlobeWidget(root, 640, 480)
 plotter.show()
 # -
 
+# ## Set the scenario time period
+
+# Using the newly created scenario, set the start and stop times. Rewind the scenario so that the graphics match the start and stop times of the scenario:
+
+scenario = root.current_scenario
+scenario.set_time_period("5 Jun 2022", "6 Jun 2022")
+root.rewind()
+
 # ## Create a facility object
 
 # Create a Static STK Object (facility). All new objects are attached to an existing parent object. In this case, the new facility is added to the children collection of the scenario.
@@ -51,7 +59,7 @@ plotter.show()
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
 
 
-facility = root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "MyFacility")
+facility = root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Philadelphia")
 # -
 
 # **Note:** the “new” method returns an object of the ``IStkObject`` type.
@@ -65,34 +73,34 @@ facility = root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "MyFacil
 root.unit_preferences.item("LatitudeUnit").set_current_unit("deg")
 root.unit_preferences.item("LongitudeUnit").set_current_unit("deg")
 
-# Change the position of the facility to latitude $40^\circ$ and longitude $-80^\circ$:
+# Then, set the position of the facility using a cartodetic (latitude, longitude, altitude) position. The ``position`` property is of the type ``IPosition`` located in the STK Utility library (``ansys.stk.core.stkutil``). Change the position of the facility to latitude $39.95^\circ$ and longitude $-75.16^\circ$, which corresponds approximately to Philadelphia's location:
 
-facility.position.assign_planetodetic(40, -80, 0)
+facility.position.assign_planetodetic(39.95, -75.16, 0)
 
-# Get the current position of the facility:
+# To get the current position of the facility, run:
 
 latitude, longitude, altitude = facility.position.query_planetodetic_array()
 print(f"{latitude = }", f"{longitude = }", f"{altitude = }", sep="\n")
-
-# The previous code shows how to set and get a cartodetic (latitude, longitude, altitude) position for a static STK object. The ``position`` property is of the type ``IPosition`` located in the STK Utility library (``ansys.stk.core.stkutil``).
 
 # ### Change the facility label
 
 # The STK Object Model follows the logic of the STK desktop application. For example, to change the label for the facility, the IFacility interface contains the ``graphics`` property, which in turn contains the ``label_name`` property. To change the label, the “Use Instance Name as Label” property must first be disabled.
 
 facility.graphics.use_inst_name_label = False
-facility.graphics.label_name = "My Facility"
+facility.graphics.label_name = "Philadelphia Facility"
 
 # ### Add a sensor to a facility
 
 # The Sensor object belongs to a group of sub objects. The Sensor object cannot exist by itself. It must be attached to another object, such as a facility or aircraft.
 
-# It is possible to use the ``children`` collection of the facility object to check if “MySensor” is already part of the collection. If the sensor already exists, it is possible to get the sensor object from the children collection. It is also possible to get the object directly from the root object by passing the full path to the sensor object.
+# It is possible to use the ``children`` collection of the facility object to check if “MySensor” is already part of the collection. If the sensor already exists, it is possible to get the sensor object from the children collection using the path from the facility to the sensor.
 
 if (facility.children.contains(STK_OBJECT_TYPE.SENSOR, "MySensor")):
     sensor = root.get_object_from_path('Facility/MyFacility/Sensor/MySensor')
-else:
-    sensor = facility.children.new(STK_OBJECT_TYPE.SENSOR, "MySensor")
+
+# In this case, the sensor has not yet been created, so create the object from the root:
+
+sensor = facility.children.new(STK_OBJECT_TYPE.SENSOR, "MySensor")
 
 # #### Set the sensor pattern
 
@@ -145,7 +153,7 @@ propagator.propagate()
 
 # Visualize the satellite's orbit using the 3D graphics window:
 
-plotter.camera.position = [7850, 17600, 16040]
+plotter.camera.position = [-9520, 14250, 18300]
 plotter.show()
 
 # #### Add access constraints to the satellite
@@ -201,43 +209,49 @@ aer_df
 # Visualize the data using a line chart:
 
 # +
-import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as md
+import pandas as pd
 
 
-# convert axes to correct types
+# Convert columns to correct types
 aer_df['time'] = pd.to_datetime(aer_df["time"])
-aer_df.set_index('time')
+aer_df.set_index('time', inplace=True)
 cols = ['azimuth', 'elevation', 'range']
 aer_df[cols] = aer_df[cols].apply(pd.to_numeric)
 
-# create plot
-fig, aer_ax1 = plt.subplots(figsize=(8, 8))
-# create second axis
-aer_ax2 = aer_ax1.twinx()
-# plot data
-aer_ax2.plot(aer_df['time'], aer_df['range'], color='#ff73e8', label='range (km)')
-aer_ax1.plot(aer_df['time'], aer_df['azimuth'], color='#63b1ff', label='azimuth (deg)')
-aer_ax1.plot(aer_df['time'], aer_df['elevation'], color='#ffbe30', label='elevation (deg)')
+# Create a plot and duplicate the x-axis
+fig, ax1 = plt.subplots(figsize=(8, 8))
+ax2 = ax1.twinx()
 
-# configure labels and grid
-aer_ax2.set_ylabel('Distance')
-aer_ax1.set_ylabel('Angle')
-aer_ax1.set_xlabel('Time')
-lines, labels = aer_ax1.get_legend_handles_labels()
-lines2, labels2 = aer_ax2.get_legend_handles_labels()
-plt.legend(lines + lines2, labels + labels2, loc='upper right')
-plt.title('AER over Time')
-aer_ax1.set_facecolor('#f7f7f7')
-aer_ax1.grid(visible=True, which='both', linestyle='--')
+# Plot range, azimuth, and elevation
+line1, = ax2.plot(aer_df.index, aer_df['range'], color='hotpink', label='Range (km)')
+line2, = ax1.plot(aer_df.index, aer_df['azimuth'], color='skyblue', label='Azimuth (deg)')
+line3, = ax1.plot(aer_df.index, aer_df['elevation'], color='gold', label='Elevation (deg)')
+
+# Set title and axes labels
+ax1.set_title("Azimuth, Elevation, and Range over Time")
+ax1.set_xlabel('Time')
+ax1.set_ylabel("Angle (deg)")
+ax2.set_ylabel('Distance (km)')
+
+# Combine legends
+lines = [line1, line2, line3]
+labels = [line.get_label() for line in lines]
+ax1.legend(lines, labels, shadow=True)
+
+# Configure style
+ax1.set_facecolor("whitesmoke")
+ax1.grid(visible=True, which='both', linestyle='--')
+
+# Improve x-axis formatting
 formatter = md.DateFormatter('%H:%M')
-aer_ax1.xaxis.set_major_formatter(formatter)
-xlocator_major = md.MinuteLocator(interval = 2)
-aer_ax1.xaxis.set_major_locator(xlocator_major)
-xlocator_minor = md.MinuteLocator(interval = 1)
-aer_ax1.xaxis.set_minor_locator(xlocator_minor)
-
+ax1.xaxis.set_major_formatter(formatter)
+# Set major and minor locators
+xlocator_major = md.MinuteLocator(interval=2)
+xlocator_minor = md.MinuteLocator(interval=1)
+ax1.xaxis.set_major_locator(xlocator_major)
+ax1.xaxis.set_minor_locator(xlocator_minor)
 plt.show()
 # -
 
@@ -267,7 +281,7 @@ vector.destination.set_point(satellite.vgt.points.item("Center"))
 from ansys.stk.core.stkobjects import GEOMETRIC_ELEM_TYPE
 
 
-boresight_vector = facility.graphics_3d.vector.reference_crdns.add(GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Facility/MyFacility FromTo Vector")
+boresight_vector = facility.graphics_3d.vector.reference_crdns.add(GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Facility/Philadelphia FromTo Vector")
 facility.graphics_3d.vector.vector_size_scale = 4.0
 # -
 
@@ -292,3 +306,5 @@ time_array = min_times.find_times().times
 for at_time in time_array:
     result = magnitude.evaluate(at_time)
     print(f"Result at time {at_time}: {result.value}")
+
+
