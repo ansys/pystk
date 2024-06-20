@@ -21,7 +21,7 @@
 
 # ## Launch a new STK instance
 #
-# Start by launching a new STK instance. In this example, STKEngine is used with graphics (``noGraphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
+# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``noGraphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -104,7 +104,7 @@ scenario.graphics.sub_planet_points_visible = False
 scenario.graphics.sub_planet_labels_visible = False
 # -
 
-# Finally, the camera position is updated to provite a better overview of the scene with the planets orbiting the Sun.
+# Finally, the camera position is updated to provide a better overview of the scene with the planets orbiting the Sun.
 
 plotter.camera.position = [402322147.89965045, -554001077.0502352, 31332205.857333962]
 plotter.show()
