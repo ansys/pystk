@@ -103,12 +103,10 @@ jobs:
     if: inputs.run-tests || github.event_name == 'schedule'
     strategy:
       matrix:
-        python: ["3.8", "3.9", "3.10"]
+        python: ["3.9", "3.10"]
         is-weekly-run:
           - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
         exclude:
-          - is-weekly-run: true
-            python: "3.8"
           - is-weekly-run: true
             python: "3.9"
       fail-fast: false

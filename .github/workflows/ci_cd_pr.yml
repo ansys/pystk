@@ -5,7 +5,7 @@ on:
 
 env:
   MAIN_PYTHON_VERSION: '3.10'
-  MINIMUM_PYTHON_VERSION: '3.8'
+  MINIMUM_PYTHON_VERSION: '3.9'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -224,13 +224,13 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        # Tests run against Python 3.8 to ensure backwards compatibility with
+        # Tests run against Python 3.9 to ensure backwards compatibility with
         # the lowest supported Python version. Testing against a single version
         # minimizes the time for CI/CD runs.
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.8']
+        python: ['3.9']
       fail-fast: false
     steps:
 
