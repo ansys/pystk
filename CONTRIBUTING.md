@@ -48,7 +48,6 @@ Use the following commands to build the images for your target distribution:
     ~$ docker images
 
     REPOSITORY   TAG                         IMAGE ID       CREATED          SIZE
-    ansys/stk    dev-centos7-python3.8    bffb1a81b5ba   31 seconds ago   2.75GB
     ansys/stk    dev-centos7-python3.10   f045f5453c31   43 seconds ago   2.77GB
     ansys/stk    dev-centos7-python3.9    48c6275abedb   49 seconds ago   2.76GB
     ansys/stk    dev-centos7-pybase       85117878fee1   2 minutes ago    3.22GB
@@ -67,7 +66,6 @@ Use the following commands to build the images for your target distribution:
     REPOSITORY   TAG                             IMAGE ID       CREATED          SIZE
     ansys/stk    dev-ubuntu22.04-python3.10   b73373a4f70f   11 seconds ago   3.75GB
     ansys/stk    dev-ubuntu22.04-python3.9    da1e30388a60   15 seconds ago   3.74GB
-    ansys/stk    dev-ubuntu22.04-python3.8    7492f6675ae8   22 seconds ago   3.74GB
     ansys/stk    dev-ubuntu22.04-pybase       e2207493249c   2 minutes ago    4.15GB
     ansys/stk    dev-ubuntu22.04              4fa0a28358bd   7 minutes ago    3.13GB
     ubuntu       22.04                        1c6025966a65   8 minutes ago    133MB
@@ -84,7 +82,6 @@ Use the following commands to build the images for your target distribution:
     REPOSITORY                                         TAG                                         IMAGE ID       CREATED        SIZE
     ansys/stk                                          dev-windowsservercore-ltsc2019-python3.10   8399f5359163   2 hours ago   20.9GB
     ansys/stk                                          dev-windowsservercore-ltsc2019-python3.9    12ed5235a1e4   2 hours ago   20.9GB
-    ansys/stk                                          dev-windowsservercore-ltsc2019-python3.8    0e5d12988064   2 hours ago   20.9GB
     ansys/stk                                          dev-windowsservercore-ltsc2019-pybase       00868a57cc61   3 hours ago   20.7GB
     ansys/stk                                          dev-windowsservercore-ltsc2019              a8e6508529ba   3 hours ago   20.7GB
     mcr.microsoft.com/dotnet/framework/runtime         4.8-windowsservercore-ltsc2019              6b8d98588f15   4 weeks ago   6.91GB
@@ -99,14 +96,13 @@ Once the images are built, you can create a new container targeting a specific P
 >Make sure that the ANSYSLMD_LICENSE_FILE environment variable is properly configured before starting the container.
 
 ```console
-tox -f docker-run-{centos,ubuntu,windows}_container-{py38,py39,py310}
+tox -f docker-run-{centos,ubuntu,windows}_container-{py39,py310}
 ```
 
 This will start a new virtual environment inside the container and install all the dependencies required to run the tests and generate the project documentation. This will also install Jupyter Lab and its dependencies in that virtual environment.
 
 In the previous command, you need to select the Python version you want to
 use, for instance:
-- `tox -f docker-run-centos_container-py38` will start a CentOS container configured with Python 3.8.
 - `tox -f docker-run-ubuntu_container-py39` will start a Ubuntu container configured with Python 3.9.
 - `tox -f docker-run-windows_container-py310` will start a Windows container configured with Python 3.10.
 
@@ -115,7 +111,7 @@ use, for instance:
 After building the images and running a container, you can execute a command inside the container using:
 
 ```console
-tox -f docker-exec-{centos,ubuntu,windows}_container-{py38,py39,py310} -- {command}
+tox -f docker-exec-{centos,ubuntu,windows}_container-{py39,py310} -- {command}
 ```
 
 For instance, to run `ls -la` inside a previously started CentOS Python 3.10 container, use:
@@ -218,7 +214,7 @@ Here are a few additional examples:
 After building the images and running a container, you can also start Jupyter Lab inside the container using:
 
 ```console
-tox -f docker-lab-{centos,ubuntu,windows}_container-{py38,py39,py310}
+tox -f docker-lab-{centos,ubuntu,windows}_container-{py39,py310}
 ```
 
 In the previous command, you need to select the Python version you want to
@@ -233,7 +229,7 @@ After building the images and running a container, you can also start a desktop 
 To start the container in User Interface mode, run the following command:
 
 ```console
-tox -f docker-novnc-{centos,ubuntu}_container-{py38,py39,py310}
+tox -f docker-novnc-{centos,ubuntu}_container-{py39,py310}
 ```
 
 Once the container is ready, use your browser to navigate to http://127.0.0.1:8888/vnc_auto.html. This will give you access to a simple X11 desktop based on [fluxbox](http://fluxbox.org/), a lightweight windows manager. The user interface is served to your browser using VNC and [novnc](https://novnc.com/info.html). An xterm is also opened on the desktop, with the virtual environment required to run the Python tests activated.
@@ -245,7 +241,7 @@ In addition to running the UI, this configuration also enables `sudo` for the st
 You can stop a running container using:
 
 ```console
-tox -f docker-stop-{centos,ubuntu,windows}_container-{py38,py39,py310}
+tox -f docker-stop-{centos,ubuntu,windows}_container-{py39,py310}
 ```
 
 ## Removing an STK container with Tox
@@ -253,7 +249,7 @@ tox -f docker-stop-{centos,ubuntu,windows}_container-{py38,py39,py310}
 You can remove a container using:
 
 ```console
-tox -f docker-rm-{centos,ubuntu,windows}_container-{py38,py39,py310}
+tox -f docker-rm-{centos,ubuntu,windows}_container-{py39,py310}
 ```
 
 ## Additional documentation
