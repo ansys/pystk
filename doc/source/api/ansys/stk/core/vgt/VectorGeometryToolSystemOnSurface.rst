@@ -1,13 +1,13 @@
 VectorGeometryToolSystemOnSurface
 =================================
 
-.. py:class:: VectorGeometryToolSystemOnSurface
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface
 
-   Bases: py:obj:`~IVectorGeometryToolSystemOnSurface`, py:obj:`~IVectorGeometryToolSystem`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolSystemOnSurface
 
 Overview
 --------

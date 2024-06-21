@@ -1,13 +1,13 @@
 VehicleTrajectoryGraphics3DModel
 ================================
 
-.. py:class:: VehicleTrajectoryGraphics3DModel
+.. py:class:: ansys.stk.core.stkobjects.VehicleTrajectoryGraphics3DModel
 
-   Bases: py:obj:`~IVehicleTrajectoryGraphics3DModel`, py:obj:`~IGraphics3DModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModel`
 
    Marker for launch vehicle or missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleTrajectoryGraphics3DModel
 
 Overview
 --------

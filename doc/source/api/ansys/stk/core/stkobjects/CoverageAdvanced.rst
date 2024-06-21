@@ -1,13 +1,13 @@
 CoverageAdvanced
 ================
 
-.. py:class:: CoverageAdvanced
+.. py:class:: ansys.stk.core.stkobjects.CoverageAdvanced
 
-   Bases: py:obj:`~ICoverageAdvanced`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageAdvanced`
 
    Advanced Properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageAdvanced
 
 Overview
 --------

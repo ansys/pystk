@@ -1,13 +1,13 @@
 IEOIRShapeLEOImaging
 ====================
 
-.. py:class:: IEOIRShapeLEOImaging
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeLEOImaging
 
    IEOIRShapeObject
    
    A LEOImaging shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeLEOImaging
 
 Overview
 --------

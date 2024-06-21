@@ -1,13 +1,13 @@
 IVehicleSGP4OnlineAutoLoad
 ==========================
 
-.. py:class:: IVehicleSGP4OnlineAutoLoad
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4OnlineAutoLoad
 
    IVehicleSGP4LoadData
    
    Do not use this interface, as it is deprecated. Use IAgVeSGP4OnlineLoad instead. Interface for SGP4 propagator. Loads the most current segment from online.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4OnlineAutoLoad
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_latest_seg_from_online`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineAutoLoad.add_latest_seg_from_online`
               - Do not use this method, as it is deprecated. Use AddSegsFromOnline on IAgVeSGP4OnlineLoad instead. Adds the latest segment from Online given an SSC number.
 
 

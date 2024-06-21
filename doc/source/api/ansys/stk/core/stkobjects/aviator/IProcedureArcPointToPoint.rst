@@ -1,13 +1,13 @@
 IProcedureArcPointToPoint
 =========================
 
-.. py:class:: IProcedureArcPointToPoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint
 
    object
    
    Interface used to access the options for an arc point to point procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureArcPointToPoint
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~arc_options`
-            * - :py:meth:`~arc_cruise_airspeed_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~enroute_turn_direction_options`
-            * - :py:meth:`~fly_cruise_airspeed_profile`
-            * - :py:meth:`~vertical_plane_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.arc_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.arc_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_turn_direction_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.fly_cruise_airspeed_profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.vertical_plane_options`
 
 
 Import detail
@@ -52,37 +52,37 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.altitude_options
-    :type: IAgAvtrArcAltitudeOptions
+    :type: IArcAltitudeOptions
 
     Get the altitude options.
 
 .. py:property:: arc_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.arc_options
-    :type: IAgAvtrArcOptions
+    :type: IArcOptions
 
     Get the arc options.
 
 .. py:property:: arc_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.arc_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the arc cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_options
-    :type: IAgAvtrEnrouteOptions
+    :type: IEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_turn_direction_options
-    :type: IAgAvtrEnrouteTurnDirectionOptions
+    :type: IEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: vertical_plane_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.vertical_plane_options
-    :type: IAgAvtrArcVerticalPlaneOptions
+    :type: IArcVerticalPlaneOptions
 
     Get the vertical plane options.
 

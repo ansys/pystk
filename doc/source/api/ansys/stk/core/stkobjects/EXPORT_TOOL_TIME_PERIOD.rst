@@ -1,12 +1,12 @@
 EXPORT_TOOL_TIME_PERIOD
 =======================
 
-.. py:class:: EXPORT_TOOL_TIME_PERIOD
+.. py:class:: ansys.stk.core.stkobjects.EXPORT_TOOL_TIME_PERIOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EXPORT_TOOL_TIME_PERIOD
 
 Overview
 --------

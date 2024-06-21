@@ -1,13 +1,13 @@
 ISensorGraphics3DProjectionElement
 ==================================
 
-.. py:class:: ISensorGraphics3DProjectionElement
+.. py:class:: ansys.stk.core.stkobjects.ISensorGraphics3DProjectionElement
 
    object
    
    Represents elements of the space and target projection collections.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorGraphics3DProjectionElement
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time`
-            * - :py:meth:`~distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DProjectionElement.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DProjectionElement.distance`
 
 
 Import detail

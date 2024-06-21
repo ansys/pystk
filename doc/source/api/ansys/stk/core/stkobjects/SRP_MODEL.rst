@@ -1,12 +1,12 @@
 SRP_MODEL
 =========
 
-.. py:class:: SRP_MODEL
+.. py:class:: ansys.stk.core.stkobjects.SRP_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SRP_MODEL
 
 Overview
 --------

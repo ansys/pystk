@@ -1,12 +1,12 @@
 VEHICLE_SGP4TLE_SELECTION
 =========================
 
-.. py:class:: VEHICLE_SGP4TLE_SELECTION
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SGP4TLE_SELECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SGP4TLE_SELECTION
 
 Overview
 --------

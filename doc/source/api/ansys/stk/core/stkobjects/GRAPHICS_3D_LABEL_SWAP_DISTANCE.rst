@@ -1,12 +1,12 @@
 GRAPHICS_3D_LABEL_SWAP_DISTANCE
 ===============================
 
-.. py:class:: GRAPHICS_3D_LABEL_SWAP_DISTANCE
+.. py:class:: ansys.stk.core.stkobjects.GRAPHICS_3D_LABEL_SWAP_DISTANCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GRAPHICS_3D_LABEL_SWAP_DISTANCE
 
 Overview
 --------

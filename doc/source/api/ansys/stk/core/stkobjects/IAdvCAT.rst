@@ -1,13 +1,13 @@
 IAdvCAT
 =======
 
-.. py:class:: IAdvCAT
+.. py:class:: ansys.stk.core.stkobjects.IAdvCAT
 
    object
    
    AgAdvCAT properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdvCAT
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.compute`
               - Launch the close approach analysis.
-            * - :py:meth:`~get_available_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.get_available_objects`
               - Return a collection of available objects.
-            * - :py:meth:`~get_primary_chosen_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.get_primary_chosen_objects`
               - Return a collection of primary objects.
-            * - :py:meth:`~get_secondary_chosen_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.get_secondary_chosen_objects`
               - Return a collection of secondary objects.
 
     .. tab-item:: Properties
@@ -35,20 +35,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_period`
-            * - :py:meth:`~threshold`
-            * - :py:meth:`~use_range_measure`
-            * - :py:meth:`~display_ack_when_done`
-            * - :py:meth:`~primary_default_class`
-            * - :py:meth:`~advanced`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~primary_default_tangential`
-            * - :py:meth:`~primary_default_cross_track`
-            * - :py:meth:`~primary_default_normal`
-            * - :py:meth:`~secondary_default_class`
-            * - :py:meth:`~secondary_default_tangential`
-            * - :py:meth:`~secondary_default_cross_track`
-            * - :py:meth:`~secondary_default_normal`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.threshold`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.use_range_measure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.display_ack_when_done`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.primary_default_class`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.advanced`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.primary_default_tangential`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.primary_default_cross_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.primary_default_normal`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.secondary_default_class`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.secondary_default_tangential`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.secondary_default_cross_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.secondary_default_normal`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IAdvCAT.time_period
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the time period for the close approach analysis.
 
@@ -94,13 +94,13 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.IAdvCAT.advanced
-    :type: IAgAdvCATAdvanced
+    :type: IAdvCATAdvanced
 
     Get AdvCAT advanced properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IAdvCAT.graphics_3d
-    :type: IAgAdvCATVO
+    :type: IAdvCATGraphics3D
 
     Get AdvCAT advanced properties.
 

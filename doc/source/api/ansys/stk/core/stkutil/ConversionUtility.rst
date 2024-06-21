@@ -1,13 +1,13 @@
 ConversionUtility
 =================
 
-.. py:class:: ConversionUtility
+.. py:class:: ansys.stk.core.stkutil.ConversionUtility
 
-   Bases: py:obj:`~IConversionUtility`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IConversionUtility`
 
    Object that contains a unit conversion utility.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: ConversionUtility
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IMarkerBatchPrimitiveFactory
 ============================
 
-.. py:class:: IMarkerBatchPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory
 
    object
    
    Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IMarkerBatchPrimitiveFactory
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory.initialize`
               - Initialize a default marker batch primitive...
-            * - :py:meth:`~initialize_with_set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory.initialize_with_set_hint`
               - Initialize a marker batch primitive with the specified setHint...
-            * - :py:meth:`~initialize_with_size_source`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory.initialize_with_size_source`
               - Initialize a marker batch primitive with the specified sizeSource...
-            * - :py:meth:`~initialize_with_size_source_and_sort_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory.initialize_with_size_source_and_sort_order`
               - Initialize a marker batch primitive with the specified sizeSource and sortOrder...
-            * - :py:meth:`~initialize_size_source_sort_order_and_set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory.initialize_size_source_sort_order_and_set_hint`
               - Initialize a marker batch primitive with the specified sizeSource, sortOrder, and setHint. This is equivalent to constructing a marker batch with the specified arguments and a marker batch rendering method of Automatic.
-            * - :py:meth:`~initialize_size_source_sort_order_set_hint_and_rendering_method`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory.initialize_size_source_sort_order_set_hint_and_rendering_method`
               - Initialize a marker batch primitive with the specified arguments.
-            * - :py:meth:`~supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory.supported`
               - Determine whether or not the video card supports the marker batch primitive with the given renderingMethod.
 
 

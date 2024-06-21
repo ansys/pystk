@@ -1,13 +1,13 @@
 IAccessTimePeriod
 =================
 
-.. py:class:: IAccessTimePeriod
+.. py:class:: ansys.stk.core.stkobjects.IAccessTimePeriod
 
    object
    
    Allow configuring the object's access interval.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessTimePeriod
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~duration`
-            * - :py:meth:`~access_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimePeriod.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimePeriod.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimePeriod.duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimePeriod.access_interval`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.IAccessTimePeriod.start_time
-    :type: IAgTimePeriodValue
+    :type: ITimePeriodValue
 
     Gets a start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.IAccessTimePeriod.stop_time
-    :type: IAgTimePeriodValue
+    :type: ITimePeriodValue
 
     Gets a stop time. Uses DateFormat Dimension.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: access_interval
     :canonical: ansys.stk.core.stkobjects.IAccessTimePeriod.access_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Returns an access interval.
 

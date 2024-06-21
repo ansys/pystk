@@ -1,13 +1,13 @@
 OrientationQuaternion
 =====================
 
-.. py:class:: OrientationQuaternion
+.. py:class:: ansys.stk.core.stkutil.OrientationQuaternion
 
-   Bases: py:obj:`~IOrientationQuaternion`, py:obj:`~IOrientation`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationQuaternion`, py:obj:`~ansys.stk.core.stkutil.IOrientation`
 
    Quaternion orientation method.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: OrientationQuaternion
 
 Overview
 --------

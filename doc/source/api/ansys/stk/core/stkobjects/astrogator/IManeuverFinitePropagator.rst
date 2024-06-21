@@ -1,13 +1,13 @@
 IManeuverFinitePropagator
 =========================
 
-.. py:class:: IManeuverFinitePropagator
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator
 
    object
    
    Properties for the propagation of a Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverFinitePropagator
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagator_name`
-            * - :py:meth:`~stopping_conditions`
-            * - :py:meth:`~min_propagation_time`
-            * - :py:meth:`~max_propagation_time`
-            * - :py:meth:`~enable_max_propagation_time`
-            * - :py:meth:`~enable_warning_message`
-            * - :py:meth:`~enable_center_burn`
-            * - :py:meth:`~bias`
-            * - :py:meth:`~override_max_propagation_time`
-            * - :py:meth:`~should_stop_for_initially_surpassed_epoch_stopping_conditions`
-            * - :py:meth:`~should_reinitialize_stm_at_start_of_segment_propagation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.propagator_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.stopping_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.min_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.enable_max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.enable_warning_message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.enable_center_burn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.bias`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.override_max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.should_stop_for_initially_surpassed_epoch_stopping_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.should_reinitialize_stm_at_start_of_segment_propagation`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: stopping_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.stopping_conditions
-    :type: IAgVAStoppingConditionCollection
+    :type: IStoppingConditionCollection
 
     Get the stopping conditions list.
 

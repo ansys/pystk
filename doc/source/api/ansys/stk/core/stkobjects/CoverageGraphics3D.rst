@@ -1,13 +1,13 @@
 CoverageGraphics3D
 ==================
 
-.. py:class:: CoverageGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.CoverageGraphics3D
 
-   Bases: py:obj:`~ICoverageGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGraphics3D`
 
    AgCvVOStatic Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageGraphics3D
 
 Overview
 --------

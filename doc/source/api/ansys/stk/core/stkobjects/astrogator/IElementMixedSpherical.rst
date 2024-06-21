@@ -1,13 +1,13 @@
 IElementMixedSpherical
 ======================
 
-.. py:class:: IElementMixedSpherical
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical
 
    IElement
    
    Properties for Mixed Spherical elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementMixedSpherical
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~horizontal_flight_path_angle`
-            * - :py:meth:`~velocity_azimuth`
-            * - :py:meth:`~velocity_magnitude`
-            * - :py:meth:`~vertical_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical.horizontal_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical.velocity_azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical.velocity_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical.vertical_flight_path_angle`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAttitudeControlFinitePlugin
 ============================
 
-.. py:class:: IAttitudeControlFinitePlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin
 
    IAttitudeControlFinite
    
    Properties for the Plugin attitude control for a Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlFinitePlugin
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~select_plugin_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin.select_plugin_by_name`
               - Select plugin using the plugin name.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plugin_name`
-            * - :py:meth:`~plugin_config`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin.plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin.plugin_config`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin.plugin_config
-    :type: IAgVAPluginProperties
+    :type: IPluginProperties
 
     Get the properties of the selected plugin.
 

@@ -1,12 +1,12 @@
 EULER_ORIENTATION_SEQUENCE
 ==========================
 
-.. py:class:: EULER_ORIENTATION_SEQUENCE
+.. py:class:: ansys.stk.core.stkutil.EULER_ORIENTATION_SEQUENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: EULER_ORIENTATION_SEQUENCE
 
 Overview
 --------

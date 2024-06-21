@@ -1,13 +1,13 @@
 StateCalcCloseApproachCosBearing
 ================================
 
-.. py:class:: StateCalcCloseApproachCosBearing
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCloseApproachCosBearing
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCloseApproachCosBearing`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachCosBearing`
 
    CloseApproachCosBearing Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcCloseApproachCosBearing
 
 Overview
 --------

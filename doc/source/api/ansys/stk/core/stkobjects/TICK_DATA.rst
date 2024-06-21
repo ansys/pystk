@@ -1,12 +1,12 @@
 TICK_DATA
 =========
 
-.. py:class:: TICK_DATA
+.. py:class:: ansys.stk.core.stkobjects.TICK_DATA
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TICK_DATA
 
 Overview
 --------

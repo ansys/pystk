@@ -1,13 +1,13 @@
 IBoundingSphere
 ===============
 
-.. py:class:: IBoundingSphere
+.. py:class:: ansys.stk.core.graphics.IBoundingSphere
 
    object
    
    A sphere that encapsulates an object.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IBoundingSphere
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~center`
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.graphics.IBoundingSphere.center`
+            * - :py:attr:`~ansys.stk.core.graphics.IBoundingSphere.radius`
 
 
 Import detail

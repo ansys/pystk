@@ -1,13 +1,13 @@
 IBasicManeuverStrategyLoop
 ==========================
 
-.. py:class:: IBasicManeuverStrategyLoop
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop
 
    object
    
    Interface used to access options for a Loop Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyLoop
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeeds`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.set_airspeeds`
               - Set the speeds at the top and bottom of the loop.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~loop_angle`
-            * - :py:meth:`~loop_angle_mode`
-            * - :py:meth:`~top_load_factor`
-            * - :py:meth:`~bottom_load_factor`
-            * - :py:meth:`~hold_init_tas`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~top_airspeed`
-            * - :py:meth:`~bottom_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.loop_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.loop_angle_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.top_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.bottom_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.hold_init_tas`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.top_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.bottom_airspeed`
 
 
 Import detail

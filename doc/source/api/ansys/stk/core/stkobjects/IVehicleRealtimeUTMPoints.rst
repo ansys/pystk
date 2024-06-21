@@ -1,13 +1,13 @@
 IVehicleRealtimeUTMPoints
 =========================
 
-.. py:class:: IVehicleRealtimeUTMPoints
+.. py:class:: ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints
 
    object
    
    Add one ephemeris point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleRealtimeUTMPoints
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints.add_position`
               - Add an ephemeris point using position only. Valid values for <ZoneStr> are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in Distance.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints.add`
               - Add an ephemeris point. Valid values for <ZoneStr> are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in Distance. LonRate and LatRate are entered in degrees/second. AltRate is entered in Distance/second.
 
 

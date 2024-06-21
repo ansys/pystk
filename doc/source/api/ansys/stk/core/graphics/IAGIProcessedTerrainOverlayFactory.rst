@@ -1,13 +1,13 @@
 IAGIProcessedTerrainOverlayFactory
 ==================================
 
-.. py:class:: IAGIProcessedTerrainOverlayFactory
+.. py:class:: ansys.stk.core.graphics.IAGIProcessedTerrainOverlayFactory
 
    object
    
    A terrain overlay for handling AGI Processed Terrain (PDTT) files.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAGIProcessedTerrainOverlayFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IAGIProcessedTerrainOverlayFactory.initialize_with_string`
               - Initialize an agi processed terrain overlay with the provided values.
 
 

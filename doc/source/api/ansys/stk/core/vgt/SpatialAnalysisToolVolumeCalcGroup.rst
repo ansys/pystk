@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeCalcGroup
 ==================================
 
-.. py:class:: SpatialAnalysisToolVolumeCalcGroup
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcGroup
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcGroup`
 
    Access or create VGT volume calc associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeCalcGroup
 
 Overview
 --------

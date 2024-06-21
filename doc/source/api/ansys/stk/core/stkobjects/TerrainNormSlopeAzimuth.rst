@@ -1,13 +1,13 @@
 TerrainNormSlopeAzimuth
 =======================
 
-.. py:class:: TerrainNormSlopeAzimuth
+.. py:class:: ansys.stk.core.stkobjects.TerrainNormSlopeAzimuth
 
-   Bases: py:obj:`~ITerrainNormData`, py:obj:`~ITerrainNormSlopeAzimuth`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITerrainNormData`, py:obj:`~ansys.stk.core.stkobjects.ITerrainNormSlopeAzimuth`
 
    Class defining Slope/Azimuth data for the TerrainNormal.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TerrainNormSlopeAzimuth
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ICartesian
 ==========
 
-.. py:class:: ICartesian
+.. py:class:: ansys.stk.core.stkutil.ICartesian
 
    IPosition
    
    IAgCartesian Interface used to access a position using Cartesian Coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: ICartesian
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian.x`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian.y`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian.z`
 
 
 Import detail

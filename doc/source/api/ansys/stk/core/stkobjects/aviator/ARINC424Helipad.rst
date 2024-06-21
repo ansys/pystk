@@ -1,13 +1,13 @@
 ARINC424Helipad
 ===============
 
-.. py:class:: ARINC424Helipad
+.. py:class:: ansys.stk.core.stkobjects.aviator.ARINC424Helipad
 
-   Bases: py:obj:`~IARINC424Item`, py:obj:`~ICatalogVTOLPoint`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogVTOLPoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an ARINC424 Helipad.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ARINC424Helipad
 
 Overview
 --------

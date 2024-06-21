@@ -1,13 +1,13 @@
 IStateTransformationFunction
 ============================
 
-.. py:class:: IStateTransformationFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateTransformationFunction
 
    object
    
    Properties for the State Transition propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateTransformationFunction
 
 Overview
 --------

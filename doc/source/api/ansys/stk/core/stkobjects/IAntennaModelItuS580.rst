@@ -1,13 +1,13 @@
 IAntennaModelItuS580
 ====================
 
-.. py:class:: IAntennaModelItuS580
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelItuS580
 
    object
    
    Provide access to the properties and methods defining an ITU-R S580-6 antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelItuS580
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~use_mainlobe_model`
-            * - :py:meth:`~sidelobe_mask_level`
-            * - :py:meth:`~sidelobe_relative_to_mainlobe`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.use_mainlobe_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.sidelobe_mask_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.sidelobe_relative_to_mainlobe`
 
 
 Import detail

@@ -1,13 +1,13 @@
 RadarPulseIntegrationFixedNumberOfPulses
 ========================================
 
-.. py:class:: RadarPulseIntegrationFixedNumberOfPulses
+.. py:class:: ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses
 
-   Bases: py:obj:`~IRadarPulseIntegrationFixedNumberOfPulses`, py:obj:`~IRadarPulseIntegration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses`, py:obj:`~ansys.stk.core.stkobjects.IRadarPulseIntegration`
 
    Class defining the fixed number of pulses integration method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarPulseIntegrationFixedNumberOfPulses
 
 Overview
 --------

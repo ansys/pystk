@@ -1,13 +1,13 @@
 IVehicleRadiationPressure
 =========================
 
-.. py:class:: IVehicleRadiationPressure
+.. py:class:: ansys.stk.core.stkobjects.IVehicleRadiationPressure
 
    object
    
    Interface for additional radiation pressure options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleRadiationPressure
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~file`
-            * - :py:meth:`~ck`
-            * - :py:meth:`~area_mass_ratio`
-            * - :py:meth:`~include_albedo`
-            * - :py:meth:`~include_thermal`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.ck`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.area_mass_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.include_albedo`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.include_thermal`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ICentralBodyEphemerisFile
 =========================
 
-.. py:class:: ICentralBodyEphemerisFile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisFile
 
    ICentralBodyEphemeris
    
    Properties for the Ephemeris File ephemeris source.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyEphemerisFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisFile.filename`
 
 
 Import detail

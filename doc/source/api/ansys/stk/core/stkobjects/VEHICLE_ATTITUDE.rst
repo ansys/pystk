@@ -1,12 +1,12 @@
 VEHICLE_ATTITUDE
 ================
 
-.. py:class:: VEHICLE_ATTITUDE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_ATTITUDE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_ATTITUDE
 
 Overview
 --------

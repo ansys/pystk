@@ -1,13 +1,13 @@
 IAnalysisWorkbenchLLAPosition
 =============================
 
-.. py:class:: IAnalysisWorkbenchLLAPosition
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchLLAPosition
 
    object
    
    A position represented by the Latitude, longtitude and Latitude.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchLLAPosition
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchLLAPosition.latitude`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchLLAPosition.longitude`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchLLAPosition.altitude`
 
 
 Import detail

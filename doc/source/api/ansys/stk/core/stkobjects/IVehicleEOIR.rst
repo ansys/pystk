@@ -1,13 +1,13 @@
 IVehicleEOIR
 ============
 
-.. py:class:: IVehicleEOIR
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEOIR
 
    IEOIR
    
    Property used to access the IAgEOIR interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEOIR
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEOIR.shape`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: shape
     :canonical: ansys.stk.core.stkobjects.IVehicleEOIR.shape
-    :type: IAgEOIRShape
+    :type: IEOIRShape
 
     Property used to access the EOIR interface.
 

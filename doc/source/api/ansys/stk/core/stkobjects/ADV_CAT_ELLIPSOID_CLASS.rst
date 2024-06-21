@@ -1,12 +1,12 @@
 ADV_CAT_ELLIPSOID_CLASS
 =======================
 
-.. py:class:: ADV_CAT_ELLIPSOID_CLASS
+.. py:class:: ansys.stk.core.stkobjects.ADV_CAT_ELLIPSOID_CLASS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ADV_CAT_ELLIPSOID_CLASS
 
 Overview
 --------

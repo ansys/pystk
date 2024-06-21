@@ -1,13 +1,13 @@
 CoverageGraphics
 ================
 
-.. py:class:: CoverageGraphics
+.. py:class:: ansys.stk.core.stkobjects.CoverageGraphics
 
-   Bases: py:obj:`~ICoverageGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGraphics`
 
    2D graphics display options for the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageGraphics
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehiclePropagatorSP3
 =====================
 
-.. py:class:: IVehiclePropagatorSP3
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorSP3
 
    IVehiclePropagator
    
    The SP3 propagator reads .sp3 files of type 'a' and 'c' and allows you to use multiple files in sequence. These files are used to provide precise GPS orbits from the National Geodetic Survey (NGS).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorSP3
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.propagate`
               - Propagates the vehicle's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~interpolation_order`
-            * - :py:meth:`~interpolation_method`
-            * - :py:meth:`~interpolate_across_boundaries`
-            * - :py:meth:`~extrapolate1_past_end`
-            * - :py:meth:`~satellite_identifier`
-            * - :py:meth:`~files`
-            * - :py:meth:`~available_identifiers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.interpolation_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.interpolation_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.interpolate_across_boundaries`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.extrapolate1_past_end`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.satellite_identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.files`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.available_identifiers`
 
 
 Import detail
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: files
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSP3.files
-    :type: IAgVePropagatorSP3FileCollection
+    :type: IVehiclePropagatorSP3FileCollection
 
     Access and manipulate the collection of SP3 files. You can add multiple files to a single satellite object and - if there are no gaps between the files - the whole ephemeris will be propagated in sequence.
 

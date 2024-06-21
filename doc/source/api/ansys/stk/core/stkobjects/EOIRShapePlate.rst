@@ -1,13 +1,13 @@
 EOIRShapePlate
 ==============
 
-.. py:class:: EOIRShapePlate
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapePlate
 
-   Bases: py:obj:`~IEOIRShapePlate`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapePlate`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Plate shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapePlate
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IGraphics3DReferenceAnalysisWorkbenchCollection
 ===============================================
 
-.. py:class:: IGraphics3DReferenceAnalysisWorkbenchCollection
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection
 
    object
    
    Manages the collection of elements that are used to visualize the Vector Geometry Tool components in 3D.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DReferenceAnalysisWorkbenchCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.item`
               - Return an element of the collection at the specified position.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.add`
               - Add a VGT component to the collection. The path must refer to a valid VGT component. The method throws an exception if the path is invalid or if the element already exist.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.remove`
               - Remove an element at the specified position from the collection.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~remove_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.remove_by_name`
               - Remove an element from the collection using the element's path. The method does not throw an exception if the element with the specified name is not in the collection.
-            * - :py:meth:`~get_crdn_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.get_crdn_by_name`
               - Return an element with the specified name and type. The method throws an exception if the element with the specified name does not exist.
 
     .. tab-item:: Properties
@@ -39,9 +39,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~available_crdns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.available_crdns`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ICalculationToolScalarFile
 ==========================
 
-.. py:class:: ICalculationToolScalarFile
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarFile
 
    object
    
    Tabulated scalar calculation data loaded from specified file - a file with .csc extension.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarFile
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.reload`
               - Reload the file specified with Filename property.
-            * - :py:meth:`~get_file_span`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.get_file_span`
               - Compute the interval time span of the file.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file_interpolation_type`
-            * - :py:meth:`~file_interpolation_order`
-            * - :py:meth:`~use_native_file_interpolation_settings`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.filename`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.file_interpolation_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.file_interpolation_order`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.use_native_file_interpolation_settings`
 
 
 Import detail

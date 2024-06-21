@@ -1,13 +1,13 @@
 RadarProbabilityOfDetectionNonCFAR
 ==================================
 
-.. py:class:: RadarProbabilityOfDetectionNonCFAR
+.. py:class:: ansys.stk.core.stkobjects.RadarProbabilityOfDetectionNonCFAR
 
-   Bases: py:obj:`~IRadarProbabilityOfDetectionNonCFAR`, py:obj:`~IRadarProbabilityOfDetection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionNonCFAR`, py:obj:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection`
 
    Class defining the non CFAR probability of detection cfar.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarProbabilityOfDetectionNonCFAR
 
 Overview
 --------

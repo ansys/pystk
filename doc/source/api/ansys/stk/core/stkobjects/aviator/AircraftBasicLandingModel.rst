@@ -1,13 +1,13 @@
 AircraftBasicLandingModel
 =========================
 
-.. py:class:: AircraftBasicLandingModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel
 
-   Bases: py:obj:`~IAircraftBasicLandingModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the basic landing performance model for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftBasicLandingModel
 
 Overview
 --------

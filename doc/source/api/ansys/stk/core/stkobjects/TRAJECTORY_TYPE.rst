@@ -1,12 +1,12 @@
 TRAJECTORY_TYPE
 ===============
 
-.. py:class:: TRAJECTORY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.TRAJECTORY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TRAJECTORY_TYPE
 
 Overview
 --------

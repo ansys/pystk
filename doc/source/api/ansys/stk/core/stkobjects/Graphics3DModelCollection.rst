@@ -1,13 +1,13 @@
 Graphics3DModelCollection
 =========================
 
-.. py:class:: Graphics3DModelCollection
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DModelCollection
 
-   Bases: py:obj:`~IGraphics3DModelData`, py:obj:`~IGraphics3DModelCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModelData`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection`
 
    Collection representing 3D model list.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DModelCollection
 
 Overview
 --------

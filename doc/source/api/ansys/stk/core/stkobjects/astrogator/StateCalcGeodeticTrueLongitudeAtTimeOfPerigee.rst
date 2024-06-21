@@ -1,13 +1,13 @@
 StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
 =============================================
 
-.. py:class:: StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee`
 
    GeodeticTrueLongitudeAtTimeOfPerigee Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcGeodeticTrueLongitudeAtTimeOfPerigee
 
 Overview
 --------

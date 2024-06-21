@@ -1,13 +1,13 @@
 LevelAttribute
 ==============
 
-.. py:class:: LevelAttribute
+.. py:class:: ansys.stk.core.stkobjects.LevelAttribute
 
-   Bases: py:obj:`~ILevelAttribute`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILevelAttribute`
 
    Properties defining display of contour levels.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LevelAttribute
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IUiAxGraphics2DAnalysisCntrl
 ============================
 
-.. py:class:: IUiAxGraphics2DAnalysisCntrl
+.. py:class:: ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl
 
    object
    
    AGI Gfx Analysis control.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IUiAxGraphics2DAnalysisCntrl
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~picture_put_reference`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.picture_put_reference`
               - Set a reference to the splash logo graphic to be displayed in the control.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~back_color`
-            * - :py:meth:`~picture`
-            * - :py:meth:`~no_logo`
-            * - :py:meth:`~vendor_id`
-            * - :py:meth:`~ready_state`
-            * - :py:meth:`~application`
-            * - :py:meth:`~control_mode`
-            * - :py:meth:`~picture_from_file`
-            * - :py:meth:`~win_id`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.back_color`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.picture`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.no_logo`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.vendor_id`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.ready_state`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.application`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.control_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.picture_from_file`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.win_id`
 
 
 Import detail
@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.application
-    :type: IAgSTKXApplication
+    :type: ISTKXApplication
 
     Reference to the STK X application object.
 

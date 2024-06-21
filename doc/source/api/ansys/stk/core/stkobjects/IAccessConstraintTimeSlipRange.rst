@@ -1,13 +1,13 @@
 IAccessConstraintTimeSlipRange
 ==============================
 
-.. py:class:: IAccessConstraintTimeSlipRange
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintTimeSlipRange
 
    IAccessConstraint
    
    IAgAccessCnstrTimeSlipRange used to access the Time Slip Range.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintTimeSlipRange
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~launch_window_start`
-            * - :py:meth:`~launch_window_end`
-            * - :py:meth:`~range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintTimeSlipRange.launch_window_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintTimeSlipRange.launch_window_end`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintTimeSlipRange.range`
 
 
 Import detail

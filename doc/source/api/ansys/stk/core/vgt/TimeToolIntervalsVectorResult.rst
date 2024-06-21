@@ -1,13 +1,13 @@
 TimeToolIntervalsVectorResult
 =============================
 
-.. py:class:: TimeToolIntervalsVectorResult
+.. py:class:: ansys.stk.core.vgt.TimeToolIntervalsVectorResult
 
-   Bases: py:obj:`~ITimeToolIntervalsVectorResult`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolIntervalsVectorResult`
 
    Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolIntervalsVectorResult
 
 Overview
 --------

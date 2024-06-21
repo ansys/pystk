@@ -1,13 +1,13 @@
 VehicleGraphics3DBPlaneEvent
 ============================
 
-.. py:class:: VehicleGraphics3DBPlaneEvent
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent
 
-   Bases: py:obj:`~IVehicleGraphics3DBPlaneEvent`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent`
 
    3D BPlane Event.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DBPlaneEvent
 
 Overview
 --------

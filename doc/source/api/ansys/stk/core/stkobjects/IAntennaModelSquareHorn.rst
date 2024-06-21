@@ -1,13 +1,13 @@
 IAntennaModelSquareHorn
 =======================
 
-.. py:class:: IAntennaModelSquareHorn
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelSquareHorn
 
    object
    
    Provide access to the properties and methods defining a square horn antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelSquareHorn
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~beamwidth`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn.beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn.efficiency`
 
 
 Import detail

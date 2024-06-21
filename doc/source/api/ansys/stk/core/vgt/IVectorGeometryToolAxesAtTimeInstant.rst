@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesAtTimeInstant
 ====================================
 
-.. py:class:: IVectorGeometryToolAxesAtTimeInstant
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant
 
    object
    
    Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesAtTimeInstant
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_time_instant`
-            * - :py:meth:`~source_axes`
-            * - :py:meth:`~reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.reference_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.source_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.reference_axes`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.reference_time_instant
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     A reference time instant. Can be any Time event.
 
 .. py:property:: source_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.source_axes
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     A base axes defining the orientation. Can be any VGT axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAtTimeInstant.reference_axes
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     A reference axes. Can be any VGT axes.
 

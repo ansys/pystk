@@ -1,13 +1,13 @@
 SensorPointingSchedule
 ======================
 
-.. py:class:: SensorPointingSchedule
+.. py:class:: ansys.stk.core.stkobjects.SensorPointingSchedule
 
-   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingSchedule`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingSchedule`
 
    Allow to schedule a sensor to point at a specific location at a specific time.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorPointingSchedule
 
 Overview
 --------

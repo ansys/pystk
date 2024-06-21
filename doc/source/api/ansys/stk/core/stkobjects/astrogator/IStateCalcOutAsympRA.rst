@@ -1,13 +1,13 @@
 IStateCalcOutAsympRA
 ====================
 
-.. py:class:: IStateCalcOutAsympRA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcOutAsympRA
 
    object
    
    Properties for a Outgoing Asymptote RA calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcOutAsympRA
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOutAsympRA.coord_system_name`
 
 
 Import detail

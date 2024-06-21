@@ -1,13 +1,13 @@
 IAnalysisWorkbenchInstance
 ==========================
 
-.. py:class:: IAnalysisWorkbenchInstance
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchInstance
 
    object
    
    The IAgCrdnInstance interface enables to obtain information about the parent object that owns the VGT component.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchInstance
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~instance_path`
-            * - :py:meth:`~template`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchInstance.instance_path`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchInstance.template`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: template
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchInstance.template
-    :type: IAgCrdn
+    :type: IAnalysisWorkbenchComponent
 
     Returns a template object the VGT component was created from or null if the VGT component was not created from a template.
 

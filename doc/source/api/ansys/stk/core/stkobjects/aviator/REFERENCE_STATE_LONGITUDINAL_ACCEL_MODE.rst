@@ -1,12 +1,12 @@
 REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE
 =======================================
 
-.. py:class:: REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE
 
 Overview
 --------

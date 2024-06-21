@@ -1,12 +1,12 @@
 COVERAGE_3D_DRAW_AT_ALTITUDE_MODE
 =================================
 
-.. py:class:: COVERAGE_3D_DRAW_AT_ALTITUDE_MODE
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_3D_DRAW_AT_ALTITUDE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_3D_DRAW_AT_ALTITUDE_MODE
 
 Overview
 --------

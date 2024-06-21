@@ -1,12 +1,12 @@
 CENTRAL_BODY_SHAPE
 ==================
 
-.. py:class:: CENTRAL_BODY_SHAPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CENTRAL_BODY_SHAPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CENTRAL_BODY_SHAPE
 
 Overview
 --------

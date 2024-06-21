@@ -1,13 +1,13 @@
 StateCalcOrbitDelaunayG
 =======================
 
-.. py:class:: StateCalcOrbitDelaunayG
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitDelaunayG
 
-   Bases: py:obj:`~IStateCalcOrbitDelaunayG`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitDelaunayG`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass AsStateCalcOrbitDelaunayG.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcOrbitDelaunayG
 
 Overview
 --------

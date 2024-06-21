@@ -1,13 +1,13 @@
 CRComplex
 =========
 
-.. py:class:: CRComplex
+.. py:class:: ansys.stk.core.stkobjects.CRComplex
 
-   Bases: py:obj:`~ICRComplex`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICRComplex`
 
    Class defining a complex number.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CRComplex
 
 Overview
 --------

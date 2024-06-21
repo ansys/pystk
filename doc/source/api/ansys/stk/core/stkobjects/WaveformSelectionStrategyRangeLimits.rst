@@ -1,13 +1,13 @@
 WaveformSelectionStrategyRangeLimits
 ====================================
 
-.. py:class:: WaveformSelectionStrategyRangeLimits
+.. py:class:: ansys.stk.core.stkobjects.WaveformSelectionStrategyRangeLimits
 
-   Bases: py:obj:`~IWaveformSelectionStrategyRangeLimits`, py:obj:`~IWaveformSelectionStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits`, py:obj:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy`
 
    Class defining the range limits waveform selection strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: WaveformSelectionStrategyRangeLimits
 
 Overview
 --------

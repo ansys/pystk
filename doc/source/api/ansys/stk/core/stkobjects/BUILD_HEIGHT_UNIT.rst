@@ -1,12 +1,12 @@
 BUILD_HEIGHT_UNIT
 =================
 
-.. py:class:: BUILD_HEIGHT_UNIT
+.. py:class:: ansys.stk.core.stkobjects.BUILD_HEIGHT_UNIT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BUILD_HEIGHT_UNIT
 
 Overview
 --------

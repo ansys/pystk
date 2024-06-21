@@ -1,13 +1,13 @@
 IRadarActivityTimeIntervalListElement
 =====================================
 
-.. py:class:: IRadarActivityTimeIntervalListElement
+.. py:class:: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement
 
    object
    
    Provide access to the properties and methods defining an entry in the time interval activity list.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarActivityTimeIntervalListElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~active`
-            * - :py:meth:`~start`
-            * - :py:meth:`~stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.active`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.stop`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ProcedureEnroute
 ================
 
-.. py:class:: ProcedureEnroute
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureEnroute
 
-   Bases: py:obj:`~IProcedureEnroute`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining an enroute procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureEnroute
 
 Overview
 --------

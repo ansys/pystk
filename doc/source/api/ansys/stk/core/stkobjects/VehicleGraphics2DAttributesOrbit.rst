@@ -1,13 +1,13 @@
 VehicleGraphics2DAttributesOrbit
 ================================
 
-.. py:class:: VehicleGraphics2DAttributesOrbit
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesOrbit
 
-   Bases: py:obj:`~IVehicleGraphics2DAttributesOrbit`, py:obj:`~IVehicleGraphics2DAttributesBasic`, py:obj:`~IVehicleGraphics2DAttributes`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributes`
 
    2D Graphics attributes for a satellite.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DAttributesOrbit
 
 Overview
 --------

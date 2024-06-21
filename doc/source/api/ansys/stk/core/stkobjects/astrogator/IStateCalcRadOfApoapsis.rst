@@ -1,13 +1,13 @@
 IStateCalcRadOfApoapsis
 =======================
 
-.. py:class:: IStateCalcRadOfApoapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRadOfApoapsis
 
    object
    
    Properties for a Radius Of Apoapsis calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRadOfApoapsis
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadOfApoapsis.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadOfApoapsis.element_type`
 
 
 Import detail

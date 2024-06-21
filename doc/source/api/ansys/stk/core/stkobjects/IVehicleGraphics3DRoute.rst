@@ -1,13 +1,13 @@
 IVehicleGraphics3DRoute
 =======================
 
-.. py:class:: IVehicleGraphics3DRoute
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DRoute
 
    object
    
    3D route graphics interface for great arc vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DRoute
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit_track_data_from_2d`
-            * - :py:meth:`~track_data`
-            * - :py:meth:`~waypoint_markers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.inherit_track_data_from_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.track_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.waypoint_markers`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: track_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.track_data
-    :type: IAgVeVOLeadTrailData
+    :type: IVehicleGraphics3DLeadTrailData
 
     Get the leading/trailing route data.
 
 .. py:property:: waypoint_markers
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.waypoint_markers
-    :type: IAgVeVOWaypointMarkersCollection
+    :type: IVehicleGraphics3DWaypointMarkersCollection
 
     Get the waypoint markers data.
 

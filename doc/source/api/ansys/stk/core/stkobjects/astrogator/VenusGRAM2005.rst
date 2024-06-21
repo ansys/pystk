@@ -1,13 +1,13 @@
 VenusGRAM2005
 =============
 
-.. py:class:: VenusGRAM2005
+.. py:class:: ansys.stk.core.stkobjects.astrogator.VenusGRAM2005
 
-   Bases: py:obj:`~IVenusGRAM2005`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Venus-GRAM 2005 atmospheric propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: VenusGRAM2005
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IElementSphericalRangeRate
 ==========================
 
-.. py:class:: IElementSphericalRangeRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate
 
    IElement
    
    Properties for Spherical Range Rate elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementSphericalRangeRate
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~right_ascension`
-            * - :py:meth:`~declination`
-            * - :py:meth:`~range`
-            * - :py:meth:`~right_ascension_rate`
-            * - :py:meth:`~declination_rate`
-            * - :py:meth:`~range_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.right_ascension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.declination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.right_ascension_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.declination_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.range_rate`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IPlanetOrbitDisplayTime
 =======================
 
-.. py:class:: IPlanetOrbitDisplayTime
+.. py:class:: ansys.stk.core.stkobjects.IPlanetOrbitDisplayTime
 
    object
    
    IAgPlOrbitDisplayTime Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPlanetOrbitDisplayTime
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetOrbitDisplayTime.time`
 
 
 Import detail

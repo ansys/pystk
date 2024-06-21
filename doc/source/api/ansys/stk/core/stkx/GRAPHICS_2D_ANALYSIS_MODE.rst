@@ -1,12 +1,12 @@
 GRAPHICS_2D_ANALYSIS_MODE
 =========================
 
-.. py:class:: GRAPHICS_2D_ANALYSIS_MODE
+.. py:class:: ansys.stk.core.stkx.GRAPHICS_2D_ANALYSIS_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: GRAPHICS_2D_ANALYSIS_MODE
 
 Overview
 --------

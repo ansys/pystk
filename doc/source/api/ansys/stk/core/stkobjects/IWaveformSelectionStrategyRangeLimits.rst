@@ -1,13 +1,13 @@
 IWaveformSelectionStrategyRangeLimits
 =====================================
 
-.. py:class:: IWaveformSelectionStrategyRangeLimits
+.. py:class:: ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits
 
    object
    
    Provide the base interface for a waveform selection strategy which produces a waveform based on target range.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IWaveformSelectionStrategyRangeLimits
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~short_range_limit`
-            * - :py:meth:`~override_default_short_range_waveform`
-            * - :py:meth:`~supported_short_range_waveforms`
-            * - :py:meth:`~short_range_waveform`
-            * - :py:meth:`~medium_range_limit`
-            * - :py:meth:`~override_default_medium_range_waveform`
-            * - :py:meth:`~supported_medium_range_waveforms`
-            * - :py:meth:`~medium_range_waveform`
-            * - :py:meth:`~long_range_limit`
-            * - :py:meth:`~override_default_long_range_waveform`
-            * - :py:meth:`~supported_long_range_waveforms`
-            * - :py:meth:`~long_range_waveform`
-            * - :py:meth:`~override_default_ultra_long_range_waveform`
-            * - :py:meth:`~supported_ultra_long_range_waveforms`
-            * - :py:meth:`~ultra_long_range_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.short_range_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.override_default_short_range_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.supported_short_range_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.short_range_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.medium_range_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.override_default_medium_range_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.supported_medium_range_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.medium_range_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.long_range_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.override_default_long_range_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.supported_long_range_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.long_range_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.override_default_ultra_long_range_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.supported_ultra_long_range_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits.ultra_long_range_waveform`
 
 
 Import detail

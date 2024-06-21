@@ -1,12 +1,12 @@
 COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE
 ========================================
 
-.. py:class:: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE
+.. py:class:: ansys.stk.core.stkobjects.COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IMissionControlSequenceUpdate
 =============================
 
-.. py:class:: IMissionControlSequenceUpdate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate
 
    object
    
    Properties for an Update segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceUpdate
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_action_and_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.set_action_and_value`
               - Set an action and the new value.
-            * - :py:meth:`~get_action`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.get_action`
               - Get the action type for a parameter.
-            * - :py:meth:`~get_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.get_value`
               - Get the value type for a parameter.
-            * - :py:meth:`~set_action`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.set_action`
               - Set the update action type.
-            * - :py:meth:`~set_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.set_value`
               - Set the update value.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -43,8 +43,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~control_parameters_available`
-            * - :py:meth:`~user_variables`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.user_variables`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.user_variables
-    :type: IAgVAUserVariableUpdateCollection
+    :type: IUserVariableUpdateCollection
 
     Interface used to modify user variables for the update segment.
 

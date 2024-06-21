@@ -1,13 +1,13 @@
 BMagnitudeCalc
 ==============
 
-.. py:class:: BMagnitudeCalc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BMagnitudeCalc
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IBMagnitudeCalc`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IBMagnitudeCalc`
 
    BMag Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BMagnitudeCalc
 
 Overview
 --------

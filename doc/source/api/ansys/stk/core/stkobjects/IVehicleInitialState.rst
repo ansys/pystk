@@ -1,13 +1,13 @@
 IVehicleInitialState
 ====================
 
-.. py:class:: IVehicleInitialState
+.. py:class:: ansys.stk.core.stkobjects.IVehicleInitialState
 
    object
    
    Propagator Initial State.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleInitialState
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~representation`
-            * - :py:meth:`~propagation_frame`
-            * - :py:meth:`~supported_propagation_frames`
-            * - :py:meth:`~orbit_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInitialState.representation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInitialState.propagation_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInitialState.supported_propagation_frames`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInitialState.orbit_epoch`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: representation
     :canonical: ansys.stk.core.stkobjects.IVehicleInitialState.representation
-    :type: IAgOrbitState
+    :type: IOrbitState
 
     Representation.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: orbit_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleInitialState.orbit_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Get the smart epoch component to configure the orbit state epoch.
 

@@ -1,13 +1,13 @@
 IFuelTank
 =========
 
-.. py:class:: IFuelTank
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IFuelTank
 
    object
    
    Properties for fuel tank configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IFuelTank
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~tank_pressure`
-            * - :py:meth:`~tank_volume`
-            * - :py:meth:`~tank_temperature`
-            * - :py:meth:`~fuel_density`
-            * - :py:meth:`~fuel_mass`
-            * - :py:meth:`~maximum_fuel_mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_volume`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.fuel_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.fuel_mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.maximum_fuel_mass`
 
 
 Import detail

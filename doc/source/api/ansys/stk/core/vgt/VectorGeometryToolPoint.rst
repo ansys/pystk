@@ -1,13 +1,13 @@
 VectorGeometryToolPoint
 =======================
 
-.. py:class:: VectorGeometryToolPoint
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPoint
 
-   Bases: py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A generic VGT point class.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPoint
 
 Overview
 --------

@@ -1,13 +1,13 @@
 StateCalcCosOfVerticalFPA
 =========================
 
-.. py:class:: StateCalcCosOfVerticalFPA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCosOfVerticalFPA
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCosOfVerticalFPA`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCosOfVerticalFPA`
 
    CosineOfVerticalFPA Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcCosOfVerticalFPA
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleTargetTimes
 ===================
 
-.. py:class:: IVehicleTargetTimes
+.. py:class:: ansys.stk.core.stkobjects.IVehicleTargetTimes
 
    object
    
    Target times for target pointing attitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleTargetTimes
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~deconflict`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetTimes.deconflict`
               - Deconflict intervals.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_access_times`
-            * - :py:meth:`~access_times`
-            * - :py:meth:`~schedule_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetTimes.use_access_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetTimes.access_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetTimes.schedule_times`
 
 
 Import detail
@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: access_times
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetTimes.access_times
-    :type: IAgAccessTimeCollection
+    :type: IAccessTimeCollection
 
     Get the access times.
 
 .. py:property:: schedule_times
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetTimes.schedule_times
-    :type: IAgVeScheduleTimesCollection
+    :type: IVehicleScheduleTimesCollection
 
     Get the scheduled times.
 

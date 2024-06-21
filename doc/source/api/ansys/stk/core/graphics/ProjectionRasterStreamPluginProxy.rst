@@ -1,13 +1,13 @@
 ProjectionRasterStreamPluginProxy
 =================================
 
-.. py:class:: ProjectionRasterStreamPluginProxy
+.. py:class:: ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy
 
-   Bases: py:obj:`~IProjectionRasterStreamPluginProxy`
+   Bases: py:obj:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy`
 
    A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ProjectionRasterStreamPluginProxy
 
 Overview
 --------

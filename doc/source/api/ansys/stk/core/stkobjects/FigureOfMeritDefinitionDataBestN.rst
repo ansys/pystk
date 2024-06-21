@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionDataBestN
 ================================
 
-.. py:class:: FigureOfMeritDefinitionDataBestN
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionDataBestN`, py:obj:`~IFigureOfMeritDefinitionData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
 
    Navigation accuracy based on best N satellites.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionDataBestN
 
 Overview
 --------

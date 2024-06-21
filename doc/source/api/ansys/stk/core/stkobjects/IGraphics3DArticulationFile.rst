@@ -1,13 +1,13 @@
 IGraphics3DArticulationFile
 ===========================
 
-.. py:class:: IGraphics3DArticulationFile
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DArticulationFile
 
    object
    
    Interface for VO model articulations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DArticulationFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DArticulationFile.reload`
               - Reload articulation file.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DArticulationFile.filename`
 
 
 Import detail

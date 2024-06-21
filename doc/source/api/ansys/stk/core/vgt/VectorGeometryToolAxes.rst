@@ -1,13 +1,13 @@
 VectorGeometryToolAxes
 ======================
 
-.. py:class:: VectorGeometryToolAxes
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxes
 
-   Bases: py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A generic axes class.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAxes
 
 Overview
 --------

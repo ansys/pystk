@@ -1,13 +1,13 @@
 IStateCalcInertialDeltaVMagnitude
 =================================
 
-.. py:class:: IStateCalcInertialDeltaVMagnitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcInertialDeltaVMagnitude
 
    object
    
    Properties for an Inertial DeltaV Magnitude calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcInertialDeltaVMagnitude
 
 Overview
 --------

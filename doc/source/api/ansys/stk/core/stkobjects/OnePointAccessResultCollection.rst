@@ -1,13 +1,13 @@
 OnePointAccessResultCollection
 ==============================
 
-.. py:class:: OnePointAccessResultCollection
+.. py:class:: ansys.stk.core.stkobjects.OnePointAccessResultCollection
 
-   Bases: py:obj:`~IOnePointAccessResultCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOnePointAccessResultCollection`
 
    Represents the data sets for one point access.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OnePointAccessResultCollection
 
 Overview
 --------

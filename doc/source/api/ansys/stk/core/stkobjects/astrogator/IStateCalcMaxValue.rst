@@ -1,13 +1,13 @@
 IStateCalcMaxValue
 ==================
 
-.. py:class:: IStateCalcMaxValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMaxValue
 
    object
    
    Properties for a Maximum Value calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMaxValue
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMaxValue.calc_object_name`
 
 
 Import detail

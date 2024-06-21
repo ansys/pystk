@@ -1,13 +1,13 @@
 IDataProviderResultTimeArrayElements
 ====================================
 
-.. py:class:: IDataProviderResultTimeArrayElements
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements
 
    object
    
    Provide a array result of element values for each time array value.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultTimeArrayElements
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements.get_array`
               - Return an array of values at the specified index.  Valid values of index range from 0 to Count-1.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~valid`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements.valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements.count`
 
 
 Import detail

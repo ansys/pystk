@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_END_GAP_OPTION
 ==============================
 
-.. py:class:: FIGURE_OF_MERIT_END_GAP_OPTION
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_END_GAP_OPTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_END_GAP_OPTION
 
 Overview
 --------

@@ -1,12 +1,12 @@
 PROFILE_INSERT_DIRECTION
 ========================
 
-.. py:class:: PROFILE_INSERT_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PROFILE_INSERT_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PROFILE_INSERT_DIRECTION
 
 Overview
 --------

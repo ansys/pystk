@@ -1,13 +1,13 @@
 IVectorGeometryToolPointCentBodyIntersect
 =========================================
 
-.. py:class:: IVectorGeometryToolPointCentBodyIntersect
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect
 
    object
    
    Point on central body surface along direction vector originating at source point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointCentBodyIntersect
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_range`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.set_range`
               - Set minimum and maximum range. An exception is thrown if Minimum exceeds Maximum. An exception is thrown if UseRangeConstraint is set to true. Applicable only if the range constraint is not used.
 
     .. tab-item:: Properties
@@ -29,17 +29,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~direction_vector`
-            * - :py:meth:`~intersection_surface`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~use_range_constraint`
-            * - :py:meth:`~minimum_range`
-            * - :py:meth:`~maximum_range`
-            * - :py:meth:`~use_minimum_range`
-            * - :py:meth:`~use_maximum_range`
-            * - :py:meth:`~allow_intersection_from_below`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.direction_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.intersection_surface`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.altitude`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.use_range_constraint`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.minimum_range`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.maximum_range`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.use_minimum_range`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.use_maximum_range`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.allow_intersection_from_below`
 
 
 Import detail
@@ -61,13 +61,13 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.reference_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     A reference point. Can be any point from VGT.
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.direction_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     A direction vector. Can be any vector from VGT.
 

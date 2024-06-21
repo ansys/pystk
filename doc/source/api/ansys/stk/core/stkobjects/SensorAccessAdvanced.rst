@@ -1,13 +1,13 @@
 SensorAccessAdvanced
 ====================
 
-.. py:class:: SensorAccessAdvanced
+.. py:class:: ansys.stk.core.stkobjects.SensorAccessAdvanced
 
-   Bases: py:obj:`~ISensorAccessAdvanced`, py:obj:`~IAccessAdvanced`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorAccessAdvanced`, py:obj:`~ansys.stk.core.stkobjects.IAccessAdvanced`
 
    Sensor's advanced targeting access computation properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorAccessAdvanced
 
 Overview
 --------

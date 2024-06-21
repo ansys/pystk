@@ -1,13 +1,13 @@
 AdvancedFixedWingElectricPowerplant
 ===================================
 
-.. py:class:: AdvancedFixedWingElectricPowerplant
+.. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingElectricPowerplant
 
-   Bases: py:obj:`~IAdvancedFixedWingElectricPowerplant`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant`
 
    Class defining an Electric powerplant in the Advanced Fixed Wing Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AdvancedFixedWingElectricPowerplant
 
 Overview
 --------

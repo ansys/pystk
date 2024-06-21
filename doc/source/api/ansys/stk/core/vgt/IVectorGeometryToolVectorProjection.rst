@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorProjection
 ===================================
 
-.. py:class:: IVectorGeometryToolVectorProjection
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorProjection
 
    object
    
    A projection of a vector computed with respect to a reference plane.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorProjection
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~source`
-            * - :py:meth:`~reference_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorProjection.source`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorProjection.reference_plane`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: source
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorProjection.source
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a source vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorProjection.reference_plane
-    :type: IAgCrdnPlaneRefTo
+    :type: IVectorGeometryToolPlaneRefTo
 
     Specify a reference plane.
 

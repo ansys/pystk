@@ -1,13 +1,13 @@
 CentralBodyGravityModel
 =======================
 
-.. py:class:: CentralBodyGravityModel
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyGravityModel
 
-   Bases: py:obj:`~ICentralBodyGravityModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyGravityModel`
 
    Central Body Gravity Model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CentralBodyGravityModel
 
 Overview
 --------

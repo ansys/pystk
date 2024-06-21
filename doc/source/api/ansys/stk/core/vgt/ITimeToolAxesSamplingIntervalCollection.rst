@@ -1,13 +1,13 @@
 ITimeToolAxesSamplingIntervalCollection
 =======================================
 
-.. py:class:: ITimeToolAxesSamplingIntervalCollection
+.. py:class:: ansys.stk.core.vgt.ITimeToolAxesSamplingIntervalCollection
 
    object
    
    A collection of intervals where each interval contains the time, orientation and velocity arrays.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolAxesSamplingIntervalCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingIntervalCollection.item`
               - Access an element at the specified position.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingIntervalCollection.count`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingIntervalCollection._NewEnum`
 
 
 Import detail

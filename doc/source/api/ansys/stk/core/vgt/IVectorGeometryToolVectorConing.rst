@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorConing
 ===============================
 
-.. py:class:: IVectorGeometryToolVectorConing
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorConing
 
    object
    
    Vector created by revolving the Reference vector around the About vector with the specified rate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorConing
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~about_vector`
-            * - :py:meth:`~reference_vector`
-            * - :py:meth:`~start_clock_angle`
-            * - :py:meth:`~stop_clock_angle`
-            * - :py:meth:`~start_epoch`
-            * - :py:meth:`~clock_angle_rate`
-            * - :py:meth:`~mode`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.about_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.reference_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.start_clock_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.stop_clock_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.start_epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.clock_angle_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.mode`
 
 
 Import detail
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: about_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorConing.about_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a vector around which the the reference vector is revolved.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorConing.reference_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a reference vector.
 

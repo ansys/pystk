@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionDataBest4
 =================================
 
-.. py:class:: IFigureOfMeritDefinitionDataBest4
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4
 
    IFigureOfMeritDefinitionData
    
    Navigation accuracy based on best four satellites.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionDataBest4
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_best4_metric_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4.is_best4_metric_supported`
               - Is the type of Best 4 metric supported?
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~best4_metric`
-            * - :py:meth:`~best4_metric_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4.best4_metric`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4.best4_metric_supported_types`
 
 
 Import detail

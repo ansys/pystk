@@ -1,13 +1,13 @@
 SatelliteGraphics3D
 ===================
 
-.. py:class:: SatelliteGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.SatelliteGraphics3D
 
-   Bases: py:obj:`~ISatelliteGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D`
 
    3D Graphics properties of a satellite.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SatelliteGraphics3D
 
 Overview
 --------

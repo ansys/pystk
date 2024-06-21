@@ -1,13 +1,13 @@
 IStateCalcCr
 ============
 
-.. py:class:: IStateCalcCr
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcCr
 
    object
    
    Properties for a Cr calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcCr
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcDifferenceOtherSegment
 ================================
 
-.. py:class:: IStateCalcDifferenceOtherSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment
 
    object
    
    Properties for a Difference Across Segments calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDifferenceOtherSegment
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
-            * - :py:meth:`~other_segment_name`
-            * - :py:meth:`~segment_state_to_use`
-            * - :py:meth:`~difference_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment.other_segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment.segment_state_to_use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment.difference_order`
 
 
 Import detail

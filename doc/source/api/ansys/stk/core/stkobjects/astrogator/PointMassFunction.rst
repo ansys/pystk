@@ -1,13 +1,13 @@
 PointMassFunction
 =================
 
-.. py:class:: PointMassFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PointMassFunction
 
-   Bases: py:obj:`~IPointMassFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPointMassFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Point Mass function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PointMassFunction
 
 Overview
 --------

@@ -1,13 +1,13 @@
 CoverageResolutionDistance
 ==========================
 
-.. py:class:: CoverageResolutionDistance
+.. py:class:: ansys.stk.core.stkobjects.CoverageResolutionDistance
 
-   Bases: py:obj:`~ICoverageResolutionDistance`, py:obj:`~ICoverageResolution`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageResolutionDistance`, py:obj:`~ansys.stk.core.stkobjects.ICoverageResolution`
 
    Distance: Define the location of the grid coordinates by using the specified distance to determine a latitude/longitude spacing scheme at the equator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageResolutionDistance
 
 Overview
 --------

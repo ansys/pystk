@@ -1,13 +1,13 @@
 StateCalcMeanMotion
 ===================
 
-.. py:class:: StateCalcMeanMotion
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMeanMotion
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanMotion`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanMotion`
 
    MeanMotion Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcMeanMotion
 
 Overview
 --------

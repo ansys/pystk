@@ -1,13 +1,13 @@
 OnePointAccessConstraint
 ========================
 
-.. py:class:: OnePointAccessConstraint
+.. py:class:: ansys.stk.core.stkobjects.OnePointAccessConstraint
 
-   Bases: py:obj:`~IOnePointAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOnePointAccessConstraint`
 
    One Point Access Result.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OnePointAccessConstraint
 
 Overview
 --------

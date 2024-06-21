@@ -1,13 +1,13 @@
 AdvancedFixedWingTurbofanBasicABProp
 ====================================
 
-.. py:class:: AdvancedFixedWingTurbofanBasicABProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABProp
 
-   Bases: py:obj:`~IAdvancedFixedWingTurbofanBasicABProp`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp`
 
    Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AdvancedFixedWingTurbofanBasicABProp
 
 Overview
 --------

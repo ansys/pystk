@@ -1,13 +1,13 @@
 IOrbitStateCartesian
 ====================
 
-.. py:class:: IOrbitStateCartesian
+.. py:class:: ansys.stk.core.stkobjects.IOrbitStateCartesian
 
    IOrbitState
    
    Cartesian coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrbitStateCartesian
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coordinate_system_type`
-            * - :py:meth:`~coordinate_system`
-            * - :py:meth:`~x_position`
-            * - :py:meth:`~y_position`
-            * - :py:meth:`~z_position`
-            * - :py:meth:`~x_velocity`
-            * - :py:meth:`~y_velocity`
-            * - :py:meth:`~z_velocity`
-            * - :py:meth:`~supported_coordinate_system_types`
-            * - :py:meth:`~state_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.coordinate_system_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.x_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.y_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.z_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.x_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.y_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.z_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.supported_coordinate_system_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.state_epoch`
 
 
 Import detail
@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateCartesian.coordinate_system
-    :type: IAgOrbitStateCoordinateSystem
+    :type: IOrbitStateCoordinateSystem
 
     Get the coordinate system and epoch.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateCartesian.state_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

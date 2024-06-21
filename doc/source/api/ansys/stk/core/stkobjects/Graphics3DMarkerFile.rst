@@ -1,13 +1,13 @@
 Graphics3DMarkerFile
 ====================
 
-.. py:class:: Graphics3DMarkerFile
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DMarkerFile
 
-   Bases: py:obj:`~IGraphics3DMarkerData`, py:obj:`~IGraphics3DMarkerFile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DMarkerData`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile`
 
    Class defining 3D marker file attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DMarkerFile
 
 Overview
 --------

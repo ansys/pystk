@@ -1,13 +1,13 @@
 IRungeKutta4thAdapt
 ===================
 
-.. py:class:: IRungeKutta4thAdapt
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt
 
    object
    
    Properties for the RK4thAdapt numerical integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IRungeKutta4thAdapt
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initial_step`
-            * - :py:meth:`~use_fixed_step`
-            * - :py:meth:`~use_max_step`
-            * - :py:meth:`~use_min_step`
-            * - :py:meth:`~max_step`
-            * - :py:meth:`~min_step`
-            * - :py:meth:`~max_rel_err`
-            * - :py:meth:`~max_abs_err`
-            * - :py:meth:`~high_safety_coefficient`
-            * - :py:meth:`~low_safety_coefficient`
-            * - :py:meth:`~error_control`
-            * - :py:meth:`~max_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.initial_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.use_fixed_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.use_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.use_min_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.min_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.max_rel_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.max_abs_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.high_safety_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.low_safety_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.error_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.max_iterations`
 
 
 Import detail

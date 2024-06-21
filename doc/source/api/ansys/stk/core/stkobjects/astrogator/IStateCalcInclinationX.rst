@@ -1,13 +1,13 @@
 IStateCalcInclinationX
 ======================
 
-.. py:class:: IStateCalcInclinationX
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcInclinationX
 
    object
    
    Properties for a InclinationX calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcInclinationX
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~inclination_magnitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInclinationX.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInclinationX.inclination_magnitude_type`
 
 
 Import detail

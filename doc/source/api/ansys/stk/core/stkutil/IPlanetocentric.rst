@@ -1,13 +1,13 @@
 IPlanetocentric
 ===============
 
-.. py:class:: IPlanetocentric
+.. py:class:: ansys.stk.core.stkutil.IPlanetocentric
 
    IPosition
    
    Planetocentric Position Type.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IPlanetocentric
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPlanetocentric.lat`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPlanetocentric.lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPlanetocentric.altitude`
 
 
 Import detail

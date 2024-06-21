@@ -1,13 +1,13 @@
 IVehicleLOPSolarRadiationPressure
 =================================
 
-.. py:class:: IVehicleLOPSolarRadiationPressure
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLOPSolarRadiationPressure
 
    object
    
    Solar radiation pressure interface for LOP propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLOPSolarRadiationPressure
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use`
-            * - :py:meth:`~cp`
-            * - :py:meth:`~atmos_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPSolarRadiationPressure.use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPSolarRadiationPressure.cp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPSolarRadiationPressure.atmos_height`
 
 
 Import detail

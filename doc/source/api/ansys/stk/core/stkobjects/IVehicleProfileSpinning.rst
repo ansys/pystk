@@ -1,13 +1,13 @@
 IVehicleProfileSpinning
 =======================
 
-.. py:class:: IVehicleProfileSpinning
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileSpinning
 
    IVehicleAttitudeProfile
    
    Spinning attitude profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileSpinning
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~body`
-            * - :py:meth:`~inertial`
-            * - :py:meth:`~rate`
-            * - :py:meth:`~offset`
-            * - :py:meth:`~smart_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.inertial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.smart_epoch`
 
 
 Import detail
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: body
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileSpinning.body
-    :type: IAgDirection
+    :type: IDirection
 
     Get the spin axis in the body frame.
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileSpinning.inertial
-    :type: IAgDirection
+    :type: IDirection
 
     Get the spin axis in the inertial frame.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileSpinning.smart_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Epoch of the offset.
 

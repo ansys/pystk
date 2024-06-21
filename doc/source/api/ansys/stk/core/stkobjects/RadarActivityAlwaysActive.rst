@@ -1,13 +1,13 @@
 RadarActivityAlwaysActive
 =========================
 
-.. py:class:: RadarActivityAlwaysActive
+.. py:class:: ansys.stk.core.stkobjects.RadarActivityAlwaysActive
 
-   Bases: py:obj:`~IRadarActivity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarActivity`
 
    Class defining radar always active activity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarActivityAlwaysActive
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleGraphics3DLeadTrailData
 ==============================
 
-.. py:class:: VehicleGraphics3DLeadTrailData
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData
 
-   Bases: py:obj:`~IVehicleGraphics3DLeadTrailData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData`
 
    AgLvVOTrajectory2 Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DLeadTrailData
 
 Overview
 --------

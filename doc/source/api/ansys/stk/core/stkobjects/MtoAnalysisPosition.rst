@@ -1,13 +1,13 @@
 MtoAnalysisPosition
 ===================
 
-.. py:class:: MtoAnalysisPosition
+.. py:class:: ansys.stk.core.stkobjects.MtoAnalysisPosition
 
-   Bases: py:obj:`~IMtoAnalysisPosition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoAnalysisPosition`
 
    MTO Position Computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoAnalysisPosition
 
 Overview
 --------

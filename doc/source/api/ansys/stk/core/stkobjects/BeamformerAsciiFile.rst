@@ -1,13 +1,13 @@
 BeamformerAsciiFile
 ===================
 
-.. py:class:: BeamformerAsciiFile
+.. py:class:: ansys.stk.core.stkobjects.BeamformerAsciiFile
 
-   Bases: py:obj:`~IBeamformerAsciiFile`, py:obj:`~IBeamformer`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformerAsciiFile`, py:obj:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a beamformer ascii file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BeamformerAsciiFile
 
 Overview
 --------

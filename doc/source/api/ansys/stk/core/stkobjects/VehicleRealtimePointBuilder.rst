@@ -1,13 +1,13 @@
 VehicleRealtimePointBuilder
 ===========================
 
-.. py:class:: VehicleRealtimePointBuilder
+.. py:class:: ansys.stk.core.stkobjects.VehicleRealtimePointBuilder
 
-   Bases: py:obj:`~IVehicleRealtimePointBuilder`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder`
 
    Allow the user to create vehicle's ephemeris by appending ephemeris points.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleRealtimePointBuilder
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVectorGeometryToolSystemFindInSystemResult
 ===========================================
 
-.. py:class:: IVectorGeometryToolSystemFindInSystemResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult
 
    object
    
    Contains the results returned with IAgCrdnSystem.FindInSystem method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolSystemFindInSystemResult
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~position`
-            * - :py:meth:`~velocity`
-            * - :py:meth:`~rate`
-            * - :py:meth:`~orientation`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.position`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.velocity`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.orientation`
 
 
 Import detail
@@ -46,25 +46,25 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.position
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     A position vector.
 
 .. py:property:: velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.velocity
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     A velocity vector.
 
 .. py:property:: rate
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.rate
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     Rate of change.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Orientation.
 

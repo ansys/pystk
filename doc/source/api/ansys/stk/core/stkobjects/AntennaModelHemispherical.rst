@@ -1,13 +1,13 @@
 AntennaModelHemispherical
 =========================
 
-.. py:class:: AntennaModelHemispherical
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelHemispherical
 
-   Bases: py:obj:`~IAntennaModelHemispherical`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelHemispherical`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a hemispherical antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelHemispherical
 
 Overview
 --------

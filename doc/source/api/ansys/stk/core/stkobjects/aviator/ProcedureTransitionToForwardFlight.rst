@@ -1,13 +1,13 @@
 ProcedureTransitionToForwardFlight
 ==================================
 
-.. py:class:: ProcedureTransitionToForwardFlight
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight
 
-   Bases: py:obj:`~IProcedureTransitionToForwardFlight`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a transition to forward flight procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureTransitionToForwardFlight
 
 Overview
 --------

@@ -1,12 +1,12 @@
 SOLAR_FORCE_METHOD
 ==================
 
-.. py:class:: SOLAR_FORCE_METHOD
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SOLAR_FORCE_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SOLAR_FORCE_METHOD
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcScript
 ================
 
-.. py:class:: IStateCalcScript
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcScript
 
    object
    
    Properties for a Script calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcScript
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_arguments`
-            * - :py:meth:`~inline_func`
-            * - :py:meth:`~unit_dimension`
-            * - :py:meth:`~calc_arguments_link_embed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript.calc_arguments`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript.inline_func`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript.unit_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript.calc_arguments_link_embed`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: calc_arguments
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcScript.calc_arguments
-    :type: IAgVACalcObjectCollection
+    :type: ICalcObjectCollection
 
     Get the arguments to be applied to the function.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: calc_arguments_link_embed
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcScript.calc_arguments_link_embed
-    :type: IAgVACalcObjectLinkEmbedControlCollection
+    :type: ICalcObjectLinkEmbedControlCollection
 
     Get the arguments to be applied to the function.
 

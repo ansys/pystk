@@ -1,12 +1,12 @@
 JET_ENGINE_TURBINE_TYPE
 =======================
 
-.. py:class:: JET_ENGINE_TURBINE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.JET_ENGINE_TURBINE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: JET_ENGINE_TURBINE_TYPE
 
 Overview
 --------

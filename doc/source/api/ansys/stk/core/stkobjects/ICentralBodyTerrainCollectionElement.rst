@@ -1,13 +1,13 @@
 ICentralBodyTerrainCollectionElement
 ====================================
 
-.. py:class:: ICentralBodyTerrainCollectionElement
+.. py:class:: ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement
 
    object
    
    Element of collection of terrain associated with central body.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICentralBodyTerrainCollectionElement
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.get_altitude`
               - Return the altitude at the specified position relative to the input reference surface. If the specified position is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is returned.
-            * - :py:meth:`~get_altitude_batch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.get_altitude_batch`
               - Return the altitudes at the specified position array relative to the input reference surface. If a specified position is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is used.
-            * - :py:meth:`~get_altitudes_between_points_at_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.get_altitudes_between_points_at_resolution`
               - Return the terrain profile at the specified resolution relative to the input reference surface. If a position along the profile is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is used.
-            * - :py:meth:`~get_extent_max_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.get_extent_max_resolution`
               - Return the highest resolution for any terrain that overlaps the specified rectangle.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~terrain_collection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.terrain_collection`
 
 
 Import detail
@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: terrain_collection
     :canonical: ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.terrain_collection
-    :type: IAgTerrainCollection
+    :type: ITerrainCollection
 
     Terrain collection.
 

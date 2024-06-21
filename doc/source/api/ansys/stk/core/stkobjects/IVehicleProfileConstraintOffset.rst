@@ -1,13 +1,13 @@
 IVehicleProfileConstraintOffset
 ===============================
 
-.. py:class:: IVehicleProfileConstraintOffset
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileConstraintOffset
 
    IVehicleAttitudeProfile
    
    Interface for constraint offset for various attitude profiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileConstraintOffset
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~constraint_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileConstraintOffset.constraint_offset`
 
 
 Import detail

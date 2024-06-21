@@ -1,13 +1,13 @@
 ITimeToolPruneFilter
 ====================
 
-.. py:class:: ITimeToolPruneFilter
+.. py:class:: ansys.stk.core.vgt.ITimeToolPruneFilter
 
    object
    
    A filter used with event interval list pruned class to prune interval lists...
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolPruneFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filter_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPruneFilter.filter_type`
 
 
 Import detail

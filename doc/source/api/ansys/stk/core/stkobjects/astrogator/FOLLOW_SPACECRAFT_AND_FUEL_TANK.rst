@@ -1,12 +1,12 @@
 FOLLOW_SPACECRAFT_AND_FUEL_TANK
 ===============================
 
-.. py:class:: FOLLOW_SPACECRAFT_AND_FUEL_TANK
+.. py:class:: ansys.stk.core.stkobjects.astrogator.FOLLOW_SPACECRAFT_AND_FUEL_TANK
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: FOLLOW_SPACECRAFT_AND_FUEL_TANK
 
 Overview
 --------

@@ -1,13 +1,13 @@
 CalculationToolParameterSet
 ===========================
 
-.. py:class:: CalculationToolParameterSet
+.. py:class:: ansys.stk.core.vgt.CalculationToolParameterSet
 
-   Bases: py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSet`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Parameter set contains various sets of scalar computations.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolParameterSet
 
 Overview
 --------

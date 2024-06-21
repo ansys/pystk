@@ -1,13 +1,13 @@
 Quantity
 ========
 
-.. py:class:: Quantity
+.. py:class:: ansys.stk.core.stkutil.Quantity
 
-   Bases: py:obj:`~IQuantity`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IQuantity`
 
    Object that contains a quantity.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Quantity
 
 Overview
 --------

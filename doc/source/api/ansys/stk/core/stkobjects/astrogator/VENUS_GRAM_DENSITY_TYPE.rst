@@ -1,12 +1,12 @@
 VENUS_GRAM_DENSITY_TYPE
 =======================
 
-.. py:class:: VENUS_GRAM_DENSITY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.VENUS_GRAM_DENSITY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: VENUS_GRAM_DENSITY_TYPE
 
 Overview
 --------

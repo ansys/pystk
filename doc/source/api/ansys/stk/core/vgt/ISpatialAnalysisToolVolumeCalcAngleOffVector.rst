@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCalcAngleOffVector
 ============================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCalcAngleOffVector
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector
 
    object
    
    A volume calc angle off vector interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCalcAngleOffVector
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~angle`
-            * - :py:meth:`~reference_plane`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~reference_vector`
-            * - :py:meth:`~about_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.angle`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.about_vector`
 
 
 Import detail
@@ -46,25 +46,25 @@ Property detail
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_plane
-    :type: IAgCrdnPlane
+    :type: IVectorGeometryToolPlane
 
     The Volume Calc Angle Off Vector reference plane.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     The Volume Calc Angle Off Vector reference point.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     The Volume Calc Angle Off Vector reference vector.
 
 .. py:property:: about_vector
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.about_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     The Volume Calc Angle Off Vector reference about vector.
 

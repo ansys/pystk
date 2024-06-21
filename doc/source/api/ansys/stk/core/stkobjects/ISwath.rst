@@ -1,13 +1,13 @@
 ISwath
 ======
 
-.. py:class:: ISwath
+.. py:class:: ansys.stk.core.stkobjects.ISwath
 
    object
    
    Provide access to the Swath properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISwath
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_time_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.add_time_interval`
               - Add an interval to the list of valid swath intervals. Start/Stop Times use DateFormat Dimension.
-            * - :py:meth:`~modify_time_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.modify_time_interval`
               - Modify an interval given an index. Start/Stop Times use DateFormat Dimension.
-            * - :py:meth:`~get_time_interval_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.get_time_interval_index`
               - Retrieve an index given a start and stop time. Start/Stop Times use DateFormat Dimension.
-            * - :py:meth:`~remove_time_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.remove_time_interval`
               - Remove the interval given the start and stop times. Start/Stop Times use DateFormat Dimension.
-            * - :py:meth:`~remove_time_interval_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.remove_time_interval_index`
               - Remove an interval given an index.
-            * - :py:meth:`~remove_all_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.remove_all_intervals`
               - Remove all intervals.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.to_array`
               - Return an array of all time intervals.
 
     .. tab-item:: Properties
@@ -41,17 +41,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~time_interval_count`
-            * - :py:meth:`~minimum_step`
-            * - :py:meth:`~maximum_step`
-            * - :py:meth:`~use_maximum_cone`
-            * - :py:meth:`~scattering_tolerance`
-            * - :py:meth:`~curvature_tolerance`
-            * - :py:meth:`~computational_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.time_interval_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.minimum_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.maximum_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.use_maximum_cone`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.scattering_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.curvature_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.computational_method`
 
 
 Import detail

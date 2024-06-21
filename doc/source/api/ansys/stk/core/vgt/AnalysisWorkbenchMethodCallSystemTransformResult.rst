@@ -1,13 +1,13 @@
 AnalysisWorkbenchMethodCallSystemTransformResult
 ================================================
 
-.. py:class:: AnalysisWorkbenchMethodCallSystemTransformResult
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchMethodCallSystemTransformResult
 
-   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolSystemTransformResult`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult`
 
    Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchMethodCallSystemTransformResult
 
 Overview
 --------

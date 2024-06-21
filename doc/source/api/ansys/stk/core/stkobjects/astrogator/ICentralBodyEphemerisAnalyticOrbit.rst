@@ -1,13 +1,13 @@
 ICentralBodyEphemerisAnalyticOrbit
 ==================================
 
-.. py:class:: ICentralBodyEphemerisAnalyticOrbit
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit
 
    ICentralBodyEphemeris
    
    Properties for the Analytic Orbit ephemeris source.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyEphemerisAnalyticOrbit
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~semi_major_axis_rate`
-            * - :py:meth:`~eccentricity`
-            * - :py:meth:`~eccentricity_rate`
-            * - :py:meth:`~inclination`
-            * - :py:meth:`~inclination_rate`
-            * - :py:meth:`~raan`
-            * - :py:meth:`~raan_rate`
-            * - :py:meth:`~arg_of_periapsis`
-            * - :py:meth:`~arg_of_periapsis_rate`
-            * - :py:meth:`~mean_longitude`
-            * - :py:meth:`~mean_longitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.semi_major_axis_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.eccentricity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.eccentricity_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.inclination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.inclination_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.raan`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.raan_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.arg_of_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.arg_of_periapsis_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.mean_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.mean_longitude_rate`
 
 
 Import detail

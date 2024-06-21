@@ -1,13 +1,13 @@
 IClassicalSizeShapeRadius
 =========================
 
-.. py:class:: IClassicalSizeShapeRadius
+.. py:class:: ansys.stk.core.stkobjects.IClassicalSizeShapeRadius
 
    IClassicalSizeShape
    
    Interface for specifying orbit size and shape using Radius.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalSizeShapeRadius
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_size_shape_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeRadius.set_size_shape_radius`
               - Set both the Apogee Radius and the Perigee Radius. Displays an error message if the value for PerigeeRadius exceeds that for ApogeeRadius. ApogeeRadius/PerigeeRadius use Distance Dimension.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~apogee_radius`
-            * - :py:meth:`~perigee_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeRadius.apogee_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeRadius.perigee_radius`
 
 
 Import detail

@@ -1,13 +1,13 @@
 AntennaModelGpsGlobal
 =====================
 
-.. py:class:: AntennaModelGpsGlobal
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelGpsGlobal
 
-   Bases: py:obj:`~IAntennaModelGpsGlobal`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a GPS global antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelGpsGlobal
 
 Overview
 --------

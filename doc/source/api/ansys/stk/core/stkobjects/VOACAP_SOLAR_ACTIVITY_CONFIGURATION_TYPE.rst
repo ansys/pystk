@@ -1,12 +1,12 @@
 VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
 ========================================
 
-.. py:class:: VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
 
 Overview
 --------

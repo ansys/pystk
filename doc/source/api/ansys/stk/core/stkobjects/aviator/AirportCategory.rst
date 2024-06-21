@@ -1,13 +1,13 @@
 AirportCategory
 ===============
 
-.. py:class:: AirportCategory
+.. py:class:: ansys.stk.core.stkobjects.aviator.AirportCategory
 
-   Bases: py:obj:`~IAirportCategory`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAirportCategory`
 
    Class defining the airport category in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AirportCategory
 
 Overview
 --------

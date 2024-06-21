@@ -1,13 +1,13 @@
 IAntennaModelOpticalSimple
 ==========================
 
-.. py:class:: IAntennaModelOpticalSimple
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple
 
    object
    
    Provide access to the properties and methods defining a simple optical antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelOpticalSimple
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_gain`
-            * - :py:meth:`~max_gain`
-            * - :py:meth:`~area`
-            * - :py:meth:`~efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.compute_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.max_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.efficiency`
 
 
 Import detail

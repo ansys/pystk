@@ -1,13 +1,13 @@
 VehicleGroundEllipsesCollection
 ===============================
 
-.. py:class:: VehicleGroundEllipsesCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection
 
-   Bases: py:obj:`~IVehicleGroundEllipsesCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGroundEllipsesCollection`
 
    List of Ground Ellipses.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGroundEllipsesCollection
 
 Overview
 --------

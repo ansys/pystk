@@ -1,13 +1,13 @@
 IStateCalcTrueAnomaly
 =====================
 
-.. py:class:: IStateCalcTrueAnomaly
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcTrueAnomaly
 
    object
    
    Properties for a Mean True Anomaly calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcTrueAnomaly
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueAnomaly.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueAnomaly.element_type`
 
 
 Import detail

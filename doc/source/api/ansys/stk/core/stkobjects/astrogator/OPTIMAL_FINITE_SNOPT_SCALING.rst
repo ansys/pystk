@@ -1,12 +1,12 @@
 OPTIMAL_FINITE_SNOPT_SCALING
 ============================
 
-.. py:class:: OPTIMAL_FINITE_SNOPT_SCALING
+.. py:class:: ansys.stk.core.stkobjects.astrogator.OPTIMAL_FINITE_SNOPT_SCALING
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: OPTIMAL_FINITE_SNOPT_SCALING
 
 Overview
 --------

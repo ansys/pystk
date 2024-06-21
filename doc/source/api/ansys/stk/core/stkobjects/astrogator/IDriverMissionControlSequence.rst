@@ -1,13 +1,13 @@
 IDriverMissionControlSequence
 =============================
 
-.. py:class:: IDriverMissionControlSequence
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence
 
    object
    
    Properties for the Mission Control Sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDriverMissionControlSequence
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~run_mission_control_sequence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.run_mission_control_sequence`
               - Run the current MCS.
-            * - :py:meth:`~begin_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.begin_run`
               - Begins an individual segment mode run.
-            * - :py:meth:`~end_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.end_run`
               - End an individual segment mode run.
-            * - :py:meth:`~clear_dwc_graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.clear_dwc_graphics`
               - Clear the draw while calculating graphics.
-            * - :py:meth:`~reset_all_profiles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.reset_all_profiles`
               - Reset all active profiles in all target sequences.
-            * - :py:meth:`~apply_all_profile_changes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.apply_all_profile_changes`
               - Apply all active profile changes in all target sequences.
-            * - :py:meth:`~append_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.append_run`
               - Append the existing ephemeris with another individual segment mode run.
-            * - :py:meth:`~append_run_from_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.append_run_from_time`
               - Append the existing ephemeris with another individual segment mode run, starting at a specified time. Ephemeris is cleared from time based on clear direction.
-            * - :py:meth:`~append_run_from_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.append_run_from_state`
               - Append the existing ephemeris with another individual segment mode run, starting at a specified state. Ephemeris is cleared from time based on clear direction.
-            * - :py:meth:`~run_mission_control_sequence2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.run_mission_control_sequence2`
               - Run the current MCS and returns an error code.
 
     .. tab-item:: Properties
@@ -47,10 +47,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~main_sequence`
-            * - :py:meth:`~options`
-            * - :py:meth:`~auto_sequence`
-            * - :py:meth:`~calculation_graphs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.main_sequence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.auto_sequence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.calculation_graphs`
 
 
 Import detail
@@ -66,25 +66,25 @@ Property detail
 
 .. py:property:: main_sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.main_sequence
-    :type: IAgVAMCSSegmentCollection
+    :type: IMissionControlSequenceSegmentCollection
 
     Get the Mission Control Sequence.
 
 .. py:property:: options
     :canonical: ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.options
-    :type: IAgVAMCSOptions
+    :type: IMissionControlSequenceOptions
 
     Get the Mission Control Sequence options.
 
 .. py:property:: auto_sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.auto_sequence
-    :type: IAgVAAutomaticSequenceCollection
+    :type: IAutomaticSequenceCollection
 
     Get the Automatic Sequences.
 
 .. py:property:: calculation_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.calculation_graphs
-    :type: IAgVACalculationGraphCollection
+    :type: ICalculationGraphCollection
 
     Get the calculation graphs.
 

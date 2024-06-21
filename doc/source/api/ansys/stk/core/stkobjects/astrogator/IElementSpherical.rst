@@ -1,13 +1,13 @@
 IElementSpherical
 =================
 
-.. py:class:: IElementSpherical
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementSpherical
 
    IElement
    
    Properties for Spherical elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementSpherical
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~right_ascension`
-            * - :py:meth:`~declination`
-            * - :py:meth:`~radius_magnitude`
-            * - :py:meth:`~horizontal_flight_path_angle`
-            * - :py:meth:`~velocity_azimuth`
-            * - :py:meth:`~velocity_magnitude`
-            * - :py:meth:`~vertical_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical.right_ascension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical.declination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical.radius_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical.horizontal_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical.velocity_azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical.velocity_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical.vertical_flight_path_angle`
 
 
 Import detail

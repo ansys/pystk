@@ -1,13 +1,13 @@
 IVehicleEllipseDataElement
 ==========================
 
-.. py:class:: IVehicleEllipseDataElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEllipseDataElement
 
    object
    
    Ground ellipse data.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEllipseDataElement
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time`
-            * - :py:meth:`~custom_position`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~semi_minor_axis`
-            * - :py:meth:`~bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.custom_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.semi_minor_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.bearing`
 
 
 Import detail

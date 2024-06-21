@@ -1,13 +1,13 @@
 IProfileChangeStoppingConditionState
 ====================================
 
-.. py:class:: IProfileChangeStoppingConditionState
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState
 
    IProfile
    
    Properties for a Change Stopping Condition State profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileChangeStoppingConditionState
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState.set_segment`
               - Set the targeted segment.
-            * - :py:meth:`~set_trigger`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState.set_trigger`
               - Set the targeted stopping condition.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~segment_name`
-            * - :py:meth:`~state`
-            * - :py:meth:`~trigger_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState.segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState.state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState.trigger_name`
 
 
 Import detail

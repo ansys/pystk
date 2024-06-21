@@ -1,12 +1,12 @@
 MINIMIZE_SITE_PROC_TIME_DIFF
 ============================
 
-.. py:class:: MINIMIZE_SITE_PROC_TIME_DIFF
+.. py:class:: ansys.stk.core.stkobjects.aviator.MINIMIZE_SITE_PROC_TIME_DIFF
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MINIMIZE_SITE_PROC_TIME_DIFF
 
 Overview
 --------

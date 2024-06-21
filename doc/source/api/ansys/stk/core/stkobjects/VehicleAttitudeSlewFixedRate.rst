@@ -1,13 +1,13 @@
 VehicleAttitudeSlewFixedRate
 ============================
 
-.. py:class:: VehicleAttitudeSlewFixedRate
+.. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedRate
 
-   Bases: py:obj:`~IVehicleAttitudeSlewFixedRate`, py:obj:`~IVehicleAttitudeSlewBase`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
 
    Fixed rate slew.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleAttitudeSlewFixedRate
 
 Overview
 --------

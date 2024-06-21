@@ -1,13 +1,13 @@
 IAntennaModelGpsFrpa
 ====================
 
-.. py:class:: IAntennaModelGpsFrpa
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelGpsFrpa
 
    object
    
    Provide access to the properties and methods defining a GPS FRPA antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelGpsFrpa
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsFrpa.efficiency`
 
 
 Import detail

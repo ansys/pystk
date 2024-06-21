@@ -1,13 +1,13 @@
 AircraftAdvancedAccelerationModel
 =================================
 
-.. py:class:: AircraftAdvancedAccelerationModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel
 
-   Bases: py:obj:`~IAircraftAdvancedAccelerationModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the advanced acceleration performance model of an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftAdvancedAccelerationModel
 
 Overview
 --------

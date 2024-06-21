@@ -1,13 +1,13 @@
 ITakeoffLowTransition
 =====================
 
-.. py:class:: ITakeoffLowTransition
+.. py:class:: ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition
 
    object
    
    The interface used to access the options for a Low Transition takeoff mode. The mode must be set to Low Transition to access this interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ITakeoffLowTransition
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_runway_terrain`
-            * - :py:meth:`~runway_altitude_offset`
-            * - :py:meth:`~hold_on_deck`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition.use_runway_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition.runway_altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition.hold_on_deck`
 
 
 Import detail

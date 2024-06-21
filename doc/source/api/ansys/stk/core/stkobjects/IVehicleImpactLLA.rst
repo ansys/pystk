@@ -1,13 +1,13 @@
 IVehicleImpactLLA
 =================
 
-.. py:class:: IVehicleImpactLLA
+.. py:class:: ansys.stk.core.stkobjects.IVehicleImpactLLA
 
    object
    
    Interface for LLA (geodetic) coordinates for a missile's impact location.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleImpactLLA
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLA.lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLA.lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLA.altitude`
 
 
 Import detail

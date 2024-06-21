@@ -1,13 +1,13 @@
 IOrientationQuaternion
 ======================
 
-.. py:class:: IOrientationQuaternion
+.. py:class:: ansys.stk.core.stkutil.IOrientationQuaternion
 
    IOrientation
    
    Quaternion representing orientation between two sets of axes.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IOrientationQuaternion
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~qx`
-            * - :py:meth:`~qy`
-            * - :py:meth:`~qz`
-            * - :py:meth:`~qs`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationQuaternion.qx`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationQuaternion.qy`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationQuaternion.qz`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationQuaternion.qs`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IRasterFactory
 ==============
 
-.. py:class:: IRasterFactory
+.. py:class:: ansys.stk.core.graphics.IRasterFactory
 
    object
    
    A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRasterFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_string_uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterFactory.initialize_with_string_uri`
               - Initialize a raster from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported formats.
-            * - :py:meth:`~initialize_with_string_uri_xy_width_and_height`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterFactory.initialize_with_string_uri_xy_width_and_height`
               - Initialize a raster from a Uri. Only the specified subsection of the raster is read. See raster for a list of supported formats.
-            * - :py:meth:`~initialize_with_raster`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterFactory.initialize_with_raster`
               - Initialize a raster from another raster.
 
 

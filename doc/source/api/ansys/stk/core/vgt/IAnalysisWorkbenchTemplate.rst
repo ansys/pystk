@@ -1,13 +1,13 @@
 IAnalysisWorkbenchTemplate
 ==========================
 
-.. py:class:: IAnalysisWorkbenchTemplate
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchTemplate
 
    object
    
    The IAgCrdnTemplate interface enables to obtain information about the STK class that owns the VGT component.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchTemplate
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~class_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchTemplate.class_name`
 
 
 Import detail

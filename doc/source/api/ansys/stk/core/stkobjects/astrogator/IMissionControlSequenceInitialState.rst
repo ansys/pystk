@@ -1,13 +1,13 @@
 IMissionControlSequenceInitialState
 ===================================
 
-.. py:class:: IMissionControlSequenceInitialState
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState
 
    object
    
    Properties for an Initial State segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceInitialState
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.set_element_type`
               - Select an coordinate type.
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.enable_control_parameter`
               - Enable a control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.disable_control_parameter`
               - Disables a control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.is_control_parameter_enabled`
               - Sees if a control is enabled.
 
     .. tab-item:: Properties
@@ -35,14 +35,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~orbit_epoch`
-            * - :py:meth:`~spacecraft_parameters`
-            * - :py:meth:`~fuel_tank`
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~element`
-            * - :py:meth:`~control_parameters_available`
-            * - :py:meth:`~user_variables`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.orbit_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.spacecraft_parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.fuel_tank`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.element`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.user_variables`
 
 
 Import detail
@@ -70,13 +70,13 @@ Property detail
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.spacecraft_parameters
-    :type: IAgVASpacecraftParameters
+    :type: ISpacecraftParameters
 
     Get the spacecraft  parameters.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.fuel_tank
-    :type: IAgVAFuelTank
+    :type: IFuelTank
 
     Get the fuel tank parameters.
 
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: element
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.element
-    :type: IAgVAElement
+    :type: IElement
 
     Get the elements of the selected coordinate type.
 
@@ -100,7 +100,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.user_variables
-    :type: IAgVAUserVariableCollection
+    :type: IUserVariableCollection
 
     Interface used to modify user variables for the initial state segment.
 

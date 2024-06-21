@@ -1,13 +1,13 @@
 AnalysisWorkbenchCollection
 ===========================
 
-.. py:class:: AnalysisWorkbenchCollection
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchCollection
 
-   Bases: py:obj:`~IAnalysisWorkbenchCollection`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchCollection`
 
    A collection of VGT objects.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchCollection
 
 Overview
 --------

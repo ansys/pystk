@@ -1,12 +1,12 @@
 EOIR_THERMAL_MODEL_TYPE
 =======================
 
-.. py:class:: EOIR_THERMAL_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.EOIR_THERMAL_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIR_THERMAL_MODEL_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionTimeAverageGap
 =====================================
 
-.. py:class:: FigureOfMeritDefinitionTimeAverageGap
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionTimeAverageGap
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionTimeAverageGap`, py:obj:`~IFigureOfMeritDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionTimeAverageGap`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Time Average Gap Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionTimeAverageGap
 
 Overview
 --------

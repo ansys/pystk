@@ -1,13 +1,13 @@
 Graphics3DDataDisplayCollection
 ===============================
 
-.. py:class:: Graphics3DDataDisplayCollection
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection
 
-   Bases: py:obj:`~IGraphics3DDataDisplayCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection`
 
    Collection of 3D Graphics data display text.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DDataDisplayCollection
 
 Overview
 --------

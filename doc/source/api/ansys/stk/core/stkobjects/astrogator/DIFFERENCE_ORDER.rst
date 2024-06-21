@@ -1,12 +1,12 @@
 DIFFERENCE_ORDER
 ================
 
-.. py:class:: DIFFERENCE_ORDER
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DIFFERENCE_ORDER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DIFFERENCE_ORDER
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ReceiverModelSimple
 ===================
 
-.. py:class:: ReceiverModelSimple
+.. py:class:: ansys.stk.core.stkobjects.ReceiverModelSimple
 
-   Bases: py:obj:`~IReceiverModelSimple`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverModelSimple`, py:obj:`~ansys.stk.core.stkobjects.IReceiverModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a simple receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceiverModelSimple
 
 Overview
 --------

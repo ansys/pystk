@@ -1,12 +1,12 @@
 ANGLE_MODE
 ==========
 
-.. py:class:: ANGLE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ANGLE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ANGLE_MODE
 
 Overview
 --------

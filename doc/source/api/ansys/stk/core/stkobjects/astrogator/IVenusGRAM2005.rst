@@ -1,13 +1,13 @@
 IVenusGRAM2005
 ==============
 
-.. py:class:: IVenusGRAM2005
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005
 
    object
    
    Properties for the Venus-GRAM 2005 atmospheric model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IVenusGRAM2005
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_approximate_altitude`
-            * - :py:meth:`~computes_temperature`
-            * - :py:meth:`~computes_pressure`
-            * - :py:meth:`~data_directory`
-            * - :py:meth:`~namelist_file`
-            * - :py:meth:`~density_type`
-            * - :py:meth:`~drag_model_type`
-            * - :py:meth:`~drag_model_plugin_name`
-            * - :py:meth:`~drag_model_plugin`
-            * - :py:meth:`~variable_area_history_file`
-            * - :py:meth:`~n_plate_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.use_approximate_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.computes_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.computes_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.data_directory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.namelist_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.density_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.variable_area_history_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.n_plate_definition_file`
 
 
 Import detail
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_plugin
-    :type: IAgVADragModelPlugin
+    :type: IDragModelPlugin
 
     Drag model plugin properties.
 

@@ -1,13 +1,13 @@
 IStateCalcDuration
 ==================
 
-.. py:class:: IStateCalcDuration
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDuration
 
    object
    
    Properties for a Duration calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDuration
 
 Overview
 --------

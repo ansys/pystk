@@ -1,13 +1,13 @@
 ITextureFilter2D
 ================
 
-.. py:class:: ITextureFilter2D
+.. py:class:: ansys.stk.core.graphics.ITextureFilter2D
 
    object
    
    A texture filter.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextureFilter2D
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minification_filter`
-            * - :py:meth:`~magnification_filter`
-            * - :py:meth:`~wrap_s`
-            * - :py:meth:`~wrap_t`
-            * - :py:meth:`~nearest_clamp_to_edge`
-            * - :py:meth:`~nearest_repeat`
-            * - :py:meth:`~linear_clamp_to_edge`
-            * - :py:meth:`~linear_repeat`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2D.minification_filter`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2D.magnification_filter`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2D.wrap_s`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2D.wrap_t`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2D.nearest_clamp_to_edge`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2D.nearest_repeat`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2D.linear_clamp_to_edge`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2D.linear_repeat`
 
 
 Import detail
@@ -67,25 +67,25 @@ Property detail
 
 .. py:property:: nearest_clamp_to_edge
     :canonical: ansys.stk.core.graphics.ITextureFilter2D.nearest_clamp_to_edge
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge.
 
 .. py:property:: nearest_repeat
     :canonical: ansys.stk.core.graphics.ITextureFilter2D.nearest_repeat
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat.
 
 .. py:property:: linear_clamp_to_edge
     :canonical: ansys.stk.core.graphics.ITextureFilter2D.linear_clamp_to_edge
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge.
 
 .. py:property:: linear_repeat
     :canonical: ansys.stk.core.graphics.ITextureFilter2D.linear_repeat
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat.
 

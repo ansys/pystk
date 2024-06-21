@@ -1,12 +1,12 @@
 LIGHTING_CONDITION
 ==================
 
-.. py:class:: LIGHTING_CONDITION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.LIGHTING_CONDITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: LIGHTING_CONDITION
 
 Overview
 --------

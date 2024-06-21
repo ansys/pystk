@@ -1,13 +1,13 @@
 SiteNavaidFromCatalog
 =====================
 
-.. py:class:: SiteNavaidFromCatalog
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog
 
-   Bases: py:obj:`~ISiteNavaidFromCatalog`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteNavaidFromCatalog`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a navaid from catalog site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteNavaidFromCatalog
 
 Overview
 --------

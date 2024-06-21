@@ -1,13 +1,13 @@
 ISensorProjectionDisplayDistance
 ================================
 
-.. py:class:: ISensorProjectionDisplayDistance
+.. py:class:: ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance
 
    object
    
    IAgSnProjDisplayDistance Interface for setting projection altitude options for a sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorProjectionDisplayDistance
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
-            * - :py:meth:`~number_of_steps`
-            * - :py:meth:`~projects_thru_crossing`
-            * - :py:meth:`~altitude_crossing_sides`
-            * - :py:meth:`~direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.number_of_steps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.projects_thru_crossing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.altitude_crossing_sides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.direction`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IGlobeImageOverlay
 ==================
 
-.. py:class:: IGlobeImageOverlay
+.. py:class:: ansys.stk.core.graphics.IGlobeImageOverlay
 
    object
    
    A globe overlay that shows an image.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGlobeImageOverlay
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~use_altitude_based_translucency`
-            * - :py:meth:`~altitude_based_translucency_lower_translucency`
-            * - :py:meth:`~altitude_based_translucency_upper_translucency`
-            * - :py:meth:`~altitude_based_translucency_lower_altitude`
-            * - :py:meth:`~altitude_based_translucency_upper_altitude`
-            * - :py:meth:`~more_than_one_image_globe_overlay_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.use_altitude_based_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.altitude_based_translucency_lower_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.altitude_based_translucency_upper_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.altitude_based_translucency_lower_altitude`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.altitude_based_translucency_upper_altitude`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.more_than_one_image_globe_overlay_supported`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IOnePointAccessResultCollection
 ===============================
 
-.. py:class:: IOnePointAccessResultCollection
+.. py:class:: ansys.stk.core.stkobjects.IOnePointAccessResultCollection
 
    object
    
    Represents the data sets for one point access.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOnePointAccessResultCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResultCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResultCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResultCollection._NewEnum`
 
 
 Import detail

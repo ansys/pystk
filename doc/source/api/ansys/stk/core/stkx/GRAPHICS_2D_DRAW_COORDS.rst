@@ -1,12 +1,12 @@
 GRAPHICS_2D_DRAW_COORDS
 =======================
 
-.. py:class:: GRAPHICS_2D_DRAW_COORDS
+.. py:class:: ansys.stk.core.stkx.GRAPHICS_2D_DRAW_COORDS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: GRAPHICS_2D_DRAW_COORDS
 
 Overview
 --------

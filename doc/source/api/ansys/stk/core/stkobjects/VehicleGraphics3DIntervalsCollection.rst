@@ -1,13 +1,13 @@
 VehicleGraphics3DIntervalsCollection
 ====================================
 
-.. py:class:: VehicleGraphics3DIntervalsCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsCollection
 
-   Bases: py:obj:`~IVehicleGraphics3DIntervalsCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsCollection`
 
    List of Intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DIntervalsCollection
 
 Overview
 --------

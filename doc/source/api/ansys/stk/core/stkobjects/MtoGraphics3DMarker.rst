@@ -1,13 +1,13 @@
 MtoGraphics3DMarker
 ===================
 
-.. py:class:: MtoGraphics3DMarker
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DMarker
 
-   Bases: py:obj:`~IMtoGraphics3DMarker`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker`
 
    MTO 3D graphics marker options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics3DMarker
 
 Overview
 --------

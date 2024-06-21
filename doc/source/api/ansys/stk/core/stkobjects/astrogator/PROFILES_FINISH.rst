@@ -1,12 +1,12 @@
 PROFILES_FINISH
 ===============
 
-.. py:class:: PROFILES_FINISH
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PROFILES_FINISH
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PROFILES_FINISH
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcCloseApproachMagnitude
 ================================
 
-.. py:class:: IStateCalcCloseApproachMagnitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachMagnitude
 
    object
    
    Properties for a CloseApproachMagnitude calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcCloseApproachMagnitude
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachMagnitude.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachMagnitude.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachMagnitude.reference`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachMagnitude.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

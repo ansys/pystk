@@ -1,13 +1,13 @@
 IAccessStoppingCondition
 ========================
 
-.. py:class:: IAccessStoppingCondition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition
 
    IStoppingConditionComponent
    
    Properties for an access stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAccessStoppingCondition
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_base_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.set_base_selection`
               - BaseSelection.
 
     .. tab-item:: Properties
@@ -29,22 +29,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_convergence`
-            * - :py:meth:`~repeat_count`
-            * - :py:meth:`~inherited`
-            * - :py:meth:`~max_trip_times`
-            * - :py:meth:`~sequence`
-            * - :py:meth:`~constraints`
-            * - :py:meth:`~criterion`
-            * - :py:meth:`~before_conditions`
-            * - :py:meth:`~aberration_type`
-            * - :py:meth:`~base_selection_type`
-            * - :py:meth:`~base_selection`
-            * - :py:meth:`~clock_host`
-            * - :py:meth:`~signal_sense`
-            * - :py:meth:`~target_object`
-            * - :py:meth:`~time_delay_convergence_tolerance`
-            * - :py:meth:`~use_light_time_delay`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.time_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.repeat_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.inherited`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.max_trip_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.sequence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.criterion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.before_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.aberration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.base_selection_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.base_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.clock_host`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.signal_sense`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.target_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.time_delay_convergence_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.use_light_time_delay`
 
 
 Import detail
@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.constraints
-    :type: IAgVAConstraintCollection
+    :type: IConstraintCollection
 
     Further conditions that must be met in order for the stopping condition to be deemed satisfied.
 
@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: before_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.before_conditions
-    :type: IAgVAStoppingConditionCollection
+    :type: IStoppingConditionCollection
 
     A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
 
@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: base_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.base_selection
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Returns the base selection object.
 
@@ -138,7 +138,7 @@ Property detail
 
 .. py:property:: target_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition.target_object
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the target object for the access calculation.
 

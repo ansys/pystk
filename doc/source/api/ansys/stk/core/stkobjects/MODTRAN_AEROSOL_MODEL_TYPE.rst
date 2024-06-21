@@ -1,12 +1,12 @@
 MODTRAN_AEROSOL_MODEL_TYPE
 ==========================
 
-.. py:class:: MODTRAN_AEROSOL_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.MODTRAN_AEROSOL_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MODTRAN_AEROSOL_MODEL_TYPE
 
 Overview
 --------

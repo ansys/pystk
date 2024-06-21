@@ -1,13 +1,13 @@
 IEOIRMaterialElementCollection
 ==============================
 
-.. py:class:: IEOIRMaterialElementCollection
+.. py:class:: ansys.stk.core.stkobjects.IEOIRMaterialElementCollection
 
    object
    
    IAgEOIRMaterialElementCollection Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRMaterialElementCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElementCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElementCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElementCollection._NewEnum`
 
 
 Import detail

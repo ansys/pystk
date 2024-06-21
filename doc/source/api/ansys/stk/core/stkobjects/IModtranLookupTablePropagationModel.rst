@@ -1,13 +1,13 @@
 IModtranLookupTablePropagationModel
 ===================================
 
-.. py:class:: IModtranLookupTablePropagationModel
+.. py:class:: ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel
 
    object
    
    Provide access to the properties and methods of the MODTRAN lookup table model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IModtranLookupTablePropagationModel
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_aerosol_model_type_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.set_aerosol_model_type_by_name`
               - Set the aerosol model type by name.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~aerosol_model_type`
-            * - :py:meth:`~visibility`
-            * - :py:meth:`~relative_humidity`
-            * - :py:meth:`~surface_temperature`
-            * - :py:meth:`~supported_aerosol_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.aerosol_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.visibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.relative_humidity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.supported_aerosol_models`
 
 
 Import detail

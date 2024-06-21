@@ -1,13 +1,13 @@
 IBlendedDensity
 ===============
 
-.. py:class:: IBlendedDensity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBlendedDensity
 
    object
    
    Properties for the blended atmospheric density propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBlendedDensity
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atm_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.atm_density_model`
               - Embeds a nominal atmosphere model from the component browser.
-            * - :py:meth:`~low_altitude_atm_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.low_altitude_atm_density_model`
               - Embeds a low altitude atmosphere model from the component browser.
 
     .. tab-item:: Properties
@@ -31,11 +31,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~density_blending_altitude_range`
-            * - :py:meth:`~atm_density_model_name`
-            * - :py:meth:`~low_altitude_atm_density_model_name`
-            * - :py:meth:`~use_approx_altitude`
-            * - :py:meth:`~lower_bound_upper_atm_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.density_blending_altitude_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.atm_density_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.low_altitude_atm_density_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.use_approx_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.lower_bound_upper_atm_model`
 
 
 Import detail

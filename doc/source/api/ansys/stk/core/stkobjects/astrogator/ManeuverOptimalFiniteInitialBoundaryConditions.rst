@@ -1,13 +1,13 @@
 ManeuverOptimalFiniteInitialBoundaryConditions
 ==============================================
 
-.. py:class:: ManeuverOptimalFiniteInitialBoundaryConditions
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions
 
-   Bases: py:obj:`~IManeuverOptimalFiniteInitialBoundaryConditions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions`
 
    Properties of initial boundary conditions for optimal finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ManeuverOptimalFiniteInitialBoundaryConditions
 
 Overview
 --------

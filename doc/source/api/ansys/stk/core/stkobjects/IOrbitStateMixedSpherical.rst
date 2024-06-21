@@ -1,13 +1,13 @@
 IOrbitStateMixedSpherical
 =========================
 
-.. py:class:: IOrbitStateMixedSpherical
+.. py:class:: ansys.stk.core.stkobjects.IOrbitStateMixedSpherical
 
    IOrbitState
    
    Mixed Spherical coordinate type, using a variation of the spherical elements that combines Earth-fixed position parameters with inertial velocity parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrbitStateMixedSpherical
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coordinate_system_type`
-            * - :py:meth:`~coordinate_system`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~fpa_type`
-            * - :py:meth:`~fpa`
-            * - :py:meth:`~azimuth`
-            * - :py:meth:`~velocity`
-            * - :py:meth:`~supported_coordinate_system_types`
-            * - :py:meth:`~state_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.coordinate_system_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.fpa_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.supported_coordinate_system_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.state_epoch`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.coordinate_system
-    :type: IAgOrbitStateCoordinateSystem
+    :type: IOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: fpa
     :canonical: ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.fpa
-    :type: IAgFlightPathAngle
+    :type: IFlightPathAngle
 
     Value of Vertical or Horizontal Flight Path Angle.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.state_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

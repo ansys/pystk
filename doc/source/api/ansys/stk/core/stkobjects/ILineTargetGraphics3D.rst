@@ -1,13 +1,13 @@
 ILineTargetGraphics3D
 =====================
 
-.. py:class:: ILineTargetGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.ILineTargetGraphics3D
 
    object
    
    Line Target 3D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILineTargetGraphics3D
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_label_max_viewing_dist`
-            * - :py:meth:`~label_max_viewing_dist`
-            * - :py:meth:`~border_wall`
-            * - :py:meth:`~vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D.enable_label_max_viewing_dist`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D.label_max_viewing_dist`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D.border_wall`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D.vector`
 
 
 Import detail
@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: border_wall
     :canonical: ansys.stk.core.stkobjects.ILineTargetGraphics3D.border_wall
-    :type: IAgVOBorderWall
+    :type: IGraphics3DBorderWall
 
     Retrieve the border wall properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.ILineTargetGraphics3D.vector
-    :type: IAgVOVector
+    :type: IGraphics3DVector
 
     Get the vector.
 

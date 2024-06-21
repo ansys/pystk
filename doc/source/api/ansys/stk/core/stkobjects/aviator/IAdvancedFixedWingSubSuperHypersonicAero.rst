@@ -1,13 +1,13 @@
 IAdvancedFixedWingSubSuperHypersonicAero
 ========================================
 
-.. py:class:: IAdvancedFixedWingSubSuperHypersonicAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero
 
    object
    
    Interface used to access the options for the Sub/Super/Hypersonic aerodynamic strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingSubSuperHypersonicAero
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_aoa`
-            * - :py:meth:`~transonic_min_mach`
-            * - :py:meth:`~transonic_max_mach`
-            * - :py:meth:`~super_hyper_mach_transition`
-            * - :py:meth:`~leading_edge_frontal_area_ratio`
-            * - :py:meth:`~subsonic_aspect_ratio`
-            * - :py:meth:`~transonic_mach_drag_factor`
-            * - :py:meth:`~wave_drag_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.max_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.transonic_min_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.transonic_max_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.super_hyper_mach_transition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.leading_edge_frontal_area_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.subsonic_aspect_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.transonic_mach_drag_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.wave_drag_factor`
 
 
 Import detail

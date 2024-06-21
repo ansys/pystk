@@ -1,13 +1,13 @@
 StateCalcAltitudeOfPeriapsis
 ============================
 
-.. py:class:: StateCalcAltitudeOfPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcAltitudeOfPeriapsis
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcAltitudeOfPeriapsis`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcAltitudeOfPeriapsis`
 
    AltitudeOfPeriapsis Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcAltitudeOfPeriapsis
 
 Overview
 --------

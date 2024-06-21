@@ -1,13 +1,13 @@
 ISiteSTKAreaTarget
 ==================
 
-.. py:class:: ISiteSTKAreaTarget
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget
 
    object
    
    Interface used to access the options for a STK Area Target site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteSTKAreaTarget
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget.get_as_site`
               - Get the site interface.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~object_name`
-            * - :py:meth:`~valid_object_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget.object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget.valid_object_names`
 
 
 Import detail

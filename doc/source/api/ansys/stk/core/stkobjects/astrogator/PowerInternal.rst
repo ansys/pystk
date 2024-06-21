@@ -1,13 +1,13 @@
 PowerInternal
 =============
 
-.. py:class:: PowerInternal
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PowerInternal
 
-   Bases: py:obj:`~IPowerInternal`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPowerInternal`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Power - Internal.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PowerInternal
 
 Overview
 --------

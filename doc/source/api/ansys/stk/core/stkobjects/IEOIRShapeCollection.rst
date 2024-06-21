@@ -1,13 +1,13 @@
 IEOIRShapeCollection
 ====================
 
-.. py:class:: IEOIRShapeCollection
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeCollection
 
    object
    
    IAgEOIRShapeCollection Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCollection.item`
               - Given an index, returns an element in the collection. If the index is an integer, then the method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCollection.add`
               - Add an element at the end of the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCollection.remove_at`
               - Remove an element at the given index in the collection.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCollection._NewEnum`
 
 
 Import detail

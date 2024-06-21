@@ -1,12 +1,12 @@
 DESCENT_SPEED_TYPE
 ==================
 
-.. py:class:: DESCENT_SPEED_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.DESCENT_SPEED_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: DESCENT_SPEED_TYPE
 
 Overview
 --------

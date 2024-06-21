@@ -1,13 +1,13 @@
 StateCalcRelPositionInPlaneAngle
 ================================
 
-.. py:class:: StateCalcRelPositionInPlaneAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRelPositionInPlaneAngle
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelPositionInPlaneAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle`
 
    Relative Position Declination Angle objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRelPositionInPlaneAngle
 
 Overview
 --------

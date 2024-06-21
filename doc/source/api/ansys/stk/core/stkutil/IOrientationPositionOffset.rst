@@ -1,13 +1,13 @@
 IOrientationPositionOffset
 ==========================
 
-.. py:class:: IOrientationPositionOffset
+.. py:class:: ansys.stk.core.stkutil.IOrientationPositionOffset
 
    object
    
    Interface for defining the orientation origin position offset relative to the parent object.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IOrientationPositionOffset
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position_offset`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationPositionOffset.position_offset`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: position_offset
     :canonical: ansys.stk.core.stkutil.IOrientationPositionOffset.position_offset
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     Gets or sets the position offset cartesian vector.
 

@@ -1,13 +1,13 @@
 Clouds
 ======
 
-.. py:class:: Clouds
+.. py:class:: ansys.stk.core.graphics.Clouds
 
-   Bases: py:obj:`~IClouds`
+   Bases: py:obj:`~ansys.stk.core.graphics.IClouds`
 
    Load, show and hide clouds in the scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: Clouds
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ICoverageGridPointSelection
 ===========================
 
-.. py:class:: ICoverageGridPointSelection
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGridPointSelection
 
    object
    
    Represents a set of coverage grid points.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGridPointSelection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection.to_array`
               - Return a jagged array of grid points and their intervals. The elements are single-dimension arrays each containing three elements: latitude, longitude and a jagged array of access intervals.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection.item`
               - Given an index, returns a point in the selection.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection.count`
 
 
 Import detail

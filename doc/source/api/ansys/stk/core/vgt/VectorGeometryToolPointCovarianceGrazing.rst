@@ -1,13 +1,13 @@
 VectorGeometryToolPointCovarianceGrazing
 ========================================
 
-.. py:class:: VectorGeometryToolPointCovarianceGrazing
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointCovarianceGrazing
 
-   Bases: py:obj:`~IVectorGeometryToolPointCovarianceGrazing`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointCovarianceGrazing
 
 Overview
 --------

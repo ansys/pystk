@@ -1,13 +1,13 @@
 IRefuelDumpProperties
 =====================
 
-.. py:class:: IRefuelDumpProperties
+.. py:class:: ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties
 
    object
    
    Interface used to access the refuel/dump properties for the current procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IRefuelDumpProperties
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_refuel_dump_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.set_refuel_dump_mode`
               - Set RefuelDumpMode and RefuelDumpModeValue if applicable.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~refuel_dump_mode`
-            * - :py:meth:`~refuel_dump_mode_value`
-            * - :py:meth:`~refuel_dump_rate`
-            * - :py:meth:`~refuel_dump_time_offset`
-            * - :py:meth:`~can_use_end_of_enroute_segment_as_epoch`
-            * - :py:meth:`~use_end_of_enroute_segment_as_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_mode_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_time_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.can_use_end_of_enroute_segment_as_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.use_end_of_enroute_segment_as_epoch`
 
 
 Import detail

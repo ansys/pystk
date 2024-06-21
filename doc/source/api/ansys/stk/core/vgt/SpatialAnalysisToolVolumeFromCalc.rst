@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeFromCalc
 =================================
 
-.. py:class:: SpatialAnalysisToolVolumeFromCalc
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeFromCalc
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeFromCalc`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An volume from calc volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeFromCalc
 
 Overview
 --------

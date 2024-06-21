@@ -1,13 +1,13 @@
 IEngineThrottleTable
 ====================
 
-.. py:class:: IEngineThrottleTable
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable
 
    object
    
    Properties for engine parameters for a Throttle Table engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IEngineThrottleTable
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,14 +33,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~throttle_table_filename`
-            * - :py:meth:`~operation_mode_definition`
-            * - :py:meth:`~regression_polynomial_degree`
-            * - :py:meth:`~g`
-            * - :py:meth:`~input_power_source_name`
-            * - :py:meth:`~percent_degradation_per_year`
-            * - :py:meth:`~reference_epoch`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.throttle_table_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.operation_mode_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.regression_polynomial_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.input_power_source_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.percent_degradation_per_year`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.reference_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.control_parameters_available`
 
 
 Import detail

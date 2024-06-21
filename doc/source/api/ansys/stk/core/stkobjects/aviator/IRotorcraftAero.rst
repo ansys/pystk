@@ -1,13 +1,13 @@
 IRotorcraftAero
 ===============
 
-.. py:class:: IRotorcraftAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IRotorcraftAero
 
    object
    
    Interface used to access the aerodynamics options for a rotorcraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IRotorcraftAero
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~rotor_count`
-            * - :py:meth:`~rotor_diameter`
-            * - :py:meth:`~blades_per_rotor`
-            * - :py:meth:`~blade_chord`
-            * - :py:meth:`~rotor_tip_mach`
-            * - :py:meth:`~fuselage_flat_plate_area`
-            * - :py:meth:`~tail_rotor_offset`
-            * - :py:meth:`~tail_rotor_diameter`
-            * - :py:meth:`~blade_profile_drag_cd0`
-            * - :py:meth:`~blade_profile_drag_k`
-            * - :py:meth:`~induced_power_correction_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.rotor_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.rotor_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.blades_per_rotor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.blade_chord`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.rotor_tip_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.fuselage_flat_plate_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.tail_rotor_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.tail_rotor_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.blade_profile_drag_cd0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.blade_profile_drag_k`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.induced_power_correction_factor`
 
 
 Import detail

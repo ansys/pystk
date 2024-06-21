@@ -1,13 +1,13 @@
 BeamformerBlackmanHarris
 ========================
 
-.. py:class:: BeamformerBlackmanHarris
+.. py:class:: ansys.stk.core.stkobjects.BeamformerBlackmanHarris
 
-   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerBlackmanHarris`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`, py:obj:`~ansys.stk.core.stkobjects.IBeamformerBlackmanHarris`
 
    Class defining a Blackman-Harris tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BeamformerBlackmanHarris
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRFFilterModelChebyshev
 =======================
 
-.. py:class:: IRFFilterModelChebyshev
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelChebyshev
 
    object
    
    Provide access to the properties and methods defining an Chebyshev analog RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelChebyshev
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~order`
-            * - :py:meth:`~cutoff_frequency`
-            * - :py:meth:`~ripple`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelChebyshev.order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelChebyshev.cutoff_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelChebyshev.ripple`
 
 
 Import detail

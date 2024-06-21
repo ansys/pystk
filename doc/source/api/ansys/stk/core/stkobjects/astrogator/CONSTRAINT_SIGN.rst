@@ -1,12 +1,12 @@
 CONSTRAINT_SIGN
 ===============
 
-.. py:class:: CONSTRAINT_SIGN
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONSTRAINT_SIGN
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONSTRAINT_SIGN
 
 Overview
 --------

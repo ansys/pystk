@@ -1,13 +1,13 @@
 ProjectionFactory
 =================
 
-.. py:class:: ProjectionFactory
+.. py:class:: ansys.stk.core.graphics.ProjectionFactory
 
-   Bases: py:obj:`~IProjectionFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IProjectionFactory`
 
    A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ProjectionFactory
 
 Overview
 --------

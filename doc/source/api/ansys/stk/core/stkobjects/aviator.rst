@@ -17,7 +17,7 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:mod: matlab
+            * - :py:mod: ansys.stk.core.stkobjects.aviator.matlab
 
              
     .. tab-item:: Interfaces
@@ -27,742 +27,742 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ISite`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
               - Interface to access Site options.
 
-            * - :py:class:`~IWindModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IWindModel`
               - Interface used to access the wind model for a mission, scenario, or procedure.
 
-            * - :py:class:`~IADDSMessage`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IADDSMessage`
               - Interface used to access a message from the NOAA ADDS forecast.
 
-            * - :py:class:`~IFuelTankInternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal`
               - Interface used to set an aircraft's internal fuel tank.
 
-            * - :py:class:`~IFuelTankExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal`
               - Interface used to set an aircraft's external fuel tank.
 
-            * - :py:class:`~IPayloadStation`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IPayloadStation`
               - Interface used to set an aircraft's payload station.
 
-            * - :py:class:`~IAircraftModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftModel`
               - Interface used to access the aircraft options in the Aviator catalog.
 
-            * - :py:class:`~IAircraftSimpleAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero`
               - Interface used to access the Simple Aerodynamics options for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~ILevelTurns`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ILevelTurns`
               - Interface used to access the Level Turns Transitions options found in the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAttitudeTransitions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAttitudeTransitions`
               - Interface used to access the Attitude Transitions options found in the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IClimbAndDescentTransitions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions`
               - Interface used to access the Climb and Descent Transitions options found in the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~ICatalogItem`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
               - Interface used to access the options for a Catalog Item in the Aviator Catalog. Use this interface to Create, Remove, Duplicate, or Rename items in the catalog.
 
-            * - :py:class:`~IAircraftBasicClimbModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel`
               - Interface used to access the basic climb model options for a climb model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftBasicAccelerationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicAccelerationModel`
               - Interface used to access the basic acceleration model options for an acceleration model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftCategory`
               - Interface used to access the Aircraft Category in the Aviator Catalog.
 
-            * - :py:class:`~IRunwayCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IRunwayCategory`
               - Interface used to access runways in the Aviator catalog.
 
-            * - :py:class:`~IBasicManeuverStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
               - Interface used to access options for a Basic Maneuver Strategy.
 
-            * - :py:class:`~IAircraftVTOL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOL`
               - Interface used to access the VTOL options for an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftExternalAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero`
               - Interface used to access the External File Aerodynamics options for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftSimpleProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleProp`
               - Interface used to access the Simple Propulsion options for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftExternalProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp`
               - Interface used to access the External File Propulsion options for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftBasicFixedWingProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp`
               - Interface used to access the Basic Fixed Wing Propulsion options for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftAdvancedClimbModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel`
               - Interface used to access the advanced climb model options for a climb model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftBasicCruiseModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel`
               - Interface used to access the basic cruise model options for a cruise model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftAdvancedCruiseModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel`
               - Interface used to access the advanced cruise model options for a cruise model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftBasicDescentModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicDescentModel`
               - Interface used to access the basic descent model options for a descent model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftAdvancedDescentModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel`
               - Interface used to access the advanced descent model options for a descent model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftBasicLandingModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel`
               - Interface used to access the basic landing model options for a landing model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftAdvancedLandingModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel`
               - Interface used to access the advanced landing model options for a landing model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftBasicTakeoffModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel`
               - Interface used to access the basic takeoff model options for a takeoff model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftAdvancedTakeoffModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel`
               - Interface used to access the advanced takeoff model options for a takeoff model of an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftVTOLModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel`
               - Interface used to access the options for a VTOL performance model of an aircraft.
 
-            * - :py:class:`~IAircraftTerrainFollow`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollow`
               - Interface used to access the TerrainFollow options for an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IPerformanceModelOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions`
               - Interface used to change the active performance model in a phase for a given model type.
 
-            * - :py:class:`~IAdvancedFixedWingTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool`
               - Interface used to access the options for the Advanced Fixed Wing Tool of an aircraft.
 
-            * - :py:class:`~IAdvancedFixedWingExternalAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalAero`
               - Interface used to access the options for an external file aerodynamic strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingSubsonicAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubsonicAero`
               - Interface used to access the options for the subsonic aerodynamic strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingSubSuperHypersonicAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero`
               - Interface used to access the options for the Sub/Super/Hypersonic aerodynamic strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingSubSuperHypersonicProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp`
               - Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingSupersonicAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero`
               - Interface used to access the options for the supersonic aerodynamic strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingGeometryBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryBasic`
               - Interface used to access the options for a basic geometry wing in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingGeometryVariable`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable`
               - Interface used to access the options for a variable geometry wing in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingElectricPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant`
               - Interface used to access the options for the Electric powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingExternalProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalProp`
               - Interface used to access the options for the External Prop File powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingPistonPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPistonPowerplant`
               - Interface used to access the options for the Piston powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingTurbopropPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant`
               - Interface used to access the options for the Turboprop powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingEmpiricalJetEngine`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingEmpiricalJetEngine`
               - Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingTurbojetBasicABProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp`
               - Interface used to access the options for the Turbojet - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingTurbofanBasicABProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp`
               - Interface used to access the options for the Turbofan - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~IAviatorVehicle`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAviatorVehicle`
               - Interface for a vehicle in Aviator.
 
-            * - :py:class:`~IMissileModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileModel`
               - Interface used to access the missile options in the Aviator catalog.
 
-            * - :py:class:`~IMissileAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileAero`
               - Interface used to access the aerodynamics options for a missile.
 
-            * - :py:class:`~IMissileProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileProp`
               - Interface used to access the Propulsion options for a missile.
 
-            * - :py:class:`~IMissileSimpleAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero`
               - Interface used to access the Simple aerodynamics options for a missile.
 
-            * - :py:class:`~IMissileSimpleProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp`
               - Interface used to access the Simple propulsion options for a missile.
 
-            * - :py:class:`~IMissileExternalAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero`
               - Interface used to access the External aerodynamics options for a missile.
 
-            * - :py:class:`~IMissileExternalProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp`
               - Interface used to access the External Prop file options for a missile.
 
-            * - :py:class:`~IMissileAdvancedAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero`
               - Interface used to access the Advanced aerodynamics options for a missile.
 
-            * - :py:class:`~IMissileRamjetProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp`
               - Interface used to access the Ramjet propulsion options for a missile.
 
-            * - :py:class:`~IMissileRocketProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp`
               - Interface used to access the Rocket propulsion options for a missile.
 
-            * - :py:class:`~IMissileTurbojetProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp`
               - Interface used to access the Turbojet propulsion options for a missile.
 
-            * - :py:class:`~IRotorcraftModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel`
               - Interface used to access the rotorcraft options in the Aviator catalog.
 
-            * - :py:class:`~IRotorcraftAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero`
               - Interface used to access the aerodynamics options for a rotorcraft.
 
-            * - :py:class:`~IRotorcraftProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp`
               - Interface used to access the Propulsion options for a rotorcraft.
 
-            * - :py:class:`~IUserRunwaySource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IUserRunwaySource`
               - Interface used to access the user runways in the Aviator catalog.
 
-            * - :py:class:`~IUserRunway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IUserRunway`
               - Interface used to access a user runway in the Aviator catalog.
 
-            * - :py:class:`~IARINC424Item`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`
               - Interface used to access the options for an ARINC424 Item found in the Aviator catalog.
 
-            * - :py:class:`~IARINC424Source`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Source`
               - Interface used to access the options for any ARINC424 source in the Aviator catalog.
 
-            * - :py:class:`~IDAFIFSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource`
               - Interface used to access the options for any DAFIF source in the Aviator catalog.
 
-            * - :py:class:`~IUserVTOLPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint`
               - Interface used to access a user VTOL Point in the Aviator catalog.
 
-            * - :py:class:`~IUserVTOLPointSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPointSource`
               - Interface used to access the user VTOL Points in the Aviator catalog.
 
-            * - :py:class:`~IUserWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IUserWaypoint`
               - Interface used to access a user waypoint in the Aviator catalog.
 
-            * - :py:class:`~IUserWaypointSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IUserWaypointSource`
               - Interface used to access the user waypoints in the Aviator catalog.
 
-            * - :py:class:`~IPropulsionEfficiencies`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies`
               - Interface used to access the options for the Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool.
 
-            * - :py:class:`~IFuelModelKeroseneAFPROP`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneAFPROP`
               - Interface used to access the options for Kerosense - CEA fuel for a thermodynamic a jet engine model.
 
-            * - :py:class:`~IFuelModelKeroseneCEA`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneCEA`
               - Interface used to access the options for Kerosense - CEA fuel for a thermodynamic a jet engine model.
 
-            * - :py:class:`~IAdvancedFixedWingRamjetBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic`
               - Interface used to access the options for a basic Ramjet mode.
 
-            * - :py:class:`~IAdvancedFixedWingScramjetBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingScramjetBasic`
               - Interface used to access the options for a basic Scramjet mode.
 
-            * - :py:class:`~IRefuelDumpProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties`
               - Interface used to access the refuel/dump properties for the current procedure.
 
-            * - :py:class:`~IProcedureFastTimeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions`
               - Interface used to access the fast time options (without error or constraint checks) for the current procedure. Use this interface to set an Interrupt Time or Fixed Duration for a procedure.
 
-            * - :py:class:`~IAtmosphereModelBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic`
               - Interface used to access the basic atmosphere model.
 
-            * - :py:class:`~IAtmosphereModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel`
               - Interface used to access the atmosphere model for a mission, scenario, or procedure.
 
-            * - :py:class:`~IADDSMessageCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IADDSMessageCollection`
               - Interface used to access the collection of messages from the NOAA ADDS forecast.
 
-            * - :py:class:`~IWindModelADDS`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS`
               - Interface used to access the options for a NOAA ADDS wind model.
 
-            * - :py:class:`~IWindModelConstant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant`
               - Interface used to access the options for a Constant Bearing/Speed wind model.
 
-            * - :py:class:`~IStation`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IStation`
               - Interface used to access a station for an Aviator aircraft.
 
-            * - :py:class:`~IStationCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IStationCollection`
               - Interface used to access the list of stations for an Aviator aircraft.
 
-            * - :py:class:`~IConfiguration`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IConfiguration`
               - Interface used to change an aircraft's configuration for an Aviator mission.
 
-            * - :py:class:`~ICatalogSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
               - Interface used to access options for a source in the Aviator Catalog. Examples of sources include User Aircraft Models, ARINC424runways, User Runways, etc.
 
-            * - :py:class:`~IAircraftModels`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftModels`
               - Interface for the User Aircraft Models in the Aviator Catalog.
 
-            * - :py:class:`~IMissileModels`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileModels`
               - Interface for the User Missile Models in the Aviator Catalog.
 
-            * - :py:class:`~IRotorcraftModels`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModels`
               - Interface for the User Rotorcraft Models in the Aviator Catalog.
 
-            * - :py:class:`~IBasicFixedWingLiftHelper`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicFixedWingLiftHelper`
               - Interface used to access Lift Coefficient Helper in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftBasicFixedWingAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero`
               - Interface used to access Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAero`
               - Interface used to access the Aerodynamics options for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftProp`
               - Interface used to access the propulsion options for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftAccelerationMode`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAccelerationMode`
               - Interface used to set the Acceleration Mode for the Advanced Acceleration Model of an aircraft.
 
-            * - :py:class:`~IAircraftAdvancedAccelerationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel`
               - Interface used to access the Advanced Acceleration Model options of an aircraft.
 
-            * - :py:class:`~IAeroPropManeuverModeHelper`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper`
               - Interface used to access the The calculation mode for the Aero/Prop maneuver mode helper. Helper found in the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~ICatalogRunway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogRunway`
               - Interface used to access a runway in the Aviator catalog.
 
-            * - :py:class:`~ICatalogAirport`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogAirport`
               - Interface used to access a airport in the Aviator catalog.
 
-            * - :py:class:`~ICatalogNavaid`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogNavaid`
               - Interface used to access a navaid in the Aviator catalog.
 
-            * - :py:class:`~ICatalogVTOLPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogVTOLPoint`
               - Interface used to access a VTOL Point in the Aviator catalog.
 
-            * - :py:class:`~ICatalogWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`
               - Interface used to access a waypoint in the Aviator catalog.
 
-            * - :py:class:`~IARINC424Airport`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Airport`
               - Do not use this interface, as it is deprecated. Use IAgAvtrARINC424Item instead.
 
-            * - :py:class:`~IDAFIFItem`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem`
               - Interface used to access the options for an DAFIF Item found in the Aviator catalog.
 
-            * - :py:class:`~IARINC424Runway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Runway`
               - Do not use this interface, as it is deprecated. Use IAgAvtrARINC424Item instead.
 
-            * - :py:class:`~IAirportCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAirportCategory`
               - Interface used to access the airports in the Aviator catalog.
 
-            * - :py:class:`~INavaidCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.INavaidCategory`
               - Interface used to access the navaids in the Aviator catalog.
 
-            * - :py:class:`~IVTOLPointCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IVTOLPointCategory`
               - Interface used to access the VTOL Points in the Aviator catalog.
 
-            * - :py:class:`~IWaypointCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory`
               - Interface used to access the waypoints in the Aviator catalog.
 
-            * - :py:class:`~IAircraftClimb`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftClimb`
               - Interface used to access the climb options for an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftCruise`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftCruise`
               - Interface used to access the cruise options for an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftDescent`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftDescent`
               - Interface used to access the descent options for an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftLanding`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftLanding`
               - Interface used to access the landing options for an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftTakeoff`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftTakeoff`
               - Interface used to access the takeoff options for an aircraft in the Aviator catalog.
 
-            * - :py:class:`~IAircraftAcceleration`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAcceleration`
               - Interface used to access the acceleration options for an aircraft in the Aviator catalog.
 
-            * - :py:class:`~ICatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalog`
               - Interface used to access the Aviator catalog.
 
-            * - :py:class:`~IProcedureTimeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions`
               - Interface used to access the time options for the current procedure. Use this interface to set an Interrupt Time or Fixed Duration for a procedure.
 
-            * - :py:class:`~ICalculationOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions`
               - Interface used to access the calculation options for a procedure or phase.
 
-            * - :py:class:`~INavigationOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.INavigationOptions`
               - Interface used to access the navigation options for an Aviator procedure.
 
-            * - :py:class:`~IAltitudeMSLAndLevelOffOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions`
               - Interface used to access the altitude MSL and Level off options for an Aviator procedure.
 
-            * - :py:class:`~IAltitudeMSLOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLOptions`
               - Interface used to access the altitude MSL options for an Aviator procedure.
 
-            * - :py:class:`~IAltitudeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAltitudeOptions`
               - Interface used to access the altitude options for an Aviator procedure.
 
-            * - :py:class:`~IHoverAltitudeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions`
               - Interface used to access the altitude options for VTOL procedure.
 
-            * - :py:class:`~IArcAltitudeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeOptions`
               - Interface used to access the altitude options for an Arc procedure.
 
-            * - :py:class:`~IArcAltitudeAndDelayOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions`
               - Interface used to access the altitude options for an Arc procedure.
 
-            * - :py:class:`~IArcOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IArcOptions`
               - Interface used to access the arc options for a procedure.
 
-            * - :py:class:`~IVerticalPlaneOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneOptions`
               - Interface used to access the Vertical Plane options for an Aviator procedure.
 
-            * - :py:class:`~IVerticalPlaneAndFlightPathOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneAndFlightPathOptions`
               - Interface used to access the Vertical Plane and Final Flight Path Angle options for an Aviator procedure.
 
-            * - :py:class:`~IArcVerticalPlaneOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IArcVerticalPlaneOptions`
               - Interface used to access the Vertical Plane options for an arc procedure.
 
-            * - :py:class:`~IEnrouteOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IEnrouteOptions`
               - Interface used to access the Enroute options for an Aviator procedure.
 
-            * - :py:class:`~IEnrouteAndDelayOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions`
               - Interface used to access the Enroute options for an Aviator procedure.
 
-            * - :py:class:`~IEnrouteTurnDirectionOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IEnrouteTurnDirectionOptions`
               - Interface used to access the Enroute Turn Direction options for an Aviator procedure.
 
-            * - :py:class:`~ICruiseAirspeedOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions`
               - Interface used to access the Cruise Airspeed options for an Aviator procedure.
 
-            * - :py:class:`~ICruiseAirspeedProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedProfile`
               - Interface used to access the Cruise Profile options for an Aviator procedure.
 
-            * - :py:class:`~ICruiseAirspeedAndProfileOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions`
               - Interface used to access the cruise airspeed options that also include a profile field.
 
-            * - :py:class:`~IAutomationStrategyFactory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAutomationStrategyFactory`
               - Interface used to send connect commands to Aviator objects.
 
-            * - :py:class:`~IConnect`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IConnect`
               - Interface used to send connect commands to Aviator objects.
 
-            * - :py:class:`~IRunwayHeadingOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IRunwayHeadingOptions`
               - Interface for the Runway Heading Options found in a Takeoff or Landing procedure.
 
-            * - :py:class:`~IProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
               - Interface used to access the options for a procedure. Use this interface to get the Site and Get the time options for the current procedure.
 
-            * - :py:class:`~IProcedureCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection`
               - Interface used to access the collection of procedures for a given phase in a mission. Use this interface to Get, Add, or Remove a procedure.
 
-            * - :py:class:`~IPhase`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IPhase`
               - Interface used to access the phase options for a mission.
 
-            * - :py:class:`~IPhaseCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IPhaseCollection`
               - Interface used to access the collection of phases for a mission.
 
-            * - :py:class:`~IMission`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IMission`
               - Interface for the mission of an aircraft using the Aviator propagator.
 
-            * - :py:class:`~IAviatorPropagator`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator`
               - Interface used to access the Aviator interface for an aircraft. Use this interface to get the mission or Aviator catalog.
 
-            * - :py:class:`~IPerformanceModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`
               - Interface for a performance model of an Aviator vehicle.
 
-            * - :py:class:`~IAdvancedFixedWingGeometry`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometry`
               - Interface used to access the options for the wing geometry in the advanced fixed wing tool.
 
-            * - :py:class:`~IAdvancedFixedWingTurbofanBasicABPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABPowerplant`
               - Do not use this interface, as it is deprecated. Use IAgAvtrAdvFixedWingTurbofanBasicABProp instead.
 
-            * - :py:class:`~IAdvancedFixedWingTurbojetBasicABPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABPowerplant`
               - Do not use this interface, as it is deprecated. Use IAgAvtrAdvFixedWingTurbojetBasicABProp instead.
 
-            * - :py:class:`~IAdvancedFixedWingPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPowerplant`
               - Interface for a powerplant strategy in the advanced fixed wing tool.
 
-            * - :py:class:`~ISiteUnknown`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteUnknown`
               - Interface of an unknown site.
 
-            * - :py:class:`~IAircraftTerrainFollowModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel`
               - Interface used to access the options for a TerrainFollow performance model of an aircraft.
 
-            * - :py:class:`~IBasicManeuverTargetPositionVel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel`
               - Interface used to access target position and velocity strategies for basic maneuvers.
 
-            * - :py:class:`~IPropulsionThrust`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust`
               - Interface used to access propulsion thrust for basic maneuver strategies.
 
-            * - :py:class:`~IBasicManeuverAirspeedOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions`
               - Interface used to access airspeed options for basic maneuver strategies.
 
-            * - :py:class:`~IBasicManeuverStrategyAileronRoll`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll`
               - Interface used to access options for a Aileron Roll Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyAutopilotNav`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav`
               - Interface used to access options for the Autopilot - Horizontal Plane Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyAutopilotProf`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf`
               - Interface used to access options for the Autopilot - Vertical Plane Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyBarrelRoll`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll`
               - Interface used to access options for a Barrel Roll Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyLoop`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop`
               - Interface used to access options for a Loop Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyLTAHover`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover`
               - Interface used to access options for a Lighter than Air Hover Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyFlyAOA`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA`
               - Interface used to access options for a Fly AOA Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyPull`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull`
               - Interface used to access options for a Pull Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyRollingPull`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull`
               - Interface used to access options for a Rolling Pull Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategySmoothAccel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel`
               - Interface used to access options for a Smooth Accel Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategySmoothTurn`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn`
               - Interface used to access options for a Smooth Turn Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategySimpleTurn`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn`
               - Interface used to access options for a Simple Turn Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyIntercept`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept`
               - Interface used to access options for an Intercept Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyRelativeBearing`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing`
               - Interface used to access options for a Relative Bearing Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyRelativeCourse`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse`
               - Interface used to access options for a Relative Course Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyRendezvous`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous`
               - Interface used to access options for a Rendezvous Formation Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyStationkeeping`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping`
               - Interface used to access options for a Stationkeeping Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyRelativeFPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA`
               - Interface used to access options for the Relative Flight Path Angle Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyRelSpeedAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude`
               - Interface used to access options for a Relative Speed/Altitude Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyBezier`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier`
               - Interface used to access options for a Bezier Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyPushPull`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull`
               - Interface used to access options for a Push/Pull Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyGlideProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile`
               - Interface used to access options for a Glide Profile Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyCruiseProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile`
               - Interface used to access options for a Cruise Profile Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyStraightAhead`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStraightAhead`
               - Interface used to access options for a Straight Ahead Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyWeave`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave`
               - Interface used to access options for a weave strategy of a basic maneuver procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyBallistic3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D`
               - Interface used to access options for a balistic 3D strategy of a basic maneuver procedure.
 
-            * - :py:class:`~IBasicManeuverStrategyPitch3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D`
               - Interface used to access options for a pitch 3D strategy of a basic maneuver procedure.
 
-            * - :py:class:`~IBasicManeuverTargetPositionVelNoisyBrgRng`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng`
               - Interface used to access target position and velocity strategy, NoisyBrnRng.
 
-            * - :py:class:`~IBasicManeuverTargetPositionVelNoisySurfTgt`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt`
               - Interface used to access target position and velocity strategy, Surf Tgt Pos Vel.
 
-            * - :py:class:`~ITakeoffNormal`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal`
               - The interface used to access the options for a Normal takeoff mode. The mode must be set to Normal to access this interface.
 
-            * - :py:class:`~ITakeoffDeparturePoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ITakeoffDeparturePoint`
               - The interface used to access the options for a Departure Point takeoff mode. The mode must be set to Departure Point to access this interface.
 
-            * - :py:class:`~ITakeoffLowTransition`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition`
               - The interface used to access the options for a Low Transition takeoff mode. The mode must be set to Low Transition to access this interface.
 
-            * - :py:class:`~IReferenceStateForwardFlightOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IReferenceStateForwardFlightOptions`
               - Interface used to access the forward flight options for a reference state procedure.
 
-            * - :py:class:`~IReferenceStateHoverOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions`
               - Interface used to access the hover options for a reference state procedure.
 
-            * - :py:class:`~IReferenceStateWeightOnWheelsOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions`
               - Interface used to access the weight on wheels options for a reference state procedure.
 
-            * - :py:class:`~IReferenceStateTakeoffLandingOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions`
               - Interface used to access the takeoff or landing options for a reference state procedure.
 
-            * - :py:class:`~ILandingEnterDownwindPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern`
               - The interface used to access the options for a Downwind Pattern approach mode for a landing procedure. The approach mode must be set to Downwind Pattern to access this interface.
 
-            * - :py:class:`~ILandingInterceptGlideslope`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ILandingInterceptGlideslope`
               - The interface used to access the options for an Intercept Glideslope approach mode for a landing procedure. The approach mode must be set to Intercept Glideslope to access this interface.
 
-            * - :py:class:`~ILandingStandardInstrumentApproach`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach`
               - The interface used to access the options for a Standard Instrument Approach mode for a landing procedure. The approach mode must be set to Standard Instrument Approach to access this interface.
 
-            * - :py:class:`~IProcedureBasicManeuver`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver`
               - Interface used to access the options for a Basic Maneuver procedure.
 
-            * - :py:class:`~ISiteWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint`
               - Interface used to access the options for a waypoint site.
 
-            * - :py:class:`~ISiteEndOfPrevProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteEndOfPrevProcedure`
               - Interface used to access the options for an End of Previous Procedure site type.
 
-            * - :py:class:`~ISiteVTOLPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint`
               - Interface used to access the options for a VTOL Point site.
 
-            * - :py:class:`~ISiteSTKVehicle`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteSTKVehicle`
               - Interface used to access the options for a STK Vehicle site.
 
-            * - :py:class:`~ISiteReferenceState`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteReferenceState`
               - Interface used to access the options for a Reference State site.
 
-            * - :py:class:`~ISiteSuperProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteSuperProcedure`
               - Interface used to access the options for a Super Procedure site.
 
-            * - :py:class:`~ISiteRelToPrevProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure`
               - Interface used to access the options for a Relative to Previous Procedure site.
 
-            * - :py:class:`~ISiteSTKObjectWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint`
               - Interface used to access the options for a STK Object Waypoint site.
 
-            * - :py:class:`~ISiteSTKStaticObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteSTKStaticObject`
               - Interface used to access the options for a STK Static Object site.
 
-            * - :py:class:`~ISiteRelToSTKObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteRelToSTKObject`
               - Interface used to access the options for a Relative to Stationary STK Object site.
 
-            * - :py:class:`~ISiteSTKAreaTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget`
               - Interface used to access the options for a STK Area Target site.
 
-            * - :py:class:`~ISiteRunway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteRunway`
               - Interface used to access the options for a Runway site type.
 
-            * - :py:class:`~IProcedureLanding`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding`
               - Interface used to access the options for a landing procedure.
 
-            * - :py:class:`~IProcedureEnroute`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute`
               - Interface used to access the options for an enroute procedure.
 
-            * - :py:class:`~IProcedureExtEphem`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem`
               - Interface used to access the options for an ExtEphem procedure.
 
-            * - :py:class:`~IProcedureFormationFlyer`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer`
               - Interface used to access the options for an enroute procedure.
 
-            * - :py:class:`~IProcedureBasicPointToPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicPointToPoint`
               - Interface used to access the options for a basic point to point procedure.
 
-            * - :py:class:`~IProcedureDelay`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay`
               - Interface used to access the options for a delay procedure.
 
-            * - :py:class:`~IProcedureTakeoff`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff`
               - Interface used to access the options for a takeoff procedure.
 
-            * - :py:class:`~IProcedureArcEnroute`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute`
               - Interface used to access the options for an arc enroute procedure.
 
-            * - :py:class:`~IProcedureArcPointToPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint`
               - Interface used to access the options for an arc point to point procedure.
 
-            * - :py:class:`~IProcedureFlightLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine`
               - Interface used to access the options for a flight line procedure.
 
-            * - :py:class:`~IProcedureHoldingCircular`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular`
               - Interface used to access the options for a holding circular procedure.
 
-            * - :py:class:`~IProcedureHoldingFigure8`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8`
               - Interface used to access the options for a holding figure 8 procedure.
 
-            * - :py:class:`~IProcedureHoldingRacetrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack`
               - Interface used to access the options for a holding racetrack procedure.
 
-            * - :py:class:`~IProcedureTransitionToHover`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover`
               - Interface used to access the options for a transition to hover procedure.
 
-            * - :py:class:`~IProcedureTerrainFollow`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow`
               - Interface used to access the options for a terrain following procedure.
 
-            * - :py:class:`~IProcedureHover`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureHover`
               - Interface used to access the options for a hover procedure.
 
-            * - :py:class:`~IProcedureHoverTranslate`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate`
               - Interface used to access the options for a hover translate procedure.
 
-            * - :py:class:`~IProcedureTransitionToForwardFlight`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight`
               - Interface used to access the options for a transition to forward flight procedure.
 
-            * - :py:class:`~IProcedureVerticalTakeoff`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff`
               - Interface used to access the options for a vertical takeoff procedure.
 
-            * - :py:class:`~IProcedureVerticalLanding`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding`
               - Interface used to access the options for a vertical landing procedure.
 
-            * - :py:class:`~IProcedureReferenceState`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState`
               - Interface used to access the options for a reference state procedure.
 
-            * - :py:class:`~IProcedureSuperProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureSuperProcedure`
               - Interface used to access the options for a super procedure.
 
-            * - :py:class:`~IProcedureLaunch`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch`
               - Interface used to access the options for a launch procedure.
 
-            * - :py:class:`~IProcedureAirway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway`
               - Interface used to access the options for an Airway procedure.
 
-            * - :py:class:`~IProcedureAirwayRouter`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter`
               - Interface used to access the options for an Airway Router procedure.
 
-            * - :py:class:`~IProcedureAreaTargetSearch`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch`
               - Interface used to access the options for an Area Target Search procedure.
 
-            * - :py:class:`~IProcedureFormationRecover`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover`
               - Interface used to access the options for a Formation Recover procedure.
 
-            * - :py:class:`~IProcedureInFormation`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation`
               - Interface used to access the options for an In Formation procedure.
 
-            * - :py:class:`~IProcedureParallelFlightLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine`
               - Interface used to access the options for a Parallel Flight Line procedure.
 
-            * - :py:class:`~IProcedureVGTPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint`
               - Interface used to access the options for a VGT Point procedure.
 
-            * - :py:class:`~ISiteRunwayFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteRunwayFromCatalog`
               - Interface used to access the options for a Runway From Catalog site type.
 
-            * - :py:class:`~ISiteAirportFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteAirportFromCatalog`
               - Interface used to access the options for a airport From Catalog site type.
 
-            * - :py:class:`~ISiteNavaidFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteNavaidFromCatalog`
               - Interface used to access the options for a navaid From Catalog site type.
 
-            * - :py:class:`~ISiteVTOLPointFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPointFromCatalog`
               - Interface used to access the options for a VTOL Point From Catalog site type.
 
-            * - :py:class:`~ISiteWaypointFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteWaypointFromCatalog`
               - Interface used to access the options for a waypoint From Catalog site type.
 
-            * - :py:class:`~IProcedureLaunchDynState`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState`
               - Interface used to access the options for a dyn state launch procedure.
 
-            * - :py:class:`~IProcedureLaunchWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint`
               - Interface used to access the options for a waypoint launch procedure.
 
-            * - :py:class:`~ISiteDynState`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteDynState`
               - Interface used to access the options for a dyn state site type.
 
     
@@ -773,718 +773,718 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~SiteWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteWaypoint`
               - Class defining a waypoint site.
 
-            * - :py:class:`~SiteEndOfPrevProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteEndOfPrevProcedure`
               - Class defining an End of Previous Procedure site.
 
-            * - :py:class:`~SiteVTOLPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteVTOLPoint`
               - Class defining a VTOL Point site.
 
-            * - :py:class:`~SiteReferenceState`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteReferenceState`
               - Class defining a Reference State site.
 
-            * - :py:class:`~SiteSTKVehicle`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteSTKVehicle`
               - Class defining a STK Vehicle site.
 
-            * - :py:class:`~SiteSuperProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteSuperProcedure`
               - Class defining a Super Procedure site.
 
-            * - :py:class:`~SiteRelToPrevProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteRelToPrevProcedure`
               - Class defining a Relative to Previous Procedure site.
 
-            * - :py:class:`~SiteSTKObjectWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint`
               - Class defining a STK Object Waypoint site.
 
-            * - :py:class:`~SiteSTKStaticObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteSTKStaticObject`
               - Class defining a STK Static Object site.
 
-            * - :py:class:`~SiteRelToSTKObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteRelToSTKObject`
               - Class defining a Relative to Stationary STK Object site.
 
-            * - :py:class:`~SiteSTKAreaTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteSTKAreaTarget`
               - Class defining a STK Area Target site.
 
-            * - :py:class:`~SiteRunway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteRunway`
               - Class defining a runway site.
 
-            * - :py:class:`~Site`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.Site`
               - Class defining an unknown site type.
 
-            * - :py:class:`~ProcedureLanding`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureLanding`
               - Class defining a landing procedure.
 
-            * - :py:class:`~ProcedureEnroute`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureEnroute`
               - Class defining an enroute procedure.
 
-            * - :py:class:`~ProcedureExtEphem`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureExtEphem`
               - Class defining an ExtEphem procedure.
 
-            * - :py:class:`~ProcedureFormationFlyer`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer`
               - Class defining an formationflyer procedure.
 
-            * - :py:class:`~ProcedureBasicPointToPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint`
               - Class defining a basic point to point procedure.
 
-            * - :py:class:`~ProcedureArcEnroute`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute`
               - Class defining a arc enroute procedure.
 
-            * - :py:class:`~ProcedureArcPointToPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureArcPointToPoint`
               - Class defining a arc point to point procedure.
 
-            * - :py:class:`~ProcedureFlightLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine`
               - Class defining a flight line procedure.
 
-            * - :py:class:`~ProcedureDelay`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay`
               - Class defining a delay procedure.
 
-            * - :py:class:`~ProcedureTakeoff`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureTakeoff`
               - Class defining a takeoff procedure.
 
-            * - :py:class:`~ProcedureCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureCollection`
               - Class defining the collection of procedures in the phase of an Aviator mission.
 
-            * - :py:class:`~Phase`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.Phase`
               - Class defining a phase in an Aviator mission.
 
-            * - :py:class:`~PhaseCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PhaseCollection`
               - Class defining the collection of phases.
 
-            * - :py:class:`~Mission`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.Mission`
               - Class defining the Aviator mission.
 
-            * - :py:class:`~AviatorPropagator`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator`
               - Class defining the Aviator propagator.
 
-            * - :py:class:`~ProcedureBasicManeuver`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver`
               - Class defining a Basic Maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyWeave`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave`
               - Class defining Weave strategy for a Basic Maneuver procedure.
 
-            * - :py:class:`~ProcedureTimeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureTimeOptions`
               - Class defining the time options for the current procedure.
 
-            * - :py:class:`~CalculationOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CalculationOptions`
               - Class defining the calculation options for a procedure or phase.
 
-            * - :py:class:`~AircraftCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftCategory`
               - Class defining the aircraft category in the Aviator catalog.
 
-            * - :py:class:`~Catalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.Catalog`
               - Class defining the Aviator Catalog.
 
-            * - :py:class:`~AircraftModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftModel`
               - Class defining an aircraft in Aviator.
 
-            * - :py:class:`~MissileModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileModel`
               - Class defining a missile in Aviator.
 
-            * - :py:class:`~RotorcraftModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel`
               - Class defining a rotorcraft in Aviator.
 
-            * - :py:class:`~RotorcraftAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RotorcraftAero`
               - Class defining the aerodynamic options for a rotorcraft.
 
-            * - :py:class:`~RotorcraftProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RotorcraftProp`
               - Class defining the propulsion options for a rotorcraft.
 
-            * - :py:class:`~AircraftAcceleration`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAcceleration`
               - Class defining the aircraft acceleration category of an Aviator aircraft.
 
-            * - :py:class:`~AircraftBasicAccelerationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel`
               - Class defining the basic acceleration performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftClimb`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftClimb`
               - Class defining the aircraft climb category of an Aviator aircraft.
 
-            * - :py:class:`~AircraftCruise`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftCruise`
               - Class defining the aircraft cruise category of an Aviator aircraft.
 
-            * - :py:class:`~AircraftDescent`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftDescent`
               - Class defining the aircraft descent category of an Aviator aircraft.
 
-            * - :py:class:`~AircraftLanding`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftLanding`
               - Class defining the aircraft landing category of an Aviator aircraft.
 
-            * - :py:class:`~AircraftTakeoff`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftTakeoff`
               - Class defining the aircraft takeoff category of an Aviator aircraft.
 
-            * - :py:class:`~AircraftBasicClimbModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel`
               - Class defining the basic climb performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftAdvancedClimbModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel`
               - Class defining the advanced climb performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftBasicCruiseModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel`
               - Class defining the basic cruise performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftAdvancedCruiseModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel`
               - Class defining the advanced cruise performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftBasicDescentModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftBasicDescentModel`
               - Class defining the basic descent performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftAdvancedDescentModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel`
               - Class defining the advanced descent performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftBasicTakeoffModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel`
               - Class defining the basic takeoff performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftAdvancedTakeoffModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel`
               - Class defining the advanced takeoff performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftBasicLandingModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel`
               - Class defining the basic landing performance model for an Aviator aircraft.
 
-            * - :py:class:`~AircraftAdvancedLandingModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel`
               - Class defining the advanced landing performance model for an Aviator aircraft.
 
-            * - :py:class:`~AirportCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AirportCategory`
               - Class defining the airport category in the Aviator catalog.
 
-            * - :py:class:`~ARINC424Airport`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ARINC424Airport`
               - Class defining an ARINC424 Airport.
 
-            * - :py:class:`~ARINC424Runway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ARINC424Runway`
               - Class defining an ARINC424 Runway.
 
-            * - :py:class:`~DAFIFRunway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DAFIFRunway`
               - Class defining an DAFIF Runway.
 
-            * - :py:class:`~DAFIFHelipad`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DAFIFHelipad`
               - Class defining an DAFIF Helipad.
 
-            * - :py:class:`~DAFIFWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DAFIFWaypoint`
               - Class defining an DAFIF Waypoint.
 
-            * - :py:class:`~RunwayCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RunwayCategory`
               - Class defining the runway category in the Aviator catalog.
 
-            * - :py:class:`~UserRunwaySource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.UserRunwaySource`
               - Class defining the user runways in the Aviator catalog.
 
-            * - :py:class:`~UserRunway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.UserRunway`
               - Class defining the user runway in the Aviator catalog.
 
-            * - :py:class:`~AltitudeMSLOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLOptions`
               - Class defining the altitude MSL options in a procedure.
 
-            * - :py:class:`~AltitudeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AltitudeOptions`
               - Class defining the altitude options in a procedure.
 
-            * - :py:class:`~ArcAltitudeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ArcAltitudeOptions`
               - Class defining the altitude options for an arc procedure.
 
-            * - :py:class:`~ArcAltitudeAndDelayOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ArcAltitudeAndDelayOptions`
               - Class defining the altitude and delay options for an arc procedure.
 
-            * - :py:class:`~ArcOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ArcOptions`
               - Class defining the arc options for a procedure.
 
-            * - :py:class:`~AltitudeMSLAndLevelOffOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions`
               - Class defining the altitude MSL and Level off options in a procedure.
 
-            * - :py:class:`~CruiseAirspeedOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions`
               - Class defining the cruise airspeed options in a procedure.
 
-            * - :py:class:`~CruiseAirspeedProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CruiseAirspeedProfile`
               - Class defining the cruise profile options in a procedure.
 
-            * - :py:class:`~CruiseAirspeedAndProfileOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CruiseAirspeedAndProfileOptions`
               - Class defining the cruise airspeed and profile options in a procedure.
 
-            * - :py:class:`~LandingCruiseAirspeedAndProfileOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LandingCruiseAirspeedAndProfileOptions`
               - Class defining the cruise airspeed and profile options for a landing procedure.
 
-            * - :py:class:`~EnrouteOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EnrouteOptions`
               - Class defining the enroute options in a procedure.
 
-            * - :py:class:`~EnrouteAndDelayOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EnrouteAndDelayOptions`
               - Class defining the enroute and delay options in a procedure.
 
-            * - :py:class:`~LandingEnrouteOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LandingEnrouteOptions`
               - Class defining the enroute options in a landing procedure.
 
-            * - :py:class:`~EnrouteTurnDirectionOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EnrouteTurnDirectionOptions`
               - Class defining the enroute turn direction options in a procedure.
 
-            * - :py:class:`~NavigationOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.NavigationOptions`
               - Class defining the navigation options in a procedure.
 
-            * - :py:class:`~VerticalPlaneOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VerticalPlaneOptions`
               - Class defining the vertical plane options in a procedure.
 
-            * - :py:class:`~ArcVerticalPlaneOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions`
               - Class defining the vertical plane options in a procedure.
 
-            * - :py:class:`~VerticalPlaneAndFlightPathOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions`
               - Class defining the vertical plane options for an arc procedure.
 
-            * - :py:class:`~LandingVerticalPlaneOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LandingVerticalPlaneOptions`
               - Class defining the vertical plane options in a landing procedure.
 
-            * - :py:class:`~RunwayHeadingOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RunwayHeadingOptions`
               - Class defining the runway heading options in a takeoff or landing procedure.
 
-            * - :py:class:`~LandingEnterDownwindPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LandingEnterDownwindPattern`
               - Class defining the enter downwind pattern options for a landing procedure.
 
-            * - :py:class:`~LandingInterceptGlideslope`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope`
               - Class defining the intercept glideslope options for a landing procedure.
 
-            * - :py:class:`~LandingStandardInstrumentApproach`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach`
               - Class defining the standard instrument approach options for a landing procedure.
 
-            * - :py:class:`~TakeoffDeparturePoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TakeoffDeparturePoint`
               - Class defining the departure point options for a takeoff procedure.
 
-            * - :py:class:`~TakeoffLowTransition`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TakeoffLowTransition`
               - Class defining the low transition options for a takeoff procedure.
 
-            * - :py:class:`~TakeoffNormal`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TakeoffNormal`
               - Class defining the normal options for a takeoff procedure.
 
-            * - :py:class:`~LevelTurns`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LevelTurns`
               - Class defining the level turns options for an acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AttitudeTransitions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AttitudeTransitions`
               - Class defining the attitude transition options for an acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~ClimbAndDescentTransitions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions`
               - Class defining the climb and descent transition options for an Acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AeroPropManeuverModeHelper`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AeroPropManeuverModeHelper`
               - Class defining the The calculation mode for the Aero/Prop maneuver mode helper. Helper for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftAdvancedAccelerationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel`
               - Class defining the advanced acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftAccelerationMode`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode`
               - Class defining the acceleration mode options for an advanced acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftSimpleAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftSimpleAero`
               - Class defining the simple aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftExternalAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAero`
               - Class defining the external file aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAero`
               - Class defining the aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftBasicFixedWingAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAero`
               - Class defining the basic fixed wing aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftProp`
               - Class defining the propulsion options for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftSimpleProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftSimpleProp`
               - Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftExternalProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftExternalProp`
               - Class defining the external propulsion options for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~AircraftBasicFixedWingProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingProp`
               - Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft.
 
-            * - :py:class:`~ARINC424Source`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ARINC424Source`
               - Class defining an ARINC424 source in the Aviator catalog.
 
-            * - :py:class:`~DAFIFSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DAFIFSource`
               - Class defining an DAFIF source in the Aviator catalog.
 
-            * - :py:class:`~BasicFixedWingFwdFlightLiftHelper`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicFixedWingFwdFlightLiftHelper`
               - Class defining the Lift Coefficient Helper for Forward Flight in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft.
 
-            * - :py:class:`~BasicManeuverStrategyStraightAhead`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStraightAhead`
               - Class defining the Straight Ahead strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyCruiseProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile`
               - Class defining the Cruise profile strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyGlideProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile`
               - Class defining the Glide profile strategy for a basic maneuver procedure.
 
-            * - :py:class:`~AircraftModels`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftModels`
               - Class defining the User Aircraft Models in the Aviator Catalog.
 
-            * - :py:class:`~MissileModels`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileModels`
               - Class defining the User Missile Models in the Aviator Catalog.
 
-            * - :py:class:`~RotorcraftModels`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RotorcraftModels`
               - Class defining the User Rotorcraft Models in the Aviator Catalog.
 
-            * - :py:class:`~Configuration`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.Configuration`
               - Class defining the aircraft configuration for an Aviator mission.
 
-            * - :py:class:`~FuelTankInternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FuelTankInternal`
               - Class defining an internal fuel tank for an Aviator aircraft.
 
-            * - :py:class:`~FuelTankExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FuelTankExternal`
               - Class defining an external fuel tank for an Aviator aircraft.
 
-            * - :py:class:`~PayloadStation`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PayloadStation`
               - Class defining a payload station for an Aviator aircraft.
 
-            * - :py:class:`~StationCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.StationCollection`
               - Class defining a collection of payload stations for an Aviator aircraft.
 
-            * - :py:class:`~WindModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WindModel`
               - Class defining the wind model for a mission, scenario, or procedure.
 
-            * - :py:class:`~WindModelConstant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WindModelConstant`
               - Class defining a constant bearing/speed wind model for a mission.
 
-            * - :py:class:`~WindModelADDS`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WindModelADDS`
               - Class defining a wind model using the NOAA ADDS service for a mission.
 
-            * - :py:class:`~ADDSMessage`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDSMessage`
               - Class defining a message from the NOAA ADDS service.
 
-            * - :py:class:`~ADDSMessageCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDSMessageCollection`
               - Class defining a collection of messages from the NOAA ADDS service.
 
-            * - :py:class:`~Procedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.Procedure`
               - Class defining an unknown procedure type.
 
-            * - :py:class:`~AtmosphereModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AtmosphereModel`
               - Class defining the atmosphere model for a mission, scenario, or procedure.
 
-            * - :py:class:`~AtmosphereModelBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic`
               - Class defining the basic atmosphere model.
 
-            * - :py:class:`~BasicManeuverStrategySimpleTurn`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn`
               - Class defining the simple turn strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyAileronRoll`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAileronRoll`
               - Class defining the aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyFlyAOA`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyFlyAOA`
               - Class defining the fly AOA strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyPull`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPull`
               - Class defining the pull strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyRollingPull`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRollingPull`
               - Class defining the rolling pull strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategySmoothAccel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothAccel`
               - Class defining the smooth accel strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategySmoothTurn`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn`
               - Class defining the smooth turn strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverAirspeedOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions`
               - Class defining the airspeed options for basic maneuver strategies.
 
-            * - :py:class:`~PropulsionThrust`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust`
               - Class defining the the thrust propulsion used in basic maneuver procedures.
 
-            * - :py:class:`~BasicManeuverStrategyAutopilotNav`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNav`
               - Class defining the autopilot - horizontal plane strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyAutopilotProf`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf`
               - Class defining the autopiloc - vertical plane strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyBarrelRoll`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBarrelRoll`
               - Class defining the barrel roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyLoop`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop`
               - Class defining the loop strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyLTAHover`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover`
               - Class defining the lighter than air hover strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyIntercept`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept`
               - Class defining the Intercept strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyRelativeBearing`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing`
               - Class defining the Relative Bearing strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyRelativeCourse`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse`
               - Class defining the Relative Course strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyRendezvous`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous`
               - Class defining the Rendezvous/Formation strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyStationkeeping`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping`
               - Class defining the Stationkeeping strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyRelativeFPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA`
               - Class defining the Relative Flight Path Angle strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyRelSpeedAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelSpeedAltitude`
               - Class defining the Relative Speed/Altitude strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyBezier`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier`
               - Class defining the Bezier strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverStrategyPushPull`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull`
               - Class defining the Push/Pull strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ProcedureHoldingCircular`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingCircular`
               - Class defining a holding circular procedure.
 
-            * - :py:class:`~ProcedureHoldingFigure8`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8`
               - Class defining a holding figure 8 procedure.
 
-            * - :py:class:`~ProcedureHoldingRacetrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingRacetrack`
               - Class defining a holding racetrack procedure.
 
-            * - :py:class:`~ProcedureTransitionToHover`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover`
               - Class defining a transition to hover procedure.
 
-            * - :py:class:`~ProcedureTerrainFollow`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow`
               - Class defining a terrain following procedure.
 
-            * - :py:class:`~ProcedureHover`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureHover`
               - Class defining a hover procedure.
 
-            * - :py:class:`~ProcedureHoverTranslate`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate`
               - Class defining a hover translate procedure.
 
-            * - :py:class:`~ProcedureTransitionToForwardFlight`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight`
               - Class defining a transition to forward flight procedure.
 
-            * - :py:class:`~HoverAltitudeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HoverAltitudeOptions`
               - Class defining the altitude options for a VTOL procedure.
 
-            * - :py:class:`~ProcedureVerticalTakeoff`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff`
               - Class defining a vertical takeoff procedure.
 
-            * - :py:class:`~ProcedureVerticalLanding`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureVerticalLanding`
               - Class defining a vertical landing procedure.
 
-            * - :py:class:`~ProcedureReferenceState`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState`
               - Class defining a reference state procedure.
 
-            * - :py:class:`~ProcedureSuperProcedure`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureSuperProcedure`
               - Class defining a super procedure.
 
-            * - :py:class:`~ProcedureLaunch`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch`
               - Class defining a launch procedure.
 
-            * - :py:class:`~ProcedureAirway`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway`
               - Class defining an Airway procedure.
 
-            * - :py:class:`~ProcedureAirwayRouter`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter`
               - Class defining an Airway Router procedure.
 
-            * - :py:class:`~ProcedureAreaTargetSearch`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch`
               - Class defining an Area Target Search procedure.
 
-            * - :py:class:`~ProcedureFormationRecover`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover`
               - Class defining a Formation/Recover procedure.
 
-            * - :py:class:`~ProcedureInFormation`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureInFormation`
               - Class defining an In Formation procedure.
 
-            * - :py:class:`~ProcedureParallelFlightLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureParallelFlightLine`
               - Class defining a Parallel Flight Line procedure.
 
-            * - :py:class:`~ProcedureVGTPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint`
               - Class defining a VGT Point procedure.
 
-            * - :py:class:`~PerformanceModelOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PerformanceModelOptions`
               - Class defining the options for the active performance model in a phase.
 
-            * - :py:class:`~AdvancedFixedWingTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool`
               - Class defining the options for the Advanced Fixed Wing Tool of an aircraft.
 
-            * - :py:class:`~AdvancedFixedWingExternalAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingExternalAero`
               - Class defining the External Aero File aerodynamic strategy in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingSubsonicAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero`
               - Class defining the subsonic aerodynamic strategy in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingSubSuperHypersonicAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicAero`
               - Class defining the Sub/Super/Hypersonic aerodynamic strategy in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingSupersonicAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSupersonicAero`
               - Class defining the supersonic aerodynamic strategy in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~PerformanceModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PerformanceModel`
               - Class defining an unknown performance model.
 
-            * - :py:class:`~AdvancedFixedWingGeometryBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryBasic`
               - Class defining a basic geometry wing in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingGeometryVariable`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable`
               - Class defining a variable geometry wing in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingElectricPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingElectricPowerplant`
               - Class defining an Electric powerplant in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingExternalProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingExternalProp`
               - Class defining an External Prop File powerplant in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingSubSuperHypersonicProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicProp`
               - Class defining a Sub/Super/Hypersonic powerplant in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingPistonPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingPistonPowerplant`
               - Class defining a Piston powerplant in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingEmpiricalJetEngine`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingEmpiricalJetEngine`
               - Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingTurbofanBasicABPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPowerplant`
               - Do not use this class, as it is deprecated. Use AgAvtrAdvFixedWingTurbofanBasicABProp instead.
 
-            * - :py:class:`~AdvancedFixedWingTurbojetBasicABPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbojetBasicABPowerplant`
               - Do not use this class, as it is deprecated. Use AgAvtrAdvFixedWingTurbojetBasicABProp instead.
 
-            * - :py:class:`~AdvancedFixedWingTurbofanBasicABProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABProp`
               - Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingTurbojetBasicABProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbojetBasicABProp`
               - Class defining the Turbojet - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~AdvancedFixedWingTurbopropPowerplant`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant`
               - Class defining the Turboprop powerplant in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~MissileSimpleAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAero`
               - Class defining the simple aerodynamic options for a missile.
 
-            * - :py:class:`~MissileExternalAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileExternalAero`
               - Class defining the external aerodynamic options for a missile.
 
-            * - :py:class:`~MissileAdvancedAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileAdvancedAero`
               - Class defining the advanced aerodynamic options for a missile.
 
-            * - :py:class:`~MissileAero`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileAero`
               - Class defining the aerodynamic options for a missile.
 
-            * - :py:class:`~MissileProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileProp`
               - Class defining the propulsion options for a missile.
 
-            * - :py:class:`~MissileSimpleProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileSimpleProp`
               - Class defining the Simple propulsion options for a missile.
 
-            * - :py:class:`~MissileExternalProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileExternalProp`
               - Class defining the External propulsion options for a missile.
 
-            * - :py:class:`~MissileRamjetProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileRamjetProp`
               - Class defining the Ramjet propulsion options for a missile.
 
-            * - :py:class:`~MissileRocketProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileRocketProp`
               - Class defining the Rocket propulsion options for a missile.
 
-            * - :py:class:`~MissileTurbojetProp`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileTurbojetProp`
               - Class defining the Turbojet propulsion options for a missile.
 
-            * - :py:class:`~ReferenceStateForwardFlightOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ReferenceStateForwardFlightOptions`
               - Class defining the Forward Flight options for a Reference State procedure.
 
-            * - :py:class:`~ReferenceStateTakeoffLandingOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions`
               - Class defining the Takeoff or Landing options for a Reference State procedure.
 
-            * - :py:class:`~ReferenceStateHoverOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions`
               - Class defining the Hover options for a Reference State procedure.
 
-            * - :py:class:`~ReferenceStateWeightOnWheelsOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions`
               - Class defining the Weight on Wheels options for a Reference State procedure.
 
-            * - :py:class:`~SiteRunwayFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteRunwayFromCatalog`
               - Class defining a runway from catalog site.
 
-            * - :py:class:`~SiteAirportFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteAirportFromCatalog`
               - Class defining a airport from catalog site.
 
-            * - :py:class:`~SiteNavaidFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog`
               - Class defining a navaid from catalog site.
 
-            * - :py:class:`~SiteVTOLPointFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteVTOLPointFromCatalog`
               - Class defining a VTOL point from catalog site.
 
-            * - :py:class:`~SiteWaypointFromCatalog`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteWaypointFromCatalog`
               - Class defining a waypoint from catalog site.
 
-            * - :py:class:`~NavaidCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.NavaidCategory`
               - Class defining the navaid category in the Aviator catalog.
 
-            * - :py:class:`~VTOLPointCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOLPointCategory`
               - Class defining the VTOL point category in the Aviator catalog.
 
-            * - :py:class:`~WaypointCategory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WaypointCategory`
               - Class defining the waypoint category in the Aviator catalog.
 
-            * - :py:class:`~ARINC424Navaid`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ARINC424Navaid`
               - Class defining an ARINC424 Navaid.
 
-            * - :py:class:`~ARINC424Helipad`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ARINC424Helipad`
               - Class defining an ARINC424 Helipad.
 
-            * - :py:class:`~ARINC424Waypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ARINC424Waypoint`
               - Class defining an ARINC424 Waypoint.
 
-            * - :py:class:`~UserVTOLPointSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.UserVTOLPointSource`
               - Class defining the user VTOL Point source in the Aviator catalog.
 
-            * - :py:class:`~UserVTOLPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint`
               - Class defining the user VTOL Point in the Aviator catalog.
 
-            * - :py:class:`~UserWaypointSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.UserWaypointSource`
               - Class defining the user waypoint source in the Aviator catalog.
 
-            * - :py:class:`~UserWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.UserWaypoint`
               - Class defining the user waypoint in the Aviator catalog.
 
-            * - :py:class:`~PropulsionEfficiencies`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies`
               - Class defining the Propulsion Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool.
 
-            * - :py:class:`~FuelModelKeroseneAFPROP`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FuelModelKeroseneAFPROP`
               - Class defining the Kerosense - AFPROP fuel type for a thermodynamic jet engine model.
 
-            * - :py:class:`~FuelModelKeroseneCEA`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FuelModelKeroseneCEA`
               - Class defining the Kerosense - CEA fuel type for a thermodynamic jet engine model.
 
-            * - :py:class:`~AdvancedFixedWingRamjetBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic`
               - Class defining the basic Ramjet model.
 
-            * - :py:class:`~AdvancedFixedWingScramjetBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingScramjetBasic`
               - Class defining the basic Scramjet model.
 
-            * - :py:class:`~AircraftVTOLModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel`
               - Class defining the VTOL performance model of an aircraft.
 
-            * - :py:class:`~AircraftVTOL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftVTOL`
               - Class defining the VTOL category of an Aviator aircraft.
 
-            * - :py:class:`~AircraftTerrainFollowModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel`
               - Class defining the TerrainFollow performance model of an aircraft.
 
-            * - :py:class:`~AircraftTerrainFollow`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollow`
               - Class defining the TerrainFollow category of an Aviator aircraft.
 
-            * - :py:class:`~BasicManeuverStrategyBallistic3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D`
               - Class defining Ballistic 3D strategy for a Basic Maneuver procedure.
 
-            * - :py:class:`~ProcedureLaunchDynState`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunchDynState`
               - Class defining a Launch Dyn State procedure.
 
-            * - :py:class:`~ProcedureLaunchWaypoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint`
               - Class defining a Launch Waypoint procedure.
 
-            * - :py:class:`~SiteDynState`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteDynState`
               - Class defining a Dyn State site.
 
-            * - :py:class:`~BasicManeuverStrategyPitch3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D`
               - Class defining Pitch 3D strategy for a Basic Maneuver procedure.
 
-            * - :py:class:`~RefuelDumpProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties`
               - Class defining the refuel/dump properties for the current procedure.
 
-            * - :py:class:`~ProcedureFastTimeOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions`
               - Class defining fast operations (without error or constraint checks) for time options for the current procedure.
 
-            * - :py:class:`~BasicManeuverTargetPositionVel`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel`
               - Class defining the target position and velocity strategies for basic maneuvers.
 
-            * - :py:class:`~BasicManeuverTargetPositionVelNoisyBrgRng`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBrgRng`
               - Class defining the position and velocity strategy, Noisy Bearing Range.
 
-            * - :py:class:`~BasicManeuverTargetPositionVelNoisySurfTgt`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTgt`
               - Class defining the position and velocity strategy, Noisy Surface Target.
 
 
@@ -1495,406 +1495,406 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ERROR_CODES`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ERROR_CODES`
               - Error Codes.
 
-            * - :py:class:`~CLOSURE_VALUE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CLOSURE_VALUE`
               - The closure value.
 
-            * - :py:class:`~PROCEDURE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PROCEDURE_TYPE`
               - Aviator procedure types.
 
-            * - :py:class:`~SITE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SITE_TYPE`
               - Aviator site types.
 
-            * - :py:class:`~BASIC_MANEUVER_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY`
               - Basic maneuver strategy types.
 
-            * - :py:class:`~STRAIGHT_AHEAD_REFERENCE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.STRAIGHT_AHEAD_REFERENCE_FRAME`
               - Straight Ahead basic maneuver Reference Frame.
 
-            * - :py:class:`~AIRSPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AIRSPEED_TYPE`
               - Airspeed types.
 
-            * - :py:class:`~AERO_PROP_SIMPLE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AERO_PROP_SIMPLE_MODE`
               - Aircraft operating mode for basic acceleration models with aerodynamics set to Simple.
 
-            * - :py:class:`~AERO_PROP_FLIGHT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AERO_PROP_FLIGHT_MODE`
               - Flight mode for the Aero/Prop maneuver mode helper in aircraft acceleration models.
 
-            * - :py:class:`~PHASE_OF_FLIGHT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PHASE_OF_FLIGHT`
               - Flight mode for basic maneuver procedures.
 
-            * - :py:class:`~CRUISE_SPEED`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CRUISE_SPEED`
               - Cruise airspeed type for the procedure.
 
-            * - :py:class:`~TAKEOFF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TAKEOFF_MODE`
               - Takeoff procedure mode.
 
-            * - :py:class:`~APPROACH_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.APPROACH_MODE`
               - Landing procedure approach mode.
 
-            * - :py:class:`~NAVIGATOR_TURN_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.NAVIGATOR_TURN_DIRECTION`
               - Turn mode for procedures with Enroute Turn Direction options.
 
-            * - :py:class:`~BASIC_MANEUVER_FUEL_FLOW_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_FUEL_FLOW_TYPE`
               - Fuel flow type for basic maneuver procedures.
 
-            * - :py:class:`~BASIC_MANEUVER_ALTITUDE_LIMIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_ALTITUDE_LIMIT`
               - The type of response Aviator will have if the maneuver attempts to exceed the altitude limit.
 
-            * - :py:class:`~RUNWAY_HIGH_LOW_END`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RUNWAY_HIGH_LOW_END`
               - Runway heading that the aircraft will use.
 
-            * - :py:class:`~BASIC_MANEUVER_REFERENCE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_REFERENCE_FRAME`
               - Reference frame for the basic maneuver strategy.
 
-            * - :py:class:`~BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT`
               - Define the control limits for the aircraft during the maneuver.
 
-            * - :py:class:`~ACCEL_MANEUVER_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCEL_MANEUVER_MODE`
               - The mode that the aircraft will adhere to the specified acceleration parameters.
 
-            * - :py:class:`~AIRCRAFT_AERO_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AIRCRAFT_AERO_STRATEGY`
               - The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values.
 
-            * - :py:class:`~AIRCRAFT_PROP_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AIRCRAFT_PROP_STRATEGY`
               - The propulsion strategy used to compute thrust and throttle setting.
 
-            * - :py:class:`~AGL_MSL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AGL_MSL`
               - The altitude mode.
 
-            * - :py:class:`~LANDING_APPROACH_FIX_RANGE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LANDING_APPROACH_FIX_RANGE_MODE`
               - The reference point on the runway for the Approach Fix Range.
 
-            * - :py:class:`~ACCELERATION_ADVANCED_ACCEL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCELERATION_ADVANCED_ACCEL_MODE`
               - Acceleration mode for aircraft advanced acceleration models.
 
-            * - :py:class:`~ACCEL_MANEUVER_AERO_PROP_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCEL_MANEUVER_AERO_PROP_MODE`
               - The mode used for the Aero/Prop maneuver mode helper for aircraft basic acceleration models.
 
-            * - :py:class:`~BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS`
               - The type of response Aviator will have if the basic maneuver attempts to exceed the airspeed limit.
 
-            * - :py:class:`~BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE`
               - Powered Cruise Options.
 
-            * - :py:class:`~TURN_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TURN_MODE`
               - The mode to specify an aircraft's level turn performance for acceleration performance models.
 
-            * - :py:class:`~POINT_TO_POINT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.POINT_TO_POINT_MODE`
               - The heading or course of the aircraft at the beginning of the procedure.
 
-            * - :py:class:`~ALTITUDE_CONSTRAINT_MANEUVER_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ALTITUDE_CONSTRAINT_MANEUVER_MODE`
               - Turn mode for procedures that may require a level off maneuver.
 
-            * - :py:class:`~WIND_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WIND_MODEL_TYPE`
               - The wind model type.
 
-            * - :py:class:`~WIND_ATMOS_MODEL_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WIND_ATMOS_MODEL_SOURCE`
               - The source for the wind or atmosphere model.
 
-            * - :py:class:`~ADDS_MSG_INTERP_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDS_MSG_INTERP_TYPE`
               - The interpolation method for the wind conditions.
 
-            * - :py:class:`~ADDS_MISSING_MSG_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDS_MISSING_MSG_TYPE`
               - The wind effect to apply if there is an interval gap between messages.
 
-            * - :py:class:`~ADDS_MSG_EXTRAP_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDS_MSG_EXTRAP_TYPE`
               - The wind effect to apply if the procedure(s) extend beyond the intervals of any available messages.
 
-            * - :py:class:`~ADDS_FORECAST_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDS_FORECAST_TYPE`
               - The forecast type for the NOAA ADDS message.
 
-            * - :py:class:`~ATMOSPHERE_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ATMOSPHERE_MODEL`
               - The basic atmosphere model type.
 
-            * - :py:class:`~SMOOTH_TURN_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_TURN_MODE`
               - The basic maneuver smooth turn mode.
 
-            * - :py:class:`~PERF_MODEL_OVERRIDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PERF_MODEL_OVERRIDE`
               - The performance model override mode.
 
-            * - :py:class:`~BASIC_MANEUVER_AIRSPEED_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_AIRSPEED_MODE`
               - The basic maneuver airspeed mode.
 
-            * - :py:class:`~AILERON_ROLL_FLIGHT_PATH`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AILERON_ROLL_FLIGHT_PATH`
               - The flight path option for an aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ROLL_LEFT_RIGHT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ROLL_LEFT_RIGHT`
               - The roll direction for an aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ROLL_UPRIGHT_INVERTED`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ROLL_UPRIGHT_INVERTED`
               - The orientation for an aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~AILERON_ROLL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AILERON_ROLL_MODE`
               - The roll mode aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~FLY_AOA_LEFT_RIGHT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FLY_AOA_LEFT_RIGHT`
               - The roll direction for a Fly AOA strategy for a basic maneuver procedure.
 
-            * - :py:class:`~SMOOTH_ACCEL_LEFT_RIGHT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_ACCEL_LEFT_RIGHT`
               - The roll direction for a smooth acceleration strategy for a basic maneuver procedure.
 
-            * - :py:class:`~PULL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PULL_MODE`
               - The pull mode for a pull strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ROLLING_PULL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ROLLING_PULL_MODE`
               - The rolling pull mode for a rolling pull strategy of a basic maneuver procedure.
 
-            * - :py:class:`~SMOOTH_ACCEL_STOP_CONDITIONS`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_ACCEL_STOP_CONDITIONS`
               - The rolling pull mode for a rolling pull strategy of a basic maneuver procedure.
 
-            * - :py:class:`~AUTOPILOT_HORIZ_PLANE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AUTOPILOT_HORIZ_PLANE_MODE`
               - The autopilot mode for an autopilot - horizontal plane strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ANGLE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ANGLE_MODE`
               - The angle mode for a barrel roll strategy of a basic maneuver procedure.
 
-            * - :py:class:`~HOVER_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOVER_ALTITUDE_MODE`
               - The altitude mode for the lighter than air hover strategy of a basic maneuver procedure.
 
-            * - :py:class:`~HOVER_HEADING_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOVER_HEADING_MODE`
               - The heading mode for the lighter than air hover strategy of a basic maneuver procedure.
 
-            * - :py:class:`~AUTOPILOT_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AUTOPILOT_ALTITUDE_MODE`
               - The altitude mode for the autopilot - vertical plane strategy of a basic maneuver procedure.
 
-            * - :py:class:`~AUTOPILOT_ALTITUDE_CONTROL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AUTOPILOT_ALTITUDE_CONTROL_MODE`
               - The altitude control mode for the autopilot - vertical plane strategy of a basic maneuver procedure.
 
-            * - :py:class:`~CLOSURE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CLOSURE_MODE`
               - The closure mode for guidance strategies of the basic maneuver procedure.
 
-            * - :py:class:`~INTERCEPT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.INTERCEPT_MODE`
               - The intercept mode for the intercept strategy of the basic maneuver procedure.
 
-            * - :py:class:`~RENDEZVOUS_STOP_CONDITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RENDEZVOUS_STOP_CONDITION`
               - The stop condition options for a rendezvous formation strategy of the basic maneuver procedure.
 
-            * - :py:class:`~FORMATION_FLYER_STOP_CONDITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FORMATION_FLYER_STOP_CONDITION`
               - The stop condition options for a Formation Flyer procedure.
 
-            * - :py:class:`~EXT_EPHEM_FLIGHT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EXT_EPHEM_FLIGHT_MODE`
               - Flight mode enums for ExtEphem.
 
-            * - :py:class:`~ACCEL_PERF_MODEL_OVERRIDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCEL_PERF_MODEL_OVERRIDE`
               - The acceleration performance model override mode.
 
-            * - :py:class:`~STATIONKEEPING_STOP_CONDITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.STATIONKEEPING_STOP_CONDITION`
               - The stop condition options for a stationkeeping strategy.
 
-            * - :py:class:`~TURN_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TURN_DIRECTION`
               - The roll direction for an aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~PROFILE_CONTROL_LIMIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PROFILE_CONTROL_LIMIT`
               - Define the control limits for a profile strategy of a basic maneuver procedure.
 
-            * - :py:class:`~REL_SPEED_ALTITUDE_STOP_CONDITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REL_SPEED_ALTITUDE_STOP_CONDITION`
               - The stop condition options for a relative speed/altitude strategy.
 
-            * - :py:class:`~RELATIVE_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RELATIVE_ALTITUDE_MODE`
               - The relative altitude mode for a relative speed/altitude strategy.
 
-            * - :py:class:`~FLY_TO_FLIGHT_PATH_ANGLE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FLY_TO_FLIGHT_PATH_ANGLE_MODE`
               - The flight path angle mode mode for a bezier profile strategy.
 
-            * - :py:class:`~PUSH_PULL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PUSH_PULL`
               - The option to pull up or push over for a push/pull profile strategy.
 
-            * - :py:class:`~ACCEL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCEL_MODE`
               - The acceleration/decelation option for a push/pull profile strategy.
 
-            * - :py:class:`~DELAY_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DELAY_ALTITUDE_MODE`
               - The altitude options for a delay procedure.
 
-            * - :py:class:`~JOIN_EXIT_ARC_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JOIN_EXIT_ARC_METHOD`
               - The options to join or exit an arc.
 
-            * - :py:class:`~FLIGHT_LINE_PROC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FLIGHT_LINE_PROC_TYPE`
               - The procedure methodology used to calculate the flight line.
 
-            * - :py:class:`~TRANSITION_TO_HOVER_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TRANSITION_TO_HOVER_MODE`
               - The type of hover to transition to.
 
-            * - :py:class:`~VTOL_RATE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_RATE_MODE`
               - The rate mode for the VTOL procedure.
 
-            * - :py:class:`~HOLDING_PROFILE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOLDING_PROFILE_MODE`
               - How the aircraft will perform during the holding pattern with respect to airspeed and altitude.
 
-            * - :py:class:`~HOLDING_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOLDING_DIRECTION`
               - The turn direction for the aircraft to enter the holding pattern.
 
-            * - :py:class:`~HOLD_REFUEL_DUMP_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOLD_REFUEL_DUMP_MODE`
               - Define when the aircraft will leave the holding pattern after it has completed refueling or dumping fuel.
 
-            * - :py:class:`~HOLDING_ENTRY_MANEUVER`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOLDING_ENTRY_MANEUVER`
               - Define how the aircraft will enter the holding pattern.
 
-            * - :py:class:`~VTOL_TRANSITION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_TRANSITION_MODE`
               - The mode to specify the course of the transition maneuver.
 
-            * - :py:class:`~VTOL_FINAL_HEADING_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_FINAL_HEADING_MODE`
               - The mode to specify the heading at the end of the maneuver.
 
-            * - :py:class:`~VTOL_TRANSLATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_TRANSLATION_MODE`
               - The mode to specify the translation of the VTOL maneuver.
 
-            * - :py:class:`~VTOL_TRANSLATION_FINAL_COURSE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_TRANSLATION_FINAL_COURSE_MODE`
               - The mode to specify the final course of the VTOL maneuver.
 
-            * - :py:class:`~HOVER_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOVER_MODE`
               - The hover mode.
 
-            * - :py:class:`~VTOL_HEADING_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_HEADING_MODE`
               - The heading mode for the hover maneuver.
 
-            * - :py:class:`~VERT_LANDING_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VERT_LANDING_MODE`
               - The heading mode for a vertical landing maneuver.
 
-            * - :py:class:`~LAUNCH_ATTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LAUNCH_ATTITUDE_MODE`
               - The attitude mode for the launch procedure.
 
-            * - :py:class:`~FUEL_FLOW_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FUEL_FLOW_TYPE`
               - The fuel flow type to use for the procedure.
 
-            * - :py:class:`~LINE_ORIENTATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LINE_ORIENTATION`
               - The orientation for a parallel flight line procedure.
 
-            * - :py:class:`~REL_ABS_BEARING`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REL_ABS_BEARING`
               - The options for a bearing that can be relative or absolute.
 
-            * - :py:class:`~BASIC_FIXED_WING_PROP_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_FIXED_WING_PROP_MODE`
               - The option to specify the thrust (jet engines) or power (propellers).
 
-            * - :py:class:`~CLIMB_SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CLIMB_SPEED_TYPE`
               - The mode to calculate the aircraft's airspeed while climbing for an advanced climb performance model.
 
-            * - :py:class:`~CRUISE_MAX_PERF_SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CRUISE_MAX_PERF_SPEED_TYPE`
               - The method for defining the maximum performance airspeed of the aircraft for an advanced cruise model.
 
-            * - :py:class:`~DESCENT_SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DESCENT_SPEED_TYPE`
               - The method for calculating the aircraft's airspeed while descending.
 
-            * - :py:class:`~TAKEOFF_LANDING_SPEED_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TAKEOFF_LANDING_SPEED_MODE`
               - The method for calculating the aircraft's speed upon leaving the ground or at wheels down.
 
-            * - :py:class:`~DEPARTURE_SPEED_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DEPARTURE_SPEED_MODE`
               - The method for calculating the aircraft's airspeed upon leaving the ground.
 
-            * - :py:class:`~ADVANCED_FIXED_WING_AERO_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADVANCED_FIXED_WING_AERO_STRATEGY`
               - The aerodynamic strategy for the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~ADVANCED_FIXED_WING_GEOMETRY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADVANCED_FIXED_WING_GEOMETRY`
               - The method to define the wing geometry of an aircraft in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~ADVANCED_FIXED_WING_POWERPLANT_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADVANCED_FIXED_WING_POWERPLANT_STRATEGY`
               - The powerplant strategy for the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~MISSILE_AERO_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MISSILE_AERO_STRATEGY`
               - The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values.
 
-            * - :py:class:`~MISSILE_PROP_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MISSILE_PROP_STRATEGY`
               - The propulsion strategy used to compute thrust and throttle setting.
 
-            * - :py:class:`~ROTORCRAFT_POWERPLANT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ROTORCRAFT_POWERPLANT_TYPE`
               - The powerplant type for a rotorcraft.
 
-            * - :py:class:`~MINIMIZE_SITE_PROC_TIME_DIFF`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MINIMIZE_SITE_PROC_TIME_DIFF`
               - Options for minimizing the time difference between the procedure and site times.
 
-            * - :py:class:`~STK_OBJECT_WAYPOINT_OFFSET_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.STK_OBJECT_WAYPOINT_OFFSET_MODE`
               - The options to offset the site location relative to the STK Object.
 
-            * - :py:class:`~SEARCH_PATTERN_COURSE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SEARCH_PATTERN_COURSE_MODE`
               - The mode to determine the course of the search pattern.
 
-            * - :py:class:`~DELAY_TURN_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DELAY_TURN_DIRECTION`
               - Turn mode for procedures with Delay options.
 
-            * - :py:class:`~TRAJECTORY_BLEND_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TRAJECTORY_BLEND_MODE`
               - The interpolation mode to determine the aircraft's position and velocity.
 
-            * - :py:class:`~REFERENCE_STATE_PERF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_PERF_MODE`
               - The type of motion the aircraft is engaged in at the reference state.
 
-            * - :py:class:`~REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE`
               - The mode to specify the longitudinal acceleration of the aircraft.
 
-            * - :py:class:`~REFERENCE_STATE_LATERAL_ACCEL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_LATERAL_ACCEL_MODE`
               - The mode to specify the lateral acceleration of the aircraft.
 
-            * - :py:class:`~REFERENCE_STATE_ATTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_ATTITUDE_MODE`
               - The mode to specify the attitude rate of change.
 
-            * - :py:class:`~AND_OR`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AND_OR`
               - The option to specify AND or OR.
 
-            * - :py:class:`~JET_ENGINE_TECHNOLOGY_LEVEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_ENGINE_TECHNOLOGY_LEVEL`
               - The technology level of the jet engine.
 
-            * - :py:class:`~JET_ENGINE_INTAKE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_ENGINE_INTAKE_TYPE`
               - The intake type of the jet engine.
 
-            * - :py:class:`~JET_ENGINE_TURBINE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_ENGINE_TURBINE_TYPE`
               - The turbine type of the jet engine.
 
-            * - :py:class:`~JET_ENGINE_EXHAUST_NOZZLE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_ENGINE_EXHAUST_NOZZLE_TYPE`
               - The exhaust nozzle type of the jet engine.
 
-            * - :py:class:`~JET_FUEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_FUEL_TYPE`
               - The jet fuel type.
 
-            * - :py:class:`~AFPROP_FUEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AFPROP_FUEL_TYPE`
               - The AFPROP fuel type.
 
-            * - :py:class:`~CEA_FUEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CEA_FUEL_TYPE`
               - The CEA fuel type.
 
-            * - :py:class:`~TURBINE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TURBINE_MODE`
               - The turbine mode for a Sub/Super/Hypersonic powerplant.
 
-            * - :py:class:`~RAMJET_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RAMJET_MODE`
               - The ramjet mode for a Sub/Super/Hypersonic powerplant.
 
-            * - :py:class:`~SCRAMJET_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SCRAMJET_MODE`
               - The scramjet mode for a Sub/Super/Hypersonic powerplant.
 
-            * - :py:class:`~NUMERICAL_INTEGRATOR`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.NUMERICAL_INTEGRATOR`
               - The numerical integrator to be used for the procedure.
 
-            * - :py:class:`~BALLISTIC_3D_CONTROL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BALLISTIC_3D_CONTROL_MODE`
               - The control mode used to define the ballistic 3D strategy of the basic maneuver procedure.
 
-            * - :py:class:`~LAUNCH_DYN_STATE_COORD_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LAUNCH_DYN_STATE_COORD_FRAME`
               - The coordinate frame used for a LaunchDynState procedure.
 
-            * - :py:class:`~LAUNCH_DYN_STATE_BEARING_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LAUNCH_DYN_STATE_BEARING_REFERENCE`
               - The vector used as a bearing reference for a LaunchDynState procedure.
 
-            * - :py:class:`~ALTITUDE_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ALTITUDE_REFERENCE`
               - The altitude reference.
 
-            * - :py:class:`~SMOOTH_TURN_FPA_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_TURN_FPA_MODE`
               - The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure.
 
-            * - :py:class:`~PITCH_3D_CONTROL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PITCH_3D_CONTROL_MODE`
               - The control mode used to define the pitch 3D strategy of the basic maneuver procedure.
 
-            * - :py:class:`~REFUEL_DUMP_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFUEL_DUMP_MODE`
               - The modes used to define procedure refuel/dump modes.
 
-            * - :py:class:`~BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE`
               - The modes used to define basic maneuver glide speed control modes.
 
-            * - :py:class:`~TARGET_POSITION_VEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TARGET_POSITION_VEL_TYPE`
               - The target pos/vel type.
 
-            * - :py:class:`~EPHEM_SHIFT_ROTATE_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EPHEM_SHIFT_ROTATE_ALTITUDE_MODE`
               - Ephem alt mode.
 
-            * - :py:class:`~EPHEM_SHIFT_ROTATE_COURSE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EPHEM_SHIFT_ROTATE_COURSE_MODE`
               - Ephem course mode.
 
 

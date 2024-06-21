@@ -1,13 +1,13 @@
 BandExtractFilter
 =================
 
-.. py:class:: BandExtractFilter
+.. py:class:: ansys.stk.core.graphics.BandExtractFilter
 
-   Bases: py:obj:`~IBandExtractFilter`, py:obj:`~IRasterFilter`
+   Bases: py:obj:`~ansys.stk.core.graphics.IBandExtractFilter`, py:obj:`~ansys.stk.core.graphics.IRasterFilter`
 
    Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: BandExtractFilter
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IClassicalLocationEccentricAnomaly
 ==================================
 
-.. py:class:: IClassicalLocationEccentricAnomaly
+.. py:class:: ansys.stk.core.stkobjects.IClassicalLocationEccentricAnomaly
 
    IClassicalLocation
    
    Interface for Eccentric Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalLocationEccentricAnomaly
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationEccentricAnomaly.value`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IScriptingSegmentCollection
 ===========================
 
-.. py:class:: IScriptingSegmentCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection
 
    object
    
    The list of object properties that the script can interact with.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingSegmentCollection
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.add`
               - Add an object property to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.remove`
               - Remove a object property.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.remove_all`
               - Remove all object properties.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.cut`
               - Copy the object property into the clipboard and removes the object property from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.paste`
               - Pastes the object property from the clipboard and inserts into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.insert_copy`
               - Copy the object property and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.get_item_by_index`
               - Retrieve a scripting segment in the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.get_item_by_name`
               - Retrieve a scripting segment in the collection by name.
 
     .. tab-item:: Properties
@@ -45,9 +45,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.provide_runtime_type_info`
 
 
 Import detail
@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingSegmentCollection.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

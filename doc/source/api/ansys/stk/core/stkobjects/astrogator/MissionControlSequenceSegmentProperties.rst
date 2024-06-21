@@ -1,13 +1,13 @@
 MissionControlSequenceSegmentProperties
 =======================================
 
-.. py:class:: MissionControlSequenceSegmentProperties
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceSegmentProperties
 
-   Bases: py:obj:`~IMissionControlSequenceSegmentProperties`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Segment Properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceSegmentProperties
 
 Overview
 --------

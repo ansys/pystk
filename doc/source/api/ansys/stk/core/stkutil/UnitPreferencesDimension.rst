@@ -1,13 +1,13 @@
 UnitPreferencesDimension
 ========================
 
-.. py:class:: UnitPreferencesDimension
+.. py:class:: ansys.stk.core.stkutil.UnitPreferencesDimension
 
-   Bases: py:obj:`~IUnitPreferencesDimension`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IUnitPreferencesDimension`
 
    Object that contains info on the Dimension.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: UnitPreferencesDimension
 
 Overview
 --------

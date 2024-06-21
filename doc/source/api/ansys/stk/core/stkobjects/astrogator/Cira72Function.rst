@@ -1,13 +1,13 @@
 Cira72Function
 ==============
 
-.. py:class:: Cira72Function
+.. py:class:: ansys.stk.core.stkobjects.astrogator.Cira72Function
 
-   Bases: py:obj:`~ICira72Function`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICira72Function`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Cira72 atmospheric propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: Cira72Function
 
 Overview
 --------

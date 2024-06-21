@@ -1,13 +1,13 @@
 IMissionControlSequenceSegment
 ==============================
 
-.. py:class:: IMissionControlSequenceSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment
 
    object
    
    General properties for segments.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceSegment
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_result_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.get_result_value`
               - Return a result value.
-            * - :py:meth:`~run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.run`
               - Run the segment in individual segment mode.  See IAgVADriverMCS.
 
     .. tab-item:: Properties
@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~properties`
-            * - :py:meth:`~initial_state`
-            * - :py:meth:`~final_state`
-            * - :py:meth:`~results`
-            * - :py:meth:`~exec_summary`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.initial_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.final_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.results`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.exec_summary`
 
 
 Import detail
@@ -58,31 +58,31 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.properties
-    :type: IAgVAMCSSegmentProperties
+    :type: IMissionControlSequenceSegmentProperties
 
     Returns the properties of the segment.
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.initial_state
-    :type: IAgVAState
+    :type: IState
 
     Get the initial state of the segment.
 
 .. py:property:: final_state
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.final_state
-    :type: IAgVAState
+    :type: IState
 
     Get the final state of the segment.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.results
-    :type: IAgVACalcObjectCollection
+    :type: ICalcObjectCollection
 
     Get the results of the segment.
 
 .. py:property:: exec_summary
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.exec_summary
-    :type: IAgDrResult
+    :type: IDataProviderResult
 
     Get the segment summary report.
 

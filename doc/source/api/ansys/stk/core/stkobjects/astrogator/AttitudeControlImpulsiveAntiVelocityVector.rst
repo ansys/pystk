@@ -1,13 +1,13 @@
 AttitudeControlImpulsiveAntiVelocityVector
 ==========================================
 
-.. py:class:: AttitudeControlImpulsiveAntiVelocityVector
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveAntiVelocityVector
 
-   Bases: py:obj:`~IAttitudeControlImpulsiveAntiVelocityVector`, py:obj:`~IAttitudeControlImpulsive`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAntiVelocityVector`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsive`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The anti-velocity vector attitude control for an impulsive maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AttitudeControlImpulsiveAntiVelocityVector
 
 Overview
 --------

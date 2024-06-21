@@ -1,13 +1,13 @@
 AntennaBeamSelectionStrategyScriptPlugin
 ========================================
 
-.. py:class:: AntennaBeamSelectionStrategyScriptPlugin
+.. py:class:: ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyScriptPlugin
 
-   Bases: py:obj:`~IAntennaBeamSelectionStrategyScriptPlugin`, py:obj:`~IAntennaBeamSelectionStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategyScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
 
    Class defining a script plugin beam selection strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaBeamSelectionStrategyScriptPlugin
 
 Overview
 --------

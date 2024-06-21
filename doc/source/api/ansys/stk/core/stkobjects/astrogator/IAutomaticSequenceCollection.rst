@@ -1,13 +1,13 @@
 IAutomaticSequenceCollection
 ============================
 
-.. py:class:: IAutomaticSequenceCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection
 
    object
    
    Properties for the Automatic Sequence Browser.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAutomaticSequenceCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.item`
               - Return the given automatic sequence.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.add`
               - Create a new sequence.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.remove`
               - Remove a sequence.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.get_item_by_index`
               - Retrieve the given automatic sequence found by the index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.get_item_by_name`
               - Retrieve the given automatic sequence found by the name.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection.count`
 
 
 Import detail

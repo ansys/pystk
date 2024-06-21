@@ -1,13 +1,13 @@
 IModelTransformation
 ====================
 
-.. py:class:: IModelTransformation
+.. py:class:: ansys.stk.core.graphics.IModelTransformation
 
    object
    
    A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IModelTransformation
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~minimum_value`
-            * - :py:meth:`~maximum_value`
-            * - :py:meth:`~default_value`
-            * - :py:meth:`~range`
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.current_value`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.minimum_value`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.maximum_value`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.default_value`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.range`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.name`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.type`
 
 
 Import detail

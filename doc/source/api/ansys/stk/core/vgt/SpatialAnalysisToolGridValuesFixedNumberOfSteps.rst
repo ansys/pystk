@@ -1,13 +1,13 @@
 SpatialAnalysisToolGridValuesFixedNumberOfSteps
 ===============================================
 
-.. py:class:: SpatialAnalysisToolGridValuesFixedNumberOfSteps
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps
 
-   Bases: py:obj:`~ISpatialAnalysisToolGridValuesFixedNumberOfSteps`, py:obj:`~ISpatialAnalysisToolGridValuesMethod`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod`
 
    Fixed step grid values.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolGridValuesFixedNumberOfSteps
 
 Overview
 --------

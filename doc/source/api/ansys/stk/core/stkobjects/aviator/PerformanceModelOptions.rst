@@ -1,13 +1,13 @@
 PerformanceModelOptions
 =======================
 
-.. py:class:: PerformanceModelOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.PerformanceModelOptions
 
-   Bases: py:obj:`~IPerformanceModelOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions`
 
    Class defining the options for the active performance model in a phase.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PerformanceModelOptions
 
 Overview
 --------

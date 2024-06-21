@@ -1,13 +1,13 @@
 DataProviderResultTimeArrayElements
 ===================================
 
-.. py:class:: DataProviderResultTimeArrayElements
+.. py:class:: ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements
 
-   Bases: py:obj:`~IDataProviderResultTimeArrayElements`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements`
 
    Provide a array result of element values for each time array value.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderResultTimeArrayElements
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAircraftDescent
 ================
 
-.. py:class:: IAircraftDescent
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftDescent
 
    object
    
    Interface used to access the descent options for an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftDescent
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_built_in_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftDescent.get_built_in_model`
               - Get the built-in model.
-            * - :py:meth:`~get_basic_descent_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftDescent.get_basic_descent_by_name`
               - Get the basic descent model with the given name.
-            * - :py:meth:`~get_advanced_descent_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftDescent.get_advanced_descent_by_name`
               - Get the advanced descent model with the given name.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftDescent.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

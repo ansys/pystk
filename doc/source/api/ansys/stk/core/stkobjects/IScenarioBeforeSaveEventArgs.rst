@@ -1,13 +1,13 @@
 IScenarioBeforeSaveEventArgs
 ============================
 
-.. py:class:: IScenarioBeforeSaveEventArgs
+.. py:class:: ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs
 
    object
    
    Contains information about the changes in the object's state.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenarioBeforeSaveEventArgs
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~path`
-            * - :py:meth:`~continue_save`
-            * - :py:meth:`~save_as`
-            * - :py:meth:`~vdf_save`
-            * - :py:meth:`~sdf_save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.continue_save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.save_as`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.vdf_save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.sdf_save`
 
 
 Import detail

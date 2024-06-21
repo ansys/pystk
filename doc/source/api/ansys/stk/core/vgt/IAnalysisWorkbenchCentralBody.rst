@@ -1,13 +1,13 @@
 IAnalysisWorkbenchCentralBody
 =============================
 
-.. py:class:: IAnalysisWorkbenchCentralBody
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBody
 
    object
    
    The interface represents a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchCentralBody
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBody.name`
 
 
 Import detail

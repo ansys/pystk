@@ -1,13 +1,13 @@
 IFlipFilter
 ===========
 
-.. py:class:: IFlipFilter
+.. py:class:: ansys.stk.core.graphics.IFlipFilter
 
    object
    
    Flips the source raster along the given flip axis.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IFlipFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~flip_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.IFlipFilter.flip_axis`
 
 
 Import detail

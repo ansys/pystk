@@ -1,13 +1,13 @@
 IAtmosphericAbsorptionModelVoacap
 =================================
 
-.. py:class:: IAtmosphericAbsorptionModelVoacap
+.. py:class:: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap
 
    object
    
    Provide access to the properties and methods of the VOACAP atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAtmosphericAbsorptionModelVoacap
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sunspot_number`
-            * - :py:meth:`~multipath_power_tolerance`
-            * - :py:meth:`~multipath_delay_tolerance`
-            * - :py:meth:`~compute_alternate_frequencies`
-            * - :py:meth:`~coefficient_data_type`
-            * - :py:meth:`~use_day_of_month_average`
-            * - :py:meth:`~solar_activity_configuration_type`
-            * - :py:meth:`~solar_activity_configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.sunspot_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.multipath_power_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.multipath_delay_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.compute_alternate_frequencies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.coefficient_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.use_day_of_month_average`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.solar_activity_configuration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.solar_activity_configuration`
 
 
 Import detail
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: solar_activity_configuration
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.solar_activity_configuration
-    :type: IAgSolarActivityConfiguration
+    :type: ISolarActivityConfiguration
 
     Gets or sets the solar activity configuration.
 

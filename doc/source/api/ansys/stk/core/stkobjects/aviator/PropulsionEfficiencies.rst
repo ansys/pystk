@@ -1,13 +1,13 @@
 PropulsionEfficiencies
 ======================
 
-.. py:class:: PropulsionEfficiencies
+.. py:class:: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies
 
-   Bases: py:obj:`~IPropulsionEfficiencies`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies`
 
    Class defining the Propulsion Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PropulsionEfficiencies
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionAgeOfData
 =================================
 
-.. py:class:: IFigureOfMeritDefinitionAgeOfData
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAgeOfData
 
    IFigureOfMeritDefinitionCompute
    
    Age of Data Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionAgeOfData
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAgeOfData.min_assets`
 
 
 Import detail

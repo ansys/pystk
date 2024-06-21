@@ -1,12 +1,12 @@
 OPTIMAL_FINITE_SNOPT_OBJECTIVE
 ==============================
 
-.. py:class:: OPTIMAL_FINITE_SNOPT_OBJECTIVE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.OPTIMAL_FINITE_SNOPT_OBJECTIVE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: OPTIMAL_FINITE_SNOPT_OBJECTIVE
 
 Overview
 --------

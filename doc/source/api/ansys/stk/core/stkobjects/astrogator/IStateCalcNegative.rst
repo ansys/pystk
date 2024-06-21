@@ -1,13 +1,13 @@
 IStateCalcNegative
 ==================
 
-.. py:class:: IStateCalcNegative
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcNegative
 
    object
    
    Properties for a Negative calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcNegative
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcNegative.calc_object_name`
 
 
 Import detail

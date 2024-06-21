@@ -1,13 +1,13 @@
 ScenarioAnimation
 =================
 
-.. py:class:: ScenarioAnimation
+.. py:class:: ansys.stk.core.stkobjects.ScenarioAnimation
 
-   Bases: py:obj:`~IScenarioAnimation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenarioAnimation`
 
    Class defining the animation properties of a Scenario.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScenarioAnimation
 
 Overview
 --------

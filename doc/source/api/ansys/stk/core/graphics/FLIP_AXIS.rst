@@ -1,12 +1,12 @@
 FLIP_AXIS
 =========
 
-.. py:class:: FLIP_AXIS
+.. py:class:: ansys.stk.core.graphics.FLIP_AXIS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: FLIP_AXIS
 
 Overview
 --------

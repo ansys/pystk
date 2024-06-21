@@ -1,13 +1,13 @@
 RadarModel
 ==========
 
-.. py:class:: RadarModel
+.. py:class:: ansys.stk.core.stkobjects.RadarModel
 
-   Bases: py:obj:`~IRadarModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a generic radar model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarModel
 
 Overview
 --------

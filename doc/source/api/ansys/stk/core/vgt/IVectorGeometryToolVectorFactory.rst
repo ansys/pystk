@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorFactory
 ================================
 
-.. py:class:: IVectorGeometryToolVectorFactory
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorFactory
 
    object
    
    A Factory object to create vectors.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorFactory
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFactory.create`
               - Create a VGT vector using specified name, description and type.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFactory.is_type_supported`
               - Return true if the type is supported.
-            * - :py:meth:`~create_displacement_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFactory.create_displacement_vector`
               - Create a displacement vector.
-            * - :py:meth:`~create_vector_plugin_from_display_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFactory.create_vector_plugin_from_display_name`
               - Create a vector component based on a COM vector plugin. For information how to implement and register VGT plugins, see.
-            * - :py:meth:`~create_cross_product_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFactory.create_cross_product_vector`
               - Create a cross product C = A x B.
 
     .. tab-item:: Properties
@@ -37,7 +37,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_vector_plugin_display_names`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFactory.available_vector_plugin_display_names`
 
 
 Import detail

@@ -1,12 +1,12 @@
 VM_DISPLAY_QUALITY_TYPE
 =======================
 
-.. py:class:: VM_DISPLAY_QUALITY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VM_DISPLAY_QUALITY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_DISPLAY_QUALITY_TYPE
 
 Overview
 --------

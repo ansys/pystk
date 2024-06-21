@@ -1,13 +1,13 @@
 VehicleWaypointAltitudeReferenceTerrain
 =======================================
 
-.. py:class:: VehicleWaypointAltitudeReferenceTerrain
+.. py:class:: ansys.stk.core.stkobjects.VehicleWaypointAltitudeReferenceTerrain
 
-   Bases: py:obj:`~IVehicleWaypointAltitudeReferenceTerrain`, py:obj:`~IVehicleWaypointAltitudeReference`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReferenceTerrain`, py:obj:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReference`
 
    Terrain altitude reference.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleWaypointAltitudeReferenceTerrain
 
 Overview
 --------

@@ -1,13 +1,13 @@
 RFFilterModel
 =============
 
-.. py:class:: RFFilterModel
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModel
 
-   Bases: py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a generic RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModel
 
 Overview
 --------

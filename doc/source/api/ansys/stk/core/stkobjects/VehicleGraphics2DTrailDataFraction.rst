@@ -1,13 +1,13 @@
 VehicleGraphics2DTrailDataFraction
 ==================================
 
-.. py:class:: VehicleGraphics2DTrailDataFraction
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTrailDataFraction
 
-   Bases: py:obj:`~IVehicleLeadTrailData`, py:obj:`~IVehicleLeadTrailDataFraction`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailData`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction`
 
    2D Graphics pass: fraction of trailing portion of vehicle track to display.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DTrailDataFraction
 
 Overview
 --------

@@ -1,12 +1,12 @@
 ONE_POINT_ACCESS_SUMMARY
 ========================
 
-.. py:class:: ONE_POINT_ACCESS_SUMMARY
+.. py:class:: ansys.stk.core.stkobjects.ONE_POINT_ACCESS_SUMMARY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ONE_POINT_ACCESS_SUMMARY
 
 Overview
 --------

@@ -1,13 +1,13 @@
 AntennaModelApertureRectangularSincRealPower
 ============================================
 
-.. py:class:: AntennaModelApertureRectangularSincRealPower
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelApertureRectangularSincRealPower
 
-   Bases: py:obj:`~IAntennaModelApertureRectangularSincRealPower`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a rectangular sinc real power aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelApertureRectangularSincRealPower
 
 Overview
 --------

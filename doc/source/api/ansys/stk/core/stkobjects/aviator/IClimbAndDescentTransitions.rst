@@ -1,13 +1,13 @@
 IClimbAndDescentTransitions
 ===========================
 
-.. py:class:: IClimbAndDescentTransitions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions
 
    object
    
    Interface used to access the Climb and Descent Transitions options found in the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IClimbAndDescentTransitions
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_pull_up_g`
-            * - :py:meth:`~max_push_over_g`
-            * - :py:meth:`~maneuver_mode`
-            * - :py:meth:`~ignore_fpa`
-            * - :py:meth:`~maneuver_mode_helper`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions.max_pull_up_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions.max_push_over_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions.maneuver_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions.ignore_fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions.maneuver_mode_helper`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions.maneuver_mode_helper
-    :type: IAgAvtrAeroPropManeuverModeHelper
+    :type: IAeroPropManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 

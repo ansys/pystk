@@ -1,13 +1,13 @@
 IAntennaModelElevationAzimuthCuts
 =================================
 
-.. py:class:: IAntennaModelElevationAzimuthCuts
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelElevationAzimuthCuts
 
    object
    
    Provide access to the properties and methods defining a pattern elevation/azimuth cuts antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelElevationAzimuthCuts
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelElevationAzimuthCuts.filename`
 
 
 Import detail

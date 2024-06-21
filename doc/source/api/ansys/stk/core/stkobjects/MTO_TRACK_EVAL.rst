@@ -1,12 +1,12 @@
 MTO_TRACK_EVAL
 ==============
 
-.. py:class:: MTO_TRACK_EVAL
+.. py:class:: ansys.stk.core.stkobjects.MTO_TRACK_EVAL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MTO_TRACK_EVAL
 
 Overview
 --------

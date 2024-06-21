@@ -1,13 +1,13 @@
 IElementEquinoctial
 ===================
 
-.. py:class:: IElementEquinoctial
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementEquinoctial
 
    IElement
    
    Properties for Equinoctial elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementEquinoctial
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~mean_motion`
-            * - :py:meth:`~h`
-            * - :py:meth:`~k`
-            * - :py:meth:`~p`
-            * - :py:meth:`~q`
-            * - :py:meth:`~mean_longitude`
-            * - :py:meth:`~formulation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.mean_motion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.h`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.k`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.q`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.mean_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.formulation`
 
 
 Import detail

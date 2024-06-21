@@ -1,13 +1,13 @@
 IVehicleGraphics2DTimeEventTypeMarker
 =====================================
 
-.. py:class:: IVehicleGraphics2DTimeEventTypeMarker
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker
 
    object
    
    2D Graphics time event: marker type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DTimeEventTypeMarker
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~color`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~unique_id`
-            * - :py:meth:`~event_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.unique_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.event_interval`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: event_interval
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.event_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Event interval.
 

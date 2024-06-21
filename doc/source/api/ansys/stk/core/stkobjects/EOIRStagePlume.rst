@@ -1,13 +1,13 @@
 EOIRStagePlume
 ==============
 
-.. py:class:: EOIRStagePlume
+.. py:class:: ansys.stk.core.stkobjects.EOIRStagePlume
 
-   Bases: py:obj:`~IEOIRStagePlume`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRStagePlume`
 
    Plume shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRStagePlume
 
 Overview
 --------

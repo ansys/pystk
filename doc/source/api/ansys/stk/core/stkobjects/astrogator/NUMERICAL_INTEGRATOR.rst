@@ -1,12 +1,12 @@
 NUMERICAL_INTEGRATOR
 ====================
 
-.. py:class:: NUMERICAL_INTEGRATOR
+.. py:class:: ansys.stk.core.stkobjects.astrogator.NUMERICAL_INTEGRATOR
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: NUMERICAL_INTEGRATOR
 
 Overview
 --------

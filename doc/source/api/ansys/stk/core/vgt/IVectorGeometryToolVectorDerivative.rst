@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorDerivative
 ===================================
 
-.. py:class:: IVectorGeometryToolVectorDerivative
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative
 
    object
    
    A vector derivative of a vector computed with respect to specified axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorDerivative
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vector`
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~differencing_time_step`
-            * - :py:meth:`~force_use_of_numerical_differences`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.differencing_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.force_use_of_numerical_differences`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a base vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.reference_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

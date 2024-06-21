@@ -1,13 +1,13 @@
 IVectorGeometryToolPointOnSurface
 =================================
 
-.. py:class:: IVectorGeometryToolPointOnSurface
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface
 
    object
    
    The detic subpoint of the reference point as projected onto the central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointOnSurface
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~reference_shape`
-            * - :py:meth:`~surface_type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.reference_shape`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.surface_type`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.central_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.reference_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a reference point.
 

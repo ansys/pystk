@@ -1,13 +1,13 @@
 Graphics3DVector
 ================
 
-.. py:class:: Graphics3DVector
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DVector
 
-   Bases: py:obj:`~IGraphics3DVector`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DVector`
 
    Class defining 3D vectors.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DVector
 
 Overview
 --------

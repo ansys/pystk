@@ -1,13 +1,13 @@
 StkObject
 =========
 
-.. py:class:: StkObject
+.. py:class:: ansys.stk.core.stkobjects.StkObject
 
-   Bases: py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Represents a generic STK object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkObject
 
 Overview
 --------

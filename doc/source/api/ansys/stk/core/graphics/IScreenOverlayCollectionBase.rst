@@ -1,13 +1,13 @@
 IScreenOverlayCollectionBase
 ============================
 
-.. py:class:: IScreenOverlayCollectionBase
+.. py:class:: ansys.stk.core.graphics.IScreenOverlayCollectionBase
 
    object
    
    The common base class for collections of overlays held by screen overlay and by screen overlay manager.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IScreenOverlayCollectionBase
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.item`
               - Get the overlay at the specified index.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.contains`
               - Determine whether the collection contains a specific overlay.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.remove`
               - Remove the first occurrence of a specific overlay from the collection.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.clear`
               - Remove all overlays from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.add`
               - Add an overlay to the collection.
 
     .. tab-item:: Properties
@@ -37,9 +37,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~is_read_only`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.is_read_only`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase._NewEnum`
 
 
 Import detail

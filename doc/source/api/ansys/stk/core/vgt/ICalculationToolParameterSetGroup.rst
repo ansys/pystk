@@ -1,13 +1,13 @@
 ICalculationToolParameterSetGroup
 =================================
 
-.. py:class:: ICalculationToolParameterSetGroup
+.. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSetGroup
 
    object
    
    Access or create VGT parameter sets associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolParameterSetGroup
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup.remove`
               - Remove a specified element.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup.item`
               - Return an element by name or at a specified position.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup.get_item_by_index`
               - Retrieve an element from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup.get_item_by_name`
               - Retrieve an element from the collection by name.
 
     .. tab-item:: Properties
@@ -37,10 +37,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~context`
-            * - :py:meth:`~count`
-            * - :py:meth:`~factory`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup.context`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup.count`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup.factory`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup._NewEnum`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetGroup.context
-    :type: IAgCrdnContext
+    :type: IAnalysisWorkbenchContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetGroup.factory
-    :type: IAgCrdnParameterSetFactory
+    :type: ICalculationToolParameterSetFactory
 
     Returns a factory object used to create calc scalar components.
 

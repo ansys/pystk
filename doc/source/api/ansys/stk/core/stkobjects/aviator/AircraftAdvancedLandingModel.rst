@@ -1,13 +1,13 @@
 AircraftAdvancedLandingModel
 ============================
 
-.. py:class:: AircraftAdvancedLandingModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel
 
-   Bases: py:obj:`~IAircraftAdvancedLandingModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the advanced landing performance model for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftAdvancedLandingModel
 
 Overview
 --------

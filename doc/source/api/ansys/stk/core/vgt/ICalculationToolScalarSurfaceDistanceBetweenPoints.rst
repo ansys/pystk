@@ -1,13 +1,13 @@
 ICalculationToolScalarSurfaceDistanceBetweenPoints
 ==================================================
 
-.. py:class:: ICalculationToolScalarSurfaceDistanceBetweenPoints
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints
 
    object
    
    Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude).
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarSurfaceDistanceBetweenPoints
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~point1`
-            * - :py:meth:`~point2`
-            * - :py:meth:`~surface_central_body`
-            * - :py:meth:`~differencing_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.point1`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.point2`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.surface_central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.differencing_time_step`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: point1
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.point1
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     Starting point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
 
 .. py:property:: point2
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.point2
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     Terminating point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
 

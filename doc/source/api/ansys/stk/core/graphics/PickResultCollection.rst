@@ -1,13 +1,13 @@
 PickResultCollection
 ====================
 
-.. py:class:: PickResultCollection
+.. py:class:: ansys.stk.core.graphics.PickResultCollection
 
-   Bases: py:obj:`~IPickResultCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IPickResultCollection`
 
    A collection of picked objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: PickResultCollection
 
 Overview
 --------

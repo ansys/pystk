@@ -1,13 +1,13 @@
 IThruster
 =========
 
-.. py:class:: IThruster
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IThruster
 
    object
    
    Properties for individual thrusters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IThruster
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.copy`
               - Make a copy of the specified thruster.
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -35,13 +35,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~user_comment`
-            * - :py:meth:`~engine_model_name`
-            * - :py:meth:`~thruster_efficiency`
-            * - :py:meth:`~equivalent_on_time`
-            * - :py:meth:`~thruster_direction`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.user_comment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.engine_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.thruster_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.equivalent_on_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.thruster_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThruster.control_parameters_available`
 
 
 Import detail
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: thruster_direction
     :canonical: ansys.stk.core.stkobjects.astrogator.IThruster.thruster_direction
-    :type: IAgDirection
+    :type: IDirection
 
     A thruster direction value.
 

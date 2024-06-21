@@ -1,13 +1,13 @@
 ISensorEOIRBandCollection
 =========================
 
-.. py:class:: ISensorEOIRBandCollection
+.. py:class:: ansys.stk.core.stkobjects.ISensorEOIRBandCollection
 
    object
    
    IAgSnEOIRBandCollection Interface. A collection of EOIR bands.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorEOIRBandCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection.item`
               - Given an index, returns an IAgSnEOIRBand interface.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection.add`
               - Add a target.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection.remove_at`
               - Remove a target given an index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection.get_item_by_name`
               - Retrieve an item from the collection by name.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection._NewEnum`
 
 
 Import detail

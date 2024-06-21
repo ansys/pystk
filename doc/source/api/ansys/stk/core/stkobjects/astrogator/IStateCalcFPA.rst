@@ -1,13 +1,13 @@
 IStateCalcFPA
 =============
 
-.. py:class:: IStateCalcFPA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcFPA
 
    object
    
    Properties for a Flight Path Angle calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcFPA
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcFPA.coord_system_name`
 
 
 Import detail

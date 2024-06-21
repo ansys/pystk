@@ -1,13 +1,13 @@
 ITriangleMeshPrimitiveOptionalParameters
 ========================================
 
-.. py:class:: ITriangleMeshPrimitiveOptionalParameters
+.. py:class:: ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParameters
 
    object
    
    Optional parameters for triangle mesh primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITriangleMeshPrimitiveOptionalParameters
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_texture_coordinates`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParameters.set_texture_coordinates`
               - Define a collection of texture coordinates.
-            * - :py:meth:`~set_per_vertex_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParameters.set_per_vertex_colors`
               - Define a collection of colors.
 
 

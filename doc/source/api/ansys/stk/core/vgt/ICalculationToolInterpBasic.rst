@@ -1,13 +1,13 @@
 ICalculationToolInterpBasic
 ===========================
 
-.. py:class:: ICalculationToolInterpBasic
+.. py:class:: ansys.stk.core.vgt.ICalculationToolInterpBasic
 
    object
    
    Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolInterpBasic
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~order`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolInterpBasic.type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolInterpBasic.order`
 
 
 Import detail

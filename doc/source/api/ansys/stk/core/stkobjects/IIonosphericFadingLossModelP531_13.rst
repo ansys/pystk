@@ -1,13 +1,13 @@
 IIonosphericFadingLossModelP531_13
 ==================================
 
-.. py:class:: IIonosphericFadingLossModelP531_13
+.. py:class:: ansys.stk.core.stkobjects.IIonosphericFadingLossModelP531_13
 
    object
    
    Provide access to the properties and methods for the Ionospheric Fading loss model ITU-R P.531_13.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IIonosphericFadingLossModelP531_13
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_alternate_ap_file`
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModelP531_13.use_alternate_ap_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModelP531_13.filename`
 
 
 Import detail

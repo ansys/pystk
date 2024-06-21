@@ -1,13 +1,13 @@
 IGraphics3DReferenceVectorGeometryToolVector
 ============================================
 
-.. py:class:: IGraphics3DReferenceVectorGeometryToolVector
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector
 
    IGraphics3DReferenceAnalysisWorkbenchComponent
    
    Configure the visual representation of a Vector Geometry vector component in 3D.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DReferenceVectorGeometryToolVector
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~draw_at_cb`
-            * - :py:meth:`~ra_dec_visible`
-            * - :py:meth:`~ra_dec_unit_abrv`
-            * - :py:meth:`~magnitude_visible`
-            * - :py:meth:`~magnitude_dimension`
-            * - :py:meth:`~magnitude_unit_abrv`
-            * - :py:meth:`~persistence_visible`
-            * - :py:meth:`~duration`
-            * - :py:meth:`~connect`
-            * - :py:meth:`~transparent`
-            * - :py:meth:`~axes`
-            * - :py:meth:`~draw_at_point`
-            * - :py:meth:`~point`
-            * - :py:meth:`~true_scale`
-            * - :py:meth:`~available_axes`
-            * - :py:meth:`~available_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.draw_at_cb`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.ra_dec_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.ra_dec_unit_abrv`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.magnitude_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.magnitude_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.magnitude_unit_abrv`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.persistence_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.connect`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.transparent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.draw_at_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.true_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.available_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.available_points`
 
 
 Import detail

@@ -19,16 +19,16 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~IStrategyMATLABNav`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav`
               - Interface used to access options for a MATLAB - Horizontal Plane Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IStrategyMATLABProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABProfile`
               - Interface used to access options for a MATLAB - Vertical Plane Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IStrategyMATLABFull3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D`
               - Interface used to access options for a MATLAB - Full 3D Strategy of a Basic Maneuver Procedure.
 
-            * - :py:class:`~IStrategyMATLAB3DGuidance`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance`
               - Interface used to access options for a MATLAB - 3D Guidance Strategy of a Basic Maneuver Procedure.
 
     
@@ -39,19 +39,19 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~StrategyMATLABNav`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABNav`
               - Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure.
 
-            * - :py:class:`~StrategyMATLABProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABProfile`
               - Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure.
 
-            * - :py:class:`~StrategyMATLABFull3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D`
               - Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure.
 
-            * - :py:class:`~StrategyMATLAB3DGuidance`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance`
               - Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure.
 
-            * - :py:class:`~BasicManeuverMATLABFactory`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.BasicManeuverMATLABFactory`
               - Class defining the factory to create the basic maneuver PropNav strategies.
 
 

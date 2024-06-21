@@ -1,13 +1,13 @@
 FigureOfMeritAssetListCollection
 ================================
 
-.. py:class:: FigureOfMeritAssetListCollection
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritAssetListCollection
 
-   Bases: py:obj:`~IFigureOfMeritAssetListCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection`
 
    List of assets available for specifying range uncertainty (for Navigation Accuracy FOM).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritAssetListCollection
 
 Overview
 --------

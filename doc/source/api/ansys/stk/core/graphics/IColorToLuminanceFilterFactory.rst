@@ -1,13 +1,13 @@
 IColorToLuminanceFilterFactory
 ==============================
 
-.. py:class:: IColorToLuminanceFilterFactory
+.. py:class:: ansys.stk.core.graphics.IColorToLuminanceFilterFactory
 
    object
    
    Extract a luminance band derived from the color bands of the source raster.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IColorToLuminanceFilterFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IColorToLuminanceFilterFactory.initialize`
               - Initialize a new instance.
 
 

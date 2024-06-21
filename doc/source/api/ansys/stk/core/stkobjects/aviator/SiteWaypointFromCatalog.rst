@@ -1,13 +1,13 @@
 SiteWaypointFromCatalog
 =======================
 
-.. py:class:: SiteWaypointFromCatalog
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteWaypointFromCatalog
 
-   Bases: py:obj:`~ISiteWaypointFromCatalog`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteWaypointFromCatalog`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a waypoint from catalog site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteWaypointFromCatalog
 
 Overview
 --------

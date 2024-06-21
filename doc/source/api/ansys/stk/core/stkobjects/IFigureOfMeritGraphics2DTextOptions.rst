@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DTextOptions
 ===================================
 
-.. py:class:: IFigureOfMeritGraphics2DTextOptions
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions
 
    object
    
    Text display options for contour legend.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DTextOptions
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~title`
-            * - :py:meth:`~num_decimal_digits`
-            * - :py:meth:`~floating_point_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions.title`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions.num_decimal_digits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions.floating_point_format`
 
 
 Import detail

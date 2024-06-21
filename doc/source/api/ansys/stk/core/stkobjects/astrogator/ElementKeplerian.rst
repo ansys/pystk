@@ -1,13 +1,13 @@
 ElementKeplerian
 ================
 
-.. py:class:: ElementKeplerian
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ElementKeplerian
 
-   Bases: py:obj:`~IElementKeplerian`, py:obj:`~IElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Keplerian elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ElementKeplerian
 
 Overview
 --------

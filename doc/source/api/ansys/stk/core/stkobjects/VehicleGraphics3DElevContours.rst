@@ -1,13 +1,13 @@
 VehicleGraphics3DElevContours
 =============================
 
-.. py:class:: VehicleGraphics3DElevContours
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DElevContours
 
-   Bases: py:obj:`~IVehicleGraphics3DElevContours`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours`
 
    3D elevation angle contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DElevContours
 
 Overview
 --------

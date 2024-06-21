@@ -1,12 +1,12 @@
 RADAR_SAR_PRF_MODE
 ==================
 
-.. py:class:: RADAR_SAR_PRF_MODE
+.. py:class:: ansys.stk.core.stkobjects.RADAR_SAR_PRF_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_SAR_PRF_MODE
 
 Overview
 --------

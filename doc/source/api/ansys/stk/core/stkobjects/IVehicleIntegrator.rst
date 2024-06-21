@@ -1,13 +1,13 @@
 IVehicleIntegrator
 ==================
 
-.. py:class:: IVehicleIntegrator
+.. py:class:: ansys.stk.core.stkobjects.IVehicleIntegrator
 
    object
    
    Interface for HPOP integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleIntegrator
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~integration_model`
-            * - :py:meth:`~use_graphics_3d_p`
-            * - :py:meth:`~predictor_corrector_scheme`
-            * - :py:meth:`~step_size_control`
-            * - :py:meth:`~time_regularization`
-            * - :py:meth:`~interpolation`
-            * - :py:meth:`~report_ephem_on_fixed_time_step`
-            * - :py:meth:`~do_not_propagate_below_altitude`
-            * - :py:meth:`~allow_position_vel_cov_interpolation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.integration_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.use_graphics_3d_p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.predictor_corrector_scheme`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.step_size_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.time_regularization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.interpolation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.report_ephem_on_fixed_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.do_not_propagate_below_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.allow_position_vel_cov_interpolation`
 
 
 Import detail
@@ -62,19 +62,19 @@ Property detail
 
 .. py:property:: step_size_control
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegrator.step_size_control
-    :type: IAgVeStepSizeControl
+    :type: IVehicleStepSizeControl
 
     Get the method of integration step size control.
 
 .. py:property:: time_regularization
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegrator.time_regularization
-    :type: IAgVeTimeRegularization
+    :type: IVehicleTimeRegularization
 
     Get the time regularization parameters.
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegrator.interpolation
-    :type: IAgVeInterpolation
+    :type: IVehicleInterpolation
 
     Get the interpolation parameters.
 

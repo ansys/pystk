@@ -1,13 +1,13 @@
 Mission
 =======
 
-.. py:class:: Mission
+.. py:class:: ansys.stk.core.stkobjects.aviator.Mission
 
-   Bases: py:obj:`~IMission`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMission`
 
    Class defining the Aviator mission.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: Mission
 
 Overview
 --------

@@ -1,13 +1,13 @@
 GridSearchResultCollection
 ==========================
 
-.. py:class:: GridSearchResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GridSearchResultCollection
 
-   Bases: py:obj:`~IGridSearchResultCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection`
 
    Properties for the list of Grid Search result parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GridSearchResultCollection
 
 Overview
 --------

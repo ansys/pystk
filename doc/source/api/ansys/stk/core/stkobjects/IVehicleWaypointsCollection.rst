@@ -1,13 +1,13 @@
 IVehicleWaypointsCollection
 ===========================
 
-.. py:class:: IVehicleWaypointsCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleWaypointsCollection
 
    object
    
    Represents a collection of waypoints used with GreatArc vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleWaypointsCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.contains`
               - Determine whether the collection contains the waypoint at the specified time.
-            * - :py:meth:`~index_of`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.index_of`
               - Determine whether the collection contains the specified waypoint and returns an index of existing waypoint. The index < 0 indicates the way point is not in the collection.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.to_array`
               - Return a two-dimensional array that contains the way points. Each sub-array represents a waypoint. The order of the elements is Time, Latitude, Longitude, Altitude,Speed,Acceleration,TurnRadius.
 
     .. tab-item:: Properties
@@ -41,8 +41,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection._NewEnum`
 
 
 Import detail

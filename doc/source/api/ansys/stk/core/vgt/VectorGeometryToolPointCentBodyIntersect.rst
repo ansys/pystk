@@ -1,13 +1,13 @@
 VectorGeometryToolPointCentBodyIntersect
 ========================================
 
-.. py:class:: VectorGeometryToolPointCentBodyIntersect
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointCentBodyIntersect
 
-   Bases: py:obj:`~IVectorGeometryToolPointCentBodyIntersect`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolPoint`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
 
    Point on central body surface along direction vector originating at source point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointCentBodyIntersect
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarActivityTimeComponentList
 ===============================
 
-.. py:class:: IRadarActivityTimeComponentList
+.. py:class:: ansys.stk.core.stkobjects.IRadarActivityTimeComponentList
 
    object
    
    Provide access to the properties and methods defining radar time components list activity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarActivityTimeComponentList
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_components`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentList.time_components`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: time_components
     :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeComponentList.time_components
-    :type: IAgRadarActivityTimeComponentListCollection
+    :type: IRadarActivityTimeComponentListCollection
 
     Gets the time components collection.
 

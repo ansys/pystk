@@ -1,12 +1,12 @@
 ROUTE_GRAPHICS_3D_MARKER_TYPE
 =============================
 
-.. py:class:: ROUTE_GRAPHICS_3D_MARKER_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ROUTE_GRAPHICS_3D_MARKER_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ROUTE_GRAPHICS_3D_MARKER_TYPE
 
 Overview
 --------

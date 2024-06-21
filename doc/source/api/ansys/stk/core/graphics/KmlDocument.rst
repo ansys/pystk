@@ -1,13 +1,13 @@
 KmlDocument
 ===========
 
-.. py:class:: KmlDocument
+.. py:class:: ansys.stk.core.graphics.KmlDocument
 
-   Bases: py:obj:`~IKmlDocument`, py:obj:`~IKmlContainer`, py:obj:`~IKmlFeature`
+   Bases: py:obj:`~ansys.stk.core.graphics.IKmlDocument`, py:obj:`~ansys.stk.core.graphics.IKmlContainer`, py:obj:`~ansys.stk.core.graphics.IKmlFeature`
 
    A KML document.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KmlDocument
 
 Overview
 --------

@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionCompute
 ==============================
 
-.. py:class:: FigureOfMeritDefinitionCompute
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionCompute
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Compute options for navigation accuracy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionCompute
 
 Overview
 --------

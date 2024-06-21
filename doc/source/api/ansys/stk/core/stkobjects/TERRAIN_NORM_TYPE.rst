@@ -1,12 +1,12 @@
 TERRAIN_NORM_TYPE
 =================
 
-.. py:class:: TERRAIN_NORM_TYPE
+.. py:class:: ansys.stk.core.stkobjects.TERRAIN_NORM_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TERRAIN_NORM_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 SiteRunway
 ==========
 
-.. py:class:: SiteRunway
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteRunway
 
-   Bases: py:obj:`~ISiteRunway`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteRunway`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a runway site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteRunway
 
 Overview
 --------

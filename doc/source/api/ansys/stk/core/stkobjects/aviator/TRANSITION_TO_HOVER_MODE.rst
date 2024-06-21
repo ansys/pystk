@@ -1,12 +1,12 @@
 TRANSITION_TO_HOVER_MODE
 ========================
 
-.. py:class:: TRANSITION_TO_HOVER_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.TRANSITION_TO_HOVER_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TRANSITION_TO_HOVER_MODE
 
 Overview
 --------

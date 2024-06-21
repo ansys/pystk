@@ -1,13 +1,13 @@
 TimeToolEventArrayFiltered
 ==========================
 
-.. py:class:: TimeToolEventArrayFiltered
+.. py:class:: ansys.stk.core.vgt.TimeToolEventArrayFiltered
 
-   Bases: py:obj:`~ITimeToolEventArrayFiltered`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventArray`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by filtering times from original time array according to specified filtering method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventArrayFiltered
 
 Overview
 --------

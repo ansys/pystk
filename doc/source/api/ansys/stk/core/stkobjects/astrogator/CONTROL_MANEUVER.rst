@@ -1,12 +1,12 @@
 CONTROL_MANEUVER
 ================
 
-.. py:class:: CONTROL_MANEUVER
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_MANEUVER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_MANEUVER
 
 Overview
 --------

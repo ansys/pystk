@@ -1,13 +1,13 @@
 IVehiclePositionVelocityElement
 ===============================
 
-.. py:class:: IVehiclePositionVelocityElement
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePositionVelocityElement
 
    object
    
    Covariance matrix interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePositionVelocityElement
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
-            * - :py:meth:`~vx`
-            * - :py:meth:`~vy`
-            * - :py:meth:`~vz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.vx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.vy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.vz`
 
 
 Import detail

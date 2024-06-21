@@ -1,13 +1,13 @@
 DAFIFSource
 ===========
 
-.. py:class:: DAFIFSource
+.. py:class:: ansys.stk.core.stkobjects.aviator.DAFIFSource
 
-   Bases: py:obj:`~IDAFIFSource`, py:obj:`~ICatalogSource`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
 
    Class defining an DAFIF source in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: DAFIFSource
 
 Overview
 --------

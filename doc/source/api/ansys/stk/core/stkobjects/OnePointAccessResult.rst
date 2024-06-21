@@ -1,13 +1,13 @@
 OnePointAccessResult
 ====================
 
-.. py:class:: OnePointAccessResult
+.. py:class:: ansys.stk.core.stkobjects.OnePointAccessResult
 
-   Bases: py:obj:`~IOnePointAccessResult`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOnePointAccessResult`
 
    One Point Access Result.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OnePointAccessResult
 
 Overview
 --------

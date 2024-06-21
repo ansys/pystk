@@ -1,12 +1,12 @@
 CLIMB_SPEED_TYPE
 ================
 
-.. py:class:: CLIMB_SPEED_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.CLIMB_SPEED_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: CLIMB_SPEED_TYPE
 
 Overview
 --------

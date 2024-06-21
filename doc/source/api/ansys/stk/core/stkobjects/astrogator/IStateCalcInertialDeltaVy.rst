@@ -1,13 +1,13 @@
 IStateCalcInertialDeltaVy
 =========================
 
-.. py:class:: IStateCalcInertialDeltaVy
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcInertialDeltaVy
 
    object
    
    Properties for an Inertial DeltaVy calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcInertialDeltaVy
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInertialDeltaVy.coord_axes_name`
 
 
 Import detail

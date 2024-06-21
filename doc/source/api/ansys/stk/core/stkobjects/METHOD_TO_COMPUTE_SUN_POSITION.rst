@@ -1,12 +1,12 @@
 METHOD_TO_COMPUTE_SUN_POSITION
 ==============================
 
-.. py:class:: METHOD_TO_COMPUTE_SUN_POSITION
+.. py:class:: ansys.stk.core.stkobjects.METHOD_TO_COMPUTE_SUN_POSITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: METHOD_TO_COMPUTE_SUN_POSITION
 
 Overview
 --------

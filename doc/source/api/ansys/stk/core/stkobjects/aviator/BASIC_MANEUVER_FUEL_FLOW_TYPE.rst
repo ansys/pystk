@@ -1,12 +1,12 @@
 BASIC_MANEUVER_FUEL_FLOW_TYPE
 =============================
 
-.. py:class:: BASIC_MANEUVER_FUEL_FLOW_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_FUEL_FLOW_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BASIC_MANEUVER_FUEL_FLOW_TYPE
 
 Overview
 --------

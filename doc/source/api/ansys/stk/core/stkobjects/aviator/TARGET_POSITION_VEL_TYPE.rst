@@ -1,12 +1,12 @@
 TARGET_POSITION_VEL_TYPE
 ========================
 
-.. py:class:: TARGET_POSITION_VEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.TARGET_POSITION_VEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TARGET_POSITION_VEL_TYPE
 
 Overview
 --------

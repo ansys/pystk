@@ -1,13 +1,13 @@
 FigureOfMeritSatisfaction
 =========================
 
-.. py:class:: FigureOfMeritSatisfaction
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritSatisfaction
 
-   Bases: py:obj:`~IFigureOfMeritSatisfaction`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction`
 
    Satisfaction properties for a Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritSatisfaction
 
 Overview
 --------

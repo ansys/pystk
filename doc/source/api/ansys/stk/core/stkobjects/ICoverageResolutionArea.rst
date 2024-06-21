@@ -1,13 +1,13 @@
 ICoverageResolutionArea
 =======================
 
-.. py:class:: ICoverageResolutionArea
+.. py:class:: ansys.stk.core.stkobjects.ICoverageResolutionArea
 
    ICoverageResolution
    
    Area: Define the location of grid coordinates by using the specified area to determine a latitude/longitude spacing scheme at the equator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageResolutionArea
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageResolutionArea.area`
 
 
 Import detail

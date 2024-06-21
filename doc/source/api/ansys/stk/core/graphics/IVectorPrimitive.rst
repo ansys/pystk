@@ -1,13 +1,13 @@
 IVectorPrimitive
 ================
 
-.. py:class:: IVectorPrimitive
+.. py:class:: ansys.stk.core.graphics.IVectorPrimitive
 
    object
    
    Render a vector in the 3D scene. A vector is defined by a source (given by a reference frame) and a direction (given by a vector). Length is auto-calculated or can be set separately.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IVectorPrimitive
 
 Overview
 --------
@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lighting`
-            * - :py:meth:`~label`
-            * - :py:meth:`~display_label`
-            * - :py:meth:`~display_magnitude`
-            * - :py:meth:`~display_ra_dec`
-            * - :py:meth:`~display_trace`
-            * - :py:meth:`~display_sweep`
-            * - :py:meth:`~display_lines`
-            * - :py:meth:`~persistence_width`
-            * - :py:meth:`~fade_persistence`
-            * - :py:meth:`~persistence_duration`
-            * - :py:meth:`~length`
-            * - :py:meth:`~width`
-            * - :py:meth:`~true_scale`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.lighting`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.label`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.display_label`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.display_magnitude`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.display_ra_dec`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.display_trace`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.display_sweep`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.display_lines`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.persistence_width`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.fade_persistence`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.persistence_duration`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.length`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.width`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitive.true_scale`
 
 
 Import detail

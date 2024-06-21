@@ -1,13 +1,13 @@
 IFilteringRasterStream
 ======================
 
-.. py:class:: IFilteringRasterStream
+.. py:class:: ansys.stk.core.graphics.IFilteringRasterStream
 
    object
    
    A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IFilteringRasterStream
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filter`
-            * - :py:meth:`~stream`
+            * - :py:attr:`~ansys.stk.core.graphics.IFilteringRasterStream.filter`
+            * - :py:attr:`~ansys.stk.core.graphics.IFilteringRasterStream.stream`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.graphics.IFilteringRasterStream.filter
-    :type: IAgStkGraphicsRasterFilter
+    :type: IRasterFilter
 
     Gets the raster filter that will be applied to the raster stream on each update.
 
 .. py:property:: stream
     :canonical: ansys.stk.core.graphics.IFilteringRasterStream.stream
-    :type: IAgStkGraphicsRasterStream
+    :type: IRasterStream
 
     Gets the raster stream that will have the raster filter applied on each update.
 

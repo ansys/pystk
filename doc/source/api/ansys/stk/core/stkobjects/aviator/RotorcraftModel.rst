@@ -1,13 +1,13 @@
 RotorcraftModel
 ===============
 
-.. py:class:: RotorcraftModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.RotorcraftModel
 
-   Bases: py:obj:`~IRotorcraftModel`, py:obj:`~IAviatorVehicle`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IAviatorVehicle`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining a rotorcraft in Aviator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: RotorcraftModel
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcEarthMeanLocTimeAN
 ============================
 
-.. py:class:: IStateCalcEarthMeanLocTimeAN
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcEarthMeanLocTimeAN
 
    object
    
    Properties for an Earth Mean Local Time of Ascending Node calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcEarthMeanLocTimeAN
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEarthMeanLocTimeAN.central_body_name`
 
 
 Import detail

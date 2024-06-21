@@ -1,13 +1,13 @@
 IDelaunayHOverSQRTmu
 ====================
 
-.. py:class:: IDelaunayHOverSQRTmu
+.. py:class:: ansys.stk.core.stkobjects.IDelaunayHOverSQRTmu
 
    object
    
    Interface for Delaunay Variable H/SQRT(mu), i.e. H divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDelaunayHOverSQRTmu
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~h_over_sqrt_mu`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayHOverSQRTmu.h_over_sqrt_mu`
 
 
 Import detail

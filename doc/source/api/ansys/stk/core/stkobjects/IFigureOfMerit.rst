@@ -1,13 +1,13 @@
 IFigureOfMerit
 ==============
 
-.. py:class:: IFigureOfMerit
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMerit
 
    object
    
    Figure of Merit properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMerit
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_definition_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.set_definition_type`
               - Set the definition type.
-            * - :py:meth:`~is_definition_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.is_definition_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_access_constraint_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.set_access_constraint_definition`
               - Set the access constraint definition.
-            * - :py:meth:`~set_access_constraint_definition_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.set_access_constraint_definition_name`
               - Set the access constraint definition by name.
-            * - :py:meth:`~set_scalar_calculation_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.set_scalar_calculation_definition`
               - Set the scalar calculation definition.
 
     .. tab-item:: Properties
@@ -37,12 +37,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~definition_type`
-            * - :py:meth:`~definition_supported_types`
-            * - :py:meth:`~definition`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~grid_inspector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.definition_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.definition_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.grid_inspector`
 
 
 Import detail
@@ -70,25 +70,25 @@ Property detail
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.definition
-    :type: IAgFmDefinition
+    :type: IFigureOfMeritDefinition
 
     Definition properties of the FOM.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.graphics
-    :type: IAgFmGraphics
+    :type: IFigureOfMeritGraphics
 
     2D graphics properties of the FOM.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.graphics_3d
-    :type: IAgFmVO
+    :type: IFigureOfMeritGraphics3D
 
     3D graphics properties of the FOM.
 
 .. py:property:: grid_inspector
     :canonical: ansys.stk.core.stkobjects.IFigureOfMerit.grid_inspector
-    :type: IAgFmGridInspector
+    :type: IFigureOfMeritGridInspector
 
     Get the Grid inspector tool.
 

@@ -1,13 +1,13 @@
 SceneCollection
 ===============
 
-.. py:class:: SceneCollection
+.. py:class:: ansys.stk.core.graphics.SceneCollection
 
-   Bases: py:obj:`~ISceneCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.ISceneCollection`
 
    A collection of scenes.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SceneCollection
 
 Overview
 --------

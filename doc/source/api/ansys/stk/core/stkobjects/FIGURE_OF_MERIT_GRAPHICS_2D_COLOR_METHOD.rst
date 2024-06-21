@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
 ========================================
 
-.. py:class:: FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
 
 Overview
 --------

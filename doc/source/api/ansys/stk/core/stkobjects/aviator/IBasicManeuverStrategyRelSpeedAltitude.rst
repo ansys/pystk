@@ -1,13 +1,13 @@
 IBasicManeuverStrategyRelSpeedAltitude
 ======================================
 
-.. py:class:: IBasicManeuverStrategyRelSpeedAltitude
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude
 
    object
    
    Interface used to access options for a Relative Speed/Altitude Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyRelSpeedAltitude
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.set_airspeed_offset`
               - Set the airspeed offset value and type.
-            * - :py:meth:`~set_min_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.set_min_airspeed`
               - Set the minimum airspeed value and type.
-            * - :py:meth:`~set_max_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.set_max_airspeed`
               - Set the maximum airspeed value and type.
-            * - :py:meth:`~cancel_tgt_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.cancel_tgt_position_vel`
               - Cancel the position velocity strategies for Rel Speed Alt.
 
     .. tab-item:: Properties
@@ -35,27 +35,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_name`
-            * - :py:meth:`~valid_target_names`
-            * - :py:meth:`~target_resolution`
-            * - :py:meth:`~relative_altitude_mode`
-            * - :py:meth:`~elevation_angle`
-            * - :py:meth:`~altitude_offset`
-            * - :py:meth:`~airspeed_offset_type`
-            * - :py:meth:`~airspeed_offset`
-            * - :py:meth:`~use_tgt_aspect_for_airspeed`
-            * - :py:meth:`~use_perf_model_limits`
-            * - :py:meth:`~range_for_equal_speed`
-            * - :py:meth:`~range_to_transition_speed`
-            * - :py:meth:`~min_altitude`
-            * - :py:meth:`~max_altitude`
-            * - :py:meth:`~min_airspeed`
-            * - :py:meth:`~min_airspeed_type`
-            * - :py:meth:`~max_airspeed`
-            * - :py:meth:`~max_airspeed_type`
-            * - :py:meth:`~stop_condition`
-            * - :py:meth:`~compensate_for_coriolis_accel`
-            * - :py:meth:`~position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.target_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.valid_target_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.target_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.relative_altitude_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.elevation_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.airspeed_offset_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.airspeed_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.use_tgt_aspect_for_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.use_perf_model_limits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.range_for_equal_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.range_to_transition_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.min_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.max_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.min_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.min_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.max_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.max_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.stop_condition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.position_vel_strategies`
 
 
 Import detail
@@ -191,7 +191,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.position_vel_strategies
-    :type: IAgAvtrBasicManeuverTargetPosVel
+    :type: IBasicManeuverTargetPositionVel
 
     Get the position velocity strategies for Rel Speed Alt.
 

@@ -1,13 +1,13 @@
 IRadarWaveformSarPulseDefinition
 ================================
 
-.. py:class:: IRadarWaveformSarPulseDefinition
+.. py:class:: ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition
 
    object
    
    Provide access to the properties and methods defining the pulse definition for a Sar waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarWaveformSarPulseDefinition
 
 Overview
 --------
@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~prf_mode`
-            * - :py:meth:`~prf`
-            * - :py:meth:`~unambiguous_range`
-            * - :py:meth:`~range_resolution_mode`
-            * - :py:meth:`~range_resolution`
-            * - :py:meth:`~bandwidth`
-            * - :py:meth:`~pcr_mode`
-            * - :py:meth:`~pcr`
-            * - :py:meth:`~pulse_width`
-            * - :py:meth:`~scene_depth`
-            * - :py:meth:`~fm_chirp_rate`
-            * - :py:meth:`~range_broadening_factor`
-            * - :py:meth:`~if_bandwidth`
-            * - :py:meth:`~number_of_pulses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.prf_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.prf`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.unambiguous_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.range_resolution_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.range_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.pcr_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.pcr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.pulse_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.scene_depth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.fm_chirp_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.range_broadening_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.if_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.number_of_pulses`
 
 
 Import detail

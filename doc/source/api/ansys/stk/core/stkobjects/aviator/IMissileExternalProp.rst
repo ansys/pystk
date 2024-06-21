@@ -1,13 +1,13 @@
 IMissileExternalProp
 ====================
 
-.. py:class:: IMissileExternalProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileExternalProp
 
    object
    
    Interface used to access the External Prop file options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileExternalProp
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp.set_filepath`
               - Set the filepath for the external prop file.
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp.reload`
               - Reload the external prop file.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filepath`
-            * - :py:meth:`~no_thrust_when_no_fuel`
-            * - :py:meth:`~is_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp.filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp.no_thrust_when_no_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp.is_valid`
 
 
 Import detail

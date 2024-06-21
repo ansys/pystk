@@ -1,13 +1,13 @@
 IMtoAnalysisRange
 =================
 
-.. py:class:: IMtoAnalysisRange
+.. py:class:: ansys.stk.core.stkobjects.IMtoAnalysisRange
 
    object
    
    MTO range computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoAnalysisRange
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_any_track_in_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.is_any_track_in_range`
               - Return true if any track is in range of the specified object.
-            * - :py:meth:`~are_all_tracks_in_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.are_all_tracks_in_range`
               - Return true if all tracks are in range of the specified object.
-            * - :py:meth:`~is_track_in_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.is_track_in_range`
               - Return true is the track id is within range.
-            * - :py:meth:`~compute_ranges`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.compute_ranges`
               - Return an array of track ids with a bool value if it's in range of the object.
-            * - :py:meth:`~compute_all_ranges`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.compute_all_ranges`
               - Compute the range of all track ids. Returns an array of track ids with a bool value if it's in range of the object.
-            * - :py:meth:`~are_tracks_in_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.are_tracks_in_range`
               - Return true if any track in the array is visible to the object.
 
     .. tab-item:: Properties
@@ -39,12 +39,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lower_limit`
-            * - :py:meth:`~upper_limit`
-            * - :py:meth:`~object_interval`
-            * - :py:meth:`~object_data`
-            * - :py:meth:`~stk_object_path`
-            * - :py:meth:`~entirety`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.lower_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.upper_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.object_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.object_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.stk_object_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.entirety`
 
 
 Import detail

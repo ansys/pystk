@@ -1,13 +1,13 @@
 StateCalcMissionControlSequenceDeltaVSquared
 ============================================
 
-.. py:class:: StateCalcMissionControlSequenceDeltaVSquared
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMissionControlSequenceDeltaVSquared
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMissionControlSequenceDeltaVSquared`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMissionControlSequenceDeltaVSquared`
 
    MCS DeltaV Squared Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcMissionControlSequenceDeltaVSquared
 
 Overview
 --------

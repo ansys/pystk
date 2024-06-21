@@ -1,13 +1,13 @@
 ICalculationToolScalarStandardDeviation
 =======================================
 
-.. py:class:: ICalculationToolScalarStandardDeviation
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation
 
    object
    
    Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarStandardDeviation
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_offsets`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.set_offsets`
               - Set the offsets with respect to current time to define the start and stop of the sliding window, used when IntegrationWindowType is set to Sliding Window.
 
     .. tab-item:: Properties
@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_scalar`
-            * - :py:meth:`~compute_as_average`
-            * - :py:meth:`~integration_window_type`
-            * - :py:meth:`~start_offset`
-            * - :py:meth:`~stop_offset`
-            * - :py:meth:`~use_custom_time_limits`
-            * - :py:meth:`~custom_time_limits`
-            * - :py:meth:`~save_data_option`
-            * - :py:meth:`~interpolation`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~integral`
-            * - :py:meth:`~keep_constant_outside_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.input_scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.compute_as_average`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.integration_window_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.start_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.stop_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.use_custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.save_data_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.interpolation`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.sampling`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.integral`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.keep_constant_outside_time_limits`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: input_scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.input_scalar
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The input scalar calculation.
 
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.custom_time_limits
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
 
@@ -104,19 +104,19 @@ Property detail
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.interpolation
-    :type: IAgCrdnInterp
+    :type: IAnalysisWorkbenchInterp
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.sampling
-    :type: IAgCrdnSampling
+    :type: IAnalysisWorkbenchSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: integral
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation.integral
-    :type: IAgCrdnIntegral
+    :type: IAnalysisWorkbenchIntegral
 
     The numerical integration method.
 

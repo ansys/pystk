@@ -1,12 +1,12 @@
 GEO_MAGNETIC_FLUX_UPDATE_RATE
 =============================
 
-.. py:class:: GEO_MAGNETIC_FLUX_UPDATE_RATE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GEO_MAGNETIC_FLUX_UPDATE_RATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GEO_MAGNETIC_FLUX_UPDATE_RATE
 
 Overview
 --------

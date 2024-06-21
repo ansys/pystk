@@ -1,13 +1,13 @@
 ICalculationToolScalarVectorComponent
 =====================================
 
-.. py:class:: ICalculationToolScalarVectorComponent
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarVectorComponent
 
    object
    
    The specified component of a vector when resolved in the specified axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarVectorComponent
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_vector`
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~component`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.input_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.component`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: input_vector
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.input_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.reference_axes
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Axes used to resolve the vector's components.
 

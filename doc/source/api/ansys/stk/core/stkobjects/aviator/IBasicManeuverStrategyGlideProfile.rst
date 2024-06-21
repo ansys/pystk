@@ -1,13 +1,13 @@
 IBasicManeuverStrategyGlideProfile
 ==================================
 
-.. py:class:: IBasicManeuverStrategyGlideProfile
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile
 
    object
    
    Interface used to access options for a Glide Profile Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyGlideProfile
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.set_airspeed`
               - Set the airspeed and airspeed type that the aircraft will attempt to achieve and maintain if the hold initial airspeed option is not enabled.
-            * - :py:meth:`~set_glide_speed_control_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.set_glide_speed_control_mode`
               - Set the glide speed control mode and altitude.
 
     .. tab-item:: Properties
@@ -31,18 +31,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~hold_initial_airspeed`
-            * - :py:meth:`~airspeed`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~min_g`
-            * - :py:meth:`~max_g`
-            * - :py:meth:`~max_speed_limits`
-            * - :py:meth:`~compensate_for_coriolis_accel`
-            * - :py:meth:`~powered_cruise_mode`
-            * - :py:meth:`~powered_cruise_throttle`
-            * - :py:meth:`~powered_cruise_thrust_model`
-            * - :py:meth:`~glide_speed_control_mode`
-            * - :py:meth:`~glide_speed_control_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.hold_initial_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.min_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.max_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.max_speed_limits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_throttle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_thrust_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.glide_speed_control_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.glide_speed_control_altitude`
 
 
 Import detail
@@ -112,7 +112,7 @@ Property detail
 
 .. py:property:: powered_cruise_thrust_model
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_thrust_model
-    :type: IAgAvtrPropulsionThrust
+    :type: IPropulsionThrust
 
     Get the powered cruise thrust model.
 

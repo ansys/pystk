@@ -1,13 +1,13 @@
 IStateCalcImpactFlux
 ====================
 
-.. py:class:: IStateCalcImpactFlux
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcImpactFlux
 
    object
    
    Interface for AgAsStateCalcImpactFlux.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcImpactFlux
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IReceiver
 =========
 
-.. py:class:: IReceiver
+.. py:class:: ansys.stk.core.stkobjects.IReceiver
 
    object
    
    Provide access to the properties and methods defining an Receiver object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReceiver
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.set_model`
               - Set the current receiver model by name.
-            * - :py:meth:`~is_refraction_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,16 +31,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_models`
-            * - :py:meth:`~model`
-            * - :py:meth:`~refraction`
-            * - :py:meth:`~refraction_supported_types`
-            * - :py:meth:`~refraction_model`
-            * - :py:meth:`~use_refraction_in_access`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~rf_environment`
-            * - :py:meth:`~laser_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.supported_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.refraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.refraction_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.refraction_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.use_refraction_in_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.laser_environment`
 
 
 Import detail
@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IReceiver.model
-    :type: IAgReceiverModel
+    :type: IReceiverModel
 
     Gets the current receiver model.
 
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.IReceiver.refraction_model
-    :type: IAgRfModelBase
+    :type: IRefractionModelBase
 
     Gets a refraction model.
 
@@ -92,25 +92,25 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IReceiver.graphics_3d
-    :type: IAgReceiverVO
+    :type: IReceiverGraphics3D
 
     Get the 3D Graphics properties for the receiver.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IReceiver.graphics
-    :type: IAgReceiverGraphics
+    :type: IReceiverGraphics
 
     Get the 2D Graphics properties for the receiver.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IReceiver.rf_environment
-    :type: IAgObjectRFEnvironment
+    :type: IObjectRFEnvironment
 
     Gets the object RF environment settings.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IReceiver.laser_environment
-    :type: IAgObjectLaserEnvironment
+    :type: IObjectLaserEnvironment
 
     Gets the object laser environment settings.
 

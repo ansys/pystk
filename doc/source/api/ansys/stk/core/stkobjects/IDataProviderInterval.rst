@@ -1,13 +1,13 @@
 IDataProviderInterval
 =====================
 
-.. py:class:: IDataProviderInterval
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderInterval
 
    object
    
    Represents the Interval Data Provider (for instance facility lighting times).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderInterval
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~exec`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInterval.exec`
               - Compute the data; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
-            * - :py:meth:`~exec_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInterval.exec_elements`
               - Compute the data and return just the indicated data elements; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
-            * - :py:meth:`~exec_event_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInterval.exec_event_array`
               - Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
-            * - :py:meth:`~exec_elements_event_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInterval.exec_elements_event_array`
               - Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
 
 

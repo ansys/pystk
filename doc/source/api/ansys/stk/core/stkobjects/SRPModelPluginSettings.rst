@@ -1,13 +1,13 @@
 SRPModelPluginSettings
 ======================
 
-.. py:class:: SRPModelPluginSettings
+.. py:class:: ansys.stk.core.stkobjects.SRPModelPluginSettings
 
-   Bases: py:obj:`~ISRPModelPluginSettings`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISRPModelPluginSettings`
 
    Plugin Light Reflection Model Settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SRPModelPluginSettings
 
 Overview
 --------

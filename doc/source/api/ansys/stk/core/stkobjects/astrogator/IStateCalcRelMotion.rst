@@ -1,13 +1,13 @@
 IStateCalcRelMotion
 ===================
 
-.. py:class:: IStateCalcRelMotion
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion
 
    object
    
    Properties for a Relative Motion calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRelMotion
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~origin_at_master`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.origin_at_master`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.reference`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

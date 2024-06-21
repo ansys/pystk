@@ -1,12 +1,12 @@
 CHAIN_COV_ASSET_MODE
 ====================
 
-.. py:class:: CHAIN_COV_ASSET_MODE
+.. py:class:: ansys.stk.core.stkobjects.CHAIN_COV_ASSET_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CHAIN_COV_ASSET_MODE
 
 Overview
 --------

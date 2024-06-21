@@ -1,13 +1,13 @@
 ICustomFunctionScriptEngine
 ===========================
 
-.. py:class:: ICustomFunctionScriptEngine
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICustomFunctionScriptEngine
 
    object
    
    Properties for custom functions.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICustomFunctionScriptEngine
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~script_filename`
-            * - :py:meth:`~file_extension_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICustomFunctionScriptEngine.script_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICustomFunctionScriptEngine.file_extension_name`
 
 
 Import detail

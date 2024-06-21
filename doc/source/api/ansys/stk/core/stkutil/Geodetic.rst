@@ -1,13 +1,13 @@
 Geodetic
 ========
 
-.. py:class:: Geodetic
+.. py:class:: ansys.stk.core.stkutil.Geodetic
 
-   Bases: py:obj:`~IGeodetic`, py:obj:`~IPosition`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IGeodetic`, py:obj:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining Geodetic position.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Geodetic
 
 Overview
 --------

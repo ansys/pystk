@@ -1,13 +1,13 @@
 IVehicleTrajectoryGraphics3DModel
 =================================
 
-.. py:class:: IVehicleTrajectoryGraphics3DModel
+.. py:class:: ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel
 
    IGraphics3DModel
    
    Marker interface for launch vehicle or missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleTrajectoryGraphics3DModel
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~trajectory_marker`
-            * - :py:meth:`~ground_marker`
-            * - :py:meth:`~is_point_visible`
-            * - :py:meth:`~point_size`
-            * - :py:meth:`~gltf_reflection_map_type`
-            * - :py:meth:`~gltf_image_based`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.trajectory_marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.ground_marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.is_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.point_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.gltf_reflection_map_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.gltf_image_based`
 
 
 Import detail
@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: trajectory_marker
     :canonical: ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.trajectory_marker
-    :type: IAgVOMarker
+    :type: IGraphics3DMarker
 
     Represents the vehicle while traveling along its actual trajectory.
 
 .. py:property:: ground_marker
     :canonical: ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.ground_marker
-    :type: IAgVOMarker
+    :type: IGraphics3DMarker
 
     Represents the vehicle's position along its ground track.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel.gltf_image_based
-    :type: IAgVOModelGltfImageBased
+    :type: IGraphics3DModelGltfImageBased
 
     Gets the glTF Image Based properties.
 

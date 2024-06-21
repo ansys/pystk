@@ -1,13 +1,13 @@
 ISensorPointingAlongVector
 ==========================
 
-.. py:class:: ISensorPointingAlongVector
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingAlongVector
 
    object
    
    IAgSnPtAlongVector Interface for a sensor whose alignment is controlled by a pair of vectors defined using the Vector Geometry tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingAlongVector
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~alignment_vector`
-            * - :py:meth:`~available_alignment_vectors`
-            * - :py:meth:`~constraint_vector`
-            * - :py:meth:`~available_constraint_vectors`
-            * - :py:meth:`~clock_angle_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.alignment_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.available_alignment_vectors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.constraint_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.available_constraint_vectors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.clock_angle_offset`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAntennaVolumeGraphics
 ======================
 
-.. py:class:: IAntennaVolumeGraphics
+.. py:class:: ansys.stk.core.stkobjects.IAntennaVolumeGraphics
 
    object
    
    IAgAntennaVolumeGraphics Interface for a antenna's 3D volume properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaVolumeGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.set_resolution`
               - Set the azimuth/elevation ranges and resolution.
-            * - :py:meth:`~set_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.set_num_points`
               - Set the azimuth/elevation ranges and number of points.
 
     .. tab-item:: Properties
@@ -31,24 +31,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~wireframe`
-            * - :py:meth:`~gain_offset`
-            * - :py:meth:`~gain_scale`
-            * - :py:meth:`~azimuth_start`
-            * - :py:meth:`~azimuth_stop`
-            * - :py:meth:`~azimuth_resolution`
-            * - :py:meth:`~azimuth_num_points`
-            * - :py:meth:`~elevation_start`
-            * - :py:meth:`~elevation_stop`
-            * - :py:meth:`~elevation_resolution`
-            * - :py:meth:`~elevation_num_points`
-            * - :py:meth:`~color_method`
-            * - :py:meth:`~start_color`
-            * - :py:meth:`~stop_color`
-            * - :py:meth:`~levels`
-            * - :py:meth:`~relative_to_maximum`
-            * - :py:meth:`~coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.wireframe`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.gain_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.gain_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.azimuth_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.azimuth_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.azimuth_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.azimuth_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.elevation_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.elevation_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.elevation_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.elevation_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.color_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.start_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.stop_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.levels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.relative_to_maximum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.coordinate_system`
 
 
 Import detail
@@ -154,7 +154,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.IAntennaVolumeGraphics.levels
-    :type: IAgAntennaVolumeLevelCollection
+    :type: IAntennaVolumeLevelCollection
 
     Gets the collection of volume levels.
 

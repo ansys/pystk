@@ -1,12 +1,12 @@
 CCSDS_DATE_FORMAT
 =================
 
-.. py:class:: CCSDS_DATE_FORMAT
+.. py:class:: ansys.stk.core.stkobjects.CCSDS_DATE_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CCSDS_DATE_FORMAT
 
 Overview
 --------

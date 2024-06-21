@@ -1,12 +1,12 @@
 GRID_SEARCH_DESIRED_OPERATION
 =============================
 
-.. py:class:: GRID_SEARCH_DESIRED_OPERATION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GRID_SEARCH_DESIRED_OPERATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GRID_SEARCH_DESIRED_OPERATION
 
 Overview
 --------

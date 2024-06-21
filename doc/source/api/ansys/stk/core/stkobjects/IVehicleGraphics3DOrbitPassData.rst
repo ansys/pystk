@@ -1,13 +1,13 @@
 IVehicleGraphics3DOrbitPassData
 ===============================
 
-.. py:class:: IVehicleGraphics3DOrbitPassData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData
 
    object
    
    Interface for satellite 3D ground and orbit track data.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DOrbitPassData
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ground_track`
-            * - :py:meth:`~orbit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData.ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData.orbit`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData.ground_track
-    :type: IAgVeVOLeadTrailData
+    :type: IVehicleGraphics3DLeadTrailData
 
     Get the 3D ground track data.
 
 .. py:property:: orbit
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData.orbit
-    :type: IAgVeVOLeadTrailData
+    :type: IVehicleGraphics3DLeadTrailData
 
     Get the 3D orbit track data.
 

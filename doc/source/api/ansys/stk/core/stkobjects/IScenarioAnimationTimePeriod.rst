@@ -1,13 +1,13 @@
 IScenarioAnimationTimePeriod
 ============================
 
-.. py:class:: IScenarioAnimationTimePeriod
+.. py:class:: ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod
 
    object
    
    IAgScAnimationTimePeriod defines methods and properties to configure the scenario's animation time.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenarioAnimationTimePeriod
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~duration`
-            * - :py:meth:`~use_analysis_start_time`
-            * - :py:meth:`~use_analysis_stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.use_analysis_start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.use_analysis_stop_time`
 
 
 Import detail
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.start_time
-    :type: IAgTimePeriodValue
+    :type: ITimePeriodValue
 
     Gets the animation's start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.stop_time
-    :type: IAgTimePeriodValue
+    :type: ITimePeriodValue
 
     Gets the animation's stop time. Uses DateFormat Dimension.
 

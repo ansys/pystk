@@ -1,13 +1,13 @@
 AntennaContourFluxDensity
 =========================
 
-.. py:class:: AntennaContourFluxDensity
+.. py:class:: ansys.stk.core.stkobjects.AntennaContourFluxDensity
 
-   Bases: py:obj:`~IAntennaContour`, py:obj:`~IAntennaContourFluxDensity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaContour`, py:obj:`~ansys.stk.core.stkobjects.IAntennaContourFluxDensity`
 
    Class defining an antenna flux density contour properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaContourFluxDensity
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleGraphics2DAttributesTrajectory
 ======================================
 
-.. py:class:: IVehicleGraphics2DAttributesTrajectory
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory
 
    IVehicleGraphics2DAttributesBasic
    
    2D Graphics attributes for launch vehicles and missiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DAttributesTrajectory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_ground_track_visible`
-            * - :py:meth:`~is_ground_marker_visible`
-            * - :py:meth:`~is_trajectory_visible`
-            * - :py:meth:`~is_trajectory_marker_visible`
-            * - :py:meth:`~pick_string`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.is_ground_track_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.is_ground_marker_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.is_trajectory_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.is_trajectory_marker_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.pick_string`
 
 
 Import detail

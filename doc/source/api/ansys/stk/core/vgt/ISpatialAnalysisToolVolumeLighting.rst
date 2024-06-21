@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeLighting
 ==================================
 
-.. py:class:: ISpatialAnalysisToolVolumeLighting
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting
 
    object
    
    A lighting volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeLighting
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~use_object_eclipsing_bodies`
-            * - :py:meth:`~lighting_conditions`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting.use_object_eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting.lighting_conditions`
 
 
 Import detail

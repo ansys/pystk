@@ -1,13 +1,13 @@
 IClassicalLocationArgumentOfLatitude
 ====================================
 
-.. py:class:: IClassicalLocationArgumentOfLatitude
+.. py:class:: ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude
 
    IClassicalLocation
    
    Interface for Argument of Latitude, used in specifying the spacecraft's location within its orbit at epoch.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalLocationArgumentOfLatitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude.value`
 
 
 Import detail

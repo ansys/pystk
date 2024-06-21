@@ -1,13 +1,13 @@
 ICentralBodyEphemerisJPLDesignExplorerOptimizer
 ===============================================
 
-.. py:class:: ICentralBodyEphemerisJPLDesignExplorerOptimizer
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLDesignExplorerOptimizer
 
    ICentralBodyEphemeris
    
    Properties for the JPL DE ephemeris source.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyEphemerisJPLDesignExplorerOptimizer
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~jplde_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLDesignExplorerOptimizer.jplde_filename`
 
 
 Import detail

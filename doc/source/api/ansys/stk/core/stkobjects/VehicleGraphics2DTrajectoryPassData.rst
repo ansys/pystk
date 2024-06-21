@@ -1,13 +1,13 @@
 VehicleGraphics2DTrajectoryPassData
 ===================================
 
-.. py:class:: VehicleGraphics2DTrajectoryPassData
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryPassData
 
-   Bases: py:obj:`~IVehicleGraphics2DTrajectoryPassData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryPassData`
 
    2D Graphics ground track and trajectory properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DTrajectoryPassData
 
 Overview
 --------

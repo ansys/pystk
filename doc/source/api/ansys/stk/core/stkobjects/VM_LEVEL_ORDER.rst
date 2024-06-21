@@ -1,12 +1,12 @@
 VM_LEVEL_ORDER
 ==============
 
-.. py:class:: VM_LEVEL_ORDER
+.. py:class:: ansys.stk.core.stkobjects.VM_LEVEL_ORDER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_LEVEL_ORDER
 
 Overview
 --------

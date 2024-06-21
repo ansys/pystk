@@ -1,13 +1,13 @@
 IStateCalcRadOfPeriapsis
 ========================
 
-.. py:class:: IStateCalcRadOfPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRadOfPeriapsis
 
    object
    
    Properties for a Radius Of Periapsis calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRadOfPeriapsis
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadOfPeriapsis.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadOfPeriapsis.element_type`
 
 
 Import detail

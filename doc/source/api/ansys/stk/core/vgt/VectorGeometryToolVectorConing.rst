@@ -1,13 +1,13 @@
 VectorGeometryToolVectorConing
 ==============================
 
-.. py:class:: VectorGeometryToolVectorConing
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorConing
 
-   Bases: py:obj:`~IVectorGeometryToolVectorConing`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector created by revolving the Reference vector around the About vector with the specified rate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorConing
 
 Overview
 --------

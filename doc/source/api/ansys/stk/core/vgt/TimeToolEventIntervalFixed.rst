@@ -1,13 +1,13 @@
 TimeToolEventIntervalFixed
 ==========================
 
-.. py:class:: TimeToolEventIntervalFixed
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalFixed
 
-   Bases: py:obj:`~ITimeToolEventIntervalFixed`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixed`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventInterval`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalFixed
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ISceneGlobeOverlaySettings
 ==========================
 
-.. py:class:: ISceneGlobeOverlaySettings
+.. py:class:: ansys.stk.core.graphics.ISceneGlobeOverlaySettings
 
    object
    
    Settings used by globe overlay objects. These settings only affect the scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISceneGlobeOverlaySettings
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~anti_alias_imagery`
-            * - :py:meth:`~terrain_mesh_pixel_error`
-            * - :py:meth:`~imagery_pixel_error`
-            * - :py:meth:`~projected_raster_model_projection`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings.anti_alias_imagery`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings.terrain_mesh_pixel_error`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings.imagery_pixel_error`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings.projected_raster_model_projection`
 
 
 Import detail

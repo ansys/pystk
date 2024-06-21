@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DAttributesAnimation
 ===========================================
 
-.. py:class:: IFigureOfMeritGraphics2DAttributesAnimation
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributesAnimation
 
    IFigureOfMeritGraphics2DAttributes
    
    Animation graphics for a Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DAttributesAnimation
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~accumulation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributesAnimation.accumulation`
 
 
 Import detail

@@ -1,12 +1,12 @@
 PROGRESS_IMAGE_Y_ORIGIN
 =======================
 
-.. py:class:: PROGRESS_IMAGE_Y_ORIGIN
+.. py:class:: ansys.stk.core.stkx.PROGRESS_IMAGE_Y_ORIGIN
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: PROGRESS_IMAGE_Y_ORIGIN
 
 Overview
 --------

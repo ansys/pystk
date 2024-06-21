@@ -1,13 +1,13 @@
 IVehicleLaunchVehicleInitialState
 =================================
 
-.. py:class:: IVehicleLaunchVehicleInitialState
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState
 
    object
    
    Simple Ascent propagator initial state interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLaunchVehicleInitialState
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~launch`
-            * - :py:meth:`~burnout_vel`
-            * - :py:meth:`~burnout`
-            * - :py:meth:`~trajectory_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.launch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.burnout_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.burnout`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.trajectory_epoch`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: launch
     :canonical: ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.launch
-    :type: IAgLLAPosition
+    :type: ILLAPosition
 
     Get the geocentric or geodetic launch position coordinates.
 
@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: burnout
     :canonical: ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.burnout
-    :type: IAgLLAPosition
+    :type: ILLAPosition
 
     Get the geocentric or geodetic burnout position coordinates.
 
 .. py:property:: trajectory_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.trajectory_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Get the smart epoch component to access the trajectory epoch.
 

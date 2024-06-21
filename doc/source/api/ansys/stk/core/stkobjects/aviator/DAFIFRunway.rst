@@ -1,13 +1,13 @@
 DAFIFRunway
 ===========
 
-.. py:class:: DAFIFRunway
+.. py:class:: ansys.stk.core.stkobjects.aviator.DAFIFRunway
 
-   Bases: py:obj:`~IDAFIFItem`, py:obj:`~ICatalogRunway`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogRunway`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an DAFIF Runway.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: DAFIFRunway
 
 Overview
 --------

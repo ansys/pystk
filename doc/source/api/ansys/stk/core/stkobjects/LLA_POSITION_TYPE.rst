@@ -1,12 +1,12 @@
 LLA_POSITION_TYPE
 =================
 
-.. py:class:: LLA_POSITION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.LLA_POSITION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LLA_POSITION_TYPE
 
 Overview
 --------

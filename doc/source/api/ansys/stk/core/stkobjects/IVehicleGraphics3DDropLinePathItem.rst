@@ -1,13 +1,13 @@
 IVehicleGraphics3DDropLinePathItem
 ==================================
 
-.. py:class:: IVehicleGraphics3DDropLinePathItem
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem
 
    object
    
    Interface for drop lines at intervals along the vehicle's path.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DDropLinePathItem
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~use_2d_color`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~interval`
-            * - :py:meth:`~line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.use_2d_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.line_style`
 
 
 Import detail

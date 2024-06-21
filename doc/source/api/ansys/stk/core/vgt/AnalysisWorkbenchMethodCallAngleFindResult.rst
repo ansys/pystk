@@ -1,13 +1,13 @@
 AnalysisWorkbenchMethodCallAngleFindResult
 ==========================================
 
-.. py:class:: AnalysisWorkbenchMethodCallAngleFindResult
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAngleFindResult
 
-   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolAngleFindResult`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult`
 
    Represents result returned with IAgCrdnAngle.FindCoordinates method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchMethodCallAngleFindResult
 
 Overview
 --------

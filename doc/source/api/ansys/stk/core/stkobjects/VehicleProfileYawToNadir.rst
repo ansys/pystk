@@ -1,13 +1,13 @@
 VehicleProfileYawToNadir
 ========================
 
-.. py:class:: VehicleProfileYawToNadir
+.. py:class:: ansys.stk.core.stkobjects.VehicleProfileYawToNadir
 
-   Bases: py:obj:`~IVehicleProfileYawToNadir`, py:obj:`~IVehicleAttitudeProfile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileYawToNadir`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    A profile useful for satellites with highly elliptical orbits.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleProfileYawToNadir
 
 Overview
 --------

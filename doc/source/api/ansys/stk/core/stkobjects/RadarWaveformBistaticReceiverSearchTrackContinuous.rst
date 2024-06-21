@@ -1,13 +1,13 @@
 RadarWaveformBistaticReceiverSearchTrackContinuous
 ==================================================
 
-.. py:class:: RadarWaveformBistaticReceiverSearchTrackContinuous
+.. py:class:: ansys.stk.core.stkobjects.RadarWaveformBistaticReceiverSearchTrackContinuous
 
-   Bases: py:obj:`~IRadarWaveformBistaticReceiverSearchTrackContinuous`, py:obj:`~IRadarWaveformSearchTrack`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackContinuous`, py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformSearchTrack`
 
    Class defining a bistatic receiver continuous waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarWaveformBistaticReceiverSearchTrackContinuous
 
 Overview
 --------

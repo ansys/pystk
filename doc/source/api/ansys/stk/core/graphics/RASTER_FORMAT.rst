@@ -1,12 +1,12 @@
 RASTER_FORMAT
 =============
 
-.. py:class:: RASTER_FORMAT
+.. py:class:: ansys.stk.core.graphics.RASTER_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RASTER_FORMAT
 
 Overview
 --------

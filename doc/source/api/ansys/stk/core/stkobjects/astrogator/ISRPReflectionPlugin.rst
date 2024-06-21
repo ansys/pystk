@@ -1,13 +1,13 @@
 ISRPReflectionPlugin
 ====================
 
-.. py:class:: ISRPReflectionPlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin
 
    object
    
    Properties for the plugin SRP Refelction.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISRPReflectionPlugin
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plugin_identifier`
-            * - :py:meth:`~plugin_config`
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~shadow_model`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~include_boundary_mitigation`
-            * - :py:meth:`~use_sun_central_body_file_values`
-            * - :py:meth:`~solar_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.plugin_identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.plugin_config`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.shadow_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.include_boundary_mitigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.use_sun_central_body_file_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.solar_radius`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.plugin_config
-    :type: IAgVAPluginProperties
+    :type: IPluginProperties
 
     Get the properties of the selected plugin.
 
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin.eclipsing_bodies
-    :type: IAgVACentralBodyCollection
+    :type: ICentralBodyCollection
 
     Other eclipsing bodies.
 

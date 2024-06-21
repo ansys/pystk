@@ -1,13 +1,13 @@
 IStrategyMATLABNav
 ==================
 
-.. py:class:: IStrategyMATLABNav
+.. py:class:: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav
 
    object
    
    Interface used to access options for a MATLAB - Horizontal Plane Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator.matlab
+.. py:currentmodule:: IStrategyMATLABNav
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_function_path_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav.is_function_path_valid`
               - Check if the MATLAB function path is valid.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~function_name`
-            * - :py:meth:`~check_for_errors`
-            * - :py:meth:`~display_output`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav.function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav.check_for_errors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav.display_output`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionCompute
 ===============================
 
-.. py:class:: IFigureOfMeritDefinitionCompute
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute
 
    IFigureOfMeritDefinition
    
    Compute options for navigation accuracy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionCompute
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_compute_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.set_compute_type`
               - Set the type of compute option.
-            * - :py:meth:`~is_compute_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.is_compute_type_supported`
               - Is the type of compute option supported?
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_type`
-            * - :py:meth:`~compute_supported_types`
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: compute
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute
-    :type: IAgFmDefinitionData
+    :type: IFigureOfMeritDefinitionData
 
     Compute.
 

@@ -1,13 +1,13 @@
 VehicleTargetPointingElement
 ============================
 
-.. py:class:: VehicleTargetPointingElement
+.. py:class:: ansys.stk.core.stkobjects.VehicleTargetPointingElement
 
-   Bases: py:obj:`~IVehicleTargetPointingElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement`
 
    Target pointing data for target pointing attitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleTargetPointingElement
 
 Overview
 --------

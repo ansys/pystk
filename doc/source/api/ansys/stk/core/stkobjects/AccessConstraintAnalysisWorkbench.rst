@@ -1,13 +1,13 @@
 AccessConstraintAnalysisWorkbench
 =================================
 
-.. py:class:: AccessConstraintAnalysisWorkbench
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench
 
-   Bases: py:obj:`~IAccessConstraintAnalysisWorkbench`, py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class related to Analysis Workbench constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintAnalysisWorkbench
 
 Overview
 --------

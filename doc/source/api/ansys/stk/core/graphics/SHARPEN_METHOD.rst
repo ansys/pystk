@@ -1,12 +1,12 @@
 SHARPEN_METHOD
 ==============
 
-.. py:class:: SHARPEN_METHOD
+.. py:class:: ansys.stk.core.graphics.SHARPEN_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SHARPEN_METHOD
 
 Overview
 --------

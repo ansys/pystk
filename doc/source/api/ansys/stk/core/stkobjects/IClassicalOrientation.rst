@@ -1,13 +1,13 @@
 IClassicalOrientation
 =====================
 
-.. py:class:: IClassicalOrientation
+.. py:class:: ansys.stk.core.stkobjects.IClassicalOrientation
 
    object
    
    Interface for specifying orbit orientation in the Classical (Keplerian) system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalOrientation
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inclination`
-            * - :py:meth:`~arg_of_perigee`
-            * - :py:meth:`~asc_node_type`
-            * - :py:meth:`~asc_node`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalOrientation.inclination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalOrientation.arg_of_perigee`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalOrientation.asc_node_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalOrientation.asc_node`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: asc_node
     :canonical: ansys.stk.core.stkobjects.IClassicalOrientation.asc_node
-    :type: IAgOrientationAscNode
+    :type: IOrientationAscNode
 
     Value of Longitude of Ascending Node or Right Ascension of Ascending Node.
 

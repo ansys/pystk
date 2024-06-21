@@ -1,13 +1,13 @@
 IManeuverFinite
 ===============
 
-.. py:class:: IManeuverFinite
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverFinite
 
    IManeuver
    
    Engine properties for a Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverFinite
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pressure_mode`
-            * - :py:meth:`~thrust_efficiency`
-            * - :py:meth:`~thrust_efficiency_mode`
-            * - :py:meth:`~propagator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite.pressure_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite.thrust_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite.thrust_efficiency_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite.propagator`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: propagator
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverFinite.propagator
-    :type: IAgVAManeuverFinitePropagator
+    :type: IManeuverFinitePropagator
 
     Get the propagator.
 

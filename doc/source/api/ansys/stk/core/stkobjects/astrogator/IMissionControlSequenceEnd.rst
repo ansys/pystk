@@ -1,13 +1,13 @@
 IMissionControlSequenceEnd
 ==========================
 
-.. py:class:: IMissionControlSequenceEnd
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceEnd
 
    object
    
    Properties for an End segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceEnd
 
 Overview
 --------

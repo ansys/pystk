@@ -1,12 +1,12 @@
 CRDN_SAMPLED_REFERENCE_TIME
 ===========================
 
-.. py:class:: CRDN_SAMPLED_REFERENCE_TIME
+.. py:class:: ansys.stk.core.vgt.CRDN_SAMPLED_REFERENCE_TIME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SAMPLED_REFERENCE_TIME
 
 Overview
 --------

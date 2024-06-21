@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneTemplate
 ================================
 
-.. py:class:: IVehicleGraphics3DBPlaneTemplate
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate
 
    object
    
    An element of IAgVeVOBPlaneTemplatesCollection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneTemplate
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~description`
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~available_central_bodies`
-            * - :py:meth:`~reference_vector`
-            * - :py:meth:`~available_vectors`
-            * - :py:meth:`~is_cartesian_grid_visible`
-            * - :py:meth:`~is_polar_grid_visible`
-            * - :py:meth:`~grid_spacing`
-            * - :py:meth:`~display_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.description`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.available_central_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.reference_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.available_vectors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.is_cartesian_grid_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.is_polar_grid_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.grid_spacing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.display_elements`
 
 
 Import detail
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: display_elements
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.display_elements
-    :type: IAgVeVOBPlaneTemplateDisplayCollection
+    :type: IVehicleGraphics3DBPlaneTemplateDisplayCollection
 
     Returns the 3D BPlane template display collection.
 

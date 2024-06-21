@@ -1,13 +1,13 @@
 ModulatorModelBoc
 =================
 
-.. py:class:: ModulatorModelBoc
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelBoc
 
-   Bases: py:obj:`~IModulatorModelBoc`, py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModelBoc`, py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a BOC modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModelBoc
 
 Overview
 --------

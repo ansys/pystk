@@ -1,13 +1,13 @@
 VectorGeometryToolVectorApoapsis
 ================================
 
-.. py:class:: VectorGeometryToolVectorApoapsis
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorApoapsis
 
-   Bases: py:obj:`~IVectorGeometryToolVectorApoapsis`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorApoapsis
 
 Overview
 --------

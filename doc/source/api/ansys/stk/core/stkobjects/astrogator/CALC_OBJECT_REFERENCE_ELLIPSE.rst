@@ -1,12 +1,12 @@
 CALC_OBJECT_REFERENCE_ELLIPSE
 =============================
 
-.. py:class:: CALC_OBJECT_REFERENCE_ELLIPSE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_REFERENCE_ELLIPSE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CALC_OBJECT_REFERENCE_ELLIPSE
 
 Overview
 --------

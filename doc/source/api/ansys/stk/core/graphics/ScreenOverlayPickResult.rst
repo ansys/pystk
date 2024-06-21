@@ -1,13 +1,13 @@
 ScreenOverlayPickResult
 =======================
 
-.. py:class:: ScreenOverlayPickResult
+.. py:class:: ansys.stk.core.graphics.ScreenOverlayPickResult
 
-   Bases: py:obj:`~IScreenOverlayPickResult`
+   Bases: py:obj:`~ansys.stk.core.graphics.IScreenOverlayPickResult`
 
    Describes a picked screen overlay as a result of a call to pick screen overlays.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ScreenOverlayPickResult
 
 Overview
 --------

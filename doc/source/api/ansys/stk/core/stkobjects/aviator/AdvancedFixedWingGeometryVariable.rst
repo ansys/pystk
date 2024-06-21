@@ -1,13 +1,13 @@
 AdvancedFixedWingGeometryVariable
 =================================
 
-.. py:class:: AdvancedFixedWingGeometryVariable
+.. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable
 
-   Bases: py:obj:`~IAdvancedFixedWingGeometryVariable`, py:obj:`~IAdvancedFixedWingGeometry`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable`, py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometry`
 
    Class defining a variable geometry wing in the Advanced Fixed Wing Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AdvancedFixedWingGeometryVariable
 
 Overview
 --------

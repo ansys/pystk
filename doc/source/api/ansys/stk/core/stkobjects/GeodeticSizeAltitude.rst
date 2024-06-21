@@ -1,13 +1,13 @@
 GeodeticSizeAltitude
 ====================
 
-.. py:class:: GeodeticSizeAltitude
+.. py:class:: ansys.stk.core.stkobjects.GeodeticSizeAltitude
 
-   Bases: py:obj:`~IGeodeticSizeAltitude`, py:obj:`~IGeodeticSize`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGeodeticSizeAltitude`, py:obj:`~ansys.stk.core.stkobjects.IGeodeticSize`
 
    Altitude and Altitude Rate (for Geodetic coordinate type).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GeodeticSizeAltitude
 
 Overview
 --------

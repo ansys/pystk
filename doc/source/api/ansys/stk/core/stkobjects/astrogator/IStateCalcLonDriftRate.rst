@@ -1,13 +1,13 @@
 IStateCalcLonDriftRate
 ======================
 
-.. py:class:: IStateCalcLonDriftRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcLonDriftRate
 
    object
    
    Properties for a Longitude Drift Rate calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcLonDriftRate
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonDriftRate.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonDriftRate.element_type`
 
 
 Import detail

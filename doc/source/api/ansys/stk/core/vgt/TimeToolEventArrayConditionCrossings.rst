@@ -1,13 +1,13 @@
 TimeToolEventArrayConditionCrossings
 ====================================
 
-.. py:class:: TimeToolEventArrayConditionCrossings
+.. py:class:: ansys.stk.core.vgt.TimeToolEventArrayConditionCrossings
 
-   Bases: py:obj:`~ITimeToolEventArrayConditionCrossings`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventArray`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventArrayConditionCrossings
 
 Overview
 --------

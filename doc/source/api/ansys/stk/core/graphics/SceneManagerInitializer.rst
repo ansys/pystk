@@ -1,13 +1,13 @@
 SceneManagerInitializer
 =======================
 
-.. py:class:: SceneManagerInitializer
+.. py:class:: ansys.stk.core.graphics.SceneManagerInitializer
 
-   Bases: py:obj:`~ISceneManagerInitializer`
+   Bases: py:obj:`~ansys.stk.core.graphics.ISceneManagerInitializer`
 
    The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SceneManagerInitializer
 
 Overview
 --------

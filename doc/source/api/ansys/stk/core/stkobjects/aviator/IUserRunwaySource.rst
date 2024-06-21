@@ -1,13 +1,13 @@
 IUserRunwaySource
 =================
 
-.. py:class:: IUserRunwaySource
+.. py:class:: ansys.stk.core.stkobjects.aviator.IUserRunwaySource
 
    object
    
    Interface used to access the user runways in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IUserRunwaySource
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_user_runway`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunwaySource.get_user_runway`
               - Get the user runway with the given name.
-            * - :py:meth:`~add_user_runway`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunwaySource.add_user_runway`
               - Create a new user runway with the given name.
-            * - :py:meth:`~get_as_catalog_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunwaySource.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
 

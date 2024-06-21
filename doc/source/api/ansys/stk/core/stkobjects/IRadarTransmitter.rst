@@ -1,13 +1,13 @@
 IRadarTransmitter
 =================
 
-.. py:class:: IRadarTransmitter
+.. py:class:: ansys.stk.core.stkobjects.IRadarTransmitter
 
    object
    
    Interface which defines a radar transmitter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarTransmitter
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_polarization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.set_polarization_type`
               - Set the current polarization type.
-            * - :py:meth:`~set_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.set_filter`
               - Set the current filter model by name.
 
     .. tab-item:: Properties
@@ -31,18 +31,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~frequency_specification`
-            * - :py:meth:`~frequency`
-            * - :py:meth:`~wavelength`
-            * - :py:meth:`~power`
-            * - :py:meth:`~post_transmit_gains_losses`
-            * - :py:meth:`~enable_polarization`
-            * - :py:meth:`~enable_ortho_polarization`
-            * - :py:meth:`~polarization`
-            * - :py:meth:`~power_amp_bandwidth`
-            * - :py:meth:`~enable_filter`
-            * - :py:meth:`~supported_filters`
-            * - :py:meth:`~filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.frequency_specification`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.wavelength`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.post_transmit_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.enable_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.enable_ortho_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.power_amp_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.enable_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.supported_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.filter`
 
 
 Import detail
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.IRadarTransmitter.post_transmit_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 
@@ -100,7 +100,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IRadarTransmitter.polarization
-    :type: IAgPolarization
+    :type: IPolarization
 
     Gets the polarization.
 
@@ -124,7 +124,7 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IRadarTransmitter.filter
-    :type: IAgRFFilterModel
+    :type: IRFFilterModel
 
     Gets the current filter model.
 

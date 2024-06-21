@@ -1,13 +1,13 @@
 MtoGraphics2DLeadTrailTimes
 ===========================
 
-.. py:class:: MtoGraphics2DLeadTrailTimes
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DLeadTrailTimes
 
-   Bases: py:obj:`~IMtoGraphics2DLeadTrailTimes`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes`
 
    MTO track lead/trail times.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics2DLeadTrailTimes
 
 Overview
 --------

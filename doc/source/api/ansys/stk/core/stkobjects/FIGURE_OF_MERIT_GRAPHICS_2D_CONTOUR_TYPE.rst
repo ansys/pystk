@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE
 ========================================
 
-.. py:class:: FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE
 
 Overview
 --------

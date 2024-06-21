@@ -1,13 +1,13 @@
 CoverageResolutionLatLon
 ========================
 
-.. py:class:: CoverageResolutionLatLon
+.. py:class:: ansys.stk.core.stkobjects.CoverageResolutionLatLon
 
-   Bases: py:obj:`~ICoverageResolutionLatLon`, py:obj:`~ICoverageResolution`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageResolutionLatLon`, py:obj:`~ansys.stk.core.stkobjects.ICoverageResolution`
 
    Lat/Lon: Determine the location of grid coordinates by specifying a latitude/longitude resolution value.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageResolutionLatLon
 
 Overview
 --------

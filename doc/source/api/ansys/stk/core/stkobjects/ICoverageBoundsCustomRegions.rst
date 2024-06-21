@@ -1,13 +1,13 @@
 ICoverageBoundsCustomRegions
 ============================
 
-.. py:class:: ICoverageBoundsCustomRegions
+.. py:class:: ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions
 
    ICoverageBounds
    
    Custom Regions.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageBoundsCustomRegions
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~region_files`
-            * - :py:meth:`~area_targets`
-            * - :py:meth:`~check_for_holes`
-            * - :py:meth:`~small_region_algorithm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.region_files`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.area_targets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.check_for_holes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.small_region_algorithm`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: region_files
     :canonical: ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.region_files
-    :type: IAgCvRegionFilesCollection
+    :type: ICoverageRegionFilesCollection
 
     File containing user-defined points defining a specific grid region.
 
 .. py:property:: area_targets
     :canonical: ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.area_targets
-    :type: IAgCvAreaTargetsCollection
+    :type: ICoverageAreaTargetsCollection
 
     Area target to be used as part of the coverage area.
 

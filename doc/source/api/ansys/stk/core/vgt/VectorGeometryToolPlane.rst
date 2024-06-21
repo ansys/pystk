@@ -1,13 +1,13 @@
 VectorGeometryToolPlane
 =======================
 
-.. py:class:: VectorGeometryToolPlane
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlane
 
-   Bases: py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Base class for VGT axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPlane
 
 Overview
 --------

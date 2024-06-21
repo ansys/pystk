@@ -1,13 +1,13 @@
 IAnalysisWorkbenchIntegral
 ==========================
 
-.. py:class:: IAnalysisWorkbenchIntegral
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchIntegral
 
    object
    
    Represents a base class for integral definitions.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchIntegral
 
 Overview
 --------

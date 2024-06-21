@@ -1,13 +1,13 @@
 IAreaTargetCommonTasks
 ======================
 
-.. py:class:: IAreaTargetCommonTasks
+.. py:class:: ansys.stk.core.stkobjects.IAreaTargetCommonTasks
 
    object
    
    AreaTarget common tasks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAreaTargetCommonTasks
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_area_type_ellipse`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetCommonTasks.set_area_type_ellipse`
               - Set the boundary area type to Ellipse.
-            * - :py:meth:`~set_area_type_pattern`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetCommonTasks.set_area_type_pattern`
               - Set the boundary area type to Pattern.
 
 

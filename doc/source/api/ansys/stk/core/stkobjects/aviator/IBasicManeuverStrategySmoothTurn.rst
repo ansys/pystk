@@ -1,13 +1,13 @@
 IBasicManeuverStrategySmoothTurn
 ================================
 
-.. py:class:: IBasicManeuverStrategySmoothTurn
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn
 
    object
    
    Interface used to access options for a Smooth Turn Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategySmoothTurn
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~heading_change`
-            * - :py:meth:`~turn_mode`
-            * - :py:meth:`~load_factor_mode`
-            * - :py:meth:`~max_load_factor_rate`
-            * - :py:meth:`~override_load_factor`
-            * - :py:meth:`~roll_rate_mode`
-            * - :py:meth:`~roll_angle`
-            * - :py:meth:`~override_roll_rate`
-            * - :py:meth:`~airspeed_options`
-            * - :py:meth:`~fpa_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.heading_change`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.turn_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.load_factor_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.max_load_factor_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.override_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.roll_rate_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.override_roll_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.fpa_mode`
 
 
 Import detail
@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

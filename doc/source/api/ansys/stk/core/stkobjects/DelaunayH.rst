@@ -1,13 +1,13 @@
 DelaunayH
 =========
 
-.. py:class:: DelaunayH
+.. py:class:: ansys.stk.core.stkobjects.DelaunayH
 
-   Bases: py:obj:`~IDelaunayActionVariable`, py:obj:`~IDelaunayH`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDelaunayActionVariable`, py:obj:`~ansys.stk.core.stkobjects.IDelaunayH`
 
    Value of Delaunay Variable H, which is the Z component of the orbital angular momentum.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DelaunayH
 
 Overview
 --------

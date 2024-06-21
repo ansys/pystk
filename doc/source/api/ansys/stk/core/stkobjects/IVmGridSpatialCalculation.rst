@@ -1,13 +1,13 @@
 IVmGridSpatialCalculation
 =========================
 
-.. py:class:: IVmGridSpatialCalculation
+.. py:class:: ansys.stk.core.stkobjects.IVmGridSpatialCalculation
 
    object
    
    IAgVmGridSpatialCalculation Interface volume grid spatial calculation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGridSpatialCalculation
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~volume_grid`
-            * - :py:meth:`~use_spatial_calculation`
-            * - :py:meth:`~spatial_calculation`
-            * - :py:meth:`~available_volume_grids`
-            * - :py:meth:`~available_spatial_calculations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.volume_grid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.use_spatial_calculation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.spatial_calculation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.available_volume_grids`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.available_spatial_calculations`
 
 
 Import detail

@@ -1,12 +1,12 @@
 COVERAGE_SATISFACTION_TYPE
 ==========================
 
-.. py:class:: COVERAGE_SATISFACTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_SATISFACTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_SATISFACTION_TYPE
 
 Overview
 --------

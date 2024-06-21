@@ -1,13 +1,13 @@
 CalculationToolParameterSetVector
 =================================
 
-.. py:class:: CalculationToolParameterSetVector
+.. py:class:: ansys.stk.core.vgt.CalculationToolParameterSetVector
 
-   Bases: py:obj:`~ICalculationToolParameterSetVector`, py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSetVector`, py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSet`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector parameter set contains various representations of a vector in a reference set of axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolParameterSetVector
 
 Overview
 --------

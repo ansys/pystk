@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeGridGroup
 ==================================
 
-.. py:class:: SpatialAnalysisToolVolumeGridGroup
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridGroup
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridGroup`
 
    Access or create VGT volume grids associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeGridGroup
 
 Overview
 --------

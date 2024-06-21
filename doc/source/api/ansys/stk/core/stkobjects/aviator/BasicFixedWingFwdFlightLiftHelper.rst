@@ -1,13 +1,13 @@
 BasicFixedWingFwdFlightLiftHelper
 =================================
 
-.. py:class:: BasicFixedWingFwdFlightLiftHelper
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicFixedWingFwdFlightLiftHelper
 
-   Bases: py:obj:`~IBasicFixedWingLiftHelper`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicFixedWingLiftHelper`
 
    Class defining the Lift Coefficient Helper for Forward Flight in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicFixedWingFwdFlightLiftHelper
 
 Overview
 --------

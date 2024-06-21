@@ -1,13 +1,13 @@
 IBasicManeuverStrategyBarrelRoll
 ================================
 
-.. py:class:: IBasicManeuverStrategyBarrelRoll
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll
 
    object
    
    Interface used to access options for a Barrel Roll Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyBarrelRoll
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeeds`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.set_airspeeds`
               - Set the speeds at the top and bottom of the loop.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~helix_angle`
-            * - :py:meth:`~helix_angle_mode`
-            * - :py:meth:`~top_load_factor`
-            * - :py:meth:`~bottom_load_factor`
-            * - :py:meth:`~torsion_angle`
-            * - :py:meth:`~hold_init_tas`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~top_airspeed`
-            * - :py:meth:`~bottom_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.helix_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.helix_angle_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.top_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.bottom_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.torsion_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.hold_init_tas`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.top_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.bottom_airspeed`
 
 
 Import detail

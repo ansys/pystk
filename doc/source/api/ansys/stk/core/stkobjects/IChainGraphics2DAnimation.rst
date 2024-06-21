@@ -1,13 +1,13 @@
 IChainGraphics2DAnimation
 =========================
 
-.. py:class:: IChainGraphics2DAnimation
+.. py:class:: ansys.stk.core.stkobjects.IChainGraphics2DAnimation
 
    object
    
    2D Animation graphics for a chain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainGraphics2DAnimation
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_highlight_visible`
-            * - :py:meth:`~is_line_visible`
-            * - :py:meth:`~is_direction_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~optimal_path_is_line_visible`
-            * - :py:meth:`~optimal_path_color`
-            * - :py:meth:`~optimal_path_line_width`
-            * - :py:meth:`~use_hide_animation_graphics_2d_if_more_than_n_strands`
-            * - :py:meth:`~hide_animation_graphics_2d_if_more_than_n_strands_num`
-            * - :py:meth:`~number_of_opt_strands_to_display`
-            * - :py:meth:`~optimal_path_color_ramp_start_color`
-            * - :py:meth:`~optimal_path_color_ramp_end_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.is_highlight_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.is_line_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.is_direction_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.optimal_path_is_line_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.optimal_path_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.optimal_path_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.use_hide_animation_graphics_2d_if_more_than_n_strands`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.number_of_opt_strands_to_display`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.optimal_path_color_ramp_start_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation.optimal_path_color_ramp_end_color`
 
 
 Import detail

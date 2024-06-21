@@ -1,13 +1,13 @@
 IAntennaModelIeee1979
 =====================
 
-.. py:class:: IAntennaModelIeee1979
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelIeee1979
 
    object
    
    Provide access to the properties and methods defining a IEEE 1979 antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelIeee1979
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelIeee1979.filename`
 
 
 Import detail

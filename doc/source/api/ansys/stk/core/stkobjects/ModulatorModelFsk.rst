@@ -1,13 +1,13 @@
 ModulatorModelFsk
 =================
 
-.. py:class:: ModulatorModelFsk
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelFsk
 
-   Bases: py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a FSK modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModelFsk
 
 Overview
 --------

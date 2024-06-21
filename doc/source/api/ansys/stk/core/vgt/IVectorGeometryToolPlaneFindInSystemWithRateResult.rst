@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneFindInSystemWithRateResult
 ==================================================
 
-.. py:class:: IVectorGeometryToolPlaneFindInSystemWithRateResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult
 
    object
    
    Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneFindInSystemWithRateResult
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~origin_position`
-            * - :py:meth:`~origin_velocity`
-            * - :py:meth:`~x_axis`
-            * - :py:meth:`~x_axis_rate`
-            * - :py:meth:`~y_axis`
-            * - :py:meth:`~y_axis_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.origin_position`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.origin_velocity`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.x_axis`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.x_axis_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.y_axis`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.y_axis_rate`
 
 
 Import detail
@@ -48,37 +48,37 @@ Property detail
 
 .. py:property:: origin_position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.origin_position
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The position of the plane's center point in the specified coordinate system.
 
 .. py:property:: origin_velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.origin_velocity
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The rate of change of the position of the plane's center point in the specified coordinate system.
 
 .. py:property:: x_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.x_axis
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     X-axis vector in the specified reference system.
 
 .. py:property:: x_axis_rate
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.x_axis_rate
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     A rate of change of the X-axis vector in the specified reference system.
 
 .. py:property:: y_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.y_axis
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     Y-axis vector in the specified reference system.
 
 .. py:property:: y_axis_rate
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.y_axis_rate
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     A rate of change of the Y-axis vector in the specified reference system.
 

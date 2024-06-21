@@ -1,13 +1,13 @@
 IVehicleImpactLLR
 =================
 
-.. py:class:: IVehicleImpactLLR
+.. py:class:: ansys.stk.core.stkobjects.IVehicleImpactLLR
 
    object
    
    Interface for LLR (geocentric) coordinates for a missile's impact location.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleImpactLLR
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLR.lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLR.lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLR.radius`
 
 
 Import detail

@@ -1,13 +1,13 @@
 PropulsionThrust
 ================
 
-.. py:class:: PropulsionThrust
+.. py:class:: ansys.stk.core.stkobjects.aviator.PropulsionThrust
 
-   Bases: py:obj:`~IPropulsionThrust`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust`
 
    Class defining the the thrust propulsion used in basic maneuver procedures.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PropulsionThrust
 
 Overview
 --------

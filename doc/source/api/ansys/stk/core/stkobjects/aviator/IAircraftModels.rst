@@ -1,13 +1,13 @@
 IAircraftModels
 ===============
 
-.. py:class:: IAircraftModels
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftModels
 
    object
    
    Interface for the User Aircraft Models in the Aviator Catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftModels
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_aircraft`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModels.get_aircraft`
               - Get the aircraft with the given name.
-            * - :py:meth:`~add_aircraft`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModels.add_aircraft`
               - Create a new aircraft with the given name.
-            * - :py:meth:`~get_as_catalog_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModels.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
 

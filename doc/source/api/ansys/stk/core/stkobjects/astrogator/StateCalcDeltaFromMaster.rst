@@ -1,13 +1,13 @@
 StateCalcDeltaFromMaster
 ========================
 
-.. py:class:: StateCalcDeltaFromMaster
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDeltaFromMaster`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaFromMaster`
 
    DeltaFromMaster Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDeltaFromMaster
 
 Overview
 --------

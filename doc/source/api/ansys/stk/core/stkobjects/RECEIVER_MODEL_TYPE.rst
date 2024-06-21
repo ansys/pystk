@@ -1,12 +1,12 @@
 RECEIVER_MODEL_TYPE
 ===================
 
-.. py:class:: RECEIVER_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RECEIVER_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RECEIVER_MODEL_TYPE
 
 Overview
 --------

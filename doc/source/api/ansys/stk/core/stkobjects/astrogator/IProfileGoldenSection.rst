@@ -1,13 +1,13 @@
 IProfileGoldenSection
 =====================
 
-.. py:class:: IProfileGoldenSection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection
 
    IProfile
    
    Properties for a Golden Section profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileGoldenSection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~targeter_graphs`
-            * - :py:meth:`~scripting_tool`
-            * - :py:meth:`~controls`
-            * - :py:meth:`~results`
-            * - :py:meth:`~max_iterations`
-            * - :py:meth:`~log_file`
-            * - :py:meth:`~enable_display_status`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.targeter_graphs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.scripting_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.controls`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.results`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.max_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.log_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.enable_display_status`
 
 
 Import detail
@@ -42,25 +42,25 @@ Property detail
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.targeter_graphs
-    :type: IAgVATargeterGraphCollection
+    :type: ITargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.scripting_tool
-    :type: IAgVAScriptingTool
+    :type: IScriptingTool
 
     Returns the Scripting tool for the sequence.
 
 .. py:property:: controls
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.controls
-    :type: IAgVAGoldenSectionControlCollection
+    :type: IGoldenSectionControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.results
-    :type: IAgVAGoldenSectionResultCollection
+    :type: IGoldenSectionResultCollection
 
     Get the list of results defined for the profile.
 

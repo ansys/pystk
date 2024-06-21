@@ -1,12 +1,12 @@
 UPDATE_ACTION
 =============
 
-.. py:class:: UPDATE_ACTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.UPDATE_ACTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: UPDATE_ACTION
 
 Overview
 --------

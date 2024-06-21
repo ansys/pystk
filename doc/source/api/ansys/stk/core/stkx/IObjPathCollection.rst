@@ -1,13 +1,13 @@
 IObjPathCollection
 ==================
 
-.. py:class:: IObjPathCollection
+.. py:class:: ansys.stk.core.stkx.IObjPathCollection
 
    object
    
    Collection of object paths.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IObjPathCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkx.IObjPathCollection.item`
               - Get the element at the specified index (0-based).
-            * - :py:meth:`~range`
+            * - :py:attr:`~ansys.stk.core.stkx.IObjPathCollection.range`
               - Return the elements within the specified range.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkx.IObjPathCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkx.IObjPathCollection._NewEnum`
 
 
 Import detail

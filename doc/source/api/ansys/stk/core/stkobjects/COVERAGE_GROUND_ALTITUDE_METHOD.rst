@@ -1,12 +1,12 @@
 COVERAGE_GROUND_ALTITUDE_METHOD
 ===============================
 
-.. py:class:: COVERAGE_GROUND_ALTITUDE_METHOD
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_GROUND_ALTITUDE_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_GROUND_ALTITUDE_METHOD
 
 Overview
 --------

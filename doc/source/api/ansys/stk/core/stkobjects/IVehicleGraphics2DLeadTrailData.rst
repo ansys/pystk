@@ -1,13 +1,13 @@
 IVehicleGraphics2DLeadTrailData
 ===============================
 
-.. py:class:: IVehicleGraphics2DLeadTrailData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData
 
    object
    
    2D Graphics pass properties: lead/trail for ground tracks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DLeadTrailData
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_lead_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.set_lead_data_type`
               - Lead data type.
-            * - :py:meth:`~is_lead_data_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.is_lead_data_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_trail_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.set_trail_data_type`
               - Trail data type.
-            * - :py:meth:`~is_trail_data_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.is_trail_data_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_trail_same_as_lead`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.set_trail_same_as_lead`
               - Set the trailing display option (and value, if applicable) to be the same as for the leading portion.
 
     .. tab-item:: Properties
@@ -37,14 +37,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lead_data_type`
-            * - :py:meth:`~lead_data_supported_types`
-            * - :py:meth:`~lead_data`
-            * - :py:meth:`~trail_data_type`
-            * - :py:meth:`~trail_data_supported_types`
-            * - :py:meth:`~trail_data`
-            * - :py:meth:`~has_lead_data`
-            * - :py:meth:`~has_trail_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.lead_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.lead_data_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.lead_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.trail_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.trail_data_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.trail_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.has_lead_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.has_trail_data`
 
 
 Import detail
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: lead_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.lead_data
-    :type: IAgVeLeadTrailData
+    :type: IVehicleLeadTrailData
 
     Lead data.
 
@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: trail_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.trail_data
-    :type: IAgVeLeadTrailData
+    :type: IVehicleLeadTrailData
 
     Trail data.
 

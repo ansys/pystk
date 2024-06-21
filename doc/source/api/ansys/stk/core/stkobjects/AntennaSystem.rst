@@ -1,13 +1,13 @@
 AntennaSystem
 =============
 
-.. py:class:: AntennaSystem
+.. py:class:: ansys.stk.core.stkobjects.AntennaSystem
 
-   Bases: py:obj:`~IAntennaSystem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaSystem`
 
    Class defining an antenna system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaSystem
 
 Overview
 --------

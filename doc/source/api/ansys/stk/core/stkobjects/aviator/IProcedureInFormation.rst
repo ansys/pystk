@@ -1,13 +1,13 @@
 IProcedureInFormation
 =====================
 
-.. py:class:: IProcedureInFormation
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureInFormation
 
    object
    
    Interface used to access the options for an In Formation procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureInFormation
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~flight_mode`
-            * - :py:meth:`~formation_point`
-            * - :py:meth:`~transition_time`
-            * - :py:meth:`~hold_time`
-            * - :py:meth:`~display_step_time`
-            * - :py:meth:`~trajectory_blending`
-            * - :py:meth:`~fuel_flow_type`
-            * - :py:meth:`~override_fuel_flow_value`
-            * - :py:meth:`~consider_accel_for_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.flight_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.formation_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.transition_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.hold_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.display_step_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.trajectory_blending`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.fuel_flow_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.override_fuel_flow_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation.consider_accel_for_fuel_flow`
 
 
 Import detail

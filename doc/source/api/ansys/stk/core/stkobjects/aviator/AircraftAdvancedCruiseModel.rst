@@ -1,13 +1,13 @@
 AircraftAdvancedCruiseModel
 ===========================
 
-.. py:class:: AircraftAdvancedCruiseModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel
 
-   Bases: py:obj:`~IAircraftAdvancedCruiseModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the advanced cruise performance model for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftAdvancedCruiseModel
 
 Overview
 --------

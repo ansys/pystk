@@ -1,13 +1,13 @@
 IProcedureAreaTargetSearch
 ==========================
 
-.. py:class:: IProcedureAreaTargetSearch
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch
 
    object
    
    Interface used to access the options for an Area Target Search procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureAreaTargetSearch
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.get_as_procedure`
               - Get the procedure interface.
-            * - :py:meth:`~copy_procedures`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.copy_procedures`
               - Copy the search pattern maneuvers as a set of procedures to the clipboard.
 
     .. tab-item:: Properties
@@ -31,17 +31,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~procedure_type`
-            * - :py:meth:`~max_separation`
-            * - :py:meth:`~course_mode`
-            * - :py:meth:`~first_leg_retrograde`
-            * - :py:meth:`~centroid_true_course`
-            * - :py:meth:`~fly_cruise_airspeed_profile`
-            * - :py:meth:`~must_level_off`
-            * - :py:meth:`~level_off_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.procedure_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.max_separation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.course_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.first_leg_retrograde`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.centroid_true_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.fly_cruise_airspeed_profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.must_level_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.level_off_mode`
 
 
 Import detail
@@ -57,19 +57,19 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.altitude_options
-    :type: IAgAvtrAltitudeOptions
+    :type: IAltitudeOptions
 
     Get the altitude options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.enroute_options
-    :type: IAgAvtrEnrouteOptions
+    :type: IEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 

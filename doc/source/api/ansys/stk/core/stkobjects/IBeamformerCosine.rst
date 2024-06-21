@@ -1,13 +1,13 @@
 IBeamformerCosine
 =================
 
-.. py:class:: IBeamformerCosine
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerCosine
 
    object
    
    Provide access to the properties and methods defining a cosine tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerCosine
 
 Overview
 --------

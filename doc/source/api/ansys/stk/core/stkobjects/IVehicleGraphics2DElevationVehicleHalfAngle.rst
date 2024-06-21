@@ -1,13 +1,13 @@
 IVehicleGraphics2DElevationVehicleHalfAngle
 ===========================================
 
-.. py:class:: IVehicleGraphics2DElevationVehicleHalfAngle
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationVehicleHalfAngle
 
    object
    
    Half angle interface for vehicle swath.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DElevationVehicleHalfAngle
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationVehicleHalfAngle.angle`
 
 
 Import detail

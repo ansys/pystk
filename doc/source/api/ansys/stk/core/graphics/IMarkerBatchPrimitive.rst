@@ -1,13 +1,13 @@
 IMarkerBatchPrimitive
 =====================
 
-.. py:class:: IMarkerBatchPrimitive
+.. py:class:: ansys.stk.core.graphics.IMarkerBatchPrimitive
 
    object
    
    Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IMarkerBatchPrimitive
 
 Overview
 --------
@@ -20,41 +20,41 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set`
               - Define the positions of markers in a marker batch. The markers are rendered in the primitive's reference frame.
-            * - :py:meth:`~set_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_with_optional_parameters`
               - Define the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame.
-            * - :py:meth:`~set_with_optional_parameters_and_render_pass_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_with_optional_parameters_and_render_pass_hint`
               - Define the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
-            * - :py:meth:`~set_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_cartographic`
               - For convenience. Defines the positions of markers in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_cartographic_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_cartographic_with_optional_parameters`
               - For convenience. Defines the positions and optional per-marker parameters of markers in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_cartographic_with_optional_parameters_and_render_pass_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_cartographic_with_optional_parameters_and_render_pass_hint`
               - For convenience. Defines the positions and optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency...
-            * - :py:meth:`~set_partial`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial`
               - Update a subset of marker positions in a marker batch.
-            * - :py:meth:`~set_partial_with_indices_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_with_indices_order`
               - Update a subset of marker positions in a marker batch.
-            * - :py:meth:`~set_partial_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_with_optional_parameters`
               - Update a subset of marker positions and/or per-marker parameters in a marker batch.
-            * - :py:meth:`~set_partial_with_optional_parameters_indices_order_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_with_optional_parameters_indices_order_and_render_pass`
               - Update a subset of marker positions and/or per-marker parameters in a marker batch.
-            * - :py:meth:`~set_partial_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_cartographic`
               - For convenience. Updates a subset of positions in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_indices_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_cartographic_with_indices_order`
               - For convenience. Updates a subset of positions in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_cartographic_with_optional_parameters`
               - For convenience. Updates a subset of positions and/or optional per-marker parameters of markers in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass`
               - For convenience. Updates a subset of positions and/or optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency...
-            * - :py:meth:`~supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.supported`
               - Determine whether or not the video card supports the marker batch primitive with the given renderingMethod.
-            * - :py:meth:`~align_to_screen`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.align_to_screen`
               - Set the up vector of the markers to always be aligned to the up vector of the camera. This is the default alignment.
-            * - :py:meth:`~align_to_north`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.align_to_north`
               - Set the up vector of the markers to point towards the north axis of centralBody. It will be aligned with the tangent vector of the surface that points north.
-            * - :py:meth:`~align_to_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.align_to_axis`
               - Set the up vector of the markers to point towards the axis of centralBody. It will be aligned with the tangent vector of the surface that points towards the axis...
 
     .. tab-item:: Properties
@@ -63,26 +63,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~size_source`
-            * - :py:meth:`~sort_order`
-            * - :py:meth:`~set_hint`
-            * - :py:meth:`~rendering_method`
-            * - :py:meth:`~render_pass`
-            * - :py:meth:`~bounding_sphere_scale`
-            * - :py:meth:`~distance_display_condition_per_marker`
-            * - :py:meth:`~texture`
-            * - :py:meth:`~size_unit`
-            * - :py:meth:`~size`
-            * - :py:meth:`~origin`
-            * - :py:meth:`~pixel_offset`
-            * - :py:meth:`~eye_offset`
-            * - :py:meth:`~rotation`
-            * - :py:meth:`~texture_coordinate`
-            * - :py:meth:`~wireframe`
-            * - :py:meth:`~per_item_picking_enabled`
-            * - :py:meth:`~texture_filter`
-            * - :py:meth:`~clamp_to_pixel`
-            * - :py:meth:`~central_body_clipped`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.size_source`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.sort_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.rendering_method`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.bounding_sphere_scale`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.distance_display_condition_per_marker`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.texture`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.size_unit`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.size`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.origin`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.pixel_offset`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.eye_offset`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.rotation`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.texture_coordinate`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.wireframe`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.per_item_picking_enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.texture_filter`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.clamp_to_pixel`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.central_body_clipped`
 
 
 Import detail
@@ -134,13 +134,13 @@ Property detail
 
 .. py:property:: distance_display_condition_per_marker
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.distance_display_condition_per_marker
-    :type: IAgStkGraphicsDistanceDisplayCondition
+    :type: IDistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch...
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.texture
-    :type: IAgStkGraphicsRendererTexture2D
+    :type: IRendererTexture2D
 
     Gets or sets the per-batch texture, which is applied to each marker in the batch.
 
@@ -200,7 +200,7 @@ Property detail
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.IMarkerBatchPrimitive.texture_filter
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets or sets the filter used for per-marker or per-batch textures.
 

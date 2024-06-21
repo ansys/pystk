@@ -1,13 +1,13 @@
 IUiApplication
 ==============
 
-.. py:class:: IUiApplication
+.. py:class:: ansys.stk.core.uiapplication.IUiApplication
 
    object
    
    IAgUiApplication represents a root of the Application Model.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: IUiApplication
 
 Overview
 --------
@@ -20,27 +20,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~load_personality`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.load_personality`
               - Load a personality by its name.
-            * - :py:meth:`~activate`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.activate`
               - Activates the application's main window.
-            * - :py:meth:`~file_open_dialog`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.file_open_dialog`
               - Brings up a common File Open dialog and returns the file name selected by the user. If the user canceled, returns an empty file name.
-            * - :py:meth:`~create_object`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.create_object`
               - Only works from local HTML pages and scripts.
-            * - :py:meth:`~file_save_as_dialog`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.file_save_as_dialog`
               - Brings up a common File SaveAs dialog and returns the file name selected by the user. If the user canceled, returns an empty file name.
-            * - :py:meth:`~quit`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.quit`
               - Shuts down the application.
-            * - :py:meth:`~file_open_dialog_ext`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.file_open_dialog_ext`
               - Brings up a standard File Open Dialog and returns an object representing the selected file.
-            * - :py:meth:`~directory_picker_dialog`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.directory_picker_dialog`
               - Brings up the Directory Picker Dialog and returns a selected directory name.
-            * - :py:meth:`~open_log_file`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.open_log_file`
               - Specify the current log file to be written to.
-            * - :py:meth:`~log_msg`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.log_msg`
               - Log the Message specified.
-            * - :py:meth:`~create_application`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.create_application`
               - Create a new instance of the application model root object.
 
     .. tab-item:: Properties
@@ -49,23 +49,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~personality`
-            * - :py:meth:`~visible`
-            * - :py:meth:`~user_control`
-            * - :py:meth:`~windows`
-            * - :py:meth:`~height`
-            * - :py:meth:`~width`
-            * - :py:meth:`~left`
-            * - :py:meth:`~top`
-            * - :py:meth:`~window_state`
-            * - :py:meth:`~mru_list`
-            * - :py:meth:`~path`
-            * - :py:meth:`~hwnd`
-            * - :py:meth:`~message_pending_delay`
-            * - :py:meth:`~personality2`
-            * - :py:meth:`~log_file`
-            * - :py:meth:`~display_alerts`
-            * - :py:meth:`~process_id`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.personality`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.visible`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.user_control`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.windows`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.height`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.width`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.left`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.top`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.window_state`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.mru_list`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.path`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.hwnd`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.message_pending_delay`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.personality2`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.log_file`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.display_alerts`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.process_id`
 
 
 Import detail
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: windows
     :canonical: ansys.stk.core.uiapplication.IUiApplication.windows
-    :type: IAgUiWindowsCollection
+    :type: IUiWindowsCollection
 
     Returns a collection of windows.
 
@@ -135,7 +135,7 @@ Property detail
 
 .. py:property:: mru_list
     :canonical: ansys.stk.core.uiapplication.IUiApplication.mru_list
-    :type: IAgMRUCollection
+    :type: IMRUCollection
 
     Returns a collection most recently used files.
 

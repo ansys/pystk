@@ -1,13 +1,13 @@
 MissileSimpleAero
 =================
 
-.. py:class:: MissileSimpleAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileSimpleAero
 
-   Bases: py:obj:`~IMissileSimpleAero`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero`
 
    Class defining the simple aerodynamic options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MissileSimpleAero
 
 Overview
 --------

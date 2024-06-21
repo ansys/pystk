@@ -1,12 +1,12 @@
 EXPORT_TOOL_VERSION_FORMAT
 ==========================
 
-.. py:class:: EXPORT_TOOL_VERSION_FORMAT
+.. py:class:: ansys.stk.core.stkobjects.EXPORT_TOOL_VERSION_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EXPORT_TOOL_VERSION_FORMAT
 
 Overview
 --------

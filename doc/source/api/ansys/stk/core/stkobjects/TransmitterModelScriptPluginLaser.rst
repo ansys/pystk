@@ -1,13 +1,13 @@
 TransmitterModelScriptPluginLaser
 =================================
 
-.. py:class:: TransmitterModelScriptPluginLaser
+.. py:class:: ansys.stk.core.stkobjects.TransmitterModelScriptPluginLaser
 
-   Bases: py:obj:`~ITransmitterModelScriptPlugin`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitterModelScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.ITransmitterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a laser script plugin transmitter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TransmitterModelScriptPluginLaser
 
 Overview
 --------

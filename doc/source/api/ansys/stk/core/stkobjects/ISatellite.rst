@@ -1,13 +1,13 @@
 ISatellite
 ==========
 
-.. py:class:: ISatellite
+.. py:class:: ansys.stk.core.stkobjects.ISatellite
 
    object
    
    Satellite properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISatellite
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_propagator_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.set_propagator_type`
               - Set the propagator type.
-            * - :py:meth:`~set_attitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.set_attitude_type`
               - Set the attitude type.
-            * - :py:meth:`~is_attitude_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.is_attitude_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~is_propagator_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.is_propagator_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -35,29 +35,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagator_type`
-            * - :py:meth:`~propagator`
-            * - :py:meth:`~attitude_type`
-            * - :py:meth:`~attitude_supported_types`
-            * - :py:meth:`~attitude`
-            * - :py:meth:`~mass_properties`
-            * - :py:meth:`~pass_break`
-            * - :py:meth:`~ground_ellipses`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~access_constraints`
-            * - :py:meth:`~eclipse_bodies`
-            * - :py:meth:`~propagator_supported_types`
-            * - :py:meth:`~export_tools`
-            * - :py:meth:`~space_environment`
-            * - :py:meth:`~reference_vehicle`
-            * - :py:meth:`~radar_clutter_map`
-            * - :py:meth:`~radar_cross_section`
-            * - :py:meth:`~use_terrain_in_lighting_computations`
-            * - :py:meth:`~lighting_max_step`
-            * - :py:meth:`~lighting_max_step_terrain`
-            * - :py:meth:`~lighting_max_step_central_body_shape`
-            * - :py:meth:`~get_eoir`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.propagator_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.propagator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.attitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.attitude_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.mass_properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.pass_break`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.ground_ellipses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.access_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.eclipse_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.propagator_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.export_tools`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.space_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.reference_vehicle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.radar_clutter_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.use_terrain_in_lighting_computations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.lighting_max_step_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.lighting_max_step_central_body_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.get_eoir`
 
 
 Import detail
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: propagator
     :canonical: ansys.stk.core.stkobjects.ISatellite.propagator
-    :type: IAgVePropagator
+    :type: IVehiclePropagator
 
     Get information for the propagator.
 
@@ -97,49 +97,49 @@ Property detail
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.ISatellite.attitude
-    :type: IAgVeAttitude
+    :type: IVehicleAttitude
 
     Get the Attitude properties of the satellite.
 
 .. py:property:: mass_properties
     :canonical: ansys.stk.core.stkobjects.ISatellite.mass_properties
-    :type: IAgVeMassProperties
+    :type: IVehicleMassProperties
 
     Get the Mass properties of the satellite.
 
 .. py:property:: pass_break
     :canonical: ansys.stk.core.stkobjects.ISatellite.pass_break
-    :type: IAgVePassBreak
+    :type: IVehiclePassBreak
 
     Get the Pass Break properties of the satellite.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.ISatellite.ground_ellipses
-    :type: IAgVeGroundEllipsesCollection
+    :type: IVehicleGroundEllipsesCollection
 
     Get the Ground Ellipses properties of the satellite.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ISatellite.graphics
-    :type: IAgSaGraphics
+    :type: ISatelliteGraphics
 
     Get the 2D Graphics properties of the satellite.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ISatellite.graphics_3d
-    :type: IAgSaVO
+    :type: ISatelliteGraphics3D
 
     Get the 3D Graphics properties of the satellite.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.ISatellite.access_constraints
-    :type: IAgAccessConstraintCollection
+    :type: IAccessConstraintCollection
 
     Get the constraints imposed on the satellite.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.ISatellite.eclipse_bodies
-    :type: IAgVeEclipseBodies
+    :type: IVehicleEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -151,31 +151,31 @@ Property detail
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.ISatellite.export_tools
-    :type: IAgSaExportTools
+    :type: ISatelliteExportTools
 
     Returns the IAgSaExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.ISatellite.space_environment
-    :type: IAgVeSpEnvSpaceEnvironment
+    :type: IVehicleSpaceEnvironment
 
     Get the SpaceEnvironment properties of the satellite.
 
 .. py:property:: reference_vehicle
     :canonical: ansys.stk.core.stkobjects.ISatellite.reference_vehicle
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference vehicle of the satellite.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.ISatellite.radar_clutter_map
-    :type: IAgRadarClutterMapInheritable
+    :type: IRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ISatellite.radar_cross_section
-    :type: IAgRadarCrossSectionInheritable
+    :type: IRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
@@ -205,7 +205,7 @@ Property detail
 
 .. py:property:: get_eoir
     :canonical: ansys.stk.core.stkobjects.ISatellite.get_eoir
-    :type: IAgEOIR
+    :type: IEOIR
 
     Get the EOIR properties of the satellite.
 

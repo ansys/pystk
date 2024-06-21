@@ -1,13 +1,13 @@
 IMissionControlSequenceLaunch
 =============================
 
-.. py:class:: IMissionControlSequenceLaunch
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch
 
    object
    
    Properties for a Launch segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceLaunch
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
-            * - :py:meth:`~set_display_system_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.set_display_system_type`
               - Set the display system type.
-            * - :py:meth:`~set_burnout_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.set_burnout_type`
               - Set the burnout type.
 
     .. tab-item:: Properties
@@ -37,24 +37,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~pre_launch_time`
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~control_parameters_available`
-            * - :py:meth:`~initial_acceleration`
-            * - :py:meth:`~spacecraft_parameters`
-            * - :py:meth:`~fuel_tank`
-            * - :py:meth:`~display_system_type`
-            * - :py:meth:`~display_system`
-            * - :py:meth:`~ascent_type`
-            * - :py:meth:`~time_of_flight`
-            * - :py:meth:`~burnout_type`
-            * - :py:meth:`~burnout`
-            * - :py:meth:`~burnout_velocity`
-            * - :py:meth:`~use_previous_segment_state`
-            * - :py:meth:`~set_met_epoch`
-            * - :py:meth:`~user_variables`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.pre_launch_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.initial_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.spacecraft_parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.fuel_tank`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.display_system_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.display_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.ascent_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.time_of_flight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.use_previous_segment_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.set_met_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.user_variables`
 
 
 Import detail
@@ -106,13 +106,13 @@ Property detail
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.spacecraft_parameters
-    :type: IAgVASpacecraftParameters
+    :type: ISpacecraftParameters
 
     Satellite Properties - the spacecraft's physical properties.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.fuel_tank
-    :type: IAgVAFuelTank
+    :type: IFuelTank
 
     Get the spacecraft's fuel tank properties.
 
@@ -124,7 +124,7 @@ Property detail
 
 .. py:property:: display_system
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.display_system
-    :type: IAgVADisplaySystem
+    :type: IDisplaySystem
 
     Gets the current Display System.
 
@@ -148,13 +148,13 @@ Property detail
 
 .. py:property:: burnout
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout
-    :type: IAgVABurnout
+    :type: IBurnout
 
     Get the burnout point definition.
 
 .. py:property:: burnout_velocity
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout_velocity
-    :type: IAgVABurnoutVelocity
+    :type: IBurnoutVelocity
 
     Get the burnout velocity definition.
 
@@ -172,7 +172,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.user_variables
-    :type: IAgVAUserVariableCollection
+    :type: IUserVariableCollection
 
     Interface used to modify user variables for the launch segment.
 

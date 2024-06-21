@@ -1,13 +1,13 @@
 ElementCartesian
 ================
 
-.. py:class:: ElementCartesian
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ElementCartesian
 
-   Bases: py:obj:`~IElementCartesian`, py:obj:`~IElement`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Cartesian elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ElementCartesian
 
 Overview
 --------

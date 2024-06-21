@@ -1,13 +1,13 @@
 IAntennaModelPhasedArray
 ========================
 
-.. py:class:: IAntennaModelPhasedArray
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelPhasedArray
 
    object
    
    Provide access to the properties and methods defining a phased array antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelPhasedArray
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~backlobe_suppression`
-            * - :py:meth:`~include_element_factor`
-            * - :py:meth:`~element_factor_exponent`
-            * - :py:meth:`~width`
-            * - :py:meth:`~height`
-            * - :py:meth:`~number_of_elements`
-            * - :py:meth:`~supported_beam_direction_provider_types`
-            * - :py:meth:`~beam_direction_provider_type`
-            * - :py:meth:`~beam_direction_provider`
-            * - :py:meth:`~supported_null_direction_provider_types`
-            * - :py:meth:`~null_direction_provider_type`
-            * - :py:meth:`~null_direction_provider`
-            * - :py:meth:`~beamformer_type`
-            * - :py:meth:`~beamformer`
-            * - :py:meth:`~element_configuration_type`
-            * - :py:meth:`~element_configuration`
-            * - :py:meth:`~elements`
-            * - :py:meth:`~show_grid`
-            * - :py:meth:`~show_labels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.backlobe_suppression`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.include_element_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.element_factor_exponent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.number_of_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.supported_beam_direction_provider_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beam_direction_provider_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beam_direction_provider`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.supported_null_direction_provider_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.null_direction_provider_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.null_direction_provider`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beamformer_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beamformer`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.element_configuration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.element_configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.show_grid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.show_labels`
 
 
 Import detail
@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: beam_direction_provider
     :canonical: ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beam_direction_provider
-    :type: IAgDirectionProvider
+    :type: IDirectionProvider
 
     Gets the beam direction provider.
 
@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: null_direction_provider
     :canonical: ansys.stk.core.stkobjects.IAntennaModelPhasedArray.null_direction_provider
-    :type: IAgDirectionProvider
+    :type: IDirectionProvider
 
     Gets the null direction provider.
 
@@ -132,7 +132,7 @@ Property detail
 
 .. py:property:: beamformer
     :canonical: ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beamformer
-    :type: IAgBeamformer
+    :type: IBeamformer
 
     Gets the beamformer.
 
@@ -144,13 +144,13 @@ Property detail
 
 .. py:property:: element_configuration
     :canonical: ansys.stk.core.stkobjects.IAntennaModelPhasedArray.element_configuration
-    :type: IAgElementConfiguration
+    :type: IElementConfiguration
 
     Gets the element configuration.
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.IAntennaModelPhasedArray.elements
-    :type: IAgElementCollection
+    :type: IElementCollection
 
     Gets the collection of elements.
 

@@ -1,13 +1,13 @@
 AGIProcessedImageGlobeOverlay
 =============================
 
-.. py:class:: AGIProcessedImageGlobeOverlay
+.. py:class:: ansys.stk.core.graphics.AGIProcessedImageGlobeOverlay
 
-   Bases: py:obj:`~IAGIProcessedImageGlobeOverlay`, py:obj:`~IGlobeImageOverlay`, py:obj:`~IGlobeOverlay`
+   Bases: py:obj:`~ansys.stk.core.graphics.IAGIProcessedImageGlobeOverlay`, py:obj:`~ansys.stk.core.graphics.IGlobeImageOverlay`, py:obj:`~ansys.stk.core.graphics.IGlobeOverlay`
 
    A globe image overlay for handling AGI Processed Image (PDTTX) files.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: AGIProcessedImageGlobeOverlay
 
 Overview
 --------

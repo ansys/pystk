@@ -1,13 +1,13 @@
 VehicleGraphics2DSAA
 ====================
 
-.. py:class:: VehicleGraphics2DSAA
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DSAA
 
-   Bases: py:obj:`~IVehicleGraphics2DSAA`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA`
 
    South Atlantic Anomaly contour settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DSAA
 
 Overview
 --------

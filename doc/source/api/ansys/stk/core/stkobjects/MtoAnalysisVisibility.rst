@@ -1,13 +1,13 @@
 MtoAnalysisVisibility
 =====================
 
-.. py:class:: MtoAnalysisVisibility
+.. py:class:: ansys.stk.core.stkobjects.MtoAnalysisVisibility
 
-   Bases: py:obj:`~IMtoAnalysisVisibility`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility`
 
    MTO Visibility Computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoAnalysisVisibility
 
 Overview
 --------

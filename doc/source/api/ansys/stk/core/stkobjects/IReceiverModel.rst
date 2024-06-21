@@ -1,13 +1,13 @@
 IReceiverModel
 ==============
 
-.. py:class:: IReceiverModel
+.. py:class:: ansys.stk.core.stkobjects.IReceiverModel
 
    object
    
    Provide access to the properties and methods defining a receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReceiverModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModel.type`
 
 
 Import detail

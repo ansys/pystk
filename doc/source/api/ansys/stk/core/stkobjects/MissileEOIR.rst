@@ -1,13 +1,13 @@
 MissileEOIR
 ===========
 
-.. py:class:: MissileEOIR
+.. py:class:: ansys.stk.core.stkobjects.MissileEOIR
 
-   Bases: py:obj:`~IMissileEOIR`, py:obj:`~IEOIR`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMissileEOIR`, py:obj:`~ansys.stk.core.stkobjects.IEOIR`
 
    AgMsEOIR interface class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MissileEOIR
 
 Overview
 --------

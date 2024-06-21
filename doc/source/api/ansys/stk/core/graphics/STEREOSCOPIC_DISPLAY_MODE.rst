@@ -1,12 +1,12 @@
 STEREOSCOPIC_DISPLAY_MODE
 =========================
 
-.. py:class:: STEREOSCOPIC_DISPLAY_MODE
+.. py:class:: ansys.stk.core.graphics.STEREOSCOPIC_DISPLAY_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: STEREOSCOPIC_DISPLAY_MODE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 MissionControlSequenceManeuver
 ==============================
 
-.. py:class:: MissionControlSequenceManeuver
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceManeuver
 
-   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceManeuver`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    The Maneuver segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceManeuver
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IPOPTResultCollection
 =====================
 
-.. py:class:: IPOPTResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection
 
-   Bases: py:obj:`~IIPOPTResultCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResultCollection`
 
    IPOPT result collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPOPTResultCollection
 
 Overview
 --------

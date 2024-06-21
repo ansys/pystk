@@ -1,13 +1,13 @@
 AdvCATChosenObject
 ==================
 
-.. py:class:: AdvCATChosenObject
+.. py:class:: ansys.stk.core.stkobjects.AdvCATChosenObject
 
-   Bases: py:obj:`~IAdvCATChosenObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATChosenObject`
 
    A chosen object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AdvCATChosenObject
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAntennaControl
 ===============
 
-.. py:class:: IAntennaControl
+.. py:class:: ansys.stk.core.stkobjects.IAntennaControl
 
    object
    
    Provide access to the properties and methods of the antenna control.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaControl
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_embedded_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.set_embedded_model`
               - Set the current antenna model by name.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_type`
-            * - :py:meth:`~supported_linked_antenna_objects`
-            * - :py:meth:`~linked_antenna_object`
-            * - :py:meth:`~supported_embedded_models`
-            * - :py:meth:`~embedded_model`
-            * - :py:meth:`~embedded_model_orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.reference_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.supported_linked_antenna_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.linked_antenna_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.supported_embedded_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.embedded_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.embedded_model_orientation`
 
 
 Import detail
@@ -74,13 +74,13 @@ Property detail
 
 .. py:property:: embedded_model
     :canonical: ansys.stk.core.stkobjects.IAntennaControl.embedded_model
-    :type: IAgAntennaModel
+    :type: IAntennaModel
 
     Gets the current antenna model.
 
 .. py:property:: embedded_model_orientation
     :canonical: ansys.stk.core.stkobjects.IAntennaControl.embedded_model_orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Gets or sets the antenna orientation.
 

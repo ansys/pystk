@@ -1,13 +1,13 @@
 IPolarizationVertical
 =====================
 
-.. py:class:: IPolarizationVertical
+.. py:class:: ansys.stk.core.stkobjects.IPolarizationVertical
 
    object
    
    Provide the interface for linear polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPolarizationVertical
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_axis`
-            * - :py:meth:`~tilt_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationVertical.reference_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationVertical.tilt_angle`
 
 
 Import detail

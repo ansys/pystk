@@ -1,12 +1,12 @@
 CENTRAL_BODY_ATTITUDE
 =====================
 
-.. py:class:: CENTRAL_BODY_ATTITUDE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CENTRAL_BODY_ATTITUDE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CENTRAL_BODY_ATTITUDE
 
 Overview
 --------

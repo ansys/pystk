@@ -1,12 +1,12 @@
 RAMJET_MODE
 ===========
 
-.. py:class:: RAMJET_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.RAMJET_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: RAMJET_MODE
 
 Overview
 --------

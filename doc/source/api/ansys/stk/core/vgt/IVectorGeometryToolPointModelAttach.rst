@@ -1,13 +1,13 @@
 IVectorGeometryToolPointModelAttach
 ===================================
 
-.. py:class:: IVectorGeometryToolPointModelAttach
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointModelAttach
 
    object
    
    A point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointModelAttach
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pointable_element_name`
-            * - :py:meth:`~use_scale`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointModelAttach.pointable_element_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointModelAttach.use_scale`
 
 
 Import detail

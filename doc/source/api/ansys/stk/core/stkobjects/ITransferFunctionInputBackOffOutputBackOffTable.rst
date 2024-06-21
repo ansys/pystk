@@ -1,13 +1,13 @@
 ITransferFunctionInputBackOffOutputBackOffTable
 ===============================================
 
-.. py:class:: ITransferFunctionInputBackOffOutputBackOffTable
+.. py:class:: ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable
 
    object
    
    Represents a collection of input back off vs output back off values.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransferFunctionInputBackOffOutputBackOffTable
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable.remove_at`
               - Remove the row with the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable.add`
               - Add and returns a new row.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable.insert_at`
               - Insert and returns a new row at the supplied index.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable._NewEnum`
 
 
 Import detail

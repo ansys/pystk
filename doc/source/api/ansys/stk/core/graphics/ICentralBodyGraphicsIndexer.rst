@@ -1,13 +1,13 @@
 ICentralBodyGraphicsIndexer
 ===========================
 
-.. py:class:: ICentralBodyGraphicsIndexer
+.. py:class:: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer
 
    object
    
    An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICentralBodyGraphicsIndexer
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.item`
               - Get the central body graphics for the specified central body.
-            * - :py:meth:`~get_by_name`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.get_by_name`
               - Return the central body graphics for the central body with the given name.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~earth`
-            * - :py:meth:`~moon`
-            * - :py:meth:`~sun`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.earth`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.moon`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.sun`
 
 
 Import detail
@@ -49,19 +49,19 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.earth
-    :type: IAgStkGraphicsCentralBodyGraphics
+    :type: ICentralBodyGraphics
 
     Gets the central body graphics for the planet Earth. This is equivalent to passing a central body equal to an instance of earth central body to the indexer.
 
 .. py:property:: moon
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.moon
-    :type: IAgStkGraphicsCentralBodyGraphics
+    :type: ICentralBodyGraphics
 
     Gets the central body graphics for the Moon.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.sun
-    :type: IAgStkGraphicsCentralBodyGraphics
+    :type: ICentralBodyGraphics
 
     Gets the central body graphics for the Sun.
 

@@ -1,13 +1,13 @@
 BasicManeuverStrategyFlyAOA
 ===========================
 
-.. py:class:: BasicManeuverStrategyFlyAOA
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyFlyAOA
 
-   Bases: py:obj:`~IBasicManeuverStrategyFlyAOA`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the fly AOA strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyFlyAOA
 
 Overview
 --------

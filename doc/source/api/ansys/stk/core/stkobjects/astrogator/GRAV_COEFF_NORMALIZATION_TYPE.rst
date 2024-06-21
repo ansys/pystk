@@ -1,12 +1,12 @@
 GRAV_COEFF_NORMALIZATION_TYPE
 =============================
 
-.. py:class:: GRAV_COEFF_NORMALIZATION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GRAV_COEFF_NORMALIZATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GRAV_COEFF_NORMALIZATION_TYPE
 
 Overview
 --------

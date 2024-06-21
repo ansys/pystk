@@ -1,12 +1,12 @@
 CRDN_SATISFACTION_CROSSING
 ==========================
 
-.. py:class:: CRDN_SATISFACTION_CROSSING
+.. py:class:: ansys.stk.core.vgt.CRDN_SATISFACTION_CROSSING
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SATISFACTION_CROSSING
 
 Overview
 --------

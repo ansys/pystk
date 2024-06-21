@@ -1,13 +1,13 @@
 ILandingStandardInstrumentApproach
 ==================================
 
-.. py:class:: ILandingStandardInstrumentApproach
+.. py:class:: ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach
 
    object
    
    The interface used to access the options for a Standard Instrument Approach mode for a landing procedure. The approach mode must be set to Standard Instrument Approach to access this interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ILandingStandardInstrumentApproach
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~approach_altitude`
-            * - :py:meth:`~level_off_mode`
-            * - :py:meth:`~approach_fix_range`
-            * - :py:meth:`~approach_fix_range_mode`
-            * - :py:meth:`~glideslope`
-            * - :py:meth:`~runway_altitude_offset`
-            * - :py:meth:`~use_runway_terrain`
-            * - :py:meth:`~touch_and_go`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.approach_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.level_off_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.approach_fix_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.approach_fix_range_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.glideslope`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.runway_altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.use_runway_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.touch_and_go`
 
 
 Import detail

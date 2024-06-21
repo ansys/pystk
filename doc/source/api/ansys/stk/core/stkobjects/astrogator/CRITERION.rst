@@ -1,12 +1,12 @@
 CRITERION
 =========
 
-.. py:class:: CRITERION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CRITERION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CRITERION
 
 Overview
 --------

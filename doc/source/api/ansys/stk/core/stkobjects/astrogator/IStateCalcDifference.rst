@@ -1,13 +1,13 @@
 IStateCalcDifference
 ====================
 
-.. py:class:: IStateCalcDifference
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDifference
 
    object
    
    Properties for a Difference calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDifference
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
-            * - :py:meth:`~difference_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifference.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifference.difference_order`
 
 
 Import detail

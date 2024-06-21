@@ -1,13 +1,13 @@
 DirectionPR
 ===========
 
-.. py:class:: DirectionPR
+.. py:class:: ansys.stk.core.stkutil.DirectionPR
 
-   Bases: py:obj:`~IDirectionPR`, py:obj:`~IDirection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IDirectionPR`, py:obj:`~ansys.stk.core.stkutil.IDirection`
 
    Pitch-Roll (PR) direction sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: DirectionPR
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAircraftExternalAero
 =====================
 
-.. py:class:: IAircraftExternalAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftExternalAero
 
    object
    
    Interface used to access the External File Aerodynamics options for the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftExternalAero
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_forward_flight_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.set_forward_flight_filepath`
               - Set the filepath for the forward flight aero file.
-            * - :py:meth:`~reload_forward_flight_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.reload_forward_flight_file`
               - Reload the forward flight aero file.
-            * - :py:meth:`~set_takeoff_landing_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.set_takeoff_landing_filepath`
               - Set the filepath for the takeoff and landing aero file.
-            * - :py:meth:`~reload_takeoff_landing_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.reload_takeoff_landing_file`
               - Reload the takeoff and landing aero file.
 
     .. tab-item:: Properties
@@ -35,14 +35,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~forward_flight_filepath`
-            * - :py:meth:`~forward_flight_reference_area`
-            * - :py:meth:`~can_set_forward_flight_reference_area`
-            * - :py:meth:`~is_forward_flight_valid`
-            * - :py:meth:`~takeoff_landing_filepath`
-            * - :py:meth:`~takeoff_landing_reference_area`
-            * - :py:meth:`~can_set_takeoff_landing_reference_area`
-            * - :py:meth:`~is_takeoff_landing_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.forward_flight_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.forward_flight_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.can_set_forward_flight_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.is_forward_flight_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.takeoff_landing_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.takeoff_landing_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.can_set_takeoff_landing_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero.is_takeoff_landing_valid`
 
 
 Import detail

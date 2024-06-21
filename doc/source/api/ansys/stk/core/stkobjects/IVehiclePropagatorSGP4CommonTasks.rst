@@ -1,13 +1,13 @@
 IVehiclePropagatorSGP4CommonTasks
 =================================
 
-.. py:class:: IVehiclePropagatorSGP4CommonTasks
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4CommonTasks
 
    object
    
    Interface provides methods encapsulating most commonly used functionality when working with SGP4 propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorSGP4CommonTasks
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_segs_from_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4CommonTasks.add_segs_from_file`
               - Search the specified file for elements matching the specified SSC number and adds them to the collection.
-            * - :py:meth:`~add_segs_from_online_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4CommonTasks.add_segs_from_online_source`
               - Search the online source (AGI server) for elements matching the specified SSC number and adds them to the collection. The method uses the propagator's start/stop.
 
 

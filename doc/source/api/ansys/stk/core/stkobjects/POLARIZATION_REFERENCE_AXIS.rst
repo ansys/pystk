@@ -1,12 +1,12 @@
 POLARIZATION_REFERENCE_AXIS
 ===========================
 
-.. py:class:: POLARIZATION_REFERENCE_AXIS
+.. py:class:: ansys.stk.core.stkobjects.POLARIZATION_REFERENCE_AXIS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: POLARIZATION_REFERENCE_AXIS
 
 Overview
 --------

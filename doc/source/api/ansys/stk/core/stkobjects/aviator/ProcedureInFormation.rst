@@ -1,13 +1,13 @@
 ProcedureInFormation
 ====================
 
-.. py:class:: ProcedureInFormation
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureInFormation
 
-   Bases: py:obj:`~IProcedureInFormation`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureInFormation`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining an In Formation procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureInFormation
 
 Overview
 --------

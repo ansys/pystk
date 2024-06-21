@@ -1,13 +1,13 @@
 DesignCR3BPObjectCollection
 ===========================
 
-.. py:class:: DesignCR3BPObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection
 
-   Bases: py:obj:`~IDesignCR3BPObjectCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection`
 
    CR3BP associated object Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DesignCR3BPObjectCollection
 
 Overview
 --------

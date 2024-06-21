@@ -1,12 +1,12 @@
 SENSOR_EOIR_JITTER_TYPES
 ========================
 
-.. py:class:: SENSOR_EOIR_JITTER_TYPES
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_EOIR_JITTER_TYPES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_EOIR_JITTER_TYPES
 
 Overview
 --------

@@ -1,13 +1,13 @@
 AdvCATPreFilters
 ================
 
-.. py:class:: AdvCATPreFilters
+.. py:class:: ansys.stk.core.stkobjects.AdvCATPreFilters
 
-   Bases: py:obj:`~IAdvCATPreFilters`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATPreFilters`
 
    AdvCAT pre-filters properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AdvCATPreFilters
 
 Overview
 --------

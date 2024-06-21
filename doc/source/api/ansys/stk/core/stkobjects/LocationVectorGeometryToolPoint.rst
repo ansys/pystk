@@ -1,13 +1,13 @@
 LocationVectorGeometryToolPoint
 ===============================
 
-.. py:class:: LocationVectorGeometryToolPoint
+.. py:class:: ansys.stk.core.stkobjects.LocationVectorGeometryToolPoint
 
-   Bases: py:obj:`~ILocationVectorGeometryToolPoint`, py:obj:`~ILocationData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILocationVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.stkobjects.ILocationData`
 
    The location based upon a Vector Geometry Tool Point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LocationVectorGeometryToolPoint
 
 Overview
 --------

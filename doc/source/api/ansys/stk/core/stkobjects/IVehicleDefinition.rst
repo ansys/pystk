@@ -1,13 +1,13 @@
 IVehicleDefinition
 ==================
 
-.. py:class:: IVehicleDefinition
+.. py:class:: ansys.stk.core.stkobjects.IVehicleDefinition
 
    object
    
    Pass break definition properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleDefinition
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_break_angle_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDefinition.set_break_angle_type`
               - Set the Break Angle type.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~break_angle_type`
-            * - :py:meth:`~break_angle`
-            * - :py:meth:`~direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDefinition.break_angle_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDefinition.break_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDefinition.direction`
 
 
 Import detail
@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: break_angle
     :canonical: ansys.stk.core.stkobjects.IVehicleDefinition.break_angle
-    :type: IAgVeBreakAngle
+    :type: IVehicleBreakAngle
 
     Value of latitude or longitude used for defining pass break.
 

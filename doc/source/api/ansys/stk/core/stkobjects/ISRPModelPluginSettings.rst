@@ -1,13 +1,13 @@
 ISRPModelPluginSettings
 =======================
 
-.. py:class:: ISRPModelPluginSettings
+.. py:class:: ansys.stk.core.stkobjects.ISRPModelPluginSettings
 
    object
    
    Plugin Light Reflection Model Settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISRPModelPluginSettings
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelPluginSettings.get_property`
               - Get a property.
-            * - :py:meth:`~set_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelPluginSettings.set_property`
               - Set a property.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelPluginSettings.available_properties`
 
 
 Import detail

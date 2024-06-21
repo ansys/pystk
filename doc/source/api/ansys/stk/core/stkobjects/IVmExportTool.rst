@@ -1,13 +1,13 @@
 IVmExportTool
 =============
 
-.. py:class:: IVmExportTool
+.. py:class:: ansys.stk.core.stkobjects.IVmExportTool
 
    object
    
    The Volumetric Export Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmExportTool
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.export`
               - Export the Volumetric data file.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~export_data_format_type`
-            * - :py:meth:`~volume_grid_export_type`
-            * - :py:meth:`~include_grid_point_cartesian`
-            * - :py:meth:`~include_grid_point_native`
-            * - :py:meth:`~include_grid_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.export_data_format_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.volume_grid_export_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.include_grid_point_cartesian`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.include_grid_point_native`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.include_grid_reference`
 
 
 Import detail

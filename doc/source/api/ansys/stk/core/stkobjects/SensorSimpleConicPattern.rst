@@ -1,13 +1,13 @@
 SensorSimpleConicPattern
 ========================
 
-.. py:class:: SensorSimpleConicPattern
+.. py:class:: ansys.stk.core.stkobjects.SensorSimpleConicPattern
 
-   Bases: py:obj:`~ISensorPattern`, py:obj:`~ISensorSimpleConicPattern`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPattern`, py:obj:`~ansys.stk.core.stkobjects.ISensorSimpleConicPattern`
 
    Class defining the simple conic pattern for a Sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorSimpleConicPattern
 
 Overview
 --------

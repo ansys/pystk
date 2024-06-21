@@ -1,13 +1,13 @@
 IStateCalcEquinoctialElem
 =========================
 
-.. py:class:: IStateCalcEquinoctialElem
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcEquinoctialElem
 
    object
    
    Properties for an Equinoctial Element calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcEquinoctialElem
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEquinoctialElem.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEquinoctialElem.element_type`
 
 
 Import detail

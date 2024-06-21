@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DColorOptions
 ====================================
 
-.. py:class:: IFigureOfMeritGraphics2DColorOptions
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions
 
    object
    
    Color options for contour legend.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DColorOptions
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~background`
-            * - :py:meth:`~text`
-            * - :py:meth:`~background_color`
-            * - :py:meth:`~text_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions.background`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions.text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions.background_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions.text_color`
 
 
 Import detail

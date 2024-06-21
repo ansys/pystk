@@ -1,13 +1,13 @@
 IExportToolTimePeriod
 =====================
 
-.. py:class:: IExportToolTimePeriod
+.. py:class:: ansys.stk.core.stkobjects.IExportToolTimePeriod
 
    object
    
    Specify Time Period.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IExportToolTimePeriod
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start`
-            * - :py:meth:`~stop`
-            * - :py:meth:`~time_period_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolTimePeriod.start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolTimePeriod.stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolTimePeriod.time_period_type`
 
 
 Import detail

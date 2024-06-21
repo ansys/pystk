@@ -1,13 +1,13 @@
 VectorGeometryToolVectorDispSurface
 ===================================
 
-.. py:class:: VectorGeometryToolVectorDispSurface
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorDispSurface
 
-   Bases: py:obj:`~IVectorGeometryToolVectorDispSurface`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Displacement between origin and destination points using surface distance and altitude difference.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorDispSurface
 
 Overview
 --------

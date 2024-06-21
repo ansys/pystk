@@ -1,13 +1,13 @@
 RasterImageGlobeOverlayFactory
 ==============================
 
-.. py:class:: RasterImageGlobeOverlayFactory
+.. py:class:: ansys.stk.core.graphics.RasterImageGlobeOverlayFactory
 
-   Bases: py:obj:`~IRasterImageGlobeOverlayFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory`
 
    A globe image overlay for handling rasters.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RasterImageGlobeOverlayFactory
 
 Overview
 --------

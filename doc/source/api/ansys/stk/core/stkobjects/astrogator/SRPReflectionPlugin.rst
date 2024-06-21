@@ -1,13 +1,13 @@
 SRPReflectionPlugin
 ===================
 
-.. py:class:: SRPReflectionPlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin
 
-   Bases: py:obj:`~ISRPReflectionPlugin`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISRPReflectionPlugin`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    SRP Reflection Plugin.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SRPReflectionPlugin
 
 Overview
 --------

@@ -1,12 +1,12 @@
 AIRCRAFT_WGS84_WARNING_TYPE
 ===========================
 
-.. py:class:: AIRCRAFT_WGS84_WARNING_TYPE
+.. py:class:: ansys.stk.core.stkobjects.AIRCRAFT_WGS84_WARNING_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AIRCRAFT_WGS84_WARNING_TYPE
 
 Overview
 --------

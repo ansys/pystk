@@ -1,12 +1,12 @@
 TARGET_SEQ_ACTION
 =================
 
-.. py:class:: TARGET_SEQ_ACTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.TARGET_SEQ_ACTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: TARGET_SEQ_ACTION
 
 Overview
 --------

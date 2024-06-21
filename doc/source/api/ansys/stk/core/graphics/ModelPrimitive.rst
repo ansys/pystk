@@ -1,13 +1,13 @@
 ModelPrimitive
 ==============
 
-.. py:class:: ModelPrimitive
+.. py:class:: ansys.stk.core.graphics.ModelPrimitive
 
-   Bases: py:obj:`~IModelPrimitive`, py:obj:`~IPrimitive`
+   Bases: py:obj:`~ansys.stk.core.graphics.IModelPrimitive`, py:obj:`~ansys.stk.core.graphics.IPrimitive`
 
    The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ModelPrimitive
 
 Overview
 --------

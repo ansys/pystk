@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeCombined
 =================================
 
-.. py:class:: SpatialAnalysisToolVolumeCombined
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCombined
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeCombined`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A combined volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeCombined
 
 Overview
 --------

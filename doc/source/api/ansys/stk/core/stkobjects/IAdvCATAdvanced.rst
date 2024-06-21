@@ -1,13 +1,13 @@
 IAdvCATAdvanced
 ===============
 
-.. py:class:: IAdvCATAdvanced
+.. py:class:: ansys.stk.core.stkobjects.IAdvCATAdvanced
 
    object
    
    AdvCAT Advanced properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdvCATAdvanced
 
 Overview
 --------
@@ -20,24 +20,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~advanced_ellipsoid`
-            * - :py:meth:`~pre_filters`
-            * - :py:meth:`~use_log_file`
-            * - :py:meth:`~log_file_name`
-            * - :py:meth:`~use_correlation_file`
-            * - :py:meth:`~correlation_file`
-            * - :py:meth:`~use_cross_reference_db`
-            * - :py:meth:`~cross_reference_db`
-            * - :py:meth:`~use_ssc_hard_body_radius_file`
-            * - :py:meth:`~ssc_hard_body_radius_file`
-            * - :py:meth:`~show_msg_in_msg_viewer`
-            * - :py:meth:`~force_repropagation_on_load`
-            * - :py:meth:`~compute_on_load`
-            * - :py:meth:`~allow_partial_ephemeris`
-            * - :py:meth:`~remove_secondary_by_ssc`
-            * - :py:meth:`~max_sample_step_size`
-            * - :py:meth:`~min_sample_step_size`
-            * - :py:meth:`~conjunction_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.advanced_ellipsoid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.pre_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.use_log_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.log_file_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.use_correlation_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.correlation_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.use_cross_reference_db`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.cross_reference_db`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.use_ssc_hard_body_radius_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.ssc_hard_body_radius_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.show_msg_in_msg_viewer`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.force_repropagation_on_load`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.compute_on_load`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.allow_partial_ephemeris`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.remove_secondary_by_ssc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.max_sample_step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.min_sample_step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.conjunction_type`
 
 
 Import detail
@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: advanced_ellipsoid
     :canonical: ansys.stk.core.stkobjects.IAdvCATAdvanced.advanced_ellipsoid
-    :type: IAgAdvCATAdvEllipsoid
+    :type: IAdvCATAdvancedEllipsoid
 
     Get AdvCAT advanced ellipsoid properties.
 
 .. py:property:: pre_filters
     :canonical: ansys.stk.core.stkobjects.IAdvCATAdvanced.pre_filters
-    :type: IAgAdvCATPreFilters
+    :type: IAdvCATPreFilters
 
     Get AdvCAT filter settings.
 

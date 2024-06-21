@@ -1,13 +1,13 @@
 IVehicleAttitude
 ================
 
-.. py:class:: IVehicleAttitude
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitude
 
    object
    
    Base interface for vehicle attitude options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitude
 
 Overview
 --------

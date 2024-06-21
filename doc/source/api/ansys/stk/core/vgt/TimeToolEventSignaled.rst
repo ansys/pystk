@@ -1,13 +1,13 @@
 TimeToolEventSignaled
 =====================
 
-.. py:class:: TimeToolEventSignaled
+.. py:class:: ansys.stk.core.vgt.TimeToolEventSignaled
 
-   Bases: py:obj:`~ITimeToolEventSignaled`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventSignaled`, py:obj:`~ansys.stk.core.vgt.ITimeToolEvent`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Event recorded on specified clock via signal transmission from original time instant recorded on different clock.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventSignaled
 
 Overview
 --------

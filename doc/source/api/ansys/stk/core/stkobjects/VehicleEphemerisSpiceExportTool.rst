@@ -1,13 +1,13 @@
 VehicleEphemerisSpiceExportTool
 ===============================
 
-.. py:class:: VehicleEphemerisSpiceExportTool
+.. py:class:: ansys.stk.core.stkobjects.VehicleEphemerisSpiceExportTool
 
-   Bases: py:obj:`~IVehicleEphemerisSpiceExportTool`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleEphemerisSpiceExportTool`
 
    AgVeEphemerisTypeSpice Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleEphemerisSpiceExportTool
 
 Overview
 --------

@@ -1,13 +1,13 @@
 Star
 ====
 
-.. py:class:: Star
+.. py:class:: ansys.stk.core.stkobjects.Star
 
-   Bases: py:obj:`~IStar`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStar`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the Star object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Star
 
 Overview
 --------

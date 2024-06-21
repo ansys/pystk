@@ -1,12 +1,12 @@
 IV_CLOCK_HOST
 =============
 
-.. py:class:: IV_CLOCK_HOST
+.. py:class:: ansys.stk.core.stkobjects.IV_CLOCK_HOST
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IV_CLOCK_HOST
 
 Overview
 --------

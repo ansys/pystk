@@ -1,13 +1,13 @@
 AntennaModelANSYSffdFormat
 ==========================
 
-.. py:class:: AntennaModelANSYSffdFormat
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat
 
-   Bases: py:obj:`~IAntennaModelANSYSffdFormat`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelANSYSffdFormat`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an antenna pattern ANSYS ffd model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelANSYSffdFormat
 
 Overview
 --------

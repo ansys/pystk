@@ -1,13 +1,13 @@
 IVehicleLaunchLLA
 =================
 
-.. py:class:: IVehicleLaunchLLA
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLaunchLLA
 
    object
    
    Interface for geodetic LLA position.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLaunchLLA
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLA.lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLA.lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLA.altitude`
 
 
 Import detail

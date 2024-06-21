@@ -1,13 +1,13 @@
 ChainGraphics3D
 ===============
 
-.. py:class:: ChainGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.ChainGraphics3D
 
-   Bases: py:obj:`~IChainGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainGraphics3D`
 
    3D graphics properties of a chain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ChainGraphics3D
 
 Overview
 --------

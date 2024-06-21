@@ -1,13 +1,13 @@
 VectorGeometryToolAngleGroup
 ============================
 
-.. py:class:: VectorGeometryToolAngleGroup
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleGroup
 
-   Bases: py:obj:`~IVectorGeometryToolAngleGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleGroup`
 
    Access or create VGT angles associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAngleGroup
 
 Overview
 --------

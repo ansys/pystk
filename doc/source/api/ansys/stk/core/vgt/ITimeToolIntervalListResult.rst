@@ -1,13 +1,13 @@
 ITimeToolIntervalListResult
 ===========================
 
-.. py:class:: ITimeToolIntervalListResult
+.. py:class:: ansys.stk.core.vgt.ITimeToolIntervalListResult
 
    object
    
    Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolIntervalListResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalListResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalListResult.intervals`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.ITimeToolIntervalListResult.intervals
-    :type: IAgCrdnIntervalCollection
+    :type: ITimeToolIntervalCollection
 
     A list of intervals.
 

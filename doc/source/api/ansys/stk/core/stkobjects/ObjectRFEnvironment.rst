@@ -1,13 +1,13 @@
 ObjectRFEnvironment
 ===================
 
-.. py:class:: ObjectRFEnvironment
+.. py:class:: ansys.stk.core.stkobjects.ObjectRFEnvironment
 
-   Bases: py:obj:`~IObjectRFEnvironment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IObjectRFEnvironment`
 
    Class defining the RF environment for an object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ObjectRFEnvironment
 
 Overview
 --------

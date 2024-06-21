@@ -1,13 +1,13 @@
 VectorGeometryToolPointFile
 ===========================
 
-.. py:class:: VectorGeometryToolPointFile
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointFile
 
-   Bases: py:obj:`~IVectorGeometryToolPointFile`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointFile`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Point specified by data from a file.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointFile
 
 Overview
 --------

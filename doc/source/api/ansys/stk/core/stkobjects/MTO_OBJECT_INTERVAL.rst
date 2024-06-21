@@ -1,12 +1,12 @@
 MTO_OBJECT_INTERVAL
 ===================
 
-.. py:class:: MTO_OBJECT_INTERVAL
+.. py:class:: ansys.stk.core.stkobjects.MTO_OBJECT_INTERVAL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MTO_OBJECT_INTERVAL
 
 Overview
 --------

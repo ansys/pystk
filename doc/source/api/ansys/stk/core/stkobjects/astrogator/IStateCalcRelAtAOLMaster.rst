@@ -1,13 +1,13 @@
 IStateCalcRelAtAOLMaster
 ========================
 
-.. py:class:: IStateCalcRelAtAOLMaster
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRelAtAOLMaster
 
    object
    
    Properties for a RelativeAtAOL calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRelAtAOLMaster
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~calc_object_name`
-            * - :py:meth:`~direction`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelAtAOLMaster.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelAtAOLMaster.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelAtAOLMaster.direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelAtAOLMaster.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelAtAOLMaster.reference`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelAtAOLMaster.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

@@ -1,13 +1,13 @@
 ISiteWaypointFromCatalog
 ========================
 
-.. py:class:: ISiteWaypointFromCatalog
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteWaypointFromCatalog
 
    object
    
    Interface used to access the options for a waypoint From Catalog site type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteWaypointFromCatalog
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_catalog_waypoint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteWaypointFromCatalog.get_catalog_waypoint`
               - Get the catalog waypoint.
-            * - :py:meth:`~set_catalog_waypoint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteWaypointFromCatalog.set_catalog_waypoint`
               - Set the catalog waypoint.
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteWaypointFromCatalog.get_as_site`
               - Get the site interface.
 
 

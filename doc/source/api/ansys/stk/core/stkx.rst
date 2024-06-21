@@ -19,61 +19,61 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ISTKXSSLCertificateErrorEventArgs`
+            * - :py:class:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs`
               - Provide information about an SSL certificate that is expired or invalid.
 
-            * - :py:class:`~ISTKXConControlQuitReceivedEventArgs`
+            * - :py:class:`~ansys.stk.core.stkx.ISTKXConControlQuitReceivedEventArgs`
               - Arguments for the OnConControlQuitReceived event.
 
-            * - :py:class:`~IPickInfoData`
+            * - :py:class:`~ansys.stk.core.stkx.IPickInfoData`
               - Mouse pick details.
 
-            * - :py:class:`~IRubberBandPickInfoData`
+            * - :py:class:`~ansys.stk.core.stkx.IRubberBandPickInfoData`
               - Rubber-band mouse pick result.
 
-            * - :py:class:`~ISTKXApplication`
+            * - :py:class:`~ansys.stk.core.stkx.ISTKXApplication`
               - STK X Application object.
 
-            * - :py:class:`~IDataObject`
+            * - :py:class:`~ansys.stk.core.stkx.IDataObject`
               - IAgDataObject is used for OLE drag and drop operations.
 
-            * - :py:class:`~IObjPathCollection`
+            * - :py:class:`~ansys.stk.core.stkx.IObjPathCollection`
               - Collection of object paths.
 
-            * - :py:class:`~IDrawElem`
+            * - :py:class:`~ansys.stk.core.stkx.IDrawElem`
               - Draw element.
 
-            * - :py:class:`~IDrawElemRect`
+            * - :py:class:`~ansys.stk.core.stkx.IDrawElemRect`
               - Define a rectangle in control coordinates.
 
-            * - :py:class:`~IDrawElemCollection`
+            * - :py:class:`~ansys.stk.core.stkx.IDrawElemCollection`
               - Collection of elements to draw on the control.
 
-            * - :py:class:`~IWinProjectionPosition`
+            * - :py:class:`~ansys.stk.core.stkx.IWinProjectionPosition`
               - Projected window position detail.
 
-            * - :py:class:`~IDrawElemLine`
+            * - :py:class:`~ansys.stk.core.stkx.IDrawElemLine`
               - Define a line in control coordinates.
 
-            * - :py:class:`~IExecCmdResult`
+            * - :py:class:`~ansys.stk.core.stkx.IExecCmdResult`
               - Collection of strings returned by the ExecuteCommand.
 
-            * - :py:class:`~IExecMultiCmdResult`
+            * - :py:class:`~ansys.stk.core.stkx.IExecMultiCmdResult`
               - Collection of objects returned by the ExecuteMultipleCommands.
 
-            * - :py:class:`~IUiAxGraphics3DCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl`
               - AGI Globe control.
 
-            * - :py:class:`~IUiAx2DCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.IUiAx2DCntrl`
               - AGI Map control.
 
-            * - :py:class:`~ISTKXApplicationPartnerAccess`
+            * - :py:class:`~ansys.stk.core.stkx.ISTKXApplicationPartnerAccess`
               - Access to the application object model for business partners.
 
-            * - :py:class:`~IDataObjectFiles`
+            * - :py:class:`~ansys.stk.core.stkx.IDataObjectFiles`
               - Collection of file names.
 
-            * - :py:class:`~IUiAxGraphics2DAnalysisCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl`
               - AGI Gfx Analysis control.
 
     
@@ -84,64 +84,64 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ExecCmdResult`
+            * - :py:class:`~ansys.stk.core.stkx.ExecCmdResult`
               - Collection of strings returned by the ExecuteCommand.
 
-            * - :py:class:`~ExecMultiCmdResult`
+            * - :py:class:`~ansys.stk.core.stkx.ExecMultiCmdResult`
               - Collection of objects returned by the ExecuteMultipleCommands.
 
-            * - :py:class:`~UiAxGraphics3DCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.UiAxGraphics3DCntrl`
               - AGI Globe control.
 
-            * - :py:class:`~UiAx2DCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.UiAx2DCntrl`
               - AGI Map control.
 
-            * - :py:class:`~PickInfoData`
+            * - :py:class:`~ansys.stk.core.stkx.PickInfoData`
               - Single mouse pick result.
 
-            * - :py:class:`~STKXApplication`
+            * - :py:class:`~ansys.stk.core.stkx.STKXApplication`
               - STK X Application object.
 
-            * - :py:class:`~STKXApplicationPartnerAccess`
+            * - :py:class:`~ansys.stk.core.stkx.STKXApplicationPartnerAccess`
               - STK X Application Partner Access object.
 
-            * - :py:class:`~DataObject`
+            * - :py:class:`~ansys.stk.core.stkx.DataObject`
               - Data Object for OLE drag & drop operations.
 
-            * - :py:class:`~DataObjectFiles`
+            * - :py:class:`~ansys.stk.core.stkx.DataObjectFiles`
               - Collection of files for OLE drag & drop operations.
 
-            * - :py:class:`~RubberBandPickInfoData`
+            * - :py:class:`~ansys.stk.core.stkx.RubberBandPickInfoData`
               - Rubber-band mouse pick result.
 
-            * - :py:class:`~ObjPathCollection`
+            * - :py:class:`~ansys.stk.core.stkx.ObjPathCollection`
               - Collection of object paths.
 
-            * - :py:class:`~DrawElemRect`
+            * - :py:class:`~ansys.stk.core.stkx.DrawElemRect`
               - Define a rectangle in window coordinates.
 
-            * - :py:class:`~DrawElemCollection`
+            * - :py:class:`~ansys.stk.core.stkx.DrawElemCollection`
               - Collection of elements to draw on the control.
 
-            * - :py:class:`~Draw2DElemRect`
+            * - :py:class:`~ansys.stk.core.stkx.Draw2DElemRect`
               - Define a rectangle in window coordinates for map control.
 
-            * - :py:class:`~Draw2DElemCollection`
+            * - :py:class:`~ansys.stk.core.stkx.Draw2DElemCollection`
               - Collection of elements to draw on map control.
 
-            * - :py:class:`~UiAxGraphics2DAnalysisCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.UiAxGraphics2DAnalysisCntrl`
               - AGI Graphics Analysis Control.
 
-            * - :py:class:`~WinProjectionPosition`
+            * - :py:class:`~ansys.stk.core.stkx.WinProjectionPosition`
               - Projected window position result.
 
-            * - :py:class:`~DrawElemLine`
+            * - :py:class:`~ansys.stk.core.stkx.DrawElemLine`
               - Define a line in window coordinates.
 
-            * - :py:class:`~STKXSSLCertificateErrorEventArgs`
+            * - :py:class:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs`
               - Provide information about an SSL certificate that is expired or invalid.
 
-            * - :py:class:`~STKXConControlQuitReceivedEventArgs`
+            * - :py:class:`~ansys.stk.core.stkx.STKXConControlQuitReceivedEventArgs`
               - Arguments for the OnConControlQuitReceived event.
 
 
@@ -152,49 +152,49 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~LOG_MSG_TYPE`
+            * - :py:class:`~ansys.stk.core.stkx.LOG_MSG_TYPE`
               - Log message types.
 
-            * - :py:class:`~LOG_MSG_DISP_ID`
+            * - :py:class:`~ansys.stk.core.stkx.LOG_MSG_DISP_ID`
               - Log message destination options.
 
-            * - :py:class:`~LINE_STYLE`
+            * - :py:class:`~ansys.stk.core.stkx.LINE_STYLE`
               - Line Style.
 
-            * - :py:class:`~EXEC_MULTI_CMD_RESULT_ACTION`
+            * - :py:class:`~ansys.stk.core.stkx.EXEC_MULTI_CMD_RESULT_ACTION`
               - Enumeration defines a set of actions when an error occurs while executing a command batch.
 
-            * - :py:class:`~SHIFT_VALUES`
+            * - :py:class:`~ansys.stk.core.stkx.SHIFT_VALUES`
               - State of the Shift/Ctrl/Alt keys.
 
-            * - :py:class:`~BUTTON_VALUES`
+            * - :py:class:`~ansys.stk.core.stkx.BUTTON_VALUES`
               - Numeric value of the mouse button pressed.
 
-            * - :py:class:`~OLE_DROP_MODE`
+            * - :py:class:`~ansys.stk.core.stkx.OLE_DROP_MODE`
               - Specify how to handle OLE drop operations.
 
-            * - :py:class:`~MOUSE_MODE`
+            * - :py:class:`~ansys.stk.core.stkx.MOUSE_MODE`
               - Mouse modes.
 
-            * - :py:class:`~LOGGING_MODE`
+            * - :py:class:`~ansys.stk.core.stkx.LOGGING_MODE`
               - Specify the state of the log file.
 
-            * - :py:class:`~GRAPHICS_2D_ANALYSIS_MODE`
+            * - :py:class:`~ansys.stk.core.stkx.GRAPHICS_2D_ANALYSIS_MODE`
               - Specify the mode of Gfx Analysis Control.
 
-            * - :py:class:`~GRAPHICS_2D_DRAW_COORDS`
+            * - :py:class:`~ansys.stk.core.stkx.GRAPHICS_2D_DRAW_COORDS`
               - Specify the draw coordinates for Map Control.
 
-            * - :py:class:`~SHOW_PROGRESS_IMAGE`
+            * - :py:class:`~ansys.stk.core.stkx.SHOW_PROGRESS_IMAGE`
               - Specify to show progress image.
 
-            * - :py:class:`~FEATURE_CODES`
+            * - :py:class:`~ansys.stk.core.stkx.FEATURE_CODES`
               - The enumeration values are used to check availability of a given feature.
 
-            * - :py:class:`~PROGRESS_IMAGE_X_ORIGIN`
+            * - :py:class:`~ansys.stk.core.stkx.PROGRESS_IMAGE_X_ORIGIN`
               - Specify to align progress image X origin.
 
-            * - :py:class:`~PROGRESS_IMAGE_Y_ORIGIN`
+            * - :py:class:`~ansys.stk.core.stkx.PROGRESS_IMAGE_Y_ORIGIN`
               - Specify to align progress image Y origin.
 
 
@@ -205,133 +205,133 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
-            * - :py:class:`~constant`
+            * - :py:class:`~ansys.stk.core.stkx.constant`
               - 
 
 

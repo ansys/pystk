@@ -1,12 +1,12 @@
 REFRESH_RATE
 ============
 
-.. py:class:: REFRESH_RATE
+.. py:class:: ansys.stk.core.graphics.REFRESH_RATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: REFRESH_RATE
 
 Overview
 --------

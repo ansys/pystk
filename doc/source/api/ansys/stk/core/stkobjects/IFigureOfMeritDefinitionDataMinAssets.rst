@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionDataMinAssets
 =====================================
 
-.. py:class:: IFigureOfMeritDefinitionDataMinAssets
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinAssets
 
    IFigureOfMeritDefinitionData
    
    Minimum number of assets.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionDataMinAssets
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinAssets.min_assets`
 
 
 Import detail

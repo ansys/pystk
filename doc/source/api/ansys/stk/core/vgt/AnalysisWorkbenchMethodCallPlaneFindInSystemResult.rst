@@ -1,13 +1,13 @@
 AnalysisWorkbenchMethodCallPlaneFindInSystemResult
 ==================================================
 
-.. py:class:: AnalysisWorkbenchMethodCallPlaneFindInSystemResult
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchMethodCallPlaneFindInSystemResult
 
-   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolPlaneFindInSystemResult`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult`
 
    Contains the results returned with IAgCrdnPlane.FindInSystem method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchMethodCallPlaneFindInSystemResult
 
 Overview
 --------

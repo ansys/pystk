@@ -1,13 +1,13 @@
 IRFInterference
 ===============
 
-.. py:class:: IRFInterference
+.. py:class:: ansys.stk.core.stkobjects.IRFInterference
 
    object
    
    Provide access to the properties and methods defining a radio frequency interference.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFInterference
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~include_active_comm_system_interference_emitters`
-            * - :py:meth:`~emitters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFInterference.enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFInterference.include_active_comm_system_interference_emitters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFInterference.emitters`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: emitters
     :canonical: ansys.stk.core.stkobjects.IRFInterference.emitters
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the interference emitters collection.
 

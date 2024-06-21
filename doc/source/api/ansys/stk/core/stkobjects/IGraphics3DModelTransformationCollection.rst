@@ -1,13 +1,13 @@
 IGraphics3DModelTransformationCollection
 ========================================
 
-.. py:class:: IGraphics3DModelTransformationCollection
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection
 
    object
    
    IAgVOModelTransCollection Interface. A collection of available transformations in the model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModelTransformationCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection.item`
               - Return a model transformation by name or at a specified position.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection.name`
 
 
 Import detail

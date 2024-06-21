@@ -1,13 +1,13 @@
 IStateCalcManeuverTotalMassFlowRate
 ===================================
 
-.. py:class:: IStateCalcManeuverTotalMassFlowRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcManeuverTotalMassFlowRate
 
    object
    
    Properties for a Total Mass Flow Rate calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcManeuverTotalMassFlowRate
 
 Overview
 --------

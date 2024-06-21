@@ -1,13 +1,13 @@
 ITimeToolEventIntervalListFiltered
 ==================================
 
-.. py:class:: ITimeToolEventIntervalListFiltered
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered
 
    object
    
    Defined by filtering intervals from original interval list using specified filtering method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalListFiltered
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~original_intervals`
-            * - :py:meth:`~filter_factory`
-            * - :py:meth:`~filter`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.original_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.filter_factory`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.filter`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: original_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.original_intervals
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The original interval list.
 
 .. py:property:: filter_factory
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.filter_factory
-    :type: IAgCrdnPruneFilterFactory
+    :type: ITimeToolPruneFilterFactory
 
     Get the prune filter factory.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.filter
-    :type: IAgCrdnPruneFilter
+    :type: ITimeToolPruneFilter
 
     The pruning filter.
 

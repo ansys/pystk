@@ -1,12 +1,12 @@
 CRDN_EVENT_LIST_MERGE_OPERATION
 ===============================
 
-.. py:class:: CRDN_EVENT_LIST_MERGE_OPERATION
+.. py:class:: ansys.stk.core.vgt.CRDN_EVENT_LIST_MERGE_OPERATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_EVENT_LIST_MERGE_OPERATION
 
 Overview
 --------

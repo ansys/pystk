@@ -1,12 +1,12 @@
 TILESET_3D_SOURCE_TYPE
 ======================
 
-.. py:class:: TILESET_3D_SOURCE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.TILESET_3D_SOURCE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TILESET_3D_SOURCE_TYPE
 
 Overview
 --------

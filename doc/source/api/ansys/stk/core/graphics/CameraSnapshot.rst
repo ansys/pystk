@@ -1,13 +1,13 @@
 CameraSnapshot
 ==============
 
-.. py:class:: CameraSnapshot
+.. py:class:: ansys.stk.core.graphics.CameraSnapshot
 
-   Bases: py:obj:`~ICameraSnapshot`
+   Bases: py:obj:`~ansys.stk.core.graphics.ICameraSnapshot`
 
    Takes snapshots of the 3D window.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: CameraSnapshot
 
 Overview
 --------

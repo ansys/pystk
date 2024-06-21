@@ -1,13 +1,13 @@
 IVehicleGPSSpecifyAlmanac
 =========================
 
-.. py:class:: IVehicleGPSSpecifyAlmanac
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac
 
    object
    
    Interface to specify a GPS almanac.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSSpecifyAlmanac
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac.properties`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac.properties
-    :type: IAgVeGPSAlmanacProperties
+    :type: IVehicleGPSAlmanacProperties
 
     Gets the almanac properties.
 

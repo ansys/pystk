@@ -1,13 +1,13 @@
 IStateCalcPi
 ============
 
-.. py:class:: IStateCalcPi
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcPi
 
    object
    
    Properties for a Pi calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcPi
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ReceivePolarizationElliptical
 =============================
 
-.. py:class:: ReceivePolarizationElliptical
+.. py:class:: ansys.stk.core.stkobjects.ReceivePolarizationElliptical
 
-   Bases: py:obj:`~IPolarizationElliptical`, py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarizationElliptical`, py:obj:`~ansys.stk.core.stkobjects.IPolarization`, py:obj:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage`
 
    Class defining an elliptical polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceivePolarizationElliptical
 
 Overview
 --------

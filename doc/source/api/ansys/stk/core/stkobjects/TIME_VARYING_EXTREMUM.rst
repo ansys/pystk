@@ -1,12 +1,12 @@
 TIME_VARYING_EXTREMUM
 =====================
 
-.. py:class:: TIME_VARYING_EXTREMUM
+.. py:class:: ansys.stk.core.stkobjects.TIME_VARYING_EXTREMUM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TIME_VARYING_EXTREMUM
 
 Overview
 --------

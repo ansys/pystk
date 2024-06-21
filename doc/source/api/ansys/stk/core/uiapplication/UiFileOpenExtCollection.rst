@@ -1,13 +1,13 @@
 UiFileOpenExtCollection
 =======================
 
-.. py:class:: UiFileOpenExtCollection
+.. py:class:: ansys.stk.core.uiapplication.UiFileOpenExtCollection
 
-   Bases: py:obj:`~IUiFileOpenExtCollection`
+   Bases: py:obj:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection`
 
    Multiple file open collection.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: UiFileOpenExtCollection
 
 Overview
 --------

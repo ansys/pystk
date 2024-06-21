@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionDataPercentLevel
 =======================================
 
-.. py:class:: FigureOfMeritDefinitionDataPercentLevel
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataPercentLevel
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionDataPercentLevel`, py:obj:`~IFigureOfMeritDefinitionData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataPercentLevel`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
 
    Specified percent level for the 'percent below' Navigation Accuracy compute option.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionDataPercentLevel
 
 Overview
 --------

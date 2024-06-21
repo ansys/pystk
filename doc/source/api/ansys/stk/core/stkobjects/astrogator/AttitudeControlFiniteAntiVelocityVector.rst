@@ -1,13 +1,13 @@
 AttitudeControlFiniteAntiVelocityVector
 =======================================
 
-.. py:class:: AttitudeControlFiniteAntiVelocityVector
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAntiVelocityVector
 
-   Bases: py:obj:`~IAttitudeControlFiniteAntiVelocityVector`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAntiVelocityVector`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The anti-velocity vector attitude control for a finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AttitudeControlFiniteAntiVelocityVector
 
 Overview
 --------

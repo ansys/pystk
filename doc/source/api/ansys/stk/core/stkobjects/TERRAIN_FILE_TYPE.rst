@@ -1,12 +1,12 @@
 TERRAIN_FILE_TYPE
 =================
 
-.. py:class:: TERRAIN_FILE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.TERRAIN_FILE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TERRAIN_FILE_TYPE
 
 Overview
 --------

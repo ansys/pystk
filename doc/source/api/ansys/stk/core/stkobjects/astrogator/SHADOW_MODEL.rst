@@ -1,12 +1,12 @@
 SHADOW_MODEL
 ============
 
-.. py:class:: SHADOW_MODEL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SHADOW_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SHADOW_MODEL
 
 Overview
 --------

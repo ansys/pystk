@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesFactory
 ==============================
 
-.. py:class:: IVectorGeometryToolAxesFactory
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesFactory
 
    object
    
    A Factory object to create axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFactory.create`
               - Create a VGT axes using specified name, description and type.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFactory.is_type_supported`
               - Return true if the type is supported.
-            * - :py:meth:`~create_axes_plugin_from_display_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFactory.create_axes_plugin_from_display_name`
               - Create an axes component based on a COM axes plugin. For information how to implement and register VGT plugins, see.
 
     .. tab-item:: Properties
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_axes_plugin_display_names`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFactory.available_axes_plugin_display_names`
 
 
 Import detail

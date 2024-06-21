@@ -1,13 +1,13 @@
 ICoverageResolutionLatLon
 =========================
 
-.. py:class:: ICoverageResolutionLatLon
+.. py:class:: ansys.stk.core.stkobjects.ICoverageResolutionLatLon
 
    ICoverageResolution
    
    Lat/Lon: Determine the location of grid coordinates by specifying a latitude/longitude resolution value.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageResolutionLatLon
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat_lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageResolutionLatLon.lat_lon`
 
 
 Import detail

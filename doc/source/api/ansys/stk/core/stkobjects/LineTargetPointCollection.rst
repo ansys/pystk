@@ -1,13 +1,13 @@
 LineTargetPointCollection
 =========================
 
-.. py:class:: LineTargetPointCollection
+.. py:class:: ansys.stk.core.stkobjects.LineTargetPointCollection
 
-   Bases: py:obj:`~ILineTargetPointCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILineTargetPointCollection`
 
    The collection of points for the line target.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LineTargetPointCollection
 
 Overview
 --------

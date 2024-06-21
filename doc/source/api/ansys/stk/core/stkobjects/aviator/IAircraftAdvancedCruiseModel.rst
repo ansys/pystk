@@ -1,13 +1,13 @@
 IAircraftAdvancedCruiseModel
 ============================
 
-.. py:class:: IAircraftAdvancedCruiseModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel
 
    object
    
    Interface used to access the advanced cruise model options for a cruise model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftAdvancedCruiseModel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.set_airspeed_limit`
               - Set the airspeed limit and airspeed type below the altitude threshold.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -31,13 +31,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~default_cruise_altitude`
-            * - :py:meth:`~max_perf_airspeed`
-            * - :py:meth:`~use_airspeed_limit`
-            * - :py:meth:`~altitude_limit`
-            * - :py:meth:`~airspeed_limit_type`
-            * - :py:meth:`~airspeed_limit`
-            * - :py:meth:`~compute_delta_downrange`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.max_perf_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.use_airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.altitude_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.airspeed_limit_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedCruiseModel.compute_delta_downrange`
 
 
 Import detail

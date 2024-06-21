@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorDirectionToStar
 ========================================
 
-.. py:class:: IVectorGeometryToolVectorDirectionToStar
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorDirectionToStar
 
    object
    
    Defined with respect to a star object. For a star object to be available, you must first create one.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorDirectionToStar
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~selected_star`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDirectionToStar.selected_star`
 
 
 Import detail

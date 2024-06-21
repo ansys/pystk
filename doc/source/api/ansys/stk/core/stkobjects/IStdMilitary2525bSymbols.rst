@@ -1,13 +1,13 @@
 IStdMilitary2525bSymbols
 ========================
 
-.. py:class:: IStdMilitary2525bSymbols
+.. py:class:: ansys.stk.core.stkobjects.IStdMilitary2525bSymbols
 
    object
    
    Represents the automation interface to generate 2525b symbology markers (military standard).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStdMilitary2525bSymbols
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create_symbol`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStdMilitary2525bSymbols.create_symbol`
               - Generate a 2525b symbol. Image will be saved to the file specified by SaveImageFilePath.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fill_enabled`
-            * - :py:meth:`~symbol_image_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStdMilitary2525bSymbols.fill_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStdMilitary2525bSymbols.symbol_image_size`
 
 
 Import detail

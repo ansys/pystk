@@ -1,13 +1,13 @@
 IBeerBouguerLambertLawLayer
 ===========================
 
-.. py:class:: IBeerBouguerLambertLawLayer
+.. py:class:: ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer
 
    object
    
    Provide access to a atmosphere layer used in the Beer-Bouguer-Lambert law propagation loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeerBouguerLambertLawLayer
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~top_height`
-            * - :py:meth:`~extinction_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer.top_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer.extinction_coefficient`
 
 
 Import detail

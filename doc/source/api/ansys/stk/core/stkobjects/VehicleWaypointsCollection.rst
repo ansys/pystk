@@ -1,13 +1,13 @@
 VehicleWaypointsCollection
 ==========================
 
-.. py:class:: VehicleWaypointsCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleWaypointsCollection
 
-   Bases: py:obj:`~IVehicleWaypointsCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection`
 
    Collection of waypoints for a Great Arc vehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleWaypointsCollection
 
 Overview
 --------

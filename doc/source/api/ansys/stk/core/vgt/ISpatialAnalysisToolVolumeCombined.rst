@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCombined
 ==================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCombined
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined
 
    object
    
    A combined volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCombined
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_all_conditions`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.get_all_conditions`
               - Get all spatial conditions.
-            * - :py:meth:`~set_all_conditions`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.set_all_conditions`
               - Set all spatial conditions.
-            * - :py:meth:`~set_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.set_condition`
               - Set spatial conditions at a position.
-            * - :py:meth:`~get_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.get_condition`
               - Get spatial conditions at a position.
-            * - :py:meth:`~remove_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.remove_condition`
               - Remove spatial conditions at a position.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~combine_operation`
-            * - :py:meth:`~condition_count`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.combine_operation`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.condition_count`
 
 
 Import detail

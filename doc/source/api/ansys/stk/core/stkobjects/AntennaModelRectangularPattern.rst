@@ -1,13 +1,13 @@
 AntennaModelRectangularPattern
 ==============================
 
-.. py:class:: AntennaModelRectangularPattern
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelRectangularPattern
 
-   Bases: py:obj:`~IAntennaModelRectangularPattern`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a rectangular pattern antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelRectangularPattern
 
 Overview
 --------

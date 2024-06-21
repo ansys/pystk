@@ -1,12 +1,12 @@
 ANIMATION_MODES
 ===============
 
-.. py:class:: ANIMATION_MODES
+.. py:class:: ansys.stk.core.stkobjects.ANIMATION_MODES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ANIMATION_MODES
 
 Overview
 --------

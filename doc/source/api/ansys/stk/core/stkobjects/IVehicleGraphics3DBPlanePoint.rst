@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlanePoint
 =============================
 
-.. py:class:: IVehicleGraphics3DBPlanePoint
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint
 
    object
    
    3D BPlane Additional Point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlanePoint
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~b_mul_t`
-            * - :py:meth:`~b_mul_r`
-            * - :py:meth:`~b_magnitude`
-            * - :py:meth:`~theta`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.b_mul_t`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.b_mul_r`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.b_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.theta`
 
 
 Import detail

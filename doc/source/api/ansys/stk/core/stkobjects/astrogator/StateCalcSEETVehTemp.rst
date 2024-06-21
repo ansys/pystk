@@ -1,13 +1,13 @@
 StateCalcSEETVehTemp
 ====================
 
-.. py:class:: StateCalcSEETVehTemp
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSEETVehTemp
 
-   Bases: py:obj:`~IStateCalcSEETVehTemp`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSEETVehTemp`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcSEETVehTemp.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcSEETVehTemp
 
 Overview
 --------

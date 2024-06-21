@@ -1,13 +1,13 @@
 IStateCalcCloseApproachY
 ========================
 
-.. py:class:: IStateCalcCloseApproachY
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachY
 
    object
    
    Properties for a CloseApproachY calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcCloseApproachY
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachY.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachY.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachY.reference`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachY.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

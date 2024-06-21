@@ -1,13 +1,13 @@
 UserVariable
 ============
 
-.. py:class:: UserVariable
+.. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariable
 
-   Bases: py:obj:`~IUserVariable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariable`
 
    User Variable.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: UserVariable
 
 Overview
 --------

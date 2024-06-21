@@ -1,13 +1,13 @@
 ICloneable
 ==========
 
-.. py:class:: ICloneable
+.. py:class:: ansys.stk.core.stkobjects.ICloneable
 
    object
    
    Interface for a component.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICloneable
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~clone_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloneable.clone_object`
               - Make a clone of this component.
 
 

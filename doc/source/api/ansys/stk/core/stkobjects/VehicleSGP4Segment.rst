@@ -1,13 +1,13 @@
 VehicleSGP4Segment
 ==================
 
-.. py:class:: VehicleSGP4Segment
+.. py:class:: ansys.stk.core.stkobjects.VehicleSGP4Segment
 
-   Bases: py:obj:`~IVehicleSGP4Segment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment`
 
    SGP4 propagator segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSGP4Segment
 
 Overview
 --------

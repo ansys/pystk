@@ -1,12 +1,12 @@
 STK_EPHEM_COVARIANCE_TYPE
 =========================
 
-.. py:class:: STK_EPHEM_COVARIANCE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.STK_EPHEM_COVARIANCE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: STK_EPHEM_COVARIANCE_TYPE
 
 Overview
 --------

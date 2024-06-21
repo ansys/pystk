@@ -1,12 +1,12 @@
 SENSOR_POINTING
 ===============
 
-.. py:class:: SENSOR_POINTING
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_POINTING
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_POINTING
 
 Overview
 --------

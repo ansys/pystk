@@ -1,13 +1,13 @@
 IDistanceToGlobeOverlayDisplayCondition
 =======================================
 
-.. py:class:: IDistanceToGlobeOverlayDisplayCondition
+.. py:class:: ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition
 
    object
    
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IDistanceToGlobeOverlayDisplayCondition
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~globe_overlay`
-            * - :py:meth:`~minimum_distance`
-            * - :py:meth:`~minimum_distance_squared`
-            * - :py:meth:`~maximum_distance`
-            * - :py:meth:`~maximum_distance_squared`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition.globe_overlay`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition.minimum_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition.minimum_distance_squared`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition.maximum_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition.maximum_distance_squared`
 
 
 Import detail
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: globe_overlay
     :canonical: ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition.globe_overlay
-    :type: IAgStkGraphicsGlobeOverlay
+    :type: IGlobeOverlay
 
     Gets or sets the globe overlay associated with this instance.
 

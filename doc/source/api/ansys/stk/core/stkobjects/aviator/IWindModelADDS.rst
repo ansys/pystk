@@ -1,13 +1,13 @@
 IWindModelADDS
 ==============
 
-.. py:class:: IWindModelADDS
+.. py:class:: ansys.stk.core.stkobjects.aviator.IWindModelADDS
 
    object
    
    Interface used to access the options for a NOAA ADDS wind model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IWindModelADDS
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_current_forecast`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.add_current_forecast`
               - Add the current forecast from the ADDS service.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~blend_time`
-            * - :py:meth:`~msg_interpolation_type`
-            * - :py:meth:`~msg_extrapolation_type`
-            * - :py:meth:`~missing_msg_type`
-            * - :py:meth:`~interp_blend_time`
-            * - :py:meth:`~messages`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.blend_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.msg_interpolation_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.msg_extrapolation_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.missing_msg_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.interp_blend_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.messages`
 
 
 Import detail
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: messages
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModelADDS.messages
-    :type: IAgAvtrADDSMessageCollection
+    :type: IADDSMessageCollection
 
     Get the messages from the current forecast.
 

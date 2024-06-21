@@ -1,13 +1,13 @@
 PathPointCollection
 ===================
 
-.. py:class:: PathPointCollection
+.. py:class:: ansys.stk.core.graphics.PathPointCollection
 
-   Bases: py:obj:`~IPathPointCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IPathPointCollection`
 
    A collection of path points.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: PathPointCollection
 
 Overview
 --------

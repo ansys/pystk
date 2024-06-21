@@ -1,13 +1,13 @@
 RadarGraphics
 =============
 
-.. py:class:: RadarGraphics
+.. py:class:: ansys.stk.core.stkobjects.RadarGraphics
 
-   Bases: py:obj:`~IRadarGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarGraphics`
 
    Class defining 2D Graphics properties of a Radar.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarGraphics
 
 Overview
 --------

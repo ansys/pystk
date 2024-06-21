@@ -1,13 +1,13 @@
 IPlanetPositionFile
 ===================
 
-.. py:class:: IPlanetPositionFile
+.. py:class:: ansys.stk.core.stkobjects.IPlanetPositionFile
 
    object
    
    IAgPlPosFile Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPlanetPositionFile
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionFile.file_path`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IMissileGraphics3D
 ==================
 
-.. py:class:: IMissileGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IMissileGraphics3D
 
    object
    
    3D Graphics for missiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMissileGraphics3D
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~model`
-            * - :py:meth:`~proximity`
-            * - :py:meth:`~elev_contours`
-            * - :py:meth:`~covariance_pointing_contour`
-            * - :py:meth:`~trajectory_systems`
-            * - :py:meth:`~trajectory`
-            * - :py:meth:`~offsets`
-            * - :py:meth:`~range_contours`
-            * - :py:meth:`~covariance`
-            * - :py:meth:`~vector`
-            * - :py:meth:`~data_display`
-            * - :py:meth:`~model_pointing`
-            * - :py:meth:`~drop_lines`
-            * - :py:meth:`~vapor_trail`
-            * - :py:meth:`~saa`
-            * - :py:meth:`~velocity_covariance`
-            * - :py:meth:`~radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.proximity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.covariance_pointing_contour`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.trajectory_systems`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.trajectory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.offsets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.range_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.covariance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.data_display`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.model_pointing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.drop_lines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.vapor_trail`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.saa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.velocity_covariance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.radar_cross_section`
 
 
 Import detail
@@ -52,103 +52,103 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.model
-    :type: IAgVeTrajectoryVOModel
+    :type: IVehicleTrajectoryGraphics3DModel
 
     Get the missile's 3D model graphics.
 
 .. py:property:: proximity
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.proximity
-    :type: IAgVeVOTrajectoryProximity
+    :type: IVehicleGraphics3DTrajectoryProximity
 
     Get the missile's 3D proximity graphics.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.elev_contours
-    :type: IAgVeVOElevContours
+    :type: IVehicleGraphics3DElevContours
 
     Get the missile's 3D elevation contour graphics.
 
 .. py:property:: covariance_pointing_contour
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.covariance_pointing_contour
-    :type: IAgVeVOCovariancePointingContour
+    :type: IVehicleGraphics3DCovariancePointingContour
 
     Get the missile's 3D covariance pointing graphics.
 
 .. py:property:: trajectory_systems
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.trajectory_systems
-    :type: IAgVeVOSystemsCollection
+    :type: IVehicleGraphics3DSystemsCollection
 
     Get the missile's 3D trajectory frame graphics.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.trajectory
-    :type: IAgVeVOTrajectory
+    :type: IVehicleGraphics3DTrajectory
 
     Get the missile's 3D trajectory graphics.
 
 .. py:property:: offsets
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.offsets
-    :type: IAgVOOffset
+    :type: IGraphics3DOffset
 
     Get the missile's 3D offsets graphics.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.range_contours
-    :type: IAgVORangeContours
+    :type: IGraphics3DRangeContours
 
     Get the missile's 3D range contour graphics.
 
 .. py:property:: covariance
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.covariance
-    :type: IAgVeVOCovariance
+    :type: IVehicleGraphics3DCovariance
 
     Get the missile's 3D covariance graphics.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.vector
-    :type: IAgVOVector
+    :type: IGraphics3DVector
 
     Get the missile's 3D vector graphics.
 
 .. py:property:: data_display
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.data_display
-    :type: IAgVODataDisplayCollection
+    :type: IGraphics3DDataDisplayCollection
 
     Get the missile's 3D data display graphics.
 
 .. py:property:: model_pointing
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.model_pointing
-    :type: IAgVOModelPointing
+    :type: IGraphics3DModelPointing
 
     Use to point parts of a facility or vehicle model toward a target, such as the Sun or Earth.
 
 .. py:property:: drop_lines
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.drop_lines
-    :type: IAgVeVOTrajectoryDropLines
+    :type: IVehicleGraphics3DTrajectoryDropLines
 
     Returns an interface allowing to configure vehicle's drop lines.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.vapor_trail
-    :type: IAgVOVaporTrail
+    :type: IGraphics3DVaporTrail
 
     Vapor trail attributes.
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.saa
-    :type: IAgVeVOSAA
+    :type: IVehicleGraphics3DSAA
 
     Get the missile's South Atlantic Anomaly Contour properties.
 
 .. py:property:: velocity_covariance
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.velocity_covariance
-    :type: IAgVeVOVelCovariance
+    :type: IVehicleGraphics3DVelCovariance
 
     Get the missile's 3D velocity covariance properties.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IMissileGraphics3D.radar_cross_section
-    :type: IAgRadarCrossSectionVO
+    :type: IRadarCrossSectionGraphics3D
 
     Gets the radar cross section graphics interface.
 

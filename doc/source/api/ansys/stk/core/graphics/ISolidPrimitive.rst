@@ -1,13 +1,13 @@
 ISolidPrimitive
 ===============
 
-.. py:class:: ISolidPrimitive
+.. py:class:: ansys.stk.core.graphics.ISolidPrimitive
 
    object
    
    Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISolidPrimitive
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_with_result`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.set_with_result`
               - Define the solid using the specified solidTriangulatorResult. The solid is rendered in the primitive's reference frame.
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.set`
               - Define the solid using the specified parameters. The solid is rendered in the primitive's reference frame.
 
     .. tab-item:: Properties
@@ -31,26 +31,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~affected_by_lighting`
-            * - :py:meth:`~display_fill`
-            * - :py:meth:`~display_silhouette`
-            * - :py:meth:`~silhouette_color`
-            * - :py:meth:`~silhouette_translucency`
-            * - :py:meth:`~silhouette_width`
-            * - :py:meth:`~minimum_silhouette_width_supported`
-            * - :py:meth:`~maximum_silhouette_width_supported`
-            * - :py:meth:`~display_outline`
-            * - :py:meth:`~outline_color`
-            * - :py:meth:`~outline_translucency`
-            * - :py:meth:`~outline_width`
-            * - :py:meth:`~outline_appearance`
-            * - :py:meth:`~back_line_color`
-            * - :py:meth:`~back_line_translucency`
-            * - :py:meth:`~position`
-            * - :py:meth:`~rotation`
-            * - :py:meth:`~scale`
-            * - :py:meth:`~back_line_width`
-            * - :py:meth:`~set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.affected_by_lighting`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.display_fill`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.display_silhouette`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.silhouette_color`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.silhouette_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.silhouette_width`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.minimum_silhouette_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.maximum_silhouette_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.display_outline`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.outline_color`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.outline_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.outline_width`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.outline_appearance`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.back_line_color`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.back_line_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.position`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.rotation`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.scale`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.back_line_width`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitive.set_hint`
 
 
 Import detail
@@ -162,7 +162,7 @@ Property detail
 
 .. py:property:: rotation
     :canonical: ansys.stk.core.graphics.ISolidPrimitive.rotation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Gets or sets the rotation applied to the solid before rendering.
 

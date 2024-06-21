@@ -1,13 +1,13 @@
 ICalculationToolScalarDataElement
 =================================
 
-.. py:class:: ICalculationToolScalarDataElement
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarDataElement
 
    object
    
    Any time-dependent data element from STK data providers available for parent STK object.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarDataElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.set`
               - Set the data provider and the element name.
-            * - :py:meth:`~set_with_group`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.set_with_group`
               - Set the data provider name, the element name, and data provider type name.
 
     .. tab-item:: Properties
@@ -31,14 +31,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~data_provider`
-            * - :py:meth:`~element_name`
-            * - :py:meth:`~group`
-            * - :py:meth:`~interpolation`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~use_samples`
-            * - :py:meth:`~save_data_option`
-            * - :py:meth:`~invalid_data_indicator`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.data_provider`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.element_name`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.group`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.interpolation`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.sampling`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.use_samples`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.save_data_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.invalid_data_indicator`
 
 
 Import detail
@@ -72,13 +72,13 @@ Property detail
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDataElement.interpolation
-    :type: IAgCrdnInterp
+    :type: IAnalysisWorkbenchInterp
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDataElement.sampling
-    :type: IAgCrdnSampling
+    :type: IAnalysisWorkbenchSampling
 
     Relative tolerance uses a combination of relative and absolute changes in scalar values between samples. Curvature tolerance also uses changes in slope between samples.
 

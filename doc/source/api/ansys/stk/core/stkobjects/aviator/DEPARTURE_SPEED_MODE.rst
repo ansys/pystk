@@ -1,12 +1,12 @@
 DEPARTURE_SPEED_MODE
 ====================
 
-.. py:class:: DEPARTURE_SPEED_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.DEPARTURE_SPEED_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: DEPARTURE_SPEED_MODE
 
 Overview
 --------

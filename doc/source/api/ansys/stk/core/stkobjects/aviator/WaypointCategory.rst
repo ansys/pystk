@@ -1,13 +1,13 @@
 WaypointCategory
 ================
 
-.. py:class:: WaypointCategory
+.. py:class:: ansys.stk.core.stkobjects.aviator.WaypointCategory
 
-   Bases: py:obj:`~IWaypointCategory`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory`
 
    Class defining the waypoint category in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: WaypointCategory
 
 Overview
 --------

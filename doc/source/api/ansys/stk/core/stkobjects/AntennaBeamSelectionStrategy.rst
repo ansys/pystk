@@ -1,13 +1,13 @@
 AntennaBeamSelectionStrategy
 ============================
 
-.. py:class:: AntennaBeamSelectionStrategy
+.. py:class:: ansys.stk.core.stkobjects.AntennaBeamSelectionStrategy
 
-   Bases: py:obj:`~IAntennaBeamSelectionStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
 
    Class defining a beam selection strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaBeamSelectionStrategy
 
 Overview
 --------

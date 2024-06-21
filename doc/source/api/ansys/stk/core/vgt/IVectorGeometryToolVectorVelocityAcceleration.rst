@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorVelocityAcceleration
 =============================================
 
-.. py:class:: IVectorGeometryToolVectorVelocityAcceleration
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration
 
    object
    
    Velocity vector of a point in a coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorVelocityAcceleration
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_system`
-            * - :py:meth:`~point`
-            * - :py:meth:`~differencing_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.differencing_time_step`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.reference_system
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     A reference (coordinate) system. Can be any VGT system.
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     A point which velocity this vector represents. Can be any VGT point.
 

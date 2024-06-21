@@ -1,13 +1,13 @@
 ProcedureTimeOptions
 ====================
 
-.. py:class:: ProcedureTimeOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureTimeOptions
 
-   Bases: py:obj:`~IProcedureTimeOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions`
 
    Class defining the time options for the current procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureTimeOptions
 
 Overview
 --------

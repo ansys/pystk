@@ -1,13 +1,13 @@
 IVehicleGraphics2DWaypointMarkersElement
 ========================================
 
-.. py:class:: IVehicleGraphics2DWaypointMarkersElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement
 
    object
    
    2D Graphics properties of element of waypoint collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DWaypointMarkersElement
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time`
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~is_label_visible`
-            * - :py:meth:`~label`
-            * - :py:meth:`~use_veh_color`
-            * - :py:meth:`~color`
-            * - :py:meth:`~marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.is_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.use_veh_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.marker_style`
 
 
 Import detail

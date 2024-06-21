@@ -1,13 +1,13 @@
 IAircraftSimpleProp
 ===================
 
-.. py:class:: IAircraftSimpleProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftSimpleProp
 
    object
    
    Interface used to access the Simple Propulsion options for the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftSimpleProp
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_density_scaling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleProp.set_density_scaling`
               - Set the option to use density scaling and set the density ratio exponent.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_thrust_accel`
-            * - :py:meth:`~min_thrust_decel`
-            * - :py:meth:`~use_density_scaling`
-            * - :py:meth:`~density_ratio_exponent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleProp.max_thrust_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleProp.min_thrust_decel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleProp.use_density_scaling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleProp.density_ratio_exponent`
 
 
 Import detail

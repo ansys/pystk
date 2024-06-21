@@ -1,12 +1,12 @@
 LANDING_APPROACH_FIX_RANGE_MODE
 ===============================
 
-.. py:class:: LANDING_APPROACH_FIX_RANGE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.LANDING_APPROACH_FIX_RANGE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: LANDING_APPROACH_FIX_RANGE_MODE
 
 Overview
 --------

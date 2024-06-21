@@ -1,13 +1,13 @@
 IAntennaModelScriptPlugin
 =========================
 
-.. py:class:: IAntennaModelScriptPlugin
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelScriptPlugin
 
    object
    
    Provide access to the properties and methods defining a script plugin antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelScriptPlugin
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelScriptPlugin.filename`
 
 
 Import detail

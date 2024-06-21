@@ -1,13 +1,13 @@
 Subset
 ======
 
-.. py:class:: Subset
+.. py:class:: ansys.stk.core.stkobjects.Subset
 
-   Bases: py:obj:`~ISubset`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISubset`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    The AgSubset class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Subset
 
 Overview
 --------

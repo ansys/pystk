@@ -1,13 +1,13 @@
 IVehicleCoordinateAxesCustom
 ============================
 
-.. py:class:: IVehicleCoordinateAxesCustom
+.. py:class:: ansys.stk.core.stkobjects.IVehicleCoordinateAxesCustom
 
    IVehicleCoordinateAxes
    
    Custom.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleCoordinateAxesCustom
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxesCustom.reference_axes_name`
 
 
 Import detail

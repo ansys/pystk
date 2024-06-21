@@ -1,13 +1,13 @@
 StkCentralBodyCollection
 ========================
 
-.. py:class:: StkCentralBodyCollection
+.. py:class:: ansys.stk.core.stkobjects.StkCentralBodyCollection
 
-   Bases: py:obj:`~IStkCentralBodyCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection`
 
    Central body collection coclass.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkCentralBodyCollection
 
 Overview
 --------

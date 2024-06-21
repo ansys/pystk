@@ -1,13 +1,13 @@
 VectorGeometryToolVectorDisplacement
 ====================================
 
-.. py:class:: VectorGeometryToolVectorDisplacement
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement
 
-   Bases: py:obj:`~IVectorGeometryToolVectorDisplacement`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector defined by its start and end points.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorDisplacement
 
 Overview
 --------

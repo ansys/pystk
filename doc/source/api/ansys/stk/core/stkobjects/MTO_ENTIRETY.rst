@@ -1,12 +1,12 @@
 MTO_ENTIRETY
 ============
 
-.. py:class:: MTO_ENTIRETY
+.. py:class:: ansys.stk.core.stkobjects.MTO_ENTIRETY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MTO_ENTIRETY
 
 Overview
 --------

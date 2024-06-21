@@ -1,12 +1,12 @@
 COEFF_RUNGE_KUTTA_V_8TH_9TH
 ===========================
 
-.. py:class:: COEFF_RUNGE_KUTTA_V_8TH_9TH
+.. py:class:: ansys.stk.core.stkobjects.astrogator.COEFF_RUNGE_KUTTA_V_8TH_9TH
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: COEFF_RUNGE_KUTTA_V_8TH_9TH
 
 Overview
 --------

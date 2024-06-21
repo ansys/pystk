@@ -1,12 +1,12 @@
 RETURN_CONTROL
 ==============
 
-.. py:class:: RETURN_CONTROL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.RETURN_CONTROL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: RETURN_CONTROL
 
 Overview
 --------

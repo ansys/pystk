@@ -1,13 +1,13 @@
 AntennaModelGpsFrpa
 ===================
 
-.. py:class:: AntennaModelGpsFrpa
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelGpsFrpa
 
-   Bases: py:obj:`~IAntennaModelGpsFrpa`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelGpsFrpa`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a GPS FRPA antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelGpsFrpa
 
 Overview
 --------

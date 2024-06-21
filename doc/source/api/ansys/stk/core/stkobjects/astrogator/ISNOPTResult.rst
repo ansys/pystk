@@ -1,13 +1,13 @@
 ISNOPTResult
 ============
 
-.. py:class:: ISNOPTResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISNOPTResult
 
    object
    
    Properties for objecvtive and constraints of a SNOPT profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISNOPTResult
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~lower_bound`
-            * - :py:meth:`~upper_bound`
-            * - :py:meth:`~scaling_value`
-            * - :py:meth:`~weight`
-            * - :py:meth:`~goal`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.lower_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.upper_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.scaling_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.weight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.goal`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResult.custom_display_unit`
 
 
 Import detail

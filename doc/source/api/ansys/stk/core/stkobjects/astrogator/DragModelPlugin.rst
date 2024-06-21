@@ -1,13 +1,13 @@
 DragModelPlugin
 ===============
 
-.. py:class:: DragModelPlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DragModelPlugin
 
-   Bases: py:obj:`~IDragModelPlugin`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDragModelPlugin`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Drag Model Plugin.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DragModelPlugin
 
 Overview
 --------

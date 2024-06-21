@@ -1,13 +1,13 @@
 StateCalcSRPArea
 ================
 
-.. py:class:: StateCalcSRPArea
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSRPArea
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSRPArea`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSRPArea`
 
    SRPArea Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcSRPArea
 
 Overview
 --------

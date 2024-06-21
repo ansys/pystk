@@ -1,13 +1,13 @@
 IModelPrimitiveFactory
 ======================
 
-.. py:class:: IModelPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.IModelPrimitiveFactory
 
    object
    
    The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IModelPrimitiveFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitiveFactory.initialize`
               - Initialize a default model primitive.
-            * - :py:meth:`~initialize_with_string_uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitiveFactory.initialize_with_string_uri`
               - For convenience. Initializes a model primitive with the specified file path.
-            * - :py:meth:`~initialize_with_string_uri_and_up_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitiveFactory.initialize_with_string_uri_and_up_axis`
               - For convenience. Initializes a model primitive with the specified file path and up axis.
 
 

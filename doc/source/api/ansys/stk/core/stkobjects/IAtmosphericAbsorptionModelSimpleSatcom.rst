@@ -1,13 +1,13 @@
 IAtmosphericAbsorptionModelSimpleSatcom
 =======================================
 
-.. py:class:: IAtmosphericAbsorptionModelSimpleSatcom
+.. py:class:: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelSimpleSatcom
 
    object
    
    Provide access to the properties and methods of the Simple Satcom atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAtmosphericAbsorptionModelSimpleSatcom
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~surface_temperature`
-            * - :py:meth:`~water_vapor_concentration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelSimpleSatcom.surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelSimpleSatcom.water_vapor_concentration`
 
 
 Import detail

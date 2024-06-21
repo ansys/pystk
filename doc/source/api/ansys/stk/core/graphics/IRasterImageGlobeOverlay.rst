@@ -1,13 +1,13 @@
 IRasterImageGlobeOverlay
 ========================
 
-.. py:class:: IRasterImageGlobeOverlay
+.. py:class:: ansys.stk.core.graphics.IRasterImageGlobeOverlay
 
    object
    
    A globe image overlay for handling rasters.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRasterImageGlobeOverlay
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_transparent_color`
-            * - :py:meth:`~transparent_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterImageGlobeOverlay.use_transparent_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterImageGlobeOverlay.transparent_color`
 
 
 Import detail

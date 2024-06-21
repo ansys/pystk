@@ -1,13 +1,13 @@
 GeodeticSizeRadius
 ==================
 
-.. py:class:: GeodeticSizeRadius
+.. py:class:: ansys.stk.core.stkobjects.GeodeticSizeRadius
 
-   Bases: py:obj:`~IGeodeticSizeRadius`, py:obj:`~IGeodeticSize`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGeodeticSizeRadius`, py:obj:`~ansys.stk.core.stkobjects.IGeodeticSize`
 
    Radius and Radius Rate (for Geodetic coordinate type).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GeodeticSizeRadius
 
 Overview
 --------

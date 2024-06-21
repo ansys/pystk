@@ -1,13 +1,13 @@
 ReferenceStateHoverOptions
 ==========================
 
-.. py:class:: ReferenceStateHoverOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions
 
-   Bases: py:obj:`~IReferenceStateHoverOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions`
 
    Class defining the Hover options for a Reference State procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ReferenceStateHoverOptions
 
 Overview
 --------

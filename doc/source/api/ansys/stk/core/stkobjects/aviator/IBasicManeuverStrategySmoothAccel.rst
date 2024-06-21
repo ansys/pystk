@@ -1,13 +1,13 @@
 IBasicManeuverStrategySmoothAccel
 =================================
 
-.. py:class:: IBasicManeuverStrategySmoothAccel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel
 
    object
    
    Interface used to access options for a Smooth Accel Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategySmoothAccel
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~turn_direction`
-            * - :py:meth:`~roll_rate_mode`
-            * - :py:meth:`~override_roll_rate`
-            * - :py:meth:`~roll_rate_dot`
-            * - :py:meth:`~control_roll_angle`
-            * - :py:meth:`~roll_angle`
-            * - :py:meth:`~load_factor_mode`
-            * - :py:meth:`~override_load_factor`
-            * - :py:meth:`~load_factor_dot`
-            * - :py:meth:`~control_pitch_angle`
-            * - :py:meth:`~pitch_angle`
-            * - :py:meth:`~stop_conditions`
-            * - :py:meth:`~stop_on_roll_angle`
-            * - :py:meth:`~stop_on_pitch_angle`
-            * - :py:meth:`~airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.roll_rate_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.override_roll_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.roll_rate_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.control_roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.load_factor_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.override_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.load_factor_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.control_pitch_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.pitch_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.stop_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.stop_on_roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.stop_on_pitch_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.airspeed_options`
 
 
 Import detail
@@ -134,7 +134,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

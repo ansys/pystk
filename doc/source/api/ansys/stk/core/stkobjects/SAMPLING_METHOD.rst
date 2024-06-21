@@ -1,12 +1,12 @@
 SAMPLING_METHOD
 ===============
 
-.. py:class:: SAMPLING_METHOD
+.. py:class:: ansys.stk.core.stkobjects.SAMPLING_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SAMPLING_METHOD
 
 Overview
 --------

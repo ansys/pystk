@@ -1,13 +1,13 @@
 AdvancedFixedWingSubsonicAero
 =============================
 
-.. py:class:: AdvancedFixedWingSubsonicAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero
 
-   Bases: py:obj:`~IAdvancedFixedWingSubsonicAero`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubsonicAero`
 
    Class defining the subsonic aerodynamic strategy in the Advanced Fixed Wing Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AdvancedFixedWingSubsonicAero
 
 Overview
 --------

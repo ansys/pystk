@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleRotation
 ================================
 
-.. py:class:: IVectorGeometryToolAngleRotation
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleRotation
 
    object
    
    Angle of the shortest rotation between the specified FromAxes and ToAxes axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleRotation
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~from_axes`
-            * - :py:meth:`~to_axes`
-            * - :py:meth:`~reference_direction`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.from_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.to_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.reference_direction`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: from_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.from_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify an axes to rotate from.
 
 .. py:property:: to_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.to_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify an axes to rotate to.
 

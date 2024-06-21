@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesFindInAxesWithRateResult
 ===============================================
 
-.. py:class:: IVectorGeometryToolAxesFindInAxesWithRateResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult
 
    object
    
    Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesFindInAxesWithRateResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~angular_velocity`
-            * - :py:meth:`~orientation`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.angular_velocity`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.orientation`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: angular_velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.angular_velocity
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     Axes' angular velocity.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     The axes' orientation.
 

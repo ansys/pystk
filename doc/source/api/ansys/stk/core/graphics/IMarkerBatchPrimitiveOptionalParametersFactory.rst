@@ -1,13 +1,13 @@
 IMarkerBatchPrimitiveOptionalParametersFactory
 ==============================================
 
-.. py:class:: IMarkerBatchPrimitiveOptionalParametersFactory
+.. py:class:: ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParametersFactory
 
    object
    
    Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IMarkerBatchPrimitiveOptionalParametersFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParametersFactory.initialize`
               - Initialize default marker batch primitive optional parameters. All per-marker parameters are initially empty.
 
 

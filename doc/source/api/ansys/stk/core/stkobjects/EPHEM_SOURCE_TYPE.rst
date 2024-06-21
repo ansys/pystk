@@ -1,12 +1,12 @@
 EPHEM_SOURCE_TYPE
 =================
 
-.. py:class:: EPHEM_SOURCE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.EPHEM_SOURCE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EPHEM_SOURCE_TYPE
 
 Overview
 --------

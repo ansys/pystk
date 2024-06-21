@@ -1,13 +1,13 @@
 VectorGeometryToolAxesLagrangeLibration
 =======================================
 
-.. py:class:: VectorGeometryToolAxesLagrangeLibration
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesLagrangeLibration
 
-   Bases: py:obj:`~IVectorGeometryToolAxesLagrangeLibration`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLagrangeLibration`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAxesLagrangeLibration
 
 Overview
 --------

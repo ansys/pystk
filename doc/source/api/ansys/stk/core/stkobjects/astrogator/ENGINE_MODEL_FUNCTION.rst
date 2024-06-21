@@ -1,12 +1,12 @@
 ENGINE_MODEL_FUNCTION
 =====================
 
-.. py:class:: ENGINE_MODEL_FUNCTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ENGINE_MODEL_FUNCTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ENGINE_MODEL_FUNCTION
 
 Overview
 --------

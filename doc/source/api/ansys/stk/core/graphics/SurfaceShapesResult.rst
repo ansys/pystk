@@ -1,13 +1,13 @@
 SurfaceShapesResult
 ===================
 
-.. py:class:: SurfaceShapesResult
+.. py:class:: ansys.stk.core.graphics.SurfaceShapesResult
 
-   Bases: py:obj:`~ISurfaceShapesResult`
+   Bases: py:obj:`~ansys.stk.core.graphics.ISurfaceShapesResult`
 
    Represents the boundary positions of a shape on the surface computed from by a surface shapes method.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SurfaceShapesResult
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcSignedEccentricity
 ============================
 
-.. py:class:: IStateCalcSignedEccentricity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSignedEccentricity
 
    object
    
    Properties for a SignedEccentricity calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSignedEccentricity
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSignedEccentricity.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSignedEccentricity.element_type`
 
 
 Import detail

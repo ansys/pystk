@@ -1,13 +1,13 @@
 BisectionControlCollection
 ==========================
 
-.. py:class:: BisectionControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BisectionControlCollection
 
-   Bases: py:obj:`~IBisectionControlCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBisectionControlCollection`
 
    Bisection control collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BisectionControlCollection
 
 Overview
 --------

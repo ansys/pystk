@@ -1,12 +1,12 @@
 MODEL_UP_AXIS
 =============
 
-.. py:class:: MODEL_UP_AXIS
+.. py:class:: ansys.stk.core.graphics.MODEL_UP_AXIS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MODEL_UP_AXIS
 
 Overview
 --------

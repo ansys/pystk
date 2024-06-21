@@ -1,13 +1,13 @@
 BasicManeuverStrategyAutopilotNav
 =================================
 
-.. py:class:: BasicManeuverStrategyAutopilotNav
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNav
 
-   Bases: py:obj:`~IBasicManeuverStrategyAutopilotNav`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the autopilot - horizontal plane strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyAutopilotNav
 
 Overview
 --------

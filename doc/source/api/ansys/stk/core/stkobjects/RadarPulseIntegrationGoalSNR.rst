@@ -1,13 +1,13 @@
 RadarPulseIntegrationGoalSNR
 ============================
 
-.. py:class:: RadarPulseIntegrationGoalSNR
+.. py:class:: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR
 
-   Bases: py:obj:`~IRadarPulseIntegrationGoalSNR`, py:obj:`~IRadarPulseIntegration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR`, py:obj:`~ansys.stk.core.stkobjects.IRadarPulseIntegration`
 
    Class defining the goal SNR integration method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarPulseIntegrationGoalSNR
 
 Overview
 --------

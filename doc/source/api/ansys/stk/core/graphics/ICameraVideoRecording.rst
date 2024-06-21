@@ -1,13 +1,13 @@
 ICameraVideoRecording
 =====================
 
-.. py:class:: ICameraVideoRecording
+.. py:class:: ansys.stk.core.graphics.ICameraVideoRecording
 
    object
    
    Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICameraVideoRecording
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_recording`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraVideoRecording.start_recording`
               - Do not use this method, as it is deprecated. Use the overload taking a video format instead. Starts recording a file in the WMV format at the specified bit and frame rate.
-            * - :py:meth:`~start_recording_frame_stack`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraVideoRecording.start_recording_frame_stack`
               - Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number.
-            * - :py:meth:`~stop_recording`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraVideoRecording.stop_recording`
               - Stop recording.
-            * - :py:meth:`~start_recording_video`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraVideoRecording.start_recording_video`
               - Start recording a video file at the specified bit and frame rate.
 
     .. tab-item:: Properties
@@ -35,7 +35,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_recording`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraVideoRecording.is_recording`
 
 
 Import detail

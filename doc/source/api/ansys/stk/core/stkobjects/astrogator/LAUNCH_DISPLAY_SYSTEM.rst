@@ -1,12 +1,12 @@
 LAUNCH_DISPLAY_SYSTEM
 =====================
 
-.. py:class:: LAUNCH_DISPLAY_SYSTEM
+.. py:class:: ansys.stk.core.stkobjects.astrogator.LAUNCH_DISPLAY_SYSTEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: LAUNCH_DISPLAY_SYSTEM
 
 Overview
 --------

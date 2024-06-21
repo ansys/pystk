@@ -1,13 +1,13 @@
 ICentralBodyGraphics
 ====================
 
-.. py:class:: ICentralBodyGraphics
+.. py:class:: ansys.stk.core.graphics.ICentralBodyGraphics
 
    object
    
    The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICentralBodyGraphics
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~color`
-            * - :py:meth:`~specular_color`
-            * - :py:meth:`~shininess`
-            * - :py:meth:`~show_imagery`
-            * - :py:meth:`~show`
-            * - :py:meth:`~show_label`
-            * - :py:meth:`~altitude_offset`
-            * - :py:meth:`~base_overlay`
-            * - :py:meth:`~night_overlay`
-            * - :py:meth:`~specular_overlay`
-            * - :py:meth:`~terrain`
-            * - :py:meth:`~imagery`
-            * - :py:meth:`~kml`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.color`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.specular_color`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.shininess`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.show_imagery`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.show`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.show_label`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.altitude_offset`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.base_overlay`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.night_overlay`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.specular_overlay`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.terrain`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.imagery`
+            * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.kml`
 
 
 Import detail
@@ -90,37 +90,37 @@ Property detail
 
 .. py:property:: base_overlay
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.base_overlay
-    :type: IAgStkGraphicsGlobeImageOverlay
+    :type: IGlobeImageOverlay
 
     Gets or sets the base globe image overlay associated with the central body in the scene. The base overlay is always rendered before any other imagery...
 
 .. py:property:: night_overlay
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.night_overlay
-    :type: IAgStkGraphicsGlobeImageOverlay
+    :type: IGlobeImageOverlay
 
     Gets or sets the night globe image overlay associated with the central body in the scene. The night overlay is displayed only on parts of the central body that are not in sun light...
 
 .. py:property:: specular_overlay
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.specular_overlay
-    :type: IAgStkGraphicsGlobeImageOverlay
+    :type: IGlobeImageOverlay
 
     Gets or sets the specular globe image overlay associated with the central body in the scene. The specular overlay is displayed only in the specular highlight of the central body.
 
 .. py:property:: terrain
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.terrain
-    :type: IAgStkGraphicsTerrainCollection
+    :type: ITerrainOverlayCollection
 
     Gets the collection of terrain overlay associated with the central body in the scene.
 
 .. py:property:: imagery
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.imagery
-    :type: IAgStkGraphicsImageCollection
+    :type: IImageCollection
 
     Gets the collection of imagery associated with the central body in the scene.
 
 .. py:property:: kml
     :canonical: ansys.stk.core.graphics.ICentralBodyGraphics.kml
-    :type: IAgStkGraphicsKmlGraphics
+    :type: IKmlGraphics
 
     Gets the kml graphics associated with the central body in the scene.
 

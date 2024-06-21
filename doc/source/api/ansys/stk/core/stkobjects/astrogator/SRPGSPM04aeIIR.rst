@@ -1,13 +1,13 @@
 SRPGSPM04aeIIR
 ==============
 
-.. py:class:: SRPGSPM04aeIIR
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIR
 
-   Bases: py:obj:`~ISRPGSPM04aeIIR`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIR`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    GSPM04aeIIR SRP propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SRPGSPM04aeIIR
 
 Overview
 --------

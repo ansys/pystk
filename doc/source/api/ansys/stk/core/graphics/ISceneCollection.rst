@@ -1,13 +1,13 @@
 ISceneCollection
 ================
 
-.. py:class:: ISceneCollection
+.. py:class:: ansys.stk.core.graphics.ISceneCollection
 
    object
    
    A collection of scenes.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISceneCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneCollection.item`
               - Return a scene in the collection at a specified index.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneCollection.count`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneCollection._NewEnum`
 
 
 Import detail

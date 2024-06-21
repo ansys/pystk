@@ -1,13 +1,13 @@
 IDirectionPR
 ============
 
-.. py:class:: IDirectionPR
+.. py:class:: ansys.stk.core.stkutil.IDirectionPR
 
    IDirection
    
    Interface for Pitch-Roll (PR) direction sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IDirectionPR
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pitch`
-            * - :py:meth:`~roll`
-            * - :py:meth:`~sequence`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionPR.pitch`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionPR.roll`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionPR.sequence`
 
 
 Import detail

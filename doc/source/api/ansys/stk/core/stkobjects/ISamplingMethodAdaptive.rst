@@ -1,13 +1,13 @@
 ISamplingMethodAdaptive
 =======================
 
-.. py:class:: ISamplingMethodAdaptive
+.. py:class:: ansys.stk.core.stkobjects.ISamplingMethodAdaptive
 
    ISamplingMethodStrategy
    
    Define an adaptive sampling method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISamplingMethodAdaptive
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_time_step`
-            * - :py:meth:`~min_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISamplingMethodAdaptive.max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISamplingMethodAdaptive.min_time_step`
 
 
 Import detail

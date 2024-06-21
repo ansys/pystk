@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorRefTo
 ==============================
 
-.. py:class:: IVectorGeometryToolVectorRefTo
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo
 
    object
    
    Represents a reference to a VGT vector.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorRefTo
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_path`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo.set_path`
               - Set a new vector.
-            * - :py:meth:`~set_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo.set_vector`
               - Set a new vector.
-            * - :py:meth:`~get_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo.get_vector`
               - Return the actual vector object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
-            * - :py:meth:`~has_cyclic_dependency`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorRefTo.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
 

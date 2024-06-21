@@ -1,13 +1,13 @@
 CalculationToolScalarElapsedTime
 ================================
 
-.. py:class:: CalculationToolScalarElapsedTime
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarElapsedTime
 
-   Bases: py:obj:`~ICalculationToolScalarElapsedTime`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarElapsedTime`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Time elapsed since the reference time instant. Negative if in the past.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarElapsedTime
 
 Overview
 --------

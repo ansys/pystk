@@ -1,13 +1,13 @@
 StateCalcNumRevs
 ================
 
-.. py:class:: StateCalcNumRevs
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcNumRevs
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcNumRevs`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcNumRevs`
 
    NumRevs Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcNumRevs
 
 Overview
 --------

@@ -1,12 +1,12 @@
 TEXTURE_WRAP
 ============
 
-.. py:class:: TEXTURE_WRAP
+.. py:class:: ansys.stk.core.graphics.TEXTURE_WRAP
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TEXTURE_WRAP
 
 Overview
 --------

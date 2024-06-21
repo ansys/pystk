@@ -1,13 +1,13 @@
 IVehicleHPOPSolarRadiationPressure
 ==================================
 
-.. py:class:: IVehicleHPOPSolarRadiationPressure
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure
 
    object
    
    Solar Radiation Pressure (SRP) interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPSolarRadiationPressure
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use`
-            * - :py:meth:`~shadow_model`
-            * - :py:meth:`~use_boundary_mitigation`
-            * - :py:meth:`~srp_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.shadow_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.use_boundary_mitigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.srp_model`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: srp_model
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.srp_model
-    :type: IAgVeHPOPSRPModel
+    :type: IVehicleHPOPSRPModel
 
     Returns a solar radiation pressure model.
 

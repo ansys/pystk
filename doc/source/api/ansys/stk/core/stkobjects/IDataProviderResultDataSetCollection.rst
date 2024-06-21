@@ -1,13 +1,13 @@
 IDataProviderResultDataSetCollection
 ====================================
 
-.. py:class:: IDataProviderResultDataSetCollection
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection
 
    object
    
    Represents a collection of dataset elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultDataSetCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~get_data_set_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.get_data_set_by_name`
               - Return the element, given the name.
-            * - :py:meth:`~get_row`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.get_row`
               - Return the specified row.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.to_array`
               - Return the entire dataset collection in row format.
 
     .. tab-item:: Properties
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~row_count`
-            * - :py:meth:`~element_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.row_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.element_names`
 
 
 Import detail

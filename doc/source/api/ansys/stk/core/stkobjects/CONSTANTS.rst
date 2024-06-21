@@ -1,12 +1,12 @@
 CONSTANTS
 =========
 
-.. py:class:: CONSTANTS
+.. py:class:: ansys.stk.core.stkobjects.CONSTANTS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CONSTANTS
 
 Overview
 --------

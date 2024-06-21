@@ -1,13 +1,13 @@
 IGridSearchControl
 ==================
 
-.. py:class:: IGridSearchControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGridSearchControl
 
    object
    
    Properties for control parameters of a Grid Search profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGridSearchControl
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~lower_bound`
-            * - :py:meth:`~upper_bound`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
-            * - :py:meth:`~step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.lower_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.upper_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.step`
 
 
 Import detail

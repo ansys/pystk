@@ -1,13 +1,13 @@
 IRadarClutterMapModelConstantCoefficient
 ========================================
 
-.. py:class:: IRadarClutterMapModelConstantCoefficient
+.. py:class:: ansys.stk.core.stkobjects.IRadarClutterMapModelConstantCoefficient
 
    object
    
    Do not use this interface, as it is deprecated. Use IAgScatteringPointModelConstantCoefficient interface instead. Provides access to the properties and methods defining a radar clutter map constant coefficient model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarClutterMapModelConstantCoefficient
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~constant_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapModelConstantCoefficient.constant_coefficient`
 
 
 Import detail

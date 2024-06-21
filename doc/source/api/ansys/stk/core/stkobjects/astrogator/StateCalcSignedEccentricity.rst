@@ -1,13 +1,13 @@
 StateCalcSignedEccentricity
 ===========================
 
-.. py:class:: StateCalcSignedEccentricity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSignedEccentricity
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSignedEccentricity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSignedEccentricity`
 
    SignedEccentricity Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcSignedEccentricity
 
 Overview
 --------

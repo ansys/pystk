@@ -1,13 +1,13 @@
 SiteVTOLPoint
 =============
 
-.. py:class:: SiteVTOLPoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteVTOLPoint
 
-   Bases: py:obj:`~ISiteVTOLPoint`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a VTOL Point site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteVTOLPoint
 
 Overview
 --------

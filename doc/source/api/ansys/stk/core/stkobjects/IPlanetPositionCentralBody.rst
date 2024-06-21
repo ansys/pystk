@@ -1,13 +1,13 @@
 IPlanetPositionCentralBody
 ==========================
 
-.. py:class:: IPlanetPositionCentralBody
+.. py:class:: ansys.stk.core.stkobjects.IPlanetPositionCentralBody
 
    object
    
    IAgPlPosCentralBody Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPlanetPositionCentralBody
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~auto_rename`
-            * - :py:meth:`~radius`
-            * - :py:meth:`~ephem_source`
-            * - :py:meth:`~available_central_bodies`
-            * - :py:meth:`~available_ephem_source_types`
-            * - :py:meth:`~jplde_version`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.auto_rename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.ephem_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.available_central_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.available_ephem_source_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.jplde_version`
 
 
 Import detail

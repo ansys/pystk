@@ -1,13 +1,13 @@
 AttitudeControlFiniteFile
 =========================
 
-.. py:class:: AttitudeControlFiniteFile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteFile
 
-   Bases: py:obj:`~IAttitudeControlFiniteFile`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteFile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The file attitude control for a finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AttitudeControlFiniteFile
 
 Overview
 --------

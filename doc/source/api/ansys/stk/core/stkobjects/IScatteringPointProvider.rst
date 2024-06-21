@@ -1,13 +1,13 @@
 IScatteringPointProvider
 ========================
 
-.. py:class:: IScatteringPointProvider
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointProvider
 
    object
    
    Provide access to the properties and methods defining a scattering point provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointProvider
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~point_provider_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProvider.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProvider.point_provider_type`
 
 
 Import detail

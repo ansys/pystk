@@ -1,13 +1,13 @@
 LinkToObject
 ============
 
-.. py:class:: LinkToObject
+.. py:class:: ansys.stk.core.stkobjects.LinkToObject
 
-   Bases: py:obj:`~ILinkToObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILinkToObject`
 
    Class defining a link to an STK object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LinkToObject
 
 Overview
 --------

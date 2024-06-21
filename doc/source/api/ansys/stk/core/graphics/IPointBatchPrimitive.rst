@@ -1,13 +1,13 @@
 IPointBatchPrimitive
 ====================
 
-.. py:class:: IPointBatchPrimitive
+.. py:class:: ansys.stk.core.graphics.IPointBatchPrimitive
 
    object
    
    Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPointBatchPrimitive
 
 Overview
 --------
@@ -20,35 +20,35 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set`
               - Define the positions of points in a point batch. The points are rendered in the primitive's reference frame.
-            * - :py:meth:`~set_with_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_with_colors`
               - Define the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame.
-            * - :py:meth:`~set_with_colors_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_with_colors_and_render_pass`
               - Define the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
-            * - :py:meth:`~set_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_cartographic`
               - For convenience. Defines the positions of points in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_cartographic_with_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_cartographic_with_colors`
               - For convenience. Defines the positions and colors of points in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_cartographic_with_colors_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_cartographic_with_colors_and_render_pass`
               - For convenience. Defines the positions and colors of points in a point batch using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_partial`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_partial`
               - Update a subset of positions in a point batch.
-            * - :py:meth:`~set_partial_with_indices_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_with_indices_order`
               - Update a subset of positions in a point batch.
-            * - :py:meth:`~set_partial_with_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_with_colors`
               - Update a subset of positions and/or colors in a point batch.
-            * - :py:meth:`~set_partial_with_colors_indices_order_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_with_colors_indices_order_and_render_pass`
               - Update a subset of positions and/or colors in a point batch.
-            * - :py:meth:`~set_partial_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_cartographic`
               - For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_indices_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_cartographic_with_indices_order`
               - For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_cartographic_with_colors`
               - For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_colors_indices_order_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_partial_cartographic_with_colors_indices_order_and_render_pass`
               - For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_with_optional_parameters`
               - Define the positions, colors, and optional parameters of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
 
     .. tab-item:: Properties
@@ -57,17 +57,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~display_outline`
-            * - :py:meth:`~outline_color`
-            * - :py:meth:`~outline_translucency`
-            * - :py:meth:`~outline_width`
-            * - :py:meth:`~pixel_size`
-            * - :py:meth:`~minimum_pixel_size_supported`
-            * - :py:meth:`~maximum_pixel_size_supported`
-            * - :py:meth:`~distance_display_condition_per_point`
-            * - :py:meth:`~set_hint`
-            * - :py:meth:`~per_item_picking_enabled`
-            * - :py:meth:`~central_body_clipped`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.display_outline`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.outline_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.outline_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.outline_width`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.pixel_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.minimum_pixel_size_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.maximum_pixel_size_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.distance_display_condition_per_point`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.per_item_picking_enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.central_body_clipped`
 
 
 Import detail
@@ -125,7 +125,7 @@ Property detail
 
 .. py:property:: distance_display_condition_per_point
     :canonical: ansys.stk.core.graphics.IPointBatchPrimitive.distance_display_condition_per_point
-    :type: IAgStkGraphicsDistanceDisplayCondition
+    :type: IDistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
 

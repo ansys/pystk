@@ -1,13 +1,13 @@
 IComponentInfo
 ==============
 
-.. py:class:: IComponentInfo
+.. py:class:: ansys.stk.core.stkobjects.IComponentInfo
 
    object
    
    Interface for a component.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IComponentInfo
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_read_only`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.is_read_only`
               - Return true if the component is read-only.
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.export`
               - Export the component with default component name as file name and component type as file extension to the scenario directory.
-            * - :py:meth:`~export_with_filename_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.export_with_filename_path`
               - Export the component with specified file name and location.
 
     .. tab-item:: Properties
@@ -33,9 +33,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~user_comment`
-            * - :py:meth:`~description`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.user_comment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.description`
 
 
 Import detail

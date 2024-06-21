@@ -1,13 +1,13 @@
 ModelArticulationCollection
 ===========================
 
-.. py:class:: ModelArticulationCollection
+.. py:class:: ansys.stk.core.graphics.ModelArticulationCollection
 
-   Bases: py:obj:`~IModelArticulationCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IModelArticulationCollection`
 
    A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ModelArticulationCollection
 
 Overview
 --------

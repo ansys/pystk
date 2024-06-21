@@ -1,13 +1,13 @@
 IVehicleAttitudeRealTime
 ========================
 
-.. py:class:: IVehicleAttitudeRealTime
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime
 
    IVehicleAttitude
    
    Real time attitude interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeRealTime
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_cbf_quaternion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_cbf_quaternion`
               - Add attitude data based on a time-ordered set of quaternions interpreted relative to CBF.
-            * - :py:meth:`~add_quaternion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_quaternion`
               - Add attitude data based on a time-ordered set of quaternions.
-            * - :py:meth:`~add_ypr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_ypr`
               - Add attitude data based on a time-ordered set of yaw, pitch and roll angles.
-            * - :py:meth:`~add_eciypr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_eciypr`
               - Add attitude data based on a time-ordered set of yaw, pitch, roll angles in the J2000 ECI coordinate system.
-            * - :py:meth:`~add_euler`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.add_euler`
               - Add attitude data based on a time-ordered set of Euler angles.
-            * - :py:meth:`~clear_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.clear_all`
               - Clear attitude data created using AddXXX commands.
 
     .. tab-item:: Properties
@@ -39,10 +39,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~look_ahead_method`
-            * - :py:meth:`~duration`
-            * - :py:meth:`~data_reference`
-            * - :py:meth:`~block_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.look_ahead_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.data_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.block_factor`
 
 
 Import detail
@@ -64,13 +64,13 @@ Property detail
 
 .. py:property:: duration
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.duration
-    :type: IAgVeDuration
+    :type: IVehicleDuration
 
     Get look ahead/look behind duration.
 
 .. py:property:: data_reference
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.data_reference
-    :type: IAgVeAttitudeRealTimeDataReference
+    :type: IVehicleAttitudeRealTimeDataReference
 
     Returns a reference attitude profile for incoming attitude data.
 

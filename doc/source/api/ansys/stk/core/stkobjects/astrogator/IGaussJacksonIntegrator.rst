@@ -1,13 +1,13 @@
 IGaussJacksonIntegrator
 =======================
 
-.. py:class:: IGaussJacksonIntegrator
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator
 
    object
    
    Properties for the Gauss-Jackson numerical integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGaussJacksonIntegrator
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_single_step_integrator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.set_single_step_integrator`
               - Change the stopping integrator.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initial_step`
-            * - :py:meth:`~max_corrector_rel_err`
-            * - :py:meth:`~corrector_mode`
-            * - :py:meth:`~max_corrector_iterations`
-            * - :py:meth:`~single_step_integrator`
-            * - :py:meth:`~single_step_integrator_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.initial_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.max_corrector_rel_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.corrector_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.max_corrector_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.single_step_integrator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.single_step_integrator_type`
 
 
 Import detail
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: single_step_integrator
     :canonical: ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.single_step_integrator
-    :type: IAgVANumericalIntegrator
+    :type: INumericalIntegrator
 
     Get the stopping integrator; a single-step integrator.
 

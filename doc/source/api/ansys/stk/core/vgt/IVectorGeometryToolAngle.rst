@@ -1,13 +1,13 @@
 IVectorGeometryToolAngle
 ========================
 
-.. py:class:: IVectorGeometryToolAngle
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngle
 
    object
    
    The interface defines methods and properties common to all angles.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngle
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~find_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngle.find_angle`
               - Find an angle at the specified epoch.
-            * - :py:meth:`~find_angle_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngle.find_angle_with_rate`
               - Find an angle and angle rate.
-            * - :py:meth:`~find_coordinates`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngle.find_coordinates`
               - Find the angle value and three vectors that define the angle in a specified input axes.
-            * - :py:meth:`~find_coordinates_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngle.find_coordinates_with_rate`
               - Find the angle value, the angle rate and three vectors that define the angle in a specified input axes.
 
     .. tab-item:: Properties
@@ -35,7 +35,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngle.type`
 
 
 Import detail

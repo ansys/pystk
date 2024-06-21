@@ -1,12 +1,12 @@
 GPS_ATTITUDE_MODEL_TYPE
 =======================
 
-.. py:class:: GPS_ATTITUDE_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.GPS_ATTITUDE_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GPS_ATTITUDE_MODEL_TYPE
 
 Overview
 --------

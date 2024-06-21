@@ -1,13 +1,13 @@
 IAccessConstraintAngle
 ======================
 
-.. py:class:: IAccessConstraintAngle
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintAngle
 
    IAccessConstraint
    
    Access Constraint used for angle constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintAngle
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAngle.angle`
 
 
 Import detail

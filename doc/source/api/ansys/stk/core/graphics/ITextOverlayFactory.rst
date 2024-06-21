@@ -1,13 +1,13 @@
 ITextOverlayFactory
 ===================
 
-.. py:class:: ITextOverlayFactory
+.. py:class:: ansys.stk.core.graphics.ITextOverlayFactory
 
    object
    
    A rectangular overlay that contains text.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextOverlayFactory
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextOverlayFactory.initialize`
               - Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels.
-            * - :py:meth:`~initialize_with_xy_width_height`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextOverlayFactory.initialize_with_xy_width_height`
               - Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
-            * - :py:meth:`~initialize_with_position_size`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextOverlayFactory.initialize_with_position_size`
               - Initialize the overlay with the specified position and size.
-            * - :py:meth:`~initialize_with_width_height_units`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextOverlayFactory.initialize_with_width_height_units`
               - Initialize the overlay with the specified position and size.
 
 

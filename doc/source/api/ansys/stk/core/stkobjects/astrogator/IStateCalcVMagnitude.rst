@@ -1,13 +1,13 @@
 IStateCalcVMagnitude
 ====================
 
-.. py:class:: IStateCalcVMagnitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcVMagnitude
 
    object
    
    Properties for a V Mag calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcVMagnitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVMagnitude.coord_system_name`
 
 
 Import detail

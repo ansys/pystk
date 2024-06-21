@@ -1,13 +1,13 @@
 IVehicleEphemerisStkExportTool
 ==============================
 
-.. py:class:: IVehicleEphemerisStkExportTool
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool
 
    object
    
    The STK Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEphemerisStkExportTool
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.export`
               - Export the ephemeris file.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coordinate_system`
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~version_format`
-            * - :py:meth:`~include_interp`
-            * - :py:meth:`~time_period`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~covariance_type`
-            * - :py:meth:`~use_vehicle_central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.version_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.include_interp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.covariance_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.use_vehicle_central_body`
 
 
 Import detail
@@ -76,13 +76,13 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.time_period
-    :type: IAgExportToolTimePeriod
+    :type: IExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.step_size
-    :type: IAgExportToolStepSize
+    :type: IExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 

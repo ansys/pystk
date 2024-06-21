@@ -1,13 +1,13 @@
 ISensorAzElMaskFile
 ===================
 
-.. py:class:: ISensorAzElMaskFile
+.. py:class:: ansys.stk.core.stkobjects.ISensorAzElMaskFile
 
    object
    
    IAgSnAzElMaskFile Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorAzElMaskFile
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~boresight_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorAzElMaskFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorAzElMaskFile.boresight_axis`
 
 
 Import detail

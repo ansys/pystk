@@ -1,13 +1,13 @@
 ICatalogWaypoint
 ================
 
-.. py:class:: ICatalogWaypoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ICatalogWaypoint
 
    object
    
    Interface used to access a waypoint in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ICatalogWaypoint
 
 Overview
 --------

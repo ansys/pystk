@@ -1,13 +1,13 @@
 IVehicleRealtimeLLAHPSPoints
 ============================
 
-.. py:class:: IVehicleRealtimeLLAHPSPoints
+.. py:class:: ansys.stk.core.stkobjects.IVehicleRealtimeLLAHPSPoints
 
    object
    
    Add one ephemeris point using latitude/longitude/altitude coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleRealtimeLLAHPSPoints
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeLLAHPSPoints.add`
               - Add an ephemeris point using position, heading, pitch and speed. Epoch uses DateFormat dimension. Lat uses Latitude dimension. Lon uses Longitude dimension. Alt uses Distance dimension. Heading/Pitch use Angle dimension.
 
 

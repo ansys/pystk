@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeGridBearingAlt
 ========================================
 
-.. py:class:: ISpatialAnalysisToolVolumeGridBearingAlt
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt
 
    object
    
    A volume grid bearing alt (Surface Bearing) interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeGridBearingAlt
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_central_body`
-            * - :py:meth:`~along_bearing_coordinates`
-            * - :py:meth:`~cross_bearing_coordinates`
-            * - :py:meth:`~altitude_coordinates`
-            * - :py:meth:`~auto_fit_bounds`
-            * - :py:meth:`~bearing_angle`
-            * - :py:meth:`~reference_location`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.reference_central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.along_bearing_coordinates`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.cross_bearing_coordinates`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.altitude_coordinates`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.auto_fit_bounds`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.bearing_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.reference_location`
 
 
 Import detail
@@ -48,19 +48,19 @@ Property detail
 
 .. py:property:: along_bearing_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.along_bearing_coordinates
-    :type: IAgCrdnGridCoordinateDefinition
+    :type: ISpatialAnalysisToolGridCoordinateDefinition
 
     Returns AlongBearing Coordinates parameters for the surface bearing.
 
 .. py:property:: cross_bearing_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.cross_bearing_coordinates
-    :type: IAgCrdnGridCoordinateDefinition
+    :type: ISpatialAnalysisToolGridCoordinateDefinition
 
     Returns CrossBearing Coordinates parameters for the surface bearing.
 
 .. py:property:: altitude_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.altitude_coordinates
-    :type: IAgCrdnGridCoordinateDefinition
+    :type: ISpatialAnalysisToolGridCoordinateDefinition
 
     Returns altitude Coordinates parameters for the surface bearing.
 

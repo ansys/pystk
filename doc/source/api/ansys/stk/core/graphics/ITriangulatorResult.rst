@@ -1,13 +1,13 @@
 ITriangulatorResult
 ===================
 
-.. py:class:: ITriangulatorResult
+.. py:class:: ansys.stk.core.graphics.ITriangulatorResult
 
    object
    
    The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITriangulatorResult
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~positions`
-            * - :py:meth:`~normals`
-            * - :py:meth:`~indices`
-            * - :py:meth:`~triangle_winding_order`
-            * - :py:meth:`~bounding_sphere`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.positions`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.normals`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.indices`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.triangle_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangulatorResult.bounding_sphere`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.ITriangulatorResult.bounding_sphere
-    :type: IAgStkGraphicsBoundingSphere
+    :type: IBoundingSphere
 
     Gets the bounding sphere that encompasses the mesh.
 

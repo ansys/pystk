@@ -1,13 +1,13 @@
 IStateCalcSEETVehTemp
 =====================
 
-.. py:class:: IStateCalcSEETVehTemp
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSEETVehTemp
 
    object
    
    Interface for AgAsStateCalcSEETVehTemp.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSEETVehTemp
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IDataProviderElement
 ====================
 
-.. py:class:: IDataProviderElement
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderElement
 
    object
    
    Provide methods to access the information about the element (for instance ``x``).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
-            * - :py:meth:`~dimension_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElement.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElement.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElement.dimension_name`
 
 
 Import detail

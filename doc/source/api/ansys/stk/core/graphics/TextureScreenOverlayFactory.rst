@@ -1,13 +1,13 @@
 TextureScreenOverlayFactory
 ===========================
 
-.. py:class:: TextureScreenOverlayFactory
+.. py:class:: ansys.stk.core.graphics.TextureScreenOverlayFactory
 
-   Bases: py:obj:`~ITextureScreenOverlayFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITextureScreenOverlayFactory`
 
    A rectangular overlay that can be assigned a texture.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TextureScreenOverlayFactory
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVmGraphics3DSpatialCalculationLevels
 =====================================
 
-.. py:class:: IVmGraphics3DSpatialCalculationLevels
+.. py:class:: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels
 
    object
    
    IAgVmVOSpatialCalculationLevels Interface for defining Spatial Calculation Levels for Volumetric Object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGraphics3DSpatialCalculationLevels
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_boundary_levels`
-            * - :py:meth:`~boundary_levels`
-            * - :py:meth:`~show_fill_levels`
-            * - :py:meth:`~display_colors_outside_min_max`
-            * - :py:meth:`~fill_levels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.show_boundary_levels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.boundary_levels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.show_fill_levels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.display_colors_outside_min_max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.fill_levels`
 
 
 Import detail
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: boundary_levels
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.boundary_levels
-    :type: IAgVmVOSpatialCalculationLevelCollection
+    :type: IVmGraphics3DSpatialCalculationLevelCollection
 
     Access and manipulate the collection of Spatial Calculation Boundary Levels for Volumetric object.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: fill_levels
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels.fill_levels
-    :type: IAgVmVOSpatialCalculationLevelCollection
+    :type: IVmGraphics3DSpatialCalculationLevelCollection
 
     Access and manipulate the collection of Spatial Calculation Fill Levels for Volumetric object.
 

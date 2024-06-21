@@ -1,13 +1,13 @@
 VehicleGraphics3DRoute
 ======================
 
-.. py:class:: VehicleGraphics3DRoute
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DRoute
 
-   Bases: py:obj:`~IVehicleGraphics3DRoute`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRoute`
 
    AgVeVORoute2 Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DRoute
 
 Overview
 --------

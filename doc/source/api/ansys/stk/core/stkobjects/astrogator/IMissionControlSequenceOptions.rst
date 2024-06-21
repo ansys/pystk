@@ -1,13 +1,13 @@
 IMissionControlSequenceOptions
 ==============================
 
-.. py:class:: IMissionControlSequenceOptions
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions
 
    object
    
    Properties for the MCS Options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceOptions
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~draw_trajectory_in_2d`
-            * - :py:meth:`~draw_trajectory_in_3d`
-            * - :py:meth:`~update_animation_time_for_all_objects`
-            * - :py:meth:`~clear_dwc_graphics_before_each_run`
-            * - :py:meth:`~clear_additional_b_plane_points`
-            * - :py:meth:`~propagate_on_apply`
-            * - :py:meth:`~enable_trajectory_segment_colors`
-            * - :py:meth:`~save_numbers_in_raw_format`
-            * - :py:meth:`~stopping_condition_time_tolerance`
-            * - :py:meth:`~enable_segment_controls`
-            * - :py:meth:`~enable_segment_results`
-            * - :py:meth:`~enable_logging`
-            * - :py:meth:`~graphics_update_rate`
-            * - :py:meth:`~promote_controls`
-            * - :py:meth:`~use_nominal_settings`
-            * - :py:meth:`~min_ephem_step`
-            * - :py:meth:`~generate_ephemeris`
-            * - :py:meth:`~user_variables`
-            * - :py:meth:`~smart_run_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.draw_trajectory_in_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.draw_trajectory_in_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.update_animation_time_for_all_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.clear_dwc_graphics_before_each_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.clear_additional_b_plane_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.propagate_on_apply`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.enable_trajectory_segment_colors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.save_numbers_in_raw_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.stopping_condition_time_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.enable_segment_controls`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.enable_segment_results`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.enable_logging`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.graphics_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.promote_controls`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.use_nominal_settings`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.min_ephem_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.generate_ephemeris`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.user_variables`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.smart_run_mode`
 
 
 Import detail
@@ -156,7 +156,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions.user_variables
-    :type: IAgVAUserVariableDefinitionCollection
+    :type: IUserVariableDefinitionCollection
 
     Interface used to add/remove user variables.
 

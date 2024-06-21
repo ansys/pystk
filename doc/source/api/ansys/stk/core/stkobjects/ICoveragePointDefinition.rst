@@ -1,13 +1,13 @@
 ICoveragePointDefinition
 ========================
 
-.. py:class:: ICoveragePointDefinition
+.. py:class:: ansys.stk.core.stkobjects.ICoveragePointDefinition
 
    object
    
    Point Definition: methods and parameters for specifying the location of points on the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoveragePointDefinition
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_points_lla`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.set_points_lla`
               - Use an array of latitude/longitude/altitude values to define a coverage grid point.
 
     .. tab-item:: Properties
@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~point_location_method`
-            * - :py:meth:`~point_file_list`
-            * - :py:meth:`~grid_class`
-            * - :py:meth:`~use_grid_seed`
-            * - :py:meth:`~use_object_as_seed`
-            * - :py:meth:`~altitude_method`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~seed_instance`
-            * - :py:meth:`~available_seeds`
-            * - :py:meth:`~ground_altitude_method`
-            * - :py:meth:`~ground_altitude`
-            * - :py:meth:`~point_altitude_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.point_location_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.point_file_list`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.grid_class`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.use_grid_seed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.use_object_as_seed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.altitude_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.seed_instance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.available_seeds`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.ground_altitude_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.ground_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.point_altitude_method`
 
 
 Import detail
@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: point_file_list
     :canonical: ansys.stk.core.stkobjects.ICoveragePointDefinition.point_file_list
-    :type: IAgCvPointFileListCollection
+    :type: ICoveragePointFileListCollection
 
     List of point file locations.
 

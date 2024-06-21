@@ -1,13 +1,13 @@
 ISiteNavaidFromCatalog
 ======================
 
-.. py:class:: ISiteNavaidFromCatalog
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteNavaidFromCatalog
 
    object
    
    Interface used to access the options for a navaid From Catalog site type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteNavaidFromCatalog
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_catalog_navaid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteNavaidFromCatalog.get_catalog_navaid`
               - Get the catalog navaid.
-            * - :py:meth:`~set_catalog_navaid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteNavaidFromCatalog.set_catalog_navaid`
               - Set the catalog navaid.
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteNavaidFromCatalog.get_as_site`
               - Get the site interface.
 
 

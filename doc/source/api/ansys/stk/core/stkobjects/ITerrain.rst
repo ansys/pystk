@@ -1,13 +1,13 @@
 ITerrain
 ========
 
-.. py:class:: ITerrain
+.. py:class:: ansys.stk.core.stkobjects.ITerrain
 
    object
    
    IAgTerrain Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITerrain
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~location`
-            * - :py:meth:`~file_type`
-            * - :py:meth:`~sw_latitude`
-            * - :py:meth:`~sw_longitude`
-            * - :py:meth:`~ne_latitude`
-            * - :py:meth:`~ne_longitude`
-            * - :py:meth:`~resolution`
-            * - :py:meth:`~use_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.location`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.file_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.sw_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.sw_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.ne_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.ne_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.use_terrain`
 
 
 Import detail

@@ -1,12 +1,12 @@
 ALTITUDE_REFERENCE_TYPE
 =======================
 
-.. py:class:: ALTITUDE_REFERENCE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ALTITUDE_REFERENCE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ALTITUDE_REFERENCE_TYPE
 
 Overview
 --------

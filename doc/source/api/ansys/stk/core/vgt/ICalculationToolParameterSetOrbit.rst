@@ -1,13 +1,13 @@
 ICalculationToolParameterSetOrbit
 =================================
 
-.. py:class:: ICalculationToolParameterSetOrbit
+.. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSetOrbit
 
    object
    
    Orbit parameter set contains various trajectory representations of an orbiting point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolParameterSetOrbit
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~orbiting_point`
-            * - :py:meth:`~reference_system`
-            * - :py:meth:`~gravitational_parameter`
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~use_central_body_gravitational_parameter`
-            * - :py:meth:`~use_central_body_inertial`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.orbiting_point`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.gravitational_parameter`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.use_central_body_gravitational_parameter`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.use_central_body_inertial`
 
 
 Import detail
@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: orbiting_point
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.orbiting_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     Get the point for which orbital parameters are computed.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetOrbit.reference_system
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     Get the reference system in which orbital parameters are computed. Only used if the option to specify reference system is selected.
 

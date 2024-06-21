@@ -1,12 +1,12 @@
 ANTENNA_CONTOUR_TYPE
 ====================
 
-.. py:class:: ANTENNA_CONTOUR_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ANTENNA_CONTOUR_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ANTENNA_CONTOUR_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 BasicManeuverTargetPositionVel
 ==============================
 
-.. py:class:: BasicManeuverTargetPositionVel
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel
 
-   Bases: py:obj:`~IBasicManeuverTargetPositionVel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel`
 
    Class defining the target position and velocity strategies for basic maneuvers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverTargetPositionVel
 
 Overview
 --------

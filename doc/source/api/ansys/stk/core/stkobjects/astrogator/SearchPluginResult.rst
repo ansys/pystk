@@ -1,13 +1,13 @@
 SearchPluginResult
 ==================
 
-.. py:class:: SearchPluginResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SearchPluginResult
 
-   Bases: py:obj:`~ISearchPluginResult`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult`
 
    Equality constraints for a plugin search profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SearchPluginResult
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ITimeToolEventIntervalCollectionLighting
 ========================================
 
-.. py:class:: ITimeToolEventIntervalCollectionLighting
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionLighting
 
    object
    
    Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalCollectionLighting
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~location`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~use_object_eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionLighting.location`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionLighting.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionLighting.use_object_eclipsing_bodies`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionLighting.location
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     The location point to compute sunlight, penumbra and umbra.
 

@@ -1,13 +1,13 @@
 StateCalcRadOfApoapsis
 ======================
 
-.. py:class:: StateCalcRadOfApoapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRadOfApoapsis
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRadOfApoapsis`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadOfApoapsis`
 
    RadiusOfApoapsis Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRadOfApoapsis
 
 Overview
 --------

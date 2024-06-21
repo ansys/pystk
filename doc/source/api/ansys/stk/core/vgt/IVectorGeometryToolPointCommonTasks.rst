@@ -1,13 +1,13 @@
 IVectorGeometryToolPointCommonTasks
 ===================================
 
-.. py:class:: IVectorGeometryToolPointCommonTasks
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointCommonTasks
 
    object
    
    Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointCommonTasks
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create_fixed_in_system_cartographic`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCommonTasks.create_fixed_in_system_cartographic`
               - Create a non-persistent point fixed in a specified reference system.
-            * - :py:meth:`~create_fixed_in_system_cartesian`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCommonTasks.create_fixed_in_system_cartesian`
               - Create a non-persistent point fixed in a specified reference system.
-            * - :py:meth:`~sample`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCommonTasks.sample`
               - Compute and returns tabulated positions and velocities of a point with respect to reference system using specified sampling parameters.
 
 

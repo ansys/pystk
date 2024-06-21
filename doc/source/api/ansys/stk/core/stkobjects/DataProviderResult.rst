@@ -1,13 +1,13 @@
 DataProviderResult
 ==================
 
-.. py:class:: DataProviderResult
+.. py:class:: ansys.stk.core.stkobjects.DataProviderResult
 
-   Bases: py:obj:`~IDataProviderResult`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResult`
 
    Results returned by the data provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderResult
 
 Overview
 --------

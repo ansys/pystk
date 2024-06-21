@@ -1,13 +1,13 @@
 IStateCalcReferenceRadius
 =========================
 
-.. py:class:: IStateCalcReferenceRadius
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcReferenceRadius
 
    object
    
    Properties for a Reference Radius calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcReferenceRadius
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_radius_source`
-            * - :py:meth:`~gravity_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcReferenceRadius.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcReferenceRadius.reference_radius_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcReferenceRadius.gravity_filename`
 
 
 Import detail

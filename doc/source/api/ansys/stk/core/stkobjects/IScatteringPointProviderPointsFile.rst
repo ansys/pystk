@@ -1,13 +1,13 @@
 IScatteringPointProviderPointsFile
 ==================================
 
-.. py:class:: IScatteringPointProviderPointsFile
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile
 
    object
    
    Provide access to the properties and methods defining a scattering point provider where the scattering points are defined in a ascii text file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointProviderPointsFile
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~default_scattering_point_model`
-            * - :py:meth:`~scattering_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.default_scattering_point_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.scattering_points`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: default_scattering_point_model
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.default_scattering_point_model
-    :type: IAgComponentLinkEmbedControl
+    :type: IComponentLinkEmbedControl
 
     Gets the link/embed controller for managing the default scattering point model component.
 
 .. py:property:: scattering_points
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.scattering_points
-    :type: IAgScatteringPointCollection
+    :type: IScatteringPointCollection
 
     Gets the collection of scattering points.
 

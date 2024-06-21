@@ -1,13 +1,13 @@
 IMtoTrackCollection
 ===================
 
-.. py:class:: IMtoTrackCollection
+.. py:class:: ansys.stk.core.stkobjects.IMtoTrackCollection
 
    object
    
    MTO Track List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoTrackCollection
 
 Overview
 --------
@@ -20,37 +20,37 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.remove_at`
               - Remove an element from the collection using a specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~add_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.add_track`
               - Add a new track with the specified point data.
-            * - :py:meth:`~load_command_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.load_command_file`
               - Load Track Command File.
-            * - :py:meth:`~get_track_from_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.get_track_from_id`
               - Given a track id, returns an element in the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.remove`
               - Remove an element from the collection using a specified track.
-            * - :py:meth:`~remove_by_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.remove_by_id`
               - Remove an element from the collection using a specified id.
-            * - :py:meth:`~add_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.add_tracks`
               - Add and returns the desired number of new tracks starting with the desired id.
-            * - :py:meth:`~remove_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.remove_tracks`
               - Remove the provided tracks.
-            * - :py:meth:`~remove_tracks_by_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.remove_tracks_by_id`
               - Remove tracks based on the provided Ids.
-            * - :py:meth:`~add_tracks_with_position_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.add_tracks_with_position_data`
               - Add new track with the specified position data.
-            * - :py:meth:`~extend_tracks_with_position_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.extend_tracks_with_position_data`
               - Extend tracks with the specified position data.
-            * - :py:meth:`~set_input_data_vgt_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.set_input_data_vgt_system`
               - Set VGT Data System to MTO tracks.
-            * - :py:meth:`~clear_input_data_vgt_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.clear_input_data_vgt_system`
               - Remove VGT Data System from MTO tracks.
 
     .. tab-item:: Properties
@@ -59,9 +59,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~recycling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackCollection.recycling`
 
 
 Import detail

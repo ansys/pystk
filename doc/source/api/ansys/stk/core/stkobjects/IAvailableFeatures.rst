@@ -1,13 +1,13 @@
 IAvailableFeatures
 ==================
 
-.. py:class:: IAvailableFeatures
+.. py:class:: ansys.stk.core.stkobjects.IAvailableFeatures
 
    object
    
    Define methods to inquiry available and supported features, object types, etc.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAvailableFeatures
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_propagator_type_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAvailableFeatures.is_propagator_type_available`
               - Return true if the specified propagator is available.
-            * - :py:meth:`~is_object_type_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAvailableFeatures.is_object_type_available`
               - Return true if the specified STK object type is available.
 
 

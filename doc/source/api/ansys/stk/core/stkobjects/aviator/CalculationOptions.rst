@@ -1,13 +1,13 @@
 CalculationOptions
 ==================
 
-.. py:class:: CalculationOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.CalculationOptions
 
-   Bases: py:obj:`~ICalculationOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions`
 
    Class defining the calculation options for a procedure or phase.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: CalculationOptions
 
 Overview
 --------

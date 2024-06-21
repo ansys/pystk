@@ -1,13 +1,13 @@
 RFFilterModelRaisedCosine
 =========================
 
-.. py:class:: RFFilterModelRaisedCosine
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelRaisedCosine
 
-   Bases: py:obj:`~IRFFilterModelRaisedCosine`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelRaisedCosine`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a raised cosine filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelRaisedCosine
 
 Overview
 --------

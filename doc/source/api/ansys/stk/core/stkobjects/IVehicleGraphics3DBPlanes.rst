@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlanes
 =========================
 
-.. py:class:: IVehicleGraphics3DBPlanes
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes
 
    object
    
    3D BPlanes properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlanes
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~templates`
-            * - :py:meth:`~instances`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes.templates`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes.instances`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: templates
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes.templates
-    :type: IAgVeVOBPlaneTemplatesCollection
+    :type: IVehicleGraphics3DBPlaneTemplatesCollection
 
     Returns the 3D BPlane templates collection.
 
 .. py:property:: instances
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes.instances
-    :type: IAgVeVOBPlaneInstancesCollection
+    :type: IVehicleGraphics3DBPlaneInstancesCollection
 
     Returns the 3D BPlane Instance collection.
 

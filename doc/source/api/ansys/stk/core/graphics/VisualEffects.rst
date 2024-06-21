@@ -1,13 +1,13 @@
 VisualEffects
 =============
 
-.. py:class:: VisualEffects
+.. py:class:: ansys.stk.core.graphics.VisualEffects
 
-   Bases: py:obj:`~IVisualEffects`
+   Bases: py:obj:`~ansys.stk.core.graphics.IVisualEffects`
 
    Control various post processing effects that can be applied to the scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: VisualEffects
 
 Overview
 --------

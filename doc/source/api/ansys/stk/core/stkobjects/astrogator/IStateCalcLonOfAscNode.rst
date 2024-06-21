@@ -1,13 +1,13 @@
 IStateCalcLonOfAscNode
 ======================
 
-.. py:class:: IStateCalcLonOfAscNode
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfAscNode
 
    object
    
    Properties for a Longitude of Ascending Node calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcLonOfAscNode
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfAscNode.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfAscNode.element_type`
 
 
 Import detail

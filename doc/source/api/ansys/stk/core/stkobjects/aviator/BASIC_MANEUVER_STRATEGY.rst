@@ -1,12 +1,12 @@
 BASIC_MANEUVER_STRATEGY
 =======================
 
-.. py:class:: BASIC_MANEUVER_STRATEGY
+.. py:class:: ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BASIC_MANEUVER_STRATEGY
 
 Overview
 --------

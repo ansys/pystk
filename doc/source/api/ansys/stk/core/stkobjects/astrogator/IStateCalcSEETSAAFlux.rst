@@ -1,13 +1,13 @@
 IStateCalcSEETSAAFlux
 =====================
 
-.. py:class:: IStateCalcSEETSAAFlux
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSEETSAAFlux
 
    object
    
    Interface for AgAsStateCalcSEETSAAFlux.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSEETSAAFlux
 
 Overview
 --------

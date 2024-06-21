@@ -1,13 +1,13 @@
 ICommSystemGraphics3D
 =====================
 
-.. py:class:: ICommSystemGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.ICommSystemGraphics3D
 
    object
    
    IAgCommSystemVO Interface for a CommSystem's 3D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystemGraphics3D
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_desired_links`
-            * - :py:meth:`~show_interference_links`
-            * - :py:meth:`~show_primary_interferer_link`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics3D.show_desired_links`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics3D.show_interference_links`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics3D.show_primary_interferer_link`
 
 
 Import detail

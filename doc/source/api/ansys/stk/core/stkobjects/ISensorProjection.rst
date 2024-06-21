@@ -1,13 +1,13 @@
 ISensorProjection
 =================
 
-.. py:class:: ISensorProjection
+.. py:class:: ansys.stk.core.stkobjects.ISensorProjection
 
    object
    
    IAgSnProjection Interface for setting and retrieving 2D Graphics Projection properties for a sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorProjection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.available_constraints`
               - Return the available constraints.
-            * - :py:meth:`~enabled_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.enabled_constraints`
               - Return the enabled constraints.
-            * - :py:meth:`~enable_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.enable_constraint`
               - Enable the constraint with the name given.
-            * - :py:meth:`~disable_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.disable_constraint`
               - Disables the constraint with the name given.
-            * - :py:meth:`~available_altitude_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.available_altitude_objects`
               - Return the available altitude objects.
 
     .. tab-item:: Properties
@@ -37,17 +37,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~persistence`
-            * - :py:meth:`~forward_persistence`
-            * - :py:meth:`~project_at_altitude_object`
-            * - :py:meth:`~intersection_type`
-            * - :py:meth:`~distance_type`
-            * - :py:meth:`~distance_data`
-            * - :py:meth:`~fill_persistence`
-            * - :py:meth:`~use_constraints`
-            * - :py:meth:`~show_on_2d_map`
-            * - :py:meth:`~use_distance`
-            * - :py:meth:`~display_times_hides_persistance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.persistence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.forward_persistence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.project_at_altitude_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.intersection_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.distance_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.distance_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.fill_persistence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.use_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.show_on_2d_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.use_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.display_times_hides_persistance`
 
 
 Import detail
@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: distance_data
     :canonical: ansys.stk.core.stkobjects.ISensorProjection.distance_data
-    :type: IAgDisplayDistance
+    :type: IDisplayDistance
 
     Value of the criterion used for determining the projection distance.
 

@@ -1,13 +1,13 @@
 CentralBodyGraphics
 ===================
 
-.. py:class:: CentralBodyGraphics
+.. py:class:: ansys.stk.core.graphics.CentralBodyGraphics
 
-   Bases: py:obj:`~ICentralBodyGraphics`
+   Bases: py:obj:`~ansys.stk.core.graphics.ICentralBodyGraphics`
 
    The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: CentralBodyGraphics
 
 Overview
 --------

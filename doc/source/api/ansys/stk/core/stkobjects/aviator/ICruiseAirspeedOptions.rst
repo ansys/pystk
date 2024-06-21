@@ -1,13 +1,13 @@
 ICruiseAirspeedOptions
 ======================
 
-.. py:class:: ICruiseAirspeedOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions
 
    object
    
    Interface used to access the Cruise Airspeed options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ICruiseAirspeedOptions
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_other_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions.set_other_airspeed`
               - Set the cruise airspeed. This option is only enabled if the cruise speed type is set to other.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cruise_speed_type`
-            * - :py:meth:`~other_airspeed_type`
-            * - :py:meth:`~other_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions.cruise_speed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions.other_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions.other_airspeed`
 
 
 Import detail

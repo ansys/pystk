@@ -1,13 +1,13 @@
 IOrbitDisplayData
 =================
 
-.. py:class:: IOrbitDisplayData
+.. py:class:: ansys.stk.core.stkobjects.IOrbitDisplayData
 
    object
    
    IAgOrbitDisplayData Interface. IAgPlOrbitDisplayTime derives from this.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrbitDisplayData
 
 Overview
 --------

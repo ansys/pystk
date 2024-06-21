@@ -1,13 +1,13 @@
 CentralBodyAttitudeRotationCoefficientsFile
 ===========================================
 
-.. py:class:: CentralBodyAttitudeRotationCoefficientsFile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyAttitudeRotationCoefficientsFile
 
-   Bases: py:obj:`~ICentralBodyAttitudeRotationCoefficientsFile`, py:obj:`~ICentralBodyAttitude`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeRotationCoefficientsFile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitude`
 
    Central Body Attitude - Rotation Coefficients File.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CentralBodyAttitudeRotationCoefficientsFile
 
 Overview
 --------

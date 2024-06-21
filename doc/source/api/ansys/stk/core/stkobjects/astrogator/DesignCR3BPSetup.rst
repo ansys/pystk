@@ -1,13 +1,13 @@
 DesignCR3BPSetup
 ================
 
-.. py:class:: DesignCR3BPSetup
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup
 
-   Bases: py:obj:`~IDesignCR3BPSetup`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CR3BP Setup Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DesignCR3BPSetup
 
 Overview
 --------

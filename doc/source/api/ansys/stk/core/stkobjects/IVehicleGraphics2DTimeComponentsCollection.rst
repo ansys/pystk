@@ -1,13 +1,13 @@
 IVehicleGraphics2DTimeComponentsCollection
 ==========================================
 
-.. py:class:: IVehicleGraphics2DTimeComponentsCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection
 
    object
    
    A collection of time components used to configure the object appearance in 2D and 3D views.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DTimeComponentsCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.add`
               - Add a new element to the collection using the specified fully qualified component's path (i.e. \"Scenario/Scenario1 AnalysisInterval EventInterval\"). Only intervals, interval lists or interval collections are allowed.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection._NewEnum`
 
 
 Import detail

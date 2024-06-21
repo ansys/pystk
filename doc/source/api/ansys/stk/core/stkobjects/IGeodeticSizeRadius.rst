@@ -1,13 +1,13 @@
 IGeodeticSizeRadius
 ===================
 
-.. py:class:: IGeodeticSizeRadius
+.. py:class:: ansys.stk.core.stkobjects.IGeodeticSizeRadius
 
    IGeodeticSize
    
    Interface for Radius and Radius Rate (for Geodetic coordinate type).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGeodeticSizeRadius
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~radius`
-            * - :py:meth:`~rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGeodeticSizeRadius.radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGeodeticSizeRadius.rate`
 
 
 Import detail

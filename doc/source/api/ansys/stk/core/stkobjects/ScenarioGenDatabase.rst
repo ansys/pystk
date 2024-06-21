@@ -1,13 +1,13 @@
 ScenarioGenDatabase
 ===================
 
-.. py:class:: ScenarioGenDatabase
+.. py:class:: ansys.stk.core.stkobjects.ScenarioGenDatabase
 
-   Bases: py:obj:`~IScenarioGenDatabase`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenarioGenDatabase`
 
    Class defining database settings of the Scenario.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScenarioGenDatabase
 
 Overview
 --------

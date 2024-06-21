@@ -1,13 +1,13 @@
 CalculationGraphCollection
 ==========================
 
-.. py:class:: CalculationGraphCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection
 
-   Bases: py:obj:`~ICalculationGraphCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection`
 
    Calculation Graph Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CalculationGraphCollection
 
 Overview
 --------

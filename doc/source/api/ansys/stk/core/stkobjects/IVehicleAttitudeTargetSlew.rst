@@ -1,13 +1,13 @@
 IVehicleAttitudeTargetSlew
 ==========================
 
-.. py:class:: IVehicleAttitudeTargetSlew
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew
 
    object
    
    Define the time required for a vehicle to move from its basic attitude to its target pointing attitude, and to change from the target pointing attitude back to the basic attitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeTargetSlew
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_slew_mode_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.set_slew_mode_type`
               - Select an attitude slew mode.
-            * - :py:meth:`~is_slew_mode_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.is_slew_mode_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~slew_mode_type`
-            * - :py:meth:`~slew_mode_supported_types`
-            * - :py:meth:`~slew_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.slew_mode_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.slew_mode_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.slew_mode`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: slew_mode
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.slew_mode
-    :type: IAgVeAttSlewBase
+    :type: IVehicleAttitudeSlewBase
 
     Returns a currently selected attitude slew configuration.
 

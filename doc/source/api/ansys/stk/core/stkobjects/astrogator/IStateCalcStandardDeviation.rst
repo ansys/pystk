@@ -1,13 +1,13 @@
 IStateCalcStandardDeviation
 ===========================
 
-.. py:class:: IStateCalcStandardDeviation
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcStandardDeviation
 
    object
    
    Properties for a Standard Deviation calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcStandardDeviation
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcStandardDeviation.calc_object_name`
 
 
 Import detail

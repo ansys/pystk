@@ -1,13 +1,13 @@
 IProcedureFastTimeOptions
 =========================
 
-.. py:class:: IProcedureFastTimeOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions
 
    object
    
    Interface used to access the fast time options (without error or constraint checks) for the current procedure. Use this interface to set an Interrupt Time or Fixed Duration for a procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureFastTimeOptions
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions.set_start_time`
               - Set the start time for the procedure.
-            * - :py:meth:`~set_interrupt_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions.set_interrupt_time`
               - Set the interrupt time for the procedure.
-            * - :py:meth:`~set_stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions.set_stop_time`
               - Set the stop time for the procedure.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions.stop_time`
 
 
 Import detail

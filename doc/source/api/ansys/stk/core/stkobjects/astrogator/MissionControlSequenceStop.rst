@@ -1,13 +1,13 @@
 MissionControlSequenceStop
 ==========================
 
-.. py:class:: MissionControlSequenceStop
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceStop
 
-   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceStop`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceStop`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    The Stop segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceStop
 
 Overview
 --------

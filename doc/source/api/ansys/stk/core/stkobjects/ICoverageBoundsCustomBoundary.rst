@@ -1,13 +1,13 @@
 ICoverageBoundsCustomBoundary
 =============================
 
-.. py:class:: ICoverageBoundsCustomBoundary
+.. py:class:: ansys.stk.core.stkobjects.ICoverageBoundsCustomBoundary
 
    ICoverageBounds
    
    Custom Boundary.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageBoundsCustomBoundary
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~region_files`
-            * - :py:meth:`~boundary_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomBoundary.region_files`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomBoundary.boundary_objects`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: region_files
     :canonical: ansys.stk.core.stkobjects.ICoverageBoundsCustomBoundary.region_files
-    :type: IAgCvRegionFilesCollection
+    :type: ICoverageRegionFilesCollection
 
     File containing user-defined points defining a specific grid region.
 
 .. py:property:: boundary_objects
     :canonical: ansys.stk.core.stkobjects.ICoverageBoundsCustomBoundary.boundary_objects
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     A list of STK Objects to be used as part of the coverage area.
 

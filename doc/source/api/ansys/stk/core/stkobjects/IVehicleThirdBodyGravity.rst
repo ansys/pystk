@@ -1,13 +1,13 @@
 IVehicleThirdBodyGravity
 ========================
 
-.. py:class:: IVehicleThirdBodyGravity
+.. py:class:: ansys.stk.core.stkobjects.IVehicleThirdBodyGravity
 
    object
    
    Third body gravity interface options for Long-range Orbit Predictor (LOP) propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleThirdBodyGravity
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_solar_gravity`
-            * - :py:meth:`~use_lunar_gravity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravity.use_solar_gravity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravity.use_lunar_gravity`
 
 
 Import detail

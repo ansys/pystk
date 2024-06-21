@@ -1,13 +1,13 @@
 VectorGeometryToolAxesAttitudeFile
 ==================================
 
-.. py:class:: VectorGeometryToolAxesAttitudeFile
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesAttitudeFile
 
-   Bases: py:obj:`~IVectorGeometryToolAxesAttitudeFile`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAttitudeFile`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes specified by data from a file.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAxesAttitudeFile
 
 Overview
 --------

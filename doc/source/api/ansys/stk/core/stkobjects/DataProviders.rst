@@ -1,13 +1,13 @@
 DataProviders
 =============
 
-.. py:class:: DataProviders
+.. py:class:: ansys.stk.core.stkobjects.DataProviders
 
-   Bases: py:obj:`~IDataProviders`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviders`
 
    Class defining data providers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviders
 
 Overview
 --------

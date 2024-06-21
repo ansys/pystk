@@ -1,13 +1,13 @@
 VehicleLaunchVehicleInitialState
 ================================
 
-.. py:class:: VehicleLaunchVehicleInitialState
+.. py:class:: ansys.stk.core.stkobjects.VehicleLaunchVehicleInitialState
 
-   Bases: py:obj:`~IVehicleLaunchVehicleInitialState`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState`
 
    Class defining launch vehicle initial state.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleLaunchVehicleInitialState
 
 Overview
 --------

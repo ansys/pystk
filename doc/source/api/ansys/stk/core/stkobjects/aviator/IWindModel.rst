@@ -1,13 +1,13 @@
 IWindModel
 ==========
 
-.. py:class:: IWindModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IWindModel
 
    object
    
    Interface used to access the wind model for a mission, scenario, or procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IWindModel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.copy`
               - Copy the wind model.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.paste`
               - Paste the wind model.
 
     .. tab-item:: Properties
@@ -31,11 +31,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~wind_model_type`
-            * - :py:meth:`~wind_model_type_string`
-            * - :py:meth:`~wind_model_source`
-            * - :py:meth:`~mode_as_constant`
-            * - :py:meth:`~mode_as_adds`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.wind_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.wind_model_type_string`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.wind_model_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.mode_as_constant`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.mode_as_adds`
 
 
 Import detail
@@ -69,13 +69,13 @@ Property detail
 
 .. py:property:: mode_as_constant
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModel.mode_as_constant
-    :type: IAgAvtrWindModelConstant
+    :type: IWindModelConstant
 
     Get the options for a Constant Bearing/Speed wind model.
 
 .. py:property:: mode_as_adds
     :canonical: ansys.stk.core.stkobjects.aviator.IWindModel.mode_as_adds
-    :type: IAgAvtrWindModelADDS
+    :type: IWindModelADDS
 
     Get the options for a NOAA ADDS Service wind model.
 

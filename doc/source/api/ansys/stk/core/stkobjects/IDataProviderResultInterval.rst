@@ -1,13 +1,13 @@
 IDataProviderResultInterval
 ===========================
 
-.. py:class:: IDataProviderResultInterval
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultInterval
 
    object
    
    Represents a data interval element.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultInterval
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~threshold_crossings`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultInterval.threshold_crossings`
               - Return a two-dimensional array containing time and direction data (negative for decreasing). The DataSets property must contain the Time dataset for this method to work correctly.
-            * - :py:meth:`~multiple_threshold_crossings`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultInterval.multiple_threshold_crossings`
               - Return an array of two-dimensional arrays.  Each two-dimensional array contains start and stop times based on the boundaries passed in. The DataSets property must contain the Time dataset for this method to work correctly.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~data_sets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultInterval.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultInterval.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultInterval.data_sets`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: data_sets
     :canonical: ansys.stk.core.stkobjects.IDataProviderResultInterval.data_sets
-    :type: IAgDrDataSetCollection
+    :type: IDataProviderResultDataSetCollection
 
     Returns a collection of data sets within the interval.
 

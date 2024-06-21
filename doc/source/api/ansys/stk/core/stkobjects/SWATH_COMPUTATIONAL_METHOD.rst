@@ -1,12 +1,12 @@
 SWATH_COMPUTATIONAL_METHOD
 ==========================
 
-.. py:class:: SWATH_COMPUTATIONAL_METHOD
+.. py:class:: ansys.stk.core.stkobjects.SWATH_COMPUTATIONAL_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SWATH_COMPUTATIONAL_METHOD
 
 Overview
 --------

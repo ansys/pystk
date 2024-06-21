@@ -1,13 +1,13 @@
 BeamformerMvdr
 ==============
 
-.. py:class:: BeamformerMvdr
+.. py:class:: ansys.stk.core.stkobjects.BeamformerMvdr
 
-   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerMvdr`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`, py:obj:`~ansys.stk.core.stkobjects.IBeamformerMvdr`
 
    Class defining a beamformer mvdr.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BeamformerMvdr
 
 Overview
 --------

@@ -1,12 +1,12 @@
 ANTENNA_MODEL_TYPE
 ==================
 
-.. py:class:: ANTENNA_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ANTENNA_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ANTENNA_MODEL_TYPE
 
 Overview
 --------

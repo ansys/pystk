@@ -1,13 +1,13 @@
 IStateCalcEccentricityAnomaly
 =============================
 
-.. py:class:: IStateCalcEccentricityAnomaly
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityAnomaly
 
    object
    
    Properties for an Eccentric Anomaly calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcEccentricityAnomaly
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityAnomaly.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityAnomaly.element_type`
 
 
 Import detail

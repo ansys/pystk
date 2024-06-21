@@ -1,13 +1,13 @@
 UserVariableDefinition
 ======================
 
-.. py:class:: UserVariableDefinition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableDefinition
 
-   Bases: py:obj:`~IUserVariableDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinition`
 
    User Variable Definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: UserVariableDefinition
 
 Overview
 --------

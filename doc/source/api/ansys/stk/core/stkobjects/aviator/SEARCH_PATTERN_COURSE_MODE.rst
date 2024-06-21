@@ -1,12 +1,12 @@
 SEARCH_PATTERN_COURSE_MODE
 ==========================
 
-.. py:class:: SEARCH_PATTERN_COURSE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.SEARCH_PATTERN_COURSE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SEARCH_PATTERN_COURSE_MODE
 
 Overview
 --------

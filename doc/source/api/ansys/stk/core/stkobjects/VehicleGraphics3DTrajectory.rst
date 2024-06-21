@@ -1,13 +1,13 @@
 VehicleGraphics3DTrajectory
 ===========================
 
-.. py:class:: VehicleGraphics3DTrajectory
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory
 
-   Bases: py:obj:`~IVehicleGraphics3DTrajectory`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectory`
 
    AgLvVOTrajectory Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DTrajectory
 
 Overview
 --------

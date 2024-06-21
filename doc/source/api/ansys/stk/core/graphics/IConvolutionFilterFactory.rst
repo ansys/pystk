@@ -1,13 +1,13 @@
 IConvolutionFilterFactory
 =========================
 
-.. py:class:: IConvolutionFilterFactory
+.. py:class:: ansys.stk.core.graphics.IConvolutionFilterFactory
 
    object
    
    Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IConvolutionFilterFactory
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilterFactory.initialize`
               - Initialize a new instance.
-            * - :py:meth:`~initialize_with_kernel`
+            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilterFactory.initialize_with_kernel`
               - Initialize a new instance with the specified kernel.
-            * - :py:meth:`~initialize_with_kernel_and_divisor`
+            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilterFactory.initialize_with_kernel_and_divisor`
               - Initialize a new instance with the specified kernel and divisor.
-            * - :py:meth:`~initialize_with_kernel_divisor_and_offset`
+            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilterFactory.initialize_with_kernel_divisor_and_offset`
               - Initialize a new instance with the specified kernel, divisor, and offset.
 
 

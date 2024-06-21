@@ -1,12 +1,12 @@
 BASIC_MANEUVER_REFERENCE_FRAME
 ==============================
 
-.. py:class:: BASIC_MANEUVER_REFERENCE_FRAME
+.. py:class:: ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_REFERENCE_FRAME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BASIC_MANEUVER_REFERENCE_FRAME
 
 Overview
 --------

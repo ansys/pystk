@@ -1,13 +1,13 @@
 IMissionControlSequenceStop
 ===========================
 
-.. py:class:: IMissionControlSequenceStop
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceStop
 
    object
    
    Properties for a Stop segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceStop
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceStop.enabled`
 
 
 Import detail

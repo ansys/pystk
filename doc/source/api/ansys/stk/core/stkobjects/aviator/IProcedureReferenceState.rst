@@ -1,13 +1,13 @@
 IProcedureReferenceState
 ========================
 
-.. py:class:: IProcedureReferenceState
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState
 
    object
    
    Interface used to access the options for a reference state procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureReferenceState
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~use_default_cruise_altitude`
-            * - :py:meth:`~msl_altitude`
-            * - :py:meth:`~performance_mode`
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~fuel_flow`
-            * - :py:meth:`~mode_as_forward_flight`
-            * - :py:meth:`~mode_as_takeoff_landing`
-            * - :py:meth:`~mode_as_hover`
-            * - :py:meth:`~mode_as_weight_on_wheels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.use_default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.msl_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.performance_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_forward_flight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_takeoff_landing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_hover`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_weight_on_wheels`
 
 
 Import detail
@@ -104,25 +104,25 @@ Property detail
 
 .. py:property:: mode_as_forward_flight
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_forward_flight
-    :type: IAgAvtrRefStateForwardFlightOptions
+    :type: IReferenceStateForwardFlightOptions
 
     Get the forward flight options.
 
 .. py:property:: mode_as_takeoff_landing
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_takeoff_landing
-    :type: IAgAvtrRefStateTakeoffLandingOptions
+    :type: IReferenceStateTakeoffLandingOptions
 
     Get the takeoff and landing options.
 
 .. py:property:: mode_as_hover
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_hover
-    :type: IAgAvtrRefStateHoverOptions
+    :type: IReferenceStateHoverOptions
 
     Get the hover options.
 
 .. py:property:: mode_as_weight_on_wheels
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_weight_on_wheels
-    :type: IAgAvtrRefStateWeightOnWheelsOptions
+    :type: IReferenceStateWeightOnWheelsOptions
 
     Get the weight on wheels options.
 

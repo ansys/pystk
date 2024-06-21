@@ -1,13 +1,13 @@
 ITextBatchPrimitiveOptionalParameters
 =====================================
 
-.. py:class:: ITextBatchPrimitiveOptionalParameters
+.. py:class:: ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters
 
    object
    
    Optional per-string and per-batch parameters for text batch primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextBatchPrimitiveOptionalParameters
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_origins`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.set_origins`
               - Define a collection of origins, one for each string in the batch.
-            * - :py:meth:`~set_eye_offsets`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.set_eye_offsets`
               - Define a collection of eye offsets, one for each string in the batch.
-            * - :py:meth:`~set_pixel_offsets`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.set_pixel_offsets`
               - Define a collection of pixel offsets, one for each string in the batch.
-            * - :py:meth:`~set_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.set_colors`
               - Define a collection of colors, one for each string in the batch.
 
     .. tab-item:: Properties
@@ -35,11 +35,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~origin`
-            * - :py:meth:`~eye_offset`
-            * - :py:meth:`~pixel_offset`
-            * - :py:meth:`~maximum_string_length`
-            * - :py:meth:`~screen_space_rendering`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.origin`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.eye_offset`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.pixel_offset`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.maximum_string_length`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.screen_space_rendering`
 
 
 Import detail

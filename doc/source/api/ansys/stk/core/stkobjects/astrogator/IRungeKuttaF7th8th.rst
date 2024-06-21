@@ -1,13 +1,13 @@
 IRungeKuttaF7th8th
 ==================
 
-.. py:class:: IRungeKuttaF7th8th
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th
 
    object
    
    Properties for the RK7th8th numerical integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IRungeKuttaF7th8th
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initial_step`
-            * - :py:meth:`~use_fixed_step`
-            * - :py:meth:`~use_max_step`
-            * - :py:meth:`~use_min_step`
-            * - :py:meth:`~max_step`
-            * - :py:meth:`~min_step`
-            * - :py:meth:`~max_rel_err`
-            * - :py:meth:`~max_abs_err`
-            * - :py:meth:`~high_safety_coefficient`
-            * - :py:meth:`~low_safety_coefficient`
-            * - :py:meth:`~error_control`
-            * - :py:meth:`~max_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.initial_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.use_fixed_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.use_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.use_min_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.min_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.max_rel_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.max_abs_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.high_safety_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.low_safety_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.error_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th.max_iterations`
 
 
 Import detail

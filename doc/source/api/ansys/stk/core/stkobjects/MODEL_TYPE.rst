@@ -1,12 +1,12 @@
 MODEL_TYPE
 ==========
 
-.. py:class:: MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MODEL_TYPE
 
 Overview
 --------

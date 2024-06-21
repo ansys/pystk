@@ -1,13 +1,13 @@
 IADDSMessageCollection
 ======================
 
-.. py:class:: IADDSMessageCollection
+.. py:class:: ansys.stk.core.stkobjects.aviator.IADDSMessageCollection
 
    object
    
    Interface used to access the collection of messages from the NOAA ADDS forecast.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IADDSMessageCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessageCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessageCollection.remove_message`
               - Remove this message from the forecast.
-            * - :py:meth:`~clear_messages`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessageCollection.clear_messages`
               - Clear all of the messages in the collection.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessageCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessageCollection._NewEnum`
 
 
 Import detail

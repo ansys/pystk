@@ -1,13 +1,13 @@
 IManeuver
 =========
 
-.. py:class:: IManeuver
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuver
 
    object
    
    Properties of an Impulsive Maneuver Segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuver
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_attitude_control_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.set_attitude_control_type`
               - Set the attitude control type.
-            * - :py:meth:`~set_propulsion_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.set_propulsion_method`
               - Set the propulsion type and associated engine/thruster set.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~attitude_control_type`
-            * - :py:meth:`~attitude_control`
-            * - :py:meth:`~propulsion_method`
-            * - :py:meth:`~propulsion_method_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.attitude_control_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.attitude_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.propulsion_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.propulsion_method_value`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: attitude_control
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuver.attitude_control
-    :type: IAgVAAttitudeControl
+    :type: IAttitudeControl
 
     Get the attitude control properties collection.
 

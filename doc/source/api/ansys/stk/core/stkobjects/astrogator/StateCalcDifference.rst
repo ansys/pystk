@@ -1,13 +1,13 @@
 StateCalcDifference
 ===================
 
-.. py:class:: StateCalcDifference
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDifference
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDifference`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifference`
 
    Difference Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDifference
 
 Overview
 --------

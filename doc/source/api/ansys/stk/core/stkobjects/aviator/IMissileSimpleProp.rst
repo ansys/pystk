@@ -1,13 +1,13 @@
 IMissileSimpleProp
 ==================
 
-.. py:class:: IMissileSimpleProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileSimpleProp
 
    object
    
    Interface used to access the Simple propulsion options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileSimpleProp
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_thrust`
-            * - :py:meth:`~fuel_flow`
-            * - :py:meth:`~no_thrust_when_no_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp.max_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp.fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp.no_thrust_when_no_fuel`
 
 
 Import detail

@@ -1,12 +1,12 @@
 COVERAGE_DATA_RETENTION
 =======================
 
-.. py:class:: COVERAGE_DATA_RETENTION
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_DATA_RETENTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_DATA_RETENTION
 
 Overview
 --------

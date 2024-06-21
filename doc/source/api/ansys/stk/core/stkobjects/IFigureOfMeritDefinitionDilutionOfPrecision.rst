@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionDilutionOfPrecision
 ===========================================
 
-.. py:class:: IFigureOfMeritDefinitionDilutionOfPrecision
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision
 
    IFigureOfMeritDefinitionCompute
    
    Dilution Of Precision Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionDilutionOfPrecision
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.set_method`
               - Set a static DOP value over the entire coverage interval.
-            * - :py:meth:`~is_method_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.is_method_supported`
               - Is the DOP method supported?
-            * - :py:meth:`~set_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.set_type`
               - Set the compute option.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.is_type_supported`
               - Is the compute option supported?
 
     .. tab-item:: Properties
@@ -35,13 +35,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method`
-            * - :py:meth:`~supported_methods`
-            * - :py:meth:`~type`
-            * - :py:meth:`~supported_types`
-            * - :py:meth:`~time_step`
-            * - :py:meth:`~type_data`
-            * - :py:meth:`~invalid_value_action`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.supported_methods`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.type_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.invalid_value_action`
 
 
 Import detail
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: type_data
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.type_data
-    :type: IAgFmDefinitionData
+    :type: IFigureOfMeritDefinitionData
 
     DOP type data.
 

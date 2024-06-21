@@ -1,13 +1,13 @@
 IAxesPrimitive
 ==============
 
-.. py:class:: IAxesPrimitive
+.. py:class:: ansys.stk.core.graphics.IAxesPrimitive
 
    object
    
    Render an axes in the 3D scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAxesPrimitive
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lighting`
-            * - :py:meth:`~label`
-            * - :py:meth:`~display_label`
-            * - :py:meth:`~display_trace`
-            * - :py:meth:`~display_sweep`
-            * - :py:meth:`~display_lines`
-            * - :py:meth:`~persistence_width`
-            * - :py:meth:`~fade_persistence`
-            * - :py:meth:`~persistence_duration`
-            * - :py:meth:`~length`
-            * - :py:meth:`~width`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.lighting`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.label`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.display_label`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.display_trace`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.display_sweep`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.display_lines`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.persistence_width`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.fade_persistence`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.persistence_duration`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.length`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitive.width`
 
 
 Import detail

@@ -1,12 +1,12 @@
 WINDING_ORDER
 =============
 
-.. py:class:: WINDING_ORDER
+.. py:class:: ansys.stk.core.graphics.WINDING_ORDER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: WINDING_ORDER
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IDataProviderResultTextMessage
 ==============================
 
-.. py:class:: IDataProviderResultTextMessage
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultTextMessage
 
    object
    
    Represents notification/failure message returned by the data provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultTextMessage
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage.item`
               - Given an index, returns a string in the collection at the given position.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~messages`
-            * - :py:meth:`~is_failure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage.messages`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage.is_failure`
 
 
 Import detail

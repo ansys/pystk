@@ -1,12 +1,12 @@
 IDEAL_ORBIT_RADIUS
 ==================
 
-.. py:class:: IDEAL_ORBIT_RADIUS
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDEAL_ORBIT_RADIUS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDEAL_ORBIT_RADIUS
 
 Overview
 --------

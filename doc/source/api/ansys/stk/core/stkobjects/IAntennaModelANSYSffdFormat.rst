@@ -1,13 +1,13 @@
 IAntennaModelANSYSffdFormat
 ===========================
 
-.. py:class:: IAntennaModelANSYSffdFormat
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelANSYSffdFormat
 
    object
    
    Provide access to the properties and methods defining an antnna pattern ANSYS ffd format model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelANSYSffdFormat
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~defined_frequencies`
-            * - :py:meth:`~gain_type`
-            * - :py:meth:`~defined_power_value`
-            * - :py:meth:`~user_gain_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelANSYSffdFormat.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelANSYSffdFormat.defined_frequencies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelANSYSffdFormat.gain_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelANSYSffdFormat.defined_power_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelANSYSffdFormat.user_gain_factor`
 
 
 Import detail

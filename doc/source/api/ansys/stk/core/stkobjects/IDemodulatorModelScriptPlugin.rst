@@ -1,13 +1,13 @@
 IDemodulatorModelScriptPlugin
 =============================
 
-.. py:class:: IDemodulatorModelScriptPlugin
+.. py:class:: ansys.stk.core.stkobjects.IDemodulatorModelScriptPlugin
 
    object
    
    Provide access to the properties and methods defining an script plugin demodulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDemodulatorModelScriptPlugin
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDemodulatorModelScriptPlugin.filename`
 
 
 Import detail

@@ -1,13 +1,13 @@
 StateCalcDuration
 =================
 
-.. py:class:: StateCalcDuration
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDuration
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDuration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDuration`
 
    Duration Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDuration
 
 Overview
 --------

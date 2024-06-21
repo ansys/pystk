@@ -1,12 +1,12 @@
 INTERSECTION_TYPE
 =================
 
-.. py:class:: INTERSECTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.INTERSECTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: INTERSECTION_TYPE
 
 Overview
 --------

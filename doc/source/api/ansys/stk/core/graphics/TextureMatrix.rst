@@ -1,13 +1,13 @@
 TextureMatrix
 =============
 
-.. py:class:: TextureMatrix
+.. py:class:: ansys.stk.core.graphics.TextureMatrix
 
-   Bases: py:obj:`~ITextureMatrix`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITextureMatrix`
 
    A 4 by 4 matrix applied to a texture coordinate.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TextureMatrix
 
 Overview
 --------

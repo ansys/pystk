@@ -1,13 +1,13 @@
 DataProviderResultSubSectionCollection
 ======================================
 
-.. py:class:: DataProviderResultSubSectionCollection
+.. py:class:: ansys.stk.core.stkobjects.DataProviderResultSubSectionCollection
 
-   Bases: py:obj:`~IDataProviderResultSubSectionCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection`
 
    Represents a collection of subsections returned by the data providers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderResultSubSectionCollection
 
 Overview
 --------

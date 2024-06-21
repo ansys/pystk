@@ -1,13 +1,13 @@
 IAtmosphereModel
 ================
 
-.. py:class:: IAtmosphereModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAtmosphereModel
 
    object
    
    Interface used to access the atmosphere model for a mission, scenario, or procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAtmosphereModel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel.copy`
               - Copy the atmosphere model.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel.paste`
               - Paste the atmosphere model.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmosphere_model_type_string`
-            * - :py:meth:`~atmosphere_model_source`
-            * - :py:meth:`~mode_as_basic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel.atmosphere_model_type_string`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel.atmosphere_model_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel.mode_as_basic`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.IAtmosphereModel.mode_as_basic
-    :type: IAgAvtrAtmosphereModelBasic
+    :type: IAtmosphereModelBasic
 
     Get the options for a Basic Atmosphere model.
 

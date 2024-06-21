@@ -1,13 +1,13 @@
 VehicleGPSAlmanacPropertiesSP3
 ==============================
 
-.. py:class:: VehicleGPSAlmanacPropertiesSP3
+.. py:class:: ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3
 
-   Bases: py:obj:`~IVehicleGPSAlmanacPropertiesSP3`, py:obj:`~IVehicleGPSAlmanacProperties`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties`
 
    SP3 almanac properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGPSAlmanacPropertiesSP3
 
 Overview
 --------

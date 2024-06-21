@@ -1,13 +1,13 @@
 FacilityGraphics3D
 ==================
 
-.. py:class:: FacilityGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.FacilityGraphics3D
 
-   Bases: py:obj:`~IFacilityGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFacilityGraphics3D`
 
    3D Graphics properties of a Facility.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FacilityGraphics3D
 
 Overview
 --------

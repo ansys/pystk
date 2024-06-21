@@ -1,13 +1,13 @@
 EOIRShapeNone
 =============
 
-.. py:class:: EOIRShapeNone
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeNone
 
-   Bases: py:obj:`~IEOIRShapeNone`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeNone`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    None shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeNone
 
 Overview
 --------

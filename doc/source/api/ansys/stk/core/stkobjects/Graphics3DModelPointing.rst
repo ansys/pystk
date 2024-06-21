@@ -1,13 +1,13 @@
 Graphics3DModelPointing
 =======================
 
-.. py:class:: Graphics3DModelPointing
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DModelPointing
 
-   Bases: py:obj:`~IGraphics3DModelPointing`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing`
 
    List of pointable model elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DModelPointing
 
 Overview
 --------

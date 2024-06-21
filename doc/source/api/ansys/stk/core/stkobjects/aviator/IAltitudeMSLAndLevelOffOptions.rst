@@ -1,13 +1,13 @@
 IAltitudeMSLAndLevelOffOptions
 ==============================
 
-.. py:class:: IAltitudeMSLAndLevelOffOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions
 
    object
    
    Interface used to access the altitude MSL and Level off options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAltitudeMSLAndLevelOffOptions
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_default_cruise_altitude`
-            * - :py:meth:`~msl_altitude`
-            * - :py:meth:`~must_level_off`
-            * - :py:meth:`~level_off_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.use_default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.msl_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.must_level_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.level_off_mode`
 
 
 Import detail

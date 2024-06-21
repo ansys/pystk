@@ -1,13 +1,13 @@
 IRadarPulseIntegrationFixedNumberOfPulses
 =========================================
 
-.. py:class:: IRadarPulseIntegrationFixedNumberOfPulses
+.. py:class:: ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses
 
    object
    
    Interface which defines a fixed number of pulses integration method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarPulseIntegrationFixedNumberOfPulses
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pulse_number`
-            * - :py:meth:`~integrator_type`
-            * - :py:meth:`~constant_efficiency`
-            * - :py:meth:`~exponent_on_pulse_number`
-            * - :py:meth:`~non_coherent_integration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.pulse_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.integrator_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.constant_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.exponent_on_pulse_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.non_coherent_integration`
 
 
 Import detail

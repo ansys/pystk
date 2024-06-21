@@ -1,13 +1,13 @@
 VectorGeometryToolSystemCommonTasks
 ===================================
 
-.. py:class:: VectorGeometryToolSystemCommonTasks
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemCommonTasks
 
-   Bases: py:obj:`~IVectorGeometryToolSystemCommonTasks`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolSystemCommonTasks`
 
    Provide methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolSystemCommonTasks
 
 Overview
 --------

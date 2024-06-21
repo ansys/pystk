@@ -1,13 +1,13 @@
 IAntennaBeamTransmit
 ====================
 
-.. py:class:: IAntennaBeamTransmit
+.. py:class:: ansys.stk.core.stkobjects.IAntennaBeamTransmit
 
    object
    
    Provide access to an transmit antenna beam.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaBeamTransmit
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamTransmit.power`
 
 
 Import detail

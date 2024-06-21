@@ -1,13 +1,13 @@
 ISearchPluginResult
 ===================
 
-.. py:class:: ISearchPluginResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISearchPluginResult
 
    object
    
    Properties of search plugin equality constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISearchPluginResult
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~result_name`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~parent_segment_name`
-            * - :py:meth:`~plugin_identifier`
-            * - :py:meth:`~plugin_config`
-            * - :py:meth:`~dimension`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
-            * - :py:meth:`~values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.result_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.parent_segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.plugin_identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.plugin_config`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.values`
 
 
 Import detail
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.ISearchPluginResult.plugin_config
-    :type: IAgVAPluginProperties
+    :type: IPluginProperties
 
     Get the properties of the selected plugin.
 

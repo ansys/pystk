@@ -1,13 +1,13 @@
 IStateCalcScalar
 ================
 
-.. py:class:: IStateCalcScalar
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcScalar
 
    object
    
    Properties for a Scalar calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcScalar
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scalar_name`
-            * - :py:meth:`~unit_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScalar.scalar_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScalar.unit_dimension`
 
 
 Import detail

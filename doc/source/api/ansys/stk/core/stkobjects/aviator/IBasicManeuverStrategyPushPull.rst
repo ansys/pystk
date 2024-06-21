@@ -1,13 +1,13 @@
 IBasicManeuverStrategyPushPull
 ==============================
 
-.. py:class:: IBasicManeuverStrategyPushPull
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull
 
    object
    
    Interface used to access options for a Push/Pull Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyPushPull
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_stop_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.set_stop_altitude`
               - Set whether to enable the altitude stopping condition and the corresponding value.
-            * - :py:meth:`~set_stop_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.set_stop_altitude_rate`
               - Set whether to enable the altitude rate stopping condition and the corresponding value.
-            * - :py:meth:`~set_stop_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.set_stop_airspeed`
               - Set whether to enable the airspeed stopping condition and the corresponding value.
 
     .. tab-item:: Properties
@@ -33,22 +33,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~push_pull`
-            * - :py:meth:`~push_pull_g`
-            * - :py:meth:`~accel_mode`
-            * - :py:meth:`~accel_decel_g`
-            * - :py:meth:`~maintain_airspeed_type`
-            * - :py:meth:`~maintain_airspeed`
-            * - :py:meth:`~stop_flight_path_angle`
-            * - :py:meth:`~use_stop_at_altitude`
-            * - :py:meth:`~stop_altitude`
-            * - :py:meth:`~use_stop_at_altitude_rate`
-            * - :py:meth:`~stop_altitude_rate`
-            * - :py:meth:`~use_stop_at_airspeed`
-            * - :py:meth:`~stop_airspeed`
-            * - :py:meth:`~stop_airspeed_type`
-            * - :py:meth:`~compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.push_pull`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.push_pull_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.accel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.accel_decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.maintain_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.maintain_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.use_stop_at_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.use_stop_at_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.use_stop_at_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.compensate_for_coriolis_accel`
 
 
 Import detail

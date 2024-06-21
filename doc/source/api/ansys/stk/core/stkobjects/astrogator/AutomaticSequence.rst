@@ -1,13 +1,13 @@
 AutomaticSequence
 =================
 
-.. py:class:: AutomaticSequence
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AutomaticSequence
 
-   Bases: py:obj:`~IAutomaticSequence`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequence`
 
    Automatic Sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AutomaticSequence
 
 Overview
 --------

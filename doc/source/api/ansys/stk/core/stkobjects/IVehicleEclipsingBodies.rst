@@ -1,13 +1,13 @@
 IVehicleEclipsingBodies
 =======================
 
-.. py:class:: IVehicleEclipsingBodies
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEclipsingBodies
 
    object
    
    Interface for eclipsing bodies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEclipsingBodies
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_eclipsing_body_assigned`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies.is_eclipsing_body_assigned`
               - Return true if the eclipsing body is assigned.
-            * - :py:meth:`~assign_eclipsing_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies.assign_eclipsing_body`
               - Add an eclipsing body.
-            * - :py:meth:`~remove_eclipsing_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies.remove_eclipsing_body`
               - Remove an eclipsing body.
-            * - :py:meth:`~remove_all_eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies.remove_all_eclipsing_bodies`
               - Remove all eclipsing bodies.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_eclipsing_bodies`
-            * - :py:meth:`~assigned_eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies.available_eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies.assigned_eclipsing_bodies`
 
 
 Import detail

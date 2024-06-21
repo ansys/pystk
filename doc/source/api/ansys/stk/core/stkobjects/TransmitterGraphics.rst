@@ -1,13 +1,13 @@
 TransmitterGraphics
 ===================
 
-.. py:class:: TransmitterGraphics
+.. py:class:: ansys.stk.core.stkobjects.TransmitterGraphics
 
-   Bases: py:obj:`~ITransmitterGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitterGraphics`
 
    Class defining 2D Graphics properties of a Transmitter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TransmitterGraphics
 
 Overview
 --------

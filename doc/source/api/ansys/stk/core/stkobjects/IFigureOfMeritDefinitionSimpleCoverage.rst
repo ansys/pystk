@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionSimpleCoverage
 ======================================
 
-.. py:class:: IFigureOfMeritDefinitionSimpleCoverage
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSimpleCoverage
 
    IFigureOfMeritDefinition
    
    Simple Coverage Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionSimpleCoverage
 
 Overview
 --------

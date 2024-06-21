@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DLevelAttributesElement
 ==============================================
 
-.. py:class:: IFigureOfMeritGraphics2DLevelAttributesElement
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesElement
 
    object
    
    2D graphics attributes of contour levels.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DLevelAttributesElement
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~level`
-            * - :py:meth:`~color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesElement.level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesElement.color`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITargeterGraphActiveControl
 ===========================
 
-.. py:class:: ITargeterGraphActiveControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl
 
    object
    
    Properties for targeter graph active control.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ITargeterGraphActiveControl
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~show_graph_value`
-            * - :py:meth:`~line_color`
-            * - :py:meth:`~point_style`
-            * - :py:meth:`~y_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.show_graph_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.line_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.point_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.y_axis`
 
 
 Import detail

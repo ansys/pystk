@@ -1,12 +1,12 @@
 OPTIMAL_FINITE_WORKING_VARIABLES
 ================================
 
-.. py:class:: OPTIMAL_FINITE_WORKING_VARIABLES
+.. py:class:: ansys.stk.core.stkobjects.astrogator.OPTIMAL_FINITE_WORKING_VARIABLES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: OPTIMAL_FINITE_WORKING_VARIABLES
 
 Overview
 --------

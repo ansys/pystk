@@ -1,13 +1,13 @@
 PathPrimitiveUpdatePolicy
 =========================
 
-.. py:class:: PathPrimitiveUpdatePolicy
+.. py:class:: ansys.stk.core.graphics.PathPrimitiveUpdatePolicy
 
-   Bases: py:obj:`~IPathPrimitiveUpdatePolicy`
+   Bases: py:obj:`~ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy`
 
    A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: PathPrimitiveUpdatePolicy
 
 Overview
 --------

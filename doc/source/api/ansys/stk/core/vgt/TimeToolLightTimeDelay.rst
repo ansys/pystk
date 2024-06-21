@@ -1,13 +1,13 @@
 TimeToolLightTimeDelay
 ======================
 
-.. py:class:: TimeToolLightTimeDelay
+.. py:class:: ansys.stk.core.vgt.TimeToolLightTimeDelay
 
-   Bases: py:obj:`~ITimeToolLightTimeDelay`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay`
 
    Manage Light Time Delay options..
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolLightTimeDelay
 
 Overview
 --------

@@ -1,13 +1,13 @@
 Mto
 ===
 
-.. py:class:: Mto
+.. py:class:: ansys.stk.core.stkobjects.Mto
 
-   Bases: py:obj:`~IMto`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMto`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Multi-Track Object (MTO).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Mto
 
 Overview
 --------

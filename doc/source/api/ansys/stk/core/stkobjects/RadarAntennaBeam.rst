@@ -1,13 +1,13 @@
 RadarAntennaBeam
 ================
 
-.. py:class:: RadarAntennaBeam
+.. py:class:: ansys.stk.core.stkobjects.RadarAntennaBeam
 
-   Bases: py:obj:`~IRadarAntennaBeam`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarAntennaBeam`
 
    Class defining a radar antenna beam.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarAntennaBeam
 
 Overview
 --------

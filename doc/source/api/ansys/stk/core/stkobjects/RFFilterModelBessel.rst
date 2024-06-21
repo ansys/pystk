@@ -1,13 +1,13 @@
 RFFilterModelBessel
 ===================
 
-.. py:class:: RFFilterModelBessel
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelBessel
 
-   Bases: py:obj:`~IRFFilterModelBessel`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelBessel`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a bessel filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelBessel
 
 Overview
 --------

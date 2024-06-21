@@ -1,13 +1,13 @@
 IDrawElem
 =========
 
-.. py:class:: IDrawElem
+.. py:class:: ansys.stk.core.stkx.IDrawElem
 
    object
    
    Draw element.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IDrawElem
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~visible`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElem.visible`
 
 
 Import detail

@@ -1,13 +1,13 @@
 CoverageBoundsLat
 =================
 
-.. py:class:: CoverageBoundsLat
+.. py:class:: ansys.stk.core.stkobjects.CoverageBoundsLat
 
-   Bases: py:obj:`~ICoverageBoundsLat`, py:obj:`~ICoverageBounds`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageBoundsLat`, py:obj:`~ansys.stk.core.stkobjects.ICoverageBounds`
 
    Latitude Bounds: create a grid between user-specified Minimum and Maximum Latitude boundaries.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageBoundsLat
 
 Overview
 --------

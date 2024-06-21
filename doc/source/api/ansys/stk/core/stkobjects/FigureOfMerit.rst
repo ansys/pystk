@@ -1,13 +1,13 @@
 FigureOfMerit
 =============
 
-.. py:class:: FigureOfMerit
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMerit
 
-   Bases: py:obj:`~IFigureOfMerit`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMerit`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Figure of Merit properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMerit
 
 Overview
 --------

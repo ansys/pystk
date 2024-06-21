@@ -1,13 +1,13 @@
 ITarget
 =======
 
-.. py:class:: ITarget
+.. py:class:: ansys.stk.core.stkobjects.ITarget
 
    object
    
    Provide access to the properties and methods used in defining a target object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITarget
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.set_az_el_mask`
               - Set an az-el mask. A member of the AgEAzElMaskType enumeration.
-            * - :py:meth:`~reset_az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.reset_az_el_mask`
               - Reset the az-el mask.
-            * - :py:meth:`~get_az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.get_az_el_mask`
               - Get the az-el mask. A member of the AgEAzElMaskType enumeration.
-            * - :py:meth:`~get_az_el_mask_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.get_az_el_mask_data`
               - Get az-el mask data.
 
     .. tab-item:: Properties
@@ -35,26 +35,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_local_time_offset`
-            * - :py:meth:`~local_time_offset`
-            * - :py:meth:`~use_terrain`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~position`
-            * - :py:meth:`~terrain_norm`
-            * - :py:meth:`~terrain_norm_data`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~access_constraints`
-            * - :py:meth:`~height_above_ground`
-            * - :py:meth:`~altitude_reference`
-            * - :py:meth:`~atmosphere`
-            * - :py:meth:`~radar_clutter_map`
-            * - :py:meth:`~radar_cross_section`
-            * - :py:meth:`~save_terrain_mask_data_in_binary`
-            * - :py:meth:`~lighting_obstruction_model`
-            * - :py:meth:`~lighting_max_step`
-            * - :py:meth:`~laser_environment`
-            * - :py:meth:`~rf_environment`
-            * - :py:meth:`~max_range_when_computing_az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.use_local_time_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.local_time_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.use_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.terrain_norm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.terrain_norm_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.access_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.height_above_ground`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.atmosphere`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.radar_clutter_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.save_terrain_mask_data_in_binary`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.lighting_obstruction_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.laser_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITarget.max_range_when_computing_az_el_mask`
 
 
 Import detail
@@ -88,13 +88,13 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ITarget.graphics
-    :type: IAgTargetGraphics
+    :type: ITargetGraphics
 
     Get the 2D Graphics properties of the target.
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.ITarget.position
-    :type: IAgPosition
+    :type: IPosition
 
     Get the position of the target.
 
@@ -106,19 +106,19 @@ Property detail
 
 .. py:property:: terrain_norm_data
     :canonical: ansys.stk.core.stkobjects.ITarget.terrain_norm_data
-    :type: IAgTerrainNormData
+    :type: ITerrainNormData
 
     Data used in specifying terrain slope.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ITarget.graphics_3d
-    :type: IAgTargetVO
+    :type: ITargetGraphics3D
 
     Get the 3D Graphics properties of the target.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.ITarget.access_constraints
-    :type: IAgAccessConstraintCollection
+    :type: IAccessConstraintCollection
 
     Get the constraints imposed on the target.
 
@@ -136,19 +136,19 @@ Property detail
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.ITarget.atmosphere
-    :type: IAgAtmosphere
+    :type: IAtmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.ITarget.radar_clutter_map
-    :type: IAgRadarClutterMapInheritable
+    :type: IRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ITarget.radar_cross_section
-    :type: IAgRadarCrossSectionInheritable
+    :type: IRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
@@ -172,13 +172,13 @@ Property detail
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.ITarget.laser_environment
-    :type: IAgPlatformLaserEnvironment
+    :type: IPlatformLaserEnvironment
 
     Gets the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.ITarget.rf_environment
-    :type: IAgPlatformRFEnvironment
+    :type: IPlatformRFEnvironment
 
     Gets the RF environment.
 

@@ -1,13 +1,13 @@
 RungeKuttaF7th8th
 =================
 
-.. py:class:: RungeKuttaF7th8th
+.. py:class:: ansys.stk.core.stkobjects.astrogator.RungeKuttaF7th8th
 
-   Bases: py:obj:`~IRungeKuttaF7th8th`, py:obj:`~INumericalIntegrator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IRungeKuttaF7th8th`, py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
 
    RKF7th8th Numerical Integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: RungeKuttaF7th8th
 
 Overview
 --------

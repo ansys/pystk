@@ -1,13 +1,13 @@
 RFFilterModelFir
 ================
 
-.. py:class:: RFFilterModelFir
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelFir
 
-   Bases: py:obj:`~IRFFilterModelFir`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelFir`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a FIR filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelFir
 
 Overview
 --------

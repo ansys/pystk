@@ -1,13 +1,13 @@
 IStarGraphics
 =============
 
-.. py:class:: IStarGraphics
+.. py:class:: ansys.stk.core.stkobjects.IStarGraphics
 
    object
    
    AgStGraphics used to access the Star's 2D graphics.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStarGraphics
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~color`
-            * - :py:meth:`~inherit`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~label_visible`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.inherit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.is_object_graphics_visible`
 
 
 Import detail

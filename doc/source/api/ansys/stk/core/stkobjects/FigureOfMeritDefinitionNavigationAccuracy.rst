@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionNavigationAccuracy
 =========================================
 
-.. py:class:: FigureOfMeritDefinitionNavigationAccuracy
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionNavigationAccuracy
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionNavigationAccuracy`, py:obj:`~IFigureOfMeritDefinitionDilutionOfPrecision`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionNavigationAccuracy`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Navigation Accuracy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionNavigationAccuracy
 
 Overview
 --------

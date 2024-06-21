@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_ACROSS_ASSETS
 =============================
 
-.. py:class:: FIGURE_OF_MERIT_ACROSS_ASSETS
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_ACROSS_ASSETS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_ACROSS_ASSETS
 
 Overview
 --------

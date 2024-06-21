@@ -1,13 +1,13 @@
 IClassicalSizeShapeMeanMotion
 =============================
 
-.. py:class:: IClassicalSizeShapeMeanMotion
+.. py:class:: ansys.stk.core.stkobjects.IClassicalSizeShapeMeanMotion
 
    IClassicalSizeShape
    
    Interface for specifying orbit size and shape using Mean Motion and Eccentricity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalSizeShapeMeanMotion
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mean_motion`
-            * - :py:meth:`~eccentricity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeMeanMotion.mean_motion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeMeanMotion.eccentricity`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IProfileChangePropagator
 ========================
 
-.. py:class:: IProfileChangePropagator
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileChangePropagator
 
    IProfile
    
    Properties for a Change Propagator profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileChangePropagator
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangePropagator.set_segment`
               - Set the targeted segment.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~segment_name`
-            * - :py:meth:`~propagator_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangePropagator.segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangePropagator.propagator_name`
 
 
 Import detail

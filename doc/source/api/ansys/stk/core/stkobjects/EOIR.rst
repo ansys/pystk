@@ -1,13 +1,13 @@
 EOIR
 ====
 
-.. py:class:: EOIR
+.. py:class:: ansys.stk.core.stkobjects.EOIR
 
-   Bases: py:obj:`~IEOIR`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIR`
 
    AgEOIR interface class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIR
 
 Overview
 --------

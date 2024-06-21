@@ -1,12 +1,12 @@
 ELEMENT
 =======
 
-.. py:class:: ELEMENT
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ELEMENT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ELEMENT
 
 Overview
 --------

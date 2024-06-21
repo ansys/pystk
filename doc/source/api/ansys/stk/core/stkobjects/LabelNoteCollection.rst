@@ -1,13 +1,13 @@
 LabelNoteCollection
 ===================
 
-.. py:class:: LabelNoteCollection
+.. py:class:: ansys.stk.core.stkobjects.LabelNoteCollection
 
-   Bases: py:obj:`~ILabelNoteCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILabelNoteCollection`
 
    Collection representing label notes list.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LabelNoteCollection
 
 Overview
 --------

@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeLighting
 =================================
 
-.. py:class:: SpatialAnalysisToolVolumeLighting
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeLighting
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeLighting`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A lighting volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeLighting
 
 Overview
 --------

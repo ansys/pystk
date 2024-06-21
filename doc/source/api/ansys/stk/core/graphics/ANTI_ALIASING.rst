@@ -1,12 +1,12 @@
 ANTI_ALIASING
 =============
 
-.. py:class:: ANTI_ALIASING
+.. py:class:: ansys.stk.core.graphics.ANTI_ALIASING
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ANTI_ALIASING
 
 Overview
 --------

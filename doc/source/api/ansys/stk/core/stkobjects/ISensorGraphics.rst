@@ -1,13 +1,13 @@
 ISensorGraphics
 ===============
 
-.. py:class:: ISensorGraphics
+.. py:class:: ansys.stk.core.stkobjects.ISensorGraphics
 
    object
    
    IAgSnGraphics Interface for a sensor's 2D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorGraphics
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit_from_scenario`
-            * - :py:meth:`~enable`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~enable_boresight_graphics_2d`
-            * - :py:meth:`~boresight_color`
-            * - :py:meth:`~boresight_marker_style`
-            * - :py:meth:`~projection`
-            * - :py:meth:`~fill_visible`
-            * - :py:meth:`~percent_translucency`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.inherit_from_scenario`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.enable_boresight_graphics_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.boresight_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.boresight_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.projection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.fill_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.percent_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.is_object_graphics_visible`
 
 
 Import detail
@@ -95,7 +95,7 @@ Property detail
 
 .. py:property:: projection
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics.projection
-    :type: IAgSnProjection
+    :type: ISensorProjection
 
     Get the 2D Projection properties of the sensor.
 

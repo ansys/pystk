@@ -1,13 +1,13 @@
 IGeospatialImageGlobeOverlay
 ============================
 
-.. py:class:: IGeospatialImageGlobeOverlay
+.. py:class:: ansys.stk.core.graphics.IGeospatialImageGlobeOverlay
 
    object
    
    A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGeospatialImageGlobeOverlay
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_transparent_color`
-            * - :py:meth:`~transparent_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IGeospatialImageGlobeOverlay.use_transparent_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IGeospatialImageGlobeOverlay.transparent_color`
 
 
 Import detail

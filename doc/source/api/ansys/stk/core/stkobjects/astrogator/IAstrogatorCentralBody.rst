@@ -1,13 +1,13 @@
 IAstrogatorCentralBody
 ======================
 
-.. py:class:: IAstrogatorCentralBody
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody
 
    object
    
    General properties for a central body.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAstrogatorCentralBody
 
 Overview
 --------
@@ -20,61 +20,61 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_default_gravity_model_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.set_default_gravity_model_by_name`
               - Select a gravity model.
-            * - :py:meth:`~add_gravity_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_gravity_model`
               - Add a central body gravity model type.
-            * - :py:meth:`~remove_gravity_model_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.remove_gravity_model_by_name`
               - Remove a central body gravity model type.
-            * - :py:meth:`~set_default_shape_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.set_default_shape_by_name`
               - Select a central body shape.
-            * - :py:meth:`~add_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_shape`
               - Add a central body shape type from the available types.
-            * - :py:meth:`~remove_shape_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.remove_shape_by_name`
               - Remove a central body shape type.
-            * - :py:meth:`~set_default_attitude_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.set_default_attitude_by_name`
               - Select a central body attitude.
-            * - :py:meth:`~add_attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_attitude`
               - Add a central body attitude type from the available types.
-            * - :py:meth:`~remove_attitude_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.remove_attitude_by_name`
               - Remove a central body attitude type.
-            * - :py:meth:`~set_default_ephemeris_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.set_default_ephemeris_by_name`
               - Select an ephemeris type.
-            * - :py:meth:`~add_ephemeris`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_ephemeris`
               - Add an ephemeris type from the available types.
-            * - :py:meth:`~remove_ephemeris_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.remove_ephemeris_by_name`
               - Remove an ephemeris type.
-            * - :py:meth:`~cut_gravity_model_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.cut_gravity_model_by_name`
               - Copy a gravity model to the clipboard and removes it from the central body.
-            * - :py:meth:`~copy_gravity_model_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.copy_gravity_model_by_name`
               - Copy a gravity model to the clipboard.
-            * - :py:meth:`~paste_gravity_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.paste_gravity_model`
               - Add the gravity model in the clipboard to the central body.
-            * - :py:meth:`~add_copy_of_gravity_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_copy_of_gravity_model`
               - Add the gravity model to the central body.
-            * - :py:meth:`~cut_shape_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.cut_shape_by_name`
               - Copy a central body shape to the clipboard and removes it from the central body.
-            * - :py:meth:`~copy_shape_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.copy_shape_by_name`
               - Copy a central body shape to the clipboard.
-            * - :py:meth:`~paste_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.paste_shape`
               - Add the central body shape in the clipboard to the central body.
-            * - :py:meth:`~add_copy_of_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_copy_of_shape`
               - Add the central body shape to the central body.
-            * - :py:meth:`~cut_attitude_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.cut_attitude_by_name`
               - Copy a central body attitude definition to the clipboard and removes it from the central body.
-            * - :py:meth:`~copy_attitude_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.copy_attitude_by_name`
               - Copy a central body attitude definition to the clipboard.
-            * - :py:meth:`~paste_attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.paste_attitude`
               - Add the central body attitude definition in the clipboard to the central body.
-            * - :py:meth:`~add_copy_of_attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_copy_of_attitude`
               - Add the central body attitude definition to the central body.
-            * - :py:meth:`~cut_ephemeris_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.cut_ephemeris_by_name`
               - Copy a central body ephemeris definition to the clipboard and removes it from the central body.
-            * - :py:meth:`~copy_ephemeris_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.copy_ephemeris_by_name`
               - Copy a central body ephemeris definition to the clipboard.
-            * - :py:meth:`~paste_ephemeris`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.paste_ephemeris`
               - Add the central body ephemeris definition in the clipboard to the central body.
-            * - :py:meth:`~add_copy_of_ephemeris`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.add_copy_of_ephemeris`
               - Add the central body ephemeris definition to the central body.
 
     .. tab-item:: Properties
@@ -83,17 +83,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~gravitational_param`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~children`
-            * - :py:meth:`~default_gravity_model_name`
-            * - :py:meth:`~default_gravity_model_data`
-            * - :py:meth:`~default_shape_name`
-            * - :py:meth:`~default_shape_data`
-            * - :py:meth:`~default_attitude_name`
-            * - :py:meth:`~default_attitude_data`
-            * - :py:meth:`~default_ephemeris_name`
-            * - :py:meth:`~default_ephemeris_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.gravitational_param`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.children`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_gravity_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_gravity_model_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_shape_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_shape_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_attitude_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_attitude_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_ephemeris_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_ephemeris_data`
 
 
 Import detail
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: children
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.children
-    :type: IAgVACentralBodyCollection
+    :type: ICentralBodyCollection
 
     Get the children of this central body.
 
@@ -133,7 +133,7 @@ Property detail
 
 .. py:property:: default_gravity_model_data
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_gravity_model_data
-    :type: IAgVACbGravityModel
+    :type: ICentralBodyGravityModel
 
     Get the gravity model parameters.
 
@@ -145,7 +145,7 @@ Property detail
 
 .. py:property:: default_shape_data
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_shape_data
-    :type: IAgVACbShape
+    :type: ICentralBodyShape
 
     Get the parameters of the central body shape.
 
@@ -157,7 +157,7 @@ Property detail
 
 .. py:property:: default_attitude_data
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_attitude_data
-    :type: IAgVACbAttitude
+    :type: ICentralBodyAttitude
 
     Get the parameters of the central body attitude.
 
@@ -169,7 +169,7 @@ Property detail
 
 .. py:property:: default_ephemeris_data
     :canonical: ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_ephemeris_data
-    :type: IAgVACbEphemeris
+    :type: ICentralBodyEphemeris
 
     Get the parameters of the central body ephemeris.
 

@@ -1,13 +1,13 @@
 AntennaModelHelix
 =================
 
-.. py:class:: AntennaModelHelix
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelHelix
 
-   Bases: py:obj:`~IAntennaModelHelix`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelHelix`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a helix antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelHelix
 
 Overview
 --------

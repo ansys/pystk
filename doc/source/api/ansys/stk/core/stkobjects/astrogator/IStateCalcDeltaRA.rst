@@ -1,13 +1,13 @@
 IStateCalcDeltaRA
 =================
 
-.. py:class:: IStateCalcDeltaRA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaRA
 
    object
    
    Properties for a Delta Right Asc calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDeltaRA
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_type`
-            * - :py:meth:`~reference_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaRA.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaRA.reference_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaRA.reference_body`
 
 
 Import detail

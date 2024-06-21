@@ -1,13 +1,13 @@
 ICoverageBoundsLatLonRegion
 ===========================
 
-.. py:class:: ICoverageBoundsLatLonRegion
+.. py:class:: ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion
 
    ICoverageBounds
    
    LatLon Region: create a region between user-specified Minimum and Maximum Latitude and Longitude boundaries.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageBoundsLatLonRegion
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_latitude`
-            * - :py:meth:`~max_latitude`
-            * - :py:meth:`~min_longitude`
-            * - :py:meth:`~max_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion.min_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion.max_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion.min_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion.max_longitude`
 
 
 Import detail

@@ -1,13 +1,13 @@
 SensorAzElMaskFile
 ==================
 
-.. py:class:: SensorAzElMaskFile
+.. py:class:: ansys.stk.core.stkobjects.SensorAzElMaskFile
 
-   Bases: py:obj:`~IAzElMaskData`, py:obj:`~ISensorAzElMaskFile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAzElMaskData`, py:obj:`~ansys.stk.core.stkobjects.ISensorAzElMaskFile`
 
    Class to define a Sensor's Azimuth-Elevation mask.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorAzElMaskFile
 
 Overview
 --------

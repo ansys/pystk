@@ -1,13 +1,13 @@
 IAccessConstraintThirdBody
 ==========================
 
-.. py:class:: IAccessConstraintThirdBody
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintThirdBody
 
    IAccessConstraint
    
    Do not use this interface, as it is deprecated. Use IAgAccessCnstrCbObstruction instead. Access Constraint Used for Third Body Obstructions.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintThirdBody
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_obstruction_assigned`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody.is_obstruction_assigned`
               - Do not use this method, as it is deprecated. Use IsObstructionAssigned on IAgAccessCnstrCbObstruction instead. Check whether a third body is already assigned.
-            * - :py:meth:`~add_obstruction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody.add_obstruction`
               - Do not use this method, as it is deprecated. Use AddObstruction on IAgAccessCnstrCbObstruction instead. Adds an Obstruction by Name.
-            * - :py:meth:`~remove_obstruction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody.remove_obstruction`
               - Do not use this method, as it is deprecated. Use RemoveObstruction on IAgAccessCnstrCbObstruction instead. Remove an Obstruction by Name.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~assigned_obstructions`
-            * - :py:meth:`~available_obstructions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody.assigned_obstructions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody.available_obstructions`
 
 
 Import detail

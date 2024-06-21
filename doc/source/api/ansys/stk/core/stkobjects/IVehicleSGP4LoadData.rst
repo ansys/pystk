@@ -1,13 +1,13 @@
 IVehicleSGP4LoadData
 ====================
 
-.. py:class:: IVehicleSGP4LoadData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4LoadData
 
    object
    
    Load Method Data interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4LoadData
 
 Overview
 --------

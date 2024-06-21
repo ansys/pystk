@@ -1,13 +1,13 @@
 IVehiclePluginSettings
 ======================
 
-.. py:class:: IVehiclePluginSettings
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePluginSettings
 
    object
    
    Interface for HPOP plugin settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePluginSettings
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginSettings.get_property`
               - Get a property.
-            * - :py:meth:`~set_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginSettings.set_property`
               - Set a property.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginSettings.available_properties`
 
 
 Import detail

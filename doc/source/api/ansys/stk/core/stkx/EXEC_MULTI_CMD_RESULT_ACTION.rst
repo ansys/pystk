@@ -1,12 +1,12 @@
 EXEC_MULTI_CMD_RESULT_ACTION
 ============================
 
-.. py:class:: EXEC_MULTI_CMD_RESULT_ACTION
+.. py:class:: ansys.stk.core.stkx.EXEC_MULTI_CMD_RESULT_ACTION
 
    IntFlag
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: EXEC_MULTI_CMD_RESULT_ACTION
 
 Overview
 --------

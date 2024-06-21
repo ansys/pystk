@@ -1,13 +1,13 @@
 IGraphics3DDetailThreshold
 ==========================
 
-.. py:class:: IGraphics3DDetailThreshold
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DDetailThreshold
 
    object
    
    AgVODetailThreshold used to access the 3D DetailThreshold values.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DDetailThreshold
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_detail_threshold`
-            * - :py:meth:`~all`
-            * - :py:meth:`~model_label`
-            * - :py:meth:`~marker_label`
-            * - :py:meth:`~marker`
-            * - :py:meth:`~point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold.enable_detail_threshold`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold.all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold.model_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold.marker_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold.marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold.point`
 
 
 Import detail

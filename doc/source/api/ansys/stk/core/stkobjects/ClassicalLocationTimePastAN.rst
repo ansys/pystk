@@ -1,13 +1,13 @@
 ClassicalLocationTimePastAN
 ===========================
 
-.. py:class:: ClassicalLocationTimePastAN
+.. py:class:: ansys.stk.core.stkobjects.ClassicalLocationTimePastAN
 
-   Bases: py:obj:`~IClassicalLocationTimePastAN`, py:obj:`~IClassicalLocation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalLocationTimePastAN`, py:obj:`~ansys.stk.core.stkobjects.IClassicalLocation`
 
    Time Past Ascending Node, used in specifying the spacecraft's location within its orbit at epoch.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ClassicalLocationTimePastAN
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IProjectedRasterOverlayFactory
 ==============================
 
-.. py:class:: IProjectedRasterOverlayFactory
+.. py:class:: ansys.stk.core.graphics.IProjectedRasterOverlayFactory
 
    object
    
    A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IProjectedRasterOverlayFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlayFactory.initialize`
               - Initialize a new instance.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlayFactory.supported`
 
 
 Import detail

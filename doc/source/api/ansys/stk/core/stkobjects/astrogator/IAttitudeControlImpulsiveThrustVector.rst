@@ -1,13 +1,13 @@
 IAttitudeControlImpulsiveThrustVector
 =====================================
 
-.. py:class:: IAttitudeControlImpulsiveThrustVector
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector
 
    IAttitudeControlImpulsive
    
    Properties for the Thrust Vector attitude control for an Impulsive Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlImpulsiveThrustVector
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~assign_cartesian`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.assign_cartesian`
               - Assign all three Cartesian components of the DeltaV vector (dimension: SmallDistance/Time).
-            * - :py:meth:`~query_cartesian`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.query_cartesian`
               - Get all three Cartesian components of the DeltaV vector as an array (dimension: SmallDistance/Time).
-            * - :py:meth:`~assign_spherical`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.assign_spherical`
               - Assign all three spherical components of the DeltaV vector (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time).
-            * - :py:meth:`~query_spherical`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.query_spherical`
               - Get all three spherical components of the DeltaV vector as an array (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time).
 
     .. tab-item:: Properties
@@ -35,16 +35,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~thrust_axes_name`
-            * - :py:meth:`~body_constraint_vector`
-            * - :py:meth:`~allow_negative_spherical_magnitude`
-            * - :py:meth:`~coord_type`
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
-            * - :py:meth:`~azimuth`
-            * - :py:meth:`~elevation`
-            * - :py:meth:`~magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.thrust_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.body_constraint_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.allow_negative_spherical_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.coord_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.magnitude`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.body_constraint_vector
-    :type: IAgDirection
+    :type: IDirection
 
     Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 

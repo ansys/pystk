@@ -1,13 +1,13 @@
 ISequenceFilter
 ===============
 
-.. py:class:: ISequenceFilter
+.. py:class:: ansys.stk.core.graphics.ISequenceFilter
 
    object
    
    Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISequenceFilter
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.graphics.ISequenceFilter.add`
               - Add a filter to the sequence.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.graphics.ISequenceFilter.remove`
               - Remove a filter from the sequence.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.graphics.ISequenceFilter.clear`
               - Clear all filters from the sequence.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.graphics.ISequenceFilter.contains`
               - Return true if the sequence contains the filter.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~continue_on_failure`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.graphics.ISequenceFilter.continue_on_failure`
+            * - :py:attr:`~ansys.stk.core.graphics.ISequenceFilter.count`
 
 
 Import detail

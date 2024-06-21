@@ -1,13 +1,13 @@
 IChainGraphics
 ==============
 
-.. py:class:: IChainGraphics
+.. py:class:: ansys.stk.core.stkobjects.IChainGraphics
 
    object
    
    2D graphics properties of a chain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainGraphics
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~static`
-            * - :py:meth:`~animation`
-            * - :py:meth:`~is_object_graphics_visible`
-            * - :py:meth:`~is_object_graphics_visible_in_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics.static`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics.is_object_graphics_visible_in_2d`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.IChainGraphics.static
-    :type: IAgChGfxStatic
+    :type: IChainGraphics2DStatic
 
     Get the chain's 2D static graphics properties.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.IChainGraphics.animation
-    :type: IAgChGfxAnimation
+    :type: IChainGraphics2DAnimation
 
     Get the chain's 3D graphics properties.
 

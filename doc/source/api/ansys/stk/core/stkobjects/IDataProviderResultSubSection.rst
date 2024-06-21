@@ -1,13 +1,13 @@
 IDataProviderResultSubSection
 =============================
 
-.. py:class:: IDataProviderResultSubSection
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultSubSection
 
    object
    
    Represents a sub-section data element.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultSubSection
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~title`
-            * - :py:meth:`~intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSection.title`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSection.intervals`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IDataProviderResultSubSection.intervals
-    :type: IAgDrIntervalCollection
+    :type: IDataProviderResultIntervalCollection
 
     Returns a collection of intervals within the sub-section.
 

@@ -1,13 +1,13 @@
 IVehicleGraphics2DSAA
 =====================
 
-.. py:class:: IVehicleGraphics2DSAA
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DSAA
 
    object
    
    South Atlantic Anomaly contour settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DSAA
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~use_vehicle_altitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~is_fill_visible`
-            * - :py:meth:`~translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.use_vehicle_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.is_fill_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.translucency`
 
 
 Import detail

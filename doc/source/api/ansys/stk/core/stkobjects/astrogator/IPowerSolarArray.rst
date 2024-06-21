@@ -1,13 +1,13 @@
 IPowerSolarArray
 ================
 
-.. py:class:: IPowerSolarArray
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPowerSolarArray
 
    object
    
    Properties for the Solar Array Power power source component.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPowerSolarArray
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,20 +33,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~area`
-            * - :py:meth:`~concentration`
-            * - :py:meth:`~cell_efficiency_percent`
-            * - :py:meth:`~array_efficiency_percent`
-            * - :py:meth:`~percent_degradation_per_year`
-            * - :py:meth:`~reference_epoch`
-            * - :py:meth:`~inclination_to_sun_line`
-            * - :py:meth:`~c0`
-            * - :py:meth:`~c1`
-            * - :py:meth:`~c2`
-            * - :py:meth:`~c3`
-            * - :py:meth:`~c4`
-            * - :py:meth:`~approximation_formula`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.concentration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.cell_efficiency_percent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.array_efficiency_percent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.percent_degradation_per_year`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.reference_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.inclination_to_sun_line`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.approximation_formula`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.control_parameters_available`
 
 
 Import detail

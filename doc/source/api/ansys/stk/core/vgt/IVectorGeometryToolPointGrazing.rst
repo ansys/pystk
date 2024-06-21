@@ -1,13 +1,13 @@
 IVectorGeometryToolPointGrazing
 ===============================
 
-.. py:class:: IVectorGeometryToolPointGrazing
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointGrazing
 
    object
    
    The grazing point is the point of closest approach to the surface of the selected central body along a defined direction.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointGrazing
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~direction_vector`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.direction_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.altitude`
 
 
 Import detail
@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.central_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.reference_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.direction_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie.
 

@@ -1,13 +1,13 @@
 ProfileLambertProfile
 =====================
 
-.. py:class:: ProfileLambertProfile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileLambertProfile
 
-   Bases: py:obj:`~IProfileLambertProfile`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Lambert profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileLambertProfile
 
 Overview
 --------

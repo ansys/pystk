@@ -1,13 +1,13 @@
 VehicleCentralBodies
 ====================
 
-.. py:class:: VehicleCentralBodies
+.. py:class:: ansys.stk.core.stkobjects.VehicleCentralBodies
 
-   Bases: py:obj:`~IVehicleCentralBodies`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleCentralBodies`
 
    Satellite Central Bodies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleCentralBodies
 
 Overview
 --------

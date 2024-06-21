@@ -1,13 +1,13 @@
 INumericalPropagatorWrapper
 ===========================
 
-.. py:class:: INumericalPropagatorWrapper
+.. py:class:: ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper
 
    object
    
    General properties for propagators.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: INumericalPropagatorWrapper
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_numerical_integrator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.set_numerical_integrator`
               - Change the single step integrator.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~use_variation_of_parameters`
-            * - :py:meth:`~use_regularized_time`
-            * - :py:meth:`~regularized_time_exponent`
-            * - :py:meth:`~regularized_time_steps_per_orbit`
-            * - :py:meth:`~propagator_functions`
-            * - :py:meth:`~numerical_integrator`
-            * - :py:meth:`~numerical_integrator_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.use_variation_of_parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.use_regularized_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.regularized_time_exponent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.regularized_time_steps_per_orbit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.propagator_functions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.numerical_integrator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.numerical_integrator_type`
 
 
 Import detail
@@ -82,13 +82,13 @@ Property detail
 
 .. py:property:: propagator_functions
     :canonical: ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.propagator_functions
-    :type: IAgVAPropagatorFunctionCollection
+    :type: IPropagatorFunctionCollection
 
     Get the list of propagator functions.
 
 .. py:property:: numerical_integrator
     :canonical: ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper.numerical_integrator
-    :type: IAgVANumericalIntegrator
+    :type: INumericalIntegrator
 
     Get the numerical integrator.
 

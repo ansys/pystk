@@ -1,13 +1,13 @@
 ILaserAtmosphericLossModel
 ==========================
 
-.. py:class:: ILaserAtmosphericLossModel
+.. py:class:: ansys.stk.core.stkobjects.ILaserAtmosphericLossModel
 
    object
    
    Provide access to the properties and methods for a laser atmospheric absorption loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILaserAtmosphericLossModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel.type`
 
 
 Import detail

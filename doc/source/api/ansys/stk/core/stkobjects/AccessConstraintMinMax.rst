@@ -1,13 +1,13 @@
 AccessConstraintMinMax
 ======================
 
-.. py:class:: AccessConstraintMinMax
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintMinMax
 
-   Bases: py:obj:`~IAccessConstraintMinMax`, py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class related to defining constraints in terms of minimum and/or maximum values.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintMinMax
 
 Overview
 --------

@@ -1,12 +1,12 @@
 CULL_FACE
 =========
 
-.. py:class:: CULL_FACE
+.. py:class:: ansys.stk.core.graphics.CULL_FACE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: CULL_FACE
 
 Overview
 --------

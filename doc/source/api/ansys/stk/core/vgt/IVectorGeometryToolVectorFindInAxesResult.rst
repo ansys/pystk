@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorFindInAxesResult
 =========================================
 
-.. py:class:: IVectorGeometryToolVectorFindInAxesResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesResult
 
    object
    
    Contains the results returned with IAgCrdnVector.FindInAxes method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorFindInAxesResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesResult.vector`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesResult.vector
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The vector in a specified axes.
 

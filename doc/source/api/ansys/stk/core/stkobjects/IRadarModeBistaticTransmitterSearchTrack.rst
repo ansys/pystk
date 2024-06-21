@@ -1,13 +1,13 @@
 IRadarModeBistaticTransmitterSearchTrack
 ========================================
 
-.. py:class:: IRadarModeBistaticTransmitterSearchTrack
+.. py:class:: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack
 
    object
    
    Provide access to the properties and methods defining a bistatic transmitter search/track mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModeBistaticTransmitterSearchTrack
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_waveform_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack.set_waveform_type`
               - Set the waveform type.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack.waveform`
 
 
 Import detail
@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: waveform
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack.waveform
-    :type: IAgRadarWaveformSearchTrack
+    :type: IRadarWaveformSearchTrack
 
     Gets the interface for configuring the search/track waveform.
 

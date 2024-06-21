@@ -1,13 +1,13 @@
 VehicleGraphics2DElevationSwathHalfWidth
 ========================================
 
-.. py:class:: VehicleGraphics2DElevationSwathHalfWidth
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DElevationSwathHalfWidth
 
-   Bases: py:obj:`~IVehicleGraphics2DElevation`, py:obj:`~IVehicleGraphics2DElevationSwathHalfWidth`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevation`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationSwathHalfWidth`
 
    Half width for vehicle swath.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DElevationSwathHalfWidth
 
 Overview
 --------

@@ -1,13 +1,13 @@
 DataProviderFixed
 =================
 
-.. py:class:: DataProviderFixed
+.. py:class:: ansys.stk.core.stkobjects.DataProviderFixed
 
-   Bases: py:obj:`~IDataProviderFixed`, py:obj:`~IDataProvider`, py:obj:`~IDataProviderInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderFixed`, py:obj:`~ansys.stk.core.stkobjects.IDataProvider`, py:obj:`~ansys.stk.core.stkobjects.IDataProviderInfo`
 
    Support for fixed data providers (i.e. non time-dependent like Facility position).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderFixed
 
 Overview
 --------

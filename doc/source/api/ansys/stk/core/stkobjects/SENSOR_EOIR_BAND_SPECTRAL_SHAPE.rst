@@ -1,12 +1,12 @@
 SENSOR_EOIR_BAND_SPECTRAL_SHAPE
 ===============================
 
-.. py:class:: SENSOR_EOIR_BAND_SPECTRAL_SHAPE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SPECTRAL_SHAPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_EOIR_BAND_SPECTRAL_SHAPE
 
 Overview
 --------

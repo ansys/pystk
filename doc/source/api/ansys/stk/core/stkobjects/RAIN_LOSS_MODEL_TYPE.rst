@@ -1,12 +1,12 @@
 RAIN_LOSS_MODEL_TYPE
 ====================
 
-.. py:class:: RAIN_LOSS_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RAIN_LOSS_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RAIN_LOSS_MODEL_TYPE
 
 Overview
 --------

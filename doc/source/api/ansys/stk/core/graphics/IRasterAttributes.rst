@@ -1,13 +1,13 @@
 IRasterAttributes
 =================
 
-.. py:class:: IRasterAttributes
+.. py:class:: ansys.stk.core.graphics.IRasterAttributes
 
    object
    
    The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRasterAttributes
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~has_band`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.has_band`
               - Get whether the raster contains the given band.
 
     .. tab-item:: Properties
@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~format`
-            * - :py:meth:`~type`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~byte_length`
-            * - :py:meth:`~width`
-            * - :py:meth:`~height`
-            * - :py:meth:`~pixel_aspect_ratio`
-            * - :py:meth:`~row_alignment`
-            * - :py:meth:`~number_of_bands`
-            * - :py:meth:`~row_stride`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.format`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.type`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.orientation`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.byte_length`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.width`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.height`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.pixel_aspect_ratio`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.row_alignment`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.number_of_bands`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.row_stride`
 
 
 Import detail

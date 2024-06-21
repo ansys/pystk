@@ -1,13 +1,13 @@
 ITileset3D
 ==========
 
-.. py:class:: ITileset3D
+.. py:class:: ansys.stk.core.stkobjects.ITileset3D
 
    object
    
    IAg3DTileset Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITileset3D
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~source_type`
-            * - :py:meth:`~uri`
-            * - :py:meth:`~reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITileset3D.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITileset3D.source_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITileset3D.uri`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITileset3D.reference_frame`
 
 
 Import detail

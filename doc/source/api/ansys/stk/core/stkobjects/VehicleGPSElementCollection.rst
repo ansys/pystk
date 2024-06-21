@@ -1,13 +1,13 @@
 VehicleGPSElementCollection
 ===========================
 
-.. py:class:: VehicleGPSElementCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleGPSElementCollection
 
-   Bases: py:obj:`~IVehicleGPSElementCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSElementCollection`
 
    A collection of GPS elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGPSElementCollection
 
 Overview
 --------

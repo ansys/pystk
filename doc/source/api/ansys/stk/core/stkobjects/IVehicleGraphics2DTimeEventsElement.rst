@@ -1,13 +1,13 @@
 IVehicleGraphics2DTimeEventsElement
 ===================================
 
-.. py:class:: IVehicleGraphics2DTimeEventsElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement
 
    object
    
    2D Graphics time event.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DTimeEventsElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_time_event_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.set_time_event_type`
               - Type of time event graphics: line, marker or text.
-            * - :py:meth:`~is_time_event_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.is_time_event_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~time_event_type`
-            * - :py:meth:`~time_event_type_supported_types`
-            * - :py:meth:`~time_event_type_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.time_event_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.time_event_type_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.time_event_type_data`
 
 
 Import detail
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: time_event_type_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.time_event_type_data
-    :type: IAgVeGfxTimeEventType
+    :type: IVehicleGraphics2DTimeEventType
 
     Time event data.
 

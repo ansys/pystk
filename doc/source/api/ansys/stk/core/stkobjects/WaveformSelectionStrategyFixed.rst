@@ -1,13 +1,13 @@
 WaveformSelectionStrategyFixed
 ==============================
 
-.. py:class:: WaveformSelectionStrategyFixed
+.. py:class:: ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed
 
-   Bases: py:obj:`~IWaveformSelectionStrategyFixed`, py:obj:`~IWaveformSelectionStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyFixed`, py:obj:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy`
 
    Class defining the waveform selection strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: WaveformSelectionStrategyFixed
 
 Overview
 --------

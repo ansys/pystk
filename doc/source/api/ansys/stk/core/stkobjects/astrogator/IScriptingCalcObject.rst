@@ -1,13 +1,13 @@
 IScriptingCalcObject
 ====================
 
-.. py:class:: IScriptingCalcObject
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject
 
    object
    
    Calc Object properties for scripting options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingCalcObject
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~copy_calc_object_to_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.copy_calc_object_to_clipboard`
               - Copy the wrapped calc object to the clipboard.
-            * - :py:meth:`~paste_calc_object_from_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.paste_calc_object_from_clipboard`
               - Replace the wrapped calc object with the instance in the clipboard.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~component_name`
-            * - :py:meth:`~calc_object_name`
-            * - :py:meth:`~calc_object`
-            * - :py:meth:`~unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.component_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.calc_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.unit`
 
 
 Import detail
@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: calc_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.calc_object
-    :type: IAgComponentInfo
+    :type: IComponentInfo
 
     Gets or sets the calculation object type.
 

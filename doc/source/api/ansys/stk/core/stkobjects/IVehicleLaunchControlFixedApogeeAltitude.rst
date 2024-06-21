@@ -1,13 +1,13 @@
 IVehicleLaunchControlFixedApogeeAltitude
 ========================================
 
-.. py:class:: IVehicleLaunchControlFixedApogeeAltitude
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLaunchControlFixedApogeeAltitude
 
    object
    
    Fixed apogee altitude interface for missile flight parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLaunchControlFixedApogeeAltitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~apogee_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedApogeeAltitude.apogee_altitude`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAttitudeControlFiniteTimeVarying
 =================================
 
-.. py:class:: IAttitudeControlFiniteTimeVarying
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying
 
    IAttitudeControlFinite
    
    Properties for the Time Varying attitude control for a Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlFiniteTimeVarying
 
 Overview
 --------
@@ -20,24 +20,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~thrust_axes_name`
-            * - :py:meth:`~body_constraint_vector`
-            * - :py:meth:`~az0`
-            * - :py:meth:`~az1`
-            * - :py:meth:`~az2`
-            * - :py:meth:`~az3`
-            * - :py:meth:`~az4`
-            * - :py:meth:`~az_a`
-            * - :py:meth:`~az_f`
-            * - :py:meth:`~az_p`
-            * - :py:meth:`~el0`
-            * - :py:meth:`~el1`
-            * - :py:meth:`~el2`
-            * - :py:meth:`~el3`
-            * - :py:meth:`~el4`
-            * - :py:meth:`~el_a`
-            * - :py:meth:`~el_f`
-            * - :py:meth:`~el_p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.thrust_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.body_constraint_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az_a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az_f`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az_p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el_a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el_f`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el_p`
 
 
 Import detail
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.body_constraint_vector
-    :type: IAgDirection
+    :type: IDirection
 
     Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 

@@ -1,13 +1,13 @@
 IVehicleLaunch
 ==============
 
-.. py:class:: IVehicleLaunch
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLaunch
 
    object
    
    Base interface IAgVeLaunch. IAgVeLaunchLLA and IAgVeLaunchLLR derive from this.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLaunch
 
 Overview
 --------

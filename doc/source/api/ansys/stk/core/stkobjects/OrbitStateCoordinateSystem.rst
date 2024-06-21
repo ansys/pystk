@@ -1,13 +1,13 @@
 OrbitStateCoordinateSystem
 ==========================
 
-.. py:class:: OrbitStateCoordinateSystem
+.. py:class:: ansys.stk.core.stkobjects.OrbitStateCoordinateSystem
 
-   Bases: py:obj:`~IOrbitStateCoordinateSystem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem`
 
    Selection of coordinate epoch for coordinate systems that do not have pre-established epochs.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OrbitStateCoordinateSystem
 
 Overview
 --------

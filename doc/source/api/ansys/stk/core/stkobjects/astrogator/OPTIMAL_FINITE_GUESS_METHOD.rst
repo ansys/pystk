@@ -1,12 +1,12 @@
 OPTIMAL_FINITE_GUESS_METHOD
 ===========================
 
-.. py:class:: OPTIMAL_FINITE_GUESS_METHOD
+.. py:class:: ansys.stk.core.stkobjects.astrogator.OPTIMAL_FINITE_GUESS_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: OPTIMAL_FINITE_GUESS_METHOD
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAtmosphereModelBasic
 =====================
 
-.. py:class:: IAtmosphereModelBasic
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic
 
    object
    
    Interface used to access the basic atmosphere model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAtmosphereModelBasic
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~basic_model_type`
-            * - :py:meth:`~use_non_standard_atmosphere`
-            * - :py:meth:`~temperature`
-            * - :py:meth:`~pressure`
-            * - :py:meth:`~density_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.basic_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.use_non_standard_atmosphere`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.density_altitude`
 
 
 Import detail

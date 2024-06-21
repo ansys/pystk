@@ -1,13 +1,13 @@
 IStateCalcTrueLon
 =================
 
-.. py:class:: IStateCalcTrueLon
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcTrueLon
 
    object
    
    Properties for a True Longitude calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcTrueLon
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueLon.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueLon.element_type`
 
 
 Import detail

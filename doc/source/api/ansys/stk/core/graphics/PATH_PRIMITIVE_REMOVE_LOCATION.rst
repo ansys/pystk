@@ -1,12 +1,12 @@
 PATH_PRIMITIVE_REMOVE_LOCATION
 ==============================
 
-.. py:class:: PATH_PRIMITIVE_REMOVE_LOCATION
+.. py:class:: ansys.stk.core.graphics.PATH_PRIMITIVE_REMOVE_LOCATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: PATH_PRIMITIVE_REMOVE_LOCATION
 
 Overview
 --------

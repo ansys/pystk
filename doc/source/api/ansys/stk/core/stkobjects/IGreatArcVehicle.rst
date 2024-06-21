@@ -1,13 +1,13 @@
 IGreatArcVehicle
 ================
 
-.. py:class:: IGreatArcVehicle
+.. py:class:: ansys.stk.core.stkobjects.IGreatArcVehicle
 
    object
    
    A base interface for all Great Arc Vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGreatArcVehicle
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_route_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.set_route_type`
               - Set the propagator type.
-            * - :py:meth:`~is_route_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.is_route_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_attitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.set_attitude_type`
               - Set the type of attitude profile.
-            * - :py:meth:`~is_attitude_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.is_attitude_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -35,17 +35,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~route_type`
-            * - :py:meth:`~route_supported_types`
-            * - :py:meth:`~route`
-            * - :py:meth:`~attitude_type`
-            * - :py:meth:`~attitude_supported_types`
-            * - :py:meth:`~attitude`
-            * - :py:meth:`~ground_ellipses`
-            * - :py:meth:`~access_constraints`
-            * - :py:meth:`~eclipse_bodies`
-            * - :py:meth:`~use_terrain_in_lighting_computations`
-            * - :py:meth:`~lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.access_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.eclipse_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.use_terrain_in_lighting_computations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_max_step`
 
 
 Import detail
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route
-    :type: IAgVePropagator
+    :type: IVehiclePropagator
 
     Get the route properties.
 
@@ -91,25 +91,25 @@ Property detail
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude
-    :type: IAgVeAttitude
+    :type: IVehicleAttitude
 
     Get the  attitude profile.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses
-    :type: IAgVeGroundEllipsesCollection
+    :type: IVehicleGroundEllipsesCollection
 
     Get the  ground ellipses properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.access_constraints
-    :type: IAgAccessConstraintCollection
+    :type: IAccessConstraintCollection
 
     Get the constraints imposed on the vehicle.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.eclipse_bodies
-    :type: IAgVeEclipseBodies
+    :type: IVehicleEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 

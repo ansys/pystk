@@ -1,13 +1,13 @@
 VectorGeometryToolVectorFixedInAxes
 ===================================
 
-.. py:class:: VectorGeometryToolVectorFixedInAxes
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorFixedInAxes
 
-   Bases: py:obj:`~IVectorGeometryToolVectorFixedInAxes`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedInAxes`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector fixed in reference axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorFixedInAxes
 
 Overview
 --------

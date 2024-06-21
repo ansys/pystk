@@ -1,12 +1,12 @@
 APPROACH_MODE
 =============
 
-.. py:class:: APPROACH_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.APPROACH_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: APPROACH_MODE
 
 Overview
 --------

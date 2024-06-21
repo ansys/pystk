@@ -1,13 +1,13 @@
 ITwoBodyFunction
 ================
 
-.. py:class:: ITwoBodyFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction
 
    object
    
    Properties for the Two Body gravity model - a standard point mass model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ITwoBodyFunction
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~grav_source`
-            * - :py:meth:`~mu`
-            * - :py:meth:`~min_radius_percent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction.grav_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction.mu`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction.min_radius_percent`
 
 
 Import detail

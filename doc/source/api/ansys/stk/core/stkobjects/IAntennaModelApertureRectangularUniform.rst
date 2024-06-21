@@ -1,13 +1,13 @@
 IAntennaModelApertureRectangularUniform
 =======================================
 
-.. py:class:: IAntennaModelApertureRectangularUniform
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform
 
    object
    
    Provide access to the properties and methods defining a rectangular uniform aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelApertureRectangularUniform
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_mainlobe_gain`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~x_dimension`
-            * - :py:meth:`~y_dimension`
-            * - :py:meth:`~x_beamwidth`
-            * - :py:meth:`~y_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.compute_mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.x_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.y_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.x_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.y_beamwidth`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VehicleHPOPDragModel
 ====================
 
-.. py:class:: VehicleHPOPDragModel
+.. py:class:: ansys.stk.core.stkobjects.VehicleHPOPDragModel
 
-   Bases: py:obj:`~IVehicleHPOPDragModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
 
    HPOP Drag Model Base CoClass.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleHPOPDragModel
 
 Overview
 --------

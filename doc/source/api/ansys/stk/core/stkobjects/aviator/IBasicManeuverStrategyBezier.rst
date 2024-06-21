@@ -1,13 +1,13 @@
 IBasicManeuverStrategyBezier
 ============================
 
-.. py:class:: IBasicManeuverStrategyBezier
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier
 
    object
    
    Interface used to access options for a Bezier Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyBezier
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.set_airspeed`
               - Set the fly to airspeed value and type.
-            * - :py:meth:`~set_vertical_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.set_vertical_velocity`
               - Set the flight path angle or altitude rate.
-            * - :py:meth:`~set_stop_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.set_stop_altitude_rate`
               - Set whether to enable the altitude rate stopping condition and the corresponding value.
-            * - :py:meth:`~set_stop_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.set_stop_airspeed`
               - Set whether to enable the airspeed stopping condition and the corresponding value.
 
     .. tab-item:: Properties
@@ -35,20 +35,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~downrange`
-            * - :py:meth:`~airspeed`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~vertical_velocity_mode`
-            * - :py:meth:`~flight_path_angle`
-            * - :py:meth:`~altitude_rate`
-            * - :py:meth:`~use_stop_at_altitude_rate`
-            * - :py:meth:`~stop_altitude_rate`
-            * - :py:meth:`~use_stop_at_airspeed`
-            * - :py:meth:`~stop_airspeed`
-            * - :py:meth:`~stop_airspeed_type`
-            * - :py:meth:`~compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.downrange`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.vertical_velocity_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.use_stop_at_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.stop_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.use_stop_at_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.stop_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.stop_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.compensate_for_coriolis_accel`
 
 
 Import detail

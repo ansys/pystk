@@ -1,12 +1,12 @@
 VEHICLE_ELLIPSE_OPTIONS
 =======================
 
-.. py:class:: VEHICLE_ELLIPSE_OPTIONS
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_ELLIPSE_OPTIONS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_ELLIPSE_OPTIONS
 
 Overview
 --------

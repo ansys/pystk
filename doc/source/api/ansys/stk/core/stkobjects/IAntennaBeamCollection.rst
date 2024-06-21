@@ -1,13 +1,13 @@
 IAntennaBeamCollection
 ======================
 
-.. py:class:: IAntennaBeamCollection
+.. py:class:: ansys.stk.core.stkobjects.IAntennaBeamCollection
 
    object
    
    Represents a collection of antenna beams.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaBeamCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamCollection.remove_at`
               - Remove the layer with the specified index.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamCollection.insert_at`
               - Insert a new beam at the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamCollection.add`
               - Add a new beam to the collection.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamCollection._NewEnum`
 
 
 Import detail

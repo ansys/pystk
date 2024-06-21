@@ -1,13 +1,13 @@
 AlphaFromRasterFilter
 =====================
 
-.. py:class:: AlphaFromRasterFilter
+.. py:class:: ansys.stk.core.graphics.AlphaFromRasterFilter
 
-   Bases: py:obj:`~IAlphaFromRasterFilter`, py:obj:`~IRasterFilter`
+   Bases: py:obj:`~ansys.stk.core.graphics.IAlphaFromRasterFilter`, py:obj:`~ansys.stk.core.graphics.IRasterFilter`
 
    Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: AlphaFromRasterFilter
 
 Overview
 --------

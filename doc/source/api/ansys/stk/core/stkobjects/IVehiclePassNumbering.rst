@@ -1,13 +1,13 @@
 IVehiclePassNumbering
 =====================
 
-.. py:class:: IVehiclePassNumbering
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePassNumbering
 
    object
    
    Base Interaface IAgVePassNumbering. IAgVePassNumberingDateOfFirstPass and IAgVePassNumberingFirstPassNum derive from this.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePassNumbering
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IScenario3dFont
 ===============
 
-.. py:class:: IScenario3dFont
+.. py:class:: ansys.stk.core.stkobjects.IScenario3dFont
 
    object
    
    IAgSc3dFont Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenario3dFont
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_font_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.is_font_available`
               - Return whether the specified font is installed in the system.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~point_size`
-            * - :py:meth:`~bold`
-            * - :py:meth:`~italic`
-            * - :py:meth:`~available_fonts`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.point_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.bold`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.italic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.available_fonts`
 
 
 Import detail

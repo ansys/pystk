@@ -1,13 +1,13 @@
 ReceiverModelScriptPluginLaser
 ==============================
 
-.. py:class:: ReceiverModelScriptPluginLaser
+.. py:class:: ansys.stk.core.stkobjects.ReceiverModelScriptPluginLaser
 
-   Bases: py:obj:`~IReceiverModelScriptPlugin`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverModelScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.IReceiverModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a laser script plugin receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceiverModelScriptPluginLaser
 
 Overview
 --------

@@ -1,13 +1,13 @@
 LineTargetGraphics
 ==================
 
-.. py:class:: LineTargetGraphics
+.. py:class:: ansys.stk.core.stkobjects.LineTargetGraphics
 
-   Bases: py:obj:`~ILineTargetGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILineTargetGraphics`
 
    The AgLtGraphics class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LineTargetGraphics
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarActivityTimeIntervalListCollection
 ========================================
 
-.. py:class:: IRadarActivityTimeIntervalListCollection
+.. py:class:: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection
 
    object
    
    Represents a collection of time interval activity elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarActivityTimeIntervalListCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.remove_at`
               - Remove the element with the specified index.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.insert_at`
               - Insert a new element at the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~import_from_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.import_from_component`
               - Import time intervals from specified time component.
-            * - :py:meth:`~load_from_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.load_from_file`
               - Load time intervals from file.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.clear`
               - Clear all elements from the collection.
 
     .. tab-item:: Properties
@@ -41,8 +41,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection._NewEnum`
 
 
 Import detail

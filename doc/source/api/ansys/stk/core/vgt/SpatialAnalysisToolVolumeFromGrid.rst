@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeFromGrid
 =================================
 
-.. py:class:: SpatialAnalysisToolVolumeFromGrid
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeFromGrid
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeFromGrid`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An over time volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeFromGrid
 
 Overview
 --------

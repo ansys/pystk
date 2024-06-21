@@ -1,12 +1,12 @@
 CLASSICAL_SIZE_SHAPE
 ====================
 
-.. py:class:: CLASSICAL_SIZE_SHAPE
+.. py:class:: ansys.stk.core.stkobjects.CLASSICAL_SIZE_SHAPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CLASSICAL_SIZE_SHAPE
 
 Overview
 --------

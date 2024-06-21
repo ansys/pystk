@@ -1,13 +1,13 @@
 IKmlDocumentLoadedEventArgs
 ===========================
 
-.. py:class:: IKmlDocumentLoadedEventArgs
+.. py:class:: ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs
 
    object
    
    The event is raised when a KML document has been loaded.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IKmlDocumentLoadedEventArgs
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~document`
-            * - :py:meth:`~exception`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs.document`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs.exception`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: document
     :canonical: ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs.document
-    :type: IAgStkGraphicsKmlDocument
+    :type: IKmlDocument
 
     Gets the KML document associated with the load event.
 

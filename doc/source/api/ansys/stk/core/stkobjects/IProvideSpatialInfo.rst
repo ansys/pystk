@@ -1,13 +1,13 @@
 IProvideSpatialInfo
 ===================
 
-.. py:class:: IProvideSpatialInfo
+.. py:class:: ansys.stk.core.stkobjects.IProvideSpatialInfo
 
    object
    
    Provide methods for accessing spatial information for an object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IProvideSpatialInfo
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_spatial_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IProvideSpatialInfo.get_spatial_info`
               - Return the spatial information for an object.
 
 

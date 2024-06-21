@@ -1,13 +1,13 @@
 IPixelSizeDisplayCondition
 ==========================
 
-.. py:class:: IPixelSizeDisplayCondition
+.. py:class:: ansys.stk.core.graphics.IPixelSizeDisplayCondition
 
    object
    
    Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPixelSizeDisplayCondition
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_pixel_size`
-            * - :py:meth:`~maximum_pixel_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IPixelSizeDisplayCondition.minimum_pixel_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IPixelSizeDisplayCondition.maximum_pixel_size`
 
 
 Import detail

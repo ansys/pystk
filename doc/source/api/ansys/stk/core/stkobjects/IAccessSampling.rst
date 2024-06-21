@@ -1,13 +1,13 @@
 IAccessSampling
 ===============
 
-.. py:class:: IAccessSampling
+.. py:class:: ansys.stk.core.stkobjects.IAccessSampling
 
    object
    
    Define properties and methods to configure the sampling strategy used in access computations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessSampling
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessSampling.set_type`
               - Set the type of sampling method.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessSampling.is_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~supported_types`
-            * - :py:meth:`~strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessSampling.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessSampling.supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessSampling.strategy`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: strategy
     :canonical: ansys.stk.core.stkobjects.IAccessSampling.strategy
-    :type: IAgSamplingMethodStrategy
+    :type: ISamplingMethodStrategy
 
     Sampling method strategy.
 

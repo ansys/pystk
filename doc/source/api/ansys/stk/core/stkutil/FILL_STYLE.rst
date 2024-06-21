@@ -1,12 +1,12 @@
 FILL_STYLE
 ==========
 
-.. py:class:: FILL_STYLE
+.. py:class:: ansys.stk.core.stkutil.FILL_STYLE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: FILL_STYLE
 
 Overview
 --------

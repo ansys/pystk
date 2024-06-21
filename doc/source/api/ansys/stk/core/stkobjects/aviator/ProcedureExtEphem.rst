@@ -1,13 +1,13 @@
 ProcedureExtEphem
 =================
 
-.. py:class:: ProcedureExtEphem
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem
 
-   Bases: py:obj:`~IProcedureExtEphem`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining an ExtEphem procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureExtEphem
 
 Overview
 --------

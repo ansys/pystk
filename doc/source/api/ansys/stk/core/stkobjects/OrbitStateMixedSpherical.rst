@@ -1,13 +1,13 @@
 OrbitStateMixedSpherical
 ========================
 
-.. py:class:: OrbitStateMixedSpherical
+.. py:class:: ansys.stk.core.stkobjects.OrbitStateMixedSpherical
 
-   Bases: py:obj:`~IOrbitStateMixedSpherical`, py:obj:`~IOrbitState`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical`, py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Mixed Spherical coordinate type, using a variation of the spherical elements that combines Earth-fixed position parameters with inertial velocity parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OrbitStateMixedSpherical
 
 Overview
 --------

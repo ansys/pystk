@@ -1,12 +1,12 @@
 VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE
 ==========================================
 
-.. py:class:: VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE
 
 Overview
 --------

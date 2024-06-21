@@ -1,13 +1,13 @@
 ILabelNoteCollection
 ====================
 
-.. py:class:: ILabelNoteCollection
+.. py:class:: ansys.stk.core.stkobjects.ILabelNoteCollection
 
    object
    
    AgLabelNoteCollection used to access the list of label notes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILabelNoteCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNoteCollection.add`
               - Add a label note to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNoteCollection.remove`
               - Remove an item given an index.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNoteCollection.item`
               - Get a LabelNote.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNoteCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNoteCollection._NewEnum`
 
 
 Import detail

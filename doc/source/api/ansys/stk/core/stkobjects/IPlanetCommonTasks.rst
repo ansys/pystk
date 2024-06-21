@@ -1,13 +1,13 @@
 IPlanetCommonTasks
 ==================
 
-.. py:class:: IPlanetCommonTasks
+.. py:class:: ansys.stk.core.stkobjects.IPlanetCommonTasks
 
    object
    
    IAgPlCommonTasks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPlanetCommonTasks
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_position_source_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetCommonTasks.set_position_source_file`
               - Specify a planet ephemeris file, with a .pe extension.
-            * - :py:meth:`~set_position_source_central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetCommonTasks.set_position_source_central_body`
               - Specify the planet using a central body and a desired ephemeris source.
 
 

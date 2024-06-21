@@ -1,12 +1,12 @@
 SENSOR_PATTERN
 ==============
 
-.. py:class:: SENSOR_PATTERN
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_PATTERN
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_PATTERN
 
 Overview
 --------

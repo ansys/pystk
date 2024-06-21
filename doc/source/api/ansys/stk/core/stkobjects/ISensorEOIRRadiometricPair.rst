@@ -1,13 +1,13 @@
 ISensorEOIRRadiometricPair
 ==========================
 
-.. py:class:: ISensorEOIRRadiometricPair
+.. py:class:: ansys.stk.core.stkobjects.ISensorEOIRRadiometricPair
 
    object
    
    IAgSnEOIRRadiometricPair Interface for defining the individual band properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorEOIRRadiometricPair
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~integration_time`
-            * - :py:meth:`~equivalent_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRRadiometricPair.integration_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRRadiometricPair.equivalent_value`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IProcedureTakeoff
 =================
 
-.. py:class:: IProcedureTakeoff
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureTakeoff
 
    object
    
    Interface used to access the options for a takeoff procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureTakeoff
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~runway_heading_options`
-            * - :py:meth:`~mode_as_normal`
-            * - :py:meth:`~mode_as_departure_point`
-            * - :py:meth:`~mode_as_low_transition`
-            * - :py:meth:`~takeoff_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.runway_heading_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_normal`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_departure_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_low_transition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.takeoff_mode`
 
 
 Import detail
@@ -49,25 +49,25 @@ Property detail
 
 .. py:property:: runway_heading_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.runway_heading_options
-    :type: IAgAvtrRunwayHeadingOptions
+    :type: IRunwayHeadingOptions
 
     Get the runway heading options.
 
 .. py:property:: mode_as_normal
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_normal
-    :type: IAgAvtrTakeoffNormal
+    :type: ITakeoffNormal
 
     Get the interface for a normal takeoff.
 
 .. py:property:: mode_as_departure_point
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_departure_point
-    :type: IAgAvtrTakeoffDeparturePoint
+    :type: ITakeoffDeparturePoint
 
     Get the interface for a departure point takeoff.
 
 .. py:property:: mode_as_low_transition
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_low_transition
-    :type: IAgAvtrTakeoffLowTransition
+    :type: ITakeoffLowTransition
 
     Get the interface for a low transition takeoff.
 

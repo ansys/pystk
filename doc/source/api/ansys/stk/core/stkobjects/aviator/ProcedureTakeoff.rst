@@ -1,13 +1,13 @@
 ProcedureTakeoff
 ================
 
-.. py:class:: ProcedureTakeoff
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureTakeoff
 
-   Bases: py:obj:`~IProcedureTakeoff`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a takeoff procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureTakeoff
 
 Overview
 --------

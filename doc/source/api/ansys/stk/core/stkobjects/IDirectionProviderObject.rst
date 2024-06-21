@@ -1,13 +1,13 @@
 IDirectionProviderObject
 ========================
 
-.. py:class:: IDirectionProviderObject
+.. py:class:: ansys.stk.core.stkobjects.IDirectionProviderObject
 
    object
    
    Provide access to the properties and methods defining an object direction provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDirectionProviderObject
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~directions`
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~limits_exceeded_behavior_type`
-            * - :py:meth:`~use_default_direction`
-            * - :py:meth:`~azimuth_steering_limit_a`
-            * - :py:meth:`~azimuth_steering_limit_b`
-            * - :py:meth:`~elevation_steering_limit_a`
-            * - :py:meth:`~elevation_steering_limit_b`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.directions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.limits_exceeded_behavior_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.use_default_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.azimuth_steering_limit_a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.azimuth_steering_limit_b`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.elevation_steering_limit_a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.elevation_steering_limit_b`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: directions
     :canonical: ansys.stk.core.stkobjects.IDirectionProviderObject.directions
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the beam steering list.
 

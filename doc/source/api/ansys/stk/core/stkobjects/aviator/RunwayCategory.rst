@@ -1,13 +1,13 @@
 RunwayCategory
 ==============
 
-.. py:class:: RunwayCategory
+.. py:class:: ansys.stk.core.stkobjects.aviator.RunwayCategory
 
-   Bases: py:obj:`~IRunwayCategory`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IRunwayCategory`
 
    Class defining the runway category in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: RunwayCategory
 
 Overview
 --------

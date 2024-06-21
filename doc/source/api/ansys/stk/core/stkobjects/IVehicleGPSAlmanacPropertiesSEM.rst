@@ -1,13 +1,13 @@
 IVehicleGPSAlmanacPropertiesSEM
 ===============================
 
-.. py:class:: IVehicleGPSAlmanacPropertiesSEM
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM
 
    IVehicleGPSAlmanacProperties
    
    SEM almanac properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSAlmanacPropertiesSEM
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~avg_ura`
-            * - :py:meth:`~almanac_week`
-            * - :py:meth:`~reference_week`
-            * - :py:meth:`~time_of_almanac`
-            * - :py:meth:`~date_of_almanac`
-            * - :py:meth:`~health`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.avg_ura`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.almanac_week`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.reference_week`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.time_of_almanac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.date_of_almanac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.health`
 
 
 Import detail

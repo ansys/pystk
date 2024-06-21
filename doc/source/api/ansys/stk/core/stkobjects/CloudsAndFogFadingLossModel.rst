@@ -1,13 +1,13 @@
 CloudsAndFogFadingLossModel
 ===========================
 
-.. py:class:: CloudsAndFogFadingLossModel
+.. py:class:: ansys.stk.core.stkobjects.CloudsAndFogFadingLossModel
 
-   Bases: py:obj:`~ICloudsAndFogFadingLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a clouds and fog fading loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CloudsAndFogFadingLossModel
 
 Overview
 --------

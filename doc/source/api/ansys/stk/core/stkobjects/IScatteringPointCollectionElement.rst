@@ -1,13 +1,13 @@
 IScatteringPointCollectionElement
 =================================
 
-.. py:class:: IScatteringPointCollectionElement
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointCollectionElement
 
    object
    
    Provide access to the properties and methods defining a scattering point collection element.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointCollectionElement
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~scattering_point_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement.scattering_point_model`
 
 
 Import detail

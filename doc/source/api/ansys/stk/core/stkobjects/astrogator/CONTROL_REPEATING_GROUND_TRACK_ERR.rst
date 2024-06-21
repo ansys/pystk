@@ -1,12 +1,12 @@
 CONTROL_REPEATING_GROUND_TRACK_ERR
 ==================================
 
-.. py:class:: CONTROL_REPEATING_GROUND_TRACK_ERR
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_REPEATING_GROUND_TRACK_ERR
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_REPEATING_GROUND_TRACK_ERR
 
 Overview
 --------

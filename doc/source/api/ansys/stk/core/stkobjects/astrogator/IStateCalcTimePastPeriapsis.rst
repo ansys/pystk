@@ -1,13 +1,13 @@
 IStateCalcTimePastPeriapsis
 ===========================
 
-.. py:class:: IStateCalcTimePastPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcTimePastPeriapsis
 
    object
    
    Properties for a Time Past Periapsis calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcTimePastPeriapsis
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTimePastPeriapsis.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTimePastPeriapsis.element_type`
 
 
 Import detail

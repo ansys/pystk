@@ -1,12 +1,12 @@
 VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE
 ========================================================
 
-.. py:class:: VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE
+.. py:class:: ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE
 
 Overview
 --------

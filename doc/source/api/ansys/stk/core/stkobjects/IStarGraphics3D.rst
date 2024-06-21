@@ -1,13 +1,13 @@
 IStarGraphics3D
 ===============
 
-.. py:class:: IStarGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IStarGraphics3D
 
    object
    
    AgStVO used to access the Star's 3D graphics.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStarGraphics3D
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inertial_position_visible`
-            * - :py:meth:`~sub_star_point_visible`
-            * - :py:meth:`~inherit_from_2d_graphics_2d`
-            * - :py:meth:`~position_label_visible`
-            * - :py:meth:`~sub_star_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.inertial_position_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.sub_star_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.inherit_from_2d_graphics_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.position_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.sub_star_label_visible`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IUnitPreferencesDimensionCollection
 ===================================
 
-.. py:class:: IUnitPreferencesDimensionCollection
+.. py:class:: ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection
 
    object
    
    Provide accesses to the global unit table.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IUnitPreferencesDimensionCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.item`
               - Return an IAgUnitPrefsDim given a Dimension name or an index.
-            * - :py:meth:`~set_current_unit`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.set_current_unit`
               - Return the Current unit for a Dimension.
-            * - :py:meth:`~get_current_unit_abbrv`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.get_current_unit_abbrv`
               - Return the Current Unit for a Dimension.
-            * - :py:meth:`~reset_units`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.reset_units`
               - Reset the unitpreferences to the Default units.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.get_item_by_index`
               - Retrieve a dimension from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.get_item_by_name`
               - Retrieve a dimension from the collection by name.
 
     .. tab-item:: Properties
@@ -39,10 +39,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~mission_elapsed_time`
-            * - :py:meth:`~julian_date_offset`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.mission_elapsed_time`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.julian_date_offset`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection._NewEnum`
 
 
 Import detail

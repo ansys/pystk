@@ -1,13 +1,13 @@
 ISolidPrimitiveFactory
 ======================
 
-.. py:class:: ISolidPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.ISolidPrimitiveFactory
 
    object
    
    Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISolidPrimitiveFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitiveFactory.initialize`
               - Initialize a default solid primitive. This is equivalent to constructing a solid primitive with a set hint of Frequent.
-            * - :py:meth:`~initialize_with_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitiveFactory.initialize_with_hint`
               - Initialize a solid primitive with the specified setHint.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_silhouette_width_supported`
-            * - :py:meth:`~maximum_silhouette_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitiveFactory.minimum_silhouette_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitiveFactory.maximum_silhouette_width_supported`
 
 
 Import detail

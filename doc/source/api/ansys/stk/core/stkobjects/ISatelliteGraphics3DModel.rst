@@ -1,13 +1,13 @@
 ISatelliteGraphics3DModel
 =========================
 
-.. py:class:: ISatelliteGraphics3DModel
+.. py:class:: ansys.stk.core.stkobjects.ISatelliteGraphics3DModel
 
    IGraphics3DModel
    
    Interface IAgSaVOModel exposes all Satellite's VO Model properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISatelliteGraphics3DModel
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~orbit_marker`
-            * - :py:meth:`~ground_marker`
-            * - :py:meth:`~solar_panels_point_at_sun`
-            * - :py:meth:`~is_point_visible`
-            * - :py:meth:`~point_size`
-            * - :py:meth:`~gltf_reflection_map_type`
-            * - :py:meth:`~gltf_image_based`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.orbit_marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.ground_marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.solar_panels_point_at_sun`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.is_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.point_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.gltf_reflection_map_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.gltf_image_based`
 
 
 Import detail
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: orbit_marker
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.orbit_marker
-    :type: IAgVOMarker
+    :type: IGraphics3DMarker
 
     Define the display of the marker to represent the selected vehicle while traveling along its actual orbit, separate from that of its ground track. The orbit is the actual path that a vehicle follows.
 
 .. py:property:: ground_marker
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.ground_marker
-    :type: IAgVOMarker
+    :type: IGraphics3DMarker
 
     Define the display of the marker to represent the vehicle's position along its ground track, separate from that of its orbit. The ground track of a vehicle is the portion of the central body's surface that it covers while traveling along its track.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.gltf_image_based
-    :type: IAgVOModelGltfImageBased
+    :type: IGraphics3DModelGltfImageBased
 
     Gets glTF Image Based properties.
 

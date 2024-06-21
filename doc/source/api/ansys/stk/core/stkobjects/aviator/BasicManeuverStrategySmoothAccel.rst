@@ -1,13 +1,13 @@
 BasicManeuverStrategySmoothAccel
 ================================
 
-.. py:class:: BasicManeuverStrategySmoothAccel
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothAccel
 
-   Bases: py:obj:`~IBasicManeuverStrategySmoothAccel`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the smooth accel strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategySmoothAccel
 
 Overview
 --------

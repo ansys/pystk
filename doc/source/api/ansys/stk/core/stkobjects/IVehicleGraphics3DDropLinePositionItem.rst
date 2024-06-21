@@ -1,13 +1,13 @@
 IVehicleGraphics3DDropLinePositionItem
 ======================================
 
-.. py:class:: IVehicleGraphics3DDropLinePositionItem
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem
 
    object
    
    Interface for drop lines from the vehicle's current position.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DDropLinePositionItem
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~use_2d_color`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.use_2d_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem.line_style`
 
 
 Import detail

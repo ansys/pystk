@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DPositionOnMap
 =====================================
 
-.. py:class:: IFigureOfMeritGraphics2DPositionOnMap
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DPositionOnMap
 
    object
    
    Coordinates of contour legend in pixels on 2D map.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DPositionOnMap
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DPositionOnMap.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DPositionOnMap.y`
 
 
 Import detail

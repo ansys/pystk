@@ -1,13 +1,13 @@
 IDemodulatorModel
 =================
 
-.. py:class:: IDemodulatorModel
+.. py:class:: ansys.stk.core.stkobjects.IDemodulatorModel
 
    object
    
    Provide access to the properties and methods defining a demodulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDemodulatorModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDemodulatorModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDemodulatorModel.type`
 
 
 Import detail

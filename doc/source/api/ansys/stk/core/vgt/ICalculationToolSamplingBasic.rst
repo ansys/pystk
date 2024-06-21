@@ -1,13 +1,13 @@
 ICalculationToolSamplingBasic
 =============================
 
-.. py:class:: ICalculationToolSamplingBasic
+.. py:class:: ansys.stk.core.vgt.ICalculationToolSamplingBasic
 
    object
    
    Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolSamplingBasic
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sampling_method`
-            * - :py:meth:`~method_factory`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingBasic.sampling_method`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingBasic.method_factory`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: sampling_method
     :canonical: ansys.stk.core.vgt.ICalculationToolSamplingBasic.sampling_method
-    :type: IAgCrdnSamplingMethod
+    :type: ICalculationToolSamplingMethod
 
     Get the sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: method_factory
     :canonical: ansys.stk.core.vgt.ICalculationToolSamplingBasic.method_factory
-    :type: IAgCrdnSamplingMethodFactory
+    :type: ICalculationToolSamplingMethodFactory
 
     Creates sampling definitions, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 

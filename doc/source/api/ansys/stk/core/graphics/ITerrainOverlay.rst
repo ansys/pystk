@@ -1,13 +1,13 @@
 ITerrainOverlay
 ===============
 
-.. py:class:: ITerrainOverlay
+.. py:class:: ansys.stk.core.graphics.ITerrainOverlay
 
    object
    
    A globe overlay which shows terrain.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITerrainOverlay
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_offset`
-            * - :py:meth:`~altitude_scale`
-            * - :py:meth:`~supported`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlay.altitude_offset`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlay.altitude_scale`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlay.supported`
 
 
 Import detail

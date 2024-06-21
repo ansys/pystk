@@ -1,12 +1,12 @@
 TAB_VEC_INTERP_METHOD
 =====================
 
-.. py:class:: TAB_VEC_INTERP_METHOD
+.. py:class:: ansys.stk.core.stkobjects.astrogator.TAB_VEC_INTERP_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: TAB_VEC_INTERP_METHOD
 
 Overview
 --------

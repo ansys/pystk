@@ -1,13 +1,13 @@
 SharpenFilterFactory
 ====================
 
-.. py:class:: SharpenFilterFactory
+.. py:class:: ansys.stk.core.graphics.SharpenFilterFactory
 
-   Bases: py:obj:`~ISharpenFilterFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.ISharpenFilterFactory`
 
    Apply a convolution filter to increase the sharpness of the source raster.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SharpenFilterFactory
 
 Overview
 --------

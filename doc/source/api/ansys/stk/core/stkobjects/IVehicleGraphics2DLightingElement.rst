@@ -1,13 +1,13 @@
 IVehicleGraphics2DLightingElement
 =================================
 
-.. py:class:: IVehicleGraphics2DLightingElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement
 
    object
    
    Lighting condition properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DLightingElement
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.line_width`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IBurnoutGeocentric
 ==================
 
-.. py:class:: IBurnoutGeocentric
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBurnoutGeocentric
 
    IBurnout
    
    {Properties for a geocentric burnout point definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBurnoutGeocentric
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeocentric.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeocentric.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeocentric.radius`
 
 
 Import detail

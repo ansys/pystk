@@ -1,13 +1,13 @@
 ISpatialAnalysisToolGridValuesFixedStep
 =======================================
 
-.. py:class:: ISpatialAnalysisToolGridValuesFixedStep
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep
 
    object
    
    Fixed step grid values.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolGridValuesFixedStep
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
-            * - :py:meth:`~include_min_max`
-            * - :py:meth:`~reference_value`
-            * - :py:meth:`~step`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.min`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.max`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.include_min_max`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.reference_value`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.step`
 
 
 Import detail

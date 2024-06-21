@@ -1,13 +1,13 @@
 MixedSphericalFPAHorizontal
 ===========================
 
-.. py:class:: MixedSphericalFPAHorizontal
+.. py:class:: ansys.stk.core.stkobjects.MixedSphericalFPAHorizontal
 
-   Bases: py:obj:`~IMixedSphericalFPAHorizontal`, py:obj:`~IFlightPathAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMixedSphericalFPAHorizontal`, py:obj:`~ansys.stk.core.stkobjects.IFlightPathAngle`
 
    Horizontal Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MixedSphericalFPAHorizontal
 
 Overview
 --------

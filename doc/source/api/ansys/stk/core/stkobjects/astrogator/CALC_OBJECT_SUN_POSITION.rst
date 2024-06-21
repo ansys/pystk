@@ -1,12 +1,12 @@
 CALC_OBJECT_SUN_POSITION
 ========================
 
-.. py:class:: CALC_OBJECT_SUN_POSITION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_SUN_POSITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CALC_OBJECT_SUN_POSITION
 
 Overview
 --------

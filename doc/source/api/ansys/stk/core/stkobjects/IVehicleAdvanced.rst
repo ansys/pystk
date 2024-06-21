@@ -1,13 +1,13 @@
 IVehicleAdvanced
 ================
 
-.. py:class:: IVehicleAdvanced
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAdvanced
 
    object
    
    Interface for advanced drag options for LOP propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAdvanced
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmospheric_density_model`
-            * - :py:meth:`~use_osculating_altitude`
-            * - :py:meth:`~max_drag_altitude`
-            * - :py:meth:`~density_weighing_factor`
-            * - :py:meth:`~exp_dens_model_params`
-            * - :py:meth:`~atmos_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.atmospheric_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.use_osculating_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.max_drag_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.density_weighing_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.exp_dens_model_params`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.atmos_density_model`
 
 
 Import detail
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: exp_dens_model_params
     :canonical: ansys.stk.core.stkobjects.IVehicleAdvanced.exp_dens_model_params
-    :type: IAgVeExpDensModelParams
+    :type: IVehicleExpDensModelParams
 
     Get the exponential density modeling parameters.
 

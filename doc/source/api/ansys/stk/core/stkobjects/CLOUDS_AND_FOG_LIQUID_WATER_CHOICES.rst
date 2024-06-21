@@ -1,12 +1,12 @@
 CLOUDS_AND_FOG_LIQUID_WATER_CHOICES
 ===================================
 
-.. py:class:: CLOUDS_AND_FOG_LIQUID_WATER_CHOICES
+.. py:class:: ansys.stk.core.stkobjects.CLOUDS_AND_FOG_LIQUID_WATER_CHOICES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CLOUDS_AND_FOG_LIQUID_WATER_CHOICES
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IProcedureFlightLine
 ====================
 
-.. py:class:: IProcedureFlightLine
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine
 
    object
    
    Interface used to access the options for a flight line procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureFlightLine
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~fly_cruise_airspeed_profile`
-            * - :py:meth:`~flight_line_airspeed_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_turn_direction_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~procedure_type`
-            * - :py:meth:`~outbound_course`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~leg_length`
-            * - :py:meth:`~must_level_off`
-            * - :py:meth:`~level_off_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.fly_cruise_airspeed_profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.flight_line_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_turn_direction_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.procedure_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.outbound_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.leg_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.must_level_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.level_off_mode`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.altitude_options
-    :type: IAgAvtrAltitudeOptions
+    :type: IAltitudeOptions
 
     Get the altitude options.
 
@@ -68,25 +68,25 @@ Property detail
 
 .. py:property:: flight_line_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.flight_line_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the flight line airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_options
-    :type: IAgAvtrEnrouteOptions
+    :type: IEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_turn_direction_options
-    :type: IAgAvtrEnrouteTurnDirectionOptions
+    :type: IEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 

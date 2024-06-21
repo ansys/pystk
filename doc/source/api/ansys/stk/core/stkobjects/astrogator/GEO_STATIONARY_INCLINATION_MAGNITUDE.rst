@@ -1,12 +1,12 @@
 GEO_STATIONARY_INCLINATION_MAGNITUDE
 ====================================
 
-.. py:class:: GEO_STATIONARY_INCLINATION_MAGNITUDE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GEO_STATIONARY_INCLINATION_MAGNITUDE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GEO_STATIONARY_INCLINATION_MAGNITUDE
 
 Overview
 --------

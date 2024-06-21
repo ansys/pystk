@@ -1,12 +1,12 @@
 BASIC_MANEUVER_AIRSPEED_MODE
 ============================
 
-.. py:class:: BASIC_MANEUVER_AIRSPEED_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_AIRSPEED_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BASIC_MANEUVER_AIRSPEED_MODE
 
 Overview
 --------

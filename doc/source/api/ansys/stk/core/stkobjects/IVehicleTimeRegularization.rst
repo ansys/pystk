@@ -1,13 +1,13 @@
 IVehicleTimeRegularization
 ==========================
 
-.. py:class:: IVehicleTimeRegularization
+.. py:class:: ansys.stk.core.stkobjects.IVehicleTimeRegularization
 
    object
    
    Interface for time regularization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleTimeRegularization
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use`
-            * - :py:meth:`~exponent`
-            * - :py:meth:`~steps_per_orbit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization.use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization.exponent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization.steps_per_orbit`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IScatteringPointProviderCollection
 ==================================
 
-.. py:class:: IScatteringPointProviderCollection
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointProviderCollection
 
    object
    
    Represents a collection of scattering point provider elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointProviderCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection.item`
               - Given an index, returns the scattering point provider element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection.remove_at`
               - Remove the scattering point provider element with the specified index.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection.insert_at`
               - Insert a new scattering point provider element at the supplied index, configured with a component with the supplied identifier.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection.add`
               - Add a new default scattering point provider element to the collection.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection.clear`
               - Clear all scattering point provider elements from the collection.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection._NewEnum`
 
 
 Import detail

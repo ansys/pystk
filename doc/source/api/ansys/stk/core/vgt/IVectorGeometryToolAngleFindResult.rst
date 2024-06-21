@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleFindResult
 ==================================
 
-.. py:class:: IVectorGeometryToolAngleFindResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult
 
    object
    
    Contains the results returned with IAgCrdnAngle.FindCoordinates method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleFindResult
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~angle`
-            * - :py:meth:`~vector_from`
-            * - :py:meth:`~vector_to`
-            * - :py:meth:`~vector_about`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_from`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_to`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_about`
 
 
 Import detail
@@ -52,19 +52,19 @@ Property detail
 
 .. py:property:: vector_from
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_from
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The first of the two vectors the angle is measured.
 
 .. py:property:: vector_to
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_to
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The second of the two vectors the angle is measured.
 
 .. py:property:: vector_about
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_about
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The vector the angle is rotated about.
 

@@ -1,13 +1,13 @@
 IAGIRoamImageGlobeOverlay
 =========================
 
-.. py:class:: IAGIRoamImageGlobeOverlay
+.. py:class:: ansys.stk.core.graphics.IAGIRoamImageGlobeOverlay
 
    object
    
    A globe image overlay for handling ROAM (TXM/TXB) files.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAGIRoamImageGlobeOverlay
 
 Overview
 --------

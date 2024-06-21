@@ -1,13 +1,13 @@
 ITimeToolRelativeSatisfactionConditionFilter
 ============================================
 
-.. py:class:: ITimeToolRelativeSatisfactionConditionFilter
+.. py:class:: ansys.stk.core.vgt.ITimeToolRelativeSatisfactionConditionFilter
 
    object
    
    The filter selects intervals if certain side condition is satisfied at least/most certain percentage of time.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolRelativeSatisfactionConditionFilter
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~condition`
-            * - :py:meth:`~duration_kind`
-            * - :py:meth:`~relative_interval_duration`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolRelativeSatisfactionConditionFilter.condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolRelativeSatisfactionConditionFilter.duration_kind`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolRelativeSatisfactionConditionFilter.relative_interval_duration`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.vgt.ITimeToolRelativeSatisfactionConditionFilter.condition
-    :type: IAgCrdnCondition
+    :type: ICalculationToolCondition
 
     Gets or sets the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list.
 

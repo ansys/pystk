@@ -1,13 +1,13 @@
 ISensorProjectionConstantAltitude
 =================================
 
-.. py:class:: ISensorProjectionConstantAltitude
+.. py:class:: ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude
 
    object
    
    IAgSnProjConstantAlt Interface for setting projection altitude options for constant altitude for a sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorProjectionConstantAltitude
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
-            * - :py:meth:`~number_of_steps`
-            * - :py:meth:`~projects_thru_crossing`
-            * - :py:meth:`~altitude_crossing_sides`
-            * - :py:meth:`~direction`
-            * - :py:meth:`~exclude_horizon_arcs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.number_of_steps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.projects_thru_crossing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.altitude_crossing_sides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude.exclude_horizon_arcs`
 
 
 Import detail

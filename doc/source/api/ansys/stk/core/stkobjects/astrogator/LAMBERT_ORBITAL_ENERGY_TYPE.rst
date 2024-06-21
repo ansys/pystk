@@ -1,12 +1,12 @@
 LAMBERT_ORBITAL_ENERGY_TYPE
 ===========================
 
-.. py:class:: LAMBERT_ORBITAL_ENERGY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.LAMBERT_ORBITAL_ENERGY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: LAMBERT_ORBITAL_ENERGY_TYPE
 
 Overview
 --------

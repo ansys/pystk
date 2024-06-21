@@ -1,13 +1,13 @@
 VehicleGraphics3DTickDataLine
 =============================
 
-.. py:class:: VehicleGraphics3DTickDataLine
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTickDataLine
 
-   Bases: py:obj:`~IVehicleGraphics3DTickData`, py:obj:`~IVehicleGraphics3DTickDataLine`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickData`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine`
 
    Line type tick marks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DTickDataLine
 
 Overview
 --------

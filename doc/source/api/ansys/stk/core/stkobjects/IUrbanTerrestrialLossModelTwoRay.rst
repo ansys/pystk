@@ -1,13 +1,13 @@
 IUrbanTerrestrialLossModelTwoRay
 ================================
 
-.. py:class:: IUrbanTerrestrialLossModelTwoRay
+.. py:class:: ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelTwoRay
 
    object
    
    Provide access to the properties and methods for an urban/terrestrial loss two ray model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IUrbanTerrestrialLossModelTwoRay
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~surface_temperature`
-            * - :py:meth:`~loss_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelTwoRay.surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelTwoRay.loss_factor`
 
 
 Import detail

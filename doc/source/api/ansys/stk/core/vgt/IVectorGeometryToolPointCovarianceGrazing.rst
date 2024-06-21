@@ -1,13 +1,13 @@
 IVectorGeometryToolPointCovarianceGrazing
 =========================================
 
-.. py:class:: IVectorGeometryToolPointCovarianceGrazing
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing
 
    object
    
    The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointCovarianceGrazing
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~direction_vector`
-            * - :py:meth:`~target_name`
-            * - :py:meth:`~distance`
-            * - :py:meth:`~probability`
-            * - :py:meth:`~scale`
-            * - :py:meth:`~use_probability`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.direction_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.target_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.distance`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.probability`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.scale`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.use_probability`
 
 
 Import detail
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.reference_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCovarianceGrazing.direction_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a direction vector to be used in conjunction with the displacement vector from the selected target object to the reference point to define a plane in which the line will lie.
 

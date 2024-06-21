@@ -1,12 +1,12 @@
 HOLDING_DIRECTION
 =================
 
-.. py:class:: HOLDING_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.aviator.HOLDING_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: HOLDING_DIRECTION
 
 Overview
 --------

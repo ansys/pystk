@@ -1,13 +1,13 @@
 MtoTrackPoint
 =============
 
-.. py:class:: MtoTrackPoint
+.. py:class:: ansys.stk.core.stkobjects.MtoTrackPoint
 
-   Bases: py:obj:`~IMtoTrackPoint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoTrackPoint`
 
    The points defined for the selected track.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoTrackPoint
 
 Overview
 --------

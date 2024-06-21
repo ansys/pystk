@@ -1,13 +1,13 @@
 ICommSystemAccessOptions
 ========================
 
-.. py:class:: ICommSystemAccessOptions
+.. py:class:: ansys.stk.core.stkobjects.ICommSystemAccessOptions
 
    object
    
    Provide access to the CommSystem object access options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystemAccessOptions
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_light_time_delay`
-            * - :py:meth:`~time_light_delay_convergence`
-            * - :py:meth:`~aberration_type`
-            * - :py:meth:`~event_detection_type`
-            * - :py:meth:`~event_detection`
-            * - :py:meth:`~sampling_method_type`
-            * - :py:meth:`~sampling_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.enable_light_time_delay`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.time_light_delay_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.aberration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.event_detection_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.event_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.sampling_method_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.sampling_method`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.ICommSystemAccessOptions.event_detection
-    :type: IAgCommSystemAccessEventDetection
+    :type: ICommSystemAccessEventDetection
 
     Gets the event detection algorithm.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: sampling_method
     :canonical: ansys.stk.core.stkobjects.ICommSystemAccessOptions.sampling_method
-    :type: IAgCommSystemAccessSamplingMethod
+    :type: ICommSystemAccessSamplingMethod
 
     Gets the sampling method.
 

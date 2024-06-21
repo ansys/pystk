@@ -1,13 +1,13 @@
 IAttitudeControlFinite
 ======================
 
-.. py:class:: IAttitudeControlFinite
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite
 
    IAttitudeControl
    
    The attitude control of a finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlFinite
 
 Overview
 --------

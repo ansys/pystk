@@ -1,13 +1,13 @@
 ClimbAndDescentTransitions
 ==========================
 
-.. py:class:: ClimbAndDescentTransitions
+.. py:class:: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions
 
-   Bases: py:obj:`~IClimbAndDescentTransitions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IClimbAndDescentTransitions`
 
    Class defining the climb and descent transition options for an Acceleration performance model of an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ClimbAndDescentTransitions
 
 Overview
 --------

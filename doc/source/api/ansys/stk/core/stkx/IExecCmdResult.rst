@@ -1,13 +1,13 @@
 IExecCmdResult
 ==============
 
-.. py:class:: IExecCmdResult
+.. py:class:: ansys.stk.core.stkx.IExecCmdResult
 
    object
    
    Collection of strings returned by the ExecuteCommand.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IExecCmdResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkx.IExecCmdResult.item`
               - Get the element at the specified index (0-based).
-            * - :py:meth:`~range`
+            * - :py:attr:`~ansys.stk.core.stkx.IExecCmdResult.range`
               - Return the elements within the specified range.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~is_succeeded`
+            * - :py:attr:`~ansys.stk.core.stkx.IExecCmdResult.count`
+            * - :py:attr:`~ansys.stk.core.stkx.IExecCmdResult._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkx.IExecCmdResult.is_succeeded`
 
 
 Import detail

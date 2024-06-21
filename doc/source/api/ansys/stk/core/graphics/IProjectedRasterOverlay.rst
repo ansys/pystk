@@ -1,13 +1,13 @@
 IProjectedRasterOverlay
 =======================
 
-.. py:class:: IProjectedRasterOverlay
+.. py:class:: ansys.stk.core.graphics.IProjectedRasterOverlay
 
    object
    
    A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IProjectedRasterOverlay
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~raster`
-            * - :py:meth:`~projection`
-            * - :py:meth:`~show_shadows`
-            * - :py:meth:`~show_frustum`
-            * - :py:meth:`~show_far_plane`
-            * - :py:meth:`~color`
-            * - :py:meth:`~frustum_color`
-            * - :py:meth:`~far_plane_color`
-            * - :py:meth:`~shadow_color`
-            * - :py:meth:`~border_color`
-            * - :py:meth:`~border_width`
-            * - :py:meth:`~frustum_translucency`
-            * - :py:meth:`~far_plane_translucency`
-            * - :py:meth:`~shadow_translucency`
-            * - :py:meth:`~border_translucency`
-            * - :py:meth:`~use_transparent_color`
-            * - :py:meth:`~transparent_color`
-            * - :py:meth:`~directions`
-            * - :py:meth:`~supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.raster`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.projection`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.show_shadows`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.show_frustum`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.show_far_plane`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.color`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.frustum_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.far_plane_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.shadow_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.border_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.border_width`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.frustum_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.far_plane_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.shadow_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.border_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.use_transparent_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.transparent_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.directions`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlay.supported`
 
 
 Import detail
@@ -54,13 +54,13 @@ Property detail
 
 .. py:property:: raster
     :canonical: ansys.stk.core.graphics.IProjectedRasterOverlay.raster
-    :type: IAgStkGraphicsRaster
+    :type: IRaster
 
     Gets or sets the raster that is projected.
 
 .. py:property:: projection
     :canonical: ansys.stk.core.graphics.IProjectedRasterOverlay.projection
-    :type: IAgStkGraphicsProjection
+    :type: IProjection
 
     Gets or sets the projection that projects the raster.
 

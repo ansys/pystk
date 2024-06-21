@@ -1,13 +1,13 @@
 VehicleGraphics2DLightingElement
 ================================
 
-.. py:class:: VehicleGraphics2DLightingElement
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLightingElement
 
-   Bases: py:obj:`~IVehicleGraphics2DLightingElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement`
 
    Lighting condition properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DLightingElement
 
 Overview
 --------

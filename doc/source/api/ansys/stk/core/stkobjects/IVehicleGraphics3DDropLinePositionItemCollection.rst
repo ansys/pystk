@@ -1,13 +1,13 @@
 IVehicleGraphics3DDropLinePositionItemCollection
 ================================================
 
-.. py:class:: IVehicleGraphics3DDropLinePositionItemCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItemCollection
 
    object
    
    Lines dropped from the vehicle's position.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DDropLinePositionItemCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItemCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItemCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItemCollection._NewEnum`
 
 
 Import detail

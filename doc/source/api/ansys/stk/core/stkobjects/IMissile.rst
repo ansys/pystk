@@ -1,13 +1,13 @@
 IMissile
 ========
 
-.. py:class:: IMissile
+.. py:class:: ansys.stk.core.stkobjects.IMissile
 
    object
    
    Interface for a missile object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMissile
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_trajectory_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.set_trajectory_type`
               - Set the propagator type.
-            * - :py:meth:`~is_trajectory_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.is_trajectory_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_attitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.set_attitude_type`
               - Set the type of attitude profile used by the missile.
-            * - :py:meth:`~is_attitude_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.is_attitude_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -35,29 +35,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~trajectory_type`
-            * - :py:meth:`~trajectory_supported_types`
-            * - :py:meth:`~trajectory`
-            * - :py:meth:`~attitude_type`
-            * - :py:meth:`~attitude_supported_types`
-            * - :py:meth:`~attitude`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~ground_ellipses`
-            * - :py:meth:`~access_constraints`
-            * - :py:meth:`~export_tools`
-            * - :py:meth:`~space_environment`
-            * - :py:meth:`~atmosphere`
-            * - :py:meth:`~radar_clutter_map`
-            * - :py:meth:`~radar_cross_section`
-            * - :py:meth:`~eclipse_bodies`
-            * - :py:meth:`~use_terrain_in_lighting_computations`
-            * - :py:meth:`~lighting_max_step`
-            * - :py:meth:`~laser_environment`
-            * - :py:meth:`~rf_environment`
-            * - :py:meth:`~lighting_max_step_terrain`
-            * - :py:meth:`~lighting_max_step_central_body_shape`
-            * - :py:meth:`~get_eoir`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.trajectory_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.trajectory_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.trajectory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.attitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.attitude_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.ground_ellipses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.access_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.export_tools`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.space_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.atmosphere`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.radar_clutter_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.eclipse_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.use_terrain_in_lighting_computations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.laser_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.lighting_max_step_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.lighting_max_step_central_body_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissile.get_eoir`
 
 
 Import detail
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.IMissile.trajectory
-    :type: IAgVePropagator
+    :type: IVehiclePropagator
 
     Get the missile's trajectory properties.
 
@@ -103,67 +103,67 @@ Property detail
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.IMissile.attitude
-    :type: IAgVeAttitude
+    :type: IVehicleAttitude
 
     Get the missile's attitude profile.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IMissile.graphics
-    :type: IAgMsGraphics
+    :type: IMissileGraphics
 
     Get the missile's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IMissile.graphics_3d
-    :type: IAgMsVO
+    :type: IMissileGraphics3D
 
     Get the missile's 3D Graphics properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.IMissile.ground_ellipses
-    :type: IAgVeGroundEllipsesCollection
+    :type: IVehicleGroundEllipsesCollection
 
     Get the missile's ground ellipses properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IMissile.access_constraints
-    :type: IAgAccessConstraintCollection
+    :type: IAccessConstraintCollection
 
     Get the constraints imposed on the missile.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.IMissile.export_tools
-    :type: IAgMsExportTools
+    :type: IMissileExportTools
 
     Returns the IAgMsExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.IMissile.space_environment
-    :type: IAgVeSpEnvSpaceEnvironment
+    :type: IVehicleSpaceEnvironment
 
     Returns the missile's SpaceEnvironment properties.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.IMissile.atmosphere
-    :type: IAgAtmosphere
+    :type: IAtmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.IMissile.radar_clutter_map
-    :type: IAgRadarClutterMapInheritable
+    :type: IRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IMissile.radar_cross_section
-    :type: IAgRadarCrossSectionInheritable
+    :type: IRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.IMissile.eclipse_bodies
-    :type: IAgVeEclipseBodies
+    :type: IVehicleEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -181,13 +181,13 @@ Property detail
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IMissile.laser_environment
-    :type: IAgPlatformLaserEnvironment
+    :type: IPlatformLaserEnvironment
 
     Gets the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IMissile.rf_environment
-    :type: IAgPlatformRFEnvironment
+    :type: IPlatformRFEnvironment
 
     Gets the RF environment.
 
@@ -205,7 +205,7 @@ Property detail
 
 .. py:property:: get_eoir
     :canonical: ansys.stk.core.stkobjects.IMissile.get_eoir
-    :type: IAgEOIR
+    :type: IEOIR
 
     Get the EOIR properties of the missile.
 

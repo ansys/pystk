@@ -1,13 +1,13 @@
 IAccessConstraintZone
 =====================
 
-.. py:class:: IAccessConstraintZone
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintZone
 
    IAccessConstraint
    
    IAgAccessCnstrZone used to access the Zone access constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintZone
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_lon`
-            * - :py:meth:`~min_lat`
-            * - :py:meth:`~max_lon`
-            * - :py:meth:`~max_lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintZone.min_lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintZone.min_lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintZone.max_lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintZone.max_lat`
 
 
 Import detail

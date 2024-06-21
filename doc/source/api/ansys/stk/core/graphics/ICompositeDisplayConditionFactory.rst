@@ -1,13 +1,13 @@
 ICompositeDisplayConditionFactory
 =================================
 
-.. py:class:: ICompositeDisplayConditionFactory
+.. py:class:: ansys.stk.core.graphics.ICompositeDisplayConditionFactory
 
    object
    
    A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICompositeDisplayConditionFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayConditionFactory.initialize`
               - Initialize an empty composite display condition.
 
 

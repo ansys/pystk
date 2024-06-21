@@ -1,13 +1,13 @@
 IFilteringRasterStreamFactory
 =============================
 
-.. py:class:: IFilteringRasterStreamFactory
+.. py:class:: ansys.stk.core.graphics.IFilteringRasterStreamFactory
 
    object
    
    A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IFilteringRasterStreamFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IFilteringRasterStreamFactory.initialize`
               - Initialize a new instance with a raster stream and the raster filter that will be applied to each update of that stream.
 
 

@@ -1,13 +1,13 @@
 IClassicalLocationTimePastPerigee
 =================================
 
-.. py:class:: IClassicalLocationTimePastPerigee
+.. py:class:: ansys.stk.core.stkobjects.IClassicalLocationTimePastPerigee
 
    IClassicalLocation
    
    Interface for Time Past Perigee, used in specifying the spacecraft's location within its orbit at epoch.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalLocationTimePastPerigee
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationTimePastPerigee.value`
 
 
 Import detail

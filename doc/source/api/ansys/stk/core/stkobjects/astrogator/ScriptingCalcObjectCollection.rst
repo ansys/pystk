@@ -1,13 +1,13 @@
 ScriptingCalcObjectCollection
 =============================
 
-.. py:class:: ScriptingCalcObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingCalcObjectCollection
 
-   Bases: py:obj:`~IScriptingCalcObjectCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection`
 
    Calc Object Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ScriptingCalcObjectCollection
 
 Overview
 --------

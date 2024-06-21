@@ -1,13 +1,13 @@
 IStkPreferencesConnect
 ======================
 
-.. py:class:: IStkPreferencesConnect
+.. py:class:: ansys.stk.core.stkobjects.IStkPreferencesConnect
 
    object
    
    Connect settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkPreferencesConnect
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~allow_connect`
-            * - :py:meth:`~allow_async`
-            * - :py:meth:`~max_connections`
-            * - :py:meth:`~poll_period`
-            * - :py:meth:`~socket`
-            * - :py:meth:`~acknowledge_message_receipt`
-            * - :py:meth:`~error_notify_mode`
-            * - :py:meth:`~wildcard_ignore_nack`
-            * - :py:meth:`~verbose`
-            * - :py:meth:`~allow_logging`
-            * - :py:meth:`~log_file`
-            * - :py:meth:`~allow_ext_connect`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.allow_connect`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.allow_async`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.max_connections`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.poll_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.socket`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.acknowledge_message_receipt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.error_notify_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.wildcard_ignore_nack`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.verbose`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.allow_logging`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.log_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.allow_ext_connect`
 
 
 Import detail

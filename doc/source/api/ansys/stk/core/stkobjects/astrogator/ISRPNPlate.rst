@@ -1,13 +1,13 @@
 ISRPNPlate
 ==========
 
-.. py:class:: ISRPNPlate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISRPNPlate
 
    object
    
    Properties for the N-plate SRP model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISRPNPlate
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~shadow_model`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~mean_flux`
-            * - :py:meth:`~luminosity`
-            * - :py:meth:`~solar_force_method`
-            * - :py:meth:`~include_boundary_mitigation`
-            * - :py:meth:`~use_sun_central_body_file_values`
-            * - :py:meth:`~solar_radius`
-            * - :py:meth:`~n_plate_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.shadow_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.mean_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.luminosity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.solar_force_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.include_boundary_mitigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.use_sun_central_body_file_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.solar_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate.n_plate_definition_file`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPNPlate.eclipsing_bodies
-    :type: IAgVACentralBodyCollection
+    :type: ICentralBodyCollection
 
     Other eclipsing bodies.
 

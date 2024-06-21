@@ -1,13 +1,13 @@
 ICoverageGraphics2DStatic
 =========================
 
-.. py:class:: ICoverageGraphics2DStatic
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGraphics2DStatic
 
    object
    
    Static 2D graphics display options for the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGraphics2DStatic
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_region_visible`
-            * - :py:meth:`~is_points_visible`
-            * - :py:meth:`~is_labels_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~fill_points`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.is_region_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.is_points_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.is_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.fill_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.fill_translucency`
 
 
 Import detail

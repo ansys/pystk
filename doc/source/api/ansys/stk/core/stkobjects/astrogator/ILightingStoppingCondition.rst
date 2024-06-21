@@ -1,13 +1,13 @@
 ILightingStoppingCondition
 ==========================
 
-.. py:class:: ILightingStoppingCondition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition
 
    IStoppingConditionComponent
    
    Properties for a lighting stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ILightingStoppingCondition
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_eclipsing_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.add_eclipsing_body`
               - Add an eclipsing body.
-            * - :py:meth:`~remove_eclipsing_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.remove_eclipsing_body`
               - Remove an eclipsing body.
 
     .. tab-item:: Properties
@@ -31,16 +31,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_trip_times`
-            * - :py:meth:`~repeat_count`
-            * - :py:meth:`~constraints`
-            * - :py:meth:`~before_conditions`
-            * - :py:meth:`~inherited`
-            * - :py:meth:`~sequence`
-            * - :py:meth:`~condition`
-            * - :py:meth:`~eclipsing_bodies_list_source`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~available_eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.max_trip_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.repeat_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.before_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.inherited`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.sequence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.condition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.eclipsing_bodies_list_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.available_eclipsing_bodies`
 
 
 Import detail
@@ -68,13 +68,13 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.constraints
-    :type: IAgVAConstraintCollection
+    :type: IConstraintCollection
 
     Further conditions that must be met in order for the stopping condition to be deemed satisfied.
 
 .. py:property:: before_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.before_conditions
-    :type: IAgVAStoppingConditionCollection
+    :type: IStoppingConditionCollection
 
     A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
 

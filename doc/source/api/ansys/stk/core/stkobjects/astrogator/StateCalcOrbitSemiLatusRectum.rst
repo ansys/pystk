@@ -1,13 +1,13 @@
 StateCalcOrbitSemiLatusRectum
 =============================
 
-.. py:class:: StateCalcOrbitSemiLatusRectum
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitSemiLatusRectum
 
-   Bases: py:obj:`~IStateCalcOrbitSemiLatusRectum`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitSemiLatusRectum`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass AsStateCalcOrbitSemiLatusRectum.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcOrbitSemiLatusRectum
 
 Overview
 --------

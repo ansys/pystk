@@ -1,13 +1,13 @@
 IUiWindow
 =========
 
-.. py:class:: IUiWindow
+.. py:class:: ansys.stk.core.uicore.IUiWindow
 
    object
    
    Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: IUiWindow
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~activate`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.activate`
               - Activates the window.
-            * - :py:meth:`~close`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.close`
               - Close the window.
-            * - :py:meth:`~get_service_by_name`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.get_service_by_name`
               - Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified symbolic name.
-            * - :py:meth:`~get_service_by_type`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.get_service_by_type`
               - Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type.
 
     .. tab-item:: Properties
@@ -35,17 +35,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~caption`
-            * - :py:meth:`~window_state`
-            * - :py:meth:`~height`
-            * - :py:meth:`~width`
-            * - :py:meth:`~left`
-            * - :py:meth:`~top`
-            * - :py:meth:`~dock_style`
-            * - :py:meth:`~no_wb_close`
-            * - :py:meth:`~un_pinned`
-            * - :py:meth:`~supports_pinning`
-            * - :py:meth:`~toolbars`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.caption`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.window_state`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.height`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.width`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.left`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.top`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.dock_style`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.no_wb_close`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.un_pinned`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.supports_pinning`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.toolbars`
 
 
 Import detail
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: toolbars
     :canonical: ansys.stk.core.uicore.IUiWindow.toolbars
-    :type: IAgUiToolbarCollection
+    :type: IUiToolbarCollection
 
     Returns the window's toolbar collection.
 

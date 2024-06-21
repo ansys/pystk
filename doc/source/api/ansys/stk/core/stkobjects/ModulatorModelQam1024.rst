@@ -1,13 +1,13 @@
 ModulatorModelQam1024
 =====================
 
-.. py:class:: ModulatorModelQam1024
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelQam1024
 
-   Bases: py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a QAM 1024 modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModelQam1024
 
 Overview
 --------

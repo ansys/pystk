@@ -1,12 +1,12 @@
 ACCEL_PERF_MODEL_OVERRIDE
 =========================
 
-.. py:class:: ACCEL_PERF_MODEL_OVERRIDE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ACCEL_PERF_MODEL_OVERRIDE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ACCEL_PERF_MODEL_OVERRIDE
 
 Overview
 --------

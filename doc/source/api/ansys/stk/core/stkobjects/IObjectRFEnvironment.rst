@@ -1,13 +1,13 @@
 IObjectRFEnvironment
 ====================
 
-.. py:class:: IObjectRFEnvironment
+.. py:class:: ansys.stk.core.stkobjects.IObjectRFEnvironment
 
    object
    
    Provide access to the properties and methods defining the RF environment for an object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IObjectRFEnvironment
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagation_channel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectRFEnvironment.propagation_channel`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.IObjectRFEnvironment.propagation_channel
-    :type: IAgPropagationChannel
+    :type: IPropagationChannel
 
     Gets the propagation channel.
 

@@ -1,13 +1,13 @@
 IState
 ======
 
-.. py:class:: IState
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IState
 
    object
    
    Spacecraft Parameters properties for the spacecraft configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IState
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.set_element_type`
               - Set the element type.
-            * - :py:meth:`~get_in_frame_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.get_in_frame_name`
               - Get the orbit state in the specified frame.
 
     .. tab-item:: Properties
@@ -31,23 +31,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~element`
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~dry_mass`
-            * - :py:meth:`~fuel_mass`
-            * - :py:meth:`~drag_area`
-            * - :py:meth:`~srp_area`
-            * - :py:meth:`~tank_pressure`
-            * - :py:meth:`~tank_temperature`
-            * - :py:meth:`~fuel_density`
-            * - :py:meth:`~cr`
-            * - :py:meth:`~cd`
-            * - :py:meth:`~radiation_pressure_coeff`
-            * - :py:meth:`~radiation_pressure_area`
-            * - :py:meth:`~k1`
-            * - :py:meth:`~k2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.element`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.dry_mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.fuel_mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.drag_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.srp_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.tank_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.tank_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.fuel_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.cr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.cd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.radiation_pressure_coeff`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.radiation_pressure_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.k1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.k2`
 
 
 Import detail
@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: element
     :canonical: ansys.stk.core.stkobjects.astrogator.IState.element
-    :type: IAgVAElement
+    :type: IElement
 
     Returns the currently selected element type.
 

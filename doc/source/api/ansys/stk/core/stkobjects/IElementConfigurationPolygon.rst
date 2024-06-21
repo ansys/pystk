@@ -1,13 +1,13 @@
 IElementConfigurationPolygon
 ============================
 
-.. py:class:: IElementConfigurationPolygon
+.. py:class:: ansys.stk.core.stkobjects.IElementConfigurationPolygon
 
    object
    
    Provide access to the properties and methods defining a polygon element configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IElementConfigurationPolygon
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lattice_type`
-            * - :py:meth:`~num_sides`
-            * - :py:meth:`~equilateral`
-            * - :py:meth:`~num_elements_x`
-            * - :py:meth:`~num_elements_y`
-            * - :py:meth:`~spacing_x`
-            * - :py:meth:`~spacing_y`
-            * - :py:meth:`~max_look_angle_el`
-            * - :py:meth:`~max_look_angle_az`
-            * - :py:meth:`~spacing_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.lattice_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.num_sides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.equilateral`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.num_elements_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.num_elements_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.spacing_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.spacing_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.max_look_angle_el`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.max_look_angle_az`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.spacing_unit`
 
 
 Import detail

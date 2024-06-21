@@ -1,13 +1,13 @@
 IVehicleProfileAviator
 ======================
 
-.. py:class:: IVehicleProfileAviator
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileAviator
 
    IVehicleAttitudeProfile
    
    The profile used for Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileAviator
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~trending_controls`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileAviator.trending_controls`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: trending_controls
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileAviator.trending_controls
-    :type: IAgVeAttTrendControlAviator
+    :type: IVehicleAttitudeTrendControlAviator
 
     Get the attitude trending controls.
 

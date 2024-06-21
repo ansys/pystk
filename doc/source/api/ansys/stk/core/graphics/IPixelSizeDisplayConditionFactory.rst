@@ -1,13 +1,13 @@
 IPixelSizeDisplayConditionFactory
 =================================
 
-.. py:class:: IPixelSizeDisplayConditionFactory
+.. py:class:: ansys.stk.core.graphics.IPixelSizeDisplayConditionFactory
 
    object
    
    Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPixelSizeDisplayConditionFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IPixelSizeDisplayConditionFactory.initialize`
               - Initialize a default pixel size display condition. minimum pixel size is set to 0 and maximum pixel size is set to Int32.MaxValue. With this interval, an object is always rendered regardless of how many pixels its bounding sphere or rectangle covers.
-            * - :py:meth:`~initialize_with_pixel_sizes`
+            * - :py:attr:`~ansys.stk.core.graphics.IPixelSizeDisplayConditionFactory.initialize_with_pixel_sizes`
               - Initialize a pixel size display condition with the inclusive interval [minimumPixelSize, maximumPixelSize]...
 
 

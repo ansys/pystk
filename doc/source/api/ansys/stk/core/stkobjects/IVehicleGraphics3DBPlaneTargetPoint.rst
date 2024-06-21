@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneTargetPoint
 ===================================
 
-.. py:class:: IVehicleGraphics3DBPlaneTargetPoint
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint
 
    object
    
    3D BPlane TargetPoint.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneTargetPoint
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_position_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.set_position_type`
               - Set the position type of the BPlane target point.
-            * - :py:meth:`~is_position_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.is_position_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,11 +31,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~position_type`
-            * - :py:meth:`~position_supported_types`
-            * - :py:meth:`~position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position`
 
 
 Import detail
@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position
-    :type: IAgVeVOBPlaneTargetPointPosition
+    :type: IVehicleGraphics3DBPlaneTargetPointPosition
 
     Returns the BPlane target point position.
 

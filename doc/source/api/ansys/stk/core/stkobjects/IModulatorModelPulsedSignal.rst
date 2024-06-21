@@ -1,13 +1,13 @@
 IModulatorModelPulsedSignal
 ===========================
 
-.. py:class:: IModulatorModelPulsedSignal
+.. py:class:: ansys.stk.core.stkobjects.IModulatorModelPulsedSignal
 
    object
    
    Provide access to the properties and methods defining a pulsed signal modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IModulatorModelPulsedSignal
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pulse_width`
-            * - :py:meth:`~pulse_period`
-            * - :py:meth:`~number_of_pulses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelPulsedSignal.pulse_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelPulsedSignal.pulse_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelPulsedSignal.number_of_pulses`
 
 
 Import detail

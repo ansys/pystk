@@ -1,12 +1,12 @@
 NOTIFICATION_FILTER_MASK
 ========================
 
-.. py:class:: NOTIFICATION_FILTER_MASK
+.. py:class:: ansys.stk.core.stkobjects.NOTIFICATION_FILTER_MASK
 
    IntFlag
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: NOTIFICATION_FILTER_MASK
 
 Overview
 --------

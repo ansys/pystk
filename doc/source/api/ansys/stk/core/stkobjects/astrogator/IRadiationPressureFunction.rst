@@ -1,13 +1,13 @@
 IRadiationPressureFunction
 ==========================
 
-.. py:class:: IRadiationPressureFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction
 
    object
    
    Properties for the Radiation Pressure propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IRadiationPressureFunction
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~include_albedo`
-            * - :py:meth:`~include_thermal_radiation_pressure`
-            * - :py:meth:`~ground_reflection_model_filename`
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~override_segment_settings`
-            * - :py:meth:`~rad_pressure_coeff`
-            * - :py:meth:`~rad_pressure_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.include_albedo`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.include_thermal_radiation_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.ground_reflection_model_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.override_segment_settings`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.rad_pressure_coeff`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.rad_pressure_area`
 
 
 Import detail

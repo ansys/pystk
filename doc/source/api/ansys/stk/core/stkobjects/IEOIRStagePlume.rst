@@ -1,13 +1,13 @@
 IEOIRStagePlume
 ===============
 
-.. py:class:: IEOIRStagePlume
+.. py:class:: ansys.stk.core.stkobjects.IEOIRStagePlume
 
    object
    
    A stage interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRStagePlume
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~on_time_delta`
-            * - :py:meth:`~off_time_delta`
-            * - :py:meth:`~temperature`
-            * - :py:meth:`~relative_width`
-            * - :py:meth:`~relative_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStagePlume.on_time_delta`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStagePlume.off_time_delta`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStagePlume.temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStagePlume.relative_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStagePlume.relative_length`
 
 
 Import detail

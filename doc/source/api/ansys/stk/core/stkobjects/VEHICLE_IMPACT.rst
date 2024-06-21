@@ -1,12 +1,12 @@
 VEHICLE_IMPACT
 ==============
 
-.. py:class:: VEHICLE_IMPACT
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_IMPACT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_IMPACT
 
 Overview
 --------

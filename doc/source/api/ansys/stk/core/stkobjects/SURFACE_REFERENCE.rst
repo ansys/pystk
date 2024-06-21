@@ -1,12 +1,12 @@
 SURFACE_REFERENCE
 =================
 
-.. py:class:: SURFACE_REFERENCE
+.. py:class:: ansys.stk.core.stkobjects.SURFACE_REFERENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SURFACE_REFERENCE
 
 Overview
 --------

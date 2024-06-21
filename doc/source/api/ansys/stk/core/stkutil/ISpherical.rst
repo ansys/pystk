@@ -1,13 +1,13 @@
 ISpherical
 ==========
 
-.. py:class:: ISpherical
+.. py:class:: ansys.stk.core.stkutil.ISpherical
 
    IPosition
    
    Spherical Position Type.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: ISpherical
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.stkutil.ISpherical.lat`
+            * - :py:attr:`~ansys.stk.core.stkutil.ISpherical.lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.ISpherical.radius`
 
 
 Import detail

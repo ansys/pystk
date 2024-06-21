@@ -1,13 +1,13 @@
 STKXConControlQuitReceivedEventArgs
 ===================================
 
-.. py:class:: STKXConControlQuitReceivedEventArgs
+.. py:class:: ansys.stk.core.stkx.STKXConControlQuitReceivedEventArgs
 
-   Bases: py:obj:`~ISTKXConControlQuitReceivedEventArgs`
+   Bases: py:obj:`~ansys.stk.core.stkx.ISTKXConControlQuitReceivedEventArgs`
 
    Arguments for the OnConControlQuitReceived event.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: STKXConControlQuitReceivedEventArgs
 
 Overview
 --------

@@ -1,12 +1,12 @@
 WINDOW_SERVICE
 ==============
 
-.. py:class:: WINDOW_SERVICE
+.. py:class:: ansys.stk.core.uicore.WINDOW_SERVICE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: WINDOW_SERVICE
 
 Overview
 --------

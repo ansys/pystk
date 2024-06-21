@@ -1,13 +1,13 @@
 Radar
 =====
 
-.. py:class:: Radar
+.. py:class:: ansys.stk.core.stkobjects.Radar
 
-   Bases: py:obj:`~IRadar`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadar`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the radar object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Radar
 
 Overview
 --------

@@ -1,13 +1,13 @@
 SiteEndOfPrevProcedure
 ======================
 
-.. py:class:: SiteEndOfPrevProcedure
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteEndOfPrevProcedure
 
-   Bases: py:obj:`~ISiteEndOfPrevProcedure`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteEndOfPrevProcedure`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining an End of Previous Procedure site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteEndOfPrevProcedure
 
 Overview
 --------

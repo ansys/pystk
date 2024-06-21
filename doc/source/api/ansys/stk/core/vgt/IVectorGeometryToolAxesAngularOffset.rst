@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesAngularOffset
 ====================================
 
-.. py:class:: IVectorGeometryToolAxesAngularOffset
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset
 
    object
    
    Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesAngularOffset
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~spin_vector`
-            * - :py:meth:`~rotation_angle`
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~fixed_offset_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.spin_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.rotation_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.fixed_offset_angle`
 
 
 Import detail
@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: spin_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.spin_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a spin vector.
 
 .. py:property:: rotation_angle
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.rotation_angle
-    :type: IAgCrdnAngleRefTo
+    :type: IVectorGeometryToolAngleRefTo
 
     Specify a rotational angle.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.reference_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

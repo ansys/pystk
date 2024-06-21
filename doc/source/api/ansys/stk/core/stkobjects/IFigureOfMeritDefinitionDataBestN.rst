@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionDataBestN
 =================================
 
-.. py:class:: IFigureOfMeritDefinitionDataBestN
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN
 
    IFigureOfMeritDefinitionData
    
    Navigation accuracy based on best N satellites.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionDataBestN
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_best_n_metric_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.is_best_n_metric_supported`
               - Is the type of Best N metric supported?
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~best_n`
-            * - :py:meth:`~best_n_metric`
-            * - :py:meth:`~best_n_metric_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.best_n`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.best_n_metric`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.best_n_metric_supported_types`
 
 
 Import detail

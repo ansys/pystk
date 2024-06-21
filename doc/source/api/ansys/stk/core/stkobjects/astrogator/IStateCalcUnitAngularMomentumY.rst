@@ -1,13 +1,13 @@
 IStateCalcUnitAngularMomentumY
 ==============================
 
-.. py:class:: IStateCalcUnitAngularMomentumY
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcUnitAngularMomentumY
 
    object
    
    Properties for a UnitAngularMomentumY calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcUnitAngularMomentumY
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcUnitAngularMomentumY.central_body_name`
 
 
 Import detail

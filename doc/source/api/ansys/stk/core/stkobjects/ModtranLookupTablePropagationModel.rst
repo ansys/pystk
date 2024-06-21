@@ -1,13 +1,13 @@
 ModtranLookupTablePropagationModel
 ==================================
 
-.. py:class:: ModtranLookupTablePropagationModel
+.. py:class:: ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel
 
-   Bases: py:obj:`~IModtranLookupTablePropagationModel`, py:obj:`~ILaserAtmosphericLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel`, py:obj:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an MODTRAN-based lookup table propagation model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModtranLookupTablePropagationModel
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IADDSMessage
 ============
 
-.. py:class:: IADDSMessage
+.. py:class:: ansys.stk.core.stkobjects.aviator.IADDSMessage
 
    object
    
    Interface used to access a message from the NOAA ADDS forecast.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IADDSMessage
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~message_time`
-            * - :py:meth:`~type`
-            * - :py:meth:`~source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.message_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.source`
 
 
 Import detail

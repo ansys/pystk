@@ -1,12 +1,12 @@
 LATTICE_TYPE
 ============
 
-.. py:class:: LATTICE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.LATTICE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LATTICE_TYPE
 
 Overview
 --------

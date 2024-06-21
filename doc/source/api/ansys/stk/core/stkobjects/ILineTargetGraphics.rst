@@ -1,13 +1,13 @@
 ILineTargetGraphics
 ===================
 
-.. py:class:: ILineTargetGraphics
+.. py:class:: ansys.stk.core.stkobjects.ILineTargetGraphics
 
    object
    
    Line Target 2D graphics.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILineTargetGraphics
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~label_name`
-            * - :py:meth:`~bounding_rect_visible`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_pts_visible`
-            * - :py:meth:`~use_inst_name_label`
-            * - :py:meth:`~label_visible`
-            * - :py:meth:`~label_color`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~color`
-            * - :py:meth:`~inherit`
-            * - :py:meth:`~label_notes`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.label_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.bounding_rect_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.line_pts_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.label_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.inherit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.label_notes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.is_object_graphics_visible`
 
 
 Import detail
@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.ILineTargetGraphics.label_notes
-    :type: IAgLabelNoteCollection
+    :type: ILabelNoteCollection
 
     Get the label notes collection.
 

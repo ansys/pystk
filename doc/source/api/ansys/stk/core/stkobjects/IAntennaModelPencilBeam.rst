@@ -1,13 +1,13 @@
 IAntennaModelPencilBeam
 =======================
 
-.. py:class:: IAntennaModelPencilBeam
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelPencilBeam
 
    object
    
    Provide access to the properties and methods defining a pencil beam antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelPencilBeam
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~sidelobe_gain`
-            * - :py:meth:`~beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPencilBeam.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPencilBeam.sidelobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPencilBeam.beamwidth`
 
 
 Import detail

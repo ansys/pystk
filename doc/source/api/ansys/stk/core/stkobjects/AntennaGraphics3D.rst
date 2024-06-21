@@ -1,13 +1,13 @@
 AntennaGraphics3D
 =================
 
-.. py:class:: AntennaGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.AntennaGraphics3D
 
-   Bases: py:obj:`~IAntennaGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaGraphics3D`
 
    Class defining 3D Graphics properties of a Antenna.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaGraphics3D
 
 Overview
 --------

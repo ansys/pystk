@@ -1,13 +1,13 @@
 VehicleHPOPForceModelMoreOptions
 ================================
 
-.. py:class:: VehicleHPOPForceModelMoreOptions
+.. py:class:: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions
 
-   Bases: py:obj:`~IVehicleHPOPForceModelMoreOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions`
 
    Class defining additional force model options for HPOP.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleHPOPForceModelMoreOptions
 
 Overview
 --------

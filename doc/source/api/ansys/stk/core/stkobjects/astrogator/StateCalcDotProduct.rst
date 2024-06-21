@@ -1,13 +1,13 @@
 StateCalcDotProduct
 ===================
 
-.. py:class:: StateCalcDotProduct
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDotProduct
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDotProduct`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDotProduct`
 
    DotProduct Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDotProduct
 
 Overview
 --------

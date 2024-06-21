@@ -1,13 +1,13 @@
 SensorEOIRBand
 ==============
 
-.. py:class:: SensorEOIRBand
+.. py:class:: ansys.stk.core.stkobjects.SensorEOIRBand
 
-   Bases: py:obj:`~ISensorEOIRBand`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorEOIRBand`
 
    Class defining an EOIR band.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorEOIRBand
 
 Overview
 --------

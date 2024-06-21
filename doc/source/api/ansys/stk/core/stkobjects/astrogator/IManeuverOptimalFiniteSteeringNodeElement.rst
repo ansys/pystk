@@ -1,13 +1,13 @@
 IManeuverOptimalFiniteSteeringNodeElement
 =========================================
 
-.. py:class:: IManeuverOptimalFiniteSteeringNodeElement
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement
 
    object
    
    The elements of the steering node.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverOptimalFiniteSteeringNodeElement
 
 Overview
 --------
@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~node_index`
-            * - :py:meth:`~time`
-            * - :py:meth:`~mass`
-            * - :py:meth:`~azimuth`
-            * - :py:meth:`~elevation`
-            * - :py:meth:`~direction_cos_x`
-            * - :py:meth:`~direction_cos_y`
-            * - :py:meth:`~direction_cos_z`
-            * - :py:meth:`~position_x`
-            * - :py:meth:`~position_y`
-            * - :py:meth:`~position_z`
-            * - :py:meth:`~vel_x`
-            * - :py:meth:`~vel_y`
-            * - :py:meth:`~vel_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.node_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.direction_cos_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.direction_cos_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.direction_cos_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.position_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.position_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.position_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.vel_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.vel_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.vel_z`
 
 
 Import detail

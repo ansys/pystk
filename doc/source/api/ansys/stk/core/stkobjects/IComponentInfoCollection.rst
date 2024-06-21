@@ -1,13 +1,13 @@
 IComponentInfoCollection
 ========================
 
-.. py:class:: IComponentInfoCollection
+.. py:class:: ansys.stk.core.stkobjects.IComponentInfoCollection
 
    object
    
    The collection of components and component folders.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IComponentInfoCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.item`
               - Allow the user to iterate through the components.
-            * - :py:meth:`~get_folder`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.get_folder`
               - Return the specified folder.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.remove`
               - Remove the named component from the collection.
-            * - :py:meth:`~duplicate_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.duplicate_component`
               - Duplicates and adds the component, with the supplied name or index, to the collection and then returns the duplicated component.
-            * - :py:meth:`~load_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.load_component`
               - Load a component from a specified file (full path) into the current folder and then returns the loaded component.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.get_item_by_index`
               - Retrieve component info from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.get_item_by_name`
               - Retrieve component info from the collection by name.
 
     .. tab-item:: Properties
@@ -41,11 +41,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~folder_count`
-            * - :py:meth:`~available_folders`
-            * - :py:meth:`~folder_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.folder_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.available_folders`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.folder_name`
 
 
 Import detail

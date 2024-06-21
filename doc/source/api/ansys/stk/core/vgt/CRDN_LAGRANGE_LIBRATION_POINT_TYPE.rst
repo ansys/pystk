@@ -1,12 +1,12 @@
 CRDN_LAGRANGE_LIBRATION_POINT_TYPE
 ==================================
 
-.. py:class:: CRDN_LAGRANGE_LIBRATION_POINT_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_LAGRANGE_LIBRATION_POINT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_LAGRANGE_LIBRATION_POINT_TYPE
 
 Overview
 --------

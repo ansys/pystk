@@ -1,13 +1,13 @@
 ICentralBodyTerrainCollection
 =============================
 
-.. py:class:: ICentralBodyTerrainCollection
+.. py:class:: ansys.stk.core.stkobjects.ICentralBodyTerrainCollection
 
    object
    
    Represents a collection of terrains associated with central bodies. This collection enables adding terrain to any central bodies and not just to the current scenario's central body.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICentralBodyTerrainCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.item`
               - Given an index or a name of a central body, returns an element in the collection.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.get_item_by_index`
               - Retrieve a central body terrain from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.get_item_by_name`
               - Retrieve a central body terrain from the collection by name.
 
     .. tab-item:: Properties
@@ -33,9 +33,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~total_cache_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.total_cache_size`
 
 
 Import detail

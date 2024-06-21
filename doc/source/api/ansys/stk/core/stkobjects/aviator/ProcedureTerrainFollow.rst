@@ -1,13 +1,13 @@
 ProcedureTerrainFollow
 ======================
 
-.. py:class:: ProcedureTerrainFollow
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow
 
-   Bases: py:obj:`~IProcedureTerrainFollow`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a terrain following procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureTerrainFollow
 
 Overview
 --------

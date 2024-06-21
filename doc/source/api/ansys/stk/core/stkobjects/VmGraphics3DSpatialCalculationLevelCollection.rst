@@ -1,13 +1,13 @@
 VmGraphics3DSpatialCalculationLevelCollection
 =============================================
 
-.. py:class:: VmGraphics3DSpatialCalculationLevelCollection
+.. py:class:: ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevelCollection
 
-   Bases: py:obj:`~IVmGraphics3DSpatialCalculationLevelCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevelCollection`
 
    Class defining collections of defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmGraphics3DSpatialCalculationLevelCollection
 
 Overview
 --------

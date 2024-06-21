@@ -1,13 +1,13 @@
 IVehicleGPSElementCollection
 ============================
 
-.. py:class:: IVehicleGPSElementCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSElementCollection
 
    object
    
    A collection of GPS elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSElementCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSElementCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSElementCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSElementCollection._NewEnum`
 
 
 Import detail

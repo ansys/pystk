@@ -1,13 +1,13 @@
 BoundingSphere
 ==============
 
-.. py:class:: BoundingSphere
+.. py:class:: ansys.stk.core.graphics.BoundingSphere
 
-   Bases: py:obj:`~IBoundingSphere`
+   Bases: py:obj:`~ansys.stk.core.graphics.IBoundingSphere`
 
    A sphere that encapsulates an object.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: BoundingSphere
 
 Overview
 --------

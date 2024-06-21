@@ -1,13 +1,13 @@
 IAircraftBasicTakeoffModel
 ==========================
 
-.. py:class:: IAircraftBasicTakeoffModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel
 
    object
    
    Interface used to access the basic takeoff model options for a takeoff model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftBasicTakeoffModel
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_takeoff_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.set_takeoff_speed`
               - Set the takeoff speed of the aircraft.
-            * - :py:meth:`~set_departure_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.set_departure_speed`
               - Set the departure speed of the aircraft.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -33,15 +33,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~takeoff_speed`
-            * - :py:meth:`~takeoff_speed_type`
-            * - :py:meth:`~sea_level_ground_roll`
-            * - :py:meth:`~departure_speed`
-            * - :py:meth:`~departure_speed_type`
-            * - :py:meth:`~use_aero_prop_fuel`
-            * - :py:meth:`~scale_fuel_flow_by_non_std_density`
-            * - :py:meth:`~accel_fuel_flow`
-            * - :py:meth:`~departure_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.takeoff_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.takeoff_speed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.sea_level_ground_roll`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.departure_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.departure_speed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.scale_fuel_flow_by_non_std_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.accel_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.departure_fuel_flow`
 
 
 Import detail

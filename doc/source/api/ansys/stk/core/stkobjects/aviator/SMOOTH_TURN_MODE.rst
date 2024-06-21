@@ -1,12 +1,12 @@
 SMOOTH_TURN_MODE
 ================
 
-.. py:class:: SMOOTH_TURN_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.SMOOTH_TURN_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SMOOTH_TURN_MODE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleStepSizeControl
 =======================
 
-.. py:class:: IVehicleStepSizeControl
+.. py:class:: ansys.stk.core.stkobjects.IVehicleStepSizeControl
 
    object
    
    Interface for step size control.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleStepSizeControl
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method`
-            * - :py:meth:`~error_tolerance`
-            * - :py:meth:`~min_step_size`
-            * - :py:meth:`~max_step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl.method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl.error_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl.min_step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl.max_step_size`
 
 
 Import detail

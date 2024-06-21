@@ -1,13 +1,13 @@
 IPowerInternal
 ==============
 
-.. py:class:: IPowerInternal
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPowerInternal
 
    object
    
    Properties for the Internal Power power source component.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPowerInternal
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerInternal.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerInternal.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerInternal.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~generated_power`
-            * - :py:meth:`~percent_degradation_per_year`
-            * - :py:meth:`~reference_epoch`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerInternal.generated_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerInternal.percent_degradation_per_year`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerInternal.reference_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerInternal.control_parameters_available`
 
 
 Import detail

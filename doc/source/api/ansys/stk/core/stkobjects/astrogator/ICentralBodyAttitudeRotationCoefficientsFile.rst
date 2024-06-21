@@ -1,13 +1,13 @@
 ICentralBodyAttitudeRotationCoefficientsFile
 ============================================
 
-.. py:class:: ICentralBodyAttitudeRotationCoefficientsFile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeRotationCoefficientsFile
 
    ICentralBodyAttitude
    
    Properties for a rotation coefficients file attitude definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyAttitudeRotationCoefficientsFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeRotationCoefficientsFile.filename`
 
 
 Import detail

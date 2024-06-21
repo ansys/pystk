@@ -1,13 +1,13 @@
 ITextureScreenOverlayFactory
 ============================
 
-.. py:class:: ITextureScreenOverlayFactory
+.. py:class:: ansys.stk.core.graphics.ITextureScreenOverlayFactory
 
    object
    
    A rectangular overlay that can be assigned a texture.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextureScreenOverlayFactory
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize`
               - Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels.
-            * - :py:meth:`~initialize_with_xy_width_height`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize_with_xy_width_height`
               - Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
-            * - :py:meth:`~initialize_with_position_size`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize_with_position_size`
               - Initialize the overlay with the specified position and size.
-            * - :py:meth:`~initialize_with_xy_texture`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize_with_xy_texture`
               - Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture.
-            * - :py:meth:`~initialize_with_position_texture`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlayFactory.initialize_with_position_texture`
               - Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture.
 
 

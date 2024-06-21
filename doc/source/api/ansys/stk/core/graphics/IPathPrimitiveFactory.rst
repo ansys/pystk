@@ -1,13 +1,13 @@
 IPathPrimitiveFactory
 =====================
 
-.. py:class:: IPathPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.IPathPrimitiveFactory
 
    object
    
    Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPathPrimitiveFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitiveFactory.initialize`
               - Initialize a default path primitive. This is equivalent to constructing a path primitive with an initial capacity of 16.
-            * - :py:meth:`~initialize_with_capacity`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitiveFactory.initialize_with_capacity`
               - Initialize a path primitive with the specified capacity.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_width_supported`
-            * - :py:meth:`~maximum_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitiveFactory.minimum_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitiveFactory.maximum_width_supported`
 
 
 Import detail

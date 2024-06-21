@@ -1,13 +1,13 @@
 CoveragePointFileListCollection
 ===============================
 
-.. py:class:: CoveragePointFileListCollection
+.. py:class:: ansys.stk.core.stkobjects.CoveragePointFileListCollection
 
-   Bases: py:obj:`~ICoveragePointFileListCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoveragePointFileListCollection`
 
    Point file list collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoveragePointFileListCollection
 
 Overview
 --------

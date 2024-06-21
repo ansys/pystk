@@ -1,13 +1,13 @@
 VehicleRealtimeUTMPoints
 ========================
 
-.. py:class:: VehicleRealtimeUTMPoints
+.. py:class:: ansys.stk.core.stkobjects.VehicleRealtimeUTMPoints
 
-   Bases: py:obj:`~IVehicleRealtimeUTMPoints`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints`
 
    Add one ephemeris point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleRealtimeUTMPoints
 
 Overview
 --------

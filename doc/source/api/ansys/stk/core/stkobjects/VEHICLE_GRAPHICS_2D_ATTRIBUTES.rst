@@ -1,12 +1,12 @@
 VEHICLE_GRAPHICS_2D_ATTRIBUTES
 ==============================
 
-.. py:class:: VEHICLE_GRAPHICS_2D_ATTRIBUTES
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_ATTRIBUTES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_GRAPHICS_2D_ATTRIBUTES
 
 Overview
 --------

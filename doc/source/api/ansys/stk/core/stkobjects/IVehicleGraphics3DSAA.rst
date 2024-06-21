@@ -1,13 +1,13 @@
 IVehicleGraphics3DSAA
 =====================
 
-.. py:class:: IVehicleGraphics3DSAA
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DSAA
 
    object
    
    Interface for 3D South Atlantic Anomaly contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DSAA
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSAA.is_visible`
 
 
 Import detail

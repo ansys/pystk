@@ -1,13 +1,13 @@
 IProcedureBasicManeuver
 =======================
 
-.. py:class:: IProcedureBasicManeuver
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver
 
    object
    
    Interface used to access the options for a Basic Maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureBasicManeuver
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,25 +29,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_time_of_flight`
-            * - :py:meth:`~use_max_time_of_flight`
-            * - :py:meth:`~stop_fuel_state`
-            * - :py:meth:`~use_stop_fuel_state`
-            * - :py:meth:`~max_downrange`
-            * - :py:meth:`~use_max_downrange`
-            * - :py:meth:`~altitude_limit_mode`
-            * - :py:meth:`~terrain_impact_mode`
-            * - :py:meth:`~terrain_impact_time_offset`
-            * - :py:meth:`~navigation_strategy_type`
-            * - :py:meth:`~navigation`
-            * - :py:meth:`~profile_strategy_type`
-            * - :py:meth:`~profile`
-            * - :py:meth:`~flight_mode`
-            * - :py:meth:`~fuel_flow_type`
-            * - :py:meth:`~override_fuel_flow_value`
-            * - :py:meth:`~scale_fuel_flow`
-            * - :py:meth:`~attitude_blend_time`
-            * - :py:meth:`~control_time_constant`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.max_time_of_flight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.use_max_time_of_flight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.stop_fuel_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.use_stop_fuel_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.max_downrange`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.use_max_downrange`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.altitude_limit_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.terrain_impact_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.terrain_impact_time_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.navigation_strategy_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.navigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.profile_strategy_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.flight_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.fuel_flow_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.override_fuel_flow_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.scale_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.attitude_blend_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.control_time_constant`
 
 
 Import detail
@@ -123,7 +123,7 @@ Property detail
 
 .. py:property:: navigation
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.navigation
-    :type: IAgAvtrBasicManeuverStrategy
+    :type: IBasicManeuverStrategy
 
     Get the interface for the navigation strategy.
 
@@ -135,7 +135,7 @@ Property detail
 
 .. py:property:: profile
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.profile
-    :type: IAgAvtrBasicManeuverStrategy
+    :type: IBasicManeuverStrategy
 
     Get the interface for the profile strategy.
 

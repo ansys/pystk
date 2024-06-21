@@ -1,13 +1,13 @@
 StateCalcRARate
 ===============
 
-.. py:class:: StateCalcRARate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRARate
 
-   Bases: py:obj:`~IStateCalcRARate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRARate`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    RightAscensionRate Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRARate
 
 Overview
 --------

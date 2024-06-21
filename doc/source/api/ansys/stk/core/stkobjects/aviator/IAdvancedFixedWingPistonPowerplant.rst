@@ -1,13 +1,13 @@
 IAdvancedFixedWingPistonPowerplant
 ==================================
 
-.. py:class:: IAdvancedFixedWingPistonPowerplant
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPistonPowerplant
 
    object
    
    Interface used to access the options for the Piston powerplant strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingPistonPowerplant
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_sea_level_static_power`
-            * - :py:meth:`~critical_altitude`
-            * - :py:meth:`~propeller_count`
-            * - :py:meth:`~propeller_diameter`
-            * - :py:meth:`~fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPistonPowerplant.max_sea_level_static_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPistonPowerplant.critical_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPistonPowerplant.propeller_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPistonPowerplant.propeller_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPistonPowerplant.fuel_flow`
 
 
 Import detail

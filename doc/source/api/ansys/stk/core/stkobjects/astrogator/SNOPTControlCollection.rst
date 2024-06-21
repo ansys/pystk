@@ -1,13 +1,13 @@
 SNOPTControlCollection
 ======================
 
-.. py:class:: SNOPTControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection
 
-   Bases: py:obj:`~ISNOPTControlCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection`
 
    SNOPT control collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SNOPTControlCollection
 
 Overview
 --------

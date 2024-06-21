@@ -1,13 +1,13 @@
 VehicleAttitudeSlewFixedTime
 ============================
 
-.. py:class:: VehicleAttitudeSlewFixedTime
+.. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedTime
 
-   Bases: py:obj:`~IVehicleAttitudeSlewFixedTime`, py:obj:`~IVehicleAttitudeSlewBase`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedTime`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
 
    Fixed time slew.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleAttitudeSlewFixedTime
 
 Overview
 --------

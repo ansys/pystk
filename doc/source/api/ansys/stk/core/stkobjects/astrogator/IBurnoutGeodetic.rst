@@ -1,13 +1,13 @@
 IBurnoutGeodetic
 ================
 
-.. py:class:: IBurnoutGeodetic
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic
 
    IBurnout
    
    Properties for a geodetic burnout point definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBurnoutGeodetic
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic.altitude`
 
 
 Import detail

@@ -1,12 +1,12 @@
 LOOK_AHEAD_PROPAGATOR
 =====================
 
-.. py:class:: LOOK_AHEAD_PROPAGATOR
+.. py:class:: ansys.stk.core.stkobjects.LOOK_AHEAD_PROPAGATOR
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LOOK_AHEAD_PROPAGATOR
 
 Overview
 --------

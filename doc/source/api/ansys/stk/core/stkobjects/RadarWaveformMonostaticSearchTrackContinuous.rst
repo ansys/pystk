@@ -1,13 +1,13 @@
 RadarWaveformMonostaticSearchTrackContinuous
 ============================================
 
-.. py:class:: RadarWaveformMonostaticSearchTrackContinuous
+.. py:class:: ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackContinuous
 
-   Bases: py:obj:`~IRadarWaveformMonostaticSearchTrackContinuous`, py:obj:`~IRadarWaveformSearchTrack`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous`, py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformSearchTrack`
 
    Class defining a monostatic continuous waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarWaveformMonostaticSearchTrackContinuous
 
 Overview
 --------

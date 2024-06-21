@@ -1,12 +1,12 @@
 EOIR_SHAPE_TYPE
 ===============
 
-.. py:class:: EOIR_SHAPE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.EOIR_SHAPE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIR_SHAPE_TYPE
 
 Overview
 --------

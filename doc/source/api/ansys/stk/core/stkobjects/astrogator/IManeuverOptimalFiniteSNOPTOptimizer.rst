@@ -1,13 +1,13 @@
 IManeuverOptimalFiniteSNOPTOptimizer
 ====================================
 
-.. py:class:: IManeuverOptimalFiniteSNOPTOptimizer
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer
 
    object
    
    Properties of SNOPT Optimizer options for optimal finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverOptimalFiniteSNOPTOptimizer
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~objective`
-            * - :py:meth:`~max_major_iterations`
-            * - :py:meth:`~tolerance_on_major_feasibility`
-            * - :py:meth:`~tolerance_on_major_optimality`
-            * - :py:meth:`~max_minor_iterations`
-            * - :py:meth:`~tolerance_on_minor_feasibility`
-            * - :py:meth:`~options_filename`
-            * - :py:meth:`~provide_runtime_type_info`
-            * - :py:meth:`~use_console_monitor`
-            * - :py:meth:`~allow_internal_primal_infeasibility_measure_normalization`
-            * - :py:meth:`~snopt_scaling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.objective`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.max_major_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.tolerance_on_major_feasibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.tolerance_on_major_optimality`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.max_minor_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.tolerance_on_minor_feasibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.options_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.use_console_monitor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.allow_internal_primal_infeasibility_measure_normalization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.snopt_scaling`
 
 
 Import detail
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

@@ -1,13 +1,13 @@
 WaveformRectangular
 ===================
 
-.. py:class:: WaveformRectangular
+.. py:class:: ansys.stk.core.stkobjects.WaveformRectangular
 
-   Bases: py:obj:`~IWaveformRectangular`, py:obj:`~IWaveform`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IWaveformRectangular`, py:obj:`~ansys.stk.core.stkobjects.IWaveform`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a rectangular waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: WaveformRectangular
 
 Overview
 --------

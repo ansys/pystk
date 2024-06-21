@@ -1,13 +1,13 @@
 RadarWaveformSarPulseIntegration
 ================================
 
-.. py:class:: RadarWaveformSarPulseIntegration
+.. py:class:: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration
 
-   Bases: py:obj:`~IRadarWaveformSarPulseIntegration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseIntegration`
 
    Class defining the pulse integration for a SAR waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarWaveformSarPulseIntegration
 
 Overview
 --------

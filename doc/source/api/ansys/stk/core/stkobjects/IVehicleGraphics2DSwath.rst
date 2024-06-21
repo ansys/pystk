@@ -1,13 +1,13 @@
 IVehicleGraphics2DSwath
 =======================
 
-.. py:class:: IVehicleGraphics2DSwath
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DSwath
 
    object
    
    Vehicle swath interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DSwath
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_elevation_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.set_elevation_type`
               - Set the elevation type.
-            * - :py:meth:`~is_elevation_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.is_elevation_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~elevation_type`
-            * - :py:meth:`~elevation_supported_types`
-            * - :py:meth:`~elevation`
-            * - :py:meth:`~options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.elevation_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.elevation_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.options`
 
 
 Import detail
@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: elevation
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.elevation
-    :type: IAgVeGfxElevation
+    :type: IVehicleGraphics2DElevation
 
     Get the elevation value.
 

@@ -1,13 +1,13 @@
 ITimeToolGapsFilter
 ===================
 
-.. py:class:: ITimeToolGapsFilter
+.. py:class:: ansys.stk.core.vgt.ITimeToolGapsFilter
 
    object
    
    The filter merges intervals unless they are separated by gaps of at least/most certain duration.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolGapsFilter
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~duration_kind`
-            * - :py:meth:`~gap_duration`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolGapsFilter.duration_kind`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolGapsFilter.gap_duration`
 
 
 Import detail

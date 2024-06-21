@@ -1,13 +1,13 @@
 IAttitudeControl
 ================
 
-.. py:class:: IAttitudeControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControl
 
    object
    
    Properties for attitude options for a maneuver segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControl
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lead_duration`
-            * - :py:meth:`~trail_duration`
-            * - :py:meth:`~body_axis`
-            * - :py:meth:`~constraint_sign`
-            * - :py:meth:`~constraint_vector_name`
-            * - :py:meth:`~custom_function`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.lead_duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.trail_duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.body_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.constraint_sign`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.constraint_vector_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.custom_function`
 
 
 Import detail

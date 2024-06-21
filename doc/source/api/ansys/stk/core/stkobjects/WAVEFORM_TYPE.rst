@@ -1,12 +1,12 @@
 WAVEFORM_TYPE
 =============
 
-.. py:class:: WAVEFORM_TYPE
+.. py:class:: ansys.stk.core.stkobjects.WAVEFORM_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: WAVEFORM_TYPE
 
 Overview
 --------

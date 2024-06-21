@@ -1,13 +1,13 @@
 ICentralBodyEphemerisPlanetary
 ==============================
 
-.. py:class:: ICentralBodyEphemerisPlanetary
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisPlanetary
 
    ICentralBodyEphemeris
    
    Properties for the Planetary Ephemeris file ephemeris source.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyEphemerisPlanetary
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~planetary_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisPlanetary.planetary_filename`
 
 
 Import detail

@@ -1,13 +1,13 @@
 TimeToolInterval
 ================
 
-.. py:class:: TimeToolInterval
+.. py:class:: ansys.stk.core.vgt.TimeToolInterval
 
-   Bases: py:obj:`~ITimeToolInterval`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolInterval`
 
    Represents an interval.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolInterval
 
 Overview
 --------

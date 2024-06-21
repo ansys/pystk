@@ -1,13 +1,13 @@
 ChainUserSpecifiedTimePeriod
 ============================
 
-.. py:class:: ChainUserSpecifiedTimePeriod
+.. py:class:: ansys.stk.core.stkobjects.ChainUserSpecifiedTimePeriod
 
-   Bases: py:obj:`~IChainUserSpecifiedTimePeriod`, py:obj:`~IChainTimePeriodBase`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainUserSpecifiedTimePeriod`, py:obj:`~ansys.stk.core.stkobjects.IChainTimePeriodBase`
 
    User-specified time period for the chain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ChainUserSpecifiedTimePeriod
 
 Overview
 --------

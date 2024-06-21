@@ -1,12 +1,12 @@
 ANIMATION_ACTIONS
 =================
 
-.. py:class:: ANIMATION_ACTIONS
+.. py:class:: ansys.stk.core.stkobjects.ANIMATION_ACTIONS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ANIMATION_ACTIONS
 
 Overview
 --------

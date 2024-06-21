@@ -1,12 +1,12 @@
 SENSOR_PROJECTION_DISTANCE_TYPE
 ===============================
 
-.. py:class:: SENSOR_PROJECTION_DISTANCE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_PROJECTION_DISTANCE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_PROJECTION_DISTANCE_TYPE
 
 Overview
 --------

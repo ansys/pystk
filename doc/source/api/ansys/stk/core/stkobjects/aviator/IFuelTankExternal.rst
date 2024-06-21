@@ -1,13 +1,13 @@
 IFuelTankExternal
 =================
 
-.. py:class:: IFuelTankExternal
+.. py:class:: ansys.stk.core.stkobjects.aviator.IFuelTankExternal
 
    object
    
    Interface used to set an aircraft's external fuel tank.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IFuelTankExternal
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~empty_weight`
-            * - :py:meth:`~capacity`
-            * - :py:meth:`~initial_fuel_state`
-            * - :py:meth:`~consumption_order`
-            * - :py:meth:`~drag_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.empty_weight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.capacity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.initial_fuel_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.consumption_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.drag_index`
 
 
 Import detail

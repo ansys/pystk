@@ -1,13 +1,13 @@
 PointingStrategySpinning
 ========================
 
-.. py:class:: PointingStrategySpinning
+.. py:class:: ansys.stk.core.stkobjects.PointingStrategySpinning
 
-   Bases: py:obj:`~IPointingStrategy`, py:obj:`~IPointingStrategySpinning`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPointingStrategy`, py:obj:`~ansys.stk.core.stkobjects.IPointingStrategySpinning`
 
    Class defining a spinning pointing strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PointingStrategySpinning
 
 Overview
 --------

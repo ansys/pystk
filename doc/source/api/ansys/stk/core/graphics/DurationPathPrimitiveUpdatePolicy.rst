@@ -1,13 +1,13 @@
 DurationPathPrimitiveUpdatePolicy
 =================================
 
-.. py:class:: DurationPathPrimitiveUpdatePolicy
+.. py:class:: ansys.stk.core.graphics.DurationPathPrimitiveUpdatePolicy
 
-   Bases: py:obj:`~IDurationPathPrimitiveUpdatePolicy`, py:obj:`~IPathPrimitiveUpdatePolicy`
+   Bases: py:obj:`~ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicy`, py:obj:`~ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy`
 
    path primitive update policy that removes points from remove location after a given duration.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: DurationPathPrimitiveUpdatePolicy
 
 Overview
 --------

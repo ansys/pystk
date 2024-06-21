@@ -1,12 +1,12 @@
 DOCK_STYLE
 ==========
 
-.. py:class:: DOCK_STYLE
+.. py:class:: ansys.stk.core.uicore.DOCK_STYLE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: DOCK_STYLE
 
 Overview
 --------

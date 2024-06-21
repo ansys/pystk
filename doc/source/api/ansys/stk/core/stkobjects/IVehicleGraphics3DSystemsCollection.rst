@@ -1,13 +1,13 @@
 IVehicleGraphics3DSystemsCollection
 ===================================
 
-.. py:class:: IVehicleGraphics3DSystemsCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection
 
    object
    
    List of Systems.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DSystemsCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.contains`
               - Check whether the given frame is already in the list.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.remove`
               - Remove a system by name.
 
     .. tab-item:: Properties
@@ -39,11 +39,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~supported_systems`
-            * - :py:meth:`~inertial_by_window`
-            * - :py:meth:`~fixed_by_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.supported_systems`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.inertial_by_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.fixed_by_window`
 
 
 Import detail
@@ -77,13 +77,13 @@ Property detail
 
 .. py:property:: inertial_by_window
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.inertial_by_window
-    :type: IAgVeVOSystemsSpecialElement
+    :type: IVehicleGraphics3DSystemsSpecialElement
 
     Gets the Inertial By Window System.
 
 .. py:property:: fixed_by_window
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.fixed_by_window
-    :type: IAgVeVOSystemsSpecialElement
+    :type: IVehicleGraphics3DSystemsSpecialElement
 
     Gets the Fixed By Window System.
 

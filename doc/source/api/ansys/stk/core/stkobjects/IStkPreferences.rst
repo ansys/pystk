@@ -1,13 +1,13 @@
 IStkPreferences
 ===============
 
-.. py:class:: IStkPreferences
+.. py:class:: ansys.stk.core.stkobjects.IStkPreferences
 
    object
    
    Configures STK preferences.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkPreferences
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~stk_preferences_vdf`
-            * - :py:meth:`~stk_preferences_connect`
-            * - :py:meth:`~stk_preferences_python_plugins`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_vdf`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_connect`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_python_plugins`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: stk_preferences_vdf
     :canonical: ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_vdf
-    :type: IAgStkPreferencesVDF
+    :type: IStkPreferencesVDF
 
     Configures STK VDF preferences.
 
 .. py:property:: stk_preferences_connect
     :canonical: ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_connect
-    :type: IAgStkPreferencesConnect
+    :type: IStkPreferencesConnect
 
     Configures STK connect preferences.
 
 .. py:property:: stk_preferences_python_plugins
     :canonical: ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_python_plugins
-    :type: IAgStkPreferencesPythonPlugins
+    :type: IStkPreferencesPythonPlugins
 
     Configures STK Python plugin preferences.
 

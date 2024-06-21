@@ -1,13 +1,13 @@
 ITimeToolPointSamplingInterval
 ==============================
 
-.. py:class:: ITimeToolPointSamplingInterval
+.. py:class:: ansys.stk.core.vgt.ITimeToolPointSamplingInterval
 
    object
    
    The interface represents an interval with the time, position and velocity arrays.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolPointSamplingInterval
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~times`
-            * - :py:meth:`~positions`
-            * - :py:meth:`~velocities`
-            * - :py:meth:`~start`
-            * - :py:meth:`~stop`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.positions`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.velocities`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.start`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.stop`
 
 
 Import detail

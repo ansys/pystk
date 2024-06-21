@@ -1,12 +1,12 @@
 WINDOW_STATE
 ============
 
-.. py:class:: WINDOW_STATE
+.. py:class:: ansys.stk.core.uicore.WINDOW_STATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: WINDOW_STATE
 
 Overview
 --------

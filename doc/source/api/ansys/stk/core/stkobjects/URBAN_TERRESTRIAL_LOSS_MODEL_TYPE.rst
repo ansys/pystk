@@ -1,12 +1,12 @@
 URBAN_TERRESTRIAL_LOSS_MODEL_TYPE
 =================================
 
-.. py:class:: URBAN_TERRESTRIAL_LOSS_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.URBAN_TERRESTRIAL_LOSS_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: URBAN_TERRESTRIAL_LOSS_MODEL_TYPE
 
 Overview
 --------

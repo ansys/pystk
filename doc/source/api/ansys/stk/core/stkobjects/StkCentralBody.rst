@@ -1,13 +1,13 @@
 StkCentralBody
 ==============
 
-.. py:class:: StkCentralBody
+.. py:class:: ansys.stk.core.stkobjects.StkCentralBody
 
-   Bases: py:obj:`~IStkCentralBody`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkCentralBody`
 
    A central body coclass.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkCentralBody
 
 Overview
 --------

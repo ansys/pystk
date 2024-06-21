@@ -1,12 +1,12 @@
 SNOPT_GOAL
 ==========
 
-.. py:class:: SNOPT_GOAL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPT_GOAL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SNOPT_GOAL
 
 Overview
 --------

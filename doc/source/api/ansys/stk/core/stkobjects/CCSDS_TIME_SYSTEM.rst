@@ -1,12 +1,12 @@
 CCSDS_TIME_SYSTEM
 =================
 
-.. py:class:: CCSDS_TIME_SYSTEM
+.. py:class:: ansys.stk.core.stkobjects.CCSDS_TIME_SYSTEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CCSDS_TIME_SYSTEM
 
 Overview
 --------

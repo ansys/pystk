@@ -1,13 +1,13 @@
 ISensorCustomPattern
 ====================
 
-.. py:class:: ISensorCustomPattern
+.. py:class:: ansys.stk.core.stkobjects.ISensorCustomPattern
 
    object
    
    IAgSnCustomPattern Interface for custom sensor patterns.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorCustomPattern
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~angular_resolution`
-            * - :py:meth:`~use_native_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCustomPattern.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCustomPattern.angular_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCustomPattern.use_native_resolution`
 
 
 Import detail

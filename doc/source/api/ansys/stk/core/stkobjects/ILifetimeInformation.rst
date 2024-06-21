@@ -1,13 +1,13 @@
 ILifetimeInformation
 ====================
 
-.. py:class:: ILifetimeInformation
+.. py:class:: ansys.stk.core.stkobjects.ILifetimeInformation
 
    object
    
    Provide the information about the lifetime of the object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILifetimeInformation
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~has_been_deleted`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILifetimeInformation.has_been_deleted`
 
 
 Import detail

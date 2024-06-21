@@ -1,13 +1,13 @@
 ProcedureLanding
 ================
 
-.. py:class:: ProcedureLanding
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureLanding
 
-   Bases: py:obj:`~IProcedureLanding`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a landing procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureLanding
 
 Overview
 --------

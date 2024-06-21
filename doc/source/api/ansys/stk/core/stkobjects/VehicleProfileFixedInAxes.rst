@@ -1,13 +1,13 @@
 VehicleProfileFixedInAxes
 =========================
 
-.. py:class:: VehicleProfileFixedInAxes
+.. py:class:: ansys.stk.core.stkobjects.VehicleProfileFixedInAxes
 
-   Bases: py:obj:`~IVehicleProfileFixedInAxes`, py:obj:`~IVehicleAttitudeProfile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileFixedInAxes`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Fixed in Axes attitude profile: maintains a constant orientation of the body-fixed axes with respect to the specified reference axes, using the selected coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleProfileFixedInAxes
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleCorrelationListCollection
 ================================
 
-.. py:class:: VehicleCorrelationListCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleCorrelationListCollection
 
-   Bases: py:obj:`~IVehicleCorrelationListCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleCorrelationListCollection`
 
    Collection representing HPOP covariance matrix.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleCorrelationListCollection
 
 Overview
 --------

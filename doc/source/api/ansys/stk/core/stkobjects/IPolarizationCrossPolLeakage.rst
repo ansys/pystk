@@ -1,13 +1,13 @@
 IPolarizationCrossPolLeakage
 ============================
 
-.. py:class:: IPolarizationCrossPolLeakage
+.. py:class:: ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage
 
    object
    
    Provide the interface for polarization cross pol leakage.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPolarizationCrossPolLeakage
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cross_pol_leakage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage.cross_pol_leakage`
 
 
 Import detail

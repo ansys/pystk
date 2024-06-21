@@ -1,13 +1,13 @@
 IStateCalcRelPositionInPlaneAngle
 =================================
 
-.. py:class:: IStateCalcRelPositionInPlaneAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle
 
    object
    
    Properties for a Relative Position In Plane Angle calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRelPositionInPlaneAngle
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~orbit_plane_source`
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
-            * - :py:meth:`~relative_position_type`
-            * - :py:meth:`~counter_clockwise_rotation`
-            * - :py:meth:`~reference_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.orbit_plane_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.relative_position_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.counter_clockwise_rotation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.reference_direction`
 
 
 Import detail
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

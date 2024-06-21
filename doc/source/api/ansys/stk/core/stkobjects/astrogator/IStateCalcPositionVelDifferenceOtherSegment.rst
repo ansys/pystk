@@ -1,13 +1,13 @@
 IStateCalcPositionVelDifferenceOtherSegment
 ===========================================
 
-.. py:class:: IStateCalcPositionVelDifferenceOtherSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcPositionVelDifferenceOtherSegment
 
    object
    
    Properties for a Position and Velocity Difference Across Segments calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcPositionVelDifferenceOtherSegment
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~other_segment_name`
-            * - :py:meth:`~segment_state_to_use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPositionVelDifferenceOtherSegment.other_segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPositionVelDifferenceOtherSegment.segment_state_to_use`
 
 
 Import detail

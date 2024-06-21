@@ -1,13 +1,13 @@
 OrientationAzEl
 ===============
 
-.. py:class:: OrientationAzEl
+.. py:class:: ansys.stk.core.stkutil.OrientationAzEl
 
-   Bases: py:obj:`~IOrientationAzEl`, py:obj:`~IOrientation`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationAzEl`, py:obj:`~ansys.stk.core.stkutil.IOrientation`
 
    AzEl orientation method.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: OrientationAzEl
 
 Overview
 --------

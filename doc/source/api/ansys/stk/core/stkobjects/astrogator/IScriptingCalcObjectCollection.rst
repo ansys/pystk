@@ -1,13 +1,13 @@
 IScriptingCalcObjectCollection
 ==============================
 
-.. py:class:: IScriptingCalcObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection
 
    object
    
    The list of calc objects that the script can interact with.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingCalcObjectCollection
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.add`
               - Add a calculation object to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.remove`
               - Remove a calculation object.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.remove_all`
               - Remove all calculation objects.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.cut`
               - Copy the calc object into the clipboard and removes the calc object from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.paste`
               - Pastes the calc object from the clipboard and inserts into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.insert_copy`
               - Copy the calc object and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.get_item_by_index`
               - Retrieve a scripting calc object from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.get_item_by_name`
               - Retrieve a scripting calc object from the collection by name.
 
     .. tab-item:: Properties
@@ -45,8 +45,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.count`
 
 
 Import detail

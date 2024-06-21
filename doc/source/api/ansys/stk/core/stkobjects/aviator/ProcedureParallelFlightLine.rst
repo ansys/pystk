@@ -1,13 +1,13 @@
 ProcedureParallelFlightLine
 ===========================
 
-.. py:class:: ProcedureParallelFlightLine
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureParallelFlightLine
 
-   Bases: py:obj:`~IProcedureParallelFlightLine`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a Parallel Flight Line procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureParallelFlightLine
 
 Overview
 --------

@@ -1,13 +1,13 @@
 DataProviderResultStatisticResult
 =================================
 
-.. py:class:: DataProviderResultStatisticResult
+.. py:class:: ansys.stk.core.stkobjects.DataProviderResultStatisticResult
 
-   Bases: py:obj:`~IDataProviderResultStatisticResult`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultStatisticResult`
 
    Results returned by statistics computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderResultStatisticResult
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IElement
 ========
 
-.. py:class:: IElement
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElement
 
    object
    
    The elements of the selected coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElement
 
 Overview
 --------

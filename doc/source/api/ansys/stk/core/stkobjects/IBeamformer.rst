@@ -1,13 +1,13 @@
 IBeamformer
 ===========
 
-.. py:class:: IBeamformer
+.. py:class:: ansys.stk.core.stkobjects.IBeamformer
 
    object
    
    Provide access to the properties and methods defining a beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformer
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformer.type`
 
 
 Import detail

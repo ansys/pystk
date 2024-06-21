@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesTrajectory
 =================================
 
-.. py:class:: IVectorGeometryToolAxesTrajectory
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory
 
    object
    
    Axes based on trajectory of the point relative to the reference coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesTrajectory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~trajectory_point`
-            * - :py:meth:`~reference_system`
-            * - :py:meth:`~trajectory_axes_type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.trajectory_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.trajectory_axes_type`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: trajectory_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.trajectory_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a trajectory point.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.reference_system
-    :type: IAgCrdnSystemRefTo
+    :type: IVectorGeometryToolSystemRefTo
 
     Specify a reference system.
 

@@ -1,12 +1,12 @@
 SCENARIO_END_LOOP_TYPE
 ======================
 
-.. py:class:: SCENARIO_END_LOOP_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SCENARIO_END_LOOP_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SCENARIO_END_LOOP_TYPE
 
 Overview
 --------

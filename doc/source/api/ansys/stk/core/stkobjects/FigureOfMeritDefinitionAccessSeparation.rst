@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionAccessSeparation
 =======================================
 
-.. py:class:: FigureOfMeritDefinitionAccessSeparation
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessSeparation
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionAccessSeparation`, py:obj:`~IFigureOfMeritDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessSeparation`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Access Separation Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionAccessSeparation
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleGraphics2DLighting
 =========================
 
-.. py:class:: VehicleGraphics2DLighting
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLighting
 
-   Bases: py:obj:`~IVehicleGraphics2DLighting`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting`
 
    Lighting.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DLighting
 
 Overview
 --------

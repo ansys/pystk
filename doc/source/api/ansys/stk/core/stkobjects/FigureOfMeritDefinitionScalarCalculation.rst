@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionScalarCalculation
 ========================================
 
-.. py:class:: FigureOfMeritDefinitionScalarCalculation
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionScalarCalculation`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Scalar Calculation Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionScalarCalculation
 
 Overview
 --------

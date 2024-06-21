@@ -1,13 +1,13 @@
 IArcVerticalPlaneOptions
 ========================
 
-.. py:class:: IArcVerticalPlaneOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IArcVerticalPlaneOptions
 
    object
    
    Interface used to access the Vertical Plane options for an arc procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IArcVerticalPlaneOptions
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_arc_flight_path_angle`
-            * - :py:meth:`~stop_arc_flight_path_angle`
-            * - :py:meth:`~min_enroute_flight_path_angle`
-            * - :py:meth:`~max_enroute_flight_path_angle`
-            * - :py:meth:`~max_vert_plane_radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcVerticalPlaneOptions.start_arc_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcVerticalPlaneOptions.stop_arc_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcVerticalPlaneOptions.min_enroute_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcVerticalPlaneOptions.max_enroute_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcVerticalPlaneOptions.max_vert_plane_radius_factor`
 
 
 Import detail

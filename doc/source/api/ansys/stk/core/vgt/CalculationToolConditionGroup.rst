@@ -1,13 +1,13 @@
 CalculationToolConditionGroup
 =============================
 
-.. py:class:: CalculationToolConditionGroup
+.. py:class:: ansys.stk.core.vgt.CalculationToolConditionGroup
 
-   Bases: py:obj:`~ICalculationToolConditionGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConditionGroup`
 
    Access or create VGT conditions associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolConditionGroup
 
 Overview
 --------

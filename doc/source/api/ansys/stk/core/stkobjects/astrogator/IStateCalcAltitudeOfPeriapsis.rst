@@ -1,13 +1,13 @@
 IStateCalcAltitudeOfPeriapsis
 =============================
 
-.. py:class:: IStateCalcAltitudeOfPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcAltitudeOfPeriapsis
 
    object
    
    Properties for an Altitude Of Periapsis calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcAltitudeOfPeriapsis
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcAltitudeOfPeriapsis.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcAltitudeOfPeriapsis.element_type`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ICalculationToolScalarConstant
 ==============================
 
-.. py:class:: ICalculationToolScalarConstant
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarConstant
 
    object
    
    Constant scalar value of specified dimension.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarConstant
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
-            * - :py:meth:`~dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarConstant.value`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarConstant.dimension`
 
 
 Import detail

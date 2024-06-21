@@ -1,12 +1,12 @@
 CRDN_CONDITION_COMBINED_OPERATION_TYPE
 ======================================
 
-.. py:class:: CRDN_CONDITION_COMBINED_OPERATION_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_CONDITION_COMBINED_OPERATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_CONDITION_COMBINED_OPERATION_TYPE
 
 Overview
 --------

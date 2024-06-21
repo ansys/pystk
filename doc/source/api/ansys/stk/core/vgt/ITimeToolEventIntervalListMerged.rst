@@ -1,13 +1,13 @@
 ITimeToolEventIntervalListMerged
 ================================
 
-.. py:class:: ITimeToolEventIntervalListMerged
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalListMerged
 
    object
    
    Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalListMerged
 
 Overview
 --------
@@ -20,27 +20,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_interval_list_a`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.set_interval_list_a`
               - Set the interval list A.
-            * - :py:meth:`~set_interval_a`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.set_interval_a`
               - Set the interval A.
-            * - :py:meth:`~set_interval_list_b`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.set_interval_list_b`
               - Set the interval list B.
-            * - :py:meth:`~set_interval_b`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.set_interval_b`
               - Set the interval B.
-            * - :py:meth:`~add_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.add_interval`
               - Add interval.
-            * - :py:meth:`~add_interval_list`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.add_interval_list`
               - Add interval list.
-            * - :py:meth:`~set_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.set_interval`
               - Set the interval at given index.
-            * - :py:meth:`~set_interval_list`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.set_interval_list`
               - Set the interval list at given index.
-            * - :py:meth:`~get_time_component`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.get_time_component`
               - Get time component at given position.
-            * - :py:meth:`~get_time_component_size`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.get_time_component_size`
               - Get time component list size.
-            * - :py:meth:`~remove_time_component`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.remove_time_component`
               - Remove time component at given position.
 
     .. tab-item:: Properties
@@ -49,9 +49,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~interval_list_or_interval_a`
-            * - :py:meth:`~interval_list_or_interval_b`
-            * - :py:meth:`~merge_operation`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.interval_list_or_interval_a`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.interval_list_or_interval_b`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.merge_operation`
 
 
 Import detail
@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: interval_list_or_interval_a
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.interval_list_or_interval_a
-    :type: IAgCrdn
+    :type: IAnalysisWorkbenchComponent
 
     The interval list or interval A.
 
 .. py:property:: interval_list_or_interval_b
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.interval_list_or_interval_b
-    :type: IAgCrdn
+    :type: IAnalysisWorkbenchComponent
 
     The interval list or interval B.
 

@@ -1,13 +1,13 @@
 TimeToolEventArrayFixedStep
 ===========================
 
-.. py:class:: TimeToolEventArrayFixedStep
+.. py:class:: ansys.stk.core.vgt.TimeToolEventArrayFixedStep
 
-   Bases: py:obj:`~ITimeToolEventArrayFixedStep`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventArray`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventArrayFixedStep
 
 Overview
 --------

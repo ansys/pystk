@@ -1,13 +1,13 @@
 ElementTargetVectorOutgoingAsymptote
 ====================================
 
-.. py:class:: ElementTargetVectorOutgoingAsymptote
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ElementTargetVectorOutgoingAsymptote
 
-   Bases: py:obj:`~IElementTargetVectorOutgoingAsymptote`, py:obj:`~IElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorOutgoingAsymptote`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Target Vector Outgoing Asymptote elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ElementTargetVectorOutgoingAsymptote
 
 Overview
 --------

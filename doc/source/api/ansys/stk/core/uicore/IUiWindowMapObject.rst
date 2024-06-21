@@ -1,13 +1,13 @@
 IUiWindowMapObject
 ==================
 
-.. py:class:: IUiWindowMapObject
+.. py:class:: ansys.stk.core.uicore.IUiWindowMapObject
 
    object
    
    Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: IUiWindowMapObject
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~map_id`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowMapObject.map_id`
 
 
 Import detail

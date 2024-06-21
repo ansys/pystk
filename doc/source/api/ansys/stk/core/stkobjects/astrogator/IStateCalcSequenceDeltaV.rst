@@ -1,13 +1,13 @@
 IStateCalcSequenceDeltaV
 ========================
 
-.. py:class:: IStateCalcSequenceDeltaV
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSequenceDeltaV
 
    object
    
    Properties for a Sequence DeltaV calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSequenceDeltaV
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sequence_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSequenceDeltaV.sequence_name`
 
 
 Import detail

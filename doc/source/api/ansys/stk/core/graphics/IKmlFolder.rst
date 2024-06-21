@@ -1,13 +1,13 @@
 IKmlFolder
 ==========
 
-.. py:class:: IKmlFolder
+.. py:class:: ansys.stk.core.graphics.IKmlFolder
 
    object
    
    A KML folder.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IKmlFolder
 
 Overview
 --------

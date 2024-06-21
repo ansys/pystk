@@ -1,13 +1,13 @@
 IManeuverOptimalFiniteInitialBoundaryConditions
 ===============================================
 
-.. py:class:: IManeuverOptimalFiniteInitialBoundaryConditions
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions
 
    object
    
    Properties of initial boundary conditions for optimal finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverOptimalFiniteInitialBoundaryConditions
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_from_initial_guess`
-            * - :py:meth:`~a`
-            * - :py:meth:`~h`
-            * - :py:meth:`~k`
-            * - :py:meth:`~p`
-            * - :py:meth:`~q`
-            * - :py:meth:`~l`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.set_from_initial_guess`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.h`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.k`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.q`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.provide_runtime_type_info`
 
 
 Import detail
@@ -49,43 +49,43 @@ Property detail
 
 .. py:property:: a
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.a
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element a.
 
 .. py:property:: h
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.h
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element h.
 
 .. py:property:: k
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.k
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element k.
 
 .. py:property:: p
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.p
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element p.
 
 .. py:property:: q
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.q
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element q.
 
 .. py:property:: l
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.l
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element L.
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

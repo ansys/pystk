@@ -1,13 +1,13 @@
 IProfileIPOPTOptimizer
 ======================
 
-.. py:class:: IProfileIPOPTOptimizer
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer
 
    IProfile
    
    Properties of IPOPT Optimizer profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileIPOPTOptimizer
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~control_parameters`
-            * - :py:meth:`~results`
-            * - :py:meth:`~targeter_graphs`
-            * - :py:meth:`~scripting_tool`
-            * - :py:meth:`~reset_controls_before_run`
-            * - :py:meth:`~tolerance_on_convergence`
-            * - :py:meth:`~maximum_iterations`
-            * - :py:meth:`~tolerance_on_constraint_violation`
-            * - :py:meth:`~tolerance_on_dual_infeasibility`
-            * - :py:meth:`~tolerance_on_complementary_infeasibility`
-            * - :py:meth:`~options_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.control_parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.results`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.targeter_graphs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.scripting_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.reset_controls_before_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.tolerance_on_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.maximum_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.tolerance_on_constraint_violation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.tolerance_on_dual_infeasibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.tolerance_on_complementary_infeasibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.options_filename`
 
 
 Import detail
@@ -46,25 +46,25 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.control_parameters
-    :type: IAgVAIPOPTControlCollection
+    :type: IIPOPTControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.results
-    :type: IAgVAIPOPTResultCollection
+    :type: IIPOPTResultCollection
 
     Get the list of results defined for the profile.
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.targeter_graphs
-    :type: IAgVATargeterGraphCollection
+    :type: ITargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer.scripting_tool
-    :type: IAgVAScriptingTool
+    :type: IScriptingTool
 
     Returns the Scripting tool for the sequence.
 

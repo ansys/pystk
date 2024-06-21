@@ -1,13 +1,13 @@
 VehicleThirdBodyGravity
 =======================
 
-.. py:class:: VehicleThirdBodyGravity
+.. py:class:: ansys.stk.core.stkobjects.VehicleThirdBodyGravity
 
-   Bases: py:obj:`~IVehicleThirdBodyGravity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravity`
 
    Third body gravity options for Long-range Orbit Predictor (LOP) propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleThirdBodyGravity
 
 Overview
 --------

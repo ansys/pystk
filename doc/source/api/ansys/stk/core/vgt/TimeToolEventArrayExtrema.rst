@@ -1,13 +1,13 @@
 TimeToolEventArrayExtrema
 =========================
 
-.. py:class:: TimeToolEventArrayExtrema
+.. py:class:: ansys.stk.core.vgt.TimeToolEventArrayExtrema
 
-   Bases: py:obj:`~ITimeToolEventArrayExtrema`, py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventArray`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventArrayExtrema
 
 Overview
 --------

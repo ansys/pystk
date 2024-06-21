@@ -1,12 +1,12 @@
 SENSOR_EOIR_PROCESSING_LEVELS
 =============================
 
-.. py:class:: SENSOR_EOIR_PROCESSING_LEVELS
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_EOIR_PROCESSING_LEVELS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_EOIR_PROCESSING_LEVELS
 
 Overview
 --------

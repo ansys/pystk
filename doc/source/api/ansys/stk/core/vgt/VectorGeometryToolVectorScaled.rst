@@ -1,13 +1,13 @@
 VectorGeometryToolVectorScaled
 ==============================
 
-.. py:class:: VectorGeometryToolVectorScaled
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorScaled
 
-   Bases: py:obj:`~IVectorGeometryToolVectorScaled`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScaled`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorScaled
 
 Overview
 --------

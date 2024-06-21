@@ -1,12 +1,12 @@
 CRDN_TRAJECTORY_AXES_TYPE
 =========================
 
-.. py:class:: CRDN_TRAJECTORY_AXES_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_TRAJECTORY_AXES_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_TRAJECTORY_AXES_TYPE
 
 Overview
 --------

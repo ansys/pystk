@@ -1,12 +1,12 @@
 STK_OBJECT_TYPE
 ===============
 
-.. py:class:: STK_OBJECT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.STK_OBJECT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: STK_OBJECT_TYPE
 
 Overview
 --------

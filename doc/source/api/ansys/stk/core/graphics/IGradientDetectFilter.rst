@@ -1,13 +1,13 @@
 IGradientDetectFilter
 =====================
 
-.. py:class:: IGradientDetectFilter
+.. py:class:: ansys.stk.core.graphics.IGradientDetectFilter
 
    object
    
    Apply a convolution filter to detect gradients in the source raster.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGradientDetectFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method`
+            * - :py:attr:`~ansys.stk.core.graphics.IGradientDetectFilter.method`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IGridSearchResultCollection
 ===========================
 
-.. py:class:: IGridSearchResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection
 
    object
    
    Properties for the list of Grid Search result parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGridSearchResultCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_result_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection.get_result_by_paths`
               - Return the result specified by the object/result path.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection.count`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAircraftAdvancedTakeoffModel
 =============================
 
-.. py:class:: IAircraftAdvancedTakeoffModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel
 
    object
    
    Interface used to access the advanced takeoff model options for a takeoff model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftAdvancedTakeoffModel
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_stall_speed_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.set_stall_speed_ratio`
               - Set the takeoff speed mode to StallSpeedRatio and specify the stall speed ratio.
-            * - :py:meth:`~set_angle_of_attack`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.set_angle_of_attack`
               - Set the takeoff speed mode to AngleOfAttack and specify the angle of attack.
-            * - :py:meth:`~set_departure_speed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.set_departure_speed_limit`
               - Set the departure speed limit of the aircraft.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -35,14 +35,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~takeoff_speed_mode`
-            * - :py:meth:`~stall_speed_ratio`
-            * - :py:meth:`~angle_of_attack`
-            * - :py:meth:`~flaps`
-            * - :py:meth:`~departure_speed_mode`
-            * - :py:meth:`~departure_speed_limit`
-            * - :py:meth:`~departure_speed_limit_type`
-            * - :py:meth:`~use_afterburner`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.takeoff_speed_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.stall_speed_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.angle_of_attack`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.flaps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.departure_speed_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.departure_speed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.departure_speed_limit_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.use_afterburner`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ISpatialState
 =============
 
-.. py:class:: ISpatialState
+.. py:class:: ansys.stk.core.stkobjects.ISpatialState
 
    object
    
    Represents a position and an attitude of an object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISpatialState
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~query_velocity_fixed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.query_velocity_fixed`
               - Return a velocity of the vehicle in central body fixed frame.
-            * - :py:meth:`~query_velocity_inertial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.query_velocity_inertial`
               - Return a velocity of the vehicle in central body inertial frame.
 
     .. tab-item:: Properties
@@ -31,15 +31,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fixed_position`
-            * - :py:meth:`~inertial_position`
-            * - :py:meth:`~inertial_orientation`
-            * - :py:meth:`~fixed_orientation`
-            * - :py:meth:`~current_time`
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~is_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.fixed_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.inertial_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.inertial_orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.fixed_orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.current_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpatialState.is_available`
 
 
 Import detail
@@ -55,25 +55,25 @@ Property detail
 
 .. py:property:: fixed_position
     :canonical: ansys.stk.core.stkobjects.ISpatialState.fixed_position
-    :type: IAgPosition
+    :type: IPosition
 
     Returns a position of the vehicle in central body fixed frame.
 
 .. py:property:: inertial_position
     :canonical: ansys.stk.core.stkobjects.ISpatialState.inertial_position
-    :type: IAgPosition
+    :type: IPosition
 
     Returns a position of the vehicle in central body inertial frame.
 
 .. py:property:: inertial_orientation
     :canonical: ansys.stk.core.stkobjects.ISpatialState.inertial_orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Returns an attitude of the vehicle in central body inertial frame.
 
 .. py:property:: fixed_orientation
     :canonical: ansys.stk.core.stkobjects.ISpatialState.fixed_orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Returns an attitude of the vehicle in central body fixed frame.
 

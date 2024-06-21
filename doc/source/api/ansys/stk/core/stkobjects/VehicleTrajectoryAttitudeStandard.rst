@@ -1,13 +1,13 @@
 VehicleTrajectoryAttitudeStandard
 =================================
 
-.. py:class:: VehicleTrajectoryAttitudeStandard
+.. py:class:: ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard
 
-   Bases: py:obj:`~IVehicleTrajectoryAttitudeStandard`, py:obj:`~IVehicleAttitudeStandard`, py:obj:`~IVehicleAttitude`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeStandard`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitude`
 
    Standard attitude profile for launch vehicle or missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleTrajectoryAttitudeStandard
 
 Overview
 --------

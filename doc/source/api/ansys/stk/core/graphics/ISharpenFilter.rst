@@ -1,13 +1,13 @@
 ISharpenFilter
 ==============
 
-.. py:class:: ISharpenFilter
+.. py:class:: ansys.stk.core.graphics.ISharpenFilter
 
    object
    
    Apply a convolution filter to increase the sharpness of the source raster.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISharpenFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method`
+            * - :py:attr:`~ansys.stk.core.graphics.ISharpenFilter.method`
 
 
 Import detail

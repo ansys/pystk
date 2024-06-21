@@ -1,13 +1,13 @@
 BeamformerDolphChebyshev
 ========================
 
-.. py:class:: BeamformerDolphChebyshev
+.. py:class:: ansys.stk.core.stkobjects.BeamformerDolphChebyshev
 
-   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerDolphChebyshev`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`, py:obj:`~ansys.stk.core.stkobjects.IBeamformerDolphChebyshev`
 
    Class defining a Dolph-Chebyshev tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BeamformerDolphChebyshev
 
 Overview
 --------

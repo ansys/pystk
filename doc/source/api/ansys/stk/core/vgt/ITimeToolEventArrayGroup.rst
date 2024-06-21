@@ -1,13 +1,13 @@
 ITimeToolEventArrayGroup
 ========================
 
-.. py:class:: ITimeToolEventArrayGroup
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArrayGroup
 
    object
    
    Access or create VGT event arrays associated with an object.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArrayGroup
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.remove`
               - Remove a specified element.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.item`
               - Return an element by name or at a specified position.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.get_item_by_index`
               - Retrieve an event array from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.get_item_by_name`
               - Retrieve an event array from the collection by name.
 
     .. tab-item:: Properties
@@ -37,10 +37,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~context`
-            * - :py:meth:`~count`
-            * - :py:meth:`~factory`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.context`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.count`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.factory`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup._NewEnum`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayGroup.context
-    :type: IAgCrdnContext
+    :type: IAnalysisWorkbenchContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayGroup.factory
-    :type: IAgCrdnEventArrayFactory
+    :type: ITimeToolEventArrayFactory
 
     Returns a Factory object used to create event arrays.
 

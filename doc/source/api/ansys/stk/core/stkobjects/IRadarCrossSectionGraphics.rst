@@ -1,13 +1,13 @@
 IRadarCrossSectionGraphics
 ==========================
 
-.. py:class:: IRadarCrossSectionGraphics
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics
 
    object
    
    IAgRadarCrossSectionGraphics Interface for radar cross section graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.set_resolution`
               - Set the azimuth/elevation ranges and resolution.
-            * - :py:meth:`~set_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.set_num_points`
               - Set the azimuth/elevation ranges and number of points.
 
     .. tab-item:: Properties
@@ -31,27 +31,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~frequency`
-            * - :py:meth:`~polarization`
-            * - :py:meth:`~show_at_altitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~relative_to_max_gain`
-            * - :py:meth:`~show_labels`
-            * - :py:meth:`~num_label_dec_digits`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~color_method`
-            * - :py:meth:`~start_color`
-            * - :py:meth:`~stop_color`
-            * - :py:meth:`~levels`
-            * - :py:meth:`~azimuth_start`
-            * - :py:meth:`~azimuth_stop`
-            * - :py:meth:`~azimuth_resolution`
-            * - :py:meth:`~azimuth_num_points`
-            * - :py:meth:`~elevation_start`
-            * - :py:meth:`~elevation_stop`
-            * - :py:meth:`~elevation_resolution`
-            * - :py:meth:`~elevation_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.show_at_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.relative_to_max_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.show_labels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.num_label_dec_digits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.color_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.start_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.stop_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.levels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.azimuth_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.azimuth_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.azimuth_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.azimuth_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.elevation_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.elevation_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.elevation_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.elevation_num_points`
 
 
 Import detail
@@ -139,7 +139,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.levels
-    :type: IAgRadarCrossSectionContourLevelCollection
+    :type: IRadarCrossSectionContourLevelCollection
 
     Gets the collection of contour levels.
 

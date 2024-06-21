@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionScalarCalculation
 =========================================
 
-.. py:class:: IFigureOfMeritDefinitionScalarCalculation
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation
 
    IFigureOfMeritDefinitionCompute
    
    Figure of Merit using an Analysis Workbench scalar calculation component as the metric.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionScalarCalculation
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_step`
-            * - :py:meth:`~calc_scalar`
-            * - :py:meth:`~should_update_accesses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation.time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation.calc_scalar`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation.should_update_accesses`
 
 
 Import detail

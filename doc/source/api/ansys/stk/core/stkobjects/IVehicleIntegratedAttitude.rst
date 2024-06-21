@@ -1,13 +1,13 @@
 IVehicleIntegratedAttitude
 ==========================
 
-.. py:class:: IVehicleIntegratedAttitude
+.. py:class:: ansys.stk.core.stkobjects.IVehicleIntegratedAttitude
 
    object
    
    Integrated Attitude interface generates an external attitude file for a satellite by numerically integrating Euler's equations for the current satellite.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleIntegratedAttitude
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~init_from_attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.init_from_attitude`
               - Initialize the parameters using a satellite's attitude.
-            * - :py:meth:`~save_to_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.save_to_file`
               - Generate an external attitude file for a satellite by numerically integrating Euler's equations for the current satellite and save results to the specified file.
 
     .. tab-item:: Properties
@@ -31,14 +31,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~wx`
-            * - :py:meth:`~wy`
-            * - :py:meth:`~wz`
-            * - :py:meth:`~torque`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.wx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.wy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.wz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.torque`
 
 
 Import detail
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Get the initial orientation of the satellite in the Earth Inertial (ECI) frame.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: torque
     :canonical: ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.torque
-    :type: IAgVeTorque
+    :type: IVehicleTorque
 
     Get the external torque data.
 

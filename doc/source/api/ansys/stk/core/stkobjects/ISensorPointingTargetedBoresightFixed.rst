@@ -1,13 +1,13 @@
 ISensorPointingTargetedBoresightFixed
 =====================================
 
-.. py:class:: ISensorPointingTargetedBoresightFixed
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightFixed
 
    object
    
    IAgSnPtTrgtBsightFixed Interface for targeted sensors with fixed boresight.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingTargetedBoresightFixed
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightFixed.orientation`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightFixed.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Get the orientation of the sensor.
 

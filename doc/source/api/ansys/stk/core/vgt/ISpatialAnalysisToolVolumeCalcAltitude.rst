@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCalcAltitude
 ======================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCalcAltitude
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude
 
    object
    
    A volume calc altitude interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCalcAltitude
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~shape_model`
-            * - :py:meth:`~use_custom_reference`
-            * - :py:meth:`~reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.shape_model`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.use_custom_reference`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.reference_point`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.reference_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     A reference point. Can be any point from VGT.
 

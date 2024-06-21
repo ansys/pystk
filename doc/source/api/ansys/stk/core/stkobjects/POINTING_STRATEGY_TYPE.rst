@@ -1,12 +1,12 @@
 POINTING_STRATEGY_TYPE
 ======================
 
-.. py:class:: POINTING_STRATEGY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.POINTING_STRATEGY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: POINTING_STRATEGY_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 TilesetCollection3D
 ===================
 
-.. py:class:: TilesetCollection3D
+.. py:class:: ansys.stk.core.stkobjects.TilesetCollection3D
 
-   Bases: py:obj:`~ITilesetCollection3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITilesetCollection3D`
 
    Collection of 3DTilesets available in the Scenario for analysis.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TilesetCollection3D
 
 Overview
 --------

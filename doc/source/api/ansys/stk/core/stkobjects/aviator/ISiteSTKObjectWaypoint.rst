@@ -1,13 +1,13 @@
 ISiteSTKObjectWaypoint
 ======================
 
-.. py:class:: ISiteSTKObjectWaypoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint
 
    object
    
    Interface used to access the options for a STK Object Waypoint site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteSTKObjectWaypoint
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.get_as_site`
               - Get the site interface.
 
     .. tab-item:: Properties
@@ -29,17 +29,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~object_name`
-            * - :py:meth:`~valid_object_names`
-            * - :py:meth:`~min_time`
-            * - :py:meth:`~waypoint_time`
-            * - :py:meth:`~minimize_site_proc_time_diff`
-            * - :py:meth:`~max_time`
-            * - :py:meth:`~offset_mode`
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~use_magnetic_bearing`
-            * - :py:meth:`~range`
-            * - :py:meth:`~vgt_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.valid_object_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.min_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.waypoint_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.minimize_site_proc_time_diff`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.max_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.offset_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.use_magnetic_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.vgt_point`
 
 
 Import detail

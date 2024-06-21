@@ -1,13 +1,13 @@
 IMtoGraphics2DMarker
 ====================
 
-.. py:class:: IMtoGraphics2DMarker
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics2DMarker
 
    object
    
    Interface to define the 2D graphics attributes of the selected MTO track or tracks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics2DMarker
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DMarker.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DMarker.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DMarker.style`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAntennaModelIsotropic
 ======================
 
-.. py:class:: IAntennaModelIsotropic
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelIsotropic
 
    object
    
    Provide access to the properties and methods defining an isotropic antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelIsotropic
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelIsotropic.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelIsotropic.efficiency`
 
 
 Import detail

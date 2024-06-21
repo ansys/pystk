@@ -1,12 +1,12 @@
 ACCEL_MANEUVER_AERO_PROP_MODE
 =============================
 
-.. py:class:: ACCEL_MANEUVER_AERO_PROP_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ACCEL_MANEUVER_AERO_PROP_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ACCEL_MANEUVER_AERO_PROP_MODE
 
 Overview
 --------

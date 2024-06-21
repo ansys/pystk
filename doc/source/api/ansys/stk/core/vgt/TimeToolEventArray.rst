@@ -1,13 +1,13 @@
 TimeToolEventArray
 ==================
 
-.. py:class:: TimeToolEventArray
+.. py:class:: ansys.stk.core.vgt.TimeToolEventArray
 
-   Bases: py:obj:`~ITimeToolEventArray`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventArray`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An ordered array of times, which may or may not be evenly spaced.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventArray
 
 Overview
 --------

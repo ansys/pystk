@@ -1,13 +1,13 @@
 IRadarWaveformBistaticReceiverSearchTrackContinuous
 ===================================================
 
-.. py:class:: IRadarWaveformBistaticReceiverSearchTrackContinuous
+.. py:class:: ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackContinuous
 
    object
    
    Interface which is implemented by a search/track waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarWaveformBistaticReceiverSearchTrackContinuous
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~analysis_mode_type`
-            * - :py:meth:`~analysis_mode`
-            * - :py:meth:`~probability_of_false_alarm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackContinuous.analysis_mode_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackContinuous.analysis_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackContinuous.probability_of_false_alarm`
 
 
 Import detail
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: analysis_mode
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackContinuous.analysis_mode
-    :type: IAgRadarContinuousWaveAnalysisMode
+    :type: IRadarContinuousWaveAnalysisMode
 
     Gets the interface for setting analysis parameters.
 

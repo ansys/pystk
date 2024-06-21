@@ -1,13 +1,13 @@
 AircraftTakeoff
 ===============
 
-.. py:class:: AircraftTakeoff
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftTakeoff
 
-   Bases: py:obj:`~IAircraftTakeoff`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftTakeoff`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the aircraft takeoff category of an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftTakeoff
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IYarkovskyFunc
 ==============
 
-.. py:class:: IYarkovskyFunc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc
 
    object
    
    Properties for the Yarkovsky Effect propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IYarkovskyFunc
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~alpha`
-            * - :py:meth:`~r0`
-            * - :py:meth:`~nm`
-            * - :py:meth:`~nn`
-            * - :py:meth:`~nk`
-            * - :py:meth:`~a1`
-            * - :py:meth:`~a2`
-            * - :py:meth:`~a3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.alpha`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.r0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.nm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.nn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.nk`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.a1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.a2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.a3`
 
 
 Import detail

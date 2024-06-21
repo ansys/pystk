@@ -1,13 +1,13 @@
 CoverageAssetListCollection
 ===========================
 
-.. py:class:: CoverageAssetListCollection
+.. py:class:: ansys.stk.core.stkobjects.CoverageAssetListCollection
 
-   Bases: py:obj:`~ICoverageAssetListCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection`
 
    Asset List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageAssetListCollection
 
 Overview
 --------

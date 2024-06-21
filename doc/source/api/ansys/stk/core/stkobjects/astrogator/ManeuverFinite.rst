@@ -1,13 +1,13 @@
 ManeuverFinite
 ==============
 
-.. py:class:: ManeuverFinite
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverFinite
 
-   Bases: py:obj:`~IManeuverFinite`, py:obj:`~IManeuver`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuver`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ManeuverFinite
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcPower
 ===============
 
-.. py:class:: IStateCalcPower
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcPower
 
    object
    
    Properties for a Power calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcPower
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~power_source_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPower.power_source_name`
 
 
 Import detail

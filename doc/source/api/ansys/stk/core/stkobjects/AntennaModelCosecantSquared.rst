@@ -1,13 +1,13 @@
 AntennaModelCosecantSquared
 ===========================
 
-.. py:class:: AntennaModelCosecantSquared
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelCosecantSquared
 
-   Bases: py:obj:`~IAntennaModelCosecantSquared`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a cosecant squared antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelCosecantSquared
 
 Overview
 --------

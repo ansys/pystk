@@ -1,13 +1,13 @@
 ISRPModelGPS
 ============
 
-.. py:class:: ISRPModelGPS
+.. py:class:: ansys.stk.core.stkobjects.ISRPModelGPS
 
    ISRPModelBase
    
    GPS Solar Radiation Pressure Model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISRPModelGPS
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scale`
-            * - :py:meth:`~y_bias`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelGPS.scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelGPS.y_bias`
 
 
 Import detail

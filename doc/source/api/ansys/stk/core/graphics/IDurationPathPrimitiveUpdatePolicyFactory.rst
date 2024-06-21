@@ -1,13 +1,13 @@
 IDurationPathPrimitiveUpdatePolicyFactory
 =========================================
 
-.. py:class:: IDurationPathPrimitiveUpdatePolicyFactory
+.. py:class:: ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicyFactory
 
    object
    
    path primitive update policy that removes points from remove location after a given duration.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IDurationPathPrimitiveUpdatePolicyFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicyFactory.initialize`
               - Construct a default update policy. This is equivalent to constructing a policy with duration set to 0 and a remove location of Front.
-            * - :py:meth:`~initialize_with_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicyFactory.initialize_with_parameters`
               - Initialize a policy with the specified duration and removeLocation.
 
 

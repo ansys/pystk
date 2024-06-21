@@ -1,13 +1,13 @@
 IReferenceStateWeightOnWheelsOptions
 ====================================
 
-.. py:class:: IReferenceStateWeightOnWheelsOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions
 
    object
    
    Interface used to access the weight on wheels options for a reference state procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IReferenceStateWeightOnWheelsOptions
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_longitudinal_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.set_longitudinal_accel`
               - Set the longitudinal acceleration.
-            * - :py:meth:`~set_lateral_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.set_lateral_accel`
               - Set the lateral acceleration.
 
     .. tab-item:: Properties
@@ -31,15 +31,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~groundspeed`
-            * - :py:meth:`~tas_dot`
-            * - :py:meth:`~groundspeed_dot`
-            * - :py:meth:`~longitudinal_accel_type`
-            * - :py:meth:`~heading`
-            * - :py:meth:`~heading_is_magnetic`
-            * - :py:meth:`~heading_dot`
-            * - :py:meth:`~course_dot`
-            * - :py:meth:`~lateral_accel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.groundspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.tas_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.groundspeed_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.longitudinal_accel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.heading_is_magnetic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.heading_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.course_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.lateral_accel_type`
 
 
 Import detail

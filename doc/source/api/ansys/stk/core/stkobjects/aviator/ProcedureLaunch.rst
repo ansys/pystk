@@ -1,13 +1,13 @@
 ProcedureLaunch
 ===============
 
-.. py:class:: ProcedureLaunch
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureLaunch
 
-   Bases: py:obj:`~IProcedureLaunch`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a launch procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureLaunch
 
 Overview
 --------

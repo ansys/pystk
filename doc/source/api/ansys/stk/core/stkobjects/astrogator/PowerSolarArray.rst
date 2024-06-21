@@ -1,13 +1,13 @@
 PowerSolarArray
 ===============
 
-.. py:class:: PowerSolarArray
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PowerSolarArray
 
-   Bases: py:obj:`~IPowerSolarArray`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Power - Solar Array.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PowerSolarArray
 
 Overview
 --------

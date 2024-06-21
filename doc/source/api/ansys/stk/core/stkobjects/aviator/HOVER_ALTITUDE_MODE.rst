@@ -1,12 +1,12 @@
 HOVER_ALTITUDE_MODE
 ===================
 
-.. py:class:: HOVER_ALTITUDE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.HOVER_ALTITUDE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: HOVER_ALTITUDE_MODE
 
 Overview
 --------

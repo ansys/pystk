@@ -1,13 +1,13 @@
 ICommSystemLinkSelectionCriteria
 ================================
 
-.. py:class:: ICommSystemLinkSelectionCriteria
+.. py:class:: ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria
 
    object
    
    Provide access to a link selection criteria.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystemLinkSelectionCriteria
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria.type`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ICameraSnapshot
 ===============
 
-.. py:class:: ICameraSnapshot
+.. py:class:: ansys.stk.core.graphics.ICameraSnapshot
 
    object
    
    Takes snapshots of the 3D window.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICameraSnapshot
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~save_to_file`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraSnapshot.save_to_file`
               - Save a snapshot of the 3D window to the filename with the specified format.
-            * - :py:meth:`~save_to_file_with_width_and_dpi`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraSnapshot.save_to_file_with_width_and_dpi`
               - Save a snapshot of the 3D window to the filename with the specified format at high resolution...
-            * - :py:meth:`~save_to_clipboard`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraSnapshot.save_to_clipboard`
               - Save a single frame of the 3D window to the clipboard.
-            * - :py:meth:`~save_to_raster`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraSnapshot.save_to_raster`
               - Save a snapshot of the 3D window to a raster.
-            * - :py:meth:`~save_to_texture`
+            * - :py:attr:`~ansys.stk.core.graphics.ICameraSnapshot.save_to_texture`
               - Save a snapshot of the 3D window to a texture 2d.
 
 

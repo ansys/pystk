@@ -1,13 +1,13 @@
 IProcedureHoldingCircular
 =========================
 
-.. py:class:: IProcedureHoldingCircular
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular
 
    object
    
    Interface used to access the options for a holding circular procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureHoldingCircular
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_minimum_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.get_minimum_diameter`
               - Get the aircraft's minimum diameter at this altitude.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -31,21 +31,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~profile_mode`
-            * - :py:meth:`~level_off_mode`
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~range`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~use_alternate_entry_points`
-            * - :py:meth:`~turn_direction`
-            * - :py:meth:`~turns`
-            * - :py:meth:`~refuel_dump_mode`
-            * - :py:meth:`~hold_cruise_airspeed_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~enroute_turn_direction_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.profile_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.level_off_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.use_alternate_entry_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.turns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.refuel_dump_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.hold_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_turn_direction_options`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.altitude_options
-    :type: IAgAvtrAltitudeMSLOptions
+    :type: IAltitudeMSLOptions
 
     Get the altitude options.
 
@@ -127,25 +127,25 @@ Property detail
 
 .. py:property:: hold_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.hold_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the hold cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_options
-    :type: IAgAvtrEnrouteAndDelayOptions
+    :type: IEnrouteAndDelayOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_turn_direction_options
-    :type: IAgAvtrEnrouteTurnDirectionOptions
+    :type: IEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 

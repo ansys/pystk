@@ -1,13 +1,13 @@
 IChainConnectionCollection
 ==========================
 
-.. py:class:: IChainConnectionCollection
+.. py:class:: ansys.stk.core.stkobjects.IChainConnectionCollection
 
    object
    
    Represents a collection of connections.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainConnectionCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~item_by_from_to_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection.item_by_from_to_objects`
               - Given the From and To objects of a connection, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection.remove_at`
               - Remove the connection with the input index.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection.remove`
               - Remove the connection for the input from-to object pair.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection.add`
               - Add and returns a new connection with the corresponding values.
-            * - :py:meth:`~add_with_parent_restriction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection.add_with_parent_restriction`
               - Add with the option for a parent restriction and returns a new connection with the corresponding values. A Constellation or Subset must be one of the input objects.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection.clear`
               - Clear all connections values from the collection.
 
     .. tab-item:: Properties
@@ -41,8 +41,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnectionCollection._NewEnum`
 
 
 Import detail

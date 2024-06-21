@@ -1,13 +1,13 @@
 IScriptingParameterEnumerationChoiceCollection
 ==============================================
 
-.. py:class:: IScriptingParameterEnumerationChoiceCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection
 
    object
    
    The list of enumeration choices available when parameter type is Enumeration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingParameterEnumerationChoiceCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.add`
               - Add an enumeration choice to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.remove`
               - Remove an enumeration choice.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.cut`
               - Copy the enumeration choice into the clipboard and removes the enumeration choice from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.paste`
               - Pastes the enumeration choice from the clipboard and inserts into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.insert_copy`
               - Copy the enumeration choice and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.get_item_by_index`
               - Retrieve a scripting parameter enumeration choice in the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.get_item_by_name`
               - Retrieve a scripting parameter enumeration choice in the collection by name.
 
     .. tab-item:: Properties
@@ -43,9 +43,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.provide_runtime_type_info`
 
 
 Import detail
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

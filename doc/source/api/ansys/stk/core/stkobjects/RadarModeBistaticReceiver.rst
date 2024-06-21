@@ -1,13 +1,13 @@
 RadarModeBistaticReceiver
 =========================
 
-.. py:class:: RadarModeBistaticReceiver
+.. py:class:: ansys.stk.core.stkobjects.RadarModeBistaticReceiver
 
-   Bases: py:obj:`~IRadarModeBistaticReceiver`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiver`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a bistatic receiver radar mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarModeBistaticReceiver
 
 Overview
 --------

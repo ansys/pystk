@@ -1,13 +1,13 @@
 IAccessConstraintAnalysisWorkbenchCollection
 ============================================
 
-.. py:class:: IAccessConstraintAnalysisWorkbenchCollection
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection
 
    object
    
    IAgAccessCnstrAWBCollection used to access angle, vector and condition constraint List interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintAnalysisWorkbenchCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.remove_index`
               - Remove an item given an index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.remove_all`
               - Remove all items from the collection.
-            * - :py:meth:`~remove_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.remove_constraint`
               - Remove a Analysis Workbench using Reference/Component.
-            * - :py:meth:`~add_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.add_constraint`
               - Add a constraint to the AWB Constraint Collection.
-            * - :py:meth:`~get_available_references`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.get_available_references`
               - Return an array of available References.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.item`
               - Get an IAgAccessCnstrAWB interface using an index.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection._NewEnum`
 
 
 Import detail

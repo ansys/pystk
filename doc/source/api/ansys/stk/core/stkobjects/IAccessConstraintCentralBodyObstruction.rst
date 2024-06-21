@@ -1,13 +1,13 @@
 IAccessConstraintCentralBodyObstruction
 =======================================
 
-.. py:class:: IAccessConstraintCentralBodyObstruction
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction
 
    IAccessConstraint
    
    Access Constraint used for Central Body Obstruction.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintCentralBodyObstruction
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_obstruction_assigned`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.is_obstruction_assigned`
               - Check whether a central body is already assigned.
-            * - :py:meth:`~add_obstruction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.add_obstruction`
               - Add a Central Body Obstruction by Name.
-            * - :py:meth:`~remove_obstruction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.remove_obstruction`
               - Remove a Central Body Obstruction by Name.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~assigned_obstructions`
-            * - :py:meth:`~available_obstructions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.assigned_obstructions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.available_obstructions`
 
 
 Import detail

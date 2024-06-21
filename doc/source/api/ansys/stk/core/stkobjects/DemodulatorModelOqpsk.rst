@@ -1,13 +1,13 @@
 DemodulatorModelOqpsk
 =====================
 
-.. py:class:: DemodulatorModelOqpsk
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelOqpsk
 
-   Bases: py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a OQPSK modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelOqpsk
 
 Overview
 --------

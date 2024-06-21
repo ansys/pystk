@@ -1,13 +1,13 @@
 IVehiclePhysicalData
 ====================
 
-.. py:class:: IVehiclePhysicalData
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePhysicalData
 
    object
    
    Physical data interface for LOP propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePhysicalData
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~drag_cross_sectional_area`
-            * - :py:meth:`~srp_cross_sectional_area`
-            * - :py:meth:`~satellite_mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePhysicalData.drag_cross_sectional_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePhysicalData.srp_cross_sectional_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePhysicalData.satellite_mass`
 
 
 Import detail

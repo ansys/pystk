@@ -1,13 +1,13 @@
 IMtoDefaultGraphics2DTrack
 ==========================
 
-.. py:class:: IMtoDefaultGraphics2DTrack
+.. py:class:: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack
 
    object
    
    Interface to set 2D graphics attributes for default MTO tracks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoDefaultGraphics2DTrack
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~label_visible`
-            * - :py:meth:`~label_color`
-            * - :py:meth:`~marker`
-            * - :py:meth:`~line`
-            * - :py:meth:`~fade_times`
-            * - :py:meth:`~lead_trail_times`
-            * - :py:meth:`~range_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.label_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.line`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.fade_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.lead_trail_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.range_contours`
 
 
 Import detail
@@ -68,31 +68,31 @@ Property detail
 
 .. py:property:: marker
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.marker
-    :type: IAgMtoGfxMarker
+    :type: IMtoGraphics2DMarker
 
     Get the display properties for the track marker.
 
 .. py:property:: line
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.line
-    :type: IAgMtoGfxLine
+    :type: IMtoGraphics2DLine
 
     Get the display properties for the track line.
 
 .. py:property:: fade_times
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.fade_times
-    :type: IAgMtoGfxFadeTimes
+    :type: IMtoGraphics2DFadeTimes
 
     Get the fade times data.
 
 .. py:property:: lead_trail_times
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.lead_trail_times
-    :type: IAgMtoGfxLeadTrailTimes
+    :type: IMtoGraphics2DLeadTrailTimes
 
     Get the lead/trail times data.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.range_contours
-    :type: IAgGfxRangeContours
+    :type: IGraphics2DRangeContours
 
     Get the MTO's 2D range contour graphics.
 

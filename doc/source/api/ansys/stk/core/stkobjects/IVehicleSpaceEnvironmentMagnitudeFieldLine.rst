@@ -1,13 +1,13 @@
 IVehicleSpaceEnvironmentMagnitudeFieldLine
 ==========================================
 
-.. py:class:: IVehicleSpaceEnvironmentMagnitudeFieldLine
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine
 
    object
    
    Graphics settings for showing magnetic field line.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpaceEnvironmentMagnitudeFieldLine
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_2d_visible`
-            * - :py:meth:`~is_3d_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.is_2d_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.is_3d_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.label_visible`
 
 
 Import detail

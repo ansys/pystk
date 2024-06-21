@@ -1,13 +1,13 @@
 IBasicManeuverStrategyBallistic3D
 =================================
 
-.. py:class:: IBasicManeuverStrategyBallistic3D
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D
 
    object
    
    Interface used to access options for a balistic 3D strategy of a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyBallistic3D
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~control_mode`
-            * - :py:meth:`~airspeed_options`
-            * - :py:meth:`~parachute_area`
-            * - :py:meth:`~parachute_cd`
-            * - :py:meth:`~wind_force_effective_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D.control_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D.airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D.parachute_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D.parachute_cd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D.wind_force_effective_area`
 
 
 Import detail
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

@@ -1,13 +1,13 @@
 ICoverageAssetListCollection
 ============================
 
-.. py:class:: ICoverageAssetListCollection
+.. py:class:: ansys.stk.core.stkobjects.ICoverageAssetListCollection
 
    object
    
    Asset List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageAssetListCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.remove`
               - Remove an element from the collection given a ObjectPath.
-            * - :py:meth:`~get_asset_from_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.get_asset_from_path`
               - Retrieve an element, given an object path.
-            * - :py:meth:`~is_asset_assigned`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.is_asset_assigned`
               - Return true if an asset is already assigned.
-            * - :py:meth:`~can_assign_asset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.can_assign_asset`
               - Return true is you can assign an asset.
 
     .. tab-item:: Properties
@@ -43,9 +43,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~available_assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection.available_assets`
 
 
 Import detail

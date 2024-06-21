@@ -1,13 +1,13 @@
 ITriangleMeshPrimitiveFactory
 =============================
 
-.. py:class:: ITriangleMeshPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.ITriangleMeshPrimitiveFactory
 
    object
    
    Render a triangle mesh in the 3D scene. Examples of triangle meshes include polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITriangleMeshPrimitiveFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveFactory.initialize`
               - Initialize a default triangle mesh primitive. This is equivalent to constructing a triangle mesh with a set hint of Frequent.
-            * - :py:meth:`~initialize_with_set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveFactory.initialize_with_set_hint`
               - Initialize a triangle mesh primitive with the specified setHint .
 
 

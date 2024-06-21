@@ -1,13 +1,13 @@
 DirectionEuler
 ==============
 
-.. py:class:: DirectionEuler
+.. py:class:: ansys.stk.core.stkutil.DirectionEuler
 
-   Bases: py:obj:`~IDirectionEuler`, py:obj:`~IDirection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IDirectionEuler`, py:obj:`~ansys.stk.core.stkutil.IDirection`
 
    Euler direction sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: DirectionEuler
 
 Overview
 --------

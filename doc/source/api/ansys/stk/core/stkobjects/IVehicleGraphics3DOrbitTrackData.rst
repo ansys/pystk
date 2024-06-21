@@ -1,13 +1,13 @@
 IVehicleGraphics3DOrbitTrackData
 ================================
 
-.. py:class:: IVehicleGraphics3DOrbitTrackData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTrackData
 
    object
    
    Interface for 3D leading/trailing track data for satellites.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DOrbitTrackData
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit_from_2d`
-            * - :py:meth:`~pass_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTrackData.inherit_from_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTrackData.pass_data`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTrackData.pass_data
-    :type: IAgVeVOOrbitPassData
+    :type: IVehicleGraphics3DOrbitPassData
 
     Get the 3D leading/trailing track data.
 

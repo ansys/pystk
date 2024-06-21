@@ -1,13 +1,13 @@
 IPOPTResult
 ===========
 
-.. py:class:: IPOPTResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTResult
 
-   Bases: py:obj:`~IIPOPTResult`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult`
 
    Properties for objecvtive and constraints of a IPOPT profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPOPTResult
 
 Overview
 --------

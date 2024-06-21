@@ -1,13 +1,13 @@
 IVehicleGraphics2DAttributesCustom
 ==================================
 
-.. py:class:: IVehicleGraphics2DAttributesCustom
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom
 
    IVehicleGraphics2DAttributes
    
    Vehicle 2D graphics display based on custom intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DAttributesCustom
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~deconflict`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.deconflict`
               - Deconflict the custom intervals.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~default`
-            * - :py:meth:`~intervals`
-            * - :py:meth:`~preemptive_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.default`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.preemptive_intervals`
 
 
 Import detail
@@ -47,13 +47,13 @@ Property detail
 
 .. py:property:: default
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.default
-    :type: IAgVeGfxAttributesBasic
+    :type: IVehicleGraphics2DAttributesBasic
 
     Get the default attributes.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.intervals
-    :type: IAgVeGfxIntervalsCollection
+    :type: IVehicleGraphics2DIntervalsCollection
 
     Get the custom intervals.
 

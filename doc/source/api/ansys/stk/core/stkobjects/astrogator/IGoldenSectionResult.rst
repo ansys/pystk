@@ -1,13 +1,13 @@
 IGoldenSectionResult
 ====================
 
-.. py:class:: IGoldenSectionResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult
 
    object
    
    Properties for result parameters of a Golden Section profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGoldenSectionResult
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~desired_operation`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult.desired_operation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResult.custom_display_unit`
 
 
 Import detail

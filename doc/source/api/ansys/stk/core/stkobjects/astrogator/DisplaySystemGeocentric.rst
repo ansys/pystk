@@ -1,13 +1,13 @@
 DisplaySystemGeocentric
 =======================
 
-.. py:class:: DisplaySystemGeocentric
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DisplaySystemGeocentric
 
-   Bases: py:obj:`~IDisplaySystemGeocentric`, py:obj:`~IDisplaySystem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeocentric`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystem`
 
    The geocentric launch location.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DisplaySystemGeocentric
 
 Overview
 --------

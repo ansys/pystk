@@ -1,13 +1,13 @@
 AccessConstraintCollection
 ==========================
 
-.. py:class:: AccessConstraintCollection
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintCollection
 
-   Bases: py:obj:`~IAccessConstraintCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintCollection`
 
    Collection of access constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintCollection
 
 Overview
 --------

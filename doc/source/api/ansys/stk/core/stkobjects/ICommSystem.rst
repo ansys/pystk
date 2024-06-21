@@ -1,13 +1,13 @@
 ICommSystem
 ===========
 
-.. py:class:: ICommSystem
+.. py:class:: ansys.stk.core.stkobjects.ICommSystem
 
    object
    
    Provide access to the properties and methods defining an CommSystem object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystem
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_link_selection_criteria_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.set_link_selection_criteria_type`
               - Set the link selection criteria by name.
 
     .. tab-item:: Properties
@@ -29,20 +29,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~transmitters`
-            * - :py:meth:`~receivers`
-            * - :py:meth:`~interference_sources`
-            * - :py:meth:`~calculate_interference`
-            * - :py:meth:`~reference_bandwidth`
-            * - :py:meth:`~constraining_role`
-            * - :py:meth:`~time_period`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~save_mode`
-            * - :py:meth:`~access_options`
-            * - :py:meth:`~link_selection_criteria`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~include_receiver_interference_emitters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.transmitters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.receivers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.interference_sources`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.calculate_interference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.reference_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.constraining_role`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.save_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.access_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.link_selection_criteria`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.include_receiver_interference_emitters`
 
 
 Import detail
@@ -58,19 +58,19 @@ Property detail
 
 .. py:property:: transmitters
     :canonical: ansys.stk.core.stkobjects.ICommSystem.transmitters
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the transmitter collection.
 
 .. py:property:: receivers
     :canonical: ansys.stk.core.stkobjects.ICommSystem.receivers
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the receiver collection.
 
 .. py:property:: interference_sources
     :canonical: ansys.stk.core.stkobjects.ICommSystem.interference_sources
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the interference source collection.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.ICommSystem.time_period
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Allows configuring the time period.
 
@@ -112,25 +112,25 @@ Property detail
 
 .. py:property:: access_options
     :canonical: ansys.stk.core.stkobjects.ICommSystem.access_options
-    :type: IAgCommSystemAccessOptions
+    :type: ICommSystemAccessOptions
 
     Get the access options.
 
 .. py:property:: link_selection_criteria
     :canonical: ansys.stk.core.stkobjects.ICommSystem.link_selection_criteria
-    :type: IAgCommSystemLinkSelectionCriteria
+    :type: ICommSystemLinkSelectionCriteria
 
     Get the link selection criteria.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ICommSystem.graphics
-    :type: IAgCommSystemGraphics
+    :type: ICommSystemGraphics
 
     Get the 2D Graphics properties for the CommSystem.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ICommSystem.graphics_3d
-    :type: IAgCommSystemVO
+    :type: ICommSystemGraphics3D
 
     Get the 3D Graphics properties for the CommSystem.
 

@@ -1,13 +1,13 @@
 IPolarizationElliptical
 =======================
 
-.. py:class:: IPolarizationElliptical
+.. py:class:: ansys.stk.core.stkobjects.IPolarizationElliptical
 
    object
    
    Provide the interface for elliptical polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPolarizationElliptical
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_axis`
-            * - :py:meth:`~tilt_angle`
-            * - :py:meth:`~axial_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.reference_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.tilt_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.axial_ratio`
 
 
 Import detail

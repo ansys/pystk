@@ -1,13 +1,13 @@
 ITimeToolEventIntervalFromIntervalList
 ======================================
 
-.. py:class:: ITimeToolEventIntervalFromIntervalList
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList
 
    object
    
    Interval created from specified interval list by using one of several selection methods.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalFromIntervalList
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_intervals`
-            * - :py:meth:`~interval_selection`
-            * - :py:meth:`~interval_number`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.reference_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.interval_selection`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.interval_number`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.reference_intervals
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The reference interval list.
 

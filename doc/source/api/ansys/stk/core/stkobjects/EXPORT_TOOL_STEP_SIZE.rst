@@ -1,12 +1,12 @@
 EXPORT_TOOL_STEP_SIZE
 =====================
 
-.. py:class:: EXPORT_TOOL_STEP_SIZE
+.. py:class:: ansys.stk.core.stkobjects.EXPORT_TOOL_STEP_SIZE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EXPORT_TOOL_STEP_SIZE
 
 Overview
 --------

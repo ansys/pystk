@@ -1,13 +1,13 @@
 IStateCalcDotProduct
 ====================
 
-.. py:class:: IStateCalcDotProduct
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDotProduct
 
    object
    
    Properties for a Dot Product calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDotProduct
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vector1_name`
-            * - :py:meth:`~vector2_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDotProduct.vector1_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDotProduct.vector2_name`
 
 
 Import detail

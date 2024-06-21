@@ -1,13 +1,13 @@
 IGreatArcGraphics3D
 ===================
 
-.. py:class:: IGreatArcGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IGreatArcGraphics3D
 
    object
    
    3D Graphics common for all Great Arc Vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGreatArcGraphics3D
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~model`
-            * - :py:meth:`~route`
-            * - :py:meth:`~offsets`
-            * - :py:meth:`~range_contours`
-            * - :py:meth:`~covariance`
-            * - :py:meth:`~vector`
-            * - :py:meth:`~data_display`
-            * - :py:meth:`~model_pointing`
-            * - :py:meth:`~velocity_covariance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.route`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.offsets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.range_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.covariance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.data_display`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.model_pointing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.velocity_covariance`
 
 
 Import detail
@@ -44,55 +44,55 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.model
-    :type: IAgVeRouteVOModel
+    :type: IVehicleRouteGraphics3DModel
 
     Get the vehicle's 3D model properties.
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.route
-    :type: IAgVeVORoute
+    :type: IVehicleGraphics3DRoute
 
     Get the vehicle's 3D route properties.
 
 .. py:property:: offsets
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.offsets
-    :type: IAgVOOffset
+    :type: IGraphics3DOffset
 
     Get the vehicle's 3D offsets properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.range_contours
-    :type: IAgVORangeContours
+    :type: IGraphics3DRangeContours
 
     Get the vehicle's 3D range contour properties.
 
 .. py:property:: covariance
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.covariance
-    :type: IAgVeVOCovariance
+    :type: IVehicleGraphics3DCovariance
 
     Get the vehicle's 3D covariance properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.vector
-    :type: IAgVOVector
+    :type: IGraphics3DVector
 
     Get the vehicle's 3D vector properties.
 
 .. py:property:: data_display
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.data_display
-    :type: IAgVODataDisplayCollection
+    :type: IGraphics3DDataDisplayCollection
 
     Get the vehicle's 3D data display properties.
 
 .. py:property:: model_pointing
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.model_pointing
-    :type: IAgVOModelPointing
+    :type: IGraphics3DModelPointing
 
     Use to point parts of a facility or vehicle model toward a target, such as the Sun or Earth.
 
 .. py:property:: velocity_covariance
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.velocity_covariance
-    :type: IAgVeVOVelCovariance
+    :type: IVehicleGraphics3DVelCovariance
 
     Get the vehicle's 3D velocity covariance properties.
 

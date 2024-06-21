@@ -1,12 +1,12 @@
 PLANET_POSITION_SOURCE_TYPE
 ===========================
 
-.. py:class:: PLANET_POSITION_SOURCE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.PLANET_POSITION_SOURCE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PLANET_POSITION_SOURCE_TYPE
 
 Overview
 --------

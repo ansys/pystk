@@ -1,12 +1,12 @@
 ATTITUDE_COORDINATE_AXES
 ========================
 
-.. py:class:: ATTITUDE_COORDINATE_AXES
+.. py:class:: ansys.stk.core.stkobjects.ATTITUDE_COORDINATE_AXES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ATTITUDE_COORDINATE_AXES
 
 Overview
 --------

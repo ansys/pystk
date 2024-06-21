@@ -1,12 +1,12 @@
 TRAJECTORY_BLEND_MODE
 =====================
 
-.. py:class:: TRAJECTORY_BLEND_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.TRAJECTORY_BLEND_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TRAJECTORY_BLEND_MODE
 
 Overview
 --------

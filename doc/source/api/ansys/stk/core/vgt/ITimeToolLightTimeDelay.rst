@@ -1,13 +1,13 @@
 ITimeToolLightTimeDelay
 =======================
 
-.. py:class:: ITimeToolLightTimeDelay
+.. py:class:: ansys.stk.core.vgt.ITimeToolLightTimeDelay
 
    object
    
    Manage Light Time Delay options..
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolLightTimeDelay
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_light_time_delay`
-            * - :py:meth:`~time_delay_convergence`
-            * - :py:meth:`~aberration_type`
-            * - :py:meth:`~clock_host`
-            * - :py:meth:`~time_sense`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.use_light_time_delay`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.time_delay_convergence`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.aberration_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.clock_host`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.time_sense`
 
 
 Import detail

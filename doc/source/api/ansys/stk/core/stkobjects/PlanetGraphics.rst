@@ -1,13 +1,13 @@
 PlanetGraphics
 ==============
 
-.. py:class:: PlanetGraphics
+.. py:class:: ansys.stk.core.stkobjects.PlanetGraphics
 
-   Bases: py:obj:`~IPlanetGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPlanetGraphics`
 
    Class defining 2D Graphics properties of a Planet.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PlanetGraphics
 
 Overview
 --------

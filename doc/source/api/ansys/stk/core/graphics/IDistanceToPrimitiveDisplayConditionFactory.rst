@@ -1,13 +1,13 @@
 IDistanceToPrimitiveDisplayConditionFactory
 ===========================================
 
-.. py:class:: IDistanceToPrimitiveDisplayConditionFactory
+.. py:class:: ansys.stk.core.graphics.IDistanceToPrimitiveDisplayConditionFactory
 
    object
    
    Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IDistanceToPrimitiveDisplayConditionFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayConditionFactory.initialize`
               - Initialize a default distance to primitive display condition. With this constructor, an object is always rendered regardless of the camera's distance to the primitive.
-            * - :py:meth:`~initialize_with_distances`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayConditionFactory.initialize_with_distances`
               - Initialize a distance to primitive display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
 

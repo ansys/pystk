@@ -1,13 +1,13 @@
 ICylinderTriangulatorInitializer
 ================================
 
-.. py:class:: ICylinderTriangulatorInitializer
+.. py:class:: ansys.stk.core.graphics.ICylinderTriangulatorInitializer
 
    object
    
    Triangulates a cylinder. It is recommended to visualize the cylinder using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICylinderTriangulatorInitializer
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create_simple`
+            * - :py:attr:`~ansys.stk.core.graphics.ICylinderTriangulatorInitializer.create_simple`
               - Compute the triangulation for a cylinder centered at the origin.
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.graphics.ICylinderTriangulatorInitializer.compute`
               - Compute the triangulation for a cylinder centered at the origin.
 
 

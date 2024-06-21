@@ -1,13 +1,13 @@
 IGraphics3DOffsetAttach
 =======================
 
-.. py:class:: IGraphics3DOffsetAttach
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DOffsetAttach
 
    object
    
    Interface for specifying attach points for the attachment of lines to objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DOffsetAttach
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~attach_point_name`
-            * - :py:meth:`~available_attach_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetAttach.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetAttach.attach_point_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetAttach.available_attach_points`
 
 
 Import detail

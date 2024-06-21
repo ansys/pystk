@@ -1,13 +1,13 @@
 IMissionControlSequenceSequence
 ===============================
 
-.. py:class:: IMissionControlSequenceSequence
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence
 
    object
    
    Properties for a Sequence segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceSequence
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~apply_script`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.apply_script`
               - Apply the script.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~repeat_count`
-            * - :py:meth:`~generate_ephemeris`
-            * - :py:meth:`~segments`
-            * - :py:meth:`~sequence_state_to_pass`
-            * - :py:meth:`~scripting_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.repeat_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.generate_ephemeris`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.segments`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.sequence_state_to_pass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.scripting_tool`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.segments
-    :type: IAgVAMCSSegmentCollection
+    :type: IMissionControlSequenceSegmentCollection
 
     Get the list of segments defined for the sequence.
 
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.scripting_tool
-    :type: IAgVAScriptingTool
+    :type: IScriptingTool
 
     Returns the Scripting tool for the sequence.
 

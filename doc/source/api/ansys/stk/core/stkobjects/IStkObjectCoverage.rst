@@ -1,13 +1,13 @@
 IStkObjectCoverage
 ==================
 
-.. py:class:: IStkObjectCoverage
+.. py:class:: ansys.stk.core.stkobjects.IStkObjectCoverage
 
    object
    
    Provide access to the Data Providers on an ObjectCoverage Object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkObjectCoverage
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.compute`
               - Compute the object coverage.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.clear`
               - Remove the computation on the object coverage.
-            * - :py:meth:`~clear_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.clear_coverage`
               - Clear object coverage.
 
     .. tab-item:: Properties
@@ -33,14 +33,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~data_providers`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~assets`
-            * - :py:meth:`~figure_of_merit`
-            * - :py:meth:`~access_interval`
-            * - :py:meth:`~use_object_times`
-            * - :py:meth:`~is_coverage_configuration_saved`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.data_providers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.figure_of_merit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.access_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.use_object_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.is_coverage_configuration_saved`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.data_providers
-    :type: IAgDataProviderCollection
+    :type: IDataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
@@ -74,19 +74,19 @@ Property detail
 
 .. py:property:: assets
     :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.assets
-    :type: IAgCvAssetListCollection
+    :type: ICoverageAssetListCollection
 
     Get the asset list collection.
 
 .. py:property:: figure_of_merit
     :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.figure_of_merit
-    :type: IAgObjectCoverageFOM
+    :type: IObjectCoverageFigureOfMerit
 
     Get the figure of merit on the object coverage.
 
 .. py:property:: access_interval
     :canonical: ansys.stk.core.stkobjects.IStkObjectCoverage.access_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     The object coverage's access interval.
 

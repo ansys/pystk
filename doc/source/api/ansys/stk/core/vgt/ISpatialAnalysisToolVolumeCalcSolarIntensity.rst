@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCalcSolarIntensity
 ============================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCalcSolarIntensity
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcSolarIntensity
 
    object
    
    A volume calc solar intensityn interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCalcSolarIntensity
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~use_object_eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcSolarIntensity.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcSolarIntensity.use_object_eclipsing_bodies`
 
 
 Import detail

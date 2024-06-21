@@ -1,13 +1,13 @@
 IVehicleGraphics2DWaypointMarker
 ================================
 
-.. py:class:: IVehicleGraphics2DWaypointMarker
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker
 
    object
    
    Display options for waypoint and turn markers in the 2D Graphics window.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DWaypointMarker
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_waypoint_markers_visible`
-            * - :py:meth:`~is_turn_markers_visible`
-            * - :py:meth:`~waypoint_markers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker.is_waypoint_markers_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker.is_turn_markers_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker.waypoint_markers`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: waypoint_markers
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker.waypoint_markers
-    :type: IAgVeGfxWaypointMarkersCollection
+    :type: IVehicleGraphics2DWaypointMarkersCollection
 
     Get the collection of waypoint markers.
 

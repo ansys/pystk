@@ -1,12 +1,12 @@
 COMM_SYSTEM_CONSTRAINING_ROLE
 =============================
 
-.. py:class:: COMM_SYSTEM_CONSTRAINING_ROLE
+.. py:class:: ansys.stk.core.stkobjects.COMM_SYSTEM_CONSTRAINING_ROLE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COMM_SYSTEM_CONSTRAINING_ROLE
 
 Overview
 --------

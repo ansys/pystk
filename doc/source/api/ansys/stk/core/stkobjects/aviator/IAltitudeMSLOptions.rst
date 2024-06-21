@@ -1,13 +1,13 @@
 IAltitudeMSLOptions
 ===================
 
-.. py:class:: IAltitudeMSLOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAltitudeMSLOptions
 
    object
    
    Interface used to access the altitude MSL options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAltitudeMSLOptions
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_default_cruise_altitude`
-            * - :py:meth:`~msl_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLOptions.use_default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLOptions.msl_altitude`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IMissileTurbojetProp
 ====================
 
-.. py:class:: IMissileTurbojetProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp
 
    object
    
    Interface used to access the Turbojet propulsion options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileTurbojetProp
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~design_mach`
-            * - :py:meth:`~design_altitude`
-            * - :py:meth:`~design_thrust`
-            * - :py:meth:`~turbine_temp`
-            * - :py:meth:`~compressor_pressure_ratio`
-            * - :py:meth:`~fuel_heating_value`
-            * - :py:meth:`~inlet_subsonic_pressure_ratio`
-            * - :py:meth:`~burner_pressure_ratio`
-            * - :py:meth:`~nozzle_pressure_ratio`
-            * - :py:meth:`~p_0over_p9`
-            * - :py:meth:`~compressor_efficiency`
-            * - :py:meth:`~turbine_efficiency`
-            * - :py:meth:`~burner_efficiency`
-            * - :py:meth:`~mechanical_efficiency`
-            * - :py:meth:`~no_thrust_when_no_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.design_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.design_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.design_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.turbine_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.compressor_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.fuel_heating_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.inlet_subsonic_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.burner_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.nozzle_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.p_0over_p9`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.compressor_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.turbine_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.burner_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.mechanical_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp.no_thrust_when_no_fuel`
 
 
 Import detail

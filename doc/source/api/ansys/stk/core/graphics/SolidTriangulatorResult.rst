@@ -1,13 +1,13 @@
 SolidTriangulatorResult
 =======================
 
-.. py:class:: SolidTriangulatorResult
+.. py:class:: ansys.stk.core.graphics.SolidTriangulatorResult
 
-   Bases: py:obj:`~ISolidTriangulatorResult`, py:obj:`~ITriangulatorResult`
+   Bases: py:obj:`~ansys.stk.core.graphics.ISolidTriangulatorResult`, py:obj:`~ansys.stk.core.graphics.ITriangulatorResult`
 
    The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SolidTriangulatorResult
 
 Overview
 --------

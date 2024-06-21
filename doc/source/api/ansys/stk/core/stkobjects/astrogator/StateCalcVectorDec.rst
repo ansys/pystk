@@ -1,13 +1,13 @@
 StateCalcVectorDec
 ==================
 
-.. py:class:: StateCalcVectorDec
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVectorDec
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVectorDec`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorDec`
 
    VectorDec Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcVectorDec
 
 Overview
 --------

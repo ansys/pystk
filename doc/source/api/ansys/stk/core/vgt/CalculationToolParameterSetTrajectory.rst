@@ -1,13 +1,13 @@
 CalculationToolParameterSetTrajectory
 =====================================
 
-.. py:class:: CalculationToolParameterSetTrajectory
+.. py:class:: ansys.stk.core.vgt.CalculationToolParameterSetTrajectory
 
-   Bases: py:obj:`~ICalculationToolParameterSetTrajectory`, py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory`, py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSet`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolParameterSetTrajectory
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleRealtimeLLAPoints
 =========================
 
-.. py:class:: IVehicleRealtimeLLAPoints
+.. py:class:: ansys.stk.core.stkobjects.IVehicleRealtimeLLAPoints
 
    object
    
    Add one ephemeris point using latitude/longitude/altitude coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleRealtimeLLAPoints
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeLLAPoints.add_position`
               - Add an ephemeris point without velocity. Epoch uses DateFormat dimension. Lat uses Latitude dimension. Lon uses Longitude dimension. Alt uses Distance dimension.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeLLAPoints.add`
               - Add an ephemeris point using position and velocity. Epoch uses DateFormat dimension. Lat uses Latitude dimension. Lon uses Longitude dimension. Alt uses Distance dimension.
-            * - :py:meth:`~add_position_batch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeLLAPoints.add_position_batch`
               - Add data points without velocity information.
-            * - :py:meth:`~add_batch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeLLAPoints.add_batch`
               - Add data points with velocity information.
 
 

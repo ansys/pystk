@@ -1,13 +1,13 @@
 NavigationOptions
 =================
 
-.. py:class:: NavigationOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.NavigationOptions
 
-   Bases: py:obj:`~INavigationOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.INavigationOptions`
 
    Class defining the navigation options in a procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: NavigationOptions
 
 Overview
 --------

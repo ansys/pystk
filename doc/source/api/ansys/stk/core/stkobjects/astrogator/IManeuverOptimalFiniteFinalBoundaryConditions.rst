@@ -1,13 +1,13 @@
 IManeuverOptimalFiniteFinalBoundaryConditions
 =============================================
 
-.. py:class:: IManeuverOptimalFiniteFinalBoundaryConditions
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions
 
    object
    
    Properties of final boundary conditions for optimal finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverOptimalFiniteFinalBoundaryConditions
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_from_final_guess`
-            * - :py:meth:`~a`
-            * - :py:meth:`~h`
-            * - :py:meth:`~k`
-            * - :py:meth:`~p`
-            * - :py:meth:`~q`
-            * - :py:meth:`~l`
-            * - :py:meth:`~lower_delta_final_time`
-            * - :py:meth:`~upper_delta_final_time`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.set_from_final_guess`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.h`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.k`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.q`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.lower_delta_final_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.upper_delta_final_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.provide_runtime_type_info`
 
 
 Import detail
@@ -51,37 +51,37 @@ Property detail
 
 .. py:property:: a
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.a
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element a.
 
 .. py:property:: h
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.h
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element h.
 
 .. py:property:: k
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.k
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element k.
 
 .. py:property:: p
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.p
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element p.
 
 .. py:property:: q
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.q
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element q.
 
 .. py:property:: l
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.l
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element L.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

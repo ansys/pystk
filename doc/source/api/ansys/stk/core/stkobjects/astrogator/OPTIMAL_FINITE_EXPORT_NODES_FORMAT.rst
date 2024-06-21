@@ -1,12 +1,12 @@
 OPTIMAL_FINITE_EXPORT_NODES_FORMAT
 ==================================
 
-.. py:class:: OPTIMAL_FINITE_EXPORT_NODES_FORMAT
+.. py:class:: ansys.stk.core.stkobjects.astrogator.OPTIMAL_FINITE_EXPORT_NODES_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: OPTIMAL_FINITE_EXPORT_NODES_FORMAT
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehiclePassNumberingDateOfFirstPass
 ====================================
 
-.. py:class:: IVehiclePassNumberingDateOfFirstPass
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass
 
    IVehiclePassNumbering
    
    Date of first pass for pass numbering.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePassNumberingDateOfFirstPass
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~first_pass_num`
-            * - :py:meth:`~pass_data_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass.first_pass_num`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass.pass_data_epoch`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: pass_data_epoch
     :canonical: ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass.pass_data_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Get the start time of the first pass.
 

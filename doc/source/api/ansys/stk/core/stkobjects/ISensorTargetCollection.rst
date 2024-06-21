@@ -1,13 +1,13 @@
 ISensorTargetCollection
 =======================
 
-.. py:class:: ISensorTargetCollection
+.. py:class:: ansys.stk.core.stkobjects.ISensorTargetCollection
 
    object
    
    IAgSnTargetCollection Interface. A collection of targets.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorTargetCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection.item`
               - Given an index, returns an IAgSnTarget interface.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection.add`
               - Add a target.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection.remove`
               - Remove a target given an index.
-            * - :py:meth:`~remove_target`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection.remove_target`
               - Remove a target given the target's name.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection.remove_all`
               - Remove all targets in the collection.
-            * - :py:meth:`~add_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection.add_object`
               - Add a target to the collection.
-            * - :py:meth:`~remove_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection.remove_object`
               - Remove a target from the collection.
 
     .. tab-item:: Properties
@@ -41,8 +41,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTargetCollection._NewEnum`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VectorGeometryToolWellKnownSunAxes
 ==================================
 
-.. py:class:: VectorGeometryToolWellKnownSunAxes
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes
 
-   Bases: py:obj:`~IVectorGeometryToolWellKnownSunAxes`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunAxes`
 
    Well-known Sun's axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolWellKnownSunAxes
 
 Overview
 --------

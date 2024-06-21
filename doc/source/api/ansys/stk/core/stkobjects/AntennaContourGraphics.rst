@@ -1,13 +1,13 @@
 AntennaContourGraphics
 ======================
 
-.. py:class:: AntennaContourGraphics
+.. py:class:: ansys.stk.core.stkobjects.AntennaContourGraphics
 
-   Bases: py:obj:`~IAntennaContourGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaContourGraphics`
 
    Class defining contour Graphics properties of a Antenna.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaContourGraphics
 
 Overview
 --------

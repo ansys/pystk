@@ -1,13 +1,13 @@
 IAttitudeControlImpulsiveAttitude
 =================================
 
-.. py:class:: IAttitudeControlImpulsiveAttitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAttitude
 
    IAttitudeControlImpulsive
    
    Properties for the Attitude attitude control for an Impulsive Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlImpulsiveAttitude
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~delta_v_magnitude`
-            * - :py:meth:`~reference_axes_name`
-            * - :py:meth:`~orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAttitude.delta_v_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAttitude.reference_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAttitude.orientation`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAttitude.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Get the orientation of the attitude.
 

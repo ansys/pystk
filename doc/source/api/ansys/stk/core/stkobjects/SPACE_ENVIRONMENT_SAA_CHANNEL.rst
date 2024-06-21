@@ -1,12 +1,12 @@
 SPACE_ENVIRONMENT_SAA_CHANNEL
 =============================
 
-.. py:class:: SPACE_ENVIRONMENT_SAA_CHANNEL
+.. py:class:: ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_SAA_CHANNEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SPACE_ENVIRONMENT_SAA_CHANNEL
 
 Overview
 --------

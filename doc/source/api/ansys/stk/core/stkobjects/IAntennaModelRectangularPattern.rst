@@ -1,13 +1,13 @@
 IAntennaModelRectangularPattern
 ===============================
 
-.. py:class:: IAntennaModelRectangularPattern
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelRectangularPattern
 
    object
    
    Provide access to the properties and methods defining a rectangular pattern antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelRectangularPattern
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~theta_angle`
-            * - :py:meth:`~phi_angle`
-            * - :py:meth:`~sidelobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern.theta_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern.phi_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern.sidelobe_gain`
 
 
 Import detail

@@ -1,12 +1,12 @@
 ARRANGE_STYLE
 =============
 
-.. py:class:: ARRANGE_STYLE
+.. py:class:: ansys.stk.core.uicore.ARRANGE_STYLE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: ARRANGE_STYLE
 
 Overview
 --------

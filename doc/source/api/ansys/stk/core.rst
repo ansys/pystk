@@ -15,9 +15,9 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:obj: stkengine
-            * - :py:obj: stkobjects
-            * - :py:obj: utilities
+            * - :py:obj: `~ansys.stk.core.stkengine`
+            * - :py:obj: `~ansys.stk.core.stkobjects`
+            * - :py:obj: `~ansys.stk.core.utilities`
 
     .. tab-item:: Submodules
 
@@ -25,12 +25,12 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:mod: graphics
-            * - :py:mod: stkutil
-            * - :py:mod: stkx
-            * - :py:mod: uiapplication
-            * - :py:mod: uicore
-            * - :py:mod: vgt
+            * - :py:mod: `~ansys.stk.core.graphics`
+            * - :py:mod: `~ansys.stk.core.stkutil`
+            * - :py:mod: `~ansys.stk.core.stkx`
+            * - :py:mod: `~ansys.stk.core.uiapplication`
+            * - :py:mod: `~ansys.stk.core.uicore`
+            * - :py:mod: `~ansys.stk.core.vgt`
 
 
 Description

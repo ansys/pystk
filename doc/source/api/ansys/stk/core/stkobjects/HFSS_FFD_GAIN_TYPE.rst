@@ -1,12 +1,12 @@
 HFSS_FFD_GAIN_TYPE
 ==================
 
-.. py:class:: HFSS_FFD_GAIN_TYPE
+.. py:class:: ansys.stk.core.stkobjects.HFSS_FFD_GAIN_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: HFSS_FFD_GAIN_TYPE
 
 Overview
 --------

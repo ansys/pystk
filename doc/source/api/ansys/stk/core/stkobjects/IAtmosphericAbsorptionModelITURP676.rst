@@ -1,13 +1,13 @@
 IAtmosphericAbsorptionModelITURP676
 ===================================
 
-.. py:class:: IAtmosphericAbsorptionModelITURP676
+.. py:class:: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676
 
    object
    
    Provide access to the properties and methods of the ITU-R P676 atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAtmosphericAbsorptionModelITURP676
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fast_approximation_method`
-            * - :py:meth:`~seasonal_regional_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676.fast_approximation_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676.seasonal_regional_method`
 
 
 Import detail

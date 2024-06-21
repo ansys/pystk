@@ -1,13 +1,13 @@
 IVehicleEphemerisCCSDSv2ExportTool
 ==================================
 
-.. py:class:: IVehicleEphemerisCCSDSv2ExportTool
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool
 
    object
    
    The CCSDSv2 Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEphemerisCCSDSv2ExportTool
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.export`
               - Export the ephemeris file.
 
     .. tab-item:: Properties
@@ -29,23 +29,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~originator`
-            * - :py:meth:`~object_id`
-            * - :py:meth:`~object_name`
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~date_format`
-            * - :py:meth:`~ephemeris_format`
-            * - :py:meth:`~time_precision`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~time_period`
-            * - :py:meth:`~reference_frames_supported`
-            * - :py:meth:`~use_satellite_center_and_frame`
-            * - :py:meth:`~time_system`
-            * - :py:meth:`~include_acceleration`
-            * - :py:meth:`~include_covariance`
-            * - :py:meth:`~has_covariance_data`
-            * - :py:meth:`~file_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.originator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.object_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.date_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.ephemeris_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.time_precision`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.reference_frames_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.use_satellite_center_and_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.time_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.include_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.include_covariance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.has_covariance_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.file_format`
 
 
 Import detail
@@ -109,13 +109,13 @@ Property detail
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.step_size
-    :type: IAgExportToolStepSize
+    :type: IExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool.time_period
-    :type: IAgExportToolTimePeriod
+    :type: IExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 

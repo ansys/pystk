@@ -1,13 +1,13 @@
 StateCalcLocalApparentSolarLon
 ==============================
 
-.. py:class:: StateCalcLocalApparentSolarLon
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcLocalApparentSolarLon
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcLocalApparentSolarLon`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLocalApparentSolarLon`
 
    LocalApparentSolarLon Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcLocalApparentSolarLon
 
 Overview
 --------

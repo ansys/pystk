@@ -1,13 +1,13 @@
 LaunchVehicle
 =============
 
-.. py:class:: LaunchVehicle
+.. py:class:: ansys.stk.core.stkobjects.LaunchVehicle
 
-   Bases: py:obj:`~ILaunchVehicle`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IProvideSpatialInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILaunchVehicle`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Launch vehicle object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LaunchVehicle
 
 Overview
 --------

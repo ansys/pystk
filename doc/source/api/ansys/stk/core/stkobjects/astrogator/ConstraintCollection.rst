@@ -1,13 +1,13 @@
 ConstraintCollection
 ====================
 
-.. py:class:: ConstraintCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ConstraintCollection
 
-   Bases: py:obj:`~IConstraintCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection`
 
    The Constraint component folder.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ConstraintCollection
 
 Overview
 --------

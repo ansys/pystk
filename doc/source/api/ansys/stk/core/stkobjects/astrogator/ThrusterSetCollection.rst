@@ -1,13 +1,13 @@
 ThrusterSetCollection
 =====================
 
-.. py:class:: ThrusterSetCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection
 
-   Bases: py:obj:`~IThrusterSetCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection`
 
    Thruster Set Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ThrusterSetCollection
 
 Overview
 --------

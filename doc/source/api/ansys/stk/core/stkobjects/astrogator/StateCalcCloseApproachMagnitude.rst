@@ -1,13 +1,13 @@
 StateCalcCloseApproachMagnitude
 ===============================
 
-.. py:class:: StateCalcCloseApproachMagnitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCloseApproachMagnitude
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCloseApproachMagnitude`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachMagnitude`
 
    CloseApproachMag Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcCloseApproachMagnitude
 
 Overview
 --------

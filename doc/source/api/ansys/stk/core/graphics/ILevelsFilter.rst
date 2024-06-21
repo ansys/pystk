@@ -1,13 +1,13 @@
 ILevelsFilter
 =============
 
-.. py:class:: ILevelsFilter
+.. py:class:: ansys.stk.core.graphics.ILevelsFilter
 
    object
    
    Adjusts the band levels of the source raster linearly.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ILevelsFilter
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_level_adjustment`
+            * - :py:attr:`~ansys.stk.core.graphics.ILevelsFilter.set_level_adjustment`
               - Set the linear level adjustment value for the given raster band. Both negative and positive values are accepted.
-            * - :py:meth:`~clear_adjustments`
+            * - :py:attr:`~ansys.stk.core.graphics.ILevelsFilter.clear_adjustments`
               - Clear the level adjustment values for all bands.
 
 

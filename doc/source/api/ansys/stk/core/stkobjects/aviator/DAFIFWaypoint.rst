@@ -1,13 +1,13 @@
 DAFIFWaypoint
 =============
 
-.. py:class:: DAFIFWaypoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.DAFIFWaypoint
 
-   Bases: py:obj:`~IDAFIFItem`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an DAFIF Waypoint.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: DAFIFWaypoint
 
 Overview
 --------

@@ -1,13 +1,13 @@
 Geocentric
 ==========
 
-.. py:class:: Geocentric
+.. py:class:: ansys.stk.core.stkutil.Geocentric
 
-   Bases: py:obj:`~IGeocentric`, py:obj:`~IPosition`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IGeocentric`, py:obj:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining Geocentric position.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Geocentric
 
 Overview
 --------

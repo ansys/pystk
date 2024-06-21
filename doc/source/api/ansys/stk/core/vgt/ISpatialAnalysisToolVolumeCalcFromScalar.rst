@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCalcFromScalar
 ========================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCalcFromScalar
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFromScalar
 
    object
    
    A volume calc scalar to location interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCalcFromScalar
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFromScalar.scalar`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: scalar
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFromScalar.scalar
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The Volume calc scalar to location Type.
 

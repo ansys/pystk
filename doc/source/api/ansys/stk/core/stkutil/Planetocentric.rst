@@ -1,13 +1,13 @@
 Planetocentric
 ==============
 
-.. py:class:: Planetocentric
+.. py:class:: ansys.stk.core.stkutil.Planetocentric
 
-   Bases: py:obj:`~IPlanetocentric`, py:obj:`~IPosition`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IPlanetocentric`, py:obj:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining Planetocentric position.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Planetocentric
 
 Overview
 --------

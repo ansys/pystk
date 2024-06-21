@@ -1,13 +1,13 @@
 AdvancedFixedWingSubSuperHypersonicProp
 =======================================
 
-.. py:class:: AdvancedFixedWingSubSuperHypersonicProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicProp
 
-   Bases: py:obj:`~IAdvancedFixedWingSubSuperHypersonicProp`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp`
 
    Class defining a Sub/Super/Hypersonic powerplant in the Advanced Fixed Wing Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AdvancedFixedWingSubSuperHypersonicProp
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarWaveformBistaticTransmitterSearchTrackContinuous
 ======================================================
 
-.. py:class:: IRadarWaveformBistaticTransmitterSearchTrackContinuous
+.. py:class:: ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackContinuous
 
    object
    
    Interface which is implemented by a search/track waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarWaveformBistaticTransmitterSearchTrackContinuous
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackContinuous.modulator`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackContinuous.modulator
-    :type: IAgRadarModulator
+    :type: IRadarModulator
 
     Gets the interface for setting the modulator parameters.
 

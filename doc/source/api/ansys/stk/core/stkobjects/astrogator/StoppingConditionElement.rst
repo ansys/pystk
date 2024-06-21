@@ -1,13 +1,13 @@
 StoppingConditionElement
 ========================
 
-.. py:class:: StoppingConditionElement
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement
 
-   Bases: py:obj:`~IStoppingConditionElement`, py:obj:`~IComponentInfo`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    A stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StoppingConditionElement
 
 Overview
 --------

@@ -1,13 +1,13 @@
 KmlDocumentCollection
 =====================
 
-.. py:class:: KmlDocumentCollection
+.. py:class:: ansys.stk.core.graphics.KmlDocumentCollection
 
-   Bases: py:obj:`~IKmlDocumentCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IKmlDocumentCollection`
 
    A collection of KML documents.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KmlDocumentCollection
 
 Overview
 --------

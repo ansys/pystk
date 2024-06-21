@@ -1,13 +1,13 @@
 IRadarModeBistaticReceiverSearchTrack
 =====================================
 
-.. py:class:: IRadarModeBistaticReceiverSearchTrack
+.. py:class:: ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack
 
    object
    
    Provide access to the properties and methods defining a bistatic receiver search/track mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModeBistaticReceiverSearchTrack
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_waveform_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack.set_waveform_type`
               - Set the waveform type.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~waveform`
-            * - :py:meth:`~doppler_clutter_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack.waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack.doppler_clutter_filters`
 
 
 Import detail
@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: waveform
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack.waveform
-    :type: IAgRadarWaveformSearchTrack
+    :type: IRadarWaveformSearchTrack
 
     Gets the interface for configuring the search/track waveform.
 
 .. py:property:: doppler_clutter_filters
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack.doppler_clutter_filters
-    :type: IAgRadarDopplerClutterFilters
+    :type: IRadarDopplerClutterFilters
 
     Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 

@@ -1,13 +1,13 @@
 IBeamformerMvdr
 ===============
 
-.. py:class:: IBeamformerMvdr
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerMvdr
 
    object
    
    Provide access to the properties and methods defining an MVDR beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerMvdr
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerMvdr.constraint`
 
 
 Import detail

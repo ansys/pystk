@@ -1,13 +1,13 @@
 CentralBodyShapeSphere
 ======================
 
-.. py:class:: CentralBodyShapeSphere
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyShapeSphere
 
-   Bases: py:obj:`~ICentralBodyShapeSphere`, py:obj:`~ICentralBodyShape`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeSphere`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
 
    Central Body Shape - Sphere.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CentralBodyShapeSphere
 
 Overview
 --------

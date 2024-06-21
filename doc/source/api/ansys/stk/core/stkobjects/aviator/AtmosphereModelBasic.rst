@@ -1,13 +1,13 @@
 AtmosphereModelBasic
 ====================
 
-.. py:class:: AtmosphereModelBasic
+.. py:class:: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic
 
-   Bases: py:obj:`~IAtmosphereModelBasic`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic`
 
    Class defining the basic atmosphere model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AtmosphereModelBasic
 
 Overview
 --------

@@ -1,12 +1,12 @@
 DATA_SAVE_MODE
 ==============
 
-.. py:class:: DATA_SAVE_MODE
+.. py:class:: ansys.stk.core.stkobjects.DATA_SAVE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DATA_SAVE_MODE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 DifferentialCorrectorControl
 ============================
 
-.. py:class:: DifferentialCorrectorControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControl
 
-   Bases: py:obj:`~IDifferentialCorrectorControl`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Control Parameters for a Target Sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DifferentialCorrectorControl
 
 Overview
 --------

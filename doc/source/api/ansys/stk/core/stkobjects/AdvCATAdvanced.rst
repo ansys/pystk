@@ -1,13 +1,13 @@
 AdvCATAdvanced
 ==============
 
-.. py:class:: AdvCATAdvanced
+.. py:class:: ansys.stk.core.stkobjects.AdvCATAdvanced
 
-   Bases: py:obj:`~IAdvCATAdvanced`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATAdvanced`
 
    AdvCAT advanced properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AdvCATAdvanced
 
 Overview
 --------

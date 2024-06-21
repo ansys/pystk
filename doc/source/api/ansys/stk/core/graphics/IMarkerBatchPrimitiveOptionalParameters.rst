@@ -1,13 +1,13 @@
 IMarkerBatchPrimitiveOptionalParameters
 =======================================
 
-.. py:class:: IMarkerBatchPrimitiveOptionalParameters
+.. py:class:: ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters
 
    object
    
    Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IMarkerBatchPrimitiveOptionalParameters
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_textures`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_textures`
               - Define a collection of textures, one for each marker in the batch.
-            * - :py:meth:`~set_sizes`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_sizes`
               - Define a collection of sizes, one for each marker in the batch.
-            * - :py:meth:`~set_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_colors`
               - Define a collection of colors, one for each marker in the batch.
-            * - :py:meth:`~set_origins`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_origins`
               - Define a collection of origins, one for each marker in the batch.
-            * - :py:meth:`~set_pixel_offsets`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_pixel_offsets`
               - Define a collection of pixel offsets, one for each marker in the batch.
-            * - :py:meth:`~set_eye_offsets`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_eye_offsets`
               - Define a collection of eye offsets, one for each marker in the batch.
-            * - :py:meth:`~set_rotations`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_rotations`
               - Define a collection of rotation angles, one for each marker in the batch.
-            * - :py:meth:`~set_texture_coordinates`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_texture_coordinates`
               - Define a collection of texture coordinates, one for each marker in the batch.
-            * - :py:meth:`~set_time_interval_display_conditions`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_time_interval_display_conditions`
               - Define a collection of time interval display conditions, one for each marker in the batch.
-            * - :py:meth:`~set_displays`
+            * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters.set_displays`
               - Define a collection of boolean display flags, one for each marker in the batch.
 
 

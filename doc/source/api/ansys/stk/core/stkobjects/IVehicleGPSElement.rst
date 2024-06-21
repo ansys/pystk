@@ -1,13 +1,13 @@
 IVehicleGPSElement
 ==================
 
-.. py:class:: IVehicleGPSElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSElement
 
    object
    
    An element of the GPS element collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSElement
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~week`
-            * - :py:meth:`~time_of_almanac`
-            * - :py:meth:`~age`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSElement.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSElement.week`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSElement.time_of_almanac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSElement.age`
 
 
 Import detail

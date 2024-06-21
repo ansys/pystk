@@ -1,13 +1,13 @@
 IMissionControlSequenceTargetSequence
 =====================================
 
-.. py:class:: IMissionControlSequenceTargetSequence
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence
 
    object
    
    General properties of a TargetSequence segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceTargetSequence
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~apply_profiles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.apply_profiles`
               - Apply Changes - applies the current values of search profiles' controls and the changes specified by the segment configuration profiles to the segments within the target sequence.
-            * - :py:meth:`~reset_profiles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.reset_profiles`
               - Reset - resets the controls of the search profiles to the segments' values.
-            * - :py:meth:`~apply_profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.apply_profile`
               - Apply Changes - applies the current values of specified profile to the segments within the target sequence.
-            * - :py:meth:`~reset_profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.reset_profile`
               - Reset - resets the current values of specified profile.
-            * - :py:meth:`~apply_profile_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.apply_profile_by_name`
               - Apply Changes - applies the current values of specified profile to the segments within the target sequence.
-            * - :py:meth:`~reset_profile_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.reset_profile_by_name`
               - Reset - resets the current values of specified profile.
 
     .. tab-item:: Properties
@@ -39,12 +39,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~action`
-            * - :py:meth:`~when_profiles_finish`
-            * - :py:meth:`~continue_on_failure`
-            * - :py:meth:`~segments`
-            * - :py:meth:`~profiles`
-            * - :py:meth:`~reset_inner_targeters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.action`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.when_profiles_finish`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.continue_on_failure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.segments`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.profiles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.reset_inner_targeters`
 
 
 Import detail
@@ -78,13 +78,13 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.segments
-    :type: IAgVAMCSSegmentCollection
+    :type: IMissionControlSequenceSegmentCollection
 
     Returns the segments contained within the target sequence.
 
 .. py:property:: profiles
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.profiles
-    :type: IAgVAProfileCollection
+    :type: IProfileCollection
 
     Returns the profiles used within the target sequence.
 

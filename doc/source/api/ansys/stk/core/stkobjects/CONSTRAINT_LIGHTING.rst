@@ -1,12 +1,12 @@
 CONSTRAINT_LIGHTING
 ===================
 
-.. py:class:: CONSTRAINT_LIGHTING
+.. py:class:: ansys.stk.core.stkobjects.CONSTRAINT_LIGHTING
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CONSTRAINT_LIGHTING
 
 Overview
 --------

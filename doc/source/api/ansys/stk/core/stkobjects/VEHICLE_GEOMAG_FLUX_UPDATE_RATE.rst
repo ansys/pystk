@@ -1,12 +1,12 @@
 VEHICLE_GEOMAG_FLUX_UPDATE_RATE
 ===============================
 
-.. py:class:: VEHICLE_GEOMAG_FLUX_UPDATE_RATE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_GEOMAG_FLUX_UPDATE_RATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_GEOMAG_FLUX_UPDATE_RATE
 
 Overview
 --------

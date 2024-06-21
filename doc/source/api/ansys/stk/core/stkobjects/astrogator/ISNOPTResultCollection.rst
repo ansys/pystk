@@ -1,13 +1,13 @@
 ISNOPTResultCollection
 ======================
 
-.. py:class:: ISNOPTResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISNOPTResultCollection
 
    object
    
    SNOPT result collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISNOPTResultCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResultCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_result_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResultCollection.get_result_by_paths`
               - Return the result specified by the object/result names.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResultCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResultCollection.count`
 
 
 Import detail

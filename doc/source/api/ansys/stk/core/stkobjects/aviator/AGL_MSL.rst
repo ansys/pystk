@@ -1,12 +1,12 @@
 AGL_MSL
 =======
 
-.. py:class:: AGL_MSL
+.. py:class:: ansys.stk.core.stkobjects.aviator.AGL_MSL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AGL_MSL
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IMtoGraphics2DGlobalTrackOptions
 ================================
 
-.. py:class:: IMtoGraphics2DGlobalTrackOptions
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics2DGlobalTrackOptions
 
    object
    
    Interface for global 2D graphics options for an MTO.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics2DGlobalTrackOptions
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~tracks_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DGlobalTrackOptions.tracks_visible`
 
 
 Import detail

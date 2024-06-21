@@ -1,13 +1,13 @@
 ISensorGraphics3DPulse
 ======================
 
-.. py:class:: ISensorGraphics3DPulse
+.. py:class:: ansys.stk.core.stkobjects.ISensorGraphics3DPulse
 
    object
    
    IAgSnVOPulse Interface, for setting and retrieving 3D Graphics Pulse properties of a sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorGraphics3DPulse
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reset_to_defaults`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.reset_to_defaults`
               - Restore all default values for modulating a sensor's projection.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pulse_visible`
-            * - :py:meth:`~amplitude`
-            * - :py:meth:`~length`
-            * - :py:meth:`~style`
-            * - :py:meth:`~enable_smooth`
-            * - :py:meth:`~presel_freq`
-            * - :py:meth:`~freq_value`
-            * - :py:meth:`~freq_reverse_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.pulse_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.amplitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.enable_smooth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.presel_freq`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.freq_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.freq_reverse_direction`
 
 
 Import detail

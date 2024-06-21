@@ -1,13 +1,13 @@
 SiteSuperProcedure
 ==================
 
-.. py:class:: SiteSuperProcedure
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteSuperProcedure
 
-   Bases: py:obj:`~ISiteSuperProcedure`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteSuperProcedure`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a Super Procedure site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteSuperProcedure
 
 Overview
 --------

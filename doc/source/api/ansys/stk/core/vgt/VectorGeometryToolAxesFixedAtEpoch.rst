@@ -1,13 +1,13 @@
 VectorGeometryToolAxesFixedAtEpoch
 ==================================
 
-.. py:class:: VectorGeometryToolAxesFixedAtEpoch
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesFixedAtEpoch
 
-   Bases: py:obj:`~IVectorGeometryToolAxesFixedAtEpoch`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFixedAtEpoch`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes based on another set fixed at a specified epoch.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAxesFixedAtEpoch
 
 Overview
 --------

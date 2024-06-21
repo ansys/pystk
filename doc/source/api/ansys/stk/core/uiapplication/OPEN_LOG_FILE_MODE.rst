@@ -1,12 +1,12 @@
 OPEN_LOG_FILE_MODE
 ==================
 
-.. py:class:: OPEN_LOG_FILE_MODE
+.. py:class:: ansys.stk.core.uiapplication.OPEN_LOG_FILE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: OPEN_LOG_FILE_MODE
 
 Overview
 --------

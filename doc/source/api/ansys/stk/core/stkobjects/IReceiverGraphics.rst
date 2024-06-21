@@ -1,13 +1,13 @@
 IReceiverGraphics
 =================
 
-.. py:class:: IReceiverGraphics
+.. py:class:: ansys.stk.core.stkobjects.IReceiverGraphics
 
    object
    
    IAgReceiverGraphics Interface for a receiver's 2D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReceiverGraphics
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~show_boresight`
-            * - :py:meth:`~boresight_color`
-            * - :py:meth:`~boresight_marker_style`
-            * - :py:meth:`~contour_graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverGraphics.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverGraphics.show_boresight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverGraphics.boresight_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverGraphics.boresight_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverGraphics.contour_graphics`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.IReceiverGraphics.contour_graphics
-    :type: IAgAntennaContourGraphics
+    :type: IAntennaContourGraphics
 
     Gets the receiver's antenna contour graphics interface.
 

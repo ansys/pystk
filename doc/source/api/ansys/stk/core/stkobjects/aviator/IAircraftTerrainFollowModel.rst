@@ -1,13 +1,13 @@
 IAircraftTerrainFollowModel
 ===========================
 
-.. py:class:: IAircraftTerrainFollowModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel
 
    object
    
    Interface used to access the options for a TerrainFollow performance model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftTerrainFollowModel
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~use_aero_prop_fuel`
-            * - :py:meth:`~scale_fuel_flow_by_non_std_density`
-            * - :py:meth:`~min_airspeed`
-            * - :py:meth:`~max_endurance_airspeed`
-            * - :py:meth:`~max_range_airspeed`
-            * - :py:meth:`~max_airspeed`
-            * - :py:meth:`~max_perf_airspeed`
-            * - :py:meth:`~min_airspeed_fuel_flow`
-            * - :py:meth:`~max_endurance_fuel_flow`
-            * - :py:meth:`~max_range_fuel_flow`
-            * - :py:meth:`~max_airspeed_fuel_flow`
-            * - :py:meth:`~max_perf_airspeed_fuel_flow`
-            * - :py:meth:`~max_pitch_angle`
-            * - :py:meth:`~terrain_window`
-            * - :py:meth:`~max_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.scale_fuel_flow_by_non_std_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.min_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_endurance_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_range_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_perf_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.min_airspeed_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_endurance_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_range_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_airspeed_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_perf_airspeed_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_pitch_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.terrain_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollowModel.max_load_factor`
 
 
 Import detail

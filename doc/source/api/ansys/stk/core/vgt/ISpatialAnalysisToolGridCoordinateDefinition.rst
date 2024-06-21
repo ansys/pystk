@@ -1,13 +1,13 @@
 ISpatialAnalysisToolGridCoordinateDefinition
 ============================================
 
-.. py:class:: ISpatialAnalysisToolGridCoordinateDefinition
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition
 
    object
    
    Define a set of coordinate values.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolGridCoordinateDefinition
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_grid_values_fixed_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.set_grid_values_fixed_step`
               - Set grid values type to fixed step.
-            * - :py:meth:`~set_grid_values_fixed_number_of_steps`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.set_grid_values_fixed_number_of_steps`
               - Do not use this method, as it is deprecated. Use SetGridValuesFixedNumberOfStepsEx.
-            * - :py:meth:`~set_grid_values_custom`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.set_grid_values_custom`
               - Set grid values type to custom values.
-            * - :py:meth:`~set_grid_values_fixed_number_of_steps_ex`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.set_grid_values_fixed_number_of_steps_ex`
               - Set grid values type to fixed number of steps with min and max as IAgQuantity.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method_type`
-            * - :py:meth:`~grid_values_method`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.method_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.grid_values_method`
 
 
 Import detail
@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: grid_values_method
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.grid_values_method
-    :type: IAgCrdnGridValuesMethod
+    :type: ISpatialAnalysisToolGridValuesMethod
 
     Sets/Returns the grid values interface.
 

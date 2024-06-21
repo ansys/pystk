@@ -1,13 +1,13 @@
 ICruiseAirspeedAndProfileOptions
 ================================
 
-.. py:class:: ICruiseAirspeedAndProfileOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions
 
    object
    
    Interface used to access the cruise airspeed options that also include a profile field.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ICruiseAirspeedAndProfileOptions
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_other_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.set_other_airspeed`
               - Set the cruise airspeed. This option is only enabled if the cruise speed type is set to other.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cruise_speed_type`
-            * - :py:meth:`~other_airspeed_type`
-            * - :py:meth:`~other_airspeed`
-            * - :py:meth:`~fly_cruise_airspeed_profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.cruise_speed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.fly_cruise_airspeed_profile`
 
 
 Import detail

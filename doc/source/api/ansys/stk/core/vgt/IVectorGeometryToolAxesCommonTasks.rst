@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesCommonTasks
 ==================================
 
-.. py:class:: IVectorGeometryToolAxesCommonTasks
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesCommonTasks
 
    object
    
    Provide methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesCommonTasks
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create_topocentric_axes_quaternion`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesCommonTasks.create_topocentric_axes_quaternion`
               - Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation.
-            * - :py:meth:`~create_topocentric_axes_euler_angles`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesCommonTasks.create_topocentric_axes_euler_angles`
               - Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation.
-            * - :py:meth:`~create_fixed`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesCommonTasks.create_fixed`
               - Create non-persistent fixed axes based on specified axes.
-            * - :py:meth:`~sample`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesCommonTasks.sample`
               - Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters.
 
 

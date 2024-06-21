@@ -1,13 +1,13 @@
 IVehicleGPSAlmanacProperties
 ============================
 
-.. py:class:: IVehicleGPSAlmanacProperties
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties
 
    object
    
    A common base interface for GPS almanac properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSAlmanacProperties
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties.type`
 
 
 Import detail

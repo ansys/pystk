@@ -1,12 +1,12 @@
 VEHICLE_PASS_NUMBERING
 ======================
 
-.. py:class:: VEHICLE_PASS_NUMBERING
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_PASS_NUMBERING
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_PASS_NUMBERING
 
 Overview
 --------

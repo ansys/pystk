@@ -1,13 +1,13 @@
 IBasicManeuverStrategyRendezvous
 ================================
 
-.. py:class:: IBasicManeuverStrategyRendezvous
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous
 
    object
    
    Interface used to access options for a Rendezvous Formation Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyRendezvous
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_cpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.set_cpa`
               - Set whether to enable collision avoidance and the corresponding minimum distance between this aircraft and the target aircraft.
-            * - :py:meth:`~set_airspeed_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.set_airspeed_factor`
               - Set whether to enable the option to control how fine the control is and the corresponding dimensionless factor.
-            * - :py:meth:`~cancel_tgt_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.cancel_tgt_position_vel`
               - Cancel the position velocity strategies for Rendezvous.
 
     .. tab-item:: Properties
@@ -33,27 +33,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_name`
-            * - :py:meth:`~valid_target_names`
-            * - :py:meth:`~target_resolution`
-            * - :py:meth:`~use_counter_turn_logic`
-            * - :py:meth:`~enable_collision_avoidance`
-            * - :py:meth:`~cpa`
-            * - :py:meth:`~relative_bearing`
-            * - :py:meth:`~relative_range`
-            * - :py:meth:`~altitude_split`
-            * - :py:meth:`~maneuver_factor`
-            * - :py:meth:`~use_perf_model_limits`
-            * - :py:meth:`~altitude_rate_control`
-            * - :py:meth:`~min_load_factor_g`
-            * - :py:meth:`~max_load_factor_g`
-            * - :py:meth:`~max_speed_advantage`
-            * - :py:meth:`~airspeed_control_mode`
-            * - :py:meth:`~accel_decel_g`
-            * - :py:meth:`~use_separate_airspeed_control`
-            * - :py:meth:`~airspeed_factor`
-            * - :py:meth:`~stop_condition`
-            * - :py:meth:`~position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.target_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.valid_target_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.target_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.use_counter_turn_logic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.enable_collision_avoidance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.cpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.relative_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.relative_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.altitude_split`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.maneuver_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.use_perf_model_limits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.altitude_rate_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.min_load_factor_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.max_load_factor_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.max_speed_advantage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.airspeed_control_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.accel_decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.use_separate_airspeed_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.airspeed_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.stop_condition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.position_vel_strategies`
 
 
 Import detail
@@ -189,7 +189,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.position_vel_strategies
-    :type: IAgAvtrBasicManeuverTargetPosVel
+    :type: IBasicManeuverTargetPositionVel
 
     Get the position velocity strategies for Rendezvous.
 

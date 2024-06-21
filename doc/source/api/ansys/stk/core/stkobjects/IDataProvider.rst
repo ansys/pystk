@@ -1,13 +1,13 @@
 IDataProvider
 =============
 
-.. py:class:: IDataProvider
+.. py:class:: ansys.stk.core.stkobjects.IDataProvider
 
    object
    
    Represents the Sub Data Provider (i.e. ``Fixed`` in ``Cartesian Position`` group on satellites, or ``Cartesian Position`` on facilities).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProvider
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_statistic_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.is_statistic_available`
               - Is the supplied statistic available for the provided element name?
-            * - :py:meth:`~is_time_varying_extremum_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.is_time_varying_extremum_available`
               - Is the supplied time varying extremum available for the provided element name?
 
     .. tab-item:: Properties
@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~elements`
-            * - :py:meth:`~pre_data`
-            * - :py:meth:`~allow_user_interface`
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~pre_data_required`
-            * - :py:meth:`~pre_data_description`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.allow_user_interface`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.is_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data_required`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data_description`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.IDataProvider.elements
-    :type: IAgDataPrvElements
+    :type: IDataProviderElements
 
     Returns a collection of elements associated with a DataProvider or a SubDataProvider.
 

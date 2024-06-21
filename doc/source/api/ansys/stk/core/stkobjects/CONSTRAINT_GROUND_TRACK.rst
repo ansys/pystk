@@ -1,12 +1,12 @@
 CONSTRAINT_GROUND_TRACK
 =======================
 
-.. py:class:: CONSTRAINT_GROUND_TRACK
+.. py:class:: ansys.stk.core.stkobjects.CONSTRAINT_GROUND_TRACK
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CONSTRAINT_GROUND_TRACK
 
 Overview
 --------

@@ -1,13 +1,13 @@
 OrientationEulerAngles
 ======================
 
-.. py:class:: OrientationEulerAngles
+.. py:class:: ansys.stk.core.stkutil.OrientationEulerAngles
 
-   Bases: py:obj:`~IOrientationEulerAngles`, py:obj:`~IOrientation`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationEulerAngles`, py:obj:`~ansys.stk.core.stkutil.IOrientation`
 
    Euler Angles orientation method.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: OrientationEulerAngles
 
 Overview
 --------

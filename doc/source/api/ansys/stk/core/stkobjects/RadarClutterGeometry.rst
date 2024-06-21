@@ -1,13 +1,13 @@
 RadarClutterGeometry
 ====================
 
-.. py:class:: RadarClutterGeometry
+.. py:class:: ansys.stk.core.stkobjects.RadarClutterGeometry
 
-   Bases: py:obj:`~IRadarClutterGeometry`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarClutterGeometry`
 
    Class defining a radar clutter geometry.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarClutterGeometry
 
 Overview
 --------

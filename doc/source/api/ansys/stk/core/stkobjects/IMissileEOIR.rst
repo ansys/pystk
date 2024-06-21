@@ -1,13 +1,13 @@
 IMissileEOIR
 ============
 
-.. py:class:: IMissileEOIR
+.. py:class:: ansys.stk.core.stkobjects.IMissileEOIR
 
    IEOIR
    
    EOIR interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMissileEOIR
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~shapes`
-            * - :py:meth:`~stage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileEOIR.shapes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMissileEOIR.stage`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: shapes
     :canonical: ansys.stk.core.stkobjects.IMissileEOIR.shapes
-    :type: IAgEOIRShapeCollection
+    :type: IEOIRShapeCollection
 
     Property used to access the shape collection.
 
 .. py:property:: stage
     :canonical: ansys.stk.core.stkobjects.IMissileEOIR.stage
-    :type: IAgEOIRStage
+    :type: IEOIRStage
 
     Property used to access missile stage interface.
 

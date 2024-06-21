@@ -1,12 +1,12 @@
 STK_EXTERNAL_FILE_MESSAGE_LEVEL
 ===============================
 
-.. py:class:: STK_EXTERNAL_FILE_MESSAGE_LEVEL
+.. py:class:: ansys.stk.core.stkobjects.STK_EXTERNAL_FILE_MESSAGE_LEVEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: STK_EXTERNAL_FILE_MESSAGE_LEVEL
 
 Overview
 --------

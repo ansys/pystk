@@ -1,13 +1,13 @@
 ITransferFunctionInputBackOffCOverImTableRow
 ============================================
 
-.. py:class:: ITransferFunctionInputBackOffCOverImTableRow
+.. py:class:: ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTableRow
 
    object
    
    Provide access to the row of an input back off vs C/Im table.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransferFunctionInputBackOffCOverImTableRow
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_back_off`
-            * - :py:meth:`~c_over_im`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTableRow.input_back_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTableRow.c_over_im`
 
 
 Import detail

@@ -1,12 +1,12 @@
 EPHEM_SHIFT_ROTATE_COURSE_MODE
 ==============================
 
-.. py:class:: EPHEM_SHIFT_ROTATE_COURSE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.EPHEM_SHIFT_ROTATE_COURSE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: EPHEM_SHIFT_ROTATE_COURSE_MODE
 
 Overview
 --------

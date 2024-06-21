@@ -1,13 +1,13 @@
 ICoverageGraphics2DAnimation
 ============================
 
-.. py:class:: ICoverageGraphics2DAnimation
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation
 
    object
    
    2D animation graphics options for the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGraphics2DAnimation
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_satisfaction_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation.is_satisfaction_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation.fill_translucency`
 
 
 Import detail

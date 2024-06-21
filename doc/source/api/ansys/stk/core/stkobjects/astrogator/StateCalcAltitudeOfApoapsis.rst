@@ -1,13 +1,13 @@
 StateCalcAltitudeOfApoapsis
 ===========================
 
-.. py:class:: StateCalcAltitudeOfApoapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcAltitudeOfApoapsis
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcAltitudeOfApoapsis`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcAltitudeOfApoapsis`
 
    AltitudeOfApoapsis Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcAltitudeOfApoapsis
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ScheduleTimeCollection
 ======================
 
-.. py:class:: ScheduleTimeCollection
+.. py:class:: ansys.stk.core.stkobjects.ScheduleTimeCollection
 
-   Bases: py:obj:`~IScheduleTimeCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScheduleTimeCollection`
 
    Collection of user-scheduled access times.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScheduleTimeCollection
 
 Overview
 --------

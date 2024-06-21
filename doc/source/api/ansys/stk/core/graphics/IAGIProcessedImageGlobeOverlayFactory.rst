@@ -1,13 +1,13 @@
 IAGIProcessedImageGlobeOverlayFactory
 =====================================
 
-.. py:class:: IAGIProcessedImageGlobeOverlayFactory
+.. py:class:: ansys.stk.core.graphics.IAGIProcessedImageGlobeOverlayFactory
 
    object
    
    A globe image overlay for handling AGI Processed Image (PDTTX) files.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAGIProcessedImageGlobeOverlayFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IAGIProcessedImageGlobeOverlayFactory.initialize_with_string`
               - Initialize an agi processed image globe overlay with the provided values.
 
 

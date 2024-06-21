@@ -1,13 +1,13 @@
 ILocationVectorGeometryToolPoint
 ================================
 
-.. py:class:: ILocationVectorGeometryToolPoint
+.. py:class:: ansys.stk.core.stkobjects.ILocationVectorGeometryToolPoint
 
    ILocationData
    
    The location based upon a Vector Geometry Tool Point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILocationVectorGeometryToolPoint
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~point_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILocationVectorGeometryToolPoint.point_path`
 
 
 Import detail

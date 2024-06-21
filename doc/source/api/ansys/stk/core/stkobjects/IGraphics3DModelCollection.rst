@@ -1,13 +1,13 @@
 IGraphics3DModelCollection
 ==========================
 
-.. py:class:: IGraphics3DModelCollection
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelCollection
 
    object
    
    IAgVOModelCollection used to access the 3D Model List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModelCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection.add`
               - Add a model file at the given time. Time Param uses DateFormat Dimension.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection.remove`
               - Remove an item at the given index.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection.item`
               - Return an IAgVoModelItem at the given index.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection._NewEnum`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IClouds
 =======
 
-.. py:class:: IClouds
+.. py:class:: ansys.stk.core.graphics.IClouds
 
    object
    
    Load, show and hide clouds in the scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IClouds
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~clouds_uri`
-            * - :py:meth:`~roundness`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~is_valid`
+            * - :py:attr:`~ansys.stk.core.graphics.IClouds.show`
+            * - :py:attr:`~ansys.stk.core.graphics.IClouds.clouds_uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IClouds.roundness`
+            * - :py:attr:`~ansys.stk.core.graphics.IClouds.altitude`
+            * - :py:attr:`~ansys.stk.core.graphics.IClouds.is_valid`
 
 
 Import detail

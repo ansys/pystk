@@ -1,13 +1,13 @@
 StationCollection
 =================
 
-.. py:class:: StationCollection
+.. py:class:: ansys.stk.core.stkobjects.aviator.StationCollection
 
-   Bases: py:obj:`~IStationCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IStationCollection`
 
    Class defining a collection of payload stations for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: StationCollection
 
 Overview
 --------

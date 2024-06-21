@@ -1,13 +1,13 @@
 IClassicalLocation
 ==================
 
-.. py:class:: IClassicalLocation
+.. py:class:: ansys.stk.core.stkobjects.IClassicalLocation
 
    object
    
    Base Interface of all IAgClassicalLocation* interfaces.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalLocation
 
 Overview
 --------

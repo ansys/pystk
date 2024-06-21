@@ -1,12 +1,12 @@
 CRDN_SIGNED_ANGLE_TYPE
 ======================
 
-.. py:class:: CRDN_SIGNED_ANGLE_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_SIGNED_ANGLE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SIGNED_ANGLE_TYPE
 
 Overview
 --------

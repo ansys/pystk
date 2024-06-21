@@ -1,13 +1,13 @@
 RadarStcAttenuation
 ===================
 
-.. py:class:: RadarStcAttenuation
+.. py:class:: ansys.stk.core.stkobjects.RadarStcAttenuation
 
-   Bases: py:obj:`~IRadarStcAttenuation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`
 
    Class defining an radar stc.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarStcAttenuation
 
 Overview
 --------

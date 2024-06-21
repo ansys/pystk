@@ -1,13 +1,13 @@
 StateCalcRelAtAOLMaster
 =======================
 
-.. py:class:: StateCalcRelAtAOLMaster
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRelAtAOLMaster
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelAtAOLMaster`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelAtAOLMaster`
 
    RelAOLMaster Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRelAtAOLMaster
 
 Overview
 --------

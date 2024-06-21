@@ -1,12 +1,12 @@
 CLEAR_EPHEMERIS_DIRECTION
 =========================
 
-.. py:class:: CLEAR_EPHEMERIS_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CLEAR_EPHEMERIS_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CLEAR_EPHEMERIS_DIRECTION
 
 Overview
 --------

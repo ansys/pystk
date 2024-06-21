@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorScalarLinearCombination
 ================================================
 
-.. py:class:: IVectorGeometryToolVectorScalarLinearCombination
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination
 
    object
    
    Linear combination of two input vectors using scalars.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorScalarLinearCombination
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vector_a`
-            * - :py:meth:`~scale_factor_a`
-            * - :py:meth:`~normalize_vector_a`
-            * - :py:meth:`~use_scale_from_scalar_a`
-            * - :py:meth:`~use_scale_from_scalar_b`
-            * - :py:meth:`~scalar_a`
-            * - :py:meth:`~scalar_b`
-            * - :py:meth:`~vector_b`
-            * - :py:meth:`~scale_factor_b`
-            * - :py:meth:`~normalize_vector_b`
-            * - :py:meth:`~output_dimension_inheritance`
-            * - :py:meth:`~output_dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.vector_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scale_factor_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.normalize_vector_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.use_scale_from_scalar_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.use_scale_from_scalar_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scalar_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scalar_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.vector_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scale_factor_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.normalize_vector_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.output_dimension_inheritance`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.output_dimension`
 
 
 Import detail
@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: vector_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.vector_a
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Vector A can be any VGT vector.
 
@@ -77,19 +77,19 @@ Property detail
 
 .. py:property:: scalar_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scalar_a
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     Scalar scale A. Can be any Scalar calculation.
 
 .. py:property:: scalar_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scalar_b
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     Scalar scale B. Can be any Scalar calculation.
 
 .. py:property:: vector_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.vector_b
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Vector B can be any VGT vector.
 

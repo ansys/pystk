@@ -1,13 +1,13 @@
 ObjectLaserEnvironment
 ======================
 
-.. py:class:: ObjectLaserEnvironment
+.. py:class:: ansys.stk.core.stkobjects.ObjectLaserEnvironment
 
-   Bases: py:obj:`~IObjectLaserEnvironment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IObjectLaserEnvironment`
 
    Class defining the laser environment for an object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ObjectLaserEnvironment
 
 Overview
 --------

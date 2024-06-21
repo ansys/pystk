@@ -1,13 +1,13 @@
 VehicleInertia
 ==============
 
-.. py:class:: VehicleInertia
+.. py:class:: ansys.stk.core.stkobjects.VehicleInertia
 
-   Bases: py:obj:`~IVehicleInertia`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleInertia`
 
    Satellite inertia matrix parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleInertia
 
 Overview
 --------

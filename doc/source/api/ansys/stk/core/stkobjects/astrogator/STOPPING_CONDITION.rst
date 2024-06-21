@@ -1,12 +1,12 @@
 STOPPING_CONDITION
 ==================
 
-.. py:class:: STOPPING_CONDITION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.STOPPING_CONDITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: STOPPING_CONDITION
 
 Overview
 --------

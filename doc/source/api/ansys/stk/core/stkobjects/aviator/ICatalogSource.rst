@@ -1,13 +1,13 @@
 ICatalogSource
 ==============
 
-.. py:class:: ICatalogSource
+.. py:class:: ansys.stk.core.stkobjects.aviator.ICatalogSource
 
    object
    
    Interface used to access options for a source in the Aviator Catalog. Examples of sources include User Aircraft Models, ARINC424runways, User Runways, etc.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ICatalogSource
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogSource.contains`
               - Check whether the catalog source contains the catalog item with the given name.
-            * - :py:meth:`~remove_child`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogSource.remove_child`
               - Remove the child with the given name.
-            * - :py:meth:`~save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogSource.save`
               - Save the catalog item.
 
     .. tab-item:: Properties
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~child_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogSource.child_names`
 
 
 Import detail

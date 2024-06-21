@@ -1,13 +1,13 @@
 IRefractionModelITURP8344
 =========================
 
-.. py:class:: IRefractionModelITURP8344
+.. py:class:: ansys.stk.core.stkobjects.IRefractionModelITURP8344
 
    IRefractionModelBase
    
    ITU-R P.834-4.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRefractionModelITURP8344
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ceiling`
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~knee_bend_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelITURP8344.ceiling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelITURP8344.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelITURP8344.knee_bend_factor`
 
 
 Import detail

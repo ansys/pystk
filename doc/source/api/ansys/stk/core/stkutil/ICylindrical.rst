@@ -1,13 +1,13 @@
 ICylindrical
 ============
 
-.. py:class:: ICylindrical
+.. py:class:: ansys.stk.core.stkutil.ICylindrical
 
    IPosition
    
    Cylindrical Position Type.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: ICylindrical
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~radius`
-            * - :py:meth:`~z`
-            * - :py:meth:`~lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICylindrical.radius`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICylindrical.z`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICylindrical.lon`
 
 
 Import detail

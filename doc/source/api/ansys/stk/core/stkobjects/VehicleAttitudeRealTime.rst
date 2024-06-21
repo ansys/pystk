@@ -1,13 +1,13 @@
 VehicleAttitudeRealTime
 =======================
 
-.. py:class:: VehicleAttitudeRealTime
+.. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeRealTime
 
-   Bases: py:obj:`~IVehicleAttitudeRealTime`, py:obj:`~IVehicleAttitude`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitude`
 
    Real time attitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleAttitudeRealTime
 
 Overview
 --------

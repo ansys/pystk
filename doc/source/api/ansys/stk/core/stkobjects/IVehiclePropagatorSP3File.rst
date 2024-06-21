@@ -1,13 +1,13 @@
 IVehiclePropagatorSP3File
 =========================
 
-.. py:class:: IVehiclePropagatorSP3File
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorSP3File
 
    object
    
    SP3 file data.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorSP3File
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~reference_time`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~agency`
-            * - :py:meth:`~orbit_type`
-            * - :py:meth:`~available_identifiers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.reference_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.agency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.orbit_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.available_identifiers`
 
 
 Import detail

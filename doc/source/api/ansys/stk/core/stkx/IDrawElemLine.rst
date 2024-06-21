@@ -1,13 +1,13 @@
 IDrawElemLine
 =============
 
-.. py:class:: IDrawElemLine
+.. py:class:: ansys.stk.core.stkx.IDrawElemLine
 
    IDrawElem
    
    Define a line in control coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IDrawElemLine
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemLine.set`
               - Set the rectangle coordinates.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~left`
-            * - :py:meth:`~right`
-            * - :py:meth:`~top`
-            * - :py:meth:`~bottom`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~line_style`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemLine.left`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemLine.right`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemLine.top`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemLine.bottom`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemLine.color`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemLine.line_width`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemLine.line_style`
 
 
 Import detail

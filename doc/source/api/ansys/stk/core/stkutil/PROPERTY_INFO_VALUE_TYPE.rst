@@ -1,12 +1,12 @@
 PROPERTY_INFO_VALUE_TYPE
 ========================
 
-.. py:class:: PROPERTY_INFO_VALUE_TYPE
+.. py:class:: ansys.stk.core.stkutil.PROPERTY_INFO_VALUE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: PROPERTY_INFO_VALUE_TYPE
 
 Overview
 --------

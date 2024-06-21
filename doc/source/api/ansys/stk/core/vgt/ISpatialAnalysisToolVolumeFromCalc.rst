@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeFromCalc
 ==================================
 
-.. py:class:: ISpatialAnalysisToolVolumeFromCalc
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc
 
    object
    
    An volume from calc volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeFromCalc
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_minimum`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.get_minimum`
               - Get the minimum bound value from the bounds. Call SetMinimum to apply changes.
-            * - :py:meth:`~set_minimum`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.set_minimum`
               - Set the minimum bound value for the bounds.
-            * - :py:meth:`~get_maximum`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.get_maximum`
               - Get the maximum bound value from the bounds. Call SetMaximum to apply changes.
-            * - :py:meth:`~set_maximum`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.set_maximum`
               - Set the maximum bound value for the condition.
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.set`
               - Set the min/max bounds. Throws an exception if the minimum is greater than maximum.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~operation`
-            * - :py:meth:`~volume_calc`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.operation`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.volume_calc`
 
 
 Import detail
@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: volume_calc
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.volume_calc
-    :type: IAgCrdnVolumeCalc
+    :type: ISpatialAnalysisToolVolumeCalc
 
     Get the volume calc from the bounds.
 

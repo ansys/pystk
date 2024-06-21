@@ -1,13 +1,13 @@
 IPluginProperties
 =================
 
-.. py:class:: IPluginProperties
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPluginProperties
 
    object
    
    Properties of a plugin attitude control.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPluginProperties
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPluginProperties.get_property`
               - Get a property.
-            * - :py:meth:`~set_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPluginProperties.set_property`
               - Set a property.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPluginProperties.available_properties`
 
 
 Import detail

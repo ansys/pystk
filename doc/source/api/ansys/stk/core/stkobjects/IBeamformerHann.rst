@@ -1,13 +1,13 @@
 IBeamformerHann
 ===============
 
-.. py:class:: IBeamformerHann
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerHann
 
    object
    
    Provide access to the properties and methods defining a Hann tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerHann
 
 Overview
 --------

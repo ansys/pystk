@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DAttributes
 ==================================
 
-.. py:class:: IFigureOfMeritGraphics2DAttributes
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes
 
    object
    
    Figure of Merit 2D graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DAttributes
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~fill_points`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~contours`
-            * - :py:meth:`~fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.fill_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.fill_translucency`
 
 
 Import detail
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: contours
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.contours
-    :type: IAgFmGfxContours
+    :type: IFigureOfMeritGraphics2DContours
 
     Coverage contours.
 

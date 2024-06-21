@@ -1,12 +1,12 @@
 THIRD_BODY_MODE
 ===============
 
-.. py:class:: THIRD_BODY_MODE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.THIRD_BODY_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: THIRD_BODY_MODE
 
 Overview
 --------

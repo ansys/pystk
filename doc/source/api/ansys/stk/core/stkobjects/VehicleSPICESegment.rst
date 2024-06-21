@@ -1,13 +1,13 @@
 VehicleSPICESegment
 ===================
 
-.. py:class:: VehicleSPICESegment
+.. py:class:: ansys.stk.core.stkobjects.VehicleSPICESegment
 
-   Bases: py:obj:`~IVehicleSPICESegment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSPICESegment`
 
    SPICE propagator segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSPICESegment
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcEpoch
 ===============
 
-.. py:class:: IStateCalcEpoch
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcEpoch
 
    object
    
    Properties for an Epoch calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcEpoch
 
 Overview
 --------

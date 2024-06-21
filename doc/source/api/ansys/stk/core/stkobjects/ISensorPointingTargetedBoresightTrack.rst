@@ -1,13 +1,13 @@
 ISensorPointingTargetedBoresightTrack
 =====================================
 
-.. py:class:: ISensorPointingTargetedBoresightTrack
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack
 
    object
    
    IAgSnPtTrgtBsightTrack Interface for targeted sensor with fixed boresight.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingTargetedBoresightTrack
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~about_boresight`
-            * - :py:meth:`~track_mode`
-            * - :py:meth:`~constraint_vector_for_up_vector_boresight`
-            * - :py:meth:`~available_constraint_vectors`
-            * - :py:meth:`~clock_angle_offset_for_up_vector_boresight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.about_boresight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.track_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.constraint_vector_for_up_vector_boresight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.available_constraint_vectors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.clock_angle_offset_for_up_vector_boresight`
 
 
 Import detail

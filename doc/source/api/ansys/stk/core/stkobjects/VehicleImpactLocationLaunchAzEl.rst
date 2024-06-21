@@ -1,13 +1,13 @@
 VehicleImpactLocationLaunchAzEl
 ===============================
 
-.. py:class:: VehicleImpactLocationLaunchAzEl
+.. py:class:: ansys.stk.core.stkobjects.VehicleImpactLocationLaunchAzEl
 
-   Bases: py:obj:`~IVehicleImpactLocation`, py:obj:`~IVehicleImpactLocationLaunchAzEl`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleImpactLocation`, py:obj:`~ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl`
 
    Class defining the option to use azimuth and elevation to specify the Missile's impact location.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleImpactLocationLaunchAzEl
 
 Overview
 --------

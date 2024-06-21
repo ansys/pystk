@@ -1,12 +1,12 @@
 VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE
 ================================
 
-.. py:class:: VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE
 
 Overview
 --------

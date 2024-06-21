@@ -1,12 +1,12 @@
 VEHICLE_INTERPOLATION_METHOD
 ============================
 
-.. py:class:: VEHICLE_INTERPOLATION_METHOD
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_INTERPOLATION_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_INTERPOLATION_METHOD
 
 Overview
 --------

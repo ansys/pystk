@@ -1,13 +1,13 @@
 TimeToolEventIntervalListSignaled
 =================================
 
-.. py:class:: TimeToolEventIntervalListSignaled
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalListSignaled
 
-   Bases: py:obj:`~ITimeToolEventIntervalListSignaled`, py:obj:`~ITimeToolEventIntervalList`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalListSignaled`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations...
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalListSignaled
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAdvCATGraphics3D
 =================
 
-.. py:class:: IAdvCATGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IAdvCATGraphics3D
 
    object
    
    AdvCAT VO properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdvCATGraphics3D
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~show_primary_ellipsoids`
-            * - :py:meth:`~show_secondary_ellipsoids`
-            * - :py:meth:`~show_secondary_ellipsoids_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATGraphics3D.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATGraphics3D.show_primary_ellipsoids`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATGraphics3D.show_secondary_ellipsoids`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATGraphics3D.show_secondary_ellipsoids_type`
 
 
 Import detail

@@ -1,12 +1,12 @@
 COMM_SYSTEM_SAVE_MODE
 =====================
 
-.. py:class:: COMM_SYSTEM_SAVE_MODE
+.. py:class:: ansys.stk.core.stkobjects.COMM_SYSTEM_SAVE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COMM_SYSTEM_SAVE_MODE
 
 Overview
 --------

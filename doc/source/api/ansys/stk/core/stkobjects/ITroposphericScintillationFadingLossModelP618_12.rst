@@ -1,13 +1,13 @@
 ITroposphericScintillationFadingLossModelP618_12
 ================================================
 
-.. py:class:: ITroposphericScintillationFadingLossModelP618_12
+.. py:class:: ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12
 
    object
    
    Provide access to the properties and methods of a Tropospheric Scintillation loss model ITU-R P.618_12.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITroposphericScintillationFadingLossModelP618_12
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~average_time_choice`
-            * - :py:meth:`~compute_deep_fade`
-            * - :py:meth:`~fade_outage`
-            * - :py:meth:`~percent_time_refractivity_gradient`
-            * - :py:meth:`~surface_temperature`
-            * - :py:meth:`~fade_exceeded`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.average_time_choice`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.compute_deep_fade`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.fade_outage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.percent_time_refractivity_gradient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.fade_exceeded`
 
 
 Import detail

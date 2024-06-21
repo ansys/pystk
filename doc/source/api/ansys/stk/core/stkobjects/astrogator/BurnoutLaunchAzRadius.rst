@@ -1,13 +1,13 @@
 BurnoutLaunchAzRadius
 =====================
 
-.. py:class:: BurnoutLaunchAzRadius
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BurnoutLaunchAzRadius
 
-   Bases: py:obj:`~IBurnoutLaunchAzRadius`, py:obj:`~IBurnout`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzRadius`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnout`
 
    The launch azimuth and radius burnout point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BurnoutLaunchAzRadius
 
 Overview
 --------

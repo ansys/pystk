@@ -1,13 +1,13 @@
 ICalculationToolParameterSetVector
 ==================================
 
-.. py:class:: ICalculationToolParameterSetVector
+.. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSetVector
 
    object
    
    Vector parameter set contains various representations of a vector in a reference set of axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolParameterSetVector
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vector`
-            * - :py:meth:`~reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetVector.vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetVector.reference_axes`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetVector.vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Get the vector for which representations are computed.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetVector.reference_axes
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Get the reference axes relative to which representations are computed.
 

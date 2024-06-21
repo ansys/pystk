@@ -1,13 +1,13 @@
 IRadarWaveformBistaticTransmitterSearchTrackFixedPRF
 ====================================================
 
-.. py:class:: IRadarWaveformBistaticTransmitterSearchTrackFixedPRF
+.. py:class:: ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF
 
    object
    
    Interface which is implemented by a search/track waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarWaveformBistaticTransmitterSearchTrackFixedPRF
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pulse_definition`
-            * - :py:meth:`~modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF.pulse_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF.modulator`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF.pulse_definition
-    :type: IAgRadarWaveformSearchTrackPulseDefinition
+    :type: IRadarWaveformSearchTrackPulseDefinition
 
     Gets the interface for setting the pulse definition parameters.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF.modulator
-    :type: IAgRadarModulator
+    :type: IRadarModulator
 
     Gets the interface for setting the modulator parameters.
 

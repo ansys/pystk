@@ -1,13 +1,13 @@
 FigureOfMeritGraphics2DTextOptions
 ==================================
 
-.. py:class:: FigureOfMeritGraphics2DTextOptions
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions
 
-   Bases: py:obj:`~IFigureOfMeritGraphics2DTextOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions`
 
    Text display options for contour legend.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGraphics2DTextOptions
 
 Overview
 --------

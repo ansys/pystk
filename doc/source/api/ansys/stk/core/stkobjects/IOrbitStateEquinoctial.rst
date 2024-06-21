@@ -1,13 +1,13 @@
 IOrbitStateEquinoctial
 ======================
 
-.. py:class:: IOrbitStateEquinoctial
+.. py:class:: ansys.stk.core.stkobjects.IOrbitStateEquinoctial
 
    IOrbitState
    
    Equinoctial coordinate type, which uses the center of the Earth as the origin and the plane of the satellite's orbit as the reference plane.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrbitStateEquinoctial
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coordinate_system_type`
-            * - :py:meth:`~coordinate_system`
-            * - :py:meth:`~size_shape_type`
-            * - :py:meth:`~size_shape`
-            * - :py:meth:`~h`
-            * - :py:meth:`~k`
-            * - :py:meth:`~p`
-            * - :py:meth:`~q`
-            * - :py:meth:`~mean_longitude`
-            * - :py:meth:`~formulation`
-            * - :py:meth:`~supported_coordinate_system_types`
-            * - :py:meth:`~state_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.coordinate_system_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.size_shape_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.size_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.h`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.k`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.q`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.mean_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.formulation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.supported_coordinate_system_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.state_epoch`
 
 
 Import detail
@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateEquinoctial.coordinate_system
-    :type: IAgOrbitStateCoordinateSystem
+    :type: IOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: size_shape
     :canonical: ansys.stk.core.stkobjects.IOrbitStateEquinoctial.size_shape
-    :type: IAgClassicalSizeShape
+    :type: IClassicalSizeShape
 
     Get the value of Mean Motion or Semimajor Axis.
 
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateEquinoctial.state_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

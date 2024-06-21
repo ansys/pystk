@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCalcDelayRange
 ========================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCalcDelayRange
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange
 
    object
    
    A volume calc propagation delay to location interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCalcDelayRange
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~distance`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~reference_plane`
-            * - :py:meth:`~along_vector`
-            * - :py:meth:`~speed_type`
-            * - :py:meth:`~speed`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.distance`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.reference_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.along_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.speed_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.speed`
 
 
 Import detail
@@ -47,19 +47,19 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.reference_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     The Volume Calc Range reference point.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.reference_plane
-    :type: IAgCrdnPlane
+    :type: IVectorGeometryToolPlane
 
     The Volume Calc Range reference plane.
 
 .. py:property:: along_vector
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.along_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     The Volume Calc Range Along Vector.
 

@@ -1,13 +1,13 @@
 IDelaunayGOverSQRTmu
 ====================
 
-.. py:class:: IDelaunayGOverSQRTmu
+.. py:class:: ansys.stk.core.stkobjects.IDelaunayGOverSQRTmu
 
    object
    
    Interface for Delaunay Variable G/SQRT(mu), i.e. G divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDelaunayGOverSQRTmu
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~g_over_sqrt_mu`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayGOverSQRTmu.g_over_sqrt_mu`
 
 
 Import detail

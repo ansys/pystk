@@ -1,13 +1,13 @@
 VehicleGPSSpecifyAlmanac
 ========================
 
-.. py:class:: VehicleGPSSpecifyAlmanac
+.. py:class:: ansys.stk.core.stkobjects.VehicleGPSSpecifyAlmanac
 
-   Bases: py:obj:`~IVehicleGPSSpecifyAlmanac`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac`
 
    Specify a GPS almanac.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGPSSpecifyAlmanac
 
 Overview
 --------

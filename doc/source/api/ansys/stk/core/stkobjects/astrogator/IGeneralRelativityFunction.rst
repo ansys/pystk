@@ -1,13 +1,13 @@
 IGeneralRelativityFunction
 ==========================
 
-.. py:class:: IGeneralRelativityFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGeneralRelativityFunction
 
    object
    
    Properties for the General Relativity propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGeneralRelativityFunction
 
 Overview
 --------

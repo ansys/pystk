@@ -1,13 +1,13 @@
 IScene
 ======
 
-.. py:class:: IScene
+.. py:class:: ansys.stk.core.graphics.IScene
 
    object
    
    A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IScene
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~render`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.render`
               - Render the scene. To render all the scenes within an application, use the Render method.
-            * - :py:meth:`~pick`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.pick`
               - Execute a pick at the given x, y and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method.
-            * - :py:meth:`~pick_rectangular`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.pick_rectangular`
               - Execute a pick in the given rectangular region and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method.
-            * - :py:meth:`~pick_screen_overlays`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.pick_screen_overlays`
               - Execute a pick on screen overlays at the given x, y and returns a front to back sorted collection of picked overlays. The coordinate origin is top, left. To pick other objects in the scene, use the Pick method.
-            * - :py:meth:`~Subscribe`
+            * - :py:attr:`~Subscribe`
               - """Return an ISceneEventHandler that is subscribed to handle events associated with this instance of IScene."""
 
     .. tab-item:: Properties
@@ -37,20 +37,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~camera`
-            * - :py:meth:`~lighting`
-            * - :py:meth:`~show_sunshine`
-            * - :py:meth:`~central_bodies`
-            * - :py:meth:`~background_color`
-            * - :py:meth:`~shade_sky_based_on_altitude`
-            * - :py:meth:`~show_stars`
-            * - :py:meth:`~globe_overlay_settings`
-            * - :py:meth:`~scene_id`
-            * - :py:meth:`~show_water_surface`
-            * - :py:meth:`~anti_aliasing`
-            * - :py:meth:`~visual_effects`
-            * - :py:meth:`~clouds`
-            * - :py:meth:`~show_star_labels`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.camera`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.lighting`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.show_sunshine`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.central_bodies`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.background_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.shade_sky_based_on_altitude`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.show_stars`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.globe_overlay_settings`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.scene_id`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.show_water_surface`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.anti_aliasing`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.visual_effects`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.clouds`
+            * - :py:attr:`~ansys.stk.core.graphics.IScene.show_star_labels`
 
 
 Import detail
@@ -66,13 +66,13 @@ Property detail
 
 .. py:property:: camera
     :canonical: ansys.stk.core.graphics.IScene.camera
-    :type: IAgStkGraphicsCamera
+    :type: ICamera
 
     Gets the camera associated with the scene, which affects the view that is rendered by the scene.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.graphics.IScene.lighting
-    :type: IAgStkGraphicsLighting
+    :type: ILighting
 
     Gets the lighting associated with the scene.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.graphics.IScene.central_bodies
-    :type: IAgStkGraphicsCentralBodyGraphicsIndexer
+    :type: ICentralBodyGraphicsIndexer
 
     Gets the central body graphics for a specified central body.
 
@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: globe_overlay_settings
     :canonical: ansys.stk.core.graphics.IScene.globe_overlay_settings
-    :type: IAgStkGraphicsSceneGlobeOverlaySettings
+    :type: ISceneGlobeOverlaySettings
 
     Gets the scene globe overlay settings for the scene.
 
@@ -132,13 +132,13 @@ Property detail
 
 .. py:property:: visual_effects
     :canonical: ansys.stk.core.graphics.IScene.visual_effects
-    :type: IAgStkGraphicsVisualEffects
+    :type: IVisualEffects
 
     Gets the visual  effects associated with the scene.
 
 .. py:property:: clouds
     :canonical: ansys.stk.core.graphics.IScene.clouds
-    :type: IAgStkGraphicsClouds
+    :type: IClouds
 
     Gets the clouds for the scene.
 

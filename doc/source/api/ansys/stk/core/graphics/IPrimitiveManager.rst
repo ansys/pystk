@@ -1,13 +1,13 @@
 IPrimitiveManager
 =================
 
-.. py:class:: IPrimitiveManager
+.. py:class:: ansys.stk.core.graphics.IPrimitiveManager
 
    object
    
    The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPrimitiveManager
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.add`
               - Add a primitive to the manager. Primitives must be added to the manager to be rendered.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.remove`
               - Remove a primitive from the manager. The primitive is no longer rendered unless it is added back into the manager.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.contains`
               - Determine whether the manager contains a primitive.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.clear`
               - Remove all primitives from the manager.
 
     .. tab-item:: Properties
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~precision_exponent`
-            * - :py:meth:`~translucent_primitives_sort_order`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.precision_exponent`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.translucent_primitives_sort_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager._NewEnum`
 
 
 Import detail

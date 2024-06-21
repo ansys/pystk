@@ -1,13 +1,13 @@
 IVehicleAccessAdvanced
 ======================
 
-.. py:class:: IVehicleAccessAdvanced
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAccessAdvanced
 
    IAccessAdvanced
    
    Interface for configuring a vehicle's advanced targeting access computation properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAccessAdvanced
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_light_time_delay`
-            * - :py:meth:`~time_sense`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAccessAdvanced.use_light_time_delay`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAccessAdvanced.time_sense`
 
 
 Import detail

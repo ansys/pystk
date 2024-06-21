@@ -1,13 +1,13 @@
 MtoDefaultTrack
 ===============
 
-.. py:class:: MtoDefaultTrack
+.. py:class:: ansys.stk.core.stkobjects.MtoDefaultTrack
 
-   Bases: py:obj:`~IMtoDefaultTrack`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoDefaultTrack`
 
    Default MTO track.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoDefaultTrack
 
 Overview
 --------

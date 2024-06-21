@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesLabels
 =============================
 
-.. py:class:: IVectorGeometryToolAxesLabels
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesLabels
 
    object
    
    Allow configuring the VGT axes labels.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesLabels
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~label_x`
-            * - :py:meth:`~label_y`
-            * - :py:meth:`~label_z`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLabels.label_x`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLabels.label_y`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLabels.label_z`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IWirelessInSite64GeometryData
 =============================
 
-.. py:class:: IWirelessInSite64GeometryData
+.. py:class:: ansys.stk.core.stkobjects.IWirelessInSite64GeometryData
 
    object
    
    Provide access to the properties and methods for geometry data for the Wireless InSite RT model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IWirelessInSite64GeometryData
 
 Overview
 --------
@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~projection_horizontal_datum`
-            * - :py:meth:`~supported_building_height_data_attributes`
-            * - :py:meth:`~building_height_data_attribute`
-            * - :py:meth:`~building_height_reference_method`
-            * - :py:meth:`~building_height_unit`
-            * - :py:meth:`~override_geometry_tile_origin`
-            * - :py:meth:`~geometry_tile_origin_latitude`
-            * - :py:meth:`~geometry_tile_origin_longitude`
-            * - :py:meth:`~use_terrain_data`
-            * - :py:meth:`~terrain_extent_min_latitude`
-            * - :py:meth:`~terrain_extent_max_latitude`
-            * - :py:meth:`~terrain_extent_min_longitude`
-            * - :py:meth:`~terrain_extent_max_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.projection_horizontal_datum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.supported_building_height_data_attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.building_height_data_attribute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.building_height_reference_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.building_height_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.override_geometry_tile_origin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.geometry_tile_origin_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.geometry_tile_origin_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.use_terrain_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.terrain_extent_min_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.terrain_extent_max_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.terrain_extent_min_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.terrain_extent_max_longitude`
 
 
 Import detail

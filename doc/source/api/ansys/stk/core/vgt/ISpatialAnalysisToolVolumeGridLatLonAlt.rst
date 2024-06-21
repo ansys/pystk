@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeGridLatLonAlt
 =======================================
 
-.. py:class:: ISpatialAnalysisToolVolumeGridLatLonAlt
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt
 
    object
    
    A volume grid lat lon alt (Cartogrographic) interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeGridLatLonAlt
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_central_body`
-            * - :py:meth:`~latitude_coordinates`
-            * - :py:meth:`~longitude_coordinates`
-            * - :py:meth:`~altitude_coordinates`
-            * - :py:meth:`~auto_fit_bounds`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.reference_central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.latitude_coordinates`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.longitude_coordinates`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.altitude_coordinates`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.auto_fit_bounds`
 
 
 Import detail
@@ -46,19 +46,19 @@ Property detail
 
 .. py:property:: latitude_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.latitude_coordinates
-    :type: IAgCrdnGridCoordinateDefinition
+    :type: ISpatialAnalysisToolGridCoordinateDefinition
 
     Returns latitude Coordinates parameters for the Theta system.
 
 .. py:property:: longitude_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.longitude_coordinates
-    :type: IAgCrdnGridCoordinateDefinition
+    :type: ISpatialAnalysisToolGridCoordinateDefinition
 
     Returns longtitude Coordinates parameters for the Radius system.
 
 .. py:property:: altitude_coordinates
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.altitude_coordinates
-    :type: IAgCrdnGridCoordinateDefinition
+    :type: ISpatialAnalysisToolGridCoordinateDefinition
 
     Returns altitude parameters for the Height system.
 

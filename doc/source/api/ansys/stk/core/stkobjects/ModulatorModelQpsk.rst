@@ -1,13 +1,13 @@
 ModulatorModelQpsk
 ==================
 
-.. py:class:: ModulatorModelQpsk
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelQpsk
 
-   Bases: py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a QPSK modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModelQpsk
 
 Overview
 --------

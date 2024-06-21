@@ -1,13 +1,13 @@
 TakeoffLowTransition
 ====================
 
-.. py:class:: TakeoffLowTransition
+.. py:class:: ansys.stk.core.stkobjects.aviator.TakeoffLowTransition
 
-   Bases: py:obj:`~ITakeoffLowTransition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition`
 
    Class defining the low transition options for a takeoff procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TakeoffLowTransition
 
 Overview
 --------

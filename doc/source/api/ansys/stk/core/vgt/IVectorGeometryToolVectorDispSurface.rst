@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorDispSurface
 ====================================
 
-.. py:class:: IVectorGeometryToolVectorDispSurface
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface
 
    object
    
    Displacement between origin and destination points using surface distance and altitude difference.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorDispSurface
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~origin_point`
-            * - :py:meth:`~destination_point`
-            * - :py:meth:`~surface_central_body`
-            * - :py:meth:`~differencing_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.origin_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.destination_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.surface_central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.differencing_time_step`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: origin_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.origin_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     An origin point.
 
 .. py:property:: destination_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.destination_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     Destination point.
 

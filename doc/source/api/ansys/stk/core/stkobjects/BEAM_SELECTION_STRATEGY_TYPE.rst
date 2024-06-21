@@ -1,12 +1,12 @@
 BEAM_SELECTION_STRATEGY_TYPE
 ============================
 
-.. py:class:: BEAM_SELECTION_STRATEGY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.BEAM_SELECTION_STRATEGY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BEAM_SELECTION_STRATEGY_TYPE
 
 Overview
 --------

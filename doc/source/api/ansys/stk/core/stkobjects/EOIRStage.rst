@@ -1,13 +1,13 @@
 EOIRStage
 =========
 
-.. py:class:: EOIRStage
+.. py:class:: ansys.stk.core.stkobjects.EOIRStage
 
-   Bases: py:obj:`~IEOIRStage`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRStage`
 
    Stage base class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRStage
 
 Overview
 --------

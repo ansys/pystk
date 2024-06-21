@@ -1,13 +1,13 @@
 ICoverageAssetListElement
 =========================
 
-.. py:class:: ICoverageAssetListElement
+.. py:class:: ansys.stk.core.stkobjects.ICoverageAssetListElement
 
    object
    
    Coverage asset.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageAssetListElement
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~contains_sub_assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.contains_sub_assets`
               - Return whether or not this element has sub assets.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~asset_status`
-            * - :py:meth:`~grouping`
-            * - :py:meth:`~object_name`
-            * - :py:meth:`~sub_asset_list`
-            * - :py:meth:`~required`
-            * - :py:meth:`~use_const_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.asset_status`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.grouping`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.sub_asset_list`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.required`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.use_const_constraints`
 
 
 Import detail
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: sub_asset_list
     :canonical: ansys.stk.core.stkobjects.ICoverageAssetListElement.sub_asset_list
-    :type: IAgCvAssetListCollection
+    :type: ICoverageAssetListCollection
 
     Returns the sub assets for this asset.
 

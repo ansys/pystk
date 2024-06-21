@@ -1,12 +1,12 @@
 STATE
 =====
 
-.. py:class:: STATE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.STATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: STATE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcGravCoeff
 ===================
 
-.. py:class:: IStateCalcGravCoeff
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff
 
    object
    
    Properties for a gravity coefficient calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcGravCoeff
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~gravity_filename`
-            * - :py:meth:`~coefficient_type`
-            * - :py:meth:`~degree`
-            * - :py:meth:`~order`
-            * - :py:meth:`~normalization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.gravity_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.coefficient_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.normalization_type`
 
 
 Import detail

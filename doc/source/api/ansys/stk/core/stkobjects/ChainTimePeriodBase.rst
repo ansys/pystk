@@ -1,13 +1,13 @@
 ChainTimePeriodBase
 ===================
 
-.. py:class:: ChainTimePeriodBase
+.. py:class:: ansys.stk.core.stkobjects.ChainTimePeriodBase
 
-   Bases: py:obj:`~IChainTimePeriodBase`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainTimePeriodBase`
 
    Chain time period options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ChainTimePeriodBase
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ExecCmdResult
 =============
 
-.. py:class:: ExecCmdResult
+.. py:class:: ansys.stk.core.stkx.ExecCmdResult
 
-   Bases: py:obj:`~IExecCmdResult`
+   Bases: py:obj:`~ansys.stk.core.stkx.IExecCmdResult`
 
    Collection of strings returned by the ExecuteCommand.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: ExecCmdResult
 
 Overview
 --------

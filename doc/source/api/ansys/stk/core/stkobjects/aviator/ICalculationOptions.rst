@@ -1,13 +1,13 @@
 ICalculationOptions
 ===================
 
-.. py:class:: ICalculationOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.ICalculationOptions
 
    object
    
    Interface used to access the calculation options for a procedure or phase.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ICalculationOptions
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_rel_motion_factor`
-            * - :py:meth:`~state_cache_time_interval`
-            * - :py:meth:`~time_resolution`
-            * - :py:meth:`~max_iterations`
-            * - :py:meth:`~max_bad_steps`
-            * - :py:meth:`~integrator_type`
-            * - :py:meth:`~integrator_type_string`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.max_rel_motion_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.state_cache_time_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.time_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.max_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.max_bad_steps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.integrator_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.integrator_type_string`
 
 
 Import detail

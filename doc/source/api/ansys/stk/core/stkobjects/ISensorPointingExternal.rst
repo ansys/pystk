@@ -1,13 +1,13 @@
 ISensorPointingExternal
 =======================
 
-.. py:class:: ISensorPointingExternal
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingExternal
 
    object
    
    IAgSnPtExternal Interface for antennas oriented with a custom pointing file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingExternal
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingExternal.filename`
 
 
 Import detail

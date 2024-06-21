@@ -1,13 +1,13 @@
 INavigationOptions
 ==================
 
-.. py:class:: INavigationOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.INavigationOptions
 
    object
    
    Interface used to access the navigation options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: INavigationOptions
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~nav_mode`
-            * - :py:meth:`~arrive_on_course`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~enroute_first_turn`
-            * - :py:meth:`~enroute_second_turn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.nav_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.arrive_on_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.enroute_first_turn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.enroute_second_turn`
 
 
 Import detail

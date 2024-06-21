@@ -1,13 +1,13 @@
 DemodulatorModelNarrowbandUniform
 =================================
 
-.. py:class:: DemodulatorModelNarrowbandUniform
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelNarrowbandUniform
 
-   Bases: py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a narrowband uniform modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelNarrowbandUniform
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ChainGraphics2DStatic
 =====================
 
-.. py:class:: ChainGraphics2DStatic
+.. py:class:: ansys.stk.core.stkobjects.ChainGraphics2DStatic
 
-   Bases: py:obj:`~IChainGraphics2DStatic`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainGraphics2DStatic`
 
    2D static graphics for a chain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ChainGraphics2DStatic
 
 Overview
 --------

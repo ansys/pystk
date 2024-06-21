@@ -1,12 +1,12 @@
 TRANSMITTER_MODEL_TYPE
 ======================
 
-.. py:class:: TRANSMITTER_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.TRANSMITTER_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TRANSMITTER_MODEL_TYPE
 
 Overview
 --------

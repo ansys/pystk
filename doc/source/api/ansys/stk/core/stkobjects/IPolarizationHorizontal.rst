@@ -1,13 +1,13 @@
 IPolarizationHorizontal
 =======================
 
-.. py:class:: IPolarizationHorizontal
+.. py:class:: ansys.stk.core.stkobjects.IPolarizationHorizontal
 
    object
    
    Provide the interface for linear polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPolarizationHorizontal
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_axis`
-            * - :py:meth:`~tilt_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationHorizontal.reference_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationHorizontal.tilt_angle`
 
 
 Import detail

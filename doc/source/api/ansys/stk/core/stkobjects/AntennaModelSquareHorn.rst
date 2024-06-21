@@ -1,13 +1,13 @@
 AntennaModelSquareHorn
 ======================
 
-.. py:class:: AntennaModelSquareHorn
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelSquareHorn
 
-   Bases: py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IAntennaModelSquareHorn`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn`
 
    Class defining a square horn antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelSquareHorn
 
 Overview
 --------

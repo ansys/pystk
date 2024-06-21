@@ -1,12 +1,12 @@
 AERO_PROP_FLIGHT_MODE
 =====================
 
-.. py:class:: AERO_PROP_FLIGHT_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.AERO_PROP_FLIGHT_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AERO_PROP_FLIGHT_MODE
 
 Overview
 --------

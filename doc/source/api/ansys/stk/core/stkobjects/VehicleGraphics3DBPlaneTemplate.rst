@@ -1,13 +1,13 @@
 VehicleGraphics3DBPlaneTemplate
 ===============================
 
-.. py:class:: VehicleGraphics3DBPlaneTemplate
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate
 
-   Bases: py:obj:`~IVehicleGraphics3DBPlaneTemplate`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate`
 
    An element of IAgVeVOBPlaneTemplatesCollection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DBPlaneTemplate
 
 Overview
 --------

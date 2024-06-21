@@ -1,13 +1,13 @@
 IProcedureDelay
 ===============
 
-.. py:class:: IProcedureDelay
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureDelay
 
    object
    
    Interface used to access the options for a delay procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureDelay
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_mode`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~cruise_airspeed_options`
-            * - :py:meth:`~turn_direction`
-            * - :py:meth:`~turn_radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.altitude_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.turn_radius_factor`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureDelay.cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the interface for the cruise airspeed options.
 

@@ -1,13 +1,13 @@
 IEventDetectionStrategy
 =======================
 
-.. py:class:: IEventDetectionStrategy
+.. py:class:: ansys.stk.core.stkobjects.IEventDetectionStrategy
 
    object
    
    Define a base interface for the event detection strategies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEventDetectionStrategy
 
 Overview
 --------

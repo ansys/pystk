@@ -1,13 +1,13 @@
 CommSystemAccessEventDetectionSamplesOnly
 =========================================
 
-.. py:class:: CommSystemAccessEventDetectionSamplesOnly
+.. py:class:: ansys.stk.core.stkobjects.CommSystemAccessEventDetectionSamplesOnly
 
-   Bases: py:obj:`~ICommSystemAccessEventDetection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetection`
 
    Class defining a CommSystem access options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CommSystemAccessEventDetectionSamplesOnly
 
 Overview
 --------

@@ -1,12 +1,12 @@
 VEHICLE_LAUNCH_CONTROL
 ======================
 
-.. py:class:: VEHICLE_LAUNCH_CONTROL
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_LAUNCH_CONTROL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_LAUNCH_CONTROL
 
 Overview
 --------

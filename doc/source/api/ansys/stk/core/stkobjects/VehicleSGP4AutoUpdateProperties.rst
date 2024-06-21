@@ -1,13 +1,13 @@
 VehicleSGP4AutoUpdateProperties
 ===============================
 
-.. py:class:: VehicleSGP4AutoUpdateProperties
+.. py:class:: ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateProperties
 
-   Bases: py:obj:`~IVehicleSGP4AutoUpdateProperties`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties`
 
    SGP4 AutoUpdate properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSGP4AutoUpdateProperties
 
 Overview
 --------

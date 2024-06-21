@@ -1,13 +1,13 @@
 VehicleScheduleTimesCollection
 ==============================
 
-.. py:class:: VehicleScheduleTimesCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleScheduleTimesCollection
 
-   Bases: py:obj:`~IVehicleScheduleTimesCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesCollection`
 
    List of scheduled accesses.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleScheduleTimesCollection
 
 Overview
 --------

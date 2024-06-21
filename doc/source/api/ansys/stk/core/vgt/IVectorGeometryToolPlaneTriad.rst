@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneTriad
 =============================
 
-.. py:class:: IVectorGeometryToolPlaneTriad
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad
 
    object
    
    A Plane containing points A, B and ReferencePont with the first axis aligned with the direction from the ReferencePoint to point A and the second axis toward the direction from the ReferencePoint to point B.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneTriad
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~point_a`
-            * - :py:meth:`~point_b`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~rotation_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.point_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.point_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.rotation_offset`
 
 
 Import detail
@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: point_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.point_a
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a point A.
 
 .. py:property:: point_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.point_b
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a point B.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.reference_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a reference point.
 

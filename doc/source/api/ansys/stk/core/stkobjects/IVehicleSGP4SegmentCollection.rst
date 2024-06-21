@@ -1,13 +1,13 @@
 IVehicleSGP4SegmentCollection
 =============================
 
-.. py:class:: IVehicleSGP4SegmentCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection
 
    object
    
    Set of Trajectories.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4SegmentCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.item`
               - Get the item for the specified index.
-            * - :py:meth:`~add_seg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.add_seg`
               - Add a default segment.
-            * - :py:meth:`~remove_seg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.remove_seg`
               - Remove a Segment given an index.
-            * - :py:meth:`~remove_all_segs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.remove_all_segs`
               - Remove all the segments in the collection.
 
     .. tab-item:: Properties
@@ -35,14 +35,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~load_method_type`
-            * - :py:meth:`~load_method`
-            * - :py:meth:`~routine_type`
-            * - :py:meth:`~available_routines`
-            * - :py:meth:`~max_tle_limit`
-            * - :py:meth:`~ssc_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.load_method_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.load_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.routine_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.available_routines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.max_tle_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.ssc_number`
 
 
 Import detail
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: load_method
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.load_method
-    :type: IAgVeSGP4LoadData
+    :type: IVehicleSGP4LoadData
 
     File Load Data.
 

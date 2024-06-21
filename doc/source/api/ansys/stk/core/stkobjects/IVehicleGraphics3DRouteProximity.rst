@@ -1,13 +1,13 @@
 IVehicleGraphics3DRouteProximity
 ================================
 
-.. py:class:: IVehicleGraphics3DRouteProximity
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity
 
    IVehicleGraphics3DProximity
    
    Proximity graphics interface for GreatArc Vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DRouteProximity
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~control_box`
-            * - :py:meth:`~bearing_box`
-            * - :py:meth:`~bearing_ellipse`
-            * - :py:meth:`~line_of_bearing`
-            * - :py:meth:`~aou_label_swap_distance`
-            * - :py:meth:`~ellipsoid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.control_box`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.bearing_box`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.bearing_ellipse`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.line_of_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.aou_label_swap_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.ellipsoid`
 
 
 Import detail
@@ -41,37 +41,37 @@ Property detail
 
 .. py:property:: control_box
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.control_box
-    :type: IAgVeVOControlBox
+    :type: IVehicleGraphics3DControlBox
 
     Get the control box parameters.
 
 .. py:property:: bearing_box
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.bearing_box
-    :type: IAgVeVOBearingBox
+    :type: IVehicleGraphics3DBearingBox
 
     Get the bearing box parameters.
 
 .. py:property:: bearing_ellipse
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.bearing_ellipse
-    :type: IAgVeVOBearingEllipse
+    :type: IVehicleGraphics3DBearingEllipse
 
     Get the bearing ellipse parameters.
 
 .. py:property:: line_of_bearing
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.line_of_bearing
-    :type: IAgVeVOLineOfBearing
+    :type: IVehicleGraphics3DLineOfBearing
 
     Get the line of bearing parameters.
 
 .. py:property:: aou_label_swap_distance
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.aou_label_swap_distance
-    :type: IAgVOLabelSwapDistance
+    :type: IGraphics3DLabelSwapDistance
 
     Area of uncertainty label swap distance.
 
 .. py:property:: ellipsoid
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity.ellipsoid
-    :type: IAgVeVOEllipsoid
+    :type: IVehicleGraphics3DEllipsoid
 
     Defines the ellipsoid parameters.
 

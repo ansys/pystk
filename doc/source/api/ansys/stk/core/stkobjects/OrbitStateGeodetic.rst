@@ -1,13 +1,13 @@
 OrbitStateGeodetic
 ==================
 
-.. py:class:: OrbitStateGeodetic
+.. py:class:: ansys.stk.core.stkobjects.OrbitStateGeodetic
 
-   Bases: py:obj:`~IOrbitStateGeodetic`, py:obj:`~IOrbitState`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic`, py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Geodetic coordinate type (available only with a Fixed coordinate system).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OrbitStateGeodetic
 
 Overview
 --------

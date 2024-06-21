@@ -1,12 +1,12 @@
 VEHICLE_GRAPHICS_2D_ELEVATION
 =============================
 
-.. py:class:: VEHICLE_GRAPHICS_2D_ELEVATION
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_ELEVATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_GRAPHICS_2D_ELEVATION
 
 Overview
 --------

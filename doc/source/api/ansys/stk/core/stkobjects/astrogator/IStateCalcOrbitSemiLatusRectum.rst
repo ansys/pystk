@@ -1,13 +1,13 @@
 IStateCalcOrbitSemiLatusRectum
 ==============================
 
-.. py:class:: IStateCalcOrbitSemiLatusRectum
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitSemiLatusRectum
 
    object
    
    Interface for AsStateCalcOrbitSemiLatusRectum.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcOrbitSemiLatusRectum
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitSemiLatusRectum.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitSemiLatusRectum.element_type`
 
 
 Import detail

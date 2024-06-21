@@ -1,13 +1,13 @@
 KeyValueCollection
 ==================
 
-.. py:class:: KeyValueCollection
+.. py:class:: ansys.stk.core.stkobjects.KeyValueCollection
 
-   Bases: py:obj:`~IKeyValueCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IKeyValueCollection`
 
    A collection of keys and values associated with the keys.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: KeyValueCollection
 
 Overview
 --------

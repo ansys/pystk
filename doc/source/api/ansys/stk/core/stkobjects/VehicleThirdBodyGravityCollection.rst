@@ -1,13 +1,13 @@
 VehicleThirdBodyGravityCollection
 =================================
 
-.. py:class:: VehicleThirdBodyGravityCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleThirdBodyGravityCollection
 
-   Bases: py:obj:`~IVehicleThirdBodyGravityCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection`
 
    Collection of third-body gravity options for the LOP propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleThirdBodyGravityCollection
 
 Overview
 --------

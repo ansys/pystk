@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleBetweenPlanes
 =====================================
 
-.. py:class:: IVectorGeometryToolAngleBetweenPlanes
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenPlanes
 
    object
    
    An angle between two planes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleBetweenPlanes
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~from_plane`
-            * - :py:meth:`~to_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenPlanes.from_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenPlanes.to_plane`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: from_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenPlanes.from_plane
-    :type: IAgCrdnPlaneRefTo
+    :type: IVectorGeometryToolPlaneRefTo
 
     Specify the first of the two planes the angle is measured.
 
 .. py:property:: to_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenPlanes.to_plane
-    :type: IAgCrdnPlaneRefTo
+    :type: IVectorGeometryToolPlaneRefTo
 
     Specify the second of the two planes the angle is measured.
 

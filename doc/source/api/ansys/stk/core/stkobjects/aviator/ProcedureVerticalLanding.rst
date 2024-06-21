@@ -1,13 +1,13 @@
 ProcedureVerticalLanding
 ========================
 
-.. py:class:: ProcedureVerticalLanding
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureVerticalLanding
 
-   Bases: py:obj:`~IProcedureVerticalLanding`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a vertical landing procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureVerticalLanding
 
 Overview
 --------

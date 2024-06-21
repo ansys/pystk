@@ -1,13 +1,13 @@
 IDataObject
 ===========
 
-.. py:class:: IDataObject
+.. py:class:: ansys.stk.core.stkx.IDataObject
 
    object
    
    IAgDataObject is used for OLE drag and drop operations.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IDataObject
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~files`
+            * - :py:attr:`~ansys.stk.core.stkx.IDataObject.files`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: files
     :canonical: ansys.stk.core.stkx.IDataObject.files
-    :type: IAgDataObjectFiles
+    :type: IDataObjectFiles
 
     Returns a collection of filenames.
 

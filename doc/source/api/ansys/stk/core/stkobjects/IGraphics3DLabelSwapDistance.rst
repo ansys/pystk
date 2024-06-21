@@ -1,13 +1,13 @@
 IGraphics3DLabelSwapDistance
 ============================
 
-.. py:class:: IGraphics3DLabelSwapDistance
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DLabelSwapDistance
 
    object
    
    Interface to control the level of detail in labels and other screen objects at specified distances.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DLabelSwapDistance
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_distance_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DLabelSwapDistance.set_distance_level`
               - Select the screen object(s) for which swapping occurs at the specified distance.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~distance_value`
-            * - :py:meth:`~distance_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DLabelSwapDistance.distance_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DLabelSwapDistance.distance_level`
 
 
 Import detail

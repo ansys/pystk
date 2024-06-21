@@ -1,13 +1,13 @@
 ModulatorModelPulsedSignal
 ==========================
 
-.. py:class:: ModulatorModelPulsedSignal
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelPulsedSignal
 
-   Bases: py:obj:`~IModulatorModelPulsedSignal`, py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModelPulsedSignal`, py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a pulsed signal modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModelPulsedSignal
 
 Overview
 --------

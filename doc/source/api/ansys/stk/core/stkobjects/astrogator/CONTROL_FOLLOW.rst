@@ -1,12 +1,12 @@
 CONTROL_FOLLOW
 ==============
 
-.. py:class:: CONTROL_FOLLOW
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_FOLLOW
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_FOLLOW
 
 Overview
 --------

@@ -1,12 +1,12 @@
 DISPLAY_TIMES_TYPE
 ==================
 
-.. py:class:: DISPLAY_TIMES_TYPE
+.. py:class:: ansys.stk.core.stkobjects.DISPLAY_TIMES_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DISPLAY_TIMES_TYPE
 
 Overview
 --------

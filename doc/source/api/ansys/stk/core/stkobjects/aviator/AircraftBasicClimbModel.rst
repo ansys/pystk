@@ -1,13 +1,13 @@
 AircraftBasicClimbModel
 =======================
 
-.. py:class:: AircraftBasicClimbModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel
 
-   Bases: py:obj:`~IAircraftBasicClimbModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the basic climb performance model for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftBasicClimbModel
 
 Overview
 --------

@@ -1,13 +1,13 @@
 RFFilterModelSinc
 =================
 
-.. py:class:: RFFilterModelSinc
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelSinc
 
-   Bases: py:obj:`~IRFFilterModelSinc`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelSinc`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a sinc filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelSinc
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IGoldenSectionControl
 =====================
 
-.. py:class:: IGoldenSectionControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl
 
    object
    
    Properties for control parameters of a Golden Section profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGoldenSectionControl
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~lower_bound`
-            * - :py:meth:`~upper_bound`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
-            * - :py:meth:`~tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.lower_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.upper_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl.tolerance`
 
 
 Import detail

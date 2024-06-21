@@ -1,12 +1,12 @@
 CRDN_SMART_INTERVAL_STATE
 =========================
 
-.. py:class:: CRDN_SMART_INTERVAL_STATE
+.. py:class:: ansys.stk.core.vgt.CRDN_SMART_INTERVAL_STATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SMART_INTERVAL_STATE
 
 Overview
 --------

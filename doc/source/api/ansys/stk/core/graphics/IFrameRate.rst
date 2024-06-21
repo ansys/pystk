@@ -1,13 +1,13 @@
 IFrameRate
 ==========
 
-.. py:class:: IFrameRate
+.. py:class:: ansys.stk.core.graphics.IFrameRate
 
    object
    
    Keeps track of how many times the scenes are rendered per second.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IFrameRate
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reset`
+            * - :py:attr:`~ansys.stk.core.graphics.IFrameRate.reset`
               - Reset the frame rate counter back to zero. The frame rate computation begins anew.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~frames_per_second`
-            * - :py:meth:`~maximum_number_of_frames`
+            * - :py:attr:`~ansys.stk.core.graphics.IFrameRate.frames_per_second`
+            * - :py:attr:`~ansys.stk.core.graphics.IFrameRate.maximum_number_of_frames`
 
 
 Import detail

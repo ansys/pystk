@@ -1,13 +1,13 @@
 IVehicleSpaceEnvironmentRadiation
 =================================
 
-.. py:class:: IVehicleSpaceEnvironmentRadiation
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation
 
    object
    
    Radiation model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpaceEnvironmentRadiation
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_electron_energies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.get_electron_energies`
               - Return electron energies in an array of doubles. Uses ParticleEnergy Dimension.
-            * - :py:meth:`~get_proton_energies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.get_proton_energies`
               - Return proton energies in an array of doubles. Uses ParticleEnergy Dimension.
-            * - :py:meth:`~compute_electron_fluxes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_electron_fluxes`
               - Compute electron fluxes at the specified time, returned in an array of doubles (1 flux per electron energy). Uses FluxPerParticleEnergy Dimension.
-            * - :py:meth:`~compute_proton_fluxes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_proton_fluxes`
               - Compute proton fluxes at the specified time, returned in an array of doubles (1 flux per proton energy). Uses FluxPerParticleEnergy Dimension.
-            * - :py:meth:`~compute_dose_rates`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_dose_rates`
               - Compute dose rate information for each shielding thickness and returns a collection to access the computed data.
-            * - :py:meth:`~compute_electron_integral_fluxes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_electron_integral_fluxes`
               - Compute electron integral fluxes at the specified time, returned in an array of doubles (1 flux per electron energy). Uses FluxPerParticleEnergy Dimension.
-            * - :py:meth:`~compute_proton_integral_fluxes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.compute_proton_integral_fluxes`
               - Compute proton integral fluxes at the specified time, returned in  an array of doubles (1 flux per proton energy). Uses FluxPerParticleEnergy Dimension.
 
     .. tab-item:: Properties
@@ -41,21 +41,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~computation_mode`
-            * - :py:meth:`~flux_status`
-            * - :py:meth:`~dose_channel`
-            * - :py:meth:`~use_nuclear_attenuation`
-            * - :py:meth:`~detector_type`
-            * - :py:meth:`~shielding_thicknesses`
-            * - :py:meth:`~ap_source`
-            * - :py:meth:`~ap`
-            * - :py:meth:`~flux_file`
-            * - :py:meth:`~include_nuclear_atten_neutrons`
-            * - :py:meth:`~detector_geometry`
-            * - :py:meth:`~use_model_epoch`
-            * - :py:meth:`~shift_saa`
-            * - :py:meth:`~dose_integration_step`
-            * - :py:meth:`~dose_report_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.computation_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.flux_status`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.dose_channel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.use_nuclear_attenuation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.detector_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.shielding_thicknesses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.ap_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.ap`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.flux_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.include_nuclear_atten_neutrons`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.detector_geometry`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.use_model_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.shift_saa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.dose_integration_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.dose_report_step`
 
 
 Import detail
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: shielding_thicknesses
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.shielding_thicknesses
-    :type: IAgDoublesCollection
+    :type: IDoublesCollection
 
     Get the shielding thicknesses. Dose and dose rate can be computed for each thickness.
 

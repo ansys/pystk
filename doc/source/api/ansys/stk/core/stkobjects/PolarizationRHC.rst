@@ -1,13 +1,13 @@
 PolarizationRHC
 ===============
 
-.. py:class:: PolarizationRHC
+.. py:class:: ansys.stk.core.stkobjects.PolarizationRHC
 
-   Bases: py:obj:`~IPolarization`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarization`
 
    Class defining a RHC polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PolarizationRHC
 
 Overview
 --------

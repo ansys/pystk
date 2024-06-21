@@ -1,13 +1,13 @@
 IVehicleGraphics2DTrajectoryResolution
 ======================================
 
-.. py:class:: IVehicleGraphics2DTrajectoryResolution
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution
 
    object
    
    Ground track and trajectory resolution for launch vehicles and missiles in terms of ephemeris steps.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DTrajectoryResolution
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ground_track`
-            * - :py:meth:`~trajectory`
-            * - :py:meth:`~min_ground_track`
-            * - :py:meth:`~min_trajectory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution.ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution.trajectory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution.min_ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution.min_trajectory`
 
 
 Import detail

@@ -1,12 +1,12 @@
 STK_EPHEM_COORDINATE_SYSTEM
 ===========================
 
-.. py:class:: STK_EPHEM_COORDINATE_SYSTEM
+.. py:class:: ansys.stk.core.stkobjects.STK_EPHEM_COORDINATE_SYSTEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: STK_EPHEM_COORDINATE_SYSTEM
 
 Overview
 --------

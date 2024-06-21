@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DContoursAnimation
 =========================================
 
-.. py:class:: IFigureOfMeritGraphics2DContoursAnimation
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContoursAnimation
 
    IFigureOfMeritGraphics2DContours
    
    Animation contour properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DContoursAnimation
 
 Overview
 --------

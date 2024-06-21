@@ -1,12 +1,12 @@
 SMOOTH_ACCEL_LEFT_RIGHT
 =======================
 
-.. py:class:: SMOOTH_ACCEL_LEFT_RIGHT
+.. py:class:: ansys.stk.core.stkobjects.aviator.SMOOTH_ACCEL_LEFT_RIGHT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SMOOTH_ACCEL_LEFT_RIGHT
 
 Overview
 --------

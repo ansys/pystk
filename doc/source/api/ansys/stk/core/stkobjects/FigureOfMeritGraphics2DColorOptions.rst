@@ -1,13 +1,13 @@
 FigureOfMeritGraphics2DColorOptions
 ===================================
 
-.. py:class:: FigureOfMeritGraphics2DColorOptions
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions
 
-   Bases: py:obj:`~IFigureOfMeritGraphics2DColorOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions`
 
    Color options for contour legend.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGraphics2DColorOptions
 
 Overview
 --------

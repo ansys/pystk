@@ -1,13 +1,13 @@
 SensorProjectionDisplayDistance
 ===============================
 
-.. py:class:: SensorProjectionDisplayDistance
+.. py:class:: ansys.stk.core.stkobjects.SensorProjectionDisplayDistance
 
-   Bases: py:obj:`~IDisplayDistance`, py:obj:`~ISensorProjectionDisplayDistance`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDisplayDistance`, py:obj:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance`
 
    Class defining projection altitude options for a sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorProjectionDisplayDistance
 
 Overview
 --------

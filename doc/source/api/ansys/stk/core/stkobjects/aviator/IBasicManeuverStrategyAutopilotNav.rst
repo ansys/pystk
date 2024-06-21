@@ -1,13 +1,13 @@
 IBasicManeuverStrategyAutopilotNav
 ==================================
 
-.. py:class:: IBasicManeuverStrategyAutopilotNav
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav
 
    object
    
    Interface used to access options for the Autopilot - Horizontal Plane Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyAutopilotNav
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_control_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~active_mode`
-            * - :py:meth:`~active_heading_course_value`
-            * - :py:meth:`~damping_ratio`
-            * - :py:meth:`~control_limit_mode`
-            * - :py:meth:`~control_limit_turn_radius`
-            * - :py:meth:`~control_limit_turn_rate`
-            * - :py:meth:`~control_limit_horiz_accel`
-            * - :py:meth:`~compensate_for_coriolis_accel`
-            * - :py:meth:`~stop_when_conditions_met`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.active_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.active_heading_course_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.damping_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_turn_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_turn_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_horiz_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.stop_when_conditions_met`
 
 
 Import detail

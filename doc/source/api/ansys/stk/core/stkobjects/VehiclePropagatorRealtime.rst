@@ -1,13 +1,13 @@
 VehiclePropagatorRealtime
 =========================
 
-.. py:class:: VehiclePropagatorRealtime
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorRealtime
 
-   Bases: py:obj:`~IVehiclePropagatorRealtime`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Realtime propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorRealtime
 
 Overview
 --------

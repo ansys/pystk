@@ -1,12 +1,12 @@
 GRADIENT_DETECT_METHOD
 ======================
 
-.. py:class:: GRADIENT_DETECT_METHOD
+.. py:class:: ansys.stk.core.graphics.GRADIENT_DETECT_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: GRADIENT_DETECT_METHOD
 
 Overview
 --------

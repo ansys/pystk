@@ -17,7 +17,7 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:obj: aviator
+            * - :py:obj: ansys.stk.core.stkobjects.aviator
 
     .. tab-item:: Submodules
 
@@ -25,7 +25,7 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:mod: astrogator
+            * - :py:mod: ansys.stk.core.stkobjects.astrogator
 
              
     .. tab-item:: Interfaces
@@ -35,3577 +35,3577 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~IDataProviderResult`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResult`
               - Provide methods to access the results returned by the data provider.
 
-            * - :py:class:`~IDataProviderTimeVarying`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying`
               - Represents the Time-dependent Data Provider (for instance satellite position).
 
-            * - :py:class:`~IDataProviderInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderInterval`
               - Represents the Interval Data Provider (for instance facility lighting times).
 
-            * - :py:class:`~IDataProviderFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderFixed`
               - Represents the Fixed Data Provider (i.e. non time dependent like facility position).
 
-            * - :py:class:`~IDataProviderResultStatistics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultStatistics`
               - Compute statistics and time varying extremums on a data set when available.
 
-            * - :py:class:`~IDataProviderInfo`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderInfo`
               - Provide methods for retrieving the information about data providers.
 
-            * - :py:class:`~IDataProviderCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderCollection`
               - Represents a collection of data providers.
 
-            * - :py:class:`~IDataProviderResultDataSet`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet`
               - Represents a dataset element.
 
-            * - :py:class:`~IDataProviderResultDataSetCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection`
               - Represents a collection of dataset elements.
 
-            * - :py:class:`~IDataProviderResultInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultInterval`
               - Represents a data interval element.
 
-            * - :py:class:`~IDataProviderResultIntervalCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultIntervalCollection`
               - Represents a collection of intervals.
 
-            * - :py:class:`~IDataProviderResultSubSection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultSubSection`
               - Represents a sub-section data element.
 
-            * - :py:class:`~IDataProviderResultSubSectionCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection`
               - Represents a collection of sub-section data elements.
 
-            * - :py:class:`~IDataProviderResultTextMessage`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage`
               - Represents notification/failure message returned by the data provider.
 
-            * - :py:class:`~IDataProviderElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderElement`
               - Provide methods to access the information about the element (for instance ``x``).
 
-            * - :py:class:`~IDataProviderElements`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderElements`
               - Represents a collection of elements in the data provider (for instance ``x``, ``y``, ``z``).
 
-            * - :py:class:`~IDataProviderResultTimeArrayElements`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements`
               - Provide a array result of element values for each time array value.
 
-            * - :py:class:`~IDataProvider`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProvider`
               - Represents the Sub Data Provider (i.e. ``Fixed`` in ``Cartesian Position`` group on satellites, or ``Cartesian Position`` on facilities).
 
-            * - :py:class:`~IDataProviders`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviders`
               - Represents a collection of data providers.
 
-            * - :py:class:`~IDataProviderGroup`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderGroup`
               - Represents a group of data providers (for instance ``Cartesian Position`` on satellite).
 
-            * - :py:class:`~IDataProviderResultStatisticResult`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultStatisticResult`
               - Represents the results of computing a data set statistics using IAgDrStatistics.ComputeStatistic method.
 
-            * - :py:class:`~IDataProviderResultTimeVaryingExtremumResult`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult`
               - Represents the results of computing a data set time varying extremum using IAgDrStatistics.ComputeTimeVarExtremum method.
 
-            * - :py:class:`~IGraphics3DDataDisplayCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection`
               - Data Display Text.
 
-            * - :py:class:`~IIntervalCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IIntervalCollection`
               - AgIntervalCollection used to access the Intervals Collection interface.
 
-            * - :py:class:`~ITimePeriodValue`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITimePeriodValue`
               - Provide methods and properties to configure a time value.
 
-            * - :py:class:`~IStkObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObject`
               - Represents the instance of STK object.
 
-            * - :py:class:`~IAccessInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessInterval`
               - Base interface for IAgTimePeriod and IAgIntervalCollection.
 
-            * - :py:class:`~IAccessTimeEventIntervals`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessTimeEventIntervals`
               - Allow configuring the access time period using a list of timeline intervals.
 
-            * - :py:class:`~IAccessTimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessTimePeriod`
               - Allow configuring the object's access interval.
 
-            * - :py:class:`~IStkAccessGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkAccessGraphics`
               - Provide access to the Graphics for Access Computations.
 
-            * - :py:class:`~IStkAccessAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkAccessAdvanced`
               - Provide access to the Advanced properties for Access Computations.
 
-            * - :py:class:`~IStkAccess`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkAccess`
               - Provide access to the Data Providers and access computations.
 
-            * - :py:class:`~IAccessConstraintCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintCollection`
               - AgAccessConstraintCollection used to access the list of constraints.
 
-            * - :py:class:`~IImmutableIntervalCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IImmutableIntervalCollection`
               - IAgImmutableIntervalCollection represents a immutable (read-only) collection of intervals.
 
-            * - :py:class:`~IFigureOfMeritDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
               - Figure of Merit definition.
 
-            * - :py:class:`~IFigureOfMeritDefinitionCompute`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`
               - Compute options for navigation accuracy.
 
-            * - :py:class:`~IFigureOfMeritDefinitionAccessConstraint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint`
               - Access Constraint Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics`
               - 2D graphics for a Figure of Merit.
 
-            * - :py:class:`~ICoverageAssetListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection`
               - Asset List.
 
-            * - :py:class:`~IAvailableFeatures`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAvailableFeatures`
               - Define methods to inquiry available and supported features, object types, etc.
 
-            * - :py:class:`~IStkCentralBodyCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection`
               - A collection of available central bodies.
 
-            * - :py:class:`~IStkPreferences`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkPreferences`
               - Configures STK preferences.
 
-            * - :py:class:`~IOnePointAccessConstraint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOnePointAccessConstraint`
               - One Point Access Result.
 
-            * - :py:class:`~IOnePointAccessConstraintCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOnePointAccessConstraintCollection`
               - Represents the access constraints for the one point access computation.
 
-            * - :py:class:`~IOnePointAccessResult`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOnePointAccessResult`
               - One Point Access Result.
 
-            * - :py:class:`~IOnePointAccessResultCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOnePointAccessResultCollection`
               - Represents the data sets for one point access.
 
-            * - :py:class:`~IOnePointAccess`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOnePointAccess`
               - One Point Access.
 
-            * - :py:class:`~IKeyValueCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IKeyValueCollection`
               - A collection of keys and values associated with the keys.
 
-            * - :py:class:`~IStkObjectElementCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectElementCollection`
               - Represents a collection of STK objects.
 
-            * - :py:class:`~IStkObjectCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectCollection`
               - Represents a collection of STK objects.
 
-            * - :py:class:`~IObjectCoverageFigureOfMerit`
+            * - :py:class:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit`
               - Provide access to the Figure of Merit on the Object Coverage tool.
 
-            * - :py:class:`~IStkObjectCoverage`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectCoverage`
               - Provide access to the Data Providers on an ObjectCoverage Object.
 
-            * - :py:class:`~IStdMilitary2525bSymbols`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStdMilitary2525bSymbols`
               - Represents the automation interface to generate 2525b symbology markers (military standard).
 
-            * - :py:class:`~IStkObjectRoot`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectRoot`
               - Represents the automation interface supported by the root object of the Automation Object Model.
 
-            * - :py:class:`~IObjectLink`
+            * - :py:class:`~ansys.stk.core.stkobjects.IObjectLink`
               - IAgObjectLink provides methods and properties of elements stored in IAgObjectLinkCollection collection.
 
-            * - :py:class:`~ILinkToObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILinkToObject`
               - IAgLinkToObject represents a link to STK object.
 
-            * - :py:class:`~IObjectLinkCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IObjectLinkCollection`
               - IAgObjectLinkCollection represents a collection of names of STK objects that are available in the current scenario.
 
-            * - :py:class:`~IAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAnimation`
               - Provide methods to control scenario animation.
 
-            * - :py:class:`~IStkObjectModelContext`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectModelContext`
               - Represents a factory class to create instances of the AgStkObjectRoot class.
 
-            * - :py:class:`~IComponentInfo`
+            * - :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`
               - Interface for a component.
 
-            * - :py:class:`~IComponentInfoCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IComponentInfoCollection`
               - The collection of components and component folders.
 
-            * - :py:class:`~IComponentDirectory`
+            * - :py:class:`~ansys.stk.core.stkobjects.IComponentDirectory`
               - Manages all components.
 
-            * - :py:class:`~ICloneable`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICloneable`
               - Interface for a component.
 
-            * - :py:class:`~IComponentLinkEmbedControl`
+            * - :py:class:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl`
               - Interface for a control which manages the linking or embedding of a component from the component browser.
 
-            * - :py:class:`~ISwath`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISwath`
               - Provide access to the Swath properties.
 
-            * - :py:class:`~IDisplayTimesData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDisplayTimesData`
               - Base Interface IAgDisplayTimesData. IAgIntervalCollection, IAgDuringAccess and IAgDisplayTimesTimeComponent derive from this.
 
-            * - :py:class:`~IDisplayTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
               - The display time interface.
 
-            * - :py:class:`~IBasicAzElMask`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBasicAzElMask`
               - AgAzElMask Azimuth-elevation access points.
 
-            * - :py:class:`~ILabelNote`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILabelNote`
               - AgLabelNote used to access the label note.
 
-            * - :py:class:`~ILabelNoteCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILabelNoteCollection`
               - AgLabelNoteCollection used to access the list of label notes.
 
-            * - :py:class:`~IDuringAccess`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDuringAccess`
               - AgDuringAccess used to access the display intervals and Access objects.
 
-            * - :py:class:`~IDisplayTimesTimeComponent`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDisplayTimesTimeComponent`
               - Interface provides methods to configure the display times using Timeline API components.
 
-            * - :py:class:`~ITerrainNormSlopeAzimuth`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITerrainNormSlopeAzimuth`
               - AgTerrainNormSlopeAzimuth used to access the Slope/Azimuth data for the TerrainNormal.
 
-            * - :py:class:`~IAccessTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessTime`
               - IAgAccessTime Interface, part of the target times scheme for specifying when a satellite or sensor can access a given object.
 
-            * - :py:class:`~IAccessTimeCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessTimeCollection`
               - IAgAccessTimeCollection Interface.
 
-            * - :py:class:`~ITerrainNormData`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITerrainNormData`
               - Base Interface IAgTerrainNormData. IAgTerrainNormSlopeAzimuth derives from this interface.
 
-            * - :py:class:`~ILifetimeInformation`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
               - Provide the information about the lifetime of the object.
 
-            * - :py:class:`~IVehicleLeadTrailData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLeadTrailData`
               - Base interface IAgVeLeadTrailData.
 
-            * - :py:class:`~IVehicleLeadTrailDataFraction`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction`
               - The percentage of the leading or trailing portion of a vehicle's path that will display in the 2D or 3D window.
 
-            * - :py:class:`~IVehicleLeadTrailDataTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataTime`
               - Configure the amount of time to display the vehicle's path in 2D or 3D window.
 
-            * - :py:class:`~IStkCentralBodyEllipsoid`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid`
               - Provide information about the central body's equatorial and polar radii.
 
-            * - :py:class:`~IStkCentralBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkCentralBody`
               - A central body interface.
 
-            * - :py:class:`~IAccessConstraint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
               - AgAccessConstraint used to access the AccessConstraint attributes.
 
-            * - :py:class:`~IAccessConstraintTimeSlipRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintTimeSlipRange`
               - IAgAccessCnstrTimeSlipRange used to access the Time Slip Range.
 
-            * - :py:class:`~IAccessConstraintZone`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintZone`
               - IAgAccessCnstrZone used to access the Zone access constraints.
 
-            * - :py:class:`~IAccessConstraintExclZonesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection`
               - AgAccessCnstrExclZonesCollection used to access the Exclusion Zones List interface.
 
-            * - :py:class:`~IAccessConstraintThirdBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody`
               - Do not use this interface, as it is deprecated. Use IAgAccessCnstrCbObstruction instead. Access Constraint Used for Third Body Obstructions.
 
-            * - :py:class:`~IAccessConstraintIntervals`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals`
               - Access Constraint used for time intervals.
 
-            * - :py:class:`~IAccessConstraintObjExAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle`
               - Access Constraint used for Object Exclusion Angles.
 
-            * - :py:class:`~IAccessConstraintCondition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintCondition`
               - Access Constraint used for lighting conditions.
 
-            * - :py:class:`~IAccessConstraintCentralBodyObstruction`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction`
               - Access Constraint used for Central Body Obstruction.
 
-            * - :py:class:`~IAccessConstraintAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintAngle`
               - Access Constraint used for angle constraints.
 
-            * - :py:class:`~IAccessConstraintMinMax`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax`
               - Access Constraint used for min/max constraints.
 
-            * - :py:class:`~IAccessConstraintPluginMinMax`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintPluginMinMax`
               - Access Constraint used for min/max plugin constraints.
 
-            * - :py:class:`~IAccessConstraintCrdnConstellation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation`
               - Access Constraint used for Vector Constraints.
 
-            * - :py:class:`~IAccessConstraintBackground`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintBackground`
               - Access Constraint used for Background Constraints.
 
-            * - :py:class:`~IAccessConstraintGroundTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintGroundTrack`
               - Access Constraint used for GroundTrack Constraints.
 
-            * - :py:class:`~IAccessConstraintAnalysisWorkbench`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench`
               - Access Constraint used for Analysis Workbench Constraints.
 
-            * - :py:class:`~IAccessConstraintAnalysisWorkbenchCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection`
               - IAgAccessCnstrAWBCollection used to access angle, vector and condition constraint List interface.
 
-            * - :py:class:`~IAccessConstraintGrazingAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintGrazingAltitude`
               - Access Constraint used for Grazing Altitude Constraint.
 
-            * - :py:class:`~ILevelAttribute`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILevelAttribute`
               - AgLevelAttribute used to access individual contour level attributes.
 
-            * - :py:class:`~ILevelAttributeCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILevelAttributeCollection`
               - AgLevelAttributeCollection used to access level attributes.
 
-            * - :py:class:`~IGraphics2DRangeContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours`
               - AgGfxRangeContours used to access contours of 2-d object.
 
-            * - :py:class:`~IGraphics3DModelFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelFile`
               - IAgVOModelFile Interface. Used to specify the model's file.
 
-            * - :py:class:`~IGraphics3DArticulationFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DArticulationFile`
               - Interface for VO model articulations.
 
-            * - :py:class:`~IGraphics3DModelGltfImageBased`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelGltfImageBased`
               - glTF Reflection Settings Interface.
 
-            * - :py:class:`~IVehicleEllipseDataElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement`
               - Ground ellipse data.
 
-            * - :py:class:`~IVehicleEllipseDataCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection`
               - Ellipse Data Collection.
 
-            * - :py:class:`~IVehicleGroundEllipseElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGroundEllipseElement`
               - Ground ellipse.
 
-            * - :py:class:`~IVehicleGroundEllipsesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGroundEllipsesCollection`
               - Ground Ellipses.
 
-            * - :py:class:`~IGraphics3DDataDisplayElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement`
               - Interface for 3D Graphics window data display element.
 
-            * - :py:class:`~IGraphics3DPointableElementsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement`
               - Pointable elements interface for 3D model pointing.
 
-            * - :py:class:`~IGraphics3DPointableElementsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection`
               - List of Pointable Elements.
 
-            * - :py:class:`~IGraphics3DModelPointing`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing`
               - List of pointable model elements.
 
-            * - :py:class:`~IGraphics3DLabelSwapDistance`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DLabelSwapDistance`
               - Interface to control the level of detail in labels and other screen objects at specified distances.
 
-            * - :py:class:`~IGraphics3DAzElMask`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask`
               - Use to display labels and adjust the translucency of the azimuth-elevation mask for a facility, place or target.
 
-            * - :py:class:`~IGraphics3DBorderWall`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall`
               - Border Wall Properties.
 
-            * - :py:class:`~IGraphics3DRangeContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours`
               - AgVORangeContour used to access the 3D RangeContour attributes.
 
-            * - :py:class:`~IGraphics3DOffsetLabel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DOffsetLabel`
               - AgVOOffsetLabel used to access the 3D Label attributes.
 
-            * - :py:class:`~IGraphics3DOffsetRotate`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate`
               - AgVOOffsetRotate used to access the 3D Rotational attributes.
 
-            * - :py:class:`~IGraphics3DOffsetTransformation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DOffsetTransformation`
               - AgVOOffsetTrans used to access the 3D Translational attributes.
 
-            * - :py:class:`~IGraphics3DOffsetAttach`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DOffsetAttach`
               - Interface for specifying attach points for the attachment of lines to objects.
 
-            * - :py:class:`~IGraphics3DOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DOffset`
               - AgVOOffset used to access the 3D offset attributes.
 
-            * - :py:class:`~IGraphics3DMarkerData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DMarkerData`
               - Base Interface IAgVOMarkerData.
 
-            * - :py:class:`~IGraphics3DMarkerShape`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DMarkerShape`
               - AgVOMarkerShape used to access the 3D markerShape attributes.
 
-            * - :py:class:`~IGraphics3DMarkerFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile`
               - AgVOMarkerFile used to access the 3D MarkerFile attributes.
 
-            * - :py:class:`~IGraphics3DMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DMarker`
               - AgVOMarker used to access the Marker values.
 
-            * - :py:class:`~IGraphics3DModelTransformation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation`
               - IAgVOModelTrans Interface. Used to modify the transformation value.
 
-            * - :py:class:`~IGraphics3DModelTransformationCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection`
               - IAgVOModelTransCollection Interface. A collection of available transformations in the model.
 
-            * - :py:class:`~IGraphics3DModelArtic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic`
               - ModelArticulation Interface.
 
-            * - :py:class:`~IGraphics3DDetailThreshold`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold`
               - AgVODetailThreshold used to access the 3D DetailThreshold values.
 
-            * - :py:class:`~IGraphics3DModelItem`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelItem`
               - AgVOModelItem used to access the Model Item in the ModelCollection.
 
-            * - :py:class:`~IGraphics3DModelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection`
               - IAgVOModelCollection used to access the 3D Model List.
 
-            * - :py:class:`~IGraphics3DModelData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelData`
               - IAgVOModelData base interface. IAgVOModelFile and IAgVOModelCollection derive from this.
 
-            * - :py:class:`~IGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModel`
               - AgVOModel used to access the 3D model attributes.
 
-            * - :py:class:`~IPointTargetGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPointTargetGraphics3DModel`
               - AgPtTargetVOModel used to access the 3D model attributes.
 
-            * - :py:class:`~IGraphics3DReferenceAnalysisWorkbenchComponent`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent`
               - IAgVORefCrdn used to access the shared properties of all 3D RefCrdn.
 
-            * - :py:class:`~IGraphics3DReferenceVectorGeometryToolVector`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector`
               - Configure the visual representation of a Vector Geometry vector component in 3D.
 
-            * - :py:class:`~IGraphics3DReferenceVectorGeometryToolAxes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes`
               - Configure the visual representation of a Vector Geometry axes component in 3D.
 
-            * - :py:class:`~IGraphics3DReferenceVectorGeometryToolAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle`
               - Configure the visual representation of a Vector Geometry angle component in 3D.
 
-            * - :py:class:`~IGraphics3DReferenceVectorGeometryToolPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint`
               - Configure the visual representation of a Vector Geometry point component in 3D.
 
-            * - :py:class:`~IGraphics3DReferenceVectorGeometryToolPlane`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane`
               - Configure the visual representation of a Vector Geometry plane component in 3D.
 
-            * - :py:class:`~IGraphics3DReferenceAnalysisWorkbenchCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection`
               - Manages the collection of elements that are used to visualize the Vector Geometry Tool components in 3D.
 
-            * - :py:class:`~IGraphics3DVector`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DVector`
               - Configures the Vector Geometry Tool 3D visualization.
 
-            * - :py:class:`~IGraphics3DVaporTrail`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail`
               - Configure the vapor trail 3D attributes.
 
-            * - :py:class:`~ILLAPosition`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILLAPosition`
               - Interface to set and retrieve the LLA position type.
 
-            * - :py:class:`~ILLAGeocentric`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILLAGeocentric`
               - Geocentric LLA position interface:.
 
-            * - :py:class:`~ILLAGeodetic`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILLAGeodetic`
               - Geodetic LLA position interface.
 
-            * - :py:class:`~IOrbitStateCoordinateSystem`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem`
               - Interface for selecting coordinate epoch for coordinate systems that do not have pre-established epochs.
 
-            * - :py:class:`~IOrbitStateCartesian`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitStateCartesian`
               - Cartesian coordinate type.
 
-            * - :py:class:`~IClassicalSizeShape`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
               - Base Interface for SizeShape property. IAgClassicalSizeShapeAltitude, IAgClassicalSizeShapeMeanMotion, IAgClassicalSizeShapePeriod, IAgClassicalSizeShapeRadius and IAgClassicalSizeShapeSemimajorAxis derive from this.
 
-            * - :py:class:`~IClassicalSizeShapeAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShapeAltitude`
               - Interface for specifying orbit size and shape using altitude.
 
-            * - :py:class:`~IClassicalSizeShapeMeanMotion`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShapeMeanMotion`
               - Interface for specifying orbit size and shape using Mean Motion and Eccentricity.
 
-            * - :py:class:`~IClassicalSizeShapePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShapePeriod`
               - Interface for specifying orbit size and shape using Period and Eccentricity.
 
-            * - :py:class:`~IClassicalSizeShapeRadius`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShapeRadius`
               - Interface for specifying orbit size and shape using Radius.
 
-            * - :py:class:`~IClassicalSizeShapeSemimajorAxis`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShapeSemimajorAxis`
               - Interface for specifying orbit size and shape using Semimajor Axis and Eccentricity.
 
-            * - :py:class:`~IOrientationAscNode`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrientationAscNode`
               - Base Interface to IAgOrientationAscNodeLAN and IAgOrientationAscNodeRAAN.
 
-            * - :py:class:`~IOrientationAscNodeLAN`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrientationAscNodeLAN`
               - Longitude of Ascending Node: the Earth-fixed longitude where the satellite crosses the inertial equator from south to north.
 
-            * - :py:class:`~IOrientationAscNodeRAAN`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrientationAscNodeRAAN`
               - Right Ascension of Ascending Node: the angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane.
 
-            * - :py:class:`~IClassicalOrientation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalOrientation`
               - Interface for specifying orbit orientation in the Classical (Keplerian) system.
 
-            * - :py:class:`~IClassicalLocation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalLocation`
               - Base Interface of all IAgClassicalLocation* interfaces.
 
-            * - :py:class:`~IClassicalLocationArgumentOfLatitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude`
               - Interface for Argument of Latitude, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~IClassicalLocationEccentricAnomaly`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationEccentricAnomaly`
               - Interface for Eccentric Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~IClassicalLocationMeanAnomaly`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationMeanAnomaly`
               - Interface for Mean Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~IClassicalLocationTimePastAN`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationTimePastAN`
               - Interface for Time Past Ascending Node, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~IClassicalLocationTimePastPerigee`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationTimePastPerigee`
               - Interface for Time Past Perigee, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~IClassicalLocationTrueAnomaly`
+            * - :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationTrueAnomaly`
               - Interface for True Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~IOrbitStateClassical`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitStateClassical`
               - Classical (Keplerian) coordinate type.
 
-            * - :py:class:`~IGeodeticSize`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGeodeticSize`
               - Base Interface IAgGeodeticSize. IAgGeodeticSizeAltitude and IAgGeodeticSizeRadius derive from this.
 
-            * - :py:class:`~IGeodeticSizeAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGeodeticSizeAltitude`
               - Interface for Altitude and Altitude Rate (for Geodetic coordinate type).
 
-            * - :py:class:`~IGeodeticSizeRadius`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGeodeticSizeRadius`
               - Interface for Radius and Radius Rate (for Geodetic coordinate type).
 
-            * - :py:class:`~IOrbitStateGeodetic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic`
               - Geodetic coordinate type (available only with a Fixed coordinate system).
 
-            * - :py:class:`~IDelaunayActionVariable`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDelaunayActionVariable`
               - Interface for Delaunay Variable L, which is related to the two-body orbital energy.
 
-            * - :py:class:`~IDelaunayL`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDelaunayL`
               - Interface for Delaunay Variable L, which is related to the two-body orbital energy.
 
-            * - :py:class:`~IDelaunayLOverSQRTmu`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDelaunayLOverSQRTmu`
               - Interface for Delaunay Variable L/SQRT(mu), i.e. L divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 
-            * - :py:class:`~IDelaunayH`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDelaunayH`
               - Value of Delaunay Variable H, which is the Z component of the orbital angular momentum.
 
-            * - :py:class:`~IDelaunayHOverSQRTmu`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDelaunayHOverSQRTmu`
               - Interface for Delaunay Variable H/SQRT(mu), i.e. H divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 
-            * - :py:class:`~IDelaunayG`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDelaunayG`
               - Interface for Delaunay Variagle G, the magnitude of the orbital angular momentum.
 
-            * - :py:class:`~IDelaunayGOverSQRTmu`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDelaunayGOverSQRTmu`
               - Interface for Delaunay Variable G/SQRT(mu), i.e. G divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 
-            * - :py:class:`~IOrbitStateDelaunay`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay`
               - Delaunay coordinate type, using a set of canonical action-angle variables, which are commonly used in general perturbation theories.
 
-            * - :py:class:`~IEquinoctialSizeShapeMeanMotion`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeMeanMotion`
               - Interface for Mean Motion, an element of the Equinoctial coordinate type.
 
-            * - :py:class:`~IEquinoctialSizeShapeSemimajorAxis`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeSemimajorAxis`
               - Interface for Semimajor Axis, an element of the Equinoctial coordinate type.
 
-            * - :py:class:`~IOrbitStateEquinoctial`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial`
               - Equinoctial coordinate type, which uses the center of the Earth as the origin and the plane of the satellite's orbit as the reference plane.
 
-            * - :py:class:`~IFlightPathAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFlightPathAngle`
               - Base Interface IAgFlightPathAngle. IAgMixedSphericalFPAHorizontal, IAgMixedSphericalFPAVertical, IAgSphericalFPAHorizontal and IAgSphericalFPAVertical derive from this.
 
-            * - :py:class:`~IMixedSphericalFPAHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMixedSphericalFPAHorizontal`
               - Interface for Horizontal Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
-            * - :py:class:`~IMixedSphericalFPAVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMixedSphericalFPAVertical`
               - Interface for Vertical Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
-            * - :py:class:`~IOrbitStateMixedSpherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical`
               - Mixed Spherical coordinate type, using a variation of the spherical elements that combines Earth-fixed position parameters with inertial velocity parameters.
 
-            * - :py:class:`~ISphericalFPAHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISphericalFPAHorizontal`
               - Interface for Horizontal Flight Path Angle, an element of the Spherical coordinate type.
 
-            * - :py:class:`~ISphericalFPAVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISphericalFPAVertical`
               - Interface for Vertical Flight Path Angle, an element of the Spherical coordinate type.
 
-            * - :py:class:`~IOrbitStateSpherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitStateSpherical`
               - Spherical coordinate type: defines the path of an orbit using polar coordinates.
 
-            * - :py:class:`~ISpatialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISpatialState`
               - Represents a position and an attitude of an object.
 
-            * - :py:class:`~IVehicleSpatialInfo`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpatialInfo`
               - Represents a spatial information of the vehicle.
 
-            * - :py:class:`~IProvideSpatialInfo`
+            * - :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
               - Provide methods for accessing spatial information for an object.
 
-            * - :py:class:`~IScenSpaceEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment`
               - no helpstring provided.
 
-            * - :py:class:`~IRadarClutterMap`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMap`
               - Do not use this interface, as it is deprecated. This interface is no longer used and there is no alternative. Provides access to the properties and methods defining a radar clutter map.
 
-            * - :py:class:`~IRadarCrossSection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSection`
               - Provide access to the properties and methods defining radar cross section.
 
-            * - :py:class:`~IRFEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFEnvironment`
               - Provide access to the properties and methods defining the RF environment.
 
-            * - :py:class:`~ILaserEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaserEnvironment`
               - Provide access to the properties and methods defining the laser environment.
 
-            * - :py:class:`~IScenarioGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenarioGraphics`
               - IAgScGraphics Interface for Scenario-level 2D Graphics attributes.
 
-            * - :py:class:`~IScenarioEarthData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenarioEarthData`
               - IAgScEarthData Interface for Earth Orientation Parameters.
 
-            * - :py:class:`~IScenarioAnimationTimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod`
               - IAgScAnimationTimePeriod defines methods and properties to configure the scenario's animation time.
 
-            * - :py:class:`~IScenarioAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenarioAnimation`
               - IAgScAnimation Interface for Scenario-level properties that control the animation cycle, animation step definition and the intervals between refresh updates in the 2D and 3D windows.
 
-            * - :py:class:`~ITerrain`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITerrain`
               - IAgTerrain Interface.
 
-            * - :py:class:`~ITerrainCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITerrainCollection`
               - IAgTerrainCollection lists all the terrain data files available in this scenario for visualization and analysis.
 
-            * - :py:class:`~ICentralBodyTerrainCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement`
               - Element of collection of terrain associated with central body.
 
-            * - :py:class:`~ICentralBodyTerrainCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection`
               - Represents a collection of terrains associated with central bodies. This collection enables adding terrain to any central bodies and not just to the current scenario's central body.
 
-            * - :py:class:`~ITileset3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITileset3D`
               - IAg3DTileset Interface.
 
-            * - :py:class:`~ITilesetCollection3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITilesetCollection3D`
               - IAg3DTilesetCollection lists all the terrain data files available in this scenario for visualization and analysis.
 
-            * - :py:class:`~IScenarioGenDatabase`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenarioGenDatabase`
               - Represents a scenario database.
 
-            * - :py:class:`~IScenarioGenDatabaseCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenarioGenDatabaseCollection`
               - Represents a collection of the scenario's databases.
 
-            * - :py:class:`~IScenario3dFont`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenario3dFont`
               - IAgSc3dFont Interface.
 
-            * - :py:class:`~IScenarioGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenarioGraphics3D`
               - Scenario 3D Graphics Attributes.
 
-            * - :py:class:`~ITimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITimePeriod`
               - Provide methods and properties to configure start and stop times.
 
-            * - :py:class:`~IScenario`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenario`
               - IAgScenario Interface for Scenario-level properties.
 
-            * - :py:class:`~ICelestialBodyInfo`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICelestialBodyInfo`
               - The interface represents information associated with a celestial body.
 
-            * - :py:class:`~ICelestialBodyCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICelestialBodyCollection`
               - Represents a collection of celestial bodies.
 
-            * - :py:class:`~IAccessAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessAdvanced`
               - Interface for configuring advanced targeting access computation properties.
 
-            * - :py:class:`~ISensorAccessAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorAccessAdvanced`
               - Interface for configuring sensor's advanced targeting access computation properties.
 
-            * - :py:class:`~IRefractionCoefficients`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRefractionCoefficients`
               - Coefficients for a polynomial in time_since_year_start that models the refraction index.
 
-            * - :py:class:`~IRefractionModelBase`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRefractionModelBase`
               - A base interface for the Refraction Models.
 
-            * - :py:class:`~IRefractionModelEffectiveRadiusMethod`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRefractionModelEffectiveRadiusMethod`
               - Effective Radius Method.
 
-            * - :py:class:`~IRefractionModelITURP8344`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRefractionModelITURP8344`
               - ITU-R P.834-4.
 
-            * - :py:class:`~IRefractionModelSCFMethod`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod`
               - SCF Method.
 
-            * - :py:class:`~IScheduleTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScheduleTime`
               - IAgScheduleTime Interface, part of the target times scheme for specifying when a satellite or sensor can access a given object.
 
-            * - :py:class:`~IScheduleTimeCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScheduleTimeCollection`
               - You can modify the scheduled times by disabling Use Access Times.
 
-            * - :py:class:`~IDisplayDistance`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDisplayDistance`
               - Base interface IAgDisplayDistance. IAgSnProjDisplayDistance, IAgSnProjConstantAlt and IAgSnProjObjectAlt derive from this.
 
-            * - :py:class:`~ISensorProjectionDisplayDistance`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance`
               - IAgSnProjDisplayDistance Interface for setting projection altitude options for a sensor.
 
-            * - :py:class:`~ISensorProjection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorProjection`
               - IAgSnProjection Interface for setting and retrieving 2D Graphics Projection properties for a sensor.
 
-            * - :py:class:`~ISensorGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics`
               - IAgSnGraphics Interface for a sensor's 2D Graphics properties.
 
-            * - :py:class:`~ISensorGraphics3DPulse`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse`
               - IAgSnVOPulse Interface, for setting and retrieving 3D Graphics Pulse properties of a sensor.
 
-            * - :py:class:`~ISensorGraphics3DOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset`
               - IAgSnVOOffset Interface for setting and retrieving 3D Graphics Vertex Offset properties of a sensor.
 
-            * - :py:class:`~ISensorGraphics3DProjectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3DProjectionElement`
               - Represents elements of the space and target projection collections.
 
-            * - :py:class:`~ISensorGraphics3DSpaceProjectionCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3DSpaceProjectionCollection`
               - Time Dependent Space Projection List.
 
-            * - :py:class:`~ISensorGraphics3DTargetProjectionCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection`
               - Time Dependent Target Projection List.
 
-            * - :py:class:`~ISensorGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3D`
               - IAgSnVO Interface for a sensor's 3D Graphics properties.
 
-            * - :py:class:`~ISensorPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPattern`
               - Base interface IAgSnPattern. IAgSnComplexConicPattern, IAgSnCustomPattern, IAgSnHalfPowerPattern, IAgSnRectangularPattern, IAgSnSARPattern, IAgSnEOIRPattern and IAgSnSimpleConicPattern implement this interface.
 
-            * - :py:class:`~ISensorSimpleConicPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorSimpleConicPattern`
               - IAgSnSimpleConicPattern Interface for a sensor pattern defined by a simple cone angle.
 
-            * - :py:class:`~ISensorSARPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorSARPattern`
               - IAgSnSARPattern Interface for the Synthetic Aperture Radar (SAR) sensor type, designed to model the field of regard of a SAR sensor with respect to the surface of the Earth.
 
-            * - :py:class:`~ISensorRectangularPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorRectangularPattern`
               - IAgSnRectangularPattern Interface for rectangular sensor types typically used with satellites or aircraft for modeling the field of view of instruments such as push broom sensors and star trackers.
 
-            * - :py:class:`~ISensorHalfPowerPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern`
               - IAgSnHalfPowerPattern Interface for half power sensors designed to model parabolic antennas.
 
-            * - :py:class:`~ISensorCustomPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorCustomPattern`
               - IAgSnCustomPattern Interface for custom sensor patterns.
 
-            * - :py:class:`~ISensorComplexConicPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorComplexConicPattern`
               - IAgSnComplexConicPattern Interface for defining sensor patterns by the inner and outer half angles and minimum and maximum clock angles of the sensor's cone.
 
-            * - :py:class:`~ISensorEOIRRadiometricPair`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRRadiometricPair`
               - IAgSnEOIRRadiometricPair Interface for defining the individual band properties.
 
-            * - :py:class:`~ISensorEOIRSensitivityCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection`
               - IAgSnEOIRFCollection Interface. A collection of Radiometric pairs defining the Sensitivities.
 
-            * - :py:class:`~ISensorEOIRSaturationCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection`
               - IAgSnEOIRSaturationCollection Interface. A collection of Radiometric pairs defining the saturations.
 
-            * - :py:class:`~ISensorEOIRBand`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRBand`
               - IAgSnEOIRBand Interface for defining the individual band properties.
 
-            * - :py:class:`~ISensorEOIRBandCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection`
               - IAgSnEOIRBandCollection Interface. A collection of EOIR bands.
 
-            * - :py:class:`~ISensorEOIRPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRPattern`
               - IAgSnEOIRPattern Interface for a sensor pattern.
 
-            * - :py:class:`~ISensorPointingTargetedBoresight`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresight`
               - Base interface IAgSnPtTrgtBsight. IAgSnPtTrgtBsightFixed and IAgSnPtTrgtBsightTrack derive from this.
 
-            * - :py:class:`~ISensorPointingTargetedBoresightTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack`
               - IAgSnPtTrgtBsightTrack Interface for targeted sensor with fixed boresight.
 
-            * - :py:class:`~ISensorPointingTargetedBoresightFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightFixed`
               - IAgSnPtTrgtBsightFixed Interface for targeted sensors with fixed boresight.
 
-            * - :py:class:`~ISensorTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorTarget`
               - IAgSnTarget Interface.
 
-            * - :py:class:`~ISensorTargetCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorTargetCollection`
               - IAgSnTargetCollection Interface. A collection of targets.
 
-            * - :py:class:`~ISensorPointing`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`
               - Base interface IAgSnPointing. IAgSnPt3DModel, IAgSnPtExternal, IAgSnPtFixed, IAgSnPtFixedAxes, IAgSnPtGrazingAlt, IAgSnPtTargeted, IAgSnPtAlongVector and IAgSnPtSchedule implement this interface.
 
-            * - :py:class:`~ISensorPointingTargeted`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingTargeted`
               - IAgSnPtTargeted Interface for targeted sensors.
 
-            * - :py:class:`~ISensorPointingSpinning`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingSpinning`
               - IAgSnPtSpinning Interface for defining the pointing properties of a spinning sensor.
 
-            * - :py:class:`~ISensorPointingGrazingAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingGrazingAltitude`
               - IAgSnPtGrazingAlt Interface for a sensor pointed in such a way that the boresight vector will graze the central body at a specified altitude.
 
-            * - :py:class:`~ISensorPointingFixedAxes`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes`
               - IAgSnPtFixedAxes Interface for sensors pointed with reference to a set of reference axes.
 
-            * - :py:class:`~ISensorPointingFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingFixed`
               - IAgSnPtFixed Interface for sensors that are fixed in the parent object's body coordinate frame, so that they always point in the same direction relative to the parent.
 
-            * - :py:class:`~ISensorPointingExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingExternal`
               - IAgSnPtExternal Interface for antennas oriented with a custom pointing file.
 
-            * - :py:class:`~ISensorPointing3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointing3DModel`
               - IAgSnPt3DModel Interface for a sensor with pointing along one of the available elements of a 3D model.
 
-            * - :py:class:`~ISensorPointingAlongVector`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector`
               - IAgSnPtAlongVector Interface for a sensor whose alignment is controlled by a pair of vectors defined using the Vector Geometry tool.
 
-            * - :py:class:`~ISensorPointingSchedule`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorPointingSchedule`
               - IAgSnPtSchedule is a placeholder interface to handle Sensor Schedule pointing type. Use Point path/to/sensor Schedule connect command to control scheduled sensor pointing.
 
-            * - :py:class:`~IAzElMaskData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAzElMaskData`
               - Base interface IAgAzElMaskData. IAgSnAzElMaskFile implements this interface.
 
-            * - :py:class:`~ISensorAzElMaskFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorAzElMaskFile`
               - IAgSnAzElMaskFile Interface.
 
-            * - :py:class:`~ISensorCommonTasks`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorCommonTasks`
               - The common tasks available for the sensor object.
 
-            * - :py:class:`~ILocationVectorGeometryToolPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILocationVectorGeometryToolPoint`
               - The location based upon a Vector Geometry Tool Point.
 
-            * - :py:class:`~ISensor`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensor`
               - Provide access to the properties and methods used in defining a sensor object.
 
-            * - :py:class:`~ISensorProjectionConstantAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude`
               - IAgSnProjConstantAlt Interface for setting projection altitude options for constant altitude for a sensor.
 
-            * - :py:class:`~ISensorProjectionObjectAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISensorProjectionObjectAltitude`
               - IAgSnProjObjectAlt Interface for setting projection altitude options for object altitude for a sensor.
 
-            * - :py:class:`~IAtmosphere`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphere`
               - Provide access to the properties and methods defining the local atmosphere.
 
-            * - :py:class:`~IRadarClutterMapInheritable`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapInheritable`
               - Do not use this interface, as it is deprecated. This interface is no longer used and there is no alternative. Provides access to the properties and methods defining a radar inheritable clutter map.
 
-            * - :py:class:`~IRadarCrossSectionInheritable`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionInheritable`
               - Provide access to the properties and methods defining a inheritable radar cross section.
 
-            * - :py:class:`~IPlatformLaserEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlatformLaserEnvironment`
               - Provide access to the properties and methods defining the laser environment for a platform.
 
-            * - :py:class:`~IPlatformRFEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment`
               - Provide access to the properties and methods defining the platform RF environment.
 
-            * - :py:class:`~IRadarCrossSectionGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D`
               - IAgRadarCrossSectionVO Interface for radar cross section 3D properties.
 
-            * - :py:class:`~IRadarCrossSectionGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics`
               - IAgRadarCrossSectionGraphics Interface for radar cross section graphics properties.
 
-            * - :py:class:`~ITargetGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITargetGraphics`
               - IAgTargetGraphics used to access the 2-d graphics properties for a Target object.
 
-            * - :py:class:`~ITargetGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITargetGraphics3D`
               - IAgTargetVO Interface. For 3D properties of a Target object.
 
-            * - :py:class:`~ITarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITarget`
               - Provide access to the properties and methods used in defining a target object.
 
-            * - :py:class:`~IAreaTypeEllipse`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAreaTypeEllipse`
               - AgAreaTypeEllipse used to access the MajorAxis MinorAxis and Bearing of the AreaTarget AreaType.
 
-            * - :py:class:`~IAreaTypePatternCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection`
               - AgAreaTypePatternCollection used to access the List of coords of the AreaTarget AreaType.
 
-            * - :py:class:`~IAreaTargetCommonTasks`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAreaTargetCommonTasks`
               - AreaTarget common tasks.
 
-            * - :py:class:`~IAreaTypeData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAreaTypeData`
               - Base interface IAgAreaTypeData. IAgAreaTypePatternCollection and IAgAreaTypeEllipse derive from it.
 
-            * - :py:class:`~IAreaTargetGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAreaTargetGraphics`
               - AgATGraphics used to access the 2D Graphics attributes of an AreaTarget interface.
 
-            * - :py:class:`~IAreaTargetGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D`
               - AgATVO used to access the 3D attributes of an AreaTarget interface.
 
-            * - :py:class:`~IAreaTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAreaTarget`
               - Provide access to the properties and methods defining an AreaTarget object.
 
-            * - :py:class:`~IAreaTypePattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAreaTypePattern`
               - AgAreaTypePattern used to access the List of coordinates of the AreaTarget AreaType interface.
 
-            * - :py:class:`~IPlanetPositionFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlanetPositionFile`
               - IAgPlPosFile Interface.
 
-            * - :py:class:`~IPlanetPositionCentralBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody`
               - IAgPlPosCentralBody Interface.
 
-            * - :py:class:`~IPlanetCommonTasks`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlanetCommonTasks`
               - IAgPlCommonTasks.
 
-            * - :py:class:`~IPositionSourceData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPositionSourceData`
               - Base interface to IAgPlPosCentralBody and IAgPlPosFile.
 
-            * - :py:class:`~IOrbitDisplayData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IOrbitDisplayData`
               - IAgOrbitDisplayData Interface. IAgPlOrbitDisplayTime derives from this.
 
-            * - :py:class:`~IPlanetOrbitDisplayTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlanetOrbitDisplayTime`
               - IAgPlOrbitDisplayTime Interface.
 
-            * - :py:class:`~IPlanetGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlanetGraphics`
               - AgPlGraphics used to access the 2D graphics of the planet.
 
-            * - :py:class:`~IPlanetGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlanetGraphics3D`
               - AgPlVO interface. Used to access the 3D graphics of the planet.
 
-            * - :py:class:`~IPlanet`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlanet`
               - Provide access to the properties and methods used in defining a planet object.
 
-            * - :py:class:`~IStarGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStarGraphics`
               - AgStGraphics used to access the Star's 2D graphics.
 
-            * - :py:class:`~IStarGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStarGraphics3D`
               - AgStVO used to access the Star's 3D graphics.
 
-            * - :py:class:`~IStar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStar`
               - Provide access to the properties and methods used in defining a star object.
 
-            * - :py:class:`~IFacilityGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFacilityGraphics`
               - AgFaGraphics used to access the 2D graphics for a Facility object interface.
 
-            * - :py:class:`~IFacilityGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFacilityGraphics3D`
               - AgFaVO Interface. For 3D properties of a Facility object interface.
 
-            * - :py:class:`~IFacility`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFacility`
               - Provide access to the properties and methods used in defining a facility object.
 
-            * - :py:class:`~IPlaceGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlaceGraphics`
               - IAgPlaceGraphics used to access the 2-d graphics properties for a Place object.
 
-            * - :py:class:`~IPlaceGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlaceGraphics3D`
               - IAgPlaceVO Interface. For 3D properties of a Place object.
 
-            * - :py:class:`~IPlace`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPlace`
               - Provide access to the properties and methods used in defining a place object.
 
-            * - :py:class:`~IAntennaNoiseTemperature`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature`
               - Provide access to the antenna noise temperature parameters.
 
-            * - :py:class:`~ISystemNoiseTemperature`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature`
               - Provide access to the system noise temperature parameters.
 
-            * - :py:class:`~IPolarization`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPolarization`
               - Provide the base interface for the a polarization object.
 
-            * - :py:class:`~IPolarizationElliptical`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPolarizationElliptical`
               - Provide the interface for elliptical polarization.
 
-            * - :py:class:`~IPolarizationCrossPolLeakage`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage`
               - Provide the interface for polarization cross pol leakage.
 
-            * - :py:class:`~IPolarizationLinear`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPolarizationLinear`
               - Provide the interface for linear polarization.
 
-            * - :py:class:`~IPolarizationHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPolarizationHorizontal`
               - Provide the interface for linear polarization.
 
-            * - :py:class:`~IPolarizationVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPolarizationVertical`
               - Provide the interface for linear polarization.
 
-            * - :py:class:`~IAdditionalGainLoss`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdditionalGainLoss`
               - Provide access to an additional gain/loss.
 
-            * - :py:class:`~IAdditionalGainLossCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdditionalGainLossCollection`
               - Represents a collection of gains and losses.
 
-            * - :py:class:`~ICRPluginConfiguration`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICRPluginConfiguration`
               - Provide access to plugin properties.
 
-            * - :py:class:`~ICRComplex`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICRComplex`
               - Provide access to the real and imaginary parts of a complex number.
 
-            * - :py:class:`~ICRComplexCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICRComplexCollection`
               - Represents a collection of complex numbers.
 
-            * - :py:class:`~ICRLocation`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICRLocation`
               - Provide the interface for a location.
 
-            * - :py:class:`~IPointingStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPointingStrategy`
               - Provide the base interface for a pointing strategy.
 
-            * - :py:class:`~IPointingStrategyFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPointingStrategyFixed`
               - Provide the interface for a fixed pointing strategy.
 
-            * - :py:class:`~IPointingStrategySpinning`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPointingStrategySpinning`
               - Provide the interface for a spinning pointing strategy.
 
-            * - :py:class:`~IPointingStrategyTargeted`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPointingStrategyTargeted`
               - Provide the interface for a targeted pointing strategy.
 
-            * - :py:class:`~IWaveformPulseDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition`
               - Provide access to the properties and methods defining the pulse definition for a rectangular pulsed waveform.
 
-            * - :py:class:`~IWaveform`
+            * - :py:class:`~ansys.stk.core.stkobjects.IWaveform`
               - Provide access to the properties and methods defining an antenna model.
 
-            * - :py:class:`~IWaveformRectangular`
+            * - :py:class:`~ansys.stk.core.stkobjects.IWaveformRectangular`
               - Provide access to a rectangular waveform.
 
-            * - :py:class:`~IWaveformSelectionStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy`
               - Provide the base interface for a waveform selection strategy.
 
-            * - :py:class:`~IWaveformSelectionStrategyFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyFixed`
               - Provide the base interface for a waveform selection strategy which produces a Fixed waveform.
 
-            * - :py:class:`~IWaveformSelectionStrategyRangeLimits`
+            * - :py:class:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyRangeLimits`
               - Provide the base interface for a waveform selection strategy which produces a waveform based on target range.
 
-            * - :py:class:`~IRFInterference`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFInterference`
               - Provide access to the properties and methods defining a radio frequency interference.
 
-            * - :py:class:`~IScatteringPointProvider`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProvider`
               - Provide access to the properties and methods defining a scattering point provider.
 
-            * - :py:class:`~IScatteringPointProviderSinglePoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderSinglePoint`
               - Provide access to the properties and methods defining a single point scattering point provider.
 
-            * - :py:class:`~IScatteringPointCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement`
               - Provide access to the properties and methods defining a scattering point collection element.
 
-            * - :py:class:`~IScatteringPointCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointCollection`
               - Represents a collection of scattering points.
 
-            * - :py:class:`~IScatteringPointProviderPointsFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile`
               - Provide access to the properties and methods defining a scattering point provider where the scattering points are defined in a ascii text file.
 
-            * - :py:class:`~IScatteringPointProviderRangeOverCFARCells`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderRangeOverCFARCells`
               - Provide access to the properties and methods defining a range over CFAR cells scattering point provider.
 
-            * - :py:class:`~IScatteringPointProviderSmoothOblateEarth`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderSmoothOblateEarth`
               - Provide access to the properties and methods defining a smooth oblate earth scattering point provider.
 
-            * - :py:class:`~IScatteringPointProviderPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderPlugin`
               - Provide access to the properties and methods defining a plugin scattering point provider.
 
-            * - :py:class:`~IScatteringPointModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointModel`
               - Provide access to the properties and methods defining a scattering point model model.
 
-            * - :py:class:`~IScatteringPointModelConstantCoefficient`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointModelConstantCoefficient`
               - Provide access to the properties and methods defining a constant coefficient scattering point model.
 
-            * - :py:class:`~IScatteringPointModelWindTurbine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine`
               - Provide access to the properties and methods defining a wind turbine scattering point model.
 
-            * - :py:class:`~IScatteringPointModelPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointModelPlugin`
               - Provide access to the properties and methods defining a plugin scattering point model.
 
-            * - :py:class:`~IScatteringPointProviderCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement`
               - Provide access to the properties and methods defining an entry in the scattering point provider collection.
 
-            * - :py:class:`~IScatteringPointProviderCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection`
               - Represents a collection of scattering point provider elements.
 
-            * - :py:class:`~IScatteringPointProviderList`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderList`
               - Provide access to the properties and methods defining a scattering point provider list.
 
-            * - :py:class:`~IObjectRFEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IObjectRFEnvironment`
               - Provide access to the properties and methods defining the RF environment for an object.
 
-            * - :py:class:`~IObjectLaserEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IObjectLaserEnvironment`
               - Provide access to the properties and methods defining the laser environment for an object.
 
-            * - :py:class:`~IAntennaModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`
               - Provide access to the properties and methods defining an antenna model.
 
-            * - :py:class:`~IAntennaModelGaussian`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelGaussian`
               - Provide access to the properties and methods defining a gaussian antenna model.
 
-            * - :py:class:`~IAntennaModelParabolic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelParabolic`
               - Provide access to the properties and methods defining a parabolic antenna model.
 
-            * - :py:class:`~IAntennaModelSquareHorn`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelSquareHorn`
               - Provide access to the properties and methods defining a square horn antenna model.
 
-            * - :py:class:`~IAntennaModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelScriptPlugin`
               - Provide access to the properties and methods defining a script plugin antenna model.
 
-            * - :py:class:`~IAntennaModelExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelExternal`
               - Provide access to the properties and methods defining a external antenna model.
 
-            * - :py:class:`~IAntennaModelGimroc`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelGimroc`
               - Provide access to the properties and methods defining a GIMROC antenna model.
 
-            * - :py:class:`~IAntennaModelRemcomUanFormat`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelRemcomUanFormat`
               - Provide access to the properties and methods defining an antnna pattern Remcom uan format model.
 
-            * - :py:class:`~IAntennaModelANSYSffdFormat`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelANSYSffdFormat`
               - Provide access to the properties and methods defining an antnna pattern ANSYS ffd format model.
 
-            * - :py:class:`~IAntennaModelTicraGRASPFormat`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelTicraGRASPFormat`
               - Provide access to the properties and methods defining an antnna pattern Ticra GRASP format model.
 
-            * - :py:class:`~IAntennaModelElevationAzimuthCuts`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelElevationAzimuthCuts`
               - Provide access to the properties and methods defining a pattern elevation/azimuth cuts antenna model.
 
-            * - :py:class:`~IAntennaModelIeee1979`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelIeee1979`
               - Provide access to the properties and methods defining a IEEE 1979 antenna model.
 
-            * - :py:class:`~IAntennaModelDipole`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelDipole`
               - Provide access to the properties and methods defining a dipole antenna model.
 
-            * - :py:class:`~IAntennaModelHelix`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelHelix`
               - Provide access to the properties and methods defining a helix antenna model.
 
-            * - :py:class:`~IAntennaModelCosecantSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared`
               - Provide access to the properties and methods defining a cosecant squared antenna model.
 
-            * - :py:class:`~IAntennaModelHemispherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelHemispherical`
               - Provide access to the properties and methods defining a hemispherical antenna model.
 
-            * - :py:class:`~IAntennaModelPencilBeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelPencilBeam`
               - Provide access to the properties and methods defining a pencil beam antenna model.
 
-            * - :py:class:`~IElementConfiguration`
+            * - :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
               - Provide access to the properties and methods defining an element configuration.
 
-            * - :py:class:`~IElementConfigurationCircular`
+            * - :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationCircular`
               - Provide access to the properties and methods defining a circular element configuration.
 
-            * - :py:class:`~IElementConfigurationLinear`
+            * - :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationLinear`
               - Provide access to the properties and methods defining a linear element configuration.
 
-            * - :py:class:`~IElementConfigurationAsciiFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationAsciiFile`
               - Provide access to the properties and methods defining a ascii file element configuration.
 
-            * - :py:class:`~IElementConfigurationHfssEepFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationHfssEepFile`
               - Provide access to the properties and methods defining an HFSS EEP file element configuration.
 
-            * - :py:class:`~IElementConfigurationPolygon`
+            * - :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon`
               - Provide access to the properties and methods defining a polygon element configuration.
 
-            * - :py:class:`~IBeamformer`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
               - Provide access to the properties and methods defining a beamformer.
 
-            * - :py:class:`~IBeamformerMvdr`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerMvdr`
               - Provide access to the properties and methods defining an MVDR beamformer.
 
-            * - :py:class:`~IBeamformerUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerUniform`
               - Provide access to the properties and methods defining a uniform tapered beamformer.
 
-            * - :py:class:`~IBeamformerAsciiFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerAsciiFile`
               - Provide access to the properties and methods defining an ascii file beamformer.
 
-            * - :py:class:`~IBeamformerScript`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerScript`
               - Provide access to the properties and methods defining an script plugin beamformer.
 
-            * - :py:class:`~IBeamformerBlackmanHarris`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerBlackmanHarris`
               - Provide access to the properties and methods defining a Blackman-Harris tapered beamformer.
 
-            * - :py:class:`~IBeamformerCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerCosine`
               - Provide access to the properties and methods defining a cosine tapered beamformer.
 
-            * - :py:class:`~IBeamformerCosineX`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerCosineX`
               - Provide access to the properties and methods defining an cosine^X tapered beamformer.
 
-            * - :py:class:`~IBeamformerCustomTaperFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerCustomTaperFile`
               - Provide access to the properties and methods defining a custom taper file beamformer.
 
-            * - :py:class:`~IBeamformerDolphChebyshev`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerDolphChebyshev`
               - Provide access to the properties and methods defining a Dolph-Chebyshev tapered beamformer.
 
-            * - :py:class:`~IBeamformerHamming`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerHamming`
               - Provide access to the properties and methods defining a Hamming tapered beamformer.
 
-            * - :py:class:`~IBeamformerHann`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerHann`
               - Provide access to the properties and methods defining a Hann tapered beamformer.
 
-            * - :py:class:`~IBeamformerRaisedCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerRaisedCosine`
               - Provide access to the properties and methods defining a raised cosine tapered beamformer.
 
-            * - :py:class:`~IBeamformerRaisedCosineSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeamformerRaisedCosineSquared`
               - Provide access to the properties and methods defining a raised cosine-squared tapered beamformer.
 
-            * - :py:class:`~IDirectionProvider`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDirectionProvider`
               - Provide access to the properties and methods defining an direction provider.
 
-            * - :py:class:`~IDirectionProviderAsciiFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDirectionProviderAsciiFile`
               - Provide access to the properties and methods defining an ascii file direction provider.
 
-            * - :py:class:`~IDirectionProviderObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDirectionProviderObject`
               - Provide access to the properties and methods defining an object direction provider.
 
-            * - :py:class:`~IDirectionProviderLink`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDirectionProviderLink`
               - Provide access to the properties and methods defining an link direction provider.
 
-            * - :py:class:`~IDirectionProviderScript`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDirectionProviderScript`
               - Provide access to the properties and methods defining an script plugin direction provider.
 
-            * - :py:class:`~IElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IElement`
               - Provide access to the properties and methods defining a phased array element.
 
-            * - :py:class:`~IElementCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IElementCollection`
               - Represents a collection of phased array elements.
 
-            * - :py:class:`~IAntennaModelPhasedArray`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray`
               - Provide access to the properties and methods defining a phased array antenna model.
 
-            * - :py:class:`~IAntennaModelHfssEepArray`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray`
               - Provide access to the properties and methods defining an HFSS EEP array antenna model.
 
-            * - :py:class:`~IAntennaModelIsotropic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelIsotropic`
               - Provide access to the properties and methods defining an isotropic antenna model.
 
-            * - :py:class:`~IAntennaModelIntelSat`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelIntelSat`
               - Provide access to the properties and methods defining an IntelSat antenna model.
 
-            * - :py:class:`~IAntennaModelOpticalSimple`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple`
               - Provide access to the properties and methods defining a simple optical antenna model.
 
-            * - :py:class:`~IAntennaModelRectangularPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern`
               - Provide access to the properties and methods defining a rectangular pattern antenna model.
 
-            * - :py:class:`~IAntennaModelGpsGlobal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal`
               - Provide access to the properties and methods defining a GPS global antenna model.
 
-            * - :py:class:`~IAntennaModelGpsFrpa`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelGpsFrpa`
               - Provide access to the properties and methods defining a GPS FRPA antenna model.
 
-            * - :py:class:`~IAntennaModelItuBO1213CoPolar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CoPolar`
               - Provide access to the properties and methods defining an ITU-R BO1213 co-polar antenna model.
 
-            * - :py:class:`~IAntennaModelItuBO1213CrossPolar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CrossPolar`
               - Provide access to the properties and methods defining an ITU-R BO1213 cross-polar antenna model.
 
-            * - :py:class:`~IAntennaModelItuF1245`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245`
               - Provide access to the properties and methods defining an ITU-R F1245-3 antenna model.
 
-            * - :py:class:`~IAntennaModelItuS580`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuS580`
               - Provide access to the properties and methods defining an ITU-R S580-6 antenna model.
 
-            * - :py:class:`~IAntennaModelItuS465`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuS465`
               - Provide access to the properties and methods defining an ITU-R S465-6 antenna model.
 
-            * - :py:class:`~IAntennaModelItuS731`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuS731`
               - Provide access to the properties and methods defining an ITU-R S731 antenna model.
 
-            * - :py:class:`~IAntennaModelItuS1528R12Circular`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Circular`
               - Provide access to the properties and methods defining an ITU-R S1528 1.2 circular antenna model.
 
-            * - :py:class:`~IAntennaModelItuS1528R13`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13`
               - Provide access to the properties and methods defining an ITU-R S1528 1.3 antenna model.
 
-            * - :py:class:`~IAntennaModelItuS672Circular`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular`
               - Provide access to the properties and methods defining an ITU-R S672-4 circular antenna model.
 
-            * - :py:class:`~IAntennaModelItuS1528R12Rectangular`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular`
               - Provide access to the properties and methods defining an ITU-R S1528 1.2 rectangular antenna model.
 
-            * - :py:class:`~IAntennaModelItuS672Rectangular`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular`
               - Provide access to the properties and methods defining an ITU-R S672-4 1.2 rectangular antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine`
               - Provide access to the properties and methods defining a circular cosine aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularUniform`
               - Provide access to the properties and methods defining a circular uniform aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularCosineSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared`
               - Provide access to the properties and methods defining a circular cosine squared aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularBessel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBessel`
               - Provide access to the properties and methods defining a circular bessel aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularBesselEnvelope`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope`
               - Provide access to the properties and methods defining a circular bessel envelope aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularCosinePedestal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosinePedestal`
               - Provide access to the properties and methods defining a circular cosine pedestal aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularCosineSquaredPedestal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal`
               - Provide access to the properties and methods defining a circular cosine squared pedestal aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularSincIntPower`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower`
               - Provide access to the properties and methods defining a circular sinc integer power aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureCircularSincRealPower`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincRealPower`
               - Provide access to the properties and methods defining a circular sinc real power aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureRectangularUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform`
               - Provide access to the properties and methods defining a rectangular uniform aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureRectangularCosineSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosineSquared`
               - Provide access to the properties and methods defining a rectangular cosine squared aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureRectangularCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosine`
               - Provide access to the properties and methods defining a rectangular cosine aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureRectangularCosinePedestal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal`
               - Provide access to the properties and methods defining a rectangular cosine pedestal aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureRectangularCosineSquaredPedestal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosineSquaredPedestal`
               - Provide access to the properties and methods defining a rectangular cosine squared pedestal aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureRectangularSincIntPower`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower`
               - Provide access to the properties and methods defining a rectangular sinc integer power aperture antenna model.
 
-            * - :py:class:`~IAntennaModelApertureRectangularSincRealPower`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower`
               - Provide access to the properties and methods defining a rectangular sinc real power aperture antenna model.
 
-            * - :py:class:`~IAntennaVolumeLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaVolumeLevel`
               - IAgRadarCrossSectionVolumeLevel Interface for an radar cross section volume level.
 
-            * - :py:class:`~IAntennaVolumeLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection`
               - Represents a collection of antenna volume levels.
 
-            * - :py:class:`~IAntennaVolumeGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics`
               - IAgAntennaVolumeGraphics Interface for a antenna's 3D volume properties.
 
-            * - :py:class:`~IAntennaGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaGraphics3D`
               - IAgAntennaVO Interface for a antenna's 3D Graphics properties.
 
-            * - :py:class:`~IAntennaContourLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContourLevel`
               - IAgAntennaContourLevel Interface for an antenna contour level.
 
-            * - :py:class:`~IAntennaContourLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection`
               - Represents a collection of antenna contour levels.
 
-            * - :py:class:`~IAntennaContour`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContour`
               - IAgAntennaContour Interface for a antenna's contour properties.
 
-            * - :py:class:`~IAntennaContourGain`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContourGain`
               - IAgAntennaContourGain Interface for a antenna's gain contour properties.
 
-            * - :py:class:`~IAntennaContourEirp`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContourEirp`
               - IAgAntennaContourEirp Interface for a antenna's eirp contour properties.
 
-            * - :py:class:`~IAntennaContourRip`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContourRip`
               - IAgAntennaContourRip Interface for a antenna's rip contour properties.
 
-            * - :py:class:`~IAntennaContourFluxDensity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContourFluxDensity`
               - IAgAntennaContourFluxDensity Interface for a antenna's flux density contour properties.
 
-            * - :py:class:`~IAntennaContourSpectralFluxDensity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContourSpectralFluxDensity`
               - IAgAntennaContourSpectralFluxDensity Interface for a antenna's spectral flux density contour properties.
 
-            * - :py:class:`~IAntennaContourGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaContourGraphics`
               - IAgAntennaContourGraphics Interface for a antenna's contour properties.
 
-            * - :py:class:`~IAntennaGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaGraphics`
               - IAgAntennaGraphics Interface for a antenna's 2D Graphics properties.
 
-            * - :py:class:`~IAntenna`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntenna`
               - Provide access to the properties and methods defining an Antenna object.
 
-            * - :py:class:`~IAntennaControl`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaControl`
               - Provide access to the properties and methods of the antenna control.
 
-            * - :py:class:`~IAntennaBeamSelectionStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
               - Provide access to a beam selection strategy.
 
-            * - :py:class:`~IAntennaBeamSelectionStrategyScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategyScriptPlugin`
               - Provide access to a script plugin beam selection strategy.
 
-            * - :py:class:`~IAntennaBeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaBeam`
               - Provide access to an antenna beam.
 
-            * - :py:class:`~IAntennaBeamTransmit`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamTransmit`
               - Provide access to an transmit antenna beam.
 
-            * - :py:class:`~IAntennaBeamCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamCollection`
               - Represents a collection of antenna beams.
 
-            * - :py:class:`~IAntennaSystem`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAntennaSystem`
               - Provide access to the properties for a antenna system.
 
-            * - :py:class:`~IRFFilterModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModel`
               - Provide access to the properties and methods defining an RF filter model.
 
-            * - :py:class:`~IModulatorModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
               - Provide access to the properties and methods defining a modulator model.
 
-            * - :py:class:`~ITransmitterModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterModel`
               - Provide access to the properties and methods defining a transmitter model.
 
-            * - :py:class:`~ITransmitterModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelScriptPlugin`
               - Provide access to the properties and methods defining a script plugin transmitter model.
 
-            * - :py:class:`~ITransmitterModelCable`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelCable`
               - Provide access to the properties and methods defining a cable transmitter model.
 
-            * - :py:class:`~ITransmitterModelSimple`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelSimple`
               - Provide access to the properties and methods defining a simple transmitter model.
 
-            * - :py:class:`~ITransmitterModelMedium`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelMedium`
               - Provide access to the properties and methods defining a medium transmitter model.
 
-            * - :py:class:`~ITransmitterModelComplex`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelComplex`
               - Provide access to the properties and methods defining a complex transmitter model.
 
-            * - :py:class:`~ITransmitterModelMultibeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam`
               - Provide access to the properties and methods defining a multibeam transmitter model.
 
-            * - :py:class:`~ITransmitterModelLaser`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelLaser`
               - Provide access to the properties and methods defining a laser transmitter model.
 
-            * - :py:class:`~ITransferFunctionInputBackOffCOverImTableRow`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTableRow`
               - Provide access to the row of an input back off vs C/Im table.
 
-            * - :py:class:`~ITransferFunctionInputBackOffCOverImTable`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable`
               - Represents a collection of input back off vs C/Im values.
 
-            * - :py:class:`~ITransferFunctionInputBackOffOutputBackOffTableRow`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTableRow`
               - Provide access to the row of an input back off vs output back off table.
 
-            * - :py:class:`~ITransferFunctionInputBackOffOutputBackOffTable`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable`
               - Represents a collection of input back off vs output back off values.
 
-            * - :py:class:`~ITransferFunctionPolynomialCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection`
               - Represents a transfer function polynomial collection.
 
-            * - :py:class:`~IReTransmitterModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReTransmitterModel`
               - Provide access to the properties and methods defining a re-transmitter model.
 
-            * - :py:class:`~IReTransmitterModelSimple`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReTransmitterModelSimple`
               - Provide access to the properties and methods defining a simple re-transmitter model.
 
-            * - :py:class:`~IReTransmitterModelMedium`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReTransmitterModelMedium`
               - Provide access to the properties and methods defining a medium re-transmitter model.
 
-            * - :py:class:`~IReTransmitterModelComplex`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex`
               - Provide access to the properties and methods defining a complex re-transmitter model.
 
-            * - :py:class:`~ITransmitterGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterGraphics3D`
               - IAgTransmitterVO Interface for a transmitter's 3D Graphics properties.
 
-            * - :py:class:`~ITransmitterGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitterGraphics`
               - IAgTransmitterGraphics Interface for a transmitter's 2D Graphics properties.
 
-            * - :py:class:`~ITransmitter`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITransmitter`
               - Provide access to the properties and methods defining an Transmitter object.
 
-            * - :py:class:`~IDemodulatorModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModel`
               - Provide access to the properties and methods defining a demodulator model.
 
-            * - :py:class:`~ILaserPropagationLossModels`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels`
               - Provide access to laser propagation loss models.
 
-            * - :py:class:`~ILinkMargin`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILinkMargin`
               - Provide access to the properties for configuring the link margin computation.
 
-            * - :py:class:`~IReceiverModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModel`
               - Provide access to the properties and methods defining a receiver model.
 
-            * - :py:class:`~IReceiverModelSimple`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModelSimple`
               - Provide access to the properties and methods defining a simple receiver model.
 
-            * - :py:class:`~IReceiverModelMedium`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModelMedium`
               - Provide access to the properties and methods defining a medium receiver model.
 
-            * - :py:class:`~IReceiverModelComplex`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModelComplex`
               - Provide access to the properties and methods defining a complex receiver model.
 
-            * - :py:class:`~IReceiverModelMultibeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam`
               - Provide access to the properties and methods defining a multibeam receiver model.
 
-            * - :py:class:`~IReceiverModelLaser`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModelLaser`
               - Provide access to the properties and methods defining a laser receiver model.
 
-            * - :py:class:`~IReceiverModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModelScriptPlugin`
               - Provide access to the properties and methods defining a script plugin receiver model.
 
-            * - :py:class:`~IReceiverModelScriptPluginRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModelScriptPluginRF`
               - Provide access to the properties and methods defining a radio frequency script plugin receiver model.
 
-            * - :py:class:`~IReceiverModelCable`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverModelCable`
               - Provide access to the properties and methods defining a cable receiver model.
 
-            * - :py:class:`~IReceiverGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverGraphics3D`
               - IAgReceiverVO Interface for a receiver's 3D Graphics properties.
 
-            * - :py:class:`~IReceiverGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiverGraphics`
               - IAgReceiverGraphics Interface for a receiver's 2D Graphics properties.
 
-            * - :py:class:`~IReceiver`
+            * - :py:class:`~ansys.stk.core.stkobjects.IReceiver`
               - Provide access to the properties and methods defining an Receiver object.
 
-            * - :py:class:`~IRadarActivity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarActivity`
               - Provide access to the properties and methods defining radar activity.
 
-            * - :py:class:`~IRadarActivityTimeComponentListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListElement`
               - Provide access to the properties and methods defining an entry in the time components activity list.
 
-            * - :py:class:`~IRadarActivityTimeComponentListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection`
               - Represents a collection of time component activity elements.
 
-            * - :py:class:`~IRadarActivityTimeComponentList`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentList`
               - Provide access to the properties and methods defining radar time components list activity.
 
-            * - :py:class:`~IRadarActivityTimeIntervalListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement`
               - Provide access to the properties and methods defining an entry in the time interval activity list.
 
-            * - :py:class:`~IRadarActivityTimeIntervalListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListCollection`
               - Represents a collection of time interval activity elements.
 
-            * - :py:class:`~IRadarActivityTimeIntervalList`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalList`
               - Provide access to the properties and methods defining radar time interval list activity.
 
-            * - :py:class:`~IRadarStcAttenuation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`
               - Provide access to the properties and methods defining a radar STC attenuation.
 
-            * - :py:class:`~IRadarStcAttenuationDecayFactor`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor`
               - Provide access to the properties and methods defining a radar decay factor STC attenuation.
 
-            * - :py:class:`~IRadarStcAttenuationDecaySlope`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope`
               - Provide access to the properties and methods defining a radar decay slope STC attenuation.
 
-            * - :py:class:`~IRadarStcAttenuationMap`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationMap`
               - Provide access to the properties and methods defining a radar STC attenuation map.
 
-            * - :py:class:`~IRadarJamming`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarJamming`
               - Provide access to the properties and methods defining a radar jamming.
 
-            * - :py:class:`~IRadarClutterGeometryModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModel`
               - Do not use this interface, as it is deprecated. Use IAgScatteringPointProvider interface instead. Provides access to the properties and methods defining a radar clutter geometry model.
 
-            * - :py:class:`~IRadarClutterGeometryModelPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModelPlugin`
               - Do not use this interface, as it is deprecated. Use IAgScatteringPointProviderPlugin interface instead. Provides access to the properties and methods defining a radar clutter geometry plugin model.
 
-            * - :py:class:`~IRadarClutter`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutter`
               - Interface which defines a radar's clutter.
 
-            * - :py:class:`~IRadarClutterGeometry`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterGeometry`
               - Do not use this interface, as it is deprecated. Use IAgRadarClutter interface instead. Interface which defines a radar's clutter geometry.
 
-            * - :py:class:`~IRadarTransmitter`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarTransmitter`
               - Interface which defines a radar transmitter.
 
-            * - :py:class:`~IRadarTransmitterMultifunction`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction`
               - Interface which defines a multifunction radar transmitter.
 
-            * - :py:class:`~IRadarReceiver`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarReceiver`
               - Interface which defines a radar receiver.
 
-            * - :py:class:`~IRadarContinuousWaveAnalysisMode`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode`
               - Interface which defines an continuous wave analysis.
 
-            * - :py:class:`~IRadarContinuousWaveAnalysisModeGoalSNR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeGoalSNR`
               - Interface which defines an continuous wave goal SNR analysis.
 
-            * - :py:class:`~IRadarContinuousWaveAnalysisModeFixedTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeFixedTime`
               - Interface which defines an continuous wave fixed time analysis.
 
-            * - :py:class:`~IRadarPulseIntegration`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarPulseIntegration`
               - Interface which defines an integration method.
 
-            * - :py:class:`~IRadarPulseIntegrationGoalSNR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR`
               - Interface which defines a goal SNR integration method.
 
-            * - :py:class:`~IRadarPulseIntegrationFixedNumberOfPulses`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses`
               - Interface which defines a fixed number of pulses integration method.
 
-            * - :py:class:`~IRadarWaveformSearchTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformSearchTrack`
               - Interface which is implemented by a search/track waveform.
 
-            * - :py:class:`~IRadarWaveformSearchTrackPulseDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformSearchTrackPulseDefinition`
               - Provide access to the properties and methods defining the pulse definition for a search track waveform.
 
-            * - :py:class:`~IRadarWaveformSarPulseDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition`
               - Provide access to the properties and methods defining the pulse definition for a Sar waveform.
 
-            * - :py:class:`~IRadarWaveformSarPulseIntegration`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseIntegration`
               - Provide access to the properties and methods defining the pulse integration for a SAR waveform.
 
-            * - :py:class:`~IRadarModulator`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModulator`
               - Provide access to the properties and methods defining the radar modulator.
 
-            * - :py:class:`~IRadarProbabilityOfDetection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection`
               - Provide access to the properties and methods for configuring probability of detection parameters.
 
-            * - :py:class:`~IRadarProbabilityOfDetectionPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionPlugin`
               - Provide access to the properties and methods defining a radar clutter geometry plugin model.
 
-            * - :py:class:`~IRadarProbabilityOfDetectionNonCFAR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionNonCFAR`
               - Provide access to the properties and methods for configuring non CFAR probability of detection parameters.
 
-            * - :py:class:`~IRadarProbabilityOfDetectionCFAR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionCFAR`
               - Provide access to the properties and methods for configuring probability of detection parameters.
 
-            * - :py:class:`~IRadarWaveformMonostaticSearchTrackContinuous`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous`
               - Interface which is implemented by a search/track waveform.
 
-            * - :py:class:`~IRadarMultifunctionDetectionProcessing`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing`
               - Interface which represents multifunction radar detection processing.
 
-            * - :py:class:`~IRadarWaveformMonostaticSearchTrackFixedPRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF`
               - Interface which is implemented by a search/track waveform.
 
-            * - :py:class:`~IRadarWaveformBistaticTransmitterSearchTrackContinuous`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackContinuous`
               - Interface which is implemented by a search/track waveform.
 
-            * - :py:class:`~IRadarWaveformBistaticTransmitterSearchTrackFixedPRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF`
               - Interface which is implemented by a search/track waveform.
 
-            * - :py:class:`~IRadarWaveformBistaticReceiverSearchTrackContinuous`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackContinuous`
               - Interface which is implemented by a search/track waveform.
 
-            * - :py:class:`~IRadarWaveformBistaticReceiverSearchTrackFixedPRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF`
               - Interface which is implemented by a search/track waveform.
 
-            * - :py:class:`~IRadarDopplerClutterFilters`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters`
               - Provide access to the properties and methods defining a radar doppler clutter filter.
 
-            * - :py:class:`~IRadarModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModel`
               - Provide access to the properties and methods defining a radar model.
 
-            * - :py:class:`~IRadarModeMonostatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeMonostatic`
               - Provide access to the properties and methods defining a monostatic mode.
 
-            * - :py:class:`~IRadarModeMonostaticSearchTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack`
               - Provide access to the properties and methods defining a monostatic search/track mode.
 
-            * - :py:class:`~IRadarModeMonostaticSar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSar`
               - Provide access to the properties and methods defining a monostatic sar mode.
 
-            * - :py:class:`~IRadarModelMonostatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModelMonostatic`
               - Provide access to the properties and methods defining a monostatic radar model.
 
-            * - :py:class:`~IRadarAntennaBeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarAntennaBeam`
               - Provide access to a radar antenna beam.
 
-            * - :py:class:`~IRadarAntennaBeamCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection`
               - Represents a collection of antenna beams.
 
-            * - :py:class:`~IRadarMultifunctionWaveformStrategySettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings`
               - Interface which defines a multifunction radar waveform strategy settings.
 
-            * - :py:class:`~IRadarModelMultifunction`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModelMultifunction`
               - Provide access to the properties and methods defining a multifunction radar model.
 
-            * - :py:class:`~IRadarModeBistaticTransmitter`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitter`
               - Provide access to the properties and methods defining a bistatic transmitter mode.
 
-            * - :py:class:`~IRadarModeBistaticTransmitterSearchTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack`
               - Provide access to the properties and methods defining a bistatic transmitter search/track mode.
 
-            * - :py:class:`~IRadarModeBistaticTransmitterSar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar`
               - Provide access to the properties and methods defining a bistatic transmitter sar mode.
 
-            * - :py:class:`~IRadarModelBistaticTransmitter`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter`
               - Provide access to the properties and methods defining a bistatic transmitter radar model.
 
-            * - :py:class:`~IRadarModeBistaticReceiver`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiver`
               - Provide access to the properties and methods defining a bistatic receiver mode.
 
-            * - :py:class:`~IRadarModeBistaticReceiverSearchTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack`
               - Provide access to the properties and methods defining a bistatic receiver search/track mode.
 
-            * - :py:class:`~IRadarModeBistaticReceiverSar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSar`
               - Provide access to the properties and methods defining a bistatic receiver sar mode.
 
-            * - :py:class:`~IRadarModelBistaticReceiver`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver`
               - Provide access to the properties and methods defining a bistatic receiver radar model.
 
-            * - :py:class:`~IRadarGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarGraphics3D`
               - IAgRadarVO Interface for a radar's 3D Graphics properties.
 
-            * - :py:class:`~IRadarMultipathGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics`
               - IAgRadarMultipathGraphics Interface for a radar's multipath graphics properties.
 
-            * - :py:class:`~IRadarAccessGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarAccessGraphics`
               - IAgRadarAccessGraphics Interface for a radar's access graphics properties.
 
-            * - :py:class:`~IRadarGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarGraphics`
               - IAgRadarGraphics Interface for a radar's 2D Graphics properties.
 
-            * - :py:class:`~IRadar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadar`
               - Provide access to the properties and methods defining an Radar object.
 
-            * - :py:class:`~IRadarClutterMapModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapModel`
               - Do not use this interface, as it is deprecated. Use IAgScatteringPointModel interface instead. Provides access to the properties and methods defining a radar clutter map model.
 
-            * - :py:class:`~IRadarClutterMapModelPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin`
               - Do not use this interface, as it is deprecated. Use IAgScatteringPointModelPlugin interface instead. Provides access to the properties and methods defining a radar clutter map plugin model.
 
-            * - :py:class:`~IRadarClutterMapModelConstantCoefficient`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarClutterMapModelConstantCoefficient`
               - Do not use this interface, as it is deprecated. Use IAgScatteringPointModelConstantCoefficient interface instead. Provides access to the properties and methods defining a radar clutter map constant coefficient model.
 
-            * - :py:class:`~IRadarCrossSectionComputeStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
               - Provide access to the properties and methods defining a radar cross section compute Strategy.
 
-            * - :py:class:`~IRadarCrossSectionComputeStrategyConstantValue`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyConstantValue`
               - Provide access to the properties and methods defining a radar cross section constant value compute Strategy.
 
-            * - :py:class:`~IRadarCrossSectionComputeStrategyScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyScriptPlugin`
               - Provide access to the properties and methods defining a radar cross section script plugin compute Strategy.
 
-            * - :py:class:`~IRadarCrossSectionComputeStrategyExternalFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyExternalFile`
               - Provide access to the properties and methods defining a radar cross section external file compute Strategy.
 
-            * - :py:class:`~IRadarCrossSectionComputeStrategyAnsysCsvFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyAnsysCsvFile`
               - Provide access to the properties and methods defining a radar cross section Ansys Csv file compute Strategy.
 
-            * - :py:class:`~IRadarCrossSectionComputeStrategyPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyPlugin`
               - Provide access to the properties and methods defining a radar cross section plugin compute Strategy.
 
-            * - :py:class:`~IRadarCrossSectionFrequencyBand`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand`
               - Provide access to the properties and methods defining radar cross section frequency band.
 
-            * - :py:class:`~IRadarCrossSectionFrequencyBandCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBandCollection`
               - Represents a collection of radar cross section frequency bands.
 
-            * - :py:class:`~IRadarCrossSectionModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionModel`
               - Provide access to the properties and methods defining a radar cross section model.
 
-            * - :py:class:`~IRadarStcAttenuationPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationPlugin`
               - Provide access to the properties and methods defining a radar STC plugin model.
 
-            * - :py:class:`~IRadarCrossSectionVolumeLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeLevel`
               - IAgRadarCrossSectionVolumeLevel Interface for an radar cross section volume level.
 
-            * - :py:class:`~IRadarCrossSectionVolumeLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeLevelCollection`
               - Represents a collection of radar cross section volume levels.
 
-            * - :py:class:`~IRadarCrossSectionVolumeGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics`
               - IAgRadarCrossSectionVolumeGraphics Interface for radar cross section 3D volume properties.
 
-            * - :py:class:`~IRadarCrossSectionContourLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevel`
               - IAgRadarCrossSectionContourLevel Interface for an radar cross section contour level.
 
-            * - :py:class:`~IRadarCrossSectionContourLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection`
               - Represents a collection of radar cross section contour levels.
 
-            * - :py:class:`~IRFFilterModelBessel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelBessel`
               - Provide access to the properties and methods defining an bessel RF filter model.
 
-            * - :py:class:`~IRFFilterModelButterworth`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelButterworth`
               - Provide access to the properties and methods defining an butterworth RF filter model.
 
-            * - :py:class:`~IRFFilterModelSincEnvSinc`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelSincEnvSinc`
               - Provide access to the properties and methods defining a sinc envelope sinc analog RF filter model.
 
-            * - :py:class:`~IRFFilterModelElliptic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelElliptic`
               - Provide access to the properties and methods defining an elliptic analog RF filter model.
 
-            * - :py:class:`~IRFFilterModelChebyshev`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelChebyshev`
               - Provide access to the properties and methods defining an Chebyshev analog RF filter model.
 
-            * - :py:class:`~IRFFilterModelCosineWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelCosineWindow`
               - Provide access to the properties and methods defining a cosine window RF filter model.
 
-            * - :py:class:`~IRFFilterModelGaussianWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelGaussianWindow`
               - Provide access to the properties and methods defining a gaussian window RF filter model.
 
-            * - :py:class:`~IRFFilterModelHammingWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelHammingWindow`
               - Provide access to the properties and methods defining a Hamming window RF filter model.
 
-            * - :py:class:`~IRFFilterModelExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelExternal`
               - Provide access to the properties and methods defining a external RF filter model.
 
-            * - :py:class:`~IRFFilterModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelScriptPlugin`
               - Provide access to the properties and methods defining a script plugin RF filter model.
 
-            * - :py:class:`~IRFFilterModelSinc`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelSinc`
               - Provide access to the properties and methods defining a sinc RF filter model.
 
-            * - :py:class:`~IRFFilterModelRaisedCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelRaisedCosine`
               - Provide access to the properties and methods defining a raised cosine RF filter model.
 
-            * - :py:class:`~IRFFilterModelRootRaisedCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelRootRaisedCosine`
               - Provide access to the properties and methods defining a root raised cosine RF filter model.
 
-            * - :py:class:`~IRFFilterModelRcLowPass`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelRcLowPass`
               - Provide access to the properties and methods defining a rc low pass RF filter model.
 
-            * - :py:class:`~IRFFilterModelFirBoxCar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelFirBoxCar`
               - Provide access to the properties and methods defining a FIR box car RF filter model.
 
-            * - :py:class:`~IRFFilterModelFir`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelFir`
               - Provide access to the properties and methods defining a FIR RF filter model.
 
-            * - :py:class:`~IRFFilterModelIir`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelIir`
               - Provide access to the properties and methods defining a IIR RF filter model.
 
-            * - :py:class:`~IModulatorModelExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IModulatorModelExternal`
               - Provide access to the properties and methods defining an external file modulator model.
 
-            * - :py:class:`~IModulatorModelBoc`
+            * - :py:class:`~ansys.stk.core.stkobjects.IModulatorModelBoc`
               - Provide access to the properties and methods defining a BOC modulator model.
 
-            * - :py:class:`~IModulatorModelPulsedSignal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IModulatorModelPulsedSignal`
               - Provide access to the properties and methods defining a pulsed signal modulator model.
 
-            * - :py:class:`~IModulatorModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IModulatorModelScriptPlugin`
               - Provide access to the properties and methods defining an script plugin modulator model.
 
-            * - :py:class:`~IDemodulatorModelExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModelExternal`
               - Provide access to the properties and methods defining an external file demodulator model.
 
-            * - :py:class:`~IDemodulatorModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModelScriptPlugin`
               - Provide access to the properties and methods defining an script plugin demodulator model.
 
-            * - :py:class:`~IRainLossModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRainLossModelScriptPlugin`
               - Provide access to the properties and methods of a script plugin rain loss model.
 
-            * - :py:class:`~IRainLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRainLossModel`
               - Provide access to the properties and methods a rain loss model.
 
-            * - :py:class:`~IRainLossModelCrane1985`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRainLossModelCrane1985`
               - Provide access to the properties and methods for a Crane 1985 rain loss model.
 
-            * - :py:class:`~IRainLossModelCrane1982`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRainLossModelCrane1982`
               - Provide access to the properties and methods for a Crane 1982 rain loss model.
 
-            * - :py:class:`~IRainLossModelCCIR1983`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRainLossModelCCIR1983`
               - Provide access to the properties and methods for a CCIR 1983 rain loss model.
 
-            * - :py:class:`~IRainLossModelITURP618_10`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_10`
               - Provide access to the properties and methods for a ITU-R P618-10 rain loss model.
 
-            * - :py:class:`~IRainLossModelITURP618_12`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_12`
               - Provide access to the properties and methods for a ITU-R P618-12 rain loss model.
 
-            * - :py:class:`~IRainLossModelITURP618_13`
+            * - :py:class:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_13`
               - Provide access to the properties and methods for a ITU-R P618-13 rain loss model.
 
-            * - :py:class:`~IUrbanTerrestrialLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel`
               - Provide access to the properties and methods for an urban/terrestrial loss model.
 
-            * - :py:class:`~IUrbanTerrestrialLossModelTwoRay`
+            * - :py:class:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelTwoRay`
               - Provide access to the properties and methods for an urban/terrestrial loss two ray model.
 
-            * - :py:class:`~IWirelessInSite64GeometryData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData`
               - Provide access to the properties and methods for geometry data for the Wireless InSite RT model.
 
-            * - :py:class:`~IUrbanTerrestrialLossModelWirelessInSite64`
+            * - :py:class:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64`
               - Provide access to the properties and methods for an urban/terrestrial loss Wireless InSite 64 model.
 
-            * - :py:class:`~ITroposphericScintillationFadingLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModel`
               - Provide access to the properties and methods for a TropoSpheric Scintillation Fading loss model.
 
-            * - :py:class:`~ITroposphericScintillationFadingLossModelP618_8`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8`
               - Provide access to the properties and methods a Tropospheric Scintillation loss model ITU-R P.618_8.
 
-            * - :py:class:`~ITroposphericScintillationFadingLossModelP618_12`
+            * - :py:class:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12`
               - Provide access to the properties and methods of a Tropospheric Scintillation loss model ITU-R P.618_12.
 
-            * - :py:class:`~IIonosphericFadingLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel`
               - Provide access to the properties and methods for an Ionospheric Fading loss model.
 
-            * - :py:class:`~IIonosphericFadingLossModelP531_13`
+            * - :py:class:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModelP531_13`
               - Provide access to the properties and methods for the Ionospheric Fading loss model ITU-R P.531_13.
 
-            * - :py:class:`~ICloudsAndFogFadingLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel`
               - Provide access to the properties and methods for Clouds and Fog loss models.
 
-            * - :py:class:`~ICloudsAndFogFadingLossModelP840_6`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_6`
               - Provide access to the properties and methods for clouds and fog loss model ITU-R P.840-6.
 
-            * - :py:class:`~ICloudsAndFogFadingLossModelP840_7`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7`
               - Provide access to the properties and methods for clouds and fog loss model ITU-R P.840-7.
 
-            * - :py:class:`~IAtmosphericAbsorptionModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`
               - Provide access to the properties and methods an atmospheric absorption model.
 
-            * - :py:class:`~IAtmosphericAbsorptionModelITURP676`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676`
               - Provide access to the properties and methods of the ITU-R P676 atmospheric absorption model.
 
-            * - :py:class:`~IAtmosphericAbsorptionModelTirem`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem`
               - Provide access to the properties and methods of the TIREM atmospheric absorption model.
 
-            * - :py:class:`~ISolarActivityConfiguration`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISolarActivityConfiguration`
               - Provide access to the properties and methods defining the solar activity configuration.
 
-            * - :py:class:`~ISolarActivityConfigurationSunspotNumber`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISolarActivityConfigurationSunspotNumber`
               - Provide access to the properties and methods defining the sunspot number.
 
-            * - :py:class:`~ISolarActivityConfigurationSolarFlux`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISolarActivityConfigurationSolarFlux`
               - Provide access to the properties and methods defining the solar flux.
 
-            * - :py:class:`~IAtmosphericAbsorptionModelVoacap`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap`
               - Provide access to the properties and methods of the VOACAP atmospheric absorption model.
 
-            * - :py:class:`~IAtmosphericAbsorptionModelSimpleSatcom`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelSimpleSatcom`
               - Provide access to the properties and methods of the Simple Satcom atmospheric absorption model.
 
-            * - :py:class:`~IAtmosphericAbsorptionModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelScriptPlugin`
               - Provide access to the properties and methods of the script plugin atmospheric absorption model.
 
-            * - :py:class:`~IAtmosphericAbsorptionModelCOMPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelCOMPlugin`
               - Provide access to the properties and methods of the COM plugin atmospheric absorption model.
 
-            * - :py:class:`~ICustomPropagationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICustomPropagationModel`
               - Provide access to the properties and methods for a custom propagation model.
 
-            * - :py:class:`~IPropagationChannel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPropagationChannel`
               - Provide access to the properties and methods defining a propagation channel.
 
-            * - :py:class:`~IBeerBouguerLambertLawLayer`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer`
               - Provide access to a atmosphere layer used in the Beer-Bouguer-Lambert law propagation loss model.
 
-            * - :py:class:`~IBeerBouguerLambertLawLayerCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection`
               - Represents a collection of complex numbers.
 
-            * - :py:class:`~ILaserAtmosphericLossModelBeerBouguerLambertLaw`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModelBeerBouguerLambertLaw`
               - Provide access to the properties and methods a Beer-Bouguer-Lambert law laser propagation loss model.
 
-            * - :py:class:`~IModtranLookupTablePropagationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel`
               - Provide access to the properties and methods of the MODTRAN lookup table model.
 
-            * - :py:class:`~IModtranPropagationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IModtranPropagationModel`
               - Provide access to the properties and methods of the MODTRAN propagation model.
 
-            * - :py:class:`~ILaserAtmosphericLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel`
               - Provide access to the properties and methods for a laser atmospheric absorption loss model.
 
-            * - :py:class:`~ILaserTroposphericScintillationLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel`
               - Provide access to the properties and methods for a laser tropospheric scintillation loss model.
 
-            * - :py:class:`~IAtmosphericTurbulenceModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModel`
               - Provide access to a refractive index structure parameter model.
 
-            * - :py:class:`~IAtmosphericTurbulenceModelConstant`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelConstant`
               - Provide access to a constant atmospheric turbulence model.
 
-            * - :py:class:`~IAtmosphericTurbulenceModelHufnagelValley`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelHufnagelValley`
               - Provide access to a Hufnagel Valley atmospheric turbulence model.
 
-            * - :py:class:`~ILaserTroposphericScintillationLossModelITURP1814`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModelITURP1814`
               - Provide access to the properties and methods an ITU-R P.1814 laser tropospheric scintillation propagation loss model.
 
-            * - :py:class:`~ILaserPropagationChannel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaserPropagationChannel`
               - Provide access to laser propagation loss models.
 
-            * - :py:class:`~ICommSystemLinkSelectionCriteria`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria`
               - Provide access to a link selection criteria.
 
-            * - :py:class:`~ICommSystemLinkSelectionCriteriaScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteriaScriptPlugin`
               - Provide access to a script plugin link selection criteria.
 
-            * - :py:class:`~ICommSystemAccessEventDetection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetection`
               - Provide access to the properties an access event detection algorithm.
 
-            * - :py:class:`~ICommSystemAccessEventDetectionSubsample`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetectionSubsample`
               - Provide access to the properties an access sub-sample event detection algorithm.
 
-            * - :py:class:`~ICommSystemAccessSamplingMethod`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod`
               - Provide access to the properties for the sampling method.
 
-            * - :py:class:`~ICommSystemAccessSamplingMethodFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodFixed`
               - Provide access to the properties for a fixed sampling method.
 
-            * - :py:class:`~ICommSystemAccessSamplingMethodAdaptive`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodAdaptive`
               - Provide access to the properties for a adaptive sampling method.
 
-            * - :py:class:`~ICommSystemAccessOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions`
               - Provide access to the CommSystem object access options.
 
-            * - :py:class:`~ICommSystemGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemGraphics`
               - IAgCommSystemGraphics Interface for a CommSystem's 2D Graphics properties.
 
-            * - :py:class:`~ICommSystemGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystemGraphics3D`
               - IAgCommSystemVO Interface for a CommSystem's 3D Graphics properties.
 
-            * - :py:class:`~ICommSystem`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICommSystem`
               - Provide access to the properties and methods defining an CommSystem object.
 
-            * - :py:class:`~ISRPModelPluginSettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISRPModelPluginSettings`
               - Plugin Light Reflection Model Settings.
 
-            * - :py:class:`~ISRPModelBase`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISRPModelBase`
               - A base interface for solar radiation pressure models.
 
-            * - :py:class:`~ISRPModelGPS`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISRPModelGPS`
               - GPS Solar Radiation Pressure Model.
 
-            * - :py:class:`~ISRPModelSpherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISRPModelSpherical`
               - Spherical Solar Radiation Pressure Model.
 
-            * - :py:class:`~ISRPModelPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISRPModelPlugin`
               - Plugin Light Reflection Model.
 
-            * - :py:class:`~IVehicleHPOPDragModelPluginSettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPluginSettings`
               - Plugin Drag Model Settings.
 
-            * - :py:class:`~IVehicleHPOPDragModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
               - A base interface for drag models.
 
-            * - :py:class:`~IVehicleHPOPDragModelSpherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelSpherical`
               - Spherical Drag Model.
 
-            * - :py:class:`~IVehicleHPOPDragModelPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin`
               - Plugin Drag Model.
 
-            * - :py:class:`~IVehicleDuration`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleDuration`
               - Look ahead and look behind duration options.
 
-            * - :py:class:`~IVehicleRealtimeCartesianPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRealtimeCartesianPoints`
               - Add one ephemeris point using cartesian coordinates.
 
-            * - :py:class:`~IVehicleRealtimeLLAHPSPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRealtimeLLAHPSPoints`
               - Add one ephemeris point using latitude/longitude/altitude coordinate system.
 
-            * - :py:class:`~IVehicleRealtimeLLAPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRealtimeLLAPoints`
               - Add one ephemeris point using latitude/longitude/altitude coordinate system.
 
-            * - :py:class:`~IVehicleRealtimeUTMPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints`
               - Add one ephemeris point.
 
-            * - :py:class:`~IVehicleGPSElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSElement`
               - An element of the GPS element collection.
 
-            * - :py:class:`~IVehicleGPSElementCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSElementCollection`
               - A collection of GPS elements.
 
-            * - :py:class:`~IVehicleHPOPSRPModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel`
               - HPOP Solar Radiation Pressure Model.
 
-            * - :py:class:`~IVehicleThirdBodyGravityElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement`
               - Third-body gravity interface.
 
-            * - :py:class:`~IVehicleThirdBodyGravityCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection`
               - Third Body Gravity Collection.
 
-            * - :py:class:`~IVehicleSGP4LoadData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4LoadData`
               - Load Method Data interface.
 
-            * - :py:class:`~IVehicleSGP4OnlineLoad`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad`
               - Interface for SGP4 propagator. Loads segments from online.
 
-            * - :py:class:`~IVehicleSGP4OnlineAutoLoad`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineAutoLoad`
               - Do not use this interface, as it is deprecated. Use IAgVeSGP4OnlineLoad instead. Interface for SGP4 propagator. Loads the most current segment from online.
 
-            * - :py:class:`~IVehicleSGP4LoadFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4LoadFile`
               - Interface for SGP4 propagator.
 
-            * - :py:class:`~IVehicleSGP4Segment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment`
               - Interface for SGP4 propagator.
 
-            * - :py:class:`~IVehiclePropagatorSGP4CommonTasks`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4CommonTasks`
               - Interface provides methods encapsulating most commonly used functionality when working with SGP4 propagator.
 
-            * - :py:class:`~IVehicleSGP4AutoUpdateProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties`
               - SGP4 Element AutoUpdate properties.
 
-            * - :py:class:`~IVehicleSGP4AutoUpdateFileSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateFileSource`
               - Interface to configure the SGP4 automatic updates using file(s).
 
-            * - :py:class:`~IVehicleSGP4AutoUpdateOnlineSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateOnlineSource`
               - Interface to configure the SGP4 automatic updates using online source (AGI server).
 
-            * - :py:class:`~IVehicleSGP4AutoUpdate`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate`
               - SGP4 Automatic Update properties.
 
-            * - :py:class:`~IVehicleSGP4PropagatorSettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4PropagatorSettings`
               - Encapsulates the SGP4 propagator settings.
 
-            * - :py:class:`~IVehicleSGP4SegmentCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection`
               - Set of Trajectories.
 
-            * - :py:class:`~IVehicleInitialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleInitialState`
               - Propagator Initial State.
 
-            * - :py:class:`~IVehicleHPOPCentralBodyGravity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity`
               - Central Body Gravity interface.
 
-            * - :py:class:`~IVehicleRadiationPressure`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure`
               - Interface for additional radiation pressure options.
 
-            * - :py:class:`~IVehicleHPOPSolarRadiationPressure`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure`
               - Solar Radiation Pressure (SRP) interface.
 
-            * - :py:class:`~IVehicleSolarFluxGeoMagnitudeEnterManually`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeEnterManually`
               - Interface for specifying solar and geomagnetic flux directly.
 
-            * - :py:class:`~IVehicleSolarFluxGeoMagnitudeUseFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile`
               - Interface for specifying solar and geomagnetic flux via a file.
 
-            * - :py:class:`~IVehicleSolarFluxGeoMagnitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitude`
               - Base Interface IAgVeSolarFluxGeoMag. IAgVeSolarFluxGeoMagEnterManually and IAgVeSolarFluxGeoMagUseFile derive from this interface.
 
-            * - :py:class:`~IVehicleHPOPForceModelDrag`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag`
               - Atmospheric Drag interface.
 
-            * - :py:class:`~IVehicleHPOPForceModelDragOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDragOptions`
               - Interface for additional options for atmospheric drag.
 
-            * - :py:class:`~IVehicleHPOPSolarRadiationPressureOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressureOptions`
               - Interface for additional solar radiation pressure options.
 
-            * - :py:class:`~IVehicleStatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleStatic`
               - Interface for additional static force model options.
 
-            * - :py:class:`~IVehicleSolidTides`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSolidTides`
               - Interface for additional force model options related to solid tides.
 
-            * - :py:class:`~IVehicleOceanTides`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleOceanTides`
               - Interface for additional force model options related to ocean tides.
 
-            * - :py:class:`~IVehiclePluginSettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePluginSettings`
               - Interface for HPOP plugin settings.
 
-            * - :py:class:`~IVehiclePluginPropagator`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator`
               - Interface for propagator plugin.
 
-            * - :py:class:`~IVehicleHPOPForceModelMoreOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions`
               - Interface for additional force model options.
 
-            * - :py:class:`~IVehicleEclipsingBodies`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies`
               - Interface for eclipsing bodies.
 
-            * - :py:class:`~IVehicleHPOPForceModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModel`
               - Interface for HPOP force models.
 
-            * - :py:class:`~IVehicleStepSizeControl`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl`
               - Interface for step size control.
 
-            * - :py:class:`~IVehicleTimeRegularization`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization`
               - Interface for time regularization.
 
-            * - :py:class:`~IVehicleInterpolation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleInterpolation`
               - Interpolation interface.
 
-            * - :py:class:`~IVehicleIntegrator`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleIntegrator`
               - Interface for HPOP integrator.
 
-            * - :py:class:`~IVehicleGravity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGravity`
               - Gravity options for covariance matrix.
 
-            * - :py:class:`~IVehiclePositionVelocityElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement`
               - Covariance matrix interface.
 
-            * - :py:class:`~IVehiclePositionVelocityCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityCollection`
               - An initial state error covariance matrix used to represent the uncertainty in the vehicle's position and velocity. Because the matrix is symmetric, you only need to enter the lower triangle of the 6x6 matrix.
 
-            * - :py:class:`~IVehicleCorrelationListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement`
               - Item in Consider Cross Correlation list.
 
-            * - :py:class:`~IVehicleCorrelationListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleCorrelationListCollection`
               - Consider Analysis list for HPOP covariance.
 
-            * - :py:class:`~IVehicleConsiderAnalysisCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement`
               - Item in Consider Analysis list for HPOP covariance.
 
-            * - :py:class:`~IVehicleConsiderAnalysisCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection`
               - AgVeConsiderAnalysisCollection.
 
-            * - :py:class:`~IVehicleCovariance`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleCovariance`
               - HPOP covariance interface.
 
-            * - :py:class:`~IVehicleJxInitialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleJxInitialState`
               - Initial state interface for J2/J4 perturbation propagators.
 
-            * - :py:class:`~IVehicleLOPCentralBodyGravity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLOPCentralBodyGravity`
               - Central body gravity interface for Long-range Orbit Predictor (LOP) propagator.
 
-            * - :py:class:`~IVehicleThirdBodyGravity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravity`
               - Third body gravity interface options for Long-range Orbit Predictor (LOP) propagator.
 
-            * - :py:class:`~IVehicleExpDensModelParams`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams`
               - Interface for exponential density model (for LOP propagator).
 
-            * - :py:class:`~IVehicleAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAdvanced`
               - Interface for advanced drag options for LOP propagator.
 
-            * - :py:class:`~IVehicleLOPForceModelDrag`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag`
               - Interface for atmospheric drag for LOP propagator.
 
-            * - :py:class:`~IVehicleLOPSolarRadiationPressure`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLOPSolarRadiationPressure`
               - Solar radiation pressure interface for LOP propagator.
 
-            * - :py:class:`~IVehiclePhysicalData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePhysicalData`
               - Physical data interface for LOP propagator.
 
-            * - :py:class:`~IVehicleLOPForceModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel`
               - Force model interface for LOP propagator.
 
-            * - :py:class:`~IVehicleSPICESegment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSPICESegment`
               - Interface for SPICE propagator segment.
 
-            * - :py:class:`~IVehicleSegmentsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSegmentsCollection`
               - Set of segments.
 
-            * - :py:class:`~IVehiclePropagator`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator`
               - Base vehicle propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorHPOP`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP`
               - HPOP propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorJ2Perturbation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation`
               - J2 Perturbation propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorJ4Perturbation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ4Perturbation`
               - J4 Perturbation propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorLOP`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP`
               - LOP (Long-Range Orbit Predictor) propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorSGP4`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4`
               - SGP4 propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorSPICE`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE`
               - SPICE propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorStkExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal`
               - StkExternal propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorTwoBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody`
               - Two-body propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorUserExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal`
               - User-external propagator interface.
 
-            * - :py:class:`~IVehicleLaunchVehicleInitialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState`
               - Simple Ascent propagator initial state interface.
 
-            * - :py:class:`~IVehiclePropagatorSimpleAscent`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent`
               - SimpleAscent Propagator.
 
-            * - :py:class:`~IVehicleWaypointAltitudeReference`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReference`
               - Base interface for the altitude references.
 
-            * - :py:class:`~IVehicleWaypointAltitudeReferenceTerrain`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReferenceTerrain`
               - Interface for terrain altitude reference.
 
-            * - :py:class:`~IVehicleWaypointsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement`
               - Interface for representing a waypoint in a collection of waypoints.
 
-            * - :py:class:`~IVehicleWaypointsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection`
               - Represents a collection of waypoints used with GreatArc vehicles.
 
-            * - :py:class:`~IVehiclePropagatorGreatArc`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc`
               - Great arc propagator interface.
 
-            * - :py:class:`~IVehiclePropagatorAviator`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorAviator`
               - Aviator propagator interface.
 
-            * - :py:class:`~IVehicleLaunchLLA`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchLLA`
               - Interface for geodetic LLA position.
 
-            * - :py:class:`~IVehicleLaunchLLR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchLLR`
               - Interface for geocentric LLR position.
 
-            * - :py:class:`~IVehicleImpactLLA`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleImpactLLA`
               - Interface for LLA (geodetic) coordinates for a missile's impact location.
 
-            * - :py:class:`~IVehicleImpactLLR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleImpactLLR`
               - Interface for LLR (geocentric) coordinates for a missile's impact location.
 
-            * - :py:class:`~IVehicleLaunchControlFixedApogeeAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedApogeeAltitude`
               - Fixed apogee altitude interface for missile flight parameters.
 
-            * - :py:class:`~IVehicleLaunchControlFixedDeltaV`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaV`
               - Fixed Delta V interface for missile flight parameters.
 
-            * - :py:class:`~IVehicleLaunchControlFixedDeltaVMinEccentricity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaVMinEccentricity`
               - Fixed Delta V minimum eccentricity interface for missile flight parameters.
 
-            * - :py:class:`~IVehicleLaunchControlFixedTimeOfFlight`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedTimeOfFlight`
               - Fixed time of flight interface for missile flight parameters.
 
-            * - :py:class:`~IVehicleImpactLocationLaunchAzEl`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl`
               - Launch AzEl interface for missile impact location. All properties on this interface should be set explicitly.
 
-            * - :py:class:`~IVehicleImpact`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleImpact`
               - Base Interface IAgVeImpact. IAgVeImpactLLA and IAgVeImpactLLR derive from this.
 
-            * - :py:class:`~IVehicleLaunchControl`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchControl`
               - Base Interface IAgVeLaunchControl. IAgVeLaunchControlFixedApogeeAlt, IAgVeLaunchControlFixedDeltaV, IAgVeLaunchControlDixedDeltaVMinEcc and IAgVeLaunchControlTimeOfFlight derive from this.
 
-            * - :py:class:`~IVehicleImpactLocationPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint`
               - Missile impact point interface.
 
-            * - :py:class:`~IVehicleLaunch`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunch`
               - Base interface IAgVeLaunch. IAgVeLaunchLLA and IAgVeLaunchLLR derive from this.
 
-            * - :py:class:`~IVehicleImpactLocation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleImpactLocation`
               - Base interface IAgVeImpactLocation. IAgVeImpactLocationLaunchAzEl and IAgVeImpactLocationPoint derive from this.
 
-            * - :py:class:`~IVehiclePropagatorBallistic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic`
               - Ballistic propagator interface.
 
-            * - :py:class:`~IVehicleRealtimePointBuilder`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder`
               - Allow the user to create vehicle's ephemeris by appending ephemeris points.
 
-            * - :py:class:`~IVehiclePropagatorRealtime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime`
               - Realtime propagator interface.
 
-            * - :py:class:`~IVehicleGPSAlmanacProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties`
               - A common base interface for GPS almanac properties.
 
-            * - :py:class:`~IVehicleGPSAlmanacPropertiesYUMA`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA`
               - YUMA almanac properties.
 
-            * - :py:class:`~IVehicleGPSAlmanacPropertiesSEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM`
               - SEM almanac properties.
 
-            * - :py:class:`~IVehicleGPSAlmanacPropertiesSP3`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3`
               - SP3 almanac properties.
 
-            * - :py:class:`~IVehicleGPSSpecifyAlmanac`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac`
               - Interface to specify a GPS almanac.
 
-            * - :py:class:`~IVehicleGPSAutoUpdateProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties`
               - Interface for GPS AutoUpdate properties.
 
-            * - :py:class:`~IVehicleGPSAutoUpdateFileSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateFileSource`
               - Interface to configure the GPS automatic updates using almanac file(s).
 
-            * - :py:class:`~IVehicleGPSAutoUpdateOnlineSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateOnlineSource`
               - Interface to configure the GPS automatic updates using online source (AGI server).
 
-            * - :py:class:`~IVehicleGPSAutoUpdate`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate`
               - Interface for GPS AutoUpdate.
 
-            * - :py:class:`~IVehiclePropagatorGPS`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS`
               - Allow the user to configure and propagate a vehicle using the GPS propagator.
 
-            * - :py:class:`~IVehiclePropagator11ParamDescriptor`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor`
               - 11-Param file definition.
 
-            * - :py:class:`~IVehiclePropagator11ParamDescriptorCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptorCollection`
               - A collection of 11-Parameter files.
 
-            * - :py:class:`~IVehiclePropagator11Param`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param`
               - The 11-Parameter propagator models geostationary satellites using 11-Parameter files. The propagator uses an algorithm documented in Intelsat Earth Station Standards (IESS) IESS-412 (Rev. 2), available at www.celestrak.com.
 
-            * - :py:class:`~IVehiclePropagatorSP3File`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File`
               - SP3 file data.
 
-            * - :py:class:`~IVehiclePropagatorSP3FileCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection`
               - A collection of SP3 files.
 
-            * - :py:class:`~IVehiclePropagatorSP3`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3`
               - The SP3 propagator reads .sp3 files of type 'a' and 'c' and allows you to use multiple files in sequence. These files are used to provide precise GPS orbits from the National Geodetic Survey (NGS).
 
-            * - :py:class:`~IVehicleTargetPointingElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement`
               - Target pointing data for target pointing attitude.
 
-            * - :py:class:`~IVehicleAccessAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAccessAdvanced`
               - Interface for configuring a vehicle's advanced targeting access computation properties.
 
-            * - :py:class:`~IVehicleAttitudeTargetSlew`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew`
               - Define the time required for a vehicle to move from its basic attitude to its target pointing attitude, and to change from the target pointing attitude back to the basic attitude.
 
-            * - :py:class:`~IVehicleTorque`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleTorque`
               - Torque file to use in defining integrated attitude.
 
-            * - :py:class:`~IVehicleIntegratedAttitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude`
               - Integrated Attitude interface generates an external attitude file for a satellite by numerically integrating Euler's equations for the current satellite.
 
-            * - :py:class:`~IVehicleVector`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleVector`
               - Aligned and Constrained attitude profile.
 
-            * - :py:class:`~IVehicleRateOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRateOffset`
               - Rate and offset interface for precession and spin.
 
-            * - :py:class:`~IVehicleAttitudeProfile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
               - The base interface that all vehicle attitude profiles are derived from.
 
-            * - :py:class:`~IVehicleProfileAlignedAndConstrained`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained`
               - Aligned and Constrained attitude profile.
 
-            * - :py:class:`~IVehicleProfileInertial`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileInertial`
               - Inertially fixed attitude profile: maintains a constant orientation of the body-fixed axes with respect to the inertial axes, using the selected coordinate type.
 
-            * - :py:class:`~IVehicleProfileYawToNadir`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileYawToNadir`
               - A profile useful for satellites with highly elliptical orbits.
 
-            * - :py:class:`~IVehicleProfileConstraintOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileConstraintOffset`
               - Interface for constraint offset for various attitude profiles.
 
-            * - :py:class:`~IVehicleProfileAlignmentOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileAlignmentOffset`
               - Interface for alignment offset for various attitude profiles.
 
-            * - :py:class:`~IVehicleProfileFixedInAxes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileFixedInAxes`
               - Fixed in Axes attitude profile: maintains a constant orientation of the body-fixed axes with respect to the specified reference axes, using the selected coordinate type.
 
-            * - :py:class:`~IVehicleProfilePrecessingSpin`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin`
               - Precessing Spin attitude profile, in which the spin axis of the satellite specified in the body frame is offset through the nutation angle away from the angular momentum direction specified in the inertial frame.
 
-            * - :py:class:`~IVehicleProfileSpinAboutXXX`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX`
               - Shared interface for Spin About Nadir and Spin About Sun Vector profile parameters.
 
-            * - :py:class:`~IVehicleProfileSpinning`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning`
               - Spinning attitude profile.
 
-            * - :py:class:`~IVehicleProfileCoordinatedTurn`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileCoordinatedTurn`
               - Coordinated turn attitude profile for aircraft.
 
-            * - :py:class:`~IVehicleScheduleTimesElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement`
               - Parameters for scheduled times for target pointing attitude.
 
-            * - :py:class:`~IVehicleScheduleTimesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesCollection`
               - List of scheduled accesses.
 
-            * - :py:class:`~IVehicleTargetTimes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleTargetTimes`
               - Target times for target pointing attitude.
 
-            * - :py:class:`~IVehicleTargetPointingIntervalCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleTargetPointingIntervalCollection`
               - Represents a collection of scheduled targeting intervals.
 
-            * - :py:class:`~IVehicleTargetPointingCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection`
               - Attitude Targets.
 
-            * - :py:class:`~IVehiclePointing`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePointing`
               - Interface for target pointing attitude profiles, which override the basic attitude profile for a satellite and have a selected axis point in the direction of one or more selected targets, subject to applicable access constraints.
 
-            * - :py:class:`~IVehicleAttitudePointing`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudePointing`
               - Target pointing attitude parameters.
 
-            * - :py:class:`~IVehicleStandardBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleStandardBasic`
               - Basic attitude profile.
 
-            * - :py:class:`~IVehicleAttitudeExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal`
               - Interface for using an external attitude (.a) file.
 
-            * - :py:class:`~IVehicleAttitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitude`
               - Base interface for vehicle attitude options.
 
-            * - :py:class:`~IVehicleAttitudeRealTimeDataReference`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTimeDataReference`
               - Real time attitude data reference.
 
-            * - :py:class:`~IVehicleAttitudeRealTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime`
               - Real time attitude interface.
 
-            * - :py:class:`~IVehicleAttitudeStandard`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeStandard`
               - Standard attitude profile.
 
-            * - :py:class:`~IVehicleTrajectoryAttitudeStandard`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard`
               - Standard attitude profile for launch vehicle or missile.
 
-            * - :py:class:`~IVehicleOrbitAttitudeStandard`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard`
               - Standard attitude profile for satellite.
 
-            * - :py:class:`~IVehicleRouteAttitudeStandard`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard`
               - Standard attitude profile for aircraft.
 
-            * - :py:class:`~IVehicleProfileGPS`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileGPS`
               - GPS Attitude profile.
 
-            * - :py:class:`~IVehicleAttitudeTrendControlAviator`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator`
               - Trending controls for Aviator attitude.
 
-            * - :py:class:`~IVehicleProfileAviator`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileAviator`
               - The profile used for Aviator aircraft.
 
-            * - :py:class:`~IVehicleGraphics2DIntervalsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection`
               - Custom Intervals Graphics List.
 
-            * - :py:class:`~IVehicleGraphics2DWaypointMarkersElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement`
               - 2D Graphics properties of element of waypoint collection.
 
-            * - :py:class:`~IVehicleGraphics2DWaypointMarkersCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersCollection`
               - A list of 2D definitions for the vehicle way points.
 
-            * - :py:class:`~IVehicleGraphics2DWaypointMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker`
               - Display options for waypoint and turn markers in the 2D Graphics window.
 
-            * - :py:class:`~IVehicleGraphics2DPassResolution`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassResolution`
               - Ground track and orbit resolution for satellites defined in terms of ephemeris steps.
 
-            * - :py:class:`~IVehicleGraphics2DRouteResolution`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRouteResolution`
               - Route resolution for great arc vehicles defined in terms of ephemeris steps.
 
-            * - :py:class:`~IVehicleGraphics2DTrajectoryResolution`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution`
               - Ground track and trajectory resolution for launch vehicles and missiles in terms of ephemeris steps.
 
-            * - :py:class:`~IVehicleGraphics2DElevationsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement`
               - 2D Graphics settings for elevation contours.
 
-            * - :py:class:`~IVehicleGraphics2DElevationsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection`
               - Collection for elevation contours. Used by vehicles.
 
-            * - :py:class:`~IVehicleGraphics2DElevContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours`
               - General settings regarding display of elevation contours.
 
-            * - :py:class:`~IVehicleGraphics2DSAA`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA`
               - South Atlantic Anomaly contour settings.
 
-            * - :py:class:`~IVehicleGraphics2DPassShowPasses`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassShowPasses`
               - Beginning and end pass numbers to display.
 
-            * - :py:class:`~IVehicleGraphics2DPass`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPass`
               - interface IAgVeGfxPass. IAgVeGfxPassShowPasses and IAgVeGfxPassResolution derive from this.
 
-            * - :py:class:`~IVehicleGraphics2DPasses`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses`
               - Interface for setting satellite pass display graphics.
 
-            * - :py:class:`~IVehicleGraphics2DTimeEventTypeLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine`
               - 2D Graphics time event: line type.
 
-            * - :py:class:`~IVehicleGraphics2DTimeEventTypeMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker`
               - 2D Graphics time event: marker type.
 
-            * - :py:class:`~IVehicleGraphics2DTimeEventTypeText`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText`
               - 2D Graphics time event: text type.
 
-            * - :py:class:`~IVehicleGraphics2DTimeEventType`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventType`
               - Base Interface IAgVeGfxTimeEventType. IAgVeGfxTimeEventTypeLine, IAgVeGfxTimeEventTypeMarker and IAgVeGfxTimeEventTypeText derive from this.
 
-            * - :py:class:`~IVehicleGraphics2DTimeEventsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement`
               - 2D Graphics time event.
 
-            * - :py:class:`~IVehicleGraphics2DTimeEventsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsCollection`
               - A satellite's time events collection.
 
-            * - :py:class:`~IVehicleGraphics2DGroundEllipsesElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement`
               - Ground ellipse 2D graphics properties.
 
-            * - :py:class:`~IVehicleGraphics2DGroundEllipsesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesCollection`
               - Collection of ground ellipse 2D graphics properties.
 
-            * - :py:class:`~IVehicleGraphics2DLeadTrailData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData`
               - 2D Graphics pass properties: lead/trail for ground tracks.
 
-            * - :py:class:`~IVehicleGraphics2DTrajectoryPassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryPassData`
               - 2D Graphics ground track and trajectory properties.
 
-            * - :py:class:`~IVehicleGraphics2DOrbitPassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData`
               - 2D Graphics ground track and orbit pass properties.
 
-            * - :py:class:`~IVehicleGraphics2DRoutePassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData`
               - Great arc route pass data.
 
-            * - :py:class:`~IVehicleGraphics2DLightingElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement`
               - Lighting condition properties.
 
-            * - :py:class:`~IVehicleGraphics2DLighting`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting`
               - Lighting.
 
-            * - :py:class:`~IVehicleGraphics2DLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLine`
               - Line Style and Line Width properties used in displaying vehicle tracks.
 
-            * - :py:class:`~IVehicleGraphics2DAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributes`
               - Base Interface for Vehicle 2D Graphics Attributes.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic`
               - Basic 2D Graphics Attributes for a vehicle.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesDisplayState`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState`
               - Provide access to non-trivial properties of 2D vehicle attributes.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesAccess`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesAccess`
               - Vehicle 2D Graphics display based on access intervals.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesTrajectory`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory`
               - 2D Graphics attributes for launch vehicles and missiles.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesOrbit`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit`
               - 2D Graphics attributes for a satellite.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesRoute`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRoute`
               - 2D Graphics attributes for aircraft, ships and ground vehicles.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesRealtime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRealtime`
               - 2D Graphics attributes for a vehicle based on real time data state.
 
-            * - :py:class:`~IVehicleGraphics2DElevationGroundElevation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationGroundElevation`
               - Ground elevation interface for vehicle swath.
 
-            * - :py:class:`~IVehicleGraphics2DElevationSwathHalfWidth`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationSwathHalfWidth`
               - Half width interface for vehicle swath.
 
-            * - :py:class:`~IVehicleGraphics2DElevationVehicleHalfAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationVehicleHalfAngle`
               - Half angle interface for vehicle swath.
 
-            * - :py:class:`~IVehicleGraphics2DElevation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevation`
               - Base Interface IAgVeGfxElevation. IAgVeGfxElevationGroundElevation, IAgVeGfxElevationsSwathHalfWidth and IAgVeGfxElevationsSwathHalfAngle derive from this.
 
-            * - :py:class:`~IVehicleGraphics2DSwath`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath`
               - Vehicle swath interface.
 
-            * - :py:class:`~IVehicleGraphics2DInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DInterval`
               - 2D Graphics display based on custom intervals.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesCustom`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom`
               - Vehicle 2D graphics display based on custom intervals.
 
-            * - :py:class:`~IVehicleGraphics2DTimeComponentsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement`
               - Provide properties to configure the vehicle's appearance in 2D and 3D views.
 
-            * - :py:class:`~IVehicleGraphics2DTimeComponentsEventElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventElement`
               - Provide properties to configure the vehicle's appearance in 2D and 3D views. The interface is used with all types of event components except for the event interval collections.
 
-            * - :py:class:`~IVehicleGraphics2DTimeComponentsEventCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement`
               - Provide properties to configure the vehicle's appearance in 2D and 3D views. The interface is used with event interval collections only.
 
-            * - :py:class:`~IVehicleGraphics2DTimeComponentsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsCollection`
               - A collection of time components used to configure the object appearance in 2D and 3D views.
 
-            * - :py:class:`~IVehicleGraphics2DAttributesTimeComponents`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents`
               - Allow configuring the 2D attributes using the time components.
 
-            * - :py:class:`~IVehicleTrajectoryGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleTrajectoryGraphics3DModel`
               - Marker interface for launch vehicle or missile.
 
-            * - :py:class:`~IVehicleRouteGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel`
               - 3D marker interface for great arc vehicles.
 
-            * - :py:class:`~IVehicleGraphics3DLeadTrailData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData`
               - Interface for vehicle's lead/trail data.
 
-            * - :py:class:`~IVehicleGraphics3DSystemsElementBase`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase`
               - Define methods and properties used to configure the 3D properties of a reference system used for displaying vehicle orbits and trajectories.
 
-            * - :py:class:`~IVehicleGraphics3DSystemsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement`
               - Element for reference system used for displaying vehicle orbits and trajectories.
 
-            * - :py:class:`~IVehicleGraphics3DSystemsSpecialElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsSpecialElement`
               - Define methods and properties to configure 3D properties of Inertial or Fixed reference system used for displaying vehicle orbits and trajectories.
 
-            * - :py:class:`~IVehicleGraphics3DSystemsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection`
               - List of Systems.
 
-            * - :py:class:`~IVehicleGraphics3DDropLinePositionItem`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem`
               - Interface for drop lines from the vehicle's current position.
 
-            * - :py:class:`~IVehicleGraphics3DDropLinePositionItemCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItemCollection`
               - Lines dropped from the vehicle's position.
 
-            * - :py:class:`~IVehicleGraphics3DDropLinePathItem`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem`
               - Interface for drop lines at intervals along the vehicle's path.
 
-            * - :py:class:`~IVehicleGraphics3DDropLinePathItemCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItemCollection`
               - Interface for drop lines from the vehicle's orbit or trajectory.
 
-            * - :py:class:`~IVehicleGraphics3DOrbitDropLines`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitDropLines`
               - Interface for droplines collections.
 
-            * - :py:class:`~IVehicleGraphics3DRouteDropLines`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines`
               - Interface for droplines for great arc vehicles.
 
-            * - :py:class:`~IVehicleGraphics3DTrajectoryDropLines`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryDropLines`
               - Interface for droplines for launch vehicles and missiles.
 
-            * - :py:class:`~IVehicleGraphics3DProximityAreaObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject`
               - A base class that defines methods and properties common to all proximity area objects.
 
-            * - :py:class:`~IVehicleGraphics3DEllipsoid`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid`
               - Define an ellipsoid around the vehicle object.
 
-            * - :py:class:`~IVehicleGraphics3DControlBox`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox`
               - Define a volume around the object that moves with the object.
 
-            * - :py:class:`~IVehicleGraphics3DBearingBox`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox`
               - Define a volume, relative to a bearing from the North, around an object.
 
-            * - :py:class:`~IVehicleGraphics3DBearingEllipse`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse`
               - Define an ellipse, relative to a bearing from the North, around the object.
 
-            * - :py:class:`~IVehicleGraphics3DLineOfBearing`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing`
               - Define a line of bearing which is drawn from an origin in the direction of a bearing.
 
-            * - :py:class:`~IVehicleGraphics3DGeoBox`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox`
               - Interface for geostationary box, a fixed plane used to visually check that a GEO satellite stays within a certain area.
 
-            * - :py:class:`~IVehicleGraphics3DProximity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximity`
               - Base Proximity graphics interface.
 
-            * - :py:class:`~IVehicleGraphics3DRouteProximity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteProximity`
               - Proximity graphics interface for GreatArc Vehicles.
 
-            * - :py:class:`~IVehicleGraphics3DOrbitProximity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitProximity`
               - Proximity graphics interface.
 
-            * - :py:class:`~IVehicleGraphics3DTrajectoryProximity`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryProximity`
               - Proximity graphics for a launch vehicle or missile.
 
-            * - :py:class:`~IVehicleGraphics3DElevContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours`
               - Interface for 3D elevation angle contours.
 
-            * - :py:class:`~IVehicleGraphics3DSAA`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSAA`
               - Interface for 3D South Atlantic Anomaly contours.
 
-            * - :py:class:`~IVehicleGraphics3DSigmaScaleProbability`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScaleProbability`
               - Interface for sigma probability for indirect sizing of covariance pointing contours.
 
-            * - :py:class:`~IVehicleGraphics3DSigmaScaleScale`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScaleScale`
               - Interface for sigma scale for direct sizing of covariance pointing contours.
 
-            * - :py:class:`~IVehicleGraphics3DDefaultAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes`
               - Default graphics attributes for covariance pointing contours.
 
-            * - :py:class:`~IVehicleGraphics3DIntervalsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement`
               - Intervals graphics interface for covariance pointing contour.
 
-            * - :py:class:`~IVehicleGraphics3DIntervalsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsCollection`
               - Intervals.
 
-            * - :py:class:`~IVehicleGraphics3DAttributesBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic`
               - Interface for basic 3D graphics for covariance pointing contours.
 
-            * - :py:class:`~IVehicleGraphics3DAttributesIntervals`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals`
               - Interface for 3D graphics based on intervals for covariance pointing contours.
 
-            * - :py:class:`~IVehicleGraphics3DSize`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSize`
               - 3D graphics vector size interface.
 
-            * - :py:class:`~IVehicleGraphics3DSigmaScale`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScale`
               - Base Interface IAgVeVOSigmaScale. IAgVeVOSigmaScaleScale and IAgVeVOSigmaScaleProbability derive from this.
 
-            * - :py:class:`~IVehicleGraphics3DAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributes`
               - Base Interface IAgVeVOAttributes. IAgVeVOAttributesBasic and IAgVeVOAttributesIntervals derive from this.
 
-            * - :py:class:`~IVehicleGraphics3DCovariancePointingContour`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour`
               - Interface for covariance pointing contours.
 
-            * - :py:class:`~IVehicleGraphics3DOrbitPassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData`
               - Interface for satellite 3D ground and orbit track data.
 
-            * - :py:class:`~IVehicleGraphics3DTrajectoryPassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryPassData`
               - Interface for 3D ground track and trajectory data for a launch vehicle or missile.
 
-            * - :py:class:`~IVehicleGraphics3DOrbitTrackData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTrackData`
               - Interface for 3D leading/trailing track data for satellites.
 
-            * - :py:class:`~IVehicleGraphics3DTrajectoryTrackData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTrackData`
               - Interface for 3D leading/trailing track data for launch vehicles and missiles.
 
-            * - :py:class:`~IVehicleGraphics3DTickData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickData`
               - Base interface IAgVeVOTickData. IAgVeVOTickDataLine and IAgVeVOTickDataPoint derive from this.
 
-            * - :py:class:`~IVehicleGraphics3DPathTickMarks`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks`
               - Interface for tick marks for 3D trajectory graphics. Tick marks represent milestones at specified intervals along the trajectory in the 3D window.
 
-            * - :py:class:`~IVehicleGraphics3DTrajectoryTickMarks`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks`
               - Tick mark data interface for launch vehicles and missiles.
 
-            * - :py:class:`~IVehicleGraphics3DTrajectory`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectory`
               - 3D pass interface for launch vehicles and missiles.
 
-            * - :py:class:`~IVehicleGraphics3DTickDataLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine`
               - Interface for line type tick marks.
 
-            * - :py:class:`~IVehicleGraphics3DTickDataPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataPoint`
               - Interface for point type tick mark.
 
-            * - :py:class:`~IVehicleGraphics3DOrbitTickMarks`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks`
               - Tick mark interface for satellites.
 
-            * - :py:class:`~IVehicleGraphics3DPass`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPass`
               - 3D pass interface for satellites.
 
-            * - :py:class:`~IVehicleGraphics3DCovariance`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance`
               - Interface for 3D covariance ellipsoids.
 
-            * - :py:class:`~IVehicleGraphics3DVelCovariance`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance`
               - Interface for 3D velocity covariance ellipsoids.
 
-            * - :py:class:`~IVehicleGraphics3DWaypointMarkersElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement`
               - 3D waypoint interface.
 
-            * - :py:class:`~IVehicleGraphics3DWaypointMarkersCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersCollection`
               - Waypoint markers collection interface.
 
-            * - :py:class:`~IVehicleGraphics3DRoute`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRoute`
               - 3D route graphics interface for great arc vehicles.
 
-            * - :py:class:`~IVehicleEclipseBodies`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies`
               - Satellite Eclipse Bodies interface, for defining the eclipse central body list used for lighting computations.
 
-            * - :py:class:`~IGreatArcGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
               - 2D Graphics common for all Great Arc Vehicles.
 
-            * - :py:class:`~IGreatArcGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D`
               - 3D Graphics common for all Great Arc Vehicles.
 
-            * - :py:class:`~IGreatArcVehicle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGreatArcVehicle`
               - A base interface for all Great Arc Vehicles.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneTemplateDisplayElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement`
               - Element of IAgVeVOBPlaneTemplateDisplayCollection.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneTemplateDisplayCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayCollection`
               - 3D DisplayElements collection for BPlane.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneTemplate`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate`
               - An element of IAgVeVOBPlaneTemplatesCollection.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneTemplatesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplatesCollection`
               - A list of available b-plane templates.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneEvent`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent`
               - 3D BPlane Event.
 
-            * - :py:class:`~IVehicleGraphics3DBPlanePoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint`
               - 3D BPlane Additional Point.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneTargetPointPosition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPosition`
               - A base class for BPlane target point position interfaces.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneTargetPointPositionCartesian`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionCartesian`
               - Cartesian.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneTargetPointPositionPolar`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar`
               - 3D BPlane target point position polar.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneTargetPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint`
               - 3D BPlane TargetPoint.
 
-            * - :py:class:`~IVehicleGraphics3DBPlanePointCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection`
               - A list of available additional points.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneInstance`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance`
               - Properties of an instance of a B-Plane template.
 
-            * - :py:class:`~IVehicleGraphics3DBPlaneInstancesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstancesCollection`
               - A list of available b-plane instances.
 
-            * - :py:class:`~IVehicleGraphics3DBPlanes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes`
               - 3D BPlanes properties.
 
-            * - :py:class:`~IVehicleSpaceEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment`
               - no helpstring provided.
 
-            * - :py:class:`~IEOIR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIR`
               - Property used to access IAgEOIR interface.
 
-            * - :py:class:`~ISatelliteGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel`
               - Interface IAgSaVOModel exposes all Satellite's VO Model properties.
 
-            * - :py:class:`~ISatelliteGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D`
               - 3D Graphics properties of a satellite.
 
-            * - :py:class:`~IVehicleCentralBodies`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleCentralBodies`
               - Satellite Central Bodies interface.
 
-            * - :py:class:`~ISatelliteGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISatelliteGraphics`
               - Satellite 2D Graphics properties.
 
-            * - :py:class:`~IVehicleRepeatGroundTrackNumbering`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleRepeatGroundTrackNumbering`
               - Repeat ground track numbering: The path number in the repeat ground track cycle corresponding to the initial conditions and the number of revolutions in the repeat cycle.
 
-            * - :py:class:`~IVehicleBreakAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleBreakAngle`
               - Base Interface IAgVeBreakAngle. IAgVeBreakAngleBreakByLatitude and IAgVeBreakAngleBreakByLongitude derive from this.
 
-            * - :py:class:`~IVehicleBreakAngleBreakByLatitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLatitude`
               - Pass break latitude.
 
-            * - :py:class:`~IVehicleBreakAngleBreakByLongitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLongitude`
               - Pass break longitude.
 
-            * - :py:class:`~IVehicleDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleDefinition`
               - Pass break definition properties.
 
-            * - :py:class:`~IVehiclePassNumbering`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePassNumbering`
               - Base Interaface IAgVePassNumbering. IAgVePassNumberingDateOfFirstPass and IAgVePassNumberingFirstPassNum derive from this.
 
-            * - :py:class:`~IVehiclePassNumberingDateOfFirstPass`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass`
               - Date of first pass for pass numbering.
 
-            * - :py:class:`~IVehiclePassNumberingFirstPassNum`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePassNumberingFirstPassNum`
               - First pass number.
 
-            * - :py:class:`~IVehiclePassBreak`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePassBreak`
               - Satellite Pass Break properties.
 
-            * - :py:class:`~IVehicleInertia`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleInertia`
               - Satellite inertia matrix parameters.
 
-            * - :py:class:`~IVehicleMassProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleMassProperties`
               - Satellite Mass properties.
 
-            * - :py:class:`~IExportToolTimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.IExportToolTimePeriod`
               - Specify Time Period.
 
-            * - :py:class:`~IExportToolStepSize`
+            * - :py:class:`~ansys.stk.core.stkobjects.IExportToolStepSize`
               - The step size.
 
-            * - :py:class:`~IVehicleEphemerisCode500ExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool`
               - The Code 500 Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-            * - :py:class:`~IVehicleEphemerisCCSDSExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool`
               - The CCSDS Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-            * - :py:class:`~IVehicleEphemerisStkExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool`
               - The STK Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-            * - :py:class:`~IVehicleCoordinateAxes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxes`
               - IAgVeCoordinateAxes.
 
-            * - :py:class:`~IVehicleCoordinateAxesCustom`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxesCustom`
               - Custom.
 
-            * - :py:class:`~IVehicleAttitudeExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool`
               - Attitude file for the Export Ephemeris/Attitude File Tool.
 
-            * - :py:class:`~IVehicleEphemerisSpiceExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEphemerisSpiceExportTool`
               - The SPICE Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-            * - :py:class:`~IVehiclePropDefinitionExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehiclePropDefinitionExportTool`
               - Interface used to define the export to data file options.
 
-            * - :py:class:`~IVehicleEphemerisStkBinaryExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkBinaryExportTool`
               - The STK Binary Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-            * - :py:class:`~IVehicleEphemerisCCSDSv2ExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSv2ExportTool`
               - The CCSDSv2 Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-            * - :py:class:`~ISatelliteExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISatelliteExportTools`
               - Interface used to define the export to data file options.
 
-            * - :py:class:`~ISatellite`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISatellite`
               - Satellite properties.
 
-            * - :py:class:`~ILaunchVehicleGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics`
               - 2D Graphics for a launch vehicle.
 
-            * - :py:class:`~ILaunchVehicleGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D`
               - 3D Graphics for a launch vehicle.
 
-            * - :py:class:`~ILaunchVehicleExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaunchVehicleExportTools`
               - Interface for a launch vehicle object.
 
-            * - :py:class:`~ILaunchVehicle`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILaunchVehicle`
               - Interface for a launch vehicle object.
 
-            * - :py:class:`~IGroundVehicleGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGroundVehicleGraphics`
               - 2D Graphics properties for ground vehicles.
 
-            * - :py:class:`~IGroundVehicleGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGroundVehicleGraphics3D`
               - 3D Graphics properties for ground vehicles.
 
-            * - :py:class:`~IGroundVehicleExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGroundVehicleExportTools`
               - Interface used to define the export to data file options.
 
-            * - :py:class:`~IGroundVehicle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IGroundVehicle`
               - Interface for a ground vehicle object.
 
-            * - :py:class:`~IMissileGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMissileGraphics`
               - 2D Graphics for missiles.
 
-            * - :py:class:`~IMissileGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMissileGraphics3D`
               - 3D Graphics for missiles.
 
-            * - :py:class:`~IMissileExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMissileExportTools`
               - Interface used to define the export to data file options.
 
-            * - :py:class:`~IMissile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMissile`
               - Interface for a missile object.
 
-            * - :py:class:`~IAircraftGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAircraftGraphics`
               - 2D Graphics for an aircraft.
 
-            * - :py:class:`~IAircraftGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAircraftGraphics3D`
               - 3D Graphics properties for an aircraft.
 
-            * - :py:class:`~IAircraftExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAircraftExportTools`
               - Interface used to define the export to data file options.
 
-            * - :py:class:`~IAircraft`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAircraft`
               - Interface for aircraft object.
 
-            * - :py:class:`~IShipGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IShipGraphics`
               - 2D Graphics options for a ship.
 
-            * - :py:class:`~IShipGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IShipGraphics3D`
               - 3D Graphics attributes for a ship.
 
-            * - :py:class:`~IShipExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.IShipExportTools`
               - Interface used to define the export to data file options.
 
-            * - :py:class:`~IShip`
+            * - :py:class:`~ansys.stk.core.stkobjects.IShip`
               - Interface for a ship object.
 
-            * - :py:class:`~IMtoGraphics2DMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DMarker`
               - Interface to define the 2D graphics attributes of the selected MTO track or tracks.
 
-            * - :py:class:`~IMtoGraphics2DLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine`
               - MTO track line display options.
 
-            * - :py:class:`~IMtoGraphics2DFadeTimes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes`
               - MTO track fade times interface.
 
-            * - :py:class:`~IMtoGraphics2DLeadTrailTimes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes`
               - MTO track lead/trail times interface.
 
-            * - :py:class:`~IMtoGraphics2DTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DTrack`
               - Interface to set 2D graphics attributes for each track in the MTO.
 
-            * - :py:class:`~IMtoGraphics2DTrackCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DTrackCollection`
               - MTO 2D Graphics Track List.
 
-            * - :py:class:`~IMtoDefaultGraphics2DTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack`
               - Interface to set 2D graphics attributes for default MTO tracks.
 
-            * - :py:class:`~IMtoGraphics2DGlobalTrackOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DGlobalTrackOptions`
               - Interface for global 2D graphics options for an MTO.
 
-            * - :py:class:`~IMtoGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics`
               - MTO 2D Graphics interface.
 
-            * - :py:class:`~IMtoGraphics3DModelArtic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic`
               - MTO ModelArticulation Interface.
 
-            * - :py:class:`~IMtoGraphics3DMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker`
               - Interface for MTO 3D graphics marker options.
 
-            * - :py:class:`~IMtoGraphics3DPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DPoint`
               - MTO track 3D marker point options interface.
 
-            * - :py:class:`~IMtoGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel`
               - Interface for MTO track model options.
 
-            * - :py:class:`~IMtoGraphics3DSwapDistances`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances`
               - Interface for MTO track 3D swap distances.
 
-            * - :py:class:`~IMtoGraphics3DDropLines`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DDropLines`
               - Interface for MTO droplines.
 
-            * - :py:class:`~IMtoGraphics3DTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack`
               - Interface for setting 3D graphics properties for MTO tracks.
 
-            * - :py:class:`~IMtoGraphics3DTrackCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrackCollection`
               - MTO 3D Graphics Track List.
 
-            * - :py:class:`~IMtoDefaultGraphics3DTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics3DTrack`
               - Interface for setting 3D graphics properties for default MTO tracks.
 
-            * - :py:class:`~IMtoGraphics3DGlobalTrackOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions`
               - Interface for global 3D graphics MTO track options.
 
-            * - :py:class:`~IMtoGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3D`
               - Interface for MTO 3D graphics properties.
 
-            * - :py:class:`~IMtoTrackPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoTrackPoint`
               - The points defined for the selected track.
 
-            * - :py:class:`~IMtoTrackPointCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection`
               - MTO track point list.
 
-            * - :py:class:`~IMtoTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoTrack`
               - List of MTO tracks with basic information about each.
 
-            * - :py:class:`~IMtoTrackCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoTrackCollection`
               - MTO Track List.
 
-            * - :py:class:`~IMtoDefaultTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoDefaultTrack`
               - Default MTO track.
 
-            * - :py:class:`~IMtoGlobalTrackOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions`
               - Global MTO track options.
 
-            * - :py:class:`~IMtoAnalysisPosition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoAnalysisPosition`
               - MTO position.
 
-            * - :py:class:`~IMtoAnalysisVisibility`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility`
               - MTO Visibility computation.
 
-            * - :py:class:`~IMtoAnalysisFieldOfView`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView`
               - MTO Field Of View computation.
 
-            * - :py:class:`~IMtoAnalysisRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoAnalysisRange`
               - MTO range computation.
 
-            * - :py:class:`~IMtoAnalysis`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMtoAnalysis`
               - MTO spatial state info.
 
-            * - :py:class:`~IMto`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMto`
               - Multi-Track Object (MTO) interface.
 
-            * - :py:class:`~ILineTargetGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILineTargetGraphics`
               - Line Target 2D graphics.
 
-            * - :py:class:`~ILineTargetGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D`
               - Line Target 3D Graphics properties.
 
-            * - :py:class:`~ILineTargetPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILineTargetPoint`
               - Line Target Point interface.
 
-            * - :py:class:`~ILineTargetPointCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILineTargetPointCollection`
               - The collection of points for the line target.
 
-            * - :py:class:`~ILineTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.ILineTarget`
               - Line Target Path properties.
 
-            * - :py:class:`~IChainGraphics2DStatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainGraphics2DStatic`
               - 2D static graphics for a chain.
 
-            * - :py:class:`~IChainGraphics2DAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation`
               - 2D Animation graphics for a chain.
 
-            * - :py:class:`~IChainGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainGraphics`
               - 2D graphics properties of a chain.
 
-            * - :py:class:`~IChainGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainGraphics3D`
               - 3D graphics properties of a chain.
 
-            * - :py:class:`~IAccessEventDetection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessEventDetection`
               - Define properties and methods to configure the event detection strategy used in access computations.
 
-            * - :py:class:`~IAccessSampling`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAccessSampling`
               - Define properties and methods to configure the sampling strategy used in access computations.
 
-            * - :py:class:`~IChainConnectionCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainConnectionCollection`
               - Represents a collection of connections.
 
-            * - :py:class:`~IChainTimePeriodBase`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainTimePeriodBase`
               - Chain time period options.
 
-            * - :py:class:`~IChainUserSpecifiedTimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainUserSpecifiedTimePeriod`
               - User-specified time period for the chain.
 
-            * - :py:class:`~IChainConstraints`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainConstraints`
               - Chain constraints.
 
-            * - :py:class:`~IChainConnection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainConnection`
               - Provide access to a Chain connection.
 
-            * - :py:class:`~IChainOptimalStrandOpts`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts`
               - Chain optimal strand options.
 
-            * - :py:class:`~IChain`
+            * - :py:class:`~ansys.stk.core.stkobjects.IChain`
               - Configuration options for chains.
 
-            * - :py:class:`~ICoverageGraphics2DStatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic`
               - Static 2D graphics display options for the coverage grid.
 
-            * - :py:class:`~ICoverageGraphics2DAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation`
               - 2D animation graphics options for the coverage grid.
 
-            * - :py:class:`~ICoverageGraphics2DProgress`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGraphics2DProgress`
               - Progress graphics for access calculations.
 
-            * - :py:class:`~ICoverageGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGraphics`
               - 2D graphics display options for the coverage grid.
 
-            * - :py:class:`~ICoverageGraphics3DAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGraphics3DAttributes`
               - 3D animation or static graphics options.
 
-            * - :py:class:`~ICoverageGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGraphics3D`
               - 3D graphics options for the coverage grid.
 
-            * - :py:class:`~ICoverageSelectedGridPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageSelectedGridPoint`
               - Represents a point selected with the grid inspector.
 
-            * - :py:class:`~ICoverageGridPointSelection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection`
               - Represents a set of coverage grid points.
 
-            * - :py:class:`~ICoverageGridInspector`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGridInspector`
               - Provide access to the Coverage Definition grid inspector properties.
 
-            * - :py:class:`~ICoverageRegionFilesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageRegionFilesCollection`
               - Region Files.
 
-            * - :py:class:`~ICoverageAreaTargetsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection`
               - Area Targets.
 
-            * - :py:class:`~ICoveragePointFileListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoveragePointFileListCollection`
               - Point file list collection.
 
-            * - :py:class:`~ICoverageBounds`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBounds`
               - Base interface for IAgCvBoundsCustom, IAgCvBoundsGlobal, IAgCvBoundsLat, IAgCvBoundsLatLines, IAgCvBoundsLonLines, IAgCvBoundsCustomBoundary.
 
-            * - :py:class:`~ICoverageBoundsCustomBoundary`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomBoundary`
               - Custom Boundary.
 
-            * - :py:class:`~ICoverageBoundsCustomRegions`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions`
               - Custom Regions.
 
-            * - :py:class:`~ICoverageBoundsGlobal`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBoundsGlobal`
               - Global: grid covering the entire globe.
 
-            * - :py:class:`~ICoverageBoundsLat`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBoundsLat`
               - Latitude Bounds: create a grid between user-specified Minimum and Maximum Latitude boundaries.
 
-            * - :py:class:`~ICoverageBoundsLatLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLine`
               - Latitude Line: Create a set of points along a single latitude line, useful when the coverage is only expected to vary with longitude.
 
-            * - :py:class:`~ICoverageBoundsLonLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBoundsLonLine`
               - Longitude Line:  Create a set of points along a single meridian, useful when the coverage is only expected to vary with latitude.
 
-            * - :py:class:`~ICoverageBoundsLatLonRegion`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion`
               - LatLon Region: create a region between user-specified Minimum and Maximum Latitude and Longitude boundaries.
 
-            * - :py:class:`~ICoverageResolution`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageResolution`
               - Base interface for IAgCvResolutionArea, IAgCvResolutionDistance and IAgCvResolutionLatLon, used to define coverage resolution (spacing between grid points).
 
-            * - :py:class:`~ICoverageResolutionArea`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageResolutionArea`
               - Area: Define the location of grid coordinates by using the specified area to determine a latitude/longitude spacing scheme at the equator.
 
-            * - :py:class:`~ICoverageResolutionDistance`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageResolutionDistance`
               - Distance: Define the location of the grid coordinates by using the specified distance to determine a latitude/longitude spacing scheme at the equator.
 
-            * - :py:class:`~ICoverageResolutionLatLon`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageResolutionLatLon`
               - Lat/Lon: Determine the location of grid coordinates by specifying a latitude/longitude resolution value.
 
-            * - :py:class:`~ICoverageGrid`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageGrid`
               - Grid Definition and resolution.
 
-            * - :py:class:`~ICoveragePointDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoveragePointDefinition`
               - Point Definition: methods and parameters for specifying the location of points on the coverage grid.
 
-            * - :py:class:`~ICoverageAssetListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageAssetListElement`
               - Coverage asset.
 
-            * - :py:class:`~ICoverageAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageAdvanced`
               - Advanced Properties.
 
-            * - :py:class:`~ICoverageInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageInterval`
               - Coverage interval: the time period over which coverage is computed.
 
-            * - :py:class:`~ICoverageDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.ICoverageDefinition`
               - Coverage definition properties.
 
-            * - :py:class:`~IFigureOfMeritGraphics3DLegendWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow`
               - 3D graphics contours legend.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DRampColor`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRampColor`
               - Color ramp method for contours: select start and end colors to define spectrum segment.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DLevelAttributesElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesElement`
               - 2D graphics attributes of contour levels.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DLevelAttributesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesCollection`
               - Level Attributes.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DPositionOnMap`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DPositionOnMap`
               - Coordinates of contour legend in pixels on 2D map.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DLegendWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow`
               - Properties of contour legend on 2D map.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DColorOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions`
               - Color options for contour legend.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DTextOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions`
               - Text display options for contour legend.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DRangeColorOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions`
               - Range color options for contour legend.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DLegend`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend`
               - Contour legend properties.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours`
               - Coverage contours.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes`
               - Figure of Merit 2D graphics properties.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DContoursAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContoursAnimation`
               - Animation contour properties.
 
-            * - :py:class:`~IFigureOfMeritGraphics2DAttributesAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributesAnimation`
               - Animation graphics for a Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritGraphics3DAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes`
               - 3D static graphics properties for a Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D`
               - Figure of Merit 3D graphics.
 
-            * - :py:class:`~IFigureOfMeritDefinitionScalarCalculation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation`
               - Figure of Merit using an Analysis Workbench scalar calculation component as the metric.
 
-            * - :py:class:`~IFigureOfMeritGridInspector`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector`
               - Provide access to the FOM grid inspector properties.
 
-            * - :py:class:`~IFigureOfMeritNavigationAccuracyMethod`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethod`
               - Navigation Accuracy Figure of Merit type.
 
-            * - :py:class:`~IFigureOfMeritNavigationAccuracyMethodElevationAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodElevationAngle`
               - Elevation Angle method for uncertainty in range measurements for the Navigation Accuracy Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritNavigationAccuracyMethodConstant`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodConstant`
               - Constant Value method for uncertainty in range measurements for the Navigation Accuracy Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritAssetListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement`
               - Asset list item (for Navigation Accuracy FOM).
 
-            * - :py:class:`~IFigureOfMeritAssetListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection`
               - List of assets available for specifying range uncertainty (for Navigation Accuracy FOM).
 
-            * - :py:class:`~IFigureOfMeritUncertainties`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritUncertainties`
               - Receiver range uncertainty (for Navigation Accuracy FOM).
 
-            * - :py:class:`~IFigureOfMeritSatisfaction`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction`
               - Satisfaction properties for a Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritDefinitionData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
               - IAgFmDefinitionData.
 
-            * - :py:class:`~IFigureOfMeritDefinitionDataMinMax`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax`
               - IAgFmDefDataMinMax.
 
-            * - :py:class:`~IFigureOfMeritDefinitionDataPercentLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataPercentLevel`
               - Specified percent level for the 'percent below' Navigation Accuracy compute option.
 
-            * - :py:class:`~IFigureOfMeritDefinitionDataMinAssets`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinAssets`
               - Minimum number of assets.
 
-            * - :py:class:`~IFigureOfMeritDefinitionDataBestN`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN`
               - Navigation accuracy based on best N satellites.
 
-            * - :py:class:`~IFigureOfMeritDefinitionDataBest4`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4`
               - Navigation accuracy based on best four satellites.
 
-            * - :py:class:`~IFigureOfMeritDefinitionResponseTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime`
               - Response Time Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritDefinitionRevisitTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionRevisitTime`
               - Revisit Time Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritDefinitionSimpleCoverage`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSimpleCoverage`
               - Simple Coverage Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritDefinitionTimeAverageGap`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionTimeAverageGap`
               - Time Average Gap Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritDefinitionDilutionOfPrecision`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision`
               - Dilution Of Precision Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritDefinitionNavigationAccuracy`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionNavigationAccuracy`
               - Navigation Accuracy.
 
-            * - :py:class:`~IFigureOfMeritDefinitionAccessSeparation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessSeparation`
               - Access Separation Figure of Merit.
 
-            * - :py:class:`~IFigureOfMerit`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMerit`
               - Figure of Merit properties.
 
-            * - :py:class:`~IFigureOfMeritDefinitionSystemResponseTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemResponseTime`
               - System Response Time Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritDefinitionAgeOfData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAgeOfData`
               - Age of Data Figure of Merit.
 
-            * - :py:class:`~IFigureOfMeritDefinitionSystemAgeOfData`
+            * - :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData`
               - System Age of Data Figure of Merit.
 
-            * - :py:class:`~IConstellationConstraintRestriction`
+            * - :py:class:`~ansys.stk.core.stkobjects.IConstellationConstraintRestriction`
               - A base interface for all interfaces returned by the Restriction property of the IAgCnConstraints interface. It can be cast to IAgCnCnstrObjectRestriction.
 
-            * - :py:class:`~IConstellationConstraintObjectRestriction`
+            * - :py:class:`~ansys.stk.core.stkobjects.IConstellationConstraintObjectRestriction`
               - A restriction interface that is satisfied only when specified number of objects meets the conditions for the chain access.
 
-            * - :py:class:`~IConstellationConstraints`
+            * - :py:class:`~ansys.stk.core.stkobjects.IConstellationConstraints`
               - Constellation Constraints.
 
-            * - :py:class:`~IConstellationGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IConstellationGraphics`
               - Graphics options for constellation.
 
-            * - :py:class:`~IConstellationRouting`
+            * - :py:class:`~ansys.stk.core.stkobjects.IConstellationRouting`
               - Routing options for constellation.
 
-            * - :py:class:`~IConstellation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IConstellation`
               - Configuration options for constellations.
 
-            * - :py:class:`~IEventDetectionStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEventDetectionStrategy`
               - Define a base interface for the event detection strategies.
 
-            * - :py:class:`~IEventDetectionNoSubSampling`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEventDetectionNoSubSampling`
               - Define event detection strategy that uses samples only (without sub-sampling).
 
-            * - :py:class:`~IEventDetectionSubSampling`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling`
               - Interface for event detection strategy involving subsampling.
 
-            * - :py:class:`~ISamplingMethodStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISamplingMethodStrategy`
               - Define a base interface for the sampling method strategies.
 
-            * - :py:class:`~ISamplingMethodAdaptive`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISamplingMethodAdaptive`
               - Define an adaptive sampling method.
 
-            * - :py:class:`~ISamplingMethodFixedStep`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISamplingMethodFixedStep`
               - Define a fixed time-step sampling method.
 
-            * - :py:class:`~ISpaceEnvironmentRadEnergyMethodSpecify`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyMethodSpecify`
               - Customized energy lists for protons and electrons.
 
-            * - :py:class:`~ISpaceEnvironmentRadEnergyValues`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues`
               - Energy values for computing electron and proton flux.
 
-            * - :py:class:`~ISpaceEnvironmentRadiationEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment`
               - Radiation environment settings.
 
-            * - :py:class:`~ISpaceEnvironmentMagnitudeFieldGraphics2D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D`
               - Graphics settings for showing magnetic field.
 
-            * - :py:class:`~ISpaceEnvironmentScenarioExtGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentScenarioExtGraphics3D`
               - Graphics settings for space environment.
 
-            * - :py:class:`~ISpaceEnvironmentSAAContour`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour`
               - SAA Contour settings.
 
-            * - :py:class:`~IVehicleSpaceEnvironmentMagneticField`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField`
               - Magnetic field model.
 
-            * - :py:class:`~IVehicleSpaceEnvironmentVehTemperature`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature`
               - Vehicle temperature model.
 
-            * - :py:class:`~IVehicleSpaceEnvironmentParticleFlux`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux`
               - Particle Flux model.
 
-            * - :py:class:`~IVehicleSpaceEnvironmentRadDoseRateElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement`
               - Dose rate interface.
 
-            * - :py:class:`~IVehicleSpaceEnvironmentRadDoseRateCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateCollection`
               - The collection holds dose rate elements computed for each shielding thickness.
 
-            * - :py:class:`~IVehicleSpaceEnvironmentRadiation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation`
               - Radiation model.
 
-            * - :py:class:`~IVehicleSpaceEnvironmentMagnitudeFieldLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine`
               - Graphics settings for showing magnetic field line.
 
-            * - :py:class:`~IVehicleSpaceEnvironmentGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentGraphics`
               - Graphics settings for space environment.
 
-            * - :py:class:`~IStkPreferencesVDF`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkPreferencesVDF`
               - VDF Load/Save settings.
 
-            * - :py:class:`~IStkPreferencesConnect`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkPreferencesConnect`
               - Connect settings.
 
-            * - :py:class:`~IStkPreferencesPythonPlugins`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins`
               - Python plugin settings.
 
-            * - :py:class:`~IPathCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPathCollection`
               - Collection to add and remove paths.
 
-            * - :py:class:`~IVehicleAttitudeMaximumSlewRate`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate`
               - Define the maximum slew rate by entering a maximum overall magnitude. You can constrain the slew rate in specific directions by selecting one or more Per Axis rates and defining separate maximum rates for those axes.
 
-            * - :py:class:`~IVehicleAttitudeMaximumSlewAcceleration`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration`
               - Define the maximum slew acceleration by entering maximum overall magnitude. You can constrain the slew acceleration in specific directions by selecting one or more Per Axis rates and defining separate maximum rates for those axes.
 
-            * - :py:class:`~IVehicleAttitudeSlewBase`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
               - Represents an attitude slew base type.
 
-            * - :py:class:`~IVehicleAttitudeSlewConstrained`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained`
               - Constrained slew mode.
 
-            * - :py:class:`~IVehicleAttitudeSlewFixedRate`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate`
               - Fixed Rate slew.
 
-            * - :py:class:`~IVehicleAttitudeSlewFixedTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedTime`
               - Fixed Time slew.
 
-            * - :py:class:`~IVmGridDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGridDefinition`
               - Base interface IAgVmGridDefinition. IAgVmGridSpatialCalculation and IAgVmExternalFile implement this interface.
 
-            * - :py:class:`~IVmAnalysisInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmAnalysisInterval`
               - IAgVmAnalysisInterval Interface for volume analysis interval.
 
-            * - :py:class:`~IVmAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmAdvanced`
               - IAgVmAdvanced Interface for advanced volumetric options.
 
-            * - :py:class:`~IVmGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3D`
               - IAgVmVO Interface for a volumetric object's 3D Graphics properties.
 
-            * - :py:class:`~IVmGraphics3DGrid`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid`
               - IAgVmVO Interface for a volumetric object's 3D Graphics properties.
 
-            * - :py:class:`~IVmGraphics3DCrossSection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSection`
               - IAgVmVOCrossSection Interface for defining planar cross-sections through the volumetric grid.
 
-            * - :py:class:`~IVmGraphics3DCrossSectionPlaneCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlaneCollection`
               - IAgVmVOCrossSectionPlaneCollection Interface for defining collections of planar cross-sections for the volumetric grid.
 
-            * - :py:class:`~IVmGraphics3DVolume`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DVolume`
               - IAgVmVOVolume Interface for defining volume for volumetric object.
 
-            * - :py:class:`~IVmGraphics3DActiveGridPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints`
               - IAgVmVOActiveGridPoints Interface for defining Active Grid Points for Volumetric Object.
 
-            * - :py:class:`~IVmGraphics3DSpatialCalculationLevels`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels`
               - IAgVmVOSpatialCalculationLevels Interface for defining Spatial Calculation Levels for Volumetric Object.
 
-            * - :py:class:`~IVmGraphics3DSpatialCalculationLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevelCollection`
               - IAgVmVOSpatialCalculationLevelCollection Interface for defining collections of defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
-            * - :py:class:`~IVmGraphics3DLegend`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend`
               - IAgVmVOLegend Interface for defining boundary/fill legend for volumetric object.
 
-            * - :py:class:`~IVmExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmExportTool`
               - The Volumetric Export Tool.
 
-            * - :py:class:`~IVolumetric`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVolumetric`
               - Volumetric properties.
 
-            * - :py:class:`~IVmGridSpatialCalculation`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation`
               - IAgVmGridSpatialCalculation Interface volume grid spatial calculation.
 
-            * - :py:class:`~IVmExternalFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmExternalFile`
               - IAgVmExternalFile Interface for volume external file.
 
-            * - :py:class:`~IVmGraphics3DCrossSectionPlane`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlane`
               - IAgVmVOCrossSectionPlane Interface for defining planar cross-sections through the volumetric grid.
 
-            * - :py:class:`~IVmGraphics3DSpatialCalculationLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel`
               - IAgVmVOSpatialCalculationLevel Interface for defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
-            * - :py:class:`~ISatelliteCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISatelliteCollection`
               - SatelliteCollection properties.
 
-            * - :py:class:`~ISubset`
+            * - :py:class:`~ansys.stk.core.stkobjects.ISubset`
               - Subset properties.
 
-            * - :py:class:`~IAdvCATAvailableObjectCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection`
               - IAgAdvCATAvailableObjectCollection represents available objects.
 
-            * - :py:class:`~IAdvCATChosenObjectCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection`
               - Chosen object collection.
 
-            * - :py:class:`~IAdvCATPreFilters`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdvCATPreFilters`
               - Pre-Filters.
 
-            * - :py:class:`~IAdvCATAdvancedEllipsoid`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid`
               - Advanced ellipsoid properties.
 
-            * - :py:class:`~IAdvCATAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdvCATAdvanced`
               - AdvCAT Advanced properties.
 
-            * - :py:class:`~IAdvCATGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdvCATGraphics3D`
               - AdvCAT VO properties.
 
-            * - :py:class:`~IAdvCAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdvCAT`
               - AgAdvCAT properties.
 
-            * - :py:class:`~IAdvCATChosenObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.IAdvCATChosenObject`
               - Chosen object.
 
-            * - :py:class:`~IEOIRShapeObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
               - A shape object interface.
 
-            * - :py:class:`~IEOIRShapeBox`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeBox`
               - A box shape interface.
 
-            * - :py:class:`~IEOIRShapeCone`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCone`
               - A cone shape interface.
 
-            * - :py:class:`~IEOIRShapePlate`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapePlate`
               - A plate shape interface.
 
-            * - :py:class:`~IEOIRShapeSphere`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeSphere`
               - A sphere shape interface.
 
-            * - :py:class:`~IEOIRShapeCoupler`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCoupler`
               - A coupler shape interface.
 
-            * - :py:class:`~IEOIRShapeNone`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeNone`
               - A none shape interface.
 
-            * - :py:class:`~IEOIRShapeGEOComm`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeGEOComm`
               - A GEOComm shape interface.
 
-            * - :py:class:`~IEOIRShapeLEOComm`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeLEOComm`
               - A LEOComm shape interface.
 
-            * - :py:class:`~IEOIRShapeLEOImaging`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeLEOImaging`
               - A LEOImaging shape interface.
 
-            * - :py:class:`~IEOIRShapeCustomMesh`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCustomMesh`
               - A custom mesh shape interface.
 
-            * - :py:class:`~IEOIRShapeTargetSignature`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeTargetSignature`
               - A target signature shape interface.
 
-            * - :py:class:`~IEOIRStagePlume`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRStagePlume`
               - A stage interface.
 
-            * - :py:class:`~IEOIRShape`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShape`
               - A shape interface.
 
-            * - :py:class:`~IEOIRStage`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRStage`
               - A stage interface.
 
-            * - :py:class:`~IEOIRShapeCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCollection`
               - IAgEOIRShapeCollection Interface.
 
-            * - :py:class:`~IEOIRMaterialElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRMaterialElement`
               - A material element interface.
 
-            * - :py:class:`~IEOIRMaterialElementCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRMaterialElementCollection`
               - IAgEOIRMaterialElementCollection Interface.
 
-            * - :py:class:`~IMissileEOIR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IMissileEOIR`
               - EOIR interface.
 
-            * - :py:class:`~IVehicleEOIR`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVehicleEOIR`
               - Property used to access the IAgEOIR interface.
 
-            * - :py:class:`~IEOIRShapeCylinder`
+            * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCylinder`
               - A cylinder shape interface.
 
-            * - :py:class:`~IStkObjectChangedEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectChangedEventArgs`
               - Contains information about the changes in the object's state.
 
-            * - :py:class:`~IScenarioBeforeSaveEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs`
               - Contains information about the changes in the object's state.
 
-            * - :py:class:`~IPctCmpltEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs`
               - Represents a structure used by the Percent Complete events.
 
-            * - :py:class:`~IStkObjectPreDeleteEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectPreDeleteEventArgs`
               - Arguments for the OnStkObjectPreDelete event.
 
-            * - :py:class:`~IStkObjectCutCopyPasteEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs`
               - Arguments for the OnStkObjectPreCut, OnStkObjectCopy and OnStkObjectPaste events.
 
     
@@ -3616,3529 +3616,3529 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~StkObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkObject`
               - Represents a generic STK object.
 
-            * - :py:class:`~StkObjectRoot`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot`
               - Top-level object in the Object Model Hierarchy.
 
-            * - :py:class:`~LevelAttribute`
+            * - :py:class:`~ansys.stk.core.stkobjects.LevelAttribute`
               - Properties defining display of contour levels.
 
-            * - :py:class:`~LevelAttributeCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.LevelAttributeCollection`
               - Collection of properties defining display of contour levels.
 
-            * - :py:class:`~BasicAzElMask`
+            * - :py:class:`~ansys.stk.core.stkobjects.BasicAzElMask`
               - The Azimuth-Elevation Mask class.
 
-            * - :py:class:`~FacilityGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.FacilityGraphics`
               - 2D Graphics properties of a Facility.
 
-            * - :py:class:`~PlaceGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlaceGraphics`
               - 2D Graphics properties of a Place.
 
-            * - :py:class:`~Graphics2DRangeContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics2DRangeContours`
               - Class defining 2D Graphics range contours: circles comprised of points at a given distance from an object and at the same altitude as that object.
 
-            * - :py:class:`~AccessConstraint`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraint`
               - Class defining access constraints.
 
-            * - :py:class:`~AccessConstraintCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintCollection`
               - Collection of access constraints.
 
-            * - :py:class:`~Graphics3DRangeContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DRangeContours`
               - Class defining 3D Graphics range contours: circles comprised of points at a given distance from an object and at the same altitude as that object.
 
-            * - :py:class:`~Graphics3DOffsetRotate`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DOffsetRotate`
               - Class defining rotation in the object body frame's X, Y and Z directions.
 
-            * - :py:class:`~Graphics3DOffsetTransformation`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DOffsetTransformation`
               - Class defining model translation in the object body frame's X, Y and Z directions.
 
-            * - :py:class:`~Graphics3DOffsetAttach`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DOffsetAttach`
               - Class defining attach points for the attachment of lines to objects.
 
-            * - :py:class:`~Graphics3DOffsetLabel`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DOffsetLabel`
               - Class defining the offset of the position of an object label in the 3D Graphics window.
 
-            * - :py:class:`~Graphics3DOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DOffset`
               - Class defining 3D offset attributes.
 
-            * - :py:class:`~Graphics3DMarkerShape`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DMarkerShape`
               - Class defining the marker type that represents the object in the 3D Graphics window.
 
-            * - :py:class:`~Graphics3DMarkerFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DMarkerFile`
               - Class defining 3D marker file attributes.
 
-            * - :py:class:`~Graphics3DMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DMarker`
               - Class defining the 3D marker to represent an object at a specified threshold.
 
-            * - :py:class:`~Graphics3DDetailThreshold`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DDetailThreshold`
               - Class defining detail thresholds as an aid for improving performance when viewing in 3D.
 
-            * - :py:class:`~Graphics3DModelItem`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelItem`
               - Class defining selection and display of 3D models.
 
-            * - :py:class:`~Graphics3DModelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelCollection`
               - Collection representing 3D model list.
 
-            * - :py:class:`~LabelNote`
+            * - :py:class:`~ansys.stk.core.stkobjects.LabelNote`
               - Class defining label notes.
 
-            * - :py:class:`~LabelNoteCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.LabelNoteCollection`
               - Collection representing label notes list.
 
-            * - :py:class:`~Graphics3DVector`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DVector`
               - Class defining 3D vectors.
 
-            * - :py:class:`~FacilityGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.FacilityGraphics3D`
               - 3D Graphics properties of a Facility.
 
-            * - :py:class:`~PlaceGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlaceGraphics3D`
               - 3D Graphics properties of a Place.
 
-            * - :py:class:`~TerrainNormSlopeAzimuth`
+            * - :py:class:`~ansys.stk.core.stkobjects.TerrainNormSlopeAzimuth`
               - Class defining Slope/Azimuth data for the TerrainNormal.
 
-            * - :py:class:`~IntervalCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.IntervalCollection`
               - Class defining display intervals.
 
-            * - :py:class:`~ImmutableIntervalCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ImmutableIntervalCollection`
               - Read-only collection of intervals.
 
-            * - :py:class:`~DuringAccess`
+            * - :py:class:`~ansys.stk.core.stkobjects.DuringAccess`
               - Class defining display intervals in terms of access to objects.
 
-            * - :py:class:`~DisplayTimesTimeComponent`
+            * - :py:class:`~ansys.stk.core.stkobjects.DisplayTimesTimeComponent`
               - Provide methods to configure the display times using Timeline API components.
 
-            * - :py:class:`~StarGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.StarGraphics3D`
               - Class defining 3D Graphics properties of a Star.
 
-            * - :py:class:`~StarGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.StarGraphics`
               - Class defining 2D Graphics properties of a Star.
 
-            * - :py:class:`~PlanetGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlanetGraphics3D`
               - Class defining 3D Graphics properties of a Planet.
 
-            * - :py:class:`~PlanetGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlanetGraphics`
               - Class defining 2D Graphics properties of a Planet.
 
-            * - :py:class:`~AreaTypePattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.AreaTypePattern`
               - Class defining coordinates of the AreaTarget AreaType.
 
-            * - :py:class:`~AreaTypePatternCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AreaTypePatternCollection`
               - Class defining the list of coordinates of the AreaTarget AreaType.
 
-            * - :py:class:`~AreaTypeEllipse`
+            * - :py:class:`~ansys.stk.core.stkobjects.AreaTypeEllipse`
               - Class defining the AreaTarget AreaType in terms of MajorAxis, MinorAxis and Bearing.
 
-            * - :py:class:`~AreaTargetGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D`
               - Class to define the 3D attributes of an AreaTarget.
 
-            * - :py:class:`~AreaTargetGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.AreaTargetGraphics`
               - Class to define the 2D attributes of an AreaTarget.
 
-            * - :py:class:`~Graphics3DAzElMask`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DAzElMask`
               - Class to define display labels and adjust the translucency of the 3D azimuth-elevation mask for a facility, place or target.
 
-            * - :py:class:`~Graphics3DModelArtic`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelArtic`
               - Class defining 3D model articulations.
 
-            * - :py:class:`~Graphics3DModelTransformationCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection`
               - Collection of available transformations in a model.
 
-            * - :py:class:`~Graphics3DModelTransformation`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation`
               - Class to modify transformation values.
 
-            * - :py:class:`~Graphics3DModelFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelFile`
               - Class defining 3D model file.
 
-            * - :py:class:`~PlanetPositionFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlanetPositionFile`
               - Class defining the planetary ephemeris file.
 
-            * - :py:class:`~PlanetPositionCentralBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody`
               - Class defining central body used to define Planet object.
 
-            * - :py:class:`~PlanetOrbitDisplayTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlanetOrbitDisplayTime`
               - Class defining display time of a planet's orbit.
 
-            * - :py:class:`~Scenario`
+            * - :py:class:`~ansys.stk.core.stkobjects.Scenario`
               - Class defining the Scenario object.
 
-            * - :py:class:`~ScenarioAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioAnimation`
               - Class defining the animation properties of a Scenario.
 
-            * - :py:class:`~ScenarioEarthData`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioEarthData`
               - Class defining the Earth Orientation Parameters of a Scenario.
 
-            * - :py:class:`~ScenarioGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioGraphics`
               - Class defining the 2D Graphics properties of a Scenario.
 
-            * - :py:class:`~TerrainCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.TerrainCollection`
               - Collection of terrain data files available in the Scenario for visualization and analysis.
 
-            * - :py:class:`~Terrain`
+            * - :py:class:`~ansys.stk.core.stkobjects.Terrain`
               - Class defining terrain data for a Scenario.
 
-            * - :py:class:`~TilesetCollection3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.TilesetCollection3D`
               - Collection of 3DTilesets available in the Scenario for analysis.
 
-            * - :py:class:`~Tileset3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.Tileset3D`
               - Class defining Analytical 3DTileset for a Scenario.
 
-            * - :py:class:`~ScenarioGenDatabaseCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioGenDatabaseCollection`
               - Collection of Scenario database settings.
 
-            * - :py:class:`~ScenarioGenDatabase`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioGenDatabase`
               - Class defining database settings of the Scenario.
 
-            * - :py:class:`~ScenarioGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioGraphics3D`
               - Class defining 3D Graphics properties of the Scenario.
 
-            * - :py:class:`~SensorComplexConicPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorComplexConicPattern`
               - Class defining the complex conic pattern for a Sensor.
 
-            * - :py:class:`~SensorEOIRPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRPattern`
               - Class defining the EOIR pattern for a Sensor.
 
-            * - :py:class:`~SensorUnknownPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorUnknownPattern`
               - Unsupported/unknown sensor pattern.
 
-            * - :py:class:`~SensorEOIRBandCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandCollection`
               - Class defining the band collection for an EOIR Sensor.
 
-            * - :py:class:`~SensorEOIRBand`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBand`
               - Class defining an EOIR band.
 
-            * - :py:class:`~SensorEOIRRadiometricPair`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRRadiometricPair`
               - Class defining an Sensitivities item.
 
-            * - :py:class:`~SensorEOIRSensitivityCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection`
               - Class defining the Sensitivities collection for an EOIR Sensor.
 
-            * - :py:class:`~SensorEOIRSaturationCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRSaturationCollection`
               - Class defining the Saturations collection for an EOIR Sensor.
 
-            * - :py:class:`~SensorCustomPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorCustomPattern`
               - Class defining the custom pattern for a Sensor.
 
-            * - :py:class:`~SensorHalfPowerPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorHalfPowerPattern`
               - Class defining the half-power pattern for a Sensor.
 
-            * - :py:class:`~SensorRectangularPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorRectangularPattern`
               - Class defining the rectangular pattern for a Sensor.
 
-            * - :py:class:`~SensorSARPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorSARPattern`
               - Class defining the Synthetic Aperture Radar (SAR) pattern for a Sensor.
 
-            * - :py:class:`~SensorSimpleConicPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorSimpleConicPattern`
               - Class defining the simple conic pattern for a Sensor.
 
-            * - :py:class:`~SensorPointingFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingFixed`
               - Class defining the fixed pointing type for a Sensor.
 
-            * - :py:class:`~SensorPointingFixedAxes`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingFixedAxes`
               - Class defining the fixed in axes pointing type for a Sensor.
 
-            * - :py:class:`~SensorPointing3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointing3DModel`
               - Class defining the 3D model pointing type for a Sensor.
 
-            * - :py:class:`~SensorPointingSpinning`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingSpinning`
               - Class defining the spinning pointing type for a Sensor.
 
-            * - :py:class:`~SensorPointingTargeted`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingTargeted`
               - Class defining the targeted pointing type for a Sensor.
 
-            * - :py:class:`~SensorPointingExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingExternal`
               - Class defining the external file-defined pointing type for a Sensor.
 
-            * - :py:class:`~SensorPointingTargetedBoresightTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingTargetedBoresightTrack`
               - Class defining a targeted sensor with tracking boresight.
 
-            * - :py:class:`~SensorPointingTargetedBoresightFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingTargetedBoresightFixed`
               - Class defining a targeted Sensor with fixed boresight.
 
-            * - :py:class:`~SensorTargetCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorTargetCollection`
               - Class defining the target collection for a target-pointing Sensor.
 
-            * - :py:class:`~SensorTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorTarget`
               - Class defining a Sensor target.
 
-            * - :py:class:`~AccessTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessTime`
               - Class for defining Sensor target times in terms of access.
 
-            * - :py:class:`~ScheduleTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScheduleTime`
               - Class for defining Sensor target times in terms of a specified schedule.
 
-            * - :py:class:`~SensorAzElMaskFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorAzElMaskFile`
               - Class to define a Sensor's Azimuth-Elevation mask.
 
-            * - :py:class:`~SensorGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics`
               - Class defining the 2D Graphics properties of a Sensor.
 
-            * - :py:class:`~SensorProjection`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorProjection`
               - Class defining the projection properties of a Sensor.
 
-            * - :py:class:`~SensorProjectionDisplayDistance`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorProjectionDisplayDistance`
               - Class defining projection altitude options for a sensor.
 
-            * - :py:class:`~SensorGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3D`
               - Class defining 3D Graphics properties of a Sensor.
 
-            * - :py:class:`~SensorGraphics3DPulse`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DPulse`
               - Class defining 3D pulse properties of a Sensor.
 
-            * - :py:class:`~SensorGraphics3DOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset`
               - Class defining 3D Graphics vertex offset properties of a Sensor.
 
-            * - :py:class:`~AccessConstraintTimeSlipRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintTimeSlipRange`
               - Class for controlling the use the Time Slip constraint for a missile or launch vehicle, used with the Close Approach Tool.
 
-            * - :py:class:`~AccessConstraintBackground`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintBackground`
               - Class related to the Background constraint, which constrains access periods based on whether the Earth is or is not in the background.
 
-            * - :py:class:`~AccessConstraintGroundTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintGroundTrack`
               - Class related to the Ground Track constraint, which constrains access to the Ascending or Descending side of the Satellite's ground track.
 
-            * - :py:class:`~AccessConstraintMinMax`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintMinMax`
               - Class related to defining constraints in terms of minimum and/or maximum values.
 
-            * - :py:class:`~AccessConstraintCrdnConstellation`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintCrdnConstellation`
               - Class related to Vector constraints.
 
-            * - :py:class:`~AccessConstraintCentralBodyObstruction`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction`
               - Class defining constraints in terms of obstruction by a specified central body.
 
-            * - :py:class:`~AccessConstraintAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintAngle`
               - Class defining Angle constraints, limiting access to intervals during which the selected angle is within the specified minimum and maximum limits.
 
-            * - :py:class:`~AccessConstraintCondition`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintCondition`
               - Class defining access constraints in terms of lighting conditions.
 
-            * - :py:class:`~AccessTimeCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessTimeCollection`
               - Collection of access times.
 
-            * - :py:class:`~ScheduleTimeCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScheduleTimeCollection`
               - Collection of user-scheduled access times.
 
-            * - :py:class:`~AccessConstraintIntervals`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintIntervals`
               - Class defining the Intervals constraint.
 
-            * - :py:class:`~AccessConstraintObjExAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle`
               - Class defining the Object Exclusion Angle constraint.
 
-            * - :py:class:`~AccessConstraintZone`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintZone`
               - Class defining the Exclusion Zone constraint.
 
-            * - :py:class:`~AccessConstraintThirdBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody`
               - Do not use this class, as it is deprecated. Use AgAccessCnstrCbObstruction instead. Class defining Central Body Obstruction constraints.
 
-            * - :py:class:`~AccessConstraintExclZonesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection`
               - Collection of Exclusion Zones used in Exclusion Zone constraint.
 
-            * - :py:class:`~AccessConstraintGrazingAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude`
               - Class defining the Grazing Altidude constraint.
 
-            * - :py:class:`~SensorPointingGrazingAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingGrazingAltitude`
               - Class defining Grazing Altitude pointing type for a Sensor.
 
-            * - :py:class:`~AreaTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.AreaTarget`
               - Class defining the AreaTarget object.
 
-            * - :py:class:`~Facility`
+            * - :py:class:`~ansys.stk.core.stkobjects.Facility`
               - Class defining the Facility object.
 
-            * - :py:class:`~Target`
+            * - :py:class:`~ansys.stk.core.stkobjects.Target`
               - Class defining the Target object.
 
-            * - :py:class:`~Place`
+            * - :py:class:`~ansys.stk.core.stkobjects.Place`
               - Class defining the Place object.
 
-            * - :py:class:`~Planet`
+            * - :py:class:`~ansys.stk.core.stkobjects.Planet`
               - Class defining the Planet object.
 
-            * - :py:class:`~Sensor`
+            * - :py:class:`~ansys.stk.core.stkobjects.Sensor`
               - Class defining the Sensor class.
 
-            * - :py:class:`~SensorCommonTasks`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorCommonTasks`
               - Class defining the Sensor Common class.
 
-            * - :py:class:`~AreaTargetCommonTasks`
+            * - :py:class:`~ansys.stk.core.stkobjects.AreaTargetCommonTasks`
               - Class defining the Area Target Common class.
 
-            * - :py:class:`~PlanetCommonTasks`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlanetCommonTasks`
               - Class defining the Planet Common class.
 
-            * - :py:class:`~Swath`
+            * - :py:class:`~ansys.stk.core.stkobjects.Swath`
               - Class defining Swath properties.
 
-            * - :py:class:`~Star`
+            * - :py:class:`~ansys.stk.core.stkobjects.Star`
               - Class defining the Star object.
 
-            * - :py:class:`~DataProviderCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderCollection`
               - Collection of data providers attached to the current STK object.
 
-            * - :py:class:`~DataProviderResultTimeArrayElements`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements`
               - Provide a array result of element values for each time array value.
 
-            * - :py:class:`~DataProviderResult`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResult`
               - Results returned by the data provider.
 
-            * - :py:class:`~DataProviderResultSubSectionCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultSubSectionCollection`
               - Represents a collection of subsections returned by the data providers.
 
-            * - :py:class:`~DataProviderResultSubSection`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultSubSection`
               - Represents a subsection in the data returned by the data providers.
 
-            * - :py:class:`~DataProviderResultIntervalCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultIntervalCollection`
               - Represents a collection of intervals returned by the data providers.
 
-            * - :py:class:`~DataProviderResultInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultInterval`
               - Represents a interval in the collection of intervals returned by the data providers.
 
-            * - :py:class:`~DataProviderResultDataSetCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection`
               - Represents a collection of datasets in the interval returned by the data providers.
 
-            * - :py:class:`~DataProviderResultDataSet`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultDataSet`
               - Represents a dataset in the collection of datasets returned by the data providers.
 
-            * - :py:class:`~DataProviderFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderFixed`
               - Support for fixed data providers (i.e. non time-dependent like Facility position).
 
-            * - :py:class:`~DataProviderTimeVarying`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderTimeVarying`
               - Support for time-dependent data providers (e.g. Satellite position).
 
-            * - :py:class:`~DataProviderInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderInterval`
               - Support for interval data providers (e.g. Facility lighting times).
 
-            * - :py:class:`~DataProviderResultTextMessage`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage`
               - Notification or failure messages returned by the data provider.
 
-            * - :py:class:`~DataProviderGroup`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderGroup`
               - Group of sub data providers (e.g. ``Cartesian Position`` on Satellites).
 
-            * - :py:class:`~DataProviderElements`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderElements`
               - Elements returned by the data provider (e.g. ``x``, ``y``, ``z``).
 
-            * - :py:class:`~DataProviderElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderElement`
               - Class defining a data provider element.
 
-            * - :py:class:`~DataProviders`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviders`
               - Class defining data providers.
 
-            * - :py:class:`~StkAccess`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkAccess`
               - Class defining Access.
 
-            * - :py:class:`~StkAccessGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkAccessGraphics`
               - Class defining 2D Graphics for Access.
 
-            * - :py:class:`~StkAccessAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkAccessAdvanced`
               - Class defining advanced Access settings.
 
-            * - :py:class:`~AccessTimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessTimePeriod`
               - Allow configuring the object's access interval.
 
-            * - :py:class:`~AccessTimeEventIntervals`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessTimeEventIntervals`
               - Allow configuring the access time period using a list of timeline intervals.
 
-            * - :py:class:`~StkObjectCoverage`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectCoverage`
               - Class defining object coverage.
 
-            * - :py:class:`~ObjectCoverageFigureOfMerit`
+            * - :py:class:`~ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit`
               - Class defining the fom on the coverage object tool.
 
-            * - :py:class:`~Scenario3dFont`
+            * - :py:class:`~ansys.stk.core.stkobjects.Scenario3dFont`
               - Font properties for Scenario 3D Graphics.
 
-            * - :py:class:`~Graphics3DBorderWall`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DBorderWall`
               - Class defining 3D Graphics border wall properties.
 
-            * - :py:class:`~Graphics3DReferenceAnalysisWorkbenchCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DReferenceAnalysisWorkbenchCollection`
               - Collection of reference vectors, axes, points, planes and angles (3D Graphics, Vector Geometry Tool).
 
-            * - :py:class:`~Graphics3DReferenceVectorGeometryToolVector`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolVector`
               - Class defining a reference vector (3D Graphics, Vector Geometry Tool).
 
-            * - :py:class:`~Graphics3DReferenceVectorGeometryToolAxes`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolAxes`
               - Class defining a set of reference axes (3D Graphics, Vector Geometry Tool).
 
-            * - :py:class:`~Graphics3DReferenceVectorGeometryToolAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolAngle`
               - Class defining a reference angle (3D Graphics, Vector Geometry Tool).
 
-            * - :py:class:`~Graphics3DReferenceVectorGeometryToolPlane`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolPlane`
               - Class defining a reference plane (3D Graphics, Vector Geometry Tool).
 
-            * - :py:class:`~Graphics3DReferenceVectorGeometryToolPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolPoint`
               - Class defining a reference point (3D Graphics, Vector Geometry Tool).
 
-            * - :py:class:`~TargetGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetGraphics`
               - Class defining 2D Graphics for a Target object.
 
-            * - :py:class:`~TargetGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetGraphics3D`
               - Class defining 3D Graphics for a Target object.
 
-            * - :py:class:`~PointTargetGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.PointTargetGraphics3DModel`
               - Point properties for a 3D model.
 
-            * - :py:class:`~ObjectLinkCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ObjectLinkCollection`
               - Collection of names of STK objects that are available in the current Scenario.
 
-            * - :py:class:`~ObjectLink`
+            * - :py:class:`~ansys.stk.core.stkobjects.ObjectLink`
               - Class defining name of an STK object.
 
-            * - :py:class:`~LinkToObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.LinkToObject`
               - Class defining a link to an STK object.
 
-            * - :py:class:`~LLAPosition`
+            * - :py:class:`~ansys.stk.core.stkobjects.LLAPosition`
               - Class defining position defined in terms of latitude, longitude and altitude (LLA).
 
-            * - :py:class:`~Graphics3DDataDisplayElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement`
               - Class defining 3D Graphics data display element.
 
-            * - :py:class:`~Graphics3DDataDisplayCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection`
               - Collection of 3D Graphics data display text.
 
-            * - :py:class:`~VehicleInitialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleInitialState`
               - Class defining the initial state of the vehicle.
 
-            * - :py:class:`~VehicleHPOPCentralBodyGravity`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity`
               - Class defining Central Body Gravity options for the High Precision Orbit Propagator (HPOP).
 
-            * - :py:class:`~VehicleRadiationPressure`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRadiationPressure`
               - Class defining solar radiation pressure on a vehicle.
 
-            * - :py:class:`~VehicleHPOPSolarRadiationPressure`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressure`
               - Class defining HPOP solar radiation pressure properties.
 
-            * - :py:class:`~VehicleSolarFluxGeoMagnitudeEnterManually`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSolarFluxGeoMagnitudeEnterManually`
               - Class defining the option to enter a vehicle's solar flux and/or GeoMag properties manually, depending on the selected atmospheric density model.
 
-            * - :py:class:`~VehicleSolarFluxGeoMagnitudeUseFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSolarFluxGeoMagnitudeUseFile`
               - Class defining the option to load a vehicle's solar flux and/or GeoMag properties from an external file.
 
-            * - :py:class:`~VehicleHPOPForceModelDrag`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag`
               - Class defining the HPOP atmospheric drag model.
 
-            * - :py:class:`~VehicleHPOPForceModelDragOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDragOptions`
               - Class defining HPOP atmospheric drag options.
 
-            * - :py:class:`~VehicleHPOPSolarRadiationPressureOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions`
               - Class defining HPOP solar radiation pressure options.
 
-            * - :py:class:`~VehicleStatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleStatic`
               - Class defining static force model options for the HPOP propagator.
 
-            * - :py:class:`~VehicleSolidTides`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSolidTides`
               - Class defining the contribution of solid tides.
 
-            * - :py:class:`~VehicleOceanTides`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleOceanTides`
               - Class defining the contribution of ocean tides.
 
-            * - :py:class:`~VehiclePluginSettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePluginSettings`
               - Class defining force model plugin settings for HPOP.
 
-            * - :py:class:`~VehiclePluginPropagator`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePluginPropagator`
               - Class defining a propagator plugin for HPOP for customization of the accelerations used in the propagation of the satellite trajectory.
 
-            * - :py:class:`~VehicleHPOPForceModelMoreOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions`
               - Class defining additional force model options for HPOP.
 
-            * - :py:class:`~VehicleHPOPForceModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPForceModel`
               - Class defining HPOP force models.
 
-            * - :py:class:`~VehicleStepSizeControl`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleStepSizeControl`
               - Class defining step size control for the HPOP integrator.
 
-            * - :py:class:`~VehicleTimeRegularization`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleTimeRegularization`
               - Class defining time regularization for the HPOP integrator, i.e. integration the orbit with respect to regularized time.
 
-            * - :py:class:`~VehicleInterpolation`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleInterpolation`
               - Class defining interpolation for the HPOP integrator.
 
-            * - :py:class:`~VehicleIntegrator`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleIntegrator`
               - Class defining the HPOP integrator.
 
-            * - :py:class:`~VehicleGravity`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGravity`
               - Class defining gravity modeling options for a vehicle.
 
-            * - :py:class:`~VehiclePositionVelocityElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePositionVelocityElement`
               - Class defining position and velocity elements for HPOP covariance.
 
-            * - :py:class:`~VehiclePositionVelocityCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePositionVelocityCollection`
               - Collection of position and velocity elements for HPOP covariance.
 
-            * - :py:class:`~VehicleCorrelationListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleCorrelationListCollection`
               - Collection representing HPOP covariance matrix.
 
-            * - :py:class:`~VehicleCorrelationListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleCorrelationListElement`
               - Class representing an element of an HPOP covariance matrix.
 
-            * - :py:class:`~VehicleCovariance`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleCovariance`
               - Class defining HPOP covariance.
 
-            * - :py:class:`~VehicleJxInitialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleJxInitialState`
               - Class defining initial state for the J2/4 propagators.
 
-            * - :py:class:`~VehicleLOPCentralBodyGravity`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLOPCentralBodyGravity`
               - Class defining gravity options for the LOP propagator.
 
-            * - :py:class:`~VehicleThirdBodyGravityElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleThirdBodyGravityElement`
               - Class defining third-body gravity options for the LOP propagator.
 
-            * - :py:class:`~VehicleThirdBodyGravityCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleThirdBodyGravityCollection`
               - Collection of third-body gravity options for the LOP propagator.
 
-            * - :py:class:`~VehicleExpDensModelParams`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleExpDensModelParams`
               - Class defining the Exponential atmospheric density model for the LOP propagator.
 
-            * - :py:class:`~VehicleAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAdvanced`
               - Class defining advanced atmospheric density options for the LOP propagator.
 
-            * - :py:class:`~VehicleLOPForceModelDrag`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLOPForceModelDrag`
               - Class defining the atmospheric drag model for the LOP propagator.
 
-            * - :py:class:`~VehicleLOPSolarRadiationPressure`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLOPSolarRadiationPressure`
               - Class defining the solar radiation pressure model for the LOP propagator.
 
-            * - :py:class:`~VehiclePhysicalData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePhysicalData`
               - Class defining physical data for the LOP force model.
 
-            * - :py:class:`~VehicleLOPForceModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLOPForceModel`
               - Class defining the force model for the LOP propagator.
 
-            * - :py:class:`~VehicleSegmentsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSegmentsCollection`
               - Collection of segments for a vehicle.
 
-            * - :py:class:`~VehiclePropagatorHPOP`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorHPOP`
               - Class defining the High Precision Orbit Propagator (HPOP).
 
-            * - :py:class:`~VehiclePropagatorJ2Perturbation`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorJ2Perturbation`
               - Class defining the J2 perturbation propagator.
 
-            * - :py:class:`~VehiclePropagatorJ4Perturbation`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorJ4Perturbation`
               - Class defining the J4 perturbation propagator.
 
-            * - :py:class:`~VehiclePropagatorLOP`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorLOP`
               - Class defining the Long-term Orbit Predictor (LOP).
 
-            * - :py:class:`~VehiclePropagatorSGP4`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorSGP4`
               - Class defining the SGP4 propagator.
 
-            * - :py:class:`~VehiclePropagatorSPICE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorSPICE`
               - Class defining the SPICE propagator.
 
-            * - :py:class:`~VehiclePropagatorStkExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorStkExternal`
               - Class defining the STK External propagator.
 
-            * - :py:class:`~VehiclePropagatorTwoBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorTwoBody`
               - Class defining the two body propagator.
 
-            * - :py:class:`~VehiclePropagatorUserExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorUserExternal`
               - Class defining the user-external propagator.
 
-            * - :py:class:`~VehicleLaunchVehicleInitialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunchVehicleInitialState`
               - Class defining launch vehicle initial state.
 
-            * - :py:class:`~VehiclePropagatorSimpleAscent`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorSimpleAscent`
               - Class defining the simple ascent propagator for a launch vehicle.
 
-            * - :py:class:`~VehicleWaypointsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleWaypointsElement`
               - Class defining a waypoint for a Great Arc vehicle.
 
-            * - :py:class:`~VehicleWaypointsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleWaypointsCollection`
               - Collection of waypoints for a Great Arc vehicle.
 
-            * - :py:class:`~VehicleLaunchLLA`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunchLLA`
               - Class defining geodetic launch latitude, longitude and altitude for a Missile or LaunchVehicle.
 
-            * - :py:class:`~VehicleLaunchLLR`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunchLLR`
               - Class defining geocentric launch latitude, longitude and radius for a Missile or LaunchVehicle.
 
-            * - :py:class:`~VehicleImpactLLA`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleImpactLLA`
               - Class defining geodetic impact latitude, longitude and altitude for a Missile.
 
-            * - :py:class:`~VehicleImpactLLR`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleImpactLLR`
               - Class defining geocentric impact latitude, longitude and radius for a Missile.
 
-            * - :py:class:`~VehicleLaunchControlFixedApogeeAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunchControlFixedApogeeAltitude`
               - Class defining the option to set a Missile's flight parameters by specifying a fixed apogee altitude.
 
-            * - :py:class:`~VehicleLaunchControlFixedDeltaV`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunchControlFixedDeltaV`
               - Class defining the option to set a Missile's flight parameters by specifying a fixed delta V.
 
-            * - :py:class:`~VehicleLaunchControlFixedDeltaVMinEccentricity`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunchControlFixedDeltaVMinEccentricity`
               - Class defining the option to set a Missile's flight parameters by specifying a fixed delta V with minimum eccentricity.
 
-            * - :py:class:`~VehicleLaunchControlFixedTimeOfFlight`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunchControlFixedTimeOfFlight`
               - Class defining the option to set a Missile's flight parameters by specifying a fixed time of flight.
 
-            * - :py:class:`~VehicleImpactLocationLaunchAzEl`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleImpactLocationLaunchAzEl`
               - Class defining the option to use azimuth and elevation to specify the Missile's impact location.
 
-            * - :py:class:`~VehicleImpactLocationPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleImpactLocationPoint`
               - Class defining a Missile's impact location.
 
-            * - :py:class:`~VehiclePropagatorBallistic`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorBallistic`
               - Class defining the ballistic propagator for a Missile.
 
-            * - :py:class:`~VehiclePropagatorGreatArc`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorGreatArc`
               - Class defining the Great Arc propagator for an Aircraft, Ship or GroundVehicle.
 
-            * - :py:class:`~VehicleSGP4SegmentCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4SegmentCollection`
               - Set of Trajectories.
 
-            * - :py:class:`~VehicleSGP4Segment`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4Segment`
               - SGP4 propagator segment.
 
-            * - :py:class:`~VehicleThirdBodyGravity`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleThirdBodyGravity`
               - Third body gravity options for Long-range Orbit Predictor (LOP) propagator.
 
-            * - :py:class:`~VehicleConsiderAnalysisCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollectionElement`
               - Item in Consider Analysis list for HPOP covariance.
 
-            * - :py:class:`~VehicleConsiderAnalysisCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection`
               - The Consider Analysis list for HPOP covariance.
 
-            * - :py:class:`~VehicleSPICESegment`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSPICESegment`
               - SPICE propagator segment.
 
-            * - :py:class:`~VehicleWaypointAltitudeReferenceTerrain`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleWaypointAltitudeReferenceTerrain`
               - Terrain altitude reference.
 
-            * - :py:class:`~VehicleWaypointAltitudeReference`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleWaypointAltitudeReference`
               - Altitude references.
 
-            * - :py:class:`~VehicleSGP4LoadFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4LoadFile`
               - SGP4 propagator. Allows the user to load segments from file.
 
-            * - :py:class:`~VehicleSGP4OnlineLoad`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4OnlineLoad`
               - SGP4 propagator. Allows the user to load segments from online.
 
-            * - :py:class:`~VehicleSGP4OnlineAutoLoad`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4OnlineAutoLoad`
               - Do not use this class, as it is deprecated. Use AgVeSGP4OnlineLoad instead. SGP4 propagator. Allows the user to load the most current segment from online.
 
-            * - :py:class:`~VehicleGroundEllipsesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection`
               - List of Ground Ellipses.
 
-            * - :py:class:`~Satellite`
+            * - :py:class:`~ansys.stk.core.stkobjects.Satellite`
               - Satellite properties.
 
-            * - :py:class:`~VehicleInertia`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleInertia`
               - Satellite inertia matrix parameters.
 
-            * - :py:class:`~VehicleMassProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleMassProperties`
               - Satellite Mass properties.
 
-            * - :py:class:`~VehicleBreakAngleBreakByLatitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleBreakAngleBreakByLatitude`
               - Pass break latitude.
 
-            * - :py:class:`~VehicleBreakAngleBreakByLongitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleBreakAngleBreakByLongitude`
               - Pass break longitude.
 
-            * - :py:class:`~VehicleDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleDefinition`
               - Pass break definition properties.
 
-            * - :py:class:`~VehicleRepeatGroundTrackNumbering`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRepeatGroundTrackNumbering`
               - Repeat ground track numbering: The path number in the repeat ground track cycle corresponding to the initial conditions and the number of revolutions in the repeat cycle.
 
-            * - :py:class:`~VehiclePassNumberingDateOfFirstPass`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePassNumberingDateOfFirstPass`
               - Date of first pass for pass numbering.
 
-            * - :py:class:`~VehiclePassNumberingFirstPassNum`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePassNumberingFirstPassNum`
               - First pass number.
 
-            * - :py:class:`~VehiclePassBreak`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePassBreak`
               - Satellite Pass Break properties.
 
-            * - :py:class:`~VehicleCentralBodies`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleCentralBodies`
               - Satellite Central Bodies.
 
-            * - :py:class:`~SatelliteGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.SatelliteGraphics`
               - Satellite 2D Graphics properties.
 
-            * - :py:class:`~SatelliteGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.SatelliteGraphics3D`
               - 3D Graphics properties of a satellite.
 
-            * - :py:class:`~VehicleEllipseDataElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEllipseDataElement`
               - Ground ellipse data.
 
-            * - :py:class:`~VehicleEllipseDataCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEllipseDataCollection`
               - Ellipse Data Collection.
 
-            * - :py:class:`~VehicleGroundEllipseElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGroundEllipseElement`
               - Ground ellipse.
 
-            * - :py:class:`~SatelliteGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.SatelliteGraphics3DModel`
               - All Satellite's VO Model properties.
 
-            * - :py:class:`~VehicleEclipseBodies`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEclipseBodies`
               - Satellite Eclipse Bodies, for defining the eclipse central body list used for lighting computations.
 
-            * - :py:class:`~VehicleVector`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleVector`
               - Aligned and Constrained attitude profile.
 
-            * - :py:class:`~VehicleRateOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRateOffset`
               - AgVeSpin Class.
 
-            * - :py:class:`~VehicleProfileAlignedAndConstrained`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained`
               - Aligned and Constrained attitude profile.
 
-            * - :py:class:`~VehicleProfileInertial`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileInertial`
               - Inertially fixed attitude profile: maintains a constant orientation of the body-fixed axes with respect to the inertial axes, using the selected coordinate type.
 
-            * - :py:class:`~VehicleProfileConstraintOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileConstraintOffset`
               - Constraint offset for various attitude profiles.
 
-            * - :py:class:`~VehicleProfileFixedInAxes`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileFixedInAxes`
               - Fixed in Axes attitude profile: maintains a constant orientation of the body-fixed axes with respect to the specified reference axes, using the selected coordinate type.
 
-            * - :py:class:`~VehicleProfilePrecessingSpin`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfilePrecessingSpin`
               - Precessing Spin attitude profile, in which the spin axis of the satellite specified in the body frame is offset through the nutation angle away from the angular momentum direction specified in the inertial frame.
 
-            * - :py:class:`~VehicleProfileSpinAboutXXX`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileSpinAboutXXX`
               - Shared for Spin About Nadir and Spin About Sun Vector profile parameters.
 
-            * - :py:class:`~VehicleProfileSpinning`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileSpinning`
               - Spinning attitude profile.
 
-            * - :py:class:`~VehicleProfileAlignmentOffset`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileAlignmentOffset`
               - Alignment offset for various attitude profiles.
 
-            * - :py:class:`~VehicleScheduleTimesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleScheduleTimesCollection`
               - List of scheduled accesses.
 
-            * - :py:class:`~VehicleTargetTimes`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleTargetTimes`
               - Target times for target pointing attitude.
 
-            * - :py:class:`~VehicleAttitudePointing`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudePointing`
               - Target pointing attitude parameters.
 
-            * - :py:class:`~VehicleDuration`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleDuration`
               - Look ahead and look behind duration options.
 
-            * - :py:class:`~VehicleStandardBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleStandardBasic`
               - Basic attitude profile.
 
-            * - :py:class:`~VehicleAttitudeExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeExternal`
               - External attitude (.a) file.
 
-            * - :py:class:`~VehicleAttitudeRealTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeRealTime`
               - Real time attitude.
 
-            * - :py:class:`~VehicleProfileCoordinatedTurn`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileCoordinatedTurn`
               - Coordinated turn attitude profile for aircraft.
 
-            * - :py:class:`~VehicleProfileYawToNadir`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileYawToNadir`
               - A profile useful for satellites with highly elliptical orbits.
 
-            * - :py:class:`~VehicleAttitudeTrendControlAviator`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeTrendControlAviator`
               - Trending controls for Aviator attitude.
 
-            * - :py:class:`~VehicleProfileAviator`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileAviator`
               - The profile used for Aviator aircraft.
 
-            * - :py:class:`~VehicleTargetPointingElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement`
               - Target pointing data for target pointing attitude.
 
-            * - :py:class:`~VehicleTargetPointingCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection`
               - List of Attitude Targets.
 
-            * - :py:class:`~VehicleTorque`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleTorque`
               - Torque file to use in defining integrated attitude.
 
-            * - :py:class:`~VehicleIntegratedAttitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleIntegratedAttitude`
               - Integrated Attitude generates an external attitude file for a satellite by numerically integrating Euler's equations for the current satellite.
 
-            * - :py:class:`~VehicleScheduleTimesElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleScheduleTimesElement`
               - Parameters for scheduled times for target pointing attitude.
 
-            * - :py:class:`~VehicleTrajectoryAttitudeStandard`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard`
               - Standard attitude profile for launch vehicle or missile.
 
-            * - :py:class:`~VehicleOrbitAttitudeStandard`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleOrbitAttitudeStandard`
               - Standard attitude profile for satellite.
 
-            * - :py:class:`~VehicleRouteAttitudeStandard`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRouteAttitudeStandard`
               - Standard attitude profile for aircraft.
 
-            * - :py:class:`~VehicleGraphics2DLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DLine`
               - Line Style and Line Width properties used in displaying vehicle tracks.
 
-            * - :py:class:`~VehicleGraphics2DIntervalsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DIntervalsCollection`
               - Custom Intervals Graphics List.
 
-            * - :py:class:`~VehicleGraphics2DAttributesAccess`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess`
               - Vehicle 2D Graphics display based on access intervals.
 
-            * - :py:class:`~VehicleGraphics2DAttributesCustom`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesCustom`
               - Vehicle 2D graphics display based on custom intervals.
 
-            * - :py:class:`~VehicleGraphics2DAttributesRealtime`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime`
               - 2D Graphics attributes for a vehicle based on real time data state.
 
-            * - :py:class:`~VehicleGraphics2DLightingElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DLightingElement`
               - Lighting condition properties.
 
-            * - :py:class:`~VehicleGraphics2DLighting`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DLighting`
               - Lighting.
 
-            * - :py:class:`~VehicleGraphics2DElevationGroundElevation`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationGroundElevation`
               - Ground elevation for vehicle swath.
 
-            * - :py:class:`~VehicleGraphics2DElevationSwathHalfWidth`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationSwathHalfWidth`
               - Half width for vehicle swath.
 
-            * - :py:class:`~VehicleGraphics2DElevationVehicleHalfAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationVehicleHalfAngle`
               - Half angle for vehicle swath.
 
-            * - :py:class:`~VehicleGraphics2DSwath`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath`
               - Vehicle swath.
 
-            * - :py:class:`~VehicleGraphics2DLeadDataFraction`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadDataFraction`
               - 2D Graphics pass: fraction of leading portion of vehicle track to display.
 
-            * - :py:class:`~VehicleGraphics2DLeadDataTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadDataTime`
               - 2D Graphics pass: time-defined segment of leading portion of vehicle track to display.
 
-            * - :py:class:`~VehicleGraphics2DTrailDataFraction`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrailDataFraction`
               - 2D Graphics pass: fraction of trailing portion of vehicle track to display.
 
-            * - :py:class:`~VehicleGraphics2DTrailDataTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrailDataTime`
               - 2D Graphics pass: time-defined segment of trailing portion of vehicle track to display.
 
-            * - :py:class:`~VehicleGraphics2DRoutePassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DRoutePassData`
               - Great arc route pass data.
 
-            * - :py:class:`~VehicleGraphics2DLeadTrailData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData`
               - 2D Graphics pass properties: lead/trail for ground tracks.
 
-            * - :py:class:`~VehicleGraphics2DOrbitPassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DOrbitPassData`
               - AgVeGfxPassData Class.
 
-            * - :py:class:`~VehicleGraphics2DTrajectoryPassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryPassData`
               - 2D Graphics ground track and trajectory properties.
 
-            * - :py:class:`~VehicleGraphics2DTrajectoryResolution`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution`
               - Ground track and trajectory resolution for launch vehicles and missiles in terms of ephemeris steps.
 
-            * - :py:class:`~VehicleGraphics2DGroundEllipsesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesCollection`
               - Collection of ground ellipse 2D graphics properties.
 
-            * - :py:class:`~VehicleGraphics2DTimeEventTypeLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine`
               - 2D Graphics time event: line type.
 
-            * - :py:class:`~VehicleGraphics2DTimeEventTypeMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeMarker`
               - 2D Graphics time event: marker type.
 
-            * - :py:class:`~VehicleGraphics2DTimeEventTypeText`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText`
               - 2D Graphics time event: text type.
 
-            * - :py:class:`~VehicleGraphics2DTimeEventsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement`
               - 2D Graphics time event.
 
-            * - :py:class:`~VehicleGraphics2DTimeEventsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsCollection`
               - A satellite's time events collection.
 
-            * - :py:class:`~VehicleGraphics2DPassShowPasses`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DPassShowPasses`
               - Beginning and end pass numbers to display.
 
-            * - :py:class:`~VehicleGraphics2DPasses`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses`
               - Settings for satellite pass display graphics.
 
-            * - :py:class:`~VehicleGraphics2DSAA`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DSAA`
               - South Atlantic Anomaly contour settings.
 
-            * - :py:class:`~VehicleGraphics2DElevationsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement`
               - 2D Graphics settings for elevation contours.
 
-            * - :py:class:`~VehicleGraphics2DElevationsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsCollection`
               - Collection for elevation contours. Used by vehicles.
 
-            * - :py:class:`~VehicleGraphics2DElevContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevContours`
               - General settings regarding display of elevation contours.
 
-            * - :py:class:`~VehicleGraphics2DRouteResolution`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DRouteResolution`
               - Route resolution for great arc vehicles defined in terms of ephemeris steps.
 
-            * - :py:class:`~VehicleGraphics2DWaypointMarkersElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement`
               - 2D Graphics properties of element of waypoint collection.
 
-            * - :py:class:`~VehicleGraphics2DWaypointMarkersCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersCollection`
               - A list of 2D definitions for the vehicle way points.
 
-            * - :py:class:`~VehicleGraphics2DWaypointMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarker`
               - Display options for waypoint and turn markers in the 2D Graphics window.
 
-            * - :py:class:`~VehicleGraphics2DInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DInterval`
               - 2D Graphics display based on custom intervals.
 
-            * - :py:class:`~VehicleGraphics2DPassResolution`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution`
               - Ground track and orbit resolution for satellites defined in terms of ephemeris steps.
 
-            * - :py:class:`~VehicleGraphics2DGroundEllipsesElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement`
               - Ground ellipse 2D graphics properties.
 
-            * - :py:class:`~VehicleGraphics2DAttributesRoute`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute`
               - 2D Graphics attributes for aircraft, ships and ground vehicles.
 
-            * - :py:class:`~VehicleGraphics2DAttributesTrajectory`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesTrajectory`
               - 2D Graphics attributes for launch vehicles and missiles.
 
-            * - :py:class:`~VehicleGraphics2DAttributesOrbit`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesOrbit`
               - 2D Graphics attributes for a satellite.
 
-            * - :py:class:`~Graphics3DPointableElementsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsElement`
               - Pointable elements for 3D model pointing.
 
-            * - :py:class:`~Graphics3DPointableElementsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection`
               - List of Pointable Elements.
 
-            * - :py:class:`~VehicleGraphics3DSystemsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsElement`
               - Element for reference system used for displaying vehicle orbits and trajectories.
 
-            * - :py:class:`~VehicleGraphics3DSystemsSpecialElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsSpecialElement`
               - Define methods and properties to configure 3D properties of Inertial or Fixed reference system used for displaying vehicle orbits and trajectories.
 
-            * - :py:class:`~VehicleGraphics3DSystemsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection`
               - List of Systems.
 
-            * - :py:class:`~VehicleGraphics3DEllipsoid`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid`
               - Define an ellipsoid around the vehicle object.
 
-            * - :py:class:`~VehicleGraphics3DControlBox`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox`
               - Define a volume around the object that moves with the object.
 
-            * - :py:class:`~VehicleGraphics3DBearingBox`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingBox`
               - Define a volume, relative to a bearing from the North, around an object.
 
-            * - :py:class:`~VehicleGraphics3DBearingEllipse`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBearingEllipse`
               - Define an ellipse, relative to a bearing from the North, around the object.
 
-            * - :py:class:`~VehicleGraphics3DLineOfBearing`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DLineOfBearing`
               - Define a line of bearing which is drawn from an origin in the direction of a bearing.
 
-            * - :py:class:`~VehicleGraphics3DGeoBox`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox`
               - Geostationary box, a fixed plane used to visually check that a GEO satellite stays within a certain area.
 
-            * - :py:class:`~VehicleGraphics3DRouteProximity`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteProximity`
               - Proximity graphics for GreatArc Vehicles.
 
-            * - :py:class:`~VehicleGraphics3DOrbitProximity`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity`
               - Proximity graphics.
 
-            * - :py:class:`~VehicleGraphics3DElevContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DElevContours`
               - 3D elevation angle contours.
 
-            * - :py:class:`~VehicleGraphics3DSAA`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DSAA`
               - 3D South Atlantic Anomaly contours.
 
-            * - :py:class:`~VehicleGraphics3DSigmaScaleProbability`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DSigmaScaleProbability`
               - Sigma probability for indirect sizing of covariance pointing contours.
 
-            * - :py:class:`~VehicleGraphics3DSigmaScaleScale`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DSigmaScaleScale`
               - Sigma scale for direct sizing of covariance pointing contours.
 
-            * - :py:class:`~VehicleGraphics3DDefaultAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes`
               - Default graphics attributes for covariance pointing contours.
 
-            * - :py:class:`~VehicleGraphics3DIntervalsElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement`
               - Intervals graphics for covariance pointing contour.
 
-            * - :py:class:`~VehicleGraphics3DIntervalsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsCollection`
               - List of Intervals.
 
-            * - :py:class:`~VehicleGraphics3DAttributesBasic`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic`
               - Basic 3D graphics for covariance pointing contours.
 
-            * - :py:class:`~VehicleGraphics3DAttributesIntervals`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesIntervals`
               - 3D graphics based on intervals for covariance pointing contours.
 
-            * - :py:class:`~VehicleGraphics3DSize`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DSize`
               - 3D graphics vector size.
 
-            * - :py:class:`~VehicleGraphics3DCovariancePointingContour`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour`
               - Covariance pointing contours.
 
-            * - :py:class:`~VehicleGraphics3DDataFraction`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DDataFraction`
               - Fraction for 3D track display.
 
-            * - :py:class:`~VehicleGraphics3DDataTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DDataTime`
               - Time.
 
-            * - :py:class:`~VehicleGraphics3DOrbitPassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitPassData`
               - Satellite 3D ground and orbit track data.
 
-            * - :py:class:`~VehicleGraphics3DOrbitTrackData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTrackData`
               - 3D leading/trailing track data for satellites.
 
-            * - :py:class:`~VehicleGraphics3DTickDataLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTickDataLine`
               - Line type tick marks.
 
-            * - :py:class:`~VehicleGraphics3DTickDataPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTickDataPoint`
               - Point type tick mark.
 
-            * - :py:class:`~VehicleGraphics3DOrbitTickMarks`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTickMarks`
               - Tick mark for satellites.
 
-            * - :py:class:`~VehicleGraphics3DPass`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DPass`
               - 3D pass for satellites.
 
-            * - :py:class:`~VehicleGraphics3DCovariance`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariance`
               - 3D position covariance ellipsoids.
 
-            * - :py:class:`~VehicleGraphics3DVelCovariance`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DVelCovariance`
               - 3D velocity covariance ellipsoids.
 
-            * - :py:class:`~VehicleGraphics3DTrajectoryProximity`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryProximity`
               - AgVeTrajectoryProximity Class.
 
-            * - :py:class:`~VehicleGraphics3DTrajectory`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory`
               - AgLvVOTrajectory Class.
 
-            * - :py:class:`~VehicleGraphics3DTrajectoryTrackData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTrackData`
               - 3D leading/trailing track data for launch vehicles and missiles.
 
-            * - :py:class:`~VehicleGraphics3DTrajectoryPassData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryPassData`
               - 3D ground track and trajectory data for a launch vehicle or missile.
 
-            * - :py:class:`~VehicleGraphics3DLeadTrailData`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData`
               - AgLvVOTrajectory2 Class.
 
-            * - :py:class:`~VehicleGraphics3DTrajectoryTickMarks`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTickMarks`
               - Tick mark data for launch vehicles and missiles.
 
-            * - :py:class:`~VehicleGraphics3DPathTickMarks`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks`
               - Tick marks for 3D trajectory graphics. Tick marks represent milestones at specified intervals along the trajectory in the 3D window.
 
-            * - :py:class:`~VehicleGraphics3DWaypointMarkersElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement`
               - 3D waypoint.
 
-            * - :py:class:`~VehicleGraphics3DWaypointMarkersCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersCollection`
               - Collection of Waypoint Markers .
 
-            * - :py:class:`~VehicleGraphics3DRoute`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DRoute`
               - AgVeVORoute2 Class.
 
-            * - :py:class:`~Graphics3DModelPointing`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelPointing`
               - List of pointable model elements.
 
-            * - :py:class:`~Graphics3DLabelSwapDistance`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance`
               - Control the level of detail in labels and other screen objects at specified distances.
 
-            * - :py:class:`~VehicleGraphics3DDropLinePositionItem`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem`
               - Drop lines from the vehicle's current position.
 
-            * - :py:class:`~VehicleGraphics3DDropLinePositionItemCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItemCollection`
               - Lines dropped from the vehicle's position.
 
-            * - :py:class:`~VehicleGraphics3DDropLinePathItem`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem`
               - Drop lines at intervals along the vehicle's path.
 
-            * - :py:class:`~VehicleGraphics3DDropLinePathItemCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItemCollection`
               - Collection of drop lines from the vehicle's orbit or trajectory.
 
-            * - :py:class:`~VehicleGraphics3DOrbitDropLines`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitDropLines`
               - Droplines collections.
 
-            * - :py:class:`~VehicleGraphics3DRouteDropLines`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DRouteDropLines`
               - Droplines for great arc vehicles.
 
-            * - :py:class:`~VehicleGraphics3DTrajectoryDropLines`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryDropLines`
               - Droplines for launch vehicles and missiles.
 
-            * - :py:class:`~VehicleTrajectoryGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleTrajectoryGraphics3DModel`
               - Marker for launch vehicle or missile.
 
-            * - :py:class:`~VehicleRouteGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRouteGraphics3DModel`
               - 3D marker for great arc vehicles.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneTemplateDisplayElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement`
               - Element of IAgVeVOBPlaneTemplateDisplayCollection.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneTemplateDisplayCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection`
               - 3D DisplayElements collection for BPlane.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneTemplate`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate`
               - An element of IAgVeVOBPlaneTemplatesCollection.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneTemplatesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplatesCollection`
               - A list of available b-plane templates.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneEvent`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneEvent`
               - 3D BPlane Event.
 
-            * - :py:class:`~VehicleGraphics3DBPlanePoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint`
               - 3D BPlane Additional Point.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneTargetPointPositionCartesian`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian`
               - Cartesian.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneTargetPointPositionPolar`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionPolar`
               - 3D BPlane target point position polar.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneTargetPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint`
               - 3D BPlane TargetPoint.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneInstance`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance`
               - An element in the IAgVeVOBPlanePointCollection.
 
-            * - :py:class:`~VehicleGraphics3DBPlaneInstancesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstancesCollection`
               - A list of available b-plane instances.
 
-            * - :py:class:`~VehicleGraphics3DBPlanePointCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection`
               - AgVeVOBPlaneCollection Class.
 
-            * - :py:class:`~VehicleGraphics3DBPlanes`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes`
               - 3D BPlanes properties.
 
-            * - :py:class:`~LaunchVehicle`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaunchVehicle`
               - Launch vehicle object.
 
-            * - :py:class:`~LaunchVehicleGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics`
               - 2D Graphics for a launch vehicle.
 
-            * - :py:class:`~LaunchVehicleGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D`
               - 3D Graphics for a launch vehicle.
 
-            * - :py:class:`~GroundVehicle`
+            * - :py:class:`~ansys.stk.core.stkobjects.GroundVehicle`
               - Ground vehicle object.
 
-            * - :py:class:`~GroundVehicleGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.GroundVehicleGraphics`
               - 2D Graphics properties for ground vehicles.
 
-            * - :py:class:`~GroundVehicleGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.GroundVehicleGraphics3D`
               - AgGvVOVO Class.
 
-            * - :py:class:`~Missile`
+            * - :py:class:`~ansys.stk.core.stkobjects.Missile`
               - Missile object.
 
-            * - :py:class:`~MissileGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.MissileGraphics`
               - 2D Graphics for missiles.
 
-            * - :py:class:`~MissileGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.MissileGraphics3D`
               - 3D Graphics for missiles.
 
-            * - :py:class:`~Aircraft`
+            * - :py:class:`~ansys.stk.core.stkobjects.Aircraft`
               - Aircraft object.
 
-            * - :py:class:`~AircraftGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.AircraftGraphics`
               - 2D Graphics for an aircraft.
 
-            * - :py:class:`~AircraftGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.AircraftGraphics3D`
               - 3D Graphics properties for an aircraft.
 
-            * - :py:class:`~Ship`
+            * - :py:class:`~ansys.stk.core.stkobjects.Ship`
               - Ship object.
 
-            * - :py:class:`~ShipGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ShipGraphics`
               - 2D Graphics options for a ship.
 
-            * - :py:class:`~ShipGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ShipGraphics3D`
               - 3D Graphics attributes for a ship.
 
-            * - :py:class:`~MtoTrackPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoTrackPoint`
               - The points defined for the selected track.
 
-            * - :py:class:`~MtoTrackPointCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoTrackPointCollection`
               - MTO track point list.
 
-            * - :py:class:`~MtoTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoTrack`
               - List of MTO tracks with basic information about each.
 
-            * - :py:class:`~MtoTrackCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoTrackCollection`
               - MTO Track List.
 
-            * - :py:class:`~MtoDefaultTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoDefaultTrack`
               - Default MTO track.
 
-            * - :py:class:`~MtoGlobalTrackOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGlobalTrackOptions`
               - Global MTO track options.
 
-            * - :py:class:`~Mto`
+            * - :py:class:`~ansys.stk.core.stkobjects.Mto`
               - Multi-Track Object (MTO).
 
-            * - :py:class:`~MtoGraphics2DMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics2DMarker`
               - Define the 2D graphics attributes of the selected MTO track or tracks.
 
-            * - :py:class:`~MtoGraphics2DLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics2DLine`
               - MTO track line display options.
 
-            * - :py:class:`~MtoGraphics2DFadeTimes`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics2DFadeTimes`
               - MTO track fade times.
 
-            * - :py:class:`~MtoGraphics2DLeadTrailTimes`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics2DLeadTrailTimes`
               - MTO track lead/trail times.
 
-            * - :py:class:`~MtoGraphics2DTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics2DTrack`
               - 2D graphics attributes for each track in the MTO.
 
-            * - :py:class:`~MtoGraphics2DTrackCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection`
               - MTO 2D Graphics Track List.
 
-            * - :py:class:`~MtoDefaultGraphics2DTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoDefaultGraphics2DTrack`
               - 2D graphics attributes for default MTO tracks.
 
-            * - :py:class:`~MtoGraphics2DGlobalTrackOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics2DGlobalTrackOptions`
               - Global 2D graphics options for an MTO.
 
-            * - :py:class:`~MtoGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics`
               - MTO 2D Graphics.
 
-            * - :py:class:`~MtoGraphics3DMarker`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DMarker`
               - MTO 3D graphics marker options.
 
-            * - :py:class:`~MtoGraphics3DPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DPoint`
               - MTO track 3D marker point options.
 
-            * - :py:class:`~MtoGraphics3DModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DModel`
               - MTO track model options.
 
-            * - :py:class:`~MtoGraphics3DSwapDistances`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DSwapDistances`
               - MTO track 3D swap distances.
 
-            * - :py:class:`~MtoGraphics3DDropLines`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DDropLines`
               - MTO droplines.
 
-            * - :py:class:`~MtoGraphics3DTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DTrack`
               - 3D graphics properties for MTO tracks.
 
-            * - :py:class:`~MtoGraphics3DTrackCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DTrackCollection`
               - MTO 3D Graphics Track List.
 
-            * - :py:class:`~MtoDefaultGraphics3DTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoDefaultGraphics3DTrack`
               - 3D graphics properties for default MTO tracks.
 
-            * - :py:class:`~MtoGraphics3DGlobalTrackOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DGlobalTrackOptions`
               - Global 3D graphics MTO track options.
 
-            * - :py:class:`~MtoGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3D`
               - MTO 3D graphics properties.
 
-            * - :py:class:`~LLAGeocentric`
+            * - :py:class:`~ansys.stk.core.stkobjects.LLAGeocentric`
               - Geocentric LLA position.
 
-            * - :py:class:`~LLAGeodetic`
+            * - :py:class:`~ansys.stk.core.stkobjects.LLAGeodetic`
               - Geodetic LLA position.
 
-            * - :py:class:`~LineTargetPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.LineTargetPoint`
               - Line Target Point.
 
-            * - :py:class:`~LineTargetPointCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.LineTargetPointCollection`
               - The collection of points for the line target.
 
-            * - :py:class:`~LineTarget`
+            * - :py:class:`~ansys.stk.core.stkobjects.LineTarget`
               - Line Target Path properties.
 
-            * - :py:class:`~LineTargetGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.LineTargetGraphics`
               - The AgLtGraphics class.
 
-            * - :py:class:`~LineTargetGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.LineTargetGraphics3D`
               - The AgLtVO class.
 
-            * - :py:class:`~CoverageDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageDefinition`
               - The AgCoverageDefinition class.
 
-            * - :py:class:`~CoverageBoundsCustomRegions`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions`
               - Custom Regions.
 
-            * - :py:class:`~CoverageBoundsCustomBoundary`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageBoundsCustomBoundary`
               - Custom Boundary.
 
-            * - :py:class:`~CoverageBoundsGlobal`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageBoundsGlobal`
               - Global: grid covering the entire globe.
 
-            * - :py:class:`~CoverageBoundsLat`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageBoundsLat`
               - Latitude Bounds: create a grid between user-specified Minimum and Maximum Latitude boundaries.
 
-            * - :py:class:`~CoverageBoundsLatLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageBoundsLatLine`
               - Latitude Line: Create a set of points along a single latitude line, useful when the coverage is only expected to vary with longitude.
 
-            * - :py:class:`~CoverageBoundsLonLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageBoundsLonLine`
               - Longitude Line:  Create a set of points along a single meridian, useful when the coverage is only expected to vary with latitude.
 
-            * - :py:class:`~CoverageBoundsLatLonRegion`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageBoundsLatLonRegion`
               - LatLon Region: create a region between user-specified Minimum and Maximum Latitude and Longitude boundaries.
 
-            * - :py:class:`~CoverageGrid`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGrid`
               - Grid Definition and resolution.
 
-            * - :py:class:`~CoverageAssetListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageAssetListElement`
               - Coverage asset.
 
-            * - :py:class:`~CoverageAssetListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageAssetListCollection`
               - Asset List.
 
-            * - :py:class:`~CoverageRegionFilesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageRegionFilesCollection`
               - Collection of Region Files.
 
-            * - :py:class:`~CoverageAreaTargetsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection`
               - Collection of Area Targets.
 
-            * - :py:class:`~CoveragePointDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoveragePointDefinition`
               - Point Definition: methods and parameters for specifying the location of points on the coverage grid.
 
-            * - :py:class:`~CoveragePointFileListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoveragePointFileListCollection`
               - Point file list collection.
 
-            * - :py:class:`~CoverageAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageAdvanced`
               - Advanced Properties.
 
-            * - :py:class:`~CoverageInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageInterval`
               - Coverage interval: the time period over which coverage is computed.
 
-            * - :py:class:`~CoverageResolutionArea`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageResolutionArea`
               - Area: Define the location of grid coordinates by using the specified area to determine a latitude/longitude spacing scheme at the equator.
 
-            * - :py:class:`~CoverageResolutionDistance`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageResolutionDistance`
               - Distance: Define the location of the grid coordinates by using the specified distance to determine a latitude/longitude spacing scheme at the equator.
 
-            * - :py:class:`~CoverageResolutionLatLon`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageResolutionLatLon`
               - Lat/Lon: Determine the location of grid coordinates by specifying a latitude/longitude resolution value.
 
-            * - :py:class:`~CoverageGraphics2DStatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic`
               - Static 2D graphics display options for the coverage grid.
 
-            * - :py:class:`~CoverageGraphics2DAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGraphics2DAnimation`
               - 2D animation graphics options for the coverage grid.
 
-            * - :py:class:`~CoverageGraphics2DProgress`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGraphics2DProgress`
               - Progress graphics for access calculations.
 
-            * - :py:class:`~CoverageGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGraphics`
               - 2D graphics display options for the coverage grid.
 
-            * - :py:class:`~CoverageGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGraphics3D`
               - AgCvVOStatic Class.
 
-            * - :py:class:`~CoverageGraphics3DAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGraphics3DAttributes`
               - 3D animation or static graphics options.
 
-            * - :py:class:`~ChainTimePeriodBase`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainTimePeriodBase`
               - Chain time period options.
 
-            * - :py:class:`~ChainUserSpecifiedTimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainUserSpecifiedTimePeriod`
               - User-specified time period for the chain.
 
-            * - :py:class:`~ChainConstraints`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainConstraints`
               - Chain constraints.
 
-            * - :py:class:`~Chain`
+            * - :py:class:`~ansys.stk.core.stkobjects.Chain`
               - AgChain Class is used to access the methods and properties of the STK Chain Object.
 
-            * - :py:class:`~ChainConnection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainConnection`
               - Class defining Chain connections.
 
-            * - :py:class:`~ChainConnectionCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainConnectionCollection`
               - Class defining a collection of Chain connections.
 
-            * - :py:class:`~ChainOptimalStrandOpts`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainOptimalStrandOpts`
               - Class defining Chain optimal strand options.
 
-            * - :py:class:`~ChainGraphics2DStatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainGraphics2DStatic`
               - 2D static graphics for a chain.
 
-            * - :py:class:`~ChainGraphics2DAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation`
               - 2D Animation graphics for a chain.
 
-            * - :py:class:`~ChainGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainGraphics`
               - 2D graphics properties of a chain.
 
-            * - :py:class:`~ChainGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainGraphics3D`
               - 3D graphics properties of a chain.
 
-            * - :py:class:`~RefractionCoefficients`
+            * - :py:class:`~ansys.stk.core.stkobjects.RefractionCoefficients`
               - Coefficients for a polynomial in time_since_year_start that models the refraction index.
 
-            * - :py:class:`~RefractionModelEffectiveRadiusMethod`
+            * - :py:class:`~ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod`
               - Effective Radius Method.
 
-            * - :py:class:`~RefractionModelITURP8344`
+            * - :py:class:`~ansys.stk.core.stkobjects.RefractionModelITURP8344`
               - ITU-R P.834-4.
 
-            * - :py:class:`~RefractionModelSCFMethod`
+            * - :py:class:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod`
               - SCF Method.
 
-            * - :py:class:`~FigureOfMeritDefinitionCompute`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionCompute`
               - Compute options for navigation accuracy.
 
-            * - :py:class:`~FigureOfMeritDefinitionDataMinMax`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataMinMax`
               - Minimum and maximum data values for navigation accuracy.
 
-            * - :py:class:`~FigureOfMeritDefinitionDataMinAssets`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataMinAssets`
               - Minimum number of assets.
 
-            * - :py:class:`~FigureOfMeritDefinitionDataPercentLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataPercentLevel`
               - Specified percent level for the 'percent below' Navigation Accuracy compute option.
 
-            * - :py:class:`~FigureOfMeritDefinitionDataBestN`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN`
               - Navigation accuracy based on best N satellites.
 
-            * - :py:class:`~FigureOfMeritDefinitionDataBest4`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4`
               - Navigation accuracy based on best 4 satellites.
 
-            * - :py:class:`~FigureOfMeritDefinitionAccessConstraint`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint`
               - Access Constraint Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritSatisfaction`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritSatisfaction`
               - Satisfaction properties for a Figure of Merit.
 
-            * - :py:class:`~FigureOfMerit`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMerit`
               - Figure of Merit properties.
 
-            * - :py:class:`~FigureOfMeritDefinitionAccessSeparation`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessSeparation`
               - Access Separation Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritDefinitionDilutionOfPrecision`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDilutionOfPrecision`
               - Dilution Of Precision Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritDefinitionNavigationAccuracy`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionNavigationAccuracy`
               - Navigation Accuracy.
 
-            * - :py:class:`~FigureOfMeritAssetListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritAssetListElement`
               - Asset list item (for Navigation Accuracy FOM).
 
-            * - :py:class:`~FigureOfMeritAssetListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritAssetListCollection`
               - List of assets available for specifying range uncertainty (for Navigation Accuracy FOM).
 
-            * - :py:class:`~FigureOfMeritUncertainties`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritUncertainties`
               - Receiver range uncertainty (for Navigation Accuracy FOM).
 
-            * - :py:class:`~FigureOfMeritDefinitionResponseTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionResponseTime`
               - Response Time Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritDefinitionRevisitTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionRevisitTime`
               - Revisit Time Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritDefinitionSimpleCoverage`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSimpleCoverage`
               - Simple Coverage Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritDefinitionTimeAverageGap`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionTimeAverageGap`
               - Time Average Gap Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritDefinitionSystemAgeOfData`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemAgeOfData`
               - System Age Of Data Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritGraphics2DContours`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DContours`
               - Coverage contours.
 
-            * - :py:class:`~FigureOfMeritGraphics2DAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DAttributes`
               - Figure of Merit 2D graphics properties.
 
-            * - :py:class:`~FigureOfMeritGraphics2DContoursAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DContoursAnimation`
               - Animation contour properties.
 
-            * - :py:class:`~FigureOfMeritGraphics2DAttributesAnimation`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DAttributesAnimation`
               - Animation graphics for a Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics`
               - AgFmGfxGraphics Class.
 
-            * - :py:class:`~FigureOfMeritGraphics2DRampColor`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor`
               - Color ramp method for contours: select start and end colors to define spectrum segment.
 
-            * - :py:class:`~FigureOfMeritGraphics2DLevelAttributesElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesElement`
               - 2D graphics attributes of contour levels.
 
-            * - :py:class:`~FigureOfMeritGraphics2DLevelAttributesCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesCollection`
               - Collection of Level Attributes.
 
-            * - :py:class:`~FigureOfMeritGraphics2DPositionOnMap`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DPositionOnMap`
               - Coordinates of contour legend in pixels on 2D map.
 
-            * - :py:class:`~FigureOfMeritGraphics2DColorOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions`
               - Color options for contour legend.
 
-            * - :py:class:`~FigureOfMeritGraphics2DLegendWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLegendWindow`
               - Properties of contour legend on 2D map.
 
-            * - :py:class:`~FigureOfMeritGraphics3DLegendWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow`
               - 3D graphics contours legend.
 
-            * - :py:class:`~FigureOfMeritGraphics2DTextOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions`
               - Text display options for contour legend.
 
-            * - :py:class:`~FigureOfMeritGraphics2DRangeColorOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions`
               - Range color options for contour legend.
 
-            * - :py:class:`~FigureOfMeritGraphics2DLegend`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLegend`
               - Contour legend properties.
 
-            * - :py:class:`~FigureOfMeritNavigationAccuracyMethodElevationAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethodElevationAngle`
               - Elevation Angle method for uncertainty in range measurements for the Navigation Accuracy Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritNavigationAccuracyMethodConstant`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethodConstant`
               - Constant Value method for uncertainty in range measurements for the Navigation Accuracy Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritGraphics3DAttributes`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes`
               - 3D static graphics properties for a Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D`
               - Figure of Merit 3D graphics.
 
-            * - :py:class:`~VehicleProfileGPS`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleProfileGPS`
               - GPS Attitude profile.
 
-            * - :py:class:`~StkObjectModelContext`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectModelContext`
               - AgStkObjectModelContext class provides methods to create instance of AgStkObjectRoot class.
 
-            * - :py:class:`~StdMilitary2525bSymbols`
+            * - :py:class:`~ansys.stk.core.stkobjects.StdMilitary2525bSymbols`
               - AgStdMil2525bSymbols class provides methods to create 2525b symbols.
 
-            * - :py:class:`~CoverageGridInspector`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGridInspector`
               - AgCvGridInspector class provides methods to use the grid inspector tool for coverage definition.
 
-            * - :py:class:`~FigureOfMeritGridInspector`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector`
               - AgFmGridInspector class provides methods to use the grid inspector tool for FOM.
 
-            * - :py:class:`~Graphics3DVaporTrail`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DVaporTrail`
               - Vapor trail attributes.
 
-            * - :py:class:`~VehicleTargetPointingIntervalCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection`
               - Represents a collection of scheduled targeting intervals.
 
-            * - :py:class:`~AccessConstraintPluginMinMax`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintPluginMinMax`
               - Class related to defining access plugin constraints in terms of minimum and/or maximum values.
 
-            * - :py:class:`~ConstellationConstraints`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstellationConstraints`
               - Class related to the constellation constraints.
 
-            * - :py:class:`~ConstellationConstraintObjectRestriction`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstellationConstraintObjectRestriction`
               - Class related to the constellation constraint restrictions.
 
-            * - :py:class:`~ConstellationConstraintRestriction`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstellationConstraintRestriction`
               - Class related to the constellation constraint restrictions.
 
-            * - :py:class:`~Constellation`
+            * - :py:class:`~ansys.stk.core.stkobjects.Constellation`
               - Class represents the STK Constellation.
 
-            * - :py:class:`~ConstellationGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstellationGraphics`
               - 2D Graphics properties of the STK Constellation.
 
-            * - :py:class:`~ConstellationRouting`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstellationRouting`
               - Routing properties of the STK Constellation.
 
-            * - :py:class:`~EventDetectionNoSubSampling`
+            * - :py:class:`~ansys.stk.core.stkobjects.EventDetectionNoSubSampling`
               - Define event detection strategy that uses samples only (without sub-sampling).
 
-            * - :py:class:`~EventDetectionSubSampling`
+            * - :py:class:`~ansys.stk.core.stkobjects.EventDetectionSubSampling`
               - Event detection strategy involving subsampling.
 
-            * - :py:class:`~SamplingMethodAdaptive`
+            * - :py:class:`~ansys.stk.core.stkobjects.SamplingMethodAdaptive`
               - Define an adaptive sampling method.
 
-            * - :py:class:`~SamplingMethodFixedStep`
+            * - :py:class:`~ansys.stk.core.stkobjects.SamplingMethodFixedStep`
               - Define a fixed time-step sampling method.
 
-            * - :py:class:`~SensorAccessAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorAccessAdvanced`
               - Sensor's advanced targeting access computation properties.
 
-            * - :py:class:`~VehicleAccessAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAccessAdvanced`
               - Vehicle advanced targeting access computation properties.
 
-            * - :py:class:`~AccessSampling`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessSampling`
               - Define properties and methods to configure the sampling strategy used in access computations.
 
-            * - :py:class:`~AccessEventDetection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessEventDetection`
               - Define properties and methods to configure the event detection strategy used in access computations.
 
-            * - :py:class:`~SensorGraphics3DProjectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DProjectionElement`
               - Represents elements of the space and target projection collections.
 
-            * - :py:class:`~SensorGraphics3DSpaceProjectionCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DSpaceProjectionCollection`
               - Time Dependent Space Projection List.
 
-            * - :py:class:`~SensorGraphics3DTargetProjectionCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DTargetProjectionCollection`
               - Time Dependent Target Projection List.
 
-            * - :py:class:`~CentralBodyTerrainCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement`
               - Element of collection of terrain associated with central body.
 
-            * - :py:class:`~CentralBodyTerrainCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection`
               - Represents a collection of terrains associated with central bodies. This collection enables adding terrain to any central bodies and not just to the current scenario's central body.
 
-            * - :py:class:`~SatelliteExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.SatelliteExportTools`
               - The Satellite Export Tools.
 
-            * - :py:class:`~LaunchVehicleExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaunchVehicleExportTools`
               - The LaunchVehicle Export Tools.
 
-            * - :py:class:`~GroundVehicleExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.GroundVehicleExportTools`
               - The GroundVehicle Export Tools.
 
-            * - :py:class:`~MissileExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.MissileExportTools`
               - The Missile Export Tools.
 
-            * - :py:class:`~AircraftExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.AircraftExportTools`
               - The Aircraft Export Tools.
 
-            * - :py:class:`~ShipExportTools`
+            * - :py:class:`~ansys.stk.core.stkobjects.ShipExportTools`
               - The Ship Export Tools.
 
-            * - :py:class:`~VehicleEphemerisCode500ExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool`
               - AgVeEphemerisTypeCode500 Class.
 
-            * - :py:class:`~VehicleEphemerisCCSDSExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool`
               - AgVeEphemerisTypeCCSDS Class.
 
-            * - :py:class:`~VehicleEphemerisStkExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisStkExportTool`
               - AgVeEphemerisTypeSTK Class.
 
-            * - :py:class:`~VehicleEphemerisSpiceExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisSpiceExportTool`
               - AgVeEphemerisTypeSpice Class.
 
-            * - :py:class:`~ExportToolTimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.ExportToolTimePeriod`
               - Specify Time Period.
 
-            * - :py:class:`~VehicleAttitudeExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool`
               - AgVeExternalFileAttitude Class.
 
-            * - :py:class:`~VehiclePropDefinitionExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropDefinitionExportTool`
               - AgVeExternalFileAttitude Class.
 
-            * - :py:class:`~VehicleCoordinateAxesCustom`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleCoordinateAxesCustom`
               - Custom.
 
-            * - :py:class:`~ExportToolStepSize`
+            * - :py:class:`~ansys.stk.core.stkobjects.ExportToolStepSize`
               - AgStepSize Class.
 
-            * - :py:class:`~PctCmpltEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.PctCmpltEventArgs`
               - Represents a structure used by the Percent Complete events.
 
-            * - :py:class:`~StkObjectChangedEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectChangedEventArgs`
               - Contains information about the changes in the object's state.
 
-            * - :py:class:`~VehicleEclipsingBodies`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEclipsingBodies`
               - Eclipsing bodies.
 
-            * - :py:class:`~LocationVectorGeometryToolPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.LocationVectorGeometryToolPoint`
               - The location based upon a Vector Geometry Tool Point.
 
-            * - :py:class:`~TimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.TimePeriod`
               - Provide methods and properties to configure start and stop times.
 
-            * - :py:class:`~TimePeriodValue`
+            * - :py:class:`~ansys.stk.core.stkobjects.TimePeriodValue`
               - Provide methods and properties to configure a time value.
 
-            * - :py:class:`~SpatialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpatialState`
               - Represents a position and an attitude of an object.
 
-            * - :py:class:`~VehicleSpatialInfo`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpatialInfo`
               - Represents a spatial information of the vehicle.
 
-            * - :py:class:`~OnePointAccess`
+            * - :py:class:`~ansys.stk.core.stkobjects.OnePointAccess`
               - One Point Access.
 
-            * - :py:class:`~OnePointAccessResultCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.OnePointAccessResultCollection`
               - Represents the data sets for one point access.
 
-            * - :py:class:`~OnePointAccessResult`
+            * - :py:class:`~ansys.stk.core.stkobjects.OnePointAccessResult`
               - One Point Access Result.
 
-            * - :py:class:`~OnePointAccessConstraintCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.OnePointAccessConstraintCollection`
               - Represents the access constraints for the one point access computation.
 
-            * - :py:class:`~OnePointAccessConstraint`
+            * - :py:class:`~ansys.stk.core.stkobjects.OnePointAccessConstraint`
               - One Point Access Result.
 
-            * - :py:class:`~VehiclePropagatorRealtime`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorRealtime`
               - Realtime propagator.
 
-            * - :py:class:`~VehicleRealtimePointBuilder`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRealtimePointBuilder`
               - Allow the user to create vehicle's ephemeris by appending ephemeris points.
 
-            * - :py:class:`~VehicleRealtimeCartesianPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRealtimeCartesianPoints`
               - AgVeRealtimeCartesianPoint Class.
 
-            * - :py:class:`~VehicleRealtimeLLAHPSPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRealtimeLLAHPSPoints`
               - Add one ephemeris point using latitude/longitude/altitude coordinate system.
 
-            * - :py:class:`~VehicleRealtimeLLAPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRealtimeLLAPoints`
               - Add one ephemeris point using latitude/longitude/altitude coordinate system.
 
-            * - :py:class:`~VehicleRealtimeUTMPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleRealtimeUTMPoints`
               - Add one ephemeris point.
 
-            * - :py:class:`~SRPModelGPS`
+            * - :py:class:`~ansys.stk.core.stkobjects.SRPModelGPS`
               - GPS Solar Radiation Pressure Model.
 
-            * - :py:class:`~SRPModelSpherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.SRPModelSpherical`
               - Spherical Solar Radiation Pressure Model.
 
-            * - :py:class:`~SRPModelPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.SRPModelPlugin`
               - Plugin Light Reflection Model.
 
-            * - :py:class:`~SRPModelPluginSettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.SRPModelPluginSettings`
               - Plugin Light Reflection Model Settings.
 
-            * - :py:class:`~VehicleHPOPSRPModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPSRPModel`
               - SRP Model Base CoClass.
 
-            * - :py:class:`~VehicleHPOPDragModelSpherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPDragModelSpherical`
               - Spherical Drag Pressure Model.
 
-            * - :py:class:`~VehicleHPOPDragModelPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin`
               - Plugin Drag Model.
 
-            * - :py:class:`~VehicleHPOPDragModelPluginSettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPDragModelPluginSettings`
               - Plugin Drag Model Settings.
 
-            * - :py:class:`~VehicleHPOPDragModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleHPOPDragModel`
               - HPOP Drag Model Base CoClass.
 
-            * - :py:class:`~ScenarioAnimationTimePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod`
               - Configure the scenario's animation time.
 
-            * - :py:class:`~SensorProjectionConstantAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorProjectionConstantAltitude`
               - Class defining projection altitude options for constant altitude for a sensor.
 
-            * - :py:class:`~SensorProjectionObjectAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorProjectionObjectAltitude`
               - Class defining projection altitude options for object altitude for a sensor.
 
-            * - :py:class:`~VehicleAttitudeRealTimeDataReference`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference`
               - Reference attitude profile for the incoming attitude data.
 
-            * - :py:class:`~MtoAnalysis`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoAnalysis`
               - MTO Spatial State Info.
 
-            * - :py:class:`~MtoAnalysisPosition`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoAnalysisPosition`
               - MTO Position Computation.
 
-            * - :py:class:`~MtoAnalysisRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoAnalysisRange`
               - MTO Range Computation.
 
-            * - :py:class:`~MtoAnalysisFieldOfView`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoAnalysisFieldOfView`
               - MTO Field Of View Computation.
 
-            * - :py:class:`~MtoAnalysisVisibility`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility`
               - MTO Visibility Computation.
 
-            * - :py:class:`~VehiclePropagatorGPS`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorGPS`
               - GPS propagator.
 
-            * - :py:class:`~AvailableFeatures`
+            * - :py:class:`~ansys.stk.core.stkobjects.AvailableFeatures`
               - Class is used to check the availability of the features such as Astrogator, etc.
 
-            * - :py:class:`~ScenarioBeforeSaveEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArgs`
               - Contains information about the changes in the object's state.
 
-            * - :py:class:`~StkObjectPreDeleteEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs`
               - Arguments for the OnStkObjectPreDelete event.
 
-            * - :py:class:`~VehiclePropagatorSGP4CommonTasks`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorSGP4CommonTasks`
               - Most commonly used functionality when working with SGP4 propagator.
 
-            * - :py:class:`~VehicleSGP4AutoUpdateProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateProperties`
               - SGP4 AutoUpdate properties.
 
-            * - :py:class:`~VehicleSGP4AutoUpdateFileSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateFileSource`
               - Configure the SGP4 automatic updates using file(s).
 
-            * - :py:class:`~VehicleSGP4AutoUpdateOnlineSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateOnlineSource`
               - Configure the SGP4 automatic updates using online source (AGI server).
 
-            * - :py:class:`~VehicleSGP4AutoUpdate`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4AutoUpdate`
               - SGP4 AutoUpdate.
 
-            * - :py:class:`~VehicleSGP4PropagatorSettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4PropagatorSettings`
               - Encapsulates the SGP4 propagator settings.
 
-            * - :py:class:`~VehicleGPSAutoUpdateProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAutoUpdateProperties`
               - GPS AutoUpdate properties.
 
-            * - :py:class:`~VehicleGPSAutoUpdateFileSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAutoUpdateFileSource`
               - GPS automatic updates using almanac file(s).
 
-            * - :py:class:`~VehicleGPSAutoUpdateOnlineSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAutoUpdateOnlineSource`
               - GPS automatic updates using online source (AGI server).
 
-            * - :py:class:`~VehicleGPSAutoUpdate`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAutoUpdate`
               - GPS AutoUpdate.
 
-            * - :py:class:`~VehicleGPSSpecifyAlmanac`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSSpecifyAlmanac`
               - Specify a GPS almanac.
 
-            * - :py:class:`~VehicleGPSAlmanacProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacProperties`
               - A common base for GPS almanac properties.
 
-            * - :py:class:`~VehicleGPSAlmanacPropertiesSEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSEM`
               - SEM almanac properties.
 
-            * - :py:class:`~VehicleGPSAlmanacPropertiesYUMA`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesYUMA`
               - YUMA almanac properties.
 
-            * - :py:class:`~VehicleGPSAlmanacPropertiesSP3`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSP3`
               - SP3 almanac properties.
 
-            * - :py:class:`~VehicleGPSElementCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSElementCollection`
               - A collection of GPS elements.
 
-            * - :py:class:`~VehicleGPSElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSElement`
               - An element of the GPS element collection.
 
-            * - :py:class:`~SpaceEnvironmentRadEnergyMethodSpecify`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadEnergyMethodSpecify`
               - Set the electron and proton energies to consider.
 
-            * - :py:class:`~SpaceEnvironmentRadEnergyValues`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadEnergyValues`
               - Energy values used by the Radiation Environment model.
 
-            * - :py:class:`~SpaceEnvironmentRadiationEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment`
               - Radiation Environment model settings.
 
-            * - :py:class:`~SpaceEnvironmentMagnitudeFieldGraphics2D`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D`
               - Geomagnetic field graphics settings.
 
-            * - :py:class:`~SpaceEnvironmentScenarioExtGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentScenarioExtGraphics3D`
               - 3D Graphics settings.
 
-            * - :py:class:`~ScenSpaceEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenSpaceEnvironment`
               - SpaceEnvironment settings.
 
-            * - :py:class:`~VehicleSpaceEnvironmentRadDoseRateElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentRadDoseRateElement`
               - Class defining dose rate information computed for a shielding thickness.
 
-            * - :py:class:`~VehicleSpaceEnvironmentRadDoseRateCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentRadDoseRateCollection`
               - Collection of dose rate elements computed for a shielding thickness.
 
-            * - :py:class:`~SpaceEnvironmentSAAContour`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentSAAContour`
               - SAA settings.
 
-            * - :py:class:`~VehicleSpaceEnvironmentVehTemperature`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentVehTemperature`
               - Vehicle Temperature settings.
 
-            * - :py:class:`~VehicleSpaceEnvironmentParticleFlux`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentParticleFlux`
               - Particle Flux settings.
 
-            * - :py:class:`~VehicleSpaceEnvironmentMagneticField`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentMagneticField`
               - Magnetic field settings.
 
-            * - :py:class:`~VehicleSpaceEnvironmentRadiation`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentRadiation`
               - Radiation model settings.
 
-            * - :py:class:`~VehicleSpaceEnvironmentMagnitudeFieldLine`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentMagnitudeFieldLine`
               - Graphics settings for displaying magnetic field lines.
 
-            * - :py:class:`~VehicleSpaceEnvironmentGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentGraphics`
               - Graphics settings.
 
-            * - :py:class:`~VehicleSpaceEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironment`
               - SpaceEnvironment settings.
 
-            * - :py:class:`~CoverageSelectedGridPoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageSelectedGridPoint`
               - Represents a point selected with the grid inspector.
 
-            * - :py:class:`~CoverageGridPointSelection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGridPointSelection`
               - Represents a set of points selected with the grid inspector.
 
-            * - :py:class:`~CelestialBodyCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CelestialBodyCollection`
               - Represents a collection of stars.
 
-            * - :py:class:`~CelestialBodyInfo`
+            * - :py:class:`~ansys.stk.core.stkobjects.CelestialBodyInfo`
               - Represents a celestial body information.
 
-            * - :py:class:`~StkCentralBodyEllipsoid`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkCentralBodyEllipsoid`
               - Central body's ellipsoid information.
 
-            * - :py:class:`~StkCentralBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkCentralBody`
               - A central body coclass.
 
-            * - :py:class:`~StkCentralBodyCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkCentralBodyCollection`
               - Central body collection coclass.
 
-            * - :py:class:`~FigureOfMeritDefinitionSystemResponseTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime`
               - System Response Time Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritDefinitionAgeOfData`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData`
               - Age of Data Figure of Merit.
 
-            * - :py:class:`~FigureOfMeritDefinitionScalarCalculation`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation`
               - Scalar Calculation Figure of Merit.
 
-            * - :py:class:`~VehiclePropagator11ParamDescriptor`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagator11ParamDescriptor`
               - 11-Param file definition.
 
-            * - :py:class:`~VehiclePropagator11ParamDescriptorCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagator11ParamDescriptorCollection`
               - A collection of 11-Parameter files.
 
-            * - :py:class:`~VehiclePropagator11Param`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagator11Param`
               - The 11-Parameter propagator models geostationary satellites using 11-Parameter files. The propagator uses an algorithm documented in Intelsat Earth Station Standards (IESS) IESS-412 (Rev. 2), available at www.celestrak.com.
 
-            * - :py:class:`~VehiclePropagatorSP3File`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorSP3File`
               - SP3 file data.
 
-            * - :py:class:`~VehiclePropagatorSP3FileCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorSP3FileCollection`
               - A collection of SP3 files.
 
-            * - :py:class:`~VehiclePropagatorSP3`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorSP3`
               - The SP3 propagator reads .sp3 files of type 'a' and 'c' and allows you to use multiple files in sequence. These files are used to provide precise GPS orbits from the National Geodetic Survey (NGS).
 
-            * - :py:class:`~VehicleEphemerisStkBinaryExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisStkBinaryExportTool`
               - AgVeEphemerisTypeSTKBinary Class.
 
-            * - :py:class:`~OrbitState`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitState`
               - Class defining orbit state.
 
-            * - :py:class:`~OrbitStateCoordinateSystem`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateCoordinateSystem`
               - Selection of coordinate epoch for coordinate systems that do not have pre-established epochs.
 
-            * - :py:class:`~OrbitStateCartesian`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateCartesian`
               - Cartesian coordinate type.
 
-            * - :py:class:`~ClassicalSizeShapeAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalSizeShapeAltitude`
               - Orbit size and shape using altitude.
 
-            * - :py:class:`~ClassicalSizeShapeMeanMotion`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalSizeShapeMeanMotion`
               - Orbit size and shape using Mean Motion and Eccentricity.
 
-            * - :py:class:`~ClassicalSizeShapePeriod`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalSizeShapePeriod`
               - Orbit size and shape using Period and Eccentricity.
 
-            * - :py:class:`~ClassicalSizeShapeRadius`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalSizeShapeRadius`
               - Orbit size and shape using Radius.
 
-            * - :py:class:`~ClassicalSizeShapeSemimajorAxis`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalSizeShapeSemimajorAxis`
               - Orbit size and shape using Semimajor Axis and Eccentricity.
 
-            * - :py:class:`~OrientationAscNodeLAN`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrientationAscNodeLAN`
               - Earth-fixed longitude where the satellite crosses the inertial equator from south to north.
 
-            * - :py:class:`~OrientationAscNodeRAAN`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrientationAscNodeRAAN`
               - Angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane.
 
-            * - :py:class:`~ClassicalOrientation`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalOrientation`
               - Orbit orientation in the Classical (Keplerian) system.
 
-            * - :py:class:`~ClassicalLocationArgumentOfLatitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalLocationArgumentOfLatitude`
               - Argument of Latitude, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~ClassicalLocationEccentricAnomaly`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalLocationEccentricAnomaly`
               - Eccentric Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~ClassicalLocationMeanAnomaly`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalLocationMeanAnomaly`
               - Mean Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~ClassicalLocationTimePastAN`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalLocationTimePastAN`
               - Time Past Ascending Node, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~ClassicalLocationTimePastPerigee`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalLocationTimePastPerigee`
               - Time Past Perigee, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~ClassicalLocationTrueAnomaly`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalLocationTrueAnomaly`
               - True Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~OrbitStateClassical`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateClassical`
               - Classical (Keplerian) coordinate type.
 
-            * - :py:class:`~GeodeticSizeAltitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.GeodeticSizeAltitude`
               - Altitude and Altitude Rate (for Geodetic coordinate type).
 
-            * - :py:class:`~GeodeticSizeRadius`
+            * - :py:class:`~ansys.stk.core.stkobjects.GeodeticSizeRadius`
               - Radius and Radius Rate (for Geodetic coordinate type).
 
-            * - :py:class:`~OrbitStateGeodetic`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateGeodetic`
               - Geodetic coordinate type (available only with a Fixed coordinate system).
 
-            * - :py:class:`~DelaunayL`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayL`
               - Delaunay Variable L, which is related to the two-body orbital energy.
 
-            * - :py:class:`~DelaunayLOverSQRTmu`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayLOverSQRTmu`
               - Delaunay Variable L/SQRT(mu), i.e. L divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 
-            * - :py:class:`~DelaunayH`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayH`
               - Value of Delaunay Variable H, which is the Z component of the orbital angular momentum.
 
-            * - :py:class:`~DelaunayHOverSQRTmu`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayHOverSQRTmu`
               - Delaunay Variable H/SQRT(mu), i.e. H divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 
-            * - :py:class:`~DelaunayG`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayG`
               - Delaunay Variable G, the magnitude of the orbital angular momentum.
 
-            * - :py:class:`~DelaunayGOverSQRTmu`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayGOverSQRTmu`
               - Delaunay Variable G/SQRT(mu), i.e. G divided the square root of the central-body gravitational constant, yielding a geometric version of the Delaunay set that is independent of the central body.
 
-            * - :py:class:`~OrbitStateDelaunay`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateDelaunay`
               - Delaunay coordinate type, using a set of canonical action-angle variables, which are commonly used in general perturbation theories.
 
-            * - :py:class:`~EquinoctialSizeShapeMeanMotion`
+            * - :py:class:`~ansys.stk.core.stkobjects.EquinoctialSizeShapeMeanMotion`
               - Mean Motion, an element of the Equinoctial coordinate type.
 
-            * - :py:class:`~EquinoctialSizeShapeSemimajorAxis`
+            * - :py:class:`~ansys.stk.core.stkobjects.EquinoctialSizeShapeSemimajorAxis`
               - Semimajor Axis, an element of the Equinoctial coordinate type.
 
-            * - :py:class:`~OrbitStateEquinoctial`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial`
               - Equinoctial coordinate type, which uses the center of the Earth as the origin and the plane of the satellite's orbit as the reference plane.
 
-            * - :py:class:`~MixedSphericalFPAHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.MixedSphericalFPAHorizontal`
               - Horizontal Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
-            * - :py:class:`~MixedSphericalFPAVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.MixedSphericalFPAVertical`
               - Vertical Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
-            * - :py:class:`~OrbitStateMixedSpherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateMixedSpherical`
               - Mixed Spherical coordinate type, using a variation of the spherical elements that combines Earth-fixed position parameters with inertial velocity parameters.
 
-            * - :py:class:`~SphericalFPAHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.SphericalFPAHorizontal`
               - Horizontal Flight Path Angle, an element of the Spherical coordinate type.
 
-            * - :py:class:`~SphericalFPAVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.SphericalFPAVertical`
               - Vertical Flight Path Angle, an element of the Spherical coordinate type.
 
-            * - :py:class:`~OrbitStateSpherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateSpherical`
               - Spherical coordinate type: defines the path of an orbit using polar coordinates.
 
-            * - :py:class:`~VehicleGraphics2DTimeComponentsEventElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventElement`
               - Provide properties to configure the vehicle's appearance in 2D and 3D views. The interface is used with all types of event components except for the event interval collections.
 
-            * - :py:class:`~VehicleGraphics2DTimeComponentsEventCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement`
               - Provide properties to configure the vehicle's appearance in 2D and 3D views. The interface is used with event interval collections only.
 
-            * - :py:class:`~VehicleGraphics2DTimeComponentsCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection`
               - A collection of time components used to configure the object appearance in 2D and 3D views.
 
-            * - :py:class:`~VehicleGraphics2DAttributesTimeComponents`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesTimeComponents`
               - Allow configuring the 2D attributes using the time components.
 
-            * - :py:class:`~StkPreferences`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkPreferences`
               - Allow configuring STK preferences.
 
-            * - :py:class:`~StkPreferencesVDF`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkPreferencesVDF`
               - Allow configuring VDF preferences.
 
-            * - :py:class:`~VehicleAttitudeMaximumSlewRate`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewRate`
               - Define the maximum slew rate by entering a maximum overall magnitude. You can constrain the slew rate in specific directions by selecting one or more Per Axis rates and defining separate maximum rates for those axes.
 
-            * - :py:class:`~VehicleAttitudeMaximumSlewAcceleration`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration`
               - Define the maximum slew acceleration by entering maximum overall magnitude. You can constrain the slew acceleration in specific directions by selecting one or more Per Axis rates and defining separate maximum rates for those axes.
 
-            * - :py:class:`~VehicleAttitudeSlewConstrained`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeSlewConstrained`
               - Constrained slew mode.
 
-            * - :py:class:`~VehicleAttitudeSlewFixedRate`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedRate`
               - Fixed rate slew.
 
-            * - :py:class:`~VehicleAttitudeSlewFixedTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedTime`
               - Fixed time slew.
 
-            * - :py:class:`~VehicleAttitudeTargetSlew`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew`
               - Define the time required for a vehicle to move from its basic attitude to its target pointing attitude, and to change from the target pointing attitude back to the basic attitude.
 
-            * - :py:class:`~MtoGraphics3DModelArtic`
+            * - :py:class:`~ansys.stk.core.stkobjects.MtoGraphics3DModelArtic`
               - Class defining MTO model articulations.
 
-            * - :py:class:`~VehiclePropagatorAviator`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagatorAviator`
               - Class defining the Mission Modler propagator for an Aircraft.
 
-            * - :py:class:`~VehicleEphemerisCCSDSv2ExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool`
               - The Ephemeris/Attitude Export Tool for CCSDSv2 Ephemeris type.
 
-            * - :py:class:`~StkPreferencesConnect`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkPreferencesConnect`
               - Allow configuring connect preferences.
 
-            * - :py:class:`~Antenna`
+            * - :py:class:`~ansys.stk.core.stkobjects.Antenna`
               - Class defining the antenna object.
 
-            * - :py:class:`~AntennaModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModel`
               - Class defining a generic antenna model.
 
-            * - :py:class:`~AntennaModelOpticalSimple`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelOpticalSimple`
               - Class defining a simple optical antenna model.
 
-            * - :py:class:`~AntennaModelOpticalGaussian`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelOpticalGaussian`
               - Class defining a gaussian optical antenna model.
 
-            * - :py:class:`~AntennaModelGaussian`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelGaussian`
               - Class defining a gaussian antenna model.
 
-            * - :py:class:`~AntennaModelParabolic`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelParabolic`
               - Class defining a parabolic antenna model.
 
-            * - :py:class:`~AntennaModelSquareHorn`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelSquareHorn`
               - Class defining a square horn antenna model.
 
-            * - :py:class:`~AntennaModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelScriptPlugin`
               - Class defining a script plguin antenna model.
 
-            * - :py:class:`~AntennaModelExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelExternal`
               - Class defining a external antenna model.
 
-            * - :py:class:`~AntennaModelGimroc`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelGimroc`
               - Class defining a GIMROC antenna model.
 
-            * - :py:class:`~AntennaModelRemcomUanFormat`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelRemcomUanFormat`
               - Class defining an antenna pattern Remcom uan model.
 
-            * - :py:class:`~AntennaModelANSYSffdFormat`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat`
               - Class defining an antenna pattern ANSYS ffd model.
 
-            * - :py:class:`~AntennaModelTicraGRASPFormat`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelTicraGRASPFormat`
               - Class defining an antenna pattern Ticra GRASP model.
 
-            * - :py:class:`~AntennaModelElevationAzimuthCuts`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelElevationAzimuthCuts`
               - Class defining a pattern elevation/azimuth cuts antenna model.
 
-            * - :py:class:`~AntennaModelIeee1979`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelIeee1979`
               - Class defining a IEEE 1979 antenna model.
 
-            * - :py:class:`~AntennaModelDipole`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelDipole`
               - Class defining a dipole antenna model.
 
-            * - :py:class:`~AntennaModelHelix`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelHelix`
               - Class defining a helix antenna model.
 
-            * - :py:class:`~AntennaModelCosecantSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelCosecantSquared`
               - Class defining a cosecant squared antenna model.
 
-            * - :py:class:`~AntennaModelHemispherical`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelHemispherical`
               - Class defining a hemispherical antenna model.
 
-            * - :py:class:`~AntennaModelPencilBeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelPencilBeam`
               - Class defining a pencil beam antenna model.
 
-            * - :py:class:`~AntennaModelPhasedArray`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelPhasedArray`
               - Class defining a phased array antenna model.
 
-            * - :py:class:`~AntennaModelHfssEepArray`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray`
               - Class defining an HFSS EEP array antenna model.
 
-            * - :py:class:`~AntennaModelIsotropic`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelIsotropic`
               - Class defining a isotropic antenna model.
 
-            * - :py:class:`~AntennaModelIntelSat`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelIntelSat`
               - Class defining a IntelSat antenna model.
 
-            * - :py:class:`~AntennaModelGpsGlobal`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelGpsGlobal`
               - Class defining a GPS global antenna model.
 
-            * - :py:class:`~AntennaModelGpsFrpa`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelGpsFrpa`
               - Class defining a GPS FRPA antenna model.
 
-            * - :py:class:`~AntennaModelItuBO1213CoPolar`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuBO1213CoPolar`
               - Class defining a ITU-R BO1213 co-polar antenna model.
 
-            * - :py:class:`~AntennaModelItuBO1213CrossPolar`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuBO1213CrossPolar`
               - Class defining a ITU-R BO1213 cross-polar antenna model.
 
-            * - :py:class:`~AntennaModelItuF1245`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuF1245`
               - Class defining a ITU-R F1245-3 antenna model.
 
-            * - :py:class:`~AntennaModelItuS580`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuS580`
               - Class defining a ITU-R S580-6 antenna model.
 
-            * - :py:class:`~AntennaModelItuS465`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuS465`
               - Class defining a ITU-R S465-6 antenna model.
 
-            * - :py:class:`~AntennaModelItuS731`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuS731`
               - Class defining a ITU-R S731 antenna model.
 
-            * - :py:class:`~AntennaModelItuS1528R12Circular`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuS1528R12Circular`
               - Class defining a ITU-R S1528 1.2 circular antenna model.
 
-            * - :py:class:`~AntennaModelItuS1528R13`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuS1528R13`
               - Class defining a ITU-R S1528 1.3 antenna model.
 
-            * - :py:class:`~AntennaModelItuS672Circular`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular`
               - Class defining a ITU-R S672 circular antenna model.
 
-            * - :py:class:`~AntennaModelItuS1528R12Rectangular`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuS1528R12Rectangular`
               - Class defining a ITU-R S1528 1.2 rectangular antenna model.
 
-            * - :py:class:`~AntennaModelItuS672Rectangular`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelItuS672Rectangular`
               - Class defining a ITU-R S672-4 rectangular antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularCosine`
               - Class defining a circular cosine aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularUniform`
               - Class defining a circular uniform aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularCosineSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularCosineSquared`
               - Class defining a circular cosine squared aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularBessel`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularBessel`
               - Class defining a circular bessel aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularBesselEnvelope`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularBesselEnvelope`
               - Class defining a circular bessel envelope aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularCosinePedestal`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularCosinePedestal`
               - Class defining a circular cosine pedestal aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularCosineSquaredPedestal`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularCosineSquaredPedestal`
               - Class defining a circular cosine squared pedestal aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularSincIntPower`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularSincIntPower`
               - Class defining a circular sinc integer power aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureCircularSincRealPower`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureCircularSincRealPower`
               - Class defining a circular sinc real power aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureRectangularCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureRectangularCosine`
               - Class defining a rectangular cosine aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureRectangularCosinePedestal`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureRectangularCosinePedestal`
               - Class defining a rectangular cosine pedestal aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureRectangularCosineSquaredPedestal`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureRectangularCosineSquaredPedestal`
               - Class defining a rectangular cosine squared pedestal aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureRectangularSincIntPower`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureRectangularSincIntPower`
               - Class defining a rectangular sinc integer power aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureRectangularSincRealPower`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureRectangularSincRealPower`
               - Class defining a rectangular sinc real power aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureRectangularCosineSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureRectangularCosineSquared`
               - Class defining a rectangular cosine squared aperture antenna model.
 
-            * - :py:class:`~AntennaModelApertureRectangularUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelApertureRectangularUniform`
               - Class defining a rectangular uniform aperture antenna model.
 
-            * - :py:class:`~AntennaModelRectangularPattern`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelRectangularPattern`
               - Class defining a rectangular pattern antenna model.
 
-            * - :py:class:`~AntennaControl`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaControl`
               - Class defining the properties for a antenna control.
 
-            * - :py:class:`~AntennaGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaGraphics3D`
               - Class defining 3D Graphics properties of a Antenna.
 
-            * - :py:class:`~RadarCrossSectionVolumeGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics`
               - Class defining 3D Volume Graphics properties of radar cross section.
 
-            * - :py:class:`~RadarCrossSectionGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics3D`
               - Class defining 3D Graphics properties of radar cross section.
 
-            * - :py:class:`~RadarCrossSectionGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics`
               - Class defining graphics properties of radar cross section.
 
-            * - :py:class:`~AntennaVolumeGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics`
               - Class defining 3D Volume Graphics properties of a Antenna.
 
-            * - :py:class:`~AntennaContourGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourGraphics`
               - Class defining contour Graphics properties of a Antenna.
 
-            * - :py:class:`~AntennaGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaGraphics`
               - Class defining 2D Graphics properties of a Antenna.
 
-            * - :py:class:`~RadarCrossSectionContourLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionContourLevelCollection`
               - Class defining a collection of radar cross section contour levels.
 
-            * - :py:class:`~RadarCrossSectionContourLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionContourLevel`
               - Class defining an radar cross section contour level.
 
-            * - :py:class:`~RadarCrossSectionVolumeLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeLevelCollection`
               - Class defining a collection of radar cross section volume levels.
 
-            * - :py:class:`~RadarCrossSectionVolumeLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeLevel`
               - Class defining an radar cross section volume level.
 
-            * - :py:class:`~AntennaVolumeLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaVolumeLevelCollection`
               - Class defining a collection of antenna volume levels.
 
-            * - :py:class:`~AntennaVolumeLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaVolumeLevel`
               - Class defining an antenna volume level.
 
-            * - :py:class:`~AntennaContourLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourLevelCollection`
               - Class defining a collection of antenna contour levels.
 
-            * - :py:class:`~AntennaContourLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourLevel`
               - Class defining an antenna contour level.
 
-            * - :py:class:`~AntennaContourGain`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourGain`
               - Class defining an antenna gain contour properties.
 
-            * - :py:class:`~AntennaContourEirp`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourEirp`
               - Class defining an antenna eirp contour properties.
 
-            * - :py:class:`~AntennaContourRip`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourRip`
               - Class defining an antenna rip contour properties.
 
-            * - :py:class:`~AntennaContourFluxDensity`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourFluxDensity`
               - Class defining an antenna flux density contour properties.
 
-            * - :py:class:`~AntennaContourSpectralFluxDensity`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourSpectralFluxDensity`
               - Class defining an antenna spectral flux density contour properties.
 
-            * - :py:class:`~Transmitter`
+            * - :py:class:`~ansys.stk.core.stkobjects.Transmitter`
               - Class defining the transmitter object.
 
-            * - :py:class:`~TransmitterModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModel`
               - Class defining a generic transmitter model.
 
-            * - :py:class:`~TransmitterModelScriptPluginRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelScriptPluginRF`
               - Class defining a RF script plugin transmitter model.
 
-            * - :py:class:`~TransmitterModelScriptPluginLaser`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelScriptPluginLaser`
               - Class defining a laser script plugin transmitter model.
 
-            * - :py:class:`~TransmitterModelCable`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelCable`
               - Class defining a cable transmitter model.
 
-            * - :py:class:`~TransmitterModelSimple`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelSimple`
               - Class defining a simple transmitter model.
 
-            * - :py:class:`~TransmitterModelMedium`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelMedium`
               - Class defining a medium transmitter model.
 
-            * - :py:class:`~TransmitterModelComplex`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelComplex`
               - Class defining a complex transmitter model.
 
-            * - :py:class:`~TransmitterModelMultibeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelMultibeam`
               - Class defining a multibeam transmitter model.
 
-            * - :py:class:`~TransmitterModelLaser`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelLaser`
               - Class defining a laser transmitter model.
 
-            * - :py:class:`~ReTransmitterModelSimple`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple`
               - Class defining a simple re-transmitter model.
 
-            * - :py:class:`~ReTransmitterModelMedium`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReTransmitterModelMedium`
               - Class defining a medium re-transmitter model.
 
-            * - :py:class:`~ReTransmitterModelComplex`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReTransmitterModelComplex`
               - Class defining a complex re-transmitter model.
 
-            * - :py:class:`~TransmitterGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterGraphics3D`
               - Class defining 3D Graphics properties of a Transmitter.
 
-            * - :py:class:`~TransmitterGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterGraphics`
               - Class defining 2D Graphics properties of a Transmitter.
 
-            * - :py:class:`~Receiver`
+            * - :py:class:`~ansys.stk.core.stkobjects.Receiver`
               - Class defining the receiver object.
 
-            * - :py:class:`~ReceiverModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModel`
               - Class defining a generic receiver model.
 
-            * - :py:class:`~ReceiverModelCable`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelCable`
               - Class defining a cable receiver model.
 
-            * - :py:class:`~ReceiverModelSimple`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelSimple`
               - Class defining a simple receiver model.
 
-            * - :py:class:`~ReceiverModelMedium`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelMedium`
               - Class defining a medium receiver model.
 
-            * - :py:class:`~ReceiverModelComplex`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelComplex`
               - Class defining a complex receiver model.
 
-            * - :py:class:`~ReceiverModelMultibeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam`
               - Class defining a mutibeam receiver model.
 
-            * - :py:class:`~ReceiverModelLaser`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelLaser`
               - Class defining a laser receiver model.
 
-            * - :py:class:`~ReceiverModelScriptPluginRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelScriptPluginRF`
               - Class defining a RF script plugin receiver model.
 
-            * - :py:class:`~ReceiverModelScriptPluginLaser`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelScriptPluginLaser`
               - Class defining a laser script plugin receiver model.
 
-            * - :py:class:`~ReceiverGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverGraphics3D`
               - Class defining 3D Graphics properties of a Receiver.
 
-            * - :py:class:`~ReceiverGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverGraphics`
               - Class defining 2D Graphics properties of a Receiver.
 
-            * - :py:class:`~RadarDopplerClutterFilters`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarDopplerClutterFilters`
               - Class defining the properties for doppler clutter filters.
 
-            * - :py:class:`~Waveform`
+            * - :py:class:`~ansys.stk.core.stkobjects.Waveform`
               - Class defining a waveform.
 
-            * - :py:class:`~WaveformRectangular`
+            * - :py:class:`~ansys.stk.core.stkobjects.WaveformRectangular`
               - Class defining a rectangular waveform.
 
-            * - :py:class:`~WaveformPulseDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.WaveformPulseDefinition`
               - Class defining the pulse definition for a rectangular waveform.
 
-            * - :py:class:`~RadarMultifunctionWaveformStrategySettings`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarMultifunctionWaveformStrategySettings`
               - Class defining the waveform selection strategy settings.
 
-            * - :py:class:`~WaveformSelectionStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.WaveformSelectionStrategy`
               - Class defining the waveform selection strategy.
 
-            * - :py:class:`~WaveformSelectionStrategyFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed`
               - Class defining the waveform selection strategy.
 
-            * - :py:class:`~WaveformSelectionStrategyRangeLimits`
+            * - :py:class:`~ansys.stk.core.stkobjects.WaveformSelectionStrategyRangeLimits`
               - Class defining the range limits waveform selection strategy.
 
-            * - :py:class:`~Radar`
+            * - :py:class:`~ansys.stk.core.stkobjects.Radar`
               - Class defining the radar object.
 
-            * - :py:class:`~RadarModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModel`
               - Class defining a generic radar model.
 
-            * - :py:class:`~RadarModelMonostatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModelMonostatic`
               - Class defining a monostatic radar model.
 
-            * - :py:class:`~RadarModelMultifunction`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModelMultifunction`
               - Class defining a multifunction radar model.
 
-            * - :py:class:`~RadarModelBistaticTransmitter`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModelBistaticTransmitter`
               - Class defining a bistatic transmitter radar model.
 
-            * - :py:class:`~RadarModelBistaticReceiver`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModelBistaticReceiver`
               - Class defining a bistatic receiver radar model.
 
-            * - :py:class:`~RadarGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarGraphics3D`
               - Class defining 3D Graphics properties of a Radar.
 
-            * - :py:class:`~RadarGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarGraphics`
               - Class defining 2D Graphics properties of a Radar.
 
-            * - :py:class:`~RadarAccessGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarAccessGraphics`
               - Class defining access graphics properties of a Radar.
 
-            * - :py:class:`~RadarMultipathGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarMultipathGraphics`
               - Class defining multipath graphics properties of a Radar.
 
-            * - :py:class:`~RadarModeMonostatic`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeMonostatic`
               - Class defining a monostatic radar mode.
 
-            * - :py:class:`~RadarModeMonostaticSearchTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeMonostaticSearchTrack`
               - Class defining a monostatic search/track radar mode.
 
-            * - :py:class:`~RadarModeMonostaticSar`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeMonostaticSar`
               - Class defining a monostatic sar radar mode.
 
-            * - :py:class:`~RadarModeBistaticTransmitter`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeBistaticTransmitter`
               - Class defining a bistatic transmitter radar mode.
 
-            * - :py:class:`~RadarModeBistaticTransmitterSearchTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSearchTrack`
               - Class defining a bistatic transmitter search/track radar mode.
 
-            * - :py:class:`~RadarModeBistaticTransmitterSar`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSar`
               - Class defining a bistatic transmitter sar radar mode.
 
-            * - :py:class:`~RadarModeBistaticReceiver`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiver`
               - Class defining a bistatic receiver radar mode.
 
-            * - :py:class:`~RadarModeBistaticReceiverSearchTrack`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack`
               - Class defining a bistatic receiver search/track radar mode.
 
-            * - :py:class:`~RadarModeBistaticReceiverSar`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSar`
               - Class defining a bistatic receiver sar radar mode.
 
-            * - :py:class:`~RadarWaveformMonostaticSearchTrackContinuous`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackContinuous`
               - Class defining a monostatic continuous waveform.
 
-            * - :py:class:`~RadarWaveformMonostaticSearchTrackFixedPRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackFixedPRF`
               - Class defining a monostatic fixed PRF waveform.
 
-            * - :py:class:`~RadarMultifunctionDetectionProcessing`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarMultifunctionDetectionProcessing`
               - Class defining multifunction radar detection processing.
 
-            * - :py:class:`~RadarWaveformBistaticTransmitterSearchTrackContinuous`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformBistaticTransmitterSearchTrackContinuous`
               - Class defining a bistatic transmitter continuous waveform.
 
-            * - :py:class:`~RadarWaveformBistaticTransmitterSearchTrackFixedPRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformBistaticTransmitterSearchTrackFixedPRF`
               - Class defining a bistatic transmitter fixed PRF waveform.
 
-            * - :py:class:`~RadarWaveformBistaticReceiverSearchTrackContinuous`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformBistaticReceiverSearchTrackContinuous`
               - Class defining a bistatic receiver continuous waveform.
 
-            * - :py:class:`~RadarWaveformBistaticReceiverSearchTrackFixedPRF`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformBistaticReceiverSearchTrackFixedPRF`
               - Class defining a bistatic receiver fixed PRF waveform.
 
-            * - :py:class:`~RadarWaveformSearchTrackPulseDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition`
               - Class defining the pulse definition for a search track waveform.
 
-            * - :py:class:`~RadarModulator`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModulator`
               - Class defining a radar modulator.
 
-            * - :py:class:`~RadarProbabilityOfDetection`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarProbabilityOfDetection`
               - Class defining the probability of detection.
 
-            * - :py:class:`~RadarProbabilityOfDetectionCFAR`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarProbabilityOfDetectionCFAR`
               - Class defining the probability of detection cfar.
 
-            * - :py:class:`~RadarProbabilityOfDetectionNonCFAR`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarProbabilityOfDetectionNonCFAR`
               - Class defining the non CFAR probability of detection cfar.
 
-            * - :py:class:`~RadarProbabilityOfDetectionPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarProbabilityOfDetectionPlugin`
               - Class defining the probability of detection plugin.
 
-            * - :py:class:`~RadarProbabilityOfDetectionCFARCellAveraging`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarProbabilityOfDetectionCFARCellAveraging`
               - Class defining the probability of detection cell averaging cfar.
 
-            * - :py:class:`~RadarProbabilityOfDetectionCFAROrderedStatistics`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarProbabilityOfDetectionCFAROrderedStatistics`
               - Class defining the probability of detection ordered statistics cfar.
 
-            * - :py:class:`~RadarPulseIntegrationGoalSNR`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR`
               - Class defining the goal SNR integration method.
 
-            * - :py:class:`~RadarPulseIntegrationFixedNumberOfPulses`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses`
               - Class defining the fixed number of pulses integration method.
 
-            * - :py:class:`~RadarContinuousWaveAnalysisModeGoalSNR`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisModeGoalSNR`
               - Class defining the continuous wave goal SNR analysis mode.
 
-            * - :py:class:`~RadarContinuousWaveAnalysisModeFixedTime`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisModeFixedTime`
               - Class defining the continuous wave fixed time analysis mode.
 
-            * - :py:class:`~RadarWaveformSarPulseDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition`
               - Class defining the pulse definition for a SAR waveform.
 
-            * - :py:class:`~RadarWaveformSarPulseIntegration`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration`
               - Class defining the pulse integration for a SAR waveform.
 
-            * - :py:class:`~RadarTransmitter`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarTransmitter`
               - Class defining the radar transmitter.
 
-            * - :py:class:`~RadarTransmitterMultifunction`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction`
               - Class defining the multifunction radar transmitter.
 
-            * - :py:class:`~RadarReceiver`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarReceiver`
               - Class defining the radar transmitter.
 
-            * - :py:class:`~AdditionalGainLoss`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdditionalGainLoss`
               - Class defining additional gains and losses.
 
-            * - :py:class:`~AdditionalGainLossCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdditionalGainLossCollection`
               - Class defining a collection of additional gains and losses.
 
-            * - :py:class:`~Polarization`
+            * - :py:class:`~ansys.stk.core.stkobjects.Polarization`
               - Class defining an polarization.
 
-            * - :py:class:`~PolarizationElliptical`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationElliptical`
               - Class defining an elliptical polarization.
 
-            * - :py:class:`~ReceivePolarizationElliptical`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationElliptical`
               - Class defining an elliptical polarization.
 
-            * - :py:class:`~PolarizationLHC`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationLHC`
               - Class defining a LHC polarization.
 
-            * - :py:class:`~PolarizationRHC`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationRHC`
               - Class defining a RHC polarization.
 
-            * - :py:class:`~ReceivePolarizationLHC`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationLHC`
               - Class defining a LHC polarization.
 
-            * - :py:class:`~ReceivePolarizationRHC`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationRHC`
               - Class defining a RHC polarization.
 
-            * - :py:class:`~PolarizationLinear`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationLinear`
               - Class defining a linear polarization.
 
-            * - :py:class:`~ReceivePolarizationLinear`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationLinear`
               - Class defining a linear polarization.
 
-            * - :py:class:`~PolarizationHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationHorizontal`
               - Class defining a horizontal polarization.
 
-            * - :py:class:`~ReceivePolarizationHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationHorizontal`
               - Class defining a horizontal polarization.
 
-            * - :py:class:`~PolarizationVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationVertical`
               - Class defining a vertical polarization.
 
-            * - :py:class:`~ReceivePolarizationVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationVertical`
               - Class defining a receive vertical polarization.
 
-            * - :py:class:`~RadarClutter`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarClutter`
               - Class defining a radar clutter.
 
-            * - :py:class:`~RadarClutterGeometry`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarClutterGeometry`
               - Class defining a radar clutter geometry.
 
-            * - :py:class:`~ScatteringPointProviderCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollectionElement`
               - Class defining a scattering point provider collection element.
 
-            * - :py:class:`~ScatteringPointProviderCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderCollection`
               - Class defining an scattering point provider collection.
 
-            * - :py:class:`~ScatteringPointProviderList`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderList`
               - Class defining a scattering point provider list.
 
-            * - :py:class:`~ScatteringPointProvider`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProvider`
               - Class defining a scattering point provider.
 
-            * - :py:class:`~ScatteringPointProviderSinglePoint`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderSinglePoint`
               - Class defining a single point scattring point provider.
 
-            * - :py:class:`~ScatteringPointCollectionElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointCollectionElement`
               - Class defining a scattering point collection element.
 
-            * - :py:class:`~ScatteringPointCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointCollection`
               - Class defining a collection of scattering points.
 
-            * - :py:class:`~ScatteringPointProviderPointsFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile`
               - Class defining a scattring point provider where the points are defined in an ascii text file.
 
-            * - :py:class:`~ScatteringPointProviderRangeOverCFARCells`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderRangeOverCFARCells`
               - Class defining a range over CFAR cells scattering point provider.
 
-            * - :py:class:`~ScatteringPointProviderSmoothOblateEarth`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderSmoothOblateEarth`
               - Class defining a smooth oblate earth scattering point provider.
 
-            * - :py:class:`~ScatteringPointProviderPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderPlugin`
               - Class defining a plugin scattering point provider.
 
-            * - :py:class:`~CRPluginConfiguration`
+            * - :py:class:`~ansys.stk.core.stkobjects.CRPluginConfiguration`
               - Class defining plugin configuration.
 
-            * - :py:class:`~RadarJamming`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarJamming`
               - Class defining radar jamming.
 
-            * - :py:class:`~RFInterference`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFInterference`
               - Class defining radar jamming.
 
-            * - :py:class:`~RFFilterModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModel`
               - Class defining a generic RF filter model.
 
-            * - :py:class:`~RFFilterModelBessel`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelBessel`
               - Class defining a bessel filter model.
 
-            * - :py:class:`~RFFilterModelSincEnvSinc`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelSincEnvSinc`
               - Class defining a Sinc Envelope Sinc filter model.
 
-            * - :py:class:`~RFFilterModelElliptic`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelElliptic`
               - Class defining a elliptic filter model.
 
-            * - :py:class:`~RFFilterModelChebyshev`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelChebyshev`
               - Class defining a Chebyshev filter model.
 
-            * - :py:class:`~RFFilterModelCosineWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelCosineWindow`
               - Class defining a cosine window filter model.
 
-            * - :py:class:`~RFFilterModelGaussianWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelGaussianWindow`
               - Class defining a cosine window filter model.
 
-            * - :py:class:`~RFFilterModelHammingWindow`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelHammingWindow`
               - Class defining a cosine window filter model.
 
-            * - :py:class:`~RFFilterModelButterworth`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelButterworth`
               - Class defining a butterworth filter model.
 
-            * - :py:class:`~RFFilterModelExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelExternal`
               - Class defining a external filter model.
 
-            * - :py:class:`~RFFilterModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelScriptPlugin`
               - Class defining a script plugin filter model.
 
-            * - :py:class:`~RFFilterModelSinc`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelSinc`
               - Class defining a sinc filter model.
 
-            * - :py:class:`~RFFilterModelRaisedCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelRaisedCosine`
               - Class defining a raised cosine filter model.
 
-            * - :py:class:`~RFFilterModelRootRaisedCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelRootRaisedCosine`
               - Class defining a root raised cosine filter model.
 
-            * - :py:class:`~RFFilterModelRcLowPass`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelRcLowPass`
               - Class defining a rc low pass filter model.
 
-            * - :py:class:`~RFFilterModelRectangular`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelRectangular`
               - Class defining a rectangular filter model.
 
-            * - :py:class:`~RFFilterModelFirBoxCar`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelFirBoxCar`
               - Class defining a FIR box car filter model.
 
-            * - :py:class:`~RFFilterModelIir`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelIir`
               - Class defining a IIR box car filter model.
 
-            * - :py:class:`~RFFilterModelFir`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelFir`
               - Class defining a FIR filter model.
 
-            * - :py:class:`~SystemNoiseTemperature`
+            * - :py:class:`~ansys.stk.core.stkobjects.SystemNoiseTemperature`
               - Class defining system noise temperature.
 
-            * - :py:class:`~AntennaNoiseTemperature`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature`
               - Class defining antenna noise temperature.
 
-            * - :py:class:`~Atmosphere`
+            * - :py:class:`~ansys.stk.core.stkobjects.Atmosphere`
               - Class defining local atmosphere.
 
-            * - :py:class:`~LaserPropagationLossModels`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaserPropagationLossModels`
               - Class defining the properties for laser propagatoin models.
 
-            * - :py:class:`~LaserAtmosphericLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaserAtmosphericLossModel`
               - Class defining an laser propagation loss model.
 
-            * - :py:class:`~LaserAtmosphericLossModelBeerBouguerLambertLaw`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw`
               - Class defining an laser propagation loss model.
 
-            * - :py:class:`~ModtranLookupTablePropagationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel`
               - Class defining an MODTRAN-based lookup table propagation model.
 
-            * - :py:class:`~ModtranPropagationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModtranPropagationModel`
               - Class defining a MODTRAN propagation model.
 
-            * - :py:class:`~LaserTroposphericScintillationLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaserTroposphericScintillationLossModel`
               - Class defining an laser tropospheric scintillation loss model.
 
-            * - :py:class:`~AtmosphericTurbulenceModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericTurbulenceModel`
               - Class defining a atmospheric turbulence model.
 
-            * - :py:class:`~AtmosphericTurbulenceModelConstant`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericTurbulenceModelConstant`
               - Class defining a constant atmospheric turbulence model.
 
-            * - :py:class:`~AtmosphericTurbulenceModelHufnagelValley`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericTurbulenceModelHufnagelValley`
               - Class defining a Hufnagel Valley atmospheric turbulence model.
 
-            * - :py:class:`~LaserTroposphericScintillationLossModelITURP1814`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaserTroposphericScintillationLossModelITURP1814`
               - Class defining an ITU-R P.1814 laser tropospheric scintillation loss model.
 
-            * - :py:class:`~AtmosphericAbsorptionModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModel`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~AtmosphericAbsorptionModelITURP676_9`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676_9`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~AtmosphericAbsorptionModelVoacap`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelVoacap`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~AtmosphericAbsorptionModelTirem320`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelTirem320`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~AtmosphericAbsorptionModelTirem331`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelTirem331`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~AtmosphericAbsorptionModelTirem550`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelTirem550`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~AtmosphericAbsorptionModelSimpleSatcom`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelSimpleSatcom`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~AtmosphericAbsorptionModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelScriptPlugin`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~AtmosphericAbsorptionModelCOMPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelCOMPlugin`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~ScatteringPointModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointModel`
               - Class defining a scattering point model.
 
-            * - :py:class:`~ScatteringPointModelPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointModelPlugin`
               - Class defining a plugin scattering point model.
 
-            * - :py:class:`~ScatteringPointModelConstantCoefficient`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointModelConstantCoefficient`
               - Class defining a constant coefficient scattering point model.
 
-            * - :py:class:`~ScatteringPointModelWindTurbine`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine`
               - Class defining a wind turbine scattering point model.
 
-            * - :py:class:`~RadarCrossSection`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSection`
               - Class defining a radar cross section.
 
-            * - :py:class:`~RadarCrossSectionModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionModel`
               - Class defining a radar cross section model.
 
-            * - :py:class:`~RadarCrossSectionInheritable`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable`
               - Class defining a inheritable radar cross section.
 
-            * - :py:class:`~RadarCrossSectionFrequencyBand`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand`
               - Class defining a inheritable radar cross section frequency band.
 
-            * - :py:class:`~RadarCrossSectionFrequencyBandCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBandCollection`
               - Class defining a inheritable radar cross section frequency band collection.
 
-            * - :py:class:`~RadarCrossSectionComputeStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategy`
               - Class defining a inheritable radar cross section compute strategy.
 
-            * - :py:class:`~RadarCrossSectionComputeStrategyConstantValue`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyConstantValue`
               - Class defining a inheritable radar cross section compute strategy.
 
-            * - :py:class:`~RadarCrossSectionComputeStrategyScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyScriptPlugin`
               - Class defining a inheritable radar cross section compute strategy.
 
-            * - :py:class:`~RadarCrossSectionComputeStrategyExternalFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyExternalFile`
               - Class defining a inheritable radar cross section compute strategy.
 
-            * - :py:class:`~RadarCrossSectionComputeStrategyAnsysCsvFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyAnsysCsvFile`
               - Class defining a inheritable radar cross section compute strategy.
 
-            * - :py:class:`~RadarCrossSectionComputeStrategyPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyPlugin`
               - Class defining a inheritable radar cross section compute strategy.
 
-            * - :py:class:`~CustomPropagationModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.CustomPropagationModel`
               - Class defining a custom propatation model.
 
-            * - :py:class:`~PropagationChannel`
+            * - :py:class:`~ansys.stk.core.stkobjects.PropagationChannel`
               - Class defining the propagation channel.
 
-            * - :py:class:`~RFEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFEnvironment`
               - Class defining the RF environment.
 
-            * - :py:class:`~LaserEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaserEnvironment`
               - Class defining the laser environment for an object.
 
-            * - :py:class:`~ObjectRFEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.ObjectRFEnvironment`
               - Class defining the RF environment for an object.
 
-            * - :py:class:`~ObjectLaserEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.ObjectLaserEnvironment`
               - Class defining the laser environment for an object.
 
-            * - :py:class:`~PlatformLaserEnvironment`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlatformLaserEnvironment`
               - Class defining the laser environment for an platform.
 
-            * - :py:class:`~RainLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModel`
               - Class defining a rain loss model.
 
-            * - :py:class:`~RainLossModelITURP618_12`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_12`
               - Class defining a rain loss model.
 
-            * - :py:class:`~RainLossModelITURP618_13`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_13`
               - Class defining a rain loss model.
 
-            * - :py:class:`~RainLossModelITURP618_10`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_10`
               - Class defining a rain loss model.
 
-            * - :py:class:`~RainLossModelCrane1985`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelCrane1985`
               - Class defining a rain loss model.
 
-            * - :py:class:`~RainLossModelCrane1982`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelCrane1982`
               - Class defining a rain loss model.
 
-            * - :py:class:`~RainLossModelCCIR1983`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelCCIR1983`
               - Class defining a rain loss model.
 
-            * - :py:class:`~RainLossModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelScriptPlugin`
               - Class defining a rain loss model.
 
-            * - :py:class:`~CloudsAndFogFadingLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModel`
               - Class defining a clouds and fog fading loss model.
 
-            * - :py:class:`~CloudsAndFogFadingLossModelP840_6`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840_6`
               - Class defining a clouds and fog Loss ITU-R P.840-6 model.
 
-            * - :py:class:`~CloudsAndFogFadingLossModelP840_7`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840_7`
               - Class defining a clouds and fog Loss ITU-R P.840-7 model.
 
-            * - :py:class:`~TroposphericScintillationFadingLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModel`
               - Class defining a tropospheric scintillation fading loss model.
 
-            * - :py:class:`~TroposphericScintillationFadingLossModelP618_8`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618_8`
               - Class defining a tropospheric scintillation fading loss P.618-8 model.
 
-            * - :py:class:`~TroposphericScintillationFadingLossModelP618_12`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618_12`
               - Class defining a tropospheric scintillation fading loss P.618-12 model.
 
-            * - :py:class:`~IonosphericFadingLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModel`
               - Class defining a Ionospheric fading loss model.
 
-            * - :py:class:`~IonosphericFadingLossModelP531_13`
+            * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13`
               - Class defining a Ionospheric fading loss P.531-13 model.
 
-            * - :py:class:`~UrbanTerrestrialLossModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModel`
               - Class defining an urban/terrestrial loss model.
 
-            * - :py:class:`~UrbanTerrestrialLossModelTwoRay`
+            * - :py:class:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelTwoRay`
               - Class defining an urban/terrestrial loss model.
 
-            * - :py:class:`~UrbanTerrestrialLossModelWirelessInSite64`
+            * - :py:class:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64`
               - Class defining an urban/terrestrial loss model.
 
-            * - :py:class:`~WirelessInSite64GeometryData`
+            * - :py:class:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData`
               - Class defining the REMCOM Wireless InSite 64 geometry data.
 
-            * - :py:class:`~PointingStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.PointingStrategy`
               - Class defining a pointing strategy.
 
-            * - :py:class:`~PointingStrategyFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.PointingStrategyFixed`
               - Class defining a fixed pointing strategy.
 
-            * - :py:class:`~PointingStrategySpinning`
+            * - :py:class:`~ansys.stk.core.stkobjects.PointingStrategySpinning`
               - Class defining a spinning pointing strategy.
 
-            * - :py:class:`~PointingStrategyTargeted`
+            * - :py:class:`~ansys.stk.core.stkobjects.PointingStrategyTargeted`
               - Class defining a targeted pointing strategy.
 
-            * - :py:class:`~CRLocation`
+            * - :py:class:`~ansys.stk.core.stkobjects.CRLocation`
               - Class defining a location.
 
-            * - :py:class:`~CRComplex`
+            * - :py:class:`~ansys.stk.core.stkobjects.CRComplex`
               - Class defining a complex number.
 
-            * - :py:class:`~CRComplexCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CRComplexCollection`
               - Class defining a collection of complex numbers.
 
-            * - :py:class:`~ModulatorModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModel`
               - Class defining a modulator model.
 
-            * - :py:class:`~ModulatorModelBpsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelBpsk`
               - Class defining a BPSK modulator model.
 
-            * - :py:class:`~ModulatorModelQpsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelQpsk`
               - Class defining a QPSK modulator model.
 
-            * - :py:class:`~ModulatorModelExternalSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelExternalSource`
               - Class defining a external source modulator model.
 
-            * - :py:class:`~ModulatorModelExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelExternal`
               - Class defining a external modulator model.
 
-            * - :py:class:`~ModulatorModelQam16`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelQam16`
               - Class defining a QAM 16 modulator model.
 
-            * - :py:class:`~ModulatorModelQam32`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelQam32`
               - Class defining a QAM 32 modulator model.
 
-            * - :py:class:`~ModulatorModelQam64`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelQam64`
               - Class defining a QAM 64 modulator model.
 
-            * - :py:class:`~ModulatorModelQam128`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelQam128`
               - Class defining a QAM 128 modulator model.
 
-            * - :py:class:`~ModulatorModelQam256`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelQam256`
               - Class defining a QAM 256 modulator model.
 
-            * - :py:class:`~ModulatorModelQam1024`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelQam1024`
               - Class defining a QAM 1024 modulator model.
 
-            * - :py:class:`~ModulatorModel8psk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModel8psk`
               - Class defining a 8PSK modulator model.
 
-            * - :py:class:`~ModulatorModel16psk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModel16psk`
               - Class defining a 16PSK modulator model.
 
-            * - :py:class:`~ModulatorModelMsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelMsk`
               - Class defining a MSK modulator model.
 
-            * - :py:class:`~ModulatorModelBoc`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelBoc`
               - Class defining a BOC modulator model.
 
-            * - :py:class:`~ModulatorModelDpsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelDpsk`
               - Class defining a DPSK modulator model.
 
-            * - :py:class:`~ModulatorModelFsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelFsk`
               - Class defining a FSK modulator model.
 
-            * - :py:class:`~ModulatorModelNfsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelNfsk`
               - Class defining a NFSK modulator model.
 
-            * - :py:class:`~ModulatorModelOqpsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelOqpsk`
               - Class defining a OQPSK modulator model.
 
-            * - :py:class:`~ModulatorModelNarrowbandUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelNarrowbandUniform`
               - Class defining a narrowband uniform modulator model.
 
-            * - :py:class:`~ModulatorModelWidebandUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelWidebandUniform`
               - Class defining a wideband uniform modulator model.
 
-            * - :py:class:`~ModulatorModelWidebandGaussian`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelWidebandGaussian`
               - Class defining a wideband gaussian modulator model.
 
-            * - :py:class:`~ModulatorModelPulsedSignal`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelPulsedSignal`
               - Class defining a pulsed signal modulator model.
 
-            * - :py:class:`~ModulatorModelScriptPluginCustomPsd`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelScriptPluginCustomPsd`
               - Class defining a custom PSD script plugin modulator model.
 
-            * - :py:class:`~ModulatorModelScriptPluginIdealPsd`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelScriptPluginIdealPsd`
               - Class defining a ideal PSD script plugin modulator model.
 
-            * - :py:class:`~LinkMargin`
+            * - :py:class:`~ansys.stk.core.stkobjects.LinkMargin`
               - Class defining a link margin computation object.
 
-            * - :py:class:`~DemodulatorModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModel`
               - Class defining a demodulator model.
 
-            * - :py:class:`~DemodulatorModelBpsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelBpsk`
               - Class defining a BPSK modulator model.
 
-            * - :py:class:`~DemodulatorModelQpsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelQpsk`
               - Class defining a QPSK modulator model.
 
-            * - :py:class:`~DemodulatorModelExternalSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelExternalSource`
               - Class defining a external source modulator model.
 
-            * - :py:class:`~DemodulatorModelExternal`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelExternal`
               - Class defining a external modulator model.
 
-            * - :py:class:`~DemodulatorModelQam16`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelQam16`
               - Class defining a QAM 16 modulator model.
 
-            * - :py:class:`~DemodulatorModelQam32`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelQam32`
               - Class defining a QAM 32 modulator model.
 
-            * - :py:class:`~DemodulatorModelQam64`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelQam64`
               - Class defining a QAM 64 modulator model.
 
-            * - :py:class:`~DemodulatorModelQam128`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelQam128`
               - Class defining a QAM 128 modulator model.
 
-            * - :py:class:`~DemodulatorModelQam256`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelQam256`
               - Class defining a QAM 256 modulator model.
 
-            * - :py:class:`~DemodulatorModelQam1024`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelQam1024`
               - Class defining a QAM 1024 modulator model.
 
-            * - :py:class:`~DemodulatorModel8psk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModel8psk`
               - Class defining a 8PSK modulator model.
 
-            * - :py:class:`~DemodulatorModel16psk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModel16psk`
               - Class defining a 16PSK modulator model.
 
-            * - :py:class:`~DemodulatorModelMsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelMsk`
               - Class defining a MSK modulator model.
 
-            * - :py:class:`~DemodulatorModelBoc`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelBoc`
               - Class defining a BOC modulator model.
 
-            * - :py:class:`~DemodulatorModelDpsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelDpsk`
               - Class defining a DPSK modulator model.
 
-            * - :py:class:`~DemodulatorModelFsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelFsk`
               - Class defining a FSK modulator model.
 
-            * - :py:class:`~DemodulatorModelNfsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelNfsk`
               - Class defining a NFSK modulator model.
 
-            * - :py:class:`~DemodulatorModelOqpsk`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelOqpsk`
               - Class defining a OQPSK modulator model.
 
-            * - :py:class:`~DemodulatorModelNarrowbandUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelNarrowbandUniform`
               - Class defining a narrowband uniform modulator model.
 
-            * - :py:class:`~DemodulatorModelWidebandUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelWidebandUniform`
               - Class defining a wideband uniform modulator model.
 
-            * - :py:class:`~DemodulatorModelWidebandGaussian`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelWidebandGaussian`
               - Class defining a wideband gaussian modulator model.
 
-            * - :py:class:`~DemodulatorModelPulsedSignal`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelPulsedSignal`
               - Class defining a pulsed signal modulator model.
 
-            * - :py:class:`~DemodulatorModelScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelScriptPlugin`
               - Class defining a script plugin modulator model.
 
-            * - :py:class:`~TransferFunctionPolynomialCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransferFunctionPolynomialCollection`
               - Class defining a collection of polynomial coefficients.
 
-            * - :py:class:`~TransferFunctionInputBackOffCOverImTableRow`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffCOverImTableRow`
               - Class defining a row of an input back off vs C/Im table.
 
-            * - :py:class:`~TransferFunctionInputBackOffCOverImTable`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffCOverImTable`
               - Class defining an input back off vs C/Im table.
 
-            * - :py:class:`~TransferFunctionInputBackOffOutputBackOffTableRow`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTableRow`
               - Class defining a row of an input back off vs output back off table.
 
-            * - :py:class:`~TransferFunctionInputBackOffOutputBackOffTable`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable`
               - Class defining an input back off vs output back off table.
 
-            * - :py:class:`~BeerBouguerLambertLawLayer`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer`
               - Class defining a row of an input back off vs output back off table.
 
-            * - :py:class:`~BeerBouguerLambertLawLayerCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection`
               - Class defining collection of Beer-Bouguer-Lamber Law atmosphere layers.
 
-            * - :py:class:`~RadarActivity`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivity`
               - Class defining radar activity.
 
-            * - :py:class:`~RadarActivityAlwaysActive`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityAlwaysActive`
               - Class defining radar always active activity.
 
-            * - :py:class:`~RadarActivityAlwaysInactive`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityAlwaysInactive`
               - Class defining radar always active inactivity.
 
-            * - :py:class:`~RadarActivityTimeComponentListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListElement`
               - Class defining an element of the time components activity list.
 
-            * - :py:class:`~RadarActivityTimeComponentListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection`
               - Class defining an radar antenna beam collection.
 
-            * - :py:class:`~RadarActivityTimeComponentList`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentList`
               - Class defining a radar time component list activity.
 
-            * - :py:class:`~RadarActivityTimeIntervalListElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement`
               - Class defining an element of the time components activity list.
 
-            * - :py:class:`~RadarActivityTimeIntervalListCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityTimeIntervalListCollection`
               - Class defining an radar antenna beam collection.
 
-            * - :py:class:`~RadarActivityTimeIntervalList`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityTimeIntervalList`
               - Class defining a radar time component list activity.
 
-            * - :py:class:`~RadarAntennaBeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarAntennaBeam`
               - Class defining a radar antenna beam.
 
-            * - :py:class:`~RadarAntennaBeamCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarAntennaBeamCollection`
               - Class defining an radar antenna beam collection.
 
-            * - :py:class:`~AntennaSystem`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaSystem`
               - Class defining an antenna system.
 
-            * - :py:class:`~AntennaBeam`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaBeam`
               - Class defining an antenna beam.
 
-            * - :py:class:`~AntennaBeamTransmit`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaBeamTransmit`
               - Class defining a transmit antenna beam.
 
-            * - :py:class:`~AntennaBeamCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaBeamCollection`
               - Class defining an antenna beam collection.
 
-            * - :py:class:`~AntennaBeamSelectionStrategy`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaBeamSelectionStrategy`
               - Class defining a beam selection strategy.
 
-            * - :py:class:`~AntennaBeamSelectionStrategyAggregate`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyAggregate`
               - Class defining a aggregated beam selection strategy.
 
-            * - :py:class:`~AntennaBeamSelectionStrategyMaxGain`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyMaxGain`
               - Class defining a maximum gain beam selection strategy.
 
-            * - :py:class:`~AntennaBeamSelectionStrategyMinBoresightAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyMinBoresightAngle`
               - Class defining a minimum boresight angle beam selection strategy.
 
-            * - :py:class:`~AntennaBeamSelectionStrategyScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyScriptPlugin`
               - Class defining a script plugin beam selection strategy.
 
-            * - :py:class:`~CommSystem`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystem`
               - Class defining a CommSystem object.
 
-            * - :py:class:`~CommSystemGraphics`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemGraphics`
               - Class defining 2D Graphics properties of a CommSystem.
 
-            * - :py:class:`~CommSystemGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemGraphics3D`
               - Class defining 3D Graphics properties of a CommSystem.
 
-            * - :py:class:`~CommSystemAccessOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessOptions`
               - Class defining a CommSystem access options.
 
-            * - :py:class:`~CommSystemAccessEventDetection`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessEventDetection`
               - Class defining a CommSystem access options.
 
-            * - :py:class:`~CommSystemAccessEventDetectionSubsample`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessEventDetectionSubsample`
               - Class defining a CommSystem access options.
 
-            * - :py:class:`~CommSystemAccessEventDetectionSamplesOnly`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessEventDetectionSamplesOnly`
               - Class defining a CommSystem access options.
 
-            * - :py:class:`~CommSystemAccessSamplingMethod`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessSamplingMethod`
               - Class defining a CommSystem access options.
 
-            * - :py:class:`~CommSystemAccessSamplingMethodFixed`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessSamplingMethodFixed`
               - Class defining a CommSystem access options.
 
-            * - :py:class:`~CommSystemAccessSamplingMethodAdaptive`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessSamplingMethodAdaptive`
               - Class defining a CommSystem access options.
 
-            * - :py:class:`~CommSystemLinkSelectionCriteria`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemLinkSelectionCriteria`
               - Class defining a CommSystem link selection criteria.
 
-            * - :py:class:`~CommSystemLinkSelectionCriteriaMinimumRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemLinkSelectionCriteriaMinimumRange`
               - Class defining a CommSystem link selection criteria.
 
-            * - :py:class:`~CommSystemLinkSelectionCriteriaMaximumElevation`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemLinkSelectionCriteriaMaximumElevation`
               - Class defining a CommSystem link selection criteria.
 
-            * - :py:class:`~CommSystemLinkSelectionCriteriaScriptPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemLinkSelectionCriteriaScriptPlugin`
               - Class defining a CommSystem link selection criteria.
 
-            * - :py:class:`~ComponentDirectory`
+            * - :py:class:`~ansys.stk.core.stkobjects.ComponentDirectory`
               - Manages all components.
 
-            * - :py:class:`~ComponentInfo`
+            * - :py:class:`~ansys.stk.core.stkobjects.ComponentInfo`
               - Class defining a component.
 
-            * - :py:class:`~ComponentInfoCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ComponentInfoCollection`
               - The collection of components and component folders.
 
-            * - :py:class:`~ComponentAttrLinkEmbedControl`
+            * - :py:class:`~ansys.stk.core.stkobjects.ComponentAttrLinkEmbedControl`
               - Attribute based component link/embed control.
 
-            * - :py:class:`~Volumetric`
+            * - :py:class:`~ansys.stk.core.stkobjects.Volumetric`
               - The AgVolumetric class.
 
-            * - :py:class:`~VmGridSpatialCalculation`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGridSpatialCalculation`
               - Class defining the volume grid spatial calculation.
 
-            * - :py:class:`~VmExternalFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmExternalFile`
               - Class defining the volume external file.
 
-            * - :py:class:`~VmAnalysisInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmAnalysisInterval`
               - Class defining the volumetric analysis interval.
 
-            * - :py:class:`~VmAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmAdvanced`
               - Class defining the volumetric Computed Data Save options.
 
-            * - :py:class:`~VmGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3D`
               - Class defining 3D graphics properties of volumetric object.
 
-            * - :py:class:`~VmGraphics3DGrid`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DGrid`
               - Class defining grid properties of 3D graphics for volumetric object.
 
-            * - :py:class:`~VmGraphics3DCrossSection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DCrossSection`
               - Class defining planar cross-sections through the volumetric grid.
 
-            * - :py:class:`~VmGraphics3DCrossSectionPlane`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DCrossSectionPlane`
               - Class defining cross-section plane for volumetric grid.
 
-            * - :py:class:`~VmGraphics3DCrossSectionPlaneCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DCrossSectionPlaneCollection`
               - Class defining collection of cross-section planes for volumetric grid.
 
-            * - :py:class:`~VmGraphics3DVolume`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DVolume`
               - Class defining planar cross-sections through the volumetric grid.
 
-            * - :py:class:`~VmGraphics3DActiveGridPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DActiveGridPoints`
               - Class defining Active Grid Points for Volumetric Object.
 
-            * - :py:class:`~VmGraphics3DSpatialCalculationLevels`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevels`
               - Class defining Spatial Calculation Levels for Volumetric Object.
 
-            * - :py:class:`~VmGraphics3DSpatialCalculationLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevel`
               - Class defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
-            * - :py:class:`~VmGraphics3DSpatialCalculationLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevelCollection`
               - Class defining collections of defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
-            * - :py:class:`~VmGraphics3DLegend`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DLegend`
               - Class defining Boundary/Fill legend for volumetric object.
 
-            * - :py:class:`~VmExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VmExportTool`
               - The Volumetric Export Tool.
 
-            * - :py:class:`~SatelliteCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.SatelliteCollection`
               - The AgSatelliteCollection class.
 
-            * - :py:class:`~Subset`
+            * - :py:class:`~ansys.stk.core.stkobjects.Subset`
               - The AgSubset class.
 
-            * - :py:class:`~ElementConfiguration`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementConfiguration`
               - Class defining an element configuration.
 
-            * - :py:class:`~ElementConfigurationCircular`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementConfigurationCircular`
               - Class defining a circular element configuration.
 
-            * - :py:class:`~ElementConfigurationLinear`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementConfigurationLinear`
               - Class defining a linear element configuration.
 
-            * - :py:class:`~ElementConfigurationAsciiFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementConfigurationAsciiFile`
               - Class defining a ascii file element configuration.
 
-            * - :py:class:`~ElementConfigurationHfssEepFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementConfigurationHfssEepFile`
               - Class defining an HFSS EEP file element configuration.
 
-            * - :py:class:`~ElementConfigurationPolygon`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementConfigurationPolygon`
               - Class defining a polygon element configuration.
 
-            * - :py:class:`~ElementConfigurationHexagon`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementConfigurationHexagon`
               - Class defining a hexagon element configuration.
 
-            * - :py:class:`~SolarActivityConfiguration`
+            * - :py:class:`~ansys.stk.core.stkobjects.SolarActivityConfiguration`
               - Class defining a solar activity configuration.
 
-            * - :py:class:`~SolarActivityConfigurationSunspotNumber`
+            * - :py:class:`~ansys.stk.core.stkobjects.SolarActivityConfigurationSunspotNumber`
               - Class defining sunspot number configuration.
 
-            * - :py:class:`~SolarActivityConfigurationSolarFlux`
+            * - :py:class:`~ansys.stk.core.stkobjects.SolarActivityConfigurationSolarFlux`
               - Class defining the solar flux configuration.
 
-            * - :py:class:`~Beamformer`
+            * - :py:class:`~ansys.stk.core.stkobjects.Beamformer`
               - Class defining a beamformer.
 
-            * - :py:class:`~BeamformerAsciiFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerAsciiFile`
               - Class defining a beamformer ascii file.
 
-            * - :py:class:`~BeamformerMvdr`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerMvdr`
               - Class defining a beamformer mvdr.
 
-            * - :py:class:`~BeamformerUniform`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerUniform`
               - Class defining a uniform tapered beamformer.
 
-            * - :py:class:`~BeamformerBlackmanHarris`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerBlackmanHarris`
               - Class defining a Blackman-Harris tapered beamformer.
 
-            * - :py:class:`~BeamformerCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerCosine`
               - Class defining a cosine tapered beamformer.
 
-            * - :py:class:`~BeamformerCosineX`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerCosineX`
               - Class defining a cosine^X tapered beamformer.
 
-            * - :py:class:`~BeamformerCustomTaperFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerCustomTaperFile`
               - Class defining a custom taper file beamformer.
 
-            * - :py:class:`~BeamformerDolphChebyshev`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerDolphChebyshev`
               - Class defining a Dolph-Chebyshev tapered beamformer.
 
-            * - :py:class:`~BeamformerHamming`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerHamming`
               - Class defining a Hamming tapered beamformer.
 
-            * - :py:class:`~BeamformerHann`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerHann`
               - Class defining a Hann tapered beamformer.
 
-            * - :py:class:`~BeamformerRaisedCosine`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerRaisedCosine`
               - Class defining a raised cosine tapered beamformer.
 
-            * - :py:class:`~BeamformerRaisedCosineSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerRaisedCosineSquared`
               - Class defining a raised cosine squared tapered beamformer.
 
-            * - :py:class:`~BeamformerScript`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerScript`
               - Class defining a beamformer script plugin.
 
-            * - :py:class:`~DirectionProvider`
+            * - :py:class:`~ansys.stk.core.stkobjects.DirectionProvider`
               - Class defining a direction provider.
 
-            * - :py:class:`~DirectionProviderAsciiFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.DirectionProviderAsciiFile`
               - Class defining an ascii file direction provider.
 
-            * - :py:class:`~DirectionProviderObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.DirectionProviderObject`
               - Class defining an object direction provider.
 
-            * - :py:class:`~DirectionProviderLink`
+            * - :py:class:`~ansys.stk.core.stkobjects.DirectionProviderLink`
               - Class defining an link direction provider.
 
-            * - :py:class:`~DirectionProviderScript`
+            * - :py:class:`~ansys.stk.core.stkobjects.DirectionProviderScript`
               - Class defining an script plugin direction provider.
 
-            * - :py:class:`~Element`
+            * - :py:class:`~ansys.stk.core.stkobjects.Element`
               - Class defining a phased array element.
 
-            * - :py:class:`~ElementCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementCollection`
               - Class defining a phased array element collection.
 
-            * - :py:class:`~KeyValueCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.KeyValueCollection`
               - A collection of keys and values associated with the keys.
 
-            * - :py:class:`~RadarStcAttenuation`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarStcAttenuation`
               - Class defining an radar stc.
 
-            * - :py:class:`~RadarStcAttenuationDecayFactor`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarStcAttenuationDecayFactor`
               - Class defining an radar decay factor stc.
 
-            * - :py:class:`~RadarStcAttenuationDecaySlope`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarStcAttenuationDecaySlope`
               - Class defining an radar decay slope stc.
 
-            * - :py:class:`~RadarStcAttenuationMapRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarStcAttenuationMapRange`
               - Class defining an radar stc range map.
 
-            * - :py:class:`~RadarStcAttenuationMapAzimuthRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarStcAttenuationMapAzimuthRange`
               - Class defining an radar stc azimuth-range map.
 
-            * - :py:class:`~RadarStcAttenuationMapElevationRange`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarStcAttenuationMapElevationRange`
               - Class defining an radar stc elevation-range map.
 
-            * - :py:class:`~RadarStcAttenuationPlugin`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarStcAttenuationPlugin`
               - Class defining an radar stc Com Plugin.
 
-            * - :py:class:`~SensorPointingAlongVector`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingAlongVector`
               - Class defining the along vector pointing type for a Sensor.
 
-            * - :py:class:`~SensorPointingSchedule`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingSchedule`
               - Allow to schedule a sensor to point at a specific location at a specific time.
 
-            * - :py:class:`~AccessConstraintAnalysisWorkbenchCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection`
               - Collection of Analysis Workbench constraints.
 
-            * - :py:class:`~AccessConstraintAnalysisWorkbench`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench`
               - Class related to Analysis Workbench constraints.
 
-            * - :py:class:`~Graphics3DArticulationFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DArticulationFile`
               - Class defining the vo articulation file.
 
-            * - :py:class:`~DataProviderResultStatisticResult`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultStatisticResult`
               - Results returned by statistics computation.
 
-            * - :py:class:`~DataProviderResultTimeVaryingExtremumResult`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultTimeVaryingExtremumResult`
               - Results returned by time varying extremum computation.
 
-            * - :py:class:`~DataProviderResultStatistics`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultStatistics`
               - Class used to compute statistics and time varying extremum on data provider result data sets.
 
-            * - :py:class:`~Graphics3DModelGltfImageBased`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DModelGltfImageBased`
               - Class defining glTF Reflection Settings.
 
-            * - :py:class:`~StkObjectCutCopyPasteEventArgs`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArgs`
               - Arguments for the OnStkObjectPreCut, OnStkObjectCopy and OnStkObjectPaste events.
 
-            * - :py:class:`~StkPreferencesPythonPlugins`
+            * - :py:class:`~ansys.stk.core.stkobjects.StkPreferencesPythonPlugins`
               - Allow configuring Python plugin preferences.
 
-            * - :py:class:`~PathCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.PathCollection`
               - Allow adding and removing of paths.
 
-            * - :py:class:`~AdvCAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCAT`
               - AdvCAT properties.
 
-            * - :py:class:`~AdvCATAvailableObjectCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATAvailableObjectCollection`
               - Read-only collection of available objects.
 
-            * - :py:class:`~AdvCATChosenObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATChosenObject`
               - A chosen object.
 
-            * - :py:class:`~AdvCATChosenObjectCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATChosenObjectCollection`
               - The chosen object collection.
 
-            * - :py:class:`~AdvCATPreFilters`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATPreFilters`
               - AdvCAT pre-filters properties.
 
-            * - :py:class:`~AdvCATAdvancedEllipsoid`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid`
               - AdvCAT advanced ellipsoid properties.
 
-            * - :py:class:`~AdvCATAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATAdvanced`
               - AdvCAT advanced properties.
 
-            * - :py:class:`~AdvCATGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATGraphics3D`
               - AdvCAT VO properties.
 
-            * - :py:class:`~EOIRShapeObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeObject`
               - Represents a generic shape object.
 
-            * - :py:class:`~EOIRShapeBox`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeBox`
               - Box shape class.
 
-            * - :py:class:`~EOIRShapeCone`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeCone`
               - Cone shape class.
 
-            * - :py:class:`~EOIRShapeCylinder`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeCylinder`
               - Cylinder shape class.
 
-            * - :py:class:`~EOIRShapePlate`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapePlate`
               - Plate shape class.
 
-            * - :py:class:`~EOIRShapeSphere`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeSphere`
               - Sphere shape class.
 
-            * - :py:class:`~EOIRShapeCoupler`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeCoupler`
               - Coupler shape class.
 
-            * - :py:class:`~EOIRShapeNone`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeNone`
               - None shape class.
 
-            * - :py:class:`~EOIRShapeGEOComm`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeGEOComm`
               - GEOComm shape class.
 
-            * - :py:class:`~EOIRShapeLEOComm`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeLEOComm`
               - LEOComm shape class.
 
-            * - :py:class:`~EOIRShapeLEOImaging`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeLEOImaging`
               - LEOImaging shape class.
 
-            * - :py:class:`~EOIRShapeCustomMesh`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeCustomMesh`
               - CustomMesh shape class.
 
-            * - :py:class:`~EOIRShapeTargetSignature`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeTargetSignature`
               - TargetSignature shape class.
 
-            * - :py:class:`~EOIRStagePlume`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRStagePlume`
               - Plume shape class.
 
-            * - :py:class:`~EOIRShape`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShape`
               - AgEOIRShape class.
 
-            * - :py:class:`~EOIRShapeCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeCollection`
               - Collection of shapes.
 
-            * - :py:class:`~EOIRMaterialElement`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRMaterialElement`
               - AgEOIRMaterialElement class.
 
-            * - :py:class:`~EOIRMaterialElementCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRMaterialElementCollection`
               - Collection of material elements.
 
-            * - :py:class:`~EOIRStage`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRStage`
               - Stage base class.
 
-            * - :py:class:`~EOIR`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIR`
               - AgEOIR interface class.
 
-            * - :py:class:`~MissileEOIR`
+            * - :py:class:`~ansys.stk.core.stkobjects.MissileEOIR`
               - AgMsEOIR interface class.
 
-            * - :py:class:`~VehicleEOIR`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEOIR`
               - AgVeEOIR interface class.
 
 
@@ -7149,1081 +7149,1081 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~CONSTANTS`
+            * - :py:class:`~ansys.stk.core.stkobjects.CONSTANTS`
               - AgEConstants contains base IDs for various structures.
 
-            * - :py:class:`~HELP_CONTEXT_IDS`
+            * - :py:class:`~ansys.stk.core.stkobjects.HELP_CONTEXT_IDS`
               - Help context IDs.
 
-            * - :py:class:`~ERROR_CODES`
+            * - :py:class:`~ansys.stk.core.stkobjects.ERROR_CODES`
               - Error codes.
 
-            * - :py:class:`~ABERRATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ABERRATION_TYPE`
               - The model of aberration to be used in access computations.
 
-            * - :py:class:`~ANIMATION_MODES`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANIMATION_MODES`
               - Animation modes.
 
-            * - :py:class:`~ANIMATION_OPTIONS`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANIMATION_OPTIONS`
               - Animation Options.
 
-            * - :py:class:`~ANIMATION_ACTIONS`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANIMATION_ACTIONS`
               - Animation action options.
 
-            * - :py:class:`~ANIMATION_DIRECTIONS`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANIMATION_DIRECTIONS`
               - Animation direction options.
 
-            * - :py:class:`~AZ_EL_MASK_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AZ_EL_MASK_TYPE`
               - Obscura types of the facility, place or target for AzElMask definition.
 
-            * - :py:class:`~ACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ACTION_TYPE`
               - Specify the action type for the Interval Access Constraint.
 
-            * - :py:class:`~AXIS_OFFSET`
+            * - :py:class:`~ansys.stk.core.stkobjects.AXIS_OFFSET`
               - Specify the axis offset for the sensor 3D Vertex Offset.
 
-            * - :py:class:`~DATA_PROVIDER_RESULT_CATEGORIES`
+            * - :py:class:`~ansys.stk.core.stkobjects.DATA_PROVIDER_RESULT_CATEGORIES`
               - Specify the category of results returned by the data providers.
 
-            * - :py:class:`~DATA_PROVIDER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DATA_PROVIDER_TYPE`
               - Specify the type of the result returned by data providers.
 
-            * - :py:class:`~DATA_PROVIDER_ELEMENT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DATA_PROVIDER_ELEMENT_TYPE`
               - Specify the type of data returned by data providers.
 
-            * - :py:class:`~ACCESS_TIME_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ACCESS_TIME_TYPE`
               - The time period to use for the access computation.
 
-            * - :py:class:`~ALTITUDE_REFERENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ALTITUDE_REFERENCE_TYPE`
               - Altitude reference options.
 
-            * - :py:class:`~TERRAIN_NORM_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TERRAIN_NORM_TYPE`
               - Methods of defining the slope of the local terrain for the facility, place or target.
 
-            * - :py:class:`~LIGHTING_OBSTRUCTION_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LIGHTING_OBSTRUCTION_MODEL_TYPE`
               - Obstruction model used in lighting computations.
 
-            * - :py:class:`~DISPLAY_TIMES_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DISPLAY_TIMES_TYPE`
               - Display times options for the object.
 
-            * - :py:class:`~AREA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AREA_TYPE`
               - Methods of defining the area target's boundaries.
 
-            * - :py:class:`~TRAJECTORY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TRAJECTORY_TYPE`
               - Trajectory type for a point.
 
-            * - :py:class:`~OFFSET_FRAME_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.OFFSET_FRAME_TYPE`
               - Frame options for label offset.
 
-            * - :py:class:`~SCENARIO_3D_POINT_SIZE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SCENARIO_3D_POINT_SIZE`
               - Font size in points.
 
-            * - :py:class:`~TERRAIN_FILE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TERRAIN_FILE_TYPE`
               - Terrain file type options.
 
-            * - :py:class:`~TILESET_3D_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TILESET_3D_SOURCE_TYPE`
               - 3DTileset source type options.
 
-            * - :py:class:`~MARKER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MARKER_TYPE`
               - Marker style options for a waypoint.
 
-            * - :py:class:`~VECTOR_AXES_CONNECT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VECTOR_AXES_CONNECT_TYPE`
               - Methods for connecting geometric elements.
 
-            * - :py:class:`~GRAPHICS_3D_MARKER_ORIGIN_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_MARKER_ORIGIN_TYPE`
               - Options for the AgVOMarker X or Y Origin property.
 
-            * - :py:class:`~GRAPHICS_3D_LABEL_SWAP_DISTANCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_LABEL_SWAP_DISTANCE`
               - Label swap distance options.
 
-            * - :py:class:`~PLANET_POSITION_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PLANET_POSITION_SOURCE_TYPE`
               - Options for defining a planet.
 
-            * - :py:class:`~EPHEM_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EPHEM_SOURCE_TYPE`
               - Central body ephemeris sources.
 
-            * - :py:class:`~PLANET_ORBIT_DISPLAY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PLANET_ORBIT_DISPLAY_TYPE`
               - Orbit display options for a planet.
 
-            * - :py:class:`~SCENARIO_END_LOOP_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SCENARIO_END_LOOP_TYPE`
               - Scenario animation cycle options.
 
-            * - :py:class:`~SCENARIO_REFRESH_DELTA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SCENARIO_REFRESH_DELTA_TYPE`
               - Scenario animation refresh update options.
 
-            * - :py:class:`~SENSOR_PATTERN`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_PATTERN`
               - Sensor patterns.
 
-            * - :py:class:`~SENSOR_POINTING`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_POINTING`
               - Sensor pointing options.
 
-            * - :py:class:`~SENSOR_POINTING_TARGETED_BORESIGHT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_POINTING_TARGETED_BORESIGHT_TYPE`
               - Boresight types for sensors of targeted pointing type.
 
-            * - :py:class:`~BORESIGHT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.BORESIGHT_TYPE`
               - About boresight options for sensors of targeted pointing type.
 
-            * - :py:class:`~TRACK_MODE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TRACK_MODE_TYPE`
               - Track mode options for tracking boresights.
 
-            * - :py:class:`~SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE`
               - Primary boresight axis for Sensor Az-El mask.
 
-            * - :py:class:`~SENSOR_REFRACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_REFRACTION_TYPE`
               - Sensor refraction models.
 
-            * - :py:class:`~SENSOR_PROJECTION_DISTANCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_PROJECTION_DISTANCE_TYPE`
               - Sensor 2D Graphics Projection 'Project To' options.
 
-            * - :py:class:`~SENSOR_LOCATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_LOCATION`
               - Sensor Location Type options.
 
-            * - :py:class:`~SCENARIO_TIME_STEP_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SCENARIO_TIME_STEP_TYPE`
               - Scenario animation time step options.
 
-            * - :py:class:`~NOTE_SHOW_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.NOTE_SHOW_TYPE`
               - Options for specifying when a label note displays.
 
-            * - :py:class:`~GEOMETRIC_ELEM_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GEOMETRIC_ELEM_TYPE`
               - Options for the VORefCrdn Type.
 
-            * - :py:class:`~SENSOR_SCAN_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_SCAN_MODE`
               - Options for the Sensor Spinning Scan Mode.
 
-            * - :py:class:`~CONSTRAINT_BACKGROUND`
+            * - :py:class:`~ansys.stk.core.stkobjects.CONSTRAINT_BACKGROUND`
               - Options for the Background constraint, and Advanced vehicle constraint.
 
-            * - :py:class:`~CONSTRAINT_GROUND_TRACK`
+            * - :py:class:`~ansys.stk.core.stkobjects.CONSTRAINT_GROUND_TRACK`
               - Options for the Ground Track constraint, an Advanced vehicle constraint.
 
-            * - :py:class:`~INTERSECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.INTERSECTION_TYPE`
               - Intersection display options for sensor projection.
 
-            * - :py:class:`~CONSTRAINT_LIGHTING`
+            * - :py:class:`~ansys.stk.core.stkobjects.CONSTRAINT_LIGHTING`
               - Options for the Lighting access constraint.
 
-            * - :py:class:`~SENSOR_GRAPHICS_3D_PROJECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PROJECTION_TYPE`
               - Options for a sensor's 3D Graphics Projection Type.
 
-            * - :py:class:`~SENSOR_GRAPHICS_3D_PULSE_STYLE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PULSE_STYLE`
               - Options for a sensor's 3D Graphics Pulse Style.
 
-            * - :py:class:`~SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET`
               - Options for a sensor's 3D Graphics Pulse Frequency presets.
 
-            * - :py:class:`~LINE_WIDTH`
+            * - :py:class:`~ansys.stk.core.stkobjects.LINE_WIDTH`
               - Line widths.
 
-            * - :py:class:`~STK_OBJECT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.STK_OBJECT_TYPE`
               - STK objects.
 
-            * - :py:class:`~ACCESS_CONSTRAINTS`
+            * - :py:class:`~ansys.stk.core.stkobjects.ACCESS_CONSTRAINTS`
               - Available Access Constraint.
 
-            * - :py:class:`~BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE`
               - Border Wall upper and lower edge altitude references.
 
-            * - :py:class:`~SHADOW_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.SHADOW_MODEL`
               - Shadow model options for solar radiation pressure.
 
-            * - :py:class:`~METHOD_TO_COMPUTE_SUN_POSITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.METHOD_TO_COMPUTE_SUN_POSITION`
               - Methods to compute sun position.
 
-            * - :py:class:`~ATMOSPHERIC_DENSITY_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.ATMOSPHERIC_DENSITY_MODEL`
               - Atmospheric density models.
 
-            * - :py:class:`~MARKER_SHAPE_3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.MARKER_SHAPE_3D`
               - 3D marker shapes.
 
-            * - :py:class:`~LEAD_TRAIL_DATA`
+            * - :py:class:`~ansys.stk.core.stkobjects.LEAD_TRAIL_DATA`
               - Lead and trail types for track display.
 
-            * - :py:class:`~TICK_DATA`
+            * - :py:class:`~ansys.stk.core.stkobjects.TICK_DATA`
               - Tick mark options. Tick marks represent milestones at specified intervals along a vehicle's track in the 3D Graphics window.
 
-            * - :py:class:`~LOAD_METHOD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LOAD_METHOD_TYPE`
               - TLE load options.
 
-            * - :py:class:`~LLA_POSITION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LLA_POSITION_TYPE`
               - LLA Position Types.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_2D_PASS`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_PASS`
               - Pass display options.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_2D_VISIBLE_SIDES`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_VISIBLE_SIDES`
               - Pass display direction options.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_2D_OFFSET`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_OFFSET`
               - Options for offset direction for 2D time events graphics.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
               - 2D Graphics time event graphics options.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_ATTRIBUTES`
               - Criteria for displaying a vehicle's 2D Graphics attributes.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_2D_ELEVATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_ELEVATION`
               - Options for vehicle swath.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_2D_OPTIONS`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_OPTIONS`
               - Display options for vehicle swath.
 
-            * - :py:class:`~MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MODEL_TYPE`
               - Display options 3D model.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE`
               - Options for where to end drop lines.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
               - Sigma scale options for sizing covariance pointing contours.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_3D_ATTRIBUTES`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_ATTRIBUTES`
               - Options for 3D graphics for covariance pointing contours.
 
-            * - :py:class:`~ROUTE_GRAPHICS_3D_MARKER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ROUTE_GRAPHICS_3D_MARKER_TYPE`
               - Waypoint marker options.
 
-            * - :py:class:`~VEHICLE_ELLIPSE_OPTIONS`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_ELLIPSE_OPTIONS`
               - Elliptical motion modeling options.
 
-            * - :py:class:`~VEHICLE_PROPAGATOR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PROPAGATOR_TYPE`
               - Vehicle propagators (available for vehicle types listed in parentheses).
 
-            * - :py:class:`~VEHICLE_SGP4_SWITCH_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SGP4_SWITCH_METHOD`
               - TLE Switch method for the SGP4 propagator.
 
-            * - :py:class:`~VEHICLE_SGP4TLE_SELECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SGP4TLE_SELECTION`
               - TLE Selection method for the SGP4 propagator.
 
-            * - :py:class:`~VEHICLE_SGP4_AUTO_UPDATE_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SGP4_AUTO_UPDATE_SOURCE`
               - The TLE sources where the SGP4 propagator retrieves TLEs from automatically upon propagation.
 
-            * - :py:class:`~THIRD_BODY_GRAV_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.THIRD_BODY_GRAV_SOURCE_TYPE`
               - Sources for 3rd body gravitation data.
 
-            * - :py:class:`~VEHICLE_GEOMAG_FLUX_SRC`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GEOMAG_FLUX_SRC`
               - GeomagFluxSrc.
 
-            * - :py:class:`~VEHICLE_GEOMAG_FLUX_UPDATE_RATE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GEOMAG_FLUX_UPDATE_RATE`
               - Geomagnetic flux update rate options.
 
-            * - :py:class:`~VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE`
               - Options for specifying solar and geomagnetic flux.
 
-            * - :py:class:`~VEHICLE_INTEGRATION_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_INTEGRATION_MODEL`
               - Integration methods.
 
-            * - :py:class:`~VEHICLE_PREDICTOR_CORRECTOR_SCHEME`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PREDICTOR_CORRECTOR_SCHEME`
               - Predictor Corrector schemes.
 
-            * - :py:class:`~VEHICLE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_METHOD`
               - Step size control options.
 
-            * - :py:class:`~VEHICLE_INTERPOLATION_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_INTERPOLATION_METHOD`
               - Interpolation methods.
 
-            * - :py:class:`~VEHICLE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_FRAME`
               - Frame options for covariance matrix.
 
-            * - :py:class:`~VEHICLE_CORRELATION_LIST_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_CORRELATION_LIST_TYPE`
               - Correlation List row and column values.
 
-            * - :py:class:`~VEHICLE_CONSIDER_ANALYSIS_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_CONSIDER_ANALYSIS_TYPE`
               - Consider parameters for HPOP covariance.
 
-            * - :py:class:`~VEHICLE_WAYPOINT_COMP_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_WAYPOINT_COMP_METHOD`
               - Methods for computing waypoints.
 
-            * - :py:class:`~VEHICLE_ALTITUDE_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_ALTITUDE_REFERENCE`
               - Reference altitude options for waypoints.
 
-            * - :py:class:`~VEHICLE_WAYPOINT_INTERP_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_WAYPOINT_INTERP_METHOD`
               - Interpolation methods.
 
-            * - :py:class:`~VEHICLE_LAUNCH`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_LAUNCH`
               - Options for launch coordinates.
 
-            * - :py:class:`~VEHICLE_IMPACT`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_IMPACT`
               - Impact location options.
 
-            * - :py:class:`~VEHICLE_LAUNCH_CONTROL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_LAUNCH_CONTROL`
               - Flight parameters for a missile.
 
-            * - :py:class:`~VEHICLE_IMPACT_LOCATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_IMPACT_LOCATION`
               - Options for specifying missile impact point.
 
-            * - :py:class:`~VEHICLE_PASS_NUMBERING`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PASS_NUMBERING`
               - Pass numbering options.
 
-            * - :py:class:`~VEHICLE_PARTIAL_PASS_MEASUREMENT`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PARTIAL_PASS_MEASUREMENT`
               - Partial Pass Measurement methods (typically used for reporting data).
 
-            * - :py:class:`~VEHICLE_COORDINATE_SYSTEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_COORDINATE_SYSTEM`
               - Coordinate system used for measurement of latitude and longitude.
 
-            * - :py:class:`~VEHICLE_BREAK_ANGLE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_BREAK_ANGLE_TYPE`
               - Definition options for setting pass breaks:.
 
-            * - :py:class:`~VEHICLE_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_DIRECTION`
               - Direction of latitude crossing at the beginning of a pass.
 
-            * - :py:class:`~GRAPHICS_3D_LOCATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_LOCATION`
               - Location options for the display of textual data in the 3D Graphics window.
 
-            * - :py:class:`~GRAPHICS_3D_X_ORIGIN`
+            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_X_ORIGIN`
               - X origin options for positioning data display.
 
-            * - :py:class:`~GRAPHICS_3D_Y_ORIGIN`
+            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_Y_ORIGIN`
               - Y origin options for positioning data display.
 
-            * - :py:class:`~GRAPHICS_3D_FONT_SIZE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_FONT_SIZE`
               - Font size for data display.
 
-            * - :py:class:`~AIRCRAFT_WGS84_WARNING_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AIRCRAFT_WGS84_WARNING_TYPE`
               - Display mode options for aircraft mission modeler WGS84 warning.
 
-            * - :py:class:`~SURFACE_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SURFACE_REFERENCE`
               - Options for surface reference of earth globes.
 
-            * - :py:class:`~GRAPHICS_3D_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_FORMAT`
               - Font format for data display.
 
-            * - :py:class:`~ATTITUDE_STANDARD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ATTITUDE_STANDARD_TYPE`
               - AgEAttitudeStandardType tells the user which interface to cast to. eRouteAttitudeStandard -> IAgVeRouteAttitudeStandard, eTrajectoryAttitudeStandard -> IAgVeTrajectoryAttitudeStandard, eOrbitAttitudeStanard -> IAgVeOrbitAttitudeStandard.
 
-            * - :py:class:`~VEHICLE_ATTITUDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_ATTITUDE`
               - Available attitude types.
 
-            * - :py:class:`~VEHICLE_PROFILE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PROFILE`
               - Predefined attitude profiles.
 
-            * - :py:class:`~VEHICLE_LOOK_AHEAD_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_LOOK_AHEAD_METHOD`
               - Look ahead duration methods.
 
-            * - :py:class:`~VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION`
               - Values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~SENSOR_ALTITUDE_CROSSING_SIDES`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_ALTITUDE_CROSSING_SIDES`
               - Options for specifying which crossings are computed and displayed in the 2D Graphics window.
 
-            * - :py:class:`~SENSOR_ALTITUDE_CROSSING_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_ALTITUDE_CROSSING_DIRECTION`
               - Options for specifying the direction in which the sensor's field of view crosses the specified altitude.
 
-            * - :py:class:`~SENSOR_GRAPHICS_3D_INHERIT_FROM_2D`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_INHERIT_FROM_2D`
               - Options for how projection distances that are computed based on 2D Graphics projection settings are displayed in the 3D Graphics window.
 
-            * - :py:class:`~SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE`
               - Options optimizing the visual appearance of projections.
 
-            * - :py:class:`~CHAIN_TIME_PERIOD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_TIME_PERIOD_TYPE`
               - Compute Time Period Type.
 
-            * - :py:class:`~CHAIN_CONST_CONSTRAINTS_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_CONST_CONSTRAINTS_MODE`
               - Constellation Constraints Mode.
 
-            * - :py:class:`~CHAIN_COV_ASSET_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_COV_ASSET_MODE`
               - Chain Cov Asset Mode.
 
-            * - :py:class:`~CHAIN_PARENT_PLATFORM_RESTRICTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_PARENT_PLATFORM_RESTRICTION`
               - Options for a chain's From and To Parent Platform Restriction.
 
-            * - :py:class:`~CHAIN_OPTIMAL_STRAND_METRIC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_METRIC_TYPE`
               - Chain optimal strand metric type.
 
-            * - :py:class:`~CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE`
               - Chain optimal strand calculation scalar type.
 
-            * - :py:class:`~CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE`
               - Chain optimal strand link comparison type.
 
-            * - :py:class:`~CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE`
               - Chain optimal strand link comparison type.
 
-            * - :py:class:`~DATA_SAVE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DATA_SAVE_MODE`
               - Access Save Mode.
 
-            * - :py:class:`~COVERAGE_BOUNDS`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_BOUNDS`
               - Coverage bounds options: values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~COVERAGE_POINT_LOC_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_POINT_LOC_METHOD`
               - Point location method.
 
-            * - :py:class:`~COVERAGE_POINT_ALTITUDE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_POINT_ALTITUDE_METHOD`
               - Custom point altitude method.
 
-            * - :py:class:`~COVERAGE_GRID_CLASS`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_GRID_CLASS`
               - Classes of objects that can be used as templates to associate access constraints, basic object properties and, in some cases, altitude with points in the grid.
 
-            * - :py:class:`~COVERAGE_ALTITUDE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_ALTITUDE_METHOD`
               - Method for specifying the altitude of a grid point.
 
-            * - :py:class:`~COVERAGE_GROUND_ALTITUDE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_GROUND_ALTITUDE_METHOD`
               - Method for specifying the ground altitude of a grid point.
 
-            * - :py:class:`~COVERAGE_DATA_RETENTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_DATA_RETENTION`
               - Data retention options.
 
-            * - :py:class:`~COVERAGE_REGION_ACCESS_ACCEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_REGION_ACCESS_ACCEL`
               - Regional acceleration options.
 
-            * - :py:class:`~COVERAGE_RESOLUTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_RESOLUTION`
               - Coverage grid resolution options: values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~COVERAGE_ASSET_STATUS`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_ASSET_STATUS`
               - Coverage asset status.
 
-            * - :py:class:`~COVERAGE_ASSET_GROUPING`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_ASSET_GROUPING`
               - Coverage asset grouping options.
 
-            * - :py:class:`~FIGURE_OF_MERIT_DEFINITION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_DEFINITION_TYPE`
               - Figure of Merit types: values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~FIGURE_OF_MERIT_SATISFACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_SATISFACTION_TYPE`
               - Satisfaction options: determine whether satisfaction is achieved based on the value of the figure of merit.
 
-            * - :py:class:`~FIGURE_OF_MERIT_CONSTRAINT_NAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_CONSTRAINT_NAME`
               - Available constraints to use for the Access Constraint Figure of Merit.
 
-            * - :py:class:`~FIGURE_OF_MERIT_COMPUTE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_COMPUTE`
               - Figure of Merit compute options.
 
-            * - :py:class:`~FIGURE_OF_MERIT_ACROSS_ASSETS`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_ACROSS_ASSETS`
               - Across Assets options: specify which value of the constraint is to be selected based on all currently available assets.
 
-            * - :py:class:`~FIGURE_OF_MERIT_COMPUTE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_COMPUTE_TYPE`
               - Allowed number of assets for the navigation solution.
 
-            * - :py:class:`~FIGURE_OF_MERIT_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_METHOD`
               - Dilution of Precision method.
 
-            * - :py:class:`~FIGURE_OF_MERIT_END_GAP_OPTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_END_GAP_OPTION`
               - End gap options: control consideration of gaps at ends of analysis intervals.
 
-            * - :py:class:`~FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE`
               - Contour fill options.
 
-            * - :py:class:`~FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD`
               - Methods for assigning colors to contour levels.
 
-            * - :py:class:`~FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT`
               - Format options for floating point numbers.
 
-            * - :py:class:`~FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION`
               - Level order display options for the contour legend.
 
-            * - :py:class:`~FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION`
               - Accumulation options: control the sense and persistence of animation graphics for a Figure of Merit.
 
-            * - :py:class:`~FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE`
               - Options for uncertainty in one-way range measurements for the Navigation Accuracy Figure of Merit.
 
-            * - :py:class:`~IV_CLOCK_HOST`
+            * - :py:class:`~ansys.stk.core.stkobjects.IV_CLOCK_HOST`
               - Clock host options for access. Time values are reported with a clock colocated with the clock host object.
 
-            * - :py:class:`~IV_TIME_SENSE`
+            * - :py:class:`~ansys.stk.core.stkobjects.IV_TIME_SENSE`
               - Mode of signal transmission of the designated clock host.
 
-            * - :py:class:`~GPS_ATTITUDE_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GPS_ATTITUDE_MODEL_TYPE`
               - GPS attitude profile model types.
 
-            * - :py:class:`~CONSTELLATION_CONSTRAINT_RESTRICTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.CONSTELLATION_CONSTRAINT_RESTRICTION`
               - The values of the enumeration are used to define constellation constraints that allow you to specify the criteria to be used when constellations are combined with other objects in a chain.
 
-            * - :py:class:`~EVENT_DETECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.EVENT_DETECTION`
               - Available event detection strategies.
 
-            * - :py:class:`~SAMPLING_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.SAMPLING_METHOD`
               - Available sampling methods.
 
-            * - :py:class:`~COVERAGE_SATISFACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_SATISFACTION_TYPE`
               - The condition on the number of assets covering a grid point that must be satisfied for a valid access.
 
-            * - :py:class:`~CCSDS_REFERENCE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.CCSDS_REFERENCE_FRAME`
               - Reference Frame.
 
-            * - :py:class:`~CCSDS_DATE_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.CCSDS_DATE_FORMAT`
               - The date format of the file.
 
-            * - :py:class:`~CCSDS_EPHEM_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.CCSDS_EPHEM_FORMAT`
               - The ephemeris format of the file.
 
-            * - :py:class:`~CCSDS_TIME_SYSTEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.CCSDS_TIME_SYSTEM`
               - Time System.
 
-            * - :py:class:`~STK_EPHEM_COORDINATE_SYSTEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.STK_EPHEM_COORDINATE_SYSTEM`
               - The Coordinate System of the file.
 
-            * - :py:class:`~STK_EPHEM_COVARIANCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.STK_EPHEM_COVARIANCE_TYPE`
               - The covariance data export type.
 
-            * - :py:class:`~EXPORT_TOOL_VERSION_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.EXPORT_TOOL_VERSION_FORMAT`
               - The version format of the file.
 
-            * - :py:class:`~EXPORT_TOOL_TIME_PERIOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.EXPORT_TOOL_TIME_PERIOD`
               - Values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~SPICE_INTERPOLATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPICE_INTERPOLATION`
               - The SPICE interpolation type.
 
-            * - :py:class:`~ATTITUDE_COORDINATE_AXES`
+            * - :py:class:`~ansys.stk.core.stkobjects.ATTITUDE_COORDINATE_AXES`
               - Attitude export options.
 
-            * - :py:class:`~ATTITUDE_INCLUDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ATTITUDE_INCLUDE`
               - Details to include in an exported Attitude file.
 
-            * - :py:class:`~EXPORT_TOOL_STEP_SIZE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EXPORT_TOOL_STEP_SIZE`
               - The Step Size type for an attitude file.
 
-            * - :py:class:`~TEXT_OUTLINE_STYLE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TEXT_OUTLINE_STYLE`
               - The text outline style for 2D graphics display.
 
-            * - :py:class:`~MTO_RANGE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTO_RANGE_MODE`
               - MTO Range Mode.
 
-            * - :py:class:`~MTO_TRACK_EVAL`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTO_TRACK_EVAL`
               - MTO Track Eval Mode.
 
-            * - :py:class:`~MTO_ENTIRETY`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTO_ENTIRETY`
               - MTO Entirety Mode.
 
-            * - :py:class:`~MTO_VISIBILITY_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTO_VISIBILITY_MODE`
               - MTO Visibility Mode.
 
-            * - :py:class:`~MTO_OBJECT_INTERVAL`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTO_OBJECT_INTERVAL`
               - MTO object interval type.
 
-            * - :py:class:`~MTO_INPUT_DATA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTO_INPUT_DATA_TYPE`
               - MTO Input Data Type.
 
-            * - :py:class:`~SOLID_TIDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SOLID_TIDE`
               - The Solid Tide Type for force modeling.
 
-            * - :py:class:`~TIME_PERIOD_VALUE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TIME_PERIOD_VALUE_TYPE`
               - Time value types.
 
-            * - :py:class:`~ONE_POINT_ACCESS_STATUS`
+            * - :py:class:`~ansys.stk.core.stkobjects.ONE_POINT_ACCESS_STATUS`
               - One point access status.
 
-            * - :py:class:`~ONE_POINT_ACCESS_SUMMARY`
+            * - :py:class:`~ansys.stk.core.stkobjects.ONE_POINT_ACCESS_SUMMARY`
               - One point access summary type.
 
-            * - :py:class:`~LOOK_AHEAD_PROPAGATOR`
+            * - :py:class:`~ansys.stk.core.stkobjects.LOOK_AHEAD_PROPAGATOR`
               - Propagators used for calculating ephemeris for look ahead purposes. The enumeration is used with realtime propagators.
 
-            * - :py:class:`~GRAPHICS_3D_MARKER_ORIENTATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_MARKER_ORIENTATION`
               - 3D graphics marker orientations.
 
-            * - :py:class:`~SRP_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.SRP_MODEL`
               - Solar radiation pressure model types.
 
-            * - :py:class:`~DRAG_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.DRAG_MODEL`
               - Drag model types.
 
-            * - :py:class:`~VEHICLE_PROPAGATION_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PROPAGATION_FRAME`
               - Propagation frames used by J2/J4/TwoBody propagators.
 
-            * - :py:class:`~STAR_REFERENCE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.STAR_REFERENCE_FRAME`
               - Star reference frame types.
 
-            * - :py:class:`~GPS_REFERENCE_WEEK`
+            * - :py:class:`~ansys.stk.core.stkobjects.GPS_REFERENCE_WEEK`
               - GPS almanac reference week.
 
-            * - :py:class:`~COVERAGE_CUSTOM_REGION_ALGORITHM`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_CUSTOM_REGION_ALGORITHM`
               - The enumerations are used to enable/disable the special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
 
-            * - :py:class:`~VEHICLE_GPS_SWITCH_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GPS_SWITCH_METHOD`
               - GPS Switch method for the GPS propagator.
 
-            * - :py:class:`~VEHICLE_GPS_ELEM_SELECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GPS_ELEM_SELECTION`
               - GPS Selection method for the GPS propagator.
 
-            * - :py:class:`~VEHICLE_GPS_AUTO_UPDATE_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GPS_AUTO_UPDATE_SOURCE`
               - The sources to retrieve GPS elements from upon propagation.
 
-            * - :py:class:`~VEHICLE_GPS_ALMANAC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GPS_ALMANAC_TYPE`
               - GPS Almanac types.
 
-            * - :py:class:`~STK_EXTERNAL_EPHEMERIS_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.STK_EXTERNAL_EPHEMERIS_FORMAT`
               - Ephemeris file formats supported by the Stk external propagator.
 
-            * - :py:class:`~STK_EXTERNAL_FILE_MESSAGE_LEVEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.STK_EXTERNAL_FILE_MESSAGE_LEVEL`
               - Ephemeris file message level used by the Stk external propagator.
 
-            * - :py:class:`~COVERAGE_3D_DRAW_AT_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_3D_DRAW_AT_ALTITUDE_MODE`
               - Coverage definition drawing modes for filled graphics when showing at altitude in 3D Graphics window.
 
-            * - :py:class:`~DISTANCE_ON_SPHERE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DISTANCE_ON_SPHERE`
               - Type of line which connects the two points.
 
-            * - :py:class:`~FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE`
               - Invalid Value Action: Controls consideration of time samples usage for computing navigation solution when insufficient number of assets are available at one or more of the time samples used.
 
-            * - :py:class:`~VEHICLE_SLEW_TIMING_BETWEEN_TARGETS`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SLEW_TIMING_BETWEEN_TARGETS`
               - Choose an event within the window of opportunity to trigger each slew, or select Optimal to change attitude whenever the slew can be performed most efficiently.
 
-            * - :py:class:`~VEHICLE_SLEW_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SLEW_MODE`
               - Target slew modes.
 
-            * - :py:class:`~COMPONENT`
+            * - :py:class:`~ansys.stk.core.stkobjects.COMPONENT`
               - The different types of components in the component browser.
 
-            * - :py:class:`~VM_DEFINITION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_DEFINITION_TYPE`
               - Volume grid definition types.
 
-            * - :py:class:`~VM_SPATIAL_CALC_EVAL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_SPATIAL_CALC_EVAL_TYPE`
               - Evaluation of Spatial Calculation types.
 
-            * - :py:class:`~VM_SAVE_COMPUTED_DATA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_SAVE_COMPUTED_DATA_TYPE`
               - Save Computed Data types.
 
-            * - :py:class:`~VM_DISPLAY_VOLUME_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_DISPLAY_VOLUME_TYPE`
               - Graphics volume display type.
 
-            * - :py:class:`~VM_DISPLAY_QUALITY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_DISPLAY_QUALITY_TYPE`
               - Quality of the graphics display types.
 
-            * - :py:class:`~VM_LEGEND_NUMERIC_NOTATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_LEGEND_NUMERIC_NOTATION`
               - Legend numeric notation types.
 
-            * - :py:class:`~VM_LEVEL_ORDER`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_LEVEL_ORDER`
               - Legend level display order.
 
-            * - :py:class:`~SENSOR_EOIR_PROCESSING_LEVELS`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_PROCESSING_LEVELS`
               - EOIR processing levels.
 
-            * - :py:class:`~SENSOR_EOIR_JITTER_TYPES`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_JITTER_TYPES`
               - EOIR jitter type.
 
-            * - :py:class:`~SENSOR_EOIR_SCAN_MODES`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_SCAN_MODES`
               - EOIR sensor scan mode.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_IMAGE_QUALITY`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_IMAGE_QUALITY`
               - EOIR band image quality levels.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_SPECTRAL_SHAPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SPECTRAL_SHAPE`
               - EOIR overall system spectral shape determination.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_SPATIAL_INPUT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SPATIAL_INPUT_MODE`
               - EOIR spatial input parameter specification.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_SPECTRAL_RSR_UNITS`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SPECTRAL_RSR_UNITS`
               - EOIR spectral relative system response units specification.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_OPTICAL_INPUT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_OPTICAL_INPUT_MODE`
               - EOIR optical input parameter specification.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_OPTICAL_TRANSMISSION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_OPTICAL_TRANSMISSION_MODE`
               - EOIR optical transmission parameter specification mode.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_RAD_PARAM_LEVEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_RAD_PARAM_LEVEL`
               - EOIR radiometric detector parameter level of specification.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_QE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_QE_MODE`
               - EOIR quantum efficiency specification mode.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_QUANTIZATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_QUANTIZATION_MODE`
               - EOIR mode of determining quantization step size.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_WAVELENGTH_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_WAVELENGTH_TYPE`
               - EOIR band diffraction wavelength reference type.
 
-            * - :py:class:`~SENSOR_EOIR_BAND_SATURATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SATURATION_MODE`
               - EOIR band irradiance or radiance reference mode.
 
-            * - :py:class:`~VM_VOLUME_GRID_EXPORT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_VOLUME_GRID_EXPORT_TYPE`
               - Volumetric data export types.
 
-            * - :py:class:`~VM_DATA_EXPORT_FORMAT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VM_DATA_EXPORT_FORMAT_TYPE`
               - Volumetric data export format types.
 
-            * - :py:class:`~CONSTELLATION_FROM_TO_PARENT_CONSTRAINT`
+            * - :py:class:`~ansys.stk.core.stkobjects.CONSTELLATION_FROM_TO_PARENT_CONSTRAINT`
               - Options for a chain's From and To Parent Constraints.
 
-            * - :py:class:`~ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS`
               - Available Analysis Workbench Access Constraints.
 
-            * - :py:class:`~STATISTICS`
+            * - :py:class:`~ansys.stk.core.stkobjects.STATISTICS`
               - The different statistics that might be available for a data set.
 
-            * - :py:class:`~TIME_VARYING_EXTREMUM`
+            * - :py:class:`~ansys.stk.core.stkobjects.TIME_VARYING_EXTREMUM`
               - The different time varying extremum that might be available for a data set.
 
-            * - :py:class:`~MODEL_GLTF_REFLECTION_MAP_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MODEL_GLTF_REFLECTION_MAP_TYPE`
               - Settings for glTF Reflection.
 
-            * - :py:class:`~SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE`
               - The different ways to determine the sensor's space projection distance in the 3D window.
 
-            * - :py:class:`~LOP_ATMOSPHERIC_DENSITY_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.LOP_ATMOSPHERIC_DENSITY_MODEL`
               - LOP Atmospheric density models.
 
-            * - :py:class:`~LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL`
               - Low Altitude Atmospheric density models.
 
-            * - :py:class:`~EPHEM_EXPORT_TOOL_FILE_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.EPHEM_EXPORT_TOOL_FILE_FORMAT`
               - Ephemeris Export Tool file formats.
 
-            * - :py:class:`~ADV_CAT_ELLIPSOID_CLASS`
+            * - :py:class:`~ansys.stk.core.stkobjects.ADV_CAT_ELLIPSOID_CLASS`
               - Method for determining Ellipsoid Sizing method (class).
 
-            * - :py:class:`~ADV_CAT_CONJUNCTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ADV_CAT_CONJUNCTION_TYPE`
               - Mode for computing events involving conjunction TCA.
 
-            * - :py:class:`~ADV_CAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ADV_CAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE`
               - Type of visible Secondary Ellipsoids.
 
-            * - :py:class:`~EOIR_SHAPE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIR_SHAPE_TYPE`
               - The object geometry which will be rendered in the synthetic scene window.
 
-            * - :py:class:`~EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE`
               - Designation of how material properties are specified.
 
-            * - :py:class:`~EOIR_THERMAL_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIR_THERMAL_MODEL_TYPE`
               - EOIR thermal models.
 
-            * - :py:class:`~EOIR_FLIGHT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIR_FLIGHT_TYPE`
               - EOIR Flight Types.
 
-            * - :py:class:`~COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
               - Component link/embed control reference type.
 
-            * - :py:class:`~SWATH_COMPUTATIONAL_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.SWATH_COMPUTATIONAL_METHOD`
               - Computationals methods for generating swaths.
 
-            * - :py:class:`~CLASSICAL_LOCATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.CLASSICAL_LOCATION`
               - Classical (Keplerian) element used to specify the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~ORIENTATION_ASC_NODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ORIENTATION_ASC_NODE`
               - Ascending node-related options for use in specifying orbit orientation.
 
-            * - :py:class:`~GEODETIC_SIZE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GEODETIC_SIZE`
               - Size options for the Geodetic coordinate type.
 
-            * - :py:class:`~DELAUNAY_L_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DELAUNAY_L_TYPE`
               - Select whether to use the default representation of Delaunay L or L/SQRT(mu).
 
-            * - :py:class:`~DELAUNAY_H_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DELAUNAY_H_TYPE`
               - Select whether to use the default representation of Delaunay H or H/SQRT(mu).
 
-            * - :py:class:`~DELAUNAY_G_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DELAUNAY_G_TYPE`
               - Select whether to use the default representation of Delaunay G or G/SQRT(mu).
 
-            * - :py:class:`~EQUINOCTIAL_SIZE_SHAPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EQUINOCTIAL_SIZE_SHAPE`
               - Opt whether to use Mean Motion or Semimajor Axis to specify the orbit size (Equinoctial coordinate type).
 
-            * - :py:class:`~MIXED_SPHERICAL_FPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.MIXED_SPHERICAL_FPA`
               - Opt whether to use Horizontal or Vertical Flight Path Angle.
 
-            * - :py:class:`~SPHERICAL_FPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPHERICAL_FPA`
               - Opt whether to use Horizontal or Vertical Flight Path Angle.
 
-            * - :py:class:`~CLASSICAL_SIZE_SHAPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CLASSICAL_SIZE_SHAPE`
               - Pairs of Classical (Keplerian) elements used to specify orbit size and shape.
 
-            * - :py:class:`~EQUINOCTIAL_FORMULATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.EQUINOCTIAL_FORMULATION`
               - Formulation: retrograde or posigrade.
 
-            * - :py:class:`~SCATTERING_POINT_PROVIDER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SCATTERING_POINT_PROVIDER_TYPE`
               - Scattering point provider type.
 
-            * - :py:class:`~SCATTERING_POINT_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SCATTERING_POINT_MODEL_TYPE`
               - Scattering point model type.
 
-            * - :py:class:`~SCATTERING_POINT_PROVIDER_LIST_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SCATTERING_POINT_PROVIDER_LIST_TYPE`
               - Scattering Point Provider List Type.
 
-            * - :py:class:`~POLARIZATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.POLARIZATION_TYPE`
               - Polarization Type.
 
-            * - :py:class:`~POLARIZATION_REFERENCE_AXIS`
+            * - :py:class:`~ansys.stk.core.stkobjects.POLARIZATION_REFERENCE_AXIS`
               - Polarization reference axis.
 
-            * - :py:class:`~NOISE_TEMP_COMPUTE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.NOISE_TEMP_COMPUTE_TYPE`
               - System noise temperature compute type.
 
-            * - :py:class:`~POINTING_STRATEGY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.POINTING_STRATEGY_TYPE`
               - Pointing strategy type.
 
-            * - :py:class:`~WAVEFORM_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.WAVEFORM_TYPE`
               - Waveform types.
 
-            * - :py:class:`~FREQUENCY_SPEC`
+            * - :py:class:`~ansys.stk.core.stkobjects.FREQUENCY_SPEC`
               - Frequency Specification Type.
 
-            * - :py:class:`~PRF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PRF_MODE`
               - Radar search/track prf modes.
 
-            * - :py:class:`~PULSE_WIDTH_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PULSE_WIDTH_MODE`
               - Radar search/track pulse width modes.
 
-            * - :py:class:`~WAVEFORM_SELECTION_STRATEGY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.WAVEFORM_SELECTION_STRATEGY_TYPE`
               - Waveform selection strategy type.
 
-            * - :py:class:`~ANTENNA_CONTROL_REFERENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_CONTROL_REFERENCE_TYPE`
               - Antenna control reference type.
 
-            * - :py:class:`~ANTENNA_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_MODEL_TYPE`
               - Antenna model types.
 
-            * - :py:class:`~ANTENNA_CONTOUR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_CONTOUR_TYPE`
               - Antenna contour types.
 
-            * - :py:class:`~CIRCULAR_APERTURE_INPUT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CIRCULAR_APERTURE_INPUT_TYPE`
               - Circular aperture antenna input type.
 
-            * - :py:class:`~RECTANGULAR_APERTURE_INPUT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RECTANGULAR_APERTURE_INPUT_TYPE`
               - Rectangular aperture antenna input type.
 
-            * - :py:class:`~DIRECTION_PROVIDER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DIRECTION_PROVIDER_TYPE`
               - Direction Provider types.
 
-            * - :py:class:`~BEAMFORMER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.BEAMFORMER_TYPE`
               - Beamformer types.
 
-            * - :py:class:`~ELEMENT_CONFIGURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ELEMENT_CONFIGURATION_TYPE`
               - Element configuration types.
 
-            * - :py:class:`~LATTICE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LATTICE_TYPE`
               - Lattice types.
 
-            * - :py:class:`~SPACING_UNIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACING_UNIT`
               - Spacing Units.
 
-            * - :py:class:`~LIMITS_EXCEEDED_BEHAVIOR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LIMITS_EXCEEDED_BEHAVIOR_TYPE`
               - Limits Exceeded Behavior types.
 
-            * - :py:class:`~ANTENNA_GRAPHICS_COORDINATE_SYSTEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_GRAPHICS_COORDINATE_SYSTEM`
               - Coordinate system for defining antenna graphics resolution.
 
-            * - :py:class:`~ANTENNA_MODEL_INPUT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_MODEL_INPUT_TYPE`
               - Diameter computation input type.
 
-            * - :py:class:`~HFSS_FFD_GAIN_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.HFSS_FFD_GAIN_TYPE`
               - Gain type.
 
-            * - :py:class:`~ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE`
               - Cosecant Squared antenna sidelobe selection types.
 
-            * - :py:class:`~BEAM_SELECTION_STRATEGY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.BEAM_SELECTION_STRATEGY_TYPE`
               - Beam selection strategy types.
 
-            * - :py:class:`~TRANSMITTER_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TRANSMITTER_MODEL_TYPE`
               - Transmitter model types.
 
-            * - :py:class:`~TRANSFER_FUNCTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TRANSFER_FUNCTION_TYPE`
               - Transmitter model types.
 
-            * - :py:class:`~RE_TRANSMITTER_OP_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RE_TRANSMITTER_OP_MODE`
               - Re-Transmitter operational mode.
 
-            * - :py:class:`~RECEIVER_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RECEIVER_MODEL_TYPE`
               - Receiver model types.
 
-            * - :py:class:`~LINK_MARGIN_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LINK_MARGIN_TYPE`
               - Link margin types.
 
-            * - :py:class:`~RADAR_STC_ATTENUATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_STC_ATTENUATION_TYPE`
               - Stc Attenuation Type.
 
-            * - :py:class:`~RADAR_FREQUENCY_SPEC`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_FREQUENCY_SPEC`
               - SNR Contour Type.
 
-            * - :py:class:`~RADAR_SNR_CONTOUR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SNR_CONTOUR_TYPE`
               - SNR Contour Type.
 
-            * - :py:class:`~RADAR_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_MODEL_TYPE`
               - Radar system types.
 
-            * - :py:class:`~RADAR_MODE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_MODE_TYPE`
               - Radar mode types.
 
-            * - :py:class:`~RADAR_WAVEFORM_SEARCH_TRACK_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_WAVEFORM_SEARCH_TRACK_TYPE`
               - Radar search/track waveform types.
 
-            * - :py:class:`~RADAR_SEARCH_TRACK_PRF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SEARCH_TRACK_PRF_MODE`
               - Radar search/track prf modes.
 
-            * - :py:class:`~RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE`
               - Radar search/track pulse width modes.
 
-            * - :py:class:`~RADAR_SAR_PRF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SAR_PRF_MODE`
               - Radar SAR prf modes.
 
-            * - :py:class:`~RADAR_SAR_RANGE_RESOLUTION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SAR_RANGE_RESOLUTION_MODE`
               - Radar SAR range resolution modes.
 
-            * - :py:class:`~RADAR_SAR_PCR_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SAR_PCR_MODE`
               - Radar SAR pulse compression ratio modes.
 
-            * - :py:class:`~RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_TYPE`
               - Radar sar pulse integration mode.
 
-            * - :py:class:`~RADAR_P_DET_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_P_DET_TYPE`
               - Radar probability of detection type.
 
-            * - :py:class:`~RADAR_PULSE_INTEGRATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_PULSE_INTEGRATION_TYPE`
               - Radar pulse integration type.
 
-            * - :py:class:`~RADAR_PULSE_INTEGRATOR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_PULSE_INTEGRATOR_TYPE`
               - Radar pulse integrator type.
 
-            * - :py:class:`~RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE`
               - Radar continuous wave analysis mode.
 
-            * - :py:class:`~RADAR_CLUTTER_GEOMETRY_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_CLUTTER_GEOMETRY_MODEL_TYPE`
               - Radar clutter geometry model type.
 
-            * - :py:class:`~RADAR_CLUTTER_MAP_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_CLUTTER_MAP_MODEL_TYPE`
               - Radar clutter map model type.
 
-            * - :py:class:`~RADAR_SWERLING_CASE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SWERLING_CASE`
               - Radar swerling case.
 
-            * - :py:class:`~RCS_COMPUTE_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.RCS_COMPUTE_STRATEGY`
               - Radar cross section compute strategy.
 
-            * - :py:class:`~RADAR_ACTIVITY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_ACTIVITY_TYPE`
               - Radar activity times strategy.
 
-            * - :py:class:`~RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION`
               - Radar cross section contour graphics polarization.
 
-            * - :py:class:`~RF_FILTER_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RF_FILTER_MODEL_TYPE`
               - RF filter model types.
 
-            * - :py:class:`~MODULATOR_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MODULATOR_MODEL_TYPE`
               - Modulator model types.
 
-            * - :py:class:`~DEMODULATOR_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DEMODULATOR_MODEL_TYPE`
               - Demodulator model types.
 
-            * - :py:class:`~RAIN_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RAIN_LOSS_MODEL_TYPE`
               - Rain loss model types.
 
-            * - :py:class:`~ATMOSPHERIC_ABSORPTION_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ATMOSPHERIC_ABSORPTION_MODEL_TYPE`
               - Atmospheric absorption model types.
 
-            * - :py:class:`~URBAN_TERRESTRIAL_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.URBAN_TERRESTRIAL_LOSS_MODEL_TYPE`
               - urban/terrestrial loss model types.
 
-            * - :py:class:`~CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE`
               - Clouds and Fog loss model types.
 
-            * - :py:class:`~CLOUDS_AND_FOG_LIQUID_WATER_CHOICES`
+            * - :py:class:`~ansys.stk.core.stkobjects.CLOUDS_AND_FOG_LIQUID_WATER_CHOICES`
               - Clouds and Fog loss model liquid water content choices.
 
-            * - :py:class:`~IONOSPHERIC_FADING_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.IONOSPHERIC_FADING_LOSS_MODEL_TYPE`
               - Ionospheric loss model types.
 
-            * - :py:class:`~TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE`
               - TropoScintillation loss model types.
 
-            * - :py:class:`~TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES`
+            * - :py:class:`~ansys.stk.core.stkobjects.TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES`
               - TroposphericScintillation loss model average time choices.
 
-            * - :py:class:`~PROJECTION_HORIZONTAL_DATUM_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PROJECTION_HORIZONTAL_DATUM_TYPE`
               - REMCOM Wireless InSite RT project/horizontal datum type.
 
-            * - :py:class:`~BUILD_HEIGHT_REFERENCE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.BUILD_HEIGHT_REFERENCE_METHOD`
               - REMCOM Wireless InSite RT building height reference method.
 
-            * - :py:class:`~BUILD_HEIGHT_UNIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.BUILD_HEIGHT_UNIT`
               - REMCOM Wireless InSite RT building height unit.
 
-            * - :py:class:`~TIREM_POLARIZATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TIREM_POLARIZATION_TYPE`
               - TIREM polarization type.
 
-            * - :py:class:`~VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE`
               - VOACAP solar activity configuration type.
 
-            * - :py:class:`~VOACAP_COEFFICIENT_DATA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOACAP_COEFFICIENT_DATA_TYPE`
               - VOACAP coefficient data type.
 
-            * - :py:class:`~LASER_PROPAGATION_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LASER_PROPAGATION_LOSS_MODEL_TYPE`
               - Laser propagation loss model types.
 
-            * - :py:class:`~LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE`
               - Laser tropospheric scintillation loss model types.
 
-            * - :py:class:`~ATMOSPHERIC_TURBULENCE_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ATMOSPHERIC_TURBULENCE_MODEL_TYPE`
               - Refractive index structure parameter model types.
 
-            * - :py:class:`~MODTRAN_AEROSOL_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MODTRAN_AEROSOL_MODEL_TYPE`
               - MODTRAN-derived lookup table aerosol model extinction types.
 
-            * - :py:class:`~MODTRAN_CLOUD_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MODTRAN_CLOUD_MODEL_TYPE`
               - MODTRAN Cloud model types.
 
-            * - :py:class:`~COMM_SYSTEM_REFERENCE_BANDWIDTH`
+            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_REFERENCE_BANDWIDTH`
               - CommSystem reference bandwidth.
 
-            * - :py:class:`~COMM_SYSTEM_CONSTRAINING_ROLE`
+            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_CONSTRAINING_ROLE`
               - CommSystem constraining role.
 
-            * - :py:class:`~COMM_SYSTEM_SAVE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_SAVE_MODE`
               - CommSystem save mode.
 
-            * - :py:class:`~COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE`
               - CommSystem access options event detection type.
 
-            * - :py:class:`~COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE`
               - CommSystem access options sampling method type.
 
-            * - :py:class:`~COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE`
               - Link selection strategy types.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY`
               - Activity level for the NASA models NASAELE and NASAPRO.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_CRRES_PROTON_ACTIVITY`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_CRRES_PROTON_ACTIVITY`
               - Activity level for CRRESPRO model.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY`
               - Activity level for CRRESRAD model.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE`
               - Mode by which color is assigned.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE`
               - Scaling of magnetic field to use when assigning color/translucency.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD`
               - Main magnetic field.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD`
               - External magnetic field.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_SAA_CHANNEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_SAA_CHANNEL`
               - Energy level for SAA protons.
 
-            * - :py:class:`~SPACE_ENVIRONMENT_SAA_FLUX_LEVEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_SAA_FLUX_LEVEL`
               - Flux level for SAA contour.
 
-            * - :py:class:`~VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL`
               - Thermal shape model.
 
-            * - :py:class:`~VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE`
               - Mode for computing 13-month average F10.7.
 
-            * - :py:class:`~VEHICLE_SPACE_ENVIRONMENT_MATERIAL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_MATERIAL`
               - Material.
 
-            * - :py:class:`~VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE`
               - Models that are to be included when modeling radiation.
 
-            * - :py:class:`~VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL`
               - Dose channel.
 
-            * - :py:class:`~VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY`
               - Detector geometry.
 
-            * - :py:class:`~VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE`
               - Detector material.
 
-            * - :py:class:`~VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE`
               - Mode for computing 15 day average Ap.
 
-            * - :py:class:`~NOTIFICATION_FILTER_MASK`
+            * - :py:class:`~ansys.stk.core.stkobjects.NOTIFICATION_FILTER_MASK`
               - The notification flags are used to enable/disable STK Object Model event notifications.
 
 

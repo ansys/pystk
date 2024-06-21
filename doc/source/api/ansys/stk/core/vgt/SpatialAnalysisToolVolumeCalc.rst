@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeCalc
 =============================
 
-.. py:class:: SpatialAnalysisToolVolumeCalc
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalc
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalc`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc interface. The methods and properties of the interface provide Volumetric calc functions.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeCalc
 
 Overview
 --------

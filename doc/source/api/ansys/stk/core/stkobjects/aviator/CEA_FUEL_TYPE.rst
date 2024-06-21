@@ -1,12 +1,12 @@
 CEA_FUEL_TYPE
 =============
 
-.. py:class:: CEA_FUEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.CEA_FUEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: CEA_FUEL_TYPE
 
 Overview
 --------

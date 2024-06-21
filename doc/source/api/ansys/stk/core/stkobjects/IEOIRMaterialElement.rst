@@ -1,13 +1,13 @@
 IEOIRMaterialElement
 ====================
 
-.. py:class:: IEOIRMaterialElement
+.. py:class:: ansys.stk.core.stkobjects.IEOIRMaterialElement
 
    object
    
    A material element interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRMaterialElement
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~temperature_model`
-            * - :py:meth:`~body_temperature`
-            * - :py:meth:`~temperature_file`
-            * - :py:meth:`~reflectance`
-            * - :py:meth:`~material`
-            * - :py:meth:`~reflectance_file`
-            * - :py:meth:`~material_element_label`
-            * - :py:meth:`~available_materials`
-            * - :py:meth:`~data_provider`
-            * - :py:meth:`~available_data_providers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.temperature_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.body_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.temperature_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.reflectance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.material`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.reflectance_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.material_element_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.available_materials`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.data_provider`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.available_data_providers`
 
 
 Import detail

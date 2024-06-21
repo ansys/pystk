@@ -1,13 +1,13 @@
 IStateCalcRA
 ============
 
-.. py:class:: IStateCalcRA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRA
 
    object
    
    Properties for a Right Asc calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRA
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRA.coord_system_name`
 
 
 Import detail

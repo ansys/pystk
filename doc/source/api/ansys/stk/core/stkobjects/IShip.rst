@@ -1,13 +1,13 @@
 IShip
 =====
 
-.. py:class:: IShip
+.. py:class:: ansys.stk.core.stkobjects.IShip
 
    IGreatArcVehicle
    
    Interface for a ship object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IShip
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~export_tools`
-            * - :py:meth:`~atmosphere`
-            * - :py:meth:`~radar_clutter_map`
-            * - :py:meth:`~radar_cross_section`
-            * - :py:meth:`~laser_environment`
-            * - :py:meth:`~rf_environment`
-            * - :py:meth:`~lighting_max_step_terrain`
-            * - :py:meth:`~lighting_max_step_central_body_shape`
-            * - :py:meth:`~get_eoir`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.export_tools`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.atmosphere`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.radar_clutter_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.laser_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.lighting_max_step_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.lighting_max_step_central_body_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IShip.get_eoir`
 
 
 Import detail
@@ -46,49 +46,49 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IShip.graphics
-    :type: IAgShGraphics
+    :type: IShipGraphics
 
     Get the ship's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IShip.graphics_3d
-    :type: IAgShVO
+    :type: IShipGraphics3D
 
     Get the ship's 3D Graphics properties.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.IShip.export_tools
-    :type: IAgShExportTools
+    :type: IShipExportTools
 
     Returns the IAgShExportTools interface.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.IShip.atmosphere
-    :type: IAgAtmosphere
+    :type: IAtmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.IShip.radar_clutter_map
-    :type: IAgRadarClutterMapInheritable
+    :type: IRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IShip.radar_cross_section
-    :type: IAgRadarCrossSectionInheritable
+    :type: IRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IShip.laser_environment
-    :type: IAgPlatformLaserEnvironment
+    :type: IPlatformLaserEnvironment
 
     Gets the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IShip.rf_environment
-    :type: IAgPlatformRFEnvironment
+    :type: IPlatformRFEnvironment
 
     Gets the RF environment.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: get_eoir
     :canonical: ansys.stk.core.stkobjects.IShip.get_eoir
-    :type: IAgEOIR
+    :type: IEOIR
 
     Get the EOIR properties of the ship.
 

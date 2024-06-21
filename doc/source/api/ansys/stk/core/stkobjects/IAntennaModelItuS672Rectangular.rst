@@ -1,13 +1,13 @@
 IAntennaModelItuS672Rectangular
 ===============================
 
-.. py:class:: IAntennaModelItuS672Rectangular
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular
 
    object
    
    Provide access to the properties and methods defining an ITU-R S672-4 1.2 rectangular antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelItuS672Rectangular
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~major_dimension`
-            * - :py:meth:`~minor_dimension`
-            * - :py:meth:`~use_mainlobe_model`
-            * - :py:meth:`~override_half_beamwidth`
-            * - :py:meth:`~half_beamwidth`
-            * - :py:meth:`~nearin_sidelobe_level`
-            * - :py:meth:`~farout_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.major_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.minor_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.use_mainlobe_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.override_half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.nearin_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular.farout_sidelobe_level`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VehicleGraphics3DBPlanePoint
 ============================
 
-.. py:class:: VehicleGraphics3DBPlanePoint
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint
 
-   Bases: py:obj:`~IVehicleGraphics3DBPlanePoint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint`
 
    3D BPlane Additional Point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DBPlanePoint
 
 Overview
 --------

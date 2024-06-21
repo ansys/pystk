@@ -1,13 +1,13 @@
 IObjectLinkCollection
 =====================
 
-.. py:class:: IObjectLinkCollection
+.. py:class:: ansys.stk.core.stkobjects.IObjectLinkCollection
 
    object
    
    IAgObjectLinkCollection represents a collection of names of STK objects that are available in the current scenario.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IObjectLinkCollection
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.add`
               - Add to the collection a link to an STK object with the given object path and name.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.remove`
               - Remove from the collection a link to the STK object with the given index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.remove_all`
               - Remove all links from the collection.
-            * - :py:meth:`~remove_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.remove_name`
               - Remove from the collection a link to an STK object with the given object path and name.
-            * - :py:meth:`~add_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.add_object`
               - Add to the collection a link to the given STK object.
-            * - :py:meth:`~remove_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.remove_object`
               - Remove from the collection a link to the given STK object.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.contains`
               - Determine whether the object with the given name is in the collection.
-            * - :py:meth:`~index_of`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.index_of`
               - Search the collection for the specified object and returns a zero-based index of the first occurrence within the collection, if found; otherwise, -1.
 
     .. tab-item:: Properties
@@ -45,9 +45,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~available_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLinkCollection.available_objects`
 
 
 Import detail

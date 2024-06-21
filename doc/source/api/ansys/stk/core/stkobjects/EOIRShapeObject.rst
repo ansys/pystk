@@ -1,13 +1,13 @@
 EOIRShapeObject
 ===============
 
-.. py:class:: EOIRShapeObject
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeObject
 
-   Bases: py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Represents a generic shape object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeObject
 
 Overview
 --------

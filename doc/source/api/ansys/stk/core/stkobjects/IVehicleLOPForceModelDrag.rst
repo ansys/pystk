@@ -1,13 +1,13 @@
 IVehicleLOPForceModelDrag
 =========================
 
-.. py:class:: IVehicleLOPForceModelDrag
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag
 
    object
    
    Interface for atmospheric drag for LOP propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLOPForceModelDrag
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use`
-            * - :py:meth:`~cd`
-            * - :py:meth:`~advanced`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag.use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag.cd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag.advanced`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag.advanced
-    :type: IAgVeAdvanced
+    :type: IVehicleAdvanced
 
     Get the advanced drag parameters.
 

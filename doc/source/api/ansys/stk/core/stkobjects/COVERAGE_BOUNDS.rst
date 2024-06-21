@@ -1,12 +1,12 @@
 COVERAGE_BOUNDS
 ===============
 
-.. py:class:: COVERAGE_BOUNDS
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_BOUNDS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_BOUNDS
 
 Overview
 --------

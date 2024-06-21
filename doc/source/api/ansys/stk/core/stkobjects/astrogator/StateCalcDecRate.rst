@@ -1,13 +1,13 @@
 StateCalcDecRate
 ================
 
-.. py:class:: StateCalcDecRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDecRate
 
-   Bases: py:obj:`~IStateCalcDecRate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDecRate`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    DeclinationRate Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDecRate
 
 Overview
 --------

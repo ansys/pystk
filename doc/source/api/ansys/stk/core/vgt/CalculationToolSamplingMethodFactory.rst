@@ -1,13 +1,13 @@
 CalculationToolSamplingMethodFactory
 ====================================
 
-.. py:class:: CalculationToolSamplingMethodFactory
+.. py:class:: ansys.stk.core.vgt.CalculationToolSamplingMethodFactory
 
-   Bases: py:obj:`~ICalculationToolSamplingMethodFactory`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolSamplingMethodFactory`
 
    The factory creates sampling method components.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolSamplingMethodFactory
 
 Overview
 --------

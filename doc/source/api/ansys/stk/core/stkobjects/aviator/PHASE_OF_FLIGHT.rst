@@ -1,12 +1,12 @@
 PHASE_OF_FLIGHT
 ===============
 
-.. py:class:: PHASE_OF_FLIGHT
+.. py:class:: ansys.stk.core.stkobjects.aviator.PHASE_OF_FLIGHT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PHASE_OF_FLIGHT
 
 Overview
 --------

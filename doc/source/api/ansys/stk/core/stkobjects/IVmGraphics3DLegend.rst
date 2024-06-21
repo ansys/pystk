@@ -1,13 +1,13 @@
 IVmGraphics3DLegend
 ===================
 
-.. py:class:: IVmGraphics3DLegend
+.. py:class:: ansys.stk.core.stkobjects.IVmGraphics3DLegend
 
    object
    
    IAgVmVOLegend Interface for defining boundary/fill legend for volumetric object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGraphics3DLegend
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position_x`
-            * - :py:meth:`~position_y`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~background_color`
-            * - :py:meth:`~title`
-            * - :py:meth:`~decimal_digits`
-            * - :py:meth:`~notation`
-            * - :py:meth:`~text_color`
-            * - :py:meth:`~level_order`
-            * - :py:meth:`~max_color_squares`
-            * - :py:meth:`~color_square_width`
-            * - :py:meth:`~color_square_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.position_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.position_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.background_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.title`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.decimal_digits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.notation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.text_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.level_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.max_color_squares`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.color_square_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.color_square_height`
 
 
 Import detail

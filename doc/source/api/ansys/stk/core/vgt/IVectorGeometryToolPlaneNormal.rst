@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneNormal
 ==============================
 
-.. py:class:: IVectorGeometryToolPlaneNormal
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneNormal
 
    object
    
    A plane normal to a vector at a given point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneNormal
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~normal_vector`
-            * - :py:meth:`~reference_vector`
-            * - :py:meth:`~reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneNormal.normal_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneNormal.reference_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneNormal.reference_point`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: normal_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneNormal.normal_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a Normal vector.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneNormal.reference_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a reference vector.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneNormal.reference_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a reference point.
 

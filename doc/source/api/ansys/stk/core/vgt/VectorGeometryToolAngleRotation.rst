@@ -1,13 +1,13 @@
 VectorGeometryToolAngleRotation
 ===============================
 
-.. py:class:: VectorGeometryToolAngleRotation
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleRotation
 
-   Bases: py:obj:`~IVectorGeometryToolAngleRotation`, py:obj:`~IVectorGeometryToolAngle`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRotation`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Angle of the shortest rotation between the specified FromAxes and ToAxes axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAngleRotation
 
 Overview
 --------

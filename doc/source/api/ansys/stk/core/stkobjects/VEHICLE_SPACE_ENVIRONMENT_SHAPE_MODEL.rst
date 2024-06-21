@@ -1,12 +1,12 @@
 VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL
 =====================================
 
-.. py:class:: VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL
 
 Overview
 --------

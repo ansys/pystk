@@ -1,13 +1,13 @@
 IStateCalcLonOfPeriapsis
 ========================
 
-.. py:class:: IStateCalcLonOfPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfPeriapsis
 
    object
    
    Properties for a Longitude of Periapsis calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcLonOfPeriapsis
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfPeriapsis.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfPeriapsis.element_type`
 
 
 Import detail

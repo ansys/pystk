@@ -1,13 +1,13 @@
 RFFilterModelElliptic
 =====================
 
-.. py:class:: RFFilterModelElliptic
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelElliptic
 
-   Bases: py:obj:`~IRFFilterModelElliptic`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelElliptic`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a elliptic filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelElliptic
 
 Overview
 --------

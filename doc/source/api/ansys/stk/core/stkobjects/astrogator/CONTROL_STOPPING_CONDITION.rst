@@ -1,12 +1,12 @@
 CONTROL_STOPPING_CONDITION
 ==========================
 
-.. py:class:: CONTROL_STOPPING_CONDITION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_STOPPING_CONDITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_STOPPING_CONDITION
 
 Overview
 --------

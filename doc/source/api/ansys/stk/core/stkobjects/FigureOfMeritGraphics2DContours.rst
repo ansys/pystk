@@ -1,13 +1,13 @@
 FigureOfMeritGraphics2DContours
 ===============================
 
-.. py:class:: FigureOfMeritGraphics2DContours
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DContours
 
-   Bases: py:obj:`~IFigureOfMeritGraphics2DContours`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours`
 
    Coverage contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGraphics2DContours
 
 Overview
 --------

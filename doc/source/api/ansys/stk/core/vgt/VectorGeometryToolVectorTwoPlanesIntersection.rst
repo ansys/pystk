@@ -1,13 +1,13 @@
 VectorGeometryToolVectorTwoPlanesIntersection
 =============================================
 
-.. py:class:: VectorGeometryToolVectorTwoPlanesIntersection
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorTwoPlanesIntersection
 
-   Bases: py:obj:`~IVectorGeometryToolVectorTwoPlanesIntersection`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined along the intersection of two planes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorTwoPlanesIntersection
 
 Overview
 --------

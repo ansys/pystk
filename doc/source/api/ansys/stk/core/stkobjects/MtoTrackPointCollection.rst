@@ -1,13 +1,13 @@
 MtoTrackPointCollection
 =======================
 
-.. py:class:: MtoTrackPointCollection
+.. py:class:: ansys.stk.core.stkobjects.MtoTrackPointCollection
 
-   Bases: py:obj:`~IMtoTrackPointCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection`
 
    MTO track point list.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoTrackPointCollection
 
 Overview
 --------

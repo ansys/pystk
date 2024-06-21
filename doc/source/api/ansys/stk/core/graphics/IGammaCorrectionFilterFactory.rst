@@ -1,13 +1,13 @@
 IGammaCorrectionFilterFactory
 =============================
 
-.. py:class:: IGammaCorrectionFilterFactory
+.. py:class:: ansys.stk.core.graphics.IGammaCorrectionFilterFactory
 
    object
    
    Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGammaCorrectionFilterFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IGammaCorrectionFilterFactory.initialize`
               - Initialize a new instance.
-            * - :py:meth:`~initialize_with_gamma`
+            * - :py:attr:`~ansys.stk.core.graphics.IGammaCorrectionFilterFactory.initialize_with_gamma`
               - Initialize a new instance with the specified gamma.
 
 

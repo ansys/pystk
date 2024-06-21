@@ -1,13 +1,13 @@
 ConstantDisplayConditionFactory
 ===============================
 
-.. py:class:: ConstantDisplayConditionFactory
+.. py:class:: ansys.stk.core.graphics.ConstantDisplayConditionFactory
 
-   Bases: py:obj:`~IConstantDisplayConditionFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IConstantDisplayConditionFactory`
 
    A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ConstantDisplayConditionFactory
 
 Overview
 --------

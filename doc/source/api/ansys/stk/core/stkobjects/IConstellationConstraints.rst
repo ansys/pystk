@@ -1,13 +1,13 @@
 IConstellationConstraints
 =========================
 
-.. py:class:: IConstellationConstraints
+.. py:class:: ansys.stk.core.stkobjects.IConstellationConstraints
 
    object
    
    Constellation Constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IConstellationConstraints
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_from_restriction_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.set_from_restriction_type`
               - Set a new restriction type when in the from access position.
-            * - :py:meth:`~set_to_restriction_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.set_to_restriction_type`
               - Set a new restriction type when in the to access position.
 
     .. tab-item:: Properties
@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~from_parent_constraint`
-            * - :py:meth:`~to_parent_constraint`
-            * - :py:meth:`~from_restriction_type`
-            * - :py:meth:`~from_restriction`
-            * - :py:meth:`~to_restriction_type`
-            * - :py:meth:`~to_restriction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.from_parent_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.to_parent_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.from_restriction_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.from_restriction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.to_restriction_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.to_restriction`
 
 
 Import detail
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: from_restriction
     :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.from_restriction
-    :type: IAgCnCnstrRestriction
+    :type: IConstellationConstraintRestriction
 
     Returns a restriction corresponding to the restriction type when in the from access position.
 
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: to_restriction
     :canonical: ansys.stk.core.stkobjects.IConstellationConstraints.to_restriction
-    :type: IAgCnCnstrRestriction
+    :type: IConstellationConstraintRestriction
 
     Returns a restriction corresponding to the restriction type when in the to access position.
 

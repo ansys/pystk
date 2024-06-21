@@ -1,13 +1,13 @@
 ICoverageBoundsGlobal
 =====================
 
-.. py:class:: ICoverageBoundsGlobal
+.. py:class:: ansys.stk.core.stkobjects.ICoverageBoundsGlobal
 
    ICoverageBounds
    
    Global: grid covering the entire globe.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageBoundsGlobal
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ICommSystemGraphics
 ===================
 
-.. py:class:: ICommSystemGraphics
+.. py:class:: ansys.stk.core.stkobjects.ICommSystemGraphics
 
    object
    
    IAgCommSystemGraphics Interface for a CommSystem's 2D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystemGraphics
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~show_desired_links`
-            * - :py:meth:`~desired_links_color`
-            * - :py:meth:`~desired_links_line_style`
-            * - :py:meth:`~desired_links_line_width`
-            * - :py:meth:`~show_interference_links`
-            * - :py:meth:`~interference_links_color`
-            * - :py:meth:`~interference_links_line_style`
-            * - :py:meth:`~interference_links_line_width`
-            * - :py:meth:`~show_primary_interferer_link`
-            * - :py:meth:`~primary_interferer_link_color`
-            * - :py:meth:`~primary_interferer_link_line_style`
-            * - :py:meth:`~primary_interferer_link_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.show_desired_links`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.desired_links_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.desired_links_line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.desired_links_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.show_interference_links`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.interference_links_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.interference_links_line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.interference_links_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.show_primary_interferer_link`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.primary_interferer_link_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.primary_interferer_link_line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.primary_interferer_link_line_width`
 
 
 Import detail

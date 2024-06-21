@@ -1,12 +1,12 @@
 CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE
 =======================================
 
-.. py:class:: CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE
 
 Overview
 --------

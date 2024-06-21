@@ -1,13 +1,13 @@
 IAccessConstraintGrazingAltitude
 ================================
 
-.. py:class:: IAccessConstraintGrazingAltitude
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintGrazingAltitude
 
    IAccessConstraintMinMax
    
    Access Constraint used for Grazing Altitude Constraint.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintGrazingAltitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_beyond_tgt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintGrazingAltitude.compute_beyond_tgt`
 
 
 Import detail

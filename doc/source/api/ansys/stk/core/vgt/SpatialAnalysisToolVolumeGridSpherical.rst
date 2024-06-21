@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeGridSpherical
 ======================================
 
-.. py:class:: SpatialAnalysisToolVolumeGridSpherical
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridSpherical`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridSpherical`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume grid spherical interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeGridSpherical
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehiclePropagatorSPICE
 ======================
 
-.. py:class:: VehiclePropagatorSPICE
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorSPICE
 
-   Bases: py:obj:`~IVehiclePropagatorSPICE`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the SPICE propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorSPICE
 
 Overview
 --------

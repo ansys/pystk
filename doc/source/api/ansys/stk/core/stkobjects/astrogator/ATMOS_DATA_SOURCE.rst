@@ -1,12 +1,12 @@
 ATMOS_DATA_SOURCE
 =================
 
-.. py:class:: ATMOS_DATA_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ATMOS_DATA_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ATMOS_DATA_SOURCE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IDesignCR3BPObjectCollection
 ============================
 
-.. py:class:: IDesignCR3BPObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection
 
    object
    
    The list of associated CR3BP objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDesignCR3BPObjectCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection.item`
               - Iterate through the collection.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection.get_item_by_index`
               - Retrieve an associated object from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection.get_item_by_name`
               - Retrieve an associated object from the collection by name.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection.count`
 
 
 Import detail

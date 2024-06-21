@@ -1,13 +1,13 @@
 IVehicleGPSAutoUpdateOnlineSource
 =================================
 
-.. py:class:: IVehicleGPSAutoUpdateOnlineSource
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateOnlineSource
 
    object
    
    Interface to configure the GPS automatic updates using online source (AGI server).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSAutoUpdateOnlineSource
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~preview`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateOnlineSource.preview`
               - Preview the GPS elements in the almanac. Only records associated with the current PRN are returned.
 
 

@@ -1,13 +1,13 @@
 IDataProviderResultDataSet
 ==========================
 
-.. py:class:: IDataProviderResultDataSet
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultDataSet
 
    object
    
    Represents a dataset element.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultDataSet
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.get_values`
               - Retrieve an array of values of the elements in the dataset.
-            * - :py:meth:`~get_internal_unit_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.get_internal_unit_values`
               - Get the Internal Unit Values of the Data.
 
     .. tab-item:: Properties
@@ -31,11 +31,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~element_name`
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~dimension_name`
-            * - :py:meth:`~count`
-            * - :py:meth:`~statistics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.element_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.dimension_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.statistics`
 
 
 Import detail
@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: statistics
     :canonical: ansys.stk.core.stkobjects.IDataProviderResultDataSet.statistics
-    :type: IAgDrStatistics
+    :type: IDataProviderResultStatistics
 
     Returns an interface for computing statistics on the results.
 

@@ -1,12 +1,12 @@
 SENSOR_EOIR_BAND_IMAGE_QUALITY
 ==============================
 
-.. py:class:: SENSOR_EOIR_BAND_IMAGE_QUALITY
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_IMAGE_QUALITY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_EOIR_BAND_IMAGE_QUALITY
 
 Overview
 --------

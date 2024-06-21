@@ -1,12 +1,12 @@
 MTO_INPUT_DATA_TYPE
 ===================
 
-.. py:class:: MTO_INPUT_DATA_TYPE
+.. py:class:: ansys.stk.core.stkobjects.MTO_INPUT_DATA_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MTO_INPUT_DATA_TYPE
 
 Overview
 --------

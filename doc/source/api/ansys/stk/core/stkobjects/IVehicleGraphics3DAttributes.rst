@@ -1,13 +1,13 @@
 IVehicleGraphics3DAttributes
 ============================
 
-.. py:class:: IVehicleGraphics3DAttributes
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DAttributes
 
    object
    
    Base Interface IAgVeVOAttributes. IAgVeVOAttributesBasic and IAgVeVOAttributesIntervals derive from this.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DAttributes
 
 Overview
 --------

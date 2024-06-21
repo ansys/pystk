@@ -1,13 +1,13 @@
 ObjectLinkCollection
 ====================
 
-.. py:class:: ObjectLinkCollection
+.. py:class:: ansys.stk.core.stkobjects.ObjectLinkCollection
 
-   Bases: py:obj:`~IObjectLinkCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IObjectLinkCollection`
 
    Collection of names of STK objects that are available in the current Scenario.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ObjectLinkCollection
 
 Overview
 --------

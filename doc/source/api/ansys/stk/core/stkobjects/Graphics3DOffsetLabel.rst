@@ -1,13 +1,13 @@
 Graphics3DOffsetLabel
 =====================
 
-.. py:class:: Graphics3DOffsetLabel
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DOffsetLabel
 
-   Bases: py:obj:`~IGraphics3DOffsetLabel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DOffsetLabel`
 
    Class defining the offset of the position of an object label in the 3D Graphics window.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DOffsetLabel
 
 Overview
 --------

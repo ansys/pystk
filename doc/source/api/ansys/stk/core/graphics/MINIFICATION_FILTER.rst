@@ -1,12 +1,12 @@
 MINIFICATION_FILTER
 ===================
 
-.. py:class:: MINIFICATION_FILTER
+.. py:class:: ansys.stk.core.graphics.MINIFICATION_FILTER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MINIFICATION_FILTER
 
 Overview
 --------

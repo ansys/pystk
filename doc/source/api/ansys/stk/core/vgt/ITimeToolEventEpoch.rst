@@ -1,13 +1,13 @@
 ITimeToolEventEpoch
 ===================
 
-.. py:class:: ITimeToolEventEpoch
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventEpoch
 
    object
    
    Event set at specified date/time.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventEpoch
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventEpoch.epoch`
 
 
 Import detail

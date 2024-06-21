@@ -1,13 +1,13 @@
 ICelestialBodyCollection
 ========================
 
-.. py:class:: ICelestialBodyCollection
+.. py:class:: ansys.stk.core.stkobjects.ICelestialBodyCollection
 
    object
    
    Represents a collection of celestial bodies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICelestialBodyCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~recycle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyCollection.recycle`
 
 
 Import detail

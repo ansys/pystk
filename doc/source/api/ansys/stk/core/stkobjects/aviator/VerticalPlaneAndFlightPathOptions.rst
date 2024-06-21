@@ -1,13 +1,13 @@
 VerticalPlaneAndFlightPathOptions
 =================================
 
-.. py:class:: VerticalPlaneAndFlightPathOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.VerticalPlaneAndFlightPathOptions
 
-   Bases: py:obj:`~IVerticalPlaneAndFlightPathOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneAndFlightPathOptions`
 
    Class defining the vertical plane options for an arc procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: VerticalPlaneAndFlightPathOptions
 
 Overview
 --------

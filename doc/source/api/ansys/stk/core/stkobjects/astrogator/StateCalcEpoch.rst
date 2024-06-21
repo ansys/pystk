@@ -1,13 +1,13 @@
 StateCalcEpoch
 ==============
 
-.. py:class:: StateCalcEpoch
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcEpoch
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEpoch`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEpoch`
 
    Epoch Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcEpoch
 
 Overview
 --------

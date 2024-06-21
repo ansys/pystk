@@ -1,13 +1,13 @@
 IVectorGeometryToolPointLocateInSystemWithRateResult
 ====================================================
 
-.. py:class:: IVectorGeometryToolPointLocateInSystemWithRateResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult
 
    object
    
    Contains the results returned with IAgCrdnPoint.LocateInSystemWithRate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointLocateInSystemWithRateResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~position`
-            * - :py:meth:`~velocity`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.position`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.velocity`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.position
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The point position in the specified coordinate system.
 
 .. py:property:: velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.velocity
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The point velocity in the specified coordinate system.
 

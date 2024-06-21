@@ -1,13 +1,13 @@
 IGraphics3DRangeContours
 ========================
 
-.. py:class:: IGraphics3DRangeContours
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DRangeContours
 
    object
    
    AgVORangeContour used to access the 3D RangeContour attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DRangeContours
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~translucent_lines`
-            * - :py:meth:`~percent_translucency`
-            * - :py:meth:`~border_wall`
-            * - :py:meth:`~label_swap_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.translucent_lines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.percent_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.border_wall`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.label_swap_distance`
 
 
 Import detail
@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: border_wall
     :canonical: ansys.stk.core.stkobjects.IGraphics3DRangeContours.border_wall
-    :type: IAgVOBorderWall
+    :type: IGraphics3DBorderWall
 
     Retrieve the border wall properties of the range contours.
 
 .. py:property:: label_swap_distance
     :canonical: ansys.stk.core.stkobjects.IGraphics3DRangeContours.label_swap_distance
-    :type: IAgVOLabelSwapDistance
+    :type: IGraphics3DLabelSwapDistance
 
     Interface to control the level of detail in labels and other screen objects at specified distances.
 

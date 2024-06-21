@@ -1,12 +1,12 @@
 AXIS_OFFSET
 ===========
 
-.. py:class:: AXIS_OFFSET
+.. py:class:: ansys.stk.core.stkobjects.AXIS_OFFSET
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AXIS_OFFSET
 
 Overview
 --------

@@ -1,13 +1,13 @@
 AircraftCategory
 ================
 
-.. py:class:: AircraftCategory
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftCategory
 
-   Bases: py:obj:`~IAircraftCategory`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftCategory`
 
    Class defining the aircraft category in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftCategory
 
 Overview
 --------

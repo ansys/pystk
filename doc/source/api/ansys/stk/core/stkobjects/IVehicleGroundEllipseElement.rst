@@ -1,13 +1,13 @@
 IVehicleGroundEllipseElement
 ============================
 
-.. py:class:: IVehicleGroundEllipseElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGroundEllipseElement
 
    object
    
    Ground ellipse.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGroundEllipseElement
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ellipse_name`
-            * - :py:meth:`~ellipse_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGroundEllipseElement.ellipse_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGroundEllipseElement.ellipse_data`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: ellipse_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGroundEllipseElement.ellipse_data
-    :type: IAgVeEllipseDataCollection
+    :type: IVehicleEllipseDataCollection
 
     Get the ground ellipse data.
 

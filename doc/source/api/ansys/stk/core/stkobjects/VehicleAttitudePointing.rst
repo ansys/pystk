@@ -1,13 +1,13 @@
 VehicleAttitudePointing
 =======================
 
-.. py:class:: VehicleAttitudePointing
+.. py:class:: ansys.stk.core.stkobjects.VehicleAttitudePointing
 
-   Bases: py:obj:`~IVehicleAttitudePointing`, py:obj:`~IVehiclePointing`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudePointing`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePointing`
 
    Target pointing attitude parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleAttitudePointing
 
 Overview
 --------

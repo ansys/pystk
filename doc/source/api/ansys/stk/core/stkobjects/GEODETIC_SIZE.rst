@@ -1,12 +1,12 @@
 GEODETIC_SIZE
 =============
 
-.. py:class:: GEODETIC_SIZE
+.. py:class:: ansys.stk.core.stkobjects.GEODETIC_SIZE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GEODETIC_SIZE
 
 Overview
 --------

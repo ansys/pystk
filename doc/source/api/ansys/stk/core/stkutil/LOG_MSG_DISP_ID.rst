@@ -1,12 +1,12 @@
 LOG_MSG_DISP_ID
 ===============
 
-.. py:class:: LOG_MSG_DISP_ID
+.. py:class:: ansys.stk.core.stkutil.LOG_MSG_DISP_ID
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: LOG_MSG_DISP_ID
 
 Overview
 --------

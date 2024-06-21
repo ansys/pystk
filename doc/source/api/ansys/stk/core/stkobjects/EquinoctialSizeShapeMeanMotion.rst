@@ -1,13 +1,13 @@
 EquinoctialSizeShapeMeanMotion
 ==============================
 
-.. py:class:: EquinoctialSizeShapeMeanMotion
+.. py:class:: ansys.stk.core.stkobjects.EquinoctialSizeShapeMeanMotion
 
-   Bases: py:obj:`~IEquinoctialSizeShapeMeanMotion`, py:obj:`~IClassicalSizeShape`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeMeanMotion`, py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Mean Motion, an element of the Equinoctial coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EquinoctialSizeShapeMeanMotion
 
 Overview
 --------

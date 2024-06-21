@@ -1,12 +1,12 @@
 POSITION_TYPE
 =============
 
-.. py:class:: POSITION_TYPE
+.. py:class:: ansys.stk.core.stkutil.POSITION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: POSITION_TYPE
 
 Overview
 --------

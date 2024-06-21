@@ -1,13 +1,13 @@
 SensorGraphics3DTargetProjectionCollection
 ==========================================
 
-.. py:class:: SensorGraphics3DTargetProjectionCollection
+.. py:class:: ansys.stk.core.stkobjects.SensorGraphics3DTargetProjectionCollection
 
-   Bases: py:obj:`~ISensorGraphics3DTargetProjectionCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection`
 
    Time Dependent Target Projection List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorGraphics3DTargetProjectionCollection
 
 Overview
 --------

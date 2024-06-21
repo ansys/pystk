@@ -1,12 +1,12 @@
 TRANSFER_FUNCTION_TYPE
 ======================
 
-.. py:class:: TRANSFER_FUNCTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.TRANSFER_FUNCTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TRANSFER_FUNCTION_TYPE
 
 Overview
 --------

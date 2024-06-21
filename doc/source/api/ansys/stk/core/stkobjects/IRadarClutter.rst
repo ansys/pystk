@@ -1,13 +1,13 @@
 IRadarClutter
 =============
 
-.. py:class:: IRadarClutter
+.. py:class:: ansys.stk.core.stkobjects.IRadarClutter
 
    object
    
    Interface which defines a radar's clutter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarClutter
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~scattering_point_provider_list`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutter.enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutter.scattering_point_provider_list`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: scattering_point_provider_list
     :canonical: ansys.stk.core.stkobjects.IRadarClutter.scattering_point_provider_list
-    :type: IAgComponentLinkEmbedControl
+    :type: IComponentLinkEmbedControl
 
     Gets the link/embed controller for managing the scattering point provider list component.
 

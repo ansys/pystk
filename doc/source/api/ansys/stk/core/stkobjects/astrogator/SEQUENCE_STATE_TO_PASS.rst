@@ -1,12 +1,12 @@
 SEQUENCE_STATE_TO_PASS
 ======================
 
-.. py:class:: SEQUENCE_STATE_TO_PASS
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SEQUENCE_STATE_TO_PASS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SEQUENCE_STATE_TO_PASS
 
 Overview
 --------

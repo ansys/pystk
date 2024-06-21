@@ -1,13 +1,13 @@
 ICalculationToolConditionSetScalarThresholds
 ============================================
 
-.. py:class:: ICalculationToolConditionSetScalarThresholds
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds
 
    object
    
    Condition set based on single scalar calculation compared to set of threshold values.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionSetScalarThresholds
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_thresholds_and_labels`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.set_thresholds_and_labels`
               - Set thresholds and threshold labels.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scalar`
-            * - :py:meth:`~thresholds`
-            * - :py:meth:`~threshold_labels`
-            * - :py:meth:`~include_above_highest_threshold`
-            * - :py:meth:`~include_below_lowest_threshold`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.thresholds`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.threshold_labels`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.include_above_highest_threshold`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.include_below_lowest_threshold`
 
 
 Import detail
@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.scalar
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The input scalar calculation.
 

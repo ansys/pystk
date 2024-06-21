@@ -1,13 +1,13 @@
 IVehicleGraphics3DElevContours
 ==============================
 
-.. py:class:: IVehicleGraphics3DElevContours
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours
 
    object
    
    Interface for 3D elevation angle contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DElevContours
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~is_cones_visible`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~fill`
-            * - :py:meth:`~fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.is_cones_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.fill`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.fill_translucency`
 
 
 Import detail

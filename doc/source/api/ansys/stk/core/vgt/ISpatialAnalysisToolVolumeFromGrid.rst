@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeFromGrid
 ==================================
 
-.. py:class:: ISpatialAnalysisToolVolumeFromGrid
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid
 
    object
    
    An over time volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeFromGrid
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~edge_type`
-            * - :py:meth:`~volume_grid`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid.edge_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid.volume_grid`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: volume_grid
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid.volume_grid
-    :type: IAgCrdnVolumeGrid
+    :type: ISpatialAnalysisToolVolumeGrid
 
     Sets/Returns the volume grid for bounding.
 

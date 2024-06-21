@@ -1,13 +1,13 @@
 VehicleGravity
 ==============
 
-.. py:class:: VehicleGravity
+.. py:class:: ansys.stk.core.stkobjects.VehicleGravity
 
-   Bases: py:obj:`~IVehicleGravity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGravity`
 
    Class defining gravity modeling options for a vehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGravity
 
 Overview
 --------

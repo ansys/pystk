@@ -1,13 +1,13 @@
 ICoverageGrid
 =============
 
-.. py:class:: ICoverageGrid
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGrid
 
    object
    
    Grid Definition and resolution.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGrid
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bounds_type`
-            * - :py:meth:`~bounds`
-            * - :py:meth:`~resolution_type`
-            * - :py:meth:`~resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGrid.bounds_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGrid.bounds`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGrid.resolution_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGrid.resolution`
 
 
 Import detail
@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: bounds
     :canonical: ansys.stk.core.stkobjects.ICoverageGrid.bounds
-    :type: IAgCvBounds
+    :type: ICoverageBounds
 
     Get the coverage region.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.ICoverageGrid.resolution
-    :type: IAgCvResolution
+    :type: ICoverageResolution
 
     Grid resolution.
 

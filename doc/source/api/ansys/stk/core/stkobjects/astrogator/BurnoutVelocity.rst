@@ -1,13 +1,13 @@
 BurnoutVelocity
 ===============
 
-.. py:class:: BurnoutVelocity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity
 
-   Bases: py:obj:`~IBurnoutVelocity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity`
 
    The burnout velocity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BurnoutVelocity
 
 Overview
 --------

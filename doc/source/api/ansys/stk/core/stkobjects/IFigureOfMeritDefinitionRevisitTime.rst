@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionRevisitTime
 ===================================
 
-.. py:class:: IFigureOfMeritDefinitionRevisitTime
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionRevisitTime
 
    IFigureOfMeritDefinitionResponseTime
    
    Revisit Time Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionRevisitTime
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~end_gap_option`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionRevisitTime.end_gap_option`
 
 
 Import detail

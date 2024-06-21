@@ -1,13 +1,13 @@
 IAircraftTerrainFollow
 ======================
 
-.. py:class:: IAircraftTerrainFollow
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollow
 
    object
    
    Interface used to access the TerrainFollow options for an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftTerrainFollow
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_terrain_follow_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollow.get_terrain_follow_by_name`
               - Get the TerrainFollow model with the given name.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollow.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

@@ -1,12 +1,12 @@
 VEHICLE_COORDINATE_SYSTEM
 =========================
 
-.. py:class:: VEHICLE_COORDINATE_SYSTEM
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_COORDINATE_SYSTEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_COORDINATE_SYSTEM
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ICalculationToolSamplingMethod
 ==============================
 
-.. py:class:: ICalculationToolSamplingMethod
+.. py:class:: ansys.stk.core.vgt.ICalculationToolSamplingMethod
 
    object
    
    A sampling method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolSamplingMethod
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingMethod.method_type`
 
 
 Import detail

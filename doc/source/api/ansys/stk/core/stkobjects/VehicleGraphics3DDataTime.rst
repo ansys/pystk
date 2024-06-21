@@ -1,13 +1,13 @@
 VehicleGraphics3DDataTime
 =========================
 
-.. py:class:: VehicleGraphics3DDataTime
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DDataTime
 
-   Bases: py:obj:`~IVehicleLeadTrailData`, py:obj:`~IVehicleLeadTrailDataTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailData`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataTime`
 
    Time.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DDataTime
 
 Overview
 --------

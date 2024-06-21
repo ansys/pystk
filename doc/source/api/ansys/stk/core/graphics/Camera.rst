@@ -1,13 +1,13 @@
 Camera
 ======
 
-.. py:class:: Camera
+.. py:class:: ansys.stk.core.graphics.Camera
 
-   Bases: py:obj:`~ICamera`
+   Bases: py:obj:`~ansys.stk.core.graphics.ICamera`
 
    Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: Camera
 
 Overview
 --------

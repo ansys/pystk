@@ -1,13 +1,13 @@
 IVehicleGraphics2DPasses
 ========================
 
-.. py:class:: IVehicleGraphics2DPasses
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DPasses
 
    object
    
    Interface for setting satellite pass display graphics.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DPasses
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_pass_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.set_pass_type`
               - Pass display option: show all or those in a user-specified range.
-            * - :py:meth:`~is_pass_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.is_pass_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pass_type`
-            * - :py:meth:`~pass_supported_types`
-            * - :py:meth:`~pass_method`
-            * - :py:meth:`~visible_sides`
-            * - :py:meth:`~is_pass_labels_visible`
-            * - :py:meth:`~is_path_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.visible_sides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.is_pass_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.is_path_labels_visible`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: pass_method
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_method
-    :type: IAgVeGfxPass
+    :type: IVehicleGraphics2DPass
 
     Get the pass property.
 

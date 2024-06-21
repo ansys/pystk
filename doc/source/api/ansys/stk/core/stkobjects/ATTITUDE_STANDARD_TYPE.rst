@@ -1,12 +1,12 @@
 ATTITUDE_STANDARD_TYPE
 ======================
 
-.. py:class:: ATTITUDE_STANDARD_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ATTITUDE_STANDARD_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ATTITUDE_STANDARD_TYPE
 
 Overview
 --------

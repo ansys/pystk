@@ -1,13 +1,13 @@
 EngineModelPoly
 ===============
 
-.. py:class:: EngineModelPoly
+.. py:class:: ansys.stk.core.stkobjects.astrogator.EngineModelPoly
 
-   Bases: py:obj:`~IEngineModelPoly`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineModelPoly`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Polynomial Thrust and Isp engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: EngineModelPoly
 
 Overview
 --------

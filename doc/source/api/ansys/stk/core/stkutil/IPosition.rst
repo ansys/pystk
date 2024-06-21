@@ -1,13 +1,13 @@
 IPosition
 =========
 
-.. py:class:: IPosition
+.. py:class:: ansys.stk.core.stkutil.IPosition
 
    object
    
    IAgPosition provides access to the position of the object.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IPosition
 
 Overview
 --------
@@ -20,43 +20,43 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~convert_to`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.convert_to`
               - Change the position coordinates to type specified.
-            * - :py:meth:`~assign`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.assign`
               - Assign the coordinates into the system.
-            * - :py:meth:`~assign_geocentric`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.assign_geocentric`
               - Assign the position using the Geocentric representation.
-            * - :py:meth:`~assign_geodetic`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.assign_geodetic`
               - Assign the position using the Geodetic representation.
-            * - :py:meth:`~assign_spherical`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.assign_spherical`
               - Assign the position using the Spherical representation.
-            * - :py:meth:`~assign_cylindrical`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.assign_cylindrical`
               - Assign the position using the Cylindrical representation.
-            * - :py:meth:`~assign_cartesian`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.assign_cartesian`
               - Assign the position using the Cartesian representation.
-            * - :py:meth:`~assign_planetocentric`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.assign_planetocentric`
               - Assign the position using the Planetocentric representation.
-            * - :py:meth:`~assign_planetodetic`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.assign_planetodetic`
               - Assign the position using the Planetodetic representation.
-            * - :py:meth:`~query_planetocentric`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_planetocentric`
               - Get the position using the Planetocentric representation.
-            * - :py:meth:`~query_planetodetic`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_planetodetic`
               - Get the position using the Planetodetic representation.
-            * - :py:meth:`~query_spherical`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_spherical`
               - Get the position using the Spherical representation.
-            * - :py:meth:`~query_cylindrical`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_cylindrical`
               - Get the position using the Cylindrical representation.
-            * - :py:meth:`~query_cartesian`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_cartesian`
               - Get the position using the Cartesian representation.
-            * - :py:meth:`~query_planetocentric_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_planetocentric_array`
               - Return the Planetocentric elements as an array.
-            * - :py:meth:`~query_planetodetic_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_planetodetic_array`
               - Return the Planetodetic elements as an array.
-            * - :py:meth:`~query_spherical_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_spherical_array`
               - Return the Spherical elements as an array.
-            * - :py:meth:`~query_cylindrical_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_cylindrical_array`
               - Return the Cylindrical elements as an array.
-            * - :py:meth:`~query_cartesian_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.query_cartesian_array`
               - Return the Cartesian elements as an array.
 
     .. tab-item:: Properties
@@ -65,8 +65,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position_type`
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.position_type`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPosition.central_body_name`
 
 
 Import detail

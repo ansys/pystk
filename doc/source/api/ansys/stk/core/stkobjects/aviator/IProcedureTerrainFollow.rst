@@ -1,13 +1,13 @@
 IProcedureTerrainFollow
 =======================
 
-.. py:class:: IProcedureTerrainFollow
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow
 
    object
    
    Interface used to access the options for a terrain following procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureTerrainFollow
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_agl`
-            * - :py:meth:`~navigation_options`
-            * - :py:meth:`~terrain_following_airspeed_options`
-            * - :py:meth:`~reduce_turn_radii`
-            * - :py:meth:`~turn_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.altitude_agl`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.navigation_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.terrain_following_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.reduce_turn_radii`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.turn_factor`
 
 
 Import detail
@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: navigation_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.navigation_options
-    :type: IAgAvtrNavigationOptions
+    :type: INavigationOptions
 
     Get the navigation options.
 
 .. py:property:: terrain_following_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.terrain_following_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the terrain following airspeed options.
 

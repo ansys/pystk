@@ -1,13 +1,13 @@
 ISamplingMethodStrategy
 =======================
 
-.. py:class:: ISamplingMethodStrategy
+.. py:class:: ansys.stk.core.stkobjects.ISamplingMethodStrategy
 
    object
    
    Define a base interface for the sampling method strategies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISamplingMethodStrategy
 
 Overview
 --------

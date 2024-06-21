@@ -1,13 +1,13 @@
 IGraphics3DReferenceAnalysisWorkbenchComponent
 ==============================================
 
-.. py:class:: IGraphics3DReferenceAnalysisWorkbenchComponent
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent
 
    object
    
    IAgVORefCrdn used to access the shared properties of all 3D RefCrdn.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DReferenceAnalysisWorkbenchComponent
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type_id`
-            * - :py:meth:`~name`
-            * - :py:meth:`~visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.label_visible`
 
 
 Import detail

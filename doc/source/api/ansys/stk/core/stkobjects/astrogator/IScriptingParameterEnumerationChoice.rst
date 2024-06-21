@@ -1,13 +1,13 @@
 IScriptingParameterEnumerationChoice
 ====================================
 
-.. py:class:: IScriptingParameterEnumerationChoice
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoice
 
    object
    
    Enumeration choice.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingParameterEnumerationChoice
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoice.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoice.value`
 
 
 Import detail

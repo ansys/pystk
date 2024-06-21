@@ -1,13 +1,13 @@
 IVehicleGraphics2DAttributesTimeComponents
 ==========================================
 
-.. py:class:: IVehicleGraphics2DAttributesTimeComponents
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents
 
    IVehicleGraphics2DAttributes
    
    Allow configuring the 2D attributes using the time components.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DAttributesTimeComponents
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~default`
-            * - :py:meth:`~time_components`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents.default`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents.time_components`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: default
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents.default
-    :type: IAgVeGfxAttributesBasic
+    :type: IVehicleGraphics2DAttributesBasic
 
     Default 2D attributes.
 
 .. py:property:: time_components
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents.time_components
-    :type: IAgVeGfxTimeComponentsCollection
+    :type: IVehicleGraphics2DTimeComponentsCollection
 
     A collection of time components and their 2D attributes.
 

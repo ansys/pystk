@@ -1,13 +1,13 @@
 RadarProbabilityOfDetectionCFARCellAveraging
 ============================================
 
-.. py:class:: RadarProbabilityOfDetectionCFARCellAveraging
+.. py:class:: ansys.stk.core.stkobjects.RadarProbabilityOfDetectionCFARCellAveraging
 
-   Bases: py:obj:`~IRadarProbabilityOfDetectionCFAR`, py:obj:`~IRadarProbabilityOfDetection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionCFAR`, py:obj:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection`
 
    Class defining the probability of detection cell averaging cfar.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarProbabilityOfDetectionCFARCellAveraging
 
 Overview
 --------

@@ -1,13 +1,13 @@
 RadarCrossSectionModel
 ======================
 
-.. py:class:: RadarCrossSectionModel
+.. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionModel
 
-   Bases: py:obj:`~IRadarCrossSectionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a radar cross section model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarCrossSectionModel
 
 Overview
 --------

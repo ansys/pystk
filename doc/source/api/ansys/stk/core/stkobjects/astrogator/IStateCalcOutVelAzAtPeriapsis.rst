@@ -1,13 +1,13 @@
 IStateCalcOutVelAzAtPeriapsis
 =============================
 
-.. py:class:: IStateCalcOutVelAzAtPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcOutVelAzAtPeriapsis
 
    object
    
    Properties for a Outgoing Vel Az at Periapsis calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcOutVelAzAtPeriapsis
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOutVelAzAtPeriapsis.coord_system_name`
 
 
 Import detail

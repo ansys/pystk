@@ -1,13 +1,13 @@
 IRFFilterModelFirBoxCar
 =======================
 
-.. py:class:: IRFFilterModelFirBoxCar
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelFirBoxCar
 
    object
    
    Provide access to the properties and methods defining a FIR box car RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelFirBoxCar
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sampling_frequency`
-            * - :py:meth:`~order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelFirBoxCar.sampling_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelFirBoxCar.order`
 
 
 Import detail

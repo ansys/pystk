@@ -1,13 +1,13 @@
 IVehicleVector
 ==============
 
-.. py:class:: IVehicleVector
+.. py:class:: ansys.stk.core.stkobjects.IVehicleVector
 
    object
    
    Aligned and Constrained attitude profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleVector
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~body`
-            * - :py:meth:`~reference_vector`
-            * - :py:meth:`~available_reference_vectors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleVector.body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleVector.reference_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleVector.available_reference_vectors`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: body
     :canonical: ansys.stk.core.stkobjects.IVehicleVector.body
-    :type: IAgDirection
+    :type: IDirection
 
     Get the body-fixed vector that is aligned or constrained with respect to the reference vector.
 

@@ -1,13 +1,13 @@
 IVehicleSpaceEnvironment
 ========================
 
-.. py:class:: IVehicleSpaceEnvironment
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment
 
    object
    
    no helpstring provided.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpaceEnvironment
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~saa_contour`
-            * - :py:meth:`~magnetic_field`
-            * - :py:meth:`~veh_temperature`
-            * - :py:meth:`~particle_flux`
-            * - :py:meth:`~radiation`
-            * - :py:meth:`~graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.saa_contour`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.magnetic_field`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.veh_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.particle_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.radiation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.graphics`
 
 
 Import detail
@@ -41,37 +41,37 @@ Property detail
 
 .. py:property:: saa_contour
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.saa_contour
-    :type: IAgSpEnvSAAContour
+    :type: ISpaceEnvironmentSAAContour
 
     SAA Contour settings.
 
 .. py:property:: magnetic_field
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.magnetic_field
-    :type: IAgVeSpEnvMagneticField
+    :type: IVehicleSpaceEnvironmentMagneticField
 
     Magnetic Field settings.
 
 .. py:property:: veh_temperature
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.veh_temperature
-    :type: IAgVeSpEnvVehTemperature
+    :type: IVehicleSpaceEnvironmentVehTemperature
 
     Vehicle Temperature settings.
 
 .. py:property:: particle_flux
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.particle_flux
-    :type: IAgVeSpEnvParticleFlux
+    :type: IVehicleSpaceEnvironmentParticleFlux
 
     Particle Flux settings.
 
 .. py:property:: radiation
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.radiation
-    :type: IAgVeSpEnvRadiation
+    :type: IVehicleSpaceEnvironmentRadiation
 
     Radiation settings.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.graphics
-    :type: IAgVeSpEnvGraphics
+    :type: IVehicleSpaceEnvironmentGraphics
 
     Graphics settings.
 

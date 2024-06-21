@@ -1,13 +1,13 @@
 IGreatArcInterpolatorFactory
 ============================
 
-.. py:class:: IGreatArcInterpolatorFactory
+.. py:class:: ansys.stk.core.graphics.IGreatArcInterpolatorFactory
 
    object
    
    The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGreatArcInterpolatorFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IGreatArcInterpolatorFactory.initialize`
               - Initialize a default great arc interpolator. This is equivalent to constructing a great arc interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree.
-            * - :py:meth:`~initialize_with_central_body`
+            * - :py:attr:`~ansys.stk.core.graphics.IGreatArcInterpolatorFactory.initialize_with_central_body`
               - Initialize a great arc interpolator with the specified centralBody and a granularity of 1 degree.
-            * - :py:meth:`~initialize_with_central_body_and_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.IGreatArcInterpolatorFactory.initialize_with_central_body_and_granularity`
               - Initialize a great arc interpolator with the specified centralBody and granularity.
 
 

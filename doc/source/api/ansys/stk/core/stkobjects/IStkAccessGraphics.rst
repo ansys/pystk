@@ -1,13 +1,13 @@
 IStkAccessGraphics
 ==================
 
-.. py:class:: IStkAccessGraphics
+.. py:class:: ansys.stk.core.stkobjects.IStkAccessGraphics
 
    object
    
    Provide access to the Graphics for Access Computations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkAccessGraphics
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit`
-            * - :py:meth:`~line_visible`
-            * - :py:meth:`~animate_graphics_2d`
-            * - :py:meth:`~static_graphics_2d`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessGraphics.inherit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessGraphics.line_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessGraphics.animate_graphics_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessGraphics.static_graphics_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessGraphics.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessGraphics.line_style`
 
 
 Import detail

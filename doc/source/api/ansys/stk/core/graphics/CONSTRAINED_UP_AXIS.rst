@@ -1,12 +1,12 @@
 CONSTRAINED_UP_AXIS
 ===================
 
-.. py:class:: CONSTRAINED_UP_AXIS
+.. py:class:: ansys.stk.core.graphics.CONSTRAINED_UP_AXIS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: CONSTRAINED_UP_AXIS
 
 Overview
 --------

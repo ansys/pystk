@@ -1,12 +1,12 @@
 TEXT_OUTLINE_STYLE
 ==================
 
-.. py:class:: TEXT_OUTLINE_STYLE
+.. py:class:: ansys.stk.core.stkobjects.TEXT_OUTLINE_STYLE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TEXT_OUTLINE_STYLE
 
 Overview
 --------

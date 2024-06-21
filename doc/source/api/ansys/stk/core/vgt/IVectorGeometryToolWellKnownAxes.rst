@@ -1,13 +1,13 @@
 IVectorGeometryToolWellKnownAxes
 ================================
 
-.. py:class:: IVectorGeometryToolWellKnownAxes
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes
 
    object
    
    Well-known Axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolWellKnownAxes
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~earth`
-            * - :py:meth:`~sun`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes.earth`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes.sun`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes.earth
-    :type: IAgCrdnWellKnownEarthAxes
+    :type: IVectorGeometryToolWellKnownEarthAxes
 
     Earth's well-known axes.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes.sun
-    :type: IAgCrdnWellKnownSunAxes
+    :type: IVectorGeometryToolWellKnownSunAxes
 
     The Sun's well-known axes.
 

@@ -1,13 +1,13 @@
 TimeToolEventIntervalCollectionCondition
 ========================================
 
-.. py:class:: TimeToolEventIntervalCollectionCondition
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalCollectionCondition
 
-   Bases: py:obj:`~ITimeToolEventIntervalCollectionCondition`, py:obj:`~ITimeToolEventIntervalCollection`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollection`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalCollectionCondition
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorEccentricity
 =====================================
 
-.. py:class:: IVectorGeometryToolVectorEccentricity
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorEccentricity
 
    object
    
    A vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorEccentricity
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~mean_element_type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorEccentricity.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorEccentricity.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorEccentricity.mean_element_type`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorEccentricity.central_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorEccentricity.reference_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
 

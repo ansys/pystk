@@ -1,12 +1,12 @@
 GRAPHICS_3D_FONT_SIZE
 =====================
 
-.. py:class:: GRAPHICS_3D_FONT_SIZE
+.. py:class:: ansys.stk.core.stkobjects.GRAPHICS_3D_FONT_SIZE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GRAPHICS_3D_FONT_SIZE
 
 Overview
 --------

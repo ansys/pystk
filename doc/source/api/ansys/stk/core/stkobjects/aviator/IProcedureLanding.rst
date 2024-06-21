@@ -1,13 +1,13 @@
 IProcedureLanding
 =================
 
-.. py:class:: IProcedureLanding
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureLanding
 
    object
    
    Interface used to access the options for a landing procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureLanding
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mode_as_standard_instrument_approach`
-            * - :py:meth:`~mode_as_intercept_glideslope`
-            * - :py:meth:`~mode_as_enter_downwind_pattern`
-            * - :py:meth:`~runway_heading_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~enroute_turn_direction_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~vertical_plane_options`
-            * - :py:meth:`~approach_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_standard_instrument_approach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_intercept_glideslope`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_enter_downwind_pattern`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.runway_heading_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_turn_direction_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.vertical_plane_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.approach_mode`
 
 
 Import detail
@@ -53,49 +53,49 @@ Property detail
 
 .. py:property:: mode_as_standard_instrument_approach
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_standard_instrument_approach
-    :type: IAgAvtrLandingStandardInstrumentApproach
+    :type: ILandingStandardInstrumentApproach
 
     Get the interface for a standard instrument approach landing.
 
 .. py:property:: mode_as_intercept_glideslope
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_intercept_glideslope
-    :type: IAgAvtrLandingInterceptGlideslope
+    :type: ILandingInterceptGlideslope
 
     Get the interface for an intercept glideslope landing.
 
 .. py:property:: mode_as_enter_downwind_pattern
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_enter_downwind_pattern
-    :type: IAgAvtrLandingEnterDownwindPattern
+    :type: ILandingEnterDownwindPattern
 
     Get the interface for a downwind pattern landing.
 
 .. py:property:: runway_heading_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLanding.runway_heading_options
-    :type: IAgAvtrRunwayHeadingOptions
+    :type: IRunwayHeadingOptions
 
     Get the runway heading options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedAndProfileOptions
+    :type: ICruiseAirspeedAndProfileOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_turn_direction_options
-    :type: IAgAvtrEnrouteTurnDirectionOptions
+    :type: IEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_options
-    :type: IAgAvtrEnrouteAndDelayOptions
+    :type: IEnrouteAndDelayOptions
 
     Get the enroute options.
 
 .. py:property:: vertical_plane_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureLanding.vertical_plane_options
-    :type: IAgAvtrVerticalPlaneOptions
+    :type: IVerticalPlaneOptions
 
     Get the vertical plane options.
 

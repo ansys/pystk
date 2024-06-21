@@ -1,13 +1,13 @@
 IVehicleLaunchLLR
 =================
 
-.. py:class:: IVehicleLaunchLLR
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLaunchLLR
 
    object
    
    Interface for geocentric LLR position.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLaunchLLR
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLR.lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLR.lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLR.radius`
 
 
 Import detail

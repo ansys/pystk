@@ -1,13 +1,13 @@
 ITimeToolEvent
 ==============
 
-.. py:class:: ITimeToolEvent
+.. py:class:: ansys.stk.core.vgt.ITimeToolEvent
 
    object
    
    Define an event (time instant).
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEvent
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~find_occurrence`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.find_occurrence`
               - Return computed time instance if it occurs.
-            * - :py:meth:`~occurs_before`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.occurs_before`
               - Return true if computed time instance occurs before or at specified time, return false otherwise.
 
     .. tab-item:: Properties
@@ -31,11 +31,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~today`
-            * - :py:meth:`~tomorrow`
-            * - :py:meth:`~noon_today`
-            * - :py:meth:`~noon_tomorrow`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.today`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.tomorrow`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.noon_today`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.noon_tomorrow`
 
 
 Import detail
@@ -57,25 +57,25 @@ Property detail
 
 .. py:property:: today
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.today
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     Return time instant that corresponds to today's GMT midnight.
 
 .. py:property:: tomorrow
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.tomorrow
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     Return time instant that corresponds to tomorrow's GMT midnight.
 
 .. py:property:: noon_today
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.noon_today
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     Return time instant that corresponds to today's GMT noon.
 
 .. py:property:: noon_tomorrow
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.noon_tomorrow
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     Return time instant that corresponds to tomorrow's GMT noon.
 

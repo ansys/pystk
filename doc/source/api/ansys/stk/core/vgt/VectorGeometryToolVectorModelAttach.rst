@@ -1,13 +1,13 @@
 VectorGeometryToolVectorModelAttach
 ===================================
 
-.. py:class:: VectorGeometryToolVectorModelAttach
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorModelAttach
 
-   Bases: py:obj:`~IVectorGeometryToolVectorModelAttach`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorModelAttach`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorModelAttach
 
 Overview
 --------

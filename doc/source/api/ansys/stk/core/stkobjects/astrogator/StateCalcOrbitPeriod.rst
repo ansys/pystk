@@ -1,13 +1,13 @@
 StateCalcOrbitPeriod
 ====================
 
-.. py:class:: StateCalcOrbitPeriod
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitPeriod
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcOrbitPeriod`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitPeriod`
 
    OrbitPeriod Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcOrbitPeriod
 
 Overview
 --------

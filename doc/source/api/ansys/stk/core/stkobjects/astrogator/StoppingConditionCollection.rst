@@ -1,13 +1,13 @@
 StoppingConditionCollection
 ===========================
 
-.. py:class:: StoppingConditionCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection
 
-   Bases: py:obj:`~IStoppingConditionCollection`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The stopping conditions collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StoppingConditionCollection
 
 Overview
 --------

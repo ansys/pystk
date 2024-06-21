@@ -1,12 +1,12 @@
 LINE_ORIENTATION
 ================
 
-.. py:class:: LINE_ORIENTATION
+.. py:class:: ansys.stk.core.stkobjects.aviator.LINE_ORIENTATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: LINE_ORIENTATION
 
 Overview
 --------

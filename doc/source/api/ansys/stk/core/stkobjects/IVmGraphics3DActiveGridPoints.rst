@@ -1,13 +1,13 @@
 IVmGraphics3DActiveGridPoints
 =============================
 
-.. py:class:: IVmGraphics3DActiveGridPoints
+.. py:class:: ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints
 
    object
    
    IAgVmVOActiveGridPoints Interface for defining Active Grid Points for Volumetric Object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGraphics3DActiveGridPoints
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_active_inactive_boundary`
-            * - :py:meth:`~active_inactive_boundary_color`
-            * - :py:meth:`~active_inactive_boundary_translucency`
-            * - :py:meth:`~show_active_inactive_fill`
-            * - :py:meth:`~inactive_fill_color`
-            * - :py:meth:`~inactive_fill_translucency`
-            * - :py:meth:`~active_fill_color`
-            * - :py:meth:`~active_fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.show_active_inactive_boundary`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.active_inactive_boundary_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.active_inactive_boundary_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.show_active_inactive_fill`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.inactive_fill_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.inactive_fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.active_fill_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.active_fill_translucency`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ChainConstraints
 ================
 
-.. py:class:: ChainConstraints
+.. py:class:: ansys.stk.core.stkobjects.ChainConstraints
 
-   Bases: py:obj:`~IChainConstraints`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainConstraints`
 
    Chain constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ChainConstraints
 
 Overview
 --------

@@ -1,12 +1,12 @@
 CRDN_INTERVAL_DURATION_KIND
 ===========================
 
-.. py:class:: CRDN_INTERVAL_DURATION_KIND
+.. py:class:: ansys.stk.core.vgt.CRDN_INTERVAL_DURATION_KIND
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_INTERVAL_DURATION_KIND
 
 Overview
 --------

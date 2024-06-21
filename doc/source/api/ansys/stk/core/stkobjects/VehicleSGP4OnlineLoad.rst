@@ -1,13 +1,13 @@
 VehicleSGP4OnlineLoad
 =====================
 
-.. py:class:: VehicleSGP4OnlineLoad
+.. py:class:: ansys.stk.core.stkobjects.VehicleSGP4OnlineLoad
 
-   Bases: py:obj:`~IVehicleSGP4OnlineLoad`, py:obj:`~IVehicleSGP4LoadData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad`, py:obj:`~ansys.stk.core.stkobjects.IVehicleSGP4LoadData`
 
    SGP4 propagator. Allows the user to load segments from online.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSGP4OnlineLoad
 
 Overview
 --------

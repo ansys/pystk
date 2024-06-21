@@ -1,13 +1,13 @@
 IBandOrderFilter
 ================
 
-.. py:class:: IBandOrderFilter
+.. py:class:: ansys.stk.core.graphics.IBandOrderFilter
 
    object
    
    Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IBandOrderFilter
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~band_order`
-            * - :py:meth:`~maintain_raster_format`
+            * - :py:attr:`~ansys.stk.core.graphics.IBandOrderFilter.band_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IBandOrderFilter.maintain_raster_format`
 
 
 Import detail

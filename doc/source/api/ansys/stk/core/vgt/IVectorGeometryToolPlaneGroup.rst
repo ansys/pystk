@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneGroup
 =============================
 
-.. py:class:: IVectorGeometryToolPlaneGroup
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup
 
    object
    
    Represents a single entry point to manipulate VGT Planes associated with an object.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneGroup
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.remove`
               - Remove a specified Plane.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.item`
               - Return an Plane by name or at a specified position.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.get_item_by_index`
               - Retrieve a plane from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.get_item_by_name`
               - Retrieve a plane from the collection by name.
 
     .. tab-item:: Properties
@@ -37,10 +37,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~context`
-            * - :py:meth:`~count`
-            * - :py:meth:`~factory`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.context`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.count`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.factory`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup._NewEnum`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.context
-    :type: IAgCrdnContext
+    :type: IAnalysisWorkbenchContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.factory
-    :type: IAgCrdnPlaneFactory
+    :type: IVectorGeometryToolPlaneFactory
 
     Returns a Factory object used to create custom planes.
 

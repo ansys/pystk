@@ -1,13 +1,13 @@
 IStkPreferencesPythonPlugins
 ============================
 
-.. py:class:: IStkPreferencesPythonPlugins
+.. py:class:: ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins
 
    object
    
    Python plugin settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkPreferencesPythonPlugins
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~access_constraint_paths`
-            * - :py:meth:`~ephemeris_file_reader_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins.access_constraint_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins.ephemeris_file_reader_paths`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: access_constraint_paths
     :canonical: ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins.access_constraint_paths
-    :type: IAgPathCollection
+    :type: IPathCollection
 
     Returns a list of paths to Python access constraint plugin.
 
 .. py:property:: ephemeris_file_reader_paths
     :canonical: ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins.ephemeris_file_reader_paths
-    :type: IAgPathCollection
+    :type: IPathCollection
 
     Returns a list of paths to Python ephemeris file reader plugin.
 

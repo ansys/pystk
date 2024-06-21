@@ -1,12 +1,12 @@
 PROFILE_CONTROL_LIMIT
 =====================
 
-.. py:class:: PROFILE_CONTROL_LIMIT
+.. py:class:: ansys.stk.core.stkobjects.aviator.PROFILE_CONTROL_LIMIT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PROFILE_CONTROL_LIMIT
 
 Overview
 --------

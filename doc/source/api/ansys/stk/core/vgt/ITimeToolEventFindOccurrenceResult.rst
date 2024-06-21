@@ -1,13 +1,13 @@
 ITimeToolEventFindOccurrenceResult
 ==================================
 
-.. py:class:: ITimeToolEventFindOccurrenceResult
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventFindOccurrenceResult
 
    object
    
    Contains the results returned with IAgCrdnEvent.FindOccurrence method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventFindOccurrenceResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventFindOccurrenceResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventFindOccurrenceResult.epoch`
 
 
 Import detail

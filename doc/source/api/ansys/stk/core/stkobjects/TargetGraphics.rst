@@ -1,13 +1,13 @@
 TargetGraphics
 ==============
 
-.. py:class:: TargetGraphics
+.. py:class:: ansys.stk.core.stkobjects.TargetGraphics
 
-   Bases: py:obj:`~ITargetGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITargetGraphics`
 
    Class defining 2D Graphics for a Target object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TargetGraphics
 
 Overview
 --------

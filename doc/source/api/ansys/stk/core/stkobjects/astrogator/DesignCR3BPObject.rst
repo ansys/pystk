@@ -1,13 +1,13 @@
 DesignCR3BPObject
 =================
 
-.. py:class:: DesignCR3BPObject
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DesignCR3BPObject
 
-   Bases: py:obj:`~IDesignCR3BPObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObject`
 
    CR3BP associated object definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DesignCR3BPObject
 
 Overview
 --------

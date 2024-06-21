@@ -1,13 +1,13 @@
 IRadarCrossSectionFrequencyBand
 ===============================
 
-.. py:class:: IRadarCrossSectionFrequencyBand
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand
 
    object
    
    Provide access to the properties and methods defining radar cross section frequency band.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionFrequencyBand
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_compute_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.set_compute_strategy`
               - Set the current compute strategy by name.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_frequency`
-            * - :py:meth:`~maximum_frequency`
-            * - :py:meth:`~swerling_case`
-            * - :py:meth:`~supported_compute_strategies`
-            * - :py:meth:`~compute_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.minimum_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.maximum_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.swerling_case`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.supported_compute_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.compute_strategy`
 
 
 Import detail
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: compute_strategy
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.compute_strategy
-    :type: IAgRadarCrossSectionComputeStrategy
+    :type: IRadarCrossSectionComputeStrategy
 
     Gets the current compute strategy.
 

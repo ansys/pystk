@@ -1,13 +1,13 @@
 IGoldenSectionResultCollection
 ==============================
 
-.. py:class:: IGoldenSectionResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection
 
    object
    
    Properties for the list of Golden Section result parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGoldenSectionResultCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_result_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection.get_result_by_paths`
               - Return the result specified by the object/result path.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection.count`
 
 
 Import detail

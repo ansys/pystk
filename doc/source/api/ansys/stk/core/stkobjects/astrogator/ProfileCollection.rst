@@ -1,13 +1,13 @@
 ProfileCollection
 =================
 
-.. py:class:: ProfileCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileCollection
 
-   Bases: py:obj:`~IProfileCollection`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Profiles of a Target Sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileCollection
 
 Overview
 --------

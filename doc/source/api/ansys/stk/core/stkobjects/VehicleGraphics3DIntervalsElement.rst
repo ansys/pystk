@@ -1,13 +1,13 @@
 VehicleGraphics3DIntervalsElement
 =================================
 
-.. py:class:: VehicleGraphics3DIntervalsElement
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement
 
-   Bases: py:obj:`~IVehicleGraphics3DIntervalsElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement`
 
    Intervals graphics for covariance pointing contour.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DIntervalsElement
 
 Overview
 --------

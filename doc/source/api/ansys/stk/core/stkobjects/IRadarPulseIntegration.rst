@@ -1,13 +1,13 @@
 IRadarPulseIntegration
 ======================
 
-.. py:class:: IRadarPulseIntegration
+.. py:class:: ansys.stk.core.stkobjects.IRadarPulseIntegration
 
    object
    
    Interface which defines an integration method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarPulseIntegration
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegration.type`
 
 
 Import detail

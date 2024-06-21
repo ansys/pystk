@@ -1,13 +1,13 @@
 VehiclePositionVelocityCollection
 =================================
 
-.. py:class:: VehiclePositionVelocityCollection
+.. py:class:: ansys.stk.core.stkobjects.VehiclePositionVelocityCollection
 
-   Bases: py:obj:`~IVehiclePositionVelocityCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityCollection`
 
    Collection of position and velocity elements for HPOP covariance.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePositionVelocityCollection
 
 Overview
 --------

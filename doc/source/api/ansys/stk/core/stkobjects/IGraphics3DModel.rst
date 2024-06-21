@@ -1,13 +1,13 @@
 IGraphics3DModel
 ================
 
-.. py:class:: IGraphics3DModel
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModel
 
    object
    
    AgVOModel used to access the 3D model attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModel
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~visible`
-            * - :py:meth:`~scale_value`
-            * - :py:meth:`~detail_threshold`
-            * - :py:meth:`~model_data`
-            * - :py:meth:`~model_type`
-            * - :py:meth:`~articulation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.scale_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.articulation`
 
 
 Import detail
@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: detail_threshold
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold
-    :type: IAgVODetailThreshold
+    :type: IGraphics3DDetailThreshold
 
     Gets the detail threshold attributes.
 
 .. py:property:: model_data
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.model_data
-    :type: IAgVOModelData
+    :type: IGraphics3DModelData
 
     Gets the model data property.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation
-    :type: IAgVOModelArtic
+    :type: IGraphics3DModelArtic
 
     Articulation property.
 

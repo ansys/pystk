@@ -1,13 +1,13 @@
 UiFileOpenExt
 =============
 
-.. py:class:: UiFileOpenExt
+.. py:class:: ansys.stk.core.uiapplication.UiFileOpenExt
 
-   Bases: py:obj:`~IUiFileOpenExt`
+   Bases: py:obj:`~ansys.stk.core.uiapplication.IUiFileOpenExt`
 
    Access to file open dialog that allows multiple file specifications.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: UiFileOpenExt
 
 Overview
 --------

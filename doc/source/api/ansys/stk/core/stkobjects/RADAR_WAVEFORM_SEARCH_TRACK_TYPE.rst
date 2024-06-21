@@ -1,12 +1,12 @@
 RADAR_WAVEFORM_SEARCH_TRACK_TYPE
 ================================
 
-.. py:class:: RADAR_WAVEFORM_SEARCH_TRACK_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RADAR_WAVEFORM_SEARCH_TRACK_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_WAVEFORM_SEARCH_TRACK_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IGraphicsFontFactory
 ====================
 
-.. py:class:: IGraphicsFontFactory
+.. py:class:: ansys.stk.core.graphics.IGraphicsFontFactory
 
    object
    
    A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGraphicsFontFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_name_size_font_style_outline`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFontFactory.initialize_with_name_size_font_style_outline`
               - Initialize a graphics font with the given arguments.
-            * - :py:meth:`~initialize_with_name_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFontFactory.initialize_with_name_size`
               - Initialize a graphics font with the typeface name and size.
 
 

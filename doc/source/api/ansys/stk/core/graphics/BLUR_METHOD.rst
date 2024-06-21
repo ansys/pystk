@@ -1,12 +1,12 @@
 BLUR_METHOD
 ===========
 
-.. py:class:: BLUR_METHOD
+.. py:class:: ansys.stk.core.graphics.BLUR_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: BLUR_METHOD
 
 Overview
 --------

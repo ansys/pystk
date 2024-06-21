@@ -1,13 +1,13 @@
 IClassicalSizeShapeAltitude
 ===========================
 
-.. py:class:: IClassicalSizeShapeAltitude
+.. py:class:: ansys.stk.core.stkobjects.IClassicalSizeShapeAltitude
 
    IClassicalSizeShape
    
    Interface for specifying orbit size and shape using altitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalSizeShapeAltitude
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~apogee_altitude`
-            * - :py:meth:`~perigee_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeAltitude.apogee_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeAltitude.perigee_altitude`
 
 
 Import detail

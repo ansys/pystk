@@ -1,13 +1,13 @@
 VehicleGraphics2DWaypointMarkersCollection
 ==========================================
 
-.. py:class:: VehicleGraphics2DWaypointMarkersCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersCollection
 
-   Bases: py:obj:`~IVehicleGraphics2DWaypointMarkersCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersCollection`
 
    A list of 2D definitions for the vehicle way points.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DWaypointMarkersCollection
 
 Overview
 --------

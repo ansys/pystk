@@ -1,13 +1,13 @@
 ISurfaceMeshPrimitive
 =====================
 
-.. py:class:: ISurfaceMeshPrimitive
+.. py:class:: ansys.stk.core.graphics.ISurfaceMeshPrimitive
 
    object
    
    A triangle mesh primitive for meshes on the surface that need to conform to terrain.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISurfaceMeshPrimitive
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.set`
               - Define the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame.
-            * - :py:meth:`~set_without_texturing`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.set_without_texturing`
               - Define the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame.
-            * - :py:meth:`~supported`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.supported`
               - Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod.
-            * - :py:meth:`~supported_with_default_rendering_method`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.supported_with_default_rendering_method`
               - Determine whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic.
 
     .. tab-item:: Properties
@@ -35,14 +35,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~texture`
-            * - :py:meth:`~wireframe`
-            * - :py:meth:`~triangle_winding_order`
-            * - :py:meth:`~set_hint`
-            * - :py:meth:`~rendering_method`
-            * - :py:meth:`~texture_filter`
-            * - :py:meth:`~texture_matrix`
-            * - :py:meth:`~transparent_texture_border`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.wireframe`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.triangle_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.rendering_method`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture_filter`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture_matrix`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.transparent_texture_border`
 
 
 Import detail
@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture
-    :type: IAgStkGraphicsRendererTexture2D
+    :type: IRendererTexture2D
 
     Gets or sets the texture applied to this primitive when rendering.
 
@@ -88,13 +88,13 @@ Property detail
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture_filter
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets or sets the filter used when a texture is applied to this primitive.
 
 .. py:property:: texture_matrix
     :canonical: ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture_matrix
-    :type: IAgStkGraphicsTextureMatrix
+    :type: ITextureMatrix
 
     Gets or sets the matrix used to transform texture coordinates when a texture is applied to this primitive.
 

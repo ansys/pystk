@@ -1,13 +1,13 @@
 CoverageBoundsLatLine
 =====================
 
-.. py:class:: CoverageBoundsLatLine
+.. py:class:: ansys.stk.core.stkobjects.CoverageBoundsLatLine
 
-   Bases: py:obj:`~ICoverageBoundsLatLine`, py:obj:`~ICoverageBounds`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLine`, py:obj:`~ansys.stk.core.stkobjects.ICoverageBounds`
 
    Latitude Line: Create a set of points along a single latitude line, useful when the coverage is only expected to vary with longitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageBoundsLatLine
 
 Overview
 --------

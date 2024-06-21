@@ -1,13 +1,13 @@
 Graphics3DPointableElementsCollection
 =====================================
 
-.. py:class:: Graphics3DPointableElementsCollection
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DPointableElementsCollection
 
-   Bases: py:obj:`~IGraphics3DPointableElementsCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection`
 
    List of Pointable Elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DPointableElementsCollection
 
 Overview
 --------

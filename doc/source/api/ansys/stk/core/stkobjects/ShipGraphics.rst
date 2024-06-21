@@ -1,13 +1,13 @@
 ShipGraphics
 ============
 
-.. py:class:: ShipGraphics
+.. py:class:: ansys.stk.core.stkobjects.ShipGraphics
 
-   Bases: py:obj:`~IShipGraphics`, py:obj:`~IGreatArcGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IShipGraphics`, py:obj:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
 
    2D Graphics options for a ship.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ShipGraphics
 
 Overview
 --------

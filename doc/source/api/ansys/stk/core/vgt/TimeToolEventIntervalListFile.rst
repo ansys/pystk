@@ -1,13 +1,13 @@
 TimeToolEventIntervalListFile
 =============================
 
-.. py:class:: TimeToolEventIntervalListFile
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalListFile
 
-   Bases: py:obj:`~ITimeToolEventIntervalListFile`, py:obj:`~ITimeToolEventIntervalList`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFile`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval list loaded from specified interval file - ASCII file with .int extension. See STK help.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalListFile
 
 Overview
 --------

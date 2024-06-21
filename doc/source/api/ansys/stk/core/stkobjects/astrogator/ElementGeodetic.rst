@@ -1,13 +1,13 @@
 ElementGeodetic
 ===============
 
-.. py:class:: ElementGeodetic
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ElementGeodetic
 
-   Bases: py:obj:`~IElementGeodetic`, py:obj:`~IElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Geodetic elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ElementGeodetic
 
 Overview
 --------

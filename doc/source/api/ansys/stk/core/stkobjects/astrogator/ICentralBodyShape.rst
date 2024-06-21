@@ -1,13 +1,13 @@
 ICentralBodyShape
 =================
 
-.. py:class:: ICentralBodyShape
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyShape
 
    object
    
    The central body shape.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyShape
 
 Overview
 --------

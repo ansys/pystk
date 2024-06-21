@@ -1,13 +1,13 @@
 ISensorTarget
 =============
 
-.. py:class:: ISensorTarget
+.. py:class:: ansys.stk.core.stkobjects.ISensorTarget
 
    object
    
    IAgSnTarget Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorTarget
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorTarget.name`
 
 
 Import detail

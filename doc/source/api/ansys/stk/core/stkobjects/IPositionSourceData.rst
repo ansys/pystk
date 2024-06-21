@@ -1,13 +1,13 @@
 IPositionSourceData
 ===================
 
-.. py:class:: IPositionSourceData
+.. py:class:: ansys.stk.core.stkobjects.IPositionSourceData
 
    object
    
    Base interface to IAgPlPosCentralBody and IAgPlPosFile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPositionSourceData
 
 Overview
 --------

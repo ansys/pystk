@@ -1,13 +1,13 @@
 IPolylinePrimitiveOptionalParameters
 ====================================
 
-.. py:class:: IPolylinePrimitiveOptionalParameters
+.. py:class:: ansys.stk.core.graphics.IPolylinePrimitiveOptionalParameters
 
    object
    
    Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPolylinePrimitiveOptionalParameters
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_time_intervals`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveOptionalParameters.set_time_intervals`
               - Define a collection of TimeIntervals defined by MinimumTime and MaximumTime in Epoch Seconds, one for each point in the Polyline.
 
 

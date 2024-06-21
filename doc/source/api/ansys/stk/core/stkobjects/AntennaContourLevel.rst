@@ -1,13 +1,13 @@
 AntennaContourLevel
 ===================
 
-.. py:class:: AntennaContourLevel
+.. py:class:: ansys.stk.core.stkobjects.AntennaContourLevel
 
-   Bases: py:obj:`~IAntennaContourLevel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaContourLevel`
 
    Class defining an antenna contour level.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaContourLevel
 
 Overview
 --------

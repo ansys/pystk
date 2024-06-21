@@ -1,13 +1,13 @@
 EOIRShapeCustomMesh
 ===================
 
-.. py:class:: EOIRShapeCustomMesh
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeCustomMesh
 
-   Bases: py:obj:`~IEOIRShapeCustomMesh`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeCustomMesh`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    CustomMesh shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeCustomMesh
 
 Overview
 --------

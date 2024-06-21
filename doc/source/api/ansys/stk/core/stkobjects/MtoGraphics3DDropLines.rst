@@ -1,13 +1,13 @@
 MtoGraphics3DDropLines
 ======================
 
-.. py:class:: MtoGraphics3DDropLines
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DDropLines
 
-   Bases: py:obj:`~IMtoGraphics3DDropLines`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DDropLines`
 
    MTO droplines.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics3DDropLines
 
 Overview
 --------

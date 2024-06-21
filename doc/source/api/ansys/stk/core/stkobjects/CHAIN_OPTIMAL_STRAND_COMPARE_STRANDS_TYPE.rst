@@ -1,12 +1,12 @@
 CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE
 =========================================
 
-.. py:class:: CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE
+.. py:class:: ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE
 
 Overview
 --------

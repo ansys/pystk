@@ -1,13 +1,13 @@
 IAlphaFromPixelFilterFactory
 ============================
 
-.. py:class:: IAlphaFromPixelFilterFactory
+.. py:class:: ansys.stk.core.graphics.IAlphaFromPixelFilterFactory
 
    object
    
    Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAlphaFromPixelFilterFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IAlphaFromPixelFilterFactory.initialize`
               - Initialize a new instance.
 
 

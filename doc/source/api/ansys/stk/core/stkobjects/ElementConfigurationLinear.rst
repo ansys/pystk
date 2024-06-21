@@ -1,13 +1,13 @@
 ElementConfigurationLinear
 ==========================
 
-.. py:class:: ElementConfigurationLinear
+.. py:class:: ansys.stk.core.stkobjects.ElementConfigurationLinear
 
-   Bases: py:obj:`~IElementConfigurationLinear`, py:obj:`~IElementConfiguration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IElementConfigurationLinear`, py:obj:`~ansys.stk.core.stkobjects.IElementConfiguration`
 
    Class defining a linear element configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ElementConfigurationLinear
 
 Overview
 --------

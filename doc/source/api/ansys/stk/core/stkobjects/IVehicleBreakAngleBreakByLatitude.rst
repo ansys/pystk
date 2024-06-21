@@ -1,13 +1,13 @@
 IVehicleBreakAngleBreakByLatitude
 =================================
 
-.. py:class:: IVehicleBreakAngleBreakByLatitude
+.. py:class:: ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLatitude
 
    IVehicleBreakAngle
    
    Pass break latitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleBreakAngleBreakByLatitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLatitude.latitude`
 
 
 Import detail

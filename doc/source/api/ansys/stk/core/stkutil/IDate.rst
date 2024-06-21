@@ -1,13 +1,13 @@
 IDate
 =====
 
-.. py:class:: IDate
+.. py:class:: ansys.stk.core.stkutil.IDate
 
    object
    
    Provide helper methods for a date.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IDate
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~format`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.format`
               - Return the value of the date given the unit.
-            * - :py:meth:`~set_date`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.set_date`
               - Set this date with the given date value and unit type.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.add`
               - Add the value in the given unit and returns a new date interface.
-            * - :py:meth:`~subtract`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.subtract`
               - Subtracts the value in the given unit and returns a new date interface.
-            * - :py:meth:`~span`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.span`
               - Subtracts the value from the IAgDate interface and returns an IAgQuantity.
 
     .. tab-item:: Properties
@@ -37,11 +37,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ole_date`
-            * - :py:meth:`~whole_days`
-            * - :py:meth:`~sec_into_day`
-            * - :py:meth:`~whole_days_utc`
-            * - :py:meth:`~sec_into_day_utc`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.ole_date`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.whole_days`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.sec_into_day`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.whole_days_utc`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDate.sec_into_day_utc`
 
 
 Import detail

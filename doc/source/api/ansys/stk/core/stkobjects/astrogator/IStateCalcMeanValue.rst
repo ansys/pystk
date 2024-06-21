@@ -1,13 +1,13 @@
 IStateCalcMeanValue
 ===================
 
-.. py:class:: IStateCalcMeanValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMeanValue
 
    object
    
    Properties for a Mean Value calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMeanValue
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanValue.calc_object_name`
 
 
 Import detail

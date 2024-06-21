@@ -1,12 +1,12 @@
 COVERAGE_GRID_CLASS
 ===================
 
-.. py:class:: COVERAGE_GRID_CLASS
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_GRID_CLASS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_GRID_CLASS
 
 Overview
 --------

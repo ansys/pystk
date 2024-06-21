@@ -1,13 +1,13 @@
 IPointMassFunction
 ==================
 
-.. py:class:: IPointMassFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPointMassFunction
 
    object
    
    Properties for the Point Mass Function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPointMassFunction
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~grav_source`
-            * - :py:meth:`~mu`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPointMassFunction.grav_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPointMassFunction.mu`
 
 
 Import detail

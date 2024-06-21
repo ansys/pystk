@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorTwoPlanesIntersection
 ==============================================
 
-.. py:class:: IVectorGeometryToolVectorTwoPlanesIntersection
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection
 
    object
    
    Defined along the intersection of two planes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorTwoPlanesIntersection
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plane_a`
-            * - :py:meth:`~plane_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection.plane_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection.plane_b`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: plane_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection.plane_a
-    :type: IAgCrdnPlaneRefTo
+    :type: IVectorGeometryToolPlaneRefTo
 
     Specify the first of the two planes which intersection defines the vector.
 
 .. py:property:: plane_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection.plane_b
-    :type: IAgCrdnPlaneRefTo
+    :type: IVectorGeometryToolPlaneRefTo
 
     Specify the second of the two planes which intersection defines the vector.
 

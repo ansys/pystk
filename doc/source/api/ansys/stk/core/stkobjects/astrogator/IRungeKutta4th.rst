@@ -1,13 +1,13 @@
 IRungeKutta4th
 ==============
 
-.. py:class:: IRungeKutta4th
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IRungeKutta4th
 
    object
    
    Properties for the RK4th numerical integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IRungeKutta4th
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initial_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4th.initial_step`
 
 
 Import detail

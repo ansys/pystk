@@ -1,13 +1,13 @@
 VehicleGraphics3DCovariancePointingContour
 ==========================================
 
-.. py:class:: VehicleGraphics3DCovariancePointingContour
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour
 
-   Bases: py:obj:`~IVehicleGraphics3DCovariancePointingContour`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour`
 
    Covariance pointing contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DCovariancePointingContour
 
 Overview
 --------

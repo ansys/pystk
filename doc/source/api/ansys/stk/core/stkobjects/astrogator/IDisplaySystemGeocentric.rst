@@ -1,13 +1,13 @@
 IDisplaySystemGeocentric
 ========================
 
-.. py:class:: IDisplaySystemGeocentric
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeocentric
 
    IDisplaySystem
    
    Properties for a geocentric launch coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDisplaySystemGeocentric
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeocentric.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeocentric.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeocentric.radius`
 
 
 Import detail

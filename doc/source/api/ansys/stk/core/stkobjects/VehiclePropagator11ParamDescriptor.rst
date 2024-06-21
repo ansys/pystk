@@ -1,13 +1,13 @@
 VehiclePropagator11ParamDescriptor
 ==================================
 
-.. py:class:: VehiclePropagator11ParamDescriptor
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagator11ParamDescriptor
 
-   Bases: py:obj:`~IVehiclePropagator11ParamDescriptor`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor`
 
    11-Param file definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagator11ParamDescriptor
 
 Overview
 --------

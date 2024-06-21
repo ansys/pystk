@@ -1,13 +1,13 @@
 AntennaModelGaussian
 ====================
 
-.. py:class:: AntennaModelGaussian
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelGaussian
 
-   Bases: py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IAntennaModelGaussian`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModelGaussian`
 
    Class defining a gaussian antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelGaussian
 
 Overview
 --------

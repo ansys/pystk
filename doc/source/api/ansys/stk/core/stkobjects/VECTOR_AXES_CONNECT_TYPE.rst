@@ -1,12 +1,12 @@
 VECTOR_AXES_CONNECT_TYPE
 ========================
 
-.. py:class:: VECTOR_AXES_CONNECT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VECTOR_AXES_CONNECT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VECTOR_AXES_CONNECT_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleRealtimeCartesianPoints
 ===============================
 
-.. py:class:: IVehicleRealtimeCartesianPoints
+.. py:class:: ansys.stk.core.stkobjects.IVehicleRealtimeCartesianPoints
 
    object
    
    Add one ephemeris point using cartesian coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleRealtimeCartesianPoints
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeCartesianPoints.add_position`
               - Add an ephemeris point. Epoch uses DateFormat dimension.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimeCartesianPoints.add`
               - Add an ephemeris point using position and velocity. Epoch uses DateFormat dimension.
 
 

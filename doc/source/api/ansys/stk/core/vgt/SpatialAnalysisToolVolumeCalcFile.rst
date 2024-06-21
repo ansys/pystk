@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeCalcFile
 =================================
 
-.. py:class:: SpatialAnalysisToolVolumeCalcFile
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcFile
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcFile`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFile`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalc`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Volumetric data loaded from a specified file - A file with .h5 extension. See STK help.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeCalcFile
 
 Overview
 --------

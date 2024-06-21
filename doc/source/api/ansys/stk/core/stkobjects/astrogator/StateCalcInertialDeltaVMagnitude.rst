@@ -1,13 +1,13 @@
 StateCalcInertialDeltaVMagnitude
 ================================
 
-.. py:class:: StateCalcInertialDeltaVMagnitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcInertialDeltaVMagnitude
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcInertialDeltaVMagnitude`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInertialDeltaVMagnitude`
 
    InertialDeltaVMag Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcInertialDeltaVMagnitude
 
 Overview
 --------

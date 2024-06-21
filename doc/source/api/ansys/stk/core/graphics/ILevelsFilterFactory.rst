@@ -1,13 +1,13 @@
 ILevelsFilterFactory
 ====================
 
-.. py:class:: ILevelsFilterFactory
+.. py:class:: ansys.stk.core.graphics.ILevelsFilterFactory
 
    object
    
    Adjusts the band levels of the source raster linearly.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ILevelsFilterFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ILevelsFilterFactory.initialize`
               - Initialize a new instance.
 
 

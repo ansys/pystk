@@ -1,13 +1,13 @@
 IDistanceToPositionDisplayCondition
 ===================================
 
-.. py:class:: IDistanceToPositionDisplayCondition
+.. py:class:: ansys.stk.core.graphics.IDistanceToPositionDisplayCondition
 
    object
    
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IDistanceToPositionDisplayCondition
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_distance`
-            * - :py:meth:`~minimum_distance_squared`
-            * - :py:meth:`~maximum_distance`
-            * - :py:meth:`~maximum_distance_squared`
-            * - :py:meth:`~position`
-            * - :py:meth:`~reference_frame`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.minimum_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.minimum_distance_squared`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.maximum_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.maximum_distance_squared`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.position`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.reference_frame`
 
 
 Import detail
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.reference_frame
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     Gets or sets the reference frame that position is defined in.
 

@@ -1,12 +1,12 @@
 SCRIPTING_PARAMETER_TYPE
 ========================
 
-.. py:class:: SCRIPTING_PARAMETER_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SCRIPTING_PARAMETER_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SCRIPTING_PARAMETER_TYPE
 
 Overview
 --------

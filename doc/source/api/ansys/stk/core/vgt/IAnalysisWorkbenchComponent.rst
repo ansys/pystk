@@ -1,13 +1,13 @@
 IAnalysisWorkbenchComponent
 ===========================
 
-.. py:class:: IAnalysisWorkbenchComponent
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchComponent
 
    object
    
    A base interface implemented by all VGT components. The methods and properties of the interface provide type information about the VGT component.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchComponent
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~duplicate`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.duplicate`
               - Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded.
-            * - :py:meth:`~anonymous_duplicate`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.anonymous_duplicate`
               - Create an anonymous copy of the instance of a VGT component. The new component is not registered and will not be persisted nor restored when a scenario is saved or loaded.
-            * - :py:meth:`~depends_on`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.depends_on`
               - Test if the instance depends on another component.
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.export`
               - Export the component to a file.
-            * - :py:meth:`~rename`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.rename`
               - Rename the component.
 
     .. tab-item:: Properties
@@ -37,19 +37,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~kind`
-            * - :py:meth:`~category`
-            * - :py:meth:`~name`
-            * - :py:meth:`~description`
-            * - :py:meth:`~path`
-            * - :py:meth:`~is_duplicable`
-            * - :py:meth:`~context`
-            * - :py:meth:`~type_info`
-            * - :py:meth:`~qualified_path`
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~is_ready`
-            * - :py:meth:`~is_read_only`
-            * - :py:meth:`~embedded_components`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.kind`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.category`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.name`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.description`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.path`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_duplicable`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_info`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.qualified_path`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_ready`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_read_only`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.embedded_components`
 
 
 Import detail
@@ -101,13 +101,13 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context
-    :type: IAgCrdnContext
+    :type: IAnalysisWorkbenchContext
 
     Returns the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
 
 .. py:property:: type_info
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_info
-    :type: IAgCrdnTypeInfo
+    :type: IAnalysisWorkbenchTypeInfo
 
     Returns the component type information.
 
@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: embedded_components
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.embedded_components
-    :type: IAgCrdnCollection
+    :type: IAnalysisWorkbenchCollection
 
     Returns a collection of embedded components.
 

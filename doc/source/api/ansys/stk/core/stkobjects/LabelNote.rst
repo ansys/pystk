@@ -1,13 +1,13 @@
 LabelNote
 =========
 
-.. py:class:: LabelNote
+.. py:class:: ansys.stk.core.stkobjects.LabelNote
 
-   Bases: py:obj:`~ILabelNote`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILabelNote`
 
    Class defining label notes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LabelNote
 
 Overview
 --------

@@ -1,12 +1,12 @@
 TURBINE_MODE
 ============
 
-.. py:class:: TURBINE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.TURBINE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TURBINE_MODE
 
 Overview
 --------

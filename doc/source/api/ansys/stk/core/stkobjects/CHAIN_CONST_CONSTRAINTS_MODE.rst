@@ -1,12 +1,12 @@
 CHAIN_CONST_CONSTRAINTS_MODE
 ============================
 
-.. py:class:: CHAIN_CONST_CONSTRAINTS_MODE
+.. py:class:: ansys.stk.core.stkobjects.CHAIN_CONST_CONSTRAINTS_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CHAIN_CONST_CONSTRAINTS_MODE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolume
 ==========================
 
-.. py:class:: ISpatialAnalysisToolVolume
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolume
 
    object
    
    A volume interface. The methods and properties of the interface provide Volume functions.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolume
 
 Overview
 --------

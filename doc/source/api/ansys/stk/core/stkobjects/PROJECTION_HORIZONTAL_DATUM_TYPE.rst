@@ -1,12 +1,12 @@
 PROJECTION_HORIZONTAL_DATUM_TYPE
 ================================
 
-.. py:class:: PROJECTION_HORIZONTAL_DATUM_TYPE
+.. py:class:: ansys.stk.core.stkobjects.PROJECTION_HORIZONTAL_DATUM_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PROJECTION_HORIZONTAL_DATUM_TYPE
 
 Overview
 --------

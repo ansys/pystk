@@ -1,13 +1,13 @@
 ISiteRelToPrevProcedure
 =======================
 
-.. py:class:: ISiteRelToPrevProcedure
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure
 
    object
    
    Interface used to access the options for a Relative to Previous Procedure site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteRelToPrevProcedure
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.get_as_site`
               - Get the site interface.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bearing_mode`
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.bearing_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.range`
 
 
 Import detail

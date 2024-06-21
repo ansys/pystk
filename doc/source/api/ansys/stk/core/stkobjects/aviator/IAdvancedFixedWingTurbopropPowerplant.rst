@@ -1,13 +1,13 @@
 IAdvancedFixedWingTurbopropPowerplant
 =====================================
 
-.. py:class:: IAdvancedFixedWingTurbopropPowerplant
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant
 
    object
    
    Interface used to access the options for the Turboprop powerplant strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingTurbopropPowerplant
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_sea_level_static_power`
-            * - :py:meth:`~propeller_count`
-            * - :py:meth:`~propeller_diameter`
-            * - :py:meth:`~fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant.max_sea_level_static_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant.propeller_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant.propeller_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant.fuel_flow`
 
 
 Import detail

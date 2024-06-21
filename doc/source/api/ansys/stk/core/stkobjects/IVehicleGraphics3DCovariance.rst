@@ -1,13 +1,13 @@
 IVehicleGraphics3DCovariance
 ============================
 
-.. py:class:: IVehicleGraphics3DCovariance
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance
 
    object
    
    Interface for 3D covariance ellipsoids.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DCovariance
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_sigma_scale_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.set_sigma_scale_type`
               - Set the sigma scale type.
-            * - :py:meth:`~is_sigma_scale_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.is_sigma_scale_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.set_attributes_type`
               - Set the position ellipsoid attributes type.
-            * - :py:meth:`~is_attributes_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.is_attributes_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -35,12 +35,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sigma_scale_type`
-            * - :py:meth:`~sigma_scale_supported_types`
-            * - :py:meth:`~sigma_scale`
-            * - :py:meth:`~attributes_type`
-            * - :py:meth:`~attributes_supported_types`
-            * - :py:meth:`~attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.sigma_scale_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.sigma_scale_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.sigma_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.attributes_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.attributes`
 
 
 Import detail
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: sigma_scale
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.sigma_scale
-    :type: IAgVeVOSigmaScale
+    :type: IVehicleGraphics3DSigmaScale
 
     Get the sigma scale.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.attributes
-    :type: IAgVeVOAttributes
+    :type: IVehicleGraphics3DAttributes
 
     Get the position ellipsoid graphics attributes.
 

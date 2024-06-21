@@ -1,12 +1,12 @@
 VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE
 =======================================
 
-.. py:class:: VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE
 
 Overview
 --------

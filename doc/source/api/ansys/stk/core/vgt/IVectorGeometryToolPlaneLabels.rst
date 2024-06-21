@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneLabels
 ==============================
 
-.. py:class:: IVectorGeometryToolPlaneLabels
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneLabels
 
    object
    
    Allow configuring the X and Y axes labels.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneLabels
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x_axis_label`
-            * - :py:meth:`~y_axis_label`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneLabels.x_axis_label`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneLabels.y_axis_label`
 
 
 Import detail

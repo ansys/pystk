@@ -1,13 +1,13 @@
 IPhaseCollection
 ================
 
-.. py:class:: IPhaseCollection
+.. py:class:: ansys.stk.core.stkobjects.aviator.IPhaseCollection
 
    object
    
    Interface used to access the collection of phases for a mission.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IPhaseCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhaseCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhaseCollection.add`
               - Add a phase at the end of the mission.
-            * - :py:meth:`~add_at_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhaseCollection.add_at_index`
               - Add a phase at the given index.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhaseCollection.remove`
               - Remove given phase.
-            * - :py:meth:`~remove_at_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhaseCollection.remove_at_index`
               - Remove phase at the given index.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhaseCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhaseCollection._NewEnum`
 
 
 Import detail

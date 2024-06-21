@@ -1,13 +1,13 @@
 IVehicleHPOPForceModelDragOptions
 =================================
 
-.. py:class:: IVehicleHPOPForceModelDragOptions
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPForceModelDragOptions
 
    object
    
    Interface for additional options for atmospheric drag.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPForceModelDragOptions
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_approx_altitude`
-            * - :py:meth:`~use_apparent_sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDragOptions.use_approx_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDragOptions.use_apparent_sun_position`
 
 
 Import detail

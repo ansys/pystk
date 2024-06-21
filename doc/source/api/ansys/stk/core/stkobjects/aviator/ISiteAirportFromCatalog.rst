@@ -1,13 +1,13 @@
 ISiteAirportFromCatalog
 =======================
 
-.. py:class:: ISiteAirportFromCatalog
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteAirportFromCatalog
 
    object
    
    Interface used to access the options for a airport From Catalog site type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteAirportFromCatalog
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_catalog_airport`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteAirportFromCatalog.get_catalog_airport`
               - Get the catalog airport.
-            * - :py:meth:`~set_catalog_airport`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteAirportFromCatalog.set_catalog_airport`
               - Set the catalog airport.
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteAirportFromCatalog.get_as_site`
               - Get the site interface.
 
 

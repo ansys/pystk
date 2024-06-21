@@ -1,12 +1,12 @@
 CRDN_EVENT_TYPE
 ===============
 
-.. py:class:: CRDN_EVENT_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_EVENT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_EVENT_TYPE
 
 Overview
 --------

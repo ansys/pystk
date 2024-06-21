@@ -1,13 +1,13 @@
 Graphics3DModelTransformation
 =============================
 
-.. py:class:: Graphics3DModelTransformation
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DModelTransformation
 
-   Bases: py:obj:`~IGraphics3DModelTransformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation`
 
    Class to modify transformation values.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DModelTransformation
 
 Overview
 --------

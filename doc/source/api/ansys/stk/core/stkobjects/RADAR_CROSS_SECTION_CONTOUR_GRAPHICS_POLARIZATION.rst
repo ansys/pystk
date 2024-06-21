@@ -1,12 +1,12 @@
 RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
 =================================================
 
-.. py:class:: RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
+.. py:class:: ansys.stk.core.stkobjects.RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
 
 Overview
 --------

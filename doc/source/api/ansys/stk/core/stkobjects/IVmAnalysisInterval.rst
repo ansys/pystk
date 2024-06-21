@@ -1,13 +1,13 @@
 IVmAnalysisInterval
 ===================
 
-.. py:class:: IVmAnalysisInterval
+.. py:class:: ansys.stk.core.stkobjects.IVmAnalysisInterval
 
    object
    
    IAgVmAnalysisInterval Interface for volume analysis interval.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmAnalysisInterval
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_evaluation_of_spatial_calc_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.set_evaluation_of_spatial_calc_type`
               - Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~analysis_interval`
-            * - :py:meth:`~evaluation_of_spatial_calc_type`
-            * - :py:meth:`~time_array`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~available_analysis_intervals`
-            * - :py:meth:`~available_times_from_time_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.analysis_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.evaluation_of_spatial_calc_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.time_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.available_analysis_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.available_times_from_time_array`
 
 
 Import detail

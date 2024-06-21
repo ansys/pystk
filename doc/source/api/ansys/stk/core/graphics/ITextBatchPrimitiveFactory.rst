@@ -1,13 +1,13 @@
 ITextBatchPrimitiveFactory
 ==========================
 
-.. py:class:: ITextBatchPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.ITextBatchPrimitiveFactory
 
    object
    
    Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextBatchPrimitiveFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_graphics_font`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveFactory.initialize_with_graphics_font`
               - Initialize a marker batch primitive with the specified font. This is equivalent to constructing a text batch with the specified font and a set hint of Frequent.
-            * - :py:meth:`~initialize_with_graphics_font_and_set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveFactory.initialize_with_graphics_font_and_set_hint`
               - Initialize a marker batch primitive with the specified font and setHint.
-            * - :py:meth:`~initialize_with_graphics_font_and_set_hint_2d`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveFactory.initialize_with_graphics_font_and_set_hint_2d`
               - Initialize a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering.
 
 

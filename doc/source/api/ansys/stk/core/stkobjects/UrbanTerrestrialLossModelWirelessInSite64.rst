@@ -1,13 +1,13 @@
 UrbanTerrestrialLossModelWirelessInSite64
 =========================================
 
-.. py:class:: UrbanTerrestrialLossModelWirelessInSite64
+.. py:class:: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64
 
-   Bases: py:obj:`~IUrbanTerrestrialLossModelWirelessInSite64`, py:obj:`~IUrbanTerrestrialLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64`, py:obj:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an urban/terrestrial loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: UrbanTerrestrialLossModelWirelessInSite64
 
 Overview
 --------

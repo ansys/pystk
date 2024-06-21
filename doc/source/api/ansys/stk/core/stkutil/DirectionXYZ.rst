@@ -1,13 +1,13 @@
 DirectionXYZ
 ============
 
-.. py:class:: DirectionXYZ
+.. py:class:: ansys.stk.core.stkutil.DirectionXYZ
 
-   Bases: py:obj:`~IDirectionXYZ`, py:obj:`~IDirection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IDirectionXYZ`, py:obj:`~ansys.stk.core.stkutil.IDirection`
 
    Cartesian direction.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: DirectionXYZ
 
 Overview
 --------

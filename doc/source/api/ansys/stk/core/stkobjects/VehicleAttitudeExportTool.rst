@@ -1,13 +1,13 @@
 VehicleAttitudeExportTool
 =========================
 
-.. py:class:: VehicleAttitudeExportTool
+.. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeExportTool
 
-   Bases: py:obj:`~IVehicleAttitudeExportTool`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool`
 
    AgVeExternalFileAttitude Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleAttitudeExportTool
 
 Overview
 --------

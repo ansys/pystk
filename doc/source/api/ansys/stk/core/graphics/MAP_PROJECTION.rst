@@ -1,12 +1,12 @@
 MAP_PROJECTION
 ==============
 
-.. py:class:: MAP_PROJECTION
+.. py:class:: ansys.stk.core.graphics.MAP_PROJECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MAP_PROJECTION
 
 Overview
 --------

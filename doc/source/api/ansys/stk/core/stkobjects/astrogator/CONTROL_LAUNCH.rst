@@ -1,12 +1,12 @@
 CONTROL_LAUNCH
 ==============
 
-.. py:class:: CONTROL_LAUNCH
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_LAUNCH
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_LAUNCH
 
 Overview
 --------

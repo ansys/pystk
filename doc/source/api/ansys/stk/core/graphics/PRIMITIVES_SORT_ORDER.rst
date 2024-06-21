@@ -1,12 +1,12 @@
 PRIMITIVES_SORT_ORDER
 =====================
 
-.. py:class:: PRIMITIVES_SORT_ORDER
+.. py:class:: ansys.stk.core.graphics.PRIMITIVES_SORT_ORDER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: PRIMITIVES_SORT_ORDER
 
 Overview
 --------

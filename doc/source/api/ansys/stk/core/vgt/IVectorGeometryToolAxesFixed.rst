@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesFixed
 ============================
 
-.. py:class:: IVectorGeometryToolAxesFixed
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesFixed
 
    object
    
    Axes fixed in reference axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesFixed
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~fixed_orientation`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFixed.reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFixed.fixed_orientation`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFixed.reference_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 
 .. py:property:: fixed_orientation
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFixed.fixed_orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Specify a desired orientation and the applicable parameters.
 

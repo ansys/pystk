@@ -1,13 +1,13 @@
 IVehicleLaunchControlFixedDeltaV
 ================================
 
-.. py:class:: IVehicleLaunchControlFixedDeltaV
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaV
 
    object
    
    Fixed Delta V interface for missile flight parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLaunchControlFixedDeltaV
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~delta_v`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaV.delta_v`
 
 
 Import detail

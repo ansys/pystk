@@ -1,12 +1,12 @@
 APP_CONSTANTS
 =============
 
-.. py:class:: APP_CONSTANTS
+.. py:class:: ansys.stk.core.uiapplication.APP_CONSTANTS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: APP_CONSTANTS
 
 Overview
 --------

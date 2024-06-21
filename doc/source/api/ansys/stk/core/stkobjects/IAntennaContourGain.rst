@@ -1,13 +1,13 @@
 IAntennaContourGain
 ===================
 
-.. py:class:: IAntennaContourGain
+.. py:class:: ansys.stk.core.stkobjects.IAntennaContourGain
 
    object
    
    IAgAntennaContourGain Interface for a antenna's gain contour properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaContourGain
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.set_resolution`
               - Set the azimuth/elevation ranges and resolution.
-            * - :py:meth:`~set_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.set_num_points`
               - Set the azimuth/elevation ranges and number of points.
 
     .. tab-item:: Properties
@@ -31,15 +31,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~azimuth_start`
-            * - :py:meth:`~azimuth_stop`
-            * - :py:meth:`~azimuth_resolution`
-            * - :py:meth:`~azimuth_num_points`
-            * - :py:meth:`~elevation_start`
-            * - :py:meth:`~elevation_stop`
-            * - :py:meth:`~elevation_resolution`
-            * - :py:meth:`~elevation_num_points`
-            * - :py:meth:`~coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.azimuth_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.azimuth_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.azimuth_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.azimuth_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.elevation_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.elevation_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.elevation_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.elevation_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.coordinate_system`
 
 
 Import detail

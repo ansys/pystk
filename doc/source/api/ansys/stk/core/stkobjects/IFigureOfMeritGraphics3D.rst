@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics3D
 ========================
 
-.. py:class:: IFigureOfMeritGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D
 
    object
    
    Figure of Merit 3D graphics.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics3D
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~static`
-            * - :py:meth:`~animation`
-            * - :py:meth:`~granularity`
-            * - :py:meth:`~pixels_per_deg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.static`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.granularity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.pixels_per_deg`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.static
-    :type: IAgFmVOAttributes
+    :type: IFigureOfMeritGraphics3DAttributes
 
     Get the static graphics.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.animation
-    :type: IAgFmVOAttributes
+    :type: IFigureOfMeritGraphics3DAttributes
 
     Get the animation graphics:.
 

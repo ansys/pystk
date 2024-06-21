@@ -1,13 +1,13 @@
 DemodulatorModelQam128
 ======================
 
-.. py:class:: DemodulatorModelQam128
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelQam128
 
-   Bases: py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a QAM 128 modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelQam128
 
 Overview
 --------

@@ -1,13 +1,13 @@
 AntennaModelApertureCircularUniform
 ===================================
 
-.. py:class:: AntennaModelApertureCircularUniform
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelApertureCircularUniform
 
-   Bases: py:obj:`~IAntennaModelApertureCircularUniform`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularUniform`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a circular uniform aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelApertureCircularUniform
 
 Overview
 --------

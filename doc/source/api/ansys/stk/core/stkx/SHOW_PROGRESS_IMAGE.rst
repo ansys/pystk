@@ -1,12 +1,12 @@
 SHOW_PROGRESS_IMAGE
 ===================
 
-.. py:class:: SHOW_PROGRESS_IMAGE
+.. py:class:: ansys.stk.core.stkx.SHOW_PROGRESS_IMAGE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: SHOW_PROGRESS_IMAGE
 
 Overview
 --------

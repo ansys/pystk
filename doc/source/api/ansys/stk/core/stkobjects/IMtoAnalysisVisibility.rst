@@ -1,13 +1,13 @@
 IMtoAnalysisVisibility
 ======================
 
-.. py:class:: IMtoAnalysisVisibility
+.. py:class:: ansys.stk.core.stkobjects.IMtoAnalysisVisibility
 
    object
    
    MTO Visibility computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoAnalysisVisibility
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_any_track_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.is_any_track_visible`
               - Return true if any track is visible to the object.
-            * - :py:meth:`~are_all_tracks_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.are_all_tracks_visible`
               - Return true if all tracks are visible to the object.
-            * - :py:meth:`~is_track_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.is_track_visible`
               - Return true is the track is visible to the object.
-            * - :py:meth:`~are_tracks_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.are_tracks_visible`
               - Return true if any track in the array is visible to the object.
-            * - :py:meth:`~compute_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.compute_tracks`
               - Return an array of track ids with a bool value indicating if it's visible to the specified object.
-            * - :py:meth:`~compute_all_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.compute_all_tracks`
               - Return an array of track ids with a bool value indicating if it's visible to the specified object.
 
     .. tab-item:: Properties
@@ -39,11 +39,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_terrain`
-            * - :py:meth:`~entirety`
-            * - :py:meth:`~object_interval`
-            * - :py:meth:`~object_data`
-            * - :py:meth:`~stk_object_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.use_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.entirety`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.object_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.object_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.stk_object_path`
 
 
 Import detail

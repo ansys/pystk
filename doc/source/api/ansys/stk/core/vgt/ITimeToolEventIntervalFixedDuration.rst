@@ -1,13 +1,13 @@
 ITimeToolEventIntervalFixedDuration
 ===================================
 
-.. py:class:: ITimeToolEventIntervalFixedDuration
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration
 
    object
    
    Interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalFixedDuration
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_time_instant`
-            * - :py:meth:`~start_offset`
-            * - :py:meth:`~stop_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration.reference_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration.start_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration.stop_offset`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration.reference_time_instant
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     The reference time instant.
 

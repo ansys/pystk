@@ -1,13 +1,13 @@
 VectorGeometryToolSystemRefTo
 =============================
 
-.. py:class:: VectorGeometryToolSystemRefTo
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemRefTo
 
-   Bases: py:obj:`~IVectorGeometryToolSystemRefTo`, py:obj:`~IAnalysisWorkbenchRefTo`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolSystemRefTo`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo`
 
    Represents a System reference.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolSystemRefTo
 
 Overview
 --------

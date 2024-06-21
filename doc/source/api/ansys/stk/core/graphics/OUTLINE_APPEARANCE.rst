@@ -1,12 +1,12 @@
 OUTLINE_APPEARANCE
 ==================
 
-.. py:class:: OUTLINE_APPEARANCE
+.. py:class:: ansys.stk.core.graphics.OUTLINE_APPEARANCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: OUTLINE_APPEARANCE
 
 Overview
 --------

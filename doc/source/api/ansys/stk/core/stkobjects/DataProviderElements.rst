@@ -1,13 +1,13 @@
 DataProviderElements
 ====================
 
-.. py:class:: DataProviderElements
+.. py:class:: ansys.stk.core.stkobjects.DataProviderElements
 
-   Bases: py:obj:`~IDataProviderElements`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderElements`
 
    Elements returned by the data provider (e.g. ``x``, ``y``, ``z``).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderElements
 
 Overview
 --------

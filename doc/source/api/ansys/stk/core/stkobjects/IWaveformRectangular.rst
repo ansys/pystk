@@ -1,13 +1,13 @@
 IWaveformRectangular
 ====================
 
-.. py:class:: IWaveformRectangular
+.. py:class:: ansys.stk.core.stkobjects.IWaveformRectangular
 
    object
    
    Provide access to a rectangular waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IWaveformRectangular
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pulse_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformRectangular.pulse_definition`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.IWaveformRectangular.pulse_definition
-    :type: IAgWaveformPulseDefinition
+    :type: IWaveformPulseDefinition
 
     Gets the pulse definition parameters.
 

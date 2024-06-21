@@ -1,13 +1,13 @@
 FlipFilter
 ==========
 
-.. py:class:: FlipFilter
+.. py:class:: ansys.stk.core.graphics.FlipFilter
 
-   Bases: py:obj:`~IFlipFilter`, py:obj:`~IRasterFilter`
+   Bases: py:obj:`~ansys.stk.core.graphics.IFlipFilter`, py:obj:`~ansys.stk.core.graphics.IRasterFilter`
 
    Flips the source raster along the given flip axis.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: FlipFilter
 
 Overview
 --------

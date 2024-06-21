@@ -1,13 +1,13 @@
 IAdvancedFixedWingEmpiricalJetEngine
 ====================================
 
-.. py:class:: IAdvancedFixedWingEmpiricalJetEngine
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingEmpiricalJetEngine
 
    object
    
    Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingEmpiricalJetEngine
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_sea_level_static_thrust`
-            * - :py:meth:`~design_point_altitude`
-            * - :py:meth:`~design_point_mach_number`
-            * - :py:meth:`~fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingEmpiricalJetEngine.max_sea_level_static_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingEmpiricalJetEngine.design_point_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingEmpiricalJetEngine.design_point_mach_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingEmpiricalJetEngine.fuel_flow`
 
 
 Import detail

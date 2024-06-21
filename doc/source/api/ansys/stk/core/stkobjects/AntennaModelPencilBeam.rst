@@ -1,13 +1,13 @@
 AntennaModelPencilBeam
 ======================
 
-.. py:class:: AntennaModelPencilBeam
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelPencilBeam
 
-   Bases: py:obj:`~IAntennaModelPencilBeam`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelPencilBeam`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a pencil beam antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelPencilBeam
 
 Overview
 --------

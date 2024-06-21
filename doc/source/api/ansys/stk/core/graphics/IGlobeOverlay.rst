@@ -1,13 +1,13 @@
 IGlobeOverlay
 =============
 
-.. py:class:: IGlobeOverlay
+.. py:class:: ansys.stk.core.graphics.IGlobeOverlay
 
    object
    
    The base class of all terrain overlay and globe image overlay objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGlobeOverlay
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~extent`
-            * - :py:meth:`~role`
-            * - :py:meth:`~uri_as_string`
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~display_condition`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlay.central_body`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlay.extent`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlay.role`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlay.uri_as_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlay.is_valid`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlay.display_condition`
 
 
 Import detail
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: display_condition
     :canonical: ansys.stk.core.graphics.IGlobeOverlay.display_condition
-    :type: IAgStkGraphicsDisplayCondition
+    :type: IDisplayCondition
 
     Gets or sets the display condition that controls whether or not the globe overlay is displayed.
 

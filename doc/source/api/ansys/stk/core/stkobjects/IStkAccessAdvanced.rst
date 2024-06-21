@@ -1,13 +1,13 @@
 IStkAccessAdvanced
 ==================
 
-.. py:class:: IStkAccessAdvanced
+.. py:class:: ansys.stk.core.stkobjects.IStkAccessAdvanced
 
    object
    
    Provide access to the Advanced properties for Access Computations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkAccessAdvanced
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_light_time_delay`
-            * - :py:meth:`~time_convergence`
-            * - :py:meth:`~max_time_step`
-            * - :py:meth:`~time_light_delay_convergence`
-            * - :py:meth:`~aberration_type`
-            * - :py:meth:`~clock_host`
-            * - :py:meth:`~signal_sense_of_clock_host`
-            * - :py:meth:`~use_default_clock_host_and_signal_sense`
-            * - :py:meth:`~use_precise_event_times`
-            * - :py:meth:`~absolute_tolerance`
-            * - :py:meth:`~relative_tolerance`
-            * - :py:meth:`~use_fixed_time_step`
-            * - :py:meth:`~min_time_step`
-            * - :py:meth:`~fixed_step_size`
-            * - :py:meth:`~fixed_time_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.enable_light_time_delay`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.time_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.time_light_delay_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.aberration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.clock_host`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.signal_sense_of_clock_host`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.use_default_clock_host_and_signal_sense`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.use_precise_event_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.absolute_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.relative_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.use_fixed_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.min_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.fixed_step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccessAdvanced.fixed_time_bound`
 
 
 Import detail

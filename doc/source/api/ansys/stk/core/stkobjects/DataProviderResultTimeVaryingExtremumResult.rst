@@ -1,13 +1,13 @@
 DataProviderResultTimeVaryingExtremumResult
 ===========================================
 
-.. py:class:: DataProviderResultTimeVaryingExtremumResult
+.. py:class:: ansys.stk.core.stkobjects.DataProviderResultTimeVaryingExtremumResult
 
-   Bases: py:obj:`~IDataProviderResultTimeVaryingExtremumResult`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult`
 
    Results returned by time varying extremum computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderResultTimeVaryingExtremumResult
 
 Overview
 --------

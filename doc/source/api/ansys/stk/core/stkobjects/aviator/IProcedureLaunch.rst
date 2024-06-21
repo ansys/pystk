@@ -1,13 +1,13 @@
 IProcedureLaunch
 ================
 
-.. py:class:: IProcedureLaunch
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureLaunch
 
    object
    
    Interface used to access the options for a launch procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureLaunch
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.set_airspeed`
               - Set the launch airspeed.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -31,17 +31,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~launch_time`
-            * - :py:meth:`~position_point_name`
-            * - :py:meth:`~direction_vec_name`
-            * - :py:meth:`~attitude_mode`
-            * - :py:meth:`~specify_launch_airspeed`
-            * - :py:meth:`~accel_g`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~airspeed`
-            * - :py:meth:`~fuel_flow_type`
-            * - :py:meth:`~override_fuel_flow`
-            * - :py:meth:`~true_course_hint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.launch_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.position_point_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.direction_vec_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.attitude_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.specify_launch_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.accel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.fuel_flow_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.override_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.true_course_hint`
 
 
 Import detail

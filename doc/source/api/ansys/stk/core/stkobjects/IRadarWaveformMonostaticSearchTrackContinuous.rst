@@ -1,13 +1,13 @@
 IRadarWaveformMonostaticSearchTrackContinuous
 =============================================
 
-.. py:class:: IRadarWaveformMonostaticSearchTrackContinuous
+.. py:class:: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous
 
    object
    
    Interface which is implemented by a search/track waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarWaveformMonostaticSearchTrackContinuous
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~analysis_mode_type`
-            * - :py:meth:`~analysis_mode`
-            * - :py:meth:`~probability_of_false_alarm`
-            * - :py:meth:`~modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.analysis_mode_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.analysis_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.probability_of_false_alarm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.modulator`
 
 
 Import detail
@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: analysis_mode
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.analysis_mode
-    :type: IAgRadarContinuousWaveAnalysisMode
+    :type: IRadarContinuousWaveAnalysisMode
 
     Gets the interface for setting analysis parameters.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.modulator
-    :type: IAgRadarModulator
+    :type: IRadarModulator
 
     Gets the interface for setting the modulator parameters.
 

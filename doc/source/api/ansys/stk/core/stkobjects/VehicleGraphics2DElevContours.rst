@@ -1,13 +1,13 @@
 VehicleGraphics2DElevContours
 =============================
 
-.. py:class:: VehicleGraphics2DElevContours
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DElevContours
 
-   Bases: py:obj:`~IVehicleGraphics2DElevContours`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours`
 
    General settings regarding display of elevation contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DElevContours
 
 Overview
 --------

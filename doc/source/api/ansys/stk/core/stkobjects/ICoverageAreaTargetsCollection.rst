@@ -1,13 +1,13 @@
 ICoverageAreaTargetsCollection
 ==============================
 
-.. py:class:: ICoverageAreaTargetsCollection
+.. py:class:: ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection
 
    object
    
    Area Targets.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageAreaTargetsCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.remove`
               - Remove an element from the collection given a Target name.
 
     .. tab-item:: Properties
@@ -37,9 +37,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~available_area_targets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.available_area_targets`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VehicleStandardBasic
 ====================
 
-.. py:class:: VehicleStandardBasic
+.. py:class:: ansys.stk.core.stkobjects.VehicleStandardBasic
 
-   Bases: py:obj:`~IVehicleStandardBasic`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleStandardBasic`
 
    Basic attitude profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleStandardBasic
 
 Overview
 --------

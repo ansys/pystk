@@ -1,13 +1,13 @@
 IVehicleGraphics3DGeoBox
 ========================
 
-.. py:class:: IVehicleGraphics3DGeoBox
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox
 
    object
    
    Interface for geostationary box, a fixed plane used to visually check that a GEO satellite stays within a certain area.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DGeoBox
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reposition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.reposition`
               - Reposition the geostationary box.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~north_south`
-            * - :py:meth:`~east_west`
-            * - :py:meth:`~radius`
-            * - :py:meth:`~color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.north_south`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.east_west`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.color`
 
 
 Import detail

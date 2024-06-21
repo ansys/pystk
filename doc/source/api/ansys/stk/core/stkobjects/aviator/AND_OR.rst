@@ -1,12 +1,12 @@
 AND_OR
 ======
 
-.. py:class:: AND_OR
+.. py:class:: ansys.stk.core.stkobjects.aviator.AND_OR
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AND_OR
 
 Overview
 --------

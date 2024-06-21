@@ -1,13 +1,13 @@
 Site
 ====
 
-.. py:class:: Site
+.. py:class:: ansys.stk.core.stkobjects.aviator.Site
 
-   Bases: py:obj:`~ISite`, py:obj:`~ISiteUnknown`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteUnknown`
 
    Class defining an unknown site type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: Site
 
 Overview
 --------

@@ -1,12 +1,12 @@
 CRDN_VOLUME_FROM_GRID_EDGE_TYPE
 ===============================
 
-.. py:class:: CRDN_VOLUME_FROM_GRID_EDGE_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_VOLUME_FROM_GRID_EDGE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_VOLUME_FROM_GRID_EDGE_TYPE
 
 Overview
 --------

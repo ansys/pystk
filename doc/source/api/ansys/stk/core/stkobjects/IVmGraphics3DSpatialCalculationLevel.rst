@@ -1,13 +1,13 @@
 IVmGraphics3DSpatialCalculationLevel
 ====================================
 
-.. py:class:: IVmGraphics3DSpatialCalculationLevel
+.. py:class:: ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel
 
    object
    
    IAgVmVOSpatialCalculationLevel Interface for defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGraphics3DSpatialCalculationLevel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
-            * - :py:meth:`~color`
-            * - :py:meth:`~translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel.translucency`
 
 
 Import detail

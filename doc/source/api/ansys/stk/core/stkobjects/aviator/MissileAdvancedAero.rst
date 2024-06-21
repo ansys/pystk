@@ -1,13 +1,13 @@
 MissileAdvancedAero
 ===================
 
-.. py:class:: MissileAdvancedAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileAdvancedAero
 
-   Bases: py:obj:`~IMissileAdvancedAero`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero`
 
    Class defining the advanced aerodynamic options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MissileAdvancedAero
 
 Overview
 --------

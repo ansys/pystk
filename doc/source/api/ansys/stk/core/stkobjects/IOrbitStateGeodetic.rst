@@ -1,13 +1,13 @@
 IOrbitStateGeodetic
 ===================
 
-.. py:class:: IOrbitStateGeodetic
+.. py:class:: ansys.stk.core.stkobjects.IOrbitStateGeodetic
 
    IOrbitState
    
    Geodetic coordinate type (available only with a Fixed coordinate system).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrbitStateGeodetic
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coordinate_system_type`
-            * - :py:meth:`~coordinate_system`
-            * - :py:meth:`~size_type`
-            * - :py:meth:`~size`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~latitude_rate`
-            * - :py:meth:`~longitude_rate`
-            * - :py:meth:`~supported_coordinate_system_types`
-            * - :py:meth:`~state_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.coordinate_system_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.size_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.latitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.longitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.supported_coordinate_system_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic.state_epoch`
 
 
 Import detail
@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateGeodetic.coordinate_system
-    :type: IAgOrbitStateCoordinateSystem
+    :type: IOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch. Note that with the Fixed coordinate system (required for the Geodetic coordinate type), the coordinate epoch is preset.
 
@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: size
     :canonical: ansys.stk.core.stkobjects.IOrbitStateGeodetic.size
-    :type: IAgGeodeticSize
+    :type: IGeodeticSize
 
     Get the value of the altitude or radius.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateGeodetic.state_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

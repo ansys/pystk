@@ -1,13 +1,13 @@
 Receiver
 ========
 
-.. py:class:: Receiver
+.. py:class:: ansys.stk.core.stkobjects.Receiver
 
-   Bases: py:obj:`~IReceiver`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiver`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the receiver object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Receiver
 
 Overview
 --------

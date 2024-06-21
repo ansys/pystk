@@ -1,13 +1,13 @@
 IAircraftCruise
 ===============
 
-.. py:class:: IAircraftCruise
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftCruise
 
    object
    
    Interface used to access the cruise options for an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftCruise
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_built_in_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftCruise.get_built_in_model`
               - Get the built-in model.
-            * - :py:meth:`~get_basic_cruise_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftCruise.get_basic_cruise_by_name`
               - Get the basic cruise model with the given name.
-            * - :py:meth:`~get_advanced_cruise_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftCruise.get_advanced_cruise_by_name`
               - Get the advanced cruise model with the given name.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftCruise.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

@@ -1,13 +1,13 @@
 StateCalcTimePastAscNode
 ========================
 
-.. py:class:: StateCalcTimePastAscNode
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcTimePastAscNode
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTimePastAscNode`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTimePastAscNode`
 
    TimePastAscNode Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcTimePastAscNode
 
 Overview
 --------

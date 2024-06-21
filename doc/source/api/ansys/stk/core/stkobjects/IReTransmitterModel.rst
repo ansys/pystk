@@ -1,13 +1,13 @@
 IReTransmitterModel
 ===================
 
-.. py:class:: IReTransmitterModel
+.. py:class:: ansys.stk.core.stkobjects.IReTransmitterModel
 
    object
    
    Provide access to the properties and methods defining a re-transmitter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReTransmitterModel
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~frequency_transfer_function_polynomial`
-            * - :py:meth:`~power_back_off_transfer_function_type`
-            * - :py:meth:`~power_back_off_linear_scale`
-            * - :py:meth:`~power_back_off_transfer_function_polynomial`
-            * - :py:meth:`~power_back_off_transfer_function_table`
-            * - :py:meth:`~enable_c_over_im`
-            * - :py:meth:`~c_over_im_transfer_function_type`
-            * - :py:meth:`~c_over_im_linear_scale`
-            * - :py:meth:`~c_over_im_transfer_function_polynomial`
-            * - :py:meth:`~c_over_im_transfer_function_table`
-            * - :py:meth:`~saturated_flux_density`
-            * - :py:meth:`~operational_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.frequency_transfer_function_polynomial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_linear_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_polynomial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_table`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.enable_c_over_im`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_linear_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_polynomial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_table`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.saturated_flux_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.operational_mode`
 
 
 Import detail
@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: frequency_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.frequency_transfer_function_polynomial
-    :type: IAgTransferFunctionPolynomialCollection
+    :type: ITransferFunctionPolynomialCollection
 
     Gets the frequency transfer function polynomial collection.
 
@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: power_back_off_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_polynomial
-    :type: IAgTransferFunctionPolynomialCollection
+    :type: ITransferFunctionPolynomialCollection
 
     Gets the power back off transfer function polynomial collection.
 
 .. py:property:: power_back_off_transfer_function_table
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_table
-    :type: IAgTransferFunctionInputBackOffOutputBackOffTable
+    :type: ITransferFunctionInputBackOffOutputBackOffTable
 
     Gets the power back off transfer function table.
 
@@ -95,13 +95,13 @@ Property detail
 
 .. py:property:: c_over_im_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_polynomial
-    :type: IAgTransferFunctionPolynomialCollection
+    :type: ITransferFunctionPolynomialCollection
 
     Gets the C/Im transfer function polynomial collection.
 
 .. py:property:: c_over_im_transfer_function_table
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_table
-    :type: IAgTransferFunctionInputBackOffCOverImTable
+    :type: ITransferFunctionInputBackOffCOverImTable
 
     Gets the C/Im transfer function table.
 

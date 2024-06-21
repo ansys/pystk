@@ -1,13 +1,13 @@
 AntennaModelApertureCircularCosineSquaredPedestal
 =================================================
 
-.. py:class:: AntennaModelApertureCircularCosineSquaredPedestal
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelApertureCircularCosineSquaredPedestal
 
-   Bases: py:obj:`~IAntennaModelApertureCircularCosineSquaredPedestal`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a circular cosine squared pedestal aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelApertureCircularCosineSquaredPedestal
 
 Overview
 --------

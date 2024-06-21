@@ -1,13 +1,13 @@
 AnalysisWorkbenchGeneric
 ========================
 
-.. py:class:: AnalysisWorkbenchGeneric
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchGeneric
 
-   Bases: py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Generic VGT component.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchGeneric
 
 Overview
 --------

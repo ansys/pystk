@@ -1,13 +1,13 @@
 IStateCalcSTMEigenval
 =====================
 
-.. py:class:: IStateCalcSTMEigenval
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval
 
    object
    
    Properties for an STM Eigenvalue calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSTMEigenval
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~eigenvalue_number`
-            * - :py:meth:`~eigenvalue_complex_part`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval.eigenvalue_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval.eigenvalue_complex_part`
 
 
 Import detail

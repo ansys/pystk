@@ -1,12 +1,12 @@
 CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
 =================================
 
-.. py:class:: CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
+.. py:class:: ansys.stk.core.vgt.CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
 
 Overview
 --------

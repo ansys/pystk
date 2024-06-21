@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionAccessConstraint
 ========================================
 
-.. py:class:: IFigureOfMeritDefinitionAccessConstraint
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint
 
    IFigureOfMeritDefinitionCompute
    
    Access Constraint Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionAccessConstraint
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~across_assets`
-            * - :py:meth:`~time_step`
-            * - :py:meth:`~constraint_name`
-            * - :py:meth:`~constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint.across_assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint.time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint.constraint_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint.constraint`
 
 
 Import detail

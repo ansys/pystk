@@ -1,13 +1,13 @@
 ISurfaceShapesInitializer
 =========================
 
-.. py:class:: ISurfaceShapesInitializer
+.. py:class:: ansys.stk.core.graphics.ISurfaceShapesInitializer
 
    object
    
    Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISurfaceShapesInitializer
 
 Overview
 --------
@@ -20,29 +20,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_circle_with_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_circle_with_granularity`
               - Compute boundary positions for a circle on the specified centralBody with the specified center, radius and granularity.
-            * - :py:meth:`~compute_circle`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_circle`
               - Compute boundary positions for a circle on the specified centralBody with the specified center and radius. This is equivalent to calling ComputeCircle with a granularity of 1 degree.
-            * - :py:meth:`~compute_circle_cartographic_with_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_circle_cartographic_with_granularity`
               - For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle.
-            * - :py:meth:`~compute_circle_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_circle_cartographic`
               - For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle.
-            * - :py:meth:`~compute_ellipse_with_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_ellipse_with_granularity`
               - Compute boundary positions for an ellipse on the specified centralBody.
-            * - :py:meth:`~compute_ellipse`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_ellipse`
               - Compute boundary positions for an ellipse on the specified centralBody. This is equivalent to calling ComputeEllipse with a granularity of 1 degree.
-            * - :py:meth:`~compute_ellipse_cartographic_with_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_ellipse_cartographic_with_granularity`
               - For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse.
-            * - :py:meth:`~compute_ellipse_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_ellipse_cartographic`
               - For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse.
-            * - :py:meth:`~compute_sector_with_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_sector_with_granularity`
               - Compute boundary positions for a sector on the specified centralBody.
-            * - :py:meth:`~compute_sector`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_sector`
               - Compute boundary positions for a sector on the specified centralBody. This is equivalent to calling ComputeSector with a granularity of 1 degree.
-            * - :py:meth:`~compute_sector_cartographic_with_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_sector_cartographic_with_granularity`
               - For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector.
-            * - :py:meth:`~compute_sector_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesInitializer.compute_sector_cartographic`
               - For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector.
 
 

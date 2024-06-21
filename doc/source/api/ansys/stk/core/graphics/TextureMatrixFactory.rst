@@ -1,13 +1,13 @@
 TextureMatrixFactory
 ====================
 
-.. py:class:: TextureMatrixFactory
+.. py:class:: ansys.stk.core.graphics.TextureMatrixFactory
 
-   Bases: py:obj:`~ITextureMatrixFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITextureMatrixFactory`
 
    A 4 by 4 matrix applied to a texture coordinate.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TextureMatrixFactory
 
 Overview
 --------

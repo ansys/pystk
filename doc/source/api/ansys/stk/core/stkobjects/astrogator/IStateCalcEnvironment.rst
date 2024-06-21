@@ -1,13 +1,13 @@
 IStateCalcEnvironment
 =====================
 
-.. py:class:: IStateCalcEnvironment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcEnvironment
 
    object
    
    Properties for an Environment calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcEnvironment
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~atmos_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEnvironment.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEnvironment.atmos_model_name`
 
 
 Import detail

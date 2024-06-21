@@ -1,12 +1,12 @@
 CRDN_CONDITION_THRESHOLD_OPTION
 ===============================
 
-.. py:class:: CRDN_CONDITION_THRESHOLD_OPTION
+.. py:class:: ansys.stk.core.vgt.CRDN_CONDITION_THRESHOLD_OPTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_CONDITION_THRESHOLD_OPTION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 AdvCATAdvancedEllipsoid
 =======================
 
-.. py:class:: AdvCATAdvancedEllipsoid
+.. py:class:: ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid
 
-   Bases: py:obj:`~IAdvCATAdvancedEllipsoid`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid`
 
    AdvCAT advanced ellipsoid properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AdvCATAdvancedEllipsoid
 
 Overview
 --------

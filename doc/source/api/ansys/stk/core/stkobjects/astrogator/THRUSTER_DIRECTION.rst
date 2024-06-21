@@ -1,12 +1,12 @@
 THRUSTER_DIRECTION
 ==================
 
-.. py:class:: THRUSTER_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.THRUSTER_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: THRUSTER_DIRECTION
 
 Overview
 --------

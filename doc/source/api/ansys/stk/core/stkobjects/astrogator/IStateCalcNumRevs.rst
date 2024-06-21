@@ -1,13 +1,13 @@
 IStateCalcNumRevs
 =================
 
-.. py:class:: IStateCalcNumRevs
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcNumRevs
 
    object
    
    Properties for a Number of Revolutions calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcNumRevs
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcNumRevs.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcNumRevs.element_type`
 
 
 Import detail

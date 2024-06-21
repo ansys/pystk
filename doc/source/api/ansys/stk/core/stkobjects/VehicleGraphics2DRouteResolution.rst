@@ -1,13 +1,13 @@
 VehicleGraphics2DRouteResolution
 ================================
 
-.. py:class:: VehicleGraphics2DRouteResolution
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DRouteResolution
 
-   Bases: py:obj:`~IVehicleGraphics2DRouteResolution`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRouteResolution`
 
    Route resolution for great arc vehicles defined in terms of ephemeris steps.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DRouteResolution
 
 Overview
 --------

@@ -1,13 +1,13 @@
 Swath
 =====
 
-.. py:class:: Swath
+.. py:class:: ansys.stk.core.stkobjects.Swath
 
-   Bases: py:obj:`~ISwath`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISwath`
 
    Class defining Swath properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Swath
 
 Overview
 --------

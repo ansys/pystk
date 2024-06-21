@@ -1,13 +1,13 @@
 StateCalcStandardDeviation
 ==========================
 
-.. py:class:: StateCalcStandardDeviation
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcStandardDeviation
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcStandardDeviation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcStandardDeviation`
 
    StandardDeviation Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcStandardDeviation
 
 Overview
 --------

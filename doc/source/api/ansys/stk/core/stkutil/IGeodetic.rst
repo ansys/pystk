@@ -1,13 +1,13 @@
 IGeodetic
 =========
 
-.. py:class:: IGeodetic
+.. py:class:: ansys.stk.core.stkutil.IGeodetic
 
    IPosition
    
    IAgGeodetic sets the position using Geodetic properties.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IGeodetic
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkutil.IGeodetic.lat`
+            * - :py:attr:`~ansys.stk.core.stkutil.IGeodetic.lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.IGeodetic.altitude`
 
 
 Import detail

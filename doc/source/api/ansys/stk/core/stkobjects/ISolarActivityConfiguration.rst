@@ -1,13 +1,13 @@
 ISolarActivityConfiguration
 ===========================
 
-.. py:class:: ISolarActivityConfiguration
+.. py:class:: ansys.stk.core.stkobjects.ISolarActivityConfiguration
 
    object
    
    Provide access to the properties and methods defining the solar activity configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISolarActivityConfiguration
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISolarActivityConfiguration.type`
 
 
 Import detail

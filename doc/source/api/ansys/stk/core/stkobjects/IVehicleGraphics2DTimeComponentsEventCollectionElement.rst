@@ -1,13 +1,13 @@
 IVehicleGraphics2DTimeComponentsEventCollectionElement
 ======================================================
 
-.. py:class:: IVehicleGraphics2DTimeComponentsEventCollectionElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement
 
    IVehicleGraphics2DTimeComponentsElement
    
    Provide properties to configure the vehicle's appearance in 2D and 3D views. The interface is used with event interval collections only.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DTimeComponentsEventCollectionElement
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_time_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.get_time_component`
               - Return an instance of a time component which provides the time intervals to control the appearance and visibility of the graphics path. The method may throw an exception if the component is invalid.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_color_ramp`
-            * - :py:meth:`~color_ramp_start_color`
-            * - :py:meth:`~color_ramp_end_color`
-            * - :py:meth:`~umbra`
-            * - :py:meth:`~penumbra`
-            * - :py:meth:`~sunlight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.use_color_ramp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_start_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_end_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.umbra`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.penumbra`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.sunlight`
 
 
 Import detail
@@ -68,19 +68,19 @@ Property detail
 
 .. py:property:: umbra
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.umbra
-    :type: IAgVeGfxAttributesBasic
+    :type: IVehicleGraphics2DAttributesBasic
 
     Configure the appearance of the orbit track, the marker, etc. when the vehicle isn't in sunlight at all.
 
 .. py:property:: penumbra
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.penumbra
-    :type: IAgVeGfxAttributesBasic
+    :type: IVehicleGraphics2DAttributesBasic
 
     Configure the appearance of the orbit track, the marker, etc. when the vehicle is only partially in sunlight.
 
 .. py:property:: sunlight
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.sunlight
-    :type: IAgVeGfxAttributesBasic
+    :type: IVehicleGraphics2DAttributesBasic
 
     Configure the appearance of the orbit track, the marker, etc. when the vehicle is in complete sunlight.
 

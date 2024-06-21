@@ -1,13 +1,13 @@
 Planetodetic
 ============
 
-.. py:class:: Planetodetic
+.. py:class:: ansys.stk.core.stkutil.Planetodetic
 
-   Bases: py:obj:`~IPlanetodetic`, py:obj:`~IPosition`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IPlanetodetic`, py:obj:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining Planetodetic position.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Planetodetic
 
 Overview
 --------

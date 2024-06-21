@@ -1,13 +1,13 @@
 IAltitudeOptions
 ================
 
-.. py:class:: IAltitudeOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAltitudeOptions
 
    object
    
    Interface used to access the altitude options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAltitudeOptions
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_default_cruise_altitude`
-            * - :py:meth:`~altitude_reference`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeOptions.use_default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeOptions.altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeOptions.altitude`
 
 
 Import detail

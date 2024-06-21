@@ -1,13 +1,13 @@
 GroundVehicleExportTools
 ========================
 
-.. py:class:: GroundVehicleExportTools
+.. py:class:: ansys.stk.core.stkobjects.GroundVehicleExportTools
 
-   Bases: py:obj:`~IGroundVehicleExportTools`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGroundVehicleExportTools`
 
    The GroundVehicle Export Tools.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GroundVehicleExportTools
 
 Overview
 --------

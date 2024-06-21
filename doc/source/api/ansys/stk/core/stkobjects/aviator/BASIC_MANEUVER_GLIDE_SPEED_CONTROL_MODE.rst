@@ -1,12 +1,12 @@
 BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
 =======================================
 
-.. py:class:: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
 
 Overview
 --------

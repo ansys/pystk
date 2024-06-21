@@ -1,13 +1,13 @@
 ICommSystemAccessSamplingMethod
 ===============================
 
-.. py:class:: ICommSystemAccessSamplingMethod
+.. py:class:: ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod
 
    object
    
    Provide access to the properties for the sampling method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystemAccessSamplingMethod
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod.type`
 
 
 Import detail

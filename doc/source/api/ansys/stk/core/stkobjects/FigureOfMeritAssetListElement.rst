@@ -1,13 +1,13 @@
 FigureOfMeritAssetListElement
 =============================
 
-.. py:class:: FigureOfMeritAssetListElement
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritAssetListElement
 
-   Bases: py:obj:`~IFigureOfMeritAssetListElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement`
 
    Asset list item (for Navigation Accuracy FOM).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritAssetListElement
 
 Overview
 --------

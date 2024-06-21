@@ -1,13 +1,13 @@
 VmGraphics3DCrossSectionPlaneCollection
 =======================================
 
-.. py:class:: VmGraphics3DCrossSectionPlaneCollection
+.. py:class:: ansys.stk.core.stkobjects.VmGraphics3DCrossSectionPlaneCollection
 
-   Bases: py:obj:`~IVmGraphics3DCrossSectionPlaneCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlaneCollection`
 
    Class defining collection of cross-section planes for volumetric grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmGraphics3DCrossSectionPlaneCollection
 
 Overview
 --------

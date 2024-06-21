@@ -1,12 +1,12 @@
 CONSTELLATION_FROM_TO_PARENT_CONSTRAINT
 =======================================
 
-.. py:class:: CONSTELLATION_FROM_TO_PARENT_CONSTRAINT
+.. py:class:: ansys.stk.core.stkobjects.CONSTELLATION_FROM_TO_PARENT_CONSTRAINT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CONSTELLATION_FROM_TO_PARENT_CONSTRAINT
 
 Overview
 --------

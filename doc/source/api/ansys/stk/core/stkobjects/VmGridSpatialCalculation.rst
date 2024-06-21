@@ -1,13 +1,13 @@
 VmGridSpatialCalculation
 ========================
 
-.. py:class:: VmGridSpatialCalculation
+.. py:class:: ansys.stk.core.stkobjects.VmGridSpatialCalculation
 
-   Bases: py:obj:`~IVmGridDefinition`, py:obj:`~IVmGridSpatialCalculation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGridDefinition`, py:obj:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation`
 
    Class defining the volume grid spatial calculation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmGridSpatialCalculation
 
 Overview
 --------

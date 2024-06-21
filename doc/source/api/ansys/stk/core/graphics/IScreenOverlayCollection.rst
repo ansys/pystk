@@ -1,13 +1,13 @@
 IScreenOverlayCollection
 ========================
 
-.. py:class:: IScreenOverlayCollection
+.. py:class:: ansys.stk.core.graphics.IScreenOverlayCollection
 
    object
    
    A collection of screen overlays.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IScreenOverlayCollection
 
 Overview
 --------

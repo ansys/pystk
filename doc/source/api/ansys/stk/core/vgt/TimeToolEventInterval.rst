@@ -1,13 +1,13 @@
 TimeToolEventInterval
 =====================
 
-.. py:class:: TimeToolEventInterval
+.. py:class:: ansys.stk.core.vgt.TimeToolEventInterval
 
-   Bases: py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventInterval`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A single time interval.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventInterval
 
 Overview
 --------

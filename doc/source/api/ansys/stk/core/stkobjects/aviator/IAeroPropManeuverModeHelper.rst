@@ -1,13 +1,13 @@
 IAeroPropManeuverModeHelper
 ===========================
 
-.. py:class:: IAeroPropManeuverModeHelper
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper
 
    object
    
    Interface used to access the The calculation mode for the Aero/Prop maneuver mode helper. Helper found in the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAeroPropManeuverModeHelper
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_reference_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.set_reference_airspeed`
               - Set the reference airspeed and reference airspeed type.
 
     .. tab-item:: Properties
@@ -29,17 +29,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mode`
-            * - :py:meth:`~flight_mode`
-            * - :py:meth:`~use_afterburner`
-            * - :py:meth:`~reference_weight`
-            * - :py:meth:`~reference_altitude`
-            * - :py:meth:`~reference_airspeed`
-            * - :py:meth:`~reference_airspeed_type`
-            * - :py:meth:`~reference_load_factor`
-            * - :py:meth:`~estimated_ps`
-            * - :py:meth:`~control_authority`
-            * - :py:meth:`~status_msg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.flight_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.use_afterburner`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_weight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.estimated_ps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.control_authority`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.status_msg`
 
 
 Import detail

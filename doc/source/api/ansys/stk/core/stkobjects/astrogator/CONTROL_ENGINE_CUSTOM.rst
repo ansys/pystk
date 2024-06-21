@@ -1,12 +1,12 @@
 CONTROL_ENGINE_CUSTOM
 =====================
 
-.. py:class:: CONTROL_ENGINE_CUSTOM
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_CUSTOM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_ENGINE_CUSTOM
 
 Overview
 --------

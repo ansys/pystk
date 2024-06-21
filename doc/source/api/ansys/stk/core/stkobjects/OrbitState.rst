@@ -1,13 +1,13 @@
 OrbitState
 ==========
 
-.. py:class:: OrbitState
+.. py:class:: ansys.stk.core.stkobjects.OrbitState
 
-   Bases: py:obj:`~IOrbitState`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Class defining orbit state.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OrbitState
 
 Overview
 --------

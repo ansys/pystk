@@ -1,13 +1,13 @@
 IVehicleGraphics2DIntervalsCollection
 =====================================
 
-.. py:class:: IVehicleGraphics2DIntervalsCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection
 
    object
    
    Custom Intervals Graphics List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DIntervalsCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.add`
               - Add a new element to the collection. Start/Stop params use DateFormat Dimension.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DIntervalsCollection._NewEnum`
 
 
 Import detail

@@ -1,12 +1,12 @@
 JET_ENGINE_TECHNOLOGY_LEVEL
 ===========================
 
-.. py:class:: JET_ENGINE_TECHNOLOGY_LEVEL
+.. py:class:: ansys.stk.core.stkobjects.aviator.JET_ENGINE_TECHNOLOGY_LEVEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: JET_ENGINE_TECHNOLOGY_LEVEL
 
 Overview
 --------

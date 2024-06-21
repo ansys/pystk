@@ -1,13 +1,13 @@
 ITerrainNormSlopeAzimuth
 ========================
 
-.. py:class:: ITerrainNormSlopeAzimuth
+.. py:class:: ansys.stk.core.stkobjects.ITerrainNormSlopeAzimuth
 
    object
    
    AgTerrainNormSlopeAzimuth used to access the Slope/Azimuth data for the TerrainNormal.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITerrainNormSlopeAzimuth
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~slope`
-            * - :py:meth:`~azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrainNormSlopeAzimuth.slope`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrainNormSlopeAzimuth.azimuth`
 
 
 Import detail

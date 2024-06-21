@@ -1,13 +1,13 @@
 ReceiverModelLaser
 ==================
 
-.. py:class:: ReceiverModelLaser
+.. py:class:: ansys.stk.core.stkobjects.ReceiverModelLaser
 
-   Bases: py:obj:`~IReceiverModelLaser`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverModelLaser`, py:obj:`~ansys.stk.core.stkobjects.IReceiverModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a laser receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceiverModelLaser
 
 Overview
 --------

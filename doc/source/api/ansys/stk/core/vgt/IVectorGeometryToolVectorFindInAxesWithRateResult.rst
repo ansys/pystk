@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorFindInAxesWithRateResult
 =================================================
 
-.. py:class:: IVectorGeometryToolVectorFindInAxesWithRateResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult
 
    object
    
    Contains the results returned with IAgCrdnVector.FindInAxesWithRate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorFindInAxesWithRateResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~vector`
-            * - :py:meth:`~rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.rate`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.vector
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The vector in a specified axes.
 
 .. py:property:: rate
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.rate
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The vector rate in a specified axes.
 

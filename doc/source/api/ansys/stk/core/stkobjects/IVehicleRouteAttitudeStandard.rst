@@ -1,13 +1,13 @@
 IVehicleRouteAttitudeStandard
 =============================
 
-.. py:class:: IVehicleRouteAttitudeStandard
+.. py:class:: ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard
 
    IVehicleAttitudeStandard
    
    Standard attitude profile for aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleRouteAttitudeStandard
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~basic`
-            * - :py:meth:`~external`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard.basic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard.external`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: basic
     :canonical: ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard.basic
-    :type: IAgVeStandardBasic
+    :type: IVehicleStandardBasic
 
     Get the basic attitude properties.
 
 .. py:property:: external
     :canonical: ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard.external
-    :type: IAgVeAttExternal
+    :type: IVehicleAttitudeExternal
 
     Get the precomputed (external) attitude properties.
 

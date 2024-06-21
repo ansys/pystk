@@ -1,13 +1,13 @@
 IStateCalcApparentSolarTime
 ===========================
 
-.. py:class:: IStateCalcApparentSolarTime
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcApparentSolarTime
 
    object
    
    Properties for an Apparent Solar Time calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcApparentSolarTime
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcApparentSolarTime.central_body_name`
 
 
 Import detail

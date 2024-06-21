@@ -1,13 +1,13 @@
 StateCalcGravitationalParameter
 ===============================
 
-.. py:class:: StateCalcGravitationalParameter
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcGravitationalParameter
 
-   Bases: py:obj:`~IStateCalcGravitationalParameter`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravitationalParameter`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    GravitationalParameter Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcGravitationalParameter
 
 Overview
 --------

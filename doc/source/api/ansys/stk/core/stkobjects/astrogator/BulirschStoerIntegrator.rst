@@ -1,13 +1,13 @@
 BulirschStoerIntegrator
 =======================
 
-.. py:class:: BulirschStoerIntegrator
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BulirschStoerIntegrator
 
-   Bases: py:obj:`~IBulirschStoerIntegrator`, py:obj:`~INumericalIntegrator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator`, py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
 
    Bulirsch-Stoer Numerical Integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BulirschStoerIntegrator
 
 Overview
 --------

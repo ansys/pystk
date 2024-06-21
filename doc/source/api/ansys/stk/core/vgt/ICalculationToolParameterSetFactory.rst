@@ -1,13 +1,13 @@
 ICalculationToolParameterSetFactory
 ===================================
 
-.. py:class:: ICalculationToolParameterSetFactory
+.. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSetFactory
 
    object
    
    The factory is used to create instances of available parameter set types.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolParameterSetFactory
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create`
               - Create and registers a parameter set using specified name and description.
-            * - :py:meth:`~create_parameter_set_attitude`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_attitude`
               - Create a parameter set defined by identifying one set of axes in reference to another.
-            * - :py:meth:`~create_parameter_set_ground_trajectory`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_ground_trajectory`
               - Create a parameter set defined by identifying location in reference central body.
-            * - :py:meth:`~create_parameter_set_trajectory`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_trajectory`
               - Create a parameter set defined by identifying location in reference coordinate system.
-            * - :py:meth:`~create_parameter_set_orbit`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_orbit`
               - Create a parameter set defined by identifying orbiting point and its central body.
-            * - :py:meth:`~create_parameter_set_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory.create_parameter_set_vector`
               - Create a parameter set defined by identifying vector in reference axes.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory.is_type_supported`
               - Return whether the specified type is supported.
 
 

@@ -1,13 +1,13 @@
 AircraftBasicDescentModel
 =========================
 
-.. py:class:: AircraftBasicDescentModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftBasicDescentModel
 
-   Bases: py:obj:`~IAircraftBasicDescentModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicDescentModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the basic descent performance model for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftBasicDescentModel
 
 Overview
 --------

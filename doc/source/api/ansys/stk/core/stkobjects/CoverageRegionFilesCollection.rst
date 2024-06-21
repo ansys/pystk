@@ -1,13 +1,13 @@
 CoverageRegionFilesCollection
 =============================
 
-.. py:class:: CoverageRegionFilesCollection
+.. py:class:: ansys.stk.core.stkobjects.CoverageRegionFilesCollection
 
-   Bases: py:obj:`~ICoverageRegionFilesCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageRegionFilesCollection`
 
    Collection of Region Files.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageRegionFilesCollection
 
 Overview
 --------

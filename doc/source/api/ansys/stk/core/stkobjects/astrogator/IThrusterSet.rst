@@ -1,13 +1,13 @@
 IThrusterSet
 ============
 
-.. py:class:: IThrusterSet
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IThrusterSet
 
    object
    
    The properties of a thruster set.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IThrusterSet
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~direction_definition`
-            * - :py:meth:`~thrusters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSet.direction_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSet.thrusters`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: thrusters
     :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSet.thrusters
-    :type: IAgVAThrusterSetCollection
+    :type: IThrusterSetCollection
 
     Get the list of thrusters.
 

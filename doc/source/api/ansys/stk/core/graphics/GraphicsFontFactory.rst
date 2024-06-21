@@ -1,13 +1,13 @@
 GraphicsFontFactory
 ===================
 
-.. py:class:: GraphicsFontFactory
+.. py:class:: ansys.stk.core.graphics.GraphicsFontFactory
 
-   Bases: py:obj:`~IGraphicsFontFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IGraphicsFontFactory`
 
    A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: GraphicsFontFactory
 
 Overview
 --------

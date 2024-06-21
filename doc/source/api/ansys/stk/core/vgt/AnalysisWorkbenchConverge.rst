@@ -1,13 +1,13 @@
 AnalysisWorkbenchConverge
 =========================
 
-.. py:class:: AnalysisWorkbenchConverge
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchConverge
 
-   Bases: py:obj:`~IAnalysisWorkbenchConverge`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchConverge`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Represents a base class for convergence definitions.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchConverge
 
 Overview
 --------

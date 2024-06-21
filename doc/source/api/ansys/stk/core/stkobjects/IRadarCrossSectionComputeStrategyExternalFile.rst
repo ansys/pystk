@@ -1,13 +1,13 @@
 IRadarCrossSectionComputeStrategyExternalFile
 =============================================
 
-.. py:class:: IRadarCrossSectionComputeStrategyExternalFile
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyExternalFile
 
    object
    
    Provide access to the properties and methods defining a radar cross section external file compute Strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionComputeStrategyExternalFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyExternalFile.filename`
 
 
 Import detail

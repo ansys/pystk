@@ -1,13 +1,13 @@
 IRadarWaveformMonostaticSearchTrackFixedPRF
 ===========================================
 
-.. py:class:: IRadarWaveformMonostaticSearchTrackFixedPRF
+.. py:class:: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF
 
    object
    
    Interface which is implemented by a search/track waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarWaveformMonostaticSearchTrackFixedPRF
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_probability_of_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.set_probability_of_detection`
               - Set the probability of detection algorithm by name.
 
     .. tab-item:: Properties
@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pulse_definition`
-            * - :py:meth:`~modulator`
-            * - :py:meth:`~supported_probability_of_detection`
-            * - :py:meth:`~probability_of_detection`
-            * - :py:meth:`~pulse_integration_type`
-            * - :py:meth:`~pulse_integration`
-            * - :py:meth:`~enable_resolution_override`
-            * - :py:meth:`~range_cell_resolution`
-            * - :py:meth:`~azimuth_resolution`
-            * - :py:meth:`~enable_pulse_canceller`
-            * - :py:meth:`~number_of_pulses_to_cancel`
-            * - :py:meth:`~enable_coherent_pulses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.pulse_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.supported_probability_of_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.probability_of_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.pulse_integration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.pulse_integration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.enable_resolution_override`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.range_cell_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.azimuth_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.enable_pulse_canceller`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.number_of_pulses_to_cancel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.enable_coherent_pulses`
 
 
 Import detail
@@ -56,13 +56,13 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.pulse_definition
-    :type: IAgRadarWaveformSearchTrackPulseDefinition
+    :type: IRadarWaveformSearchTrackPulseDefinition
 
     Gets the interface for setting the pulse definition parameters.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.modulator
-    :type: IAgRadarModulator
+    :type: IRadarModulator
 
     Gets the interface for setting the modulator parameters.
 
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: probability_of_detection
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.probability_of_detection
-    :type: IAgRadarProbabilityOfDetection
+    :type: IRadarProbabilityOfDetection
 
     Gets the interface for setting the probability of detection parameters.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: pulse_integration
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF.pulse_integration
-    :type: IAgRadarPulseIntegration
+    :type: IRadarPulseIntegration
 
     Gets the interface for setting pulse integration parameters.
 

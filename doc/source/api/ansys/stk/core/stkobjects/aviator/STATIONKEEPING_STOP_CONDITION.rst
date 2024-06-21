@@ -1,12 +1,12 @@
 STATIONKEEPING_STOP_CONDITION
 =============================
 
-.. py:class:: STATIONKEEPING_STOP_CONDITION
+.. py:class:: ansys.stk.core.stkobjects.aviator.STATIONKEEPING_STOP_CONDITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: STATIONKEEPING_STOP_CONDITION
 
 Overview
 --------

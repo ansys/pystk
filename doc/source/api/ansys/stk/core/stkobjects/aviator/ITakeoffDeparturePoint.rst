@@ -1,13 +1,13 @@
 ITakeoffDeparturePoint
 ======================
 
-.. py:class:: ITakeoffDeparturePoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ITakeoffDeparturePoint
 
    object
    
    The interface used to access the options for a Departure Point takeoff mode. The mode must be set to Departure Point to access this interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ITakeoffDeparturePoint
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~takeoff_climb_angle`
-            * - :py:meth:`~departure_altitude`
-            * - :py:meth:`~departure_point_range`
-            * - :py:meth:`~use_runway_terrain`
-            * - :py:meth:`~runway_altitude_offset`
-            * - :py:meth:`~hold_on_deck`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffDeparturePoint.takeoff_climb_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffDeparturePoint.departure_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffDeparturePoint.departure_point_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffDeparturePoint.use_runway_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffDeparturePoint.runway_altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffDeparturePoint.hold_on_deck`
 
 
 Import detail

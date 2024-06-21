@@ -1,13 +1,13 @@
 IAntenna
 ========
 
-.. py:class:: IAntenna
+.. py:class:: ansys.stk.core.stkobjects.IAntenna
 
    object
    
    Provide access to the properties and methods defining an Antenna object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntenna
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.set_model`
               - Set the current antenna model by name.
-            * - :py:meth:`~is_refraction_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,17 +31,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_models`
-            * - :py:meth:`~model`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~refraction`
-            * - :py:meth:`~refraction_supported_types`
-            * - :py:meth:`~refraction_model`
-            * - :py:meth:`~use_refraction_in_access`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~rf_environment`
-            * - :py:meth:`~laser_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.supported_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.refraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.refraction_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.refraction_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.use_refraction_in_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.laser_environment`
 
 
 Import detail
@@ -63,13 +63,13 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IAntenna.model
-    :type: IAgAntennaModel
+    :type: IAntennaModel
 
     Gets the current antenna model.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IAntenna.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Gets the antenna orientation.
 
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.IAntenna.refraction_model
-    :type: IAgRfModelBase
+    :type: IRefractionModelBase
 
     Gets a refraction model.
 
@@ -99,25 +99,25 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IAntenna.graphics_3d
-    :type: IAgAntennaVO
+    :type: IAntennaGraphics3D
 
     Get the 3D Graphics properties for the antenna.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IAntenna.graphics
-    :type: IAgAntennaGraphics
+    :type: IAntennaGraphics
 
     Get the 2D Graphics properties for the antenna.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IAntenna.rf_environment
-    :type: IAgObjectRFEnvironment
+    :type: IObjectRFEnvironment
 
     Gets the object RF environment settings.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IAntenna.laser_environment
-    :type: IAgObjectLaserEnvironment
+    :type: IObjectLaserEnvironment
 
     Gets the object laser environment settings.
 

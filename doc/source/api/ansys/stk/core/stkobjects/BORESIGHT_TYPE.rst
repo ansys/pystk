@@ -1,12 +1,12 @@
 BORESIGHT_TYPE
 ==============
 
-.. py:class:: BORESIGHT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.BORESIGHT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BORESIGHT_TYPE
 
 Overview
 --------

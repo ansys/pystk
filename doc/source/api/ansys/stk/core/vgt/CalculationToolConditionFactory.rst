@@ -1,13 +1,13 @@
 CalculationToolConditionFactory
 ===============================
 
-.. py:class:: CalculationToolConditionFactory
+.. py:class:: ansys.stk.core.vgt.CalculationToolConditionFactory
 
-   Bases: py:obj:`~ICalculationToolConditionFactory`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConditionFactory`
 
    The factory creates condition components.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolConditionFactory
 
 Overview
 --------

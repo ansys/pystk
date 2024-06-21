@@ -1,13 +1,13 @@
 MissionControlSequenceEnd
 =========================
 
-.. py:class:: MissionControlSequenceEnd
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceEnd
 
-   Bases: py:obj:`~IMissionControlSequenceEnd`, py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IComponentInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceEnd`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`
 
    The End segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceEnd
 
 Overview
 --------

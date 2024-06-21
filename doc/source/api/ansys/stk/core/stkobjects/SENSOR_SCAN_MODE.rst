@@ -1,12 +1,12 @@
 SENSOR_SCAN_MODE
 ================
 
-.. py:class:: SENSOR_SCAN_MODE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_SCAN_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_SCAN_MODE
 
 Overview
 --------

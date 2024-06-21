@@ -1,13 +1,13 @@
 IDataProviderGroup
 ==================
 
-.. py:class:: IDataProviderGroup
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderGroup
 
    object
    
    Represents a group of data providers (for instance ``Cartesian Position`` on satellite).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderGroup
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~group`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderGroup.group`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: group
     :canonical: ansys.stk.core.stkobjects.IDataProviderGroup.group
-    :type: IAgDataProviders
+    :type: IDataProviders
 
     Returns a collection of data providers in the group.
 

@@ -1,13 +1,13 @@
 CalculationToolScalarFunction
 =============================
 
-.. py:class:: CalculationToolScalarFunction
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarFunction
 
-   Bases: py:obj:`~ICalculationToolScalarFunction`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarFunction`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by performing the specified function on the input scalar or time instant.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarFunction
 
 Overview
 --------

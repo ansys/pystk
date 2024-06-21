@@ -1,12 +1,12 @@
 CRDN_SAVE_DATA_OPTION
 =====================
 
-.. py:class:: CRDN_SAVE_DATA_OPTION
+.. py:class:: ansys.stk.core.vgt.CRDN_SAVE_DATA_OPTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SAVE_DATA_OPTION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IQuantity
 =========
 
-.. py:class:: IQuantity
+.. py:class:: ansys.stk.core.stkutil.IQuantity
 
    object
    
    Provide helper methods for a quantity.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IQuantity
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~convert_to_unit`
+            * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.convert_to_unit`
               - Change the value in this quantity to the specified unit.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.add`
               - Add the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
-            * - :py:meth:`~subtract`
+            * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.subtract`
               - Subtracts the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
-            * - :py:meth:`~multiply_qty`
+            * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.multiply_qty`
               - Multiplies the value from the IAgQuantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar.
-            * - :py:meth:`~divide_qty`
+            * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.divide_qty`
               - Divides the value from the IAgQuantity interface to this interface. The dimensions must be similar.
 
     .. tab-item:: Properties
@@ -37,9 +37,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~dimension`
-            * - :py:meth:`~unit`
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.dimension`
+            * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.unit`
+            * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.value`
 
 
 Import detail

@@ -1,12 +1,12 @@
 BUTTON_VALUES
 =============
 
-.. py:class:: BUTTON_VALUES
+.. py:class:: ansys.stk.core.stkx.BUTTON_VALUES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: BUTTON_VALUES
 
 Overview
 --------

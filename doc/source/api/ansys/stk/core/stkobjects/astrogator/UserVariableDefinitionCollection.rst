@@ -1,13 +1,13 @@
 UserVariableDefinitionCollection
 ================================
 
-.. py:class:: UserVariableDefinitionCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection
 
-   Bases: py:obj:`~IUserVariableDefinitionCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection`
 
    User Variable Definition Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: UserVariableDefinitionCollection
 
 Overview
 --------

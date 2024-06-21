@@ -1,13 +1,13 @@
 IVmExternalFile
 ===============
 
-.. py:class:: IVmExternalFile
+.. py:class:: ansys.stk.core.stkobjects.IVmExternalFile
 
    object
    
    IAgVmExternalFile Interface for volume external file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmExternalFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmExternalFile.reload`
               - Reload volume external file.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmExternalFile.filename`
 
 
 Import detail

@@ -1,13 +1,13 @@
 FigureOfMeritGraphics2DLevelAttributesElement
 =============================================
 
-.. py:class:: FigureOfMeritGraphics2DLevelAttributesElement
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesElement
 
-   Bases: py:obj:`~IFigureOfMeritGraphics2DLevelAttributesElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesElement`
 
    2D graphics attributes of contour levels.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGraphics2DLevelAttributesElement
 
 Overview
 --------

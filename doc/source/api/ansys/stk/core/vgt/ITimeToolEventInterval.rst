@@ -1,13 +1,13 @@
 ITimeToolEventInterval
 ======================
 
-.. py:class:: ITimeToolEventInterval
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventInterval
 
    object
    
    A single time interval.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventInterval
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~find_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.find_interval`
               - Return computed interval if it exists.
-            * - :py:meth:`~occurred`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.occurred`
               - Determine if specified time falls within computed interval if it exists.
 
     .. tab-item:: Properties
@@ -31,11 +31,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~label_start_description`
-            * - :py:meth:`~label_stop_description`
-            * - :py:meth:`~label_start`
-            * - :py:meth:`~label_stop`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.label_start_description`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.label_stop_description`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.label_start`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.label_stop`
 
 
 Import detail

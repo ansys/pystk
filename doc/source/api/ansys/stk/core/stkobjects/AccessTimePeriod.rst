@@ -1,13 +1,13 @@
 AccessTimePeriod
 ================
 
-.. py:class:: AccessTimePeriod
+.. py:class:: ansys.stk.core.stkobjects.AccessTimePeriod
 
-   Bases: py:obj:`~IAccessTimePeriod`, py:obj:`~ITimePeriod`, py:obj:`~IAccessInterval`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessTimePeriod`, py:obj:`~ansys.stk.core.stkobjects.ITimePeriod`, py:obj:`~ansys.stk.core.stkobjects.IAccessInterval`
 
    Allow configuring the object's access interval.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessTimePeriod
 
 Overview
 --------

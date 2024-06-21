@@ -1,13 +1,13 @@
 IDifferentialCorrectorControl
 =============================
 
-.. py:class:: IDifferentialCorrectorControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl
 
    object
    
    Properties for control parameters of a differential corrector profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDifferentialCorrectorControl
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~final_value`
-            * - :py:meth:`~last_update`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~initial_value`
-            * - :py:meth:`~perturbation`
-            * - :py:meth:`~correction`
-            * - :py:meth:`~tolerance`
-            * - :py:meth:`~max_step`
-            * - :py:meth:`~scaling_method`
-            * - :py:meth:`~scaling_value`
-            * - :py:meth:`~dimension`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
-            * - :py:meth:`~values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.final_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.last_update`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.initial_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.perturbation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.correction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.scaling_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.scaling_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.values`
 
 
 Import detail

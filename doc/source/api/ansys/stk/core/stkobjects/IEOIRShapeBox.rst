@@ -1,13 +1,13 @@
 IEOIRShapeBox
 =============
 
-.. py:class:: IEOIRShapeBox
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeBox
 
    IEOIRShapeObject
    
    A box shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeBox
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~width`
-            * - :py:meth:`~depth`
-            * - :py:meth:`~height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeBox.width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeBox.depth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeBox.height`
 
 
 Import detail

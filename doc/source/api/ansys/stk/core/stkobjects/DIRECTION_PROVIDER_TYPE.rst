@@ -1,12 +1,12 @@
 DIRECTION_PROVIDER_TYPE
 =======================
 
-.. py:class:: DIRECTION_PROVIDER_TYPE
+.. py:class:: ansys.stk.core.stkobjects.DIRECTION_PROVIDER_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DIRECTION_PROVIDER_TYPE
 
 Overview
 --------

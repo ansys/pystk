@@ -1,13 +1,13 @@
 ISpaceEnvironmentSAAContour
 ===========================
 
-.. py:class:: ISpaceEnvironmentSAAContour
+.. py:class:: ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour
 
    object
    
    SAA Contour settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISpaceEnvironmentSAAContour
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_saa_flux_intensity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour.compute_saa_flux_intensity`
               - Compute SAA flux intensity at the specified time on the vehicle's channel. Uses DateFormat and FluxIntensity Dimensions.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~channel`
-            * - :py:meth:`~flux_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour.channel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour.flux_level`
 
 
 Import detail

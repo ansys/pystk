@@ -1,13 +1,13 @@
 IScriptingParameter
 ===================
 
-.. py:class:: IScriptingParameter
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingParameter
 
    object
    
    Parameter properties for scripting options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingParameter
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~param_value`
-            * - :py:meth:`~unit`
-            * - :py:meth:`~type`
-            * - :py:meth:`~inherit_value`
-            * - :py:meth:`~user_comment`
-            * - :py:meth:`~dimension`
-            * - :py:meth:`~enumeration_choices`
-            * - :py:meth:`~use_min_value`
-            * - :py:meth:`~min_value`
-            * - :py:meth:`~use_max_value`
-            * - :py:meth:`~max_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.param_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.inherit_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.user_comment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.enumeration_choices`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.use_min_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.min_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.use_max_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.max_value`
 
 
 Import detail
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: enumeration_choices
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameter.enumeration_choices
-    :type: IAgVAScriptingParameterEnumerationChoiceCollection
+    :type: IScriptingParameterEnumerationChoiceCollection
 
     Get the collection of enumerations to use when parameter type is eVAScriptingParameterTypeEnumeration.
 

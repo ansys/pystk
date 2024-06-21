@@ -1,13 +1,13 @@
 MissionControlSequenceHold
 ==========================
 
-.. py:class:: MissionControlSequenceHold
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceHold
 
-   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceHold`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    The Hold segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceHold
 
 Overview
 --------

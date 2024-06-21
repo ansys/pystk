@@ -1,13 +1,13 @@
 ReceivePolarizationLHC
 ======================
 
-.. py:class:: ReceivePolarizationLHC
+.. py:class:: ansys.stk.core.stkobjects.ReceivePolarizationLHC
 
-   Bases: py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarization`, py:obj:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage`
 
    Class defining a LHC polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceivePolarizationLHC
 
 Overview
 --------

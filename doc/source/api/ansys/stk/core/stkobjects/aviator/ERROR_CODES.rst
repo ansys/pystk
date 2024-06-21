@@ -1,12 +1,12 @@
 ERROR_CODES
 ===========
 
-.. py:class:: ERROR_CODES
+.. py:class:: ansys.stk.core.stkobjects.aviator.ERROR_CODES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ERROR_CODES
 
 Overview
 --------

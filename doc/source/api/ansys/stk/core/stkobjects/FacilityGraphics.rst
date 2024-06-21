@@ -1,13 +1,13 @@
 FacilityGraphics
 ================
 
-.. py:class:: FacilityGraphics
+.. py:class:: ansys.stk.core.stkobjects.FacilityGraphics
 
-   Bases: py:obj:`~IFacilityGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFacilityGraphics`
 
    2D Graphics properties of a Facility.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FacilityGraphics
 
 Overview
 --------

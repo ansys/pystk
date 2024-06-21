@@ -1,13 +1,13 @@
 StateCalcRepeatingGroundTrackErr
 ================================
 
-.. py:class:: StateCalcRepeatingGroundTrackErr
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRepeatingGroundTrackErr`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr`
 
    RepeatingGrTrackErr Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRepeatingGroundTrackErr
 
 Overview
 --------

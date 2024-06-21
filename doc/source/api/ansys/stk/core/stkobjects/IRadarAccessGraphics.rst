@@ -1,13 +1,13 @@
 IRadarAccessGraphics
 ====================
 
-.. py:class:: IRadarAccessGraphics
+.. py:class:: ansys.stk.core.stkobjects.IRadarAccessGraphics
 
    object
    
    IAgRadarAccessGraphics Interface for a radar's access graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarAccessGraphics
 
 Overview
 --------
@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_snr_contour`
-            * - :py:meth:`~snr_contour_type`
-            * - :py:meth:`~snr`
-            * - :py:meth:`~radar_to_tgt_color`
-            * - :py:meth:`~show_bistatic_rdr_to_target`
-            * - :py:meth:`~bistatic_rdr_to_target_color`
-            * - :py:meth:`~bistatic_rdr_to_target_line_style`
-            * - :py:meth:`~bistatic_rdr_to_target_line_width`
-            * - :py:meth:`~show_bistatic_xmtr_to_bistatic_rcvr`
-            * - :py:meth:`~bistatic_xmtr_to_bistatic_rcvr_color`
-            * - :py:meth:`~bistatic_xmtr_to_bistatic_rcvr_line_style`
-            * - :py:meth:`~bistatic_xmtr_to_bistatic_rcvr_line_width`
-            * - :py:meth:`~show_clutter`
-            * - :py:meth:`~clutter_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.show_snr_contour`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.snr_contour_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.snr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.radar_to_tgt_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.show_bistatic_rdr_to_target`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_rdr_to_target_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_rdr_to_target_line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_rdr_to_target_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.show_bistatic_xmtr_to_bistatic_rcvr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.show_clutter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAccessGraphics.clutter_color`
 
 
 Import detail

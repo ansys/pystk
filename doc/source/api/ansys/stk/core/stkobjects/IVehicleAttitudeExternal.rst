@@ -1,13 +1,13 @@
 IVehicleAttitudeExternal
 ========================
 
-.. py:class:: IVehicleAttitudeExternal
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeExternal
 
    object
    
    Interface for using an external attitude (.a) file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeExternal
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.reload`
               - Reload the file.
-            * - :py:meth:`~load`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.load`
               - Load the file.
-            * - :py:meth:`~disable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.disable`
               - Unload the file.
 
     .. tab-item:: Properties
@@ -33,14 +33,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file_path`
-            * - :py:meth:`~override`
-            * - :py:meth:`~attitude_start_epoch`
-            * - :py:meth:`~message_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.file_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.override`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.attitude_start_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.message_level`
 
 
 Import detail
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: attitude_start_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExternal.attitude_start_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     If overriding the times contained in the external file, specifies the time of the first attitude point.
 

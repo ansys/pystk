@@ -1,13 +1,13 @@
 StrategyMATLABFull3D
 ====================
 
-.. py:class:: StrategyMATLABFull3D
+.. py:class:: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D
 
-   Bases: py:obj:`~IStrategyMATLABFull3D`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D`, py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IBasicManeuverStrategy`
 
    Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator.matlab
+.. py:currentmodule:: StrategyMATLABFull3D
 
 Overview
 --------

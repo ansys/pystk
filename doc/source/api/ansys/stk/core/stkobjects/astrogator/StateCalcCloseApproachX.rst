@@ -1,13 +1,13 @@
 StateCalcCloseApproachX
 =======================
 
-.. py:class:: StateCalcCloseApproachX
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCloseApproachX
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCloseApproachX`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachX`
 
    CloseApproachX Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcCloseApproachX
 
 Overview
 --------

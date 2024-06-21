@@ -1,13 +1,13 @@
 IGraphics3DReferenceVectorGeometryToolPoint
 ===========================================
 
-.. py:class:: IGraphics3DReferenceVectorGeometryToolPoint
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint
 
    IGraphics3DReferenceAnalysisWorkbenchComponent
    
    Configure the visual representation of a Vector Geometry point component in 3D.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DReferenceVectorGeometryToolPoint
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~trajectory_type`
-            * - :py:meth:`~ra_dec_visible`
-            * - :py:meth:`~ra_dec_unit_abrv`
-            * - :py:meth:`~magnitude_visible`
-            * - :py:meth:`~magnitude_unit_abrv`
-            * - :py:meth:`~cartesian_visible`
-            * - :py:meth:`~cartesian_unit_abrv`
-            * - :py:meth:`~system`
-            * - :py:meth:`~size`
-            * - :py:meth:`~available_systems`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.trajectory_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.ra_dec_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.ra_dec_unit_abrv`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.magnitude_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.magnitude_unit_abrv`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.cartesian_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.cartesian_unit_abrv`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.available_systems`
 
 
 Import detail

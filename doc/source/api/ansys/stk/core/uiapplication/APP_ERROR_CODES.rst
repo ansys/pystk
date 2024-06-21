@@ -1,12 +1,12 @@
 APP_ERROR_CODES
 ===============
 
-.. py:class:: APP_ERROR_CODES
+.. py:class:: ansys.stk.core.uiapplication.APP_ERROR_CODES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: APP_ERROR_CODES
 
 Overview
 --------

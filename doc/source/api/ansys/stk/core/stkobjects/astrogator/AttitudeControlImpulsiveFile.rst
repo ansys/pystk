@@ -1,13 +1,13 @@
 AttitudeControlImpulsiveFile
 ============================
 
-.. py:class:: AttitudeControlImpulsiveFile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile
 
-   Bases: py:obj:`~IAttitudeControlImpulsiveFile`, py:obj:`~IAttitudeControlImpulsive`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsive`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The file attitude control for an impulsive maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AttitudeControlImpulsiveFile
 
 Overview
 --------

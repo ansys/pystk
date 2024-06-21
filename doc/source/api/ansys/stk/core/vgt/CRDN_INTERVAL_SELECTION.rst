@@ -1,12 +1,12 @@
 CRDN_INTERVAL_SELECTION
 =======================
 
-.. py:class:: CRDN_INTERVAL_SELECTION
+.. py:class:: ansys.stk.core.vgt.CRDN_INTERVAL_SELECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_INTERVAL_SELECTION
 
 Overview
 --------

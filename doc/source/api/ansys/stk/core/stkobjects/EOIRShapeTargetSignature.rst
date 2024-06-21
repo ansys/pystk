@@ -1,13 +1,13 @@
 EOIRShapeTargetSignature
 ========================
 
-.. py:class:: EOIRShapeTargetSignature
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeTargetSignature
 
-   Bases: py:obj:`~IEOIRShapeTargetSignature`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeTargetSignature`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    TargetSignature shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeTargetSignature
 
 Overview
 --------

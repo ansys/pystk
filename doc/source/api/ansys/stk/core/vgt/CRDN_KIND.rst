@@ -1,12 +1,12 @@
 CRDN_KIND
 =========
 
-.. py:class:: CRDN_KIND
+.. py:class:: ansys.stk.core.vgt.CRDN_KIND
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_KIND
 
 Overview
 --------

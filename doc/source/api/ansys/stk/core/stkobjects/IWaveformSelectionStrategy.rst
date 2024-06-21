@@ -1,13 +1,13 @@
 IWaveformSelectionStrategy
 ==========================
 
-.. py:class:: IWaveformSelectionStrategy
+.. py:class:: ansys.stk.core.stkobjects.IWaveformSelectionStrategy
 
    object
    
    Provide the base interface for a waveform selection strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IWaveformSelectionStrategy
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy.type`
 
 
 Import detail

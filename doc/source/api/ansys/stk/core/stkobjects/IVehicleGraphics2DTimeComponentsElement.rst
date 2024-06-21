@@ -1,13 +1,13 @@
 IVehicleGraphics2DTimeComponentsElement
 =======================================
 
-.. py:class:: IVehicleGraphics2DTimeComponentsElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement
 
    object
    
    Provide properties to configure the vehicle's appearance in 2D and 3D views.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DTimeComponentsElement
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~increase_priority`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.increase_priority`
               - Increase the time component's rendering priority.
-            * - :py:meth:`~decrease_priority`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.decrease_priority`
               - Decrease the time component's rendering priority.
-            * - :py:meth:`~set_highest_priority`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.set_highest_priority`
               - Set the highest time component's rendering priority.
-            * - :py:meth:`~set_lowest_priority`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.set_lowest_priority`
               - Set the lowest time component's rendering priority.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~qualified_path`
-            * - :py:meth:`~priority`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.qualified_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.priority`
 
 
 Import detail

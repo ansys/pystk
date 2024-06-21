@@ -1,13 +1,13 @@
 ISensorEOIRSensitivityCollection
 ================================
 
-.. py:class:: ISensorEOIRSensitivityCollection
+.. py:class:: ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection
 
    object
    
    IAgSnEOIRFCollection Interface. A collection of Radiometric pairs defining the Sensitivities.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorEOIRSensitivityCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection.item`
               - Given an index, returns an IAgSnEOIRRadiometricPair interface.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection.add`
               - Add a radiometric pair.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection.remove_at`
               - Remove a radiometric pair given an index.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSensitivityCollection._NewEnum`
 
 
 Import detail

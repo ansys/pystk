@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneTrajectory
 ==================================
 
-.. py:class:: IVectorGeometryToolPlaneTrajectory
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory
 
    object
    
    The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneTrajectory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~point`
-            * - :py:meth:`~reference_system`
-            * - :py:meth:`~rotation_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.rotation_offset`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a trajectory point.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.reference_system
-    :type: IAgCrdnSystemRefTo
+    :type: IVectorGeometryToolSystemRefTo
 
     Specify a reference system.
 

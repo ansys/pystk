@@ -1,12 +1,12 @@
 PROFILE
 =======
 
-.. py:class:: PROFILE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PROFILE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PROFILE
 
 Overview
 --------

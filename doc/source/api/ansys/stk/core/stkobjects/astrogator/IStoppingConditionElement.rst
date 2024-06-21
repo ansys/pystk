@@ -1,13 +1,13 @@
 IStoppingConditionElement
 =========================
 
-.. py:class:: IStoppingConditionElement
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement
 
    object
    
    The status of a stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStoppingConditionElement
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.enable_control_parameter`
               - Enable or disables the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,9 +33,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~active`
-            * - :py:meth:`~control_parameters_available`
-            * - :py:meth:`~properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.active`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.properties`
 
 
 Import detail
@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.properties
-    :type: IAgVAStoppingConditionComponent
+    :type: IStoppingConditionComponent
 
     Get the properties available to the stopping condition.
 

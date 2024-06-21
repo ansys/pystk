@@ -1,13 +1,13 @@
 AccessConstraintExclZonesCollection
 ===================================
 
-.. py:class:: AccessConstraintExclZonesCollection
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection
 
-   Bases: py:obj:`~IAccessConstraintExclZonesCollection`, py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Collection of Exclusion Zones used in Exclusion Zone constraint.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintExclZonesCollection
 
 Overview
 --------

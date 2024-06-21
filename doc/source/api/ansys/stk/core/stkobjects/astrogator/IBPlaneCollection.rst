@@ -1,13 +1,13 @@
 IBPlaneCollection
 =================
 
-.. py:class:: IBPlaneCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBPlaneCollection
 
    object
    
    Properties for the collection of B-Planes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBPlaneCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.add`
               - Add a BPlane.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.remove`
               - Remove a BPlane.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.remove_all`
               - Remove all BPlanes.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.item`
               - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.count`
 
 
 Import detail

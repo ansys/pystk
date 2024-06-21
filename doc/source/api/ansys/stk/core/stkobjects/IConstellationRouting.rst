@@ -1,13 +1,13 @@
 IConstellationRouting
 =====================
 
-.. py:class:: IConstellationRouting
+.. py:class:: ansys.stk.core.stkobjects.IConstellationRouting
 
    object
    
    Routing options for constellation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IConstellationRouting
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_routing_file`
-            * - :py:meth:`~routing_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationRouting.use_routing_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationRouting.routing_file`
 
 
 Import detail

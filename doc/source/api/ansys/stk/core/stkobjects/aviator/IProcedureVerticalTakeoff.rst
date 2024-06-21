@@ -1,13 +1,13 @@
 IProcedureVerticalTakeoff
 =========================
 
-.. py:class:: IProcedureVerticalTakeoff
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff
 
    object
    
    Interface used to access the options for a vertical takeoff procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureVerticalTakeoff
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.set_heading`
               - Set the heading and heading reference.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -31,13 +31,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_above_point`
-            * - :py:meth:`~final_altitude_rate`
-            * - :py:meth:`~altitude_offset`
-            * - :py:meth:`~heading`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~heading_into_wind`
-            * - :py:meth:`~hold_on_deck`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.altitude_above_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.final_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.heading_into_wind`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.hold_on_deck`
 
 
 Import detail

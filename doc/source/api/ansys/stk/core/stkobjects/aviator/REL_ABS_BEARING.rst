@@ -1,12 +1,12 @@
 REL_ABS_BEARING
 ===============
 
-.. py:class:: REL_ABS_BEARING
+.. py:class:: ansys.stk.core.stkobjects.aviator.REL_ABS_BEARING
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: REL_ABS_BEARING
 
 Overview
 --------

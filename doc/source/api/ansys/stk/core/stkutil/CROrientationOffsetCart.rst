@@ -1,13 +1,13 @@
 CROrientationOffsetCart
 =======================
 
-.. py:class:: CROrientationOffsetCart
+.. py:class:: ansys.stk.core.stkutil.CROrientationOffsetCart
 
-   Bases: py:obj:`~ICartesian3Vector`
+   Bases: py:obj:`~ansys.stk.core.stkutil.ICartesian3Vector`
 
    Orientation offset cartesian.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: CROrientationOffsetCart
 
 Overview
 --------

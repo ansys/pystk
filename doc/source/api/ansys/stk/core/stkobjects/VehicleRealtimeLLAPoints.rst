@@ -1,13 +1,13 @@
 VehicleRealtimeLLAPoints
 ========================
 
-.. py:class:: VehicleRealtimeLLAPoints
+.. py:class:: ansys.stk.core.stkobjects.VehicleRealtimeLLAPoints
 
-   Bases: py:obj:`~IVehicleRealtimeLLAPoints`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRealtimeLLAPoints`
 
    Add one ephemeris point using latitude/longitude/altitude coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleRealtimeLLAPoints
 
 Overview
 --------

@@ -1,13 +1,13 @@
 StateCalcRadOfPeriapsis
 =======================
 
-.. py:class:: StateCalcRadOfPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRadOfPeriapsis
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRadOfPeriapsis`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadOfPeriapsis`
 
    RadiusOfPeriapsis Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRadOfPeriapsis
 
 Overview
 --------

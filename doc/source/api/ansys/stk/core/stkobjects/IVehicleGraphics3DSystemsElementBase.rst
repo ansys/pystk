@@ -1,13 +1,13 @@
 IVehicleGraphics3DSystemsElementBase
 ====================================
 
-.. py:class:: IVehicleGraphics3DSystemsElementBase
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase
 
    object
    
    Define methods and properties used to configure the 3D properties of a reference system used for displaying vehicle orbits and trajectories.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DSystemsElementBase
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit`
-            * - :py:meth:`~color`
-            * - :py:meth:`~graphics_3d_window`
-            * - :py:meth:`~available_graphics_3d_windows`
-            * - :py:meth:`~persist_for_all_passes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.inherit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.graphics_3d_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.available_graphics_3d_windows`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase.persist_for_all_passes`
 
 
 Import detail

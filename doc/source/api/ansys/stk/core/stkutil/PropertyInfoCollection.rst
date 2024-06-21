@@ -1,13 +1,13 @@
 PropertyInfoCollection
 ======================
 
-.. py:class:: PropertyInfoCollection
+.. py:class:: ansys.stk.core.stkutil.PropertyInfoCollection
 
-   Bases: py:obj:`~IPropertyInfoCollection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IPropertyInfoCollection`
 
    Property Information Collection coclass.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: PropertyInfoCollection
 
 Overview
 --------

@@ -1,12 +1,12 @@
 CRDN_THRESH_CONVERGE_SENSE
 ==========================
 
-.. py:class:: CRDN_THRESH_CONVERGE_SENSE
+.. py:class:: ansys.stk.core.vgt.CRDN_THRESH_CONVERGE_SENSE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_THRESH_CONVERGE_SENSE
 
 Overview
 --------

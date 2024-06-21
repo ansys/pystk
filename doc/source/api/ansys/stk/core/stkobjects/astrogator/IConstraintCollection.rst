@@ -1,13 +1,13 @@
 IConstraintCollection
 =====================
 
-.. py:class:: IConstraintCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IConstraintCollection
 
    object
    
    The list of constraints assigned to a stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IConstraintCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.add`
               - Add a constraint to the collection.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.item`
               - Iterate through the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.remove`
               - Remove a specified constraint from the collection.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.cut`
               - Copy the constraint into the clipboard and removes the constraint from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.paste`
               - Pastes the constraint from the clipboard and inserts into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.insert_copy`
               - Copy the constraint and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.get_item_by_index`
               - Retrieve a constraint from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.get_item_by_name`
               - Retrieve a constraint from the collection by name.
 
     .. tab-item:: Properties
@@ -43,8 +43,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.count`
 
 
 Import detail

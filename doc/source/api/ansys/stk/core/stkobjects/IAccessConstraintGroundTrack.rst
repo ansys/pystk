@@ -1,13 +1,13 @@
 IAccessConstraintGroundTrack
 ============================
 
-.. py:class:: IAccessConstraintGroundTrack
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintGroundTrack
 
    IAccessConstraint
    
    Access Constraint used for GroundTrack Constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintGroundTrack
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintGroundTrack.direction`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAntennaModelApertureCircularSincIntPower
 =========================================
 
-.. py:class:: IAntennaModelApertureCircularSincIntPower
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower
 
    object
    
    Provide access to the properties and methods defining a circular sinc integer power aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelApertureCircularSincIntPower
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_mainlobe_gain`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~beamwidth`
-            * - :py:meth:`~function_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.compute_mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.function_power`
 
 
 Import detail

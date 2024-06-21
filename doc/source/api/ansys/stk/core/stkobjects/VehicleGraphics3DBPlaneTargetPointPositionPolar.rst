@@ -1,13 +1,13 @@
 VehicleGraphics3DBPlaneTargetPointPositionPolar
 ===============================================
 
-.. py:class:: VehicleGraphics3DBPlaneTargetPointPositionPolar
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionPolar
 
-   Bases: py:obj:`~IVehicleGraphics3DBPlaneTargetPointPositionPolar`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar`
 
    3D BPlane target point position polar.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DBPlaneTargetPointPositionPolar
 
 Overview
 --------

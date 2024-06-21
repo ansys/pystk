@@ -1,12 +1,12 @@
 VM_DEFINITION_TYPE
 ==================
 
-.. py:class:: VM_DEFINITION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VM_DEFINITION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_DEFINITION_TYPE
 
 Overview
 --------

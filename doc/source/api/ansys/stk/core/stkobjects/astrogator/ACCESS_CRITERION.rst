@@ -1,12 +1,12 @@
 ACCESS_CRITERION
 ================
 
-.. py:class:: ACCESS_CRITERION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ACCESS_CRITERION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ACCESS_CRITERION
 
 Overview
 --------

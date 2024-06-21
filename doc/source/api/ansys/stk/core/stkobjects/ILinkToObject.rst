@@ -1,13 +1,13 @@
 ILinkToObject
 =============
 
-.. py:class:: ILinkToObject
+.. py:class:: ansys.stk.core.stkobjects.ILinkToObject
 
    object
    
    IAgLinkToObject represents a link to STK object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILinkToObject
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bind_to`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.bind_to`
               - Binds to existing object instance using the specified object path.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~linked_object`
-            * - :py:meth:`~available_objects`
-            * - :py:meth:`~is_intrinsic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.linked_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.available_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.is_intrinsic`
 
 
 Import detail
@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: linked_object
     :canonical: ansys.stk.core.stkobjects.ILinkToObject.linked_object
-    :type: IAgStkObject
+    :type: IStkObject
 
     Dereferences the link and returns the linked object.
 

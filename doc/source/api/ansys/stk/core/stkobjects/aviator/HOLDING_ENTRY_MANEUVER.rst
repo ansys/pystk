@@ -1,12 +1,12 @@
 HOLDING_ENTRY_MANEUVER
 ======================
 
-.. py:class:: HOLDING_ENTRY_MANEUVER
+.. py:class:: ansys.stk.core.stkobjects.aviator.HOLDING_ENTRY_MANEUVER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: HOLDING_ENTRY_MANEUVER
 
 Overview
 --------

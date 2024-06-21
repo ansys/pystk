@@ -1,12 +1,12 @@
 VM_SPATIAL_CALC_EVAL_TYPE
 =========================
 
-.. py:class:: VM_SPATIAL_CALC_EVAL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VM_SPATIAL_CALC_EVAL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_SPATIAL_CALC_EVAL_TYPE
 
 Overview
 --------

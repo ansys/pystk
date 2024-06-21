@@ -1,13 +1,13 @@
 IAnalysisWorkbenchMethodCallResult
 ==================================
 
-.. py:class:: IAnalysisWorkbenchMethodCallResult
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult
 
    object
    
    Instances of the interface are used to return the result of a computation.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchMethodCallResult
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult.is_valid`
 
 
 Import detail

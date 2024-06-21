@@ -1,13 +1,13 @@
 IRainLossModel
 ==============
 
-.. py:class:: IRainLossModel
+.. py:class:: ansys.stk.core.stkobjects.IRainLossModel
 
    object
    
    Provide access to the properties and methods a rain loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRainLossModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModel.type`
 
 
 Import detail

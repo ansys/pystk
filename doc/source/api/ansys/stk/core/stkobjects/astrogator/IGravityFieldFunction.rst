@@ -1,13 +1,13 @@
 IGravityFieldFunction
 =====================
 
-.. py:class:: IGravityFieldFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction
 
    object
    
    Properties for the Gravitational Force gravity model - a complex gravitational force calculation, optionally including solid and ocean tide effects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGravityFieldFunction
 
 Overview
 --------
@@ -20,26 +20,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~gravity_filename`
-            * - :py:meth:`~degree`
-            * - :py:meth:`~order`
-            * - :py:meth:`~max_degree_text`
-            * - :py:meth:`~max_order_text`
-            * - :py:meth:`~include_time_dependent_solid_tides`
-            * - :py:meth:`~solid_tide_min_amp`
-            * - :py:meth:`~use_ocean_tides`
-            * - :py:meth:`~ocean_tide_min_amp`
-            * - :py:meth:`~min_radius_percent`
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~ocean_tide_max_degree`
-            * - :py:meth:`~ocean_tide_max_order`
-            * - :py:meth:`~solid_tide_type`
-            * - :py:meth:`~truncate_solid_tides`
-            * - :py:meth:`~use_secular_variations`
-            * - :py:meth:`~partials_degree`
-            * - :py:meth:`~partials_order`
-            * - :py:meth:`~max_partials_degree_text`
-            * - :py:meth:`~max_partials_order_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.gravity_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.max_degree_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.max_order_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.include_time_dependent_solid_tides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.solid_tide_min_amp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.use_ocean_tides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.ocean_tide_min_amp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.min_radius_percent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.ocean_tide_max_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.ocean_tide_max_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.solid_tide_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.truncate_solid_tides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.use_secular_variations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.partials_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.partials_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.max_partials_degree_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction.max_partials_order_text`
 
 
 Import detail

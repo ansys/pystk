@@ -1,13 +1,13 @@
 IAnalysisWorkbenchContext
 =========================
 
-.. py:class:: IAnalysisWorkbenchContext
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchContext
 
    object
    
    The interface represents a context associated with a VGT component. All VGT components are associated with a valid context. A context can represent a VGT instance or a VGT template.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchContext
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_template`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchContext.is_template`
 
 
 Import detail

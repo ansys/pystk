@@ -1,12 +1,12 @@
 LIGHTING_OBSTRUCTION_MODEL_TYPE
 ===============================
 
-.. py:class:: LIGHTING_OBSTRUCTION_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.LIGHTING_OBSTRUCTION_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LIGHTING_OBSTRUCTION_MODEL_TYPE
 
 Overview
 --------

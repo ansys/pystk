@@ -1,13 +1,13 @@
 TimeToolEventIntervalFromIntervalList
 =====================================
 
-.. py:class:: TimeToolEventIntervalFromIntervalList
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalFromIntervalList
 
-   Bases: py:obj:`~ITimeToolEventIntervalFromIntervalList`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventInterval`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval created from specified interval list by using one of several selection methods.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalFromIntervalList
 
 Overview
 --------

@@ -1,13 +1,13 @@
 RFFilterModelChebyshev
 ======================
 
-.. py:class:: RFFilterModelChebyshev
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelChebyshev
 
-   Bases: py:obj:`~IRFFilterModelChebyshev`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelChebyshev`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a Chebyshev filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelChebyshev
 
 Overview
 --------

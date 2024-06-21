@@ -1,13 +1,13 @@
 IStateCalcSEETMagnitudeFieldFieldLineSepAngle
 =============================================
 
-.. py:class:: IStateCalcSEETMagnitudeFieldFieldLineSepAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSEETMagnitudeFieldFieldLineSepAngle
 
    object
    
    Properties for a SEETMagFieldFieldLineSepAngle calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSEETMagnitudeFieldFieldLineSepAngle
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSEETMagnitudeFieldFieldLineSepAngle.target_object`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: target_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSEETMagnitudeFieldFieldLineSepAngle.target_object
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

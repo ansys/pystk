@@ -1,13 +1,13 @@
 IScatteringPointProviderPlugin
 ==============================
 
-.. py:class:: IScatteringPointProviderPlugin
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointProviderPlugin
 
    object
    
    Provide access to the properties and methods defining a plugin scattering point provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointProviderPlugin
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plugin_configuration`
-            * - :py:meth:`~raw_plugin_object`
-            * - :py:meth:`~scattering_point_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.plugin_configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.raw_plugin_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.scattering_point_model`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.plugin_configuration
-    :type: IAgCRPluginConfiguration
+    :type: ICRPluginConfiguration
 
     Gets the plugin configuration interface.
 
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: scattering_point_model
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.scattering_point_model
-    :type: IAgComponentLinkEmbedControl
+    :type: IComponentLinkEmbedControl
 
     Gets the link/embed controller for managing the default scattering point model component.
 

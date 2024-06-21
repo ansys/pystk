@@ -1,13 +1,13 @@
 StateCalcRelativeInclination
 ============================
 
-.. py:class:: StateCalcRelativeInclination
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeInclination
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelativeInclination`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination`
 
    Relative Inclination Angle objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRelativeInclination
 
 Overview
 --------

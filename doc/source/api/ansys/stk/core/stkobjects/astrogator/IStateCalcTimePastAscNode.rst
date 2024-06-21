@@ -1,13 +1,13 @@
 IStateCalcTimePastAscNode
 =========================
 
-.. py:class:: IStateCalcTimePastAscNode
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcTimePastAscNode
 
    object
    
    Properties for a Time Past Ascending Node calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcTimePastAscNode
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTimePastAscNode.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTimePastAscNode.element_type`
 
 
 Import detail

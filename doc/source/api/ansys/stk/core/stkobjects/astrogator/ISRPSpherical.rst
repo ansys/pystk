@@ -1,13 +1,13 @@
 ISRPSpherical
 =============
 
-.. py:class:: ISRPSpherical
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISRPSpherical
 
    object
    
    Properties for the Spherical SRP model; assumes a spherical spacecraft. The equation used by STK is described in the Solar Radiation technical note.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISRPSpherical
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~shadow_model`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~mean_flux`
-            * - :py:meth:`~luminosity`
-            * - :py:meth:`~solar_force_method`
-            * - :py:meth:`~include_boundary_mitigation`
-            * - :py:meth:`~use_sun_central_body_file_values`
-            * - :py:meth:`~solar_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.shadow_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.mean_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.luminosity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.solar_force_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.include_boundary_mitigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.use_sun_central_body_file_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical.solar_radius`
 
 
 Import detail
@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPSpherical.eclipsing_bodies
-    :type: IAgVACentralBodyCollection
+    :type: ICentralBodyCollection
 
     Other eclipsing bodies.
 

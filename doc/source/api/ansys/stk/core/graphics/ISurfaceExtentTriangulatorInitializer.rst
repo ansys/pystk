@@ -1,13 +1,13 @@
 ISurfaceExtentTriangulatorInitializer
 =====================================
 
-.. py:class:: ISurfaceExtentTriangulatorInitializer
+.. py:class:: ansys.stk.core.graphics.ISurfaceExtentTriangulatorInitializer
 
    object
    
    Triangulates an extent on a central body into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive. The boundary is commonly visualized with the polyline primitive.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISurfaceExtentTriangulatorInitializer
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_simple`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceExtentTriangulatorInitializer.compute_simple`
               - Compute a triangulation on the specified centralBody for the specified extent. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree.
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceExtentTriangulatorInitializer.compute`
               - Compute a triangulation on the specified centralBody for the specified extent.
 
 

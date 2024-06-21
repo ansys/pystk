@@ -1,12 +1,12 @@
 OLE_DROP_MODE
 =============
 
-.. py:class:: OLE_DROP_MODE
+.. py:class:: ansys.stk.core.stkx.OLE_DROP_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: OLE_DROP_MODE
 
 Overview
 --------

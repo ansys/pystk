@@ -1,13 +1,13 @@
 IEOIRShapeCustomMesh
 ====================
 
-.. py:class:: IEOIRShapeCustomMesh
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeCustomMesh
 
    IEOIRShapeObject
    
    A custom mesh shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeCustomMesh
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCustomMesh.max_dimension`
 
 
 Import detail

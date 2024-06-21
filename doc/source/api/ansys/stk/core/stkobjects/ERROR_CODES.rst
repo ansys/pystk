@@ -1,12 +1,12 @@
 ERROR_CODES
 ===========
 
-.. py:class:: ERROR_CODES
+.. py:class:: ansys.stk.core.stkobjects.ERROR_CODES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ERROR_CODES
 
 Overview
 --------

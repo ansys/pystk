@@ -1,13 +1,13 @@
 IModelArticulation
 ==================
 
-.. py:class:: IModelArticulation
+.. py:class:: ansys.stk.core.graphics.IModelArticulation
 
    object
    
    A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IModelArticulation
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation.item`
               - Get the transformation at the given index. The index is zero-based.
-            * - :py:meth:`~get_item_by_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation.get_item_by_string`
               - Get a transformation by name.
-            * - :py:meth:`~get_by_name`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation.get_by_name`
               - Get a transformation by name.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation.contains`
               - Return true if the collection contains the transformation.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation.name`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation._NewEnum`
 
 
 Import detail

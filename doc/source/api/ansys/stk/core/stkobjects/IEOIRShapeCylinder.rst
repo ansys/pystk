@@ -1,13 +1,13 @@
 IEOIRShapeCylinder
 ==================
 
-.. py:class:: IEOIRShapeCylinder
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeCylinder
 
    IEOIRShapeObject
    
    A cylinder shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeCylinder
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~radius`
-            * - :py:meth:`~height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCylinder.radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCylinder.height`
 
 
 Import detail

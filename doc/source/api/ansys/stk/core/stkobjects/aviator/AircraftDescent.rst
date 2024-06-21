@@ -1,13 +1,13 @@
 AircraftDescent
 ===============
 
-.. py:class:: AircraftDescent
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftDescent
 
-   Bases: py:obj:`~IAircraftDescent`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftDescent`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the aircraft descent category of an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftDescent
 
 Overview
 --------

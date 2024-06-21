@@ -1,12 +1,12 @@
 RADAR_FREQUENCY_SPEC
 ====================
 
-.. py:class:: RADAR_FREQUENCY_SPEC
+.. py:class:: ansys.stk.core.stkobjects.RADAR_FREQUENCY_SPEC
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_FREQUENCY_SPEC
 
 Overview
 --------

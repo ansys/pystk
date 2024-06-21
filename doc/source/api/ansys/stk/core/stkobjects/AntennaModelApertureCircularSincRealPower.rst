@@ -1,13 +1,13 @@
 AntennaModelApertureCircularSincRealPower
 =========================================
 
-.. py:class:: AntennaModelApertureCircularSincRealPower
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelApertureCircularSincRealPower
 
-   Bases: py:obj:`~IAntennaModelApertureCircularSincRealPower`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincRealPower`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a circular sinc real power aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelApertureCircularSincRealPower
 
 Overview
 --------

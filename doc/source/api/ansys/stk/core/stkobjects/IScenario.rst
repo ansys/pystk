@@ -1,13 +1,13 @@
 IScenario
 =========
 
-.. py:class:: IScenario
+.. py:class:: ansys.stk.core.stkobjects.IScenario
 
    object
    
    IAgScenario Interface for Scenario-level properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenario
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.set_time_period`
               - Set the Scenario time period. startTime/stopTime use DateFormat Dimension.
-            * - :py:meth:`~set_dirty`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.set_dirty`
               - Set the flag indicating the scenario has been modified.
-            * - :py:meth:`~get_existing_accesses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.get_existing_accesses`
               - Return an array of existing accesses in the current scenario. The result is a two-dimensional array of triplets where each triplet contains the paths of two objects participating in the access and a flag indicating whether the access is computed.
-            * - :py:meth:`~get_access_between_objects_by_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.get_access_between_objects_by_path`
               - Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     .. tab-item:: Properties
@@ -35,32 +35,32 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~animation`
-            * - :py:meth:`~earth_data`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~gen_dbs`
-            * - :py:meth:`~sat_no_orbit_warning`
-            * - :py:meth:`~msl_no_orbit_warning`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~aircraft_wgs84_warning`
-            * - :py:meth:`~msl_stop_time_warning`
-            * - :py:meth:`~terrain`
-            * - :py:meth:`~component_directory`
-            * - :py:meth:`~scenario_files`
-            * - :py:meth:`~is_dirty`
-            * - :py:meth:`~use_analysis_start_time_for_epoch`
-            * - :py:meth:`~space_environment`
-            * - :py:meth:`~scene_manager`
-            * - :py:meth:`~analysis_interval`
-            * - :py:meth:`~analysis_epoch`
-            * - :py:meth:`~radar_clutter_map`
-            * - :py:meth:`~radar_cross_section`
-            * - :py:meth:`~rf_environment`
-            * - :py:meth:`~tilesets`
-            * - :py:meth:`~laser_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.earth_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.gen_dbs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.sat_no_orbit_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.msl_no_orbit_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.aircraft_wgs84_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.msl_stop_time_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.component_directory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.scenario_files`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.is_dirty`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.use_analysis_start_time_for_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.space_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.scene_manager`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.analysis_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.analysis_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.radar_clutter_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.tilesets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.laser_environment`
 
 
 Import detail
@@ -94,25 +94,25 @@ Property detail
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.IScenario.animation
-    :type: IAgScAnimation
+    :type: IScenarioAnimation
 
     Scenario animation settings.
 
 .. py:property:: earth_data
     :canonical: ansys.stk.core.stkobjects.IScenario.earth_data
-    :type: IAgScEarthData
+    :type: IScenarioEarthData
 
     Scenario Earth Data settings.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IScenario.graphics
-    :type: IAgScGraphics
+    :type: IScenarioGraphics
 
     Scenario 2D Graphics settings.
 
 .. py:property:: gen_dbs
     :canonical: ansys.stk.core.stkobjects.IScenario.gen_dbs
-    :type: IAgScGenDbCollection
+    :type: IScenarioGenDatabaseCollection
 
     Scenario database settings.
 
@@ -130,7 +130,7 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IScenario.graphics_3d
-    :type: IAgScVO
+    :type: IScenarioGraphics3D
 
     Scenario 3D Graphics settings.
 
@@ -148,13 +148,13 @@ Property detail
 
 .. py:property:: terrain
     :canonical: ansys.stk.core.stkobjects.IScenario.terrain
-    :type: IAgCentralBodyTerrainCollection
+    :type: ICentralBodyTerrainCollection
 
     Returns a list of central bodies and their terrains.
 
 .. py:property:: component_directory
     :canonical: ansys.stk.core.stkobjects.IScenario.component_directory
-    :type: IAgComponentDirectory
+    :type: IComponentDirectory
 
     Get the component directory interface.
 
@@ -178,55 +178,55 @@ Property detail
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.IScenario.space_environment
-    :type: IAgSpEnvScenSpaceEnvironment
+    :type: IScenSpaceEnvironment
 
     Scenario SpaceEnvironment settings.
 
 .. py:property:: scene_manager
     :canonical: ansys.stk.core.stkobjects.IScenario.scene_manager
-    :type: IAgStkGraphicsSceneManager
+    :type: ISceneManager
 
     A scene manager.
 
 .. py:property:: analysis_interval
     :canonical: ansys.stk.core.stkobjects.IScenario.analysis_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Allows the user to configure the scenario's analysis time period.
 
 .. py:property:: analysis_epoch
     :canonical: ansys.stk.core.stkobjects.IScenario.analysis_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Allows the user to configure the scenario's analysis epoch.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.IScenario.radar_clutter_map
-    :type: IAgRadarClutterMap
+    :type: IRadarClutterMap
 
     Returns the global radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IScenario.radar_cross_section
-    :type: IAgRadarCrossSection
+    :type: IRadarCrossSection
 
     Returns the global radar cross section.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IScenario.rf_environment
-    :type: IAgRFEnvironment
+    :type: IRFEnvironment
 
     Returns the RF environment.
 
 .. py:property:: tilesets
     :canonical: ansys.stk.core.stkobjects.IScenario.tilesets
-    :type: IAg3DTilesetCollection
+    :type: ITilesetCollection3D
 
     Returns a list of 3D Tilesets used for Analysis.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.IScenario.laser_environment
-    :type: IAgLaserEnvironment
+    :type: ILaserEnvironment
 
     Returns the laser environment.
 

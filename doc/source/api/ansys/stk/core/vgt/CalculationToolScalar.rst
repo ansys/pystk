@@ -1,13 +1,13 @@
 CalculationToolScalar
 =====================
 
-.. py:class:: CalculationToolScalar
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalar
 
-   Bases: py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Any scalar calculation that is not constant by construction.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalar
 
 Overview
 --------

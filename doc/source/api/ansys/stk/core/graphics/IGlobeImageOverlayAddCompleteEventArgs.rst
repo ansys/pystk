@@ -1,13 +1,13 @@
 IGlobeImageOverlayAddCompleteEventArgs
 ======================================
 
-.. py:class:: IGlobeImageOverlayAddCompleteEventArgs
+.. py:class:: ansys.stk.core.graphics.IGlobeImageOverlayAddCompleteEventArgs
 
    object
    
    The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGlobeImageOverlayAddCompleteEventArgs
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~overlay`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlayAddCompleteEventArgs.overlay`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: overlay
     :canonical: ansys.stk.core.graphics.IGlobeImageOverlayAddCompleteEventArgs.overlay
-    :type: IAgStkGraphicsGlobeImageOverlay
+    :type: IGlobeImageOverlay
 
     The overlay object that was added earlier using AddAsync.
 

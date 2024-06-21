@@ -1,13 +1,13 @@
 CommSystemAccessSamplingMethod
 ==============================
 
-.. py:class:: CommSystemAccessSamplingMethod
+.. py:class:: ansys.stk.core.stkobjects.CommSystemAccessSamplingMethod
 
-   Bases: py:obj:`~ICommSystemAccessSamplingMethod`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod`
 
    Class defining a CommSystem access options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CommSystemAccessSamplingMethod
 
 Overview
 --------

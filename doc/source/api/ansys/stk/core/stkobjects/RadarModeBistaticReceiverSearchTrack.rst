@@ -1,13 +1,13 @@
 RadarModeBistaticReceiverSearchTrack
 ====================================
 
-.. py:class:: RadarModeBistaticReceiverSearchTrack
+.. py:class:: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack
 
-   Bases: py:obj:`~IRadarModeBistaticReceiverSearchTrack`, py:obj:`~IRadarModeBistaticReceiver`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack`, py:obj:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiver`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a bistatic receiver search/track radar mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarModeBistaticReceiverSearchTrack
 
 Overview
 --------

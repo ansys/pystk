@@ -1,13 +1,13 @@
 IStateCalcDeltaV
 ================
 
-.. py:class:: IStateCalcDeltaV
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaV
 
    object
    
    Properties for a DeltaV calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDeltaV
 
 Overview
 --------

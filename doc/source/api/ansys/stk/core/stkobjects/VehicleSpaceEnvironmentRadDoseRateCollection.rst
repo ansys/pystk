@@ -1,13 +1,13 @@
 VehicleSpaceEnvironmentRadDoseRateCollection
 ============================================
 
-.. py:class:: VehicleSpaceEnvironmentRadDoseRateCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentRadDoseRateCollection
 
-   Bases: py:obj:`~IVehicleSpaceEnvironmentRadDoseRateCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateCollection`
 
    Collection of dose rate elements computed for a shielding thickness.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSpaceEnvironmentRadDoseRateCollection
 
 Overview
 --------

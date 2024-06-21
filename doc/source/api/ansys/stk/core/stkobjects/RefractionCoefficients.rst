@@ -1,13 +1,13 @@
 RefractionCoefficients
 ======================
 
-.. py:class:: RefractionCoefficients
+.. py:class:: ansys.stk.core.stkobjects.RefractionCoefficients
 
-   Bases: py:obj:`~IRefractionCoefficients`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRefractionCoefficients`
 
    Coefficients for a polynomial in time_since_year_start that models the refraction index.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RefractionCoefficients
 
 Overview
 --------

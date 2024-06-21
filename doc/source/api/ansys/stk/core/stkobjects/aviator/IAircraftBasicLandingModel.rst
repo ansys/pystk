@@ -1,13 +1,13 @@
 IAircraftBasicLandingModel
 ==========================
 
-.. py:class:: IAircraftBasicLandingModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel
 
    object
    
    Interface used to access the basic landing model options for a landing model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftBasicLandingModel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_landing_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.set_landing_speed`
               - Set the landing speed of the aircraft.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~landing_speed`
-            * - :py:meth:`~landing_speed_type`
-            * - :py:meth:`~sea_level_ground_roll`
-            * - :py:meth:`~use_aero_prop_fuel`
-            * - :py:meth:`~scale_fuel_flow_by_non_std_density`
-            * - :py:meth:`~fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.landing_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.landing_speed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.sea_level_ground_roll`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.scale_fuel_flow_by_non_std_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.fuel_flow`
 
 
 Import detail

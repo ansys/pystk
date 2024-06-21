@@ -1,13 +1,13 @@
 DataProviderTimeVarying
 =======================
 
-.. py:class:: DataProviderTimeVarying
+.. py:class:: ansys.stk.core.stkobjects.DataProviderTimeVarying
 
-   Bases: py:obj:`~IDataProviderTimeVarying`, py:obj:`~IDataProvider`, py:obj:`~IDataProviderInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying`, py:obj:`~ansys.stk.core.stkobjects.IDataProvider`, py:obj:`~ansys.stk.core.stkobjects.IDataProviderInfo`
 
    Support for time-dependent data providers (e.g. Satellite position).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderTimeVarying
 
 Overview
 --------

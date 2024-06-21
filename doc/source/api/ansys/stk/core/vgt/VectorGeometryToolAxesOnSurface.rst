@@ -1,13 +1,13 @@
 VectorGeometryToolAxesOnSurface
 ===============================
 
-.. py:class:: VectorGeometryToolAxesOnSurface
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface
 
-   Bases: py:obj:`~IVectorGeometryToolAxesOnSurface`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Topocentric axes located at the reference point's projection on the central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAxesOnSurface
 
 Overview
 --------

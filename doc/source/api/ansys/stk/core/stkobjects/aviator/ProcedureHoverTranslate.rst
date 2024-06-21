@@ -1,13 +1,13 @@
 ProcedureHoverTranslate
 =======================
 
-.. py:class:: ProcedureHoverTranslate
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate
 
-   Bases: py:obj:`~IProcedureHoverTranslate`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a hover translate procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureHoverTranslate
 
 Overview
 --------

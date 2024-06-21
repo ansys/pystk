@@ -1,13 +1,13 @@
 VehicleHPOPSolarRadiationPressureOptions
 ========================================
 
-.. py:class:: VehicleHPOPSolarRadiationPressureOptions
+.. py:class:: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions
 
-   Bases: py:obj:`~IVehicleHPOPSolarRadiationPressureOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressureOptions`
 
    Class defining HPOP solar radiation pressure options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleHPOPSolarRadiationPressureOptions
 
 Overview
 --------

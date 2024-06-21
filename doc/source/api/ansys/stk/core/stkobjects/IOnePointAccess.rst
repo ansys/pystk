@@ -1,13 +1,13 @@
 IOnePointAccess
 ===============
 
-.. py:class:: IOnePointAccess
+.. py:class:: ansys.stk.core.stkobjects.IOnePointAccess
 
    object
    
    One Point Access.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOnePointAccess
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.compute`
               - Compute one point access results using the StartTime, StopTime, StepSize, and SummaryOption.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.remove`
               - Remove the one point access component that was created.
-            * - :py:meth:`~compute_first_satisfaction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.compute_first_satisfaction`
               - Compute and reports the first N satisfaction intervals (where N <= MaxNumAccessesToFind) over the specified interval whose spans meet the specified minimum duration. Does not use output file.
 
     .. tab-item:: Properties
@@ -33,12 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~summary_option`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~output_to_file`
-            * - :py:meth:`~output_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.summary_option`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.output_to_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.output_file`
 
 
 Import detail

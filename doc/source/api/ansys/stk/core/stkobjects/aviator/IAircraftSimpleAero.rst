@@ -1,13 +1,13 @@
 IAircraftSimpleAero
 ===================
 
-.. py:class:: IAircraftSimpleAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero
 
    object
    
    Interface used to access the Simple Aerodynamics options for the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftSimpleAero
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~operating_mode`
-            * - :py:meth:`~s_reference`
-            * - :py:meth:`~cl_max`
-            * - :py:meth:`~cd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.operating_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.s_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.cl_max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.cd`
 
 
 Import detail

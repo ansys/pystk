@@ -1,12 +1,12 @@
 COVERAGE_ASSET_GROUPING
 =======================
 
-.. py:class:: COVERAGE_ASSET_GROUPING
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_ASSET_GROUPING
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_ASSET_GROUPING
 
 Overview
 --------

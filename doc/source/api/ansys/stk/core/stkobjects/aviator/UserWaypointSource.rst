@@ -1,13 +1,13 @@
 UserWaypointSource
 ==================
 
-.. py:class:: UserWaypointSource
+.. py:class:: ansys.stk.core.stkobjects.aviator.UserWaypointSource
 
-   Bases: py:obj:`~IUserWaypointSource`, py:obj:`~ICatalogSource`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IUserWaypointSource`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
 
    Class defining the user waypoint source in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: UserWaypointSource
 
 Overview
 --------

@@ -1,13 +1,13 @@
 TimeToolIntervalsFilter
 =======================
 
-.. py:class:: TimeToolIntervalsFilter
+.. py:class:: ansys.stk.core.vgt.TimeToolIntervalsFilter
 
-   Bases: py:obj:`~ITimeToolIntervalsFilter`, py:obj:`~ITimeToolPruneFilter`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolIntervalsFilter`, py:obj:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
 
    The filter selects intervals of at least/most certain duration.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolIntervalsFilter
 
 Overview
 --------

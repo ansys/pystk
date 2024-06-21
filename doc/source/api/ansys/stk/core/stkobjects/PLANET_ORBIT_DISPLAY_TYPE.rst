@@ -1,12 +1,12 @@
 PLANET_ORBIT_DISPLAY_TYPE
 =========================
 
-.. py:class:: PLANET_ORBIT_DISPLAY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.PLANET_ORBIT_DISPLAY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PLANET_ORBIT_DISPLAY_TYPE
 
 Overview
 --------

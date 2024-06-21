@@ -1,13 +1,13 @@
 IStateCalcTwoBodyDriftRate
 ==========================
 
-.. py:class:: IStateCalcTwoBodyDriftRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcTwoBodyDriftRate
 
    object
    
    Properties for a TwoBodyDriftRate calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcTwoBodyDriftRate
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTwoBodyDriftRate.central_body_name`
 
 
 Import detail

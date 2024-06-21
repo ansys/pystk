@@ -1,13 +1,13 @@
 ICommSystemAccessEventDetectionSubsample
 ========================================
 
-.. py:class:: ICommSystemAccessEventDetectionSubsample
+.. py:class:: ansys.stk.core.stkobjects.ICommSystemAccessEventDetectionSubsample
 
    object
    
    Provide access to the properties an access sub-sample event detection algorithm.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystemAccessEventDetectionSubsample
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_convergence`
-            * - :py:meth:`~absolute_tolerance`
-            * - :py:meth:`~relative_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetectionSubsample.time_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetectionSubsample.absolute_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetectionSubsample.relative_tolerance`
 
 
 Import detail

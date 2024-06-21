@@ -1,13 +1,13 @@
 IBulirschStoerIntegrator
 ========================
 
-.. py:class:: IBulirschStoerIntegrator
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator
 
    object
    
    Properties for the Bulirsch-Stoer numerical integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBulirschStoerIntegrator
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initial_step`
-            * - :py:meth:`~use_fixed_step`
-            * - :py:meth:`~use_max_step`
-            * - :py:meth:`~use_min_step`
-            * - :py:meth:`~max_step`
-            * - :py:meth:`~min_step`
-            * - :py:meth:`~max_rel_err`
-            * - :py:meth:`~max_sequences`
-            * - :py:meth:`~max_iterations`
-            * - :py:meth:`~tolerance`
-            * - :py:meth:`~first_safety_coefficient`
-            * - :py:meth:`~second_safety_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.initial_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.use_fixed_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.use_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.use_min_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.min_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.max_rel_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.max_sequences`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.max_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.first_safety_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.second_safety_coefficient`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IEOIR
 =====
 
-.. py:class:: IEOIR
+.. py:class:: ansys.stk.core.stkobjects.IEOIR
 
    object
    
    Property used to access IAgEOIR interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIR
 
 Overview
 --------

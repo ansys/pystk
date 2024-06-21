@@ -1,13 +1,13 @@
 ISensorPointingTargetedBoresight
 ================================
 
-.. py:class:: ISensorPointingTargetedBoresight
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingTargetedBoresight
 
    object
    
    Base interface IAgSnPtTrgtBsight. IAgSnPtTrgtBsightFixed and IAgSnPtTrgtBsightTrack derive from this.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingTargetedBoresight
 
 Overview
 --------

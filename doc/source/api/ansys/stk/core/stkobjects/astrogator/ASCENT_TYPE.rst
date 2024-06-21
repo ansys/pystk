@@ -1,12 +1,12 @@
 ASCENT_TYPE
 ===========
 
-.. py:class:: ASCENT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ASCENT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ASCENT_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAntennaModelApertureCircularCosine
 ===================================
 
-.. py:class:: IAntennaModelApertureCircularCosine
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine
 
    object
    
    Provide access to the properties and methods defining a circular cosine aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelApertureCircularCosine
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_mainlobe_gain`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.compute_mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosine.beamwidth`
 
 
 Import detail

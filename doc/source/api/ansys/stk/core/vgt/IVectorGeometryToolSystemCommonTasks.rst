@@ -1,13 +1,13 @@
 IVectorGeometryToolSystemCommonTasks
 ====================================
 
-.. py:class:: IVectorGeometryToolSystemCommonTasks
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystemCommonTasks
 
    object
    
    Provide methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolSystemCommonTasks
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create_east_north_up_cartographic`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemCommonTasks.create_east_north_up_cartographic`
               - Create a non-persistent East-North-Up (ENU) reference frame with the origin at the specified geodetic location.
-            * - :py:meth:`~create_assembled`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemCommonTasks.create_assembled`
               - Create a non-persistent system component assembled from an origin point and a set of reference axes.
 
 

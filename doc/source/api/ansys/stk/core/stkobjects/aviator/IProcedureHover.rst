@@ -1,13 +1,13 @@
 IProcedureHover
 ===============
 
-.. py:class:: IProcedureHover
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureHover
 
    object
    
    Interface used to access the options for a hover procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureHover
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_relative_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.set_relative_course`
               - Set the relative heading change.
-            * - :py:meth:`~set_absolute_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.set_absolute_course`
               - Set the absolute heading and reference.
-            * - :py:meth:`~set_final_translation_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.set_final_translation_course`
               - Set the option to have the final heading to match the translation bearing.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -35,22 +35,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~hover_mode`
-            * - :py:meth:`~fixed_time`
-            * - :py:meth:`~heading_mode`
-            * - :py:meth:`~final_heading_mode`
-            * - :py:meth:`~absolute_course`
-            * - :py:meth:`~relative_course`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~final_heading_rate`
-            * - :py:meth:`~translation_mode`
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~use_magnetic_bearing`
-            * - :py:meth:`~range`
-            * - :py:meth:`~final_course_mode`
-            * - :py:meth:`~smooth_translation_mode`
-            * - :py:meth:`~radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.hover_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.fixed_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.heading_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.final_heading_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.absolute_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.relative_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.final_heading_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.translation_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.use_magnetic_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.final_course_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.smooth_translation_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHover.radius_factor`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHover.altitude_options
-    :type: IAgAvtrHoverAltitudeOptions
+    :type: IHoverAltitudeOptions
 
     Get the altitude options.
 

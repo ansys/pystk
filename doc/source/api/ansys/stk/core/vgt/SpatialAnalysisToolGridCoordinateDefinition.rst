@@ -1,13 +1,13 @@
 SpatialAnalysisToolGridCoordinateDefinition
 ===========================================
 
-.. py:class:: SpatialAnalysisToolGridCoordinateDefinition
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition
 
-   Bases: py:obj:`~ISpatialAnalysisToolGridCoordinateDefinition`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition`
 
    Define a set of coordinate values.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolGridCoordinateDefinition
 
 Overview
 --------

@@ -1,12 +1,12 @@
 CONSTRAINT_BACKGROUND
 =====================
 
-.. py:class:: CONSTRAINT_BACKGROUND
+.. py:class:: ansys.stk.core.stkobjects.CONSTRAINT_BACKGROUND
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CONSTRAINT_BACKGROUND
 
 Overview
 --------

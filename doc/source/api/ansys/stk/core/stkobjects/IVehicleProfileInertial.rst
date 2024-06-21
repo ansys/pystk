@@ -1,13 +1,13 @@
 IVehicleProfileInertial
 =======================
 
-.. py:class:: IVehicleProfileInertial
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileInertial
 
    IVehicleAttitudeProfile
    
    Inertially fixed attitude profile: maintains a constant orientation of the body-fixed axes with respect to the inertial axes, using the selected coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileInertial
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inertial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileInertial.inertial`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileInertial.inertial
-    :type: IAgOrientation
+    :type: IOrientation
 
     Get inertial axes.
 

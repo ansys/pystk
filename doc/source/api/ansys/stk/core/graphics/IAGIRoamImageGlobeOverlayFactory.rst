@@ -1,13 +1,13 @@
 IAGIRoamImageGlobeOverlayFactory
 ================================
 
-.. py:class:: IAGIRoamImageGlobeOverlayFactory
+.. py:class:: ansys.stk.core.graphics.IAGIRoamImageGlobeOverlayFactory
 
    object
    
    A globe image overlay for handling ROAM (TXM/TXB) files.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAGIRoamImageGlobeOverlayFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IAGIRoamImageGlobeOverlayFactory.initialize_with_string`
               - Initialize an agi roam image globe overlay with the provided values.
 
 

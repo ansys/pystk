@@ -1,13 +1,13 @@
 BasicManeuverStrategyPushPull
 =============================
 
-.. py:class:: BasicManeuverStrategyPushPull
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull
 
-   Bases: py:obj:`~IBasicManeuverStrategyPushPull`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Push/Pull strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyPushPull
 
 Overview
 --------

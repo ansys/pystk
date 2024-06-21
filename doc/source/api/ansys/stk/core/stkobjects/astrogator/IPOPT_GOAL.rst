@@ -1,12 +1,12 @@
 IPOPT_GOAL
 ==========
 
-.. py:class:: IPOPT_GOAL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPT_GOAL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPOPT_GOAL
 
 Overview
 --------

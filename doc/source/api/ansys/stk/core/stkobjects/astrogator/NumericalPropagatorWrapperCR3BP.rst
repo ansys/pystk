@@ -1,13 +1,13 @@
 NumericalPropagatorWrapperCR3BP
 ===============================
 
-.. py:class:: NumericalPropagatorWrapperCR3BP
+.. py:class:: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP
 
-   Bases: py:obj:`~INumericalPropagatorWrapperCR3BP`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapperCR3BP`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Numerical CR3BP Propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: NumericalPropagatorWrapperCR3BP
 
 Overview
 --------

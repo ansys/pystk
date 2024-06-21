@@ -1,13 +1,13 @@
 CalculationToolScalarFixedAtTimeInstant
 =======================================
 
-.. py:class:: CalculationToolScalarFixedAtTimeInstant
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarFixedAtTimeInstant
 
-   Bases: py:obj:`~ICalculationToolScalarFixedAtTimeInstant`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarFixedAtTimeInstant`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarFixedAtTimeInstant
 
 Overview
 --------

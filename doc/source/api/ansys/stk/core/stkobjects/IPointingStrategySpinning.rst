@@ -1,13 +1,13 @@
 IPointingStrategySpinning
 =========================
 
-.. py:class:: IPointingStrategySpinning
+.. py:class:: ansys.stk.core.stkobjects.IPointingStrategySpinning
 
    object
    
    Provide the interface for a spinning pointing strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPointingStrategySpinning
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~spin_axes_orientation`
-            * - :py:meth:`~cone_angle`
-            * - :py:meth:`~spin_rate`
-            * - :py:meth:`~initial_offset_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategySpinning.spin_axes_orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategySpinning.cone_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategySpinning.spin_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategySpinning.initial_offset_angle`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: spin_axes_orientation
     :canonical: ansys.stk.core.stkobjects.IPointingStrategySpinning.spin_axes_orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Gets the spin axes orientation.
 

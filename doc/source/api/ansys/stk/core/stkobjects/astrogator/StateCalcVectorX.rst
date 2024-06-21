@@ -1,13 +1,13 @@
 StateCalcVectorX
 ================
 
-.. py:class:: StateCalcVectorX
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVectorX
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVectorX`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX`
 
    VectorX Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcVectorX
 
 Overview
 --------

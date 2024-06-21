@@ -1,12 +1,12 @@
 PITCH_3D_CONTROL_MODE
 =====================
 
-.. py:class:: PITCH_3D_CONTROL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.PITCH_3D_CONTROL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PITCH_3D_CONTROL_MODE
 
 Overview
 --------

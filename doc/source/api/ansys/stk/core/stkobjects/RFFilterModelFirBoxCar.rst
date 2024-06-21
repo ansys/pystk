@@ -1,13 +1,13 @@
 RFFilterModelFirBoxCar
 ======================
 
-.. py:class:: RFFilterModelFirBoxCar
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelFirBoxCar
 
-   Bases: py:obj:`~IRFFilterModelFirBoxCar`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelFirBoxCar`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a FIR box car filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelFirBoxCar
 
 Overview
 --------

@@ -1,13 +1,13 @@
 DemodulatorModelMsk
 ===================
 
-.. py:class:: DemodulatorModelMsk
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelMsk
 
-   Bases: py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a MSK modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelMsk
 
 Overview
 --------

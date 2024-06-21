@@ -1,13 +1,13 @@
 IUserVariable
 =============
 
-.. py:class:: IUserVariable
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IUserVariable
 
    object
    
    The properties for a User Variable initial value.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IUserVariable
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariable.enable_control_parameter`
               - Enable or disables the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariable.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariable.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~unit_dimension`
-            * - :py:meth:`~variable_name`
-            * - :py:meth:`~variable_value`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariable.unit_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariable.variable_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariable.variable_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariable.control_parameters_available`
 
 
 Import detail

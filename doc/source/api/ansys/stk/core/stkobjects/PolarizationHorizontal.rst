@@ -1,13 +1,13 @@
 PolarizationHorizontal
 ======================
 
-.. py:class:: PolarizationHorizontal
+.. py:class:: ansys.stk.core.stkobjects.PolarizationHorizontal
 
-   Bases: py:obj:`~IPolarizationHorizontal`, py:obj:`~IPolarization`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarizationHorizontal`, py:obj:`~ansys.stk.core.stkobjects.IPolarization`
 
    Class defining a horizontal polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PolarizationHorizontal
 
 Overview
 --------

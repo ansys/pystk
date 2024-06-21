@@ -1,12 +1,12 @@
 AUTOPILOT_ALTITUDE_CONTROL_MODE
 ===============================
 
-.. py:class:: AUTOPILOT_ALTITUDE_CONTROL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.AUTOPILOT_ALTITUDE_CONTROL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AUTOPILOT_ALTITUDE_CONTROL_MODE
 
 Overview
 --------

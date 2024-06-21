@@ -1,13 +1,13 @@
 IVehicleAttitudeSlewFixedTime
 =============================
 
-.. py:class:: IVehicleAttitudeSlewFixedTime
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedTime
 
    IVehicleAttitudeSlewBase
    
    Fixed Time slew.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeSlewFixedTime
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~slew_time`
-            * - :py:meth:`~match_angular_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedTime.slew_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedTime.match_angular_velocity`
 
 
 Import detail

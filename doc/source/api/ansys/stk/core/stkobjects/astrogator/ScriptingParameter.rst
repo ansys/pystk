@@ -1,13 +1,13 @@
 ScriptingParameter
 ==================
 
-.. py:class:: ScriptingParameter
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingParameter
 
-   Bases: py:obj:`~IScriptingParameter`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Scripting Parameter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ScriptingParameter
 
 Overview
 --------

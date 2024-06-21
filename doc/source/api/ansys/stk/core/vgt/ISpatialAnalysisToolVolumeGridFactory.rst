@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeGridFactory
 =====================================
 
-.. py:class:: ISpatialAnalysisToolVolumeGridFactory
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory
 
    object
    
    The factory is used to create instances of volume grids.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeGridFactory
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory.create`
               - Create and registers a volume grid using specified name and description.
-            * - :py:meth:`~create_volume_grid_cartesian`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory.create_volume_grid_cartesian`
               - Create and registers a cartesian volume grid type using specified name and description.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:meth:`~create_volume_grid_cylindrical`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory.create_volume_grid_cylindrical`
               - Create and registers a cylindrical volume grid type using specified name and description.
-            * - :py:meth:`~create_volume_grid_spherical`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory.create_volume_grid_spherical`
               - Create and registers a spherical volume grid type using specified name and description.
-            * - :py:meth:`~create_volume_grid_constrained`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory.create_volume_grid_constrained`
               - Create and registers a volume grid of type that can be constrained by conditions using specified name and description.
-            * - :py:meth:`~create_volume_grid_lat_lon_altitude`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory.create_volume_grid_lat_lon_altitude`
               - Create and registers cartographic volume grid type using specified name and description.
-            * - :py:meth:`~create_volume_grid_bearing_altitude`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridFactory.create_volume_grid_bearing_altitude`
               - Create and registers a volume grid of type surface bearing using specified name and description.
 
 

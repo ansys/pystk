@@ -1,12 +1,12 @@
 UI_LOG_MSG_TYPE
 ===============
 
-.. py:class:: UI_LOG_MSG_TYPE
+.. py:class:: ansys.stk.core.uiapplication.UI_LOG_MSG_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: UI_LOG_MSG_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 KmlFeatureCollection
 ====================
 
-.. py:class:: KmlFeatureCollection
+.. py:class:: ansys.stk.core.graphics.KmlFeatureCollection
 
-   Bases: py:obj:`~IKmlFeatureCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IKmlFeatureCollection`
 
    A collection of KML features.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KmlFeatureCollection
 
 Overview
 --------

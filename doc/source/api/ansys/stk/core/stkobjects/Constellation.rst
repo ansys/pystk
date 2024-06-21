@@ -1,13 +1,13 @@
 Constellation
 =============
 
-.. py:class:: Constellation
+.. py:class:: ansys.stk.core.stkobjects.Constellation
 
-   Bases: py:obj:`~IConstellation`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IConstellation`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class represents the STK Constellation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Constellation
 
 Overview
 --------

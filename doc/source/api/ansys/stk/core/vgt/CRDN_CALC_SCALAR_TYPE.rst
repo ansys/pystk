@@ -1,12 +1,12 @@
 CRDN_CALC_SCALAR_TYPE
 =====================
 
-.. py:class:: CRDN_CALC_SCALAR_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_CALC_SCALAR_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_CALC_SCALAR_TYPE
 
 Overview
 --------

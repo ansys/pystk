@@ -1,13 +1,13 @@
 IIPOPTResult
 ============
 
-.. py:class:: IIPOPTResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IIPOPTResult
 
    object
    
    Properties for objecvtive and constraints of a IPOPT profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IIPOPTResult
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~lower_bound`
-            * - :py:meth:`~upper_bound`
-            * - :py:meth:`~scaling_value`
-            * - :py:meth:`~weight`
-            * - :py:meth:`~goal`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.lower_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.upper_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.scaling_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.weight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.goal`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult.custom_display_unit`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VehicleEclipsingBodies
 ======================
 
-.. py:class:: VehicleEclipsingBodies
+.. py:class:: ansys.stk.core.stkobjects.VehicleEclipsingBodies
 
-   Bases: py:obj:`~IVehicleEclipsingBodies`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies`
 
    Eclipsing bodies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleEclipsingBodies
 
 Overview
 --------

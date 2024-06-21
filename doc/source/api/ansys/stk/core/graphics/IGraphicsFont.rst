@@ -1,13 +1,13 @@
 IGraphicsFont
 =============
 
-.. py:class:: IGraphicsFont
+.. py:class:: ansys.stk.core.graphics.IGraphicsFont
 
    object
    
    A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGraphicsFont
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~size`
-            * - :py:meth:`~bold`
-            * - :py:meth:`~italic`
-            * - :py:meth:`~underline`
-            * - :py:meth:`~strikeout`
-            * - :py:meth:`~outline`
-            * - :py:meth:`~style`
-            * - :py:meth:`~antialias`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.name`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.size`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.bold`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.italic`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.underline`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.strikeout`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.outline`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.style`
+            * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.antialias`
 
 
 Import detail

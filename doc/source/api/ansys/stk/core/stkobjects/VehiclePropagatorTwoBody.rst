@@ -1,13 +1,13 @@
 VehiclePropagatorTwoBody
 ========================
 
-.. py:class:: VehiclePropagatorTwoBody
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorTwoBody
 
-   Bases: py:obj:`~IVehiclePropagatorTwoBody`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the two body propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorTwoBody
 
 Overview
 --------

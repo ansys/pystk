@@ -1,13 +1,13 @@
 VehicleSpaceEnvironment
 =======================
 
-.. py:class:: VehicleSpaceEnvironment
+.. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironment
 
-   Bases: py:obj:`~IVehicleSpaceEnvironment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment`
 
    SpaceEnvironment settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSpaceEnvironment
 
 Overview
 --------

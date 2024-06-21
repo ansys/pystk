@@ -1,13 +1,13 @@
 AttitudeControlFiniteThrustVector
 =================================
 
-.. py:class:: AttitudeControlFiniteThrustVector
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector
 
-   Bases: py:obj:`~IAttitudeControlFiniteThrustVector`, py:obj:`~IAttitudeControlFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteThrustVector`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The thrust vector attitude control for a finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AttitudeControlFiniteThrustVector
 
 Overview
 --------

@@ -1,12 +1,12 @@
 CRUISE_SPEED
 ============
 
-.. py:class:: CRUISE_SPEED
+.. py:class:: ansys.stk.core.stkobjects.aviator.CRUISE_SPEED
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: CRUISE_SPEED
 
 Overview
 --------

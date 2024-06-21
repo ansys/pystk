@@ -1,13 +1,13 @@
 IBeamformerCosineX
 ==================
 
-.. py:class:: IBeamformerCosineX
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerCosineX
 
    object
    
    Provide access to the properties and methods defining an cosine^X tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerCosineX
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerCosineX.x`
 
 
 Import detail

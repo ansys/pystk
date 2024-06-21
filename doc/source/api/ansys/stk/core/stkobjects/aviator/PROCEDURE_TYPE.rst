@@ -1,12 +1,12 @@
 PROCEDURE_TYPE
 ==============
 
-.. py:class:: PROCEDURE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.PROCEDURE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PROCEDURE_TYPE
 
 Overview
 --------

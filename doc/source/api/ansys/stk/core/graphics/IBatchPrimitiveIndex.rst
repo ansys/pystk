@@ -1,13 +1,13 @@
 IBatchPrimitiveIndex
 ====================
 
-.. py:class:: IBatchPrimitiveIndex
+.. py:class:: ansys.stk.core.graphics.IBatchPrimitiveIndex
 
    object
    
    Represents an individual item index that is associated with a batch primitive. Provides the Index of the individual item and the Primitive that contains that index...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IBatchPrimitiveIndex
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~index`
-            * - :py:meth:`~primitive`
+            * - :py:attr:`~ansys.stk.core.graphics.IBatchPrimitiveIndex.index`
+            * - :py:attr:`~ansys.stk.core.graphics.IBatchPrimitiveIndex.primitive`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: primitive
     :canonical: ansys.stk.core.graphics.IBatchPrimitiveIndex.primitive
-    :type: IAgStkGraphicsPrimitive
+    :type: IPrimitive
 
     The Primitive that contains the item at the Index specified.
 

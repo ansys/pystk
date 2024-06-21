@@ -1,13 +1,13 @@
 IDisplaySystemGeodetic
 ======================
 
-.. py:class:: IDisplaySystemGeodetic
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeodetic
 
    IDisplaySystem
    
    Properties for a geodetic launch coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDisplaySystemGeodetic
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeodetic.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeodetic.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeodetic.altitude`
 
 
 Import detail

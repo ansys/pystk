@@ -1,13 +1,13 @@
 CalculationToolScalarVectorMagnitude
 ====================================
 
-.. py:class:: CalculationToolScalarVectorMagnitude
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarVectorMagnitude
 
-   Bases: py:obj:`~ICalculationToolScalarVectorMagnitude`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarVectorMagnitude`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Scalar equal to the magnitude of a specified vector.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarVectorMagnitude
 
 Overview
 --------

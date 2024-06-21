@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorDisplacement
 =====================================
 
-.. py:class:: IVectorGeometryToolVectorDisplacement
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement
 
    object
    
    Vector defined by its start and end points.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorDisplacement
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~origin`
-            * - :py:meth:`~destination`
-            * - :py:meth:`~apparent`
-            * - :py:meth:`~ignore_aberration`
-            * - :py:meth:`~signal_sense`
-            * - :py:meth:`~reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.origin`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.destination`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.apparent`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.ignore_aberration`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.signal_sense`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.reference_system`
 
 
 Import detail
@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.origin
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify the vector's origin point.
 
 .. py:property:: destination
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.destination
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify the vector's destination point.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.reference_system
-    :type: IAgCrdnSystemRefTo
+    :type: IVectorGeometryToolSystemRefTo
 
     Specify a frame in which the light time delay is computed. This property is read-only if Apparent is set to false.
 

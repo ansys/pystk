@@ -1,13 +1,13 @@
 IAntennaModelItuF1245
 =====================
 
-.. py:class:: IAntennaModelItuF1245
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelItuF1245
 
    object
    
    Provide access to the properties and methods defining an ITU-R F1245-3 antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelItuF1245
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~polarization_advantage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245.polarization_advantage`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAdvCATChosenObjectCollection
 =============================
 
-.. py:class:: IAdvCATChosenObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection
 
    object
    
    Chosen object collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdvCATChosenObjectCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.item`
               - Given an index, returns a chosen object in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.remove_at`
               - Remove an object from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.add`
               - Add a new chosen object to the collection.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection._NewEnum`
 
 
 Import detail

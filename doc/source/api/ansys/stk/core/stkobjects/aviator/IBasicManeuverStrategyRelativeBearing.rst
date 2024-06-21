@@ -1,13 +1,13 @@
 IBasicManeuverStrategyRelativeBearing
 =====================================
 
-.. py:class:: IBasicManeuverStrategyRelativeBearing
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing
 
    object
    
    Interface used to access options for a Relative Bearing Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyRelativeBearing
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_control_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
-            * - :py:meth:`~cancel_tgt_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.cancel_tgt_position_vel`
               - Cancel the position velocity strategies for Relative Bearing.
 
     .. tab-item:: Properties
@@ -31,17 +31,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_name`
-            * - :py:meth:`~valid_target_names`
-            * - :py:meth:`~target_resolution`
-            * - :py:meth:`~rel_bearing`
-            * - :py:meth:`~min_range`
-            * - :py:meth:`~control_limit_mode`
-            * - :py:meth:`~control_limit_turn_radius`
-            * - :py:meth:`~control_limit_turn_rate`
-            * - :py:meth:`~control_limit_horiz_accel`
-            * - :py:meth:`~compensate_for_coriolis_accel`
-            * - :py:meth:`~position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.target_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.valid_target_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.target_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.rel_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.min_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.control_limit_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.control_limit_turn_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.control_limit_turn_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.control_limit_horiz_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.position_vel_strategies`
 
 
 Import detail
@@ -117,7 +117,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.position_vel_strategies
-    :type: IAgAvtrBasicManeuverTargetPosVel
+    :type: IBasicManeuverTargetPositionVel
 
     Get the position velocity strategies for Relative Bearing.
 

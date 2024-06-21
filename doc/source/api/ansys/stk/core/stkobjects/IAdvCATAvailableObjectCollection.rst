@@ -1,13 +1,13 @@
 IAdvCATAvailableObjectCollection
 ================================
 
-.. py:class:: IAdvCATAvailableObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection
 
    object
    
    IAgAdvCATAvailableObjectCollection represents available objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdvCATAvailableObjectCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_available_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection.get_available_object`
               - Return name, date and type times of the interval at a given index.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection.to_array`
               - Return a two-dimensional array of objects.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection.count`
 
 
 Import detail

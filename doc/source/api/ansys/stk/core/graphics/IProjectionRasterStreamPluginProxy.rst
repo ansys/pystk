@@ -1,13 +1,13 @@
 IProjectionRasterStreamPluginProxy
 ==================================
 
-.. py:class:: IProjectionRasterStreamPluginProxy
+.. py:class:: ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy
 
    object
    
    A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IProjectionRasterStreamPluginProxy
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~raster_stream`
-            * - :py:meth:`~projection_stream`
-            * - :py:meth:`~is_raster_stream_supported`
-            * - :py:meth:`~is_projection_stream_supported`
-            * - :py:meth:`~real_plugin_object`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.raster_stream`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.projection_stream`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.is_raster_stream_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.is_projection_stream_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.real_plugin_object`
 
 
 Import detail
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: raster_stream
     :canonical: ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.raster_stream
-    :type: IAgStkGraphicsRasterStream
+    :type: IRasterStream
 
     Returns a raster stream.
 
 .. py:property:: projection_stream
     :canonical: ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.projection_stream
-    :type: IAgStkGraphicsProjectionStream
+    :type: IProjectionStream
 
     Returns a projection stream.
 

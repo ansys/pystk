@@ -1,13 +1,13 @@
 ManeuverOptimalFiniteSteeringNodeCollection
 ===========================================
 
-.. py:class:: ManeuverOptimalFiniteSteeringNodeCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection
 
-   Bases: py:obj:`~IManeuverOptimalFiniteSteeringNodeCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeCollection`
 
    Steering/nodes collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ManeuverOptimalFiniteSteeringNodeCollection
 
 Overview
 --------

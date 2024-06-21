@@ -1,13 +1,13 @@
 ISiteWaypoint
 =============
 
-.. py:class:: ISiteWaypoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteWaypoint
 
    object
    
    Interface used to access the options for a waypoint site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteWaypoint
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint.get_as_site`
               - Get the site interface.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint.longitude`
 
 
 Import detail

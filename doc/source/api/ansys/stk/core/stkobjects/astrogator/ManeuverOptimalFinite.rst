@@ -1,13 +1,13 @@
 ManeuverOptimalFinite
 =====================
 
-.. py:class:: ManeuverOptimalFinite
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite
 
-   Bases: py:obj:`~IManeuverOptimalFinite`, py:obj:`~IManeuver`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuver`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Optimal Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ManeuverOptimalFinite
 
 Overview
 --------

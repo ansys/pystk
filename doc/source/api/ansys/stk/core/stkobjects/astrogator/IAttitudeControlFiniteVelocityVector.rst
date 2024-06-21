@@ -1,13 +1,13 @@
 IAttitudeControlFiniteVelocityVector
 ====================================
 
-.. py:class:: IAttitudeControlFiniteVelocityVector
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteVelocityVector
 
    IAttitudeControlFinite
    
    Properties for the Velocity Vector attitude control for a Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlFiniteVelocityVector
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~attitude_update`
-            * - :py:meth:`~body_constraint_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteVelocityVector.attitude_update`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteVelocityVector.body_constraint_vector`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteVelocityVector.body_constraint_vector
-    :type: IAgDirection
+    :type: IDirection
 
     Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 

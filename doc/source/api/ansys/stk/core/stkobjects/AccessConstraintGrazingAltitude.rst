@@ -1,13 +1,13 @@
 AccessConstraintGrazingAltitude
 ===============================
 
-.. py:class:: AccessConstraintGrazingAltitude
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude
 
-   Bases: py:obj:`~IAccessConstraintGrazingAltitude`, py:obj:`~IAccessConstraintMinMax`, py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintGrazingAltitude`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining the Grazing Altidude constraint.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintGrazingAltitude
 
 Overview
 --------

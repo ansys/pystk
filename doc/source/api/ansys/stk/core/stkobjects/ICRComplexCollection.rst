@@ -1,13 +1,13 @@
 ICRComplexCollection
 ====================
 
-.. py:class:: ICRComplexCollection
+.. py:class:: ansys.stk.core.stkobjects.ICRComplexCollection
 
    object
    
    Represents a collection of complex numbers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICRComplexCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection.remove_at`
               - Remove the complex value with the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection.add`
               - Add and returns a new complex value.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection.insert_at`
               - Insert and returns a new complex value at the supplied index.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection.clear`
               - Clear all complex values from the collection.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection._NewEnum`
 
 
 Import detail

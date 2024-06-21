@@ -1,12 +1,12 @@
 SPHERICAL_FPA
 =============
 
-.. py:class:: SPHERICAL_FPA
+.. py:class:: ansys.stk.core.stkobjects.SPHERICAL_FPA
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SPHERICAL_FPA
 
 Overview
 --------

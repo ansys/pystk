@@ -1,13 +1,13 @@
 IVectorGeometryToolPointSatelliteCollectionEntry
 ================================================
 
-.. py:class:: IVectorGeometryToolPointSatelliteCollectionEntry
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointSatelliteCollectionEntry
 
    object
    
    A point placed at the center of mass of a specified satellite of the satellite collection.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointSatelliteCollectionEntry
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~entry_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointSatelliteCollectionEntry.entry_name`
 
 
 Import detail

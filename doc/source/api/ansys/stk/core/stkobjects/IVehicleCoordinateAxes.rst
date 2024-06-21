@@ -1,13 +1,13 @@
 IVehicleCoordinateAxes
 ======================
 
-.. py:class:: IVehicleCoordinateAxes
+.. py:class:: ansys.stk.core.stkobjects.IVehicleCoordinateAxes
 
    object
    
    IAgVeCoordinateAxes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleCoordinateAxes
 
 Overview
 --------

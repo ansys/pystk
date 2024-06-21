@@ -19,19 +19,19 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~IMRUCollection`
+            * - :py:class:`~ansys.stk.core.uiapplication.IMRUCollection`
               - Provide information about most recently used (MRU) list.
 
-            * - :py:class:`~IUiFileOpenExt`
+            * - :py:class:`~ansys.stk.core.uiapplication.IUiFileOpenExt`
               - Access to file open dialog that allows multiple file specifications.
 
-            * - :py:class:`~IUiApplication`
+            * - :py:class:`~ansys.stk.core.uiapplication.IUiApplication`
               - IAgUiApplication represents a root of the Application Model.
 
-            * - :py:class:`~IUiApplicationPartnerAccess`
+            * - :py:class:`~ansys.stk.core.uiapplication.IUiApplicationPartnerAccess`
               - Access to the application object model for business partners.
 
-            * - :py:class:`~IUiFileOpenExtCollection`
+            * - :py:class:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection`
               - Multiple file open collection.
 
     
@@ -42,16 +42,16 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~UiApplication`
+            * - :py:class:`~ansys.stk.core.uiapplication.UiApplication`
               - A root object of the Application Model.
 
-            * - :py:class:`~MRUCollection`
+            * - :py:class:`~ansys.stk.core.uiapplication.MRUCollection`
               - Provide information about most recently used (MRU) list.
 
-            * - :py:class:`~UiFileOpenExtCollection`
+            * - :py:class:`~ansys.stk.core.uiapplication.UiFileOpenExtCollection`
               - Multiple file open collection.
 
-            * - :py:class:`~UiFileOpenExt`
+            * - :py:class:`~ansys.stk.core.uiapplication.UiFileOpenExt`
               - Access to file open dialog that allows multiple file specifications.
 
 
@@ -62,16 +62,16 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~OPEN_LOG_FILE_MODE`
+            * - :py:class:`~ansys.stk.core.uiapplication.OPEN_LOG_FILE_MODE`
               - Log file open modes.
 
-            * - :py:class:`~UI_LOG_MSG_TYPE`
+            * - :py:class:`~ansys.stk.core.uiapplication.UI_LOG_MSG_TYPE`
               - Log message types.
 
-            * - :py:class:`~APP_CONSTANTS`
+            * - :py:class:`~ansys.stk.core.uiapplication.APP_CONSTANTS`
               - AgEAppConstants contains base IDs for various structures.
 
-            * - :py:class:`~APP_ERROR_CODES`
+            * - :py:class:`~ansys.stk.core.uiapplication.APP_ERROR_CODES`
               - App error codes.
 
 

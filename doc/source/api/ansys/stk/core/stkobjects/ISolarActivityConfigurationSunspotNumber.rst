@@ -1,13 +1,13 @@
 ISolarActivityConfigurationSunspotNumber
 ========================================
 
-.. py:class:: ISolarActivityConfigurationSunspotNumber
+.. py:class:: ansys.stk.core.stkobjects.ISolarActivityConfigurationSunspotNumber
 
    object
    
    Provide access to the properties and methods defining the sunspot number.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISolarActivityConfigurationSunspotNumber
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sunspot_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISolarActivityConfigurationSunspotNumber.sunspot_number`
 
 
 Import detail

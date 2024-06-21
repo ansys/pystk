@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DLegend
 ==============================
 
-.. py:class:: IFigureOfMeritGraphics2DLegend
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend
 
    object
    
    Contour legend properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DLegend
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~color_options`
-            * - :py:meth:`~text_options`
-            * - :py:meth:`~range_color_options`
-            * - :py:meth:`~graphics_2d_window`
-            * - :py:meth:`~graphics_3d_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.color_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.text_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.range_color_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.graphics_2d_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.graphics_3d_window`
 
 
 Import detail
@@ -40,31 +40,31 @@ Property detail
 
 .. py:property:: color_options
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.color_options
-    :type: IAgFmGfxColorOptions
+    :type: IFigureOfMeritGraphics2DColorOptions
 
     Color options for contour legend.
 
 .. py:property:: text_options
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.text_options
-    :type: IAgFmGfxTextOptions
+    :type: IFigureOfMeritGraphics2DTextOptions
 
     Text options for contour legend.
 
 .. py:property:: range_color_options
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.range_color_options
-    :type: IAgFmGfxRangeColorOptions
+    :type: IFigureOfMeritGraphics2DRangeColorOptions
 
     Range color options for contour legend.
 
 .. py:property:: graphics_2d_window
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.graphics_2d_window
-    :type: IAgFmGfxLegendWindow
+    :type: IFigureOfMeritGraphics2DLegendWindow
 
     Get the 2D graphics window on which the legend is to display.
 
 .. py:property:: graphics_3d_window
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.graphics_3d_window
-    :type: IAgFmVOLegendWindow
+    :type: IFigureOfMeritGraphics3DLegendWindow
 
     Get the 3D graphics window on which the legend is to display.
 

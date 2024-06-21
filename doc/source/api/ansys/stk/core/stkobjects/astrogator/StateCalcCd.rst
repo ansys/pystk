@@ -1,13 +1,13 @@
 StateCalcCd
 ===========
 
-.. py:class:: StateCalcCd
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCd
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCd`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCd`
 
    Cd Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcCd
 
 Overview
 --------

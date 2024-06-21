@@ -1,12 +1,12 @@
 SCATTERING_POINT_PROVIDER_LIST_TYPE
 ===================================
 
-.. py:class:: SCATTERING_POINT_PROVIDER_LIST_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SCATTERING_POINT_PROVIDER_LIST_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SCATTERING_POINT_PROVIDER_LIST_TYPE
 
 Overview
 --------

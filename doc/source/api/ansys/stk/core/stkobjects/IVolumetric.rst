@@ -1,13 +1,13 @@
 IVolumetric
 ===========
 
-.. py:class:: IVolumetric
+.. py:class:: ansys.stk.core.stkobjects.IVolumetric
 
    object
    
    Volumetric properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVolumetric
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_volume_grid_definition_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.set_volume_grid_definition_type`
               - Set volume grid definition type, using the AgEVmDefinitionType enumeration.
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.compute`
               - Compute computations for Volumetric.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.clear`
               - Clear computations for Volumetric.
-            * - :py:meth:`~get_volumetric_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.get_volumetric_export_tool`
               - Volumetric export tool.
-            * - :py:meth:`~compute_in_parallel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.compute_in_parallel`
               - Compute computations in parallel for Volumetric.
 
     .. tab-item:: Properties
@@ -37,11 +37,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~volume_grid_definition_type`
-            * - :py:meth:`~volume_grid_definition`
-            * - :py:meth:`~volume_analysis_interval`
-            * - :py:meth:`~advanced`
-            * - :py:meth:`~graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.volume_grid_definition_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.volume_grid_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.volume_analysis_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.advanced`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.graphics_3d`
 
 
 Import detail
@@ -63,25 +63,25 @@ Property detail
 
 .. py:property:: volume_grid_definition
     :canonical: ansys.stk.core.stkobjects.IVolumetric.volume_grid_definition
-    :type: IAgVmGridDefinition
+    :type: IVmGridDefinition
 
     Get Volume Grid definition.
 
 .. py:property:: volume_analysis_interval
     :canonical: ansys.stk.core.stkobjects.IVolumetric.volume_analysis_interval
-    :type: IAgVmAnalysisInterval
+    :type: IVmAnalysisInterval
 
     Get Volume Analysis Interval.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.IVolumetric.advanced
-    :type: IAgVmAdvanced
+    :type: IVmAdvanced
 
     Get Advanced options.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IVolumetric.graphics_3d
-    :type: IAgVmVO
+    :type: IVmGraphics3D
 
     Get the 3D Graphics properties for the volumetric object.
 

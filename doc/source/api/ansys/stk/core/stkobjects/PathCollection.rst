@@ -1,13 +1,13 @@
 PathCollection
 ==============
 
-.. py:class:: PathCollection
+.. py:class:: ansys.stk.core.stkobjects.PathCollection
 
-   Bases: py:obj:`~IPathCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPathCollection`
 
    Allow adding and removing of paths.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PathCollection
 
 Overview
 --------

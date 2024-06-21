@@ -1,13 +1,13 @@
 TimeToolEventIntervalCollectionLighting
 =======================================
 
-.. py:class:: TimeToolEventIntervalCollectionLighting
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalCollectionLighting
 
-   Bases: py:obj:`~ITimeToolEventIntervalCollectionLighting`, py:obj:`~ITimeToolEventIntervalCollection`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionLighting`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollection`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalCollectionLighting
 
 Overview
 --------

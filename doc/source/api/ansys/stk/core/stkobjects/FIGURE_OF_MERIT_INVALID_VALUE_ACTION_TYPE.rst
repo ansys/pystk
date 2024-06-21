@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE
 =========================================
 
-.. py:class:: FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE
 
 Overview
 --------

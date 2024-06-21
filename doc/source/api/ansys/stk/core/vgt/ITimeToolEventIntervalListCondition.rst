@@ -1,13 +1,13 @@
 ITimeToolEventIntervalListCondition
 ===================================
 
-.. py:class:: ITimeToolEventIntervalListCondition
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalListCondition
 
    object
    
    Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalListCondition
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~condition`
-            * - :py:meth:`~custom_time_limits`
-            * - :py:meth:`~use_custom_time_limits`
-            * - :py:meth:`~save_data_option`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~convergence`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.use_custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.save_data_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.sampling`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.convergence`
 
 
 Import detail
@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.condition
-    :type: IAgCrdnCondition
+    :type: ICalculationToolCondition
 
     The condition component.
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.custom_time_limits
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The interval list or single interval within which intervals of satisfaction are sought. The specified value is used if UseCustomTimeLimits is true. The default is set to overall availability of host object...
 
@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.sampling
-    :type: IAgCrdnSampling
+    :type: IAnalysisWorkbenchSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.convergence
-    :type: IAgCrdnConverge
+    :type: IAnalysisWorkbenchConverge
 
     The Convergence definition, which uses time tolerance to determine when times for intervals of satisfaction are found.
 

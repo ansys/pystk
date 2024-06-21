@@ -1,13 +1,13 @@
 IBeerBouguerLambertLawLayerCollection
 =====================================
 
-.. py:class:: IBeerBouguerLambertLawLayerCollection
+.. py:class:: ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection
 
    object
    
    Represents a collection of complex numbers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeerBouguerLambertLawLayerCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection.remove_at`
               - Remove the layer with the specified index.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection._NewEnum`
 
 
 Import detail

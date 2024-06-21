@@ -1,13 +1,13 @@
 IBasicManeuverStrategy
 ======================
 
-.. py:class:: IBasicManeuverStrategy
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy
 
    object
    
    Interface used to access options for a Basic Maneuver Strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategy
 
 Overview
 --------

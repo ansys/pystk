@@ -1,13 +1,13 @@
 ICruiseAirspeedProfile
 ======================
 
-.. py:class:: ICruiseAirspeedProfile
+.. py:class:: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedProfile
 
    object
    
    Interface used to access the Cruise Profile options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ICruiseAirspeedProfile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fly_cruise_airspeed_profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedProfile.fly_cruise_airspeed_profile`
 
 
 Import detail

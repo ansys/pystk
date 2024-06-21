@@ -1,12 +1,12 @@
 BASIC_FIXED_WING_PROP_MODE
 ==========================
 
-.. py:class:: BASIC_FIXED_WING_PROP_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.BASIC_FIXED_WING_PROP_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BASIC_FIXED_WING_PROP_MODE
 
 Overview
 --------

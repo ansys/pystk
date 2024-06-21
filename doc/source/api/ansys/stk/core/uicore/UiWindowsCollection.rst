@@ -1,13 +1,13 @@
 UiWindowsCollection
 ===================
 
-.. py:class:: UiWindowsCollection
+.. py:class:: ansys.stk.core.uicore.UiWindowsCollection
 
-   Bases: py:obj:`~IUiWindowsCollection`
+   Bases: py:obj:`~ansys.stk.core.uicore.IUiWindowsCollection`
 
    Provide methods and properties to manage the windows.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: UiWindowsCollection
 
 Overview
 --------

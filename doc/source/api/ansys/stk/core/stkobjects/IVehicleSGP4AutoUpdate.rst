@@ -1,13 +1,13 @@
 IVehicleSGP4AutoUpdate
 ======================
 
-.. py:class:: IVehicleSGP4AutoUpdate
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate
 
    object
    
    SGP4 Automatic Update properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4AutoUpdate
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~selected_source`
-            * - :py:meth:`~properties`
-            * - :py:meth:`~file_source`
-            * - :py:meth:`~online_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate.selected_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate.properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate.file_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate.online_source`
 
 
 Import detail
@@ -45,19 +45,19 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate.properties
-    :type: IAgVeSGP4AutoUpdateProperties
+    :type: IVehicleSGP4AutoUpdateProperties
 
     Get the Automatic Update selection and method.
 
 .. py:property:: file_source
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate.file_source
-    :type: IAgVeSGP4AutoUpdateFileSource
+    :type: IVehicleSGP4AutoUpdateFileSource
 
     A file to be used as the element source, containing GP data (either TLEs or CCSDS OMM content).
 
 .. py:property:: online_source
     :canonical: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate.online_source
-    :type: IAgVeSGP4AutoUpdateOnlineSource
+    :type: IVehicleSGP4AutoUpdateOnlineSource
 
     AGI server to be used as the element source.
 

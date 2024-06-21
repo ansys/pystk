@@ -1,13 +1,13 @@
 VectorGeometryToolAngleDihedral
 ===============================
 
-.. py:class:: VectorGeometryToolAngleDihedral
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleDihedral
 
-   Bases: py:obj:`~IVectorGeometryToolAngleDihedral`, py:obj:`~IVectorGeometryToolAngle`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An angle between two vectors about an axis.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAngleDihedral
 
 Overview
 --------

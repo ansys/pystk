@@ -1,13 +1,13 @@
 ICalculationToolConditionScalarBounds
 =====================================
 
-.. py:class:: ICalculationToolConditionScalarBounds
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionScalarBounds
 
    object
    
    Defined by determining if input scalar is within specified bounds; returns +1 if satisfied, -1 if not satisfied and 0 if on boundary.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionScalarBounds
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_minimum`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.get_minimum`
               - Get the minimum bound value from the condition. Call SetMinimum to apply changes.
-            * - :py:meth:`~set_minimum`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.set_minimum`
               - Set the minimum bound value for the condition.
-            * - :py:meth:`~get_maximum`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.get_maximum`
               - Get the maximum bound value from the condition. Call SetMaximum to apply changes.
-            * - :py:meth:`~set_maximum`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.set_maximum`
               - Set the maximum bound value for the condition.
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.set`
               - Set the min/max bounds. Throws an exception if the minimum is greater than maximum.
-            * - :py:meth:`~get_minimum_unitless`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.get_minimum_unitless`
               - Get the unitless minimum bound value from the condition. Call SetMinimum to apply changes.
-            * - :py:meth:`~set_minimum_unitless`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.set_minimum_unitless`
               - Set the unitless minimum bound value for the condition.
-            * - :py:meth:`~get_maximum_unitless`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.get_maximum_unitless`
               - Get the unitless maximum bound value from the condition. Call SetMaximum to apply changes.
-            * - :py:meth:`~set_maximum_unitless`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.set_maximum_unitless`
               - Set the unitless maximum bound value for the condition.
-            * - :py:meth:`~set_unitless`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.set_unitless`
               - Set the unitless min/max bounds. Throws an exception if the minimum is greater than maximum.
 
     .. tab-item:: Properties
@@ -47,8 +47,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scalar`
-            * - :py:meth:`~operation`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.operation`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.scalar
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     Get the scalar calculation from the condition.
 

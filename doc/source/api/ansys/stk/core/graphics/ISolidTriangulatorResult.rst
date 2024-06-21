@@ -1,13 +1,13 @@
 ISolidTriangulatorResult
 ========================
 
-.. py:class:: ISolidTriangulatorResult
+.. py:class:: ansys.stk.core.graphics.ISolidTriangulatorResult
 
    object
    
    The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISolidTriangulatorResult
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~outline_indices`
-            * - :py:meth:`~outline_positions`
-            * - :py:meth:`~outline_polyline_type`
-            * - :py:meth:`~closed`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidTriangulatorResult.outline_indices`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidTriangulatorResult.outline_positions`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidTriangulatorResult.outline_polyline_type`
+            * - :py:attr:`~ansys.stk.core.graphics.ISolidTriangulatorResult.closed`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IMtoGraphics2DFadeTimes
 =======================
 
-.. py:class:: IMtoGraphics2DFadeTimes
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes
 
    object
    
    MTO track fade times interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics2DFadeTimes
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_pre_fade`
-            * - :py:meth:`~pre_fade_time`
-            * - :py:meth:`~use_post_fade`
-            * - :py:meth:`~post_fade_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes.use_pre_fade`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes.pre_fade_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes.use_post_fade`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes.post_fade_time`
 
 
 Import detail

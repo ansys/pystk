@@ -1,13 +1,13 @@
 CentralBodyAttitudeIAU1994
 ==========================
 
-.. py:class:: CentralBodyAttitudeIAU1994
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyAttitudeIAU1994
 
-   Bases: py:obj:`~ICentralBodyAttitudeIAU1994`, py:obj:`~ICentralBodyAttitude`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitude`
 
    Central Body Attitude - IAU1994.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CentralBodyAttitudeIAU1994
 
 Overview
 --------

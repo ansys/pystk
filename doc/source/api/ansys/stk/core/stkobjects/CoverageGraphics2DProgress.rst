@@ -1,13 +1,13 @@
 CoverageGraphics2DProgress
 ==========================
 
-.. py:class:: CoverageGraphics2DProgress
+.. py:class:: ansys.stk.core.stkobjects.CoverageGraphics2DProgress
 
-   Bases: py:obj:`~ICoverageGraphics2DProgress`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGraphics2DProgress`
 
    Progress graphics for access calculations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageGraphics2DProgress
 
 Overview
 --------

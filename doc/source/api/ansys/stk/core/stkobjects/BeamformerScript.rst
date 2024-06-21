@@ -1,13 +1,13 @@
 BeamformerScript
 ================
 
-.. py:class:: BeamformerScript
+.. py:class:: ansys.stk.core.stkobjects.BeamformerScript
 
-   Bases: py:obj:`~IBeamformerScript`, py:obj:`~IBeamformer`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformerScript`, py:obj:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a beamformer script plugin.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BeamformerScript
 
 Overview
 --------

@@ -1,12 +1,12 @@
 EPHEM_EXPORT_TOOL_FILE_FORMAT
 =============================
 
-.. py:class:: EPHEM_EXPORT_TOOL_FILE_FORMAT
+.. py:class:: ansys.stk.core.stkobjects.EPHEM_EXPORT_TOOL_FILE_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EPHEM_EXPORT_TOOL_FILE_FORMAT
 
 Overview
 --------

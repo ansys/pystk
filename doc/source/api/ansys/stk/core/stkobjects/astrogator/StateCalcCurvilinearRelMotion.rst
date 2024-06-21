@@ -1,13 +1,13 @@
 StateCalcCurvilinearRelMotion
 =============================
 
-.. py:class:: StateCalcCurvilinearRelMotion
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelMotion
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCurvilinearRelMotion`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion`
 
    Curvilinear Relative Motion objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcCurvilinearRelMotion
 
 Overview
 --------

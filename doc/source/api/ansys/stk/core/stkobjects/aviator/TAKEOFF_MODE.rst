@@ -1,12 +1,12 @@
 TAKEOFF_MODE
 ============
 
-.. py:class:: TAKEOFF_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.TAKEOFF_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TAKEOFF_MODE
 
 Overview
 --------

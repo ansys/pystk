@@ -1,13 +1,13 @@
 MtoGraphics2DTrackCollection
 ============================
 
-.. py:class:: MtoGraphics2DTrackCollection
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection
 
-   Bases: py:obj:`~IMtoGraphics2DTrackCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics2DTrackCollection`
 
    MTO 2D Graphics Track List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics2DTrackCollection
 
 Overview
 --------

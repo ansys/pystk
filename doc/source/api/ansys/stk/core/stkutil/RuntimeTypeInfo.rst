@@ -1,13 +1,13 @@
 RuntimeTypeInfo
 ===============
 
-.. py:class:: RuntimeTypeInfo
+.. py:class:: ansys.stk.core.stkutil.RuntimeTypeInfo
 
-   Bases: py:obj:`~IRuntimeTypeInfo`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IRuntimeTypeInfo`
 
    Runtime Type info coclass.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: RuntimeTypeInfo
 
 Overview
 --------

@@ -1,13 +1,13 @@
 PickResult
 ==========
 
-.. py:class:: PickResult
+.. py:class:: ansys.stk.core.graphics.PickResult
 
-   Bases: py:obj:`~IPickResult`
+   Bases: py:obj:`~ansys.stk.core.graphics.IPickResult`
 
    A single result from Pick.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: PickResult
 
 Overview
 --------

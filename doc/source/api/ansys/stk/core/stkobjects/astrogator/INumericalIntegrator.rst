@@ -1,13 +1,13 @@
 INumericalIntegrator
 ====================
 
-.. py:class:: INumericalIntegrator
+.. py:class:: ansys.stk.core.stkobjects.astrogator.INumericalIntegrator
 
    object
    
    The type of numerical integrator to be used by the propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: INumericalIntegrator
 
 Overview
 --------

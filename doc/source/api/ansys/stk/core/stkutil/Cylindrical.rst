@@ -1,13 +1,13 @@
 Cylindrical
 ===========
 
-.. py:class:: Cylindrical
+.. py:class:: ansys.stk.core.stkutil.Cylindrical
 
-   Bases: py:obj:`~ICylindrical`, py:obj:`~IPosition`
+   Bases: py:obj:`~ansys.stk.core.stkutil.ICylindrical`, py:obj:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining cylindrical position.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Cylindrical
 
 Overview
 --------

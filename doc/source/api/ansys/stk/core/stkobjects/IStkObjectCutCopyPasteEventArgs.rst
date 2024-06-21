@@ -1,13 +1,13 @@
 IStkObjectCutCopyPasteEventArgs
 ===============================
 
-.. py:class:: IStkObjectCutCopyPasteEventArgs
+.. py:class:: ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs
 
    object
    
    Arguments for the OnStkObjectPreCut, OnStkObjectCopy and OnStkObjectPaste events.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkObjectCutCopyPasteEventArgs
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~selected_object_path`
-            * - :py:meth:`~object_paths`
-            * - :py:meth:`~pasted_object_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs.selected_object_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs.object_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs.pasted_object_paths`
 
 
 Import detail

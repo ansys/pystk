@@ -1,13 +1,13 @@
 IVehicleLeadTrailDataTime
 =========================
 
-.. py:class:: IVehicleLeadTrailDataTime
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLeadTrailDataTime
 
    object
    
    Configure the amount of time to display the vehicle's path in 2D or 3D window.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLeadTrailDataTime
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataTime.time`
 
 
 Import detail

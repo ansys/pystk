@@ -1,13 +1,13 @@
 ICalculationToolIntegralBasic
 =============================
 
-.. py:class:: ICalculationToolIntegralBasic
+.. py:class:: ansys.stk.core.vgt.ICalculationToolIntegralBasic
 
    object
    
    Integral definition determines how scalar calculation is numerically integrated.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolIntegralBasic
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~tolerance`
-            * - :py:meth:`~maximum_iterations`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolIntegralBasic.type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolIntegralBasic.tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolIntegralBasic.maximum_iterations`
 
 
 Import detail

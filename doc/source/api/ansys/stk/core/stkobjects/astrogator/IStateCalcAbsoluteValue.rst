@@ -1,13 +1,13 @@
 IStateCalcAbsoluteValue
 =======================
 
-.. py:class:: IStateCalcAbsoluteValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcAbsoluteValue
 
    object
    
    Properties for an Absolute Value calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcAbsoluteValue
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcAbsoluteValue.calc_object_name`
 
 
 Import detail

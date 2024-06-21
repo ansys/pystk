@@ -1,12 +1,12 @@
 VEHICLE_PROFILE
 ===============
 
-.. py:class:: VEHICLE_PROFILE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_PROFILE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_PROFILE
 
 Overview
 --------

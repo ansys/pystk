@@ -1,13 +1,13 @@
 VehicleGraphics2DTimeEventsElement
 ==================================
 
-.. py:class:: VehicleGraphics2DTimeEventsElement
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement
 
-   Bases: py:obj:`~IVehicleGraphics2DTimeEventsElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement`
 
    2D Graphics time event.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DTimeEventsElement
 
 Overview
 --------

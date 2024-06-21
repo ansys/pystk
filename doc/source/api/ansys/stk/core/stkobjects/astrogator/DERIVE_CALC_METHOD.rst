@@ -1,12 +1,12 @@
 DERIVE_CALC_METHOD
 ==================
 
-.. py:class:: DERIVE_CALC_METHOD
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DERIVE_CALC_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DERIVE_CALC_METHOD
 
 Overview
 --------

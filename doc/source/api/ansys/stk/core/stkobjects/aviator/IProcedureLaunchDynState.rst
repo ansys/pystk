@@ -1,13 +1,13 @@
 IProcedureLaunchDynState
 ========================
 
-.. py:class:: IProcedureLaunchDynState
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState
 
    object
    
    Interface used to access the options for a dyn state launch procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureLaunchDynState
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.set_airspeed`
               - Set the launch airspeed.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -31,19 +31,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~launch_time`
-            * - :py:meth:`~coord_frame`
-            * - :py:meth:`~bearing_reference`
-            * - :py:meth:`~launch_bearing`
-            * - :py:meth:`~launch_elevation`
-            * - :py:meth:`~attitude_mode`
-            * - :py:meth:`~specify_launch_airspeed`
-            * - :py:meth:`~accel_g`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~airspeed`
-            * - :py:meth:`~fuel_flow_type`
-            * - :py:meth:`~override_fuel_flow`
-            * - :py:meth:`~true_course_hint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.launch_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.coord_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.bearing_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.launch_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.launch_elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.attitude_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.specify_launch_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.accel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.fuel_flow_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.override_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.true_course_hint`
 
 
 Import detail

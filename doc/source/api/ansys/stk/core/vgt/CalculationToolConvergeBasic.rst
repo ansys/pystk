@@ -1,13 +1,13 @@
 CalculationToolConvergeBasic
 ============================
 
-.. py:class:: CalculationToolConvergeBasic
+.. py:class:: ansys.stk.core.vgt.CalculationToolConvergeBasic
 
-   Bases: py:obj:`~ICalculationToolConvergeBasic`, py:obj:`~IAnalysisWorkbenchConverge`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchConverge`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolConvergeBasic
 
 Overview
 --------

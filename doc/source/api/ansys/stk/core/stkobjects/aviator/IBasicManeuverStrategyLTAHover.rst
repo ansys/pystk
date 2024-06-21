@@ -1,13 +1,13 @@
 IBasicManeuverStrategyLTAHover
 ==============================
 
-.. py:class:: IBasicManeuverStrategyLTAHover
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover
 
    object
    
    Interface used to access options for a Lighter than Air Hover Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyLTAHover
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~heading_mode`
-            * - :py:meth:`~relative_heading`
-            * - :py:meth:`~absolute_heading`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~heading_rate`
-            * - :py:meth:`~altitude_mode`
-            * - :py:meth:`~absolute_altitude`
-            * - :py:meth:`~relative_altitude_change`
-            * - :py:meth:`~control_altitude_rate`
-            * - :py:meth:`~altitude_rate`
-            * - :py:meth:`~parachute_area`
-            * - :py:meth:`~parachute_cd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.heading_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.relative_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.absolute_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.heading_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.altitude_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.absolute_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.relative_altitude_change`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.control_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.parachute_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.parachute_cd`
 
 
 Import detail

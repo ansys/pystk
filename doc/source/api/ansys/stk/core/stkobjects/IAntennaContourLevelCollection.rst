@@ -1,13 +1,13 @@
 IAntennaContourLevelCollection
 ==============================
 
-.. py:class:: IAntennaContourLevelCollection
+.. py:class:: ansys.stk.core.stkobjects.IAntennaContourLevelCollection
 
    object
    
    Represents a collection of antenna contour levels.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaContourLevelCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection.contains`
               - Check whether the collection contains an object with the given value.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection.remove`
               - Remove the level with the corresponding value.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection.remove_at`
               - Remove the level with the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection.add`
               - Add and returns a new level with the corresponding value.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection.clear`
               - Clear all contour levels from the collection.
-            * - :py:meth:`~get_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection.get_level`
               - Get the level with the specified value.
 
     .. tab-item:: Properties
@@ -41,8 +41,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection._NewEnum`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVehicleSolarFluxGeoMagnitudeUseFile
 ====================================
 
-.. py:class:: IVehicleSolarFluxGeoMagnitudeUseFile
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile
 
    object
    
    Interface for specifying solar and geomagnetic flux via a file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSolarFluxGeoMagnitudeUseFile
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~file`
-            * - :py:meth:`~geomag_flux_update_rate`
-            * - :py:meth:`~geomag_flux_src`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile.file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile.geomag_flux_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile.geomag_flux_src`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesTransformWithRateResult
 ==============================================
 
-.. py:class:: IVectorGeometryToolAxesTransformWithRateResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult
 
    object
    
    Contains the results returned with IAgCrdnAxes.TransformFromWithRate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesTransformWithRateResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~vector`
-            * - :py:meth:`~velocity`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.velocity`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.vector
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The output vector in the current axes.
 
 .. py:property:: velocity
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.velocity
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The vector velocity.
 

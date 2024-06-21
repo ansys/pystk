@@ -1,13 +1,13 @@
 ScriptingCalcObject
 ===================
 
-.. py:class:: ScriptingCalcObject
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingCalcObject
 
-   Bases: py:obj:`~IScriptingCalcObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject`
 
    Calc Object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ScriptingCalcObject
 
 Overview
 --------

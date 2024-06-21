@@ -1,13 +1,13 @@
 ReceiverModelCable
 ==================
 
-.. py:class:: ReceiverModelCable
+.. py:class:: ansys.stk.core.stkobjects.ReceiverModelCable
 
-   Bases: py:obj:`~IReceiverModelCable`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverModelCable`, py:obj:`~ansys.stk.core.stkobjects.IReceiverModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a cable receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceiverModelCable
 
 Overview
 --------

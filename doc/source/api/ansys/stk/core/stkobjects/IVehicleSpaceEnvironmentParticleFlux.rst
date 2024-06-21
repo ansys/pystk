@@ -1,13 +1,13 @@
 IVehicleSpaceEnvironmentParticleFlux
 ====================================
 
-.. py:class:: IVehicleSpaceEnvironmentParticleFlux
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux
 
    object
    
    Particle Flux model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpaceEnvironmentParticleFlux
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_particle_mass_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.get_particle_mass_array`
               - Return the particle mass array as an array of doubles. Uses Mass Dimension.
-            * - :py:meth:`~compute_meteor_impact_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_meteor_impact_flux`
               - Compute meteor impact flux. Uses DateFormat and Flux Dimensions.
-            * - :py:meth:`~compute_meteor_damage_impact_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_meteor_damage_impact_flux`
               - Compute meteor damage impact flux. Uses DateFormat and Flux Dimensions.
-            * - :py:meth:`~compute_meteor_impact_flux_distribution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_meteor_impact_flux_distribution`
               - Compute meteor impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
-            * - :py:meth:`~compute_meteor_damage_impact_flux_distribution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_meteor_damage_impact_flux_distribution`
               - Compute meteor damage impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
-            * - :py:meth:`~compute_debris_impact_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_debris_impact_flux`
               - Compute debris impact flux. Uses DateFormat and Flux Dimensions.
-            * - :py:meth:`~compute_debris_damage_impact_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_debris_damage_impact_flux`
               - Compute debris damage impact flux. Uses DateFormat and Flux Dimensions.
-            * - :py:meth:`~compute_debris_impact_flux_distribution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_debris_impact_flux_distribution`
               - Compute debris impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
-            * - :py:meth:`~compute_debris_damage_impact_flux_distribution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.compute_debris_damage_impact_flux_distribution`
               - Compute debris damage impact flux for each particle of the mass array, returned as an array of doubles. Uses DateFormat and Flux Dimensions.
 
     .. tab-item:: Properties
@@ -45,15 +45,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~f_10_p7_source`
-            * - :py:meth:`~f_10_p7`
-            * - :py:meth:`~material`
-            * - :py:meth:`~area`
-            * - :py:meth:`~pit_depth`
-            * - :py:meth:`~use_sporadic_meteors`
-            * - :py:meth:`~material_density`
-            * - :py:meth:`~tensile_strength`
-            * - :py:meth:`~flux_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.f_10_p7_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.f_10_p7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.material`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.pit_depth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.use_sporadic_meteors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.material_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.tensile_strength`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.flux_file`
 
 
 Import detail

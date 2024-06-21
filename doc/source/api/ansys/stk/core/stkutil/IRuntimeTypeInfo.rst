@@ -1,13 +1,13 @@
 IRuntimeTypeInfo
 ================
 
-.. py:class:: IRuntimeTypeInfo
+.. py:class:: ansys.stk.core.stkutil.IRuntimeTypeInfo
 
    object
    
    Interface used to retrieve the properties at runtime.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IRuntimeTypeInfo
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_item`
+            * - :py:attr:`~ansys.stk.core.stkutil.IRuntimeTypeInfo.get_item`
               - Return the property of the collection at the given index.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~properties`
-            * - :py:meth:`~is_collection`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkutil.IRuntimeTypeInfo.properties`
+            * - :py:attr:`~ansys.stk.core.stkutil.IRuntimeTypeInfo.is_collection`
+            * - :py:attr:`~ansys.stk.core.stkutil.IRuntimeTypeInfo.count`
 
 
 Import detail
@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkutil.IRuntimeTypeInfo.properties
-    :type: IAgPropertyInfoCollection
+    :type: IPropertyInfoCollection
 
     Get the collection of properties.
 

@@ -1,13 +1,13 @@
 IVectorGeometryToolAxes
 =======================
 
-.. py:class:: IVectorGeometryToolAxes
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxes
 
    object
    
    The interface defines methods and properties common to all axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxes
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~find_in_axes_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.find_in_axes_with_rate`
               - Find an angular velocity and orientation in the specified axes.
-            * - :py:meth:`~find_in_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.find_in_axes`
               - Find an orientation in the specified axes.
-            * - :py:meth:`~transform`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.transform`
               - Transform the input vector from this axes into the output axes.
-            * - :py:meth:`~transform_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.transform_with_rate`
               - Transform the input vector and vector's rate from this axes into the output axes.
 
     .. tab-item:: Properties
@@ -35,11 +35,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~labels`
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.labels`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.x`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.y`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.z`
 
 
 Import detail
@@ -61,25 +61,25 @@ Property detail
 
 .. py:property:: labels
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.labels
-    :type: IAgCrdnAxesLabels
+    :type: IVectorGeometryToolAxesLabels
 
     Returns an object that allows modifying the axes labels.
 
 .. py:property:: x
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.x
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Returns the X axis of the component.
 
 .. py:property:: y
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.y
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Returns the Y axis of the component.
 
 .. py:property:: z
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.z
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Returns the Z axis of the component.
 

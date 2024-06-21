@@ -1,12 +1,12 @@
 COMPONENT
 =========
 
-.. py:class:: COMPONENT
+.. py:class:: ansys.stk.core.stkobjects.COMPONENT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COMPONENT
 
 Overview
 --------

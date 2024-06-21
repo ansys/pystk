@@ -1,13 +1,13 @@
 UnitPreferencesDimensionCollection
 ==================================
 
-.. py:class:: UnitPreferencesDimensionCollection
+.. py:class:: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection
 
-   Bases: py:obj:`~IUnitPreferencesDimensionCollection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection`
 
    Object that contains a collection of dimensions.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: UnitPreferencesDimensionCollection
 
 Overview
 --------

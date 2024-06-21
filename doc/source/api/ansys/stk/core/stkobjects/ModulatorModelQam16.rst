@@ -1,13 +1,13 @@
 ModulatorModelQam16
 ===================
 
-.. py:class:: ModulatorModelQam16
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelQam16
 
-   Bases: py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a QAM 16 modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModelQam16
 
 Overview
 --------

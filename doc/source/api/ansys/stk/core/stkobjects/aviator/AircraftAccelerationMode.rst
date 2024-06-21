@@ -1,13 +1,13 @@
 AircraftAccelerationMode
 ========================
 
-.. py:class:: AircraftAccelerationMode
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode
 
-   Bases: py:obj:`~IAircraftAccelerationMode`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftAccelerationMode`
 
    Class defining the acceleration mode options for an advanced acceleration performance model of an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftAccelerationMode
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ITimeToolEventIntervalSignaled
 ==============================
 
-.. py:class:: ITimeToolEventIntervalSignaled
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalSignaled
 
    object
    
    Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalSignaled
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~original_interval`
-            * - :py:meth:`~signal_sense`
-            * - :py:meth:`~base_clock_location`
-            * - :py:meth:`~target_clock_location`
-            * - :py:meth:`~signal_delay`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.original_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.signal_sense`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.base_clock_location`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.target_clock_location`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.signal_delay`
 
 
 Import detail
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: original_interval
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.original_interval
-    :type: IAgCrdnEventInterval
+    :type: ITimeToolEventInterval
 
     The original interval.
 
@@ -52,19 +52,19 @@ Property detail
 
 .. py:property:: base_clock_location
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.base_clock_location
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     The base clock location, which is a point from VGT.
 
 .. py:property:: target_clock_location
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.target_clock_location
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     The target clock location, which is a point from VGT.
 
 .. py:property:: signal_delay
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalSignaled.signal_delay
-    :type: IAgCrdnSignalDelay
+    :type: IAnalysisWorkbenchSignalDelay
 
     The Signal delay definition, which includes signal transmission, time delay convergence and signal path reference system.
 

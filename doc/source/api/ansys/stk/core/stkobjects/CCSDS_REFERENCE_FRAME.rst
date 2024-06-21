@@ -1,12 +1,12 @@
 CCSDS_REFERENCE_FRAME
 =====================
 
-.. py:class:: CCSDS_REFERENCE_FRAME
+.. py:class:: ansys.stk.core.stkobjects.CCSDS_REFERENCE_FRAME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CCSDS_REFERENCE_FRAME
 
 Overview
 --------

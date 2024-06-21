@@ -1,13 +1,13 @@
 IManeuverImpulsive
 ==================
 
-.. py:class:: IManeuverImpulsive
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverImpulsive
 
    IManeuver
    
    Properties for an Impulsive Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverImpulsive
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~update_mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverImpulsive.update_mass`
 
 
 Import detail

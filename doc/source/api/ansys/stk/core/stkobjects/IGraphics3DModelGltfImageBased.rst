@@ -1,13 +1,13 @@
 IGraphics3DModelGltfImageBased
 ==============================
 
-.. py:class:: IGraphics3DModelGltfImageBased
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelGltfImageBased
 
    object
    
    glTF Reflection Settings Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModelGltfImageBased
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file_path`
-            * - :py:meth:`~reflection_reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelGltfImageBased.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelGltfImageBased.file_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelGltfImageBased.reflection_reference_frame`
 
 
 Import detail

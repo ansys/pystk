@@ -1,13 +1,13 @@
 IRaster
 =======
 
-.. py:class:: IRaster
+.. py:class:: ansys.stk.core.graphics.IRaster
 
    object
    
    A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRaster
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~flip`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.flip`
               - Flips the raster along the given axis.
-            * - :py:meth:`~rotate`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.rotate`
               - Rotate the raster by the given angle.
-            * - :py:meth:`~apply`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.apply`
               - Apply a raster filter to the raster and returns a new raster with the results of the filtering. The current raster is not modified.
-            * - :py:meth:`~apply_in_place`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.apply_in_place`
               - Apply a raster filter to the raster. The current raster will contain the results of the filtering.
-            * - :py:meth:`~extract_band`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.extract_band`
               - Extract the band of raster data associated with the given raster band.
-            * - :py:meth:`~extract_band_from_raster_format`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.extract_band_from_raster_format`
               - Extract the bands of raster data associated with the given raster format.
-            * - :py:meth:`~copy_from_raster`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.copy_from_raster`
               - Copy the data associated with the given raster into this raster.
 
     .. tab-item:: Properties
@@ -41,9 +41,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~attributes`
-            * - :py:meth:`~width`
-            * - :py:meth:`~height`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.attributes`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.width`
+            * - :py:attr:`~ansys.stk.core.graphics.IRaster.height`
 
 
 Import detail
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.graphics.IRaster.attributes
-    :type: IAgStkGraphicsRasterAttributes
+    :type: IRasterAttributes
 
     Gets the raster attributes that define the raster data.
 

@@ -1,13 +1,13 @@
 IManeuverOptimalFinite
 ======================
 
-.. py:class:: IManeuverOptimalFinite
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite
 
    IManeuver
    
    Engine properties for a Optimal Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverOptimalFinite
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~run_seed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.run_seed`
               - Run seed.
-            * - :py:meth:`~export_nodes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.export_nodes`
               - Export the current set of collocation nodes to a file.
 
     .. tab-item:: Properties
@@ -31,29 +31,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pressure_mode`
-            * - :py:meth:`~thrust_efficiency`
-            * - :py:meth:`~thrust_efficiency_mode`
-            * - :py:meth:`~number_of_nodes`
-            * - :py:meth:`~initial_guess_file_name`
-            * - :py:meth:`~seed_method`
-            * - :py:meth:`~node_status_message`
-            * - :py:meth:`~run_mode`
-            * - :py:meth:`~halt_mission_control_sequence_when_no_convergence`
-            * - :py:meth:`~discretization_strategy`
-            * - :py:meth:`~working_variables`
-            * - :py:meth:`~scaling_options`
-            * - :py:meth:`~enable_unit_vector_controls`
-            * - :py:meth:`~thrust_axes`
-            * - :py:meth:`~snopt_optimizer`
-            * - :py:meth:`~initial_boundary_conditions`
-            * - :py:meth:`~final_boundary_conditions`
-            * - :py:meth:`~path_boundary_conditions`
-            * - :py:meth:`~log_file_name`
-            * - :py:meth:`~export_format`
-            * - :py:meth:`~steering_nodes`
-            * - :py:meth:`~initial_guess_interpolation_method`
-            * - :py:meth:`~should_reinitialize_stm_at_start_of_segment_propagation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.pressure_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.thrust_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.thrust_efficiency_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.number_of_nodes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_guess_file_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.seed_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.node_status_message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.run_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.halt_mission_control_sequence_when_no_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.discretization_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.working_variables`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.scaling_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.enable_unit_vector_controls`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.thrust_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.snopt_optimizer`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_boundary_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.final_boundary_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.path_boundary_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.log_file_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.export_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.steering_nodes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_guess_interpolation_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.should_reinitialize_stm_at_start_of_segment_propagation`
 
 
 Import detail
@@ -153,25 +153,25 @@ Property detail
 
 .. py:property:: snopt_optimizer
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.snopt_optimizer
-    :type: IAgVAManeuverOptimalFiniteSNOPTOptimizer
+    :type: IManeuverOptimalFiniteSNOPTOptimizer
 
     SNOPT Optimizer Options.
 
 .. py:property:: initial_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_boundary_conditions
-    :type: IAgVAManeuverOptimalFiniteInitialBoundaryConditions
+    :type: IManeuverOptimalFiniteInitialBoundaryConditions
 
     Initial Boundary Conditions.
 
 .. py:property:: final_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.final_boundary_conditions
-    :type: IAgVAManeuverOptimalFiniteFinalBoundaryConditions
+    :type: IManeuverOptimalFiniteFinalBoundaryConditions
 
     Final Boundary Conditions.
 
 .. py:property:: path_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.path_boundary_conditions
-    :type: IAgVAManeuverOptimalFinitePathBoundaryConditions
+    :type: IManeuverOptimalFinitePathBoundaryConditions
 
     Path Boundary Conditions.
 
@@ -189,7 +189,7 @@ Property detail
 
 .. py:property:: steering_nodes
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.steering_nodes
-    :type: IAgVAManeuverOptimalFiniteSteeringNodeCollection
+    :type: IManeuverOptimalFiniteSteeringNodeCollection
 
     Get the list of steering nodes.
 

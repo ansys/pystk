@@ -1,13 +1,13 @@
 VectorGeometryToolAxesBPlane
 ============================
 
-.. py:class:: VectorGeometryToolAxesBPlane
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesBPlane
 
-   Bases: py:obj:`~IVectorGeometryToolAxesBPlane`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesBPlane`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    B-Plane axes using the selected target body and reference vector.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAxesBPlane
 
 Overview
 --------

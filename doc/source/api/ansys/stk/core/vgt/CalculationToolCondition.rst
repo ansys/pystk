@@ -1,13 +1,13 @@
 CalculationToolCondition
 ========================
 
-.. py:class:: CalculationToolCondition
+.. py:class:: ansys.stk.core.vgt.CalculationToolCondition
 
-   Bases: py:obj:`~ICalculationToolCondition`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolCondition`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolCondition
 
 Overview
 --------

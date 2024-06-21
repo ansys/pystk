@@ -1,12 +1,12 @@
 CONTROL_POWER_SOLAR_ARRAY
 =========================
 
-.. py:class:: CONTROL_POWER_SOLAR_ARRAY
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_POWER_SOLAR_ARRAY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_POWER_SOLAR_ARRAY
 
 Overview
 --------

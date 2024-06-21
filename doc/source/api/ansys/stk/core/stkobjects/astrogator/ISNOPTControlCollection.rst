@@ -1,13 +1,13 @@
 ISNOPTControlCollection
 =======================
 
-.. py:class:: ISNOPTControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection
 
    object
    
    Properties for the list of SNOPT control parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISNOPTControlCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_control_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection.get_control_by_paths`
               - Return the control specified by the object/control path.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection.count`
 
 
 Import detail

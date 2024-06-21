@@ -1,13 +1,13 @@
 ModulatorModel16psk
 ===================
 
-.. py:class:: ModulatorModel16psk
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModel16psk
 
-   Bases: py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a 16PSK modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModel16psk
 
 Overview
 --------

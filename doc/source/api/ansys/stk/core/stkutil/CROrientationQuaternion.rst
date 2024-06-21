@@ -1,13 +1,13 @@
 CROrientationQuaternion
 =======================
 
-.. py:class:: CROrientationQuaternion
+.. py:class:: ansys.stk.core.stkutil.CROrientationQuaternion
 
-   Bases: py:obj:`~IOrientationQuaternion`, py:obj:`~IOrientation`, py:obj:`~IOrientationPositionOffset`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationQuaternion`, py:obj:`~ansys.stk.core.stkutil.IOrientation`, py:obj:`~ansys.stk.core.stkutil.IOrientationPositionOffset`
 
    Quaternion orientation method.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: CROrientationQuaternion
 
 Overview
 --------

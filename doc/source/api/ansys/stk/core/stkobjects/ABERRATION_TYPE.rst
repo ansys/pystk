@@ -1,12 +1,12 @@
 ABERRATION_TYPE
 ===============
 
-.. py:class:: ABERRATION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ABERRATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ABERRATION_TYPE
 
 Overview
 --------

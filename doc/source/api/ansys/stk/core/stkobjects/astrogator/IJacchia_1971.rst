@@ -1,13 +1,13 @@
 IJacchia_1971
 =============
 
-.. py:class:: IJacchia_1971
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IJacchia_1971
 
    object
    
    Properties for the Jacchia 1971 atmospheric model - a model that is similar to Jacchia 1970, with improved treatment of certain solar effects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IJacchia_1971
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_approximate_altitude`
-            * - :py:meth:`~computes_temperature`
-            * - :py:meth:`~computes_pressure`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~atmos_data_source`
-            * - :py:meth:`~f_10_p7`
-            * - :py:meth:`~f_10_p7_avg`
-            * - :py:meth:`~kp`
-            * - :py:meth:`~atmos_data_geo_magnetic_flux_source`
-            * - :py:meth:`~atmos_data_geo_magnetic_flux_update_rate`
-            * - :py:meth:`~atmos_data_filename`
-            * - :py:meth:`~drag_model_type`
-            * - :py:meth:`~drag_model_plugin_name`
-            * - :py:meth:`~drag_model_plugin`
-            * - :py:meth:`~variable_area_history_file`
-            * - :py:meth:`~n_plate_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.use_approximate_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.computes_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.computes_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.f_10_p7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.f_10_p7_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.kp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.atmos_data_geo_magnetic_flux_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.atmos_data_geo_magnetic_flux_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.atmos_data_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.drag_model_plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.drag_model_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.variable_area_history_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1971.n_plate_definition_file`
 
 
 Import detail
@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchia_1971.drag_model_plugin
-    :type: IAgVADragModelPlugin
+    :type: IDragModelPlugin
 
     Drag model plugin properties.
 

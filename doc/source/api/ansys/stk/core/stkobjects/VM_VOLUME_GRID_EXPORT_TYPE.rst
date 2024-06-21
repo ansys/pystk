@@ -1,12 +1,12 @@
 VM_VOLUME_GRID_EXPORT_TYPE
 ==========================
 
-.. py:class:: VM_VOLUME_GRID_EXPORT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VM_VOLUME_GRID_EXPORT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_VOLUME_GRID_EXPORT_TYPE
 
 Overview
 --------

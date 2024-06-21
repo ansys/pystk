@@ -1,12 +1,12 @@
 GRAPH_OPTION
 ============
 
-.. py:class:: GRAPH_OPTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GRAPH_OPTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GRAPH_OPTION
 
 Overview
 --------

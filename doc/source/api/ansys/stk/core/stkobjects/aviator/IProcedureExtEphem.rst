@@ -1,13 +1,13 @@
 IProcedureExtEphem
 ==================
 
-.. py:class:: IProcedureExtEphem
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureExtEphem
 
    object
    
    Interface used to access the options for an ExtEphem procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureExtEphem
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.get_as_procedure`
               - Get the procedure interface.
-            * - :py:meth:`~shift_rotate_set`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.shift_rotate_set`
               - Shift rotate set values.
 
     .. tab-item:: Properties
@@ -31,20 +31,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ephemeris_file`
-            * - :py:meth:`~ephemeris_file_duration`
-            * - :py:meth:`~use_start_duration`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~duration`
-            * - :py:meth:`~flight_mode`
-            * - :py:meth:`~use_shift_rotate`
-            * - :py:meth:`~shift_time`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~course`
-            * - :py:meth:`~course_mode`
-            * - :py:meth:`~altitude_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.ephemeris_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.ephemeris_file_duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.use_start_duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.flight_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.use_shift_rotate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.shift_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.course_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.altitude_mode`
 
 
 Import detail

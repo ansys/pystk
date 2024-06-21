@@ -1,13 +1,13 @@
 BasicManeuverStrategyRollingPull
 ================================
 
-.. py:class:: BasicManeuverStrategyRollingPull
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRollingPull
 
-   Bases: py:obj:`~IBasicManeuverStrategyRollingPull`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the rolling pull strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyRollingPull
 
 Overview
 --------

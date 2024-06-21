@@ -1,13 +1,13 @@
 Thruster
 ========
 
-.. py:class:: Thruster
+.. py:class:: ansys.stk.core.stkobjects.astrogator.Thruster
 
-   Bases: py:obj:`~IThruster`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IThruster`
 
    Thruster definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: Thruster
 
 Overview
 --------

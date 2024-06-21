@@ -1,12 +1,12 @@
 RUN_CODE
 ========
 
-.. py:class:: RUN_CODE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.RUN_CODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: RUN_CODE
 
 Overview
 --------

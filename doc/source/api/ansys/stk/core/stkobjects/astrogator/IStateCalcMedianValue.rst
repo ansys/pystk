@@ -1,13 +1,13 @@
 IStateCalcMedianValue
 =====================
 
-.. py:class:: IStateCalcMedianValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMedianValue
 
    object
    
    Properties for a Median Value calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMedianValue
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMedianValue.calc_object_name`
 
 
 Import detail

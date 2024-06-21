@@ -1,13 +1,13 @@
 IScenarioEarthData
 ==================
 
-.. py:class:: IScenarioEarthData
+.. py:class:: ansys.stk.core.stkobjects.IScenarioEarthData
 
    object
    
    IAgScEarthData Interface for Earth Orientation Parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenarioEarthData
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reload_eop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioEarthData.reload_eop`
               - Reload the EOP file.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~eop_filename`
-            * - :py:meth:`~eop_start_time`
-            * - :py:meth:`~eop_stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioEarthData.eop_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioEarthData.eop_start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioEarthData.eop_stop_time`
 
 
 Import detail

@@ -1,12 +1,12 @@
 MARS_GRAM_DENSITY_TYPE
 ======================
 
-.. py:class:: MARS_GRAM_DENSITY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MARS_GRAM_DENSITY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MARS_GRAM_DENSITY_TYPE
 
 Overview
 --------

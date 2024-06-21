@@ -1,13 +1,13 @@
 IRotorcraftProp
 ===============
 
-.. py:class:: IRotorcraftProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IRotorcraftProp
 
    object
    
    Interface used to access the Propulsion options for a rotorcraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IRotorcraftProp
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~powerplant_type`
-            * - :py:meth:`~max_sl_power`
-            * - :py:meth:`~max_sl_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp.powerplant_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp.max_sl_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp.max_sl_fuel_flow`
 
 
 Import detail

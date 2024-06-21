@@ -1,13 +1,13 @@
 Facility
 ========
 
-.. py:class:: Facility
+.. py:class:: ansys.stk.core.stkobjects.Facility
 
-   Bases: py:obj:`~IFacility`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFacility`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the Facility object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Facility
 
 Overview
 --------

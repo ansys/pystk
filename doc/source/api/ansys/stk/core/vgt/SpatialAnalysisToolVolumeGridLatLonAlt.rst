@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeGridLatLonAlt
 ======================================
 
-.. py:class:: SpatialAnalysisToolVolumeGridLatLonAlt
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridLatLonAlt
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridLatLonAlt`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume grid lat lon alt (Cartogrographic) interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeGridLatLonAlt
 
 Overview
 --------

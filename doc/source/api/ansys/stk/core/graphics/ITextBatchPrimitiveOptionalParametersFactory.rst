@@ -1,13 +1,13 @@
 ITextBatchPrimitiveOptionalParametersFactory
 ============================================
 
-.. py:class:: ITextBatchPrimitiveOptionalParametersFactory
+.. py:class:: ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParametersFactory
 
    object
    
    Optional per-string and per-batch parameters for text batch primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextBatchPrimitiveOptionalParametersFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParametersFactory.initialize`
               - Initialize default text batch primitive optional parameters.
 
 

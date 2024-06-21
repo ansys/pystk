@@ -1,13 +1,13 @@
 VehicleSpaceEnvironmentVehTemperature
 =====================================
 
-.. py:class:: VehicleSpaceEnvironmentVehTemperature
+.. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentVehTemperature
 
-   Bases: py:obj:`~IVehicleSpaceEnvironmentVehTemperature`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature`
 
    Vehicle Temperature settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSpaceEnvironmentVehTemperature
 
 Overview
 --------

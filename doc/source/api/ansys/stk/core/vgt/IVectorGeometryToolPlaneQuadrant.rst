@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneQuadrant
 ================================
 
-.. py:class:: IVectorGeometryToolPlaneQuadrant
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant
 
    object
    
    A plane based on a selected Quadrant of a reference system.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneQuadrant
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_system`
-            * - :py:meth:`~quadrant`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant.reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant.quadrant`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant.reference_system
-    :type: IAgCrdnSystemRefTo
+    :type: IVectorGeometryToolSystemRefTo
 
     Specify a reference system.
 

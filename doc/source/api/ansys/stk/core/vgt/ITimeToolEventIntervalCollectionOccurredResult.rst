@@ -1,13 +1,13 @@
 ITimeToolEventIntervalCollectionOccurredResult
 ==============================================
 
-.. py:class:: ITimeToolEventIntervalCollectionOccurredResult
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionOccurredResult
 
    object
    
    Contains the results returned with IAgCrdnEventIntervalCollection.Occurred method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalCollectionOccurredResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~index`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionOccurredResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionOccurredResult.index`
 
 
 Import detail

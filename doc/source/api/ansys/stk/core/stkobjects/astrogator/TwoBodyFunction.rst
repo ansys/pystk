@@ -1,13 +1,13 @@
 TwoBodyFunction
 ===============
 
-.. py:class:: TwoBodyFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.TwoBodyFunction
 
-   Bases: py:obj:`~ITwoBodyFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Two Body gravity propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: TwoBodyFunction
 
 Overview
 --------

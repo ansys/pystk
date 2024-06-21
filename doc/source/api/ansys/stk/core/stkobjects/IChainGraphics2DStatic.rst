@@ -1,13 +1,13 @@
 IChainGraphics2DStatic
 ======================
 
-.. py:class:: IChainGraphics2DStatic
+.. py:class:: ansys.stk.core.stkobjects.IChainGraphics2DStatic
 
    object
    
    2D static graphics for a chain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainGraphics2DStatic
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DStatic.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DStatic.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics2DStatic.line_width`
 
 
 Import detail

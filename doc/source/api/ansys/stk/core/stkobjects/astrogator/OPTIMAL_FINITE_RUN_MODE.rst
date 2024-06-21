@@ -1,12 +1,12 @@
 OPTIMAL_FINITE_RUN_MODE
 =======================
 
-.. py:class:: OPTIMAL_FINITE_RUN_MODE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.OPTIMAL_FINITE_RUN_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: OPTIMAL_FINITE_RUN_MODE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 StateCalcSpeedOfLight
 =====================
 
-.. py:class:: StateCalcSpeedOfLight
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSpeedOfLight
 
-   Bases: py:obj:`~IStateCalcSpeedOfLight`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSpeedOfLight`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Speed Of Light Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcSpeedOfLight
 
 Overview
 --------

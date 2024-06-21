@@ -1,13 +1,13 @@
 IStateCalcImpactMassFlux
 ========================
 
-.. py:class:: IStateCalcImpactMassFlux
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcImpactMassFlux
 
    object
    
    Interface for AgAsStateCalcImpactMassFlux.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcImpactMassFlux
 
 Overview
 --------

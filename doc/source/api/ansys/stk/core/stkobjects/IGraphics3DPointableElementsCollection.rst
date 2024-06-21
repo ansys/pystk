@@ -1,13 +1,13 @@
 IGraphics3DPointableElementsCollection
 ======================================
 
-.. py:class:: IGraphics3DPointableElementsCollection
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection
 
    object
    
    List of Pointable Elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DPointableElementsCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~sort`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.sort`
               - Re-orders pointable elements.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsCollection._NewEnum`
 
 
 Import detail

@@ -1,12 +1,12 @@
 VEHICLE_PARTIAL_PASS_MEASUREMENT
 ================================
 
-.. py:class:: VEHICLE_PARTIAL_PASS_MEASUREMENT
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_PARTIAL_PASS_MEASUREMENT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_PARTIAL_PASS_MEASUREMENT
 
 Overview
 --------

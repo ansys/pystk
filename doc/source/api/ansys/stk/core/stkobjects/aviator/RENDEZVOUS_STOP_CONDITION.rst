@@ -1,12 +1,12 @@
 RENDEZVOUS_STOP_CONDITION
 =========================
 
-.. py:class:: RENDEZVOUS_STOP_CONDITION
+.. py:class:: ansys.stk.core.stkobjects.aviator.RENDEZVOUS_STOP_CONDITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: RENDEZVOUS_STOP_CONDITION
 
 Overview
 --------

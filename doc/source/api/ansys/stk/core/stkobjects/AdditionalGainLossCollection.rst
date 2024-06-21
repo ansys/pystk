@@ -1,13 +1,13 @@
 AdditionalGainLossCollection
 ============================
 
-.. py:class:: AdditionalGainLossCollection
+.. py:class:: ansys.stk.core.stkobjects.AdditionalGainLossCollection
 
-   Bases: py:obj:`~IAdditionalGainLossCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdditionalGainLossCollection`
 
    Class defining a collection of additional gains and losses.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AdditionalGainLossCollection
 
 Overview
 --------

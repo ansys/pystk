@@ -1,13 +1,13 @@
 AttitudeControlOptimalFiniteLagrange
 ====================================
 
-.. py:class:: AttitudeControlOptimalFiniteLagrange
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlOptimalFiniteLagrange
 
-   Bases: py:obj:`~IAttitudeControlOptimalFiniteLagrange`, py:obj:`~IAttitudeControlOptimalFinite`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlOptimalFiniteLagrange`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlOptimalFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Lagrange Interpolation attitude control for a optimal finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AttitudeControlOptimalFiniteLagrange
 
 Overview
 --------

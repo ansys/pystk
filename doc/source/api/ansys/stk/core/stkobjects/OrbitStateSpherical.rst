@@ -1,13 +1,13 @@
 OrbitStateSpherical
 ===================
 
-.. py:class:: OrbitStateSpherical
+.. py:class:: ansys.stk.core.stkobjects.OrbitStateSpherical
 
-   Bases: py:obj:`~IOrbitStateSpherical`, py:obj:`~IOrbitState`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitStateSpherical`, py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Spherical coordinate type: defines the path of an orbit using polar coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OrbitStateSpherical
 
 Overview
 --------

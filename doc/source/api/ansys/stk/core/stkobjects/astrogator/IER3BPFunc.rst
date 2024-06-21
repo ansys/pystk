@@ -1,13 +1,13 @@
 IER3BPFunc
 ==========
 
-.. py:class:: IER3BPFunc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IER3BPFunc
 
    object
    
    Properties for the ER3BP propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IER3BPFunc
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~secondary_name`
-            * - :py:meth:`~ephemeris_epoch`
-            * - :py:meth:`~true_anomaly`
-            * - :py:meth:`~eccentricity`
-            * - :py:meth:`~mass_parameter`
-            * - :py:meth:`~characteristic_distance`
-            * - :py:meth:`~characteristic_time`
-            * - :py:meth:`~characteristic_velocity`
-            * - :py:meth:`~characteristic_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.secondary_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.ephemeris_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.true_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.eccentricity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.mass_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.characteristic_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.characteristic_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.characteristic_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IER3BPFunc.characteristic_acceleration`
 
 
 Import detail

@@ -1,13 +1,13 @@
 CameraVideoRecording
 ====================
 
-.. py:class:: CameraVideoRecording
+.. py:class:: ansys.stk.core.graphics.CameraVideoRecording
 
-   Bases: py:obj:`~ICameraVideoRecording`
+   Bases: py:obj:`~ansys.stk.core.graphics.ICameraVideoRecording`
 
    Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: CameraVideoRecording
 
 Overview
 --------

@@ -1,12 +1,12 @@
 VEHICLE_LOOK_AHEAD_METHOD
 =========================
 
-.. py:class:: VEHICLE_LOOK_AHEAD_METHOD
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_LOOK_AHEAD_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_LOOK_AHEAD_METHOD
 
 Overview
 --------

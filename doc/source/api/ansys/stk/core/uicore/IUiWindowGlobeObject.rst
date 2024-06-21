@@ -1,13 +1,13 @@
 IUiWindowGlobeObject
 ====================
 
-.. py:class:: IUiWindowGlobeObject
+.. py:class:: ansys.stk.core.uicore.IUiWindowGlobeObject
 
    object
    
    Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: IUiWindowGlobeObject
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scene_id`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowGlobeObject.scene_id`
 
 
 Import detail

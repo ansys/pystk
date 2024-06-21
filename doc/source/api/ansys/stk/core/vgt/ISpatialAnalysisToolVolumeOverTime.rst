@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeOverTime
 ==================================
 
-.. py:class:: ISpatialAnalysisToolVolumeOverTime
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime
 
    object
    
    An over time volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeOverTime
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~duration_type`
-            * - :py:meth:`~reference_volume`
-            * - :py:meth:`~reference_intervals`
-            * - :py:meth:`~start_offset`
-            * - :py:meth:`~stop_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.duration_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.reference_volume`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.reference_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.start_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.stop_offset`
 
 
 Import detail
@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: reference_volume
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.reference_volume
-    :type: IAgCrdnVolume
+    :type: ISpatialAnalysisToolVolume
 
     Sets/Returns the reference volume.
 
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.reference_intervals
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The reference interval list for the over time volume.
 

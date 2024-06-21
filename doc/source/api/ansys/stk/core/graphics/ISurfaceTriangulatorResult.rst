@@ -1,13 +1,13 @@
 ISurfaceTriangulatorResult
 ==========================
 
-.. py:class:: ISurfaceTriangulatorResult
+.. py:class:: ansys.stk.core.graphics.ISurfaceTriangulatorResult
 
    object
    
    The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISurfaceTriangulatorResult
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~granularity`
-            * - :py:meth:`~boundary_indices`
-            * - :py:meth:`~boundary_positions`
-            * - :py:meth:`~boundary_positions_winding_order`
-            * - :py:meth:`~boundary_polyline_type`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.boundary_indices`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.boundary_positions`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.boundary_positions_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.boundary_polyline_type`
 
 
 Import detail

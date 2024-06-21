@@ -1,13 +1,13 @@
 IConfiguration
 ==============
 
-.. py:class:: IConfiguration
+.. py:class:: ansys.stk.core.stkobjects.aviator.IConfiguration
 
    object
    
    Interface used to change an aircraft's configuration for an Aviator mission.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IConfiguration
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_empty_cg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.set_empty_cg`
               - Set the aircraft's Empty CG position.
-            * - :py:meth:`~paste_configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.paste_configuration`
               - Paste the aircraft's configuration.
-            * - :py:meth:`~get_stations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.get_stations`
               - Get a collection of the aircraft's payload stations.
-            * - :py:meth:`~save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.save`
               - Save.
 
     .. tab-item:: Properties
@@ -35,20 +35,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~empty_weight`
-            * - :py:meth:`~max_landing_weight`
-            * - :py:meth:`~base_drag_index`
-            * - :py:meth:`~empty_cgx`
-            * - :py:meth:`~empty_cgy`
-            * - :py:meth:`~empty_cgz`
-            * - :py:meth:`~total_weight`
-            * - :py:meth:`~total_weight_max_fuel`
-            * - :py:meth:`~total_drag_index`
-            * - :py:meth:`~total_cgx`
-            * - :py:meth:`~total_cgy`
-            * - :py:meth:`~total_cgz`
-            * - :py:meth:`~total_capacity`
-            * - :py:meth:`~initial_fuel_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.empty_weight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.max_landing_weight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.base_drag_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.empty_cgx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.empty_cgy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.empty_cgz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_weight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_weight_max_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_drag_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_cgx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_cgy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_cgz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_capacity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.initial_fuel_state`
 
 
 Import detail

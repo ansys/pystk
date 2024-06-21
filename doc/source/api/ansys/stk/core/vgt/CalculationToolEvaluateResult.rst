@@ -1,13 +1,13 @@
 CalculationToolEvaluateResult
 =============================
 
-.. py:class:: CalculationToolEvaluateResult
+.. py:class:: ansys.stk.core.vgt.CalculationToolEvaluateResult
 
-   Bases: py:obj:`~ICalculationToolEvaluateResult`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolEvaluateResult`
 
    Represents the results of evaluating a scalar component.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolEvaluateResult
 
 Overview
 --------

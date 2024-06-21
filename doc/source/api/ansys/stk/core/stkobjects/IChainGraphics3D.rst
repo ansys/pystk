@@ -1,13 +1,13 @@
 IChainGraphics3D
 ================
 
-.. py:class:: IChainGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IChainGraphics3D
 
    object
    
    3D graphics properties of a chain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainGraphics3D
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~data_display`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics3D.data_display`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: data_display
     :canonical: ansys.stk.core.stkobjects.IChainGraphics3D.data_display
-    :type: IAgVODataDisplayCollection
+    :type: IGraphics3DDataDisplayCollection
 
     Get the chains's 3D data display properties.
 

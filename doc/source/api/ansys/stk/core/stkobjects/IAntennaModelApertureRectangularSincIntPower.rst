@@ -1,13 +1,13 @@
 IAntennaModelApertureRectangularSincIntPower
 ============================================
 
-.. py:class:: IAntennaModelApertureRectangularSincIntPower
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower
 
    object
    
    Provide access to the properties and methods defining a rectangular sinc integer power aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelApertureRectangularSincIntPower
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_mainlobe_gain`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~x_dimension`
-            * - :py:meth:`~y_dimension`
-            * - :py:meth:`~x_beamwidth`
-            * - :py:meth:`~y_beamwidth`
-            * - :py:meth:`~function_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.compute_mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.x_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.y_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.x_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.y_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincIntPower.function_power`
 
 
 Import detail

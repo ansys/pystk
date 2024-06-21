@@ -1,13 +1,13 @@
 IAircraftAccelerationMode
 =========================
 
-.. py:class:: IAircraftAccelerationMode
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftAccelerationMode
 
    object
    
    Interface used to set the Acceleration Mode for the Advanced Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftAccelerationMode
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~accel_mode`
-            * - :py:meth:`~accel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAccelerationMode.accel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAccelerationMode.accel_g`
 
 
 Import detail

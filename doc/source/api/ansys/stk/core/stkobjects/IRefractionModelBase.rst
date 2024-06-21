@@ -1,13 +1,13 @@
 IRefractionModelBase
 ====================
 
-.. py:class:: IRefractionModelBase
+.. py:class:: ansys.stk.core.stkobjects.IRefractionModelBase
 
    object
    
    A base interface for the Refraction Models.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRefractionModelBase
 
 Overview
 --------

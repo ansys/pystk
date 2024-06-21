@@ -1,13 +1,13 @@
 ISatelliteGraphics
 ==================
 
-.. py:class:: ISatelliteGraphics
+.. py:class:: ansys.stk.core.stkobjects.ISatelliteGraphics
 
    object
    
    Satellite 2D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISatelliteGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.set_attributes_type`
               - Set the attributes type.
-            * - :py:meth:`~is_attributes_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.is_attributes_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,25 +31,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~attributes_type`
-            * - :py:meth:`~attributes_supported_types`
-            * - :py:meth:`~attributes`
-            * - :py:meth:`~time_events`
-            * - :py:meth:`~passes`
-            * - :py:meth:`~pass_data`
-            * - :py:meth:`~resolution`
-            * - :py:meth:`~elev_contours`
-            * - :py:meth:`~saa`
-            * - :py:meth:`~range_contours`
-            * - :py:meth:`~lighting`
-            * - :py:meth:`~swath`
-            * - :py:meth:`~ground_ellipses`
-            * - :py:meth:`~label_notes`
-            * - :py:meth:`~ground_track_central_body_display`
-            * - :py:meth:`~use_inst_name_label`
-            * - :py:meth:`~label_name`
-            * - :py:meth:`~is_object_graphics_visible`
-            * - :py:meth:`~radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.attributes_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.time_events`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.passes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.pass_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.saa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.range_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.lighting`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.swath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.ground_ellipses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.label_notes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.ground_track_central_body_display`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.label_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.radar_cross_section`
 
 
 Import detail
@@ -77,79 +77,79 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.attributes
-    :type: IAgVeGfxAttributes
+    :type: IVehicleGraphics2DAttributes
 
     Get the satellite's 2D Graphics Attributes.
 
 .. py:property:: time_events
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.time_events
-    :type: IAgVeGfxTimeEventsCollection
+    :type: IVehicleGraphics2DTimeEventsCollection
 
     Get the satellite's TimeEvents properties.
 
 .. py:property:: passes
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.passes
-    :type: IAgVeGfxPasses
+    :type: IVehicleGraphics2DPasses
 
     Get the pass display settings of the satellite's Pass properties.
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.pass_data
-    :type: IAgVeGfxOrbitPassData
+    :type: IVehicleGraphics2DOrbitPassData
 
     Get the leading/trailing ground track and orbit settings of the satellite's Pass properties.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.resolution
-    :type: IAgVeGfxPassResolution
+    :type: IVehicleGraphics2DPassResolution
 
     Get the path resolution settings of the satellite's Pass properties.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.elev_contours
-    :type: IAgVeGfxElevContours
+    :type: IVehicleGraphics2DElevContours
 
     Get the satellite's Elevation Contours properties.
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.saa
-    :type: IAgVeGfxSAA
+    :type: IVehicleGraphics2DSAA
 
     Get the satellite's South Atlantic Anomaly Contour properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.range_contours
-    :type: IAgGfxRangeContours
+    :type: IGraphics2DRangeContours
 
     Get the satellite's Range Contours properties.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.lighting
-    :type: IAgVeGfxLighting
+    :type: IVehicleGraphics2DLighting
 
     Get the satellite's Lighting properties.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.swath
-    :type: IAgVeGfxSwath
+    :type: IVehicleGraphics2DSwath
 
     Get the satellite's Swath properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.ground_ellipses
-    :type: IAgVeGfxGroundEllipsesCollection
+    :type: IVehicleGraphics2DGroundEllipsesCollection
 
     Get the satellite's Ground Ellipses properties.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.label_notes
-    :type: IAgLabelNoteCollection
+    :type: ILabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
 .. py:property:: ground_track_central_body_display
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.ground_track_central_body_display
-    :type: IAgVeCentralBodies
+    :type: IVehicleCentralBodies
 
     Gets the ground track display central bodies.
 
@@ -173,7 +173,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ISatelliteGraphics.radar_cross_section
-    :type: IAgRadarCrossSectionGraphics
+    :type: IRadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

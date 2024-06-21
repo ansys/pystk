@@ -1,13 +1,13 @@
 AreaTypePatternCollection
 =========================
 
-.. py:class:: AreaTypePatternCollection
+.. py:class:: ansys.stk.core.stkobjects.AreaTypePatternCollection
 
-   Bases: py:obj:`~IAreaTypeData`, py:obj:`~IAreaTypePatternCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAreaTypeData`, py:obj:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection`
 
    Class defining the list of coordinates of the AreaTarget AreaType.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AreaTypePatternCollection
 
 Overview
 --------

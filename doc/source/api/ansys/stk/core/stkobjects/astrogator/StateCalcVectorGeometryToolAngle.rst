@@ -1,13 +1,13 @@
 StateCalcVectorGeometryToolAngle
 ================================
 
-.. py:class:: StateCalcVectorGeometryToolAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVectorGeometryToolAngle
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVectorGeometryToolAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorGeometryToolAngle`
 
    Vector Geometry Tool Angle Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcVectorGeometryToolAngle
 
 Overview
 --------

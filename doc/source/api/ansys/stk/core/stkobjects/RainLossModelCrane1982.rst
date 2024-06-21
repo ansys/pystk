@@ -1,13 +1,13 @@
 RainLossModelCrane1982
 ======================
 
-.. py:class:: RainLossModelCrane1982
+.. py:class:: ansys.stk.core.stkobjects.RainLossModelCrane1982
 
-   Bases: py:obj:`~IRainLossModelCrane1982`, py:obj:`~IRainLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRainLossModelCrane1982`, py:obj:`~ansys.stk.core.stkobjects.IRainLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a rain loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RainLossModelCrane1982
 
 Overview
 --------

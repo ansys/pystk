@@ -1,13 +1,13 @@
 UserRunwaySource
 ================
 
-.. py:class:: UserRunwaySource
+.. py:class:: ansys.stk.core.stkobjects.aviator.UserRunwaySource
 
-   Bases: py:obj:`~IUserRunwaySource`, py:obj:`~ICatalogSource`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IUserRunwaySource`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
 
    Class defining the user runways in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: UserRunwaySource
 
 Overview
 --------

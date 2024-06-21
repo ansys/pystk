@@ -1,13 +1,13 @@
 ISurfaceShapesResult
 ====================
 
-.. py:class:: ISurfaceShapesResult
+.. py:class:: ansys.stk.core.graphics.ISurfaceShapesResult
 
    object
    
    Represents the boundary positions of a shape on the surface computed from by a surface shapes method.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISurfaceShapesResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~positions`
-            * - :py:meth:`~positions_winding_order`
-            * - :py:meth:`~polyline_type`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesResult.positions`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesResult.positions_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesResult.polyline_type`
 
 
 Import detail

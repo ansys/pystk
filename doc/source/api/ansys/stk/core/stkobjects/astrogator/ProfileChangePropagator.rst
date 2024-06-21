@@ -1,13 +1,13 @@
 ProfileChangePropagator
 =======================
 
-.. py:class:: ProfileChangePropagator
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileChangePropagator
 
-   Bases: py:obj:`~IProfileChangePropagator`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileChangePropagator`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Change Propagator profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileChangePropagator
 
 Overview
 --------

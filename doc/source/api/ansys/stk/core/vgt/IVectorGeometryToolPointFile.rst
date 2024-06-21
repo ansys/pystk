@@ -1,13 +1,13 @@
 IVectorGeometryToolPointFile
 ============================
 
-.. py:class:: IVectorGeometryToolPointFile
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointFile
 
    object
    
    Point specified by data from a file.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFile.filename`
 
 
 Import detail

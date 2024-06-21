@@ -1,13 +1,13 @@
 IRadarCrossSectionModel
 =======================
 
-.. py:class:: IRadarCrossSectionModel
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionModel
 
    object
    
    Provide access to the properties and methods defining a radar cross section model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~frequency_bands`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionModel.frequency_bands`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: frequency_bands
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionModel.frequency_bands
-    :type: IAgRadarCrossSectionFrequencyBandCollection
+    :type: IRadarCrossSectionFrequencyBandCollection
 
     Gets the RCS frequency band collection.
 

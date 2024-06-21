@@ -1,13 +1,13 @@
 ITransferFunctionInputBackOffOutputBackOffTableRow
 ==================================================
 
-.. py:class:: ITransferFunctionInputBackOffOutputBackOffTableRow
+.. py:class:: ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTableRow
 
    object
    
    Provide access to the row of an input back off vs output back off table.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransferFunctionInputBackOffOutputBackOffTableRow
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_back_off`
-            * - :py:meth:`~output_back_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTableRow.input_back_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTableRow.output_back_off`
 
 
 Import detail

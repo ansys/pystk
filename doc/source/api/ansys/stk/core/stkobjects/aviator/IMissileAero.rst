@@ -1,13 +1,13 @@
 IMissileAero
 ============
 
-.. py:class:: IMissileAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileAero
 
    object
    
    Interface used to access the aerodynamics options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileAero
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~aero_strategy`
-            * - :py:meth:`~mode_as_simple`
-            * - :py:meth:`~mode_as_external`
-            * - :py:meth:`~mode_as_advanced`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAero.aero_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_simple`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_external`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_advanced`
 
 
 Import detail
@@ -45,19 +45,19 @@ Property detail
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_simple
-    :type: IAgAvtrMissileSimpleAero
+    :type: IMissileSimpleAero
 
     Get the interface for a simple aerodynamics strategy.
 
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_external
-    :type: IAgAvtrMissileExternalAero
+    :type: IMissileExternalAero
 
     Get the interface for an external file aerodynamics strategy.
 
 .. py:property:: mode_as_advanced
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_advanced
-    :type: IAgAvtrMissileAdvancedAero
+    :type: IMissileAdvancedAero
 
     Get the interface for an advanced aerodynamics strategy.
 

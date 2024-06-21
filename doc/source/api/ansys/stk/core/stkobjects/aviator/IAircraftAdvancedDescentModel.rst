@@ -1,13 +1,13 @@
 IAircraftAdvancedDescentModel
 =============================
 
-.. py:class:: IAircraftAdvancedDescentModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel
 
    object
    
    Interface used to access the advanced descent model options for a descent model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftAdvancedDescentModel
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_descent_override_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.set_descent_override_airspeed`
               - Set the override airspeed and airspeed type.
-            * - :py:meth:`~set_airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.set_airspeed_limit`
               - Set the airspeed limit and airspeed type below the altitude threshold.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -33,16 +33,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~descent_speed_type`
-            * - :py:meth:`~descent_stall_speed_ratio`
-            * - :py:meth:`~descent_override_airspeed_type`
-            * - :py:meth:`~descent_override_airspeed`
-            * - :py:meth:`~speedbrakes`
-            * - :py:meth:`~use_airspeed_limit`
-            * - :py:meth:`~altitude_limit`
-            * - :py:meth:`~airspeed_limit_type`
-            * - :py:meth:`~airspeed_limit`
-            * - :py:meth:`~compute_delta_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_speed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_stall_speed_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_override_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_override_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.speedbrakes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.use_airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.altitude_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.airspeed_limit_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.compute_delta_altitude`
 
 
 Import detail

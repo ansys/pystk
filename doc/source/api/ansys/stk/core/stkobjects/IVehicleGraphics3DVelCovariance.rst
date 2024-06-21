@@ -1,13 +1,13 @@
 IVehicleGraphics3DVelCovariance
 ===============================
 
-.. py:class:: IVehicleGraphics3DVelCovariance
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance
 
    object
    
    Interface for 3D velocity covariance ellipsoids.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DVelCovariance
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.set_attributes_type`
               - Set the velocity ellipsoid attributes type.
-            * - :py:meth:`~is_attributes_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.is_attributes_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scale`
-            * - :py:meth:`~attributes_type`
-            * - :py:meth:`~attributes_supported_types`
-            * - :py:meth:`~attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.attributes_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.attributes`
 
 
 Import detail
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.attributes
-    :type: IAgVeVOAttributes
+    :type: IVehicleGraphics3DAttributes
 
     Get the velocity ellipsoid graphics attributes.
 

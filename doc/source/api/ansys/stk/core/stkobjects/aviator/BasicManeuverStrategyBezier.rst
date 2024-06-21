@@ -1,13 +1,13 @@
 BasicManeuverStrategyBezier
 ===========================
 
-.. py:class:: BasicManeuverStrategyBezier
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier
 
-   Bases: py:obj:`~IBasicManeuverStrategyBezier`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Bezier strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyBezier
 
 Overview
 --------

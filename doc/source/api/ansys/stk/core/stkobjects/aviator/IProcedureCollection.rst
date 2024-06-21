@@ -1,13 +1,13 @@
 IProcedureCollection
 ====================
 
-.. py:class:: IProcedureCollection
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureCollection
 
    object
    
    Interface used to access the collection of procedures for a given phase in a mission. Use this interface to Get, Add, or Remove a procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection.add`
               - Add a procedure with the specified site at the end of the current phase.
-            * - :py:meth:`~add_at_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection.add_at_index`
               - Add a procedure with the specified site at the given index.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection.remove`
               - Remove given procedure.
-            * - :py:meth:`~remove_at_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection.remove_at_index`
               - Remove procedure at the given index.
-            * - :py:meth:`~enable_auto_propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection.enable_auto_propagate`
               - Enable automatically propagating the mission. Aviator will automatically propagate before adding a procedure, ensuring a valid initial state for the new procedure.
-            * - :py:meth:`~disable_auto_propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection.disable_auto_propagate`
               - Disable automatically propagating the mission. Use with caution. Aviator will not automatically propagate before adding new procedures.
 
     .. tab-item:: Properties
@@ -41,8 +41,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureCollection._NewEnum`
 
 
 Import detail

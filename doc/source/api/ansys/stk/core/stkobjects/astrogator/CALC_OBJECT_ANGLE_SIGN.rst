@@ -1,12 +1,12 @@
 CALC_OBJECT_ANGLE_SIGN
 ======================
 
-.. py:class:: CALC_OBJECT_ANGLE_SIGN
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_ANGLE_SIGN
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CALC_OBJECT_ANGLE_SIGN
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IPolylinePrimitive
 ==================
 
-.. py:class:: IPolylinePrimitive
+.. py:class:: ansys.stk.core.graphics.IPolylinePrimitive
 
    object
    
    Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPolylinePrimitive
 
 Overview
 --------
@@ -20,51 +20,51 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set`
               - Define the positions for a polyline primitive. The polyline is rendered in its reference frame.
-            * - :py:meth:`~set_with_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_with_colors`
               - Define the positions and colors of a polyline. The polyline is rendered in its reference frame.
-            * - :py:meth:`~set_with_colors_and_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_with_colors_and_hint`
               - Define the positions and colors of a polyline. The polyline is rendered in its reference frame. renderPassHint is provided for efficiency.
-            * - :py:meth:`~set_with_surface_shapes_result`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_with_surface_shapes_result`
               - Define the positions of a polyline using the positions of the specified surfaceShapesResult.
-            * - :py:meth:`~set_with_surface_triangulator_result`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_with_surface_triangulator_result`
               - Define the positions of a polyline using the boundary positions of the specified surfaceTriangulatorResult.
-            * - :py:meth:`~set_with_solid_triangulator_result`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_with_solid_triangulator_result`
               - Define the positions of a polyline using the outline positions of the specified solidTriangulatorResult.
-            * - :py:meth:`~set_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_cartographic`
               - For convenience. Defines the positions of a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_cartographic_with_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_cartographic_with_colors`
               - For convenience. Defines the positions and colors of a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_cartographic_with_colors_and_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_cartographic_with_colors_and_hint`
               - For convenience. Defines the positions and colors of a polyline using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_subset`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_subset`
               - Define the positions of a polyline using a subset of input positions.
-            * - :py:meth:`~set_subset_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_subset_cartographic`
               - For convenience. Defines the positions of a polyline using a subset of input cartographic positions. This is equivalent to converting the subset of positions to cartesian and calling SetSubset.
-            * - :py:meth:`~set_partial`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial`
               - Update a subset of positions in a polyline.
-            * - :py:meth:`~set_partial_with_indices_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_with_indices_order`
               - Update a subset of positions in a polyline.
-            * - :py:meth:`~set_partial_with_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_with_colors`
               - Update a subset of positions and/or colors in a polyline.
-            * - :py:meth:`~set_partial_with_colors_indices_order_and_render_pass_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_with_colors_indices_order_and_render_pass_hint`
               - Update a subset of positions and/or colors in a polyline.
-            * - :py:meth:`~set_partial_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_cartographic`
               - For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_indices_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_cartographic_with_indices_order`
               - For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_colors`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_cartographic_with_colors`
               - For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_colors_indices_order_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_cartographic_with_colors_indices_order_and_render_pass`
               - For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_with_colors_and_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_with_colors_and_optional_parameters`
               - Define the positions, colors, and/or optional point properties of a polyline. The polyline is rendered in its reference frame.
-            * - :py:meth:`~set_cartographic_with_colors_and_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_cartographic_with_colors_and_optional_parameters`
               - For convenience. Defines the positions, colors, and/or optional point properties of a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_partial_with_colors_and_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_with_colors_and_optional_parameters`
               - Update a subset of positions, colors, and/or optional point properties in a polyline.
-            * - :py:meth:`~set_partial_cartographic_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_partial_cartographic_with_optional_parameters`
               - For convenience. Updates a subset of positions, colors, and/or optional point properties in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     .. tab-item:: Properties
@@ -73,18 +73,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~width`
-            * - :py:meth:`~minimum_width_supported`
-            * - :py:meth:`~maximum_width_supported`
-            * - :py:meth:`~position_interpolator`
-            * - :py:meth:`~polyline_type`
-            * - :py:meth:`~set_hint`
-            * - :py:meth:`~display_outline`
-            * - :py:meth:`~outline_color`
-            * - :py:meth:`~outline_translucency`
-            * - :py:meth:`~outline_width`
-            * - :py:meth:`~per_item_picking_enabled`
-            * - :py:meth:`~central_body_clipped`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.width`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.minimum_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.maximum_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.position_interpolator`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.polyline_type`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.display_outline`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.outline_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.outline_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.outline_width`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.per_item_picking_enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.central_body_clipped`
 
 
 Import detail
@@ -118,7 +118,7 @@ Property detail
 
 .. py:property:: position_interpolator
     :canonical: ansys.stk.core.graphics.IPolylinePrimitive.position_interpolator
-    :type: IAgStkGraphicsPositionInterpolator
+    :type: IPositionInterpolator
 
     Gets the position interpolator applied to positions passed to Set, SetCartographic, SetSubset, and SetSubsetCartographic methods. When this property is null, linear interpolation is used.
 

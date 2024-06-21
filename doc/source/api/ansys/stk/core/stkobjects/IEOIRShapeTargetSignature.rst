@@ -1,13 +1,13 @@
 IEOIRShapeTargetSignature
 =========================
 
-.. py:class:: IEOIRShapeTargetSignature
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeTargetSignature
 
    IEOIRShapeObject
    
    A target signature shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeTargetSignature
 
 Overview
 --------

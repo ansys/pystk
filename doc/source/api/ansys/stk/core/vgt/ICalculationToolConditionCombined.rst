@@ -1,13 +1,13 @@
 ICalculationToolConditionCombined
 =================================
 
-.. py:class:: ICalculationToolConditionCombined
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionCombined
 
    object
    
    Define a condition which combines multiple conditions.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionCombined
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_all_conditions`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.get_all_conditions`
               - Get all conditions that are being combined.
-            * - :py:meth:`~set_all_conditions`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.set_all_conditions`
               - Set all conditions to be combined.
-            * - :py:meth:`~get_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.get_condition`
               - Get the condition at the position specified.
-            * - :py:meth:`~set_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.set_condition`
               - Set the condition at the position specified.
-            * - :py:meth:`~remove_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.remove_condition`
               - Remove the condition at the position specified.
-            * - :py:meth:`~add_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.add_condition`
               - Add a condition at the end of the list.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~combine_operation`
-            * - :py:meth:`~condition_count`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.combine_operation`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.condition_count`
 
 
 Import detail

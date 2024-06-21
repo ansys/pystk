@@ -1,13 +1,13 @@
 IGradientDetectFilterFactory
 ============================
 
-.. py:class:: IGradientDetectFilterFactory
+.. py:class:: ansys.stk.core.graphics.IGradientDetectFilterFactory
 
    object
    
    Apply a convolution filter to detect gradients in the source raster.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGradientDetectFilterFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IGradientDetectFilterFactory.initialize`
               - Initialize a new instance.
-            * - :py:meth:`~initialize_with_method`
+            * - :py:attr:`~ansys.stk.core.graphics.IGradientDetectFilterFactory.initialize_with_method`
               - Initialize a new instance with specified gradient detect method.
 
 

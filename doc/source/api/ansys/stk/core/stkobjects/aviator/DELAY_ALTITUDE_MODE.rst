@@ -1,12 +1,12 @@
 DELAY_ALTITUDE_MODE
 ===================
 
-.. py:class:: DELAY_ALTITUDE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.DELAY_ALTITUDE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: DELAY_ALTITUDE_MODE
 
 Overview
 --------

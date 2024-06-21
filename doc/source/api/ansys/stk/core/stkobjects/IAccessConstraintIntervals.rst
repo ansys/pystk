@@ -1,13 +1,13 @@
 IAccessConstraintIntervals
 ==========================
 
-.. py:class:: IAccessConstraintIntervals
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintIntervals
 
    IAccessConstraint
    
    Access Constraint used for time intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintIntervals
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~action_type`
-            * - :py:meth:`~intervals`
-            * - :py:meth:`~file_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals.action_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals.intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals.file_path`
 
 
 Import detail
@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IAccessConstraintIntervals.intervals
-    :type: IAgIntervalCollection
+    :type: IIntervalCollection
 
     Gets the collection of intervals.
 

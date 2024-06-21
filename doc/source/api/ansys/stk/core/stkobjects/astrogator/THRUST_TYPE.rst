@@ -1,12 +1,12 @@
 THRUST_TYPE
 ===========
 
-.. py:class:: THRUST_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.THRUST_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: THRUST_TYPE
 
 Overview
 --------

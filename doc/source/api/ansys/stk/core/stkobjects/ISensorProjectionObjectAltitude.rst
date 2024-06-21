@@ -1,13 +1,13 @@
 ISensorProjectionObjectAltitude
 ===============================
 
-.. py:class:: ISensorProjectionObjectAltitude
+.. py:class:: ansys.stk.core.stkobjects.ISensorProjectionObjectAltitude
 
    object
    
    IAgSnProjObjectAlt Interface for setting projection altitude options for object altitude for a sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorProjectionObjectAltitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~exclude_horizon_arcs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionObjectAltitude.exclude_horizon_arcs`
 
 
 Import detail

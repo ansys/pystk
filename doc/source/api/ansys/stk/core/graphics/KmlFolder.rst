@@ -1,13 +1,13 @@
 KmlFolder
 =========
 
-.. py:class:: KmlFolder
+.. py:class:: ansys.stk.core.graphics.KmlFolder
 
-   Bases: py:obj:`~IKmlFolder`, py:obj:`~IKmlContainer`, py:obj:`~IKmlFeature`
+   Bases: py:obj:`~ansys.stk.core.graphics.IKmlFolder`, py:obj:`~ansys.stk.core.graphics.IKmlContainer`, py:obj:`~ansys.stk.core.graphics.IKmlFeature`
 
    A KML folder.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KmlFolder
 
 Overview
 --------

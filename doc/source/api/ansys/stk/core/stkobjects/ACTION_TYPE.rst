@@ -1,12 +1,12 @@
 ACTION_TYPE
 ===========
 
-.. py:class:: ACTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ACTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ACTION_TYPE
 
 Overview
 --------

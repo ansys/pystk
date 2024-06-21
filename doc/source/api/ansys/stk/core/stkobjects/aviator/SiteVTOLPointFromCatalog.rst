@@ -1,13 +1,13 @@
 SiteVTOLPointFromCatalog
 ========================
 
-.. py:class:: SiteVTOLPointFromCatalog
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteVTOLPointFromCatalog
 
-   Bases: py:obj:`~ISiteVTOLPointFromCatalog`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPointFromCatalog`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a VTOL point from catalog site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteVTOLPointFromCatalog
 
 Overview
 --------

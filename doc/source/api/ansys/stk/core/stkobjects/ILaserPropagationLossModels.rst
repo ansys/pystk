@@ -1,13 +1,13 @@
 ILaserPropagationLossModels
 ===========================
 
-.. py:class:: ILaserPropagationLossModels
+.. py:class:: ansys.stk.core.stkobjects.ILaserPropagationLossModels
 
    object
    
    Provide access to laser propagation loss models.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILaserPropagationLossModels
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_atmospheric_loss_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels.set_atmospheric_loss_model`
               - Set the current atmospheric absorption loss model by name.
-            * - :py:meth:`~set_tropospheric_scintillation_loss_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels.set_tropospheric_scintillation_loss_model`
               - Set the current tropospheric scintillation loss model by name.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_atmospheric_loss_model`
-            * - :py:meth:`~atmospheric_loss_model`
-            * - :py:meth:`~enable_tropospheric_scintillation_loss_model`
-            * - :py:meth:`~tropospheric_scintillation_loss_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels.enable_atmospheric_loss_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels.atmospheric_loss_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels.enable_tropospheric_scintillation_loss_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels.tropospheric_scintillation_loss_model`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: atmospheric_loss_model
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationLossModels.atmospheric_loss_model
-    :type: IAgLaserAtmosphericLossModel
+    :type: ILaserAtmosphericLossModel
 
     Gets the laser atmospheric absorption loss model.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: tropospheric_scintillation_loss_model
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationLossModels.tropospheric_scintillation_loss_model
-    :type: IAgLaserTroposphericScintillationLossModel
+    :type: ILaserTroposphericScintillationLossModel
 
     Gets the laser propagation loss model.
 

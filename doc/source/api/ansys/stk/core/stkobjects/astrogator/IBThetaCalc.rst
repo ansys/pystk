@@ -1,13 +1,13 @@
 IBThetaCalc
 ===========
 
-.. py:class:: IBThetaCalc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBThetaCalc
 
    object
    
    Properties for a BTheta calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBThetaCalc
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_body_name`
-            * - :py:meth:`~reference_vector_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBThetaCalc.target_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBThetaCalc.reference_vector_name`
 
 
 Import detail

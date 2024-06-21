@@ -1,13 +1,13 @@
 IEOIRShapeCoupler
 =================
 
-.. py:class:: IEOIRShapeCoupler
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeCoupler
 
    IEOIRShapeObject
    
    A coupler shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeCoupler
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~radius1`
-            * - :py:meth:`~height`
-            * - :py:meth:`~radius2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCoupler.radius1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCoupler.height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCoupler.radius2`
 
 
 Import detail

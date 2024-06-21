@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeInview
 ================================
 
-.. py:class:: ISpatialAnalysisToolVolumeInview
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeInview
 
    object
    
    An Inview volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeInview
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~constraint_object`
-            * - :py:meth:`~light_time_delay`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeInview.constraint_object`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeInview.light_time_delay`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: light_time_delay
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeInview.light_time_delay
-    :type: IAgCrdnLightTimeDelay
+    :type: ITimeToolLightTimeDelay
 
     Returns Light Time Delay options parameters.
 

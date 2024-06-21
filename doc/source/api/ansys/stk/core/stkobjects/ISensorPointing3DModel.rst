@@ -1,13 +1,13 @@
 ISensorPointing3DModel
 ======================
 
-.. py:class:: ISensorPointing3DModel
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointing3DModel
 
    object
    
    IAgSnPt3DModel Interface for a sensor with pointing along one of the available elements of a 3D model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointing3DModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~attach_name`
-            * - :py:meth:`~available_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointing3DModel.attach_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointing3DModel.available_elements`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IStateCalcGeodeticElem
 ======================
 
-.. py:class:: IStateCalcGeodeticElem
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcGeodeticElem
 
    object
    
    Properties for a Geodetic Element calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcGeodeticElem
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGeodeticElem.central_body_name`
 
 
 Import detail

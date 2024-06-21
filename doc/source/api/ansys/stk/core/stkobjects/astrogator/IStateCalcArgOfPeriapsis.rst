@@ -1,13 +1,13 @@
 IStateCalcArgOfPeriapsis
 ========================
 
-.. py:class:: IStateCalcArgOfPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcArgOfPeriapsis
 
    object
    
    Properties for an Argument of Periapsis calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcArgOfPeriapsis
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcArgOfPeriapsis.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcArgOfPeriapsis.element_type`
 
 
 Import detail

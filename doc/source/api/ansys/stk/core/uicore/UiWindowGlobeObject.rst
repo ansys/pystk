@@ -1,13 +1,13 @@
 UiWindowGlobeObject
 ===================
 
-.. py:class:: UiWindowGlobeObject
+.. py:class:: ansys.stk.core.uicore.UiWindowGlobeObject
 
-   Bases: py:obj:`~IUiWindowGlobeObject`
+   Bases: py:obj:`~ansys.stk.core.uicore.IUiWindowGlobeObject`
 
    Provide methods and properties to manipulate the 3D globe.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: UiWindowGlobeObject
 
 Overview
 --------

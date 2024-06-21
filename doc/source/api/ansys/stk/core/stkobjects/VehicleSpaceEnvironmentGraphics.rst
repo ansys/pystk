@@ -1,13 +1,13 @@
 VehicleSpaceEnvironmentGraphics
 ===============================
 
-.. py:class:: VehicleSpaceEnvironmentGraphics
+.. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentGraphics
 
-   Bases: py:obj:`~IVehicleSpaceEnvironmentGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentGraphics`
 
    Graphics settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSpaceEnvironmentGraphics
 
 Overview
 --------

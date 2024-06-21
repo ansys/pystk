@@ -1,13 +1,13 @@
 ClassicalSizeShapeSemimajorAxis
 ===============================
 
-.. py:class:: ClassicalSizeShapeSemimajorAxis
+.. py:class:: ansys.stk.core.stkobjects.ClassicalSizeShapeSemimajorAxis
 
-   Bases: py:obj:`~IClassicalSizeShapeSemimajorAxis`, py:obj:`~IClassicalSizeShape`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShapeSemimajorAxis`, py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Orbit size and shape using Semimajor Axis and Eccentricity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ClassicalSizeShapeSemimajorAxis
 
 Overview
 --------

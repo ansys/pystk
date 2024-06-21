@@ -1,13 +1,13 @@
 CalculationToolSamplingBasic
 ============================
 
-.. py:class:: CalculationToolSamplingBasic
+.. py:class:: ansys.stk.core.vgt.CalculationToolSamplingBasic
 
-   Bases: py:obj:`~ICalculationToolSamplingBasic`, py:obj:`~IAnalysisWorkbenchSampling`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolSamplingBasic`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchSampling`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolSamplingBasic
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleGraphics2DAttributesBasic
 =================================
 
-.. py:class:: IVehicleGraphics2DAttributesBasic
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic
 
    IVehicleGraphics2DAttributes
    
    Basic 2D Graphics Attributes for a vehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DAttributesBasic
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit`
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~label_visible`
-            * - :py:meth:`~line`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.inherit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.line`
 
 
 Import detail
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: line
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.line
-    :type: IAgVeGfxLine
+    :type: IVehicleGraphics2DLine
 
     Get the line display properties for the vehicle.
 

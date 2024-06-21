@@ -1,12 +1,12 @@
 LAUNCH_DYN_STATE_BEARING_REFERENCE
 ==================================
 
-.. py:class:: LAUNCH_DYN_STATE_BEARING_REFERENCE
+.. py:class:: ansys.stk.core.stkobjects.aviator.LAUNCH_DYN_STATE_BEARING_REFERENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: LAUNCH_DYN_STATE_BEARING_REFERENCE
 
 Overview
 --------

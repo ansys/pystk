@@ -1,13 +1,13 @@
 IBasicManeuverStrategyAutopilotProf
 ===================================
 
-.. py:class:: IBasicManeuverStrategyAutopilotProf
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf
 
    object
    
    Interface used to access options for the Autopilot - Vertical Plane Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyAutopilotProf
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_mode`
-            * - :py:meth:`~absolute_altitude`
-            * - :py:meth:`~relative_altitude_change`
-            * - :py:meth:`~altitude_rate`
-            * - :py:meth:`~fpa`
-            * - :py:meth:`~altitude_control_mode`
-            * - :py:meth:`~control_altitude_rate_value`
-            * - :py:meth:`~control_fpa_value`
-            * - :py:meth:`~control_limit_mode`
-            * - :py:meth:`~max_pitch_rate`
-            * - :py:meth:`~fly_ballistic`
-            * - :py:meth:`~damping_ratio`
-            * - :py:meth:`~airspeed_options`
-            * - :py:meth:`~compensate_for_coriolis_accel`
-            * - :py:meth:`~stop_when_conditions_met`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.altitude_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.absolute_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.relative_altitude_change`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.altitude_control_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.control_altitude_rate_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.control_fpa_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.control_limit_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.max_pitch_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.fly_ballistic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.damping_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.stop_when_conditions_met`
 
 
 Import detail
@@ -122,7 +122,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

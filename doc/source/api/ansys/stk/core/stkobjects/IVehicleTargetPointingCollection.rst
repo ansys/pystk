@@ -1,13 +1,13 @@
 IVehicleTargetPointingCollection
 ================================
 
-.. py:class:: IVehicleTargetPointingCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleTargetPointingCollection
 
    object
    
    Attitude Targets.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleTargetPointingCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.contains`
               - Return true if the collection contains the specified target.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.remove`
               - Remove the element using the object path.
-            * - :py:meth:`~add_position_as_target`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.add_position_as_target`
               - Add the specified LLA position to the collection of targets. Latitude param uses Latitude Dimension, Longitude param uses Longitude Dimension. Alt param uses Distance Dimension.
 
     .. tab-item:: Properties
@@ -41,9 +41,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~available_targets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.available_targets`
 
 
 Import detail

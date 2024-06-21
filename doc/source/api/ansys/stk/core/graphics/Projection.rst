@@ -1,13 +1,13 @@
 Projection
 ==========
 
-.. py:class:: Projection
+.. py:class:: ansys.stk.core.graphics.Projection
 
-   Bases: py:obj:`~IProjection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IProjection`
 
    A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: Projection
 
 Overview
 --------

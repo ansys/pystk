@@ -1,13 +1,13 @@
 IBrightnessFilter
 =================
 
-.. py:class:: IBrightnessFilter
+.. py:class:: ansys.stk.core.graphics.IBrightnessFilter
 
    object
    
    Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IBrightnessFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~adjustment`
+            * - :py:attr:`~ansys.stk.core.graphics.IBrightnessFilter.adjustment`
 
 
 Import detail

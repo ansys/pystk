@@ -1,13 +1,13 @@
 IAdditionalGainLoss
 ===================
 
-.. py:class:: IAdditionalGainLoss
+.. py:class:: ansys.stk.core.stkobjects.IAdditionalGainLoss
 
    object
    
    Provide access to an additional gain/loss.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdditionalGainLoss
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~gain`
-            * - :py:meth:`~identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLoss.gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLoss.identifier`
 
 
 Import detail

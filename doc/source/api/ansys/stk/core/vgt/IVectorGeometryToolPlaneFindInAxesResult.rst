@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneFindInAxesResult
 ========================================
 
-.. py:class:: IVectorGeometryToolPlaneFindInAxesResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult
 
    object
    
    Contains the results returned with IAgCrdnPlane.FindInAxes method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneFindInAxesResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~x_axis`
-            * - :py:meth:`~y_axis`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult.x_axis`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult.y_axis`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: x_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult.x_axis
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     X-axis vector in the specified reference axes.
 
 .. py:property:: y_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult.y_axis
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     Y-axis vector in the specified reference axes.
 

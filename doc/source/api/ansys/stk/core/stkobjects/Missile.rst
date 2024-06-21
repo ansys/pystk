@@ -1,13 +1,13 @@
 Missile
 =======
 
-.. py:class:: Missile
+.. py:class:: ansys.stk.core.stkobjects.Missile
 
-   Bases: py:obj:`~IMissile`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IProvideSpatialInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMissile`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Missile object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Missile
 
 Overview
 --------

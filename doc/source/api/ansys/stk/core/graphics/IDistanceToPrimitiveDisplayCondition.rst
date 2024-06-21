@@ -1,13 +1,13 @@
 IDistanceToPrimitiveDisplayCondition
 ====================================
 
-.. py:class:: IDistanceToPrimitiveDisplayCondition
+.. py:class:: ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition
 
    object
    
    Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IDistanceToPrimitiveDisplayCondition
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~primitive`
-            * - :py:meth:`~minimum_distance`
-            * - :py:meth:`~minimum_distance_squared`
-            * - :py:meth:`~maximum_distance`
-            * - :py:meth:`~maximum_distance_squared`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition.primitive`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition.minimum_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition.minimum_distance_squared`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition.maximum_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition.maximum_distance_squared`
 
 
 Import detail
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: primitive
     :canonical: ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition.primitive
-    :type: IAgStkGraphicsPrimitive
+    :type: IPrimitive
 
     Gets or sets the primitive associated with this instance.
 

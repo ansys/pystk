@@ -1,12 +1,12 @@
 VEHICLE_SLEW_TIMING_BETWEEN_TARGETS
 ===================================
 
-.. py:class:: VEHICLE_SLEW_TIMING_BETWEEN_TARGETS
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SLEW_TIMING_BETWEEN_TARGETS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SLEW_TIMING_BETWEEN_TARGETS
 
 Overview
 --------

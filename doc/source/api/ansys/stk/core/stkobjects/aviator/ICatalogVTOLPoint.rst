@@ -1,13 +1,13 @@
 ICatalogVTOLPoint
 =================
 
-.. py:class:: ICatalogVTOLPoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ICatalogVTOLPoint
 
    object
    
    Interface used to access a VTOL Point in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ICatalogVTOLPoint
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleRefTo
 =============================
 
-.. py:class:: IVectorGeometryToolAngleRefTo
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo
 
    object
    
    Represents a reference to a VGT angle.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleRefTo
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_path`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo.set_path`
               - Set a new angle.
-            * - :py:meth:`~set_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo.set_angle`
               - Set a new angle.
-            * - :py:meth:`~get_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo.get_angle`
               - Return the actual angle object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
-            * - :py:meth:`~has_cyclic_dependency`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRefTo.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
 

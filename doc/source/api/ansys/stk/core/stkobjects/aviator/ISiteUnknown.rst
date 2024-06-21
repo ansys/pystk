@@ -1,13 +1,13 @@
 ISiteUnknown
 ============
 
-.. py:class:: ISiteUnknown
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteUnknown
 
    object
    
    Interface of an unknown site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteUnknown
 
 Overview
 --------

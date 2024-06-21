@@ -1,13 +1,13 @@
 ElementCollection
 =================
 
-.. py:class:: ElementCollection
+.. py:class:: ansys.stk.core.stkobjects.ElementCollection
 
-   Bases: py:obj:`~IElementCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IElementCollection`
 
    Class defining a phased array element collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ElementCollection
 
 Overview
 --------

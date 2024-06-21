@@ -1,13 +1,13 @@
 IUserRunway
 ===========
 
-.. py:class:: IUserRunway
+.. py:class:: ansys.stk.core.stkobjects.aviator.IUserRunway
 
    object
    
    Interface used to access a user runway in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IUserRunway
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.get_as_catalog_item`
               - Get the catalog item interface for this object.
-            * - :py:meth:`~get_terrain_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.get_terrain_altitude`
               - Set the runway altitude to the terrain altitude.
-            * - :py:meth:`~copy_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.copy_site`
               - Copy the site to the clipboard.
-            * - :py:meth:`~paste_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.paste_site`
               - Paste the site to the clipboard.
 
     .. tab-item:: Properties
@@ -35,13 +35,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~length`
-            * - :py:meth:`~low_end_heading`
-            * - :py:meth:`~high_end_heading`
-            * - :py:meth:`~is_magnetic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.low_end_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.high_end_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserRunway.is_magnetic`
 
 
 Import detail

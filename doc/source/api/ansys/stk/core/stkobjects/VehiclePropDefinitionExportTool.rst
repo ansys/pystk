@@ -1,13 +1,13 @@
 VehiclePropDefinitionExportTool
 ===============================
 
-.. py:class:: VehiclePropDefinitionExportTool
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropDefinitionExportTool
 
-   Bases: py:obj:`~IVehiclePropDefinitionExportTool`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropDefinitionExportTool`
 
    AgVeExternalFileAttitude Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropDefinitionExportTool
 
 Overview
 --------

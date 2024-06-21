@@ -1,12 +1,12 @@
 ADV_CAT_CONJUNCTION_TYPE
 ========================
 
-.. py:class:: ADV_CAT_CONJUNCTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ADV_CAT_CONJUNCTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ADV_CAT_CONJUNCTION_TYPE
 
 Overview
 --------

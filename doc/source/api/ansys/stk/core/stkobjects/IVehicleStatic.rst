@@ -1,13 +1,13 @@
 IVehicleStatic
 ==============
 
-.. py:class:: IVehicleStatic
+.. py:class:: ansys.stk.core.stkobjects.IVehicleStatic
 
    object
    
    Interface for additional static force model options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleStatic
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~satellite_mass`
-            * - :py:meth:`~inc_relativistic_acc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStatic.satellite_mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStatic.inc_relativistic_acc`
 
 
 Import detail

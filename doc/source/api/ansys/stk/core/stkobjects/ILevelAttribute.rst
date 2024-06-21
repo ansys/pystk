@@ -1,13 +1,13 @@
 ILevelAttribute
 ===============
 
-.. py:class:: ILevelAttribute
+.. py:class:: ansys.stk.core.stkobjects.ILevelAttribute
 
    object
    
    AgLevelAttribute used to access individual contour level attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILevelAttribute
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~level`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~label_visible`
-            * - :py:meth:`~user_text_visible`
-            * - :py:meth:`~label_angle`
-            * - :py:meth:`~user_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.user_text_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.label_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.user_text`
 
 
 Import detail

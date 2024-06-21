@@ -1,13 +1,13 @@
 TransmitterModelLaser
 =====================
 
-.. py:class:: TransmitterModelLaser
+.. py:class:: ansys.stk.core.stkobjects.TransmitterModelLaser
 
-   Bases: py:obj:`~ITransmitterModelLaser`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitterModelLaser`, py:obj:`~ansys.stk.core.stkobjects.ITransmitterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a laser transmitter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TransmitterModelLaser
 
 Overview
 --------

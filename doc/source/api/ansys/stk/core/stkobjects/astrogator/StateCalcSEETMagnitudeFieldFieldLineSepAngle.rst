@@ -1,13 +1,13 @@
 StateCalcSEETMagnitudeFieldFieldLineSepAngle
 ============================================
 
-.. py:class:: StateCalcSEETMagnitudeFieldFieldLineSepAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSEETMagnitudeFieldFieldLineSepAngle
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSEETMagnitudeFieldFieldLineSepAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSEETMagnitudeFieldFieldLineSepAngle`
 
    SEETMagFieldFieldLineSepAngle Calc object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcSEETMagnitudeFieldFieldLineSepAngle
 
 Overview
 --------

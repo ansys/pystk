@@ -1,13 +1,13 @@
 IThirdBodyFunction
 ==================
 
-.. py:class:: IThirdBodyFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction
 
    object
    
    Properties for a Third Body propagator function. The IAgComponentInfo object returned by the mode property can be cast to IAgVAGravityFieldFunction or IAgVAPointMassFunction depending on the selected ModeType.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IThirdBodyFunction
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_mode_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.set_mode_type`
               - Set the third body gravity mode.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~third_body_name`
-            * - :py:meth:`~ephem_source`
-            * - :py:meth:`~mode`
-            * - :py:meth:`~mode_type`
-            * - :py:meth:`~ephemeris_source_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.third_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.ephem_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.mode_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.ephemeris_source_warning`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.mode
-    :type: IAgComponentInfo
+    :type: IComponentInfo
 
     Get the third body gravity mode. The IAgComponentInfo object returned by this property can be cast to IAgVAGravityFieldFunction or IAgVAPointMassFunction depending on the selected ModeType.
 

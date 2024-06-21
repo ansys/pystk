@@ -1,12 +1,12 @@
 CONTROL_ENGINE_MODEL_POLY
 =========================
 
-.. py:class:: CONTROL_ENGINE_MODEL_POLY
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_MODEL_POLY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_ENGINE_MODEL_POLY
 
 Overview
 --------

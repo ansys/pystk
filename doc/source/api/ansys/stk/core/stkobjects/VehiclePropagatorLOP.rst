@@ -1,13 +1,13 @@
 VehiclePropagatorLOP
 ====================
 
-.. py:class:: VehiclePropagatorLOP
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorLOP
 
-   Bases: py:obj:`~IVehiclePropagatorLOP`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the Long-term Orbit Predictor (LOP).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorLOP
 
 Overview
 --------

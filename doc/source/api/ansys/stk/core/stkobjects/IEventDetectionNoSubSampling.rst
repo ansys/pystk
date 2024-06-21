@@ -1,13 +1,13 @@
 IEventDetectionNoSubSampling
 ============================
 
-.. py:class:: IEventDetectionNoSubSampling
+.. py:class:: ansys.stk.core.stkobjects.IEventDetectionNoSubSampling
 
    IEventDetectionStrategy
    
    Define event detection strategy that uses samples only (without sub-sampling).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEventDetectionNoSubSampling
 
 Overview
 --------

@@ -1,13 +1,13 @@
 CRLocation
 ==========
 
-.. py:class:: CRLocation
+.. py:class:: ansys.stk.core.stkobjects.CRLocation
 
-   Bases: py:obj:`~ICRLocation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICRLocation`
 
    Class defining a location.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CRLocation
 
 Overview
 --------

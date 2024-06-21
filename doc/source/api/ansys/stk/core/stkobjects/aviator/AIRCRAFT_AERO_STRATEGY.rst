@@ -1,12 +1,12 @@
 AIRCRAFT_AERO_STRATEGY
 ======================
 
-.. py:class:: AIRCRAFT_AERO_STRATEGY
+.. py:class:: ansys.stk.core.stkobjects.aviator.AIRCRAFT_AERO_STRATEGY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AIRCRAFT_AERO_STRATEGY
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRotateFilterFactory
 ====================
 
-.. py:class:: IRotateFilterFactory
+.. py:class:: ansys.stk.core.graphics.IRotateFilterFactory
 
    object
    
    Rotate the source raster clockwise by the specified angle.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRotateFilterFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IRotateFilterFactory.initialize`
               - Initialize a new instance.
-            * - :py:meth:`~initialize_with_angle`
+            * - :py:attr:`~ansys.stk.core.graphics.IRotateFilterFactory.initialize_with_angle`
               - Initialize a new instance with a counterclockwise rotation angle.
 
 

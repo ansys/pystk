@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeFromTimeSatisfaction
 =============================================
 
-.. py:class:: SpatialAnalysisToolVolumeFromTimeSatisfaction
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeFromTimeSatisfaction
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeFromTimeSatisfaction`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromTimeSatisfaction`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An volume from time satisfaction volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeFromTimeSatisfaction
 
 Overview
 --------

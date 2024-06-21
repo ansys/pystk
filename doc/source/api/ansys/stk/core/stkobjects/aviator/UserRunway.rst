@@ -1,13 +1,13 @@
 UserRunway
 ==========
 
-.. py:class:: UserRunway
+.. py:class:: ansys.stk.core.stkobjects.aviator.UserRunway
 
-   Bases: py:obj:`~IUserRunway`, py:obj:`~ICatalogRunway`, py:obj:`~ICatalogItem`, py:obj:`~ICatalogWaypoint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IUserRunway`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogRunway`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`
 
    Class defining the user runway in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: UserRunway
 
 Overview
 --------

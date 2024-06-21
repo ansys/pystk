@@ -1,12 +1,12 @@
 MOUSE_MODE
 ==========
 
-.. py:class:: MOUSE_MODE
+.. py:class:: ansys.stk.core.stkx.MOUSE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: MOUSE_MODE
 
 Overview
 --------

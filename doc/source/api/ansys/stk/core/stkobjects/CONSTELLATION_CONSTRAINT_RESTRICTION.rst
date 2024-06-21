@@ -1,12 +1,12 @@
 CONSTELLATION_CONSTRAINT_RESTRICTION
 ====================================
 
-.. py:class:: CONSTELLATION_CONSTRAINT_RESTRICTION
+.. py:class:: ansys.stk.core.stkobjects.CONSTELLATION_CONSTRAINT_RESTRICTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CONSTELLATION_CONSTRAINT_RESTRICTION
 
 Overview
 --------

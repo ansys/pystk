@@ -1,13 +1,13 @@
 StateCalcVectorRA
 =================
 
-.. py:class:: StateCalcVectorRA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVectorRA
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVectorRA`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorRA`
 
    VectorRA Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcVectorRA
 
 Overview
 --------

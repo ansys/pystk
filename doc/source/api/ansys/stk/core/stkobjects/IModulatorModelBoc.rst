@@ -1,13 +1,13 @@
 IModulatorModelBoc
 ==================
 
-.. py:class:: IModulatorModelBoc
+.. py:class:: ansys.stk.core.stkobjects.IModulatorModelBoc
 
    object
    
    Provide access to the properties and methods defining a BOC modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IModulatorModelBoc
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~subcarrier_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelBoc.subcarrier_frequency`
 
 
 Import detail

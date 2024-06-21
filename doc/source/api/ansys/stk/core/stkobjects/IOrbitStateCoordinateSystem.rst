@@ -1,13 +1,13 @@
 IOrbitStateCoordinateSystem
 ===========================
 
-.. py:class:: IOrbitStateCoordinateSystem
+.. py:class:: ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem
 
    object
    
    Interface for selecting coordinate epoch for coordinate systems that do not have pre-established epochs.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrbitStateCoordinateSystem
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~coordinate_system_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem.coordinate_system_epoch`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: coordinate_system_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem.coordinate_system_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Smart epoch component representing the coordinate epoch. Disabled for coordinate systems with pre-established epochs (e.g. J2000, B1950).
 

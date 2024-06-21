@@ -1,12 +1,12 @@
 AREA_TYPE
 =========
 
-.. py:class:: AREA_TYPE
+.. py:class:: ansys.stk.core.stkobjects.AREA_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AREA_TYPE
 
 Overview
 --------

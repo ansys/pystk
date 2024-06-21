@@ -1,13 +1,13 @@
 VehicleProfileConstraintOffset
 ==============================
 
-.. py:class:: VehicleProfileConstraintOffset
+.. py:class:: ansys.stk.core.stkobjects.VehicleProfileConstraintOffset
 
-   Bases: py:obj:`~IVehicleProfileConstraintOffset`, py:obj:`~IVehicleAttitudeProfile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileConstraintOffset`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Constraint offset for various attitude profiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleProfileConstraintOffset
 
 Overview
 --------

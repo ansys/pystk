@@ -1,13 +1,13 @@
 CRComplexCollection
 ===================
 
-.. py:class:: CRComplexCollection
+.. py:class:: ansys.stk.core.stkobjects.CRComplexCollection
 
-   Bases: py:obj:`~ICRComplexCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICRComplexCollection`
 
    Class defining a collection of complex numbers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CRComplexCollection
 
 Overview
 --------

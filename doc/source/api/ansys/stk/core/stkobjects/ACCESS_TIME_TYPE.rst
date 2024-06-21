@@ -1,12 +1,12 @@
 ACCESS_TIME_TYPE
 ================
 
-.. py:class:: ACCESS_TIME_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ACCESS_TIME_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ACCESS_TIME_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IExponential
 ============
 
-.. py:class:: IExponential
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IExponential
 
    object
    
    Properties for the Exponential atmospheric model - a model that calculates atmospheric density using an equation involving a reference density, reference altitude, and scale altitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IExponential
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_approximate_altitude`
-            * - :py:meth:`~reference_density`
-            * - :py:meth:`~reference_altitude`
-            * - :py:meth:`~scale_altitude`
-            * - :py:meth:`~drag_model_type`
-            * - :py:meth:`~drag_model_plugin_name`
-            * - :py:meth:`~drag_model_plugin`
-            * - :py:meth:`~variable_area_history_file`
-            * - :py:meth:`~n_plate_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.use_approximate_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.reference_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.reference_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.scale_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.drag_model_plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.drag_model_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.variable_area_history_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IExponential.n_plate_definition_file`
 
 
 Import detail
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IExponential.drag_model_plugin
-    :type: IAgVADragModelPlugin
+    :type: IDragModelPlugin
 
     Drag model plugin properties.
 

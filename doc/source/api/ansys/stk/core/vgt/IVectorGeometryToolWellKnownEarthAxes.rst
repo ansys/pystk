@@ -1,13 +1,13 @@
 IVectorGeometryToolWellKnownEarthAxes
 =====================================
 
-.. py:class:: IVectorGeometryToolWellKnownEarthAxes
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes
 
    object
    
    Well-known Earth's axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolWellKnownEarthAxes
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fixed`
-            * - :py:meth:`~icrf`
-            * - :py:meth:`~inertial`
-            * - :py:meth:`~j2000`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.fixed`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.icrf`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.inertial`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.j2000`
 
 
 Import detail
@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: fixed
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.fixed
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Earth's Fixed axes.
 
 .. py:property:: icrf
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.icrf
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Earth's ICRF axes.
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.inertial
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Earth's Inertial axes (as defined in STK).
 
 .. py:property:: j2000
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.j2000
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     The Earth's J2000 axes.
 

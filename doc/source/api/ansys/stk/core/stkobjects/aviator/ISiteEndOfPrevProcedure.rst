@@ -1,13 +1,13 @@
 ISiteEndOfPrevProcedure
 =======================
 
-.. py:class:: ISiteEndOfPrevProcedure
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteEndOfPrevProcedure
 
    object
    
    Interface used to access the options for an End of Previous Procedure site type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteEndOfPrevProcedure
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteEndOfPrevProcedure.get_as_site`
               - Get the site interface.
 
 

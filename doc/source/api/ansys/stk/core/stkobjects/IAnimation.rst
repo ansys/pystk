@@ -1,13 +1,13 @@
 IAnimation
 ==========
 
-.. py:class:: IAnimation
+.. py:class:: ansys.stk.core.stkobjects.IAnimation
 
    object
    
    Provide methods to control scenario animation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAnimation
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~play_forward`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.play_forward`
               - Animate forward.
-            * - :py:meth:`~play_backward`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.play_backward`
               - Animate backward.
-            * - :py:meth:`~pause`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.pause`
               - Pause the animation.
-            * - :py:meth:`~rewind`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.rewind`
               - Stop and reset the animation.
-            * - :py:meth:`~step_forward`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step_forward`
               - Advance the animation one step forward.
-            * - :py:meth:`~step_backward`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step_backward`
               - Reverse the animation one step backward.
-            * - :py:meth:`~faster`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.faster`
               - Increase the speed of the animation.
-            * - :py:meth:`~slower`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.slower`
               - Decrease the speed of the animation.
 
     .. tab-item:: Properties
@@ -43,11 +43,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mode`
-            * - :py:meth:`~current_time`
-            * - :py:meth:`~step`
-            * - :py:meth:`~animation_options`
-            * - :py:meth:`~high_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.current_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.animation_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.high_speed`
 
 
 Import detail

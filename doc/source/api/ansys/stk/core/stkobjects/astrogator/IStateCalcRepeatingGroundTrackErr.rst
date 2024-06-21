@@ -1,13 +1,13 @@
 IStateCalcRepeatingGroundTrackErr
 =================================
 
-.. py:class:: IStateCalcRepeatingGroundTrackErr
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr
 
    object
    
    Properties for a RepeatingGroundTrackEquatorError calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRepeatingGroundTrackErr
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_longitude`
-            * - :py:meth:`~repeat_count`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.reference_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.repeat_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.control_parameters_available`
 
 
 Import detail

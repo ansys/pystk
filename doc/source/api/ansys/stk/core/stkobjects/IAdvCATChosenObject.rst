@@ -1,13 +1,13 @@
 IAdvCATChosenObject
 ===================
 
-.. py:class:: IAdvCATChosenObject
+.. py:class:: ansys.stk.core.stkobjects.IAdvCATChosenObject
 
    object
    
    Chosen object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdvCATChosenObject
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~ellipsoid_class`
-            * - :py:meth:`~tangential`
-            * - :py:meth:`~cross_track`
-            * - :py:meth:`~normal`
-            * - :py:meth:`~type`
-            * - :py:meth:`~hard_body_radius`
-            * - :py:meth:`~number_id`
-            * - :py:meth:`~string_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.ellipsoid_class`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.tangential`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.cross_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.normal`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.hard_body_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.number_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.string_id`
 
 
 Import detail

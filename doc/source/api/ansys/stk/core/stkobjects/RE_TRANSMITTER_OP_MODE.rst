@@ -1,12 +1,12 @@
 RE_TRANSMITTER_OP_MODE
 ======================
 
-.. py:class:: RE_TRANSMITTER_OP_MODE
+.. py:class:: ansys.stk.core.stkobjects.RE_TRANSMITTER_OP_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RE_TRANSMITTER_OP_MODE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ProcedureFormationRecover
 =========================
 
-.. py:class:: ProcedureFormationRecover
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover
 
-   Bases: py:obj:`~IProcedureFormationRecover`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a Formation/Recover procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureFormationRecover
 
 Overview
 --------

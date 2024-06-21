@@ -1,13 +1,13 @@
 PlanetPositionFile
 ==================
 
-.. py:class:: PlanetPositionFile
+.. py:class:: ansys.stk.core.stkobjects.PlanetPositionFile
 
-   Bases: py:obj:`~IPositionSourceData`, py:obj:`~IPlanetPositionFile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPositionSourceData`, py:obj:`~ansys.stk.core.stkobjects.IPlanetPositionFile`
 
    Class defining the planetary ephemeris file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PlanetPositionFile
 
 Overview
 --------

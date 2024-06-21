@@ -1,13 +1,13 @@
 ISearchPluginControlCollection
 ==============================
 
-.. py:class:: ISearchPluginControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISearchPluginControlCollection
 
    object
    
    Properties for the list of search plugin control parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISearchPluginControlCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControlCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_control_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControlCollection.get_control_by_paths`
               - Return the control specified by the object/control path.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControlCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControlCollection.count`
 
 
 Import detail

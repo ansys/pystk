@@ -1,13 +1,13 @@
 AtmosphericAbsorptionModelTirem320
 ==================================
 
-.. py:class:: AtmosphericAbsorptionModelTirem320
+.. py:class:: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelTirem320
 
-   Bases: py:obj:`~IAtmosphericAbsorptionModelTirem`, py:obj:`~IAtmosphericAbsorptionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem`, py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AtmosphericAbsorptionModelTirem320
 
 Overview
 --------

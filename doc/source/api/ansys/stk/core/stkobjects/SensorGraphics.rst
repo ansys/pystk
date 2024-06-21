@@ -1,13 +1,13 @@
 SensorGraphics
 ==============
 
-.. py:class:: SensorGraphics
+.. py:class:: ansys.stk.core.stkobjects.SensorGraphics
 
-   Bases: py:obj:`~ISensorGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorGraphics`
 
    Class defining the 2D Graphics properties of a Sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorGraphics
 
 Overview
 --------

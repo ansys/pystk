@@ -1,13 +1,13 @@
 IOverlay
 ========
 
-.. py:class:: IOverlay
+.. py:class:: ansys.stk.core.graphics.IOverlay
 
    object
    
    A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IOverlay
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bring_to_front`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.bring_to_front`
               - Brings the overlay to the front of the z-order, so it is on top of all other overlays with the same parent.
-            * - :py:meth:`~send_to_back`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.send_to_back`
               - Send the overlay to the back of the z-order, so it is underneath all other overlays with the same parent.
-            * - :py:meth:`~overlay_to_control`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.overlay_to_control`
               - Transform a given position, specified relative to the overlay, into coordinates relative to the overall globe control...
-            * - :py:meth:`~control_to_overlay`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.control_to_overlay`
               - Transform a given position, specified relative to the overall globe control, into coordinates relative to this overlay...
 
     .. tab-item:: Properties
@@ -35,45 +35,45 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position`
-            * - :py:meth:`~pinning_position`
-            * - :py:meth:`~x`
-            * - :py:meth:`~x_unit`
-            * - :py:meth:`~y`
-            * - :py:meth:`~y_unit`
-            * - :py:meth:`~size`
-            * - :py:meth:`~width`
-            * - :py:meth:`~width_unit`
-            * - :py:meth:`~height`
-            * - :py:meth:`~height_unit`
-            * - :py:meth:`~minimum_size`
-            * - :py:meth:`~maximum_size`
-            * - :py:meth:`~bounds`
-            * - :py:meth:`~border_color`
-            * - :py:meth:`~border_size`
-            * - :py:meth:`~border_translucency`
-            * - :py:meth:`~translation_x`
-            * - :py:meth:`~translation_y`
-            * - :py:meth:`~rotation_angle`
-            * - :py:meth:`~rotation_point`
-            * - :py:meth:`~scale`
-            * - :py:meth:`~flip_x`
-            * - :py:meth:`~flip_y`
-            * - :py:meth:`~origin`
-            * - :py:meth:`~pinning_origin`
-            * - :py:meth:`~parent`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~color`
-            * - :py:meth:`~picking_enabled`
-            * - :py:meth:`~clip_to_parent`
-            * - :py:meth:`~display`
-            * - :py:meth:`~control_position`
-            * - :py:meth:`~control_size`
-            * - :py:meth:`~control_bounds`
-            * - :py:meth:`~display_condition`
-            * - :py:meth:`~overlays`
-            * - :py:meth:`~padding`
-            * - :py:meth:`~tag`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.position`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.pinning_position`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.x`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.x_unit`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.y`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.y_unit`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.size`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.width`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.width_unit`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.height`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.height_unit`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.minimum_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.maximum_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.bounds`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.border_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.border_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.border_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.translation_x`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.translation_y`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.rotation_angle`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.rotation_point`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.scale`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.flip_x`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.flip_y`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.origin`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.pinning_origin`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.parent`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.color`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.picking_enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.clip_to_parent`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.display`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.control_position`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.control_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.control_bounds`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.display_condition`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.overlays`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.padding`
+            * - :py:attr:`~ansys.stk.core.graphics.IOverlay.tag`
 
 
 Import detail
@@ -245,7 +245,7 @@ Property detail
 
 .. py:property:: parent
     :canonical: ansys.stk.core.graphics.IOverlay.parent
-    :type: IAgStkGraphicsScreenOverlayContainer
+    :type: IScreenOverlayContainer
 
     Gets the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager'sscreen overlays collection.
 
@@ -299,13 +299,13 @@ Property detail
 
 .. py:property:: display_condition
     :canonical: ansys.stk.core.graphics.IOverlay.display_condition
-    :type: IAgStkGraphicsDisplayCondition
+    :type: IDisplayCondition
 
     Gets or sets the display condition that determines if the overlay should be rendered. Both this and display must evaluate to true for the overlay to be rendered.
 
 .. py:property:: overlays
     :canonical: ansys.stk.core.graphics.IOverlay.overlays
-    :type: IAgStkGraphicsScreenOverlayCollection
+    :type: IScreenOverlayCollection
 
     Gets the collection of overlays that are contained within this overlay.
 

@@ -1,13 +1,13 @@
 ISceneDisplayConditionFactory
 =============================
 
-.. py:class:: ISceneDisplayConditionFactory
+.. py:class:: ansys.stk.core.graphics.ISceneDisplayConditionFactory
 
    object
    
    A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISceneDisplayConditionFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneDisplayConditionFactory.initialize`
               - Initialize a default scene display condition. When this display condition is assigned to an object, such as a primitive, the object can be restricted to only render in certain scenes. Call set display in scene or display only in scene to limit the scenes.
 
 

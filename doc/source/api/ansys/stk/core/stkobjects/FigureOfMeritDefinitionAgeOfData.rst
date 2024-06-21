@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionAgeOfData
 ================================
 
-.. py:class:: FigureOfMeritDefinitionAgeOfData
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionAgeOfData`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAgeOfData`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Age of Data Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionAgeOfData
 
 Overview
 --------

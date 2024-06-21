@@ -1,13 +1,13 @@
 IVehiclePositionVelocityCollection
 ==================================
 
-.. py:class:: IVehiclePositionVelocityCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePositionVelocityCollection
 
    object
    
    An initial state error covariance matrix used to represent the uncertainty in the vehicle's position and velocity. Because the matrix is symmetric, you only need to enter the lower triangle of the 6x6 matrix.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePositionVelocityCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityCollection._NewEnum`
 
 
 Import detail

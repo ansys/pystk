@@ -1,13 +1,13 @@
 IStrategyMATLABFull3D
 =====================
 
-.. py:class:: IStrategyMATLABFull3D
+.. py:class:: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D
 
    object
    
    Interface used to access options for a MATLAB - Full 3D Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator.matlab
+.. py:currentmodule:: IStrategyMATLABFull3D
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_function_path_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D.is_function_path_valid`
               - Check if the MATLAB function path is valid.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~function_name`
-            * - :py:meth:`~check_for_errors`
-            * - :py:meth:`~display_output`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D.function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D.check_for_errors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D.display_output`
 
 
 Import detail

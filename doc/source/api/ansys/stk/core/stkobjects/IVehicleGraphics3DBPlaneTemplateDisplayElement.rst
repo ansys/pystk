@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneTemplateDisplayElement
 ==============================================
 
-.. py:class:: IVehicleGraphics3DBPlaneTemplateDisplayElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement
 
    object
    
    Element of IAgVeVOBPlaneTemplateDisplayCollection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneTemplateDisplayElement
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~name`
-            * - :py:meth:`~color`
-            * - :py:meth:`~scale_factor`
-            * - :py:meth:`~is_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.scale_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.is_label_visible`
 
 
 Import detail

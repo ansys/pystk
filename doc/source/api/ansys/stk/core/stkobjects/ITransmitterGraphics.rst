@@ -1,13 +1,13 @@
 ITransmitterGraphics
 ====================
 
-.. py:class:: ITransmitterGraphics
+.. py:class:: ansys.stk.core.stkobjects.ITransmitterGraphics
 
    object
    
    IAgTransmitterGraphics Interface for a transmitter's 2D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransmitterGraphics
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~show_boresight`
-            * - :py:meth:`~boresight_color`
-            * - :py:meth:`~boresight_marker_style`
-            * - :py:meth:`~contour_graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterGraphics.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterGraphics.show_boresight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterGraphics.boresight_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterGraphics.boresight_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterGraphics.contour_graphics`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.ITransmitterGraphics.contour_graphics
-    :type: IAgAntennaContourGraphics
+    :type: IAntennaContourGraphics
 
     Gets the transmitter's antenna contour graphics interface.
 

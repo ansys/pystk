@@ -1,13 +1,13 @@
 SolarActivityConfiguration
 ==========================
 
-.. py:class:: SolarActivityConfiguration
+.. py:class:: ansys.stk.core.stkobjects.SolarActivityConfiguration
 
-   Bases: py:obj:`~ISolarActivityConfiguration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISolarActivityConfiguration`
 
    Class defining a solar activity configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SolarActivityConfiguration
 
 Overview
 --------

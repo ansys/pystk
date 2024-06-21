@@ -1,12 +1,12 @@
 COVERAGE_POINT_ALTITUDE_METHOD
 ==============================
 
-.. py:class:: COVERAGE_POINT_ALTITUDE_METHOD
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_POINT_ALTITUDE_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_POINT_ALTITUDE_METHOD
 
 Overview
 --------

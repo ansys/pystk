@@ -1,13 +1,13 @@
 IDelaunayL
 ==========
 
-.. py:class:: IDelaunayL
+.. py:class:: ansys.stk.core.stkobjects.IDelaunayL
 
    object
    
    Interface for Delaunay Variable L, which is related to the two-body orbital energy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDelaunayL
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayL.l`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IStkObjectChangedEventArgs
 ==========================
 
-.. py:class:: IStkObjectChangedEventArgs
+.. py:class:: ansys.stk.core.stkobjects.IStkObjectChangedEventArgs
 
    object
    
    Contains information about the changes in the object's state.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkObjectChangedEventArgs
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectChangedEventArgs.path`
 
 
 Import detail

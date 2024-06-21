@@ -1,13 +1,13 @@
 ScriptingParameterEnumerationChoiceCollection
 =============================================
 
-.. py:class:: ScriptingParameterEnumerationChoiceCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection
 
-   Bases: py:obj:`~IScriptingParameterEnumerationChoiceCollection`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Scripting Parameter Enumeration Choice Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ScriptingParameterEnumerationChoiceCollection
 
 Overview
 --------

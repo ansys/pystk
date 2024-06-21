@@ -1,13 +1,13 @@
 IAdvancedFixedWingGeometryVariable
 ==================================
 
-.. py:class:: IAdvancedFixedWingGeometryVariable
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable
 
    object
    
    Interface used to access the options for a variable geometry wing in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingGeometryVariable
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_aspect_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable.set_aspect_ratio`
               - Set the aspect ratio of the aircraft.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~aspect_ratio`
-            * - :py:meth:`~start_sweep_mach`
-            * - :py:meth:`~stop_sweep_mach`
-            * - :py:meth:`~min_sweep_angle`
-            * - :py:meth:`~max_sweep_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable.aspect_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable.start_sweep_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable.stop_sweep_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable.min_sweep_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryVariable.max_sweep_angle`
 
 
 Import detail

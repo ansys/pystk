@@ -1,13 +1,13 @@
 IAntennaModelItuBO1213CoPolar
 =============================
 
-.. py:class:: IAntennaModelItuBO1213CoPolar
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelItuBO1213CoPolar
 
    object
    
    Provide access to the properties and methods defining an ITU-R BO1213 co-polar antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelItuBO1213CoPolar
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CoPolar.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CoPolar.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CoPolar.diameter`
 
 
 Import detail

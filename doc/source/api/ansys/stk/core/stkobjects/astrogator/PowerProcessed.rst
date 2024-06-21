@@ -1,13 +1,13 @@
 PowerProcessed
 ==============
 
-.. py:class:: PowerProcessed
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PowerProcessed
 
-   Bases: py:obj:`~IPowerProcessed`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Power - Processed Power Unit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PowerProcessed
 
 Overview
 --------

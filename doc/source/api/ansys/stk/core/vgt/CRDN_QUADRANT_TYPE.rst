@@ -1,12 +1,12 @@
 CRDN_QUADRANT_TYPE
 ==================
 
-.. py:class:: CRDN_QUADRANT_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_QUADRANT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_QUADRANT_TYPE
 
 Overview
 --------

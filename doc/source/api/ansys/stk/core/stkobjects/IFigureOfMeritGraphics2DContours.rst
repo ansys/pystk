@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DContours
 ================================
 
-.. py:class:: IFigureOfMeritGraphics2DContours
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours
 
    object
    
    Coverage contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DContours
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~contour_type`
-            * - :py:meth:`~color_method`
-            * - :py:meth:`~ramp_color`
-            * - :py:meth:`~level_attributes`
-            * - :py:meth:`~legend`
-            * - :py:meth:`~show_up_to_max_only`
-            * - :py:meth:`~show_contour_lines`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~use_static_contours`
-            * - :py:meth:`~line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.contour_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.color_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.ramp_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.level_attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.legend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.show_up_to_max_only`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.show_contour_lines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.use_static_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.line_style`
 
 
 Import detail
@@ -64,19 +64,19 @@ Property detail
 
 .. py:property:: ramp_color
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.ramp_color
-    :type: IAgFmGfxRampColor
+    :type: IFigureOfMeritGraphics2DRampColor
 
     Color ramp colors.
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.level_attributes
-    :type: IAgFmGfxLevelAttributesCollection
+    :type: IFigureOfMeritGraphics2DLevelAttributesCollection
 
     Contour level display properties.
 
 .. py:property:: legend
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.legend
-    :type: IAgFmGfxLegend
+    :type: IFigureOfMeritGraphics2DLegend
 
     Contour legend.
 

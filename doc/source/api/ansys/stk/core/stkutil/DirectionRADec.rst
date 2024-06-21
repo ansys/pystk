@@ -1,13 +1,13 @@
 DirectionRADec
 ==============
 
-.. py:class:: DirectionRADec
+.. py:class:: ansys.stk.core.stkutil.DirectionRADec
 
-   Bases: py:obj:`~IDirectionRADec`, py:obj:`~IDirection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IDirectionRADec`, py:obj:`~ansys.stk.core.stkutil.IDirection`
 
    Spherical direction (Right Ascension and Declination).
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: DirectionRADec
 
 Overview
 --------

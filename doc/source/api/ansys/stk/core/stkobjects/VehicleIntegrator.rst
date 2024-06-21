@@ -1,13 +1,13 @@
 VehicleIntegrator
 =================
 
-.. py:class:: VehicleIntegrator
+.. py:class:: ansys.stk.core.stkobjects.VehicleIntegrator
 
-   Bases: py:obj:`~IVehicleIntegrator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleIntegrator`
 
    Class defining the HPOP integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleIntegrator
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAreaTypePattern
 ================
 
-.. py:class:: IAreaTypePattern
+.. py:class:: ansys.stk.core.stkobjects.IAreaTypePattern
 
    object
    
    AgAreaTypePattern used to access the List of coordinates of the AreaTarget AreaType interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAreaTypePattern
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePattern.lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePattern.lon`
 
 
 Import detail

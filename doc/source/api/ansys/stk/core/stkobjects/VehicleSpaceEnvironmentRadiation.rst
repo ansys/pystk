@@ -1,13 +1,13 @@
 VehicleSpaceEnvironmentRadiation
 ================================
 
-.. py:class:: VehicleSpaceEnvironmentRadiation
+.. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentRadiation
 
-   Bases: py:obj:`~IVehicleSpaceEnvironmentRadiation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation`
 
    Radiation model settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSpaceEnvironmentRadiation
 
 Overview
 --------

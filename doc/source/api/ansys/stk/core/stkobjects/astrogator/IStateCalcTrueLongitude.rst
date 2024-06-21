@@ -1,13 +1,13 @@
 IStateCalcTrueLongitude
 =======================
 
-.. py:class:: IStateCalcTrueLongitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcTrueLongitude
 
    object
    
    Properties for a TrueLongitude calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcTrueLongitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueLongitude.central_body_name`
 
 
 Import detail

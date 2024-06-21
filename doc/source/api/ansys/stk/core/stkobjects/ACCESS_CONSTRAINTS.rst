@@ -1,12 +1,12 @@
 ACCESS_CONSTRAINTS
 ==================
 
-.. py:class:: ACCESS_CONSTRAINTS
+.. py:class:: ansys.stk.core.stkobjects.ACCESS_CONSTRAINTS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ACCESS_CONSTRAINTS
 
 Overview
 --------

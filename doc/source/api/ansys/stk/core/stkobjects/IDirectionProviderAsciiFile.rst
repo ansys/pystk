@@ -1,13 +1,13 @@
 IDirectionProviderAsciiFile
 ===========================
 
-.. py:class:: IDirectionProviderAsciiFile
+.. py:class:: ansys.stk.core.stkobjects.IDirectionProviderAsciiFile
 
    object
    
    Provide access to the properties and methods defining an ascii file direction provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDirectionProviderAsciiFile
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderAsciiFile.enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderAsciiFile.filename`
 
 
 Import detail

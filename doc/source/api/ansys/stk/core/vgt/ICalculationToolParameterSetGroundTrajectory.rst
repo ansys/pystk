@@ -1,13 +1,13 @@
 ICalculationToolParameterSetGroundTrajectory
 ============================================
 
-.. py:class:: ICalculationToolParameterSetGroundTrajectory
+.. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSetGroundTrajectory
 
    object
    
    Ground trajectory parameter set contains various representations of trajectory of a point relative to central body reference shape.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolParameterSetGroundTrajectory
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~location`
-            * - :py:meth:`~central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroundTrajectory.location`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroundTrajectory.central_body`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetGroundTrajectory.location
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     Get the point for which ground trajectory representations are computed.
 

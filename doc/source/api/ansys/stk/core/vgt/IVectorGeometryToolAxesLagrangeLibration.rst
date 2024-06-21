@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesLagrangeLibration
 ========================================
 
-.. py:class:: IVectorGeometryToolAxesLagrangeLibration
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesLagrangeLibration
 
    object
    
    Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesLagrangeLibration
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~primary_central_body`
-            * - :py:meth:`~point_type`
-            * - :py:meth:`~secondary_central_bodies`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLagrangeLibration.primary_central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLagrangeLibration.point_type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLagrangeLibration.secondary_central_bodies`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: primary_central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesLagrangeLibration.primary_central_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a primary central body.
 
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: secondary_central_bodies
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesLagrangeLibration.secondary_central_bodies
-    :type: IAgCrdnCentralBodyCollection
+    :type: IAnalysisWorkbenchCentralBodyCollection
 
     Specify secondary central bodies.
 

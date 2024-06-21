@@ -1,13 +1,13 @@
 ICentralBodyShapeOblateSpheroid
 ===============================
 
-.. py:class:: ICentralBodyShapeOblateSpheroid
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeOblateSpheroid
 
    ICentralBodyShape
    
    Properties for the central body oblate spheroid shape.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyShapeOblateSpheroid
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_radius`
-            * - :py:meth:`~max_radius`
-            * - :py:meth:`~flattening_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeOblateSpheroid.min_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeOblateSpheroid.max_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeOblateSpheroid.flattening_coefficient`
 
 
 Import detail

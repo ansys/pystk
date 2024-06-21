@@ -1,13 +1,13 @@
 VehicleGPSAutoUpdate
 ====================
 
-.. py:class:: VehicleGPSAutoUpdate
+.. py:class:: ansys.stk.core.stkobjects.VehicleGPSAutoUpdate
 
-   Bases: py:obj:`~IVehicleGPSAutoUpdate`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate`
 
    GPS AutoUpdate.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGPSAutoUpdate
 
 Overview
 --------

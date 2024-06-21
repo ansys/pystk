@@ -1,13 +1,13 @@
 ITargeterGraphResult
 ====================
 
-.. py:class:: ITargeterGraphResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult
 
    object
    
    Properties for targeter graph result.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ITargeterGraphResult
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~show_desired_value`
-            * - :py:meth:`~line_color`
-            * - :py:meth:`~point_style`
-            * - :py:meth:`~y_axis`
-            * - :py:meth:`~graph_option`
-            * - :py:meth:`~show_tolerance_band`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.show_desired_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.line_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.point_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.y_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.graph_option`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.show_tolerance_band`
 
 
 Import detail

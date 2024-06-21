@@ -1,13 +1,13 @@
 StkCentralBodyEllipsoid
 =======================
 
-.. py:class:: StkCentralBodyEllipsoid
+.. py:class:: ansys.stk.core.stkobjects.StkCentralBodyEllipsoid
 
-   Bases: py:obj:`~IStkCentralBodyEllipsoid`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid`
 
    Central body's ellipsoid information.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkCentralBodyEllipsoid
 
 Overview
 --------

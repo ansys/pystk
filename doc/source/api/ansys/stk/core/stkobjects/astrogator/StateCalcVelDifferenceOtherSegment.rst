@@ -1,13 +1,13 @@
 StateCalcVelDifferenceOtherSegment
 ==================================
 
-.. py:class:: StateCalcVelDifferenceOtherSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVelDifferenceOtherSegment
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVelDifferenceOtherSegment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVelDifferenceOtherSegment`
 
    VelDifferenceOtherSegment Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcVelDifferenceOtherSegment
 
 Overview
 --------

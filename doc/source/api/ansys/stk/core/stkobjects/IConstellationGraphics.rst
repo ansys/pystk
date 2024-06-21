@@ -1,13 +1,13 @@
 IConstellationGraphics
 ======================
 
-.. py:class:: IConstellationGraphics
+.. py:class:: ansys.stk.core.stkobjects.IConstellationGraphics
 
    object
    
    Graphics options for constellation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IConstellationGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~hide_graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationGraphics.hide_graphics`
               - Remove the graphics for all objects within the constellation from the 2D Graphics window.
-            * - :py:meth:`~restore_graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationGraphics.restore_graphics`
               - Restore the graphics for all objects within the constellation in the 2D Graphics window.
 
 

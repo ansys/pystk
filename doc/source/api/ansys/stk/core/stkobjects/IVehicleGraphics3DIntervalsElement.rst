@@ -1,13 +1,13 @@
 IVehicleGraphics3DIntervalsElement
 ==================================
 
-.. py:class:: IVehicleGraphics3DIntervalsElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement
 
    object
    
    Intervals graphics interface for covariance pointing contour.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DIntervalsElement
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DIntervalsElement.translucency`
 
 
 Import detail

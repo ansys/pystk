@@ -1,13 +1,13 @@
 ITexture2DFactory
 =================
 
-.. py:class:: ITexture2DFactory
+.. py:class:: ansys.stk.core.graphics.ITexture2DFactory
 
    object
    
    A factory for creating texture 2d objects from various sources.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITexture2DFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~load_from_string_uri`
+            * - :py:attr:`~ansys.stk.core.graphics.ITexture2DFactory.load_from_string_uri`
               - Create a new texture from a Uri, which can be a file, HTTP, HTTPS, or FTP source. See raster for a list of supported raster formats.
-            * - :py:meth:`~from_raster`
+            * - :py:attr:`~ansys.stk.core.graphics.ITexture2DFactory.from_raster`
               - Create a new texture from a raster.
 
 

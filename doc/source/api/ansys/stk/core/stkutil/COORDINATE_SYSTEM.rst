@@ -1,12 +1,12 @@
 COORDINATE_SYSTEM
 =================
 
-.. py:class:: COORDINATE_SYSTEM
+.. py:class:: ansys.stk.core.stkutil.COORDINATE_SYSTEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: COORDINATE_SYSTEM
 
 Overview
 --------

@@ -19,22 +19,22 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~IUiToolbar`
+            * - :py:class:`~ansys.stk.core.uicore.IUiToolbar`
               - Provide methods and properties to control a toolbar.
 
-            * - :py:class:`~IUiToolbarCollection`
+            * - :py:class:`~ansys.stk.core.uicore.IUiToolbarCollection`
               - Provide methods and properties to obtain a window's toolbars.
 
-            * - :py:class:`~IUiWindow`
+            * - :py:class:`~ansys.stk.core.uicore.IUiWindow`
               - Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 
-            * - :py:class:`~IUiWindowsCollection`
+            * - :py:class:`~ansys.stk.core.uicore.IUiWindowsCollection`
               - Provide methods and properties to manage the application's windows.
 
-            * - :py:class:`~IUiWindowMapObject`
+            * - :py:class:`~ansys.stk.core.uicore.IUiWindowMapObject`
               - Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties.
 
-            * - :py:class:`~IUiWindowGlobeObject`
+            * - :py:class:`~ansys.stk.core.uicore.IUiWindowGlobeObject`
               - Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties.
 
     
@@ -45,22 +45,22 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~UiWindowsCollection`
+            * - :py:class:`~ansys.stk.core.uicore.UiWindowsCollection`
               - Provide methods and properties to manage the windows.
 
-            * - :py:class:`~UiWindow`
+            * - :py:class:`~ansys.stk.core.uicore.UiWindow`
               - Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 
-            * - :py:class:`~UiToolbar`
+            * - :py:class:`~ansys.stk.core.uicore.UiToolbar`
               - Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar.
 
-            * - :py:class:`~UiToolbarCollection`
+            * - :py:class:`~ansys.stk.core.uicore.UiToolbarCollection`
               - Provide methods and properties to manage the toolbars.
 
-            * - :py:class:`~UiWindowMapObject`
+            * - :py:class:`~ansys.stk.core.uicore.UiWindowMapObject`
               - Provide methods and properties to manipulate the 2D map.
 
-            * - :py:class:`~UiWindowGlobeObject`
+            * - :py:class:`~ansys.stk.core.uicore.UiWindowGlobeObject`
               - Provide methods and properties to manipulate the 3D globe.
 
 
@@ -71,19 +71,19 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~WINDOW_SERVICE`
+            * - :py:class:`~ansys.stk.core.uicore.WINDOW_SERVICE`
               - Well-known types of services.
 
-            * - :py:class:`~WINDOW_STATE`
+            * - :py:class:`~ansys.stk.core.uicore.WINDOW_STATE`
               - Window states.
 
-            * - :py:class:`~ARRANGE_STYLE`
+            * - :py:class:`~ansys.stk.core.uicore.ARRANGE_STYLE`
               - Window layout styles.
 
-            * - :py:class:`~DOCK_STYLE`
+            * - :py:class:`~ansys.stk.core.uicore.DOCK_STYLE`
               - Window docking styles.
 
-            * - :py:class:`~FLOAT_STATE`
+            * - :py:class:`~ansys.stk.core.uicore.FLOAT_STATE`
               - Floating state.
 
 

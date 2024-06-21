@@ -1,13 +1,13 @@
 ICustomImageGlobeOverlay
 ========================
 
-.. py:class:: ICustomImageGlobeOverlay
+.. py:class:: ansys.stk.core.graphics.ICustomImageGlobeOverlay
 
    object
    
    A globe image overlay that allows for a user defined image to be specified.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICustomImageGlobeOverlay
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_up`
+            * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay.start_up`
               - Initiate start-up when imagery is being added to the globe.
-            * - :py:meth:`~shut_down`
+            * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay.shut_down`
               - Initiate shutdown when imagery is being removed from the globe.
-            * - :py:meth:`~clear_cache`
+            * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay.clear_cache`
               - Clear the image data cache associated with this instance. This is equivalent to deleting and re-adding the overlay.
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay.reload`
               - Reload the image data associated with this instance. Preserves the current image data until new image data replaces it.
-            * - :py:meth:`~read`
+            * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay.read`
               - Read a tile from the specified extent, scales it to and stores the result in image.
 
     .. tab-item:: Properties
@@ -37,9 +37,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_translucent`
-            * - :py:meth:`~maximum_meters_per_pixel`
-            * - :py:meth:`~projection`
+            * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay.is_translucent`
+            * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay.maximum_meters_per_pixel`
+            * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay.projection`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IRadarStcAttenuation
 ====================
 
-.. py:class:: IRadarStcAttenuation
+.. py:class:: ansys.stk.core.stkobjects.IRadarStcAttenuation
 
    object
    
    Provide access to the properties and methods defining a radar STC attenuation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarStcAttenuation
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuation.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuation.name`
 
 
 Import detail

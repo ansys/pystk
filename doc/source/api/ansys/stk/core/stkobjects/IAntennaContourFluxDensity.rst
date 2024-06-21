@@ -1,13 +1,13 @@
 IAntennaContourFluxDensity
 ==========================
 
-.. py:class:: IAntennaContourFluxDensity
+.. py:class:: ansys.stk.core.stkobjects.IAntennaContourFluxDensity
 
    object
    
    IAgAntennaContourFluxDensity Interface for a antenna's flux density contour properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaContourFluxDensity
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourFluxDensity.set_resolution`
               - Set the azimuth and elevation resolution as well as the maximum elevation angle.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~azimuth_resolution`
-            * - :py:meth:`~elevation_resolution`
-            * - :py:meth:`~max_elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourFluxDensity.azimuth_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourFluxDensity.elevation_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourFluxDensity.max_elevation`
 
 
 Import detail

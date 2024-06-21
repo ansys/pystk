@@ -1,13 +1,13 @@
 AntennaModelItuS672Rectangular
 ==============================
 
-.. py:class:: AntennaModelItuS672Rectangular
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelItuS672Rectangular
 
-   Bases: py:obj:`~IAntennaModelItuS672Rectangular`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Rectangular`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a ITU-R S672-4 rectangular antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelItuS672Rectangular
 
 Overview
 --------

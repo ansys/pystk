@@ -1,13 +1,13 @@
 VectorGeometryToolVectorPlugin
 ==============================
 
-.. py:class:: VectorGeometryToolVectorPlugin
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorPlugin
 
-   Bases: py:obj:`~IVectorGeometryToolVectorPlugin`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorPlugin`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    A VGT vector plugin.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorPlugin
 
 Overview
 --------

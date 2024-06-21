@@ -1,13 +1,13 @@
 IVectorGeometryToolPointFixedInSystem
 =====================================
 
-.. py:class:: IVectorGeometryToolPointFixedInSystem
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem
 
    object
    
    Point fixed in a reference coordinate system using the selected coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointFixedInSystem
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference`
-            * - :py:meth:`~fixed_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem.reference`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem.fixed_point`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem.reference
-    :type: IAgCrdnSystemRefTo
+    :type: IVectorGeometryToolSystemRefTo
 
     Specify a reference system.
 
 .. py:property:: fixed_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem.fixed_point
-    :type: IAgPosition
+    :type: IPosition
 
     Specify the point's position. The position is relative with respect to the specified reference system.
 

@@ -1,13 +1,13 @@
 IAircraftBasicFixedWingProp
 ===========================
 
-.. py:class:: IAircraftBasicFixedWingProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp
 
    object
    
    Interface used to access the Basic Fixed Wing Propulsion options for the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftBasicFixedWingProp
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_density_scaling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.set_density_scaling`
               - Set the option to use density scaling and set the density ratio exponent.
 
     .. tab-item:: Properties
@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propulsion_mode`
-            * - :py:meth:`~propeller_count`
-            * - :py:meth:`~propeller_diameter`
-            * - :py:meth:`~propeller_rpm`
-            * - :py:meth:`~min_power_thrust`
-            * - :py:meth:`~min_fuel_flow`
-            * - :py:meth:`~max_power_thrust`
-            * - :py:meth:`~max_fuel_flow`
-            * - :py:meth:`~max_thrust_accel`
-            * - :py:meth:`~min_thrust_decel`
-            * - :py:meth:`~use_density_scaling`
-            * - :py:meth:`~density_ratio_exponent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.propulsion_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.propeller_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.propeller_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.propeller_rpm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.min_power_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.min_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.max_power_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.max_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.max_thrust_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.min_thrust_decel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.use_density_scaling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.density_ratio_exponent`
 
 
 Import detail

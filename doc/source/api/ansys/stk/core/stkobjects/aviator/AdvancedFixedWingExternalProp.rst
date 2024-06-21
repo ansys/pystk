@@ -1,13 +1,13 @@
 AdvancedFixedWingExternalProp
 =============================
 
-.. py:class:: AdvancedFixedWingExternalProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingExternalProp
 
-   Bases: py:obj:`~IAdvancedFixedWingExternalProp`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalProp`
 
    Class defining an External Prop File powerplant in the Advanced Fixed Wing Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AdvancedFixedWingExternalProp
 
 Overview
 --------

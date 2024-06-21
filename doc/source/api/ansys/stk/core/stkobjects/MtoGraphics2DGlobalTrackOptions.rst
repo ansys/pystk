@@ -1,13 +1,13 @@
 MtoGraphics2DGlobalTrackOptions
 ===============================
 
-.. py:class:: MtoGraphics2DGlobalTrackOptions
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DGlobalTrackOptions
 
-   Bases: py:obj:`~IMtoGraphics2DGlobalTrackOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics2DGlobalTrackOptions`
 
    Global 2D graphics options for an MTO.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics2DGlobalTrackOptions
 
 Overview
 --------

@@ -1,12 +1,12 @@
 SQUARED_TYPE
 ============
 
-.. py:class:: SQUARED_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SQUARED_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SQUARED_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarModelBistaticReceiver
 ===========================
 
-.. py:class:: IRadarModelBistaticReceiver
+.. py:class:: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver
 
    object
    
    Provide access to the properties and methods defining a bistatic receiver radar model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModelBistaticReceiver
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.set_mode`
               - Set the current radar mode by name.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_modes`
-            * - :py:meth:`~mode`
-            * - :py:meth:`~receiver`
-            * - :py:meth:`~clutter_geometry`
-            * - :py:meth:`~jamming`
-            * - :py:meth:`~bistatic_transmitters`
-            * - :py:meth:`~antenna_control`
-            * - :py:meth:`~clutter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.supported_modes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.receiver`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.clutter_geometry`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.jamming`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.bistatic_transmitters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.antenna_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.clutter`
 
 
 Import detail
@@ -58,43 +58,43 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.mode
-    :type: IAgRadarModeBistaticReceiver
+    :type: IRadarModeBistaticReceiver
 
     Gets the current radar mode.
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.receiver
-    :type: IAgRadarReceiver
+    :type: IRadarReceiver
 
     Gets the radar receiver.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.clutter_geometry
-    :type: IAgRadarClutterGeometry
+    :type: IRadarClutterGeometry
 
     This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
 
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.jamming
-    :type: IAgRadarJamming
+    :type: IRadarJamming
 
     Gets the radar jamming.
 
 .. py:property:: bistatic_transmitters
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.bistatic_transmitters
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the bistatic transmitter collection.
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.antenna_control
-    :type: IAgAntennaControl
+    :type: IAntennaControl
 
     Gets the radar antenna control.
 
 .. py:property:: clutter
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.clutter
-    :type: IAgRadarClutter
+    :type: IRadarClutter
 
     Gets the radar clutter settings.
 

@@ -1,13 +1,13 @@
 IStateCalcDamageFlux
 ====================
 
-.. py:class:: IStateCalcDamageFlux
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDamageFlux
 
    object
    
    Interface for AgAsStateCalcDamageFlux.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDamageFlux
 
 Overview
 --------

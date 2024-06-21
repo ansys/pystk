@@ -1,13 +1,13 @@
 VectorGeometryToolPlaneNormal
 =============================
 
-.. py:class:: VectorGeometryToolPlaneNormal
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneNormal
 
-   Bases: py:obj:`~IVectorGeometryToolPlaneNormal`, py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneNormal`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A plane normal to a vector at a given point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPlaneNormal
 
 Overview
 --------

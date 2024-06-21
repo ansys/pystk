@@ -1,13 +1,13 @@
 ICalculationToolScalarFactory
 =============================
 
-.. py:class:: ICalculationToolScalarFactory
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarFactory
 
    object
    
    The factory creates scalar calculation components.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarFactory
 
 Overview
 --------
@@ -20,51 +20,51 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create`
               - Create and registers a scalar calculation using specified name, description, and type.
-            * - :py:meth:`~create_calc_scalar_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_angle`
               - Create a scalar calculation equal to angular displacement obtained from any angle in VGT.
-            * - :py:meth:`~create_calc_scalar_fixed_at_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_fixed_at_time_instant`
               - Create a scalar calculation defined by evaluating the input scalar calculation at the specified reference time instant.
-            * - :py:meth:`~create_calc_scalar_constant`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_constant`
               - Create a scalar calculation of constant value of the specified dimension.
-            * - :py:meth:`~create_calc_scalar_data_element`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_data_element`
               - Create a scalar calculation defined from a time-dependent data element from STK data providers available for parent STK object.
-            * - :py:meth:`~create_calc_scalar_data_element_with_group`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_data_element_with_group`
               - Create a scalar calculation defined from a time-dependent data element from STK data providers available for parent STK object.
-            * - :py:meth:`~create_calc_scalar_derivative`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_derivative`
               - Create a scalar calculation that is the derivative of an input scalar calculation.
-            * - :py:meth:`~create_calc_scalar_elapsed_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_elapsed_time`
               - Create a scalar calculation that is the time elapsed since a reference time instant.
-            * - :py:meth:`~create_calc_scalar_file`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_file`
               - Create scalar calculation specified by external data file.
-            * - :py:meth:`~create_calc_scalar_function`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_function`
               - Create a scalar calculation that is defined by performing the specified function on the input scalar or time instant.
-            * - :py:meth:`~create_calc_scalar_integral`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_integral`
               - Create a scalar calculation that is the integral of an input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
-            * - :py:meth:`~create_calc_scalar_function2_var`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_function2_var`
               - Create a scalar calculation that is defined by performing a function(x,y) on two scalar arguments.
-            * - :py:meth:`~create_calc_scalar_vector_magnitude`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_vector_magnitude`
               - Create a scalar calculation equal to the magnitude of a specified vector.
-            * - :py:meth:`~create_calc_scalar_plugin_from_display_name`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_plugin_from_display_name`
               - Create a scalar calculation based on a COM plugin. For information how to implement and register VGT plugins, see <topic name='Engine Plugins: COM-based Engine Plugin Components'>COM-based Engine Plugins.</topic>.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:meth:`~create_calc_scalar_from_custom_script`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_from_custom_script`
               - Create a calc scalar calculation that uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
-            * - :py:meth:`~create_calc_scalar_surface_distance_between_points`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_surface_distance_between_points`
               - Create a calc scalar calculation that is surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude).
-            * - :py:meth:`~create_calc_scalar_dot_product`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_dot_product`
               - Create a scalar calculation that is defined by a dot product between two vectors.
-            * - :py:meth:`~create_calc_scalar_vector_component`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_vector_component`
               - Create a scalar calculation that is defined by a specified component of a vector when resolved in specified axes.
-            * - :py:meth:`~create_calc_scalar_average`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_average`
               - Create a scalar calculation that is the average of an input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
-            * - :py:meth:`~create_calc_scalar_standard_deviation`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_standard_deviation`
               - Create a scalar calculation that is the standard deviation of an input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
-            * - :py:meth:`~create_calc_scalar_point_in_volume_calc`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_point_in_volume_calc`
               - Create a scalar calculation along trajectory.
-            * - :py:meth:`~create_calc_scalar_custom_inline_script`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.create_calc_scalar_custom_inline_script`
               - Create a custom inline script scalar.
 
     .. tab-item:: Properties
@@ -73,7 +73,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_calc_scalar_plugin_display_names`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.available_calc_scalar_plugin_display_names`
 
 
 Import detail

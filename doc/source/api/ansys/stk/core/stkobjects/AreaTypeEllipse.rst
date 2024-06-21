@@ -1,13 +1,13 @@
 AreaTypeEllipse
 ===============
 
-.. py:class:: AreaTypeEllipse
+.. py:class:: ansys.stk.core.stkobjects.AreaTypeEllipse
 
-   Bases: py:obj:`~IAreaTypeData`, py:obj:`~IAreaTypeEllipse`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAreaTypeData`, py:obj:`~ansys.stk.core.stkobjects.IAreaTypeEllipse`
 
    Class defining the AreaTarget AreaType in terms of MajorAxis, MinorAxis and Bearing.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AreaTypeEllipse
 
 Overview
 --------

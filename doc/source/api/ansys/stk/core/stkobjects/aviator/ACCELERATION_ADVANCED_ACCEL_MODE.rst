@@ -1,12 +1,12 @@
 ACCELERATION_ADVANCED_ACCEL_MODE
 ================================
 
-.. py:class:: ACCELERATION_ADVANCED_ACCEL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ACCELERATION_ADVANCED_ACCEL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ACCELERATION_ADVANCED_ACCEL_MODE
 
 Overview
 --------

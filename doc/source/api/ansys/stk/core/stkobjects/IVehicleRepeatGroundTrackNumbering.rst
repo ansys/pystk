@@ -1,13 +1,13 @@
 IVehicleRepeatGroundTrackNumbering
 ==================================
 
-.. py:class:: IVehicleRepeatGroundTrackNumbering
+.. py:class:: ansys.stk.core.stkobjects.IVehicleRepeatGroundTrackNumbering
 
    object
    
    Repeat ground track numbering: The path number in the repeat ground track cycle corresponding to the initial conditions and the number of revolutions in the repeat cycle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleRepeatGroundTrackNumbering
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~first_path_num`
-            * - :py:meth:`~revs_to_repeat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRepeatGroundTrackNumbering.first_path_num`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRepeatGroundTrackNumbering.revs_to_repeat`
 
 
 Import detail

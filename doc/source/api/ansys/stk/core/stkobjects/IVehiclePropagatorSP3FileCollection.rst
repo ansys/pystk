@@ -1,13 +1,13 @@
 IVehiclePropagatorSP3FileCollection
 ===================================
 
-.. py:class:: IVehiclePropagatorSP3FileCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection
 
    object
    
    A collection of SP3 files.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorSP3FileCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.add`
               - Load an SP3 file using the specified file path and adds the file to a collection of SP3 files.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection._NewEnum`
 
 
 Import detail

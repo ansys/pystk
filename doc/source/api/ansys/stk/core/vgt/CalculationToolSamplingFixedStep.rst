@@ -1,13 +1,13 @@
 CalculationToolSamplingFixedStep
 ================================
 
-.. py:class:: CalculationToolSamplingFixedStep
+.. py:class:: ansys.stk.core.vgt.CalculationToolSamplingFixedStep
 
-   Bases: py:obj:`~ICalculationToolSamplingFixedStep`, py:obj:`~ICalculationToolSamplingMethod`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolSamplingFixedStep`, py:obj:`~ansys.stk.core.vgt.ICalculationToolSamplingMethod`
 
    Fixed step definition includes parameters that determine how scalar data should be sampled based on fixed steps between samples.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolSamplingFixedStep
 
 Overview
 --------

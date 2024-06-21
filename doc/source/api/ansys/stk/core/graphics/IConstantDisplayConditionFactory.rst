@@ -1,13 +1,13 @@
 IConstantDisplayConditionFactory
 ================================
 
-.. py:class:: IConstantDisplayConditionFactory
+.. py:class:: ansys.stk.core.graphics.IConstantDisplayConditionFactory
 
    object
    
    A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IConstantDisplayConditionFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IConstantDisplayConditionFactory.initialize`
               - Initialize a default constant display condition. display is set to false so when this display condition is assigned to an object, such as a primitive, the object is not rendered.
-            * - :py:meth:`~initialize_display`
+            * - :py:attr:`~ansys.stk.core.graphics.IConstantDisplayConditionFactory.initialize_display`
               - Initialize a constant display condition with the value the display condition evaluates to.
 
 

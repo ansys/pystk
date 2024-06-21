@@ -1,13 +1,13 @@
 IRadarModulator
 ===============
 
-.. py:class:: IRadarModulator
+.. py:class:: ansys.stk.core.stkobjects.IRadarModulator
 
    object
    
    Provide access to the properties and methods defining the radar modulator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModulator
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_signal_psd`
-            * - :py:meth:`~psd_limit_multiplier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModulator.use_signal_psd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModulator.psd_limit_multiplier`
 
 
 Import detail

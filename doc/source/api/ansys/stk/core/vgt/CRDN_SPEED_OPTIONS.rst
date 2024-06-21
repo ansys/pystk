@@ -1,12 +1,12 @@
 CRDN_SPEED_OPTIONS
 ==================
 
-.. py:class:: CRDN_SPEED_OPTIONS
+.. py:class:: ansys.stk.core.vgt.CRDN_SPEED_OPTIONS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SPEED_OPTIONS
 
 Overview
 --------

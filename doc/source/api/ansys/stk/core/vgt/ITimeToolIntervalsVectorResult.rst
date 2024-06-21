@@ -1,13 +1,13 @@
 ITimeToolIntervalsVectorResult
 ==============================
 
-.. py:class:: ITimeToolIntervalsVectorResult
+.. py:class:: ansys.stk.core.vgt.ITimeToolIntervalsVectorResult
 
    object
    
    Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolIntervalsVectorResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~interval_collections`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalsVectorResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalsVectorResult.interval_collections`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: interval_collections
     :canonical: ansys.stk.core.vgt.ITimeToolIntervalsVectorResult.interval_collections
-    :type: IAgCrdnIntervalVectorCollection
+    :type: ITimeToolIntervalVectorCollection
 
     A collection of interval collections.
 

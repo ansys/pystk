@@ -1,12 +1,12 @@
 DRAG_MODEL
 ==========
 
-.. py:class:: DRAG_MODEL
+.. py:class:: ansys.stk.core.stkobjects.DRAG_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DRAG_MODEL
 
 Overview
 --------

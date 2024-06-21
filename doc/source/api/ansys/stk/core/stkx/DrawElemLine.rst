@@ -1,13 +1,13 @@
 DrawElemLine
 ============
 
-.. py:class:: DrawElemLine
+.. py:class:: ansys.stk.core.stkx.DrawElemLine
 
-   Bases: py:obj:`~IDrawElemLine`
+   Bases: py:obj:`~ansys.stk.core.stkx.IDrawElemLine`
 
    Define a line in window coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: DrawElemLine
 
 Overview
 --------

@@ -1,12 +1,12 @@
 PRF_MODE
 ========
 
-.. py:class:: PRF_MODE
+.. py:class:: ansys.stk.core.stkobjects.PRF_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PRF_MODE
 
 Overview
 --------

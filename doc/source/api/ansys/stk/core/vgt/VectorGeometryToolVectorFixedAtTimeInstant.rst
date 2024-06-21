@@ -1,13 +1,13 @@
 VectorGeometryToolVectorFixedAtTimeInstant
 ==========================================
 
-.. py:class:: VectorGeometryToolVectorFixedAtTimeInstant
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorFixedAtTimeInstant
 
-   Bases: py:obj:`~IVectorGeometryToolVectorFixedAtTimeInstant`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtTimeInstant`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Vector fixed relative to reference axes based on another vector evaluated at specified time instant.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorFixedAtTimeInstant
 
 Overview
 --------

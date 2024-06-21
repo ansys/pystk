@@ -1,13 +1,13 @@
 IProfileSNOPTOptimizer
 ======================
 
-.. py:class:: IProfileSNOPTOptimizer
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer
 
    IProfile
    
    Properties of SNOPT Optimizer profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileSNOPTOptimizer
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~control_parameters`
-            * - :py:meth:`~results`
-            * - :py:meth:`~targeter_graphs`
-            * - :py:meth:`~scripting_tool`
-            * - :py:meth:`~reset_controls_before_run`
-            * - :py:meth:`~max_major_iterations`
-            * - :py:meth:`~tolerance_on_major_feasibility`
-            * - :py:meth:`~tolerance_on_major_optimality`
-            * - :py:meth:`~max_minor_iterations`
-            * - :py:meth:`~tolerance_on_minor_feasibility`
-            * - :py:meth:`~tolerance_on_minor_optimality`
-            * - :py:meth:`~options_filename`
-            * - :py:meth:`~allow_internal_primal_infeasibility_measure_normalization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.control_parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.results`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.targeter_graphs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.scripting_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.reset_controls_before_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.max_major_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.tolerance_on_major_feasibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.tolerance_on_major_optimality`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.max_minor_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.tolerance_on_minor_feasibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.tolerance_on_minor_optimality`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.options_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.allow_internal_primal_infeasibility_measure_normalization`
 
 
 Import detail
@@ -48,25 +48,25 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.control_parameters
-    :type: IAgVASNOPTControlCollection
+    :type: ISNOPTControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.results
-    :type: IAgVASNOPTResultCollection
+    :type: ISNOPTResultCollection
 
     Get the list of results defined for the profile.
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.targeter_graphs
-    :type: IAgVATargeterGraphCollection
+    :type: ITargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.scripting_tool
-    :type: IAgVAScriptingTool
+    :type: IScriptingTool
 
     Returns the Scripting tool for the sequence.
 

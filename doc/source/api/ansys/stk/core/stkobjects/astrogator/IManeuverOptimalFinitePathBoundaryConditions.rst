@@ -1,13 +1,13 @@
 IManeuverOptimalFinitePathBoundaryConditions
 ============================================
 
-.. py:class:: IManeuverOptimalFinitePathBoundaryConditions
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions
 
    object
    
    Properties of path boundary conditions for optimal finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverOptimalFinitePathBoundaryConditions
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_from_initial_guess`
-            * - :py:meth:`~a`
-            * - :py:meth:`~h`
-            * - :py:meth:`~k`
-            * - :py:meth:`~p`
-            * - :py:meth:`~q`
-            * - :py:meth:`~l`
-            * - :py:meth:`~lower_bound_azimuth`
-            * - :py:meth:`~upper_bound_azimuth`
-            * - :py:meth:`~lower_bound_elevation`
-            * - :py:meth:`~upper_bound_elevation`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.compute_from_initial_guess`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.h`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.k`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.q`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.lower_bound_azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.upper_bound_azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.lower_bound_elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.upper_bound_elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.provide_runtime_type_info`
 
 
 Import detail
@@ -53,37 +53,37 @@ Property detail
 
 .. py:property:: a
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.a
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element a.
 
 .. py:property:: h
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.h
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element h.
 
 .. py:property:: k
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.k
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element k.
 
 .. py:property:: p
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.p
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element p.
 
 .. py:property:: q
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.q
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element q.
 
 .. py:property:: l
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.l
-    :type: IAgVAManeuverOptimalFiniteBounds
+    :type: IManeuverOptimalFiniteBounds
 
     Bound limits for element L.
 
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

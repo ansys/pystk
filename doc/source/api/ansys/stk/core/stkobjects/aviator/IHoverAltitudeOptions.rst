@@ -1,13 +1,13 @@
 IHoverAltitudeOptions
 =====================
 
-.. py:class:: IHoverAltitudeOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions
 
    object
    
    Interface used to access the altitude options for VTOL procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IHoverAltitudeOptions
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_reference`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~final_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions.altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions.final_altitude_rate`
 
 
 Import detail

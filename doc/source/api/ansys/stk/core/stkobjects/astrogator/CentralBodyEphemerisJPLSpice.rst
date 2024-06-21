@@ -1,13 +1,13 @@
 CentralBodyEphemerisJPLSpice
 ============================
 
-.. py:class:: CentralBodyEphemerisJPLSpice
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisJPLSpice
 
-   Bases: py:obj:`~ICentralBodyEphemerisJPLSpice`, py:obj:`~ICentralBodyEphemeris`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLSpice`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
 
    Central Body Ephemeris - JPLSpice.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CentralBodyEphemerisJPLSpice
 
 Overview
 --------

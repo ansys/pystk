@@ -1,13 +1,13 @@
 StateCalcTrueLongitude
 ======================
 
-.. py:class:: StateCalcTrueLongitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcTrueLongitude
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTrueLongitude`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueLongitude`
 
    TrueLongitude Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcTrueLongitude
 
 Overview
 --------

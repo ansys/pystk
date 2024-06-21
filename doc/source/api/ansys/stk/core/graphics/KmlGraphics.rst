@@ -1,13 +1,13 @@
 KmlGraphics
 ===========
 
-.. py:class:: KmlGraphics
+.. py:class:: ansys.stk.core.graphics.KmlGraphics
 
-   Bases: py:obj:`~IKmlGraphics`
+   Bases: py:obj:`~ansys.stk.core.graphics.IKmlGraphics`
 
    Provide loading and unloading of kml documents for a particular central body.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KmlGraphics
 
 Overview
 --------

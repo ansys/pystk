@@ -1,13 +1,13 @@
 ReTransmitterModelComplex
 =========================
 
-.. py:class:: ReTransmitterModelComplex
+.. py:class:: ansys.stk.core.stkobjects.ReTransmitterModelComplex
 
-   Bases: py:obj:`~IReTransmitterModelComplex`, py:obj:`~IReTransmitterModel`, py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex`, py:obj:`~ansys.stk.core.stkobjects.IReTransmitterModel`, py:obj:`~ansys.stk.core.stkobjects.ITransmitterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a complex re-transmitter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReTransmitterModelComplex
 
 Overview
 --------

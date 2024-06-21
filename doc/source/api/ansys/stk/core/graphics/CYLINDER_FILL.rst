@@ -1,12 +1,12 @@
 CYLINDER_FILL
 =============
 
-.. py:class:: CYLINDER_FILL
+.. py:class:: ansys.stk.core.graphics.CYLINDER_FILL
 
    IntFlag
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: CYLINDER_FILL
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleHPOPDragModelSpherical
 ==============================
 
-.. py:class:: IVehicleHPOPDragModelSpherical
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPDragModelSpherical
 
    IVehicleHPOPDragModel
    
    Spherical Drag Model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPDragModelSpherical
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cd`
-            * - :py:meth:`~area_mass_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelSpherical.cd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelSpherical.area_mass_ratio`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITerrainCollection
 ==================
 
-.. py:class:: ITerrainCollection
+.. py:class:: ansys.stk.core.stkobjects.ITerrainCollection
 
    object
    
    IAgTerrainCollection lists all the terrain data files available in this scenario for visualization and analysis.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITerrainCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrainCollection.item`
               - Given an index, returns an IAgTerrain interface.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrainCollection.add`
               - Add a terrain item to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrainCollection.remove`
               - Remove a given index from the collection.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrainCollection.remove_all`
               - Remove all items from the collections.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrainCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITerrainCollection._NewEnum`
 
 
 Import detail

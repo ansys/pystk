@@ -1,13 +1,13 @@
 IVehicleProfileGPS
 ==================
 
-.. py:class:: IVehicleProfileGPS
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileGPS
 
    IVehicleAttitudeProfile
    
    GPS Attitude profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileGPS
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileGPS.model_type`
 
 
 Import detail

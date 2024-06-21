@@ -1,12 +1,12 @@
 SPACING_UNIT
 ============
 
-.. py:class:: SPACING_UNIT
+.. py:class:: ansys.stk.core.stkobjects.SPACING_UNIT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SPACING_UNIT
 
 Overview
 --------

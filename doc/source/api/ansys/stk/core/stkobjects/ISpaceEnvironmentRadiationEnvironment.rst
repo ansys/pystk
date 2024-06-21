@@ -1,13 +1,13 @@
 ISpaceEnvironmentRadiationEnvironment
 =====================================
 
-.. py:class:: ISpaceEnvironmentRadiationEnvironment
+.. py:class:: ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment
 
    object
    
    Radiation environment settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISpaceEnvironmentRadiationEnvironment
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_crres_electron_energies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.get_crres_electron_energies`
               - Return electron energies used for the CRRES models as an array of doubles. Uses ParticleEnergy Dimension.
-            * - :py:meth:`~get_crres_proton_energies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.get_crres_proton_energies`
               - Return proton energies used for the CRRES models as an array of doubles. Uses ParticleEnergy Dimension.
-            * - :py:meth:`~get_nasa_electron_energies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.get_nasa_electron_energies`
               - Return electron energies used for the NASA models as an array of doubles. Uses ParticleEnergy Dimension.
-            * - :py:meth:`~get_nasa_proton_energies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.get_nasa_proton_energies`
               - Return proton energies used for the NASA models as an array of doubles. Uses ParticleEnergy Dimension.
 
     .. tab-item:: Properties
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~crres_proton_activity`
-            * - :py:meth:`~crres_radiation_activity`
-            * - :py:meth:`~nasa_energy_values`
-            * - :py:meth:`~nasa_models_activity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.crres_proton_activity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.crres_radiation_activity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.nasa_energy_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.nasa_models_activity`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: nasa_energy_values
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.nasa_energy_values
-    :type: IAgSpEnvRadEnergyValues
+    :type: ISpaceEnvironmentRadEnergyValues
 
     Proton and electron energies for the NASA models.
 

@@ -1,13 +1,13 @@
 IStateCalcRAAN
 ==============
 
-.. py:class:: IStateCalcRAAN
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRAAN
 
    object
    
    Properties for a RAAN calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRAAN
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRAAN.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRAAN.element_type`
 
 
 Import detail

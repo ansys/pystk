@@ -1,13 +1,13 @@
 AnalysisWorkbenchTemplate
 =========================
 
-.. py:class:: AnalysisWorkbenchTemplate
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchTemplate
 
-   Bases: py:obj:`~IAnalysisWorkbenchContext`, py:obj:`~IAnalysisWorkbenchTemplate`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchContext`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchTemplate`
 
    Enable to obtain information about the STK class that owns the VGT component.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchTemplate
 
 Overview
 --------

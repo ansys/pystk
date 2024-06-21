@@ -1,13 +1,13 @@
 IStateCalcRelGroundTrackError
 =============================
 
-.. py:class:: IStateCalcRelGroundTrackError
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError
 
    object
    
    Properties for a RelGroundTrackError calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRelGroundTrackError
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~direction`
-            * - :py:meth:`~signed`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.signed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.reference`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

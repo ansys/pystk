@@ -1,13 +1,13 @@
 IVehicleSGP4LoadFile
 ====================
 
-.. py:class:: IVehicleSGP4LoadFile
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4LoadFile
 
    IVehicleSGP4LoadData
    
    Interface for SGP4 propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4LoadFile
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_ssc_nums_from_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.get_ssc_nums_from_file`
               - Return an array of SSC Numbers from the file selected.
-            * - :py:meth:`~get_segs_from_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.get_segs_from_file`
               - Return an array of available segments from a file using the specified SSC Number.
-            * - :py:meth:`~add_segs_from_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.add_segs_from_file`
               - Add multiple segments from the array returned in GetSegsFromFile.
 
     .. tab-item:: Properties
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.file`
 
 
 Import detail

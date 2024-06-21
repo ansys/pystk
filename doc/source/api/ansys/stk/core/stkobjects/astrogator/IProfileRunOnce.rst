@@ -1,13 +1,13 @@
 IProfileRunOnce
 ===============
 
-.. py:class:: IProfileRunOnce
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileRunOnce
 
    IProfile
    
    Properties for a Run Once profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileRunOnce
 
 Overview
 --------

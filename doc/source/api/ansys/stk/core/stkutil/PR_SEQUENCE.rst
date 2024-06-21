@@ -1,12 +1,12 @@
 PR_SEQUENCE
 ===========
 
-.. py:class:: PR_SEQUENCE
+.. py:class:: ansys.stk.core.stkutil.PR_SEQUENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: PR_SEQUENCE
 
 Overview
 --------

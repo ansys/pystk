@@ -1,13 +1,13 @@
 IAltitudeDisplayCondition
 =========================
 
-.. py:class:: IAltitudeDisplayCondition
+.. py:class:: ansys.stk.core.graphics.IAltitudeDisplayCondition
 
    object
    
    Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAltitudeDisplayCondition
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_altitude`
-            * - :py:meth:`~maximum_altitude`
-            * - :py:meth:`~central_body`
+            * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayCondition.minimum_altitude`
+            * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayCondition.maximum_altitude`
+            * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayCondition.central_body`
 
 
 Import detail

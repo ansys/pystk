@@ -1,13 +1,13 @@
 AntennaModelScriptPlugin
 ========================
 
-.. py:class:: AntennaModelScriptPlugin
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelScriptPlugin
 
-   Bases: py:obj:`~IAntennaModelScriptPlugin`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a script plguin antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelScriptPlugin
 
 Overview
 --------

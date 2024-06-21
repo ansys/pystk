@@ -1,13 +1,13 @@
 IVehicleProfileSpinAboutXXX
 ===========================
 
-.. py:class:: IVehicleProfileSpinAboutXXX
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX
 
    IVehicleAttitudeProfile
    
    Shared interface for Spin About Nadir and Spin About Sun Vector profile parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileSpinAboutXXX
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~rate`
-            * - :py:meth:`~offset`
-            * - :py:meth:`~smart_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX.rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX.offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX.smart_epoch`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX.smart_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Epoch of the offset.
 

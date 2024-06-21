@@ -1,13 +1,13 @@
 IVehicleSGP4OnlineLoad
 ======================
 
-.. py:class:: IVehicleSGP4OnlineLoad
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad
 
    IVehicleSGP4LoadData
    
    Interface for SGP4 propagator. Loads segments from online.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4OnlineLoad
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_segs_from_online`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.get_segs_from_online`
               - Return an array with all segments related to the supplied SSC number.
-            * - :py:meth:`~add_segs_from_online`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.add_segs_from_online`
               - Accept an array of segments to add.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~load_newest`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.load_newest`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.stop_time`
 
 
 Import detail

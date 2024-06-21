@@ -1,13 +1,13 @@
 ICalculationToolScalarCustomInline
 ==================================
 
-.. py:class:: ICalculationToolScalarCustomInline
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarCustomInline
 
    object
    
    A calc scalar based on using an inline scripted algorithm in MATLAB, Perl, VBScript or JScript to define its value and rate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarCustomInline
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_all_arguments`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.get_all_arguments`
               - Return the list of arguments.
-            * - :py:meth:`~set_all_arguments`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.set_all_arguments`
               - Set the list of arguments.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~script_type`
-            * - :py:meth:`~value_function`
-            * - :py:meth:`~derivative_function`
-            * - :py:meth:`~dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.script_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.value_function`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.derivative_function`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.dimension`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ReceiverModelScriptPluginRF
 ===========================
 
-.. py:class:: ReceiverModelScriptPluginRF
+.. py:class:: ansys.stk.core.stkobjects.ReceiverModelScriptPluginRF
 
-   Bases: py:obj:`~IReceiverModelScriptPlugin`, py:obj:`~IReceiverModelScriptPluginRF`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverModelScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.IReceiverModelScriptPluginRF`, py:obj:`~ansys.stk.core.stkobjects.IReceiverModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a RF script plugin receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceiverModelScriptPluginRF
 
 Overview
 --------

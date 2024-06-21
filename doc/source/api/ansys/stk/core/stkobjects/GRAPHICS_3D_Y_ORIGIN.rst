@@ -1,12 +1,12 @@
 GRAPHICS_3D_Y_ORIGIN
 ====================
 
-.. py:class:: GRAPHICS_3D_Y_ORIGIN
+.. py:class:: ansys.stk.core.stkobjects.GRAPHICS_3D_Y_ORIGIN
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GRAPHICS_3D_Y_ORIGIN
 
 Overview
 --------

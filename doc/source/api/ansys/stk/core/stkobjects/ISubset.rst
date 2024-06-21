@@ -1,13 +1,13 @@
 ISubset
 =======
 
-.. py:class:: ISubset
+.. py:class:: ansys.stk.core.stkobjects.ISubset
 
    object
    
    Subset properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISubset
 
 Overview
 --------

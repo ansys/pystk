@@ -1,12 +1,12 @@
 CRDN_INTERSECTION_SURFACE
 =========================
 
-.. py:class:: CRDN_INTERSECTION_SURFACE
+.. py:class:: ansys.stk.core.vgt.CRDN_INTERSECTION_SURFACE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_INTERSECTION_SURFACE
 
 Overview
 --------

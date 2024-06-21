@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorApoapsis
 =================================
 
-.. py:class:: IVectorGeometryToolVectorApoapsis
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis
 
    object
    
    Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorApoapsis
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~mean_element_type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.mean_element_type`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.reference_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a reference point.
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.central_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 

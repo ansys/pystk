@@ -1,13 +1,13 @@
 AdvancedFixedWingExternalAero
 =============================
 
-.. py:class:: AdvancedFixedWingExternalAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingExternalAero
 
-   Bases: py:obj:`~IAdvancedFixedWingExternalAero`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalAero`
 
    Class defining the External Aero File aerodynamic strategy in the Advanced Fixed Wing Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AdvancedFixedWingExternalAero
 
 Overview
 --------

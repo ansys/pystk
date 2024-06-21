@@ -1,13 +1,13 @@
 EnginePlugin
 ============
 
-.. py:class:: EnginePlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.EnginePlugin
 
-   Bases: py:obj:`~IEnginePlugin`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEnginePlugin`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Plugin engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: EnginePlugin
 
 Overview
 --------

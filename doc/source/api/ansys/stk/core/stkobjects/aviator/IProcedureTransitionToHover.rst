@@ -1,13 +1,13 @@
 IProcedureTransitionToHover
 ===========================
 
-.. py:class:: IProcedureTransitionToHover
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover
 
    object
    
    Interface used to access the options for a transition to hover procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureTransitionToHover
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_transition_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.set_transition_course`
               - Set the course and heading reference.
-            * - :py:meth:`~set_transition_into_wind`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.set_transition_into_wind`
               - Set the option to transition into the wind to true.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -33,15 +33,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_reference`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~course`
-            * - :py:meth:`~transition_into_wind`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_turn_direction_options`
-            * - :py:meth:`~vertical_plane_options`
-            * - :py:meth:`~smooth_transition_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.transition_into_wind`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.enroute_turn_direction_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.vertical_plane_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.smooth_transition_mode`
 
 
 Import detail
@@ -87,19 +87,19 @@ Property detail
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.enroute_options
-    :type: IAgAvtrEnrouteOptions
+    :type: IEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.enroute_turn_direction_options
-    :type: IAgAvtrEnrouteTurnDirectionOptions
+    :type: IEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
 .. py:property:: vertical_plane_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover.vertical_plane_options
-    :type: IAgAvtrVerticalPlaneAndFlightPathOptions
+    :type: IVerticalPlaneAndFlightPathOptions
 
     Get the vertical plane options.
 

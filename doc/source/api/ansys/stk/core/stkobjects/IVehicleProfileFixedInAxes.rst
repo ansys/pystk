@@ -1,13 +1,13 @@
 IVehicleProfileFixedInAxes
 ==========================
 
-.. py:class:: IVehicleProfileFixedInAxes
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileFixedInAxes
 
    IVehicleAttitudeProfile
    
    Fixed in Axes attitude profile: maintains a constant orientation of the body-fixed axes with respect to the specified reference axes, using the selected coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileFixedInAxes
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~available_reference_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileFixedInAxes.orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileFixedInAxes.reference_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileFixedInAxes.available_reference_axes`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileFixedInAxes.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Get the orientation of the body-fixed axes.
 

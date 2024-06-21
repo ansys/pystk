@@ -1,13 +1,13 @@
 Place
 =====
 
-.. py:class:: Place
+.. py:class:: ansys.stk.core.stkobjects.Place
 
-   Bases: py:obj:`~IPlace`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPlace`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the Place object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Place
 
 Overview
 --------

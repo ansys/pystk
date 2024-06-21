@@ -1,13 +1,13 @@
 StkObjectChangedEventArgs
 =========================
 
-.. py:class:: StkObjectChangedEventArgs
+.. py:class:: ansys.stk.core.stkobjects.StkObjectChangedEventArgs
 
-   Bases: py:obj:`~IStkObjectChangedEventArgs`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkObjectChangedEventArgs`
 
    Contains information about the changes in the object's state.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkObjectChangedEventArgs
 
 Overview
 --------

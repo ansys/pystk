@@ -1,13 +1,13 @@
 ProcedureVGTPoint
 =================
 
-.. py:class:: ProcedureVGTPoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint
 
-   Bases: py:obj:`~IProcedureVGTPoint`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a VGT Point procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureVGTPoint
 
 Overview
 --------

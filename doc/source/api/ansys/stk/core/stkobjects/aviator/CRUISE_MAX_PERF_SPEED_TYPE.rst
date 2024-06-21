@@ -1,12 +1,12 @@
 CRUISE_MAX_PERF_SPEED_TYPE
 ==========================
 
-.. py:class:: CRUISE_MAX_PERF_SPEED_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.CRUISE_MAX_PERF_SPEED_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: CRUISE_MAX_PERF_SPEED_TYPE
 
 Overview
 --------

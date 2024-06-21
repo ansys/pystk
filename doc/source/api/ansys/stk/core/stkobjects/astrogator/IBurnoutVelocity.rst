@@ -1,13 +1,13 @@
 IBurnoutVelocity
 ================
 
-.. py:class:: IBurnoutVelocity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity
 
    object
    
    Properties for the burnout velocity of a Launch segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBurnoutVelocity
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~burnout_option`
-            * - :py:meth:`~fixed_velocity`
-            * - :py:meth:`~inertial_velocity`
-            * - :py:meth:`~inertial_velocity_azimuth`
-            * - :py:meth:`~inertial_horizontal_fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity.burnout_option`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity.fixed_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity.inertial_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity.inertial_velocity_azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity.inertial_horizontal_fpa`
 
 
 Import detail

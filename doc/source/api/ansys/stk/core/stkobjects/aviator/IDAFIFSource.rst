@@ -1,13 +1,13 @@
 IDAFIFSource
 ============
 
-.. py:class:: IDAFIFSource
+.. py:class:: ansys.stk.core.stkobjects.aviator.IDAFIFSource
 
    object
    
    Interface used to access the options for any DAFIF source in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IDAFIFSource
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_dafif_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.get_dafif_item`
               - Get the DAFIF item with the given name.
-            * - :py:meth:`~get_as_catalog_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~data_path`
-            * - :py:meth:`~effective_date`
-            * - :py:meth:`~expiration_date`
-            * - :py:meth:`~spec_revision`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.data_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.effective_date`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.expiration_date`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.spec_revision`
 
 
 Import detail

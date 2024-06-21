@@ -1,12 +1,12 @@
 SMOOTH_ACCEL_STOP_CONDITIONS
 ============================
 
-.. py:class:: SMOOTH_ACCEL_STOP_CONDITIONS
+.. py:class:: ansys.stk.core.stkobjects.aviator.SMOOTH_ACCEL_STOP_CONDITIONS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SMOOTH_ACCEL_STOP_CONDITIONS
 
 Overview
 --------

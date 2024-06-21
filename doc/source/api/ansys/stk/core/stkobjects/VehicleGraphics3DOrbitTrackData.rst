@@ -1,13 +1,13 @@
 VehicleGraphics3DOrbitTrackData
 ===============================
 
-.. py:class:: VehicleGraphics3DOrbitTrackData
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTrackData
 
-   Bases: py:obj:`~IVehicleGraphics3DOrbitTrackData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTrackData`
 
    3D leading/trailing track data for satellites.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DOrbitTrackData
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcEccentricityX
 =======================
 
-.. py:class:: IStateCalcEccentricityX
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityX
 
    object
    
    Properties for a EccentricityX calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcEccentricityX
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityX.central_body_name`
 
 
 Import detail

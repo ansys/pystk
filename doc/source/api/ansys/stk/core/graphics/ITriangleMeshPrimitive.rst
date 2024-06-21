@@ -1,13 +1,13 @@
 ITriangleMeshPrimitive
 ======================
 
-.. py:class:: ITriangleMeshPrimitive
+.. py:class:: ansys.stk.core.graphics.ITriangleMeshPrimitive
 
    object
    
    Render a triangle mesh in the 3D scene. Examples of triangle meshes include polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITriangleMeshPrimitive
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.set`
               - Define the triangle mesh using an indexed triangle list specified by positions, normals, and indices. The mesh is rendered in the primitive's reference frame.
-            * - :py:meth:`~set_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.set_with_optional_parameters`
               - Define the triangle mesh using an indexed triangle list specified by positions, normals, indices, and optionalParameters. The mesh is rendered in the primitive's reference frame.
-            * - :py:meth:`~set_triangulator`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.set_triangulator`
               - Define the triangle mesh using the specified triangulator. The mesh is rendered in the primitive's reference frame.
 
     .. tab-item:: Properties
@@ -33,17 +33,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~wireframe`
-            * - :py:meth:`~render_back_then_front_faces`
-            * - :py:meth:`~lighting`
-            * - :py:meth:`~triangle_winding_order`
-            * - :py:meth:`~cull_face`
-            * - :py:meth:`~shade_model`
-            * - :py:meth:`~texture`
-            * - :py:meth:`~texture_filter`
-            * - :py:meth:`~set_hint`
-            * - :py:meth:`~central_body_clipped`
-            * - :py:meth:`~two_sided_lighting`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.wireframe`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.render_back_then_front_faces`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.lighting`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.triangle_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.cull_face`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.shade_model`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.texture`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.texture_filter`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.central_body_clipped`
+            * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.two_sided_lighting`
 
 
 Import detail
@@ -95,13 +95,13 @@ Property detail
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.texture
-    :type: IAgStkGraphicsRendererTexture2D
+    :type: IRendererTexture2D
 
     Gets or sets the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.ITriangleMeshPrimitive.texture_filter
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets or sets the filter used for the texture associated with this triangle mesh.
 

@@ -1,13 +1,13 @@
 IVehiclePropagatorTwoBody
 =========================
 
-.. py:class:: IVehiclePropagatorTwoBody
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody
 
    IVehiclePropagator
    
    Two-body propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorTwoBody
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~initial_state`
-            * - :py:meth:`~ephemeris_interval`
-            * - :py:meth:`~propagation_frame`
-            * - :py:meth:`~supported_propagation_frames`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.initial_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.propagation_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.supported_propagation_frames`
 
 
 Import detail
@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.initial_state
-    :type: IAgVeInitialState
+    :type: IVehicleInitialState
 
     Get the initial state.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

@@ -1,13 +1,13 @@
 IScheduleTime
 =============
 
-.. py:class:: IScheduleTime
+.. py:class:: ansys.stk.core.stkobjects.IScheduleTime
 
    object
    
    IAgScheduleTime Interface, part of the target times scheme for specifying when a satellite or sensor can access a given object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScheduleTime
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~target`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTime.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTime.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTime.target`
 
 
 Import detail

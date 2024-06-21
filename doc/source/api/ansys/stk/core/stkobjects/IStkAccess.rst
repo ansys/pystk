@@ -1,13 +1,13 @@
 IStkAccess
 ==========
 
-.. py:class:: IStkAccess
+.. py:class:: ansys.stk.core.stkobjects.IStkAccess
 
    object
    
    Provide access to the Data Providers and access computations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkAccess
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.remove_access`
               - Remove the access that was computed between two objects.
-            * - :py:meth:`~compute_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.compute_access`
               - Recomputes the access between two objects.  Calls to ComputeAccess should not be made between calls to BeginUpdate and EndUpdate.
-            * - :py:meth:`~specify_access_time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.specify_access_time_period`
               - If eUserSpec is selected for AccessTimePeriod, specify the start and stop times for the user-defined period.
-            * - :py:meth:`~specify_access_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.specify_access_intervals`
               - Allow a list of intervals to be used for the access calculation.
-            * - :py:meth:`~specify_access_event_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.specify_access_event_intervals`
               - Access is computed using the intervals in the specified event interval list.
-            * - :py:meth:`~clear_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.clear_access`
               - Clear the access intervals, but not the definitional settings of the access object itself (like step size, light time delay settings, time interval, etc.).
 
     .. tab-item:: Properties
@@ -39,18 +39,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~data_providers`
-            * - :py:meth:`~access_time_period`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~advanced`
-            * - :py:meth:`~data_displays`
-            * - :py:meth:`~computed_access_interval_times`
-            * - :py:meth:`~access_time_period_data`
-            * - :py:meth:`~vgt`
-            * - :py:meth:`~save_computed_data`
-            * - :py:meth:`~base`
-            * - :py:meth:`~target`
-            * - :py:meth:`~name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.data_providers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.access_time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.advanced`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.data_displays`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.computed_access_interval_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.access_time_period_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.vgt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.save_computed_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.base`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.target`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.name`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.IStkAccess.data_providers
-    :type: IAgDataProviderCollection
+    :type: IDataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
@@ -78,37 +78,37 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IStkAccess.graphics
-    :type: IAgStkAccessGraphics
+    :type: IStkAccessGraphics
 
     Gets the Graphics properties for the Access computations.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.IStkAccess.advanced
-    :type: IAgStkAccessAdvanced
+    :type: IStkAccessAdvanced
 
     Gets the Advanced properties for the Access computations.
 
 .. py:property:: data_displays
     :canonical: ansys.stk.core.stkobjects.IStkAccess.data_displays
-    :type: IAgVODataDisplayCollection
+    :type: IGraphics3DDataDisplayCollection
 
     Gets the VO Data Display Collection.
 
 .. py:property:: computed_access_interval_times
     :canonical: ansys.stk.core.stkobjects.IStkAccess.computed_access_interval_times
-    :type: IAgIntervalCollection
+    :type: IIntervalCollection
 
     Returns a list of the computed access interval times.
 
 .. py:property:: access_time_period_data
     :canonical: ansys.stk.core.stkobjects.IStkAccess.access_time_period_data
-    :type: IAgAccessInterval
+    :type: IAccessInterval
 
     Returns an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
 
 .. py:property:: vgt
     :canonical: ansys.stk.core.stkobjects.IStkAccess.vgt
-    :type: IAgCrdnProvider
+    :type: IAnalysisWorkbenchProvider
 
     Gets a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
 
@@ -120,13 +120,13 @@ Property detail
 
 .. py:property:: base
     :canonical: ansys.stk.core.stkobjects.IStkAccess.base
-    :type: IAgStkObject
+    :type: IStkObject
 
     Base object used in the access.
 
 .. py:property:: target
     :canonical: ansys.stk.core.stkobjects.IStkAccess.target
-    :type: IAgStkObject
+    :type: IStkObject
 
     Target object used in the access.
 

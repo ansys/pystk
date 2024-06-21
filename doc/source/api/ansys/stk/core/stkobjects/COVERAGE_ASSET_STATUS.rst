@@ -1,12 +1,12 @@
 COVERAGE_ASSET_STATUS
 =====================
 
-.. py:class:: COVERAGE_ASSET_STATUS
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_ASSET_STATUS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_ASSET_STATUS
 
 Overview
 --------

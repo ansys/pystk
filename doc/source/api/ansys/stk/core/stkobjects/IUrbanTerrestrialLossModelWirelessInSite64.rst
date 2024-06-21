@@ -1,13 +1,13 @@
 IUrbanTerrestrialLossModelWirelessInSite64
 ==========================================
 
-.. py:class:: IUrbanTerrestrialLossModelWirelessInSite64
+.. py:class:: ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64
 
    object
    
    Provide access to the properties and methods for an urban/terrestrial loss Wireless InSite 64 model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IUrbanTerrestrialLossModelWirelessInSite64
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~surface_temperature`
-            * - :py:meth:`~supported_calculation_methods`
-            * - :py:meth:`~calculation_method`
-            * - :py:meth:`~enable_ground_reflection`
-            * - :py:meth:`~geometry_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.supported_calculation_methods`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.calculation_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.enable_ground_reflection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.geometry_data`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: geometry_data
     :canonical: ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.geometry_data
-    :type: IAgWirelessInSite64GeometryData
+    :type: IWirelessInSite64GeometryData
 
     Gets the geometry data.
 

@@ -1,13 +1,13 @@
 IVehicleGraphics3DTrajectoryPassData
 ====================================
 
-.. py:class:: IVehicleGraphics3DTrajectoryPassData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryPassData
 
    object
    
    Interface for 3D ground track and trajectory data for a launch vehicle or missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DTrajectoryPassData
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ground_track`
-            * - :py:meth:`~trajectory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryPassData.ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryPassData.trajectory`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryPassData.ground_track
-    :type: IAgVeVOLeadTrailData
+    :type: IVehicleGraphics3DLeadTrailData
 
     Get the 3D ground track data.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryPassData.trajectory
-    :type: IAgVeVOLeadTrailData
+    :type: IVehicleGraphics3DLeadTrailData
 
     Get the 3D trajectory data.
 

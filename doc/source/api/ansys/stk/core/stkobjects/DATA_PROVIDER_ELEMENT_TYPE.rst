@@ -1,12 +1,12 @@
 DATA_PROVIDER_ELEMENT_TYPE
 ==========================
 
-.. py:class:: DATA_PROVIDER_ELEMENT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.DATA_PROVIDER_ELEMENT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DATA_PROVIDER_ELEMENT_TYPE
 
 Overview
 --------

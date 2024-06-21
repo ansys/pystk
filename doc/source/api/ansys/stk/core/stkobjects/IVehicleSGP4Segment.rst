@@ -1,13 +1,13 @@
 IVehicleSGP4Segment
 ===================
 
-.. py:class:: IVehicleSGP4Segment
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4Segment
 
    object
    
    Interface for SGP4 propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4Segment
 
 Overview
 --------
@@ -20,24 +20,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ssc_num`
-            * - :py:meth:`~rev_number`
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~inclination`
-            * - :py:meth:`~arg_of_perigee`
-            * - :py:meth:`~raan`
-            * - :py:meth:`~eccentricity`
-            * - :py:meth:`~mean_motion`
-            * - :py:meth:`~mean_anomaly`
-            * - :py:meth:`~mean_motion_dot`
-            * - :py:meth:`~motion_dot_dot`
-            * - :py:meth:`~b_star`
-            * - :py:meth:`~classification`
-            * - :py:meth:`~intl_designator`
-            * - :py:meth:`~switching_method`
-            * - :py:meth:`~range`
-            * - :py:meth:`~switch_time`
-            * - :py:meth:`~enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.ssc_num`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.rev_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.inclination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.arg_of_perigee`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.raan`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.eccentricity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.mean_motion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.mean_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.mean_motion_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.motion_dot_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.b_star`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.classification`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.intl_designator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.switching_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.switch_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4Segment.enabled`
 
 
 Import detail

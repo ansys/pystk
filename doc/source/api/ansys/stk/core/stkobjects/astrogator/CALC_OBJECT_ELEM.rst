@@ -1,12 +1,12 @@
 CALC_OBJECT_ELEM
 ================
 
-.. py:class:: CALC_OBJECT_ELEM
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_ELEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CALC_OBJECT_ELEM
 
 Overview
 --------

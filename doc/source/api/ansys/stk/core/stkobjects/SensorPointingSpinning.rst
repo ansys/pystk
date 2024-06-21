@@ -1,13 +1,13 @@
 SensorPointingSpinning
 ======================
 
-.. py:class:: SensorPointingSpinning
+.. py:class:: ansys.stk.core.stkobjects.SensorPointingSpinning
 
-   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingSpinning`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingSpinning`
 
    Class defining the spinning pointing type for a Sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorPointingSpinning
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IConvolutionFilter
 ==================
 
-.. py:class:: IConvolutionFilter
+.. py:class:: ansys.stk.core.graphics.IConvolutionFilter
 
    object
    
    Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IConvolutionFilter
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~divisor`
-            * - :py:meth:`~offset`
-            * - :py:meth:`~kernel`
+            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilter.divisor`
+            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilter.offset`
+            * - :py:attr:`~ansys.stk.core.graphics.IConvolutionFilter.kernel`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ICalculationToolConditionSetFactory
 ===================================
 
-.. py:class:: ICalculationToolConditionSetFactory
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionSetFactory
 
    object
    
    The factory creates condition set components.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionSetFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetFactory.create`
               - Create and registers a condition set using specified name, description, and type.
-            * - :py:meth:`~create_scalar_thresholds`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetFactory.create_scalar_thresholds`
               - Create a scalar thresholds condition set.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetFactory.is_type_supported`
               - Return whether the specified type is supported.
 
 

@@ -1,13 +1,13 @@
 VehicleRouteGraphics3DModel
 ===========================
 
-.. py:class:: VehicleRouteGraphics3DModel
+.. py:class:: ansys.stk.core.stkobjects.VehicleRouteGraphics3DModel
 
-   Bases: py:obj:`~IVehicleRouteGraphics3DModel`, py:obj:`~IGraphics3DModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModel`
 
    3D marker for great arc vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleRouteGraphics3DModel
 
 Overview
 --------

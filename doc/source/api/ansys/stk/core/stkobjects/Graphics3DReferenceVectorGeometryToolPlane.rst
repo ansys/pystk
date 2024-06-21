@@ -1,13 +1,13 @@
 Graphics3DReferenceVectorGeometryToolPlane
 ==========================================
 
-.. py:class:: Graphics3DReferenceVectorGeometryToolPlane
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolPlane
 
-   Bases: py:obj:`~IGraphics3DReferenceVectorGeometryToolPlane`, py:obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~IDisplayTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining a reference plane (3D Graphics, Vector Geometry Tool).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DReferenceVectorGeometryToolPlane
 
 Overview
 --------

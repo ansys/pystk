@@ -1,13 +1,13 @@
 CelestialBodyInfo
 =================
 
-.. py:class:: CelestialBodyInfo
+.. py:class:: ansys.stk.core.stkobjects.CelestialBodyInfo
 
-   Bases: py:obj:`~ICelestialBodyInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICelestialBodyInfo`
 
    Represents a celestial body information.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CelestialBodyInfo
 
 Overview
 --------

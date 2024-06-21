@@ -1,13 +1,13 @@
 ITimeToolEventIntervalSmartInterval
 ===================================
 
-.. py:class:: ITimeToolEventIntervalSmartInterval
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval
 
    object
    
    A smart interval.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalSmartInterval
 
 Overview
 --------
@@ -20,29 +20,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_implicit_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.set_implicit_interval`
               - Set the reference interval and changes the state to Implicit.
-            * - :py:meth:`~find_start_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.find_start_time`
               - Find a start time of the interval. An exception is thrown if the start time cannot be determined from the interval's current state.
-            * - :py:meth:`~find_stop_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.find_stop_time`
               - Find a stop time of the interval. An exception is thrown if the stop time cannot be determined from the interval's current state.
-            * - :py:meth:`~get_start_epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.get_start_epoch`
               - Return a copy of the start epoch. Changes to the epoch will not affect the state of the interval.
-            * - :py:meth:`~set_start_epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.set_start_epoch`
               - Set a start of the interval using specified epoch component.
-            * - :py:meth:`~get_stop_epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.get_stop_epoch`
               - Return a copy of the stop epoch. Changes to the epoch will not affect the state of the interval.
-            * - :py:meth:`~set_stop_epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.set_stop_epoch`
               - Set a stop of the interval using specified epoch component.
-            * - :py:meth:`~set_explicit_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.set_explicit_interval`
               - Set the interval's start and the stop times changes the interval's state to explicit. Exception is thrown if specified start time is greater than stop time.
-            * - :py:meth:`~set_start_and_stop_epochs`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.set_start_and_stop_epochs`
               - Set the interval's start and stop epochs as two smart epoch components. Exception is thrown if specified start time is greater than stop time.
-            * - :py:meth:`~set_start_and_stop_times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.set_start_and_stop_times`
               - Set the interval's start and stop epochs as explicit times. Exception is thrown if specified start time is greater than stop time.
-            * - :py:meth:`~set_start_epoch_and_duration`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.set_start_epoch_and_duration`
               - Set the interval's start epoch and the interval's duration.
-            * - :py:meth:`~set_start_time_and_duration`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.set_start_time_and_duration`
               - Set the interval's start time and the interval's duration.
 
     .. tab-item:: Properties
@@ -51,9 +51,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_interval`
-            * - :py:meth:`~duration_as_string`
-            * - :py:meth:`~state`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.reference_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.duration_as_string`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.state`
 
 
 Import detail
@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: reference_interval
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.reference_interval
-    :type: IAgCrdnEventInterval
+    :type: ITimeToolEventInterval
 
     The reference interval used to compute start/stop times of this interval if the state of the interval is set to implicit.
 

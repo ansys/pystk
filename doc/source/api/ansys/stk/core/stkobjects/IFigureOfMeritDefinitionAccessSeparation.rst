@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionAccessSeparation
 ========================================
 
-.. py:class:: IFigureOfMeritDefinitionAccessSeparation
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessSeparation
 
    IFigureOfMeritDefinition
    
    Access Separation Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionAccessSeparation
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_max_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessSeparation.min_max_data`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: min_max_data
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessSeparation.min_max_data
-    :type: IAgFmDefDataMinMax
+    :type: IFigureOfMeritDefinitionDataMinMax
 
     Minimum and maximum time intervals for determining if two or more coverage intervals occur within a specified time interval.
 

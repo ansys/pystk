@@ -1,13 +1,13 @@
 IVehicleSegmentsCollection
 ==========================
 
-.. py:class:: IVehicleSegmentsCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSegmentsCollection
 
    object
    
    Set of segments.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSegmentsCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSegmentsCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSegmentsCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSegmentsCollection._NewEnum`
 
 
 Import detail

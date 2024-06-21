@@ -1,13 +1,13 @@
 SolarActivityConfigurationSunspotNumber
 =======================================
 
-.. py:class:: SolarActivityConfigurationSunspotNumber
+.. py:class:: ansys.stk.core.stkobjects.SolarActivityConfigurationSunspotNumber
 
-   Bases: py:obj:`~ISolarActivityConfigurationSunspotNumber`, py:obj:`~ISolarActivityConfiguration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISolarActivityConfigurationSunspotNumber`, py:obj:`~ansys.stk.core.stkobjects.ISolarActivityConfiguration`
 
    Class defining sunspot number configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SolarActivityConfigurationSunspotNumber
 
 Overview
 --------

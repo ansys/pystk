@@ -1,13 +1,13 @@
 VehicleSGP4SegmentCollection
 ============================
 
-.. py:class:: VehicleSGP4SegmentCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleSGP4SegmentCollection
 
-   Bases: py:obj:`~IVehicleSGP4SegmentCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection`
 
    Set of Trajectories.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSGP4SegmentCollection
 
 Overview
 --------

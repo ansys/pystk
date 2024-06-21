@@ -1,13 +1,13 @@
 IProcedureHoldingRacetrack
 ==========================
 
-.. py:class:: IProcedureHoldingRacetrack
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack
 
    object
    
    Interface used to access the options for a holding racetrack procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureHoldingRacetrack
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_minimum_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.get_minimum_width`
               - Get the minimum allowable width based on the aircraft's minimum diameter at this altitude.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -31,21 +31,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~profile_mode`
-            * - :py:meth:`~level_off_mode`
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~range`
-            * - :py:meth:`~length`
-            * - :py:meth:`~width`
-            * - :py:meth:`~entry_maneuver`
-            * - :py:meth:`~turns`
-            * - :py:meth:`~refuel_dump_mode`
-            * - :py:meth:`~hold_cruise_airspeed_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~enroute_turn_direction_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.profile_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.level_off_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.entry_maneuver`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.turns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.refuel_dump_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.hold_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_turn_direction_options`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.altitude_options
-    :type: IAgAvtrAltitudeMSLOptions
+    :type: IAltitudeMSLOptions
 
     Get the altitude options.
 
@@ -127,25 +127,25 @@ Property detail
 
 .. py:property:: hold_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.hold_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the hold cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_options
-    :type: IAgAvtrEnrouteAndDelayOptions
+    :type: IEnrouteAndDelayOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_turn_direction_options
-    :type: IAgAvtrEnrouteTurnDirectionOptions
+    :type: IEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 

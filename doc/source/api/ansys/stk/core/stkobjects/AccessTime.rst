@@ -1,13 +1,13 @@
 AccessTime
 ==========
 
-.. py:class:: AccessTime
+.. py:class:: ansys.stk.core.stkobjects.AccessTime
 
-   Bases: py:obj:`~IAccessTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessTime`
 
    Class for defining Sensor target times in terms of access.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessTime
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCalcRange
 ===================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCalcRange
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange
 
    object
    
    A volume calc distance to location interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCalcRange
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~distance`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~reference_plane`
-            * - :py:meth:`~along_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.distance`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.reference_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.along_vector`
 
 
 Import detail
@@ -45,19 +45,19 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.reference_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     The Volume Calc Range reference point.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.reference_plane
-    :type: IAgCrdnPlane
+    :type: IVectorGeometryToolPlane
 
     The Volume Calc Range reference plane.
 
 .. py:property:: along_vector
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.along_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     The Volume Calc Range Along Vector.
 

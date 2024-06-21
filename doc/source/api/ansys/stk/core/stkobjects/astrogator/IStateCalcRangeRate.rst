@@ -1,13 +1,13 @@
 IStateCalcRangeRate
 ===================
 
-.. py:class:: IStateCalcRangeRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRangeRate
 
    object
    
    Properties for a Range Rate calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRangeRate
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRangeRate.coord_system_name`
 
 
 Import detail

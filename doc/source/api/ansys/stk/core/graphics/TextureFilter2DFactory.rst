@@ -1,13 +1,13 @@
 TextureFilter2DFactory
 ======================
 
-.. py:class:: TextureFilter2DFactory
+.. py:class:: ansys.stk.core.graphics.TextureFilter2DFactory
 
-   Bases: py:obj:`~ITextureFilter2DFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITextureFilter2DFactory`
 
    Create texture filters.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TextureFilter2DFactory
 
 Overview
 --------

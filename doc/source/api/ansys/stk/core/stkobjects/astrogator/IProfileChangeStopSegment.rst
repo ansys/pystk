@@ -1,13 +1,13 @@
 IProfileChangeStopSegment
 =========================
 
-.. py:class:: IProfileChangeStopSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment
 
    IProfile
    
    Properties for a Change Stop Segment profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileChangeStopSegment
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment.set_segment`
               - Set the stop segment to target.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~segment_name`
-            * - :py:meth:`~state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment.segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment.state`
 
 
 Import detail

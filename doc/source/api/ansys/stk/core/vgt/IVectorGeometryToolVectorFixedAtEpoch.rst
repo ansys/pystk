@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorFixedAtEpoch
 =====================================
 
-.. py:class:: IVectorGeometryToolVectorFixedAtEpoch
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch
 
    object
    
    A vector based on another vector fixed at a specified epoch.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorFixedAtEpoch
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~source_vector`
-            * - :py:meth:`~reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch.epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch.source_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch.reference_axes`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: source_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch.source_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a source vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch.reference_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

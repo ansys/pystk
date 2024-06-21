@@ -1,12 +1,12 @@
 RADAR_PULSE_INTEGRATION_TYPE
 ============================
 
-.. py:class:: RADAR_PULSE_INTEGRATION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RADAR_PULSE_INTEGRATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_PULSE_INTEGRATION_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorAngleRate
 ==================================
 
-.. py:class:: IVectorGeometryToolVectorAngleRate
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate
 
    object
    
    Angle rate vector perpendicular to the plane in which the angle is defined.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorAngleRate
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~angle`
-            * - :py:meth:`~differencing_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate.angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate.differencing_time_step`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: angle
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate.angle
-    :type: IAgCrdnAngleRefTo
+    :type: IVectorGeometryToolAngleRefTo
 
     Specify an angle. The angle vector will be perpendicular to the plane in which the angle is defined.
 

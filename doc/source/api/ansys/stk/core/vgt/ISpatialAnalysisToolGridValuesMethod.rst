@@ -1,13 +1,13 @@
 ISpatialAnalysisToolGridValuesMethod
 ====================================
 
-.. py:class:: ISpatialAnalysisToolGridValuesMethod
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod
 
    object
    
    A grid values method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolGridValuesMethod
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod.method_type`
 
 
 Import detail

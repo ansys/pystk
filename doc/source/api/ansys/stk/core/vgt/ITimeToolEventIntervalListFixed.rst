@@ -1,13 +1,13 @@
 ITimeToolEventIntervalListFixed
 ===============================
 
-.. py:class:: ITimeToolEventIntervalListFixed
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalListFixed
 
    object
    
    Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalListFixed
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFixed.get_intervals`
               - Get intervals with explicitly specified start and stop times from interval list. The method returns a one-dimensional array which elements are 2-tuples of intervals' start/stop times converted according to the current unit preferences.
-            * - :py:meth:`~set_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFixed.set_intervals`
               - Set interval list from intervals with explicitly specified start and stop times. The method takes a one-dimensional array which elements are 2-tuples of intervals' start/stop times converted according to the current unit preferences.
 
 

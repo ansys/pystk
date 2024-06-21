@@ -1,12 +1,12 @@
 CONTROL_ORBIT_STATE_VALUE
 =========================
 
-.. py:class:: CONTROL_ORBIT_STATE_VALUE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_ORBIT_STATE_VALUE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_ORBIT_STATE_VALUE
 
 Overview
 --------

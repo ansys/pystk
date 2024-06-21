@@ -1,13 +1,13 @@
 DemodulatorModelExternalSource
 ==============================
 
-.. py:class:: DemodulatorModelExternalSource
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelExternalSource
 
-   Bases: py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a external source modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelExternalSource
 
 Overview
 --------

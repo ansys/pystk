@@ -1,13 +1,13 @@
 OnePointAccess
 ==============
 
-.. py:class:: OnePointAccess
+.. py:class:: ansys.stk.core.stkobjects.OnePointAccess
 
-   Bases: py:obj:`~IOnePointAccess`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOnePointAccess`
 
    One Point Access.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OnePointAccess
 
 Overview
 --------

@@ -1,13 +1,13 @@
 BandOrderFilterFactory
 ======================
 
-.. py:class:: BandOrderFilterFactory
+.. py:class:: ansys.stk.core.graphics.BandOrderFilterFactory
 
-   Bases: py:obj:`~IBandOrderFilterFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IBandOrderFilterFactory`
 
    Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: BandOrderFilterFactory
 
 Overview
 --------

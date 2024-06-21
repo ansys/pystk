@@ -1,13 +1,13 @@
 RadarCrossSectionComputeStrategyExternalFile
 ============================================
 
-.. py:class:: RadarCrossSectionComputeStrategyExternalFile
+.. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyExternalFile
 
-   Bases: py:obj:`~IRadarCrossSectionComputeStrategyExternalFile`, py:obj:`~IRadarCrossSectionComputeStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyExternalFile`, py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarCrossSectionComputeStrategyExternalFile
 
 Overview
 --------

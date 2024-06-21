@@ -1,13 +1,13 @@
 IVehicleHPOPCentralBodyGravity
 ==============================
 
-.. py:class:: IVehicleHPOPCentralBodyGravity
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity
 
    object
    
    Central Body Gravity interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPCentralBodyGravity
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_maximum_degree_and_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.set_maximum_degree_and_order`
               - Set maximum degree and maximum order of geopotential coefficients to be included for Central Body gravity computations. An exception is raised if MaximumDegree is less than MaximumOrder. Both values are dimensionless.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~file`
-            * - :py:meth:`~max_degree`
-            * - :py:meth:`~max_order`
-            * - :py:meth:`~use_ocean_tides`
-            * - :py:meth:`~solid_tide_type`
-            * - :py:meth:`~use_secular_variations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.max_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.max_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.use_ocean_tides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.solid_tide_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.use_secular_variations`
 
 
 Import detail

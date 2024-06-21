@@ -1,13 +1,13 @@
 LLAPosition
 ===========
 
-.. py:class:: LLAPosition
+.. py:class:: ansys.stk.core.stkobjects.LLAPosition
 
-   Bases: py:obj:`~ILLAPosition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILLAPosition`
 
    Class defining position defined in terms of latitude, longitude and altitude (LLA).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LLAPosition
 
 Overview
 --------

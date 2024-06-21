@@ -1,12 +1,12 @@
 TURN_MODE
 =========
 
-.. py:class:: TURN_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.TURN_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TURN_MODE
 
 Overview
 --------

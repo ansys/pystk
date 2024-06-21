@@ -1,13 +1,13 @@
 IVehicleGraphics3DOrbitTickMarks
 ================================
 
-.. py:class:: IVehicleGraphics3DOrbitTickMarks
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks
 
    object
    
    Tick mark interface for satellites.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DOrbitTickMarks
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_between_ticks`
-            * - :py:meth:`~ground_track`
-            * - :py:meth:`~orbit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.time_between_ticks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.orbit`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.ground_track
-    :type: IAgVeVOPathTickMarks
+    :type: IVehicleGraphics3DPathTickMarks
 
     Get the ground track tick marks.
 
 .. py:property:: orbit
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.orbit
-    :type: IAgVeVOPathTickMarks
+    :type: IVehicleGraphics3DPathTickMarks
 
     Get the orbit track tick marks.
 

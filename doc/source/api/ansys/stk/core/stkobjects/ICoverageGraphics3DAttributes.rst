@@ -1,13 +1,13 @@
 ICoverageGraphics3DAttributes
 =============================
 
-.. py:class:: ICoverageGraphics3DAttributes
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGraphics3DAttributes
 
    object
    
    3D animation or static graphics options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGraphics3DAttributes
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~point_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3DAttributes.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3DAttributes.translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3DAttributes.point_size`
 
 
 Import detail

@@ -1,13 +1,13 @@
 SatelliteExportTools
 ====================
 
-.. py:class:: SatelliteExportTools
+.. py:class:: ansys.stk.core.stkobjects.SatelliteExportTools
 
-   Bases: py:obj:`~ISatelliteExportTools`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISatelliteExportTools`
 
    The Satellite Export Tools.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SatelliteExportTools
 
 Overview
 --------

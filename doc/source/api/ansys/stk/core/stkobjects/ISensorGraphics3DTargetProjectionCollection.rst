@@ -1,13 +1,13 @@
 ISensorGraphics3DTargetProjectionCollection
 ===========================================
 
-.. py:class:: ISensorGraphics3DTargetProjectionCollection
+.. py:class:: ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection
 
    object
    
    Time Dependent Target Projection List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorGraphics3DTargetProjectionCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.add`
               - Add a new element to the collection.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DTargetProjectionCollection._NewEnum`
 
 
 Import detail

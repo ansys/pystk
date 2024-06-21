@@ -1,13 +1,13 @@
 IAdvancedFixedWingGeometryBasic
 ===============================
 
-.. py:class:: IAdvancedFixedWingGeometryBasic
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryBasic
 
    object
    
    Interface used to access the options for a basic geometry wing in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingGeometryBasic
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_aspect_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryBasic.set_aspect_ratio`
               - Set the aspect ratio of the aircraft.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~aspect_ratio`
-            * - :py:meth:`~wing_sweep`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryBasic.aspect_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryBasic.wing_sweep`
 
 
 Import detail

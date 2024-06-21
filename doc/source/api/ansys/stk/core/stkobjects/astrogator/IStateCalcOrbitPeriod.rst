@@ -1,13 +1,13 @@
 IStateCalcOrbitPeriod
 =====================
 
-.. py:class:: IStateCalcOrbitPeriod
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitPeriod
 
    object
    
    Properties for an Orbit Period calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcOrbitPeriod
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitPeriod.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitPeriod.element_type`
 
 
 Import detail

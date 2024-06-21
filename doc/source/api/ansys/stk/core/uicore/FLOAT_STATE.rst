@@ -1,12 +1,12 @@
 FLOAT_STATE
 ===========
 
-.. py:class:: FLOAT_STATE
+.. py:class:: ansys.stk.core.uicore.FLOAT_STATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: FLOAT_STATE
 
 Overview
 --------

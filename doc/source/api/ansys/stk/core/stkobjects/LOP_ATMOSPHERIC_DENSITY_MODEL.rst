@@ -1,12 +1,12 @@
 LOP_ATMOSPHERIC_DENSITY_MODEL
 =============================
 
-.. py:class:: LOP_ATMOSPHERIC_DENSITY_MODEL
+.. py:class:: ansys.stk.core.stkobjects.LOP_ATMOSPHERIC_DENSITY_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LOP_ATMOSPHERIC_DENSITY_MODEL
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleGraphics3DRouteDropLines
 ================================
 
-.. py:class:: IVehicleGraphics3DRouteDropLines
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines
 
    object
    
    Interface for droplines for great arc vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DRouteDropLines
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position`
-            * - :py:meth:`~route`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines.position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines.route`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines.position
-    :type: IAgVeVODropLinePosItemCollection
+    :type: IVehicleGraphics3DDropLinePositionItemCollection
 
     Get the list of droplines from the vehicle's current positions.
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines.route
-    :type: IAgVeVODropLinePathItemCollection
+    :type: IVehicleGraphics3DDropLinePathItemCollection
 
     Get the list of droplines at intervals along the vehicle's route.
 

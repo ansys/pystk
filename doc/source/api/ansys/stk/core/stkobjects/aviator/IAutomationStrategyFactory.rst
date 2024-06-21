@@ -1,13 +1,13 @@
 IAutomationStrategyFactory
 ==========================
 
-.. py:class:: IAutomationStrategyFactory
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAutomationStrategyFactory
 
    object
    
    Interface used to send connect commands to Aviator objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAutomationStrategyFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~construct_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAutomationStrategyFactory.construct_strategy`
               - Construct the strategy.
 
 

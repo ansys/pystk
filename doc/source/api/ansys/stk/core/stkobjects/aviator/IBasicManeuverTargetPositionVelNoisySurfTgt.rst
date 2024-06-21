@@ -1,13 +1,13 @@
 IBasicManeuverTargetPositionVelNoisySurfTgt
 ===========================================
 
-.. py:class:: IBasicManeuverTargetPositionVelNoisySurfTgt
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt
 
    object
    
    Interface used to access target position and velocity strategy, Surf Tgt Pos Vel.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverTargetPositionVelNoisySurfTgt
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~new_random_engine_seed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.new_random_engine_seed`
               - Generate a new random engine seed.
-            * - :py:meth:`~apply_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.apply_position_vel`
               - Apply the current position velocity strategy.
-            * - :py:meth:`~cancel_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.cancel_position_vel`
               - Cancel the current position velocity strategy.
-            * - :py:meth:`~set_base_dyn_state_link_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.set_base_dyn_state_link_name`
               - Set the BaseDynStateLinkName.
 
     .. tab-item:: Properties
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~measurement_time_step`
-            * - :py:meth:`~position_cep`
-            * - :py:meth:`~course_error`
-            * - :py:meth:`~speed_error`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.measurement_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.position_cep`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.course_error`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.speed_error`
 
 
 Import detail

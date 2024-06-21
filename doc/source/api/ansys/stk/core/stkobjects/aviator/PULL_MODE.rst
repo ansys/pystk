@@ -1,12 +1,12 @@
 PULL_MODE
 =========
 
-.. py:class:: PULL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.PULL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PULL_MODE
 
 Overview
 --------

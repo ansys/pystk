@@ -1,13 +1,13 @@
 AutomaticSequenceCollection
 ===========================
 
-.. py:class:: AutomaticSequenceCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection
 
-   Bases: py:obj:`~IAutomaticSequenceCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection`
 
    Automatic Sequence Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AutomaticSequenceCollection
 
 Overview
 --------

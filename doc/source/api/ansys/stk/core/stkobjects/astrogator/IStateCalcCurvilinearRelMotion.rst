@@ -1,13 +1,13 @@
 IStateCalcCurvilinearRelMotion
 ==============================
 
-.. py:class:: IStateCalcCurvilinearRelMotion
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion
 
    object
    
    Properties for Curvilinear Relative Motion  calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcCurvilinearRelMotion
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_ellipse`
-            * - :py:meth:`~location_source`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~sign_convention`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion.reference_ellipse`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion.location_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion.reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion.sign_convention`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

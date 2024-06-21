@@ -1,13 +1,13 @@
 RubberBandPickInfoData
 ======================
 
-.. py:class:: RubberBandPickInfoData
+.. py:class:: ansys.stk.core.stkx.RubberBandPickInfoData
 
-   Bases: py:obj:`~IRubberBandPickInfoData`
+   Bases: py:obj:`~ansys.stk.core.stkx.IRubberBandPickInfoData`
 
    Rubber-band mouse pick result.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: RubberBandPickInfoData
 
 Overview
 --------

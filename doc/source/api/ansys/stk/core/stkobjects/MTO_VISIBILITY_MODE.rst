@@ -1,12 +1,12 @@
 MTO_VISIBILITY_MODE
 ===================
 
-.. py:class:: MTO_VISIBILITY_MODE
+.. py:class:: ansys.stk.core.stkobjects.MTO_VISIBILITY_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MTO_VISIBILITY_MODE
 
 Overview
 --------

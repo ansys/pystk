@@ -1,13 +1,13 @@
 IVehicleInertia
 ===============
 
-.. py:class:: IVehicleInertia
+.. py:class:: ansys.stk.core.stkobjects.IVehicleInertia
 
    object
    
    Satellite inertia matrix parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleInertia
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ixx`
-            * - :py:meth:`~iyy`
-            * - :py:meth:`~izz`
-            * - :py:meth:`~ixy`
-            * - :py:meth:`~ixz`
-            * - :py:meth:`~iyz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.ixx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.iyy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.izz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.ixy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.ixz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.iyz`
 
 
 Import detail

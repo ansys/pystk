@@ -1,13 +1,13 @@
 IOrbitStateClassical
 ====================
 
-.. py:class:: IOrbitStateClassical
+.. py:class:: ansys.stk.core.stkobjects.IOrbitStateClassical
 
    IOrbitState
    
    Classical (Keplerian) coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrbitStateClassical
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coordinate_system_type`
-            * - :py:meth:`~coordinate_system`
-            * - :py:meth:`~size_shape_type`
-            * - :py:meth:`~size_shape`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~location_type`
-            * - :py:meth:`~location`
-            * - :py:meth:`~supported_coordinate_system_types`
-            * - :py:meth:`~state_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.coordinate_system_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.size_shape_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.size_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.location_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.location`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.supported_coordinate_system_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateClassical.state_epoch`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.coordinate_system
-    :type: IAgOrbitStateCoordinateSystem
+    :type: IOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: size_shape
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.size_shape
-    :type: IAgClassicalSizeShape
+    :type: IClassicalSizeShape
 
     Get the size and shape of the orbit.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.orientation
-    :type: IAgClassicalOrientation
+    :type: IClassicalOrientation
 
     Get the orbit orientation.
 
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.location
-    :type: IAgClassicalLocation
+    :type: IClassicalLocation
 
     Get the location of the spacecraft in the orbit at epoch.
 
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateClassical.state_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

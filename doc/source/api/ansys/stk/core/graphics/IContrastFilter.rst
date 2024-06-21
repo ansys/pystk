@@ -1,13 +1,13 @@
 IContrastFilter
 ===============
 
-.. py:class:: IContrastFilter
+.. py:class:: ansys.stk.core.graphics.IContrastFilter
 
    object
    
    Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IContrastFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~adjustment`
+            * - :py:attr:`~ansys.stk.core.graphics.IContrastFilter.adjustment`
 
 
 Import detail

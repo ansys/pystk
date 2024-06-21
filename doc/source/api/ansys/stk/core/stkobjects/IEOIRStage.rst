@@ -1,13 +1,13 @@
 IEOIRStage
 ==========
 
-.. py:class:: IEOIRStage
+.. py:class:: ansys.stk.core.stkobjects.IEOIRStage
 
    object
    
    A stage interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRStage
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~flight_type`
-            * - :py:meth:`~plume`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStage.flight_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStage.plume`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: plume
     :canonical: ansys.stk.core.stkobjects.IEOIRStage.plume
-    :type: IAgEOIRStagePlume
+    :type: IEOIRStagePlume
 
     Property used to access the stage plume.
 

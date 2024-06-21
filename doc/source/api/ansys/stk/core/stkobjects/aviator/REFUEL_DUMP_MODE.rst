@@ -1,12 +1,12 @@
 REFUEL_DUMP_MODE
 ================
 
-.. py:class:: REFUEL_DUMP_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.REFUEL_DUMP_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: REFUEL_DUMP_MODE
 
 Overview
 --------

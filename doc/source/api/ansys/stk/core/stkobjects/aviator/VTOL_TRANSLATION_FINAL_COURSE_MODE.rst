@@ -1,12 +1,12 @@
 VTOL_TRANSLATION_FINAL_COURSE_MODE
 ==================================
 
-.. py:class:: VTOL_TRANSLATION_FINAL_COURSE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.VTOL_TRANSLATION_FINAL_COURSE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: VTOL_TRANSLATION_FINAL_COURSE_MODE
 
 Overview
 --------

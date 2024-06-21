@@ -1,13 +1,13 @@
 IVehicleLaunchControlFixedDeltaVMinEccentricity
 ===============================================
 
-.. py:class:: IVehicleLaunchControlFixedDeltaVMinEccentricity
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaVMinEccentricity
 
    object
    
    Fixed Delta V minimum eccentricity interface for missile flight parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLaunchControlFixedDeltaVMinEccentricity
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~delta_v_min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaVMinEccentricity.delta_v_min`
 
 
 Import detail

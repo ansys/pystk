@@ -1,13 +1,13 @@
 IStateCalcLocalApparentSolarLon
 ===============================
 
-.. py:class:: IStateCalcLocalApparentSolarLon
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcLocalApparentSolarLon
 
    object
    
    Properties for a Local Apparent Solar Longitude calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcLocalApparentSolarLon
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLocalApparentSolarLon.central_body_name`
 
 
 Import detail

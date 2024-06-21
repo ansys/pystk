@@ -1,13 +1,13 @@
 Satellite
 =========
 
-.. py:class:: Satellite
+.. py:class:: ansys.stk.core.stkobjects.Satellite
 
-   Bases: py:obj:`~ISatellite`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IProvideSpatialInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISatellite`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Satellite properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Satellite
 
 Overview
 --------

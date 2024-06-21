@@ -1,13 +1,13 @@
 VehicleGraphics2DElevationGroundElevation
 =========================================
 
-.. py:class:: VehicleGraphics2DElevationGroundElevation
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DElevationGroundElevation
 
-   Bases: py:obj:`~IVehicleGraphics2DElevation`, py:obj:`~IVehicleGraphics2DElevationGroundElevation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevation`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationGroundElevation`
 
    Ground elevation for vehicle swath.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DElevationGroundElevation
 
 Overview
 --------

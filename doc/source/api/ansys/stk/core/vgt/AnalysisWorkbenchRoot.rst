@@ -1,13 +1,13 @@
 AnalysisWorkbenchRoot
 =====================
 
-.. py:class:: AnalysisWorkbenchRoot
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchRoot
 
-   Bases: py:obj:`~IAnalysisWorkbenchRoot`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot`
 
    Represents a VGT root.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchRoot
 
 Overview
 --------

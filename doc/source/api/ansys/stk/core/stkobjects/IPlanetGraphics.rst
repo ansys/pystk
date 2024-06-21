@@ -1,13 +1,13 @@
 IPlanetGraphics
 ===============
 
-.. py:class:: IPlanetGraphics
+.. py:class:: ansys.stk.core.stkobjects.IPlanetGraphics
 
    object
    
    AgPlGraphics used to access the 2D graphics of the planet.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPlanetGraphics
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit`
-            * - :py:meth:`~color`
-            * - :py:meth:`~sub_planet_label_visible`
-            * - :py:meth:`~position_label_visible`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~inertial_position_visible`
-            * - :py:meth:`~sub_planet_point_visible`
-            * - :py:meth:`~orbit_visible`
-            * - :py:meth:`~orbit_display`
-            * - :py:meth:`~orbit_display_data`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.inherit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.sub_planet_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.position_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.inertial_position_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.sub_planet_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.orbit_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.orbit_display`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.orbit_display_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.is_object_graphics_visible`
 
 
 Import detail
@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: orbit_display_data
     :canonical: ansys.stk.core.stkobjects.IPlanetGraphics.orbit_display_data
-    :type: IAgOrbitDisplayData
+    :type: IOrbitDisplayData
 
     If time is used to determine how much of the orbit displays, specify a time value.
 

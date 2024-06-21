@@ -1,13 +1,13 @@
 TimeToolLastIntervalsFilter
 ===========================
 
-.. py:class:: TimeToolLastIntervalsFilter
+.. py:class:: ansys.stk.core.vgt.TimeToolLastIntervalsFilter
 
-   Bases: py:obj:`~ITimeToolLastIntervalsFilter`, py:obj:`~ITimeToolPruneFilter`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolLastIntervalsFilter`, py:obj:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
 
    The filter selects a portion of last intervals.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolLastIntervalsFilter
 
 Overview
 --------

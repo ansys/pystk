@@ -1,13 +1,13 @@
 IVmAdvanced
 ===========
 
-.. py:class:: IVmAdvanced
+.. py:class:: ansys.stk.core.stkobjects.IVmAdvanced
 
    object
    
    IAgVmAdvanced Interface for advanced volumetric options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmAdvanced
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~automatic_recompute`
-            * - :py:meth:`~save_computed_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAdvanced.automatic_recompute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmAdvanced.save_computed_data_type`
 
 
 Import detail

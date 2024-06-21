@@ -1,13 +1,13 @@
 ICalculationToolScalar
 ======================
 
-.. py:class:: ICalculationToolScalar
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalar
 
    object
    
    Any scalar calculation that is not constant by construction.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalar
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~evaluate`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.evaluate`
               - Evaluate the scalar calculation at the specified time instant.
-            * - :py:meth:`~quick_evaluate`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate`
               - Evaluate the scalar calculation at the specified time instant and returns the results as an array with two elements, the first element being of boolean type indicating whether the computation succeeded, followed by a double-precision value representing...
-            * - :py:meth:`~evaluate_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.evaluate_with_rate`
               - Evaluate the scalar calculation at the specified time instant. The result is a scalar value and its rate of change.
-            * - :py:meth:`~quick_evaluate_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate`
               - Evaluate the scalar calculation at the specified time instant and returns the results as an array with three elements, the first element being of boolean type indicating whether the computation succeeded, followed by two double-precision values one rep...
-            * - :py:meth:`~get_availability`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.get_availability`
               - Return a list of availability intervals.
-            * - :py:meth:`~quick_evaluate_array`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_array`
               - Evaluate the scalar calculation, and rate, over an array of times, entered as strings in the Scenario date unit. It returns an array corresponding to the input times...
-            * - :py:meth:`~quick_evaluate_with_rate_array`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate_array`
               - Evaluate the scalar calculation over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
-            * - :py:meth:`~quick_evaluate_event_array`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_event_array`
               - Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
-            * - :py:meth:`~quick_evaluate_with_rate_event_array`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate_event_array`
               - Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
 
     .. tab-item:: Properties
@@ -45,8 +45,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~unit_of_measure`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.unit_of_measure`
 
 
 Import detail

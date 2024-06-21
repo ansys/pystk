@@ -1,13 +1,13 @@
 IVehiclePropagatorHPOP
 ======================
 
-.. py:class:: IVehiclePropagatorHPOP
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP
 
    IVehiclePropagator
    
    HPOP propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorHPOP
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~initial_state`
-            * - :py:meth:`~force_model`
-            * - :py:meth:`~integrator`
-            * - :py:meth:`~covariance`
-            * - :py:meth:`~ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.initial_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.force_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.integrator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.covariance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.ephemeris_interval`
 
 
 Import detail
@@ -56,31 +56,31 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.initial_state
-    :type: IAgVeInitialState
+    :type: IVehicleInitialState
 
     Get the satellite's initial state.
 
 .. py:property:: force_model
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.force_model
-    :type: IAgVeHPOPForceModel
+    :type: IVehicleHPOPForceModel
 
     Get the force model parameters.
 
 .. py:property:: integrator
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.integrator
-    :type: IAgVeIntegrator
+    :type: IVehicleIntegrator
 
     Get the integrator parameters.
 
 .. py:property:: covariance
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.covariance
-    :type: IAgVeCovariance
+    :type: IVehicleCovariance
 
     Get the covariance parameters.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

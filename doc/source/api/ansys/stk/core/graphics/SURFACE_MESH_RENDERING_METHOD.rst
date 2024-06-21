@@ -1,12 +1,12 @@
 SURFACE_MESH_RENDERING_METHOD
 =============================
 
-.. py:class:: SURFACE_MESH_RENDERING_METHOD
+.. py:class:: ansys.stk.core.graphics.SURFACE_MESH_RENDERING_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SURFACE_MESH_RENDERING_METHOD
 
 Overview
 --------

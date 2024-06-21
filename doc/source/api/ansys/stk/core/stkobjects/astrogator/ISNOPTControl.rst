@@ -1,13 +1,13 @@
 ISNOPTControl
 =============
 
-.. py:class:: ISNOPTControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISNOPTControl
 
    object
    
    Properties for control parameters of a SNOPT profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISNOPTControl
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~initial_value`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~lower_bound`
-            * - :py:meth:`~upper_bound`
-            * - :py:meth:`~scaling_value`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.initial_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.lower_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.upper_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.scaling_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl.custom_display_unit`
 
 
 Import detail

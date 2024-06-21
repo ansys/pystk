@@ -1,13 +1,13 @@
 IAircraftVTOLModel
 ==================
 
-.. py:class:: IAircraftVTOLModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel
 
    object
    
    Interface used to access the options for a VTOL performance model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftVTOLModel
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_forward_flight_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.set_forward_flight_airspeed`
               - Set the speed at which the aircraft can begin forward flight.
 
     .. tab-item:: Properties
@@ -29,19 +29,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_hover_altitude`
-            * - :py:meth:`~use_aero_prop_fuel`
-            * - :py:meth:`~scale_fuel_flow_by_non_std_density`
-            * - :py:meth:`~hover_fuel`
-            * - :py:meth:`~heading_rate`
-            * - :py:meth:`~heading_transition_time`
-            * - :py:meth:`~vertical_rate`
-            * - :py:meth:`~vertical_transition_time`
-            * - :py:meth:`~translation_rate`
-            * - :py:meth:`~translation_transition_time`
-            * - :py:meth:`~forward_flight_airspeed`
-            * - :py:meth:`~forward_flight_airspeed_type`
-            * - :py:meth:`~forward_flight_transition_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.max_hover_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.scale_fuel_flow_by_non_std_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.hover_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.heading_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.heading_transition_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.vertical_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.vertical_transition_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.translation_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.translation_transition_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.forward_flight_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.forward_flight_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOLModel.forward_flight_transition_time`
 
 
 Import detail

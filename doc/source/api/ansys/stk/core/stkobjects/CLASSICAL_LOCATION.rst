@@ -1,12 +1,12 @@
 CLASSICAL_LOCATION
 ==================
 
-.. py:class:: CLASSICAL_LOCATION
+.. py:class:: ansys.stk.core.stkobjects.CLASSICAL_LOCATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CLASSICAL_LOCATION
 
 Overview
 --------

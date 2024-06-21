@@ -1,13 +1,13 @@
 IVmGridDefinition
 =================
 
-.. py:class:: IVmGridDefinition
+.. py:class:: ansys.stk.core.stkobjects.IVmGridDefinition
 
    object
    
    Base interface IAgVmGridDefinition. IAgVmGridSpatialCalculation and IAgVmExternalFile implement this interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGridDefinition
 
 Overview
 --------

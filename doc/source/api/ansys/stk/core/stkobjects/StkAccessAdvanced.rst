@@ -1,13 +1,13 @@
 StkAccessAdvanced
 =================
 
-.. py:class:: StkAccessAdvanced
+.. py:class:: ansys.stk.core.stkobjects.StkAccessAdvanced
 
-   Bases: py:obj:`~IStkAccessAdvanced`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkAccessAdvanced`
 
    Class defining advanced Access settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkAccessAdvanced
 
 Overview
 --------

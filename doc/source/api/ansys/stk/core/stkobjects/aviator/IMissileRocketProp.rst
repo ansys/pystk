@@ -1,13 +1,13 @@
 IMissileRocketProp
 ==================
 
-.. py:class:: IMissileRocketProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileRocketProp
 
    object
    
    Interface used to access the Rocket propulsion options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileRocketProp
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~nozzle_expansion_ratio`
-            * - :py:meth:`~nozzle_exit_diameter`
-            * - :py:meth:`~combustion_chamber_pressure`
-            * - :py:meth:`~propellant_specific_heat_ratio`
-            * - :py:meth:`~propellant_characteristic_velocity`
-            * - :py:meth:`~use_boost_sustain_mode`
-            * - :py:meth:`~boost_fuel_fraction`
-            * - :py:meth:`~boost_chamber_pressure`
-            * - :py:meth:`~no_thrust_when_no_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.nozzle_expansion_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.nozzle_exit_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.combustion_chamber_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.propellant_specific_heat_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.propellant_characteristic_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.use_boost_sustain_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.boost_fuel_fraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.boost_chamber_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp.no_thrust_when_no_fuel`
 
 
 Import detail

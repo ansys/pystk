@@ -1,12 +1,12 @@
 BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 =========================================
 
-.. py:class:: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
+.. py:class:: ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
 
 Overview
 --------

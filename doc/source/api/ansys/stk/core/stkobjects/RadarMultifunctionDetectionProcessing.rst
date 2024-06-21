@@ -1,13 +1,13 @@
 RadarMultifunctionDetectionProcessing
 =====================================
 
-.. py:class:: RadarMultifunctionDetectionProcessing
+.. py:class:: ansys.stk.core.stkobjects.RadarMultifunctionDetectionProcessing
 
-   Bases: py:obj:`~IRadarMultifunctionDetectionProcessing`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing`
 
    Class defining multifunction radar detection processing.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarMultifunctionDetectionProcessing
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleDefinition
 =================
 
-.. py:class:: VehicleDefinition
+.. py:class:: ansys.stk.core.stkobjects.VehicleDefinition
 
-   Bases: py:obj:`~IVehicleDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleDefinition`
 
    Pass break definition properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleDefinition
 
 Overview
 --------

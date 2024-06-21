@@ -1,13 +1,13 @@
 ISite
 =====
 
-.. py:class:: ISite
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISite
 
    object
    
    Interface to access Site options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISite
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISite.name`
 
 
 Import detail

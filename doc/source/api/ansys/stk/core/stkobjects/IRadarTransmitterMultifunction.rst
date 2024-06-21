@@ -1,13 +1,13 @@
 IRadarTransmitterMultifunction
 ==============================
 
-.. py:class:: IRadarTransmitterMultifunction
+.. py:class:: ansys.stk.core.stkobjects.IRadarTransmitterMultifunction
 
    object
    
    Interface which defines a multifunction radar transmitter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarTransmitterMultifunction
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_polarization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.set_polarization_type`
               - Set the current polarization type.
-            * - :py:meth:`~set_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.set_filter`
               - Set the current filter model by name.
 
     .. tab-item:: Properties
@@ -31,15 +31,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~post_transmit_gains_losses`
-            * - :py:meth:`~enable_polarization`
-            * - :py:meth:`~enable_ortho_polarization`
-            * - :py:meth:`~polarization`
-            * - :py:meth:`~power_amp_bandwidth`
-            * - :py:meth:`~enable_filter`
-            * - :py:meth:`~supported_filters`
-            * - :py:meth:`~filter`
-            * - :py:meth:`~max_power_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.post_transmit_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.enable_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.enable_ortho_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.power_amp_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.enable_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.supported_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.max_power_limit`
 
 
 Import detail
@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.post_transmit_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.polarization
-    :type: IAgPolarization
+    :type: IPolarization
 
     Gets the polarization.
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IRadarTransmitterMultifunction.filter
-    :type: IAgRFFilterModel
+    :type: IRFFilterModel
 
     Gets the current filter model.
 

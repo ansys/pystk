@@ -1,13 +1,13 @@
 IComponentDirectory
 ===================
 
-.. py:class:: IComponentDirectory
+.. py:class:: ansys.stk.core.stkobjects.IComponentDirectory
 
    object
    
    Manages all components.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IComponentDirectory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_components`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentDirectory.get_components`
               - Return the specified components.
 
 

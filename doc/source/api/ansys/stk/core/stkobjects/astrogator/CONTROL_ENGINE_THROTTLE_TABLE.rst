@@ -1,12 +1,12 @@
 CONTROL_ENGINE_THROTTLE_TABLE
 =============================
 
-.. py:class:: CONTROL_ENGINE_THROTTLE_TABLE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_THROTTLE_TABLE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_ENGINE_THROTTLE_TABLE
 
 Overview
 --------

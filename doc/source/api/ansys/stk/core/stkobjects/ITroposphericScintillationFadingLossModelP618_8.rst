@@ -1,13 +1,13 @@
 ITroposphericScintillationFadingLossModelP618_8
 ===============================================
 
-.. py:class:: ITroposphericScintillationFadingLossModelP618_8
+.. py:class:: ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8
 
    object
    
    Provide access to the properties and methods a Tropospheric Scintillation loss model ITU-R P.618_8.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITroposphericScintillationFadingLossModelP618_8
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_deep_fade`
-            * - :py:meth:`~fade_outage`
-            * - :py:meth:`~percent_time_refractivity_gradient`
-            * - :py:meth:`~surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8.compute_deep_fade`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8.fade_outage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8.percent_time_refractivity_gradient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8.surface_temperature`
 
 
 Import detail

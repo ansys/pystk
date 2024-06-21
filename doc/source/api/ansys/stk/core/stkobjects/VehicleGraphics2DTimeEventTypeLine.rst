@@ -1,13 +1,13 @@
 VehicleGraphics2DTimeEventTypeLine
 ==================================
 
-.. py:class:: VehicleGraphics2DTimeEventTypeLine
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine
 
-   Bases: py:obj:`~IVehicleGraphics2DTimeEventType`, py:obj:`~IVehicleGraphics2DTimeEventTypeLine`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventType`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine`
 
    2D Graphics time event: line type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DTimeEventTypeLine
 
 Overview
 --------

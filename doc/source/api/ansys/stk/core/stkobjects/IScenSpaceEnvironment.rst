@@ -1,13 +1,13 @@
 IScenSpaceEnvironment
 =====================
 
-.. py:class:: IScenSpaceEnvironment
+.. py:class:: ansys.stk.core.stkobjects.IScenSpaceEnvironment
 
    object
    
    no helpstring provided.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenSpaceEnvironment
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_saa_flux_intensity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment.compute_saa_flux_intensity`
               - Compute SAA flux intensity at the specified Earth location. Uses Angle, Longitude, Distance, and FluxIntensity Dimensions.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~radiation_environment`
-            * - :py:meth:`~graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment.radiation_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment.graphics_3d`
 
 
 Import detail
@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: radiation_environment
     :canonical: ansys.stk.core.stkobjects.IScenSpaceEnvironment.radiation_environment
-    :type: IAgSpEnvRadiationEnvironment
+    :type: ISpaceEnvironmentRadiationEnvironment
 
     Gets the radiation environment settings.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IScenSpaceEnvironment.graphics_3d
-    :type: IAgSpEnvScenExtVO
+    :type: ISpaceEnvironmentScenarioExtGraphics3D
 
     Gets the 3D Graphics settings.
 

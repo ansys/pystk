@@ -1,13 +1,13 @@
 RadarReceiver
 =============
 
-.. py:class:: RadarReceiver
+.. py:class:: ansys.stk.core.stkobjects.RadarReceiver
 
-   Bases: py:obj:`~IRadarReceiver`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarReceiver`
 
    Class defining the radar transmitter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarReceiver
 
 Overview
 --------

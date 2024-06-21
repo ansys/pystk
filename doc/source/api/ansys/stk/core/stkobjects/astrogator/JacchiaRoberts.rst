@@ -1,13 +1,13 @@
 JacchiaRoberts
 ==============
 
-.. py:class:: JacchiaRoberts
+.. py:class:: ansys.stk.core.stkobjects.astrogator.JacchiaRoberts
 
-   Bases: py:obj:`~IJacchiaRoberts`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IJacchiaRoberts`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Jacchia Roberts atmospheric propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: JacchiaRoberts
 
 Overview
 --------

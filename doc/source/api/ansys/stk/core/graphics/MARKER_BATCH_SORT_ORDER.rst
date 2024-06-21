@@ -1,12 +1,12 @@
 MARKER_BATCH_SORT_ORDER
 =======================
 
-.. py:class:: MARKER_BATCH_SORT_ORDER
+.. py:class:: ansys.stk.core.graphics.MARKER_BATCH_SORT_ORDER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MARKER_BATCH_SORT_ORDER
 
 Overview
 --------

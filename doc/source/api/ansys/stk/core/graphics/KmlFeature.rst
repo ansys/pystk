@@ -1,13 +1,13 @@
 KmlFeature
 ==========
 
-.. py:class:: KmlFeature
+.. py:class:: ansys.stk.core.graphics.KmlFeature
 
-   Bases: py:obj:`~IKmlFeature`
+   Bases: py:obj:`~ansys.stk.core.graphics.IKmlFeature`
 
    A KML feature.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KmlFeature
 
 Overview
 --------

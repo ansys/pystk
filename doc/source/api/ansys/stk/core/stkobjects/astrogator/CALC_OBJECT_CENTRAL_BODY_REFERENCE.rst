@@ -1,12 +1,12 @@
 CALC_OBJECT_CENTRAL_BODY_REFERENCE
 ==================================
 
-.. py:class:: CALC_OBJECT_CENTRAL_BODY_REFERENCE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_CENTRAL_BODY_REFERENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CALC_OBJECT_CENTRAL_BODY_REFERENCE
 
 Overview
 --------

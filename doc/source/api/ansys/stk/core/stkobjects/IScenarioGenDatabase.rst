@@ -1,13 +1,13 @@
 IScenarioGenDatabase
 ====================
 
-.. py:class:: IScenarioGenDatabase
+.. py:class:: ansys.stk.core.stkobjects.IScenarioGenDatabase
 
    object
    
    Represents a scenario database.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenarioGenDatabase
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~default_database`
-            * - :py:meth:`~default_direction`
-            * - :py:meth:`~enable_aux_database`
-            * - :py:meth:`~aux_database`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.default_database`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.default_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.enable_aux_database`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.aux_database`
 
 
 Import detail

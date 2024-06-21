@@ -1,13 +1,13 @@
 StateCalcInertialDeltaVz
 ========================
 
-.. py:class:: StateCalcInertialDeltaVz
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcInertialDeltaVz
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcInertialDeltaVz`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInertialDeltaVz`
 
    InertialDeltaVz Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcInertialDeltaVz
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarGraphics
 ==============
 
-.. py:class:: IRadarGraphics
+.. py:class:: ansys.stk.core.stkobjects.IRadarGraphics
 
    object
    
    IAgRadarGraphics Interface for a radar's 2D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarGraphics
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~show_boresight`
-            * - :py:meth:`~boresight_color`
-            * - :py:meth:`~boresight_marker_style`
-            * - :py:meth:`~contour_graphics`
-            * - :py:meth:`~access`
-            * - :py:meth:`~multipath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.show_boresight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.boresight_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.boresight_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.contour_graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.multipath`
 
 
 Import detail
@@ -66,19 +66,19 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.IRadarGraphics.contour_graphics
-    :type: IAgAntennaContourGraphics
+    :type: IAntennaContourGraphics
 
     Gets the radar's antenna contour graphics interface.
 
 .. py:property:: access
     :canonical: ansys.stk.core.stkobjects.IRadarGraphics.access
-    :type: IAgRadarAccessGraphics
+    :type: IRadarAccessGraphics
 
     Gets the radar's access graphics interface.
 
 .. py:property:: multipath
     :canonical: ansys.stk.core.stkobjects.IRadarGraphics.multipath
-    :type: IAgRadarMultipathGraphics
+    :type: IRadarMultipathGraphics
 
     Gets the radar's multipath graphics interface.
 

@@ -1,13 +1,13 @@
 ICalculationToolScalarFunction
 ==============================
 
-.. py:class:: ICalculationToolScalarFunction
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarFunction
 
    object
    
    Defined by performing the specified function on the input scalar or time instant.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarFunction
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_scalar`
-            * - :py:meth:`~input_scalar`
-            * - :py:meth:`~input_time`
-            * - :py:meth:`~input_unit`
-            * - :py:meth:`~a`
-            * - :py:meth:`~b`
-            * - :py:meth:`~c`
-            * - :py:meth:`~d`
-            * - :py:meth:`~coefficients`
-            * - :py:meth:`~selected_function`
-            * - :py:meth:`~available_functions`
-            * - :py:meth:`~inherit_dimension_from_input`
-            * - :py:meth:`~output_dimension`
-            * - :py:meth:`~output_unit`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~convergence`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.use_scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.input_scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.input_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.input_unit`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.a`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.b`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.c`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.d`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.coefficients`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.selected_function`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.available_functions`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.inherit_dimension_from_input`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.output_dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.output_unit`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.sampling`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.convergence`
 
 
 Import detail
@@ -57,13 +57,13 @@ Property detail
 
 .. py:property:: input_scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction.input_scalar
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The input scalar calculation (used if UseScalar is true). The UseScalar property should be set to true before this property can be set.
 
 .. py:property:: input_time
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction.input_time
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     The input time instant (used if UseScalar is false).
 
@@ -135,13 +135,13 @@ Property detail
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction.sampling
-    :type: IAgCrdnSampling
+    :type: IAnalysisWorkbenchSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction.convergence
-    :type: IAgCrdnConverge
+    :type: IAnalysisWorkbenchConverge
 
     The Convergence definition, which uses time tolerance to determine when time of extremum is found.
 

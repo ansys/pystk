@@ -1,13 +1,13 @@
 IWinProjectionPosition
 ======================
 
-.. py:class:: IWinProjectionPosition
+.. py:class:: ansys.stk.core.stkx.IWinProjectionPosition
 
    object
    
    Projected window position detail.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IWinProjectionPosition
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x_position`
-            * - :py:meth:`~y_position`
-            * - :py:meth:`~is_win_projection_position_valid`
+            * - :py:attr:`~ansys.stk.core.stkx.IWinProjectionPosition.x_position`
+            * - :py:attr:`~ansys.stk.core.stkx.IWinProjectionPosition.y_position`
+            * - :py:attr:`~ansys.stk.core.stkx.IWinProjectionPosition.is_win_projection_position_valid`
 
 
 Import detail

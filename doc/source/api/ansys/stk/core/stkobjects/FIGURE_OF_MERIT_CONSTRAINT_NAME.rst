@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_CONSTRAINT_NAME
 ===============================
 
-.. py:class:: FIGURE_OF_MERIT_CONSTRAINT_NAME
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_CONSTRAINT_NAME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_CONSTRAINT_NAME
 
 Overview
 --------

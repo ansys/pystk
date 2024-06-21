@@ -1,13 +1,13 @@
 IVehicleAttitudeSlewConstrained
 ===============================
 
-.. py:class:: IVehicleAttitudeSlewConstrained
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained
 
    IVehicleAttitudeSlewBase
    
    Constrained slew mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeSlewConstrained
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maximum_slew_time`
-            * - :py:meth:`~slew_timing_between_targets`
-            * - :py:meth:`~maximum_slew_rate`
-            * - :py:meth:`~maximum_slew_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.maximum_slew_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.slew_timing_between_targets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.maximum_slew_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.maximum_slew_acceleration`
 
 
 Import detail
@@ -51,13 +51,13 @@ Property detail
 
 .. py:property:: maximum_slew_rate
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.maximum_slew_rate
-    :type: IAgVeAttMaximumSlewRate
+    :type: IVehicleAttitudeMaximumSlewRate
 
     Configure how to constrain the slew rate.
 
 .. py:property:: maximum_slew_acceleration
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.maximum_slew_acceleration
-    :type: IAgVeAttMaximumSlewAcceleration
+    :type: IVehicleAttitudeMaximumSlewAcceleration
 
     Configure how to constrain the slew acceleration.
 

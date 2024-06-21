@@ -1,13 +1,13 @@
 ITargeterGraphCollection
 ========================
 
-.. py:class:: ITargeterGraphCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection
 
    object
    
    The list of User Variables accessed through the Driver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ITargeterGraphCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add_graph`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.add_graph`
               - Add a new targeter graph.
-            * - :py:meth:`~remove_graph`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.remove_graph`
               - Remove a targeter graph.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.cut`
               - Copy a targeter graph to the clipboard and removes the targeter graph from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.paste`
               - Pastes a targeter graph from the clipboard into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.insert_copy`
               - Copy a targeter graph and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.get_item_by_index`
               - Retrieve a targeter graph from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.get_item_by_name`
               - Retrieve a targeter graph from the collection by name.
 
     .. tab-item:: Properties
@@ -43,9 +43,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.provide_runtime_type_info`
 
 
 Import detail
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphCollection.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

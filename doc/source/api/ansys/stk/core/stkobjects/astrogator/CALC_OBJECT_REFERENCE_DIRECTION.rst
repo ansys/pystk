@@ -1,12 +1,12 @@
 CALC_OBJECT_REFERENCE_DIRECTION
 ===============================
 
-.. py:class:: CALC_OBJECT_REFERENCE_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_REFERENCE_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CALC_OBJECT_REFERENCE_DIRECTION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRainLossModelScriptPlugin
 ==========================
 
-.. py:class:: IRainLossModelScriptPlugin
+.. py:class:: ansys.stk.core.stkobjects.IRainLossModelScriptPlugin
 
    object
    
    Provide access to the properties and methods of a script plugin rain loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRainLossModelScriptPlugin
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelScriptPlugin.filename`
 
 
 Import detail

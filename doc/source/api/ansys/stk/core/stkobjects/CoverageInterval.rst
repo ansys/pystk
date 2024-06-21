@@ -1,13 +1,13 @@
 CoverageInterval
 ================
 
-.. py:class:: CoverageInterval
+.. py:class:: ansys.stk.core.stkobjects.CoverageInterval
 
-   Bases: py:obj:`~ICoverageInterval`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageInterval`
 
    Coverage interval: the time period over which coverage is computed.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageInterval
 
 Overview
 --------

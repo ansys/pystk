@@ -1,13 +1,13 @@
 FigureOfMeritGraphics2DAttributes
 =================================
 
-.. py:class:: FigureOfMeritGraphics2DAttributes
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DAttributes
 
-   Bases: py:obj:`~IFigureOfMeritGraphics2DAttributes`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes`
 
    Figure of Merit 2D graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGraphics2DAttributes
 
 Overview
 --------

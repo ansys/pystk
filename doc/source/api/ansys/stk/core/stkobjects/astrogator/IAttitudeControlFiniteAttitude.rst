@@ -1,13 +1,13 @@
 IAttitudeControlFiniteAttitude
 ==============================
 
-.. py:class:: IAttitudeControlFiniteAttitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude
 
    IAttitudeControlFinite
    
    Properties for the Attitude attitude control for a Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlFiniteAttitude
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~attitude_update`
-            * - :py:meth:`~reference_axes_name`
-            * - :py:meth:`~orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.attitude_update`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.reference_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.orientation`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Get the orientation of the attitude.
 

@@ -1,13 +1,13 @@
 IGreatArcInterpolator
 =====================
 
-.. py:class:: IGreatArcInterpolator
+.. py:class:: ansys.stk.core.graphics.IGreatArcInterpolator
 
    object
    
    The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGreatArcInterpolator
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.IGreatArcInterpolator.central_body`
+            * - :py:attr:`~ansys.stk.core.graphics.IGreatArcInterpolator.granularity`
 
 
 Import detail

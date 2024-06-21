@@ -1,13 +1,13 @@
 ICalculationToolScalarVectorMagnitude
 =====================================
 
-.. py:class:: ICalculationToolScalarVectorMagnitude
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarVectorMagnitude
 
    object
    
    Scalar equal to the magnitude of a specified vector.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarVectorMagnitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarVectorMagnitude.input_vector`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: input_vector
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarVectorMagnitude.input_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Specify any vector in VGT. Note that its magnitude is reference axes independent which is why it is not specified.
 

@@ -1,13 +1,13 @@
 IStateCalcValueAtSegment
 ========================
 
-.. py:class:: IStateCalcValueAtSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegment
 
    object
    
    Properties for a Value At Segment calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcValueAtSegment
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
-            * - :py:meth:`~other_segment_name`
-            * - :py:meth:`~segment_state_to_use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegment.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegment.other_segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegment.segment_state_to_use`
 
 
 Import detail

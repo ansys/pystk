@@ -1,13 +1,13 @@
 IPropulsionEfficiencies
 =======================
 
-.. py:class:: IPropulsionEfficiencies
+.. py:class:: ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies
 
    object
    
    Interface used to access the options for the Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IPropulsionEfficiencies
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~technology_level`
-            * - :py:meth:`~intake_type`
-            * - :py:meth:`~turbine_type`
-            * - :py:meth:`~exhaust_nozzle_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies.technology_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies.intake_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies.turbine_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies.exhaust_nozzle_type`
 
 
 Import detail

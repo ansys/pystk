@@ -1,13 +1,13 @@
 IRadarClutterMap
 ================
 
-.. py:class:: IRadarClutterMap
+.. py:class:: ansys.stk.core.stkobjects.IRadarClutterMap
 
    object
    
    Do not use this interface, as it is deprecated. This interface is no longer used and there is no alternative. Provides access to the properties and methods defining a radar clutter map.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarClutterMap
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMap.set_model`
               - Set the current clutter map model by name.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_models`
-            * - :py:meth:`~model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMap.supported_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMap.model`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.model
-    :type: IAgRadarClutterMapModel
+    :type: IRadarClutterMapModel
 
     Gets the current clutter map model.
 

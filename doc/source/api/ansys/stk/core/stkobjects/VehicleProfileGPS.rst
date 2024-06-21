@@ -1,13 +1,13 @@
 VehicleProfileGPS
 =================
 
-.. py:class:: VehicleProfileGPS
+.. py:class:: ansys.stk.core.stkobjects.VehicleProfileGPS
 
-   Bases: py:obj:`~IVehicleProfileGPS`, py:obj:`~IVehicleAttitudeProfile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileGPS`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    GPS Attitude profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleProfileGPS
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ILaunchVehicle
 ==============
 
-.. py:class:: ILaunchVehicle
+.. py:class:: ansys.stk.core.stkobjects.ILaunchVehicle
 
    object
    
    Interface for a launch vehicle object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILaunchVehicle
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_trajectory_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.set_trajectory_type`
               - Set the propagator type.
-            * - :py:meth:`~is_trajectory_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.is_trajectory_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_attitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.set_attitude_type`
               - Set the type of attitude profile used by the launch vehicle.
-            * - :py:meth:`~is_attitude_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.is_attitude_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -35,28 +35,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~trajectory_type`
-            * - :py:meth:`~trajectory_supported_types`
-            * - :py:meth:`~trajectory`
-            * - :py:meth:`~attitude_type`
-            * - :py:meth:`~attitude_supported_types`
-            * - :py:meth:`~attitude`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~ground_ellipses`
-            * - :py:meth:`~access_constraints`
-            * - :py:meth:`~export_tools`
-            * - :py:meth:`~space_environment`
-            * - :py:meth:`~atmosphere`
-            * - :py:meth:`~radar_clutter_map`
-            * - :py:meth:`~radar_cross_section`
-            * - :py:meth:`~eclipse_bodies`
-            * - :py:meth:`~use_terrain_in_lighting_computations`
-            * - :py:meth:`~lighting_max_step`
-            * - :py:meth:`~laser_environment`
-            * - :py:meth:`~rf_environment`
-            * - :py:meth:`~lighting_max_step_terrain`
-            * - :py:meth:`~lighting_max_step_central_body_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.trajectory_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.trajectory_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.trajectory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.attitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.attitude_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.ground_ellipses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.access_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.export_tools`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.space_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.atmosphere`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.radar_clutter_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.eclipse_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.use_terrain_in_lighting_computations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.laser_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.lighting_max_step_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.lighting_max_step_central_body_shape`
 
 
 Import detail
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.trajectory
-    :type: IAgVePropagator
+    :type: IVehiclePropagator
 
     Get the launch vehicle's trajectory properties.
 
@@ -102,67 +102,67 @@ Property detail
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.attitude
-    :type: IAgVeAttitude
+    :type: IVehicleAttitude
 
     Get the launch vehicle's attitude profile.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.graphics
-    :type: IAgLvGraphics
+    :type: ILaunchVehicleGraphics
 
     Get the launch vehicle's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.graphics_3d
-    :type: IAgLvVO
+    :type: ILaunchVehicleGraphics3D
 
     Get the launch vehicle's 3D Graphics properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.ground_ellipses
-    :type: IAgVeGroundEllipsesCollection
+    :type: IVehicleGroundEllipsesCollection
 
     Get the launch vehicle's ground ellipses properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.access_constraints
-    :type: IAgAccessConstraintCollection
+    :type: IAccessConstraintCollection
 
     Get the constraints imposed on the launch vehicle.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.export_tools
-    :type: IAgLvExportTools
+    :type: ILaunchVehicleExportTools
 
     Returns the IAgLvExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.space_environment
-    :type: IAgVeSpEnvSpaceEnvironment
+    :type: IVehicleSpaceEnvironment
 
     Returns the launch vehicle's SpaceEnvironment properties.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.atmosphere
-    :type: IAgAtmosphere
+    :type: IAtmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.radar_clutter_map
-    :type: IAgRadarClutterMapInheritable
+    :type: IRadarClutterMapInheritable
 
     Returns the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.radar_cross_section
-    :type: IAgRadarCrossSectionInheritable
+    :type: IRadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.eclipse_bodies
-    :type: IAgVeEclipseBodies
+    :type: IVehicleEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -180,13 +180,13 @@ Property detail
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.laser_environment
-    :type: IAgPlatformLaserEnvironment
+    :type: IPlatformLaserEnvironment
 
     Gets the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicle.rf_environment
-    :type: IAgPlatformRFEnvironment
+    :type: IPlatformRFEnvironment
 
     Gets the RF environment.
 

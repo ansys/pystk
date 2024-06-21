@@ -1,13 +1,13 @@
 StateCalcMeanRightAscension
 ===========================
 
-.. py:class:: StateCalcMeanRightAscension
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMeanRightAscension
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanRightAscension`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanRightAscension`
 
    MeanRightAscension Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcMeanRightAscension
 
 Overview
 --------

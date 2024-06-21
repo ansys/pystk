@@ -1,13 +1,13 @@
 Phase
 =====
 
-.. py:class:: Phase
+.. py:class:: ansys.stk.core.stkobjects.aviator.Phase
 
-   Bases: py:obj:`~IPhase`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IPhase`
 
    Class defining a phase in an Aviator mission.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: Phase
 
 Overview
 --------

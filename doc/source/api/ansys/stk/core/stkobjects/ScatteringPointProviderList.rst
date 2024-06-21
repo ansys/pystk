@@ -1,13 +1,13 @@
 ScatteringPointProviderList
 ===========================
 
-.. py:class:: ScatteringPointProviderList
+.. py:class:: ansys.stk.core.stkobjects.ScatteringPointProviderList
 
-   Bases: py:obj:`~IScatteringPointProviderList`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProviderList`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a scattering point provider list.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScatteringPointProviderList
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ICartesian2Vector
 =================
 
-.. py:class:: ICartesian2Vector
+.. py:class:: ansys.stk.core.stkutil.ICartesian2Vector
 
    object
    
    Represents a cartesian 2-D vector.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: ICartesian2Vector
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian2Vector.get`
               - Return cartesian vector.
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian2Vector.set`
               - Set cartesian vector.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian2Vector.to_array`
               - Return coordinates as an array.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian2Vector.x`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian2Vector.y`
 
 
 Import detail

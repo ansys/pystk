@@ -1,13 +1,13 @@
 IFigureOfMeritAssetListElement
 ==============================
 
-.. py:class:: IFigureOfMeritAssetListElement
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement
 
    object
    
    Asset list item (for Navigation Accuracy FOM).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritAssetListElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method_type`
-            * - :py:meth:`~method`
-            * - :py:meth:`~asset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.method_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.asset`
 
 
 Import detail
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.method
-    :type: IAgFmNAMethod
+    :type: IFigureOfMeritNavigationAccuracyMethod
 
     Range uncertainty method.
 

@@ -1,13 +1,13 @@
 IRadarActivityTimeIntervalList
 ==============================
 
-.. py:class:: IRadarActivityTimeIntervalList
+.. py:class:: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalList
 
    object
    
    Provide access to the properties and methods defining radar time interval list activity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarActivityTimeIntervalList
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalList.time_intervals`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: time_intervals
     :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalList.time_intervals
-    :type: IAgRadarActivityTimeIntervalListCollection
+    :type: IRadarActivityTimeIntervalListCollection
 
     Gets the time components collection.
 

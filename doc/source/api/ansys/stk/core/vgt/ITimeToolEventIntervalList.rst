@@ -1,13 +1,13 @@
 ITimeToolEventIntervalList
 ==========================
 
-.. py:class:: ITimeToolEventIntervalList
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalList
 
    object
    
    An ordered list of time intervals.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalList
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~find_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalList.find_intervals`
               - Return computed interval list that can be empty.
-            * - :py:meth:`~occurred`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalList.occurred`
               - Determine if specified time falls within computed interval list.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~labels`
-            * - :py:meth:`~descriptions`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalList.type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalList.labels`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalList.descriptions`
 
 
 Import detail

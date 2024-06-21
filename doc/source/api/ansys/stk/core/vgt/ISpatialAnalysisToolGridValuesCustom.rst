@@ -1,13 +1,13 @@
 ISpatialAnalysisToolGridValuesCustom
 ====================================
 
-.. py:class:: ISpatialAnalysisToolGridValuesCustom
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesCustom
 
    object
    
    Fixed step grid values.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolGridValuesCustom
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~values`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesCustom.values`
 
 
 Import detail

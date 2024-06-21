@@ -1,13 +1,13 @@
 IMtoGraphics3DDropLines
 =======================
 
-.. py:class:: IMtoGraphics3DDropLines
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DDropLines
 
    object
    
    Interface for MTO droplines.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DDropLines
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position`
-            * - :py:meth:`~ephemeris`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DDropLines.position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DDropLines.ephemeris`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DDropLines.position
-    :type: IAgVeVODropLinePosItemCollection
+    :type: IVehicleGraphics3DDropLinePositionItemCollection
 
     Get a list of droplines from the MTO's current positions.
 
 .. py:property:: ephemeris
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DDropLines.ephemeris
-    :type: IAgVeVODropLinePathItemCollection
+    :type: IVehicleGraphics3DDropLinePathItemCollection
 
     Get a list of droplines at intervals along the MTO's ephemeris.
 

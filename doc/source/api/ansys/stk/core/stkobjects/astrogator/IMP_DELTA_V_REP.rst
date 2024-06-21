@@ -1,12 +1,12 @@
 IMP_DELTA_V_REP
 ===============
 
-.. py:class:: IMP_DELTA_V_REP
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMP_DELTA_V_REP
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMP_DELTA_V_REP
 
 Overview
 --------

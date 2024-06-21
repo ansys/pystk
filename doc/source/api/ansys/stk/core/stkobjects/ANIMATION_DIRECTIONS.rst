@@ -1,12 +1,12 @@
 ANIMATION_DIRECTIONS
 ====================
 
-.. py:class:: ANIMATION_DIRECTIONS
+.. py:class:: ansys.stk.core.stkobjects.ANIMATION_DIRECTIONS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ANIMATION_DIRECTIONS
 
 Overview
 --------

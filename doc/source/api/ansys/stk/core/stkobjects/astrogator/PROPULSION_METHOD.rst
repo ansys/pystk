@@ -1,12 +1,12 @@
 PROPULSION_METHOD
 =================
 
-.. py:class:: PROPULSION_METHOD
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PROPULSION_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PROPULSION_METHOD
 
 Overview
 --------

@@ -1,13 +1,13 @@
 UiAxGraphics2DAnalysisCntrl
 ===========================
 
-.. py:class:: UiAxGraphics2DAnalysisCntrl
+.. py:class:: ansys.stk.core.stkx.UiAxGraphics2DAnalysisCntrl
 
-   Bases: py:obj:`~IUiAxGraphics2DAnalysisCntrl`
+   Bases: py:obj:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl`
 
    AGI Graphics Analysis Control.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: UiAxGraphics2DAnalysisCntrl
 
 Overview
 --------

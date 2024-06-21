@@ -1,13 +1,13 @@
 SRPTabAreaVec
 =============
 
-.. py:class:: SRPTabAreaVec
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SRPTabAreaVec
 
-   Bases: py:obj:`~ISRPTabAreaVec`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Tabulated area vector SRP propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SRPTabAreaVec
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleAttitudeSlewFixedRate
 =============================
 
-.. py:class:: IVehicleAttitudeSlewFixedRate
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate
 
    IVehicleAttitudeSlewBase
    
    Fixed Rate slew.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeSlewFixedRate
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maximum_slew_time`
-            * - :py:meth:`~slew_timing_between_targets`
-            * - :py:meth:`~maximum_slew_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate.maximum_slew_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate.slew_timing_between_targets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate.maximum_slew_rate`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: maximum_slew_rate
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate.maximum_slew_rate
-    :type: IAgVeAttMaximumSlewRate
+    :type: IVehicleAttitudeMaximumSlewRate
 
     Configure how to constrain the slew rate.
 

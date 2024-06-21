@@ -1,13 +1,13 @@
 DoublesCollection
 =================
 
-.. py:class:: DoublesCollection
+.. py:class:: ansys.stk.core.stkutil.DoublesCollection
 
-   Bases: py:obj:`~IDoublesCollection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IDoublesCollection`
 
    A collection of doubles.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: DoublesCollection
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IMtoGraphics
 ============
 
-.. py:class:: IMtoGraphics
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics
 
    object
    
    MTO 2D Graphics interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~tracks`
-            * - :py:meth:`~default_track`
-            * - :py:meth:`~global_track_options`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics.tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics.default_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics.global_track_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics.is_object_graphics_visible`
 
 
 Import detail
@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: tracks
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics.tracks
-    :type: IAgMtoGfxTrackCollection
+    :type: IMtoGraphics2DTrackCollection
 
     Get the collection of MTO 2D graphics properties.
 
 .. py:property:: default_track
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics.default_track
-    :type: IAgMtoDefaultGfxTrack
+    :type: IMtoDefaultGraphics2DTrack
 
     Get the default track 2D graphics.
 
 .. py:property:: global_track_options
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics.global_track_options
-    :type: IAgMtoGfxGlobalTrackOptions
+    :type: IMtoGraphics2DGlobalTrackOptions
 
     Get the 2D graphics global settings.
 

@@ -1,13 +1,13 @@
 Direction
 =========
 
-.. py:class:: Direction
+.. py:class:: ansys.stk.core.stkutil.Direction
 
-   Bases: py:obj:`~IDirection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IDirection`
 
    Class defining direction options for aligned and constrained vectors.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Direction
 
 Overview
 --------

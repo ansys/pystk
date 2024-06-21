@@ -1,13 +1,13 @@
 IScenarioGenDatabaseCollection
 ==============================
 
-.. py:class:: IScenarioGenDatabaseCollection
+.. py:class:: ansys.stk.core.stkobjects.IScenarioGenDatabaseCollection
 
    object
    
    Represents a collection of the scenario's databases.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenarioGenDatabaseCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabaseCollection.item`
               - Return scenario database settings at a specified position.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabaseCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabaseCollection._NewEnum`
 
 
 Import detail

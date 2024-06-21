@@ -1,12 +1,12 @@
 VEHICLE_LAUNCH
 ==============
 
-.. py:class:: VEHICLE_LAUNCH
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_LAUNCH
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_LAUNCH
 
 Overview
 --------

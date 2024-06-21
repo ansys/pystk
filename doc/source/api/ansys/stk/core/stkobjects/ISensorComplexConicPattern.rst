@@ -1,13 +1,13 @@
 ISensorComplexConicPattern
 ==========================
 
-.. py:class:: ISensorComplexConicPattern
+.. py:class:: ansys.stk.core.stkobjects.ISensorComplexConicPattern
 
    object
    
    IAgSnComplexConicPattern Interface for defining sensor patterns by the inner and outer half angles and minimum and maximum clock angles of the sensor's cone.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorComplexConicPattern
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_clock_angles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorComplexConicPattern.set_clock_angles`
               - Set both the min and max clock angle.
-            * - :py:meth:`~set_cone_half_angles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorComplexConicPattern.set_cone_half_angles`
               - Set both the inner and outer cone half angles.
 
     .. tab-item:: Properties
@@ -31,11 +31,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inner_cone_half_angle`
-            * - :py:meth:`~outer_cone_half_angle`
-            * - :py:meth:`~minimum_clock_angle`
-            * - :py:meth:`~maximum_clock_angle`
-            * - :py:meth:`~angular_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorComplexConicPattern.inner_cone_half_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorComplexConicPattern.outer_cone_half_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorComplexConicPattern.minimum_clock_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorComplexConicPattern.maximum_clock_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorComplexConicPattern.angular_resolution`
 
 
 Import detail

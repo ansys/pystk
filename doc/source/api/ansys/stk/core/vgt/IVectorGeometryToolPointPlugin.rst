@@ -1,13 +1,13 @@
 IVectorGeometryToolPointPlugin
 ==============================
 
-.. py:class:: IVectorGeometryToolPointPlugin
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointPlugin
 
    object
    
    A VGT point plugin.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointPlugin
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reset`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.reset`
               - Reset the plugin.
-            * - :py:meth:`~set_property`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.set_property`
               - Set the plugin properties. This method throws an exception if the specified property does not exist, invalid value was specified or the specified property is read-only.
-            * - :py:meth:`~get_property`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.get_property`
               - Read a value of the specified plugin property. This method throws an exception if the property does not exist.
 
     .. tab-item:: Properties
@@ -33,9 +33,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~prog_id`
-            * - :py:meth:`~display_name`
-            * - :py:meth:`~available_properties`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.prog_id`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.display_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlugin.available_properties`
 
 
 Import detail

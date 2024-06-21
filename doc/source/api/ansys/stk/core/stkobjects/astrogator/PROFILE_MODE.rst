@@ -1,12 +1,12 @@
 PROFILE_MODE
 ============
 
-.. py:class:: PROFILE_MODE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PROFILE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PROFILE_MODE
 
 Overview
 --------

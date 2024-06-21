@@ -1,13 +1,13 @@
 IRadarCrossSection
 ==================
 
-.. py:class:: IRadarCrossSection
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSection
 
    object
    
    Provide access to the properties and methods defining radar cross section.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSection.set_model`
               - Set the current RCS model by name.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_models`
-            * - :py:meth:`~model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSection.supported_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSection.model`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSection.model
-    :type: IAgRadarCrossSectionModel
+    :type: IRadarCrossSectionModel
 
     Gets the current RCS model.
 

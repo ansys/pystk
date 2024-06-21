@@ -1,13 +1,13 @@
 IDirectionEuler
 ===============
 
-.. py:class:: IDirectionEuler
+.. py:class:: ansys.stk.core.stkutil.IDirectionEuler
 
    IDirection
    
    Interface for Euler direction sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IDirectionEuler
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~b`
-            * - :py:meth:`~c`
-            * - :py:meth:`~sequence`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionEuler.b`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionEuler.c`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionEuler.sequence`
 
 
 Import detail

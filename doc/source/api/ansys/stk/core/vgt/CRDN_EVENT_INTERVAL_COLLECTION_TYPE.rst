@@ -1,12 +1,12 @@
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE
 ===================================
 
-.. py:class:: CRDN_EVENT_INTERVAL_COLLECTION_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_EVENT_INTERVAL_COLLECTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_EVENT_INTERVAL_COLLECTION_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IMtoGraphics3DModel
 ===================
 
-.. py:class:: IMtoGraphics3DModel
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DModel
 
    object
    
    Interface for MTO track model options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DModel
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~filename`
-            * - :py:meth:`~scale_value`
-            * - :py:meth:`~initial_bearing`
-            * - :py:meth:`~z_points_nadir`
-            * - :py:meth:`~articulation`
-            * - :py:meth:`~file_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.scale_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.initial_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.z_points_nadir`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.articulation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.file_path`
 
 
 Import detail
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DModel.articulation
-    :type: IAgMtoVOModelArtic
+    :type: IMtoGraphics3DModelArtic
 
     Configures the model articulations.
 

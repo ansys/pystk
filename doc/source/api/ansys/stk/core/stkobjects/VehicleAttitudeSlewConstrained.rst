@@ -1,13 +1,13 @@
 VehicleAttitudeSlewConstrained
 ==============================
 
-.. py:class:: VehicleAttitudeSlewConstrained
+.. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeSlewConstrained
 
-   Bases: py:obj:`~IVehicleAttitudeSlewConstrained`, py:obj:`~IVehicleAttitudeSlewBase`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
 
    Constrained slew mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleAttitudeSlewConstrained
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ITimeToolLastIntervalsFilter
 ============================
 
-.. py:class:: ITimeToolLastIntervalsFilter
+.. py:class:: ansys.stk.core.vgt.ITimeToolLastIntervalsFilter
 
    object
    
    The filter selects a portion of last intervals.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolLastIntervalsFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maximum_number_of_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLastIntervalsFilter.maximum_number_of_intervals`
 
 
 Import detail

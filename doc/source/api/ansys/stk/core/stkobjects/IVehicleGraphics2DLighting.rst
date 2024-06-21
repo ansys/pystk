@@ -1,13 +1,13 @@
 IVehicleGraphics2DLighting
 ==========================
 
-.. py:class:: IVehicleGraphics2DLighting
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DLighting
 
    object
    
    Lighting.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DLighting
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sunlight`
-            * - :py:meth:`~penumbra`
-            * - :py:meth:`~umbra`
-            * - :py:meth:`~is_sun_light_penumbra_visible`
-            * - :py:meth:`~is_penumbra_umbra_visible`
-            * - :py:meth:`~is_solar_specular_reflection_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.sunlight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.penumbra`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.umbra`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.is_sun_light_penumbra_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.is_penumbra_umbra_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.is_solar_specular_reflection_point_visible`
 
 
 Import detail
@@ -41,19 +41,19 @@ Property detail
 
 .. py:property:: sunlight
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.sunlight
-    :type: IAgVeGfxLightingElement
+    :type: IVehicleGraphics2DLightingElement
 
     Get the display options for regions of sunlight.
 
 .. py:property:: penumbra
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.penumbra
-    :type: IAgVeGfxLightingElement
+    :type: IVehicleGraphics2DLightingElement
 
     Get the display options for regions of penumbra.
 
 .. py:property:: umbra
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.umbra
-    :type: IAgVeGfxLightingElement
+    :type: IVehicleGraphics2DLightingElement
 
     Get the display options for regions of umbra.
 

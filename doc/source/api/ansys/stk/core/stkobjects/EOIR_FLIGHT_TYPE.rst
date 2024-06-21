@@ -1,12 +1,12 @@
 EOIR_FLIGHT_TYPE
 ================
 
-.. py:class:: EOIR_FLIGHT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.EOIR_FLIGHT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIR_FLIGHT_TYPE
 
 Overview
 --------

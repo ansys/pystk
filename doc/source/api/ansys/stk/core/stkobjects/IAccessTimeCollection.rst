@@ -1,13 +1,13 @@
 IAccessTimeCollection
 =====================
 
-.. py:class:: IAccessTimeCollection
+.. py:class:: ansys.stk.core.stkobjects.IAccessTimeCollection
 
    object
    
    IAgAccessTimeCollection Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessTimeCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimeCollection.item`
               - Return target times scheme by name or at a specified position.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimeCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimeCollection._NewEnum`
 
 
 Import detail

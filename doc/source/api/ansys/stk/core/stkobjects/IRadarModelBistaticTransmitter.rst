@@ -1,13 +1,13 @@
 IRadarModelBistaticTransmitter
 ==============================
 
-.. py:class:: IRadarModelBistaticTransmitter
+.. py:class:: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter
 
    object
    
    Provide access to the properties and methods defining a bistatic transmitter radar model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModelBistaticTransmitter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.set_mode`
               - Set the current radar mode by name.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_modes`
-            * - :py:meth:`~mode`
-            * - :py:meth:`~transmitter`
-            * - :py:meth:`~bistatic_receivers`
-            * - :py:meth:`~antenna_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.supported_modes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.transmitter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.bistatic_receivers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.antenna_control`
 
 
 Import detail
@@ -55,25 +55,25 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.mode
-    :type: IAgRadarModeBistaticTransmitter
+    :type: IRadarModeBistaticTransmitter
 
     Gets the current radar mode.
 
 .. py:property:: transmitter
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.transmitter
-    :type: IAgRadarTransmitter
+    :type: IRadarTransmitter
 
     Gets the radar transmitter.
 
 .. py:property:: bistatic_receivers
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.bistatic_receivers
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the bistatic receiver collection.
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.antenna_control
-    :type: IAgAntennaControl
+    :type: IAntennaControl
 
     Gets the radar antenna control.
 

@@ -1,12 +1,12 @@
 VEHICLE_CONSIDER_ANALYSIS_TYPE
 ==============================
 
-.. py:class:: VEHICLE_CONSIDER_ANALYSIS_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_CONSIDER_ANALYSIS_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_CONSIDER_ANALYSIS_TYPE
 
 Overview
 --------

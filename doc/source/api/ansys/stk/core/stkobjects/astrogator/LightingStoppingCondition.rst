@@ -1,13 +1,13 @@
 LightingStoppingCondition
 =========================
 
-.. py:class:: LightingStoppingCondition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~ILightingStoppingCondition`, py:obj:`~IStoppingConditionComponent`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Lighting stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: LightingStoppingCondition
 
 Overview
 --------

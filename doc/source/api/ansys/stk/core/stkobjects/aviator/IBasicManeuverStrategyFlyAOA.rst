@@ -1,13 +1,13 @@
 IBasicManeuverStrategyFlyAOA
 ============================
 
-.. py:class:: IBasicManeuverStrategyFlyAOA
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA
 
    object
    
    Interface used to access options for a Fly AOA Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyFlyAOA
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~turn_direction`
-            * - :py:meth:`~roll_rate_mode`
-            * - :py:meth:`~override_roll_rate`
-            * - :py:meth:`~roll_rate_dot`
-            * - :py:meth:`~control_roll_angle`
-            * - :py:meth:`~roll_angle`
-            * - :py:meth:`~stop_on_roll_angle`
-            * - :py:meth:`~aoa`
-            * - :py:meth:`~airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.roll_rate_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.override_roll_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.roll_rate_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.control_roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.stop_on_roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.airspeed_options`
 
 
 Import detail
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

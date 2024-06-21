@@ -1,13 +1,13 @@
 VehicleSegmentsCollection
 =========================
 
-.. py:class:: VehicleSegmentsCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleSegmentsCollection
 
-   Bases: py:obj:`~IVehicleSegmentsCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSegmentsCollection`
 
    Collection of segments for a vehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSegmentsCollection
 
 Overview
 --------

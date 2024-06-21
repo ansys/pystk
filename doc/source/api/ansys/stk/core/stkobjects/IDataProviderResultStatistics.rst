@@ -1,13 +1,13 @@
 IDataProviderResultStatistics
 =============================
 
-.. py:class:: IDataProviderResultStatistics
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultStatistics
 
    object
    
    Compute statistics and time varying extremums on a data set when available.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultStatistics
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_statistic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultStatistics.compute_statistic`
               - Compute the requested statistic for the data set.
-            * - :py:meth:`~compute_time_varying_extremum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultStatistics.compute_time_varying_extremum`
               - Compute the requested time varying extremum for the data set.
-            * - :py:meth:`~is_statistic_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultStatistics.is_statistic_available`
               - Is the supplied statistic available for the data?
-            * - :py:meth:`~is_time_varying_extremum_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultStatistics.is_time_varying_extremum_available`
               - Is the supplied time varying extremum available for the data?
 
 

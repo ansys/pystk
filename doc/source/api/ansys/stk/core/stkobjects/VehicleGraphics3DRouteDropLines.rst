@@ -1,13 +1,13 @@
 VehicleGraphics3DRouteDropLines
 ===============================
 
-.. py:class:: VehicleGraphics3DRouteDropLines
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DRouteDropLines
 
-   Bases: py:obj:`~IVehicleGraphics3DRouteDropLines`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines`
 
    Droplines for great arc vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DRouteDropLines
 
 Overview
 --------

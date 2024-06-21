@@ -1,12 +1,12 @@
 ERROR_CONTROL
 =============
 
-.. py:class:: ERROR_CONTROL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ERROR_CONTROL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ERROR_CONTROL
 
 Overview
 --------

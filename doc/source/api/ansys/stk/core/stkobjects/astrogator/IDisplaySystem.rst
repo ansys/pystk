@@ -1,13 +1,13 @@
 IDisplaySystem
 ==============
 
-.. py:class:: IDisplaySystem
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDisplaySystem
 
    object
    
    The launch coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDisplaySystem
 
 Overview
 --------

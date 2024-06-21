@@ -1,13 +1,13 @@
 IVehicleHPOPDragModelPlugin
 ===========================
 
-.. py:class:: IVehicleHPOPDragModelPlugin
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin
 
    IVehicleHPOPDragModel
    
    Plugin Drag Model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPDragModelPlugin
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plugin_name`
-            * - :py:meth:`~plugin_settings`
-            * - :py:meth:`~available_plugins`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin.plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin.plugin_settings`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin.available_plugins`
 
 
 Import detail
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: plugin_settings
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin.plugin_settings
-    :type: IAgVeHPOPDragModelPluginSettings
+    :type: IVehicleHPOPDragModelPluginSettings
 
     Get the parameters of the selected plugin.
 

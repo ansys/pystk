@@ -1,13 +1,13 @@
 IARINC424Item
 =============
 
-.. py:class:: IARINC424Item
+.. py:class:: ansys.stk.core.stkobjects.aviator.IARINC424Item
 
    object
    
    Interface used to access the options for an ARINC424 Item found in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IARINC424Item
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Item.get_as_catalog_item`
               - Get the catalog item interface for this object.
-            * - :py:meth:`~get_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Item.get_value`
               - Get the value of the field with the given name.
-            * - :py:meth:`~get_all_fields`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Item.get_all_fields`
               - Get all the field names.
-            * - :py:meth:`~get_all_fields_and_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Item.get_all_fields_and_values`
               - Get all the field names along with the corresponding value.
-            * - :py:meth:`~copy_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Item.copy_site`
               - Copy the site to the clipboard.
 
 

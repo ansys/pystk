@@ -1,13 +1,13 @@
 ScatteringPointProviderRangeOverCFARCells
 =========================================
 
-.. py:class:: ScatteringPointProviderRangeOverCFARCells
+.. py:class:: ansys.stk.core.stkobjects.ScatteringPointProviderRangeOverCFARCells
 
-   Bases: py:obj:`~IScatteringPointProviderRangeOverCFARCells`, py:obj:`~IScatteringPointProvider`, py:obj:`~IRadarClutterGeometryModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProviderRangeOverCFARCells`, py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProvider`, py:obj:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a range over CFAR cells scattering point provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScatteringPointProviderRangeOverCFARCells
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IGraphics3DModelItem
 ====================
 
-.. py:class:: IGraphics3DModelItem
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelItem
 
    object
    
    AgVOModelItem used to access the Model Item in the ModelCollection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModelItem
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~switch_time`
-            * - :py:meth:`~graphics_3d_model_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelItem.switch_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelItem.graphics_3d_model_file`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: graphics_3d_model_file
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModelItem.graphics_3d_model_file
-    :type: IAgVOModelFile
+    :type: IGraphics3DModelFile
 
     Interface to specify model's file.
 

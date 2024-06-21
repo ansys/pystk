@@ -1,12 +1,12 @@
 JOIN_EXIT_ARC_METHOD
 ====================
 
-.. py:class:: JOIN_EXIT_ARC_METHOD
+.. py:class:: ansys.stk.core.stkobjects.aviator.JOIN_EXIT_ARC_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: JOIN_EXIT_ARC_METHOD
 
 Overview
 --------

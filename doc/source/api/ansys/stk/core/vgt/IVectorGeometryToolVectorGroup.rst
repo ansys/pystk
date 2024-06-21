@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorGroup
 ==============================
 
-.. py:class:: IVectorGeometryToolVectorGroup
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorGroup
 
    object
    
    Access or create VGT vectors associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorGroup
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.remove`
               - Remove a specified vector.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.item`
               - Return a vector by name or at a specified position.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.get_item_by_index`
               - Retrieve a vector from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.get_item_by_name`
               - Retrieve a vector from the collection by name.
 
     .. tab-item:: Properties
@@ -37,10 +37,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~context`
-            * - :py:meth:`~count`
-            * - :py:meth:`~factory`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.context`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.count`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.factory`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorGroup._NewEnum`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.context
-    :type: IAgCrdnContext
+    :type: IAnalysisWorkbenchContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorGroup.factory
-    :type: IAgCrdnVectorFactory
+    :type: IVectorGeometryToolVectorFactory
 
     Returns a Factory object used to create custom vectors.
 

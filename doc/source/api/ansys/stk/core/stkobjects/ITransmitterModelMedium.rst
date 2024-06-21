@@ -1,13 +1,13 @@
 ITransmitterModelMedium
 =======================
 
-.. py:class:: ITransmitterModelMedium
+.. py:class:: ansys.stk.core.stkobjects.ITransmitterModelMedium
 
    object
    
    Provide access to the properties and methods defining a medium transmitter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransmitterModelMedium
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_polarization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.set_polarization_type`
               - Set the current polarization type.
-            * - :py:meth:`~set_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.set_filter`
               - Set the current filter model by name.
-            * - :py:meth:`~set_modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.set_modulator`
               - Set the current modulator model by name.
 
     .. tab-item:: Properties
@@ -33,18 +33,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~frequency`
-            * - :py:meth:`~data_rate`
-            * - :py:meth:`~power`
-            * - :py:meth:`~antenna_gain`
-            * - :py:meth:`~enable_polarization`
-            * - :py:meth:`~polarization`
-            * - :py:meth:`~post_transmit_gains_losses`
-            * - :py:meth:`~enable_filter`
-            * - :py:meth:`~supported_filters`
-            * - :py:meth:`~filter`
-            * - :py:meth:`~supported_modulators`
-            * - :py:meth:`~modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.data_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.antenna_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.enable_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.post_transmit_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.enable_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.supported_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.supported_modulators`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.modulator`
 
 
 Import detail
@@ -90,13 +90,13 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.polarization
-    :type: IAgPolarization
+    :type: IPolarization
 
     Gets the polarization.
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.post_transmit_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 
@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.filter
-    :type: IAgRFFilterModel
+    :type: IRFFilterModel
 
     Gets the current filter model.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMedium.modulator
-    :type: IAgModulatorModel
+    :type: IModulatorModel
 
     Gets the current modulator model.
 

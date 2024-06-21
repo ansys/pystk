@@ -1,13 +1,13 @@
 ITimeToolEventIntervalFactory
 =============================
 
-.. py:class:: ITimeToolEventIntervalFactory
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalFactory
 
    object
    
    The factory creates event intervals.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalFactory
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.create`
               - Create and register an interval using specified name, description, and type.
-            * - :py:meth:`~create_event_interval_fixed`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.create_event_interval_fixed`
               - Create an interval defined between two explicitly specified start and stop times.
-            * - :py:meth:`~create_event_interval_fixed_duration`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.create_event_interval_fixed_duration`
               - Create an interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
-            * - :py:meth:`~create_event_interval_between_time_instants`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.create_event_interval_between_time_instants`
               - Create an interval using specified start and stop time instants.
-            * - :py:meth:`~create_event_interval_from_interval_list`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.create_event_interval_from_interval_list`
               - Create an interval from a specified interval list by using one of several selection methods.
-            * - :py:meth:`~create_event_interval_scaled`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.create_event_interval_scaled`
               - Create an interval by scaling an original interval using either absolute or relative scale.
-            * - :py:meth:`~create_event_interval_signaled`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.create_event_interval_signaled`
               - Create an interval that is recorded at target clock location by performing signal transmission of original interval between base and target clock locations.
-            * - :py:meth:`~create_event_interval_time_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.create_event_interval_time_offset`
               - Create an interval defined by shifting the specified reference interval by a fixed time offset.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFactory.is_type_supported`
               - Return whether the specified type is supported.
 
 

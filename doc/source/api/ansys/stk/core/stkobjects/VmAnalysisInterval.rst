@@ -1,13 +1,13 @@
 VmAnalysisInterval
 ==================
 
-.. py:class:: VmAnalysisInterval
+.. py:class:: ansys.stk.core.stkobjects.VmAnalysisInterval
 
-   Bases: py:obj:`~IVmAnalysisInterval`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmAnalysisInterval`
 
    Class defining the volumetric analysis interval.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmAnalysisInterval
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IFigureOfMeritGridInspector
 ===========================
 
-.. py:class:: IFigureOfMeritGridInspector
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector
 
    object
    
    Provide access to the FOM grid inspector properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGridInspector
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~select_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.select_point`
               - Select point.
-            * - :py:meth:`~clear_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.clear_selection`
               - Clear the selected point or region.
-            * - :py:meth:`~select_region`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.select_region`
               - Select a region.
 
     .. tab-item:: Properties
@@ -33,11 +33,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~region_figure_of_merit`
-            * - :py:meth:`~region_satisfaction`
-            * - :py:meth:`~point_figure_of_merit`
-            * - :py:meth:`~point_satisfaction`
-            * - :py:meth:`~message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.region_figure_of_merit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.region_satisfaction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.point_figure_of_merit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.point_satisfaction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.message`
 
 
 Import detail
@@ -53,25 +53,25 @@ Property detail
 
 .. py:property:: region_figure_of_merit
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.region_figure_of_merit
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Retrieves the Region FOM data provider.
 
 .. py:property:: region_satisfaction
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.region_satisfaction
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Retrieves the Region Satisfaction data provider.
 
 .. py:property:: point_figure_of_merit
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.point_figure_of_merit
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Retrieves the Point FOM data provider.
 
 .. py:property:: point_satisfaction
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.point_satisfaction
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Retrieves the Point Satisfaction data provider.
 

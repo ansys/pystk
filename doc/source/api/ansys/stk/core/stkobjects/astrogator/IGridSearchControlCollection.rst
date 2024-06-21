@@ -1,13 +1,13 @@
 IGridSearchControlCollection
 ============================
 
-.. py:class:: IGridSearchControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IGridSearchControlCollection
 
    object
    
    Properties for the list of Grid Search control parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IGridSearchControlCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControlCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_control_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControlCollection.get_control_by_paths`
               - Return the control specified by the object/control path.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControlCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControlCollection.count`
 
 
 Import detail

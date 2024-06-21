@@ -1,13 +1,13 @@
 IReceiverModelMultibeam
 =======================
 
-.. py:class:: IReceiverModelMultibeam
+.. py:class:: ansys.stk.core.stkobjects.IReceiverModelMultibeam
 
    object
    
    Provide access to the properties and methods defining a multibeam receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReceiverModelMultibeam
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.set_filter`
               - Set the current filter model by name.
-            * - :py:meth:`~set_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.set_demodulator`
               - Set the current demodulator model by name.
 
     .. tab-item:: Properties
@@ -31,27 +31,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_filter`
-            * - :py:meth:`~supported_filters`
-            * - :py:meth:`~filter`
-            * - :py:meth:`~pre_receive_gains_losses`
-            * - :py:meth:`~pre_demod_gains_losses`
-            * - :py:meth:`~link_margin`
-            * - :py:meth:`~auto_scale_bandwidth`
-            * - :py:meth:`~bandwidth`
-            * - :py:meth:`~auto_select_demodulator`
-            * - :py:meth:`~supported_demodulators`
-            * - :py:meth:`~demodulator`
-            * - :py:meth:`~use_rain`
-            * - :py:meth:`~supported_rain_outage_percent_values`
-            * - :py:meth:`~rain_outage_percent`
-            * - :py:meth:`~auto_track_frequency`
-            * - :py:meth:`~antenna_to_lna_line_loss`
-            * - :py:meth:`~lna_gain`
-            * - :py:meth:`~lna_to_receiver_line_loss`
-            * - :py:meth:`~system_noise_temperature`
-            * - :py:meth:`~antenna_system`
-            * - :py:meth:`~interference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.enable_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.supported_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.pre_receive_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.pre_demod_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.link_margin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.auto_scale_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.auto_select_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.supported_demodulators`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.use_rain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.supported_rain_outage_percent_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.rain_outage_percent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.auto_track_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.antenna_to_lna_line_loss`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.lna_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.lna_to_receiver_line_loss`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.system_noise_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.antenna_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.interference`
 
 
 Import detail
@@ -79,25 +79,25 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.filter
-    :type: IAgRFFilterModel
+    :type: IRFFilterModel
 
     Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.pre_receive_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
 .. py:property:: pre_demod_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.pre_demod_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.link_margin
-    :type: IAgLinkMargin
+    :type: ILinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 
@@ -127,7 +127,7 @@ Property detail
 
 .. py:property:: demodulator
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.demodulator
-    :type: IAgDemodulatorModel
+    :type: IDemodulatorModel
 
     Gets the current demodulator model.
 
@@ -175,19 +175,19 @@ Property detail
 
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.system_noise_temperature
-    :type: IAgSystemNoiseTemperature
+    :type: ISystemNoiseTemperature
 
     Gets the system noise temperature interface.
 
 .. py:property:: antenna_system
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.antenna_system
-    :type: IAgAntennaSystem
+    :type: IAntennaSystem
 
     Gets the antenna system.
 
 .. py:property:: interference
     :canonical: ansys.stk.core.stkobjects.IReceiverModelMultibeam.interference
-    :type: IAgRFInterference
+    :type: IRFInterference
 
     Gets the radio frequency interference.
 

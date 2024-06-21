@@ -1,13 +1,13 @@
 IAtmosphericAbsorptionModel
 ===========================
 
-.. py:class:: IAtmosphericAbsorptionModel
+.. py:class:: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel
 
    object
    
    Provide access to the properties and methods an atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAtmosphericAbsorptionModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel.type`
 
 
 Import detail

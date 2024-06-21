@@ -1,13 +1,13 @@
 IVehicleGraphics2DElevationSwathHalfWidth
 =========================================
 
-.. py:class:: IVehicleGraphics2DElevationSwathHalfWidth
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationSwathHalfWidth
 
    object
    
    Half width interface for vehicle swath.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DElevationSwathHalfWidth
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationSwathHalfWidth.distance`
 
 
 Import detail

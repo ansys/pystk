@@ -1,13 +1,13 @@
 IAccessConstraintPluginMinMax
 =============================
 
-.. py:class:: IAccessConstraintPluginMinMax
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintPluginMinMax
 
    IAccessConstraintMinMax
    
    Access Constraint used for min/max plugin constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintPluginMinMax
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_raw_plugin_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintPluginMinMax.get_raw_plugin_object`
               - Return a raw pointer to the access plugin constraint.
-            * - :py:meth:`~get_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintPluginMinMax.get_property`
               - Get a property.
-            * - :py:meth:`~set_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintPluginMinMax.set_property`
               - Set a property.
 
     .. tab-item:: Properties
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintPluginMinMax.available_properties`
 
 
 Import detail

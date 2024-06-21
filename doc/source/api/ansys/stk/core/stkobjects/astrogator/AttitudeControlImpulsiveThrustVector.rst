@@ -1,13 +1,13 @@
 AttitudeControlImpulsiveThrustVector
 ====================================
 
-.. py:class:: AttitudeControlImpulsiveThrustVector
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveThrustVector
 
-   Bases: py:obj:`~IAttitudeControlImpulsiveThrustVector`, py:obj:`~IAttitudeControlImpulsive`, py:obj:`~IAttitudeControl`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsive`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The thrust vector attitude control for an impulsive maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AttitudeControlImpulsiveThrustVector
 
 Overview
 --------

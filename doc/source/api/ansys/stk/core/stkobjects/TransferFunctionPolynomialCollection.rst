@@ -1,13 +1,13 @@
 TransferFunctionPolynomialCollection
 ====================================
 
-.. py:class:: TransferFunctionPolynomialCollection
+.. py:class:: ansys.stk.core.stkobjects.TransferFunctionPolynomialCollection
 
-   Bases: py:obj:`~ITransferFunctionPolynomialCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection`
 
    Class defining a collection of polynomial coefficients.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TransferFunctionPolynomialCollection
 
 Overview
 --------

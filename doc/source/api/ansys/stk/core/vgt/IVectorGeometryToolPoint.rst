@@ -1,13 +1,13 @@
 IVectorGeometryToolPoint
 ========================
 
-.. py:class:: IVectorGeometryToolPoint
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPoint
 
    object
    
    The interface defines methods and properties common to all points.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPoint
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~locate_in_system_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPoint.locate_in_system_with_rate`
               - Locates the point's position and velocity in a specified coordinate system.
-            * - :py:meth:`~locate_in_system`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPoint.locate_in_system`
               - Locates the point's position in a specified coordinate system.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPoint.type`
 
 
 Import detail

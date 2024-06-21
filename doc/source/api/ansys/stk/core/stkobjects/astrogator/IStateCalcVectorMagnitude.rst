@@ -1,13 +1,13 @@
 IStateCalcVectorMagnitude
 =========================
 
-.. py:class:: IStateCalcVectorMagnitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcVectorMagnitude
 
    object
    
    Properties for a Vector Mag calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcVectorMagnitude
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vector_name`
-            * - :py:meth:`~unit_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorMagnitude.vector_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorMagnitude.unit_dimension`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IEngineModelIspCoefficients
 ===========================
 
-.. py:class:: IEngineModelIspCoefficients
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients
 
    object
    
    Isp coefficient properties for engine definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IEngineModelIspCoefficients
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~c0`
-            * - :py:meth:`~c1`
-            * - :py:meth:`~c2`
-            * - :py:meth:`~c3`
-            * - :py:meth:`~c4`
-            * - :py:meth:`~c5`
-            * - :py:meth:`~c6`
-            * - :py:meth:`~c7`
-            * - :py:meth:`~e4`
-            * - :py:meth:`~e5`
-            * - :py:meth:`~e6`
-            * - :py:meth:`~e7`
-            * - :py:meth:`~b7`
-            * - :py:meth:`~k0`
-            * - :py:meth:`~k1`
-            * - :py:meth:`~reference_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.c0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.c1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.c2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.c3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.c4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.c5`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.c6`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.c7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.e4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.e5`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.e6`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.e7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.b7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.k0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.k1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients.reference_temp`
 
 
 Import detail

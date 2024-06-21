@@ -1,12 +1,12 @@
 LOAD_METHOD_TYPE
 ================
 
-.. py:class:: LOAD_METHOD_TYPE
+.. py:class:: ansys.stk.core.stkobjects.LOAD_METHOD_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LOAD_METHOD_TYPE
 
 Overview
 --------

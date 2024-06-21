@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionResponseTime
 ====================================
 
-.. py:class:: IFigureOfMeritDefinitionResponseTime
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime
 
    IFigureOfMeritDefinitionCompute
    
    Response Time Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionResponseTime
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime.min_assets`
 
 
 Import detail

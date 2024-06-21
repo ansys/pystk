@@ -1,13 +1,13 @@
 PickInfoData
 ============
 
-.. py:class:: PickInfoData
+.. py:class:: ansys.stk.core.stkx.PickInfoData
 
-   Bases: py:obj:`~IPickInfoData`
+   Bases: py:obj:`~ansys.stk.core.stkx.IPickInfoData`
 
    Single mouse pick result.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: PickInfoData
 
 Overview
 --------

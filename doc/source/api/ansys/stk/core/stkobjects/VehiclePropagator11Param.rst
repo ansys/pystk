@@ -1,13 +1,13 @@
 VehiclePropagator11Param
 ========================
 
-.. py:class:: VehiclePropagator11Param
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagator11Param
 
-   Bases: py:obj:`~IVehiclePropagator11Param`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    The 11-Parameter propagator models geostationary satellites using 11-Parameter files. The propagator uses an algorithm documented in Intelsat Earth Station Standards (IESS) IESS-412 (Rev. 2), available at www.celestrak.com.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagator11Param
 
 Overview
 --------

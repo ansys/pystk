@@ -1,13 +1,13 @@
 IMtoAnalysisPosition
 ====================
 
-.. py:class:: IMtoAnalysisPosition
+.. py:class:: ansys.stk.core.stkobjects.IMtoAnalysisPosition
 
    object
    
    MTO position.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoAnalysisPosition
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_all_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisPosition.compute_all_tracks`
               - Compute the position of all tracks at the given time.
-            * - :py:meth:`~compute_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisPosition.compute_tracks`
               - Compute the position of all track of given Id at the given time.
-            * - :py:meth:`~compute_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisPosition.compute_track`
               - Compute the position of the track Id at the given time.
 
     .. tab-item:: Properties
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisPosition.altitude_reference`
 
 
 Import detail

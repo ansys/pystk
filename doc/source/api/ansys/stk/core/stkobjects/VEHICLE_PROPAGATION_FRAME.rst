@@ -1,12 +1,12 @@
 VEHICLE_PROPAGATION_FRAME
 =========================
 
-.. py:class:: VEHICLE_PROPAGATION_FRAME
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_PROPAGATION_FRAME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_PROPAGATION_FRAME
 
 Overview
 --------

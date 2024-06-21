@@ -1,13 +1,13 @@
 IStkObjectElementCollection
 ===========================
 
-.. py:class:: IStkObjectElementCollection
+.. py:class:: ansys.stk.core.stkobjects.IStkObjectElementCollection
 
    object
    
    Represents a collection of STK objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkObjectElementCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection.item`
               - Given an index, returns an element in the collection. If the index is an integer, then the method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection.contains`
               - Check whether an object with the given name exists.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection.get_item_by_index`
               - Retrieve an Stk object element from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection.get_item_by_name`
               - Retrieve an Stk object element from the collection by name.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection._NewEnum`
 
 
 Import detail

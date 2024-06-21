@@ -1,13 +1,13 @@
 ISTKXApplicationPartnerAccess
 =============================
 
-.. py:class:: ISTKXApplicationPartnerAccess
+.. py:class:: ansys.stk.core.stkx.ISTKXApplicationPartnerAccess
 
    object
    
    Access to the application object model for business partners.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: ISTKXApplicationPartnerAccess
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~grant_partner_access`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplicationPartnerAccess.grant_partner_access`
               - Provide object model root for authorized business partners.
 
 

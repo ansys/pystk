@@ -1,13 +1,13 @@
 IRFFilterModelBessel
 ====================
 
-.. py:class:: IRFFilterModelBessel
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelBessel
 
    object
    
    Provide access to the properties and methods defining an bessel RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelBessel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~order`
-            * - :py:meth:`~cutoff_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelBessel.order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelBessel.cutoff_frequency`
 
 
 Import detail

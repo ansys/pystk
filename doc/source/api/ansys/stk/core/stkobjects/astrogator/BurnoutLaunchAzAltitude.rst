@@ -1,13 +1,13 @@
 BurnoutLaunchAzAltitude
 =======================
 
-.. py:class:: BurnoutLaunchAzAltitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BurnoutLaunchAzAltitude
 
-   Bases: py:obj:`~IBurnoutLaunchAzAltitude`, py:obj:`~IBurnout`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzAltitude`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnout`
 
    The launch azimuth and altitude burnout point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BurnoutLaunchAzAltitude
 
 Overview
 --------

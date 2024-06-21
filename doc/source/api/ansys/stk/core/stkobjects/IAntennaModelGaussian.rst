@@ -1,13 +1,13 @@
 IAntennaModelGaussian
 =====================
 
-.. py:class:: IAntennaModelGaussian
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelGaussian
 
    object
    
    Provide access to the properties and methods defining a gaussian antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelGaussian
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~beamwidth`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.efficiency`
 
 
 Import detail

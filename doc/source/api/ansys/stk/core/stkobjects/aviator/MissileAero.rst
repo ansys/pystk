@@ -1,13 +1,13 @@
 MissileAero
 ===========
 
-.. py:class:: MissileAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileAero
 
-   Bases: py:obj:`~IMissileAero`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileAero`
 
    Class defining the aerodynamic options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MissileAero
 
 Overview
 --------

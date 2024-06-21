@@ -1,12 +1,12 @@
 FREQUENCY_SPEC
 ==============
 
-.. py:class:: FREQUENCY_SPEC
+.. py:class:: ansys.stk.core.stkobjects.FREQUENCY_SPEC
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FREQUENCY_SPEC
 
 Overview
 --------

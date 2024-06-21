@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeGridCartesian
 ======================================
 
-.. py:class:: SpatialAnalysisToolVolumeGridCartesian
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeGridCartesian`, py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume grid Cartesian interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeGridCartesian
 
 Overview
 --------

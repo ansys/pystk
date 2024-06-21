@@ -1,13 +1,13 @@
 MissionControlSequenceUpdate
 ============================
 
-.. py:class:: MissionControlSequenceUpdate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceUpdate
 
-   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IMissionControlSequenceUpdate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    The Update segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceUpdate
 
 Overview
 --------

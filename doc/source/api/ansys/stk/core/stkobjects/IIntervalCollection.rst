@@ -1,13 +1,13 @@
 IIntervalCollection
 ===================
 
-.. py:class:: IIntervalCollection
+.. py:class:: ansys.stk.core.stkobjects.IIntervalCollection
 
    object
    
    AgIntervalCollection used to access the Intervals Collection interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IIntervalCollection
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.add`
               - Add an interval to the collection and returns the index. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~remove_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.remove_index`
               - Remove an item by the index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.remove_all`
               - Remove all items in the collection.
-            * - :py:meth:`~remove_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.remove_interval`
               - Remove an interval using the interval interface. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~deconflict`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.deconflict`
               - Deconflict display intervals.
-            * - :py:meth:`~load_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.load_intervals`
               - Load an interval file.
-            * - :py:meth:`~change_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.change_interval`
               - Update interval with specified start and stop times at a given index. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~get_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.get_interval`
               - Return start and stop times of the interval at a given index. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.to_array`
               - Return a two-dimensional array of intervals beginning at a given position and having specified number of rows.
 
     .. tab-item:: Properties
@@ -45,7 +45,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.count`
 
 
 Import detail

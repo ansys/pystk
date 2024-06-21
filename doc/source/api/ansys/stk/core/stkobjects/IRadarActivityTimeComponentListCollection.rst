@@ -1,13 +1,13 @@
 IRadarActivityTimeComponentListCollection
 =========================================
 
-.. py:class:: IRadarActivityTimeComponentListCollection
+.. py:class:: ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection
 
    object
    
    Represents a collection of time component activity elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarActivityTimeComponentListCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.item`
               - Given an index, returns the time component element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.remove_at`
               - Remove the time component element with the specified index.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.insert_at`
               - Insert a new time component element at the supplied index, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.add`
               - Add a new time component element to the collection, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.clear`
               - Clear all time component elements from the collection.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection._NewEnum`
 
 
 Import detail

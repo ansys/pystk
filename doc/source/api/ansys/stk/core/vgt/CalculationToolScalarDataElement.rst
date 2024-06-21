@@ -1,13 +1,13 @@
 CalculationToolScalarDataElement
 ================================
 
-.. py:class:: CalculationToolScalarDataElement
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarDataElement
 
-   Bases: py:obj:`~ICalculationToolScalarDataElement`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Any time-dependent data element from STK data providers available for parent STK object.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarDataElement
 
 Overview
 --------

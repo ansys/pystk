@@ -1,13 +1,13 @@
 IPlanetGraphics3D
 =================
 
-.. py:class:: IPlanetGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IPlanetGraphics3D
 
    object
    
    AgPlVO interface. Used to access the 3D graphics of the planet.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPlanetGraphics3D
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit_from_2d_graphics_2d`
-            * - :py:meth:`~inertial_position_visible`
-            * - :py:meth:`~sub_planet_point_visible`
-            * - :py:meth:`~position_label_visible`
-            * - :py:meth:`~sub_planet_label_visible`
-            * - :py:meth:`~orbit_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.inherit_from_2d_graphics_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.inertial_position_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.sub_planet_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.position_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.sub_planet_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.orbit_visible`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesAttitudeFile
 ===================================
 
-.. py:class:: IVectorGeometryToolAxesAttitudeFile
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesAttitudeFile
 
    object
    
    Axes specified by data from a file.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesAttitudeFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAttitudeFile.filename`
 
 
 Import detail

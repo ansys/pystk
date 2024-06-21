@@ -1,13 +1,13 @@
 IMissionControlSequenceFollow
 =============================
 
-.. py:class:: IMissionControlSequenceFollow
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow
 
    object
    
    Properties for a Follow segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceFollow
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,19 +33,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~leader`
-            * - :py:meth:`~x_offset`
-            * - :py:meth:`~y_offset`
-            * - :py:meth:`~z_offset`
-            * - :py:meth:`~separation_conditions`
-            * - :py:meth:`~spacecraft_parameters`
-            * - :py:meth:`~fuel_tank`
-            * - :py:meth:`~joining_type`
-            * - :py:meth:`~separation_type`
-            * - :py:meth:`~spacecraft_and_fuel_tank_type`
-            * - :py:meth:`~joining_conditions`
-            * - :py:meth:`~control_parameters_available`
-            * - :py:meth:`~user_variables`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.leader`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.x_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.y_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.z_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.separation_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.spacecraft_parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.fuel_tank`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.joining_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.separation_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.spacecraft_and_fuel_tank_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.joining_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.user_variables`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: leader
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.leader
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the leader object.
 
@@ -85,19 +85,19 @@ Property detail
 
 .. py:property:: separation_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.separation_conditions
-    :type: IAgVAStoppingConditionCollection
+    :type: IStoppingConditionCollection
 
     If separation conditions are specified, the list of separation conditions.
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.spacecraft_parameters
-    :type: IAgVASpacecraftParameters
+    :type: ISpacecraftParameters
 
     Get the spacecraft's physical properties.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.fuel_tank
-    :type: IAgVAFuelTank
+    :type: IFuelTank
 
     Get the spacecraft's fuel tank properties.
 
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: joining_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.joining_conditions
-    :type: IAgVAStoppingConditionCollection
+    :type: IStoppingConditionCollection
 
     If joining conditions are specified, the list of joining conditions.
 
@@ -133,7 +133,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.user_variables
-    :type: IAgVAUserVariableCollection
+    :type: IUserVariableCollection
 
     Interface used to modify user variables for the follow segment.
 

@@ -1,13 +1,13 @@
 ICentralBodyShapeTriaxialEllipsoid
 ==================================
 
-.. py:class:: ICentralBodyShapeTriaxialEllipsoid
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid
 
    ICentralBodyShape
    
    Properties for the central body triaxial ellipsoid shape.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyShapeTriaxialEllipsoid
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~semi_mid_axis`
-            * - :py:meth:`~semi_minor_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid.semi_mid_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid.semi_minor_axis`
 
 
 Import detail

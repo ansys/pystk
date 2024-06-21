@@ -1,13 +1,13 @@
 IClassicalSizeShapeSemimajorAxis
 ================================
 
-.. py:class:: IClassicalSizeShapeSemimajorAxis
+.. py:class:: ansys.stk.core.stkobjects.IClassicalSizeShapeSemimajorAxis
 
    IClassicalSizeShape
    
    Interface for specifying orbit size and shape using Semimajor Axis and Eccentricity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalSizeShapeSemimajorAxis
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~eccentricity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeSemimajorAxis.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeSemimajorAxis.eccentricity`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VehiclePluginPropagator
 =======================
 
-.. py:class:: VehiclePluginPropagator
+.. py:class:: ansys.stk.core.stkobjects.VehiclePluginPropagator
 
-   Bases: py:obj:`~IVehiclePluginPropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator`
 
    Class defining a propagator plugin for HPOP for customization of the accelerations used in the propagation of the satellite trajectory.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePluginPropagator
 
 Overview
 --------

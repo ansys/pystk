@@ -1,12 +1,12 @@
 RECTANGULAR_APERTURE_INPUT_TYPE
 ===============================
 
-.. py:class:: RECTANGULAR_APERTURE_INPUT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RECTANGULAR_APERTURE_INPUT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RECTANGULAR_APERTURE_INPUT_TYPE
 
 Overview
 --------

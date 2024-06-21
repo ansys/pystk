@@ -1,13 +1,13 @@
 IGraphics3DPointableElementsElement
 ===================================
 
-.. py:class:: IGraphics3DPointableElementsElement
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement
 
    object
    
    Pointable elements interface for 3D model pointing.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DPointableElementsElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pointing_name`
-            * - :py:meth:`~assigned_target_object`
-            * - :py:meth:`~intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.pointing_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.assigned_target_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.intervals`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: assigned_target_object
     :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.assigned_target_object
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the assigned target for the pointable element.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.intervals
-    :type: IAgIntervalCollection
+    :type: IIntervalCollection
 
     Gets a collection of intervals during which an 3d model part points towards selected targets.
 

@@ -1,13 +1,13 @@
 IVectorGeometryToolSystemAssembled
 ==================================
 
-.. py:class:: IVectorGeometryToolSystemAssembled
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled
 
    object
    
    A system assembled from an origin point and a set of reference axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolSystemAssembled
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~origin_point`
-            * - :py:meth:`~reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled.origin_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled.reference_axes`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: origin_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled.origin_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a point of origin.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled.reference_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

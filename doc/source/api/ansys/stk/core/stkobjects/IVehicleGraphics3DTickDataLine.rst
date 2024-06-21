@@ -1,13 +1,13 @@
 IVehicleGraphics3DTickDataLine
 ==============================
 
-.. py:class:: IVehicleGraphics3DTickDataLine
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine
 
    object
    
    Interface for line type tick marks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DTickDataLine
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~length`
-            * - :py:meth:`~line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine.length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine.line_width`
 
 
 Import detail

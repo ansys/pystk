@@ -1,13 +1,13 @@
 UiToolbarCollection
 ===================
 
-.. py:class:: UiToolbarCollection
+.. py:class:: ansys.stk.core.uicore.UiToolbarCollection
 
-   Bases: py:obj:`~IUiToolbarCollection`
+   Bases: py:obj:`~ansys.stk.core.uicore.IUiToolbarCollection`
 
    Provide methods and properties to manage the toolbars.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: UiToolbarCollection
 
 Overview
 --------

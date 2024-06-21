@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneFindInSystemResult
 ==========================================
 
-.. py:class:: IVectorGeometryToolPlaneFindInSystemResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult
 
    object
    
    Contains the results returned with IAgCrdnPlane.FindInSystem method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneFindInSystemResult
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~origin_position`
-            * - :py:meth:`~x_axis`
-            * - :py:meth:`~y_axis`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.origin_position`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.x_axis`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.y_axis`
 
 
 Import detail
@@ -45,19 +45,19 @@ Property detail
 
 .. py:property:: origin_position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.origin_position
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The position of the plane's center point in the specified coordinate system.
 
 .. py:property:: x_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.x_axis
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     X-axis vector in the specified reference system.
 
 .. py:property:: y_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.y_axis
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     Y-axis vector in the specified reference system.
 

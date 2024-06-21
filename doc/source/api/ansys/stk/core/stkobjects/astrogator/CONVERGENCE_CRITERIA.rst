@@ -1,12 +1,12 @@
 CONVERGENCE_CRITERIA
 ====================
 
-.. py:class:: CONVERGENCE_CRITERIA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONVERGENCE_CRITERIA
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONVERGENCE_CRITERIA
 
 Overview
 --------

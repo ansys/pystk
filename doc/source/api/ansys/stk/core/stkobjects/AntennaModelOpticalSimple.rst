@@ -1,13 +1,13 @@
 AntennaModelOpticalSimple
 =========================
 
-.. py:class:: AntennaModelOpticalSimple
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelOpticalSimple
 
-   Bases: py:obj:`~IAntennaModelOpticalSimple`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a simple optical antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelOpticalSimple
 
 Overview
 --------

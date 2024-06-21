@@ -1,13 +1,13 @@
 VehicleGraphics2DWaypointMarker
 ===============================
 
-.. py:class:: VehicleGraphics2DWaypointMarker
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarker
 
-   Bases: py:obj:`~IVehicleGraphics2DWaypointMarker`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker`
 
    Display options for waypoint and turn markers in the 2D Graphics window.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DWaypointMarker
 
 Overview
 --------

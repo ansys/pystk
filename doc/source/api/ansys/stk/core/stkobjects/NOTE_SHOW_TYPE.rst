@@ -1,12 +1,12 @@
 NOTE_SHOW_TYPE
 ==============
 
-.. py:class:: NOTE_SHOW_TYPE
+.. py:class:: ansys.stk.core.stkobjects.NOTE_SHOW_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: NOTE_SHOW_TYPE
 
 Overview
 --------

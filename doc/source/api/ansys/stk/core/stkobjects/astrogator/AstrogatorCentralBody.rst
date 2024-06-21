@@ -1,13 +1,13 @@
 AstrogatorCentralBody
 =====================
 
-.. py:class:: AstrogatorCentralBody
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AstrogatorCentralBody
 
-   Bases: py:obj:`~IAstrogatorCentralBody`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Central Body.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AstrogatorCentralBody
 
 Overview
 --------

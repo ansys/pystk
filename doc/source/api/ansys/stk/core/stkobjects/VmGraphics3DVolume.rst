@@ -1,13 +1,13 @@
 VmGraphics3DVolume
 ==================
 
-.. py:class:: VmGraphics3DVolume
+.. py:class:: ansys.stk.core.stkobjects.VmGraphics3DVolume
 
-   Bases: py:obj:`~IVmGraphics3DVolume`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DVolume`
 
    Class defining planar cross-sections through the volumetric grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmGraphics3DVolume
 
 Overview
 --------

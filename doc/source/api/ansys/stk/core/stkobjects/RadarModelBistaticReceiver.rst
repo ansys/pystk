@@ -1,13 +1,13 @@
 RadarModelBistaticReceiver
 ==========================
 
-.. py:class:: RadarModelBistaticReceiver
+.. py:class:: ansys.stk.core.stkobjects.RadarModelBistaticReceiver
 
-   Bases: py:obj:`~IRadarModelBistaticReceiver`, py:obj:`~IRadarModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver`, py:obj:`~ansys.stk.core.stkobjects.IRadarModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a bistatic receiver radar model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarModelBistaticReceiver
 
 Overview
 --------

@@ -1,13 +1,13 @@
 TimeToolEventIntervalTimeOffset
 ===============================
 
-.. py:class:: TimeToolEventIntervalTimeOffset
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalTimeOffset
 
-   Bases: py:obj:`~ITimeToolEventIntervalTimeOffset`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalTimeOffset`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventInterval`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval defined by shifting specified reference interval by fixed time offset.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalTimeOffset
 
 Overview
 --------

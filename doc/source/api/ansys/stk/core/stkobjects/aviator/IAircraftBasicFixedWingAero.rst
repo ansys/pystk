@@ -1,13 +1,13 @@
 IAircraftBasicFixedWingAero
 ===========================
 
-.. py:class:: IAircraftBasicFixedWingAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero
 
    object
    
    Interface used to access Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftBasicFixedWingAero
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~forward_flight_reference_area`
-            * - :py:meth:`~forward_flight_use_compressible_flow`
-            * - :py:meth:`~forward_flight_cl0`
-            * - :py:meth:`~forward_flight_cl_alpha`
-            * - :py:meth:`~forward_flight_min_aoa`
-            * - :py:meth:`~forward_flight_max_aoa`
-            * - :py:meth:`~forward_flight_cd0`
-            * - :py:meth:`~forward_flight_k`
-            * - :py:meth:`~takeoff_landing_reference_area`
-            * - :py:meth:`~takeoff_landing_use_compressible_flow`
-            * - :py:meth:`~takeoff_landing_cl0`
-            * - :py:meth:`~takeoff_landing_cl_alpha`
-            * - :py:meth:`~takeoff_landing_min_aoa`
-            * - :py:meth:`~takeoff_landing_max_aoa`
-            * - :py:meth:`~takeoff_landing_cd0`
-            * - :py:meth:`~takeoff_landing_k`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.forward_flight_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.forward_flight_use_compressible_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.forward_flight_cl0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.forward_flight_cl_alpha`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.forward_flight_min_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.forward_flight_max_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.forward_flight_cd0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.forward_flight_k`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.takeoff_landing_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.takeoff_landing_use_compressible_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.takeoff_landing_cl0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.takeoff_landing_cl_alpha`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.takeoff_landing_min_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.takeoff_landing_max_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.takeoff_landing_cd0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero.takeoff_landing_k`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVehicleTargetPointingElement
 =============================
 
-.. py:class:: IVehicleTargetPointingElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleTargetPointingElement
 
    object
    
    Target pointing data for target pointing attitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleTargetPointingElement
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reset_constrained_vector_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.reset_constrained_vector_reference`
               - Set the constrained vector reference to a default value. Returns true if succeeded, otherwise return false.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target`
-            * - :py:meth:`~aligned_vector`
-            * - :py:meth:`~constrained_vector`
-            * - :py:meth:`~constrained_vector_reference`
-            * - :py:meth:`~available_constrained_vectors`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.target`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.aligned_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.constrained_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.constrained_vector_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.available_constrained_vectors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.intervals`
 
 
 Import detail
@@ -53,19 +53,19 @@ Property detail
 
 .. py:property:: target
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.target
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get a reference to the targeted object.
 
 .. py:property:: aligned_vector
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.aligned_vector
-    :type: IAgDirection
+    :type: IDirection
 
     Get the aligned vector.
 
 .. py:property:: constrained_vector
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.constrained_vector
-    :type: IAgDirection
+    :type: IDirection
 
     Get the constrained vector.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IVehicleTargetPointingElement.intervals
-    :type: IAgVeTargetPointingIntervalCollection
+    :type: IVehicleTargetPointingIntervalCollection
 
     Returns a list of scheduled time intervals for the current target.
 

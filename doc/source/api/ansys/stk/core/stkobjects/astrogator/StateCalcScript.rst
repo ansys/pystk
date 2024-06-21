@@ -1,13 +1,13 @@
 StateCalcScript
 ===============
 
-.. py:class:: StateCalcScript
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcScript
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcScript`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript`
 
    Script Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcScript
 
 Overview
 --------

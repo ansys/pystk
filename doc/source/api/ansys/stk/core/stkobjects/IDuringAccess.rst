@@ -1,13 +1,13 @@
 IDuringAccess
 =============
 
-.. py:class:: IDuringAccess
+.. py:class:: ansys.stk.core.stkobjects.IDuringAccess
 
    object
    
    AgDuringAccess used to access the display intervals and Access objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDuringAccess
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~display_intervals`
-            * - :py:meth:`~access_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDuringAccess.display_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDuringAccess.access_objects`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: display_intervals
     :canonical: ansys.stk.core.stkobjects.IDuringAccess.display_intervals
-    :type: IAgIntervalCollection
+    :type: IIntervalCollection
 
     Gets the display intervals property.
 
 .. py:property:: access_objects
     :canonical: ansys.stk.core.stkobjects.IDuringAccess.access_objects
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the access objects property.
 

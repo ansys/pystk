@@ -1,13 +1,13 @@
 RadarCrossSection
 =================
 
-.. py:class:: RadarCrossSection
+.. py:class:: ansys.stk.core.stkobjects.RadarCrossSection
 
-   Bases: py:obj:`~IRadarCrossSection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSection`
 
    Class defining a radar cross section.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarCrossSection
 
 Overview
 --------

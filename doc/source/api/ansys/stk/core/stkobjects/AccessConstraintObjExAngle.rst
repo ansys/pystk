@@ -1,13 +1,13 @@
 AccessConstraintObjExAngle
 ==========================
 
-.. py:class:: AccessConstraintObjExAngle
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintObjExAngle
 
-   Bases: py:obj:`~IAccessConstraintObjExAngle`, py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining the Object Exclusion Angle constraint.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintObjExAngle
 
 Overview
 --------

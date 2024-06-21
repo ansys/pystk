@@ -1,13 +1,13 @@
 IAdvCATPreFilters
 =================
 
-.. py:class:: IAdvCATPreFilters
+.. py:class:: ansys.stk.core.stkobjects.IAdvCATPreFilters
 
    object
    
    Pre-Filters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdvCATPreFilters
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_out_of_date_filter`
-            * - :py:meth:`~out_of_date_pad`
-            * - :py:meth:`~use_apogee_perigee_filter`
-            * - :py:meth:`~apogee_perigee_pad`
-            * - :py:meth:`~use_orbit_path_filter`
-            * - :py:meth:`~orbit_path_pad`
-            * - :py:meth:`~use_time_filter`
-            * - :py:meth:`~time_distance_pad`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.use_out_of_date_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.out_of_date_pad`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.use_apogee_perigee_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.apogee_perigee_pad`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.use_orbit_path_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.orbit_path_pad`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.use_time_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.time_distance_pad`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAirportCategory
 ================
 
-.. py:class:: IAirportCategory
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAirportCategory
 
    object
    
    Interface used to access the airports in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAirportCategory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~arinc424_airports`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAirportCategory.arinc424_airports`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: arinc424_airports
     :canonical: ansys.stk.core.stkobjects.aviator.IAirportCategory.arinc424_airports
-    :type: IAgAvtrARINC424Source
+    :type: IARINC424Source
 
     Get the ARINC-424 airports.
 

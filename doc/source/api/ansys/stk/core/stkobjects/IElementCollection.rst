@@ -1,13 +1,13 @@
 IElementCollection
 ==================
 
-.. py:class:: IElementCollection
+.. py:class:: ansys.stk.core.stkobjects.IElementCollection
 
    object
    
    Represents a collection of phased array elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IElementCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementCollection.item`
               - Given an index, returns the element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementCollection._NewEnum`
 
 
 Import detail

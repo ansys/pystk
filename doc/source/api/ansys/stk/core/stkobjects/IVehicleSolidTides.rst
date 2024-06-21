@@ -1,13 +1,13 @@
 IVehicleSolidTides
 ==================
 
-.. py:class:: IVehicleSolidTides
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSolidTides
 
    object
    
    Interface for additional force model options related to solid tides.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSolidTides
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inc_time_dep_solid_tides`
-            * - :py:meth:`~min_amplitude`
-            * - :py:meth:`~truncate_solid_tides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolidTides.inc_time_dep_solid_tides`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolidTides.min_amplitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolidTides.truncate_solid_tides`
 
 
 Import detail

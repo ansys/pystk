@@ -1,12 +1,12 @@
 VEHICLE_GPS_ALMANAC_TYPE
 ========================
 
-.. py:class:: VEHICLE_GPS_ALMANAC_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_GPS_ALMANAC_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_GPS_ALMANAC_TYPE
 
 Overview
 --------

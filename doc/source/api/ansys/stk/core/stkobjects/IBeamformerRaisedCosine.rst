@@ -1,13 +1,13 @@
 IBeamformerRaisedCosine
 =======================
 
-.. py:class:: IBeamformerRaisedCosine
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerRaisedCosine
 
    object
    
    Provide access to the properties and methods defining a raised cosine tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerRaisedCosine
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~p`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerRaisedCosine.p`
 
 
 Import detail

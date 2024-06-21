@@ -1,13 +1,13 @@
 IStkObject
 ==========
 
-.. py:class:: IStkObject
+.. py:class:: ansys.stk.core.stkobjects.IStkObject
 
    object
    
    Represents the instance of STK object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkObject
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.export`
               - Export the object to a file.
-            * - :py:meth:`~is_object_coverage_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.is_object_coverage_supported`
               - Determine whether or not the object supports ObjectCoverage.
-            * - :py:meth:`~is_access_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.is_access_supported`
               - Determine whether or not the object supports Access.
-            * - :py:meth:`~get_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.get_access`
               - Return an IAgStkAccess object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
-            * - :py:meth:`~get_access_to_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.get_access_to_object`
               - Return an IAgStkAccess object associated with this STK object and another STK object.
-            * - :py:meth:`~create_one_point_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.create_one_point_access`
               - Create one point access to the supplied object name. The Remove method in IAgOnePtAccess should be called when you are done with the data.
-            * - :py:meth:`~unload`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.unload`
               - Remove the object from the scenario.
-            * - :py:meth:`~is_vgt_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.is_vgt_supported`
               - Return whether the object supports Vector Geometry.
-            * - :py:meth:`~copy_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.copy_object`
               - Copy and paste the current instance of STK Object. The copied object will be pasted as the sibling of the instance being copied.
 
     .. tab-item:: Properties
@@ -45,23 +45,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~parent`
-            * - :py:meth:`~path`
-            * - :py:meth:`~instance_name`
-            * - :py:meth:`~class_type`
-            * - :py:meth:`~class_name`
-            * - :py:meth:`~children`
-            * - :py:meth:`~root`
-            * - :py:meth:`~data_providers`
-            * - :py:meth:`~short_description`
-            * - :py:meth:`~long_description`
-            * - :py:meth:`~has_children`
-            * - :py:meth:`~object_coverage`
-            * - :py:meth:`~access_constraints`
-            * - :py:meth:`~object_files`
-            * - :py:meth:`~vgt`
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~metadata`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.parent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.instance_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.class_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.class_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.children`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.root`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.data_providers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.short_description`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.long_description`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.has_children`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.access_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_files`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.vgt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.metadata`
 
 
 Import detail
@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: parent
     :canonical: ansys.stk.core.stkobjects.IStkObject.parent
-    :type: IAgStkObject
+    :type: IStkObject
 
     Returns the parent object or null if the object has become orphaned. The exception is AgStkObjectRoot object which is a topmost element and does not have a parent.
 
@@ -107,19 +107,19 @@ Property detail
 
 .. py:property:: children
     :canonical: ansys.stk.core.stkobjects.IStkObject.children
-    :type: IAgStkObjectCollection
+    :type: IStkObjectCollection
 
     Returns a collection of direct descendants of the current object.
 
 .. py:property:: root
     :canonical: ansys.stk.core.stkobjects.IStkObject.root
-    :type: IAgStkObjectRoot
+    :type: IStkObjectRoot
 
     Returns the Root object or null.
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.IStkObject.data_providers
-    :type: IAgDataProviderCollection
+    :type: IDataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
@@ -143,13 +143,13 @@ Property detail
 
 .. py:property:: object_coverage
     :canonical: ansys.stk.core.stkobjects.IStkObject.object_coverage
-    :type: IAgStkObjectCoverage
+    :type: IStkObjectCoverage
 
     Returns an IAgStkObjectCoverage object.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IStkObject.access_constraints
-    :type: IAgAccessConstraintCollection
+    :type: IAccessConstraintCollection
 
     Get the constraints imposed on the object.
 
@@ -161,7 +161,7 @@ Property detail
 
 .. py:property:: vgt
     :canonical: ansys.stk.core.stkobjects.IStkObject.vgt
-    :type: IAgCrdnProvider
+    :type: IAnalysisWorkbenchProvider
 
     Returns an instance of Vector Geometry Tool provider.
 
@@ -173,7 +173,7 @@ Property detail
 
 .. py:property:: metadata
     :canonical: ansys.stk.core.stkobjects.IStkObject.metadata
-    :type: IAgKeyValueCollection
+    :type: IKeyValueCollection
 
     Gets the object's metadata. Metadata is a collection of keys and their associated values.
 

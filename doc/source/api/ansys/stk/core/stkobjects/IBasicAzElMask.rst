@@ -1,13 +1,13 @@
 IBasicAzElMask
 ==============
 
-.. py:class:: IBasicAzElMask
+.. py:class:: ansys.stk.core.stkobjects.IBasicAzElMask
 
    object
    
    AgAzElMask Azimuth-elevation access points.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBasicAzElMask
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_visible`
-            * - :py:meth:`~number_of_altitude_steps`
-            * - :py:meth:`~range_visible`
-            * - :py:meth:`~number_of_range_steps`
-            * - :py:meth:`~display_range_minimum`
-            * - :py:meth:`~display_range_maximum`
-            * - :py:meth:`~display_altitude_minimum`
-            * - :py:meth:`~display_altitude_maximum`
-            * - :py:meth:`~altitude_color_visible`
-            * - :py:meth:`~altitude_color`
-            * - :py:meth:`~range_color_visible`
-            * - :py:meth:`~range_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.altitude_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.number_of_altitude_steps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.range_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.number_of_range_steps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.display_range_minimum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.display_range_maximum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.display_altitude_minimum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.display_altitude_maximum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.altitude_color_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.altitude_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.range_color_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBasicAzElMask.range_color`
 
 
 Import detail

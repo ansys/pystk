@@ -1,13 +1,13 @@
 IMissionControlSequenceSegmentProperties
 ========================================
 
-.. py:class:: IMissionControlSequenceSegmentProperties
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties
 
    object
    
    The segment properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceSegmentProperties
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~apply_final_state_to_b_planes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.apply_final_state_to_b_planes`
               - Apply the last calculated final state of the segment to all selected B-Planes.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~display_coordinate_system`
-            * - :py:meth:`~color`
-            * - :py:meth:`~update_animation_time_after_run`
-            * - :py:meth:`~b_planes`
-            * - :py:meth:`~last_run_code`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.display_coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.update_animation_time_after_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.b_planes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.last_run_code`
 
 
 Import detail
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: b_planes
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.b_planes
-    :type: IAgVABPlaneCollection
+    :type: IBPlaneCollection
 
     Get the B-Plane or B-Planes to which the epoch, position, and velocity of the segment's final state will be applied, according to the B-Plane's definition.
 

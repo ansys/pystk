@@ -1,13 +1,13 @@
 StateCalcCartSTMElem
 ====================
 
-.. py:class:: StateCalcCartSTMElem
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcCartSTMElem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem`
 
    Cartesian STM Elements Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcCartSTMElem
 
 Overview
 --------

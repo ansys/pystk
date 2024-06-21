@@ -1,13 +1,13 @@
 IBasicManeuverStrategyIntercept
 ===============================
 
-.. py:class:: IBasicManeuverStrategyIntercept
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept
 
    object
    
    Interface used to access options for an Intercept Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyIntercept
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_stop_time_to_go`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.set_stop_time_to_go`
               - Set the option to use the stop time from target stopping condition and set the according value.
-            * - :py:meth:`~set_stop_slant_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.set_stop_slant_range`
               - Set the option to use the stop slant range stopping condition and set the according value.
-            * - :py:meth:`~set_control_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
-            * - :py:meth:`~cancel_tgt_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.cancel_tgt_position_vel`
               - Cancel the position velocity strategies for Intercept.
 
     .. tab-item:: Properties
@@ -35,26 +35,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_name`
-            * - :py:meth:`~valid_target_names`
-            * - :py:meth:`~target_resolution`
-            * - :py:meth:`~use_stop_time_to_go`
-            * - :py:meth:`~stop_time_to_go`
-            * - :py:meth:`~use_stop_slant_range`
-            * - :py:meth:`~stop_slant_range`
-            * - :py:meth:`~intercept_mode`
-            * - :py:meth:`~target_aspect`
-            * - :py:meth:`~lateral_separation`
-            * - :py:meth:`~maneuver_factor`
-            * - :py:meth:`~control_limit_mode`
-            * - :py:meth:`~control_limit_turn_radius`
-            * - :py:meth:`~control_limit_turn_rate`
-            * - :py:meth:`~control_limit_horiz_accel`
-            * - :py:meth:`~closure_mode`
-            * - :py:meth:`~hobs_max_angle`
-            * - :py:meth:`~hobs_angle_tol`
-            * - :py:meth:`~compensate_for_coriolis_accel`
-            * - :py:meth:`~position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.target_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.valid_target_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.target_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.use_stop_time_to_go`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.stop_time_to_go`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.use_stop_slant_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.stop_slant_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.intercept_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.target_aspect`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.lateral_separation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.maneuver_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_turn_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_turn_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_horiz_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.closure_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.hobs_max_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.hobs_angle_tol`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.position_vel_strategies`
 
 
 Import detail
@@ -184,7 +184,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.position_vel_strategies
-    :type: IAgAvtrBasicManeuverTargetPosVel
+    :type: IBasicManeuverTargetPositionVel
 
     Get the position velocity strategies for Intercept.
 

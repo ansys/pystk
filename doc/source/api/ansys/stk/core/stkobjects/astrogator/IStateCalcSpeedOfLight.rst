@@ -1,13 +1,13 @@
 IStateCalcSpeedOfLight
 ======================
 
-.. py:class:: IStateCalcSpeedOfLight
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSpeedOfLight
 
    object
    
    Properties for a Speed of Light calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSpeedOfLight
 
 Overview
 --------

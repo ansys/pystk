@@ -1,13 +1,13 @@
 IScenarioAnimation
 ==================
 
-.. py:class:: IScenarioAnimation
+.. py:class:: ansys.stk.core.stkobjects.IScenarioAnimation
 
    object
    
    IAgScAnimation Interface for Scenario-level properties that control the animation cycle, animation step definition and the intervals between refresh updates in the 2D and 3D windows.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenarioAnimation
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_time_array_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.set_time_array_component`
               - Configure the time array using the specified time component. Allowed are only event arrays.
-            * - :py:meth:`~set_time_array_qualified_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.set_time_array_qualified_path`
               - Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 OneMinuteSampleTimes EventArray\").
-            * - :py:meth:`~get_time_array_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.get_time_array_component`
               - Return a time array component used to configure the time array or null if component has not been configured yet.
-            * - :py:meth:`~get_time_array_qualified_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.get_time_array_qualified_path`
               - Return the time array component's qualified path or null if no component has been configured yet.
-            * - :py:meth:`~reset_time_array_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.reset_time_array_component`
               - Remove and resets the display configuration by unsetting currently set time array component (if any).
 
     .. tab-item:: Properties
@@ -37,17 +37,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~enable_anim_cycle_time`
-            * - :py:meth:`~anim_cycle_time`
-            * - :py:meth:`~anim_step_value`
-            * - :py:meth:`~refresh_delta`
-            * - :py:meth:`~anim_cycle_type`
-            * - :py:meth:`~refresh_delta_type`
-            * - :py:meth:`~anim_step_type`
-            * - :py:meth:`~continue_x_realtime_from_pause`
-            * - :py:meth:`~time_period`
-            * - :py:meth:`~time_array_increment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.enable_anim_cycle_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.anim_cycle_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.anim_step_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.refresh_delta`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.anim_cycle_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.refresh_delta_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.anim_step_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.continue_x_realtime_from_pause`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimation.time_array_increment`
 
 
 Import detail
@@ -117,7 +117,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IScenarioAnimation.time_period
-    :type: IAgScAnimationTimePeriod
+    :type: IScenarioAnimationTimePeriod
 
     Allows the user to configure the scenario's animation time period.
 

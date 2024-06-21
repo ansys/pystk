@@ -1,12 +1,12 @@
 VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE
 ========================================
 
-.. py:class:: VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE
 
 Overview
 --------

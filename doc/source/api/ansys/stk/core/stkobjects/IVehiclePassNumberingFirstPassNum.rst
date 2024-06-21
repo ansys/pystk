@@ -1,13 +1,13 @@
 IVehiclePassNumberingFirstPassNum
 =================================
 
-.. py:class:: IVehiclePassNumberingFirstPassNum
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePassNumberingFirstPassNum
 
    IVehiclePassNumbering
    
    First pass number.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePassNumberingFirstPassNum
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~first_pass_num`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassNumberingFirstPassNum.first_pass_num`
 
 
 Import detail

@@ -1,13 +1,13 @@
 SpatialAnalysisToolGridValuesCustom
 ===================================
 
-.. py:class:: SpatialAnalysisToolGridValuesCustom
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesCustom
 
-   Bases: py:obj:`~ISpatialAnalysisToolGridValuesCustom`, py:obj:`~ISpatialAnalysisToolGridValuesMethod`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesCustom`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod`
 
    Fixed step grid values.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolGridValuesCustom
 
 Overview
 --------

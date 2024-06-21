@@ -1,13 +1,13 @@
 ICalculationToolSamplingRelativeTolerance
 =========================================
 
-.. py:class:: ICalculationToolSamplingRelativeTolerance
+.. py:class:: ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance
 
    object
    
    Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolSamplingRelativeTolerance
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_time_step`
-            * - :py:meth:`~maximum_time_step`
-            * - :py:meth:`~step_at_boundaries`
-            * - :py:meth:`~relative_tolerance`
-            * - :py:meth:`~absolute_tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.minimum_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.maximum_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.step_at_boundaries`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.relative_tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.absolute_tolerance`
 
 
 Import detail

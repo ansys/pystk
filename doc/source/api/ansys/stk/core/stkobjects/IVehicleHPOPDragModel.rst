@@ -1,13 +1,13 @@
 IVehicleHPOPDragModel
 =====================
 
-.. py:class:: IVehicleHPOPDragModel
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPDragModel
 
    object
    
    A base interface for drag models.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPDragModel
 
 Overview
 --------

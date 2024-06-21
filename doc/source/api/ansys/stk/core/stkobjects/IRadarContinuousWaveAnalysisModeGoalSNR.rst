@@ -1,13 +1,13 @@
 IRadarContinuousWaveAnalysisModeGoalSNR
 =======================================
 
-.. py:class:: IRadarContinuousWaveAnalysisModeGoalSNR
+.. py:class:: ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeGoalSNR
 
    object
    
    Interface which defines an continuous wave goal SNR analysis.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarContinuousWaveAnalysisModeGoalSNR
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~snr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeGoalSNR.snr`
 
 
 Import detail

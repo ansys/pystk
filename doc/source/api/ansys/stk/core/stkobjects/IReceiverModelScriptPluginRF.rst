@@ -1,13 +1,13 @@
 IReceiverModelScriptPluginRF
 ============================
 
-.. py:class:: IReceiverModelScriptPluginRF
+.. py:class:: ansys.stk.core.stkobjects.IReceiverModelScriptPluginRF
 
    object
    
    Provide access to the properties and methods defining a radio frequency script plugin receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReceiverModelScriptPluginRF
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~interference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelScriptPluginRF.interference`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: interference
     :canonical: ansys.stk.core.stkobjects.IReceiverModelScriptPluginRF.interference
-    :type: IAgRFInterference
+    :type: IRFInterference
 
     Gets the radio frequency interference.
 

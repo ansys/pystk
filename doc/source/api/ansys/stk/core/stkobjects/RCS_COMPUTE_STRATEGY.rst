@@ -1,12 +1,12 @@
 RCS_COMPUTE_STRATEGY
 ====================
 
-.. py:class:: RCS_COMPUTE_STRATEGY
+.. py:class:: ansys.stk.core.stkobjects.RCS_COMPUTE_STRATEGY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RCS_COMPUTE_STRATEGY
 
 Overview
 --------

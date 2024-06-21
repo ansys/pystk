@@ -1,12 +1,12 @@
 MAINTAIN_ASPECT_RATIO
 =====================
 
-.. py:class:: MAINTAIN_ASPECT_RATIO
+.. py:class:: ansys.stk.core.graphics.MAINTAIN_ASPECT_RATIO
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MAINTAIN_ASPECT_RATIO
 
 Overview
 --------

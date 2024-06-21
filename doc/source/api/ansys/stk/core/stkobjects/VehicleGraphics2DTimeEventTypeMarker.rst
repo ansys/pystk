@@ -1,13 +1,13 @@
 VehicleGraphics2DTimeEventTypeMarker
 ====================================
 
-.. py:class:: VehicleGraphics2DTimeEventTypeMarker
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeMarker
 
-   Bases: py:obj:`~IVehicleGraphics2DTimeEventType`, py:obj:`~IVehicleGraphics2DTimeEventTypeMarker`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventType`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker`
 
    2D Graphics time event: marker type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DTimeEventTypeMarker
 
 Overview
 --------

@@ -1,12 +1,12 @@
 CRDN_PARAMETER_SET_TYPE
 =======================
 
-.. py:class:: CRDN_PARAMETER_SET_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_PARAMETER_SET_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_PARAMETER_SET_TYPE
 
 Overview
 --------

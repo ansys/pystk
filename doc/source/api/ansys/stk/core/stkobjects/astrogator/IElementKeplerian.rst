@@ -1,13 +1,13 @@
 IElementKeplerian
 =================
 
-.. py:class:: IElementKeplerian
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementKeplerian
 
    IElement
    
    Properties for Keplerian elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementKeplerian
 
 Overview
 --------
@@ -20,29 +20,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~eccentricity`
-            * - :py:meth:`~inclination`
-            * - :py:meth:`~raan`
-            * - :py:meth:`~arg_of_periapsis`
-            * - :py:meth:`~true_anomaly`
-            * - :py:meth:`~apoapsis_altitude_size`
-            * - :py:meth:`~apoapsis_radius_size`
-            * - :py:meth:`~mean_motion`
-            * - :py:meth:`~periapsis_altitude_size`
-            * - :py:meth:`~periapsis_radius_size`
-            * - :py:meth:`~period`
-            * - :py:meth:`~lan`
-            * - :py:meth:`~arg_of_latitude`
-            * - :py:meth:`~eccentric_anomaly`
-            * - :py:meth:`~mean_anomaly`
-            * - :py:meth:`~time_past_asc_node`
-            * - :py:meth:`~time_past_periapsis`
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~apoapsis_altitude_shape`
-            * - :py:meth:`~apoapsis_radius_shape`
-            * - :py:meth:`~periapsis_altitude_shape`
-            * - :py:meth:`~periapsis_radius_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.eccentricity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.inclination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.raan`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.arg_of_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.true_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.apoapsis_altitude_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.apoapsis_radius_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.mean_motion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.periapsis_altitude_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.periapsis_radius_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.lan`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.arg_of_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.eccentric_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.mean_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.time_past_asc_node`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.time_past_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.apoapsis_altitude_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.apoapsis_radius_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.periapsis_altitude_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian.periapsis_radius_shape`
 
 
 Import detail

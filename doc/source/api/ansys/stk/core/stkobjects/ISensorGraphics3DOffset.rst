@@ -1,13 +1,13 @@
 ISensorGraphics3DOffset
 =======================
 
-.. py:class:: ISensorGraphics3DOffset
+.. py:class:: ansys.stk.core.stkobjects.ISensorGraphics3DOffset
 
    object
    
    IAgSnVOOffset Interface for setting and retrieving 3D Graphics Vertex Offset properties of a sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorGraphics3DOffset
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_axis_offset_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.get_axis_offset_value`
               - Get the selected axis offset type.
-            * - :py:meth:`~set_axis_offset_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.set_axis_offset_value`
               - Select the axis offset type.
 
     .. tab-item:: Properties
@@ -31,14 +31,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit_from_parent_obj`
-            * - :py:meth:`~enable_translational`
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
-            * - :py:meth:`~enable_attach_point`
-            * - :py:meth:`~attach_point_name`
-            * - :py:meth:`~available_attach_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.inherit_from_parent_obj`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.enable_translational`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.enable_attach_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.attach_point_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.available_attach_points`
 
 
 Import detail

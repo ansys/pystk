@@ -1,13 +1,13 @@
 VehicleGraphics3DCovariance
 ===========================
 
-.. py:class:: VehicleGraphics3DCovariance
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance
 
-   Bases: py:obj:`~IVehicleGraphics3DCovariance`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance`
 
    3D position covariance ellipsoids.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DCovariance
 
 Overview
 --------

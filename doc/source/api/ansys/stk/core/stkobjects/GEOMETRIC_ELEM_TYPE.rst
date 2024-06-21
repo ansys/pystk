@@ -1,12 +1,12 @@
 GEOMETRIC_ELEM_TYPE
 ===================
 
-.. py:class:: GEOMETRIC_ELEM_TYPE
+.. py:class:: ansys.stk.core.stkobjects.GEOMETRIC_ELEM_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GEOMETRIC_ELEM_TYPE
 
 Overview
 --------

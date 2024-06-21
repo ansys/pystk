@@ -1,12 +1,12 @@
 VEHICLE_WAYPOINT_INTERP_METHOD
 ==============================
 
-.. py:class:: VEHICLE_WAYPOINT_INTERP_METHOD
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_WAYPOINT_INTERP_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_WAYPOINT_INTERP_METHOD
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VmExportTool
 ============
 
-.. py:class:: VmExportTool
+.. py:class:: ansys.stk.core.stkobjects.VmExportTool
 
-   Bases: py:obj:`~IVmExportTool`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmExportTool`
 
    The Volumetric Export Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmExportTool
 
 Overview
 --------

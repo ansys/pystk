@@ -1,12 +1,12 @@
 CRDN_REFERENCE_SHAPE_TYPE
 =========================
 
-.. py:class:: CRDN_REFERENCE_SHAPE_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_REFERENCE_SHAPE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_REFERENCE_SHAPE_TYPE
 
 Overview
 --------

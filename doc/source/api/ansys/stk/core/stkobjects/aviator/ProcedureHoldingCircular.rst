@@ -1,13 +1,13 @@
 ProcedureHoldingCircular
 ========================
 
-.. py:class:: ProcedureHoldingCircular
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureHoldingCircular
 
-   Bases: py:obj:`~IProcedureHoldingCircular`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a holding circular procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureHoldingCircular
 
 Overview
 --------

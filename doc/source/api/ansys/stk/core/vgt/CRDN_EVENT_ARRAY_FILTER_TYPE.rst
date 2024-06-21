@@ -1,12 +1,12 @@
 CRDN_EVENT_ARRAY_FILTER_TYPE
 ============================
 
-.. py:class:: CRDN_EVENT_ARRAY_FILTER_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_EVENT_ARRAY_FILTER_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_EVENT_ARRAY_FILTER_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VectorGeometryToolPointGroup
 ============================
 
-.. py:class:: VectorGeometryToolPointGroup
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointGroup
 
-   Bases: py:obj:`~IVectorGeometryToolPointGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointGroup`
 
    Access or create VGT points associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointGroup
 
 Overview
 --------

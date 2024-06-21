@@ -1,12 +1,12 @@
 RADAR_SWERLING_CASE
 ===================
 
-.. py:class:: RADAR_SWERLING_CASE
+.. py:class:: ansys.stk.core.stkobjects.RADAR_SWERLING_CASE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_SWERLING_CASE
 
 Overview
 --------

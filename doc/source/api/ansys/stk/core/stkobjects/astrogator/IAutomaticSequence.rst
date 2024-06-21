@@ -1,13 +1,13 @@
 IAutomaticSequence
 ==================
 
-.. py:class:: IAutomaticSequence
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAutomaticSequence
 
    object
    
    Properties for automatic sequences.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAutomaticSequence
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~make_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.make_copy`
               - Make a copy of the sequence.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~user_comment`
-            * - :py:meth:`~sequence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.user_comment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.sequence`
 
 
 Import detail
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.sequence
-    :type: IAgVAMCSSegmentCollection
+    :type: IMissionControlSequenceSegmentCollection
 
     Returns the segment collection of the sequence.
 

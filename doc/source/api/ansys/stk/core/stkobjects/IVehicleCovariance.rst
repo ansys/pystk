@@ -1,13 +1,13 @@
 IVehicleCovariance
 ==================
 
-.. py:class:: IVehicleCovariance
+.. py:class:: ansys.stk.core.stkobjects.IVehicleCovariance
 
    object
    
    HPOP covariance interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleCovariance
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~validate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.validate`
               - Validate.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_covariance`
-            * - :py:meth:`~frame`
-            * - :py:meth:`~representation`
-            * - :py:meth:`~gravity`
-            * - :py:meth:`~position_velocity`
-            * - :py:meth:`~include_consider_analysis`
-            * - :py:meth:`~consider_analysis_list`
-            * - :py:meth:`~include_consider_cross_correlation`
-            * - :py:meth:`~correlation_list`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.compute_covariance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.representation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.gravity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.position_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.include_consider_analysis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.consider_analysis_list`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.include_consider_cross_correlation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.correlation_list`
 
 
 Import detail
@@ -71,13 +71,13 @@ Property detail
 
 .. py:property:: gravity
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.gravity
-    :type: IAgVeGravity
+    :type: IVehicleGravity
 
     Get the gravity parameters for the covariance.
 
 .. py:property:: position_velocity
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.position_velocity
-    :type: IAgVePositionVelocityCollection
+    :type: IVehiclePositionVelocityCollection
 
     Get the covariance matrix.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: consider_analysis_list
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.consider_analysis_list
-    :type: IAgVeConsiderAnalysisCollection
+    :type: IVehicleConsiderAnalysisCollection
 
     Get the Consider Analysis list.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: correlation_list
     :canonical: ansys.stk.core.stkobjects.IVehicleCovariance.correlation_list
-    :type: IAgVeCorrelationListCollection
+    :type: IVehicleCorrelationListCollection
 
     Get the Consider Cross Correlation list.
 

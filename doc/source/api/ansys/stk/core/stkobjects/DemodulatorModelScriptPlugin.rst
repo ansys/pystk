@@ -1,13 +1,13 @@
 DemodulatorModelScriptPlugin
 ============================
 
-.. py:class:: DemodulatorModelScriptPlugin
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelScriptPlugin
 
-   Bases: py:obj:`~IDemodulatorModelScriptPlugin`, py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModelScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a script plugin modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelScriptPlugin
 
 Overview
 --------

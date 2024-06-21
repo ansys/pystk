@@ -1,13 +1,13 @@
 StateCalcEarthMeanSolarTime
 ===========================
 
-.. py:class:: StateCalcEarthMeanSolarTime
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcEarthMeanSolarTime
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEarthMeanSolarTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEarthMeanSolarTime`
 
    EarthMeanSolarTime Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcEarthMeanSolarTime
 
 Overview
 --------

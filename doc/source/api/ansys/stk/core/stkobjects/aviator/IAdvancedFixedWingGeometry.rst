@@ -1,13 +1,13 @@
 IAdvancedFixedWingGeometry
 ==========================
 
-.. py:class:: IAdvancedFixedWingGeometry
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometry
 
    object
    
    Interface used to access the options for the wing geometry in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingGeometry
 
 Overview
 --------

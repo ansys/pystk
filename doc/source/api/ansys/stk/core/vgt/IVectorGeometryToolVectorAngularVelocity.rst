@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorAngularVelocity
 ========================================
 
-.. py:class:: IVectorGeometryToolVectorAngularVelocity
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity
 
    object
    
    Angular velocity vector of one set of axes computed with respect to the reference set.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorAngularVelocity
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~axes`
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~differencing_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity.axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity.reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity.differencing_time_step`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity.axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify the axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity.reference_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

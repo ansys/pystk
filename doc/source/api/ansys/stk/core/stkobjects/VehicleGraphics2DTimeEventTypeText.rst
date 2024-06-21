@@ -1,13 +1,13 @@
 VehicleGraphics2DTimeEventTypeText
 ==================================
 
-.. py:class:: VehicleGraphics2DTimeEventTypeText
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText
 
-   Bases: py:obj:`~IVehicleGraphics2DTimeEventType`, py:obj:`~IVehicleGraphics2DTimeEventTypeText`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventType`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText`
 
    2D Graphics time event: text type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DTimeEventTypeText
 
 Overview
 --------

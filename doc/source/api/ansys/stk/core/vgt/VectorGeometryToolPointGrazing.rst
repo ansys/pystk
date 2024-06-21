@@ -1,13 +1,13 @@
 VectorGeometryToolPointGrazing
 ==============================
 
-.. py:class:: VectorGeometryToolPointGrazing
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointGrazing
 
-   Bases: py:obj:`~IVectorGeometryToolPointGrazing`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The grazing point is the point of closest approach to the surface of the selected central body along a defined direction.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointGrazing
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ISensorPointingFixedAxes
 ========================
 
-.. py:class:: ISensorPointingFixedAxes
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingFixedAxes
 
    object
    
    IAgSnPtFixedAxes Interface for sensors pointed with reference to a set of reference axes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingFixedAxes
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~available_axes`
-            * - :py:meth:`~use_reference_axes_flipped_about_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes.reference_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes.orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes.available_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes.use_reference_axes_flipped_about_x`
 
 
 Import detail
@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.ISensorPointingFixedAxes.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Get the sensor's orientation properties.
 

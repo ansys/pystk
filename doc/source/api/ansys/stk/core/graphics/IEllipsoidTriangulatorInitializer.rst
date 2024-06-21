@@ -1,13 +1,13 @@
 IEllipsoidTriangulatorInitializer
 =================================
 
-.. py:class:: IEllipsoidTriangulatorInitializer
+.. py:class:: ansys.stk.core.graphics.IEllipsoidTriangulatorInitializer
 
    object
    
    Triangulates an ellipsoid. It is recommended to visualize the ellipsoid using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IEllipsoidTriangulatorInitializer
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_simple`
+            * - :py:attr:`~ansys.stk.core.graphics.IEllipsoidTriangulatorInitializer.compute_simple`
               - Compute the triangulation for an ellipsoid with the specified radii, centered at the origin, using 32 slices and 16 stacks.
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.graphics.IEllipsoidTriangulatorInitializer.compute`
               - Compute the triangulation for an ellipsoid with the specified radii, centered at the origin.
 
 

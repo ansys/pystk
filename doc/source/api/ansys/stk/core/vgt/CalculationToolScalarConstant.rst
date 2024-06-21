@@ -1,13 +1,13 @@
 CalculationToolScalarConstant
 =============================
 
-.. py:class:: CalculationToolScalarConstant
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarConstant
 
-   Bases: py:obj:`~ICalculationToolScalarConstant`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarConstant`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Constant scalar value of specified dimension.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarConstant
 
 Overview
 --------

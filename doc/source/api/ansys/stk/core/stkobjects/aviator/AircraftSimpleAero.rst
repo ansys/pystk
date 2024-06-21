@@ -1,13 +1,13 @@
 AircraftSimpleAero
 ==================
 
-.. py:class:: AircraftSimpleAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftSimpleAero
 
-   Bases: py:obj:`~IAircraftSimpleAero`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero`
 
    Class defining the simple aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftSimpleAero
 
 Overview
 --------

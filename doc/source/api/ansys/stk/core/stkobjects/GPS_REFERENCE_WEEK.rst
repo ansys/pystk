@@ -1,12 +1,12 @@
 GPS_REFERENCE_WEEK
 ==================
 
-.. py:class:: GPS_REFERENCE_WEEK
+.. py:class:: ansys.stk.core.stkobjects.GPS_REFERENCE_WEEK
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GPS_REFERENCE_WEEK
 
 Overview
 --------

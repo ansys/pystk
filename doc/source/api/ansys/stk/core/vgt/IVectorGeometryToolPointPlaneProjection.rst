@@ -1,13 +1,13 @@
 IVectorGeometryToolPointPlaneProjection
 =======================================
 
-.. py:class:: IVectorGeometryToolPointPlaneProjection
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection
 
    object
    
    The projection of a point onto a reference plane. Specify the Source Point and Reference Plane.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointPlaneProjection
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~source_point`
-            * - :py:meth:`~reference_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection.source_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection.reference_plane`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: source_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection.source_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a source point.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection.reference_plane
-    :type: IAgCrdnPlaneRefTo
+    :type: IVectorGeometryToolPlaneRefTo
 
     Specify a reference plane.
 

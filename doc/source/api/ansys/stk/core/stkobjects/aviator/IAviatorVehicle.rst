@@ -1,13 +1,13 @@
 IAviatorVehicle
 ===============
 
-.. py:class:: IAviatorVehicle
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAviatorVehicle
 
    object
    
    Interface for a vehicle in Aviator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAviatorVehicle
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorVehicle.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

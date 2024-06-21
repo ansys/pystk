@@ -1,12 +1,12 @@
 RADAR_CLUTTER_GEOMETRY_MODEL_TYPE
 =================================
 
-.. py:class:: RADAR_CLUTTER_GEOMETRY_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RADAR_CLUTTER_GEOMETRY_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_CLUTTER_GEOMETRY_MODEL_TYPE
 
 Overview
 --------

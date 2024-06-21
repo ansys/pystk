@@ -1,13 +1,13 @@
 IVehicleHPOPSolarRadiationPressureOptions
 =========================================
 
-.. py:class:: IVehicleHPOPSolarRadiationPressureOptions
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressureOptions
 
    object
    
    Interface for additional solar radiation pressure options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPSolarRadiationPressureOptions
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method_to_compute_sun_position`
-            * - :py:meth:`~atmos_altitude_of_earth_shape_for_eclipse`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressureOptions.method_to_compute_sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressureOptions.atmos_altitude_of_earth_shape_for_eclipse`
 
 
 Import detail

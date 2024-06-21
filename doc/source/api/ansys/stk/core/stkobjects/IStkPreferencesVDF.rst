@@ -1,13 +1,13 @@
 IStkPreferencesVDF
 ==================
 
-.. py:class:: IStkPreferencesVDF
+.. py:class:: ansys.stk.core.stkobjects.IStkPreferencesVDF
 
    object
    
    VDF Load/Save settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkPreferencesVDF
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~save_scenario_as_vdf`
-            * - :py:meth:`~base_directory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesVDF.save_scenario_as_vdf`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesVDF.base_directory`
 
 
 Import detail

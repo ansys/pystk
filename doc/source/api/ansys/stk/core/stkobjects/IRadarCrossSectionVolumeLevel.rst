@@ -1,13 +1,13 @@
 IRadarCrossSectionVolumeLevel
 =============================
 
-.. py:class:: IRadarCrossSectionVolumeLevel
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionVolumeLevel
 
    object
    
    IAgRadarCrossSectionVolumeLevel Interface for an radar cross section volume level.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionVolumeLevel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
-            * - :py:meth:`~color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeLevel.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeLevel.color`
 
 
 Import detail

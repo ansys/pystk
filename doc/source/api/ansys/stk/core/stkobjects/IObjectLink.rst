@@ -1,13 +1,13 @@
 IObjectLink
 ===========
 
-.. py:class:: IObjectLink
+.. py:class:: ansys.stk.core.stkobjects.IObjectLink
 
    object
    
    IAgObjectLink provides methods and properties of elements stored in IAgObjectLinkCollection collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IObjectLink
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~path`
-            * - :py:meth:`~type`
-            * - :py:meth:`~linked_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLink.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLink.path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLink.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLink.linked_object`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: linked_object
     :canonical: ansys.stk.core.stkobjects.IObjectLink.linked_object
-    :type: IAgStkObject
+    :type: IStkObject
 
     Returns the STK object associated with the instance.
 

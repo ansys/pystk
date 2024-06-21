@@ -1,12 +1,12 @@
 CUSTOM_FUNCTION
 ===============
 
-.. py:class:: CUSTOM_FUNCTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CUSTOM_FUNCTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CUSTOM_FUNCTION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IEngineIon
 ==========
 
-.. py:class:: IEngineIon
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IEngineIon
 
    object
    
    Properties for engine parameters for an Ion engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IEngineIon
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,15 +33,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~g`
-            * - :py:meth:`~input_power_source_name`
-            * - :py:meth:`~min_required_power`
-            * - :py:meth:`~max_input_power`
-            * - :py:meth:`~percent_degradation_per_year`
-            * - :py:meth:`~reference_epoch`
-            * - :py:meth:`~percent_throttle`
-            * - :py:meth:`~engine_definition`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.input_power_source_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.min_required_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.max_input_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.percent_degradation_per_year`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.reference_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.percent_throttle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.engine_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.control_parameters_available`
 
 
 Import detail
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: engine_definition
     :canonical: ansys.stk.core.stkobjects.astrogator.IEngineIon.engine_definition
-    :type: IAgVAEngineDefinition
+    :type: IEngineDefinition
 
     Get the engine definition.
 

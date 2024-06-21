@@ -1,13 +1,13 @@
 ARINC424Waypoint
 ================
 
-.. py:class:: ARINC424Waypoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ARINC424Waypoint
 
-   Bases: py:obj:`~IARINC424Item`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an ARINC424 Waypoint.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ARINC424Waypoint
 
 Overview
 --------

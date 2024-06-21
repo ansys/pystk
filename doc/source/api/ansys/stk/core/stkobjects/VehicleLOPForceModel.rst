@@ -1,13 +1,13 @@
 VehicleLOPForceModel
 ====================
 
-.. py:class:: VehicleLOPForceModel
+.. py:class:: ansys.stk.core.stkobjects.VehicleLOPForceModel
 
-   Bases: py:obj:`~IVehicleLOPForceModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel`
 
    Class defining the force model for the LOP propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleLOPForceModel
 
 Overview
 --------

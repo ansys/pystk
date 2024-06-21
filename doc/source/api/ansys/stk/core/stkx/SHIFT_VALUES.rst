@@ -1,12 +1,12 @@
 SHIFT_VALUES
 ============
 
-.. py:class:: SHIFT_VALUES
+.. py:class:: ansys.stk.core.stkx.SHIFT_VALUES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: SHIFT_VALUES
 
 Overview
 --------

@@ -1,13 +1,13 @@
 DrawElemRect
 ============
 
-.. py:class:: DrawElemRect
+.. py:class:: ansys.stk.core.stkx.DrawElemRect
 
-   Bases: py:obj:`~IDrawElemRect`
+   Bases: py:obj:`~ansys.stk.core.stkx.IDrawElemRect`
 
    Define a rectangle in window coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: DrawElemRect
 
 Overview
 --------

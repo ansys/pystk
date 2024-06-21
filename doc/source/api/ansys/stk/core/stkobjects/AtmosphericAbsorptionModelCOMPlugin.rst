@@ -1,13 +1,13 @@
 AtmosphericAbsorptionModelCOMPlugin
 ===================================
 
-.. py:class:: AtmosphericAbsorptionModelCOMPlugin
+.. py:class:: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelCOMPlugin
 
-   Bases: py:obj:`~IAtmosphericAbsorptionModelCOMPlugin`, py:obj:`~IAtmosphericAbsorptionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelCOMPlugin`, py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AtmosphericAbsorptionModelCOMPlugin
 
 Overview
 --------

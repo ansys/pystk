@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleFindAngleWithRateResult
 ===============================================
 
-.. py:class:: IVectorGeometryToolAngleFindAngleWithRateResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleWithRateResult
 
    object
    
    Contains the results returned with IAgCrdnAngle.FindAngleWithRate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleFindAngleWithRateResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~angle`
-            * - :py:meth:`~angle_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleWithRateResult.angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleWithRateResult.angle_rate`
 
 
 Import detail

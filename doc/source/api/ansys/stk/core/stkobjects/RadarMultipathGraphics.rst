@@ -1,13 +1,13 @@
 RadarMultipathGraphics
 ======================
 
-.. py:class:: RadarMultipathGraphics
+.. py:class:: ansys.stk.core.stkobjects.RadarMultipathGraphics
 
-   Bases: py:obj:`~IRadarMultipathGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics`
 
    Class defining multipath graphics properties of a Radar.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarMultipathGraphics
 
 Overview
 --------

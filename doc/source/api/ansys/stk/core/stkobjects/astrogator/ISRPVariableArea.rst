@@ -1,13 +1,13 @@
 ISRPVariableArea
 ================
 
-.. py:class:: ISRPVariableArea
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISRPVariableArea
 
    object
    
    Properties for the Variable Area SRP model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISRPVariableArea
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~shadow_model`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~mean_flux`
-            * - :py:meth:`~luminosity`
-            * - :py:meth:`~solar_force_method`
-            * - :py:meth:`~include_boundary_mitigation`
-            * - :py:meth:`~use_sun_central_body_file_values`
-            * - :py:meth:`~solar_radius`
-            * - :py:meth:`~variable_area_history_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.shadow_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.mean_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.luminosity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.solar_force_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.include_boundary_mitigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.use_sun_central_body_file_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.solar_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.variable_area_history_file`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.eclipsing_bodies
-    :type: IAgVACentralBodyCollection
+    :type: ICentralBodyCollection
 
     Other eclipsing bodies.
 

@@ -1,13 +1,13 @@
 StateCalcMeanEarthLon
 =====================
 
-.. py:class:: StateCalcMeanEarthLon
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMeanEarthLon
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanEarthLon`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanEarthLon`
 
    MeanEarthLon Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcMeanEarthLon
 
 Overview
 --------

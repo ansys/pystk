@@ -1,13 +1,13 @@
 VehicleGraphics3DDataFraction
 =============================
 
-.. py:class:: VehicleGraphics3DDataFraction
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DDataFraction
 
-   Bases: py:obj:`~IVehicleLeadTrailData`, py:obj:`~IVehicleLeadTrailDataFraction`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailData`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction`
 
    Fraction for 3D track display.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DDataFraction
 
 Overview
 --------

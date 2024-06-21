@@ -1,13 +1,13 @@
 PlanetPositionCentralBody
 =========================
 
-.. py:class:: PlanetPositionCentralBody
+.. py:class:: ansys.stk.core.stkobjects.PlanetPositionCentralBody
 
-   Bases: py:obj:`~IPositionSourceData`, py:obj:`~IPlanetPositionCentralBody`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPositionSourceData`, py:obj:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody`
 
    Class defining central body used to define Planet object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PlanetPositionCentralBody
 
 Overview
 --------

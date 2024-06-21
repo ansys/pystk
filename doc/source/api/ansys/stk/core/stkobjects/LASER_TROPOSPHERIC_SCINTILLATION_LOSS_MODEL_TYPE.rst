@@ -1,12 +1,12 @@
 LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE
 ================================================
 
-.. py:class:: LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE
 
 Overview
 --------

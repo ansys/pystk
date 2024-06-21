@@ -1,13 +1,13 @@
 IEngineCustom
 =============
 
-.. py:class:: IEngineCustom
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IEngineCustom
 
    object
    
    Properties for a Custom engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IEngineCustom
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,13 +33,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~g`
-            * - :py:meth:`~eval_function_name`
-            * - :py:meth:`~post_function_name`
-            * - :py:meth:`~pre_function_name`
-            * - :py:meth:`~seg_start_function_name`
-            * - :py:meth:`~update_function_name`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.eval_function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.post_function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.pre_function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.seg_start_function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.update_function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.control_parameters_available`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IUiAx2DCntrl
 ============
 
-.. py:class:: IUiAx2DCntrl
+.. py:class:: ansys.stk.core.stkx.IUiAx2DCntrl
 
    object
    
    AGI Map control.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IUiAx2DCntrl
 
 Overview
 --------
@@ -20,27 +20,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~picture_put_reference`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.picture_put_reference`
               - Set a reference to the splash logo graphic to be displayed in the control.
-            * - :py:meth:`~zoom_in`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.zoom_in`
               - Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom.
-            * - :py:meth:`~zoom_out`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.zoom_out`
               - Zoom out to view a larger portion of a previously magnified map.
-            * - :py:meth:`~pick_info`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.pick_info`
               - Get detailed information about a mouse pick.
-            * - :py:meth:`~copy_from_win_id`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.copy_from_win_id`
               - Copy an existing Window's scene into this control.
-            * - :py:meth:`~rubber_band_pick_info`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.rubber_band_pick_info`
               - Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom).
-            * - :py:meth:`~get_window_projected_position`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.get_window_projected_position`
               - Get the window projected position for given values.
-            * - :py:meth:`~set_mouse_cursor_from_file`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.set_mouse_cursor_from_file`
               - Set mouse cursor to the selected cursor file.
-            * - :py:meth:`~restore_mouse_cursor`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.restore_mouse_cursor`
               - Restores mouse cursor back to normal.
-            * - :py:meth:`~set_mouse_cursor_from_handle`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.set_mouse_cursor_from_handle`
               - Set mouse cursor to the passed cursor handle.
-            * - :py:meth:`~Subscribe`
+            * - :py:attr:`~Subscribe`
               - """Return an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
 
     .. tab-item:: Properties
@@ -49,25 +49,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~back_color`
-            * - :py:meth:`~picture`
-            * - :py:meth:`~win_id`
-            * - :py:meth:`~application`
-            * - :py:meth:`~no_logo`
-            * - :py:meth:`~ole_drop_mode`
-            * - :py:meth:`~vendor_id`
-            * - :py:meth:`~mouse_mode`
-            * - :py:meth:`~ready_state`
-            * - :py:meth:`~advanced_pick_mode`
-            * - :py:meth:`~in_zoom_mode`
-            * - :py:meth:`~show_progress_image`
-            * - :py:meth:`~progress_image_x_offset`
-            * - :py:meth:`~progress_image_y_offset`
-            * - :py:meth:`~progress_image_file`
-            * - :py:meth:`~progress_image_x_origin`
-            * - :py:meth:`~progress_image_y_origin`
-            * - :py:meth:`~picture_from_file`
-            * - :py:meth:`~pan_mode_enabled`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.back_color`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.picture`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.win_id`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.application`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.no_logo`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.ole_drop_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.vendor_id`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.mouse_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.ready_state`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.advanced_pick_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.in_zoom_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.show_progress_image`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_x_offset`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_y_offset`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_file`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_x_origin`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_y_origin`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.picture_from_file`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.pan_mode_enabled`
 
 
 Import detail
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.IUiAx2DCntrl.application
-    :type: IAgSTKXApplication
+    :type: ISTKXApplication
 
     Reference to the STK X application object.
 

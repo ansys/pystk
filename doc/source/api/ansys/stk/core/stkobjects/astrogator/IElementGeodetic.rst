@@ -1,13 +1,13 @@
 IElementGeodetic
 ================
 
-.. py:class:: IElementGeodetic
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementGeodetic
 
    IElement
    
    Properties for Geodetic elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementGeodetic
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~radius_magnitude`
-            * - :py:meth:`~latitude_rate`
-            * - :py:meth:`~longitude_rate`
-            * - :py:meth:`~altitude_rate`
-            * - :py:meth:`~radius_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.radius_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.latitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.longitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.radius_rate`
 
 
 Import detail

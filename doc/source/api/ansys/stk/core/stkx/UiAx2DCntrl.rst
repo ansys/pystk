@@ -1,13 +1,13 @@
 UiAx2DCntrl
 ===========
 
-.. py:class:: UiAx2DCntrl
+.. py:class:: ansys.stk.core.stkx.UiAx2DCntrl
 
-   Bases: py:obj:`~IUiAx2DCntrl`
+   Bases: py:obj:`~ansys.stk.core.stkx.IUiAx2DCntrl`
 
    AGI Map control.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: UiAx2DCntrl
 
 Overview
 --------

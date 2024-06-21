@@ -1,13 +1,13 @@
 IWaveformSelectionStrategyFixed
 ===============================
 
-.. py:class:: IWaveformSelectionStrategyFixed
+.. py:class:: ansys.stk.core.stkobjects.IWaveformSelectionStrategyFixed
 
    object
    
    Provide the base interface for a waveform selection strategy which produces a Fixed waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IWaveformSelectionStrategyFixed
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_waveforms`
-            * - :py:meth:`~fixed_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyFixed.supported_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyFixed.fixed_waveform`
 
 
 Import detail

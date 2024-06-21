@@ -1,13 +1,13 @@
 FigureOfMeritGraphics2DAttributesAnimation
 ==========================================
 
-.. py:class:: FigureOfMeritGraphics2DAttributesAnimation
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DAttributesAnimation
 
-   Bases: py:obj:`~IFigureOfMeritGraphics2DAttributesAnimation`, py:obj:`~IFigureOfMeritGraphics2DAttributes`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributesAnimation`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes`
 
    Animation graphics for a Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGraphics2DAttributesAnimation
 
 Overview
 --------

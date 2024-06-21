@@ -1,13 +1,13 @@
 IAntennaSystem
 ==============
 
-.. py:class:: IAntennaSystem
+.. py:class:: ansys.stk.core.stkobjects.IAntennaSystem
 
    object
    
    Provide access to the properties for a antenna system.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaSystem
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_beam_selection_strategy_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaSystem.set_beam_selection_strategy_type`
               - Set the beam selection strategy type.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~antenna_beams`
-            * - :py:meth:`~beam_selection_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaSystem.antenna_beams`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaSystem.beam_selection_strategy`
 
 
 Import detail
@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: antenna_beams
     :canonical: ansys.stk.core.stkobjects.IAntennaSystem.antenna_beams
-    :type: IAgAntennaBeamCollection
+    :type: IAntennaBeamCollection
 
     Gets the antenna beam collection.
 
 .. py:property:: beam_selection_strategy
     :canonical: ansys.stk.core.stkobjects.IAntennaSystem.beam_selection_strategy
-    :type: IAgAntennaBeamSelectionStrategy
+    :type: IAntennaBeamSelectionStrategy
 
     Gets the beam selection strategy.
 

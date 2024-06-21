@@ -1,13 +1,13 @@
 AccessConstraint
 ================
 
-.. py:class:: AccessConstraint
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraint
 
-   Bases: py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining access constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraint
 
 Overview
 --------

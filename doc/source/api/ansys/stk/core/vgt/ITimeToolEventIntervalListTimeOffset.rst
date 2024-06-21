@@ -1,13 +1,13 @@
 ITimeToolEventIntervalListTimeOffset
 ====================================
 
-.. py:class:: ITimeToolEventIntervalListTimeOffset
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalListTimeOffset
 
    object
    
    Interval List defined by shifting the specified reference interval list by a fixed time offset.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalListTimeOffset
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_intervals`
-            * - :py:meth:`~time_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListTimeOffset.reference_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListTimeOffset.time_offset`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListTimeOffset.reference_intervals
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The reference interval list.
 

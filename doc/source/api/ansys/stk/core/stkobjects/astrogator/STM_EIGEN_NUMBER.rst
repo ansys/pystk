@@ -1,12 +1,12 @@
 STM_EIGEN_NUMBER
 ================
 
-.. py:class:: STM_EIGEN_NUMBER
+.. py:class:: ansys.stk.core.stkobjects.astrogator.STM_EIGEN_NUMBER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: STM_EIGEN_NUMBER
 
 Overview
 --------

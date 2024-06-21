@@ -1,13 +1,13 @@
 RadarTransmitter
 ================
 
-.. py:class:: RadarTransmitter
+.. py:class:: ansys.stk.core.stkobjects.RadarTransmitter
 
-   Bases: py:obj:`~IRadarTransmitter`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarTransmitter`
 
    Class defining the radar transmitter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarTransmitter
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IScreenOverlayManager
 =====================
 
-.. py:class:: IScreenOverlayManager
+.. py:class:: ansys.stk.core.graphics.IScreenOverlayManager
 
    object
    
    The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IScreenOverlayManager
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bounds`
-            * - :py:meth:`~overlays`
-            * - :py:meth:`~padding`
-            * - :py:meth:`~display`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayManager.bounds`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayManager.overlays`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayManager.padding`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayManager.display`
 
 
 Import detail
@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: overlays
     :canonical: ansys.stk.core.graphics.IScreenOverlayManager.overlays
-    :type: IAgStkGraphicsScreenOverlayCollection
+    :type: IScreenOverlayCollection
 
     Gets the collection of overlays that are contained within this manager.
 

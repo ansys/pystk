@@ -1,13 +1,13 @@
 IStkCentralBodyCollection
 =========================
 
-.. py:class:: IStkCentralBodyCollection
+.. py:class:: ansys.stk.core.stkobjects.IStkCentralBodyCollection
 
    object
    
    A collection of available central bodies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkCentralBodyCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.contains`
               - Search for a central body with a given name. Returns false if the specified element does not exist.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.item`
               - Return a central body by name or at a specified position.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.get_item_by_index`
               - Retrieve a central body from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.get_item_by_name`
               - Retrieve a central body from the collection by name.
 
     .. tab-item:: Properties
@@ -35,11 +35,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~earth`
-            * - :py:meth:`~sun`
-            * - :py:meth:`~moon`
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.earth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.sun`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.moon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection._NewEnum`
 
 
 Import detail
@@ -55,19 +55,19 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.earth
-    :type: IAgStkCentralBody
+    :type: IStkCentralBody
 
     Returns the Earth central body.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.sun
-    :type: IAgStkCentralBody
+    :type: IStkCentralBody
 
     Returns the Sun central body.
 
 .. py:property:: moon
     :canonical: ansys.stk.core.stkobjects.IStkCentralBodyCollection.moon
-    :type: IAgStkCentralBody
+    :type: IStkCentralBody
 
     Returns the Moon central body.
 

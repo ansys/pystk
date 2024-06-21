@@ -1,13 +1,13 @@
 ISRPAeroT30
 ===========
 
-.. py:class:: ISRPAeroT30
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISRPAeroT30
 
    object
    
    Properties for the Aerospace T30 solar radiation pressure model for GPS block IIR.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISRPAeroT30
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~shadow_model`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~include_boundary_mitigation`
-            * - :py:meth:`~use_sun_central_body_file_values`
-            * - :py:meth:`~solar_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPAeroT30.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPAeroT30.shadow_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPAeroT30.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPAeroT30.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPAeroT30.include_boundary_mitigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPAeroT30.use_sun_central_body_file_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPAeroT30.solar_radius`
 
 
 Import detail
@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPAeroT30.eclipsing_bodies
-    :type: IAgVACentralBodyCollection
+    :type: ICentralBodyCollection
 
     Other eclipsing bodies.
 

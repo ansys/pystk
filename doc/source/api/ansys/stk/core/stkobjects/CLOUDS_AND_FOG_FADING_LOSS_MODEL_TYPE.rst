@@ -1,12 +1,12 @@
 CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE
 =====================================
 
-.. py:class:: CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE
 
 Overview
 --------

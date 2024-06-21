@@ -1,13 +1,13 @@
 IProfileDifferentialCorrector
 =============================
 
-.. py:class:: IProfileDifferentialCorrector
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector
 
    IProfile
    
    Properties for a Differential Corrector profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileDifferentialCorrector
 
 Overview
 --------
@@ -20,28 +20,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~control_parameters`
-            * - :py:meth:`~results`
-            * - :py:meth:`~max_iterations`
-            * - :py:meth:`~enable_display_status`
-            * - :py:meth:`~convergence_criteria`
-            * - :py:meth:`~enable_line_search`
-            * - :py:meth:`~max_line_search_iterations`
-            * - :py:meth:`~line_search_lower_bound`
-            * - :py:meth:`~line_search_upper_bound`
-            * - :py:meth:`~line_search_tolerance`
-            * - :py:meth:`~enable_homotopy`
-            * - :py:meth:`~homotopy_steps`
-            * - :py:meth:`~derivative_calc_method`
-            * - :py:meth:`~clear_corrections_before_run`
-            * - :py:meth:`~enable_b_plane_nominal`
-            * - :py:meth:`~enable_b_plane_perturbations`
-            * - :py:meth:`~draw_perturbation`
-            * - :py:meth:`~scripting_tool`
-            * - :py:meth:`~root_finding_algorithm`
-            * - :py:meth:`~num_iterations`
-            * - :py:meth:`~targeter_graphs`
-            * - :py:meth:`~stop_on_limit_cycle_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.control_parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.results`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.max_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.enable_display_status`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.convergence_criteria`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.enable_line_search`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.max_line_search_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.line_search_lower_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.line_search_upper_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.line_search_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.enable_homotopy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.homotopy_steps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.derivative_calc_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.clear_corrections_before_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.enable_b_plane_nominal`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.enable_b_plane_perturbations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.draw_perturbation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.scripting_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.root_finding_algorithm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.num_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.targeter_graphs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.stop_on_limit_cycle_detection`
 
 
 Import detail
@@ -57,13 +57,13 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.control_parameters
-    :type: IAgVADCControlCollection
+    :type: IDifferentialCorrectorControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.results
-    :type: IAgVADCResultCollection
+    :type: IDifferentialCorrectorResultCollection
 
     Get the list of results defined for the profile.
 
@@ -159,7 +159,7 @@ Property detail
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.scripting_tool
-    :type: IAgVAScriptingTool
+    :type: IScriptingTool
 
     Returns the Scripting tool for the sequence.
 
@@ -177,7 +177,7 @@ Property detail
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileDifferentialCorrector.targeter_graphs
-    :type: IAgVATargeterGraphCollection
+    :type: ITargeterGraphCollection
 
     Graphs.
 

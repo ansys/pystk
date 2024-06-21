@@ -1,13 +1,13 @@
 IStateCalcMeanMotion
 ====================
 
-.. py:class:: IStateCalcMeanMotion
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMeanMotion
 
    object
    
    Properties for a Mean Motion calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMeanMotion
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanMotion.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanMotion.element_type`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VehicleLaunchControlFixedApogeeAltitude
 =======================================
 
-.. py:class:: VehicleLaunchControlFixedApogeeAltitude
+.. py:class:: ansys.stk.core.stkobjects.VehicleLaunchControlFixedApogeeAltitude
 
-   Bases: py:obj:`~IVehicleLaunchControl`, py:obj:`~IVehicleLaunchControlFixedApogeeAltitude`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchControl`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedApogeeAltitude`
 
    Class defining the option to set a Missile's flight parameters by specifying a fixed apogee altitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleLaunchControlFixedApogeeAltitude
 
 Overview
 --------

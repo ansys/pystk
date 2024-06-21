@@ -1,13 +1,13 @@
 IStateCalcPositionDifferenceOtherSegment
 ========================================
 
-.. py:class:: IStateCalcPositionDifferenceOtherSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcPositionDifferenceOtherSegment
 
    object
    
    Properties for a Position Difference Across Segments calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcPositionDifferenceOtherSegment
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~other_segment_name`
-            * - :py:meth:`~segment_state_to_use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPositionDifferenceOtherSegment.other_segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPositionDifferenceOtherSegment.segment_state_to_use`
 
 
 Import detail

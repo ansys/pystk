@@ -1,13 +1,13 @@
 CalculationToolScalarSurfaceDistanceBetweenPoints
 =================================================
 
-.. py:class:: CalculationToolScalarSurfaceDistanceBetweenPoints
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints
 
-   Bases: py:obj:`~ICalculationToolScalarSurfaceDistanceBetweenPoints`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude).
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarSurfaceDistanceBetweenPoints
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IUiAxGraphics3DCntrl
 ====================
 
-.. py:class:: IUiAxGraphics3DCntrl
+.. py:class:: ansys.stk.core.stkx.IUiAxGraphics3DCntrl
 
    object
    
    AGI Globe control.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IUiAxGraphics3DCntrl
 
 Overview
 --------
@@ -20,29 +20,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~picture_put_reference`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.picture_put_reference`
               - Set a reference to the splash logo graphic to be displayed in the control.
-            * - :py:meth:`~pick_info`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.pick_info`
               - Get detailed information about a mouse pick.
-            * - :py:meth:`~zoom_in`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.zoom_in`
               - Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom.
-            * - :py:meth:`~rubber_band_pick_info`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.rubber_band_pick_info`
               - Get detailed information about a rubber-band mouse pick. The values must be within the VO window (0 to width-1 for left and right, 0 to height-1 for top and bottom).
-            * - :py:meth:`~copy_from_win_id`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.copy_from_win_id`
               - Copy an existing Window's scene into this control.
-            * - :py:meth:`~start_object_editing`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.start_object_editing`
               - Enters into 3D object editing mode.
-            * - :py:meth:`~apply_object_editing`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.apply_object_editing`
               - Commit changes when in 3D object editing mode.
-            * - :py:meth:`~stop_object_editing`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.stop_object_editing`
               - End 3D object editing mode.
-            * - :py:meth:`~set_mouse_cursor_from_file`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.set_mouse_cursor_from_file`
               - Set mouse cursor to the selected cursor file.
-            * - :py:meth:`~restore_mouse_cursor`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.restore_mouse_cursor`
               - Restores mouse cursor back to normal.
-            * - :py:meth:`~set_mouse_cursor_from_handle`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.set_mouse_cursor_from_handle`
               - Set mouse cursor to the passed cursor handle.
-            * - :py:meth:`~Subscribe`
+            * - :py:attr:`~Subscribe`
               - """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxGraphics3DCntrl."""
 
     .. tab-item:: Properties
@@ -51,27 +51,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~back_color`
-            * - :py:meth:`~picture`
-            * - :py:meth:`~win_id`
-            * - :py:meth:`~application`
-            * - :py:meth:`~no_logo`
-            * - :py:meth:`~ole_drop_mode`
-            * - :py:meth:`~vendor_id`
-            * - :py:meth:`~mouse_mode`
-            * - :py:meth:`~draw_elements`
-            * - :py:meth:`~ready_state`
-            * - :py:meth:`~ppt_preload_mode`
-            * - :py:meth:`~advanced_pick_mode`
-            * - :py:meth:`~is_object_editing`
-            * - :py:meth:`~in_zoom_mode`
-            * - :py:meth:`~show_progress_image`
-            * - :py:meth:`~progress_image_x_offset`
-            * - :py:meth:`~progress_image_y_offset`
-            * - :py:meth:`~progress_image_file`
-            * - :py:meth:`~progress_image_x_origin`
-            * - :py:meth:`~progress_image_y_origin`
-            * - :py:meth:`~picture_from_file`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.back_color`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.picture`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.win_id`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.application`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.no_logo`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.ole_drop_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.vendor_id`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.mouse_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.draw_elements`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.ready_state`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.ppt_preload_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.advanced_pick_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.is_object_editing`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.in_zoom_mode`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.show_progress_image`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.progress_image_x_offset`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.progress_image_y_offset`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.progress_image_file`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.progress_image_x_origin`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.progress_image_y_origin`
+            * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl.picture_from_file`
 
 
 Import detail
@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.application
-    :type: IAgSTKXApplication
+    :type: ISTKXApplication
 
     Reference to the STK X application object.
 
@@ -135,7 +135,7 @@ Property detail
 
 .. py:property:: draw_elements
     :canonical: ansys.stk.core.stkx.IUiAxGraphics3DCntrl.draw_elements
-    :type: IAgDrawElemCollection
+    :type: IDrawElemCollection
 
     Elements to draw on the control.
 

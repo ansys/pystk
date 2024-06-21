@@ -1,13 +1,13 @@
 IVehicleGraphics3DProximityAreaObject
 =====================================
 
-.. py:class:: IVehicleGraphics3DProximityAreaObject
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject
 
    object
    
    A base class that defines methods and properties common to all proximity area objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DProximityAreaObject
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~is_label_visible`
-            * - :py:meth:`~is_text_visible`
-            * - :py:meth:`~text`
-            * - :py:meth:`~line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_text_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_style`
 
 
 Import detail

@@ -1,12 +1,12 @@
 SENSOR_POINTING_TARGETED_BORESIGHT_TYPE
 =======================================
 
-.. py:class:: SENSOR_POINTING_TARGETED_BORESIGHT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_POINTING_TARGETED_BORESIGHT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_POINTING_TARGETED_BORESIGHT_TYPE
 
 Overview
 --------

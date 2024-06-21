@@ -1,13 +1,13 @@
 IObjectCoverageFigureOfMerit
 ============================
 
-.. py:class:: IObjectCoverageFigureOfMerit
+.. py:class:: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit
 
    object
    
    Provide access to the Figure of Merit on the Object Coverage tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IObjectCoverageFigureOfMerit
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_definition_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.set_definition_type`
               - Set the definition type.
-            * - :py:meth:`~is_definition_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.is_definition_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_access_constraint_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.set_access_constraint_definition`
               - Set the access constraint definition.
-            * - :py:meth:`~set_access_constraint_definition_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.set_access_constraint_definition_name`
               - Set the access constraint definition by name.
 
     .. tab-item:: Properties
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~definition_type`
-            * - :py:meth:`~definition_supported_types`
-            * - :py:meth:`~definition`
-            * - :py:meth:`~graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.graphics`
 
 
 Import detail
@@ -66,13 +66,13 @@ Property detail
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition
-    :type: IAgFmDefinition
+    :type: IFigureOfMeritDefinition
 
     Definition properties of the FOM.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.graphics
-    :type: IAgFmGraphics
+    :type: IFigureOfMeritGraphics
 
     2D graphics properties of the FOM.
 

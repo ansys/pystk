@@ -1,12 +1,12 @@
 ORIGIN
 ======
 
-.. py:class:: ORIGIN
+.. py:class:: ansys.stk.core.graphics.ORIGIN
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ORIGIN
 
 Overview
 --------

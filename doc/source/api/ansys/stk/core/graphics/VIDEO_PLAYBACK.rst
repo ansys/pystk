@@ -1,12 +1,12 @@
 VIDEO_PLAYBACK
 ==============
 
-.. py:class:: VIDEO_PLAYBACK
+.. py:class:: ansys.stk.core.graphics.VIDEO_PLAYBACK
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: VIDEO_PLAYBACK
 
 Overview
 --------

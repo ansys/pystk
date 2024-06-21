@@ -1,13 +1,13 @@
 ScreenOverlayManager
 ====================
 
-.. py:class:: ScreenOverlayManager
+.. py:class:: ansys.stk.core.graphics.ScreenOverlayManager
 
-   Bases: py:obj:`~IScreenOverlayManager`, py:obj:`~IScreenOverlayCollectionBase`, py:obj:`~IScreenOverlayContainer`
+   Bases: py:obj:`~ansys.stk.core.graphics.IScreenOverlayManager`, py:obj:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase`, py:obj:`~ansys.stk.core.graphics.IScreenOverlayContainer`
 
    The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ScreenOverlayManager
 
 Overview
 --------

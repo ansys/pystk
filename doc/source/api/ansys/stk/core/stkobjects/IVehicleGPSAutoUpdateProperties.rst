@@ -1,13 +1,13 @@
 IVehicleGPSAutoUpdateProperties
 ===============================
 
-.. py:class:: IVehicleGPSAutoUpdateProperties
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties
 
    object
    
    Interface for GPS AutoUpdate properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSAutoUpdateProperties
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~selection`
-            * - :py:meth:`~switch_method`
-            * - :py:meth:`~week_reference_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.switch_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.week_reference_epoch`
 
 
 Import detail

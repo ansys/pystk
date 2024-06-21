@@ -1,12 +1,12 @@
 MARKER_BATCH_RENDERING_METHOD
 =============================
 
-.. py:class:: MARKER_BATCH_RENDERING_METHOD
+.. py:class:: ansys.stk.core.graphics.MARKER_BATCH_RENDERING_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MARKER_BATCH_RENDERING_METHOD
 
 Overview
 --------

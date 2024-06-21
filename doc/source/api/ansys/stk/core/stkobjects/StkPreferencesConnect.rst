@@ -1,13 +1,13 @@
 StkPreferencesConnect
 =====================
 
-.. py:class:: StkPreferencesConnect
+.. py:class:: ansys.stk.core.stkobjects.StkPreferencesConnect
 
-   Bases: py:obj:`~IStkPreferencesConnect`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkPreferencesConnect`
 
    Allow configuring connect preferences.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkPreferencesConnect
 
 Overview
 --------

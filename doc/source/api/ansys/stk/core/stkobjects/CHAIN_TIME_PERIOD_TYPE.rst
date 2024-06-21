@@ -1,12 +1,12 @@
 CHAIN_TIME_PERIOD_TYPE
 ======================
 
-.. py:class:: CHAIN_TIME_PERIOD_TYPE
+.. py:class:: ansys.stk.core.stkobjects.CHAIN_TIME_PERIOD_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CHAIN_TIME_PERIOD_TYPE
 
 Overview
 --------

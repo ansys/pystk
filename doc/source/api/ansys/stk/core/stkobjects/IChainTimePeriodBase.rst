@@ -1,13 +1,13 @@
 IChainTimePeriodBase
 ====================
 
-.. py:class:: IChainTimePeriodBase
+.. py:class:: ansys.stk.core.stkobjects.IChainTimePeriodBase
 
    object
    
    Chain time period options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainTimePeriodBase
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainTimePeriodBase.type`
 
 
 Import detail

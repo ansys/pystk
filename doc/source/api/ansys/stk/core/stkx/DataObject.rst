@@ -1,13 +1,13 @@
 DataObject
 ==========
 
-.. py:class:: DataObject
+.. py:class:: ansys.stk.core.stkx.DataObject
 
-   Bases: py:obj:`~IDataObject`
+   Bases: py:obj:`~ansys.stk.core.stkx.IDataObject`
 
    Data Object for OLE drag & drop operations.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: DataObject
 
 Overview
 --------

@@ -1,12 +1,12 @@
 STK_EXTERNAL_EPHEMERIS_FORMAT
 =============================
 
-.. py:class:: STK_EXTERNAL_EPHEMERIS_FORMAT
+.. py:class:: ansys.stk.core.stkobjects.STK_EXTERNAL_EPHEMERIS_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: STK_EXTERNAL_EPHEMERIS_FORMAT
 
 Overview
 --------

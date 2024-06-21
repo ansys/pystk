@@ -1,13 +1,13 @@
 KmlNetworkLink
 ==============
 
-.. py:class:: KmlNetworkLink
+.. py:class:: ansys.stk.core.graphics.KmlNetworkLink
 
-   Bases: py:obj:`~IKmlNetworkLink`, py:obj:`~IKmlFeature`
+   Bases: py:obj:`~ansys.stk.core.graphics.IKmlNetworkLink`, py:obj:`~ansys.stk.core.graphics.IKmlFeature`
 
    A KML network link.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KmlNetworkLink
 
 Overview
 --------

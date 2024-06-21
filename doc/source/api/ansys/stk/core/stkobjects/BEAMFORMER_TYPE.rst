@@ -1,12 +1,12 @@
 BEAMFORMER_TYPE
 ===============
 
-.. py:class:: BEAMFORMER_TYPE
+.. py:class:: ansys.stk.core.stkobjects.BEAMFORMER_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BEAMFORMER_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 SiteWaypoint
 ============
 
-.. py:class:: SiteWaypoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteWaypoint
 
-   Bases: py:obj:`~ISiteWaypoint`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a waypoint site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteWaypoint
 
 Overview
 --------

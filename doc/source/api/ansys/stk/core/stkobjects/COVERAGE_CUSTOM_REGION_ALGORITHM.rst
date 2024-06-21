@@ -1,12 +1,12 @@
 COVERAGE_CUSTOM_REGION_ALGORITHM
 ================================
 
-.. py:class:: COVERAGE_CUSTOM_REGION_ALGORITHM
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_CUSTOM_REGION_ALGORITHM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_CUSTOM_REGION_ALGORITHM
 
 Overview
 --------

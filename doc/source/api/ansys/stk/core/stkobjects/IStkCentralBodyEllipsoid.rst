@@ -1,13 +1,13 @@
 IStkCentralBodyEllipsoid
 ========================
 
-.. py:class:: IStkCentralBodyEllipsoid
+.. py:class:: ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid
 
    object
    
    Provide information about the central body's equatorial and polar radii.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkCentralBodyEllipsoid
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_surface_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.compute_surface_distance`
               - Compute the distance between two points on the surface of the central body. Distance is measured along a great arc path.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~a`
-            * - :py:meth:`~b`
-            * - :py:meth:`~c`
-            * - :py:meth:`~mean_radius`
-            * - :py:meth:`~volumetric_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.b`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.c`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.mean_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.volumetric_radius`
 
 
 Import detail

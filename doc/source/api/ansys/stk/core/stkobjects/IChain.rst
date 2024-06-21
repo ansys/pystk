@@ -1,13 +1,13 @@
 IChain
 ======
 
-.. py:class:: IChain
+.. py:class:: ansys.stk.core.stkobjects.IChain
 
    object
    
    Configuration options for chains.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChain
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_time_period_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.set_time_period_type`
               - Set the option used to specify the time period.
-            * - :py:meth:`~set_access_intervals_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.set_access_intervals_file`
               - Opt to produce an .int file containing the strand access intervals.
-            * - :py:meth:`~reset_access_intervals_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.reset_access_intervals_file`
               - Reset the .int file containing the strand access intervals.
-            * - :py:meth:`~compute_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.compute_access`
               - Compute access for the chain.
-            * - :py:meth:`~clear_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.clear_access`
               - Remove all chain accesses.
 
     .. tab-item:: Properties
@@ -37,30 +37,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~objects`
-            * - :py:meth:`~auto_recompute`
-            * - :py:meth:`~time_period_type`
-            * - :py:meth:`~time_period`
-            * - :py:meth:`~data_save_mode`
-            * - :py:meth:`~access_intervals_file`
-            * - :py:meth:`~enable_light_time_delay`
-            * - :py:meth:`~max_time_step`
-            * - :py:meth:`~time_convergence`
-            * - :py:meth:`~constraints`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~event_detection`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~detect_events_based_on_samples_only`
-            * - :py:meth:`~const_constraints_mode`
-            * - :py:meth:`~keep_empty_strands`
-            * - :py:meth:`~allow_dup_objs_in_strands`
-            * - :py:meth:`~cov_asset_mode`
-            * - :py:meth:`~start_object`
-            * - :py:meth:`~end_object`
-            * - :py:meth:`~max_strand_depth`
-            * - :py:meth:`~connections`
-            * - :py:meth:`~optimal_strand_opts`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.auto_recompute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.time_period_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.data_save_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.access_intervals_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.enable_light_time_delay`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.time_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.event_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.sampling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.detect_events_based_on_samples_only`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.const_constraints_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.keep_empty_strands`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.allow_dup_objs_in_strands`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.cov_asset_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.start_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.end_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.max_strand_depth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.connections`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChain.optimal_strand_opts`
 
 
 Import detail
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: objects
     :canonical: ansys.stk.core.stkobjects.IChain.objects
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IChain.time_period
-    :type: IAgChTimePeriodBase
+    :type: IChainTimePeriodBase
 
     Get the time period for the chain.
 
@@ -130,31 +130,31 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.IChain.constraints
-    :type: IAgChConstraints
+    :type: IChainConstraints
 
     Get the constraints applicable to the chain.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IChain.graphics
-    :type: IAgChGraphics
+    :type: IChainGraphics
 
     Get the 2D graphics properties of the chain.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IChain.graphics_3d
-    :type: IAgChVO
+    :type: IChainGraphics3D
 
     Get the 3D graphics properties of the chain.
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.IChain.event_detection
-    :type: IAgAccessEventDetection
+    :type: IAccessEventDetection
 
     Event detection strategy used for access calculations.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.stkobjects.IChain.sampling
-    :type: IAgAccessSampling
+    :type: IAccessSampling
 
     Sampling method used for access calculations.
 
@@ -190,13 +190,13 @@ Property detail
 
 .. py:property:: start_object
     :canonical: ansys.stk.core.stkobjects.IChain.start_object
-    :type: IAgStkObject
+    :type: IStkObject
 
     Start object for the Chain.
 
 .. py:property:: end_object
     :canonical: ansys.stk.core.stkobjects.IChain.end_object
-    :type: IAgStkObject
+    :type: IStkObject
 
     End object for the Chain.
 
@@ -208,13 +208,13 @@ Property detail
 
 .. py:property:: connections
     :canonical: ansys.stk.core.stkobjects.IChain.connections
-    :type: IAgChConnectionCollection
+    :type: IChainConnectionCollection
 
     Get the collection of connections in the chain.
 
 .. py:property:: optimal_strand_opts
     :canonical: ansys.stk.core.stkobjects.IChain.optimal_strand_opts
-    :type: IAgChOptimalStrandOpts
+    :type: IChainOptimalStrandOpts
 
     Optimal strands settings for the Chain.
 

@@ -1,13 +1,13 @@
 IntervalCollection
 ==================
 
-.. py:class:: IntervalCollection
+.. py:class:: ansys.stk.core.stkobjects.IntervalCollection
 
-   Bases: py:obj:`~IIntervalCollection`, py:obj:`~IDisplayTimesData`, py:obj:`~IAccessInterval`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IIntervalCollection`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTimesData`, py:obj:`~ansys.stk.core.stkobjects.IAccessInterval`
 
    Class defining display intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IntervalCollection
 
 Overview
 --------

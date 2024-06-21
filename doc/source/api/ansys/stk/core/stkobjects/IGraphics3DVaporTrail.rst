@@ -1,13 +1,13 @@
 IGraphics3DVaporTrail
 =====================
 
-.. py:class:: IGraphics3DVaporTrail
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DVaporTrail
 
    object
    
    Configure the vapor trail 3D attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DVaporTrail
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~visible`
-            * - :py:meth:`~max_num_of_puffs`
-            * - :py:meth:`~density`
-            * - :py:meth:`~radius`
-            * - :py:meth:`~color`
-            * - :py:meth:`~use_attach_point`
-            * - :py:meth:`~attach_point_name`
-            * - :py:meth:`~image_file`
-            * - :py:meth:`~available_attach_points`
-            * - :py:meth:`~display_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.max_num_of_puffs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.use_attach_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.attach_point_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.image_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.available_attach_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.display_interval`
 
 
 Import detail
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: display_interval
     :canonical: ansys.stk.core.stkobjects.IGraphics3DVaporTrail.display_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Defines a display interval of the vapor trail in the 3D window.
 

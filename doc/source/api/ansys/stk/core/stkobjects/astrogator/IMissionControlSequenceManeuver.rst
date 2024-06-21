@@ -1,13 +1,13 @@
 IMissionControlSequenceManeuver
 ===============================
 
-.. py:class:: IMissionControlSequenceManeuver
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver
 
    object
    
    General properties for a Maneuver segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceManeuver
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_maneuver_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.set_maneuver_type`
               - Set the maneuver type.
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maneuver_type`
-            * - :py:meth:`~maneuver`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.maneuver_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.maneuver`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.control_parameters_available`
 
 
 Import detail
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: maneuver
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.maneuver
-    :type: IAgVAManeuver
+    :type: IManeuver
 
     Get the Maneuver properties.
 

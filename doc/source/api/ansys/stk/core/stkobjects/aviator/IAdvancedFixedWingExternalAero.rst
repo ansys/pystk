@@ -1,13 +1,13 @@
 IAdvancedFixedWingExternalAero
 ==============================
 
-.. py:class:: IAdvancedFixedWingExternalAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalAero
 
    object
    
    Interface used to access the options for an external file aerodynamic strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingExternalAero
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalAero.set_filepath`
               - Set the filepath for the external aero file.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filepath`
-            * - :py:meth:`~is_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalAero.filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalAero.is_valid`
 
 
 Import detail

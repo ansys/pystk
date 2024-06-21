@@ -1,13 +1,13 @@
 IRFFilterModel
 ==============
 
-.. py:class:: IRFFilterModel
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModel
 
    object
    
    Provide access to the properties and methods defining an RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModel
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
-            * - :py:meth:`~upper_bandwidth_limit`
-            * - :py:meth:`~lower_bandwidth_limit`
-            * - :py:meth:`~bandwidth`
-            * - :py:meth:`~insertion_loss`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.upper_bandwidth_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.lower_bandwidth_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.insertion_loss`
 
 
 Import detail

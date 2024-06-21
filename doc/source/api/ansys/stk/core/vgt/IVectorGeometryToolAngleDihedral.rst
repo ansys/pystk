@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleDihedral
 ================================
 
-.. py:class:: IVectorGeometryToolAngleDihedral
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral
 
    object
    
    An angle between two vectors about an axis.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleDihedral
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~from_vector`
-            * - :py:meth:`~to_vector`
-            * - :py:meth:`~pole_about`
-            * - :py:meth:`~counter_clockwise_rotation`
-            * - :py:meth:`~signed_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.from_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.to_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.pole_about`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.counter_clockwise_rotation`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.signed_angle`
 
 
 Import detail
@@ -40,19 +40,19 @@ Property detail
 
 .. py:property:: from_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.from_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a first vector to measure the angle.
 
 .. py:property:: to_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.to_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a second vector to measure the angle.
 
 .. py:property:: pole_about
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.pole_about
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a vector about.
 

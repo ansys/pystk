@@ -1,13 +1,13 @@
 IWaveformPulseDefinition
 ========================
 
-.. py:class:: IWaveformPulseDefinition
+.. py:class:: ansys.stk.core.stkobjects.IWaveformPulseDefinition
 
    object
    
    Provide access to the properties and methods defining the pulse definition for a rectangular pulsed waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IWaveformPulseDefinition
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~prf_mode`
-            * - :py:meth:`~prf`
-            * - :py:meth:`~unambiguous_range`
-            * - :py:meth:`~unambiguous_velocity`
-            * - :py:meth:`~pulse_width_mode`
-            * - :py:meth:`~pulse_width`
-            * - :py:meth:`~duty_factor`
-            * - :py:meth:`~number_of_pulses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.prf_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.prf`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.unambiguous_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.unambiguous_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.pulse_width_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.pulse_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.duty_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.number_of_pulses`
 
 
 Import detail

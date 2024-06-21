@@ -1,13 +1,13 @@
 IVectorGeometryToolPointGlint
 =============================
 
-.. py:class:: IVectorGeometryToolPointGlint
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointGlint
 
    object
    
    Point on central body surface that reflects from source to observer.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointGlint
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~source_point`
-            * - :py:meth:`~observer_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGlint.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGlint.source_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGlint.observer_point`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGlint.central_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: source_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGlint.source_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a source point.
 
 .. py:property:: observer_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointGlint.observer_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify an observer point.
 

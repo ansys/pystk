@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
 ========================================
 
-.. py:class:: FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IElementConfigurationLinear
 ===========================
 
-.. py:class:: IElementConfigurationLinear
+.. py:class:: ansys.stk.core.stkobjects.IElementConfigurationLinear
 
    object
    
    Provide access to the properties and methods defining a linear element configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IElementConfigurationLinear
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~num_elements`
-            * - :py:meth:`~spacing`
-            * - :py:meth:`~tilt_angle`
-            * - :py:meth:`~max_look_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationLinear.num_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationLinear.spacing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationLinear.tilt_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationLinear.max_look_angle`
 
 
 Import detail

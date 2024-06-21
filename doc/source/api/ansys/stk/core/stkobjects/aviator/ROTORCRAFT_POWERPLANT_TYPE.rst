@@ -1,12 +1,12 @@
 ROTORCRAFT_POWERPLANT_TYPE
 ==========================
 
-.. py:class:: ROTORCRAFT_POWERPLANT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ROTORCRAFT_POWERPLANT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ROTORCRAFT_POWERPLANT_TYPE
 
 Overview
 --------

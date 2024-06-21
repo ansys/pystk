@@ -1,12 +1,12 @@
 BURNOUT_OPTIONS
 ===============
 
-.. py:class:: BURNOUT_OPTIONS
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BURNOUT_OPTIONS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BURNOUT_OPTIONS
 
 Overview
 --------

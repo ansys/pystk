@@ -1,13 +1,13 @@
 VTOLPointCategory
 =================
 
-.. py:class:: VTOLPointCategory
+.. py:class:: ansys.stk.core.stkobjects.aviator.VTOLPointCategory
 
-   Bases: py:obj:`~IVTOLPointCategory`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IVTOLPointCategory`
 
    Class defining the VTOL point category in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: VTOLPointCategory
 
 Overview
 --------

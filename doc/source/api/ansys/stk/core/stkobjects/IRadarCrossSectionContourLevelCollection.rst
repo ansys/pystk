@@ -1,13 +1,13 @@
 IRadarCrossSectionContourLevelCollection
 ========================================
 
-.. py:class:: IRadarCrossSectionContourLevelCollection
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection
 
    object
    
    Represents a collection of radar cross section contour levels.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionContourLevelCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.contains`
               - Check whether the collection contains an object with the given value.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.remove`
               - Remove the level with the corresponding value.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.remove_at`
               - Remove the level with the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.add`
               - Add and returns a new level with the corresponding value.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.clear`
               - Clear all contour levels from the collection.
-            * - :py:meth:`~get_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.get_level`
               - Get the level with the specified value.
 
     .. tab-item:: Properties
@@ -41,8 +41,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionContourLevelCollection._NewEnum`
 
 
 Import detail

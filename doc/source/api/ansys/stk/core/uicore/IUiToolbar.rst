@@ -1,13 +1,13 @@
 IUiToolbar
 ==========
 
-.. py:class:: IUiToolbar
+.. py:class:: ansys.stk.core.uicore.IUiToolbar
 
    object
    
    Provide methods and properties to control a toolbar.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: IUiToolbar
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~id`
-            * - :py:meth:`~caption`
-            * - :py:meth:`~visible`
-            * - :py:meth:`~float_state`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbar.id`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbar.caption`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbar.visible`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbar.float_state`
 
 
 Import detail

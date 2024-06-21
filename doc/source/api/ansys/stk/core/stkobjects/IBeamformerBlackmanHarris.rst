@@ -1,13 +1,13 @@
 IBeamformerBlackmanHarris
 =========================
 
-.. py:class:: IBeamformerBlackmanHarris
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerBlackmanHarris
 
    object
    
    Provide access to the properties and methods defining a Blackman-Harris tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerBlackmanHarris
 
 Overview
 --------

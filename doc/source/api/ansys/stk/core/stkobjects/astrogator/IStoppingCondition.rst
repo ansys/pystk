@@ -1,13 +1,13 @@
 IStoppingCondition
 ==================
 
-.. py:class:: IStoppingCondition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStoppingCondition
 
    IStoppingConditionComponent
    
    Basic properties for a stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStoppingCondition
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~copy_user_calc_object_to_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.copy_user_calc_object_to_clipboard`
               - Copy the user-defined stopping condition calc object to the clipboard.
-            * - :py:meth:`~paste_user_calc_object_from_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.paste_user_calc_object_from_clipboard`
               - Replace the user-defined stopping condition calc object with the calc object in the clipboard.
 
     .. tab-item:: Properties
@@ -31,22 +31,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~trip`
-            * - :py:meth:`~tolerance`
-            * - :py:meth:`~repeat_count`
-            * - :py:meth:`~inherited`
-            * - :py:meth:`~max_trip_times`
-            * - :py:meth:`~coord_system`
-            * - :py:meth:`~sequence`
-            * - :py:meth:`~constraints`
-            * - :py:meth:`~user_calc_object_name`
-            * - :py:meth:`~user_calc_object`
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~criterion`
-            * - :py:meth:`~before_conditions`
-            * - :py:meth:`~dimension`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~user_calc_object_link_embed_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.trip`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.repeat_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.inherited`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.max_trip_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.coord_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.sequence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.criterion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.before_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.reference_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object_link_embed_control`
 
 
 Import detail
@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.constraints
-    :type: IAgVAConstraintCollection
+    :type: IConstraintCollection
 
     Further conditions that must be met in order for the stopping condition to be deemed satisfied.
 
@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: user_calc_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object
-    :type: IAgComponentInfo
+    :type: IComponentInfo
 
     A User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on.
 
@@ -134,7 +134,7 @@ Property detail
 
 .. py:property:: before_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.before_conditions
-    :type: IAgVAStoppingConditionCollection
+    :type: IStoppingConditionCollection
 
     A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
 
@@ -152,7 +152,7 @@ Property detail
 
 .. py:property:: user_calc_object_link_embed_control
     :canonical: ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object_link_embed_control
-    :type: IAgComponentLinkEmbedControl
+    :type: IComponentLinkEmbedControl
 
     Gets the link / embed controller for managing the user calc. object.
 

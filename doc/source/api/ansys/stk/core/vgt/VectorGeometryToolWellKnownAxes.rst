@@ -1,13 +1,13 @@
 VectorGeometryToolWellKnownAxes
 ===============================
 
-.. py:class:: VectorGeometryToolWellKnownAxes
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownAxes
 
-   Bases: py:obj:`~IVectorGeometryToolWellKnownAxes`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes`
 
    Represents well-known VGT Axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolWellKnownAxes
 
 Overview
 --------

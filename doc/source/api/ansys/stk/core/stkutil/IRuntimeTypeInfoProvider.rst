@@ -1,13 +1,13 @@
 IRuntimeTypeInfoProvider
 ========================
 
-.. py:class:: IRuntimeTypeInfoProvider
+.. py:class:: ansys.stk.core.stkutil.IRuntimeTypeInfoProvider
 
    object
    
    Access point for IAgRuntimeTypeInfo.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IRuntimeTypeInfoProvider
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkutil.IRuntimeTypeInfoProvider.provide_runtime_type_info`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkutil.IRuntimeTypeInfoProvider.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

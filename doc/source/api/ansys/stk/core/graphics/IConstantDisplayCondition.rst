@@ -1,13 +1,13 @@
 IConstantDisplayCondition
 =========================
 
-.. py:class:: IConstantDisplayCondition
+.. py:class:: ansys.stk.core.graphics.IConstantDisplayCondition
 
    object
    
    A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IConstantDisplayCondition
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~display`
+            * - :py:attr:`~ansys.stk.core.graphics.IConstantDisplayCondition.display`
 
 
 Import detail

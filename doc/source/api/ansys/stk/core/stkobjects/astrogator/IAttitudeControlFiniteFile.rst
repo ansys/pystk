@@ -1,13 +1,13 @@
 IAttitudeControlFiniteFile
 ==========================
 
-.. py:class:: IAttitudeControlFiniteFile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteFile
 
    IAttitudeControlFinite
    
    Properties for the File attitude control for a Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlFiniteFile
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file_time_offset`
-            * - :py:meth:`~full_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteFile.file_time_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteFile.full_filename`
 
 
 Import detail

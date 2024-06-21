@@ -1,13 +1,13 @@
 IDirectionXYZ
 =============
 
-.. py:class:: IDirectionXYZ
+.. py:class:: ansys.stk.core.stkutil.IDirectionXYZ
 
    IDirection
    
    Interface for Cartesian direction.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IDirectionXYZ
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionXYZ.x`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionXYZ.y`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionXYZ.z`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IGraphics3DModelArtic
 =====================
 
-.. py:class:: IGraphics3DModelArtic
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelArtic
 
    object
    
    ModelArticulation Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModelArtic
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_transformation_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.get_transformation_value`
               - Get the Transformation Value given the LOD (level of detail), articulation name and the transformation name.
-            * - :py:meth:`~set_transformation_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.set_transformation_value`
               - Set the Transformation Value given the LOD and articulation name.
-            * - :py:meth:`~get_available_articulations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.get_available_articulations`
               - Get the available articulations.
-            * - :py:meth:`~get_available_transformations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.get_available_transformations`
               - Get the available transformations.
 
     .. tab-item:: Properties
@@ -35,12 +35,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_default_save`
-            * - :py:meth:`~lod_count`
-            * - :py:meth:`~use_object_color_for_model`
-            * - :py:meth:`~save_artic_file_on_save`
-            * - :py:meth:`~use_articulation_file`
-            * - :py:meth:`~graphics_3d_articulation_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.enable_default_save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.lod_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.use_object_color_for_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.save_artic_file_on_save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.use_articulation_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.graphics_3d_articulation_file`
 
 
 Import detail
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: graphics_3d_articulation_file
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModelArtic.graphics_3d_articulation_file
-    :type: IAgVOArticulationFile
+    :type: IGraphics3DArticulationFile
 
     Interface to specify articulation file.
 

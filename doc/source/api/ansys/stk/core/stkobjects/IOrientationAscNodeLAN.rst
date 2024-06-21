@@ -1,13 +1,13 @@
 IOrientationAscNodeLAN
 ======================
 
-.. py:class:: IOrientationAscNodeLAN
+.. py:class:: ansys.stk.core.stkobjects.IOrientationAscNodeLAN
 
    IOrientationAscNode
    
    Longitude of Ascending Node: the Earth-fixed longitude where the satellite crosses the inertial equator from south to north.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrientationAscNodeLAN
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrientationAscNodeLAN.value`
 
 
 Import detail

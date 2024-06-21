@@ -1,13 +1,13 @@
 IDataProviderResultTimeVaryingExtremumResult
 ============================================
 
-.. py:class:: IDataProviderResultTimeVaryingExtremumResult
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult
 
    object
    
    Represents the results of computing a data set time varying extremum using IAgDrStatistics.ComputeTimeVarExtremum method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultTimeVaryingExtremumResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
-            * - :py:meth:`~time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult.time`
 
 
 Import detail

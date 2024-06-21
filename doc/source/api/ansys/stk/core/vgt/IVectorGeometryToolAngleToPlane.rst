@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleToPlane
 ===============================
 
-.. py:class:: IVectorGeometryToolAngleToPlane
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane
 
    object
    
    An angle between a vector and a plane.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleToPlane
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_vector`
-            * - :py:meth:`~reference_plane`
-            * - :py:meth:`~signed`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.reference_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.reference_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.signed`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.reference_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a reference vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.reference_plane
-    :type: IAgCrdnPlaneRefTo
+    :type: IVectorGeometryToolPlaneRefTo
 
     Specify a reference plane.
 

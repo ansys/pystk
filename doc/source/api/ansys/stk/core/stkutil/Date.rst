@@ -1,13 +1,13 @@
 Date
 ====
 
-.. py:class:: Date
+.. py:class:: ansys.stk.core.stkutil.Date
 
-   Bases: py:obj:`~IDate`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IDate`
 
    Object that contains a date.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Date
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IBDotRCalc
 ==========
 
-.. py:class:: IBDotRCalc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBDotRCalc
 
    object
    
    Properties for a BDotR calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBDotRCalc
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_body_name`
-            * - :py:meth:`~reference_vector_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBDotRCalc.target_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBDotRCalc.reference_vector_name`
 
 
 Import detail

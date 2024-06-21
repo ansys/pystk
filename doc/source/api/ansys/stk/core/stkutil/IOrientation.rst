@@ -1,13 +1,13 @@
 IOrientation
 ============
 
-.. py:class:: IOrientation
+.. py:class:: ansys.stk.core.stkutil.IOrientation
 
    object
    
    Interface to set and retrieve the orientation method.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IOrientation
 
 Overview
 --------
@@ -20,33 +20,33 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~convert_to`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.convert_to`
               - Change the orientation method to the type specified.
-            * - :py:meth:`~assign`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.assign`
               - Assign a new orientation method.
-            * - :py:meth:`~assign_az_el`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.assign_az_el`
               - Set orientation using the AzEl representation.
-            * - :py:meth:`~assign_euler_angles`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.assign_euler_angles`
               - Set orientation using the Euler angles representation.
-            * - :py:meth:`~assign_quaternion`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.assign_quaternion`
               - Set orientation using the Quaternion representation.
-            * - :py:meth:`~assign_ypr_angles`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.assign_ypr_angles`
               - Set orientation using the YPR angles representation.
-            * - :py:meth:`~query_az_el`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_az_el`
               - Get orientation using the AzEl representation.
-            * - :py:meth:`~query_euler_angles`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_euler_angles`
               - Get orientation using the Euler angles representation.
-            * - :py:meth:`~query_quaternion`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_quaternion`
               - Get orientation using the Quaternion representation.
-            * - :py:meth:`~query_ypr_angles`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_ypr_angles`
               - Get orientation using the YPR angles representation.
-            * - :py:meth:`~query_az_el_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_az_el_array`
               - Return the AzEl elements as an array.
-            * - :py:meth:`~query_euler_angles_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_euler_angles_array`
               - Return the Euler elements as an array.
-            * - :py:meth:`~query_quaternion_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_quaternion_array`
               - Return the Quaternion elements as an array.
-            * - :py:meth:`~query_ypr_angles_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.query_ypr_angles_array`
               - Return the YPR Angles elements as an array.
 
     .. tab-item:: Properties
@@ -55,7 +55,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~orientation_type`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.orientation_type`
 
 
 Import detail

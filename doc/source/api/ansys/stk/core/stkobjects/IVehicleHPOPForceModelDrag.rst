@@ -1,13 +1,13 @@
 IVehicleHPOPForceModelDrag
 ==========================
 
-.. py:class:: IVehicleHPOPForceModelDrag
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag
 
    object
    
    Atmospheric Drag interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPForceModelDrag
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_solar_flux_geo_magnitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.set_solar_flux_geo_magnitude_type`
               - Set the method for specifying solar and geomagnetic flux.
-            * - :py:meth:`~set_drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.set_drag_model_type`
               - Change the active drag model type.
-            * - :py:meth:`~is_drag_model_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.is_drag_model_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -33,16 +33,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use`
-            * - :py:meth:`~atmospheric_density_model`
-            * - :py:meth:`~solar_flux_geo_magnitude_type`
-            * - :py:meth:`~solar_flux_geo_magnitude`
-            * - :py:meth:`~drag_model_type`
-            * - :py:meth:`~drag_model_supported_types`
-            * - :py:meth:`~drag_model`
-            * - :py:meth:`~low_altitude_atmospheric_density_model`
-            * - :py:meth:`~blending_range`
-            * - :py:meth:`~low_altitude_atmos_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.atmospheric_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.solar_flux_geo_magnitude_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.solar_flux_geo_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.drag_model_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.drag_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.low_altitude_atmospheric_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.blending_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.low_altitude_atmos_density_model`
 
 
 Import detail
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: solar_flux_geo_magnitude
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.solar_flux_geo_magnitude
-    :type: IAgVeSolarFluxGeoMag
+    :type: IVehicleSolarFluxGeoMagnitude
 
     Solar and geomagnetic flux.
 
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: drag_model
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.drag_model
-    :type: IAgVeHPOPDragModel
+    :type: IVehicleHPOPDragModel
 
     Returns the active drag model.
 

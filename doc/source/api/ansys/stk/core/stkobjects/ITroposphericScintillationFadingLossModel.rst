@@ -1,13 +1,13 @@
 ITroposphericScintillationFadingLossModel
 =========================================
 
-.. py:class:: ITroposphericScintillationFadingLossModel
+.. py:class:: ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModel
 
    object
    
    Provide access to the properties and methods for a TropoSpheric Scintillation Fading loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITroposphericScintillationFadingLossModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModel.type`
 
 
 Import detail

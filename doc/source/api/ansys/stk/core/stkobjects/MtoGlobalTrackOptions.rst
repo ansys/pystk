@@ -1,13 +1,13 @@
 MtoGlobalTrackOptions
 =====================
 
-.. py:class:: MtoGlobalTrackOptions
+.. py:class:: ansys.stk.core.stkobjects.MtoGlobalTrackOptions
 
-   Bases: py:obj:`~IMtoGlobalTrackOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions`
 
    Global MTO track options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGlobalTrackOptions
 
 Overview
 --------

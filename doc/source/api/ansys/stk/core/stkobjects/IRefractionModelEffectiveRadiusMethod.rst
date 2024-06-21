@@ -1,13 +1,13 @@
 IRefractionModelEffectiveRadiusMethod
 =====================================
 
-.. py:class:: IRefractionModelEffectiveRadiusMethod
+.. py:class:: ansys.stk.core.stkobjects.IRefractionModelEffectiveRadiusMethod
 
    IRefractionModelBase
    
    Effective Radius Method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRefractionModelEffectiveRadiusMethod
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~eff_rad`
-            * - :py:meth:`~max_target_altitude`
-            * - :py:meth:`~use_extrapolation`
-            * - :py:meth:`~ceiling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelEffectiveRadiusMethod.eff_rad`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelEffectiveRadiusMethod.max_target_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelEffectiveRadiusMethod.use_extrapolation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelEffectiveRadiusMethod.ceiling`
 
 
 Import detail

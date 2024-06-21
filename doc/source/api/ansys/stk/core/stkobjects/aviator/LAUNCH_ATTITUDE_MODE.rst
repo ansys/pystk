@@ -1,12 +1,12 @@
 LAUNCH_ATTITUDE_MODE
 ====================
 
-.. py:class:: LAUNCH_ATTITUDE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.LAUNCH_ATTITUDE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: LAUNCH_ATTITUDE_MODE
 
 Overview
 --------

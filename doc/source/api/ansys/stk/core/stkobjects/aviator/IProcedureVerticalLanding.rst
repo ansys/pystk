@@ -1,13 +1,13 @@
 IProcedureVerticalLanding
 =========================
 
-.. py:class:: IProcedureVerticalLanding
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding
 
    object
    
    Interface used to access the options for a vertical landing procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureVerticalLanding
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.set_heading`
               - Set the heading and heading reference.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -31,13 +31,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_above_point`
-            * - :py:meth:`~final_altitude_rate`
-            * - :py:meth:`~altitude_offset`
-            * - :py:meth:`~heading_mode`
-            * - :py:meth:`~heading`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.altitude_above_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.final_altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.heading_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.radius_factor`
 
 
 Import detail

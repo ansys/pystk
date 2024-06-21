@@ -1,12 +1,12 @@
 RF_FILTER_MODEL_TYPE
 ====================
 
-.. py:class:: RF_FILTER_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RF_FILTER_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RF_FILTER_MODEL_TYPE
 
 Overview
 --------

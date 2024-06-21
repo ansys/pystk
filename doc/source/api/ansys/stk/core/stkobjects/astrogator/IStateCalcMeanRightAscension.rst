@@ -1,13 +1,13 @@
 IStateCalcMeanRightAscension
 ============================
 
-.. py:class:: IStateCalcMeanRightAscension
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMeanRightAscension
 
    object
    
    Properties for a MeanRightAscension calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMeanRightAscension
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanRightAscension.central_body_name`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ILineTargetPoint
 ================
 
-.. py:class:: ILineTargetPoint
+.. py:class:: ansys.stk.core.stkobjects.ILineTargetPoint
 
    object
    
    Line Target Point interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILineTargetPoint
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPoint.lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPoint.lon`
 
 
 Import detail

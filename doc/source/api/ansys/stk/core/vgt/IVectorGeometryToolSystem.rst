@@ -1,13 +1,13 @@
 IVectorGeometryToolSystem
 =========================
 
-.. py:class:: IVectorGeometryToolSystem
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystem
 
    object
    
    The interface contains methods and properties shared by all VGT systems.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolSystem
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~find_in_system`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystem.find_in_system`
               - Find position, velocity, rate and orientation using the specified system.
-            * - :py:meth:`~transform`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystem.transform`
               - Translate the position vector from this system into the output system.
-            * - :py:meth:`~transform_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystem.transform_with_rate`
               - Translate the position and rate vectors from this system into the output system.
 
     .. tab-item:: Properties
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystem.type`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IBasicManeuverTargetPositionVel
 ===============================
 
-.. py:class:: IBasicManeuverTargetPositionVel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel
 
    object
    
    Interface used to access target position and velocity strategies for basic maneuvers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverTargetPositionVel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~apply_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.apply_position_vel`
               - Apply the current position velocity strategy.
-            * - :py:meth:`~cancel_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.cancel_position_vel`
               - Cancel the current position velocity strategy.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_position_vel_type`
-            * - :py:meth:`~target_position_vel_type_string`
-            * - :py:meth:`~mode_as_noisy_brg_rng`
-            * - :py:meth:`~mode_as_noisy_surf_tgt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.target_position_vel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.target_position_vel_type_string`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.mode_as_noisy_brg_rng`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.mode_as_noisy_surf_tgt`
 
 
 Import detail
@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: mode_as_noisy_brg_rng
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.mode_as_noisy_brg_rng
-    :type: IAgAvtrBasicManeuverTargetPosVelNoisyBrgRng
+    :type: IBasicManeuverTargetPositionVelNoisyBrgRng
 
     Get the options for a noisy bearing range velocity strategy.
 
 .. py:property:: mode_as_noisy_surf_tgt
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVel.mode_as_noisy_surf_tgt
-    :type: IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt
+    :type: IBasicManeuverTargetPositionVelNoisySurfTgt
 
     Get the options for a noisy surface target position velocity strategy.
 

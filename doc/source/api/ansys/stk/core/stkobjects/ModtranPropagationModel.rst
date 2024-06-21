@@ -1,13 +1,13 @@
 ModtranPropagationModel
 =======================
 
-.. py:class:: ModtranPropagationModel
+.. py:class:: ansys.stk.core.stkobjects.ModtranPropagationModel
 
-   Bases: py:obj:`~IModtranPropagationModel`, py:obj:`~ILaserAtmosphericLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModtranPropagationModel`, py:obj:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a MODTRAN propagation model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModtranPropagationModel
 
 Overview
 --------

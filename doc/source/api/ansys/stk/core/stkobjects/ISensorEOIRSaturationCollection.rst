@@ -1,13 +1,13 @@
 ISensorEOIRSaturationCollection
 ===============================
 
-.. py:class:: ISensorEOIRSaturationCollection
+.. py:class:: ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection
 
    object
    
    IAgSnEOIRSaturationCollection Interface. A collection of Radiometric pairs defining the saturations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorEOIRSaturationCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection.item`
               - Given an index, returns an IAgSnEOIRRadiometricPair interface.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection.add`
               - Add a radiometric pair.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection.remove_at`
               - Remove a radiometric pair given an index.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection._NewEnum`
 
 
 Import detail

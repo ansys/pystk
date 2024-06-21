@@ -1,13 +1,13 @@
 ISRPModelPlugin
 ===============
 
-.. py:class:: ISRPModelPlugin
+.. py:class:: ansys.stk.core.stkobjects.ISRPModelPlugin
 
    ISRPModelBase
    
    Plugin Light Reflection Model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISRPModelPlugin
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plugin_name`
-            * - :py:meth:`~plugin_settings`
-            * - :py:meth:`~available_plugins`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelPlugin.plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelPlugin.plugin_settings`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelPlugin.available_plugins`
 
 
 Import detail
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: plugin_settings
     :canonical: ansys.stk.core.stkobjects.ISRPModelPlugin.plugin_settings
-    :type: IAgSRPModelPluginSettings
+    :type: ISRPModelPluginSettings
 
     Get the parameters of the selected plugin.
 

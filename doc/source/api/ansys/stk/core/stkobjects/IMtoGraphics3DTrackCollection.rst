@@ -1,13 +1,13 @@
 IMtoGraphics3DTrackCollection
 =============================
 
-.. py:class:: IMtoGraphics3DTrackCollection
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DTrackCollection
 
    object
    
    MTO 3D Graphics Track List.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DTrackCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrackCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~get_track_from_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrackCollection.get_track_from_id`
               - Given a track id, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~recycling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrackCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrackCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrackCollection.recycling`
 
 
 Import detail

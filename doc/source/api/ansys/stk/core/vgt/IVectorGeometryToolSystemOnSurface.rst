@@ -1,13 +1,13 @@
 IVectorGeometryToolSystemOnSurface
 ==================================
 
-.. py:class:: IVectorGeometryToolSystemOnSurface
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface
 
    object
    
    A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolSystemOnSurface
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~azimuth_angle`
-            * - :py:meth:`~use_msl`
-            * - :py:meth:`~position`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.azimuth_angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.use_msl`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.position`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.central_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.position
-    :type: IAgCrdnLLAPosition
+    :type: IAnalysisWorkbenchLLAPosition
 
     Specify the position of the system's origin.
 

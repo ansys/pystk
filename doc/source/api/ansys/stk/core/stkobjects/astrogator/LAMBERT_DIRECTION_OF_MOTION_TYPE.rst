@@ -1,12 +1,12 @@
 LAMBERT_DIRECTION_OF_MOTION_TYPE
 ================================
 
-.. py:class:: LAMBERT_DIRECTION_OF_MOTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.LAMBERT_DIRECTION_OF_MOTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: LAMBERT_DIRECTION_OF_MOTION_TYPE
 
 Overview
 --------

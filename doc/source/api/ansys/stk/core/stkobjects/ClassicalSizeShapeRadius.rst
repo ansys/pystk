@@ -1,13 +1,13 @@
 ClassicalSizeShapeRadius
 ========================
 
-.. py:class:: ClassicalSizeShapeRadius
+.. py:class:: ansys.stk.core.stkobjects.ClassicalSizeShapeRadius
 
-   Bases: py:obj:`~IClassicalSizeShapeRadius`, py:obj:`~IClassicalSizeShape`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShapeRadius`, py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Orbit size and shape using Radius.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ClassicalSizeShapeRadius
 
 Overview
 --------

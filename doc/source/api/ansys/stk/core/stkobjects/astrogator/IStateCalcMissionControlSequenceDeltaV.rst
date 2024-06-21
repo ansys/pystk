@@ -1,13 +1,13 @@
 IStateCalcMissionControlSequenceDeltaV
 ======================================
 
-.. py:class:: IStateCalcMissionControlSequenceDeltaV
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMissionControlSequenceDeltaV
 
    object
    
    Properties for a MCS DeltaV calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMissionControlSequenceDeltaV
 
 Overview
 --------

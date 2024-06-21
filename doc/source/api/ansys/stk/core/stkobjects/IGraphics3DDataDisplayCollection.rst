@@ -1,13 +1,13 @@
 IGraphics3DDataDisplayCollection
 ================================
 
-.. py:class:: IGraphics3DDataDisplayCollection
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection
 
    object
    
    Data Display Text.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DDataDisplayCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.add`
               - Add a new element to the collection.
-            * - :py:meth:`~is_pre_data_required`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.is_pre_data_required`
               - Determine if the data display needs additional data, such as a comparison object for an RIC report or a set of axes for a vector.
-            * - :py:meth:`~add_data_display_requiring_pre_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.add_data_display_requiring_pre_data`
               - Add a data display using additional data, such as a comparison object for an RIC report or a set of axes for a vector.
 
     .. tab-item:: Properties
@@ -39,9 +39,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~available_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.available_data`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IChainUserSpecifiedTimePeriod
 =============================
 
-.. py:class:: IChainUserSpecifiedTimePeriod
+.. py:class:: ansys.stk.core.stkobjects.IChainUserSpecifiedTimePeriod
 
    IChainTimePeriodBase
    
    User-specified time period for the chain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainUserSpecifiedTimePeriod
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainUserSpecifiedTimePeriod.time_interval`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: time_interval
     :canonical: ansys.stk.core.stkobjects.IChainUserSpecifiedTimePeriod.time_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Allows configuring the time interval.
 

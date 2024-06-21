@@ -1,13 +1,13 @@
 ReceivePolarizationRHC
 ======================
 
-.. py:class:: ReceivePolarizationRHC
+.. py:class:: ansys.stk.core.stkobjects.ReceivePolarizationRHC
 
-   Bases: py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarization`, py:obj:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage`
 
    Class defining a RHC polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceivePolarizationRHC
 
 Overview
 --------

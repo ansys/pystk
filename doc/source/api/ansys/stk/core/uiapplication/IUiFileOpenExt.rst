@@ -1,13 +1,13 @@
 IUiFileOpenExt
 ==============
 
-.. py:class:: IUiFileOpenExt
+.. py:class:: ansys.stk.core.uiapplication.IUiFileOpenExt
 
    object
    
    Access to file open dialog that allows multiple file specifications.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: IUiFileOpenExt
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~file_name`
-            * - :py:meth:`~filter_description`
-            * - :py:meth:`~filter_pattern`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExt.file_name`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExt.filter_description`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExt.filter_pattern`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: file_name
     :canonical: ansys.stk.core.uiapplication.IUiFileOpenExt.file_name
-    :type: IAgUiFileOpenExtCollection
+    :type: IUiFileOpenExtCollection
 
     Gets/sets the multiple file open collection.
 

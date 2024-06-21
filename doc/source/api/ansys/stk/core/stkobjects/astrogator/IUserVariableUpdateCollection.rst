@@ -1,13 +1,13 @@
 IUserVariableUpdateCollection
 =============================
 
-.. py:class:: IUserVariableUpdateCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection
 
    object
    
    The list of User Variables accessed through an Update segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IUserVariableUpdateCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection.get_item_by_index`
               - Retrieve a user variable update in the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection.get_item_by_name`
               - Retrieve a user variable update in the collection by name.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection.count`
 
 
 Import detail

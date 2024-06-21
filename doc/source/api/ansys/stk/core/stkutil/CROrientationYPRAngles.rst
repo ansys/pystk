@@ -1,13 +1,13 @@
 CROrientationYPRAngles
 ======================
 
-.. py:class:: CROrientationYPRAngles
+.. py:class:: ansys.stk.core.stkutil.CROrientationYPRAngles
 
-   Bases: py:obj:`~IOrientationYPRAngles`, py:obj:`~IOrientation`, py:obj:`~IOrientationPositionOffset`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationYPRAngles`, py:obj:`~ansys.stk.core.stkutil.IOrientation`, py:obj:`~ansys.stk.core.stkutil.IOrientationPositionOffset`
 
    Yaw-Pitch Roll (YPR) Angles orientation system.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: CROrientationYPRAngles
 
 Overview
 --------

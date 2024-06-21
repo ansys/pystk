@@ -1,13 +1,13 @@
 IDifferentialCorrectorResult
 ============================
 
-.. py:class:: IDifferentialCorrectorResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult
 
    object
    
    Properties for equality constraints of a differential corrector profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDifferentialCorrectorResult
 
 Overview
 --------
@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~desired_value`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~difference`
-            * - :py:meth:`~tolerance`
-            * - :py:meth:`~scaling_method`
-            * - :py:meth:`~scaling_value`
-            * - :py:meth:`~weight`
-            * - :py:meth:`~dimension`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
-            * - :py:meth:`~values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.desired_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.difference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.scaling_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.scaling_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.weight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult.values`
 
 
 Import detail

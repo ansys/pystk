@@ -1,13 +1,13 @@
 ISensorEOIRPattern
 ==================
 
-.. py:class:: ISensorEOIRPattern
+.. py:class:: ansys.stk.core.stkobjects.ISensorEOIRPattern
 
    object
    
    IAgSnEOIRPattern Interface for a sensor pattern.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorEOIRPattern
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~line_of_site_jitter`
-            * - :py:meth:`~processing_level`
-            * - :py:meth:`~use_motion_blur`
-            * - :py:meth:`~bands`
-            * - :py:meth:`~jitter_type`
-            * - :py:meth:`~jitter_data_file`
-            * - :py:meth:`~jitter_data_file_spatial_sampling`
-            * - :py:meth:`~jitter_data_file_frequency_sampling`
-            * - :py:meth:`~along_scan_smear_rate`
-            * - :py:meth:`~across_scan_smear_rate`
-            * - :py:meth:`~scan_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.line_of_site_jitter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.processing_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.use_motion_blur`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.bands`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_data_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_data_file_spatial_sampling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_data_file_frequency_sampling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.along_scan_smear_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.across_scan_smear_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.scan_mode`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: bands
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRPattern.bands
-    :type: IAgSnEOIRBandCollection
+    :type: ISensorEOIRBandCollection
 
     Get the collection of Bands for the sensor.
 

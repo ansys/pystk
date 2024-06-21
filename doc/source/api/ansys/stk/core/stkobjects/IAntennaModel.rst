@@ -1,13 +1,13 @@
 IAntennaModel
 =============
 
-.. py:class:: IAntennaModel
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModel
 
    object
    
    Provide access to the properties and methods defining an antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
-            * - :py:meth:`~design_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.design_frequency`
 
 
 Import detail

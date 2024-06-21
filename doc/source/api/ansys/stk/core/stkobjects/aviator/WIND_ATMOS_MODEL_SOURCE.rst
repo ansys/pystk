@@ -1,12 +1,12 @@
 WIND_ATMOS_MODEL_SOURCE
 =======================
 
-.. py:class:: WIND_ATMOS_MODEL_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.aviator.WIND_ATMOS_MODEL_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: WIND_ATMOS_MODEL_SOURCE
 
 Overview
 --------

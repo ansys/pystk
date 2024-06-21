@@ -1,13 +1,13 @@
 IReceiverModelSimple
 ====================
 
-.. py:class:: IReceiverModelSimple
+.. py:class:: ansys.stk.core.stkobjects.IReceiverModelSimple
 
    object
    
    Provide access to the properties and methods defining a simple receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReceiverModelSimple
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.set_filter`
               - Set the current filter model by name.
-            * - :py:meth:`~set_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.set_demodulator`
               - Set the current demodulator model by name.
-            * - :py:meth:`~set_polarization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.set_polarization_type`
               - Set the current polarization type.
 
     .. tab-item:: Properties
@@ -33,26 +33,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_filter`
-            * - :py:meth:`~supported_filters`
-            * - :py:meth:`~filter`
-            * - :py:meth:`~pre_receive_gains_losses`
-            * - :py:meth:`~pre_demod_gains_losses`
-            * - :py:meth:`~link_margin`
-            * - :py:meth:`~auto_scale_bandwidth`
-            * - :py:meth:`~bandwidth`
-            * - :py:meth:`~auto_select_demodulator`
-            * - :py:meth:`~supported_demodulators`
-            * - :py:meth:`~demodulator`
-            * - :py:meth:`~use_rain`
-            * - :py:meth:`~supported_rain_outage_percent_values`
-            * - :py:meth:`~rain_outage_percent`
-            * - :py:meth:`~enable_polarization`
-            * - :py:meth:`~polarization`
-            * - :py:meth:`~auto_track_frequency`
-            * - :py:meth:`~frequency`
-            * - :py:meth:`~g_over_t`
-            * - :py:meth:`~interference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.enable_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.supported_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.pre_receive_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.pre_demod_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.link_margin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.auto_scale_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.auto_select_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.supported_demodulators`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.use_rain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.supported_rain_outage_percent_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.rain_outage_percent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.enable_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.auto_track_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.g_over_t`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelSimple.interference`
 
 
 Import detail
@@ -80,25 +80,25 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IReceiverModelSimple.filter
-    :type: IAgRFFilterModel
+    :type: IRFFilterModel
 
     Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelSimple.pre_receive_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
 .. py:property:: pre_demod_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelSimple.pre_demod_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.IReceiverModelSimple.link_margin
-    :type: IAgLinkMargin
+    :type: ILinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 
@@ -128,7 +128,7 @@ Property detail
 
 .. py:property:: demodulator
     :canonical: ansys.stk.core.stkobjects.IReceiverModelSimple.demodulator
-    :type: IAgDemodulatorModel
+    :type: IDemodulatorModel
 
     Gets the current demodulator model.
 
@@ -158,7 +158,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IReceiverModelSimple.polarization
-    :type: IAgPolarization
+    :type: IPolarization
 
     Gets the polarization.
 
@@ -182,7 +182,7 @@ Property detail
 
 .. py:property:: interference
     :canonical: ansys.stk.core.stkobjects.IReceiverModelSimple.interference
-    :type: IAgRFInterference
+    :type: IRFInterference
 
     Gets the radio frequency interference.
 

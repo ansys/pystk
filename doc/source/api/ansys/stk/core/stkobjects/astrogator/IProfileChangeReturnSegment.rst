@@ -1,13 +1,13 @@
 IProfileChangeReturnSegment
 ===========================
 
-.. py:class:: IProfileChangeReturnSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileChangeReturnSegment
 
    IProfile
    
    Properties for a Change Return Segment profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileChangeReturnSegment
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeReturnSegment.set_segment`
               - Set the return segment to target.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~segment_name`
-            * - :py:meth:`~state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeReturnSegment.segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeReturnSegment.state`
 
 
 Import detail

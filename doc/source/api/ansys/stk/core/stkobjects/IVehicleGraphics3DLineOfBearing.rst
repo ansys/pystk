@@ -1,13 +1,13 @@
 IVehicleGraphics3DLineOfBearing
 ===============================
 
-.. py:class:: IVehicleGraphics3DLineOfBearing
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing
 
    IVehicleGraphics3DProximityAreaObject
    
    Define a line of bearing which is drawn from an origin in the direction of a bearing.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DLineOfBearing
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~origin_latitude`
-            * - :py:meth:`~origin_longitude`
-            * - :py:meth:`~origin_altitude`
-            * - :py:meth:`~length`
-            * - :py:meth:`~bearing_error`
-            * - :py:meth:`~error_color`
-            * - :py:meth:`~error_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.origin_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.origin_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.origin_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.bearing_error`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.error_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.error_line_width`
 
 
 Import detail

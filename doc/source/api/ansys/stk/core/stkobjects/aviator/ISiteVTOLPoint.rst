@@ -1,13 +1,13 @@
 ISiteVTOLPoint
 ==============
 
-.. py:class:: ISiteVTOLPoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint
 
    object
    
    Interface used to access the options for a VTOL Point site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteVTOLPoint
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint.get_as_site`
               - Get the site interface.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPoint.altitude_reference`
 
 
 Import detail

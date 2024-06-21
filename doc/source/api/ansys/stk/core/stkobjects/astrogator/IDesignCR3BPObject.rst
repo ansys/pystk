@@ -1,13 +1,13 @@
 IDesignCR3BPObject
 ==================
 
-.. py:class:: IDesignCR3BPObject
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObject
 
    object
    
    Properties for individual associated CR3BP object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDesignCR3BPObject
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~object_name`
-            * - :py:meth:`~object_type`
-            * - :py:meth:`~object_depends_on`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObject.object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObject.object_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObject.object_depends_on`
 
 
 Import detail

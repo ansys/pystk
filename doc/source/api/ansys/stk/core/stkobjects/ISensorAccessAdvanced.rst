@@ -1,13 +1,13 @@
 ISensorAccessAdvanced
 =====================
 
-.. py:class:: ISensorAccessAdvanced
+.. py:class:: ansys.stk.core.stkobjects.ISensorAccessAdvanced
 
    IAccessAdvanced
    
    Interface for configuring sensor's advanced targeting access computation properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorAccessAdvanced
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ICalculationToolScalarFunction2Var
 ==================================
 
-.. py:class:: ICalculationToolScalarFunction2Var
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarFunction2Var
 
    object
    
    Defined by performing a function(x,y) on two scalar arguments.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarFunction2Var
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~unit_x`
-            * - :py:meth:`~a`
-            * - :py:meth:`~y`
-            * - :py:meth:`~unit_y`
-            * - :py:meth:`~b`
-            * - :py:meth:`~c`
-            * - :py:meth:`~output_dimension_inheritance`
-            * - :py:meth:`~output_dimension`
-            * - :py:meth:`~available_functions`
-            * - :py:meth:`~selected_function`
-            * - :py:meth:`~output_unit`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.x`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.unit_x`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.a`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.y`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.unit_y`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.b`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.c`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.output_dimension_inheritance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.output_dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.available_functions`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.selected_function`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.output_unit`
 
 
 Import detail
@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: x
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.x
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The scalar argument X.
 
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: y
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.y
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The scalar argument Y.
 

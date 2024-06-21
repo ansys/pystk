@@ -1,13 +1,13 @@
 IAdvancedFixedWingElectricPowerplant
 ====================================
 
-.. py:class:: IAdvancedFixedWingElectricPowerplant
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant
 
    object
    
    Interface used to access the options for the Electric powerplant strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingElectricPowerplant
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_power`
-            * - :py:meth:`~propeller_count`
-            * - :py:meth:`~propeller_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant.max_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant.propeller_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant.propeller_diameter`
 
 
 Import detail

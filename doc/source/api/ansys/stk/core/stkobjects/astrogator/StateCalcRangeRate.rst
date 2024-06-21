@@ -1,13 +1,13 @@
 StateCalcRangeRate
 ==================
 
-.. py:class:: StateCalcRangeRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRangeRate
 
-   Bases: py:obj:`~IStateCalcRangeRate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRangeRate`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    RangeRate Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRangeRate
 
 Overview
 --------

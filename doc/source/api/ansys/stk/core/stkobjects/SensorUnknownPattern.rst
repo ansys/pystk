@@ -1,13 +1,13 @@
 SensorUnknownPattern
 ====================
 
-.. py:class:: SensorUnknownPattern
+.. py:class:: ansys.stk.core.stkobjects.SensorUnknownPattern
 
-   Bases: py:obj:`~ISensorPattern`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPattern`
 
    Unsupported/unknown sensor pattern.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorUnknownPattern
 
 Overview
 --------

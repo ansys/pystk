@@ -1,13 +1,13 @@
 IStateCalcOnePointAccess
 ========================
 
-.. py:class:: IStateCalcOnePointAccess
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess
 
    object
    
    Properties for an Access calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcOnePointAccess
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_base_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.set_base_selection`
               - Set the base selection.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~aberration_type`
-            * - :py:meth:`~base_selection_type`
-            * - :py:meth:`~base_selection`
-            * - :py:meth:`~clock_host`
-            * - :py:meth:`~signal_sense`
-            * - :py:meth:`~target_object`
-            * - :py:meth:`~time_delay_convergence_tolerance`
-            * - :py:meth:`~use_light_time_delay`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.aberration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.base_selection_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.base_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.clock_host`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.signal_sense`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.target_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.time_delay_convergence_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.use_light_time_delay`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: base_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.base_selection
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the base selection object.
 
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: target_object
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcOnePointAccess.target_object
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the target object.
 

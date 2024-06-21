@@ -1,13 +1,13 @@
 RotorcraftModels
 ================
 
-.. py:class:: RotorcraftModels
+.. py:class:: ansys.stk.core.stkobjects.aviator.RotorcraftModels
 
-   Bases: py:obj:`~IRotorcraftModels`, py:obj:`~ICatalogSource`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModels`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
 
    Class defining the User Rotorcraft Models in the Aviator Catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: RotorcraftModels
 
 Overview
 --------

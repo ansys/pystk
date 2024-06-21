@@ -1,13 +1,13 @@
 IEdgeDetectFilter
 =================
 
-.. py:class:: IEdgeDetectFilter
+.. py:class:: ansys.stk.core.graphics.IEdgeDetectFilter
 
    object
    
    Apply a convolution filter to detect edges in the source raster.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IEdgeDetectFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method`
+            * - :py:attr:`~ansys.stk.core.graphics.IEdgeDetectFilter.method`
 
 
 Import detail

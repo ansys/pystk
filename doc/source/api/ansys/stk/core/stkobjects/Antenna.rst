@@ -1,13 +1,13 @@
 Antenna
 =======
 
-.. py:class:: Antenna
+.. py:class:: ansys.stk.core.stkobjects.Antenna
 
-   Bases: py:obj:`~IAntenna`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntenna`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the antenna object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Antenna
 
 Overview
 --------

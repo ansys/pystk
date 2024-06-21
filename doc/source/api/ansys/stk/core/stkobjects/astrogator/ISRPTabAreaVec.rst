@@ -1,13 +1,13 @@
 ISRPTabAreaVec
 ==============
 
-.. py:class:: ISRPTabAreaVec
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec
 
    object
    
    Properties for the tabulated area vector SRP model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISRPTabAreaVec
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~shadow_model`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~mean_flux`
-            * - :py:meth:`~luminosity`
-            * - :py:meth:`~solar_force_method`
-            * - :py:meth:`~include_boundary_mitigation`
-            * - :py:meth:`~use_sun_central_body_file_values`
-            * - :py:meth:`~solar_radius`
-            * - :py:meth:`~tab_area_vector_definition_file`
-            * - :py:meth:`~interpolation_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.shadow_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.mean_flux`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.luminosity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.solar_force_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.include_boundary_mitigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.use_sun_central_body_file_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.solar_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.tab_area_vector_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.interpolation_method`
 
 
 Import detail
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPTabAreaVec.eclipsing_bodies
-    :type: IAgVACentralBodyCollection
+    :type: ICentralBodyCollection
 
     Other eclipsing bodies.
 

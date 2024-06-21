@@ -1,13 +1,13 @@
 ISensorSARPattern
 =================
 
-.. py:class:: ISensorSARPattern
+.. py:class:: ansys.stk.core.stkobjects.ISensorSARPattern
 
    object
    
    IAgSnSARPattern Interface for the Synthetic Aperture Radar (SAR) sensor type, designed to model the field of regard of a SAR sensor with respect to the surface of the Earth.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorSARPattern
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_elevation_angles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSARPattern.set_elevation_angles`
               - Set both the min and max elevation angle. Min/Max use Angle Dimension.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~parent_altitude`
-            * - :py:meth:`~min_elevation_angle`
-            * - :py:meth:`~max_elevation_angle`
-            * - :py:meth:`~fore_exclusion_angle`
-            * - :py:meth:`~aft_exclusion_angle`
-            * - :py:meth:`~angular_resolution`
-            * - :py:meth:`~track_parent_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSARPattern.parent_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSARPattern.min_elevation_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSARPattern.max_elevation_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSARPattern.fore_exclusion_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSARPattern.aft_exclusion_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSARPattern.angular_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSARPattern.track_parent_altitude`
 
 
 Import detail

@@ -1,13 +1,13 @@
 EOIRShapeCone
 =============
 
-.. py:class:: EOIRShapeCone
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeCone
 
-   Bases: py:obj:`~IEOIRShapeCone`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeCone`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Cone shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeCone
 
 Overview
 --------

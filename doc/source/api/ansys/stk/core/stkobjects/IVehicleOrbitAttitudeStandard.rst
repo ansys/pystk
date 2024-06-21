@@ -1,13 +1,13 @@
 IVehicleOrbitAttitudeStandard
 =============================
 
-.. py:class:: IVehicleOrbitAttitudeStandard
+.. py:class:: ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard
 
    IVehicleAttitudeStandard
    
    Standard attitude profile for satellite.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleOrbitAttitudeStandard
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~basic`
-            * - :py:meth:`~pointing`
-            * - :py:meth:`~external`
-            * - :py:meth:`~integrated_attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard.basic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard.pointing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard.external`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard.integrated_attitude`
 
 
 Import detail
@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: basic
     :canonical: ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard.basic
-    :type: IAgVeStandardBasic
+    :type: IVehicleStandardBasic
 
     Get the basic attitude properties.
 
 .. py:property:: pointing
     :canonical: ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard.pointing
-    :type: IAgVeAttPointing
+    :type: IVehicleAttitudePointing
 
     Get the target pointing attitude properties.
 
 .. py:property:: external
     :canonical: ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard.external
-    :type: IAgVeAttExternal
+    :type: IVehicleAttitudeExternal
 
     Get the precomputed (external) attitude properties.
 
 .. py:property:: integrated_attitude
     :canonical: ansys.stk.core.stkobjects.IVehicleOrbitAttitudeStandard.integrated_attitude
-    :type: IAgVeIntegratedAttitude
+    :type: IVehicleIntegratedAttitude
 
     Returns a reference to the Integrated Attitude Tool.
 

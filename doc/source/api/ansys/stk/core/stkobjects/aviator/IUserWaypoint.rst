@@ -1,13 +1,13 @@
 IUserWaypoint
 =============
 
-.. py:class:: IUserWaypoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.IUserWaypoint
 
    object
    
    Interface used to access a user waypoint in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IUserWaypoint
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~copy_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserWaypoint.copy_site`
               - Copy the site to the clipboard.
-            * - :py:meth:`~paste_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserWaypoint.paste_site`
               - Paste the site to the clipboard.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserWaypoint.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserWaypoint.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserWaypoint.longitude`
 
 
 Import detail

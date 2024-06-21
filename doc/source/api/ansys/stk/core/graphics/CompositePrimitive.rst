@@ -1,13 +1,13 @@
 CompositePrimitive
 ==================
 
-.. py:class:: CompositePrimitive
+.. py:class:: ansys.stk.core.graphics.CompositePrimitive
 
-   Bases: py:obj:`~ICompositePrimitive`, py:obj:`~IPrimitive`
+   Bases: py:obj:`~ansys.stk.core.graphics.ICompositePrimitive`, py:obj:`~ansys.stk.core.graphics.IPrimitive`
 
    A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: CompositePrimitive
 
 Overview
 --------

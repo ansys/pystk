@@ -1,12 +1,12 @@
 SMART_RUN_MODE
 ==============
 
-.. py:class:: SMART_RUN_MODE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SMART_RUN_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SMART_RUN_MODE
 
 Overview
 --------

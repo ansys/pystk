@@ -1,13 +1,13 @@
 IVectorPrimitiveFactory
 =======================
 
-.. py:class:: IVectorPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.IVectorPrimitiveFactory
 
    object
    
    Render a vector in the 3D scene. A vector is defined by a source (given by a reference frame) and a direction (given by a vector). Length is auto-calculated or can be set separately.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IVectorPrimitiveFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_direction`
+            * - :py:attr:`~ansys.stk.core.graphics.IVectorPrimitiveFactory.initialize_with_direction`
               - Initialize a vector primitive with the specified reference frame as its source and pointing in direction dir.
 
 

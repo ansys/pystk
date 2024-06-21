@@ -1,13 +1,13 @@
 UiWindow
 ========
 
-.. py:class:: UiWindow
+.. py:class:: ansys.stk.core.uicore.UiWindow
 
-   Bases: py:obj:`~IUiWindow`
+   Bases: py:obj:`~ansys.stk.core.uicore.IUiWindow`
 
    Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: UiWindow
 
 Overview
 --------

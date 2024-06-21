@@ -1,13 +1,13 @@
 ICloudsAndFogFadingLossModelP840_7
 ==================================
 
-.. py:class:: ICloudsAndFogFadingLossModelP840_7
+.. py:class:: ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7
 
    object
    
    Provide access to the properties and methods for clouds and fog loss model ITU-R P.840-7.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICloudsAndFogFadingLossModelP840_7
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cloud_ceiling`
-            * - :py:meth:`~cloud_layer_thickness`
-            * - :py:meth:`~cloud_temperature`
-            * - :py:meth:`~cloud_liquid_water_density`
-            * - :py:meth:`~liquid_water_density_choice`
-            * - :py:meth:`~liquid_water_percent_annual_exceeded`
-            * - :py:meth:`~liquid_water_percent_monthly_exceeded`
-            * - :py:meth:`~average_data_month`
-            * - :py:meth:`~use_rain_height_as_cloud_layer_thickness`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.cloud_ceiling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.cloud_layer_thickness`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.cloud_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.cloud_liquid_water_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.liquid_water_density_choice`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.liquid_water_percent_annual_exceeded`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.liquid_water_percent_monthly_exceeded`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.average_data_month`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.use_rain_height_as_cloud_layer_thickness`
 
 
 Import detail

@@ -1,13 +1,13 @@
 RFFilterModelRectangular
 ========================
 
-.. py:class:: RFFilterModelRectangular
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelRectangular
 
-   Bases: py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a rectangular filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelRectangular
 
 Overview
 --------

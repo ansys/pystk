@@ -1,13 +1,13 @@
 ISatelliteCollection
 ====================
 
-.. py:class:: ISatelliteCollection
+.. py:class:: ansys.stk.core.stkobjects.ISatelliteCollection
 
    object
    
    SatelliteCollection properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISatelliteCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteCollection.compute`
               - Compute the satellite collection, updating its subgroups.
 
 

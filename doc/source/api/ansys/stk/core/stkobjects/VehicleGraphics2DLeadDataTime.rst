@@ -1,13 +1,13 @@
 VehicleGraphics2DLeadDataTime
 =============================
 
-.. py:class:: VehicleGraphics2DLeadDataTime
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLeadDataTime
 
-   Bases: py:obj:`~IVehicleLeadTrailData`, py:obj:`~IVehicleLeadTrailDataTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailData`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataTime`
 
    2D Graphics pass: time-defined segment of leading portion of vehicle track to display.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DLeadDataTime
 
 Overview
 --------

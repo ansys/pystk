@@ -1,13 +1,13 @@
 ICoverageAdvanced
 =================
 
-.. py:class:: ICoverageAdvanced
+.. py:class:: ansys.stk.core.stkobjects.ICoverageAdvanced
 
    object
    
    Advanced Properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageAdvanced
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~data_retention`
-            * - :py:meth:`~auto_recompute`
-            * - :py:meth:`~save_mode`
-            * - :py:meth:`~region_access_acceleration`
-            * - :py:meth:`~enable_light_time_delay`
-            * - :py:meth:`~event_detection`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~n_assets_satisfaction_threshold`
-            * - :py:meth:`~n_assets_satisfaction_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.data_retention`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.auto_recompute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.save_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.region_access_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.enable_light_time_delay`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.event_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.sampling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.n_assets_satisfaction_threshold`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.n_assets_satisfaction_type`
 
 
 Import detail
@@ -74,13 +74,13 @@ Property detail
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.ICoverageAdvanced.event_detection
-    :type: IAgAccessEventDetection
+    :type: IAccessEventDetection
 
     Get the event detection strategy used in access computations.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.stkobjects.ICoverageAdvanced.sampling
-    :type: IAgAccessSampling
+    :type: IAccessSampling
 
     Get the sampling strategy used in access computations.
 

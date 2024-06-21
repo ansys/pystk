@@ -1,13 +1,13 @@
 IProcedureHoldingFigure8
 ========================
 
-.. py:class:: IProcedureHoldingFigure8
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8
 
    object
    
    Interface used to access the options for a holding figure 8 procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureHoldingFigure8
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_minimum_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.get_minimum_width`
               - Get the minimum allowable width based on the aircraft's minimum diameter at this altitude.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -31,21 +31,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~profile_mode`
-            * - :py:meth:`~level_off_mode`
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~range`
-            * - :py:meth:`~length`
-            * - :py:meth:`~width`
-            * - :py:meth:`~use_alternate_entry_points`
-            * - :py:meth:`~turns`
-            * - :py:meth:`~refuel_dump_mode`
-            * - :py:meth:`~hold_cruise_airspeed_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~enroute_turn_direction_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.profile_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.level_off_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.use_alternate_entry_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.turns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.refuel_dump_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.hold_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.enroute_turn_direction_options`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.altitude_options
-    :type: IAgAvtrAltitudeMSLOptions
+    :type: IAltitudeMSLOptions
 
     Get the altitude options.
 
@@ -127,25 +127,25 @@ Property detail
 
 .. py:property:: hold_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.hold_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the hold cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.enroute_options
-    :type: IAgAvtrEnrouteAndDelayOptions
+    :type: IEnrouteAndDelayOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureHoldingFigure8.enroute_turn_direction_options
-    :type: IAgAvtrEnrouteTurnDirectionOptions
+    :type: IEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 

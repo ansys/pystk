@@ -1,13 +1,13 @@
 StateCalcApparentSolarTime
 ==========================
 
-.. py:class:: StateCalcApparentSolarTime
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcApparentSolarTime
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcApparentSolarTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcApparentSolarTime`
 
    Apparent Solar Time Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcApparentSolarTime
 
 Overview
 --------

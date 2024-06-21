@@ -1,13 +1,13 @@
 IScatteringPointProviderCollectionElement
 =========================================
 
-.. py:class:: IScatteringPointProviderCollectionElement
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement
 
    object
    
    Provide access to the properties and methods defining an entry in the scattering point provider collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointProviderCollectionElement
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~scattering_point_provider`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement.enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement.scattering_point_provider`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: scattering_point_provider
     :canonical: ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement.scattering_point_provider
-    :type: IAgComponentLinkEmbedControl
+    :type: IComponentLinkEmbedControl
 
     Gets the link/embed controller for managing the scattering point provider component.
 

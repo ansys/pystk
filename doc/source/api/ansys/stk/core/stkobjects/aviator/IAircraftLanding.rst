@@ -1,13 +1,13 @@
 IAircraftLanding
 ================
 
-.. py:class:: IAircraftLanding
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftLanding
 
    object
    
    Interface used to access the landing options for an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftLanding
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_built_in_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftLanding.get_built_in_model`
               - Get the built-in model.
-            * - :py:meth:`~get_basic_landing_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftLanding.get_basic_landing_by_name`
               - Get the basic Landing model with the given name.
-            * - :py:meth:`~get_advanced_landing_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftLanding.get_advanced_landing_by_name`
               - Get the advanced Landing model with the given name.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftLanding.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

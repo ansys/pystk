@@ -1,13 +1,13 @@
 ProfileChangeStopSegment
 ========================
 
-.. py:class:: ProfileChangeStopSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment
 
-   Bases: py:obj:`~IProfileChangeStopSegment`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Change Stop Segment profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileChangeStopSegment
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IScreenOverlay
 ==============
 
-.. py:class:: IScreenOverlay
+.. py:class:: ansys.stk.core.graphics.IScreenOverlay
 
    object
    
    A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IScreenOverlay
 
 Overview
 --------

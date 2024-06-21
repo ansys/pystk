@@ -1,13 +1,13 @@
 GaussJacksonIntegrator
 ======================
 
-.. py:class:: GaussJacksonIntegrator
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GaussJacksonIntegrator
 
-   Bases: py:obj:`~IGaussJacksonIntegrator`, py:obj:`~INumericalIntegrator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator`, py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
 
    Gauss-Jackson Numerical Integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GaussJacksonIntegrator
 
 Overview
 --------

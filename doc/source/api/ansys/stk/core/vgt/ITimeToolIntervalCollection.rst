@@ -1,13 +1,13 @@
 ITimeToolIntervalCollection
 ===========================
 
-.. py:class:: ITimeToolIntervalCollection
+.. py:class:: ansys.stk.core.vgt.ITimeToolIntervalCollection
 
    object
    
    The interface represents a collection of intervals.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolIntervalCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalCollection.item`
               - Return an interval at a specified index.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalCollection.count`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalCollection._NewEnum`
 
 
 Import detail

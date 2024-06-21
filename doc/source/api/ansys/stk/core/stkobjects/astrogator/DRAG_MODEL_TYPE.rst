@@ -1,12 +1,12 @@
 DRAG_MODEL_TYPE
 ===============
 
-.. py:class:: DRAG_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DRAG_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DRAG_MODEL_TYPE
 
 Overview
 --------

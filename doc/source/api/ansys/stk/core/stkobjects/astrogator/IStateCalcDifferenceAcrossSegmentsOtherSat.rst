@@ -1,13 +1,13 @@
 IStateCalcDifferenceAcrossSegmentsOtherSat
 ==========================================
 
-.. py:class:: IStateCalcDifferenceAcrossSegmentsOtherSat
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat
 
    object
    
    Properties for a Difference Across Segments Across Satellites calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDifferenceAcrossSegmentsOtherSat
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
-            * - :py:meth:`~other_segment_name`
-            * - :py:meth:`~segment_state_to_use`
-            * - :py:meth:`~difference_order`
-            * - :py:meth:`~reference_sat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.other_segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.segment_state_to_use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.difference_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.reference_sat`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: reference_sat
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.reference_sat
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the Astrogator satellite on which the segment to be compared exists.
 

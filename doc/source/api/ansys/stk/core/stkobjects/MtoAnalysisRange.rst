@@ -1,13 +1,13 @@
 MtoAnalysisRange
 ================
 
-.. py:class:: MtoAnalysisRange
+.. py:class:: ansys.stk.core.stkobjects.MtoAnalysisRange
 
-   Bases: py:obj:`~IMtoAnalysisRange`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoAnalysisRange`
 
    MTO Range Computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoAnalysisRange
 
 Overview
 --------

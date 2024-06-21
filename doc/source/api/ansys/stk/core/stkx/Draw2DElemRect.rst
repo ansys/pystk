@@ -1,13 +1,13 @@
 Draw2DElemRect
 ==============
 
-.. py:class:: Draw2DElemRect
+.. py:class:: ansys.stk.core.stkx.Draw2DElemRect
 
-   Bases: py:obj:`~IDrawElemRect`
+   Bases: py:obj:`~ansys.stk.core.stkx.IDrawElemRect`
 
    Define a rectangle in window coordinates for map control.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: Draw2DElemRect
 
 Overview
 --------

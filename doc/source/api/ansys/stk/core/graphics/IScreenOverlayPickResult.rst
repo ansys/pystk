@@ -1,13 +1,13 @@
 IScreenOverlayPickResult
 ========================
 
-.. py:class:: IScreenOverlayPickResult
+.. py:class:: ansys.stk.core.graphics.IScreenOverlayPickResult
 
    object
    
    Describes a picked screen overlay as a result of a call to pick screen overlays.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IScreenOverlayPickResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position`
-            * - :py:meth:`~control_position`
-            * - :py:meth:`~overlay`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResult.position`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResult.control_position`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResult.overlay`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: overlay
     :canonical: ansys.stk.core.graphics.IScreenOverlayPickResult.overlay
-    :type: IAgStkGraphicsScreenOverlay
+    :type: IScreenOverlay
 
     Gets the screen overlay that was picked.
 

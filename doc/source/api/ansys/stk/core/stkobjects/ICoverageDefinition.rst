@@ -1,13 +1,13 @@
 ICoverageDefinition
 ===================
 
-.. py:class:: ICoverageDefinition
+.. py:class:: ansys.stk.core.stkobjects.ICoverageDefinition
 
    object
    
    Coverage definition properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageDefinition
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_accesses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.compute_accesses`
               - Compute accesses between the grid points and the assigned assets.
-            * - :py:meth:`~clear_accesses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.clear_accesses`
               - Remove access information currently maintained in association with each grid point in the coverage area.
-            * - :py:meth:`~reload_accesses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.reload_accesses`
               - Reload access data that was previously saved with a coverage definition object.
-            * - :py:meth:`~export_accesses_as_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.export_accesses_as_text`
               - Export all computed accesses to an ASCII text file.
 
     .. tab-item:: Properties
@@ -35,14 +35,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~grid`
-            * - :py:meth:`~point_definition`
-            * - :py:meth:`~asset_list`
-            * - :py:meth:`~advanced`
-            * - :py:meth:`~interval`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~grid_inspector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.grid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.point_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.asset_list`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.advanced`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.grid_inspector`
 
 
 Import detail
@@ -58,49 +58,49 @@ Property detail
 
 .. py:property:: grid
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.grid
-    :type: IAgCvGrid
+    :type: ICoverageGrid
 
     Definition of the coverage grid.
 
 .. py:property:: point_definition
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.point_definition
-    :type: IAgCvPointDefinition
+    :type: ICoveragePointDefinition
 
     Location of points on the coverage grid.
 
 .. py:property:: asset_list
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.asset_list
-    :type: IAgCvAssetListCollection
+    :type: ICoverageAssetListCollection
 
     List of assets to use in coverage computations.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.advanced
-    :type: IAgCvAdvanced
+    :type: ICoverageAdvanced
 
     Advanced properties of the coverage definition.
 
 .. py:property:: interval
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.interval
-    :type: IAgCvInterval
+    :type: ICoverageInterval
 
     Coverage interval.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.graphics
-    :type: IAgCvGraphics
+    :type: ICoverageGraphics
 
     2D Graphics properties of the coverage definition.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.graphics_3d
-    :type: IAgCvVO
+    :type: ICoverageGraphics3D
 
     3D Graphics properties of the coverage definition.
 
 .. py:property:: grid_inspector
     :canonical: ansys.stk.core.stkobjects.ICoverageDefinition.grid_inspector
-    :type: IAgCvGridInspector
+    :type: ICoverageGridInspector
 
     Get the grid inspector tool.
 

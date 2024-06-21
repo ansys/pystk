@@ -1,13 +1,13 @@
 CoverageGraphics2DStatic
 ========================
 
-.. py:class:: CoverageGraphics2DStatic
+.. py:class:: ansys.stk.core.stkobjects.CoverageGraphics2DStatic
 
-   Bases: py:obj:`~ICoverageGraphics2DStatic`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic`
 
    Static 2D graphics display options for the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageGraphics2DStatic
 
 Overview
 --------

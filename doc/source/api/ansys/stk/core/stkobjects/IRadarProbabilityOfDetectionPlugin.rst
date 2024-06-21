@@ -1,13 +1,13 @@
 IRadarProbabilityOfDetectionPlugin
 ==================================
 
-.. py:class:: IRadarProbabilityOfDetectionPlugin
+.. py:class:: ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionPlugin
 
    object
    
    Provide access to the properties and methods defining a radar clutter geometry plugin model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarProbabilityOfDetectionPlugin
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plugin_configuration`
-            * - :py:meth:`~raw_plugin_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionPlugin.plugin_configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionPlugin.raw_plugin_object`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionPlugin.plugin_configuration
-    :type: IAgCRPluginConfiguration
+    :type: ICRPluginConfiguration
 
     Gets the plugin configuration interface.
 

@@ -1,13 +1,13 @@
 IReferenceStateTakeoffLandingOptions
 ====================================
 
-.. py:class:: IReferenceStateTakeoffLandingOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions
 
    object
    
    Interface used to access the takeoff or landing options for a reference state procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IReferenceStateTakeoffLandingOptions
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.set_airspeed`
               - Set the launch airspeed.
-            * - :py:meth:`~set_longitudinal_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.set_longitudinal_accel`
               - Set the longitudinal acceleration.
-            * - :py:meth:`~set_lateral_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.set_lateral_accel`
               - Set the lateral acceleration.
-            * - :py:meth:`~set_attitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.set_attitude_rate`
               - Set the vertical attitude rate.
 
     .. tab-item:: Properties
@@ -35,26 +35,26 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~airspeed`
-            * - :py:meth:`~altitude_rate`
-            * - :py:meth:`~flight_path_angle`
-            * - :py:meth:`~tas_dot`
-            * - :py:meth:`~groundspeed_dot`
-            * - :py:meth:`~longitudinal_accel_type`
-            * - :py:meth:`~heading`
-            * - :py:meth:`~heading_is_magnetic`
-            * - :py:meth:`~course`
-            * - :py:meth:`~course_is_magnetic`
-            * - :py:meth:`~heading_dot`
-            * - :py:meth:`~course_dot`
-            * - :py:meth:`~lateral_accel_type`
-            * - :py:meth:`~roll_angle`
-            * - :py:meth:`~aoa`
-            * - :py:meth:`~sideslip`
-            * - :py:meth:`~pitch_rate`
-            * - :py:meth:`~push_pull_g`
-            * - :py:meth:`~attitude_rate_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.tas_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.groundspeed_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.longitudinal_accel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.heading_is_magnetic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.course_is_magnetic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.heading_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.course_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.lateral_accel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.sideslip`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.pitch_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.push_pull_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.attitude_rate_type`
 
 
 Import detail

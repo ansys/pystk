@@ -1,13 +1,13 @@
 IStateCalcSolarInPlaneAngle
 ===========================
 
-.. py:class:: IStateCalcSolarInPlaneAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle
 
    object
    
    Properties for a Solar In Plane Angle calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSolarInPlaneAngle
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~orbit_plane_source`
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~counter_clockwise_rotation`
-            * - :py:meth:`~reference_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.orbit_plane_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.counter_clockwise_rotation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.reference_direction`
 
 
 Import detail
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

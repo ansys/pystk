@@ -1,13 +1,13 @@
 SensorProjectionConstantAltitude
 ================================
 
-.. py:class:: SensorProjectionConstantAltitude
+.. py:class:: ansys.stk.core.stkobjects.SensorProjectionConstantAltitude
 
-   Bases: py:obj:`~IDisplayDistance`, py:obj:`~ISensorProjectionConstantAltitude`, py:obj:`~ISensorProjectionDisplayDistance`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDisplayDistance`, py:obj:`~ansys.stk.core.stkobjects.ISensorProjectionConstantAltitude`, py:obj:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance`
 
    Class defining projection altitude options for constant altitude for a sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorProjectionConstantAltitude
 
 Overview
 --------

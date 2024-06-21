@@ -1,13 +1,13 @@
 PathPointFactory
 ================
 
-.. py:class:: PathPointFactory
+.. py:class:: ansys.stk.core.graphics.PathPointFactory
 
-   Bases: py:obj:`~IPathPointFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IPathPointFactory`
 
    Factory creates path points.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: PathPointFactory
 
 Overview
 --------

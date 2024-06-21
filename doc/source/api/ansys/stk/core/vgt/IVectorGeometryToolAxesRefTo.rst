@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesRefTo
 ============================
 
-.. py:class:: IVectorGeometryToolAxesRefTo
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesRefTo
 
    object
    
    Represents a reference to a VGT axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesRefTo
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_path`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesRefTo.set_path`
               - Set a new axes.
-            * - :py:meth:`~set_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesRefTo.set_axes`
               - Set a new axes.
-            * - :py:meth:`~get_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesRefTo.get_axes`
               - Return the actual axes object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
-            * - :py:meth:`~has_cyclic_dependency`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesRefTo.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
 

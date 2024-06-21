@@ -1,12 +1,12 @@
 CIRCULAR_APERTURE_INPUT_TYPE
 ============================
 
-.. py:class:: CIRCULAR_APERTURE_INPUT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.CIRCULAR_APERTURE_INPUT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CIRCULAR_APERTURE_INPUT_TYPE
 
 Overview
 --------

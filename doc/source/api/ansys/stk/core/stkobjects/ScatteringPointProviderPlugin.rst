@@ -1,13 +1,13 @@
 ScatteringPointProviderPlugin
 =============================
 
-.. py:class:: ScatteringPointProviderPlugin
+.. py:class:: ansys.stk.core.stkobjects.ScatteringPointProviderPlugin
 
-   Bases: py:obj:`~IScatteringPointProvider`, py:obj:`~IScatteringPointProviderPlugin`, py:obj:`~IRadarClutterGeometryModelPlugin`, py:obj:`~IRadarClutterGeometryModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProvider`, py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProviderPlugin`, py:obj:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModelPlugin`, py:obj:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a plugin scattering point provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScatteringPointProviderPlugin
 
 Overview
 --------

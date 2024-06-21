@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorModelAttach
 ====================================
 
-.. py:class:: IVectorGeometryToolVectorModelAttach
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorModelAttach
 
    object
    
    Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorModelAttach
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pointable_element_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorModelAttach.pointable_element_name`
 
 
 Import detail

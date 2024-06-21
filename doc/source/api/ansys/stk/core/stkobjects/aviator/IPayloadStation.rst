@@ -1,13 +1,13 @@
 IPayloadStation
 ===============
 
-.. py:class:: IPayloadStation
+.. py:class:: ansys.stk.core.stkobjects.aviator.IPayloadStation
 
    object
    
    Interface used to set an aircraft's payload station.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IPayloadStation
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.set_position`
               - Set the payload station's parent relative position.
-            * - :py:meth:`~remove_sub_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.remove_sub_item`
               - Remove any sub item that may be attached to the payload station.
-            * - :py:meth:`~add_external_fuel_tank`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.add_external_fuel_tank`
               - Add an external fuel tank to the payload station.
-            * - :py:meth:`~get_external_fuel_tank`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.get_external_fuel_tank`
               - Get the external fuel tank attached to the payload station.
 
     .. tab-item:: Properties
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~position_x`
-            * - :py:meth:`~position_y`
-            * - :py:meth:`~position_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.position_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.position_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.position_z`
 
 
 Import detail

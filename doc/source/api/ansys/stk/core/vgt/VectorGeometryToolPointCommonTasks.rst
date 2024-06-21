@@ -1,13 +1,13 @@
 VectorGeometryToolPointCommonTasks
 ==================================
 
-.. py:class:: VectorGeometryToolPointCommonTasks
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointCommonTasks
 
-   Bases: py:obj:`~IVectorGeometryToolPointCommonTasks`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointCommonTasks`
 
    Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointCommonTasks
 
 Overview
 --------

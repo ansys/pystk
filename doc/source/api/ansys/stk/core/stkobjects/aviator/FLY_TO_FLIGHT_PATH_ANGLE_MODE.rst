@@ -1,12 +1,12 @@
 FLY_TO_FLIGHT_PATH_ANGLE_MODE
 =============================
 
-.. py:class:: FLY_TO_FLIGHT_PATH_ANGLE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.FLY_TO_FLIGHT_PATH_ANGLE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: FLY_TO_FLIGHT_PATH_ANGLE_MODE
 
 Overview
 --------

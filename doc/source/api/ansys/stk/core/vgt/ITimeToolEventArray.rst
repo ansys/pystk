@@ -1,13 +1,13 @@
 ITimeToolEventArray
 ===================
 
-.. py:class:: ITimeToolEventArray
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArray
 
    object
    
    An ordered array of times, which may or may not be evenly spaced.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArray
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~find_times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArray.find_times`
               - Return computed array of times.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArray.type`
 
 
 Import detail

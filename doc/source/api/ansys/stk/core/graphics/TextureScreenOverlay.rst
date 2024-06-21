@@ -1,13 +1,13 @@
 TextureScreenOverlay
 ====================
 
-.. py:class:: TextureScreenOverlay
+.. py:class:: ansys.stk.core.graphics.TextureScreenOverlay
 
-   Bases: py:obj:`~ITextureScreenOverlay`, py:obj:`~IScreenOverlay`, py:obj:`~IOverlay`, py:obj:`~IScreenOverlayContainer`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITextureScreenOverlay`, py:obj:`~ansys.stk.core.graphics.IScreenOverlay`, py:obj:`~ansys.stk.core.graphics.IOverlay`, py:obj:`~ansys.stk.core.graphics.IScreenOverlayContainer`
 
    A rectangular overlay that can be assigned a texture.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TextureScreenOverlay
 
 Overview
 --------

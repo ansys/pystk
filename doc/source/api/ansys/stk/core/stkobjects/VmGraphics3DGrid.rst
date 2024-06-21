@@ -1,13 +1,13 @@
 VmGraphics3DGrid
 ================
 
-.. py:class:: VmGraphics3DGrid
+.. py:class:: ansys.stk.core.stkobjects.VmGraphics3DGrid
 
-   Bases: py:obj:`~IVmGraphics3DGrid`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid`
 
    Class defining grid properties of 3D graphics for volumetric object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmGraphics3DGrid
 
 Overview
 --------

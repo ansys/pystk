@@ -1,13 +1,13 @@
 SNOPTControl
 ============
 
-.. py:class:: SNOPTControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTControl
 
-   Bases: py:obj:`~ISNOPTControl`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControl`
 
    Control parameters for SNOPT optimizer profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SNOPTControl
 
 Overview
 --------

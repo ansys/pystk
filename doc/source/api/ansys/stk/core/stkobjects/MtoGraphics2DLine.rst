@@ -1,13 +1,13 @@
 MtoGraphics2DLine
 =================
 
-.. py:class:: MtoGraphics2DLine
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DLine
 
-   Bases: py:obj:`~IMtoGraphics2DLine`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine`
 
    MTO track line display options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics2DLine
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleLaunchControlFixedDeltaV
 ===============================
 
-.. py:class:: VehicleLaunchControlFixedDeltaV
+.. py:class:: ansys.stk.core.stkobjects.VehicleLaunchControlFixedDeltaV
 
-   Bases: py:obj:`~IVehicleLaunchControl`, py:obj:`~IVehicleLaunchControlFixedDeltaV`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchControl`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaV`
 
    Class defining the option to set a Missile's flight parameters by specifying a fixed delta V.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleLaunchControlFixedDeltaV
 
 Overview
 --------

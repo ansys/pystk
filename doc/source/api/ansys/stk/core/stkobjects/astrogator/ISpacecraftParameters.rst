@@ -1,13 +1,13 @@
 ISpacecraftParameters
 =====================
 
-.. py:class:: ISpacecraftParameters
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters
 
    object
    
    Properties for spacecraft configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISpacecraftParameters
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~dry_mass`
-            * - :py:meth:`~cd`
-            * - :py:meth:`~drag_area`
-            * - :py:meth:`~cr`
-            * - :py:meth:`~solar_radiation_pressure_area`
-            * - :py:meth:`~ck`
-            * - :py:meth:`~radiation_pressure_area`
-            * - :py:meth:`~k1`
-            * - :py:meth:`~k2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.dry_mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.cd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.drag_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.cr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.solar_radiation_pressure_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.ck`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.radiation_pressure_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.k1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters.k2`
 
 
 Import detail

@@ -1,12 +1,12 @@
 CRDN_SURFACE_TYPE
 =================
 
-.. py:class:: CRDN_SURFACE_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_SURFACE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SURFACE_TYPE
 
 Overview
 --------

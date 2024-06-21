@@ -1,12 +1,12 @@
 MARKER_BATCH_SIZE_SOURCE
 ========================
 
-.. py:class:: MARKER_BATCH_SIZE_SOURCE
+.. py:class:: ansys.stk.core.graphics.MARKER_BATCH_SIZE_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MARKER_BATCH_SIZE_SOURCE
 
 Overview
 --------

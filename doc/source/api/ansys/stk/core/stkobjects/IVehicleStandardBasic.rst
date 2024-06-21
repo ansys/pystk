@@ -1,13 +1,13 @@
 IVehicleStandardBasic
 =====================
 
-.. py:class:: IVehicleStandardBasic
+.. py:class:: ansys.stk.core.stkobjects.IVehicleStandardBasic
 
    object
    
    Basic attitude profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleStandardBasic
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_profile_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStandardBasic.set_profile_type`
               - Set basic attitude profile type.
-            * - :py:meth:`~is_profile_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStandardBasic.is_profile_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~profile_type`
-            * - :py:meth:`~profile_supported_types`
-            * - :py:meth:`~profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStandardBasic.profile_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStandardBasic.profile_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStandardBasic.profile`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: profile
     :canonical: ansys.stk.core.stkobjects.IVehicleStandardBasic.profile
-    :type: IAgVeAttProfile
+    :type: IVehicleAttitudeProfile
 
     Returns the profile interface.
 

@@ -1,12 +1,12 @@
 LEAD_TRAIL_DATA
 ===============
 
-.. py:class:: LEAD_TRAIL_DATA
+.. py:class:: ansys.stk.core.stkobjects.LEAD_TRAIL_DATA
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LEAD_TRAIL_DATA
 
 Overview
 --------

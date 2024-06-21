@@ -1,13 +1,13 @@
 IRadarProbabilityOfDetectionNonCFAR
 ===================================
 
-.. py:class:: IRadarProbabilityOfDetectionNonCFAR
+.. py:class:: ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionNonCFAR
 
    object
    
    Provide access to the properties and methods for configuring non CFAR probability of detection parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarProbabilityOfDetectionNonCFAR
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~probability_of_false_alarm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionNonCFAR.probability_of_false_alarm`
 
 
 Import detail

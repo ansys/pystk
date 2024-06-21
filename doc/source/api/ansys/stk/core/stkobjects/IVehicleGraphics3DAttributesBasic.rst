@@ -1,13 +1,13 @@
 IVehicleGraphics3DAttributesBasic
 =================================
 
-.. py:class:: IVehicleGraphics3DAttributesBasic
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic
 
    object
    
    Interface for basic 3D graphics for covariance pointing contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DAttributesBasic
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~use_custom_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.use_custom_color`
 
 
 Import detail

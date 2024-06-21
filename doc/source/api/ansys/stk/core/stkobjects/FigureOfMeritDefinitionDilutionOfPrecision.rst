@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionDilutionOfPrecision
 ==========================================
 
-.. py:class:: FigureOfMeritDefinitionDilutionOfPrecision
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDilutionOfPrecision
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionDilutionOfPrecision`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Dilution Of Precision Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionDilutionOfPrecision
 
 Overview
 --------

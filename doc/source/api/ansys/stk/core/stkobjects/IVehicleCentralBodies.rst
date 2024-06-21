@@ -1,13 +1,13 @@
 IVehicleCentralBodies
 =====================
 
-.. py:class:: IVehicleCentralBodies
+.. py:class:: ansys.stk.core.stkobjects.IVehicleCentralBodies
 
    object
    
    Satellite Central Bodies interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleCentralBodies
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_central_body_assigned`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCentralBodies.is_central_body_assigned`
               - Check whether a central body is already assigned.
-            * - :py:meth:`~assign_central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCentralBodies.assign_central_body`
               - Assign a central body.
-            * - :py:meth:`~remove_central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCentralBodies.remove_central_body`
               - Remove a central body.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCentralBodies.remove_all`
               - Remove all the central bodies.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_central_bodies`
-            * - :py:meth:`~assigned_central_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCentralBodies.available_central_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCentralBodies.assigned_central_bodies`
 
 
 Import detail

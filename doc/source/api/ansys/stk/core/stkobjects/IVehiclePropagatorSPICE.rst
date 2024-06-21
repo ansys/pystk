@@ -1,13 +1,13 @@
 IVehiclePropagatorSPICE
 =======================
 
-.. py:class:: IVehiclePropagatorSPICE
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorSPICE
 
    IVehiclePropagator
    
    SPICE propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorSPICE
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~spice`
-            * - :py:meth:`~body_name`
-            * - :py:meth:`~segments`
-            * - :py:meth:`~available_body_names`
-            * - :py:meth:`~ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.spice`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.segments`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.available_body_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.ephemeris_interval`
 
 
 Import detail
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.segments
-    :type: IAgVeSegmentsCollection
+    :type: IVehicleSegmentsCollection
 
     Get the segment list.
 
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

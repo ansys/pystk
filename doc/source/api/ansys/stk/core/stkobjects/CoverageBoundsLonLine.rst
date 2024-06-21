@@ -1,13 +1,13 @@
 CoverageBoundsLonLine
 =====================
 
-.. py:class:: CoverageBoundsLonLine
+.. py:class:: ansys.stk.core.stkobjects.CoverageBoundsLonLine
 
-   Bases: py:obj:`~ICoverageBoundsLonLine`, py:obj:`~ICoverageBounds`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageBoundsLonLine`, py:obj:`~ansys.stk.core.stkobjects.ICoverageBounds`
 
    Longitude Line:  Create a set of points along a single meridian, useful when the coverage is only expected to vary with latitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageBoundsLonLine
 
 Overview
 --------

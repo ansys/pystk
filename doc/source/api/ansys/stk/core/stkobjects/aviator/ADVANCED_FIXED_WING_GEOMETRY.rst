@@ -1,12 +1,12 @@
 ADVANCED_FIXED_WING_GEOMETRY
 ============================
 
-.. py:class:: ADVANCED_FIXED_WING_GEOMETRY
+.. py:class:: ansys.stk.core.stkobjects.aviator.ADVANCED_FIXED_WING_GEOMETRY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ADVANCED_FIXED_WING_GEOMETRY
 
 Overview
 --------

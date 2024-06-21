@@ -1,13 +1,13 @@
 IVehicleSGP4PropagatorSettings
 ==============================
 
-.. py:class:: IVehicleSGP4PropagatorSettings
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4PropagatorSettings
 
    object
    
    Encapsulates the SGP4 propagator settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4PropagatorSettings
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_sgp4_one_point_interpolation`
-            * - :py:meth:`~use_sgp4_one_point_validation`
-            * - :py:meth:`~use_sgp4_one_point_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4PropagatorSettings.use_sgp4_one_point_interpolation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4PropagatorSettings.use_sgp4_one_point_validation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4PropagatorSettings.use_sgp4_one_point_warning`
 
 
 Import detail

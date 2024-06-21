@@ -1,13 +1,13 @@
 IPhase
 ======
 
-.. py:class:: IPhase
+.. py:class:: ansys.stk.core.stkobjects.aviator.IPhase
 
    object
    
    Interface used to access the phase options for a mission.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IPhase
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_performance_model_by_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhase.get_performance_model_by_type`
               - Get the active performance model for the given category type.
-            * - :py:meth:`~set_default_perf_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhase.set_default_perf_models`
               - Set the phase to use the default performance models of the aircraft.
-            * - :py:meth:`~copy_performance_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhase.copy_performance_models`
               - Create a copy of the active performance models for the current phase.
-            * - :py:meth:`~paste_performance_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhase.paste_performance_models`
               - Paste the performance models.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~procedures`
-            * - :py:meth:`~name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhase.procedures`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhase.name`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: procedures
     :canonical: ansys.stk.core.stkobjects.aviator.IPhase.procedures
-    :type: IAgAvtrProcedureCollection
+    :type: IProcedureCollection
 
     Returns the procedure collection.
 

@@ -1,13 +1,13 @@
 ITimeToolIntervalsFilter
 ========================
 
-.. py:class:: ITimeToolIntervalsFilter
+.. py:class:: ansys.stk.core.vgt.ITimeToolIntervalsFilter
 
    object
    
    The filter selects intervals of at least/most certain duration.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolIntervalsFilter
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~duration_kind`
-            * - :py:meth:`~interval_duration`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalsFilter.duration_kind`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalsFilter.interval_duration`
 
 
 Import detail

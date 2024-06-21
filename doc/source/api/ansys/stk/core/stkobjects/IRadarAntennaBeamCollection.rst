@@ -1,13 +1,13 @@
 IRadarAntennaBeamCollection
 ===========================
 
-.. py:class:: IRadarAntennaBeamCollection
+.. py:class:: ansys.stk.core.stkobjects.IRadarAntennaBeamCollection
 
    object
    
    Represents a collection of antenna beams.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarAntennaBeamCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.remove_at`
               - Remove the layer with the specified index.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.insert_at`
               - Insert a new beam at the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.add`
               - Add a new beam to the collection.
-            * - :py:meth:`~duplicate_beam`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.duplicate_beam`
               - Duplicates the beam at the specified index.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection._NewEnum`
 
 
 Import detail

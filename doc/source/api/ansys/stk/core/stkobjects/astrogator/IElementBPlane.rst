@@ -1,13 +1,13 @@
 IElementBPlane
 ==============
 
-.. py:class:: IElementBPlane
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementBPlane
 
    IElement
    
    Properties for BPlane elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementBPlane
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~right_ascension_of_b_plane`
-            * - :py:meth:`~declination_of_b_plane`
-            * - :py:meth:`~b_dot_r_first_b_vector`
-            * - :py:meth:`~b_dot_t_second_b_vector`
-            * - :py:meth:`~hyperbolic_turning_angle`
-            * - :py:meth:`~orbital_c3_energy`
-            * - :py:meth:`~hyperbolic_v_infinity`
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~b_dot_t_first_b_vector`
-            * - :py:meth:`~b_theta_first_b_vector`
-            * - :py:meth:`~b_dot_r_second_b_vector`
-            * - :py:meth:`~b_magnitude_second_b_vector`
-            * - :py:meth:`~true_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.right_ascension_of_b_plane`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.declination_of_b_plane`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_dot_r_first_b_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_dot_t_second_b_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.hyperbolic_turning_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.orbital_c3_energy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.hyperbolic_v_infinity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_dot_t_first_b_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_theta_first_b_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_dot_r_second_b_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_magnitude_second_b_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.true_anomaly`
 
 
 Import detail

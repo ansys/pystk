@@ -1,13 +1,13 @@
 IPickInfoData
 =============
 
-.. py:class:: IPickInfoData
+.. py:class:: ansys.stk.core.stkx.IPickInfoData
 
    object
    
    Mouse pick details.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IPickInfoData
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~obj_path`
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~is_obj_path_valid`
-            * - :py:meth:`~is_lat_lon_altitude_valid`
+            * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.obj_path`
+            * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.lat`
+            * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.lon`
+            * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.altitude`
+            * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.is_obj_path_valid`
+            * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.is_lat_lon_altitude_valid`
 
 
 Import detail

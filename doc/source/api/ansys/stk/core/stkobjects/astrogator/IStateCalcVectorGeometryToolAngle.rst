@@ -1,13 +1,13 @@
 IStateCalcVectorGeometryToolAngle
 =================================
 
-.. py:class:: IStateCalcVectorGeometryToolAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcVectorGeometryToolAngle
 
    object
    
    Properties for an Vector Geometry Tool Angle calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcVectorGeometryToolAngle
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~angle_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorGeometryToolAngle.angle_name`
 
 
 Import detail

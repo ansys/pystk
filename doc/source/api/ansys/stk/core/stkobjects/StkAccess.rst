@@ -1,13 +1,13 @@
 StkAccess
 =========
 
-.. py:class:: StkAccess
+.. py:class:: ansys.stk.core.stkobjects.StkAccess
 
-   Bases: py:obj:`~ILifetimeInformation`, py:obj:`~IStkAccess`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IStkAccess`
 
    Class defining Access.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkAccess
 
 Overview
 --------

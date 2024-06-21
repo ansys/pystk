@@ -1,13 +1,13 @@
 IFlipFilterFactory
 ==================
 
-.. py:class:: IFlipFilterFactory
+.. py:class:: ansys.stk.core.graphics.IFlipFilterFactory
 
    object
    
    Flips the source raster along the given flip axis.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IFlipFilterFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IFlipFilterFactory.initialize`
               - Initialize a new instance.
-            * - :py:meth:`~initialize_with_flip_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.IFlipFilterFactory.initialize_with_flip_axis`
               - Initialize a new instance with the specified flip axis.
 
 

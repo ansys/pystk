@@ -1,12 +1,12 @@
 SCREEN_OVERLAY_PINNING_ORIGIN
 =============================
 
-.. py:class:: SCREEN_OVERLAY_PINNING_ORIGIN
+.. py:class:: ansys.stk.core.graphics.SCREEN_OVERLAY_PINNING_ORIGIN
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SCREEN_OVERLAY_PINNING_ORIGIN
 
 Overview
 --------

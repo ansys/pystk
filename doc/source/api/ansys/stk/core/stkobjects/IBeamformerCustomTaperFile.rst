@@ -1,13 +1,13 @@
 IBeamformerCustomTaperFile
 ==========================
 
-.. py:class:: IBeamformerCustomTaperFile
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerCustomTaperFile
 
    object
    
    Provide access to the properties and methods defining a custom taper file beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerCustomTaperFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerCustomTaperFile.filename`
 
 
 Import detail

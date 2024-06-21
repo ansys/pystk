@@ -1,13 +1,13 @@
 Terrain
 =======
 
-.. py:class:: Terrain
+.. py:class:: ansys.stk.core.stkobjects.Terrain
 
-   Bases: py:obj:`~ITerrain`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITerrain`
 
    Class defining terrain data for a Scenario.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Terrain
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ILLAGeocentric
 ==============
 
-.. py:class:: ILLAGeocentric
+.. py:class:: ansys.stk.core.stkobjects.ILLAGeocentric
 
    ILLAPosition
    
    Geocentric LLA position interface:.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILLAGeocentric
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~rad`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILLAGeocentric.lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILLAGeocentric.lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILLAGeocentric.rad`
 
 
 Import detail

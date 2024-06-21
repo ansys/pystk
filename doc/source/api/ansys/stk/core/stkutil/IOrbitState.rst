@@ -1,13 +1,13 @@
 IOrbitState
 ===========
 
-.. py:class:: IOrbitState
+.. py:class:: ansys.stk.core.stkutil.IOrbitState
 
    object
    
    Interface to set and retrieve the coordinate type used to specify the orbit state.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IOrbitState
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~convert_to`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.convert_to`
               - Change the coordinate type to the type specified.
-            * - :py:meth:`~assign`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign`
               - Assign a new coordinate type.
-            * - :py:meth:`~assign_classical`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_classical`
               - Assign a new orbit state using Classical representation.
-            * - :py:meth:`~assign_cartesian`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_cartesian`
               - Assign a new orbit state using Cartesian representation.
-            * - :py:meth:`~assign_geodetic`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_geodetic`
               - Assign a new orbit state using Geodetic representation.
-            * - :py:meth:`~assign_equinoctial_posigrade`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_equinoctial_posigrade`
               - Assign a new orbit state using Equinoctial representation.
-            * - :py:meth:`~assign_equinoctial_retrograde`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_equinoctial_retrograde`
               - Assign a new orbit state using Equinoctial representation.
-            * - :py:meth:`~assign_mixed_spherical`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_mixed_spherical`
               - Assign a new orbit state using Mixed Spherical representation.
-            * - :py:meth:`~assign_spherical`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.assign_spherical`
               - Assign a new orbit state using Spherical representation.
 
     .. tab-item:: Properties
@@ -45,9 +45,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~orbit_state_type`
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~epoch`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.orbit_state_type`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.epoch`
 
 
 Import detail

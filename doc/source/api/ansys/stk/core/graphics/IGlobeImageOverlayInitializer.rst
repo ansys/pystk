@@ -1,13 +1,13 @@
 IGlobeImageOverlayInitializer
 =============================
 
-.. py:class:: IGlobeImageOverlayInitializer
+.. py:class:: ansys.stk.core.graphics.IGlobeImageOverlayInitializer
 
    object
    
    A globe overlay that shows an image.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGlobeImageOverlayInitializer
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~more_than_one_image_globe_overlay_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlayInitializer.more_than_one_image_globe_overlay_supported`
 
 
 Import detail

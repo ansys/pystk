@@ -1,13 +1,13 @@
 IVehicleGraphics3DSigmaScale
 ============================
 
-.. py:class:: IVehicleGraphics3DSigmaScale
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScale
 
    object
    
    Base Interface IAgVeVOSigmaScale. IAgVeVOSigmaScaleScale and IAgVeVOSigmaScaleProbability derive from this.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DSigmaScale
 
 Overview
 --------

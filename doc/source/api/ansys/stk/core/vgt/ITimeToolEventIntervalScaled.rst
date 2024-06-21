@@ -1,13 +1,13 @@
 ITimeToolEventIntervalScaled
 ============================
 
-.. py:class:: ITimeToolEventIntervalScaled
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalScaled
 
    object
    
    Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalScaled
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~original_interval`
-            * - :py:meth:`~absolute_increment`
-            * - :py:meth:`~relative_increment`
-            * - :py:meth:`~use_absolute_increment`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled.original_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled.absolute_increment`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled.relative_increment`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled.use_absolute_increment`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: original_interval
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalScaled.original_interval
-    :type: IAgCrdnEventInterval
+    :type: ITimeToolEventInterval
 
     The original interval.
 

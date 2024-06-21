@@ -1,13 +1,13 @@
 VehiclePassBreak
 ================
 
-.. py:class:: VehiclePassBreak
+.. py:class:: ansys.stk.core.stkobjects.VehiclePassBreak
 
-   Bases: py:obj:`~IVehiclePassBreak`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePassBreak`
 
    Satellite Pass Break properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePassBreak
 
 Overview
 --------

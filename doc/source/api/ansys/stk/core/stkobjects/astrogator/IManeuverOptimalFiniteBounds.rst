@@ -1,13 +1,13 @@
 IManeuverOptimalFiniteBounds
 ============================
 
-.. py:class:: IManeuverOptimalFiniteBounds
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteBounds
 
    object
    
    The bounds for boundary interfaces.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IManeuverOptimalFiniteBounds
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lower_bound`
-            * - :py:meth:`~upper_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteBounds.lower_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteBounds.upper_bound`
 
 
 Import detail

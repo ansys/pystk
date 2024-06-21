@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesModelAttach
 ==================================
 
-.. py:class:: IVectorGeometryToolAxesModelAttach
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesModelAttach
 
    object
    
    Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesModelAttach
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pointable_element_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesModelAttach.pointable_element_name`
 
 
 Import detail

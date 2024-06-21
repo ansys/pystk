@@ -1,13 +1,13 @@
 EquinoctialSizeShapeSemimajorAxis
 =================================
 
-.. py:class:: EquinoctialSizeShapeSemimajorAxis
+.. py:class:: ansys.stk.core.stkobjects.EquinoctialSizeShapeSemimajorAxis
 
-   Bases: py:obj:`~IEquinoctialSizeShapeSemimajorAxis`, py:obj:`~IClassicalSizeShape`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeSemimajorAxis`, py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Semimajor Axis, an element of the Equinoctial coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EquinoctialSizeShapeSemimajorAxis
 
 Overview
 --------

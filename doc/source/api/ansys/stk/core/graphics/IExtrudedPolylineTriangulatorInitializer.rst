@@ -1,13 +1,13 @@
 IExtrudedPolylineTriangulatorInitializer
 ========================================
 
-.. py:class:: IExtrudedPolylineTriangulatorInitializer
+.. py:class:: ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer
 
    object
    
    Triangulates a polyline into an extrusion with bottom and top boundaries.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IExtrudedPolylineTriangulatorInitializer
 
 Overview
 --------
@@ -20,29 +20,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute`
               - Compute an extrusion between bottomPositions and topPositions on the specified centralBody. This is equivalent to calling Compute with a positionsWindingOrder of compute.
-            * - :py:meth:`~compute_with_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_with_winding_order`
               - Compute an extrusion between bottomPositions and topPositions on the specified centralBody.
-            * - :py:meth:`~compute_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_cartographic`
               - For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute.
-            * - :py:meth:`~compute_cartographic_with_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_cartographic_with_winding_order`
               - For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute.
-            * - :py:meth:`~compute_with_altitudes`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_with_altitudes`
               - Compute an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude. This is equivalent to calling Compute with a positionsWindingOrder of compute.
-            * - :py:meth:`~compute_with_altitudes_and_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_with_altitudes_and_winding_order`
               - Compute an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude.
-            * - :py:meth:`~compute_cartographic_with_altitudes`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_cartographic_with_altitudes`
               - For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
-            * - :py:meth:`~compute_cartographic_with_altitudes_and_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_cartographic_with_altitudes_and_winding_order`
               - For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
-            * - :py:meth:`~compute_single_constant_altitude`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_single_constant_altitude`
               - Compute an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions...
-            * - :py:meth:`~compute_single_constant_altitude_with_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_single_constant_altitude_with_winding_order`
               - Compute an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions.
-            * - :py:meth:`~compute_single_constant_altitude_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_single_constant_altitude_cartographic`
               - For convenience. Computes an extrusion of positions on the specified centralBody using cartographic positions. One side of the extrusion has a constant altitude and the other has the original altitudes from positions...
-            * - :py:meth:`~compute_single_constant_altitude_cartographic_with_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer.compute_single_constant_altitude_cartographic_with_winding_order`
               - For convenience. Computes an extrusion of positions on the specified centralBody using cartographic positions. One side of the extrusion has a constant altitude and the other has the original altitudes from positions...
 
 

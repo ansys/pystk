@@ -1,13 +1,13 @@
 IAntennaModelGpsGlobal
 ======================
 
-.. py:class:: IAntennaModelGpsGlobal
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelGpsGlobal
 
    object
    
    Provide access to the properties and methods defining a GPS global antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelGpsGlobal
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_block_types`
-            * - :py:meth:`~block_type`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~max_gain`
-            * - :py:meth:`~beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.supported_block_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.block_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.max_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.beamwidth`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IBasicManeuverStrategyWeave
 ===========================
 
-.. py:class:: IBasicManeuverStrategyWeave
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave
 
    object
    
    Interface used to access options for a weave strategy of a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyWeave
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_control_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~heading_change`
-            * - :py:meth:`~max_num_cycles`
-            * - :py:meth:`~max_distance`
-            * - :py:meth:`~control_limit_mode`
-            * - :py:meth:`~control_limit_turn_radius`
-            * - :py:meth:`~control_limit_turn_rate`
-            * - :py:meth:`~control_limit_horiz_accel`
-            * - :py:meth:`~compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.heading_change`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.max_num_cycles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.max_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.control_limit_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.control_limit_turn_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.control_limit_turn_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.control_limit_horiz_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.compensate_for_coriolis_accel`
 
 
 Import detail

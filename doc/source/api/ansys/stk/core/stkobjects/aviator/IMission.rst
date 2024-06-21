@@ -1,13 +1,13 @@
 IMission
 ========
 
-.. py:class:: IMission
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMission
 
    object
    
    Interface for the mission of an aircraft using the Aviator propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMission
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_first_invalid_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.get_first_invalid_procedure`
               - Get the first invalid procedure in the mission. Calling this method will propagate the mission.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~phases`
-            * - :py:meth:`~vehicle`
-            * - :py:meth:`~configuration`
-            * - :py:meth:`~wind_model`
-            * - :py:meth:`~atmosphere_model`
-            * - :py:meth:`~is_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.phases`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.vehicle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.wind_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.atmosphere_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.is_valid`
 
 
 Import detail
@@ -50,31 +50,31 @@ Property detail
 
 .. py:property:: phases
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.phases
-    :type: IAgAvtrPhaseCollection
+    :type: IPhaseCollection
 
     Get the mission phases.
 
 .. py:property:: vehicle
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.vehicle
-    :type: IAgAvtrVehicle
+    :type: IAviatorVehicle
 
     Gets or sets the vehicle used in the mission.
 
 .. py:property:: configuration
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.configuration
-    :type: IAgAvtrConfiguration
+    :type: IConfiguration
 
     Get the aircraft's configuration for the mission.
 
 .. py:property:: wind_model
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.wind_model
-    :type: IAgAvtrWindModel
+    :type: IWindModel
 
     Get the mission wind model.
 
 .. py:property:: atmosphere_model
     :canonical: ansys.stk.core.stkobjects.aviator.IMission.atmosphere_model
-    :type: IAgAvtrAtmosphereModel
+    :type: IAtmosphereModel
 
     Get the mission atmosphere model.
 

@@ -1,13 +1,13 @@
 IOrientationYPRAngles
 =====================
 
-.. py:class:: IOrientationYPRAngles
+.. py:class:: ansys.stk.core.stkutil.IOrientationYPRAngles
 
    IOrientation
    
    Interface for Yaw-Pitch Roll (YPR) Angles orientation system.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IOrientationYPRAngles
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sequence`
-            * - :py:meth:`~yaw`
-            * - :py:meth:`~pitch`
-            * - :py:meth:`~roll`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationYPRAngles.sequence`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationYPRAngles.yaw`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationYPRAngles.pitch`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationYPRAngles.roll`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAccessConstraintCondition
 ==========================
 
-.. py:class:: IAccessConstraintCondition
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintCondition
 
    IAccessConstraint
    
    Access Constraint used for lighting conditions.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintCondition
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~condition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCondition.condition`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVehiclePropagatorStkExternal
 =============================
 
-.. py:class:: IVehiclePropagatorStkExternal
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal
 
    IVehiclePropagator
    
    StkExternal propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorStkExternal
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~step`
-            * - :py:meth:`~filename`
-            * - :py:meth:`~override`
-            * - :py:meth:`~file_format`
-            * - :py:meth:`~ephemeris_start_epoch`
-            * - :py:meth:`~limit_ephemeris_to_scenario_interval`
-            * - :py:meth:`~message_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.override`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.file_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.ephemeris_start_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.limit_ephemeris_to_scenario_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.message_level`
 
 
 Import detail
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: ephemeris_start_epoch
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.ephemeris_start_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     If overriding the times contained in the external file, specify the time of the first ephemeris point.
 

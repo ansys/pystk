@@ -1,12 +1,12 @@
 VM_LEGEND_NUMERIC_NOTATION
 ==========================
 
-.. py:class:: VM_LEGEND_NUMERIC_NOTATION
+.. py:class:: ansys.stk.core.stkobjects.VM_LEGEND_NUMERIC_NOTATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_LEGEND_NUMERIC_NOTATION
 
 Overview
 --------

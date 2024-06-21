@@ -1,12 +1,12 @@
 RADAR_SNR_CONTOUR_TYPE
 ======================
 
-.. py:class:: RADAR_SNR_CONTOUR_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RADAR_SNR_CONTOUR_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_SNR_CONTOUR_TYPE
 
 Overview
 --------

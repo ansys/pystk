@@ -1,13 +1,13 @@
 ScreenOverlayPickResultCollection
 =================================
 
-.. py:class:: ScreenOverlayPickResultCollection
+.. py:class:: ansys.stk.core.graphics.ScreenOverlayPickResultCollection
 
-   Bases: py:obj:`~IScreenOverlayPickResultCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IScreenOverlayPickResultCollection`
 
    A collection of pick results.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ScreenOverlayPickResultCollection
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IElementConfigurationCircular
 =============================
 
-.. py:class:: IElementConfigurationCircular
+.. py:class:: ansys.stk.core.stkobjects.IElementConfigurationCircular
 
    object
    
    Provide access to the properties and methods defining a circular element configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IElementConfigurationCircular
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~num_elements`
-            * - :py:meth:`~spacing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationCircular.num_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationCircular.spacing`
 
 
 Import detail

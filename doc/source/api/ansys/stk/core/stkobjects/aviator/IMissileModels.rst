@@ -1,13 +1,13 @@
 IMissileModels
 ==============
 
-.. py:class:: IMissileModels
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileModels
 
    object
    
    Interface for the User Missile Models in the Aviator Catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileModels
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_missile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModels.get_missile`
               - Get the missile with the given name.
-            * - :py:meth:`~add_missile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModels.add_missile`
               - Create a new missile with the given name.
-            * - :py:meth:`~get_as_catalog_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModels.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
 

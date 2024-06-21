@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeCalcAltitude
 =====================================
 
-.. py:class:: SpatialAnalysisToolVolumeCalcAltitude
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcAltitude
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcAltitude`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalc`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc altitude interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeCalcAltitude
 
 Overview
 --------

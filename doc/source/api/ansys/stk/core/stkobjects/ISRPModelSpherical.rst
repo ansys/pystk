@@ -1,13 +1,13 @@
 ISRPModelSpherical
 ==================
 
-.. py:class:: ISRPModelSpherical
+.. py:class:: ansys.stk.core.stkobjects.ISRPModelSpherical
 
    ISRPModelBase
    
    Spherical Solar Radiation Pressure Model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISRPModelSpherical
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cr`
-            * - :py:meth:`~area_mass_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelSpherical.cr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelSpherical.area_mass_ratio`
 
 
 Import detail

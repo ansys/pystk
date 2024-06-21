@@ -1,13 +1,13 @@
 IAtmosphericAbsorptionModelTirem
 ================================
 
-.. py:class:: IAtmosphericAbsorptionModelTirem
+.. py:class:: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem
 
    object
    
    Provide access to the properties and methods of the TIREM atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAtmosphericAbsorptionModelTirem
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~surface_temperature`
-            * - :py:meth:`~surface_humidity`
-            * - :py:meth:`~surface_conductivity`
-            * - :py:meth:`~surface_refractivity`
-            * - :py:meth:`~relative_permittivity`
-            * - :py:meth:`~override_terrain_sample_resolution`
-            * - :py:meth:`~terrain_sample_resolution`
-            * - :py:meth:`~polarization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.surface_humidity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.surface_conductivity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.surface_refractivity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.relative_permittivity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.override_terrain_sample_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.terrain_sample_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.polarization_type`
 
 
 Import detail

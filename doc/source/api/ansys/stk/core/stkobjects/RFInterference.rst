@@ -1,13 +1,13 @@
 RFInterference
 ==============
 
-.. py:class:: RFInterference
+.. py:class:: ansys.stk.core.stkobjects.RFInterference
 
-   Bases: py:obj:`~IRFInterference`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFInterference`
 
    Class defining radar jamming.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFInterference
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleGraphics2DOrbitPassData
 ==============================
 
-.. py:class:: VehicleGraphics2DOrbitPassData
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DOrbitPassData
 
-   Bases: py:obj:`~IVehicleGraphics2DOrbitPassData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData`
 
    AgVeGfxPassData Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DOrbitPassData
 
 Overview
 --------

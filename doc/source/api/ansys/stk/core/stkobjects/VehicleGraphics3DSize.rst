@@ -1,13 +1,13 @@
 VehicleGraphics3DSize
 =====================
 
-.. py:class:: VehicleGraphics3DSize
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DSize
 
-   Bases: py:obj:`~IVehicleGraphics3DSize`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSize`
 
    3D graphics vector size.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DSize
 
 Overview
 --------

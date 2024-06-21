@@ -1,13 +1,13 @@
 IVehicleGraphics3DControlBox
 ============================
 
-.. py:class:: IVehicleGraphics3DControlBox
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox
 
    IVehicleGraphics3DProximityAreaObject
    
    Define a volume around the object that moves with the object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DControlBox
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_translucency`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~x_axis_length`
-            * - :py:meth:`~y_axis_length`
-            * - :py:meth:`~z_axis_length`
-            * - :py:meth:`~x_offset`
-            * - :py:meth:`~y_offset`
-            * - :py:meth:`~z_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.use_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.x_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.y_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.z_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.x_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.y_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.z_offset`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.reference_frame
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Gets or sets the reference axes that is used to align the ellipsoid.
 

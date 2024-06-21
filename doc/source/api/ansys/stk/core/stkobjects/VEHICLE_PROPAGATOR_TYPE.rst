@@ -1,12 +1,12 @@
 VEHICLE_PROPAGATOR_TYPE
 =======================
 
-.. py:class:: VEHICLE_PROPAGATOR_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_PROPAGATOR_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_PROPAGATOR_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ISensor
 =======
 
-.. py:class:: ISensor
+.. py:class:: ansys.stk.core.stkobjects.ISensor
 
    object
    
    Provide access to the properties and methods used in defining a sensor object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensor
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_pattern_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.set_pattern_type`
               - Set the pattern type.
-            * - :py:meth:`~set_pointing_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.set_pointing_type`
               - Set the sensor's pointing type, using the AgESnPointing enumeration.
-            * - :py:meth:`~set_pointing_external_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.set_pointing_external_file`
               - Set the external pointing type.
-            * - :py:meth:`~reset_az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.reset_az_el_mask`
               - Reset the az-el mask.
-            * - :py:meth:`~set_az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.set_az_el_mask`
               - Set the az-el mask type, using the AgEAzElMaskType enumeration.
-            * - :py:meth:`~set_az_el_mask_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.set_az_el_mask_file`
               - Path and file name of az-el mask file.
-            * - :py:meth:`~set_location_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.set_location_type`
               - Set the sensor's location type, a member of the AgESnLocation enumeration.
-            * - :py:meth:`~is_refraction_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~get_stars_in_fov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.get_stars_in_fov`
               - Return celestial bodies within the sensor's field of view.
 
     .. tab-item:: Properties
@@ -45,25 +45,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pattern_type`
-            * - :py:meth:`~pattern`
-            * - :py:meth:`~pointing_type`
-            * - :py:meth:`~pointing`
-            * - :py:meth:`~az_el_mask`
-            * - :py:meth:`~az_el_mask_data`
-            * - :py:meth:`~focal_length`
-            * - :py:meth:`~detector_pitch`
-            * - :py:meth:`~refraction`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~location_type`
-            * - :py:meth:`~location_data`
-            * - :py:meth:`~access_constraints`
-            * - :py:meth:`~swath`
-            * - :py:meth:`~refraction_supported_types`
-            * - :py:meth:`~refraction_model`
-            * - :py:meth:`~use_refraction_in_access`
-            * - :py:meth:`~common_tasks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.pattern_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.pattern`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.pointing_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.pointing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.az_el_mask_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.focal_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.detector_pitch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.refraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.location_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.location_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.access_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.swath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.refraction_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.refraction_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.use_refraction_in_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.common_tasks`
 
 
 Import detail
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: pattern
     :canonical: ansys.stk.core.stkobjects.ISensor.pattern
-    :type: IAgSnPattern
+    :type: ISensorPattern
 
     Get data defining the sensor pattern.
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: pointing
     :canonical: ansys.stk.core.stkobjects.ISensor.pointing
-    :type: IAgSnPointing
+    :type: ISensorPointing
 
     Get pointing data for the sensor.
 
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: az_el_mask_data
     :canonical: ansys.stk.core.stkobjects.ISensor.az_el_mask_data
-    :type: IAgAzElMaskData
+    :type: IAzElMaskData
 
     Get az-el mask data for the sensor.
 
@@ -133,13 +133,13 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ISensor.graphics
-    :type: IAgSnGraphics
+    :type: ISensorGraphics
 
     Get the 2D Graphics properties for the sensor.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ISensor.graphics_3d
-    :type: IAgSnVO
+    :type: ISensorGraphics3D
 
     Get the 3D Graphics properties for the sensor.
 
@@ -151,19 +151,19 @@ Property detail
 
 .. py:property:: location_data
     :canonical: ansys.stk.core.stkobjects.ISensor.location_data
-    :type: IAgLocationData
+    :type: ILocationData
 
     Get location data for the sensor. The sensor's center point is invalid; all other points are valid choices for the location data.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.ISensor.access_constraints
-    :type: IAgAccessConstraintCollection
+    :type: IAccessConstraintCollection
 
     Get constraints imposed on the sensor.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.ISensor.swath
-    :type: IAgSwath
+    :type: ISwath
 
     Get the sensor's swath.
 
@@ -175,7 +175,7 @@ Property detail
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.ISensor.refraction_model
-    :type: IAgRfModelBase
+    :type: IRefractionModelBase
 
     Gets a refraction model.
 
@@ -187,7 +187,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.ISensor.common_tasks
-    :type: IAgSnCommonTasks
+    :type: ISensorCommonTasks
 
     Returns an interface that exposes common tasks.
 

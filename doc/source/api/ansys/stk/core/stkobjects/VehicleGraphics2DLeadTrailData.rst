@@ -1,13 +1,13 @@
 VehicleGraphics2DLeadTrailData
 ==============================
 
-.. py:class:: VehicleGraphics2DLeadTrailData
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData
 
-   Bases: py:obj:`~IVehicleGraphics2DLeadTrailData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData`
 
    2D Graphics pass properties: lead/trail for ground tracks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DLeadTrailData
 
 Overview
 --------

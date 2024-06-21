@@ -1,13 +1,13 @@
 IVehicleLOPCentralBodyGravity
 =============================
 
-.. py:class:: IVehicleLOPCentralBodyGravity
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLOPCentralBodyGravity
 
    object
    
    Central body gravity interface for Long-range Orbit Predictor (LOP) propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLOPCentralBodyGravity
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_degree`
-            * - :py:meth:`~max_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPCentralBodyGravity.max_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPCentralBodyGravity.max_order`
 
 
 Import detail

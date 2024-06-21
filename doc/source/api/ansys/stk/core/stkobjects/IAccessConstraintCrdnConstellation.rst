@@ -1,13 +1,13 @@
 IAccessConstraintCrdnConstellation
 ==================================
 
-.. py:class:: IAccessConstraintCrdnConstellation
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation
 
    IAccessConstraint
    
    Access Constraint used for Vector Constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintCrdnConstellation
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_min`
-            * - :py:meth:`~enable_max`
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
-            * - :py:meth:`~reference`
-            * - :py:meth:`~available_references`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.enable_min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.enable_max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.available_references`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAntennaModelItuS1528R13
 ========================
 
-.. py:class:: IAntennaModelItuS1528R13
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelItuS1528R13
 
    object
    
    Provide access to the properties and methods defining an ITU-R S1528 1.3 antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelItuS1528R13
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~use_mainlobe_model`
-            * - :py:meth:`~override_half_beamwidth`
-            * - :py:meth:`~half_beamwidth`
-            * - :py:meth:`~nearin_sidelobe_mask_cross_point`
-            * - :py:meth:`~farout_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.use_mainlobe_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.override_half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.nearin_sidelobe_mask_cross_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.farout_sidelobe_level`
 
 
 Import detail

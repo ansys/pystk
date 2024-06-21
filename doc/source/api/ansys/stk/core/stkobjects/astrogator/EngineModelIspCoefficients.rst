@@ -1,13 +1,13 @@
 EngineModelIspCoefficients
 ==========================
 
-.. py:class:: EngineModelIspCoefficients
+.. py:class:: ansys.stk.core.stkobjects.astrogator.EngineModelIspCoefficients
 
-   Bases: py:obj:`~IEngineModelIspCoefficients`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients`
 
    Engine Model Isp Coefficients.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: EngineModelIspCoefficients
 
 Overview
 --------

@@ -1,13 +1,13 @@
 AntennaModelParabolic
 =====================
 
-.. py:class:: AntennaModelParabolic
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelParabolic
 
-   Bases: py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IAntennaModelParabolic`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModelParabolic`
 
    Class defining a parabolic antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelParabolic
 
 Overview
 --------

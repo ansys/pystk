@@ -1,13 +1,13 @@
 ElementConfiguration
 ====================
 
-.. py:class:: ElementConfiguration
+.. py:class:: ansys.stk.core.stkobjects.ElementConfiguration
 
-   Bases: py:obj:`~IElementConfiguration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IElementConfiguration`
 
    Class defining an element configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ElementConfiguration
 
 Overview
 --------

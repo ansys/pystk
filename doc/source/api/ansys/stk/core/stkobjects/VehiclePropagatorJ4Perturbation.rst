@@ -1,13 +1,13 @@
 VehiclePropagatorJ4Perturbation
 ===============================
 
-.. py:class:: VehiclePropagatorJ4Perturbation
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorJ4Perturbation
 
-   Bases: py:obj:`~IVehiclePropagatorJ4Perturbation`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ4Perturbation`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the J4 perturbation propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorJ4Perturbation
 
 Overview
 --------

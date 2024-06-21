@@ -1,13 +1,13 @@
 IVehicleEclipseBodies
 =====================
 
-.. py:class:: IVehicleEclipseBodies
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEclipseBodies
 
    object
    
    Satellite Eclipse Bodies interface, for defining the eclipse central body list used for lighting computations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEclipseBodies
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_central_body_assigned`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.is_central_body_assigned`
               - Check whether a central body is already assigned.
-            * - :py:meth:`~assign_central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.assign_central_body`
               - Assign a central body.
-            * - :py:meth:`~remove_central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.remove_central_body`
               - Remove a central body.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.remove_all`
               - Remove all the central bodies.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_customized_list`
-            * - :py:meth:`~available_central_bodies`
-            * - :py:meth:`~assigned_central_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.use_customized_list`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.available_central_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.assigned_central_bodies`
 
 
 Import detail

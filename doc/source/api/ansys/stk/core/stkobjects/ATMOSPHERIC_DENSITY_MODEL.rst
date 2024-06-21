@@ -1,12 +1,12 @@
 ATMOSPHERIC_DENSITY_MODEL
 =========================
 
-.. py:class:: ATMOSPHERIC_DENSITY_MODEL
+.. py:class:: ansys.stk.core.stkobjects.ATMOSPHERIC_DENSITY_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ATMOSPHERIC_DENSITY_MODEL
 
 Overview
 --------

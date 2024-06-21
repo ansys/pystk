@@ -1,13 +1,13 @@
 ProfileChangeStoppingConditionState
 ===================================
 
-.. py:class:: ProfileChangeStoppingConditionState
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileChangeStoppingConditionState
 
-   Bases: py:obj:`~IProfileChangeStoppingConditionState`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Change Stopping Condition State profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileChangeStoppingConditionState
 
 Overview
 --------

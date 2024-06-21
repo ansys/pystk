@@ -1,12 +1,12 @@
 GRAVITATIONAL_PARAMETER_SOURCE
 ==============================
 
-.. py:class:: GRAVITATIONAL_PARAMETER_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GRAVITATIONAL_PARAMETER_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GRAVITATIONAL_PARAMETER_SOURCE
 
 Overview
 --------

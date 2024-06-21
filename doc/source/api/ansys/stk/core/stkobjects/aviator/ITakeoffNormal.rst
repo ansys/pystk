@@ -1,13 +1,13 @@
 ITakeoffNormal
 ==============
 
-.. py:class:: ITakeoffNormal
+.. py:class:: ansys.stk.core.stkobjects.aviator.ITakeoffNormal
 
    object
    
    The interface used to access the options for a Normal takeoff mode. The mode must be set to Normal to access this interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ITakeoffNormal
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~takeoff_climb_angle`
-            * - :py:meth:`~departure_altitude`
-            * - :py:meth:`~use_runway_terrain`
-            * - :py:meth:`~runway_altitude_offset`
-            * - :py:meth:`~hold_on_deck`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.takeoff_climb_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.departure_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.use_runway_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.runway_altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.hold_on_deck`
 
 
 Import detail

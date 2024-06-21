@@ -1,13 +1,13 @@
 RadarModelMultifunction
 =======================
 
-.. py:class:: RadarModelMultifunction
+.. py:class:: ansys.stk.core.stkobjects.RadarModelMultifunction
 
-   Bases: py:obj:`~IRadarModelMultifunction`, py:obj:`~IRadarModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModelMultifunction`, py:obj:`~ansys.stk.core.stkobjects.IRadarModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a multifunction radar model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarModelMultifunction
 
 Overview
 --------

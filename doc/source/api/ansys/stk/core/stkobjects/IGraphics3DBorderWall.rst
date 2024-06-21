@@ -1,13 +1,13 @@
 IGraphics3DBorderWall
 =====================
 
-.. py:class:: IGraphics3DBorderWall
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DBorderWall
 
    object
    
    Border Wall Properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DBorderWall
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_altitude_reference_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.is_altitude_reference_type_supported`
               - Provide verification of the availability of borderwall edge altitude reference.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_border_wall`
-            * - :py:meth:`~upper_edge_altitude_reference`
-            * - :py:meth:`~upper_edge_height`
-            * - :py:meth:`~lower_edge_altitude_reference`
-            * - :py:meth:`~lower_edge_height`
-            * - :py:meth:`~use_wall_translucency`
-            * - :py:meth:`~wall_translucency`
-            * - :py:meth:`~use_line_translucency`
-            * - :py:meth:`~line_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.use_border_wall`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.upper_edge_altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.upper_edge_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.lower_edge_altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.lower_edge_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.use_wall_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.wall_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.use_line_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.line_translucency`
 
 
 Import detail

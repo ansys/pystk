@@ -1,12 +1,12 @@
 VM_DATA_EXPORT_FORMAT_TYPE
 ==========================
 
-.. py:class:: VM_DATA_EXPORT_FORMAT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VM_DATA_EXPORT_FORMAT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_DATA_EXPORT_FORMAT_TYPE
 
 Overview
 --------

@@ -1,12 +1,12 @@
 SENSOR_GRAPHICS_3D_INHERIT_FROM_2D
 ==================================
 
-.. py:class:: SENSOR_GRAPHICS_3D_INHERIT_FROM_2D
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_INHERIT_FROM_2D
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_GRAPHICS_3D_INHERIT_FROM_2D
 
 Overview
 --------

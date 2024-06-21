@@ -1,12 +1,12 @@
 CCSDS_EPHEM_FORMAT
 ==================
 
-.. py:class:: CCSDS_EPHEM_FORMAT
+.. py:class:: ansys.stk.core.stkobjects.CCSDS_EPHEM_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CCSDS_EPHEM_FORMAT
 
 Overview
 --------

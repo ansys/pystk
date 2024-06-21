@@ -1,12 +1,12 @@
 SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE
 ==================================================
 
-.. py:class:: SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE
 
 Overview
 --------

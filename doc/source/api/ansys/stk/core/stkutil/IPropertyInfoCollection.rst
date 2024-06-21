@@ -1,13 +1,13 @@
 IPropertyInfoCollection
 =======================
 
-.. py:class:: IPropertyInfoCollection
+.. py:class:: ansys.stk.core.stkutil.IPropertyInfoCollection
 
    object
    
    The collection of properties.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IPropertyInfoCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfoCollection.item`
               - Allow the user to iterate through the properties.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfoCollection.get_item_by_index`
               - Retrieve a property from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfoCollection.get_item_by_name`
               - Retrieve a property from the collection by name.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfoCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfoCollection.count`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IMissionControlSequencePropagate
 ================================
 
-.. py:class:: IMissionControlSequencePropagate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate
 
    object
    
    Properties for a Propagate segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequencePropagate
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.enable_control_parameter`
               - Enable or disables the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,16 +33,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagator_name`
-            * - :py:meth:`~stopping_conditions`
-            * - :py:meth:`~min_propagation_time`
-            * - :py:meth:`~max_propagation_time`
-            * - :py:meth:`~enable_max_propagation_time`
-            * - :py:meth:`~enable_warning_message`
-            * - :py:meth:`~control_parameters_available`
-            * - :py:meth:`~override_max_propagation_time`
-            * - :py:meth:`~should_stop_for_initially_surpassed_epoch_stopping_conditions`
-            * - :py:meth:`~should_reinitialize_stm_at_start_of_segment_propagation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.propagator_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.stopping_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.min_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.enable_max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.enable_warning_message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.override_max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.should_stop_for_initially_surpassed_epoch_stopping_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.should_reinitialize_stm_at_start_of_segment_propagation`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: stopping_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.stopping_conditions
-    :type: IAgVAStoppingConditionCollection
+    :type: IStoppingConditionCollection
 
     Get the list of stopping conditions defined for the segment.
 

@@ -1,13 +1,13 @@
 IVehiclePropagatorAviator
 =========================
 
-.. py:class:: IVehiclePropagatorAviator
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorAviator
 
    IVehiclePropagator
    
    Aviator propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorAviator
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_flight_mission`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorAviator.get_flight_mission`
               - Return the underlying Flight Mission object.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~avtr_propagator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorAviator.avtr_propagator`
 
 
 Import detail

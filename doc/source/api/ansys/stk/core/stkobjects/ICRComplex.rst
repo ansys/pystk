@@ -1,13 +1,13 @@
 ICRComplex
 ==========
 
-.. py:class:: ICRComplex
+.. py:class:: ansys.stk.core.stkobjects.ICRComplex
 
    object
    
    Provide access to the real and imaginary parts of a complex number.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICRComplex
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~real`
-            * - :py:meth:`~imaginary`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplex.real`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplex.imaginary`
 
 
 Import detail

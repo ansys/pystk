@@ -1,13 +1,13 @@
 IVehicleThirdBodyGravityCollection
 ==================================
 
-.. py:class:: IVehicleThirdBodyGravityCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection
 
    object
    
    Third Body Gravity Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleThirdBodyGravityCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add_third_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.add_third_body`
               - Add a new element to the collection.
-            * - :py:meth:`~remove_third_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.remove_third_body`
               - Remove an element from the collection.
 
     .. tab-item:: Properties
@@ -37,9 +37,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~available_third_body_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.available_third_body_names`
 
 
 Import detail

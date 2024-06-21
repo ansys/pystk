@@ -1,13 +1,13 @@
 ElementEquinoctial
 ==================
 
-.. py:class:: ElementEquinoctial
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ElementEquinoctial
 
-   Bases: py:obj:`~IElementEquinoctial`, py:obj:`~IElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Equinoctial elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ElementEquinoctial
 
 Overview
 --------

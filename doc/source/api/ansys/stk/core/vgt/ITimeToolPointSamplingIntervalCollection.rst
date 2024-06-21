@@ -1,13 +1,13 @@
 ITimeToolPointSamplingIntervalCollection
 ========================================
 
-.. py:class:: ITimeToolPointSamplingIntervalCollection
+.. py:class:: ansys.stk.core.vgt.ITimeToolPointSamplingIntervalCollection
 
    object
    
    A collection of intervals where each interval contains the time, position and velocity arrays.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolPointSamplingIntervalCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingIntervalCollection.item`
               - Access an element at the specified position.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingIntervalCollection.count`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingIntervalCollection._NewEnum`
 
 
 Import detail

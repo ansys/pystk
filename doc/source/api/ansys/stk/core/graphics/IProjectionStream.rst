@@ -1,13 +1,13 @@
 IProjectionStream
 =================
 
-.. py:class:: IProjectionStream
+.. py:class:: ansys.stk.core.graphics.IProjectionStream
 
    object
    
    A projection that is updated dynamically at the specified update delta. The class can be used to stream projection data to projection clients, like projected raster overlay...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IProjectionStream
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~update`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionStream.update`
               - When overridden in a derived class, updates the projection data associated with the projection stream at the specified time. When the Update method is called, the projection stream contains the current projection data...
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~update_delta`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionStream.update_delta`
 
 
 Import detail

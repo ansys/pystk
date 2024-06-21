@@ -1,13 +1,13 @@
 CROrientationAzEl
 =================
 
-.. py:class:: CROrientationAzEl
+.. py:class:: ansys.stk.core.stkutil.CROrientationAzEl
 
-   Bases: py:obj:`~IOrientationAzEl`, py:obj:`~IOrientation`, py:obj:`~IOrientationPositionOffset`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationAzEl`, py:obj:`~ansys.stk.core.stkutil.IOrientation`, py:obj:`~ansys.stk.core.stkutil.IOrientationPositionOffset`
 
    AzEl orientation method.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: CROrientationAzEl
 
 Overview
 --------

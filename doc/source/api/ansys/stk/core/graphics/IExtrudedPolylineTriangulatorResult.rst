@@ -1,13 +1,13 @@
 IExtrudedPolylineTriangulatorResult
 ===================================
 
-.. py:class:: IExtrudedPolylineTriangulatorResult
+.. py:class:: ansys.stk.core.graphics.IExtrudedPolylineTriangulatorResult
 
    object
    
    The result from extruded polyline triangulation: a triangle mesh defined using an indexed triangle list with top and bottom boundary positions. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IExtrudedPolylineTriangulatorResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~top_boundary_positions`
-            * - :py:meth:`~bottom_boundary_positions`
-            * - :py:meth:`~boundary_positions_winding_order`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorResult.top_boundary_positions`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorResult.bottom_boundary_positions`
+            * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorResult.boundary_positions_winding_order`
 
 
 Import detail

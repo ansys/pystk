@@ -1,13 +1,13 @@
 IVehicleOceanTides
 ==================
 
-.. py:class:: IVehicleOceanTides
+.. py:class:: ansys.stk.core.stkobjects.IVehicleOceanTides
 
    object
    
    Interface for additional force model options related to ocean tides.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleOceanTides
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_degree`
-            * - :py:meth:`~max_order`
-            * - :py:meth:`~min_amplitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleOceanTides.max_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleOceanTides.max_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleOceanTides.min_amplitude`
 
 
 Import detail

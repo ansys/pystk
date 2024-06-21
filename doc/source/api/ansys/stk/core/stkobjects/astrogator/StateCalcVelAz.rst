@@ -1,13 +1,13 @@
 StateCalcVelAz
 ==============
 
-.. py:class:: StateCalcVelAz
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVelAz
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcVelAz`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVelAz`
 
    Velocity Azimuth Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcVelAz
 
 Overview
 --------

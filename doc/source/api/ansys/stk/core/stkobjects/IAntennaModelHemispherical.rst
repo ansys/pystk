@@ -1,13 +1,13 @@
 IAntennaModelHemispherical
 ==========================
 
-.. py:class:: IAntennaModelHemispherical
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelHemispherical
 
    object
    
    Provide access to the properties and methods defining a hemispherical antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelHemispherical
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHemispherical.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHemispherical.mainlobe_gain`
 
 
 Import detail

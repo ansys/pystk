@@ -1,13 +1,13 @@
 ILineTargetPointCollection
 ==========================
 
-.. py:class:: ILineTargetPointCollection
+.. py:class:: ansys.stk.core.stkobjects.ILineTargetPointCollection
 
    object
    
    The collection of points for the line target.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILineTargetPointCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection.item`
               - Return the latitude-longitude pair with the specified index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection.add`
               - Add a latitude-longitude pair. Lat uses Latitude Dimension, Lon Uses Longitude Dimension.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection.remove`
               - Remove an item using a given index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection.remove_all`
               - Remove all items.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~anchor_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection.anchor_point`
 
 
 Import detail

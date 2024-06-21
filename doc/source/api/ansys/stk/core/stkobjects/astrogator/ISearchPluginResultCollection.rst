@@ -1,13 +1,13 @@
 ISearchPluginResultCollection
 =============================
 
-.. py:class:: ISearchPluginResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection
 
    object
    
    Properties for the list of search plugin equality constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISearchPluginResultCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_result_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection.get_result_by_paths`
               - Return the result specified by the object/result path.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection.count`
 
 
 Import detail

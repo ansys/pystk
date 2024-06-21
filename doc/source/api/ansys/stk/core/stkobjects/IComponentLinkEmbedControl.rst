@@ -1,13 +1,13 @@
 IComponentLinkEmbedControl
 ==========================
 
-.. py:class:: IComponentLinkEmbedControl
+.. py:class:: ansys.stk.core.stkobjects.IComponentLinkEmbedControl
 
    object
    
    Interface for a control which manages the linking or embedding of a component from the component browser.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IComponentLinkEmbedControl
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.set_component`
               - Set the component by name.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_type`
-            * - :py:meth:`~component`
-            * - :py:meth:`~supported_components`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.reference_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.supported_components`
 
 
 Import detail
@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: component
     :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.component
-    :type: IAgComponentInfo
+    :type: IComponentInfo
 
     Get the component interface.
 

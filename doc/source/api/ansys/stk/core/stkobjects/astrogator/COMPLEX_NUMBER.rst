@@ -1,12 +1,12 @@
 COMPLEX_NUMBER
 ==============
 
-.. py:class:: COMPLEX_NUMBER
+.. py:class:: ansys.stk.core.stkobjects.astrogator.COMPLEX_NUMBER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: COMPLEX_NUMBER
 
 Overview
 --------

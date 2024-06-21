@@ -1,13 +1,13 @@
 SensorTarget
 ============
 
-.. py:class:: SensorTarget
+.. py:class:: ansys.stk.core.stkobjects.SensorTarget
 
-   Bases: py:obj:`~ISensorTarget`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorTarget`
 
    Class defining a Sensor target.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorTarget
 
 Overview
 --------

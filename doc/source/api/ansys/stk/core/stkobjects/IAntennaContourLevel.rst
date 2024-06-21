@@ -1,13 +1,13 @@
 IAntennaContourLevel
 ====================
 
-.. py:class:: IAntennaContourLevel
+.. py:class:: ansys.stk.core.stkobjects.IAntennaContourLevel
 
    object
    
    IAgAntennaContourLevel Interface for an antenna contour level.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaContourLevel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevel.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevel.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevel.line_style`
 
 
 Import detail

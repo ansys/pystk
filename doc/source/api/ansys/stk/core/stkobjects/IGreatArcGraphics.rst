@@ -1,13 +1,13 @@
 IGreatArcGraphics
 =================
 
-.. py:class:: IGreatArcGraphics
+.. py:class:: ansys.stk.core.stkobjects.IGreatArcGraphics
 
    object
    
    2D Graphics common for all Great Arc Vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGreatArcGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.set_attributes_type`
               - Set the 2D Graphics attributes type for the vehicle.
-            * - :py:meth:`~is_attributes_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.is_attributes_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,19 +31,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~attributes_type`
-            * - :py:meth:`~attributes_supported_types`
-            * - :py:meth:`~attributes`
-            * - :py:meth:`~pass_data`
-            * - :py:meth:`~waypoint_marker`
-            * - :py:meth:`~resolution`
-            * - :py:meth:`~range_contours`
-            * - :py:meth:`~lighting`
-            * - :py:meth:`~ground_ellipses`
-            * - :py:meth:`~label_notes`
-            * - :py:meth:`~use_inst_name_label`
-            * - :py:meth:`~label_name`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.pass_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.waypoint_marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.range_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.lighting`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.ground_ellipses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.label_notes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.label_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.is_object_graphics_visible`
 
 
 Import detail
@@ -71,49 +71,49 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.attributes
-    :type: IAgVeGfxAttributes
+    :type: IVehicleGraphics2DAttributes
 
     Get the vehicle's 2D Graphics attributes.
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.pass_data
-    :type: IAgVeGfxRoutePassData
+    :type: IVehicleGraphics2DRoutePassData
 
     Get the vehicle's 2D route graphics.
 
 .. py:property:: waypoint_marker
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.waypoint_marker
-    :type: IAgVeGfxWaypointMarker
+    :type: IVehicleGraphics2DWaypointMarker
 
     Get the vehicle's 2D waypoint marker graphics.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.resolution
-    :type: IAgVeGfxRouteResolution
+    :type: IVehicleGraphics2DRouteResolution
 
     Get the vehicle's 2D resolution graphics.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.range_contours
-    :type: IAgGfxRangeContours
+    :type: IGraphics2DRangeContours
 
     Get the vehicle's 2D range contour graphics.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.lighting
-    :type: IAgVeGfxLighting
+    :type: IVehicleGraphics2DLighting
 
     Get the vehicle's 2D lighting graphics.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.ground_ellipses
-    :type: IAgVeGfxGroundEllipsesCollection
+    :type: IVehicleGraphics2DGroundEllipsesCollection
 
     Get the vehicle's 2D ground ellipses graphics.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.label_notes
-    :type: IAgLabelNoteCollection
+    :type: ILabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 

@@ -1,13 +1,13 @@
 IRendererTextureTemplate2D
 ==========================
 
-.. py:class:: IRendererTextureTemplate2D
+.. py:class:: ansys.stk.core.graphics.IRendererTextureTemplate2D
 
    object
    
    Template object containing attributes required to create a 2D texture.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRendererTextureTemplate2D
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~internal_format`
-            * - :py:meth:`~width`
-            * - :py:meth:`~height`
+            * - :py:attr:`~ansys.stk.core.graphics.IRendererTextureTemplate2D.internal_format`
+            * - :py:attr:`~ansys.stk.core.graphics.IRendererTextureTemplate2D.width`
+            * - :py:attr:`~ansys.stk.core.graphics.IRendererTextureTemplate2D.height`
 
 
 Import detail

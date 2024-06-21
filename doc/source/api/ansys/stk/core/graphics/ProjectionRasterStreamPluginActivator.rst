@@ -1,13 +1,13 @@
 ProjectionRasterStreamPluginActivator
 =====================================
 
-.. py:class:: ProjectionRasterStreamPluginActivator
+.. py:class:: ansys.stk.core.graphics.ProjectionRasterStreamPluginActivator
 
-   Bases: py:obj:`~IProjectionRasterStreamPluginActivator`
+   Bases: py:obj:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginActivator`
 
    The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ProjectionRasterStreamPluginActivator
 
 Overview
 --------

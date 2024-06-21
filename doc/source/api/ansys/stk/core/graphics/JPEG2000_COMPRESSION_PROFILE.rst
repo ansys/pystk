@@ -1,12 +1,12 @@
 JPEG2000_COMPRESSION_PROFILE
 ============================
 
-.. py:class:: JPEG2000_COMPRESSION_PROFILE
+.. py:class:: ansys.stk.core.graphics.JPEG2000_COMPRESSION_PROFILE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: JPEG2000_COMPRESSION_PROFILE
 
 Overview
 --------

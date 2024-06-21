@@ -1,13 +1,13 @@
 AnalysisWorkbenchSampling
 =========================
 
-.. py:class:: AnalysisWorkbenchSampling
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchSampling
 
-   Bases: py:obj:`~IAnalysisWorkbenchSampling`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchSampling`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Base sampling interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchSampling
 
 Overview
 --------

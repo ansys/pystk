@@ -1,12 +1,12 @@
 LAUNCH_DYN_STATE_COORD_FRAME
 ============================
 
-.. py:class:: LAUNCH_DYN_STATE_COORD_FRAME
+.. py:class:: ansys.stk.core.stkobjects.aviator.LAUNCH_DYN_STATE_COORD_FRAME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: LAUNCH_DYN_STATE_COORD_FRAME
 
 Overview
 --------

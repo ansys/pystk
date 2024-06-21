@@ -1,13 +1,13 @@
 PolarizationVertical
 ====================
 
-.. py:class:: PolarizationVertical
+.. py:class:: ansys.stk.core.stkobjects.PolarizationVertical
 
-   Bases: py:obj:`~IPolarizationVertical`, py:obj:`~IPolarization`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarizationVertical`, py:obj:`~ansys.stk.core.stkobjects.IPolarization`
 
    Class defining a vertical polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PolarizationVertical
 
 Overview
 --------

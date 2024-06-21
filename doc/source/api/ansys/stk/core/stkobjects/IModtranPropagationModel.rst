@@ -1,13 +1,13 @@
 IModtranPropagationModel
 ========================
 
-.. py:class:: IModtranPropagationModel
+.. py:class:: ansys.stk.core.stkobjects.IModtranPropagationModel
 
    object
    
    Provide access to the properties and methods of the MODTRAN propagation model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IModtranPropagationModel
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_aerosol_model_type_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.set_aerosol_model_type_by_name`
               - Set the aerosol model type by name.
 
     .. tab-item:: Properties
@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_aerosol_models`
-            * - :py:meth:`~aerosol_model_type`
-            * - :py:meth:`~visibility`
-            * - :py:meth:`~relative_humidity`
-            * - :py:meth:`~surface_temperature`
-            * - :py:meth:`~cloud_model_type`
-            * - :py:meth:`~override_cloud_thickness`
-            * - :py:meth:`~cloud_thickness`
-            * - :py:meth:`~override_cloud_altitude`
-            * - :py:meth:`~cloud_altitude`
-            * - :py:meth:`~write_start_time`
-            * - :py:meth:`~write_num_time_steps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.supported_aerosol_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.aerosol_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.visibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.relative_humidity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.cloud_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.override_cloud_thickness`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.cloud_thickness`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.override_cloud_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.cloud_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.write_start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.write_num_time_steps`
 
 
 Import detail

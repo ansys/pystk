@@ -1,13 +1,13 @@
 StateCalcOutAsympDec
 ====================
 
-.. py:class:: StateCalcOutAsympDec
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcOutAsympDec
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcOutAsympDec`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOutAsympDec`
 
    OutAsymptoteDec Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcOutAsympDec
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ICoverageBounds
 ===============
 
-.. py:class:: ICoverageBounds
+.. py:class:: ansys.stk.core.stkobjects.ICoverageBounds
 
    object
    
    Base interface for IAgCvBoundsCustom, IAgCvBoundsGlobal, IAgCvBoundsLat, IAgCvBoundsLatLines, IAgCvBoundsLonLines, IAgCvBoundsCustomBoundary.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageBounds
 
 Overview
 --------

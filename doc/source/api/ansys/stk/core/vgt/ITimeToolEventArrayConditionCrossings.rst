@@ -1,13 +1,13 @@
 ITimeToolEventArrayConditionCrossings
 =====================================
 
-.. py:class:: ITimeToolEventArrayConditionCrossings
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings
 
    object
    
    Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArrayConditionCrossings
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~satisfaction_crossing`
-            * - :py:meth:`~condition`
-            * - :py:meth:`~custom_time_limits`
-            * - :py:meth:`~use_custom_time_limits`
-            * - :py:meth:`~save_data_option`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~convergence`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.satisfaction_crossing`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.use_custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.save_data_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.sampling`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.convergence`
 
 
 Import detail
@@ -48,13 +48,13 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.condition
-    :type: IAgCrdnCondition
+    :type: ICalculationToolCondition
 
     The condition component.
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.custom_time_limits
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     Specify the interval list within which satisfaction crossing times are sought. The default is set to overall availability of host object. The time limits will be used if UseCustomTimeLimits is set to true.
 
@@ -72,13 +72,13 @@ Property detail
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.sampling
-    :type: IAgCrdnSampling
+    :type: IAnalysisWorkbenchSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.convergence
-    :type: IAgCrdnConverge
+    :type: IAnalysisWorkbenchConverge
 
     The Convergence definition, which uses time tolerance to determine when crossing times are found.
 

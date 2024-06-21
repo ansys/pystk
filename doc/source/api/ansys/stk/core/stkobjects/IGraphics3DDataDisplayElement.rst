@@ -1,13 +1,13 @@
 IGraphics3DDataDisplayElement
 =============================
 
-.. py:class:: IGraphics3DDataDisplayElement
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement
 
    object
    
    Interface for 3D Graphics window data display element.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DDataDisplayElement
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_displayed_in_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.is_displayed_in_window`
               - Opt whether to show the data display in the selected location.
-            * - :py:meth:`~add_to_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.add_to_window`
               - Add the data display to a 3D window.
-            * - :py:meth:`~remove_from_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.remove_from_window`
               - Remove the data display from a 3D window.
-            * - :py:meth:`~add_to_all_windows`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.add_to_all_windows`
               - Add the data display to all 3D windows.
 
     .. tab-item:: Properties
@@ -35,32 +35,32 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~location`
-            * - :py:meth:`~x_origin`
-            * - :py:meth:`~x`
-            * - :py:meth:`~y_origin`
-            * - :py:meth:`~y`
-            * - :py:meth:`~title`
-            * - :py:meth:`~font_size`
-            * - :py:meth:`~font_color`
-            * - :py:meth:`~format`
-            * - :py:meth:`~use_background`
-            * - :py:meth:`~transparent_bg`
-            * - :py:meth:`~bg_width`
-            * - :py:meth:`~bg_height`
-            * - :py:meth:`~bg_color`
-            * - :py:meth:`~available_windows`
-            * - :py:meth:`~title_text`
-            * - :py:meth:`~background_translucency`
-            * - :py:meth:`~use_background_texture`
-            * - :py:meth:`~background_texture_filename`
-            * - :py:meth:`~use_background_border`
-            * - :py:meth:`~background_border_color`
-            * - :py:meth:`~use_auto_size_width`
-            * - :py:meth:`~use_auto_size_height`
-            * - :py:meth:`~is_show_name_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.location`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.x_origin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.y_origin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.title`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.font_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.font_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.use_background`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.transparent_bg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.bg_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.bg_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.bg_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.available_windows`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.title_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.background_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.use_background_texture`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.background_texture_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.use_background_border`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.background_border_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.use_auto_size_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.use_auto_size_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement.is_show_name_enabled`
 
 
 Import detail

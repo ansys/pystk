@@ -1,13 +1,13 @@
 IVerticalPlaneAndFlightPathOptions
 ==================================
 
-.. py:class:: IVerticalPlaneAndFlightPathOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IVerticalPlaneAndFlightPathOptions
 
    object
    
    Interface used to access the Vertical Plane and Final Flight Path Angle options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IVerticalPlaneAndFlightPathOptions
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~final_flight_path_angle`
-            * - :py:meth:`~min_enroute_flight_path_angle`
-            * - :py:meth:`~max_enroute_flight_path_angle`
-            * - :py:meth:`~max_vert_plane_radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneAndFlightPathOptions.final_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneAndFlightPathOptions.min_enroute_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneAndFlightPathOptions.max_enroute_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneAndFlightPathOptions.max_vert_plane_radius_factor`
 
 
 Import detail

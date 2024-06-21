@@ -1,13 +1,13 @@
 IMtoGraphics3DModelArtic
 ========================
 
-.. py:class:: IMtoGraphics3DModelArtic
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic
 
    object
    
    MTO ModelArticulation Interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DModelArtic
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_transformation_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.get_transformation_value`
               - Get the Transformation Value given the LOD (level of detail), articulation name and the transformation name.
-            * - :py:meth:`~set_transformation_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.set_transformation_value`
               - Set the Transformation Value given the LOD and articulation name.
-            * - :py:meth:`~get_available_articulations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.get_available_articulations`
               - Get the available articulations.
-            * - :py:meth:`~get_available_transformations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.get_available_transformations`
               - Get the available transformations.
 
     .. tab-item:: Properties
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_default_save`
-            * - :py:meth:`~lod_count`
-            * - :py:meth:`~read_artic_file_on_load`
-            * - :py:meth:`~save_artic_file_on_save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.enable_default_save`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.lod_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.read_artic_file_on_load`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.save_artic_file_on_save`
 
 
 Import detail

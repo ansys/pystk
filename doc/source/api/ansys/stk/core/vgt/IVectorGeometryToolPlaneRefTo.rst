@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneRefTo
 =============================
 
-.. py:class:: IVectorGeometryToolPlaneRefTo
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo
 
    object
    
    Represents a reference to a VGT plane.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneRefTo
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_path`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo.set_path`
               - Set a new plane using a specified path.
-            * - :py:meth:`~set_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo.set_plane`
               - Set a new plane.
-            * - :py:meth:`~get_plane`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo.get_plane`
               - Return the actual plane object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
-            * - :py:meth:`~has_cyclic_dependency`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
 

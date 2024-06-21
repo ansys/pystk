@@ -1,12 +1,12 @@
 CRDN_DIMENSION_INHERITANCE
 ==========================
 
-.. py:class:: CRDN_DIMENSION_INHERITANCE
+.. py:class:: ansys.stk.core.vgt.CRDN_DIMENSION_INHERITANCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_DIMENSION_INHERITANCE
 
 Overview
 --------

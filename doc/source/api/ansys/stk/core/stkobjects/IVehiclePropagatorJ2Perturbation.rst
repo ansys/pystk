@@ -1,13 +1,13 @@
 IVehiclePropagatorJ2Perturbation
 ================================
 
-.. py:class:: IVehiclePropagatorJ2Perturbation
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation
 
    IVehiclePropagator
    
    J2 Perturbation propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorJ2Perturbation
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~initial_state`
-            * - :py:meth:`~ephemeris_interval`
-            * - :py:meth:`~propagation_frame`
-            * - :py:meth:`~supported_propagation_frames`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.initial_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.propagation_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.supported_propagation_frames`
 
 
 Import detail
@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.initial_state
-    :type: IAgVeJxInitialState
+    :type: IVehicleJxInitialState
 
     Get the initial state.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

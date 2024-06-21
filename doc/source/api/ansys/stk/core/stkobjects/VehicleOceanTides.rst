@@ -1,13 +1,13 @@
 VehicleOceanTides
 =================
 
-.. py:class:: VehicleOceanTides
+.. py:class:: ansys.stk.core.stkobjects.VehicleOceanTides
 
-   Bases: py:obj:`~IVehicleOceanTides`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleOceanTides`
 
    Class defining the contribution of ocean tides.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleOceanTides
 
 Overview
 --------

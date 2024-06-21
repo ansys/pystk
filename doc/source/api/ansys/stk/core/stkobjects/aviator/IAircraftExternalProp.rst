@@ -1,13 +1,13 @@
 IAircraftExternalProp
 =====================
 
-.. py:class:: IAircraftExternalProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftExternalProp
 
    object
    
    Interface used to access the External File Propulsion options for the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftExternalProp
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_prop_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.set_prop_filepath`
               - Set the filepath for the prop file.
-            * - :py:meth:`~reload_prop_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.reload_prop_file`
               - Reload the prop file.
-            * - :py:meth:`~set_density_scaling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.set_density_scaling`
               - Set the option to use density scaling and set the density ratio exponent.
 
     .. tab-item:: Properties
@@ -33,13 +33,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~prop_filepath`
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~can_set_accel_decel`
-            * - :py:meth:`~max_thrust_accel`
-            * - :py:meth:`~min_thrust_decel`
-            * - :py:meth:`~use_density_scaling`
-            * - :py:meth:`~density_ratio_exponent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.prop_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.is_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.can_set_accel_decel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.max_thrust_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.min_thrust_decel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.use_density_scaling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.density_ratio_exponent`
 
 
 Import detail

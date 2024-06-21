@@ -1,13 +1,13 @@
 IEnrouteOptions
 ===============
 
-.. py:class:: IEnrouteOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IEnrouteOptions
 
    object
    
    Interface used to access the Enroute options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IEnrouteOptions
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_max_speed_turns`
-            * - :py:meth:`~max_turn_radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteOptions.use_max_speed_turns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteOptions.max_turn_radius_factor`
 
 
 Import detail

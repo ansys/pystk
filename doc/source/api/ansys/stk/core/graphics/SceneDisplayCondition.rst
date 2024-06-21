@@ -1,13 +1,13 @@
 SceneDisplayCondition
 =====================
 
-.. py:class:: SceneDisplayCondition
+.. py:class:: ansys.stk.core.graphics.SceneDisplayCondition
 
-   Bases: py:obj:`~ISceneDisplayCondition`, py:obj:`~IDisplayCondition`
+   Bases: py:obj:`~ansys.stk.core.graphics.ISceneDisplayCondition`, py:obj:`~ansys.stk.core.graphics.IDisplayCondition`
 
    A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SceneDisplayCondition
 
 Overview
 --------

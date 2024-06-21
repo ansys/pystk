@@ -1,13 +1,13 @@
 VehicleProfileAlignedAndConstrained
 ===================================
 
-.. py:class:: VehicleProfileAlignedAndConstrained
+.. py:class:: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained
 
-   Bases: py:obj:`~IVehicleProfileAlignedAndConstrained`, py:obj:`~IVehicleAttitudeProfile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Aligned and Constrained attitude profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleProfileAlignedAndConstrained
 
 Overview
 --------

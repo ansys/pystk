@@ -1,12 +1,12 @@
 EXT_EPHEM_FLIGHT_MODE
 =====================
 
-.. py:class:: EXT_EPHEM_FLIGHT_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.EXT_EPHEM_FLIGHT_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: EXT_EPHEM_FLIGHT_MODE
 
 Overview
 --------

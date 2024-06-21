@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics
 ======================
 
-.. py:class:: IFigureOfMeritGraphics
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics
 
    object
    
    2D graphics for a Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~static`
-            * - :py:meth:`~animation`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics.static`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics.is_object_graphics_visible`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics.static
-    :type: IAgFmGfxAttributes
+    :type: IFigureOfMeritGraphics2DAttributes
 
     Get the static graphics.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics.animation
-    :type: IAgFmGfxAttributesAnimation
+    :type: IFigureOfMeritGraphics2DAttributesAnimation
 
     Get the animation graphics.
 

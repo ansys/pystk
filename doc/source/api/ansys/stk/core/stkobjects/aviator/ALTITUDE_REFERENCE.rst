@@ -1,12 +1,12 @@
 ALTITUDE_REFERENCE
 ==================
 
-.. py:class:: ALTITUDE_REFERENCE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ALTITUDE_REFERENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ALTITUDE_REFERENCE
 
 Overview
 --------

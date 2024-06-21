@@ -1,13 +1,13 @@
 CalculationToolSamplingMethod
 =============================
 
-.. py:class:: CalculationToolSamplingMethod
+.. py:class:: ansys.stk.core.vgt.CalculationToolSamplingMethod
 
-   Bases: py:obj:`~ICalculationToolSamplingMethod`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolSamplingMethod`
 
    A sampling method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolSamplingMethod
 
 Overview
 --------

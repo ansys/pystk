@@ -1,12 +1,12 @@
 STK_OBJECT_WAYPOINT_OFFSET_MODE
 ===============================
 
-.. py:class:: STK_OBJECT_WAYPOINT_OFFSET_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.STK_OBJECT_WAYPOINT_OFFSET_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: STK_OBJECT_WAYPOINT_OFFSET_MODE
 
 Overview
 --------

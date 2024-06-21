@@ -1,13 +1,13 @@
 ManeuverOptimalFiniteSteeringNodeElement
 ========================================
 
-.. py:class:: ManeuverOptimalFiniteSteeringNodeElement
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeElement
 
-   Bases: py:obj:`~IManeuverOptimalFiniteSteeringNodeElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement`
 
    The elements of the steering node.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ManeuverOptimalFiniteSteeringNodeElement
 
 Overview
 --------

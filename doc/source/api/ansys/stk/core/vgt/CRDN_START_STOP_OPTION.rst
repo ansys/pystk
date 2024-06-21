@@ -1,12 +1,12 @@
 CRDN_START_STOP_OPTION
 ======================
 
-.. py:class:: CRDN_START_STOP_OPTION
+.. py:class:: ansys.stk.core.vgt.CRDN_START_STOP_OPTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_START_STOP_OPTION
 
 Overview
 --------

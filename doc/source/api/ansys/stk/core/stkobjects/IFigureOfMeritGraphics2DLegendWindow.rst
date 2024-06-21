@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DLegendWindow
 ====================================
 
-.. py:class:: IFigureOfMeritGraphics2DLegendWindow
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow
 
    object
    
    Properties of contour legend on 2D map.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DLegendWindow
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible_on_map`
-            * - :py:meth:`~position_on_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow.is_visible_on_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow.position_on_map`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: position_on_map
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow.position_on_map
-    :type: IAgFmGfxPositionOnMap
+    :type: IFigureOfMeritGraphics2DPositionOnMap
 
     Get the position of the contour legend on the 2D map in pixel coordinates.
 

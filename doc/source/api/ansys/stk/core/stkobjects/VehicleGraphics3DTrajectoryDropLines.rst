@@ -1,13 +1,13 @@
 VehicleGraphics3DTrajectoryDropLines
 ====================================
 
-.. py:class:: VehicleGraphics3DTrajectoryDropLines
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryDropLines
 
-   Bases: py:obj:`~IVehicleGraphics3DTrajectoryDropLines`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryDropLines`
 
    Droplines for launch vehicles and missiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DTrajectoryDropLines
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarModel
 ===========
 
-.. py:class:: IRadarModel
+.. py:class:: ansys.stk.core.stkobjects.IRadarModel
 
    object
    
    Provide access to the properties and methods defining a radar model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModel.type`
 
 
 Import detail

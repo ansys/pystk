@@ -1,13 +1,13 @@
 PolarizationLHC
 ===============
 
-.. py:class:: PolarizationLHC
+.. py:class:: ansys.stk.core.stkobjects.PolarizationLHC
 
-   Bases: py:obj:`~IPolarization`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarization`
 
    Class defining a LHC polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PolarizationLHC
 
 Overview
 --------

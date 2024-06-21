@@ -1,13 +1,13 @@
 IScreenOverlayPickResultCollection
 ==================================
 
-.. py:class:: IScreenOverlayPickResultCollection
+.. py:class:: ansys.stk.core.graphics.IScreenOverlayPickResultCollection
 
    object
    
    A collection of pick results.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IScreenOverlayPickResultCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResultCollection.item`
               - Get an element at the specified position in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResultCollection.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResultCollection._NewEnum`
 
 
 Import detail

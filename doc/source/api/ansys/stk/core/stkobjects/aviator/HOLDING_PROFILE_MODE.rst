@@ -1,12 +1,12 @@
 HOLDING_PROFILE_MODE
 ====================
 
-.. py:class:: HOLDING_PROFILE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.HOLDING_PROFILE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: HOLDING_PROFILE_MODE
 
 Overview
 --------

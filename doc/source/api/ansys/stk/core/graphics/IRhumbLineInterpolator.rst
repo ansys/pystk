@@ -1,13 +1,13 @@
 IRhumbLineInterpolator
 ======================
 
-.. py:class:: IRhumbLineInterpolator
+.. py:class:: ansys.stk.core.graphics.IRhumbLineInterpolator
 
    object
    
    The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRhumbLineInterpolator
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.IRhumbLineInterpolator.central_body`
+            * - :py:attr:`~ansys.stk.core.graphics.IRhumbLineInterpolator.granularity`
 
 
 Import detail

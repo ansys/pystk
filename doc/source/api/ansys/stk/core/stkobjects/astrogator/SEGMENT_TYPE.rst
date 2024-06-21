@@ -1,12 +1,12 @@
 SEGMENT_TYPE
 ============
 
-.. py:class:: SEGMENT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SEGMENT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SEGMENT_TYPE
 
 Overview
 --------

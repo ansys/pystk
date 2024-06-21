@@ -1,13 +1,13 @@
 LineTarget
 ==========
 
-.. py:class:: LineTarget
+.. py:class:: ansys.stk.core.stkobjects.LineTarget
 
-   Bases: py:obj:`~ILineTarget`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILineTarget`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Line Target Path properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LineTarget
 
 Overview
 --------

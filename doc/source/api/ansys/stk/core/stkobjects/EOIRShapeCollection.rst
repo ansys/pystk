@@ -1,13 +1,13 @@
 EOIRShapeCollection
 ===================
 
-.. py:class:: EOIRShapeCollection
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeCollection
 
-   Bases: py:obj:`~IEOIRShapeCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeCollection`
 
    Collection of shapes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeCollection
 
 Overview
 --------

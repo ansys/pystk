@@ -1,13 +1,13 @@
 IAccessConstraintExclZonesCollection
 ====================================
 
-.. py:class:: IAccessConstraintExclZonesCollection
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection
 
    object
    
    AgAccessCnstrExclZonesCollection used to access the Exclusion Zones List interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintExclZonesCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.remove_index`
               - Remove an item given an index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.remove_all`
               - Remove all items from the collection.
-            * - :py:meth:`~remove_excl_zone`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.remove_excl_zone`
               - Remove an Exclusion Zone using the min and max lat/lon values. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
-            * - :py:meth:`~change_excl_zone`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.change_excl_zone`
               - Update Exclusion Zone data at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
-            * - :py:meth:`~get_excl_zone`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.get_excl_zone`
               - Return min and max lat/lon values at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.to_array`
               - Return a four-dimensional array of min/max lat/lon values beginning at a given position and having specified number of rows.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.item`
               - Get an IAgAccessCnstrZone interface using an index.
 
     .. tab-item:: Properties
@@ -41,15 +41,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~constraint_name`
-            * - :py:meth:`~is_plugin`
-            * - :py:meth:`~excl_intvl`
-            * - :py:meth:`~constraint_type`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~max_time_step`
-            * - :py:meth:`~max_rel_motion`
-            * - :py:meth:`~enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.constraint_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.is_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.excl_intvl`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.constraint_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.max_rel_motion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.enabled`
 
 
 Import detail

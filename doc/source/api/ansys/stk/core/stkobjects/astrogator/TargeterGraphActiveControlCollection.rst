@@ -1,13 +1,13 @@
 TargeterGraphActiveControlCollection
 ====================================
 
-.. py:class:: TargeterGraphActiveControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.TargeterGraphActiveControlCollection
 
-   Bases: py:obj:`~ITargeterGraphActiveControlCollection`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControlCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Targeter Graph Active Control Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: TargeterGraphActiveControlCollection
 
 Overview
 --------

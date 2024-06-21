@@ -1,12 +1,12 @@
 ELEMENT_TYPE
 ============
 
-.. py:class:: ELEMENT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ELEMENT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ELEMENT_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ITextBatchPrimitive
 ===================
 
-.. py:class:: ITextBatchPrimitive
+.. py:class:: ansys.stk.core.graphics.ITextBatchPrimitive
 
    object
    
    Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextBatchPrimitive
 
 Overview
 --------
@@ -20,33 +20,33 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set`
               - Define the positions and text of strings in a text batch. The strings are rendered in the primitive's reference frame.
-            * - :py:meth:`~set_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_with_optional_parameters`
               - Define the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame.
-            * - :py:meth:`~set_with_optional_parameters_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_with_optional_parameters_and_render_pass`
               - Define the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
-            * - :py:meth:`~set_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_cartographic`
               - For convenience. Defines the positions and text of strings in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_cartographic_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_cartographic_with_optional_parameters`
               - For convenience. Defines the positions, text, and optional parameters of strings in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_cartographic_with_optional_parameters_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_cartographic_with_optional_parameters_and_render_pass`
               - For convenience. Defines the positions, text, and optional parameters of strings in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
-            * - :py:meth:`~set_partial`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_partial`
               - Update a subset of positions and/or text in a text batch.
-            * - :py:meth:`~set_partial_with_indices_order`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_partial_with_indices_order`
               - Update a subset of positions and/or text in a text batch.
-            * - :py:meth:`~set_partial_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_partial_with_optional_parameters`
               - Update a subset of positions, text, and/or optional per-string parameters in a text batch.
-            * - :py:meth:`~set_partial_with_optional_parameters_indices_order_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_partial_with_optional_parameters_indices_order_and_render_pass`
               - Update a subset of positions, text, and/or optional per-string parameters in a text batch.
-            * - :py:meth:`~set_partial_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_partial_cartographic`
               - For convenience. Updates a subset of positions and/or text in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_indices_order`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_partial_cartographic_with_indices_order`
               - For convenience. Updates a subset of positions and/or text in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_optional_parameters`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_partial_cartographic_with_optional_parameters`
               - For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
-            * - :py:meth:`~set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass`
               - For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     .. tab-item:: Properties
@@ -55,16 +55,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_hint`
-            * - :py:meth:`~bounding_sphere_scale`
-            * - :py:meth:`~font`
-            * - :py:meth:`~outline_color`
-            * - :py:meth:`~outline_translucency`
-            * - :py:meth:`~align_to_pixel`
-            * - :py:meth:`~distance_display_condition_per_string`
-            * - :py:meth:`~per_item_picking_enabled`
-            * - :py:meth:`~texture_filter`
-            * - :py:meth:`~render_in_screen_space`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.bounding_sphere_scale`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.font`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.outline_color`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.outline_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.align_to_pixel`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.distance_display_condition_per_string`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.per_item_picking_enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.texture_filter`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.render_in_screen_space`
 
 
 Import detail
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: font
     :canonical: ansys.stk.core.graphics.ITextBatchPrimitive.font
-    :type: IAgStkGraphicsGraphicsFont
+    :type: IGraphicsFont
 
     Gets the font used to render the text batch.
 
@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: distance_display_condition_per_string
     :canonical: ansys.stk.core.graphics.ITextBatchPrimitive.distance_display_condition_per_string
-    :type: IAgStkGraphicsDistanceDisplayCondition
+    :type: IDistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per string in the text batch during rendering. This is different than display condition, which is evaluated once for the entire text batch...
 
@@ -128,7 +128,7 @@ Property detail
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.ITextBatchPrimitive.texture_filter
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets or sets the filter used to filter the texture-based font.
 

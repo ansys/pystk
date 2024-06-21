@@ -1,13 +1,13 @@
 VectorGeometryToolAngleBetweenPlanes
 ====================================
 
-.. py:class:: VectorGeometryToolAngleBetweenPlanes
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleBetweenPlanes
 
-   Bases: py:obj:`~IVectorGeometryToolAngleBetweenPlanes`, py:obj:`~IVectorGeometryToolAngle`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenPlanes`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An angle between two planes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAngleBetweenPlanes
 
 Overview
 --------

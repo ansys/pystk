@@ -1,13 +1,13 @@
 ICalculationToolEvaluateResult
 ==============================
 
-.. py:class:: ICalculationToolEvaluateResult
+.. py:class:: ansys.stk.core.vgt.ICalculationToolEvaluateResult
 
    object
    
    Represents the results of evaluating a scalar component using IAgCrdnCalcScalar.Evaluate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolEvaluateResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolEvaluateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolEvaluateResult.value`
 
 
 Import detail

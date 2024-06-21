@@ -1,13 +1,13 @@
 StkPreferences
 ==============
 
-.. py:class:: StkPreferences
+.. py:class:: ansys.stk.core.stkobjects.StkPreferences
 
-   Bases: py:obj:`~IStkPreferences`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkPreferences`
 
    Allow configuring STK preferences.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkPreferences
 
 Overview
 --------

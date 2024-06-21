@@ -1,13 +1,13 @@
 IAltitudeDisplayConditionFactory
 ================================
 
-.. py:class:: IAltitudeDisplayConditionFactory
+.. py:class:: ansys.stk.core.graphics.IAltitudeDisplayConditionFactory
 
    object
    
    Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAltitudeDisplayConditionFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayConditionFactory.initialize`
               - Initialize a default altitude display condition. With this constructor, an object is always rendered regardless of the camera's altitude.
-            * - :py:meth:`~initialize_with_altitudes`
+            * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayConditionFactory.initialize_with_altitudes`
               - Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]...
-            * - :py:meth:`~initialize_with_central_body_and_altitudes`
+            * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayConditionFactory.initialize_with_central_body_and_altitudes`
               - Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]...
 
 

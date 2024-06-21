@@ -1,13 +1,13 @@
 IEngineModelThrustCoefficients
 ==============================
 
-.. py:class:: IEngineModelThrustCoefficients
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients
 
    object
    
    Thrust coefficient properties for engine definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IEngineModelThrustCoefficients
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~c0`
-            * - :py:meth:`~c1`
-            * - :py:meth:`~c2`
-            * - :py:meth:`~c3`
-            * - :py:meth:`~c4`
-            * - :py:meth:`~c5`
-            * - :py:meth:`~c6`
-            * - :py:meth:`~c7`
-            * - :py:meth:`~e4`
-            * - :py:meth:`~e5`
-            * - :py:meth:`~e6`
-            * - :py:meth:`~e7`
-            * - :py:meth:`~b7`
-            * - :py:meth:`~k0`
-            * - :py:meth:`~k1`
-            * - :py:meth:`~reference_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c5`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c6`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.e4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.e5`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.e6`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.e7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.b7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.k0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.k1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.reference_temp`
 
 
 Import detail

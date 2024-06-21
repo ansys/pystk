@@ -1,13 +1,13 @@
 SensorPointingTargetedBoresightTrack
 ====================================
 
-.. py:class:: SensorPointingTargetedBoresightTrack
+.. py:class:: ansys.stk.core.stkobjects.SensorPointingTargetedBoresightTrack
 
-   Bases: py:obj:`~ISensorPointingTargetedBoresight`, py:obj:`~ISensorPointingTargetedBoresightTrack`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresight`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack`
 
    Class defining a targeted sensor with tracking boresight.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorPointingTargetedBoresightTrack
 
 Overview
 --------

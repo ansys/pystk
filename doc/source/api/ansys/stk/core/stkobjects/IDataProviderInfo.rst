@@ -1,13 +1,13 @@
 IDataProviderInfo
 =================
 
-.. py:class:: IDataProviderInfo
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderInfo
 
    object
    
    Provide methods for retrieving the information about data providers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderInfo
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_group`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInfo.is_group`
               - Determine if the data provider represents a group.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInfo.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInfo.type`
 
 
 Import detail

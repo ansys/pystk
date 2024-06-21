@@ -1,13 +1,13 @@
 IOnePointAccessResult
 =====================
 
-.. py:class:: IOnePointAccessResult
+.. py:class:: ansys.stk.core.stkobjects.IOnePointAccessResult
 
    object
    
    One Point Access Result.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOnePointAccessResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~access_satisfied`
-            * - :py:meth:`~time`
-            * - :py:meth:`~constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResult.access_satisfied`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResult.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResult.constraints`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.IOnePointAccessResult.constraints
-    :type: IAgOnePtAccessConstraintCollection
+    :type: IOnePointAccessConstraintCollection
 
     List of constraints evaluated at this time.
 

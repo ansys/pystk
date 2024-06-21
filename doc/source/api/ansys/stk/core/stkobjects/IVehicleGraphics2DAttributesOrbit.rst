@@ -1,13 +1,13 @@
 IVehicleGraphics2DAttributesOrbit
 =================================
 
-.. py:class:: IVehicleGraphics2DAttributesOrbit
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit
 
    IVehicleGraphics2DAttributesBasic
    
    2D Graphics attributes for a satellite.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DAttributesOrbit
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_ground_track_visible`
-            * - :py:meth:`~is_ground_marker_visible`
-            * - :py:meth:`~is_orbit_visible`
-            * - :py:meth:`~is_orbit_marker_visible`
-            * - :py:meth:`~pick_string`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.is_ground_track_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.is_ground_marker_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.is_orbit_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.is_orbit_marker_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.pick_string`
 
 
 Import detail

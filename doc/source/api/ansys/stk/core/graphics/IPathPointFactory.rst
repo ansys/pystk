@@ -1,13 +1,13 @@
 IPathPointFactory
 =================
 
-.. py:class:: IPathPointFactory
+.. py:class:: ansys.stk.core.graphics.IPathPointFactory
 
    object
    
    Create Path Primitive's path points.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPathPointFactory
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPointFactory.initialize`
               - Initialize a new path point.
-            * - :py:meth:`~initialize_with_date`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPointFactory.initialize_with_date`
               - Initialize a new path point with the given date.
-            * - :py:meth:`~initialize_with_date_and_position`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPointFactory.initialize_with_date_and_position`
               - Initialize a new path point with the given date and position.
-            * - :py:meth:`~initialize_with_date_position_and_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPointFactory.initialize_with_date_position_and_color`
               - Initialize a new path point with the given date, position and color.
-            * - :py:meth:`~initialize_with_date_position_color_and_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPointFactory.initialize_with_date_position_color_and_translucency`
               - Initialize a new path point with the given date, position, color and translucency.
 
 

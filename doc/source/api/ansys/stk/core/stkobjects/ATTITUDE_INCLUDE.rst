@@ -1,12 +1,12 @@
 ATTITUDE_INCLUDE
 ================
 
-.. py:class:: ATTITUDE_INCLUDE
+.. py:class:: ansys.stk.core.stkobjects.ATTITUDE_INCLUDE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ATTITUDE_INCLUDE
 
 Overview
 --------

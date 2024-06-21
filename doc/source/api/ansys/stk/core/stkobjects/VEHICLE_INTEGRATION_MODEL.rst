@@ -1,12 +1,12 @@
 VEHICLE_INTEGRATION_MODEL
 =========================
 
-.. py:class:: VEHICLE_INTEGRATION_MODEL
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_INTEGRATION_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_INTEGRATION_MODEL
 
 Overview
 --------

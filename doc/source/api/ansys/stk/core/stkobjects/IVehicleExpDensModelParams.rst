@@ -1,13 +1,13 @@
 IVehicleExpDensModelParams
 ==========================
 
-.. py:class:: IVehicleExpDensModelParams
+.. py:class:: ansys.stk.core.stkobjects.IVehicleExpDensModelParams
 
    object
    
    Interface for exponential density model (for LOP propagator).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleExpDensModelParams
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_density`
-            * - :py:meth:`~reference_height`
-            * - :py:meth:`~scale_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams.reference_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams.reference_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams.scale_height`
 
 
 Import detail

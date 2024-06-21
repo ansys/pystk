@@ -1,13 +1,13 @@
 StateCalcAngle
 ==============
 
-.. py:class:: StateCalcAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcAngle
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcAngle`
 
    Angle Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcAngle
 
 Overview
 --------

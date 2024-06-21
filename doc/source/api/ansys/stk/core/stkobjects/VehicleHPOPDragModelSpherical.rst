@@ -1,13 +1,13 @@
 VehicleHPOPDragModelSpherical
 =============================
 
-.. py:class:: VehicleHPOPDragModelSpherical
+.. py:class:: ansys.stk.core.stkobjects.VehicleHPOPDragModelSpherical
 
-   Bases: py:obj:`~IVehicleHPOPDragModelSpherical`, py:obj:`~IVehicleHPOPDragModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelSpherical`, py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
 
    Spherical Drag Pressure Model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleHPOPDragModelSpherical
 
 Overview
 --------

@@ -1,13 +1,13 @@
 StateCalcSequenceDeltaV
 =======================
 
-.. py:class:: StateCalcSequenceDeltaV
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSequenceDeltaV
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSequenceDeltaV`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSequenceDeltaV`
 
    Sequence DeltaV Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcSequenceDeltaV
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleGraphics3DOrbitPassData
 ==============================
 
-.. py:class:: VehicleGraphics3DOrbitPassData
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitPassData
 
-   Bases: py:obj:`~IVehicleGraphics3DOrbitPassData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData`
 
    Satellite 3D ground and orbit track data.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DOrbitPassData
 
 Overview
 --------

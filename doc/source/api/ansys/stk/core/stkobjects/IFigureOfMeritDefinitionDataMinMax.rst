@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionDataMinMax
 ==================================
 
-.. py:class:: IFigureOfMeritDefinitionDataMinMax
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax
 
    IFigureOfMeritDefinitionData
    
    IAgFmDefDataMinMax.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionDataMinMax
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_value`
-            * - :py:meth:`~max_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax.min_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax.max_value`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneInstancesCollection
 ===========================================
 
-.. py:class:: IVehicleGraphics3DBPlaneInstancesCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstancesCollection
 
    object
    
    A list of available b-plane instances.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneInstancesCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstancesCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstancesCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstancesCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstancesCollection.add`
               - Add a new element to the collection.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstancesCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstancesCollection._NewEnum`
 
 
 Import detail

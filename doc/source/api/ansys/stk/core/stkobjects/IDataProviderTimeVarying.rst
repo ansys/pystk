@@ -1,13 +1,13 @@
 IDataProviderTimeVarying
 ========================
 
-.. py:class:: IDataProviderTimeVarying
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderTimeVarying
 
    object
    
    Represents the Time-dependent Data Provider (for instance satellite position).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderTimeVarying
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~exec`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec`
               - Compute the data; time-dependent data providers require an interval and a time step. Start/Stop use DateFormat Dimension. StepTime uses Time Dimension.
-            * - :py:meth:`~exec_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_elements`
               - Compute the data and return just the indicated data elements; time-dependent data providers require an interval and a time step.
-            * - :py:meth:`~exec_single`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_single`
               - Compute the data given a single Time. SingleTime uses DateFormat Dimension.
-            * - :py:meth:`~exec_single_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_single_elements`
               - Compute the data given a single Time and return just the indicated data elements. SingleTime uses DateFormat Dimension.
-            * - :py:meth:`~exec_single_elements_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_single_elements_array`
               - Compute the data given a single Time array and return just the indicated data elements. If time values without data are requested, null entries will be returned in the data array. SingleTime uses DateFormat Dimension.
-            * - :py:meth:`~exec_native_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_native_times`
               - Compute the data for default; default time-dependent data providers require an interval. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~exec_elements_native_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_elements_native_times`
               - Compute the data for default; return just the indicated data elements; default time-dependent data providers require an interval. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~exec_event_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_event_array`
               - Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
-            * - :py:meth:`~exec_elements_event_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_elements_event_array`
               - Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~exec_elements_event_array_only`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderTimeVarying.exec_elements_event_array_only`
               - Compute the data and returns just the indicated data elements; Input is a Times Array component.
 
 

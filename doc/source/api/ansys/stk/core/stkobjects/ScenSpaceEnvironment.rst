@@ -1,13 +1,13 @@
 ScenSpaceEnvironment
 ====================
 
-.. py:class:: ScenSpaceEnvironment
+.. py:class:: ansys.stk.core.stkobjects.ScenSpaceEnvironment
 
-   Bases: py:obj:`~IScenSpaceEnvironment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment`
 
    SpaceEnvironment settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScenSpaceEnvironment
 
 Overview
 --------

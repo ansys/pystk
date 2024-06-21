@@ -1,13 +1,13 @@
 LaserAtmosphericLossModelBeerBouguerLambertLaw
 ==============================================
 
-.. py:class:: LaserAtmosphericLossModelBeerBouguerLambertLaw
+.. py:class:: ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw
 
-   Bases: py:obj:`~ILaserAtmosphericLossModelBeerBouguerLambertLaw`, py:obj:`~ILaserAtmosphericLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModelBeerBouguerLambertLaw`, py:obj:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an laser propagation loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LaserAtmosphericLossModelBeerBouguerLambertLaw
 
 Overview
 --------

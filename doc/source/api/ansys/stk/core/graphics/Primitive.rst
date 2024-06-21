@@ -1,13 +1,13 @@
 Primitive
 =========
 
-.. py:class:: Primitive
+.. py:class:: ansys.stk.core.graphics.Primitive
 
-   Bases: py:obj:`~IPrimitive`
+   Bases: py:obj:`~ansys.stk.core.graphics.IPrimitive`
 
    Primitives represent objects rendered in the 3D scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: Primitive
 
 Overview
 --------

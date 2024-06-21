@@ -1,13 +1,13 @@
 IStkObjectCollection
 ====================
 
-.. py:class:: IStkObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.IStkObjectCollection
 
    object
    
    Represents a collection of STK objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkObjectCollection
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.item`
               - Given an index, returns the element in the collection. If the index is an integer, then method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
-            * - :py:meth:`~new`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.new`
               - Create an STK object using specified class and instance name.
-            * - :py:meth:`~unload`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.unload`
               - Remove an STK object using specified object's type and name.
-            * - :py:meth:`~get_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.get_elements`
               - Return a collection of objects of specified type.
-            * - :py:meth:`~new_on_central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.new_on_central_body`
               - Create an STK object using specified class, instance name and the central body.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.contains`
               - Check whether the collection contains an object with the given type and name.
-            * - :py:meth:`~import_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.import_object`
               - Import object from external file and returns the pointer to the object.
-            * - :py:meth:`~copy_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.copy_object`
               - Copy and paste the specified object.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.get_item_by_index`
               - Retrieve an Stk object from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.get_item_by_name`
               - Retrieve an Stk object from the collection by name.
 
     .. tab-item:: Properties
@@ -47,9 +47,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~supported_child_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.supported_child_types`
 
 
 Import detail

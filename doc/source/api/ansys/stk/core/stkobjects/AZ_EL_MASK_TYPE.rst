@@ -1,12 +1,12 @@
 AZ_EL_MASK_TYPE
 ===============
 
-.. py:class:: AZ_EL_MASK_TYPE
+.. py:class:: ansys.stk.core.stkobjects.AZ_EL_MASK_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AZ_EL_MASK_TYPE
 
 Overview
 --------

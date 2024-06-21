@@ -1,12 +1,12 @@
 POINT_TO_POINT_MODE
 ===================
 
-.. py:class:: POINT_TO_POINT_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.POINT_TO_POINT_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: POINT_TO_POINT_MODE
 
 Overview
 --------

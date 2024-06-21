@@ -1,13 +1,13 @@
 IStateCalcGravitationalParameter
 ================================
 
-.. py:class:: IStateCalcGravitationalParameter
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcGravitationalParameter
 
    object
    
    Properties for a Gravitational Parameter calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcGravitationalParameter
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~grav_source`
-            * - :py:meth:`~gravity_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravitationalParameter.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravitationalParameter.grav_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravitationalParameter.gravity_filename`
 
 
 Import detail

@@ -1,13 +1,13 @@
 BasicManeuverStrategyRendezvous
 ===============================
 
-.. py:class:: BasicManeuverStrategyRendezvous
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous
 
-   Bases: py:obj:`~IBasicManeuverStrategyRendezvous`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Rendezvous/Formation strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyRendezvous
 
 Overview
 --------

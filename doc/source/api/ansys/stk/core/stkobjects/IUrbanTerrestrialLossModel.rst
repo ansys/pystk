@@ -1,13 +1,13 @@
 IUrbanTerrestrialLossModel
 ==========================
 
-.. py:class:: IUrbanTerrestrialLossModel
+.. py:class:: ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel
 
    object
    
    Provide access to the properties and methods for an urban/terrestrial loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IUrbanTerrestrialLossModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel.type`
 
 
 Import detail

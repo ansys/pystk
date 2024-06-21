@@ -1,12 +1,12 @@
 FOLLOW_JOIN
 ===========
 
-.. py:class:: FOLLOW_JOIN
+.. py:class:: ansys.stk.core.stkobjects.astrogator.FOLLOW_JOIN
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: FOLLOW_JOIN
 
 Overview
 --------

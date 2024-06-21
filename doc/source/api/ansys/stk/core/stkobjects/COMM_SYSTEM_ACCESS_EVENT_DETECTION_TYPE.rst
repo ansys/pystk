@@ -1,12 +1,12 @@
 COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
 =======================================
 
-.. py:class:: COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
 
 Overview
 --------

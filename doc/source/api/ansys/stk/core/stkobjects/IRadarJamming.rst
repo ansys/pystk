@@ -1,13 +1,13 @@
 IRadarJamming
 =============
 
-.. py:class:: IRadarJamming
+.. py:class:: ansys.stk.core.stkobjects.IRadarJamming
 
    object
    
    Provide access to the properties and methods defining a radar jamming.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarJamming
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~jammers`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarJamming.enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarJamming.jammers`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: jammers
     :canonical: ansys.stk.core.stkobjects.IRadarJamming.jammers
-    :type: IAgObjectLinkCollection
+    :type: IObjectLinkCollection
 
     Gets the jammers collection.
 

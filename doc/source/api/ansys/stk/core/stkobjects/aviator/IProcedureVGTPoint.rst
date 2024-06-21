@@ -1,13 +1,13 @@
 IProcedureVGTPoint
 ==================
 
-.. py:class:: IProcedureVGTPoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint
 
    object
    
    Interface used to access the options for a VGT Point procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureVGTPoint
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,18 +29,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_time`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~maximum_time`
-            * - :py:meth:`~formation_point`
-            * - :py:meth:`~interpolate_point_position_vel`
-            * - :py:meth:`~duration`
-            * - :py:meth:`~use_max_point_stop_time`
-            * - :py:meth:`~fuel_flow_type`
-            * - :py:meth:`~override_fuel_flow_value`
-            * - :py:meth:`~consider_accel_for_fuel_flow`
-            * - :py:meth:`~flight_mode`
-            * - :py:meth:`~display_step_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.minimum_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.maximum_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.formation_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.interpolate_point_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.use_max_point_stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.fuel_flow_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.override_fuel_flow_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.consider_accel_for_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.flight_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.display_step_time`
 
 
 Import detail

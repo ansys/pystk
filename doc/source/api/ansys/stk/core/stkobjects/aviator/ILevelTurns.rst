@@ -1,13 +1,13 @@
 ILevelTurns
 ===========
 
-.. py:class:: ILevelTurns
+.. py:class:: ansys.stk.core.stkobjects.aviator.ILevelTurns
 
    object
    
    Interface used to access the Level Turns Transitions options found in the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ILevelTurns
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_level_turn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.set_level_turn`
               - Set the level turn mode and corresponding value.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~turn_mode`
-            * - :py:meth:`~turn_g`
-            * - :py:meth:`~bank_angle`
-            * - :py:meth:`~turn_acceleration`
-            * - :py:meth:`~turn_radius`
-            * - :py:meth:`~turn_rate`
-            * - :py:meth:`~maneuver_mode`
-            * - :py:meth:`~maneuver_mode_helper`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.bank_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.maneuver_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.maneuver_mode_helper`
 
 
 Import detail
@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.ILevelTurns.maneuver_mode_helper
-    :type: IAgAvtrAeroPropManeuverModeHelper
+    :type: IAeroPropManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 

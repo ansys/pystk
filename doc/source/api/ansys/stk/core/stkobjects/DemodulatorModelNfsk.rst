@@ -1,13 +1,13 @@
 DemodulatorModelNfsk
 ====================
 
-.. py:class:: DemodulatorModelNfsk
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelNfsk
 
-   Bases: py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a NFSK modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelNfsk
 
 Overview
 --------

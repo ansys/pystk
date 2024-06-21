@@ -1,13 +1,13 @@
 IRasterImageGlobeOverlayFactory
 ===============================
 
-.. py:class:: IRasterImageGlobeOverlayFactory
+.. py:class:: ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory
 
    object
    
    A globe image overlay for handling rasters.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRasterImageGlobeOverlayFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory.initialize_with_string`
               - Initialize a raster image globe overlay with the provided values.
-            * - :py:meth:`~initialize_with_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory.initialize_with_color`
               - Initialize a raster image globe overlay with the provided values.
-            * - :py:meth:`~initialize_with_raster`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory.initialize_with_raster`
               - Initialize a raster image globe overlay with the provided values.
 
 

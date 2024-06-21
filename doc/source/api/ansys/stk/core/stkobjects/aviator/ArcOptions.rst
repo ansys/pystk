@@ -1,13 +1,13 @@
 ArcOptions
 ==========
 
-.. py:class:: ArcOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.ArcOptions
 
-   Bases: py:obj:`~IArcOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IArcOptions`
 
    Class defining the arc options for a procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ArcOptions
 
 Overview
 --------

@@ -1,13 +1,13 @@
 BlendedDensity
 ==============
 
-.. py:class:: BlendedDensity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BlendedDensity
 
-   Bases: py:obj:`~IBlendedDensity`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Blended atmospheric density propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BlendedDensity
 
 Overview
 --------

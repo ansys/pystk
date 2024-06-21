@@ -1,13 +1,13 @@
 IRFFilterModelElliptic
 ======================
 
-.. py:class:: IRFFilterModelElliptic
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelElliptic
 
    object
    
    Provide access to the properties and methods defining an elliptic analog RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelElliptic
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~order`
-            * - :py:meth:`~cutoff_frequency`
-            * - :py:meth:`~ripple`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelElliptic.order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelElliptic.cutoff_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelElliptic.ripple`
 
 
 Import detail

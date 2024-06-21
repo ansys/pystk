@@ -1,13 +1,13 @@
 IStateCalcVectorRA
 ==================
 
-.. py:class:: IStateCalcVectorRA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcVectorRA
 
    object
    
    Properties for a Vector RA calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcVectorRA
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_axes_name`
-            * - :py:meth:`~vector_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorRA.coord_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorRA.vector_name`
 
 
 Import detail

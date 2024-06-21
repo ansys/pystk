@@ -1,13 +1,13 @@
 IAntennaBeamSelectionStrategy
 =============================
 
-.. py:class:: IAntennaBeamSelectionStrategy
+.. py:class:: ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy
 
    object
    
    Provide access to a beam selection strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaBeamSelectionStrategy
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy.type`
 
 
 Import detail

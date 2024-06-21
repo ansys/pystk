@@ -1,12 +1,12 @@
 ROOT_FINDING_ALGORITHM
 ======================
 
-.. py:class:: ROOT_FINDING_ALGORITHM
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ROOT_FINDING_ALGORITHM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ROOT_FINDING_ALGORITHM
 
 Overview
 --------

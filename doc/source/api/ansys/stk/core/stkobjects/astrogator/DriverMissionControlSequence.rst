@@ -1,13 +1,13 @@
 DriverMissionControlSequence
 ============================
 
-.. py:class:: DriverMissionControlSequence
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DriverMissionControlSequence
 
-   Bases: py:obj:`~IDriverMissionControlSequence`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IVehiclePropagator`
 
    Basic properties of an Astrogator satellite.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DriverMissionControlSequence
 
 Overview
 --------

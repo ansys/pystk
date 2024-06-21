@@ -1,12 +1,12 @@
 VTOL_FINAL_HEADING_MODE
 =======================
 
-.. py:class:: VTOL_FINAL_HEADING_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.VTOL_FINAL_HEADING_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: VTOL_FINAL_HEADING_MODE
 
 Overview
 --------

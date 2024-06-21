@@ -1,13 +1,13 @@
 ITimeToolEventArrayExtrema
 ==========================
 
-.. py:class:: ITimeToolEventArrayExtrema
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArrayExtrema
 
    object
    
    Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArrayExtrema
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~extremum_type`
-            * - :py:meth:`~is_global`
-            * - :py:meth:`~calculation`
-            * - :py:meth:`~custom_time_limits`
-            * - :py:meth:`~use_custom_time_limits`
-            * - :py:meth:`~save_data_option`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~convergence`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.extremum_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.is_global`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.calculation`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.use_custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.save_data_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.sampling`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.convergence`
 
 
 Import detail
@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: calculation
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.calculation
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The scalar calculation.
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.custom_time_limits
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     A custom interval list or a single interval. It is by default set to overall availability of host object. This determines time limits within extrema are sought. The time limits will be used if UseCustomTimeLimits is set to true.
 
@@ -79,13 +79,13 @@ Property detail
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.sampling
-    :type: IAgCrdnSampling
+    :type: IAnalysisWorkbenchSampling
 
     The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayExtrema.convergence
-    :type: IAgCrdnConverge
+    :type: IAnalysisWorkbenchConverge
 
     The Convergence definition, which uses time tolerance to determine when times of extrema are found.
 

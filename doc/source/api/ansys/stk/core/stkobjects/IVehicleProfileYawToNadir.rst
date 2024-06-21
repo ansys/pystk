@@ -1,13 +1,13 @@
 IVehicleProfileYawToNadir
 =========================
 
-.. py:class:: IVehicleProfileYawToNadir
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileYawToNadir
 
    IVehicleAttitudeProfile
    
    A profile useful for satellites with highly elliptical orbits.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileYawToNadir
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inertial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileYawToNadir.inertial`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.stkobjects.IVehicleProfileYawToNadir.inertial
-    :type: IAgDirection
+    :type: IDirection
 
     Get the body-fixed Z axis is fixed in inertial space using the selected coordinate type. The X axis is then constrained, via motion in the yaw sense about the body-fixed Z axis, toward the nadir direction.
 

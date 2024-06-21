@@ -1,13 +1,13 @@
 IDifferentialCorrectorResultCollection
 ======================================
 
-.. py:class:: IDifferentialCorrectorResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection
 
    object
    
    Differential Corrector result collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDifferentialCorrectorResultCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_result_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.get_result_by_paths`
               - Return the result specified by the object/result path.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.provide_runtime_type_info`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

@@ -1,12 +1,12 @@
 RASTER_BAND
 ===========
 
-.. py:class:: RASTER_BAND
+.. py:class:: ansys.stk.core.graphics.RASTER_BAND
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RASTER_BAND
 
 Overview
 --------

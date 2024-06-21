@@ -1,13 +1,13 @@
 IEOIRShape
 ==========
 
-.. py:class:: IEOIRShape
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShape
 
    object
    
    A shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShape
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~shape_type`
-            * - :py:meth:`~mesh_file`
-            * - :py:meth:`~shape_object`
-            * - :py:meth:`~dimension_a`
-            * - :py:meth:`~dimension_b`
-            * - :py:meth:`~dimension_c`
-            * - :py:meth:`~material_specification_type`
-            * - :py:meth:`~material_map_file`
-            * - :py:meth:`~material_element_index`
-            * - :py:meth:`~material_elements_count`
-            * - :py:meth:`~material_elements`
-            * - :py:meth:`~target_signature_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.shape_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.mesh_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.shape_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.dimension_a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.dimension_b`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.dimension_c`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_specification_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_map_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_element_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_elements_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.target_signature_file`
 
 
 Import detail
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: shape_object
     :canonical: ansys.stk.core.stkobjects.IEOIRShape.shape_object
-    :type: IAgEOIRShapeObject
+    :type: IEOIRShapeObject
 
     Property used to access the shape object.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: material_elements
     :canonical: ansys.stk.core.stkobjects.IEOIRShape.material_elements
-    :type: IAgEOIRMaterialElementCollection
+    :type: IEOIRMaterialElementCollection
 
     Property used to access the material element collection.
 

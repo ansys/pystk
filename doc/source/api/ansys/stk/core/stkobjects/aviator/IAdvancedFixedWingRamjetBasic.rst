@@ -1,13 +1,13 @@
 IAdvancedFixedWingRamjetBasic
 =============================
 
-.. py:class:: IAdvancedFixedWingRamjetBasic
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic
 
    object
    
    Interface used to access the options for a basic Ramjet mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingRamjetBasic
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~design_altitude`
-            * - :py:meth:`~design_mach`
-            * - :py:meth:`~design_thrust`
-            * - :py:meth:`~max_compression_temp`
-            * - :py:meth:`~max_burner_temp`
-            * - :py:meth:`~fuel_type`
-            * - :py:meth:`~fuel_mode_as_afprop`
-            * - :py:meth:`~fuel_mode_as_cea`
-            * - :py:meth:`~efficiencies_and_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.design_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.design_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.design_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.max_compression_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.max_burner_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.fuel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.fuel_mode_as_afprop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.fuel_mode_as_cea`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.efficiencies_and_losses`
 
 
 Import detail
@@ -80,19 +80,19 @@ Property detail
 
 .. py:property:: fuel_mode_as_afprop
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.fuel_mode_as_afprop
-    :type: IAgAvtrFuelModelKeroseneAFPROP
+    :type: IFuelModelKeroseneAFPROP
 
     Get the interface for a Kerosene - AFPROP fuel mode.
 
 .. py:property:: fuel_mode_as_cea
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.fuel_mode_as_cea
-    :type: IAgAvtrFuelModelKeroseneCEA
+    :type: IFuelModelKeroseneCEA
 
     Get the interface for a Kerosene - CEA fuel mode.
 
 .. py:property:: efficiencies_and_losses
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.efficiencies_and_losses
-    :type: IAgAvtrPropulsionEfficiencies
+    :type: IPropulsionEfficiencies
 
     Get the jet engine's propulsion efficiencies and losses.
 

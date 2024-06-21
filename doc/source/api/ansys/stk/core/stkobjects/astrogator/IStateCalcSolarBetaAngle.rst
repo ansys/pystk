@@ -1,13 +1,13 @@
 IStateCalcSolarBetaAngle
 ========================
 
-.. py:class:: IStateCalcSolarBetaAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle
 
    object
    
    Properties for a Solar Beta Angle calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSolarBetaAngle
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~orbit_plane_source`
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~sign_convention`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.orbit_plane_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.sign_convention`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

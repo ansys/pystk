@@ -1,13 +1,13 @@
 IRainLossModelCCIR1983
 ======================
 
-.. py:class:: IRainLossModelCCIR1983
+.. py:class:: ansys.stk.core.stkobjects.IRainLossModelCCIR1983
 
    object
    
    Provide access to the properties and methods for a CCIR 1983 rain loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRainLossModelCCIR1983
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelCCIR1983.surface_temperature`
 
 
 Import detail

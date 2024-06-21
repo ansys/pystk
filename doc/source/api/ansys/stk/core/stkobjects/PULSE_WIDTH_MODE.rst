@@ -1,12 +1,12 @@
 PULSE_WIDTH_MODE
 ================
 
-.. py:class:: PULSE_WIDTH_MODE
+.. py:class:: ansys.stk.core.stkobjects.PULSE_WIDTH_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PULSE_WIDTH_MODE
 
 Overview
 --------

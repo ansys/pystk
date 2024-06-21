@@ -1,13 +1,13 @@
 DirectionProviderAsciiFile
 ==========================
 
-.. py:class:: DirectionProviderAsciiFile
+.. py:class:: ansys.stk.core.stkobjects.DirectionProviderAsciiFile
 
-   Bases: py:obj:`~IDirectionProviderAsciiFile`, py:obj:`~IDirectionProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDirectionProviderAsciiFile`, py:obj:`~ansys.stk.core.stkobjects.IDirectionProvider`
 
    Class defining an ascii file direction provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DirectionProviderAsciiFile
 
 Overview
 --------

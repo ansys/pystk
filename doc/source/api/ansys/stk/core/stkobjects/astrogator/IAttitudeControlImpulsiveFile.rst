@@ -1,13 +1,13 @@
 IAttitudeControlImpulsiveFile
 =============================
 
-.. py:class:: IAttitudeControlImpulsiveFile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile
 
    IAttitudeControlImpulsive
    
    Properties for the File attitude control for an Impulsive Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlImpulsiveFile
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~delta_v_magnitude`
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file_time_offset`
-            * - :py:meth:`~full_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.delta_v_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.file_time_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.full_filename`
 
 
 Import detail

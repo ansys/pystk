@@ -1,13 +1,13 @@
 IVehicleTrajectoryAttitudeStandard
 ==================================
 
-.. py:class:: IVehicleTrajectoryAttitudeStandard
+.. py:class:: ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard
 
    IVehicleAttitudeStandard
    
    Standard attitude profile for launch vehicle or missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleTrajectoryAttitudeStandard
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~basic`
-            * - :py:meth:`~pointing`
-            * - :py:meth:`~external`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard.basic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard.pointing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard.external`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: basic
     :canonical: ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard.basic
-    :type: IAgVeStandardBasic
+    :type: IVehicleStandardBasic
 
     Get the basic attitude properties.
 
 .. py:property:: pointing
     :canonical: ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard.pointing
-    :type: IAgVeAttPointing
+    :type: IVehicleAttitudePointing
 
     Get the target pointing attitude properties.
 
 .. py:property:: external
     :canonical: ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard.external
-    :type: IAgVeAttExternal
+    :type: IVehicleAttitudeExternal
 
     Get the precomputed (external) attitude properties.
 

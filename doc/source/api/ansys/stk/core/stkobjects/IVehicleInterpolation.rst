@@ -1,13 +1,13 @@
 IVehicleInterpolation
 =====================
 
-.. py:class:: IVehicleInterpolation
+.. py:class:: ansys.stk.core.stkobjects.IVehicleInterpolation
 
    object
    
    Interpolation interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleInterpolation
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method`
-            * - :py:meth:`~graphics_3d_pmu`
-            * - :py:meth:`~order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInterpolation.method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInterpolation.graphics_3d_pmu`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInterpolation.order`
 
 
 Import detail

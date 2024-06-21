@@ -1,13 +1,13 @@
 ICamera
 =======
 
-.. py:class:: ICamera
+.. py:class:: ansys.stk.core.graphics.ICamera
 
    object
    
    Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICamera
 
 Overview
 --------
@@ -20,37 +20,37 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~visibility_test`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.visibility_test`
               - Get the visibility of a sphere against the view frustum and any occluding central bodies.
-            * - :py:meth:`~cartographic_to_window`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.cartographic_to_window`
               - Convert a cartographic position to a pixel coordinate relative to the globe control. This method can throw an exception. Returns an array containing the pixel coordinate (in the order x, y) of the cartographic position relative to the globe control...
-            * - :py:meth:`~try_cartographic_to_window`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.try_cartographic_to_window`
               - Convert a cartographic position to a pixel coordinate relative to the globe control. This method does not throw an exception.
-            * - :py:meth:`~window_to_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.window_to_cartographic`
               - Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered; if the pixel coordinate does not intersect the ellipsoid, an exception is thrown. Returns the cartographic position...
-            * - :py:meth:`~try_window_to_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.try_window_to_cartographic`
               - Convert a pixel coordinate relative to the globe control to a cartographic position. For speed, terrain is not considered. This method does not throw an exception.
-            * - :py:meth:`~view_central_body`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_central_body`
               - Zoom to a central body and use the specified axes for rotation. The reference point is set to the center of the central body and the camera's position is set so the entire central body is visible.
-            * - :py:meth:`~view_extent`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_extent`
               - Zooms to a cartographic extent on the centralBody. The camera will be looking straight down at the extent, with the up vector pointing toward local north. The axes is set to an east-north-up axes at the center of extent.
-            * - :py:meth:`~view_rectangular_extent`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_rectangular_extent`
               - Zooms to a rectangular extent composed of west, south, east, north on the centralBody. The camera will be looking straight down at the extent, with the up vector pointing toward local north...
-            * - :py:meth:`~view_with_up_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_with_up_axis`
               - View from a point to a point. Sets the camera's position and the reference point the camera is looking at.
-            * - :py:meth:`~view`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view`
               - View from a point to a point. Sets the camera's position and the reference point the camera is looking at.
-            * - :py:meth:`~view_direction_with_up_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_direction_with_up_axis`
               - View from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking.
-            * - :py:meth:`~view_direction`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_direction`
               - View from a point to a direction. Sets the camera's position and the direction vector indicating where the camera is looking.
-            * - :py:meth:`~view_offset_with_up_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_offset_with_up_axis`
               - Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset.
-            * - :py:meth:`~view_offset`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_offset`
               - Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the offset.
-            * - :py:meth:`~view_offset_direction_with_up_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_offset_direction_with_up_axis`
               - Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector.
-            * - :py:meth:`~view_offset_direction`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.view_offset_direction`
               - Set the camera's reference point - the point the camera is looking at. The camera's position is the reference point translated by the direction vector.
 
     .. tab-item:: Properties
@@ -59,27 +59,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~direction`
-            * - :py:meth:`~up_vector`
-            * - :py:meth:`~distance`
-            * - :py:meth:`~axes`
-            * - :py:meth:`~constrained_up_axis`
-            * - :py:meth:`~allow_rotation_over_constrained_up_axis`
-            * - :py:meth:`~lock_view_direction`
-            * - :py:meth:`~field_of_view`
-            * - :py:meth:`~horizontal_field_of_view`
-            * - :py:meth:`~vertical_field_of_view`
-            * - :py:meth:`~near_plane`
-            * - :py:meth:`~far_plane`
-            * - :py:meth:`~far_near_plane_ratio`
-            * - :py:meth:`~distance_per_radius`
-            * - :py:meth:`~snapshot`
-            * - :py:meth:`~video_recording`
-            * - :py:meth:`~pixel_size_per_distance`
-            * - :py:meth:`~position_reference_frame`
-            * - :py:meth:`~reference_point_reference_frame`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.position`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.reference_point`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.direction`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.up_vector`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.distance`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.axes`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.constrained_up_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.allow_rotation_over_constrained_up_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.lock_view_direction`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.field_of_view`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.horizontal_field_of_view`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.vertical_field_of_view`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.near_plane`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.far_plane`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.far_near_plane_ratio`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.distance_per_radius`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.snapshot`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.video_recording`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.pixel_size_per_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.position_reference_frame`
+            * - :py:attr:`~ansys.stk.core.graphics.ICamera.reference_point_reference_frame`
 
 
 Import detail
@@ -125,7 +125,7 @@ Property detail
 
 .. py:property:: axes
     :canonical: ansys.stk.core.graphics.ICamera.axes
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Gets or sets camera's axes of rotation.
 
@@ -191,13 +191,13 @@ Property detail
 
 .. py:property:: snapshot
     :canonical: ansys.stk.core.graphics.ICamera.snapshot
-    :type: IAgStkGraphicsCameraSnapshot
+    :type: ICameraSnapshot
 
     Gets the camera snapshot settings.
 
 .. py:property:: video_recording
     :canonical: ansys.stk.core.graphics.ICamera.video_recording
-    :type: IAgStkGraphicsCameraVideoRecording
+    :type: ICameraVideoRecording
 
     Gets the camera video recorder.
 
@@ -209,13 +209,13 @@ Property detail
 
 .. py:property:: position_reference_frame
     :canonical: ansys.stk.core.graphics.ICamera.position_reference_frame
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     Gets the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes.
 
 .. py:property:: reference_point_reference_frame
     :canonical: ansys.stk.core.graphics.ICamera.reference_point_reference_frame
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     Gets the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes.
 

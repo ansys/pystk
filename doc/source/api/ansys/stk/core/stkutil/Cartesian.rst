@@ -1,13 +1,13 @@
 Cartesian
 =========
 
-.. py:class:: Cartesian
+.. py:class:: ansys.stk.core.stkutil.Cartesian
 
-   Bases: py:obj:`~ICartesian`, py:obj:`~IPosition`
+   Bases: py:obj:`~ansys.stk.core.stkutil.ICartesian`, py:obj:`~ansys.stk.core.stkutil.IPosition`
 
    Class used to access a position using Cartesian Coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Cartesian
 
 Overview
 --------

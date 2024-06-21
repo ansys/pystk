@@ -1,13 +1,13 @@
 IVehicleSolarFluxGeoMagnitudeEnterManually
 ==========================================
 
-.. py:class:: IVehicleSolarFluxGeoMagnitudeEnterManually
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeEnterManually
 
    object
    
    Interface for specifying solar and geomagnetic flux directly.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSolarFluxGeoMagnitudeEnterManually
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~daily_f107`
-            * - :py:meth:`~average_f107`
-            * - :py:meth:`~geomagnetic_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeEnterManually.daily_f107`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeEnterManually.average_f107`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeEnterManually.geomagnetic_index`
 
 
 Import detail

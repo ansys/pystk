@@ -1,13 +1,13 @@
 AircraftBasicTakeoffModel
 =========================
 
-.. py:class:: AircraftBasicTakeoffModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel
 
-   Bases: py:obj:`~IAircraftBasicTakeoffModel`, py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the basic takeoff performance model for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftBasicTakeoffModel
 
 Overview
 --------

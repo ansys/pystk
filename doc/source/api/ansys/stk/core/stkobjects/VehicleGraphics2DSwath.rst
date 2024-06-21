@@ -1,13 +1,13 @@
 VehicleGraphics2DSwath
 ======================
 
-.. py:class:: VehicleGraphics2DSwath
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DSwath
 
-   Bases: py:obj:`~IVehicleGraphics2DSwath`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath`
 
    Vehicle swath.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DSwath
 
 Overview
 --------

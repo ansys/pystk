@@ -1,13 +1,13 @@
 ICalculationToolParameterSetAttitude
 ====================================
 
-.. py:class:: ICalculationToolParameterSetAttitude
+.. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSetAttitude
 
    object
    
    Attitude parameter set contains various representations of attitude of one set of axes relative to another.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolParameterSetAttitude
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~axes`
-            * - :py:meth:`~reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetAttitude.axes`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetAttitude.reference_axes`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: axes
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetAttitude.axes
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Get the axes for which attitude representations are computed.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetAttitude.reference_axes
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Get the reference axes relative to which attitude representations are computed.
 

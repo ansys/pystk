@@ -1,13 +1,13 @@
 IPrimitive
 ==========
 
-.. py:class:: IPrimitive
+.. py:class:: ansys.stk.core.graphics.IPrimitive
 
    object
    
    Primitives represent objects rendered in the 3D scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPrimitive
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~bounding_sphere`
-            * - :py:meth:`~automatically_compute_bounding_sphere`
-            * - :py:meth:`~display_condition`
-            * - :py:meth:`~display`
-            * - :py:meth:`~color`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~tag`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitive.reference_frame`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitive.bounding_sphere`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitive.automatically_compute_bounding_sphere`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitive.display_condition`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitive.display`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitive.color`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitive.translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IPrimitive.tag`
 
 
 Import detail
@@ -43,13 +43,13 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.graphics.IPrimitive.reference_frame
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     Gets or sets the reference frame this primitive is defined and rendered in.
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.IPrimitive.bounding_sphere
-    :type: IAgStkGraphicsBoundingSphere
+    :type: IBoundingSphere
 
     Gets or sets the bounding sphere that encompasses the primitive. The center is defined in the primitive's reference frame.
 
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: display_condition
     :canonical: ansys.stk.core.graphics.IPrimitive.display_condition
-    :type: IAgStkGraphicsDisplayCondition
+    :type: IDisplayCondition
 
     Gets or sets the display condition that determines if the primitive should be rendered. Both this and display must evaluate to true for the primitive to be rendered.
 

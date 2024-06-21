@@ -1,13 +1,13 @@
 IEnrouteAndDelayOptions
 =======================
 
-.. py:class:: IEnrouteAndDelayOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions
 
    object
    
    Interface used to access the Enroute options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IEnrouteAndDelayOptions
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~delay_enroute_climb_descents`
-            * - :py:meth:`~use_max_speed_turns`
-            * - :py:meth:`~max_turn_radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.delay_enroute_climb_descents`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.use_max_speed_turns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions.max_turn_radius_factor`
 
 
 Import detail

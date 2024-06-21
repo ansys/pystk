@@ -1,12 +1,12 @@
 ADDS_MSG_INTERP_TYPE
 ====================
 
-.. py:class:: ADDS_MSG_INTERP_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ADDS_MSG_INTERP_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ADDS_MSG_INTERP_TYPE
 
 Overview
 --------

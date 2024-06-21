@@ -1,12 +1,12 @@
 LINK_MARGIN_TYPE
 ================
 
-.. py:class:: LINK_MARGIN_TYPE
+.. py:class:: ansys.stk.core.stkobjects.LINK_MARGIN_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LINK_MARGIN_TYPE
 
 Overview
 --------

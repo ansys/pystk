@@ -1,12 +1,12 @@
 SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET
 =========================================
 
-.. py:class:: SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET
 
 Overview
 --------

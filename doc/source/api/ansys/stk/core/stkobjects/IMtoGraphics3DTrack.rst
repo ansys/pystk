@@ -1,13 +1,13 @@
 IMtoGraphics3DTrack
 ===================
 
-.. py:class:: IMtoGraphics3DTrack
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DTrack
 
    object
    
    Interface for setting 3D graphics properties for MTO tracks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DTrack
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~marker`
-            * - :py:meth:`~point`
-            * - :py:meth:`~model`
-            * - :py:meth:`~label`
-            * - :py:meth:`~swap_distances`
-            * - :py:meth:`~range_contours`
-            * - :py:meth:`~drop_lines`
-            * - :py:meth:`~id`
-            * - :py:meth:`~should_fade_over_trail_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.swap_distances`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.range_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.drop_lines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.should_fade_over_trail_time`
 
 
 Import detail
@@ -51,43 +51,43 @@ Property detail
 
 .. py:property:: marker
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DTrack.marker
-    :type: IAgMtoVOMarker
+    :type: IMtoGraphics3DMarker
 
     Get the track's 3D marker properties.
 
 .. py:property:: point
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DTrack.point
-    :type: IAgMtoVOPoint
+    :type: IMtoGraphics3DPoint
 
     Get the track's 3D point properties.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DTrack.model
-    :type: IAgMtoVOModel
+    :type: IMtoGraphics3DModel
 
     Get the track's 3D model properties.
 
 .. py:property:: label
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DTrack.label
-    :type: IAgVOOffsetLabel
+    :type: IGraphics3DOffsetLabel
 
     Get the track's 3D label properties.
 
 .. py:property:: swap_distances
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DTrack.swap_distances
-    :type: IAgMtoVOSwapDistances
+    :type: IMtoGraphics3DSwapDistances
 
     Get the track's 3D swap distance properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DTrack.range_contours
-    :type: IAgVORangeContours
+    :type: IGraphics3DRangeContours
 
     Get the MTO's 3D range contour properties.
 
 .. py:property:: drop_lines
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DTrack.drop_lines
-    :type: IAgMtoVODropLines
+    :type: IMtoGraphics3DDropLines
 
     Returns an interface allowing you to configure the MTO's drop lines.
 

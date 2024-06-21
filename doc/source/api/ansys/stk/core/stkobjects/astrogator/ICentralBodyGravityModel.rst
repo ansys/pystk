@@ -1,13 +1,13 @@
 ICentralBodyGravityModel
 ========================
 
-.. py:class:: ICentralBodyGravityModel
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyGravityModel
 
    object
    
    Properties for a central body gravity model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyGravityModel
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~gravitational_param`
-            * - :py:meth:`~reference_distance`
-            * - :py:meth:`~j2`
-            * - :py:meth:`~j3`
-            * - :py:meth:`~j4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyGravityModel.gravitational_param`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyGravityModel.reference_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyGravityModel.j2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyGravityModel.j3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyGravityModel.j4`
 
 
 Import detail

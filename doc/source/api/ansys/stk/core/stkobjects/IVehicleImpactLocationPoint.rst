@@ -1,13 +1,13 @@
 IVehicleImpactLocationPoint
 ===========================
 
-.. py:class:: IVehicleImpactLocationPoint
+.. py:class:: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint
 
    object
    
    Missile impact point interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleImpactLocationPoint
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_impact_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.set_impact_type`
               - Set the impact type.
-            * - :py:meth:`~is_impact_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.is_impact_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_launch_control_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.set_launch_control_type`
               - Set the flight parameter type.
-            * - :py:meth:`~is_launch_control_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.is_launch_control_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -35,12 +35,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~impact_type`
-            * - :py:meth:`~impact_supported_types`
-            * - :py:meth:`~impact`
-            * - :py:meth:`~launch_control_type`
-            * - :py:meth:`~launch_control_supported_types`
-            * - :py:meth:`~launch_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control`
 
 
 Import detail
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: impact
     :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact
-    :type: IAgVeImpact
+    :type: IVehicleImpact
 
     Get the impact point.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: launch_control
     :canonical: ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control
-    :type: IAgVeLaunchControl
+    :type: IVehicleLaunchControl
 
     Get the flight parameters.
 

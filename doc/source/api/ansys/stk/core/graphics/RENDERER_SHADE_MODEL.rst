@@ -1,12 +1,12 @@
 RENDERER_SHADE_MODEL
 ====================
 
-.. py:class:: RENDERER_SHADE_MODEL
+.. py:class:: ansys.stk.core.graphics.RENDERER_SHADE_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RENDERER_SHADE_MODEL
 
 Overview
 --------

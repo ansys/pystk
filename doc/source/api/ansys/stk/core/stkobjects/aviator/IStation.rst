@@ -1,13 +1,13 @@
 IStation
 ========
 
-.. py:class:: IStation
+.. py:class:: ansys.stk.core.stkobjects.aviator.IStation
 
    object
    
    Interface used to access a station for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IStation
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ISpaceEnvironmentMagnitudeFieldGraphics2D
 =========================================
 
-.. py:class:: ISpaceEnvironmentMagnitudeFieldGraphics2D
+.. py:class:: ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D
 
    object
    
    Graphics settings for showing magnetic field.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISpaceEnvironmentMagnitudeFieldGraphics2D
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_b_field_as_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_field_as_array`
               - Compute geomagnetic field in Earth Fixed components, returned as the array (Bx, By, Bz), at the specified Earth location. Uses Date, Angle, Longitude, Distance, and MagneticField Dimensions.
-            * - :py:meth:`~compute_dipole_l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.compute_dipole_l`
               - Compute dipole L-shell parameter at the specified Earth location. Uses Date, Angle, Longitude, and Distance Dimensions.
-            * - :py:meth:`~compute_mc_ilwain_l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.compute_mc_ilwain_l`
               - Compute McIlwain L-shell parameter at the specified Earth location. Uses Date, Angle, Longitude, and Distance Dimensions.
-            * - :py:meth:`~compute_b_beq`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_beq`
               - Compute B/Beq (i.e., the ratio of the magnetic field at the specified Earth location to the minimum field intensity along the field line thru the location). Uses Date, Angle, Longitude, and Distance Dimensions.
 
     .. tab-item:: Properties
@@ -35,25 +35,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_magnitude_field_visible`
-            * - :py:meth:`~color_mode`
-            * - :py:meth:`~color_scale`
-            * - :py:meth:`~field_line_refresh`
-            * - :py:meth:`~color_ramp_start`
-            * - :py:meth:`~color_ramp_stop`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~reference_longitude`
-            * - :py:meth:`~start_latitude`
-            * - :py:meth:`~stop_latitude`
-            * - :py:meth:`~num_field_lines`
-            * - :py:meth:`~num_longitudes`
-            * - :py:meth:`~main_field`
-            * - :py:meth:`~external_field`
-            * - :py:meth:`~igrf_update_rate`
-            * - :py:meth:`~max_translucency`
-            * - :py:meth:`~color_ramp_start_color`
-            * - :py:meth:`~color_ramp_stop_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.is_magnitude_field_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.color_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.color_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.field_line_refresh`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.reference_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.start_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.stop_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.num_field_lines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.num_longitudes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.main_field`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.external_field`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.igrf_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.max_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop_color`
 
 
 Import detail

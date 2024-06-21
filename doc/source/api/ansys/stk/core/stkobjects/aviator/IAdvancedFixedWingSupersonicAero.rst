@@ -1,13 +1,13 @@
 IAdvancedFixedWingSupersonicAero
 ================================
 
-.. py:class:: IAdvancedFixedWingSupersonicAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero
 
    object
    
    Interface used to access the options for the supersonic aerodynamic strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingSupersonicAero
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~geometry_type`
-            * - :py:meth:`~geometry_mode_as_basic`
-            * - :py:meth:`~geometry_mode_as_variable`
-            * - :py:meth:`~max_aoa`
-            * - :py:meth:`~subsonic_cd0`
-            * - :py:meth:`~transonic_min_mach`
-            * - :py:meth:`~transonic_max_mach`
-            * - :py:meth:`~supersonic_max_mach`
-            * - :py:meth:`~transonic_mach_drag_factor`
-            * - :py:meth:`~supersonic_mach_drag_factor`
-            * - :py:meth:`~leading_edge_suction_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.geometry_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.geometry_mode_as_basic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.geometry_mode_as_variable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.max_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.subsonic_cd0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.transonic_min_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.transonic_max_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.supersonic_max_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.transonic_mach_drag_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.supersonic_mach_drag_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.leading_edge_suction_efficiency`
 
 
 Import detail
@@ -52,13 +52,13 @@ Property detail
 
 .. py:property:: geometry_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.geometry_mode_as_basic
-    :type: IAgAvtrAdvFixedWingGeometryBasic
+    :type: IAdvancedFixedWingGeometryBasic
 
     Get the options for a basic geometry wing.
 
 .. py:property:: geometry_mode_as_variable
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSupersonicAero.geometry_mode_as_variable
-    :type: IAgAvtrAdvFixedWingGeometryVariable
+    :type: IAdvancedFixedWingGeometryVariable
 
     Get the options for a variable geometry wing.
 

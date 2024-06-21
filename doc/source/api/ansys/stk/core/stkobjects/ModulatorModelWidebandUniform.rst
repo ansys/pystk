@@ -1,13 +1,13 @@
 ModulatorModelWidebandUniform
 =============================
 
-.. py:class:: ModulatorModelWidebandUniform
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelWidebandUniform
 
-   Bases: py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a wideband uniform modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModelWidebandUniform
 
 Overview
 --------

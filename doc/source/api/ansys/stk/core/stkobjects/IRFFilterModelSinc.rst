@@ -1,13 +1,13 @@
 IRFFilterModelSinc
 ==================
 
-.. py:class:: IRFFilterModelSinc
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelSinc
 
    object
    
    Provide access to the properties and methods defining a sinc RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelSinc
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cutoff_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelSinc.cutoff_frequency`
 
 
 Import detail

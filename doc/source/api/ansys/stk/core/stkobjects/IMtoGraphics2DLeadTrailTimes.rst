@@ -1,13 +1,13 @@
 IMtoGraphics2DLeadTrailTimes
 ============================
 
-.. py:class:: IMtoGraphics2DLeadTrailTimes
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes
 
    object
    
    MTO track lead/trail times interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics2DLeadTrailTimes
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_lead_trail`
-            * - :py:meth:`~lead_time`
-            * - :py:meth:`~trail_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes.use_lead_trail`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes.lead_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes.trail_time`
 
 
 Import detail

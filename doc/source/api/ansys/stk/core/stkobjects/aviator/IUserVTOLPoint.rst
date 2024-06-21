@@ -1,13 +1,13 @@
 IUserVTOLPoint
 ==============
 
-.. py:class:: IUserVTOLPoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.IUserVTOLPoint
 
    object
    
    Interface used to access a user VTOL Point in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IUserVTOLPoint
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_terrain_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.get_terrain_altitude`
               - Set the VTOL Point altitude to the terrain altitude.
-            * - :py:meth:`~copy_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.copy_site`
               - Copy the site to the clipboard.
-            * - :py:meth:`~paste_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.paste_site`
               - Paste the site to the clipboard.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.longitude`
 
 
 Import detail

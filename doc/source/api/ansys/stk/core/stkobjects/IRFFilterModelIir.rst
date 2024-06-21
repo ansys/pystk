@@ -1,13 +1,13 @@
 IRFFilterModelIir
 =================
 
-.. py:class:: IRFFilterModelIir
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelIir
 
    object
    
    Provide access to the properties and methods defining a IIR RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelIir
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sampling_frequency`
-            * - :py:meth:`~numerator_complex_polynomial`
-            * - :py:meth:`~denominator_complex_polynomial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelIir.sampling_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelIir.numerator_complex_polynomial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelIir.denominator_complex_polynomial`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: numerator_complex_polynomial
     :canonical: ansys.stk.core.stkobjects.IRFFilterModelIir.numerator_complex_polynomial
-    :type: IAgCRComplexCollection
+    :type: ICRComplexCollection
 
     Gets the numerator complex polynomial.
 
 .. py:property:: denominator_complex_polynomial
     :canonical: ansys.stk.core.stkobjects.IRFFilterModelIir.denominator_complex_polynomial
-    :type: IAgCRComplexCollection
+    :type: ICRComplexCollection
 
     Gets the denominator complex polynomial.
 

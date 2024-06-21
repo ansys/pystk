@@ -1,13 +1,13 @@
 VectorGeometryToolVectorProjection
 ==================================
 
-.. py:class:: VectorGeometryToolVectorProjection
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorProjection
 
-   Bases: py:obj:`~IVectorGeometryToolVectorProjection`, py:obj:`~IVectorGeometryToolVector`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorProjection`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A projection of a vector computed with respect to a reference plane.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorProjection
 
 Overview
 --------

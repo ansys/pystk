@@ -1,13 +1,13 @@
 RadarModeMonostatic
 ===================
 
-.. py:class:: RadarModeMonostatic
+.. py:class:: ansys.stk.core.stkobjects.RadarModeMonostatic
 
-   Bases: py:obj:`~IRadarModeMonostatic`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModeMonostatic`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a monostatic radar mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarModeMonostatic
 
 Overview
 --------

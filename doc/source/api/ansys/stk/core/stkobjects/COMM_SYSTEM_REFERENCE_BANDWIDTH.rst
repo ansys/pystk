@@ -1,12 +1,12 @@
 COMM_SYSTEM_REFERENCE_BANDWIDTH
 ===============================
 
-.. py:class:: COMM_SYSTEM_REFERENCE_BANDWIDTH
+.. py:class:: ansys.stk.core.stkobjects.COMM_SYSTEM_REFERENCE_BANDWIDTH
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COMM_SYSTEM_REFERENCE_BANDWIDTH
 
 Overview
 --------

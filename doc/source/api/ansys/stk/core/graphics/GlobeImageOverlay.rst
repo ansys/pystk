@@ -1,13 +1,13 @@
 GlobeImageOverlay
 =================
 
-.. py:class:: GlobeImageOverlay
+.. py:class:: ansys.stk.core.graphics.GlobeImageOverlay
 
-   Bases: py:obj:`~IGlobeImageOverlay`, py:obj:`~IGlobeOverlay`
+   Bases: py:obj:`~ansys.stk.core.graphics.IGlobeImageOverlay`, py:obj:`~ansys.stk.core.graphics.IGlobeOverlay`
 
    A globe overlay that shows an image.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: GlobeImageOverlay
 
 Overview
 --------

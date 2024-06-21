@@ -1,12 +1,12 @@
 VEHICLE_ALTITUDE_REFERENCE
 ==========================
 
-.. py:class:: VEHICLE_ALTITUDE_REFERENCE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_ALTITUDE_REFERENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_ALTITUDE_REFERENCE
 
 Overview
 --------

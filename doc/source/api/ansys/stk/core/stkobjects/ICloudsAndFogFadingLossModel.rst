@@ -1,13 +1,13 @@
 ICloudsAndFogFadingLossModel
 ============================
 
-.. py:class:: ICloudsAndFogFadingLossModel
+.. py:class:: ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel
 
    object
    
    Provide access to the properties and methods for Clouds and Fog loss models.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICloudsAndFogFadingLossModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel.type`
 
 
 Import detail

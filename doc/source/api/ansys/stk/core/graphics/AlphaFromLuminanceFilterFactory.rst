@@ -1,13 +1,13 @@
 AlphaFromLuminanceFilterFactory
 ===============================
 
-.. py:class:: AlphaFromLuminanceFilterFactory
+.. py:class:: ansys.stk.core.graphics.AlphaFromLuminanceFilterFactory
 
-   Bases: py:obj:`~IAlphaFromLuminanceFilterFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IAlphaFromLuminanceFilterFactory`
 
    Add an alpha band to the source raster derived from the luminance of the raster's color bands.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: AlphaFromLuminanceFilterFactory
 
 Overview
 --------

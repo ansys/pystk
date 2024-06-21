@@ -1,13 +1,13 @@
 ICalculationToolScalarDerivative
 ================================
 
-.. py:class:: ICalculationToolScalarDerivative
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarDerivative
 
    object
    
    Derivative of an input scalar calculation.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarDerivative
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scalar`
-            * - :py:meth:`~differencing_time_step`
-            * - :py:meth:`~force_use_of_numerical_differences`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDerivative.scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDerivative.differencing_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDerivative.force_use_of_numerical_differences`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: scalar
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDerivative.scalar
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The input scalar component used to compute the derivative.
 

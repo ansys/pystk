@@ -1,13 +1,13 @@
 IFigureOfMeritAssetListCollection
 =================================
 
-.. py:class:: IFigureOfMeritAssetListCollection
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection
 
    object
    
    List of assets available for specifying range uncertainty (for Navigation Accuracy FOM).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritAssetListCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection._NewEnum`
 
 
 Import detail

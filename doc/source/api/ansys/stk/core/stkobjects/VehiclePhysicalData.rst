@@ -1,13 +1,13 @@
 VehiclePhysicalData
 ===================
 
-.. py:class:: VehiclePhysicalData
+.. py:class:: ansys.stk.core.stkobjects.VehiclePhysicalData
 
-   Bases: py:obj:`~IVehiclePhysicalData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePhysicalData`
 
    Class defining physical data for the LOP force model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePhysicalData
 
 Overview
 --------

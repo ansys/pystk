@@ -1,13 +1,13 @@
 IBasicManeuverStrategyPitch3D
 =============================
 
-.. py:class:: IBasicManeuverStrategyPitch3D
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D
 
    object
    
    Interface used to access options for a pitch 3D strategy of a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyPitch3D
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~control_mode`
-            * - :py:meth:`~command_fpa`
-            * - :py:meth:`~control_fpa_dot`
-            * - :py:meth:`~stop_when_fpa_achieved`
-            * - :py:meth:`~airspeed_options`
-            * - :py:meth:`~wind_force_effective_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.control_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.command_fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.control_fpa_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.stop_when_fpa_achieved`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.wind_force_effective_area`
 
 
 Import detail
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

@@ -1,13 +1,13 @@
 ICalcObjectCollection
 =====================
 
-.. py:class:: ICalcObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection
 
    object
    
    Collection of calculation objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICalcObjectCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.add`
               - Add a calc object to the collection.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.item`
               - Return a calc object.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.remove`
               - Remove a calc object from the collection.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.cut`
               - Copy a calc object to the clipboard and removes the calc object from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.paste`
               - Pastes a calc object from the clipboard into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.insert_copy`
               - Copy a calc object and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.get_item_by_index`
               - Retrieve a calc object found by the index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.get_item_by_name`
               - Retrieve a calc object found by the name.
 
     .. tab-item:: Properties
@@ -43,8 +43,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection.count`
 
 
 Import detail

@@ -1,13 +1,13 @@
 BisectionResultCollection
 =========================
 
-.. py:class:: BisectionResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BisectionResultCollection
 
-   Bases: py:obj:`~IBisectionResultCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBisectionResultCollection`
 
    Bisection result collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BisectionResultCollection
 
 Overview
 --------

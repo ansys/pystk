@@ -1,13 +1,13 @@
 TroposphericScintillationFadingLossModel
 ========================================
 
-.. py:class:: TroposphericScintillationFadingLossModel
+.. py:class:: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModel
 
-   Bases: py:obj:`~ITroposphericScintillationFadingLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a tropospheric scintillation fading loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TroposphericScintillationFadingLossModel
 
 Overview
 --------

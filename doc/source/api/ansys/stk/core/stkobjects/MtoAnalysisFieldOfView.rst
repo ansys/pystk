@@ -1,13 +1,13 @@
 MtoAnalysisFieldOfView
 ======================
 
-.. py:class:: MtoAnalysisFieldOfView
+.. py:class:: ansys.stk.core.stkobjects.MtoAnalysisFieldOfView
 
-   Bases: py:obj:`~IMtoAnalysisFieldOfView`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView`
 
    MTO Field Of View Computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoAnalysisFieldOfView
 
 Overview
 --------

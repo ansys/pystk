@@ -1,13 +1,13 @@
 IDesignCR3BPSetup
 =================
 
-.. py:class:: IDesignCR3BPSetup
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup
 
    object
    
    Properties for the CR3BP Setup Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDesignCR3BPSetup
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create_ideal_secondary_cb`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.create_ideal_secondary_cb`
               - Construct the idealized secondary for the three-body system.
-            * - :py:meth:`~reset_ideal_secondary_cb`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.reset_ideal_secondary_cb`
               - Reset the idealized secondary for the three-body system.
-            * - :py:meth:`~update_ideal_secondary_cb`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.update_ideal_secondary_cb`
               - Update the idealized secondary for the three-body system.
-            * - :py:meth:`~create_rotating_coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.create_rotating_coordinate_system`
               - Create the coordinate system for the RotatingSystemChoice selection.
-            * - :py:meth:`~delete_rotating_coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.delete_rotating_coordinate_system`
               - Delete the coordinate system for the RotatingSystemChoice selection.
-            * - :py:meth:`~create_calculation_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.create_calculation_objects`
               - Create the calculation objects for the selected coordinate system.
-            * - :py:meth:`~delete_calculation_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.delete_calculation_objects`
               - Delete the calculation objects for the selected coordinate system.
-            * - :py:meth:`~create_propagator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.create_propagator`
               - Create the propagator for the primary-secondary CR3BP formulation.
-            * - :py:meth:`~delete_propagator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.delete_propagator`
               - Delete the propagator for the primary-secondary CR3BP formulation.
 
     .. tab-item:: Properties
@@ -45,19 +45,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~secondary_body_name`
-            * - :py:meth:`~initial_epoch`
-            * - :py:meth:`~ideal_orbit_radius`
-            * - :py:meth:`~ideal_secondary_name`
-            * - :py:meth:`~mass_parameter`
-            * - :py:meth:`~characteristic_distance`
-            * - :py:meth:`~characteristic_time`
-            * - :py:meth:`~characteristic_velocity`
-            * - :py:meth:`~characteristic_acceleration`
-            * - :py:meth:`~rotating_system_choice`
-            * - :py:meth:`~associated_objects`
-            * - :py:meth:`~include_stm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.secondary_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.initial_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.ideal_orbit_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.ideal_secondary_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.mass_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.characteristic_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.characteristic_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.characteristic_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.characteristic_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.rotating_system_choice`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.associated_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.include_stm`
 
 
 Import detail
@@ -139,7 +139,7 @@ Property detail
 
 .. py:property:: associated_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.associated_objects
-    :type: IAgVADesignCR3BPObjectCollection
+    :type: IDesignCR3BPObjectCollection
 
     Get the list of associated objects.
 

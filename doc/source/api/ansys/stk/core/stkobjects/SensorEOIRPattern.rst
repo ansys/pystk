@@ -1,13 +1,13 @@
 SensorEOIRPattern
 =================
 
-.. py:class:: SensorEOIRPattern
+.. py:class:: ansys.stk.core.stkobjects.SensorEOIRPattern
 
-   Bases: py:obj:`~ISensorPattern`, py:obj:`~ISensorEOIRPattern`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPattern`, py:obj:`~ansys.stk.core.stkobjects.ISensorEOIRPattern`
 
    Class defining the EOIR pattern for a Sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorEOIRPattern
 
 Overview
 --------

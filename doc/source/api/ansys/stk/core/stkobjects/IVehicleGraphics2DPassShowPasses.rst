@@ -1,13 +1,13 @@
 IVehicleGraphics2DPassShowPasses
 ================================
 
-.. py:class:: IVehicleGraphics2DPassShowPasses
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DPassShowPasses
 
    object
    
    Beginning and end pass numbers to display.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DPassShowPasses
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~first_pass`
-            * - :py:meth:`~last_pass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassShowPasses.first_pass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassShowPasses.last_pass`
 
 
 Import detail

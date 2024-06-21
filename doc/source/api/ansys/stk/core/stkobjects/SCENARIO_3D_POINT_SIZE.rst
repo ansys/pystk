@@ -1,12 +1,12 @@
 SCENARIO_3D_POINT_SIZE
 ======================
 
-.. py:class:: SCENARIO_3D_POINT_SIZE
+.. py:class:: ansys.stk.core.stkobjects.SCENARIO_3D_POINT_SIZE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SCENARIO_3D_POINT_SIZE
 
 Overview
 --------

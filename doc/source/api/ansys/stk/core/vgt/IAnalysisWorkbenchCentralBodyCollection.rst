@@ -1,13 +1,13 @@
 IAnalysisWorkbenchCentralBodyCollection
 =======================================
 
-.. py:class:: IAnalysisWorkbenchCentralBodyCollection
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection
 
    object
    
    A collection of central body names.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchCentralBodyCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection.item`
               - Return a central body name at a specified index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection.add`
               - Add a central body to the collection of central bodies. True indicates success.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection.remove`
               - Remove a central body with the specified name from the collection of the central bodies.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection.count`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection._NewEnum`
 
 
 Import detail

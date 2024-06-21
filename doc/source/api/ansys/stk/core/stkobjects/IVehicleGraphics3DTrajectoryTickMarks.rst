@@ -1,13 +1,13 @@
 IVehicleGraphics3DTrajectoryTickMarks
 =====================================
 
-.. py:class:: IVehicleGraphics3DTrajectoryTickMarks
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks
 
    object
    
    Tick mark data interface for launch vehicles and missiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DTrajectoryTickMarks
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_between_ticks`
-            * - :py:meth:`~ground_track`
-            * - :py:meth:`~trajectory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks.time_between_ticks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks.ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks.trajectory`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks.ground_track
-    :type: IAgVeVOPathTickMarks
+    :type: IVehicleGraphics3DPathTickMarks
 
     Get the ground track tick marks.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks.trajectory
-    :type: IAgVeVOPathTickMarks
+    :type: IVehicleGraphics3DPathTickMarks
 
     Get the trajectory tick marks.
 

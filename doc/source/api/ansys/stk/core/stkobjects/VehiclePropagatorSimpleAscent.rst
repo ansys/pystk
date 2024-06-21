@@ -1,13 +1,13 @@
 VehiclePropagatorSimpleAscent
 =============================
 
-.. py:class:: VehiclePropagatorSimpleAscent
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorSimpleAscent
 
-   Bases: py:obj:`~IVehiclePropagatorSimpleAscent`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the simple ascent propagator for a launch vehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorSimpleAscent
 
 Overview
 --------

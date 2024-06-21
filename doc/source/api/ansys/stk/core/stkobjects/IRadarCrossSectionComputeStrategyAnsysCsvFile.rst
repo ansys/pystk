@@ -1,13 +1,13 @@
 IRadarCrossSectionComputeStrategyAnsysCsvFile
 =============================================
 
-.. py:class:: IRadarCrossSectionComputeStrategyAnsysCsvFile
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyAnsysCsvFile
 
    object
    
    Provide access to the properties and methods defining a radar cross section Ansys Csv file compute Strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionComputeStrategyAnsysCsvFile
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file2_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyAnsysCsvFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyAnsysCsvFile.file2_name`
 
 
 Import detail

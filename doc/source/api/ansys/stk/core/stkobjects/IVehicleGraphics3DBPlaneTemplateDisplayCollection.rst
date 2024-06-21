@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneTemplateDisplayCollection
 =================================================
 
-.. py:class:: IVehicleGraphics3DBPlaneTemplateDisplayCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayCollection
 
    object
    
    3D DisplayElements collection for BPlane.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneTemplateDisplayCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayCollection._NewEnum`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVehicleAttitudeMaximumSlewRate
 ===============================
 
-.. py:class:: IVehicleAttitudeMaximumSlewRate
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate
 
    object
    
    Define the maximum slew rate by entering a maximum overall magnitude. You can constrain the slew rate in specific directions by selecting one or more Per Axis rates and defining separate maximum rates for those axes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeMaximumSlewRate
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~magnitude`
-            * - :py:meth:`~per_axis_x_enabled`
-            * - :py:meth:`~per_axis_y_enabled`
-            * - :py:meth:`~per_axis_z_enabled`
-            * - :py:meth:`~per_axis_x`
-            * - :py:meth:`~per_axis_y`
-            * - :py:meth:`~per_axis_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate.magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate.per_axis_x_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate.per_axis_y_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate.per_axis_z_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate.per_axis_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate.per_axis_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewRate.per_axis_z`
 
 
 Import detail

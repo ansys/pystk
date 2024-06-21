@@ -1,12 +1,12 @@
 SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE
 ================================
 
-.. py:class:: SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE
 
 Overview
 --------

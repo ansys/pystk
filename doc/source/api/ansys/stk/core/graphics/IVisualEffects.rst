@@ -1,13 +1,13 @@
 IVisualEffects
 ==============
 
-.. py:class:: IVisualEffects
+.. py:class:: ansys.stk.core.graphics.IVisualEffects
 
    object
    
    Control various post processing effects that can be applied to the scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IVisualEffects
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lens_flare_enabled`
-            * - :py:meth:`~vignette_enabled`
-            * - :py:meth:`~vignette_strength`
+            * - :py:attr:`~ansys.stk.core.graphics.IVisualEffects.lens_flare_enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.IVisualEffects.vignette_enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.IVisualEffects.vignette_strength`
 
 
 Import detail

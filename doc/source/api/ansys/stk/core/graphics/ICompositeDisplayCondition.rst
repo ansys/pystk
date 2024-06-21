@@ -1,13 +1,13 @@
 ICompositeDisplayCondition
 ==========================
 
-.. py:class:: ICompositeDisplayCondition
+.. py:class:: ansys.stk.core.graphics.ICompositeDisplayCondition
 
    object
    
    A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICompositeDisplayCondition
 
 Overview
 --------
@@ -20,31 +20,31 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.item`
               - Return the condition at the given zero-based index.
-            * - :py:meth:`~reserve`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.reserve`
               - Request enough memory for the composite to contain at least count display conditions. count will not be affected but capacity may be.
-            * - :py:meth:`~add_with_negate`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.add_with_negate`
               - Add a display condition to the end of the composite.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.add`
               - Add a display condition to the end of the composite.
-            * - :py:meth:`~insert_with_negate`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.insert_with_negate`
               - Insert a display condition at the given zero-based index, shifting existing display conditions.
-            * - :py:meth:`~insert`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.insert`
               - Insert a display condition at the given zero-based index, shifting existing display conditions.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.remove`
               - Remove a display condition from the composite.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.remove_at`
               - Remove the display condition at the given zero-based index, shifting existing display conditions.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.clear`
               - Remove all display conditions from the composite.
-            * - :py:meth:`~get_negate`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.get_negate`
               - Determine if a logical not operation is applied to a display condition in the composite.
-            * - :py:meth:`~set_negate`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.set_negate`
               - Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
-            * - :py:meth:`~get_negate_at`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.get_negate_at`
               - Determine if a logical not operation is applied to a display condition in the composite.
-            * - :py:meth:`~set_negate_at`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.set_negate_at`
               - Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
 
     .. tab-item:: Properties
@@ -53,10 +53,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~capacity`
-            * - :py:meth:`~logic_operation`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.count`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.capacity`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.logic_operation`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition._NewEnum`
 
 
 Import detail

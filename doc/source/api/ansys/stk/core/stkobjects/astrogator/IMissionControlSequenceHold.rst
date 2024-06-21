@@ -1,13 +1,13 @@
 IMissionControlSequenceHold
 ===========================
 
-.. py:class:: IMissionControlSequenceHold
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold
 
    object
    
    Properties for a Hold segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceHold
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.enable_control_parameter`
               - Enable or disables the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,17 +33,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~hold_frame_name`
-            * - :py:meth:`~enable_hold_attitude`
-            * - :py:meth:`~stopping_conditions`
-            * - :py:meth:`~min_propagation_time`
-            * - :py:meth:`~max_propagation_time`
-            * - :py:meth:`~enable_max_propagation_time`
-            * - :py:meth:`~enable_warning_message`
-            * - :py:meth:`~control_parameters_available`
-            * - :py:meth:`~override_max_propagation_time`
-            * - :py:meth:`~should_stop_for_initially_surpassed_epoch_stopping_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.hold_frame_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.enable_hold_attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.stopping_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.min_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.enable_max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.enable_warning_message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.override_max_propagation_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.should_stop_for_initially_surpassed_epoch_stopping_conditions`
 
 
 Import detail
@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: stopping_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.stopping_conditions
-    :type: IAgVAStoppingConditionCollection
+    :type: IStoppingConditionCollection
 
     Get the stopping conditions defined for the segment.
 

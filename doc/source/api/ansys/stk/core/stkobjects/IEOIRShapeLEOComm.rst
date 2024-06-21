@@ -1,13 +1,13 @@
 IEOIRShapeLEOComm
 =================
 
-.. py:class:: IEOIRShapeLEOComm
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeLEOComm
 
    IEOIRShapeObject
    
    A LEOComm shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeLEOComm
 
 Overview
 --------

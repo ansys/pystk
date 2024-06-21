@@ -1,13 +1,13 @@
 ISiteVTOLPointFromCatalog
 =========================
 
-.. py:class:: ISiteVTOLPointFromCatalog
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteVTOLPointFromCatalog
 
    object
    
    Interface used to access the options for a VTOL Point From Catalog site type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteVTOLPointFromCatalog
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_catalog_vtol_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPointFromCatalog.get_catalog_vtol_point`
               - Get the catalog VTOL point.
-            * - :py:meth:`~set_catalog_vtol_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPointFromCatalog.set_catalog_vtol_point`
               - Set the catalog VTOL point.
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteVTOLPointFromCatalog.get_as_site`
               - Get the site interface.
 
 

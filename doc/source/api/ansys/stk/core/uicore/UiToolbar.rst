@@ -1,13 +1,13 @@
 UiToolbar
 =========
 
-.. py:class:: UiToolbar
+.. py:class:: ansys.stk.core.uicore.UiToolbar
 
-   Bases: py:obj:`~IUiToolbar`
+   Bases: py:obj:`~ansys.stk.core.uicore.IUiToolbar`
 
    Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: UiToolbar
 
 Overview
 --------

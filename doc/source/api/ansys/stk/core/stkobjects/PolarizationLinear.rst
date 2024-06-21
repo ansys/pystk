@@ -1,13 +1,13 @@
 PolarizationLinear
 ==================
 
-.. py:class:: PolarizationLinear
+.. py:class:: ansys.stk.core.stkobjects.PolarizationLinear
 
-   Bases: py:obj:`~IPolarizationLinear`, py:obj:`~IPolarization`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarizationLinear`, py:obj:`~ansys.stk.core.stkobjects.IPolarization`
 
    Class defining a linear polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PolarizationLinear
 
 Overview
 --------

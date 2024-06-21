@@ -1,13 +1,13 @@
 Graphics3DAzElMask
 ==================
 
-.. py:class:: Graphics3DAzElMask
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DAzElMask
 
-   Bases: py:obj:`~IGraphics3DAzElMask`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask`
 
    Class to define display labels and adjust the translucency of the 3D azimuth-elevation mask for a facility, place or target.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DAzElMask
 
 Overview
 --------

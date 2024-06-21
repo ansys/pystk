@@ -1,13 +1,13 @@
 MissileModels
 =============
 
-.. py:class:: MissileModels
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileModels
 
-   Bases: py:obj:`~IMissileModels`, py:obj:`~ICatalogSource`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileModels`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
 
    Class defining the User Missile Models in the Aviator Catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MissileModels
 
 Overview
 --------

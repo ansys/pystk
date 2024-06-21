@@ -1,13 +1,13 @@
 IChainConnection
 ================
 
-.. py:class:: IChainConnection
+.. py:class:: ansys.stk.core.stkobjects.IChainConnection
 
    object
    
    Provide access to a Chain connection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainConnection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~from_object`
-            * - :py:meth:`~to_object`
-            * - :py:meth:`~min_num_uses`
-            * - :py:meth:`~max_num_uses`
-            * - :py:meth:`~parent_platform_restriction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.from_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.to_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.min_num_uses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.max_num_uses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.parent_platform_restriction`
 
 
 Import detail
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: from_object
     :canonical: ansys.stk.core.stkobjects.IChainConnection.from_object
-    :type: IAgStkObject
+    :type: IStkObject
 
     From object for a connection.
 
 .. py:property:: to_object
     :canonical: ansys.stk.core.stkobjects.IChainConnection.to_object
-    :type: IAgStkObject
+    :type: IStkObject
 
     To object for a connection.
 

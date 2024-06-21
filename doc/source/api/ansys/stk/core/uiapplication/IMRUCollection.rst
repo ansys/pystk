@@ -1,13 +1,13 @@
 IMRUCollection
 ==============
 
-.. py:class:: IMRUCollection
+.. py:class:: ansys.stk.core.uiapplication.IMRUCollection
 
    object
    
    Provide information about most recently used (MRU) list.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: IMRUCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IMRUCollection.item`
               - Get the MRU at the specified index.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IMRUCollection.count`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IMRUCollection._NewEnum`
 
 
 Import detail

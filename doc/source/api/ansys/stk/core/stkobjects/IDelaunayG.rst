@@ -1,13 +1,13 @@
 IDelaunayG
 ==========
 
-.. py:class:: IDelaunayG
+.. py:class:: ansys.stk.core.stkobjects.IDelaunayG
 
    object
    
    Interface for Delaunay Variagle G, the magnitude of the orbital angular momentum.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDelaunayG
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayG.g`
 
 
 Import detail

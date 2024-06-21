@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeGrid
 =============================
 
-.. py:class:: SpatialAnalysisToolVolumeGrid
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGrid
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeGrid`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeGrid
 
 Overview
 --------

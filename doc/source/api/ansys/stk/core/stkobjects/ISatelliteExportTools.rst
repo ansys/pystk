@@ -1,13 +1,13 @@
 ISatelliteExportTools
 =====================
 
-.. py:class:: ISatelliteExportTools
+.. py:class:: ansys.stk.core.stkobjects.ISatelliteExportTools
 
    object
    
    Interface used to define the export to data file options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISatelliteExportTools
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_ephemeris_ccsds_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_ccsds_export_tool`
               - Return an Ephemeris file of the CCSDS ephemeris type for export.
-            * - :py:meth:`~get_ephemeris_stk_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_stk_export_tool`
               - Return an Ephemeris file of the STK ephemeris type for export.
-            * - :py:meth:`~get_ephemeris_spice_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_spice_export_tool`
               - Return an Ephemeris file of the Spice ephemeris type for export.
-            * - :py:meth:`~get_ephemeris_code500_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_code500_export_tool`
               - Return an Ephemeris file of the Code500Ephem ephemeris type for export; AgAsCode500.dll must be copied to your install data's 'Modules' directory.
-            * - :py:meth:`~get_prop_definition_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteExportTools.get_prop_definition_export_tool`
               - Return a Propagator (Prop Def) file for export.
-            * - :py:meth:`~get_attitude_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteExportTools.get_attitude_export_tool`
               - Return an Attitude file for export.
-            * - :py:meth:`~get_ephemeris_stk_binary_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_stk_binary_export_tool`
               - Return an Ephemeris file of the STK Binary ephemeris type for export.
-            * - :py:meth:`~get_ephemeris_ccsd_sv2_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteExportTools.get_ephemeris_ccsd_sv2_export_tool`
               - Return an Ephemeris file of the CCSDS v2 ephemeris type for export.
 
 

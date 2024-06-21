@@ -1,12 +1,12 @@
 ROLL_LEFT_RIGHT
 ===============
 
-.. py:class:: ROLL_LEFT_RIGHT
+.. py:class:: ansys.stk.core.stkobjects.aviator.ROLL_LEFT_RIGHT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ROLL_LEFT_RIGHT
 
 Overview
 --------

@@ -1,13 +1,13 @@
 RadarCrossSectionComputeStrategyPlugin
 ======================================
 
-.. py:class:: RadarCrossSectionComputeStrategyPlugin
+.. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyPlugin
 
-   Bases: py:obj:`~IRadarCrossSectionComputeStrategyPlugin`, py:obj:`~IRadarCrossSectionComputeStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyPlugin`, py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarCrossSectionComputeStrategyPlugin
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleGroundEllipseElement
 ===========================
 
-.. py:class:: VehicleGroundEllipseElement
+.. py:class:: ansys.stk.core.stkobjects.VehicleGroundEllipseElement
 
-   Bases: py:obj:`~IVehicleGroundEllipseElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGroundEllipseElement`
 
    Ground ellipse.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGroundEllipseElement
 
 Overview
 --------

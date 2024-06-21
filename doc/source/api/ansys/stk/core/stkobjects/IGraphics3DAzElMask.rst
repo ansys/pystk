@@ -1,13 +1,13 @@
 IGraphics3DAzElMask
 ===================
 
-.. py:class:: IGraphics3DAzElMask
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DAzElMask
 
    object
    
    Use to display labels and adjust the translucency of the azimuth-elevation mask for a facility, place or target.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DAzElMask
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compass_directions_visible`
-            * - :py:meth:`~altitude_labels_visible`
-            * - :py:meth:`~numb_altitude_labels`
-            * - :py:meth:`~interior_translucency`
-            * - :py:meth:`~line_translucency`
-            * - :py:meth:`~label_swap_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.compass_directions_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.altitude_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.numb_altitude_labels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.interior_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.line_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.label_swap_distance`
 
 
 Import detail
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: label_swap_distance
     :canonical: ansys.stk.core.stkobjects.IGraphics3DAzElMask.label_swap_distance
-    :type: IAgVOLabelSwapDistance
+    :type: IGraphics3DLabelSwapDistance
 
     Interface to control the level of detail in labels and other screen objects at specified distances.
 

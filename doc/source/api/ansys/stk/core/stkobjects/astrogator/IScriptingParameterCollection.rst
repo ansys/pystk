@@ -1,13 +1,13 @@
 IScriptingParameterCollection
 =============================
 
-.. py:class:: IScriptingParameterCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection
 
    object
    
    The list of parameters that the script can interact with.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingParameterCollection
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.add`
               - Add a parameter to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.remove`
               - Remove a parameter.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.remove_all`
               - Remove all parameters.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.cut`
               - Copy the parameter into the clipboard and removes the parameter from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.paste`
               - Pastes the parameter from the clipboard and inserts into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.insert_copy`
               - Copy the parameter and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.get_item_by_index`
               - Retrieve a scripting parameter in the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.get_item_by_name`
               - Retrieve a scripting parameter in the collection by name.
 
     .. tab-item:: Properties
@@ -45,9 +45,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.provide_runtime_type_info`
 
 
 Import detail
@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

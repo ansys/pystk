@@ -1,13 +1,13 @@
 JacchiaBowman2008
 =================
 
-.. py:class:: JacchiaBowman2008
+.. py:class:: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008
 
-   Bases: py:obj:`~IJacchiaBowman2008`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Jacchia Bowman 2008 atmospheric propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: JacchiaBowman2008
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ITransferFunctionInputBackOffCOverImTable
 =========================================
 
-.. py:class:: ITransferFunctionInputBackOffCOverImTable
+.. py:class:: ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable
 
    object
    
    Represents a collection of input back off vs C/Im values.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransferFunctionInputBackOffCOverImTable
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.remove_at`
               - Remove the row with the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.add`
               - Add and returns a new row.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.insert_at`
               - Insert and returns a new row at the supplied index.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTable._NewEnum`
 
 
 Import detail

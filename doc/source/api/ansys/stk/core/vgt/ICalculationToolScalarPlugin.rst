@@ -1,13 +1,13 @@
 ICalculationToolScalarPlugin
 ============================
 
-.. py:class:: ICalculationToolScalarPlugin
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarPlugin
 
    object
    
    Use a scalar calculation plugin.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarPlugin
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reset`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarPlugin.reset`
               - Reset the plugin.
-            * - :py:meth:`~set_property`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarPlugin.set_property`
               - Set the plugin properties. This method throws an exception if the specified property does not exist, an invalid value was specified or the specified property is read-only.
-            * - :py:meth:`~get_property`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarPlugin.get_property`
               - Read a value of the specified plugin property. This method throws an exception if the property does not exist.
 
     .. tab-item:: Properties
@@ -33,9 +33,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~prog_id`
-            * - :py:meth:`~display_name`
-            * - :py:meth:`~available_properties`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarPlugin.prog_id`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarPlugin.display_name`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarPlugin.available_properties`
 
 
 Import detail

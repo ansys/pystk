@@ -1,13 +1,13 @@
 IAccessConstraintMinMax
 =======================
 
-.. py:class:: IAccessConstraintMinMax
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintMinMax
 
    IAccessConstraint
    
    Access Constraint used for min/max constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintMinMax
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_min`
-            * - :py:meth:`~enable_max`
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax.enable_min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax.enable_max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax.max`
 
 
 Import detail

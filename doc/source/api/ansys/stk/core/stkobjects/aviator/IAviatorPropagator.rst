@@ -1,13 +1,13 @@
 IAviatorPropagator
 ==================
 
-.. py:class:: IAviatorPropagator
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAviatorPropagator
 
    object
    
    Interface used to access the Aviator interface for an aircraft. Use this interface to get the mission or Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAviatorPropagator
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator.propagate`
               - Apply All Change.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~avtr_mission`
-            * - :py:meth:`~auto_recalculate`
-            * - :py:meth:`~avtr_catalog`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator.avtr_mission`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator.auto_recalculate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator.avtr_catalog`
 
 
 Import detail
@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: avtr_mission
     :canonical: ansys.stk.core.stkobjects.aviator.IAviatorPropagator.avtr_mission
-    :type: IAgAvtrMission
+    :type: IMission
 
     Get the Aviator mission.
 
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: avtr_catalog
     :canonical: ansys.stk.core.stkobjects.aviator.IAviatorPropagator.avtr_catalog
-    :type: IAgAvtrCatalog
+    :type: ICatalog
 
     Get the Aviator catalog.
 

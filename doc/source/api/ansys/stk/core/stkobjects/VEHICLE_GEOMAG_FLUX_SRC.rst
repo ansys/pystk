@@ -1,12 +1,12 @@
 VEHICLE_GEOMAG_FLUX_SRC
 =======================
 
-.. py:class:: VEHICLE_GEOMAG_FLUX_SRC
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_GEOMAG_FLUX_SRC
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_GEOMAG_FLUX_SRC
 
 Overview
 --------

@@ -1,12 +1,12 @@
 EPHEM_SOURCE
 ============
 
-.. py:class:: EPHEM_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.EPHEM_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: EPHEM_SOURCE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleGPSAlmanacPropertiesSP3
 ===============================
 
-.. py:class:: IVehicleGPSAlmanacPropertiesSP3
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3
 
    IVehicleGPSAlmanacProperties
    
    SP3 almanac properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSAlmanacPropertiesSP3
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~almanac_week`
-            * - :py:meth:`~time_of_almanac`
-            * - :py:meth:`~date_of_almanac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3.almanac_week`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3.time_of_almanac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3.date_of_almanac`
 
 
 Import detail

@@ -1,13 +1,13 @@
 PolarizationElliptical
 ======================
 
-.. py:class:: PolarizationElliptical
+.. py:class:: ansys.stk.core.stkobjects.PolarizationElliptical
 
-   Bases: py:obj:`~IPolarizationElliptical`, py:obj:`~IPolarization`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarizationElliptical`, py:obj:`~ansys.stk.core.stkobjects.IPolarization`
 
    Class defining an elliptical polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PolarizationElliptical
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAtmosphericAbsorptionModelScriptPlugin
 =======================================
 
-.. py:class:: IAtmosphericAbsorptionModelScriptPlugin
+.. py:class:: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelScriptPlugin
 
    object
    
    Provide access to the properties and methods of the script plugin atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAtmosphericAbsorptionModelScriptPlugin
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelScriptPlugin.filename`
 
 
 Import detail

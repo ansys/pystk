@@ -1,13 +1,13 @@
 IRadarPulseIntegrationGoalSNR
 =============================
 
-.. py:class:: IRadarPulseIntegrationGoalSNR
+.. py:class:: ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR
 
    object
    
    Interface which defines a goal SNR integration method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarPulseIntegrationGoalSNR
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~snr`
-            * - :py:meth:`~maximum_pulses`
-            * - :py:meth:`~integrator_type`
-            * - :py:meth:`~constant_efficiency`
-            * - :py:meth:`~exponent_on_pulse_number`
-            * - :py:meth:`~integration_file`
-            * - :py:meth:`~non_coherent_integration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR.snr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR.maximum_pulses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR.integrator_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR.constant_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR.exponent_on_pulse_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR.integration_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationGoalSNR.non_coherent_integration`
 
 
 Import detail

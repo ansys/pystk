@@ -1,12 +1,12 @@
 CONTROL_ENGINE_CONSTANT
 =======================
 
-.. py:class:: CONTROL_ENGINE_CONSTANT
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_CONSTANT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_ENGINE_CONSTANT
 
 Overview
 --------

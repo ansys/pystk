@@ -1,13 +1,13 @@
 CommSystemAccessSamplingMethodAdaptive
 ======================================
 
-.. py:class:: CommSystemAccessSamplingMethodAdaptive
+.. py:class:: ansys.stk.core.stkobjects.CommSystemAccessSamplingMethodAdaptive
 
-   Bases: py:obj:`~ICommSystemAccessSamplingMethodAdaptive`, py:obj:`~ICommSystemAccessSamplingMethod`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodAdaptive`, py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod`
 
    Class defining a CommSystem access options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CommSystemAccessSamplingMethodAdaptive
 
 Overview
 --------

@@ -1,13 +1,13 @@
 GridSearchResult
 ================
 
-.. py:class:: GridSearchResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GridSearchResult
 
-   Bases: py:obj:`~IGridSearchResult`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResult`
 
    Result parameters for Grid Search profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GridSearchResult
 
 Overview
 --------

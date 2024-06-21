@@ -1,13 +1,13 @@
 VectorGeometryToolWellKnownSunSystems
 =====================================
 
-.. py:class:: VectorGeometryToolWellKnownSunSystems
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems
 
-   Bases: py:obj:`~IVectorGeometryToolWellKnownSunSystems`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems`
 
    The Sun's well-known coordinate reference systems.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolWellKnownSunSystems
 
 Overview
 --------

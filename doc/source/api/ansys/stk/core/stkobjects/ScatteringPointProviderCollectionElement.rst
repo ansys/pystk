@@ -1,13 +1,13 @@
 ScatteringPointProviderCollectionElement
 ========================================
 
-.. py:class:: ScatteringPointProviderCollectionElement
+.. py:class:: ansys.stk.core.stkobjects.ScatteringPointProviderCollectionElement
 
-   Bases: py:obj:`~IScatteringPointProviderCollectionElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement`
 
    Class defining a scattering point provider collection element.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScatteringPointProviderCollectionElement
 
 Overview
 --------

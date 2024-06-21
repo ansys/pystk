@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorScaled
 ===============================
 
-.. py:class:: IVectorGeometryToolVectorScaled
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorScaled
 
    object
    
    Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorScaled
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_vector`
-            * - :py:meth:`~scale`
-            * - :py:meth:`~is_normalized`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScaled.reference_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScaled.scale`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScaled.is_normalized`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScaled.reference_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     A vector being scaled.
 

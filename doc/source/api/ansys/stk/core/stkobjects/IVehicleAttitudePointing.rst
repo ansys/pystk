@@ -1,13 +1,13 @@
 IVehicleAttitudePointing
 ========================
 
-.. py:class:: IVehicleAttitudePointing
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudePointing
 
    IVehiclePointing
    
    Target pointing attitude parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudePointing
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~advanced`
-            * - :py:meth:`~target_slew`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudePointing.advanced`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudePointing.target_slew`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudePointing.advanced
-    :type: IAgVeAccessAdvanced
+    :type: IVehicleAccessAdvanced
 
     Returns advanced targeting access computation properties.
 
 .. py:property:: target_slew
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudePointing.target_slew
-    :type: IAgVeAttTargetSlew
+    :type: IVehicleAttitudeTargetSlew
 
     Define the time required for the vehicle to move from its basic attitude to its target pointing attitude, and to change from the target pointing attitude back to the basic attitude.
 

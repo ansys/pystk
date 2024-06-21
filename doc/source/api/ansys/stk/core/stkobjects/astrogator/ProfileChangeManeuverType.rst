@@ -1,13 +1,13 @@
 ProfileChangeManeuverType
 =========================
 
-.. py:class:: ProfileChangeManeuverType
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileChangeManeuverType
 
-   Bases: py:obj:`~IProfileChangeManeuverType`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Change Maneuver Type profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileChangeManeuverType
 
 Overview
 --------

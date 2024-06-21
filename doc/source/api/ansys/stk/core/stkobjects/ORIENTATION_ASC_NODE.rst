@@ -1,12 +1,12 @@
 ORIENTATION_ASC_NODE
 ====================
 
-.. py:class:: ORIENTATION_ASC_NODE
+.. py:class:: ansys.stk.core.stkobjects.ORIENTATION_ASC_NODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ORIENTATION_ASC_NODE
 
 Overview
 --------

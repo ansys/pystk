@@ -1,13 +1,13 @@
 IVideoStream
 ============
 
-.. py:class:: IVideoStream
+.. py:class:: ansys.stk.core.graphics.IVideoStream
 
    object
    
    A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IVideoStream
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reinitialize_with_string_uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.reinitialize_with_string_uri`
               - Reinitializes the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
-            * - :py:meth:`~play`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.play`
               - Begins playing the video when the playback property is set to real time.
-            * - :py:meth:`~pause`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.pause`
               - Pauses the video when the playback property is set to real time.
-            * - :py:meth:`~stop`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.stop`
               - Stop the video when the playback property is set to real time. Stopping the video will seek to the first frame and pause playback. Use the Play method to begin playing the video again.
-            * - :py:meth:`~reset`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.reset`
               - Seeks the video to its first frame and begins playing the video when the playback property is set to real time.
-            * - :py:meth:`~close`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.close`
               - Close the video stream and any associated resources.
 
     .. tab-item:: Properties
@@ -39,22 +39,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~uri`
-            * - :py:meth:`~playback`
-            * - :py:meth:`~frame_rate`
-            * - :py:meth:`~interval_start_time`
-            * - :py:meth:`~interval_end_time`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~end_time`
-            * - :py:meth:`~start_frame`
-            * - :py:meth:`~end_frame`
-            * - :py:meth:`~loop`
-            * - :py:meth:`~is_playing`
-            * - :py:meth:`~packet_acquirement_yield_time`
-            * - :py:meth:`~packet_buffer_limit`
-            * - :py:meth:`~allow_frame_drop`
-            * - :py:meth:`~enable_audio`
-            * - :py:meth:`~audio_uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.playback`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.frame_rate`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.interval_start_time`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.interval_end_time`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.start_time`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.end_time`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.start_frame`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.end_frame`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.loop`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.is_playing`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.packet_acquirement_yield_time`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.packet_buffer_limit`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.allow_frame_drop`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.enable_audio`
+            * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.audio_uri`
 
 
 Import detail
@@ -88,13 +88,13 @@ Property detail
 
 .. py:property:: interval_start_time
     :canonical: ansys.stk.core.graphics.IVideoStream.interval_start_time
-    :type: IAgDate
+    :type: IDate
 
     Gets or sets the scene manager time at which the video will begin playing when the playback property is set to time interval.
 
 .. py:property:: interval_end_time
     :canonical: ansys.stk.core.graphics.IVideoStream.interval_end_time
-    :type: IAgDate
+    :type: IDate
 
     Gets or sets the scene manager time at which the video will stop playing when the playback property is set to time interval.
 

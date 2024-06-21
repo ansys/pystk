@@ -1,13 +1,13 @@
 IDisplayTimesTimeComponent
 ==========================
 
-.. py:class:: IDisplayTimesTimeComponent
+.. py:class:: ansys.stk.core.stkobjects.IDisplayTimesTimeComponent
 
    object
    
    Interface provides methods to configure the display times using Timeline API components.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDisplayTimesTimeComponent
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_time_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTimesTimeComponent.set_time_component`
               - Configure the display times using the specified time component. Allowed are only intervals and interval lists.
-            * - :py:meth:`~set_qualified_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTimesTimeComponent.set_qualified_path`
               - Configure the display times using the specified time component. Allowed are only intervals and interval lists. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 AnalysisInterval EventInterval\").
-            * - :py:meth:`~get_time_component`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTimesTimeComponent.get_time_component`
               - Return a time component used to configure the display times or null if component has not been configured yet.
-            * - :py:meth:`~get_qualified_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTimesTimeComponent.get_qualified_path`
               - Return the time component' qualified path or null if no component has been configured yet.
-            * - :py:meth:`~reset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTimesTimeComponent.reset`
               - Remove and resets the display configuration by unsetting currently set time component (if any).
 
 

@@ -1,13 +1,13 @@
 ICartesian3Vector
 =================
 
-.. py:class:: ICartesian3Vector
+.. py:class:: ansys.stk.core.stkutil.ICartesian3Vector
 
    object
    
    Represents a cartesian 3-D vector.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: ICartesian3Vector
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.get`
               - Return cartesian vector.
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.set`
               - Set cartesian vector.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.to_array`
               - Return coordinates as an array.
 
     .. tab-item:: Properties
@@ -33,9 +33,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.x`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.y`
+            * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.z`
 
 
 Import detail

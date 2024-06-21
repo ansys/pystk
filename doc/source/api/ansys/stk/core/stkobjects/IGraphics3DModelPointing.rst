@@ -1,13 +1,13 @@
 IGraphics3DModelPointing
 ========================
 
-.. py:class:: IGraphics3DModelPointing
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelPointing
 
    object
    
    List of pointable model elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModelPointing
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing.add_interval`
               - Add a new element to the collection using specified pointable model part, target name and the time period during which the pointable part targets the specified object.
-            * - :py:meth:`~remove_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing.remove_interval`
               - Remove a pointable element from the collection of pointable elements using specified pointable model part and target name.
-            * - :py:meth:`~load_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing.load_intervals`
               - Add the intervals from the given file.
 
     .. tab-item:: Properties
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pointable_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing.pointable_elements`
 
 
 Import detail
@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: pointable_elements
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModelPointing.pointable_elements
-    :type: IAgVOPointableElementsCollection
+    :type: IGraphics3DPointableElementsCollection
 
     Get the list of pointable model elements.
 

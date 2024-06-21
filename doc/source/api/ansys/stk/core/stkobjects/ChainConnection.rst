@@ -1,13 +1,13 @@
 ChainConnection
 ===============
 
-.. py:class:: ChainConnection
+.. py:class:: ansys.stk.core.stkobjects.ChainConnection
 
-   Bases: py:obj:`~IChainConnection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainConnection`
 
    Class defining Chain connections.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ChainConnection
 
 Overview
 --------

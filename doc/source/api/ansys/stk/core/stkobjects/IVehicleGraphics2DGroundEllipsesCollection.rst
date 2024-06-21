@@ -1,13 +1,13 @@
 IVehicleGraphics2DGroundEllipsesCollection
 ==========================================
 
-.. py:class:: IVehicleGraphics2DGroundEllipsesCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesCollection
 
    object
    
    Collection of ground ellipse 2D graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DGroundEllipsesCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesCollection._NewEnum`
 
 
 Import detail

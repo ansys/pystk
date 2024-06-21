@@ -1,13 +1,13 @@
 IKmlDocument
 ============
 
-.. py:class:: IKmlDocument
+.. py:class:: ansys.stk.core.graphics.IKmlDocument
 
    object
    
    A KML document.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IKmlDocument
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlDocument.uri`
 
 
 Import detail

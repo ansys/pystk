@@ -1,13 +1,13 @@
 VectorGeometryToolPlaneQuadrant
 ===============================
 
-.. py:class:: VectorGeometryToolPlaneQuadrant
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneQuadrant
 
-   Bases: py:obj:`~IVectorGeometryToolPlaneQuadrant`, py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A plane based on a selected Quadrant of a reference system.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPlaneQuadrant
 
 Overview
 --------

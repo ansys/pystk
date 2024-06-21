@@ -1,13 +1,13 @@
 Polarization
 ============
 
-.. py:class:: Polarization
+.. py:class:: ansys.stk.core.stkobjects.Polarization
 
-   Bases: py:obj:`~IPolarization`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarization`
 
    Class defining an polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Polarization
 
 Overview
 --------

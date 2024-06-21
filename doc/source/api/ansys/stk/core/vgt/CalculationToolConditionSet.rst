@@ -1,13 +1,13 @@
 CalculationToolConditionSet
 ===========================
 
-.. py:class:: CalculationToolConditionSet
+.. py:class:: ansys.stk.core.vgt.CalculationToolConditionSet
 
-   Bases: py:obj:`~ICalculationToolConditionSet`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConditionSet`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for...
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolConditionSet
 
 Overview
 --------

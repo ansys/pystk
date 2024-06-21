@@ -1,12 +1,12 @@
 CRDN_SIGNAL_SENSE
 =================
 
-.. py:class:: CRDN_SIGNAL_SENSE
+.. py:class:: ansys.stk.core.vgt.CRDN_SIGNAL_SENSE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SIGNAL_SENSE
 
 Overview
 --------

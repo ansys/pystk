@@ -1,13 +1,13 @@
 ICalculationToolConditionSetEvaluateResult
 ==========================================
 
-.. py:class:: ICalculationToolConditionSetEvaluateResult
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateResult
 
    object
    
    Represents the results returned by ConditionSet.Evaluate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionSetEvaluateResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~values`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateResult.values`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IDirection
 ==========
 
-.. py:class:: IDirection
+.. py:class:: ansys.stk.core.stkutil.IDirection
 
    object
    
    Interface to set and retrieve direction options for aligned and constrained vectors.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IDirection
 
 Overview
 --------
@@ -20,33 +20,33 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~convert_to`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.convert_to`
               - Change the direction to the type specified.
-            * - :py:meth:`~assign`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.assign`
               - Assign a new direction.
-            * - :py:meth:`~assign_euler`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.assign_euler`
               - Set direction using the Euler representation. Params B and C use Angle Dimension.
-            * - :py:meth:`~assign_pr`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.assign_pr`
               - Set direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension.
-            * - :py:meth:`~assign_ra_dec`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.assign_ra_dec`
               - Set direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude.
-            * - :py:meth:`~assign_xyz`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.assign_xyz`
               - Set direction using the Cartesian representation. Params X, Y and Z are dimensionless.
-            * - :py:meth:`~query_euler`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_euler`
               - Get direction using the Euler representation. Params B and C use Angle Dimension.
-            * - :py:meth:`~query_pr`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_pr`
               - Get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension.
-            * - :py:meth:`~query_ra_dec`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_ra_dec`
               - Get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude.
-            * - :py:meth:`~query_xyz`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_xyz`
               - Get direction using the Cartesian representation. Params X, Y and Z are dimensionless.
-            * - :py:meth:`~query_euler_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_euler_array`
               - Return the Euler elements in an array.
-            * - :py:meth:`~query_pr_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_pr_array`
               - Return the PR elements in an array.
-            * - :py:meth:`~query_ra_dec_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_ra_dec_array`
               - Return the RADec elements in an array.
-            * - :py:meth:`~query_xyz_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.query_xyz_array`
               - Return the XYZ elements in an array.
 
     .. tab-item:: Properties
@@ -55,7 +55,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~direction_type`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirection.direction_type`
 
 
 Import detail

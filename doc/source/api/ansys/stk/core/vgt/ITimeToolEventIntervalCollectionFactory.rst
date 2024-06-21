@@ -1,13 +1,13 @@
 ITimeToolEventIntervalCollectionFactory
 =======================================
 
-.. py:class:: ITimeToolEventIntervalCollectionFactory
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory
 
    object
    
    The factory creates collections of event interval lists.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalCollectionFactory
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.create`
               - Create and register an event interval collection using specified name, description, and type.
-            * - :py:meth:`~create_event_interval_collection_lighting`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.create_event_interval_collection_lighting`
               - Create an event interval collection defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
-            * - :py:meth:`~create_event_interval_collection_signaled`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.create_event_interval_collection_signaled`
               - Create an event interval collection recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:meth:`~create_event_interval_collection_satisfaction`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionFactory.create_event_interval_collection_satisfaction`
               - Create an event interval collection containing intervals during which condition set is satisfied.
 
 

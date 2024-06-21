@@ -1,13 +1,13 @@
 IAdvancedFixedWingExternalProp
 ==============================
 
-.. py:class:: IAdvancedFixedWingExternalProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalProp
 
    object
    
    Interface used to access the options for the External Prop File powerplant strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingExternalProp
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalProp.set_filepath`
               - Set the filepath for the external aero file.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filepath`
-            * - :py:meth:`~is_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalProp.filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalProp.is_valid`
 
 
 Import detail

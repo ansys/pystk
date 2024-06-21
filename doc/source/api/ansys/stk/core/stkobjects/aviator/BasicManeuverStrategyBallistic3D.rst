@@ -1,13 +1,13 @@
 BasicManeuverStrategyBallistic3D
 ================================
 
-.. py:class:: BasicManeuverStrategyBallistic3D
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D
 
-   Bases: py:obj:`~IBasicManeuverStrategyBallistic3D`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBallistic3D`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining Ballistic 3D strategy for a Basic Maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyBallistic3D
 
 Overview
 --------

@@ -1,13 +1,13 @@
 BeerBouguerLambertLawLayer
 ==========================
 
-.. py:class:: BeerBouguerLambertLawLayer
+.. py:class:: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer
 
-   Bases: py:obj:`~IBeerBouguerLambertLawLayer`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer`
 
    Class defining a row of an input back off vs output back off table.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BeerBouguerLambertLawLayer
 
 Overview
 --------

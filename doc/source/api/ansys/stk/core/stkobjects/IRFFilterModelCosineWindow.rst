@@ -1,13 +1,13 @@
 IRFFilterModelCosineWindow
 ==========================
 
-.. py:class:: IRFFilterModelCosineWindow
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelCosineWindow
 
    object
    
    Provide access to the properties and methods defining a cosine window RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelCosineWindow
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sampling_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelCosineWindow.sampling_frequency`
 
 
 Import detail

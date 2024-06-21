@@ -1,13 +1,13 @@
 BeamformerCustomTaperFile
 =========================
 
-.. py:class:: BeamformerCustomTaperFile
+.. py:class:: ansys.stk.core.stkobjects.BeamformerCustomTaperFile
 
-   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerCustomTaperFile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`, py:obj:`~ansys.stk.core.stkobjects.IBeamformerCustomTaperFile`
 
    Class defining a custom taper file beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BeamformerCustomTaperFile
 
 Overview
 --------

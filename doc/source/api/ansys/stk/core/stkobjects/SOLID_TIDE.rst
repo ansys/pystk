@@ -1,12 +1,12 @@
 SOLID_TIDE
 ==========
 
-.. py:class:: SOLID_TIDE
+.. py:class:: ansys.stk.core.stkobjects.SOLID_TIDE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SOLID_TIDE
 
 Overview
 --------

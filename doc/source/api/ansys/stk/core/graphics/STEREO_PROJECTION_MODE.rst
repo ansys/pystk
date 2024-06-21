@@ -1,12 +1,12 @@
 STEREO_PROJECTION_MODE
 ======================
 
-.. py:class:: STEREO_PROJECTION_MODE
+.. py:class:: ansys.stk.core.graphics.STEREO_PROJECTION_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: STEREO_PROJECTION_MODE
 
 Overview
 --------

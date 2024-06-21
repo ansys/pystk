@@ -1,13 +1,13 @@
 EOIRShapeCoupler
 ================
 
-.. py:class:: EOIRShapeCoupler
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeCoupler
 
-   Bases: py:obj:`~IEOIRShapeCoupler`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeCoupler`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Coupler shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeCoupler
 
 Overview
 --------

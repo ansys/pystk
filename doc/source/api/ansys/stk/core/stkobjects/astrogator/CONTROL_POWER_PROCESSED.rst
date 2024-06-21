@@ -1,12 +1,12 @@
 CONTROL_POWER_PROCESSED
 =======================
 
-.. py:class:: CONTROL_POWER_PROCESSED
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_POWER_PROCESSED
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_POWER_PROCESSED
 
 Overview
 --------

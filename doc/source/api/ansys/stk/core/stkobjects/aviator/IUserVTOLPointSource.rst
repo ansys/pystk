@@ -1,13 +1,13 @@
 IUserVTOLPointSource
 ====================
 
-.. py:class:: IUserVTOLPointSource
+.. py:class:: ansys.stk.core.stkobjects.aviator.IUserVTOLPointSource
 
    object
    
    Interface used to access the user VTOL Points in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IUserVTOLPointSource
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_user_vtol_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPointSource.get_user_vtol_point`
               - Get the user VTOL Point with the given name.
-            * - :py:meth:`~add_user_vtol_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPointSource.add_user_vtol_point`
               - Create a new user VTOL Point with the given name.
-            * - :py:meth:`~get_as_catalog_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPointSource.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
 

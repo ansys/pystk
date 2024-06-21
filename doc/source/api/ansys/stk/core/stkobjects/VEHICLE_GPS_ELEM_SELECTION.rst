@@ -1,12 +1,12 @@
 VEHICLE_GPS_ELEM_SELECTION
 ==========================
 
-.. py:class:: VEHICLE_GPS_ELEM_SELECTION
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_GPS_ELEM_SELECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_GPS_ELEM_SELECTION
 
 Overview
 --------

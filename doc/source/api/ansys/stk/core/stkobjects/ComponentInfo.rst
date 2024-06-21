@@ -1,13 +1,13 @@
 ComponentInfo
 =============
 
-.. py:class:: ComponentInfo
+.. py:class:: ansys.stk.core.stkobjects.ComponentInfo
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a component.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ComponentInfo
 
 Overview
 --------

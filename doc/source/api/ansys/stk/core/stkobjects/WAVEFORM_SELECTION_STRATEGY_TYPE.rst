@@ -1,12 +1,12 @@
 WAVEFORM_SELECTION_STRATEGY_TYPE
 ================================
 
-.. py:class:: WAVEFORM_SELECTION_STRATEGY_TYPE
+.. py:class:: ansys.stk.core.stkobjects.WAVEFORM_SELECTION_STRATEGY_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: WAVEFORM_SELECTION_STRATEGY_TYPE
 
 Overview
 --------

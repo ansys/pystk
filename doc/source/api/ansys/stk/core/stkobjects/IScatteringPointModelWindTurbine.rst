@@ -1,13 +1,13 @@
 IScatteringPointModelWindTurbine
 ================================
 
-.. py:class:: IScatteringPointModelWindTurbine
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine
 
    object
    
    Provide access to the properties and methods defining a wind turbine scattering point model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointModelWindTurbine
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~blade_length`
-            * - :py:meth:`~blade_rotation`
-            * - :py:meth:`~wind_direction`
-            * - :py:meth:`~blade_scattering_cross_section`
-            * - :py:meth:`~structure_scattering_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.blade_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.blade_rotation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.wind_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.blade_scattering_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.structure_scattering_cross_section`
 
 
 Import detail

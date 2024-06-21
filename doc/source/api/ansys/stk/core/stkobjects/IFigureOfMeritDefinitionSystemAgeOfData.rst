@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionSystemAgeOfData
 =======================================
 
-.. py:class:: IFigureOfMeritDefinitionSystemAgeOfData
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData
 
    IFigureOfMeritDefinitionCompute
    
    System Age of Data Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionSystemAgeOfData
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~command_station_path`
-            * - :py:meth:`~receive_station_path`
-            * - :py:meth:`~command_prep_time`
-            * - :py:meth:`~commanding_time`
-            * - :py:meth:`~pre_collection_time`
-            * - :py:meth:`~collection_time`
-            * - :py:meth:`~post_collection_time`
-            * - :py:meth:`~downlink_time`
-            * - :py:meth:`~allow_forward_crosslink`
-            * - :py:meth:`~time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.command_station_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.receive_station_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.command_prep_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.commanding_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.pre_collection_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.collection_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.post_collection_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.downlink_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.allow_forward_crosslink`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.time_step`
 
 
 Import detail

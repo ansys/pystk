@@ -1,12 +1,12 @@
 REFERENCE_STATE_PERF_MODE
 =========================
 
-.. py:class:: REFERENCE_STATE_PERF_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_PERF_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: REFERENCE_STATE_PERF_MODE
 
 Overview
 --------

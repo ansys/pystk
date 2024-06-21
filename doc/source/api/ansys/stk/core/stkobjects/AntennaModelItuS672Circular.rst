@@ -1,13 +1,13 @@
 AntennaModelItuS672Circular
 ===========================
 
-.. py:class:: AntennaModelItuS672Circular
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelItuS672Circular
 
-   Bases: py:obj:`~IAntennaModelItuS672Circular`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a ITU-R S672 circular antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelItuS672Circular
 
 Overview
 --------

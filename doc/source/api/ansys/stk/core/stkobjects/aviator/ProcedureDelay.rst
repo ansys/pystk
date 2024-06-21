@@ -1,13 +1,13 @@
 ProcedureDelay
 ==============
 
-.. py:class:: ProcedureDelay
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureDelay
 
-   Bases: py:obj:`~IProcedureDelay`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a delay procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureDelay
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ICalculationToolConvergeBasic
 =============================
 
-.. py:class:: ICalculationToolConvergeBasic
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConvergeBasic
 
    object
    
    Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConvergeBasic
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sense`
-            * - :py:meth:`~time_tolerance`
-            * - :py:meth:`~absolute_tolerance`
-            * - :py:meth:`~relative_tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic.sense`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic.time_tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic.absolute_tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic.relative_tolerance`
 
 
 Import detail

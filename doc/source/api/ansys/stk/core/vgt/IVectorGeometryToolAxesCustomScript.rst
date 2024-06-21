@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesCustomScript
 ===================================
 
-.. py:class:: IVectorGeometryToolAxesCustomScript
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesCustomScript
 
    object
    
    Customized axes offset with respect to a set of reference Axes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesCustomScript
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesCustomScript.reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesCustomScript.filename`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesCustomScript.reference_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

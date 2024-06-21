@@ -1,13 +1,13 @@
 IUserWaypointSource
 ===================
 
-.. py:class:: IUserWaypointSource
+.. py:class:: ansys.stk.core.stkobjects.aviator.IUserWaypointSource
 
    object
    
    Interface used to access the user waypoints in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IUserWaypointSource
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_user_waypoint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserWaypointSource.get_user_waypoint`
               - Get the user waypoint with the given name.
-            * - :py:meth:`~add_user_waypoint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserWaypointSource.add_user_waypoint`
               - Create a new user waypoint with the given name.
-            * - :py:meth:`~get_as_catalog_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserWaypointSource.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
 

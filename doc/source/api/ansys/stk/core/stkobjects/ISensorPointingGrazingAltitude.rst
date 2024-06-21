@@ -1,13 +1,13 @@
 ISensorPointingGrazingAltitude
 ==============================
 
-.. py:class:: ISensorPointingGrazingAltitude
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingGrazingAltitude
 
    object
    
    IAgSnPtGrazingAlt Interface for a sensor pointed in such a way that the boresight vector will graze the central body at a specified altitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingGrazingAltitude
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~azimuth_offset`
-            * - :py:meth:`~grazing_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingGrazingAltitude.azimuth_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingGrazingAltitude.grazing_altitude`
 
 
 Import detail

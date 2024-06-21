@@ -1,13 +1,13 @@
 IExportToolStepSize
 ===================
 
-.. py:class:: IExportToolStepSize
+.. py:class:: ansys.stk.core.stkobjects.IExportToolStepSize
 
    object
    
    The step size.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IExportToolStepSize
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
-            * - :py:meth:`~step_size_type`
-            * - :py:meth:`~time_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolStepSize.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolStepSize.step_size_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolStepSize.time_array`
 
 
 Import detail

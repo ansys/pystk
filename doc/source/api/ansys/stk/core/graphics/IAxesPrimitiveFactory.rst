@@ -1,13 +1,13 @@
 IAxesPrimitiveFactory
 =====================
 
-.. py:class:: IAxesPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.IAxesPrimitiveFactory
 
    object
    
    Render an axes in the 3D scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAxesPrimitiveFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_direction`
+            * - :py:attr:`~ansys.stk.core.graphics.IAxesPrimitiveFactory.initialize_with_direction`
               - Initialize an axes primitive with the specified reference frame as its source.
 
 

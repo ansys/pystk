@@ -1,13 +1,13 @@
 IFigureOfMeritDefinition
 ========================
 
-.. py:class:: IFigureOfMeritDefinition
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinition
 
    object
    
    Figure of Merit definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinition
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~satisfaction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition.satisfaction`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: satisfaction
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinition.satisfaction
-    :type: IAgFmSatisfaction
+    :type: IFigureOfMeritSatisfaction
 
     Satisfaction criteria for the Figure of Merit.
 

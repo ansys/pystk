@@ -1,13 +1,13 @@
 FuelTankInternal
 ================
 
-.. py:class:: FuelTankInternal
+.. py:class:: ansys.stk.core.stkobjects.aviator.FuelTankInternal
 
-   Bases: py:obj:`~IFuelTankInternal`, py:obj:`~IStation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal`, py:obj:`~ansys.stk.core.stkobjects.aviator.IStation`
 
    Class defining an internal fuel tank for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: FuelTankInternal
 
 Overview
 --------

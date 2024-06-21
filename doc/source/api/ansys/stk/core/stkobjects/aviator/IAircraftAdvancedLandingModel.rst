@@ -1,13 +1,13 @@
 IAircraftAdvancedLandingModel
 =============================
 
-.. py:class:: IAircraftAdvancedLandingModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel
 
    object
    
    Interface used to access the advanced landing model options for a landing model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftAdvancedLandingModel
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_stall_speed_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.set_stall_speed_ratio`
               - Set the landing speed mode to StallSpeedRatio and specify the stall speed ratio.
-            * - :py:meth:`~set_angle_of_attack`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.set_angle_of_attack`
               - Set the landing speed mode to AngleOfAttack and specify the angle of attack.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -33,12 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~landing_speed_mode`
-            * - :py:meth:`~stall_speed_ratio`
-            * - :py:meth:`~angle_of_attack`
-            * - :py:meth:`~flaps`
-            * - :py:meth:`~speedbrakes`
-            * - :py:meth:`~braking_decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.landing_speed_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.stall_speed_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.angle_of_attack`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.flaps`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.speedbrakes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.braking_decel_g`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITextureScreenOverlay
 =====================
 
-.. py:class:: ITextureScreenOverlay
+.. py:class:: ansys.stk.core.graphics.ITextureScreenOverlay
 
    object
    
    A rectangular overlay that can be assigned a texture.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextureScreenOverlay
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~texture`
-            * - :py:meth:`~texture_filter`
-            * - :py:meth:`~maintain_aspect_ratio`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlay.texture`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlay.texture_filter`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlay.maintain_aspect_ratio`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.ITextureScreenOverlay.texture
-    :type: IAgStkGraphicsRendererTexture2D
+    :type: IRendererTexture2D
 
     Gets or sets the texture (image) to be drawn on the overlay. Textures can be obtained from textures.
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.ITextureScreenOverlay.texture_filter
-    :type: IAgStkGraphicsTextureFilter2D
+    :type: ITextureFilter2D
 
     Gets or sets the filter used for the texture associated with this overlay.
 

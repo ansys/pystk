@@ -1,13 +1,13 @@
 ITransmitterModelMultibeam
 ==========================
 
-.. py:class:: ITransmitterModelMultibeam
+.. py:class:: ansys.stk.core.stkobjects.ITransmitterModelMultibeam
 
    object
    
    Provide access to the properties and methods defining a multibeam transmitter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransmitterModelMultibeam
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.set_filter`
               - Set the current filter model by name.
-            * - :py:meth:`~set_modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.set_modulator`
               - Set the current modulator model by name.
 
     .. tab-item:: Properties
@@ -31,14 +31,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~data_rate`
-            * - :py:meth:`~post_transmit_gains_losses`
-            * - :py:meth:`~enable_filter`
-            * - :py:meth:`~supported_filters`
-            * - :py:meth:`~filter`
-            * - :py:meth:`~supported_modulators`
-            * - :py:meth:`~modulator`
-            * - :py:meth:`~antenna_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.data_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.post_transmit_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.enable_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.supported_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.supported_modulators`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.antenna_system`
 
 
 Import detail
@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.post_transmit_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.filter
-    :type: IAgRFFilterModel
+    :type: IRFFilterModel
 
     Gets the current filter model.
 
@@ -90,13 +90,13 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.modulator
-    :type: IAgModulatorModel
+    :type: IModulatorModel
 
     Gets the current modulator model.
 
 .. py:property:: antenna_system
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelMultibeam.antenna_system
-    :type: IAgAntennaSystem
+    :type: IAntennaSystem
 
     Gets the antenna system.
 

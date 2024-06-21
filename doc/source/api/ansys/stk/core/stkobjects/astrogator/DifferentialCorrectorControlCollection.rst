@@ -1,13 +1,13 @@
 DifferentialCorrectorControlCollection
 ======================================
 
-.. py:class:: DifferentialCorrectorControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection
 
-   Bases: py:obj:`~IDifferentialCorrectorControlCollection`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControlCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The collection of Control Parameters for a differential corrector profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DifferentialCorrectorControlCollection
 
 Overview
 --------

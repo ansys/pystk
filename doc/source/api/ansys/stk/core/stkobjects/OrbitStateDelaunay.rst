@@ -1,13 +1,13 @@
 OrbitStateDelaunay
 ==================
 
-.. py:class:: OrbitStateDelaunay
+.. py:class:: ansys.stk.core.stkobjects.OrbitStateDelaunay
 
-   Bases: py:obj:`~IOrbitStateDelaunay`, py:obj:`~IOrbitState`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay`, py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Delaunay coordinate type, using a set of canonical action-angle variables, which are commonly used in general perturbation theories.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OrbitStateDelaunay
 
 Overview
 --------

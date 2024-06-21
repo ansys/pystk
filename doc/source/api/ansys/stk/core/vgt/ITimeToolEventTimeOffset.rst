@@ -1,13 +1,13 @@
 ITimeToolEventTimeOffset
 ========================
 
-.. py:class:: ITimeToolEventTimeOffset
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventTimeOffset
 
    object
    
    Event at fixed offset from specified reference event.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventTimeOffset
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_time_instant`
-            * - :py:meth:`~time_offset2`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventTimeOffset.reference_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventTimeOffset.time_offset2`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.ITimeToolEventTimeOffset.reference_time_instant
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     The reference time instant.
 

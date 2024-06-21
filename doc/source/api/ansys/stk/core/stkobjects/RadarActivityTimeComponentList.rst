@@ -1,13 +1,13 @@
 RadarActivityTimeComponentList
 ==============================
 
-.. py:class:: RadarActivityTimeComponentList
+.. py:class:: ansys.stk.core.stkobjects.RadarActivityTimeComponentList
 
-   Bases: py:obj:`~IRadarActivity`, py:obj:`~IRadarActivityTimeComponentList`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarActivity`, py:obj:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentList`
 
    Class defining a radar time component list activity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarActivityTimeComponentList
 
 Overview
 --------

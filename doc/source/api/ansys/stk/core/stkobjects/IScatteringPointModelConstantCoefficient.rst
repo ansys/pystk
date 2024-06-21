@@ -1,13 +1,13 @@
 IScatteringPointModelConstantCoefficient
 ========================================
 
-.. py:class:: IScatteringPointModelConstantCoefficient
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointModelConstantCoefficient
 
    object
    
    Provide access to the properties and methods defining a constant coefficient scattering point model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointModelConstantCoefficient
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~constant_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelConstantCoefficient.constant_coefficient`
 
 
 Import detail

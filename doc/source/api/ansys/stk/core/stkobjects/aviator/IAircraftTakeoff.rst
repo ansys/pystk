@@ -1,13 +1,13 @@
 IAircraftTakeoff
 ================
 
-.. py:class:: IAircraftTakeoff
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftTakeoff
 
    object
    
    Interface used to access the takeoff options for an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftTakeoff
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_built_in_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTakeoff.get_built_in_model`
               - Get the built-in model.
-            * - :py:meth:`~get_basic_takeoff_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTakeoff.get_basic_takeoff_by_name`
               - Get the basic Takeoff model with the given name.
-            * - :py:meth:`~get_advanced_takeoff_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTakeoff.get_advanced_takeoff_by_name`
               - Get the advanced Takeoff model with the given name.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftTakeoff.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

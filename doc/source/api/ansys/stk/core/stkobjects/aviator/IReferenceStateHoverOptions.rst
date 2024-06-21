@@ -1,13 +1,13 @@
 IReferenceStateHoverOptions
 ===========================
 
-.. py:class:: IReferenceStateHoverOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions
 
    object
    
    Interface used to access the hover options for a reference state procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IReferenceStateHoverOptions
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_longitudinal_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.set_longitudinal_accel`
               - Set the longitudinal acceleration.
-            * - :py:meth:`~set_attitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.set_attitude_rate`
               - Set the vertical attitude rate.
 
     .. tab-item:: Properties
@@ -31,22 +31,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~groundspeed`
-            * - :py:meth:`~altitude_rate`
-            * - :py:meth:`~tas_dot`
-            * - :py:meth:`~groundspeed_dot`
-            * - :py:meth:`~longitudinal_accel_type`
-            * - :py:meth:`~heading`
-            * - :py:meth:`~heading_is_magnetic`
-            * - :py:meth:`~course`
-            * - :py:meth:`~course_is_magnetic`
-            * - :py:meth:`~heading_dot`
-            * - :py:meth:`~course_dot`
-            * - :py:meth:`~roll_angle`
-            * - :py:meth:`~aoa`
-            * - :py:meth:`~pitch_rate`
-            * - :py:meth:`~push_pull_g`
-            * - :py:meth:`~attitude_rate_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.groundspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.tas_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.groundspeed_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.longitudinal_accel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.heading_is_magnetic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.course_is_magnetic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.heading_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.course_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.roll_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.pitch_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.push_pull_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateHoverOptions.attitude_rate_type`
 
 
 Import detail

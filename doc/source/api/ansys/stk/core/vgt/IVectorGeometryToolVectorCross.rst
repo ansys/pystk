@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorCross
 ==============================
 
-.. py:class:: IVectorGeometryToolVectorCross
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorCross
 
    object
    
    The vector cross product of two vectors.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorCross
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~from_method`
-            * - :py:meth:`~to`
-            * - :py:meth:`~is_normalized`
-            * - :py:meth:`~dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross.from_method`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross.to`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross.is_normalized`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross.dimension`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: from_method
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorCross.from_method
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify one of the two vectors which define the vector cross product.
 
 .. py:property:: to
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorCross.to
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify the second of the two vectors which define the vector cross product.
 

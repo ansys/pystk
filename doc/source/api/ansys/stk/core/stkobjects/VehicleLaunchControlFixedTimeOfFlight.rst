@@ -1,13 +1,13 @@
 VehicleLaunchControlFixedTimeOfFlight
 =====================================
 
-.. py:class:: VehicleLaunchControlFixedTimeOfFlight
+.. py:class:: ansys.stk.core.stkobjects.VehicleLaunchControlFixedTimeOfFlight
 
-   Bases: py:obj:`~IVehicleLaunchControl`, py:obj:`~IVehicleLaunchControlFixedTimeOfFlight`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchControl`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedTimeOfFlight`
 
    Class defining the option to set a Missile's flight parameters by specifying a fixed time of flight.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleLaunchControlFixedTimeOfFlight
 
 Overview
 --------

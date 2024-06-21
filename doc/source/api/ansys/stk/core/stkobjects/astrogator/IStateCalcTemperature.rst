@@ -1,13 +1,13 @@
 IStateCalcTemperature
 =====================
 
-.. py:class:: IStateCalcTemperature
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcTemperature
 
    object
    
    Properties for a Tank Temperature calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcTemperature
 
 Overview
 --------

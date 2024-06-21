@@ -1,13 +1,13 @@
 KmlContainer
 ============
 
-.. py:class:: KmlContainer
+.. py:class:: ansys.stk.core.graphics.KmlContainer
 
-   Bases: py:obj:`~IKmlContainer`, py:obj:`~IKmlFeature`
+   Bases: py:obj:`~ansys.stk.core.graphics.IKmlContainer`, py:obj:`~ansys.stk.core.graphics.IKmlFeature`
 
    A KmlContainer contains a collection of children kml features.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KmlContainer
 
 Overview
 --------

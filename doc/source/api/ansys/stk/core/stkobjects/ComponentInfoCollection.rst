@@ -1,13 +1,13 @@
 ComponentInfoCollection
 =======================
 
-.. py:class:: ComponentInfoCollection
+.. py:class:: ansys.stk.core.stkobjects.ComponentInfoCollection
 
-   Bases: py:obj:`~IComponentInfoCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IComponentInfoCollection`
 
    The collection of components and component folders.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ComponentInfoCollection
 
 Overview
 --------

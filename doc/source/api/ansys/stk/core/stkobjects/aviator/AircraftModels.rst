@@ -1,13 +1,13 @@
 AircraftModels
 ==============
 
-.. py:class:: AircraftModels
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftModels
 
-   Bases: py:obj:`~IAircraftModels`, py:obj:`~ICatalogSource`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftModels`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
 
    Class defining the User Aircraft Models in the Aviator Catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftModels
 
 Overview
 --------

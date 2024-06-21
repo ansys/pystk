@@ -1,13 +1,13 @@
 MissionControlSequenceInitialState
 ==================================
 
-.. py:class:: MissionControlSequenceInitialState
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceInitialState
 
-   Bases: py:obj:`~IMissionControlSequenceInitialState`, py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IRuntimeTypeInfoProvider`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    The Initial State segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceInitialState
 
 Overview
 --------

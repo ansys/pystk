@@ -1,13 +1,13 @@
 IRubberBandPickInfoData
 =======================
 
-.. py:class:: IRubberBandPickInfoData
+.. py:class:: ansys.stk.core.stkx.IRubberBandPickInfoData
 
    object
    
    Rubber-band mouse pick result.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IRubberBandPickInfoData
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~obj_paths`
+            * - :py:attr:`~ansys.stk.core.stkx.IRubberBandPickInfoData.obj_paths`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: obj_paths
     :canonical: ansys.stk.core.stkx.IRubberBandPickInfoData.obj_paths
-    :type: IAgObjPathCollection
+    :type: IObjPathCollection
 
     List of object paths selected.
 

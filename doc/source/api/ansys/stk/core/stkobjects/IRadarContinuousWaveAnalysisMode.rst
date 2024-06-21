@@ -1,13 +1,13 @@
 IRadarContinuousWaveAnalysisMode
 ================================
 
-.. py:class:: IRadarContinuousWaveAnalysisMode
+.. py:class:: ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode
 
    object
    
    Interface which defines an continuous wave analysis.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarContinuousWaveAnalysisMode
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode.type`
 
 
 Import detail

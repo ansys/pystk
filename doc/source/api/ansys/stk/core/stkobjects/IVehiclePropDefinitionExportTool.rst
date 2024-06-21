@@ -1,13 +1,13 @@
 IVehiclePropDefinitionExportTool
 ================================
 
-.. py:class:: IVehiclePropDefinitionExportTool
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropDefinitionExportTool
 
    object
    
    Interface used to define the export to data file options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropDefinitionExportTool
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropDefinitionExportTool.export`
               - Export the Propagator (Prop Def) file.
 
 

@@ -1,13 +1,13 @@
 SpaceEnvironmentScenarioExtGraphics3D
 =====================================
 
-.. py:class:: SpaceEnvironmentScenarioExtGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentScenarioExtGraphics3D
 
-   Bases: py:obj:`~ISpaceEnvironmentScenarioExtGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISpaceEnvironmentScenarioExtGraphics3D`
 
    3D Graphics settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SpaceEnvironmentScenarioExtGraphics3D
 
 Overview
 --------

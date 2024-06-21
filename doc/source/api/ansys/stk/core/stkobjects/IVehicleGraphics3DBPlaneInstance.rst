@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneInstance
 ================================
 
-.. py:class:: IVehicleGraphics3DBPlaneInstance
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance
 
    object
    
    Properties of an instance of a B-Plane template.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneInstance
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~name`
-            * - :py:meth:`~description`
-            * - :py:meth:`~definition`
-            * - :py:meth:`~event_name`
-            * - :py:meth:`~event`
-            * - :py:meth:`~target_point`
-            * - :py:meth:`~is_label_visible`
-            * - :py:meth:`~point_size`
-            * - :py:meth:`~is_connect_points_visible`
-            * - :py:meth:`~connect_points_color`
-            * - :py:meth:`~connect_point_line_width`
-            * - :py:meth:`~graphics_3d_window`
-            * - :py:meth:`~available_graphics_3d_windows`
-            * - :py:meth:`~additional_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.description`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.event_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.event`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.target_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.is_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.point_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.is_connect_points_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.connect_points_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.connect_point_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.graphics_3d_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.available_graphics_3d_windows`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.additional_points`
 
 
 Import detail
@@ -80,13 +80,13 @@ Property detail
 
 .. py:property:: event
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.event
-    :type: IAgVeVOBPlaneEvent
+    :type: IVehicleGraphics3DBPlaneEvent
 
     Returns the 3D BPlane Event properties.
 
 .. py:property:: target_point
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.target_point
-    :type: IAgVeVOBPlaneTargetPoint
+    :type: IVehicleGraphics3DBPlaneTargetPoint
 
     Returns the 3D BPlane Target Point properties.
 
@@ -134,7 +134,7 @@ Property detail
 
 .. py:property:: additional_points
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance.additional_points
-    :type: IAgVeVOBPlanePointCollection
+    :type: IVehicleGraphics3DBPlanePointCollection
 
     Returns a collection of additional points.
 

@@ -1,13 +1,13 @@
 IPointingStrategyFixed
 ======================
 
-.. py:class:: IPointingStrategyFixed
+.. py:class:: ansys.stk.core.stkobjects.IPointingStrategyFixed
 
    object
    
    Provide the interface for a fixed pointing strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPointingStrategyFixed
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategyFixed.orientation`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IPointingStrategyFixed.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Gets the fixed orientation.
 

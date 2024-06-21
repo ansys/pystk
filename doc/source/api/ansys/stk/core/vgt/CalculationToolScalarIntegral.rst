@@ -1,13 +1,13 @@
 CalculationToolScalarIntegral
 =============================
 
-.. py:class:: CalculationToolScalarIntegral
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarIntegral
 
-   Bases: py:obj:`~ICalculationToolScalarIntegral`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarIntegral`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarIntegral
 
 Overview
 --------

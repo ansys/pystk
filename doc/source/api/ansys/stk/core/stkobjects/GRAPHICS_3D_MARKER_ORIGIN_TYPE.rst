@@ -1,12 +1,12 @@
 GRAPHICS_3D_MARKER_ORIGIN_TYPE
 ==============================
 
-.. py:class:: GRAPHICS_3D_MARKER_ORIGIN_TYPE
+.. py:class:: ansys.stk.core.stkobjects.GRAPHICS_3D_MARKER_ORIGIN_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GRAPHICS_3D_MARKER_ORIGIN_TYPE
 
 Overview
 --------

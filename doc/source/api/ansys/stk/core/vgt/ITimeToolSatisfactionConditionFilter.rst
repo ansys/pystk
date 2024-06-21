@@ -1,13 +1,13 @@
 ITimeToolSatisfactionConditionFilter
 ====================================
 
-.. py:class:: ITimeToolSatisfactionConditionFilter
+.. py:class:: ansys.stk.core.vgt.ITimeToolSatisfactionConditionFilter
 
    object
    
    The filter selects intervals if certain side condition is satisfied at least/most certain duration.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolSatisfactionConditionFilter
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~condition`
-            * - :py:meth:`~duration_kind`
-            * - :py:meth:`~interval_duration`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSatisfactionConditionFilter.condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSatisfactionConditionFilter.duration_kind`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSatisfactionConditionFilter.interval_duration`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.vgt.ITimeToolSatisfactionConditionFilter.condition
-    :type: IAgCrdnCondition
+    :type: ICalculationToolCondition
 
     Gets or sets the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list.
 

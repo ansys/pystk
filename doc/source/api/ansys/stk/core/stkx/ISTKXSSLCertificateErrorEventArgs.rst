@@ -1,13 +1,13 @@
 ISTKXSSLCertificateErrorEventArgs
 =================================
 
-.. py:class:: ISTKXSSLCertificateErrorEventArgs
+.. py:class:: ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs
 
    object
    
    Provide information about an SSL certificate that is expired or invalid.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: ISTKXSSLCertificateErrorEventArgs
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_ignore_error`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.set_ignore_error`
               - Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server.
-            * - :py:meth:`~set_ignore_error_permanently`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.set_ignore_error_permanently`
               - Specify True to ignore the certificate error and add the certificate to the list of trusted certificates.
 
     .. tab-item:: Properties
@@ -31,15 +31,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_error_ignored`
-            * - :py:meth:`~serial_number`
-            * - :py:meth:`~issuer`
-            * - :py:meth:`~subject`
-            * - :py:meth:`~valid_date`
-            * - :py:meth:`~expiration_date`
-            * - :py:meth:`~is_expired`
-            * - :py:meth:`~pem_data`
-            * - :py:meth:`~handled`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.is_error_ignored`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.serial_number`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.issuer`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.subject`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.valid_date`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.expiration_date`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.is_expired`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.pem_data`
+            * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.handled`
 
 
 Import detail

@@ -1,12 +1,12 @@
 CONTROL_UPDATE
 ==============
 
-.. py:class:: CONTROL_UPDATE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_UPDATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_UPDATE
 
 Overview
 --------

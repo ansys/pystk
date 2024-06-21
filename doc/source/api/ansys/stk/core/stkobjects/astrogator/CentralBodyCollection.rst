@@ -1,13 +1,13 @@
 CentralBodyCollection
 =====================
 
-.. py:class:: CentralBodyCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyCollection
 
-   Bases: py:obj:`~ICentralBodyCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection`
 
    Central Body Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CentralBodyCollection
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAccessTimeEventIntervals
 =========================
 
-.. py:class:: IAccessTimeEventIntervals
+.. py:class:: ansys.stk.core.stkobjects.IAccessTimeEventIntervals
 
    object
    
    Allow configuring the access time period using a list of timeline intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessTimeEventIntervals
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~list_of_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimeEventIntervals.list_of_intervals`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: list_of_intervals
     :canonical: ansys.stk.core.stkobjects.IAccessTimeEventIntervals.list_of_intervals
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     A list of timeline intervals used to define a list of allowed access intervals.
 

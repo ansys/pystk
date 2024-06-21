@@ -1,13 +1,13 @@
 IBoundingSphereFactory
 ======================
 
-.. py:class:: IBoundingSphereFactory
+.. py:class:: ansys.stk.core.graphics.IBoundingSphereFactory
 
    object
    
    Create instances of the bounding sphere type.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IBoundingSphereFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IBoundingSphereFactory.initialize`
               - Create instances of BoundingSphere.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maximum_radius_bounding_sphere`
+            * - :py:attr:`~ansys.stk.core.graphics.IBoundingSphereFactory.maximum_radius_bounding_sphere`
 
 
 Import detail
@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: maximum_radius_bounding_sphere
     :canonical: ansys.stk.core.graphics.IBoundingSphereFactory.maximum_radius_bounding_sphere
-    :type: IAgStkGraphicsBoundingSphere
+    :type: IBoundingSphere
 
     Gets the bounding sphere of maximum possible radius.
 

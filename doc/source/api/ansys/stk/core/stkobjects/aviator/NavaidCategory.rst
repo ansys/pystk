@@ -1,13 +1,13 @@
 NavaidCategory
 ==============
 
-.. py:class:: NavaidCategory
+.. py:class:: ansys.stk.core.stkobjects.aviator.NavaidCategory
 
-   Bases: py:obj:`~INavaidCategory`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.INavaidCategory`
 
    Class defining the navaid category in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: NavaidCategory
 
 Overview
 --------

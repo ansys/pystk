@@ -1,13 +1,13 @@
 IVehicleSpatialInfo
 ===================
 
-.. py:class:: IVehicleSpatialInfo
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpatialInfo
 
    object
    
    Represents a spatial information of the vehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpatialInfo
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpatialInfo.get_state`
               - Return a spatial state of the vehicle at specified time.
-            * - :py:meth:`~get_available_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpatialInfo.get_available_times`
               - Return a collection of available intervals.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~recycle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpatialInfo.recycle`
 
 
 Import detail

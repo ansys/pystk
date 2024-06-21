@@ -1,13 +1,13 @@
 IAdditionalGainLossCollection
 =============================
 
-.. py:class:: IAdditionalGainLossCollection
+.. py:class:: ansys.stk.core.stkobjects.IAdditionalGainLossCollection
 
    object
    
    Represents a collection of gains and losses.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdditionalGainLossCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLossCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLossCollection.remove_at`
               - Remove the gain with the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLossCollection.add`
               - Add and returns a new gain with the corresponding value.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLossCollection.clear`
               - Clear all gain values from the collection.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLossCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLossCollection._NewEnum`
 
 
 Import detail

@@ -1,12 +1,12 @@
 AUTOPILOT_HORIZ_PLANE_MODE
 ==========================
 
-.. py:class:: AUTOPILOT_HORIZ_PLANE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.AUTOPILOT_HORIZ_PLANE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AUTOPILOT_HORIZ_PLANE_MODE
 
 Overview
 --------

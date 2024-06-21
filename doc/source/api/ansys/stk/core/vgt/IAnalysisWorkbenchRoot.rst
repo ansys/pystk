@@ -1,13 +1,13 @@
 IAnalysisWorkbenchRoot
 ======================
 
-.. py:class:: IAnalysisWorkbenchRoot
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchRoot
 
    object
    
    Represents a VGT root object.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchRoot
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_template_provider`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot.get_template_provider`
               - Return a template provider. The method takes a class name (i.e. \"Satellite\", \"Facility\", etc.).
-            * - :py:meth:`~get_provider`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot.get_provider`
               - Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. \"Satellite/Satellite1\", \"CentralBody/Earth\", etc.).
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~well_known_systems`
-            * - :py:meth:`~well_known_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot.well_known_systems`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot.well_known_axes`
 
 
 Import detail
@@ -48,13 +48,13 @@ Property detail
 
 .. py:property:: well_known_systems
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchRoot.well_known_systems
-    :type: IAgCrdnWellKnownSystems
+    :type: IVectorGeometryToolWellKnownSystems
 
     Returns the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.).
 
 .. py:property:: well_known_axes
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchRoot.well_known_axes
-    :type: IAgCrdnWellKnownAxes
+    :type: IVectorGeometryToolWellKnownAxes
 
     Returns the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.).
 

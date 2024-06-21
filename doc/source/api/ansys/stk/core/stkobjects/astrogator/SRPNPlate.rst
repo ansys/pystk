@@ -1,13 +1,13 @@
 SRPNPlate
 =========
 
-.. py:class:: SRPNPlate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SRPNPlate
 
-   Bases: py:obj:`~ISRPNPlate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISRPNPlate`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    NPlate SRP propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SRPNPlate
 
 Overview
 --------

@@ -1,13 +1,13 @@
 PropagatorFunctionCollection
 ============================
 
-.. py:class:: PropagatorFunctionCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection
 
-   Bases: py:obj:`~IPropagatorFunctionCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection`
 
    Propagator Function Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PropagatorFunctionCollection
 
 Overview
 --------

@@ -1,12 +1,12 @@
 ELEMENT_CONFIGURATION_TYPE
 ==========================
 
-.. py:class:: ELEMENT_CONFIGURATION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ELEMENT_CONFIGURATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ELEMENT_CONFIGURATION_TYPE
 
 Overview
 --------

@@ -1,12 +1,12 @@
 VECTOR_GEOMETRY_TOOL_POINT_TYPE
 ===============================
 
-.. py:class:: VECTOR_GEOMETRY_TOOL_POINT_TYPE
+.. py:class:: ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_POINT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VECTOR_GEOMETRY_TOOL_POINT_TYPE
 
 Overview
 --------

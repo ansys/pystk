@@ -1,13 +1,13 @@
 DisplaySystemGeodetic
 =====================
 
-.. py:class:: DisplaySystemGeodetic
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DisplaySystemGeodetic
 
-   Bases: py:obj:`~IDisplaySystemGeodetic`, py:obj:`~IDisplaySystem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeodetic`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystem`
 
    The geodetic launch location.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DisplaySystemGeodetic
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehiclePropagatorGPS
 =====================
 
-.. py:class:: IVehiclePropagatorGPS
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorGPS
 
    IVehiclePropagator
    
    Allow the user to configure and propagate a vehicle using the GPS propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorGPS
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~prn`
-            * - :py:meth:`~available_prns`
-            * - :py:meth:`~auto_update_enabled`
-            * - :py:meth:`~auto_update`
-            * - :py:meth:`~specify_catalog`
-            * - :py:meth:`~ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.prn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.available_prns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.auto_update_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.auto_update`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.specify_catalog`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.ephemeris_interval`
 
 
 Import detail
@@ -75,19 +75,19 @@ Property detail
 
 .. py:property:: auto_update
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGPS.auto_update
-    :type: IAgVeGPSAutoUpdate
+    :type: IVehicleGPSAutoUpdate
 
     Allows configuring the auto-update parameters and settings. AutoUpdateEnabled must be set to true in order to be able to change the auto-update properties.
 
 .. py:property:: specify_catalog
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGPS.specify_catalog
-    :type: IAgVeGPSSpecifyAlmanac
+    :type: IVehicleGPSSpecifyAlmanac
 
     Specify a catalog. AutoUpdateEnabled must be set to false in order to select an almanac.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGPS.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

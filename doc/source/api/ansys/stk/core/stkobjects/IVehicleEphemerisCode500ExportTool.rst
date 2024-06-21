@@ -1,13 +1,13 @@
 IVehicleEphemerisCode500ExportTool
 ==================================
 
-.. py:class:: IVehicleEphemerisCode500ExportTool
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool
 
    object
    
    The Code 500 Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEphemerisCode500ExportTool
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.export`
               - Export the ephemeris file.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sat_id`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.sat_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.time_period`
 
 
 Import detail
@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.step_size
-    :type: IAgExportToolStepSize
+    :type: IExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.time_period
-    :type: IAgExportToolTimePeriod
+    :type: IExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 

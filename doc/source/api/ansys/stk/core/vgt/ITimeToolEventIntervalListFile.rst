@@ -1,13 +1,13 @@
 ITimeToolEventIntervalListFile
 ==============================
 
-.. py:class:: ITimeToolEventIntervalListFile
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalListFile
 
    object
    
    Interval list loaded from specified interval file - ASCII file with .int extension. See STK help.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalListFile
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFile.reload`
               - Reload the interval list file.
-            * - :py:meth:`~get_file_span`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFile.get_file_span`
               - Compute the interval list file span.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFile.filename`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IStateCalcDragArea
 ==================
 
-.. py:class:: IStateCalcDragArea
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDragArea
 
    object
    
    Properties for a DragArea calculation object. CAgAsStateCalcDragArea.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDragArea
 
 Overview
 --------

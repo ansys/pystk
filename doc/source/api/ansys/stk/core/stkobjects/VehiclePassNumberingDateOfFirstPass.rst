@@ -1,13 +1,13 @@
 VehiclePassNumberingDateOfFirstPass
 ===================================
 
-.. py:class:: VehiclePassNumberingDateOfFirstPass
+.. py:class:: ansys.stk.core.stkobjects.VehiclePassNumberingDateOfFirstPass
 
-   Bases: py:obj:`~IVehiclePassNumberingDateOfFirstPass`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass`
 
    Date of first pass for pass numbering.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePassNumberingDateOfFirstPass
 
 Overview
 --------

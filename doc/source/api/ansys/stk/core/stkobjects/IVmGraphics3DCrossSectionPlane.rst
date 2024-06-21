@@ -1,13 +1,13 @@
 IVmGraphics3DCrossSectionPlane
 ==============================
 
-.. py:class:: IVmGraphics3DCrossSectionPlane
+.. py:class:: ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlane
 
    object
    
    IAgVmVOCrossSectionPlane Interface for defining planar cross-sections through the volumetric grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGraphics3DCrossSectionPlane
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plane`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlane.plane`
 
 
 Import detail

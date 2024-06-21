@@ -1,13 +1,13 @@
 IStateCalcAltitudeOfApoapsis
 ============================
 
-.. py:class:: IStateCalcAltitudeOfApoapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcAltitudeOfApoapsis
 
    object
    
    Properties for an Altitude of Apoapsis calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcAltitudeOfApoapsis
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcAltitudeOfApoapsis.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcAltitudeOfApoapsis.element_type`
 
 
 Import detail

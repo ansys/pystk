@@ -1,13 +1,13 @@
 ImmutableIntervalCollection
 ===========================
 
-.. py:class:: ImmutableIntervalCollection
+.. py:class:: ansys.stk.core.stkobjects.ImmutableIntervalCollection
 
-   Bases: py:obj:`~IImmutableIntervalCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IImmutableIntervalCollection`
 
    Read-only collection of intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ImmutableIntervalCollection
 
 Overview
 --------

@@ -1,13 +1,13 @@
 BThetaCalc
 ==========
 
-.. py:class:: BThetaCalc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BThetaCalc
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IBThetaCalc`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IBThetaCalc`
 
    BTheta Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BThetaCalc
 
 Overview
 --------

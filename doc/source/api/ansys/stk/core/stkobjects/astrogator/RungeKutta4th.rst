@@ -1,13 +1,13 @@
 RungeKutta4th
 =============
 
-.. py:class:: RungeKutta4th
+.. py:class:: ansys.stk.core.stkobjects.astrogator.RungeKutta4th
 
-   Bases: py:obj:`~IRungeKutta4th`, py:obj:`~INumericalIntegrator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4th`, py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
 
    RK4th Numerical Integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: RungeKutta4th
 
 Overview
 --------

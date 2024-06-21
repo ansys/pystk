@@ -1,13 +1,13 @@
 IBeamformerDolphChebyshev
 =========================
 
-.. py:class:: IBeamformerDolphChebyshev
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerDolphChebyshev
 
    object
    
    Provide access to the properties and methods defining a Dolph-Chebyshev tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerDolphChebyshev
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerDolphChebyshev.sidelobe_level`
 
 
 Import detail

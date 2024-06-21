@@ -1,13 +1,13 @@
 STKXApplicationPartnerAccess
 ============================
 
-.. py:class:: STKXApplicationPartnerAccess
+.. py:class:: ansys.stk.core.stkx.STKXApplicationPartnerAccess
 
-   Bases: py:obj:`~ISTKXApplicationPartnerAccess`
+   Bases: py:obj:`~ansys.stk.core.stkx.ISTKXApplicationPartnerAccess`
 
    STK X Application Partner Access object.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: STKXApplicationPartnerAccess
 
 Overview
 --------

@@ -1,13 +1,13 @@
 CalculationToolScalarAverage
 ============================
 
-.. py:class:: CalculationToolScalarAverage
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarAverage
 
-   Bases: py:obj:`~ICalculationToolScalarAverage`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarAverage`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarAverage
 
 Overview
 --------

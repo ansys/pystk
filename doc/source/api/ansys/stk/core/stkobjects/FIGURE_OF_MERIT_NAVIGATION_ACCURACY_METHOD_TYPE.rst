@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE
 ===============================================
 
-.. py:class:: FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 StateCalcMedianValue
 ====================
 
-.. py:class:: StateCalcMedianValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMedianValue
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMedianValue`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMedianValue`
 
    MedianValue Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcMedianValue
 
 Overview
 --------

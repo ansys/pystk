@@ -1,13 +1,13 @@
 ITextureMatrix
 ==============
 
-.. py:class:: ITextureMatrix
+.. py:class:: ansys.stk.core.graphics.ITextureMatrix
 
    object
    
    A 4 by 4 matrix applied to a texture coordinate.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextureMatrix
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~m11`
-            * - :py:meth:`~m12`
-            * - :py:meth:`~m13`
-            * - :py:meth:`~m14`
-            * - :py:meth:`~m21`
-            * - :py:meth:`~m22`
-            * - :py:meth:`~m23`
-            * - :py:meth:`~m24`
-            * - :py:meth:`~m31`
-            * - :py:meth:`~m32`
-            * - :py:meth:`~m33`
-            * - :py:meth:`~m34`
-            * - :py:meth:`~m41`
-            * - :py:meth:`~m42`
-            * - :py:meth:`~m43`
-            * - :py:meth:`~m44`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m11`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m12`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m13`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m14`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m21`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m22`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m23`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m24`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m31`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m32`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m33`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m34`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m41`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m42`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m43`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m44`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVehicleEllipseDataCollection
 =============================
 
-.. py:class:: IVehicleEllipseDataCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEllipseDataCollection
 
    object
    
    Ellipse Data Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEllipseDataCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.add`
               - Add a new element to the collection.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection._NewEnum`
 
 
 Import detail

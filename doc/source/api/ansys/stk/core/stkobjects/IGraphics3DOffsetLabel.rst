@@ -1,13 +1,13 @@
 IGraphics3DOffsetLabel
 ======================
 
-.. py:class:: IGraphics3DOffsetLabel
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DOffsetLabel
 
    object
    
    AgVOOffsetLabel used to access the 3D Label attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DOffsetLabel
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
-            * - :py:meth:`~offset_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetLabel.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetLabel.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetLabel.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetLabel.z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetLabel.offset_frame`
 
 
 Import detail

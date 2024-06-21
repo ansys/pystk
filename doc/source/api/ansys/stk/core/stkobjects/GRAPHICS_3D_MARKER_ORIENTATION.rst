@@ -1,12 +1,12 @@
 GRAPHICS_3D_MARKER_ORIENTATION
 ==============================
 
-.. py:class:: GRAPHICS_3D_MARKER_ORIENTATION
+.. py:class:: ansys.stk.core.stkobjects.GRAPHICS_3D_MARKER_ORIENTATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GRAPHICS_3D_MARKER_ORIENTATION
 
 Overview
 --------

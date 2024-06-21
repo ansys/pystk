@@ -1,13 +1,13 @@
 ProcedureAreaTargetSearch
 =========================
 
-.. py:class:: ProcedureAreaTargetSearch
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch
 
-   Bases: py:obj:`~IProcedureAreaTargetSearch`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining an Area Target Search procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureAreaTargetSearch
 
 Overview
 --------

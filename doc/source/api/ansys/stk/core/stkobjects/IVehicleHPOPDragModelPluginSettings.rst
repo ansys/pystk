@@ -1,13 +1,13 @@
 IVehicleHPOPDragModelPluginSettings
 ===================================
 
-.. py:class:: IVehicleHPOPDragModelPluginSettings
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPDragModelPluginSettings
 
    object
    
    Plugin Drag Model Settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPDragModelPluginSettings
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPluginSettings.get_property`
               - Get a property.
-            * - :py:meth:`~set_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPluginSettings.set_property`
               - Set a property.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPluginSettings.available_properties`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAccessConstraintAnalysisWorkbench
 ==================================
 
-.. py:class:: IAccessConstraintAnalysisWorkbench
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench
 
    IAccessConstraint
    
    Access Constraint used for Analysis Workbench Constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintAnalysisWorkbench
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_min`
-            * - :py:meth:`~enable_max`
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
-            * - :py:meth:`~reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.enable_min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.enable_max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.reference`
 
 
 Import detail

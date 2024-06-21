@@ -1,13 +1,13 @@
 Orientation
 ===========
 
-.. py:class:: Orientation
+.. py:class:: ansys.stk.core.stkutil.Orientation
 
-   Bases: py:obj:`~IOrientation`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientation`
 
    Class defining the orientation of an orbit.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Orientation
 
 Overview
 --------

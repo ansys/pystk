@@ -1,13 +1,13 @@
 IPolylinePrimitiveOptionalParametersFactory
 ===========================================
 
-.. py:class:: IPolylinePrimitiveOptionalParametersFactory
+.. py:class:: ansys.stk.core.graphics.IPolylinePrimitiveOptionalParametersFactory
 
    object
    
    Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPolylinePrimitiveOptionalParametersFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveOptionalParametersFactory.initialize`
               - Initialize default polyline primitive optional parameters. All per-segment parameters are initially empty.
 
 

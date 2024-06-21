@@ -1,13 +1,13 @@
 IVehicleLeadTrailDataFraction
 =============================
 
-.. py:class:: IVehicleLeadTrailDataFraction
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction
 
    object
    
    The percentage of the leading or trailing portion of a vehicle's path that will display in the 2D or 3D window.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLeadTrailDataFraction
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction.fraction`
 
 
 Import detail

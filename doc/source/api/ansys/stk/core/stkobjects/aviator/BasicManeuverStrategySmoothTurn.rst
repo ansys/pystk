@@ -1,13 +1,13 @@
 BasicManeuverStrategySmoothTurn
 ===============================
 
-.. py:class:: BasicManeuverStrategySmoothTurn
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn
 
-   Bases: py:obj:`~IBasicManeuverStrategySmoothTurn`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothTurn`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the smooth turn strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategySmoothTurn
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IJacchiaBowman2008
 ==================
 
-.. py:class:: IJacchiaBowman2008
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008
 
    object
    
    Properties for the Jacchia Bowman 2008 atmospheric density model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IJacchiaBowman2008
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_approximate_altitude`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~atmos_data_source`
-            * - :py:meth:`~f10`
-            * - :py:meth:`~f10_avg`
-            * - :py:meth:`~m10`
-            * - :py:meth:`~m10_avg`
-            * - :py:meth:`~s10`
-            * - :py:meth:`~s10_avg`
-            * - :py:meth:`~y10`
-            * - :py:meth:`~y10_avg`
-            * - :py:meth:`~dst_d_tc`
-            * - :py:meth:`~atmos_aug_data_file`
-            * - :py:meth:`~atmos_aug_dtc_file`
-            * - :py:meth:`~drag_model_type`
-            * - :py:meth:`~drag_model_plugin_name`
-            * - :py:meth:`~drag_model_plugin`
-            * - :py:meth:`~variable_area_history_file`
-            * - :py:meth:`~n_plate_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.use_approximate_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.f10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.f10_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.m10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.m10_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.s10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.s10_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.y10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.y10_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.dst_d_tc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.atmos_aug_data_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.atmos_aug_dtc_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.drag_model_plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.drag_model_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.variable_area_history_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.n_plate_definition_file`
 
 
 Import detail
@@ -150,7 +150,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IJacchiaBowman2008.drag_model_plugin
-    :type: IAgVADragModelPlugin
+    :type: IDragModelPlugin
 
     Drag model plugin properties.
 

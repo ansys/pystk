@@ -1,13 +1,13 @@
 IPickResult
 ===========
 
-.. py:class:: IPickResult
+.. py:class:: ansys.stk.core.graphics.IPickResult
 
    object
    
    A single result from Pick.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPickResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~objects`
-            * - :py:meth:`~depth`
-            * - :py:meth:`~position`
+            * - :py:attr:`~ansys.stk.core.graphics.IPickResult.objects`
+            * - :py:attr:`~ansys.stk.core.graphics.IPickResult.depth`
+            * - :py:attr:`~ansys.stk.core.graphics.IPickResult.position`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: objects
     :canonical: ansys.stk.core.graphics.IPickResult.objects
-    :type: IAgStkGraphicsObjectCollection
+    :type: IObjectCollection
 
     Gets a collection of objects that were on the pick stack for the picked object.
 

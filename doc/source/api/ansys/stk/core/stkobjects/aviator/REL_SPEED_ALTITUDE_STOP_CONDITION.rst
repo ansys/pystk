@@ -1,12 +1,12 @@
 REL_SPEED_ALTITUDE_STOP_CONDITION
 =================================
 
-.. py:class:: REL_SPEED_ALTITUDE_STOP_CONDITION
+.. py:class:: ansys.stk.core.stkobjects.aviator.REL_SPEED_ALTITUDE_STOP_CONDITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: REL_SPEED_ALTITUDE_STOP_CONDITION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IDataProviders
 ==============
 
-.. py:class:: IDataProviders
+.. py:class:: ansys.stk.core.stkobjects.IDataProviders
 
    object
    
    Represents a collection of data providers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviders
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviders.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviders.contains`
               - Determine whether the collection contains a specific data provider.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviders.get_item_by_index`
               - Retrieve a data provider from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviders.get_item_by_name`
               - Retrieve a data provider from the collection by name.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviders.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviders._NewEnum`
 
 
 Import detail

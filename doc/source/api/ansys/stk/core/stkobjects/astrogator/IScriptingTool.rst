@@ -1,13 +1,13 @@
 IScriptingTool
 ==============
 
-.. py:class:: IScriptingTool
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingTool
 
    object
    
    Properties for the Scripting Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingTool
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~script_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.script_text`
               - Injects the script into the scripting tool.
-            * - :py:meth:`~copy_to_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.copy_to_clipboard`
               - Copy entire scripting tool to clipboard.
-            * - :py:meth:`~paste_from_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.paste_from_clipboard`
               - Replace entire scripting tool with scripting tool in clipboard.
 
     .. tab-item:: Properties
@@ -33,12 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~segment_properties`
-            * - :py:meth:`~calc_objects`
-            * - :py:meth:`~parameters`
-            * - :py:meth:`~language_type`
-            * - :py:meth:`~pre_iterate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.segment_properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.calc_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.language_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.pre_iterate`
 
 
 Import detail
@@ -60,19 +60,19 @@ Property detail
 
 .. py:property:: segment_properties
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingTool.segment_properties
-    :type: IAgVAScriptingSegmentCollection
+    :type: IScriptingSegmentCollection
 
     Returns the collection of the segment properties.
 
 .. py:property:: calc_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingTool.calc_objects
-    :type: IAgVAScriptingCalcObjectCollection
+    :type: IScriptingCalcObjectCollection
 
     Returns the collection of the calculation objects.
 
 .. py:property:: parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.IScriptingTool.parameters
-    :type: IAgVAScriptingParameterCollection
+    :type: IScriptingParameterCollection
 
     Returns the collection of parameters.
 

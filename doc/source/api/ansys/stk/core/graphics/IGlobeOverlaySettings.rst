@@ -1,13 +1,13 @@
 IGlobeOverlaySettings
 =====================
 
-.. py:class:: IGlobeOverlaySettings
+.. py:class:: ansys.stk.core.graphics.IGlobeOverlaySettings
 
    object
    
    Settings used by globe overlay objects. These setting affect all scenes.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IGlobeOverlaySettings
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~terrain_cache_size`
-            * - :py:meth:`~imagery_cache_size`
-            * - :py:meth:`~preload_terrain_and_imagery`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlaySettings.terrain_cache_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlaySettings.imagery_cache_size`
+            * - :py:attr:`~ansys.stk.core.graphics.IGlobeOverlaySettings.preload_terrain_and_imagery`
 
 
 Import detail

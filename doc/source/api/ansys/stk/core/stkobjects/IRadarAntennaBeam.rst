@@ -1,13 +1,13 @@
 IRadarAntennaBeam
 =================
 
-.. py:class:: IRadarAntennaBeam
+.. py:class:: ansys.stk.core.stkobjects.IRadarAntennaBeam
 
    object
    
    Provide access to a radar antenna beam.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarAntennaBeam
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_pointing_strategy_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.set_pointing_strategy_type`
               - Set the current pointing strategy type.
-            * - :py:meth:`~set_activity_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.set_activity_type`
               - Set the activity type.
-            * - :py:meth:`~set_waveform_selection_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.set_waveform_selection_strategy`
               - Set the current waveform selection strategy.
 
     .. tab-item:: Properties
@@ -33,12 +33,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~id`
-            * - :py:meth:`~pointing_strategy`
-            * - :py:meth:`~gain`
-            * - :py:meth:`~beam_width`
-            * - :py:meth:`~activity`
-            * - :py:meth:`~waveform_selection_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.pointing_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.beam_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.activity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.waveform_selection_strategy`
 
 
 Import detail
@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: pointing_strategy
     :canonical: ansys.stk.core.stkobjects.IRadarAntennaBeam.pointing_strategy
-    :type: IAgPointingStrategy
+    :type: IPointingStrategy
 
     Gets the pointing strategy.
 
@@ -78,13 +78,13 @@ Property detail
 
 .. py:property:: activity
     :canonical: ansys.stk.core.stkobjects.IRadarAntennaBeam.activity
-    :type: IAgRadarActivity
+    :type: IRadarActivity
 
     Gets the activity.
 
 .. py:property:: waveform_selection_strategy
     :canonical: ansys.stk.core.stkobjects.IRadarAntennaBeam.waveform_selection_strategy
-    :type: IAgWaveformSelectionStrategy
+    :type: IWaveformSelectionStrategy
 
     Gets the waveform selection strategy.
 

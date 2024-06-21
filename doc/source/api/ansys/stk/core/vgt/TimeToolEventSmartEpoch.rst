@@ -1,13 +1,13 @@
 TimeToolEventSmartEpoch
 =======================
 
-.. py:class:: TimeToolEventSmartEpoch
+.. py:class:: ansys.stk.core.vgt.TimeToolEventSmartEpoch
 
-   Bases: py:obj:`~ITimeToolEventSmartEpoch`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch`, py:obj:`~ansys.stk.core.vgt.ITimeToolEvent`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A smart epoch.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventSmartEpoch
 
 Overview
 --------

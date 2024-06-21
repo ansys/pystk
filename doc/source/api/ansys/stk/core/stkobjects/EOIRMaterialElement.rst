@@ -1,13 +1,13 @@
 EOIRMaterialElement
 ===================
 
-.. py:class:: EOIRMaterialElement
+.. py:class:: ansys.stk.core.stkobjects.EOIRMaterialElement
 
-   Bases: py:obj:`~IEOIRMaterialElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRMaterialElement`
 
    AgEOIRMaterialElement class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRMaterialElement
 
 Overview
 --------

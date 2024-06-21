@@ -1,12 +1,12 @@
 VEHICLE_BREAK_ANGLE_TYPE
 ========================
 
-.. py:class:: VEHICLE_BREAK_ANGLE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_BREAK_ANGLE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_BREAK_ANGLE_TYPE
 
 Overview
 --------

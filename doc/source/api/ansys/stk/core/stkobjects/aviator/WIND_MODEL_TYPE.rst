@@ -1,12 +1,12 @@
 WIND_MODEL_TYPE
 ===============
 
-.. py:class:: WIND_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.WIND_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: WIND_MODEL_TYPE
 
 Overview
 --------

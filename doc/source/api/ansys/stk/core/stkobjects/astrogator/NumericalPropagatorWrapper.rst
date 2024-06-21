@@ -1,13 +1,13 @@
 NumericalPropagatorWrapper
 ==========================
 
-.. py:class:: NumericalPropagatorWrapper
+.. py:class:: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper
 
-   Bases: py:obj:`~INumericalPropagatorWrapper`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapper`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Numerical Propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: NumericalPropagatorWrapper
 
 Overview
 --------

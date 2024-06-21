@@ -1,13 +1,13 @@
 IDataProviderResult
 ===================
 
-.. py:class:: IDataProviderResult
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResult
 
    object
    
    Provide methods to access the results returned by the data provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResult
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~category`
-            * - :py:meth:`~value`
-            * - :py:meth:`~sections`
-            * - :py:meth:`~intervals`
-            * - :py:meth:`~data_sets`
-            * - :py:meth:`~message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.category`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.sections`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.data_sets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.message`
 
 
 Import detail
@@ -53,25 +53,25 @@ Property detail
 
 .. py:property:: sections
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.sections
-    :type: IAgDrSubSectionCollection
+    :type: IDataProviderResultSubSectionCollection
 
     Returns a collection of sections.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.intervals
-    :type: IAgDrIntervalCollection
+    :type: IDataProviderResultIntervalCollection
 
     Returns a collection of intervals.
 
 .. py:property:: data_sets
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.data_sets
-    :type: IAgDrDataSetCollection
+    :type: IDataProviderResultDataSetCollection
 
     Returns a collection of Datasets.
 
 .. py:property:: message
     :canonical: ansys.stk.core.stkobjects.IDataProviderResult.message
-    :type: IAgDrTextMessage
+    :type: IDataProviderResultTextMessage
 
     Returns the message returned with the result.
 

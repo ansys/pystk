@@ -1,13 +1,13 @@
 IGraphics3DModelFile
 ====================
 
-.. py:class:: IGraphics3DModelFile
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelFile
 
    object
    
    IAgVOModelFile Interface. Used to specify the model's file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModelFile
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelFile.file_path`
 
 
 Import detail

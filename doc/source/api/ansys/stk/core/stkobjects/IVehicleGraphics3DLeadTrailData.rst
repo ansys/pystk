@@ -1,13 +1,13 @@
 IVehicleGraphics3DLeadTrailData
 ===============================
 
-.. py:class:: IVehicleGraphics3DLeadTrailData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData
 
    object
    
    Interface for vehicle's lead/trail data.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DLeadTrailData
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_lead_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.set_lead_data_type`
               - Set the display option for the leading portion of the vehicle's tracks.
-            * - :py:meth:`~set_trail_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.set_trail_data_type`
               - Set the display option for the trailng portion of the vehicle's tracks.
-            * - :py:meth:`~is_data_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.is_data_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_trail_same_as_lead`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.set_trail_same_as_lead`
               - Set the trailing display option (and value, if applicable) to be the same as for the leading portion.
 
     .. tab-item:: Properties
@@ -35,13 +35,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lead_data_type`
-            * - :py:meth:`~trail_data_type`
-            * - :py:meth:`~lead_data`
-            * - :py:meth:`~trail_data`
-            * - :py:meth:`~has_lead_data`
-            * - :py:meth:`~has_trail_data`
-            * - :py:meth:`~supported_data_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.lead_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.trail_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.lead_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.trail_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.has_lead_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.has_trail_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.supported_data_types`
 
 
 Import detail
@@ -69,13 +69,13 @@ Property detail
 
 .. py:property:: lead_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.lead_data
-    :type: IAgVeLeadTrailData
+    :type: IVehicleLeadTrailData
 
     Get the display value (time or percent) for the leading portion of the vehicle's tracks.
 
 .. py:property:: trail_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.trail_data
-    :type: IAgVeLeadTrailData
+    :type: IVehicleLeadTrailData
 
     Get the display value (time or percent) for the trailing portion of the vehicle's tracks.
 

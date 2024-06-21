@@ -1,13 +1,13 @@
 StateCalcLonOfAscNode
 =====================
 
-.. py:class:: StateCalcLonOfAscNode
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcLonOfAscNode
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcLonOfAscNode`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfAscNode`
 
    LongitudeOfAscendingNode Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcLonOfAscNode
 
 Overview
 --------

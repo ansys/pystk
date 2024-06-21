@@ -1,12 +1,12 @@
 FONT_STYLE
 ==========
 
-.. py:class:: FONT_STYLE
+.. py:class:: ansys.stk.core.graphics.FONT_STYLE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: FONT_STYLE
 
 Overview
 --------

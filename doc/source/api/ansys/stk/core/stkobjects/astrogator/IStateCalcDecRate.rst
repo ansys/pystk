@@ -1,13 +1,13 @@
 IStateCalcDecRate
 =================
 
-.. py:class:: IStateCalcDecRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDecRate
 
    object
    
    Properties for a Declination Rate calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDecRate
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDecRate.coord_system_name`
 
 
 Import detail

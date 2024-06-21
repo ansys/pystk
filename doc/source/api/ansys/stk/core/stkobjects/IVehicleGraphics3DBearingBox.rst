@@ -1,13 +1,13 @@
 IVehicleGraphics3DBearingBox
 ============================
 
-.. py:class:: IVehicleGraphics3DBearingBox
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox
 
    IVehicleGraphics3DProximityAreaObject
    
    Define a volume, relative to a bearing from the North, around an object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBearingBox
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~length`
-            * - :py:meth:`~width`
-            * - :py:meth:`~height`
-            * - :py:meth:`~length_offset`
-            * - :py:meth:`~width_offset`
-            * - :py:meth:`~height_offset`
-            * - :py:meth:`~use_translucency`
-            * - :py:meth:`~translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.length_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.width_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.height_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.use_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.translucency`
 
 
 Import detail

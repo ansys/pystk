@@ -1,13 +1,13 @@
 IVehiclePropagator11ParamDescriptor
 ===================================
 
-.. py:class:: IVehiclePropagator11ParamDescriptor
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor
 
    object
    
    11-Param file definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagator11ParamDescriptor
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~filename`
-            * - :py:meth:`~satellite_identification`
-            * - :py:meth:`~nominal_longitude`
-            * - :py:meth:`~lm0`
-            * - :py:meth:`~lm1`
-            * - :py:meth:`~lm2`
-            * - :py:meth:`~lonc`
-            * - :py:meth:`~lonc1`
-            * - :py:meth:`~lons`
-            * - :py:meth:`~lons1`
-            * - :py:meth:`~latc`
-            * - :py:meth:`~latc1`
-            * - :py:meth:`~lats`
-            * - :py:meth:`~lats1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.satellite_identification`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.nominal_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lm0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lm1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lm2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lonc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lonc1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lons`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lons1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.latc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.latc1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lats`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lats1`
 
 
 Import detail

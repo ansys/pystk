@@ -1,13 +1,13 @@
 IProcedureAirwayRouter
 ======================
 
-.. py:class:: IProcedureAirwayRouter
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter
 
    object
    
    Interface used to access the options for an Airway Router procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureAirwayRouter
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.get_as_procedure`
               - Get the procedure interface.
-            * - :py:meth:`~update_route`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.update_route`
               - Recalculate the route.
-            * - :py:meth:`~get_waypoints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.get_waypoints`
               - Get a list of the current route's waypoints.
-            * - :py:meth:`~get_segments`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.get_segments`
               - Get a list of the current route's individual procedures.
-            * - :py:meth:`~copy_procedures`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.copy_procedures`
               - Copy the route as a set of procedures to the clipboard.
 
     .. tab-item:: Properties
@@ -37,15 +37,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~router`
-            * - :py:meth:`~optimize_for_wind`
-            * - :py:meth:`~bounding_box_pad`
-            * - :py:meth:`~max_waypoint_range`
-            * - :py:meth:`~entry_exit_and_or`
-            * - :py:meth:`~max_waypoint_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.router`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.optimize_for_wind`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.bounding_box_pad`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.max_waypoint_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.entry_exit_and_or`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.max_waypoint_count`
 
 
 Import detail
@@ -61,19 +61,19 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.altitude_options
-    :type: IAgAvtrAltitudeMSLOptions
+    :type: IAltitudeMSLOptions
 
     Get the altitude options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.enroute_options
-    :type: IAgAvtrEnrouteOptions
+    :type: IEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 

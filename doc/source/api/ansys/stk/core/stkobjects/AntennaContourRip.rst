@@ -1,13 +1,13 @@
 AntennaContourRip
 =================
 
-.. py:class:: AntennaContourRip
+.. py:class:: ansys.stk.core.stkobjects.AntennaContourRip
 
-   Bases: py:obj:`~IAntennaContour`, py:obj:`~IAntennaContourRip`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaContour`, py:obj:`~ansys.stk.core.stkobjects.IAntennaContourRip`
 
    Class defining an antenna rip contour properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaContourRip
 
 Overview
 --------

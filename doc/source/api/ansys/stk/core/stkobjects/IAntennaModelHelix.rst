@@ -1,13 +1,13 @@
 IAntennaModelHelix
 ==================
 
-.. py:class:: IAntennaModelHelix
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelHelix
 
    object
    
    Provide access to the properties and methods defining a helix antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelHelix
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~turn_spacing`
-            * - :py:meth:`~number_of_turns`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.turn_spacing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.number_of_turns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.use_backlobe_as_mainlobe_atten`
 
 
 Import detail

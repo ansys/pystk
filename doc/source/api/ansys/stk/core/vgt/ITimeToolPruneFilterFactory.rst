@@ -1,13 +1,13 @@
 ITimeToolPruneFilterFactory
 ===========================
 
-.. py:class:: ITimeToolPruneFilterFactory
+.. py:class:: ansys.stk.core.vgt.ITimeToolPruneFilterFactory
 
    object
    
    The factory creates pruning filters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolPruneFilterFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPruneFilterFactory.create`
               - Create and initializes a new prune filter using default configuration.
 
 

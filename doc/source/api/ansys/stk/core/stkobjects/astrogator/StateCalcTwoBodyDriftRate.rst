@@ -1,13 +1,13 @@
 StateCalcTwoBodyDriftRate
 =========================
 
-.. py:class:: StateCalcTwoBodyDriftRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcTwoBodyDriftRate
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTwoBodyDriftRate`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTwoBodyDriftRate`
 
    TwoBodyDriftRate Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcTwoBodyDriftRate
 
 Overview
 --------

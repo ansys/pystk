@@ -1,12 +1,12 @@
 FOLLOW_SEPARATION
 =================
 
-.. py:class:: FOLLOW_SEPARATION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.FOLLOW_SEPARATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: FOLLOW_SEPARATION
 
 Overview
 --------

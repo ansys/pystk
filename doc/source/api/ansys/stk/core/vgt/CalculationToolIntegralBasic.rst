@@ -1,13 +1,13 @@
 CalculationToolIntegralBasic
 ============================
 
-.. py:class:: CalculationToolIntegralBasic
+.. py:class:: ansys.stk.core.vgt.CalculationToolIntegralBasic
 
-   Bases: py:obj:`~ICalculationToolIntegralBasic`, py:obj:`~IAnalysisWorkbenchIntegral`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolIntegralBasic`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchIntegral`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Integral definition determines how scalar calculation is numerically integrated.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolIntegralBasic
 
 Overview
 --------

@@ -1,13 +1,13 @@
 RungeKutta2nd3rd
 ================
 
-.. py:class:: RungeKutta2nd3rd
+.. py:class:: ansys.stk.core.stkobjects.astrogator.RungeKutta2nd3rd
 
-   Bases: py:obj:`~IRungeKutta2nd3rd`, py:obj:`~INumericalIntegrator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd`, py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
 
    RK2nd3rd Numerical Integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: RungeKutta2nd3rd
 
 Overview
 --------

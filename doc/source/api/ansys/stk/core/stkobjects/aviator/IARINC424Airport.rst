@@ -1,13 +1,13 @@
 IARINC424Airport
 ================
 
-.. py:class:: IARINC424Airport
+.. py:class:: ansys.stk.core.stkobjects.aviator.IARINC424Airport
 
    object
    
    Do not use this interface, as it is deprecated. Use IAgAvtrARINC424Item instead.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IARINC424Airport
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Airport.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

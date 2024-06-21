@@ -1,13 +1,13 @@
 IAzElMaskData
 =============
 
-.. py:class:: IAzElMaskData
+.. py:class:: ansys.stk.core.stkobjects.IAzElMaskData
 
    object
    
    Base interface IAgAzElMaskData. IAgSnAzElMaskFile implements this interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAzElMaskData
 
 Overview
 --------

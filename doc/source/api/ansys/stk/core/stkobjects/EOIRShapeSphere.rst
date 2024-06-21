@@ -1,13 +1,13 @@
 EOIRShapeSphere
 ===============
 
-.. py:class:: EOIRShapeSphere
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeSphere
 
-   Bases: py:obj:`~IEOIRShapeSphere`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeSphere`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Sphere shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeSphere
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehiclePropagator11Param
 =========================
 
-.. py:class:: IVehiclePropagator11Param
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagator11Param
 
    IVehiclePropagator
    
    The 11-Parameter propagator models geostationary satellites using 11-Parameter files. The propagator uses an algorithm documented in Intelsat Earth Station Standards (IESS) IESS-412 (Rev. 2), available at www.celestrak.com.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagator11Param
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~ephemeris_interval`
-            * - :py:meth:`~parameter_files`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param.ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param.parameter_files`
 
 
 Import detail
@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11Param.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 
 .. py:property:: parameter_files
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagator11Param.parameter_files
-    :type: IAgVePropagator11ParamDescriptorCollection
+    :type: IVehiclePropagator11ParamDescriptorCollection
 
     Returns a collection of 11-Parameter satellite definitions.
 

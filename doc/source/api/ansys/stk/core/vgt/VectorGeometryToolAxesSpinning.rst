@@ -1,13 +1,13 @@
 VectorGeometryToolAxesSpinning
 ==============================
 
-.. py:class:: VectorGeometryToolAxesSpinning
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesSpinning
 
-   Bases: py:obj:`~IVectorGeometryToolAxesSpinning`, py:obj:`~IVectorGeometryToolAxes`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAxesSpinning
 
 Overview
 --------

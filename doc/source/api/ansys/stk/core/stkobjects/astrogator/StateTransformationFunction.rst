@@ -1,13 +1,13 @@
 StateTransformationFunction
 ===========================
 
-.. py:class:: StateTransformationFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateTransformationFunction
 
-   Bases: py:obj:`~IStateTransformationFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateTransformationFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    State Transition Propagator Function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateTransformationFunction
 
 Overview
 --------

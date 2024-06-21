@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesSpinning
 ===============================
 
-.. py:class:: IVectorGeometryToolAxesSpinning
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning
 
    object
    
    Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesSpinning
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~spin_vector`
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~initial_offset`
-            * - :py:meth:`~spin_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.spin_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.initial_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.spin_rate`
 
 
 Import detail
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: spin_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.spin_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     Specify a spin vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.reference_axes
-    :type: IAgCrdnAxesRefTo
+    :type: IVectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

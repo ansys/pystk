@@ -1,13 +1,13 @@
 IBisectionResult
 ================
 
-.. py:class:: IBisectionResult
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBisectionResult
 
    object
    
    Properties for result parameters of a Bisection profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBisectionResult
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~desired_value`
-            * - :py:meth:`~tolerance`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult.desired_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult.tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult.custom_display_unit`
 
 
 Import detail

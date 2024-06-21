@@ -1,13 +1,13 @@
 IPointingStrategy
 =================
 
-.. py:class:: IPointingStrategy
+.. py:class:: ansys.stk.core.stkobjects.IPointingStrategy
 
    object
    
    Provide the base interface for a pointing strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPointingStrategy
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategy.type`
 
 
 Import detail

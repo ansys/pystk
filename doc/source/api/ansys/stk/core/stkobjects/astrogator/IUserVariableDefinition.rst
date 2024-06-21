@@ -1,13 +1,13 @@
 IUserVariableDefinition
 =======================
 
-.. py:class:: IUserVariableDefinition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IUserVariableDefinition
 
    object
    
    Properties for a User Variable definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IUserVariableDefinition
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~unit_dimension`
-            * - :py:meth:`~variable_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinition.unit_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinition.variable_name`
 
 
 Import detail

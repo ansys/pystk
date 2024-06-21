@@ -1,13 +1,13 @@
 AdvCAT
 ======
 
-.. py:class:: AdvCAT
+.. py:class:: ansys.stk.core.stkobjects.AdvCAT
 
-   Bases: py:obj:`~IAdvCAT`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCAT`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    AdvCAT properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AdvCAT
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAntennaGraphics3D
 ==================
 
-.. py:class:: IAntennaGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IAntennaGraphics3D
 
    object
    
    IAgAntennaVO Interface for a antenna's 3D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaGraphics3D
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vector`
-            * - :py:meth:`~show_boresight`
-            * - :py:meth:`~show_contours`
-            * - :py:meth:`~volume_graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics3D.vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics3D.show_boresight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics3D.show_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics3D.volume_graphics`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.IAntennaGraphics3D.vector
-    :type: IAgVOVector
+    :type: IGraphics3DVector
 
     Get the antenna's Vector properties.
 
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: volume_graphics
     :canonical: ansys.stk.core.stkobjects.IAntennaGraphics3D.volume_graphics
-    :type: IAgAntennaVolumeGraphics
+    :type: IAntennaVolumeGraphics
 
     Gets the antenna volume graphics interface.
 

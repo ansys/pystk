@@ -1,13 +1,13 @@
 CalculationToolScalarPlugin
 ===========================
 
-.. py:class:: CalculationToolScalarPlugin
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarPlugin
 
-   Bases: py:obj:`~ICalculationToolScalarPlugin`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarPlugin`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Use a scalar calculation plugin.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarPlugin
 
 Overview
 --------

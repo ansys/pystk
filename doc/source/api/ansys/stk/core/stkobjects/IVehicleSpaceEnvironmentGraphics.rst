@@ -1,13 +1,13 @@
 IVehicleSpaceEnvironmentGraphics
 ================================
 
-.. py:class:: IVehicleSpaceEnvironmentGraphics
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentGraphics
 
    object
    
    Graphics settings for space environment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpaceEnvironmentGraphics
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~magnitude_field_line`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentGraphics.magnitude_field_line`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: magnitude_field_line
     :canonical: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentGraphics.magnitude_field_line
-    :type: IAgVeSpEnvMagFieldLine
+    :type: IVehicleSpaceEnvironmentMagnitudeFieldLine
 
     Graphics settings for showing magnetic field lines.
 

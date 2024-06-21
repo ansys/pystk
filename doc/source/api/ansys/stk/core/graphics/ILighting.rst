@@ -1,13 +1,13 @@
 ILighting
 =========
 
-.. py:class:: ILighting
+.. py:class:: ansys.stk.core.graphics.ILighting
 
    object
    
    Lighting in the 3D scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ILighting
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~ambient_intensity`
-            * - :py:meth:`~diffuse_intensity`
-            * - :py:meth:`~night_lights_intensity`
+            * - :py:attr:`~ansys.stk.core.graphics.ILighting.enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.ILighting.ambient_intensity`
+            * - :py:attr:`~ansys.stk.core.graphics.ILighting.diffuse_intensity`
+            * - :py:attr:`~ansys.stk.core.graphics.ILighting.night_lights_intensity`
 
 
 Import detail

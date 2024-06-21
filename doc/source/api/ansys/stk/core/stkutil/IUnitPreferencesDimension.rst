@@ -1,13 +1,13 @@
 IUnitPreferencesDimension
 =========================
 
-.. py:class:: IUnitPreferencesDimension
+.. py:class:: ansys.stk.core.stkutil.IUnitPreferencesDimension
 
    object
    
    Provide info on a Dimension from the global unit table.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IUnitPreferencesDimension
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_current_unit`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.set_current_unit`
               - Set the Unit for this simple dimension.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~id`
-            * - :py:meth:`~name`
-            * - :py:meth:`~available_units`
-            * - :py:meth:`~current_unit`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.id`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.name`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.available_units`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.current_unit`
 
 
 Import detail
@@ -60,13 +60,13 @@ Property detail
 
 .. py:property:: available_units
     :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimension.available_units
-    :type: IAgUnitPrefsUnitCollection
+    :type: IUnitPreferencesUnitCollection
 
     Returns collection of Units.
 
 .. py:property:: current_unit
     :canonical: ansys.stk.core.stkutil.IUnitPreferencesDimension.current_unit
-    :type: IAgUnitPrefsUnit
+    :type: IUnitPreferencesUnit
 
     Returns the current unit for this dimension.
 

@@ -1,13 +1,13 @@
 PlaceGraphics
 =============
 
-.. py:class:: PlaceGraphics
+.. py:class:: ansys.stk.core.stkobjects.PlaceGraphics
 
-   Bases: py:obj:`~IPlaceGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPlaceGraphics`
 
    2D Graphics properties of a Place.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PlaceGraphics
 
 Overview
 --------

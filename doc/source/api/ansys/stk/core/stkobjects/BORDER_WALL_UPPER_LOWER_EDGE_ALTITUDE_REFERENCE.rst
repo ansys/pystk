@@ -1,12 +1,12 @@
 BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE
 ===============================================
 
-.. py:class:: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE
+.. py:class:: ansys.stk.core.stkobjects.BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE
 
 Overview
 --------

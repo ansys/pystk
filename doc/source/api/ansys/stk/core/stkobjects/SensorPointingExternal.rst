@@ -1,13 +1,13 @@
 SensorPointingExternal
 ======================
 
-.. py:class:: SensorPointingExternal
+.. py:class:: ansys.stk.core.stkobjects.SensorPointingExternal
 
-   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingExternal`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingExternal`
 
    Class defining the external file-defined pointing type for a Sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorPointingExternal
 
 Overview
 --------

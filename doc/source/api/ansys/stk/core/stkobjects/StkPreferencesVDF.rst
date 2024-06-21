@@ -1,13 +1,13 @@
 StkPreferencesVDF
 =================
 
-.. py:class:: StkPreferencesVDF
+.. py:class:: ansys.stk.core.stkobjects.StkPreferencesVDF
 
-   Bases: py:obj:`~IStkPreferencesVDF`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkPreferencesVDF`
 
    Allow configuring VDF preferences.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkPreferencesVDF
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleAttitudeStandard
 ========================
 
-.. py:class:: IVehicleAttitudeStandard
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeStandard
 
    IVehicleAttitude
    
    Standard attitude profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeStandard
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeStandard.type`
 
 
 Import detail

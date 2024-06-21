@@ -1,13 +1,13 @@
 UserVariableUpdateCollection
 ============================
 
-.. py:class:: UserVariableUpdateCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection
 
-   Bases: py:obj:`~IUserVariableUpdateCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection`
 
    User Variable Update Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: UserVariableUpdateCollection
 
 Overview
 --------

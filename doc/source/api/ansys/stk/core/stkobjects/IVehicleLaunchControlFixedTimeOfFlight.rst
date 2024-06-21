@@ -1,13 +1,13 @@
 IVehicleLaunchControlFixedTimeOfFlight
 ======================================
 
-.. py:class:: IVehicleLaunchControlFixedTimeOfFlight
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLaunchControlFixedTimeOfFlight
 
    object
    
    Fixed time of flight interface for missile flight parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLaunchControlFixedTimeOfFlight
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_of_flight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedTimeOfFlight.time_of_flight`
 
 
 Import detail

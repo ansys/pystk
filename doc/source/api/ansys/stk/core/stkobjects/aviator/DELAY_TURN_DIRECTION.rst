@@ -1,12 +1,12 @@
 DELAY_TURN_DIRECTION
 ====================
 
-.. py:class:: DELAY_TURN_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.aviator.DELAY_TURN_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: DELAY_TURN_DIRECTION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IMissileExternalAero
 ====================
 
-.. py:class:: IMissileExternalAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileExternalAero
 
    object
    
    Interface used to access the External aerodynamics options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileExternalAero
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.set_filepath`
               - Set the filepath for the external aero file.
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.reload`
               - Reload the external aero file.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filepath`
-            * - :py:meth:`~reference_area`
-            * - :py:meth:`~can_set_reference_area`
-            * - :py:meth:`~is_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.can_set_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.is_valid`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IStateCalcDeltaVSquared
 =======================
 
-.. py:class:: IStateCalcDeltaVSquared
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaVSquared
 
    object
    
    Properties for a DeltaV Squared calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDeltaVSquared
 
 Overview
 --------

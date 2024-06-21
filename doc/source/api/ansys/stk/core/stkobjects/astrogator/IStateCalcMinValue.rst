@@ -1,13 +1,13 @@
 IStateCalcMinValue
 ==================
 
-.. py:class:: IStateCalcMinValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMinValue
 
    object
    
    Properties for a Minimum Value calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMinValue
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMinValue.calc_object_name`
 
 
 Import detail

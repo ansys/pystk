@@ -1,12 +1,12 @@
 CHAIN_PARENT_PLATFORM_RESTRICTION
 =================================
 
-.. py:class:: CHAIN_PARENT_PLATFORM_RESTRICTION
+.. py:class:: ansys.stk.core.stkobjects.CHAIN_PARENT_PLATFORM_RESTRICTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CHAIN_PARENT_PLATFORM_RESTRICTION
 
 Overview
 --------

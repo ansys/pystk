@@ -1,12 +1,12 @@
 VEHICLE_GPS_SWITCH_METHOD
 =========================
 
-.. py:class:: VEHICLE_GPS_SWITCH_METHOD
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_GPS_SWITCH_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_GPS_SWITCH_METHOD
 
 Overview
 --------

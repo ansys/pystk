@@ -1,12 +1,12 @@
 SENSOR_EOIR_BAND_RAD_PARAM_LEVEL
 ================================
 
-.. py:class:: SENSOR_EOIR_BAND_RAD_PARAM_LEVEL
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_RAD_PARAM_LEVEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_EOIR_BAND_RAD_PARAM_LEVEL
 
 Overview
 --------

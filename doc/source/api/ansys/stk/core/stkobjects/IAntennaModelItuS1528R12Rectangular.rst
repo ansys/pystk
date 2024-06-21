@@ -1,13 +1,13 @@
 IAntennaModelItuS1528R12Rectangular
 ===================================
 
-.. py:class:: IAntennaModelItuS1528R12Rectangular
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular
 
    object
    
    Provide access to the properties and methods defining an ITU-R S1528 1.2 rectangular antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelItuS1528R12Rectangular
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~major_dimension`
-            * - :py:meth:`~minor_dimension`
-            * - :py:meth:`~use_mainlobe_model`
-            * - :py:meth:`~override_half_beamwidth`
-            * - :py:meth:`~half_beamwidth`
-            * - :py:meth:`~nearin_sidelobe_level`
-            * - :py:meth:`~farout_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.major_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.minor_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.use_mainlobe_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.override_half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.nearin_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.farout_sidelobe_level`
 
 
 Import detail

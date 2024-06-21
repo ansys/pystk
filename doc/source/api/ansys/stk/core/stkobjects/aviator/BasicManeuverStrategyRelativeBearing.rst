@@ -1,13 +1,13 @@
 BasicManeuverStrategyRelativeBearing
 ====================================
 
-.. py:class:: BasicManeuverStrategyRelativeBearing
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing
 
-   Bases: py:obj:`~IBasicManeuverStrategyRelativeBearing`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Relative Bearing strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyRelativeBearing
 
 Overview
 --------

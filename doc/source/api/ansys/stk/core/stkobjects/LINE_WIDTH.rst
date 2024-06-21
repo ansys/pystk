@@ -1,12 +1,12 @@
 LINE_WIDTH
 ==========
 
-.. py:class:: LINE_WIDTH
+.. py:class:: ansys.stk.core.stkobjects.LINE_WIDTH
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LINE_WIDTH
 
 Overview
 --------

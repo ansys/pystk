@@ -1,13 +1,13 @@
 IStateCalcCartSTMElem
 =====================
 
-.. py:class:: IStateCalcCartSTMElem
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem
 
    object
    
    Properties for a Cartesian STM Element calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcCartSTMElem
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~final_var`
-            * - :py:meth:`~init_var`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem.final_var`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem.init_var`
 
 
 Import detail

@@ -1,12 +1,12 @@
 MARKER_BATCH_UNIT
 =================
 
-.. py:class:: MARKER_BATCH_UNIT
+.. py:class:: ansys.stk.core.graphics.MARKER_BATCH_UNIT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MARKER_BATCH_UNIT
 
 Overview
 --------

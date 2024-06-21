@@ -1,13 +1,13 @@
 StarGraphics
 ============
 
-.. py:class:: StarGraphics
+.. py:class:: ansys.stk.core.stkobjects.StarGraphics
 
-   Bases: py:obj:`~IStarGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStarGraphics`
 
    Class defining 2D Graphics properties of a Star.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StarGraphics
 
 Overview
 --------

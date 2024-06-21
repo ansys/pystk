@@ -1,13 +1,13 @@
 ARINC424Navaid
 ==============
 
-.. py:class:: ARINC424Navaid
+.. py:class:: ansys.stk.core.stkobjects.aviator.ARINC424Navaid
 
-   Bases: py:obj:`~IARINC424Item`, py:obj:`~ICatalogNavaid`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogNavaid`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an ARINC424 Navaid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ARINC424Navaid
 
 Overview
 --------

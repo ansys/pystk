@@ -1,13 +1,13 @@
 IFuelModelKeroseneCEA
 =====================
 
-.. py:class:: IFuelModelKeroseneCEA
+.. py:class:: ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneCEA
 
    object
    
    Interface used to access the options for Kerosense - CEA fuel for a thermodynamic a jet engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IFuelModelKeroseneCEA
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~subtype`
-            * - :py:meth:`~specific_energy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneCEA.subtype`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneCEA.specific_energy`
 
 
 Import detail

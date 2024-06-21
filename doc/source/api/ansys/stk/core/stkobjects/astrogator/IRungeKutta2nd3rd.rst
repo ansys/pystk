@@ -1,13 +1,13 @@
 IRungeKutta2nd3rd
 =================
 
-.. py:class:: IRungeKutta2nd3rd
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd
 
    object
    
    Properties for the RK2nd3rd numerical integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IRungeKutta2nd3rd
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initial_step`
-            * - :py:meth:`~use_fixed_step`
-            * - :py:meth:`~use_max_step`
-            * - :py:meth:`~use_min_step`
-            * - :py:meth:`~max_step`
-            * - :py:meth:`~min_step`
-            * - :py:meth:`~max_rel_err`
-            * - :py:meth:`~max_abs_err`
-            * - :py:meth:`~high_safety_coefficient`
-            * - :py:meth:`~low_safety_coefficient`
-            * - :py:meth:`~error_control`
-            * - :py:meth:`~max_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.initial_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.use_fixed_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.use_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.use_min_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.min_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.max_rel_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.max_abs_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.high_safety_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.low_safety_coefficient`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.error_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta2nd3rd.max_iterations`
 
 
 Import detail

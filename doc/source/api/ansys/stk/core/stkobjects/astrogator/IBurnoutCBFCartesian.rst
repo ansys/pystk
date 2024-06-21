@@ -1,13 +1,13 @@
 IBurnoutCBFCartesian
 ====================
 
-.. py:class:: IBurnoutCBFCartesian
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian
 
    IBurnout
    
    Properties for a Cartesian CBF burnout state definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBurnoutCBFCartesian
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cartesian_burnout_x`
-            * - :py:meth:`~cartesian_burnout_y`
-            * - :py:meth:`~cartesian_burnout_z`
-            * - :py:meth:`~cartesian_burnout_vx`
-            * - :py:meth:`~cartesian_burnout_vy`
-            * - :py:meth:`~cartesian_burnout_vz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vz`
 
 
 Import detail

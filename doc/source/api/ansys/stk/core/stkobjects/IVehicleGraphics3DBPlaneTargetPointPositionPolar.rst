@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneTargetPointPositionPolar
 ================================================
 
-.. py:class:: IVehicleGraphics3DBPlaneTargetPointPositionPolar
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar
 
    IVehicleGraphics3DBPlaneTargetPointPosition
    
    3D BPlane target point position polar.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneTargetPointPositionPolar
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~b_magnitude`
-            * - :py:meth:`~theta`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar.b_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar.theta`
 
 
 Import detail

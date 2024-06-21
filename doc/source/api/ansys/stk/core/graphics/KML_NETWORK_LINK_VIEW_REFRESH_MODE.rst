@@ -1,12 +1,12 @@
 KML_NETWORK_LINK_VIEW_REFRESH_MODE
 ==================================
 
-.. py:class:: KML_NETWORK_LINK_VIEW_REFRESH_MODE
+.. py:class:: ansys.stk.core.graphics.KML_NETWORK_LINK_VIEW_REFRESH_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: KML_NETWORK_LINK_VIEW_REFRESH_MODE
 
 Overview
 --------

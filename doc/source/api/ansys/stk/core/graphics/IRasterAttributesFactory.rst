@@ -1,13 +1,13 @@
 IRasterAttributesFactory
 ========================
 
-.. py:class:: IRasterAttributesFactory
+.. py:class:: ansys.stk.core.graphics.IRasterAttributesFactory
 
    object
    
    The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRasterAttributesFactory
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_format`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributesFactory.initialize_with_format`
               - Initialize a new instance with the width and height of the raster in pixels, and the given raster format.
-            * - :py:meth:`~initialize_with_format_and_type`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributesFactory.initialize_with_format_and_type`
               - Initialize a new instance with the width and height of the raster in pixels, and the given raster format and raster type.
-            * - :py:meth:`~initialize_with_format_type_and_orientation`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributesFactory.initialize_with_format_type_and_orientation`
               - Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, and raster orientation.
-            * - :py:meth:`~initialize_with_format_type_orientation_and_alignment`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributesFactory.initialize_with_format_type_orientation_and_alignment`
               - Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, and row alignment.
-            * - :py:meth:`~initialize_with_format_type_orientation_alignment_and_ratio`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributesFactory.initialize_with_format_type_orientation_alignment_and_ratio`
               - Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, row alignment, and pixel aspect ratio.
-            * - :py:meth:`~initialize_with_raster`
+            * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributesFactory.initialize_with_raster`
               - Initialize a new instance with the attributes of the specified raster.
 
 

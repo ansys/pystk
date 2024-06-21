@@ -1,13 +1,13 @@
 IMissileRamjetProp
 ==================
 
-.. py:class:: IMissileRamjetProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileRamjetProp
 
    object
    
    Interface used to access the Ramjet propulsion options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileRamjetProp
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~design_mach`
-            * - :py:meth:`~design_altitude`
-            * - :py:meth:`~design_thrust`
-            * - :py:meth:`~engine_temp`
-            * - :py:meth:`~fuel_heating_value`
-            * - :py:meth:`~inlet_pressure_ratio`
-            * - :py:meth:`~burner_pressure_ratio`
-            * - :py:meth:`~nozzle_pressure_ratio`
-            * - :py:meth:`~p_0over_p9`
-            * - :py:meth:`~burner_efficiency`
-            * - :py:meth:`~no_thrust_when_no_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.design_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.design_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.design_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.engine_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.fuel_heating_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.inlet_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.burner_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.nozzle_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.p_0over_p9`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.burner_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.no_thrust_when_no_fuel`
 
 
 Import detail

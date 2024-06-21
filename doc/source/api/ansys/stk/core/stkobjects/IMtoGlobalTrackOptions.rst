@@ -1,13 +1,13 @@
 IMtoGlobalTrackOptions
 ======================
 
-.. py:class:: IMtoGlobalTrackOptions
+.. py:class:: ansys.stk.core.stkobjects.IMtoGlobalTrackOptions
 
    object
    
    Global MTO track options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGlobalTrackOptions
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~save_track_data`
-            * - :py:meth:`~computation_track_id`
-            * - :py:meth:`~block_size`
-            * - :py:meth:`~altitude_reference`
-            * - :py:meth:`~is_static`
-            * - :py:meth:`~prune_max_num_pts`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions.save_track_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions.computation_track_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions.block_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions.altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions.is_static`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions.prune_max_num_pts`
 
 
 Import detail

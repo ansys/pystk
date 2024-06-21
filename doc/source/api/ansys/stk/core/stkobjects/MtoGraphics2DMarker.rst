@@ -1,13 +1,13 @@
 MtoGraphics2DMarker
 ===================
 
-.. py:class:: MtoGraphics2DMarker
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DMarker
 
-   Bases: py:obj:`~IMtoGraphics2DMarker`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics2DMarker`
 
    Define the 2D graphics attributes of the selected MTO track or tracks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics2DMarker
 
 Overview
 --------

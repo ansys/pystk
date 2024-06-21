@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesGroup
 ============================
 
-.. py:class:: IVectorGeometryToolAxesGroup
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup
 
    object
    
    Access or create VGT axes associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesGroup
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.remove`
               - Remove a specified Axes.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.item`
               - Return an axes by name or at a specified position.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.get_item_by_index`
               - Retrieve an axes from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.get_item_by_name`
               - Retrieve an axes from the collection by name.
 
     .. tab-item:: Properties
@@ -37,11 +37,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~context`
-            * - :py:meth:`~count`
-            * - :py:meth:`~factory`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~common_tasks`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.context`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.count`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.factory`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.common_tasks`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.context
-    :type: IAgCrdnContext
+    :type: IAnalysisWorkbenchContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.factory
-    :type: IAgCrdnAxesFactory
+    :type: IVectorGeometryToolAxesFactory
 
     Returns a Factory object used to create custom axes.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesGroup.common_tasks
-    :type: IAgCrdnAxesCommonTasks
+    :type: IVectorGeometryToolAxesCommonTasks
 
     Provides access to common tasks that allow users quickly carry out tasks such as creating known axes, etc.
 

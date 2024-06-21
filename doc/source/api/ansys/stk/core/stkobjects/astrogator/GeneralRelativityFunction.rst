@@ -1,13 +1,13 @@
 GeneralRelativityFunction
 =========================
 
-.. py:class:: GeneralRelativityFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GeneralRelativityFunction
 
-   Bases: py:obj:`~IGeneralRelativityFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGeneralRelativityFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    General Relativity Propagator Function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GeneralRelativityFunction
 
 Overview
 --------

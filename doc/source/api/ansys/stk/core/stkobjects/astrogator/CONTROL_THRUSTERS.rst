@@ -1,12 +1,12 @@
 CONTROL_THRUSTERS
 =================
 
-.. py:class:: CONTROL_THRUSTERS
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_THRUSTERS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_THRUSTERS
 
 Overview
 --------

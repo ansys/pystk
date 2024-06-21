@@ -1,13 +1,13 @@
 IAdvancedFixedWingPowerplant
 ============================
 
-.. py:class:: IAdvancedFixedWingPowerplant
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingPowerplant
 
    object
    
    Interface for a powerplant strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingPowerplant
 
 Overview
 --------

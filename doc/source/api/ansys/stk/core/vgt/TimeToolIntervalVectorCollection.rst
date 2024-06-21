@@ -1,13 +1,13 @@
 TimeToolIntervalVectorCollection
 ================================
 
-.. py:class:: TimeToolIntervalVectorCollection
+.. py:class:: ansys.stk.core.vgt.TimeToolIntervalVectorCollection
 
-   Bases: py:obj:`~ITimeToolIntervalVectorCollection`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolIntervalVectorCollection`
 
    A collection of interval collections.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolIntervalVectorCollection
 
 Overview
 --------

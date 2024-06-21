@@ -1,13 +1,13 @@
 VectorGeometryToolPointAtTimeInstant
 ====================================
 
-.. py:class:: VectorGeometryToolPointAtTimeInstant
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointAtTimeInstant
 
-   Bases: py:obj:`~IVectorGeometryToolPointAtTimeInstant`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolPoint`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
 
    Point fixed relative to reference system based on another point evaluated at specified time instant.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointAtTimeInstant
 
 Overview
 --------

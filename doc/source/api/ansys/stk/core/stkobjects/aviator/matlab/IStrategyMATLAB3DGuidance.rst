@@ -1,13 +1,13 @@
 IStrategyMATLAB3DGuidance
 =========================
 
-.. py:class:: IStrategyMATLAB3DGuidance
+.. py:class:: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance
 
    object
    
    Interface used to access options for a MATLAB - 3D Guidance Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator.matlab
+.. py:currentmodule:: IStrategyMATLAB3DGuidance
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_stop_time_to_go`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.set_stop_time_to_go`
               - Set the option to use the stop time from target stopping condition and set the according value.
-            * - :py:meth:`~set_stop_slant_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.set_stop_slant_range`
               - Set the option to use the stop slant range stopping condition and set the according value.
-            * - :py:meth:`~is_function_path_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.is_function_path_valid`
               - Check if the MATLAB function path is valid.
-            * - :py:meth:`~cancel_tgt_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.cancel_tgt_position_vel`
               - Cancel the position velocity strategies for MATLAB 3D Guidance.
 
     .. tab-item:: Properties
@@ -35,22 +35,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_name`
-            * - :py:meth:`~valid_target_names`
-            * - :py:meth:`~target_resolution`
-            * - :py:meth:`~use_stop_time_to_go`
-            * - :py:meth:`~stop_time_to_go`
-            * - :py:meth:`~use_stop_slant_range`
-            * - :py:meth:`~stop_slant_range`
-            * - :py:meth:`~function_name`
-            * - :py:meth:`~check_for_errors`
-            * - :py:meth:`~display_output`
-            * - :py:meth:`~closure_mode`
-            * - :py:meth:`~hobs_max_angle`
-            * - :py:meth:`~hobs_angle_tol`
-            * - :py:meth:`~compute_tas_dot`
-            * - :py:meth:`~airspeed_options`
-            * - :py:meth:`~position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.target_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.valid_target_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.target_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.use_stop_time_to_go`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.stop_time_to_go`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.use_stop_slant_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.stop_slant_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.check_for_errors`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.display_output`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.closure_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.hobs_max_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.hobs_angle_tol`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.compute_tas_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.position_vel_strategies`
 
 
 Import detail
@@ -150,13 +150,13 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.position_vel_strategies
-    :type: IAgAvtrBasicManeuverTargetPosVel
+    :type: IBasicManeuverTargetPositionVel
 
     Get the position velocity strategies for MATLAB 3D Guidance.
 

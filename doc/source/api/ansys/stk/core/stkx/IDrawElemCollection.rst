@@ -1,13 +1,13 @@
 IDrawElemCollection
 ===================
 
-.. py:class:: IDrawElemCollection
+.. py:class:: ansys.stk.core.stkx.IDrawElemCollection
 
    object
    
    Collection of elements to draw on the control.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IDrawElemCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection.item`
               - Get the element at the specified index (0-based).
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection.clear`
               - Clear the contents of the collection and updates the display.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection.add`
               - Create and add a new element to the end of the sequence.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection.remove`
               - Remove the specified element.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~visible`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection.visible`
 
 
 Import detail

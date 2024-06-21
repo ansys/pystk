@@ -1,13 +1,13 @@
 ISceneDisplayCondition
 ======================
 
-.. py:class:: ISceneDisplayCondition
+.. py:class:: ansys.stk.core.graphics.ISceneDisplayCondition
 
    object
    
    A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISceneDisplayCondition
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_display_in_scene`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneDisplayCondition.set_display_in_scene`
               - Allow or disallows rendering for in a particular scene for.
-            * - :py:meth:`~get_display_in_scene`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneDisplayCondition.get_display_in_scene`
               - Determine whether the display condition allows rendering rendering in the given scene.
-            * - :py:meth:`~display_only_in_scene`
+            * - :py:attr:`~ansys.stk.core.graphics.ISceneDisplayCondition.display_only_in_scene`
               - Allow rendering only in the given scene. The display condition will not allow rendering in other scenes, including newly created ones.
 
 

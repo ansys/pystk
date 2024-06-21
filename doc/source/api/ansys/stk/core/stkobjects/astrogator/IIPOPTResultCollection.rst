@@ -1,13 +1,13 @@
 IIPOPTResultCollection
 ======================
 
-.. py:class:: IIPOPTResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IIPOPTResultCollection
 
    object
    
    IPOPT result collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IIPOPTResultCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResultCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~get_result_by_paths`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResultCollection.get_result_by_paths`
               - Return the result specified by the object/result names.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResultCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResultCollection.count`
 
 
 Import detail

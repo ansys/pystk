@@ -1,13 +1,13 @@
 ICalculationToolSamplingFixedStep
 =================================
 
-.. py:class:: ICalculationToolSamplingFixedStep
+.. py:class:: ansys.stk.core.vgt.ICalculationToolSamplingFixedStep
 
    object
    
    Fixed step definition includes parameters that determine how scalar data should be sampled based on fixed steps between samples.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolSamplingFixedStep
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingFixedStep.time_step`
 
 
 Import detail

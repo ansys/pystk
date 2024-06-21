@@ -1,12 +1,12 @@
 YPR_ANGLES_SEQUENCE
 ===================
 
-.. py:class:: YPR_ANGLES_SEQUENCE
+.. py:class:: ansys.stk.core.stkutil.YPR_ANGLES_SEQUENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: YPR_ANGLES_SEQUENCE
 
 Overview
 --------

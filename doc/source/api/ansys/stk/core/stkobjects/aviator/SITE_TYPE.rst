@@ -1,12 +1,12 @@
 SITE_TYPE
 =========
 
-.. py:class:: SITE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.SITE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SITE_TYPE
 
 Overview
 --------

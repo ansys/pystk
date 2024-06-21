@@ -1,13 +1,13 @@
 VehicleGraphics3DSAA
 ====================
 
-.. py:class:: VehicleGraphics3DSAA
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DSAA
 
-   Bases: py:obj:`~IVehicleGraphics3DSAA`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSAA`
 
    3D South Atlantic Anomaly contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DSAA
 
 Overview
 --------

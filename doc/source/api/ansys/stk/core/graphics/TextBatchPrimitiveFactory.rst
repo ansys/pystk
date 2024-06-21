@@ -1,13 +1,13 @@
 TextBatchPrimitiveFactory
 =========================
 
-.. py:class:: TextBatchPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.TextBatchPrimitiveFactory
 
-   Bases: py:obj:`~ITextBatchPrimitiveFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITextBatchPrimitiveFactory`
 
    Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TextBatchPrimitiveFactory
 
 Overview
 --------

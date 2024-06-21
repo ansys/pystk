@@ -1,13 +1,13 @@
 IAntennaModelApertureRectangularCosinePedestal
 ==============================================
 
-.. py:class:: IAntennaModelApertureRectangularCosinePedestal
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal
 
    object
    
    Provide access to the properties and methods defining a rectangular cosine pedestal aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelApertureRectangularCosinePedestal
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_mainlobe_gain`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~x_dimension`
-            * - :py:meth:`~y_dimension`
-            * - :py:meth:`~x_beamwidth`
-            * - :py:meth:`~y_beamwidth`
-            * - :py:meth:`~pedestal_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.compute_mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.x_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.y_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.x_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.y_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularCosinePedestal.pedestal_level`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ILevelAttributeCollection
 =========================
 
-.. py:class:: ILevelAttributeCollection
+.. py:class:: ansys.stk.core.stkobjects.ILevelAttributeCollection
 
    object
    
    AgLevelAttributeCollection used to access level attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILevelAttributeCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection.item`
               - Return an IAgLevelAttribute given an index number.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection.remove`
               - Remove an IAgLevelAttribute Item with given index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection.remove_all`
               - Remove all IAgLevelAttribute.
-            * - :py:meth:`~add_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection.add_level`
               - Add a level.
-            * - :py:meth:`~add_level_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection.add_level_range`
               - Add a level range.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection._NewEnum`
 
 
 Import detail

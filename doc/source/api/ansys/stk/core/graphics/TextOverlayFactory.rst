@@ -1,13 +1,13 @@
 TextOverlayFactory
 ==================
 
-.. py:class:: TextOverlayFactory
+.. py:class:: ansys.stk.core.graphics.TextOverlayFactory
 
-   Bases: py:obj:`~ITextOverlayFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITextOverlayFactory`
 
    A rectangular overlay that contains text.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TextOverlayFactory
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleGraphics2DLine
 ======================
 
-.. py:class:: IVehicleGraphics2DLine
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DLine
 
    object
    
    Line Style and Line Width properties used in displaying vehicle tracks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DLine
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~style`
-            * - :py:meth:`~width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLine.style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLine.width`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IUiToolbarCollection
 ====================
 
-.. py:class:: IUiToolbarCollection
+.. py:class:: ansys.stk.core.uicore.IUiToolbarCollection
 
    object
    
    Provide methods and properties to obtain a window's toolbars.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: IUiToolbarCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbarCollection.item`
               - Retrieve a toolbar object.
-            * - :py:meth:`~get_toolbar_by_id`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbarCollection.get_toolbar_by_id`
               - Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbarCollection.get_item_by_index`
               - Retrieve a toolbar object based on the index in the collection.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbarCollection.get_item_by_name`
               - Retrieve a toolbar object based on the name of the Toolbar in the collection.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbarCollection.count`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiToolbarCollection._NewEnum`
 
 
 Import detail

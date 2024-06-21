@@ -1,13 +1,13 @@
 SensorGraphics3D
 ================
 
-.. py:class:: SensorGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.SensorGraphics3D
 
-   Bases: py:obj:`~ISensorGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorGraphics3D`
 
    Class defining 3D Graphics properties of a Sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorGraphics3D
 
 Overview
 --------

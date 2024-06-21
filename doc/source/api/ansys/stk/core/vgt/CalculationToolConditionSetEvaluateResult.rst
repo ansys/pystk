@@ -1,13 +1,13 @@
 CalculationToolConditionSetEvaluateResult
 =========================================
 
-.. py:class:: CalculationToolConditionSetEvaluateResult
+.. py:class:: ansys.stk.core.vgt.CalculationToolConditionSetEvaluateResult
 
-   Bases: py:obj:`~ICalculationToolConditionSetEvaluateResult`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateResult`
 
    Represents the results returned by ConditionSet.Evaluate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolConditionSetEvaluateResult
 
 Overview
 --------

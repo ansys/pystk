@@ -1,13 +1,13 @@
 IVectorGeometryToolPointFactory
 ===============================
 
-.. py:class:: IVectorGeometryToolPointFactory
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointFactory
 
    object
    
    A Factory object to create points.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointFactory
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFactory.create`
               - Create a VGT point using the specified name, description and type.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFactory.is_type_supported`
               - Return true if the type is supported.
-            * - :py:meth:`~create_point_plugin_from_display_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFactory.create_point_plugin_from_display_name`
               - Create a point component based on a COM point plugin. For information how to implement and register VGT plugins, see.
-            * - :py:meth:`~create_point_fixed_on_central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFactory.create_point_fixed_on_central_body`
               - Create a point fixed on a central body.
 
     .. tab-item:: Properties
@@ -35,7 +35,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_point_plugin_display_names`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFactory.available_point_plugin_display_names`
 
 
 Import detail

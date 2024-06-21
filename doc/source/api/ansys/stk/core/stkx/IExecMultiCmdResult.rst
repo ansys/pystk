@@ -1,13 +1,13 @@
 IExecMultiCmdResult
 ===================
 
-.. py:class:: IExecMultiCmdResult
+.. py:class:: ansys.stk.core.stkx.IExecMultiCmdResult
 
    object
    
    Collection of objects returned by the ExecuteMultipleCommands.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IExecMultiCmdResult
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkx.IExecMultiCmdResult.item`
               - Get the element at the specified index (0-based).
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkx.IExecMultiCmdResult.count`
+            * - :py:attr:`~ansys.stk.core.stkx.IExecMultiCmdResult._NewEnum`
 
 
 Import detail

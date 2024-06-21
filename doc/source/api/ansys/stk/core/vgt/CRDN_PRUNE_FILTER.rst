@@ -1,12 +1,12 @@
 CRDN_PRUNE_FILTER
 =================
 
-.. py:class:: CRDN_PRUNE_FILTER
+.. py:class:: ansys.stk.core.vgt.CRDN_PRUNE_FILTER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_PRUNE_FILTER
 
 Overview
 --------

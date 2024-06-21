@@ -1,13 +1,13 @@
 IGeodeticSizeAltitude
 =====================
 
-.. py:class:: IGeodeticSizeAltitude
+.. py:class:: ansys.stk.core.stkobjects.IGeodeticSizeAltitude
 
    IGeodeticSize
    
    Interface for Altitude and Altitude Rate (for Geodetic coordinate type).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGeodeticSizeAltitude
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGeodeticSizeAltitude.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGeodeticSizeAltitude.rate`
 
 
 Import detail

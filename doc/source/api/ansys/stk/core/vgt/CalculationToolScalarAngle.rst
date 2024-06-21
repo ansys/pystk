@@ -1,13 +1,13 @@
 CalculationToolScalarAngle
 ==========================
 
-.. py:class:: CalculationToolScalarAngle
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarAngle
 
-   Bases: py:obj:`~ICalculationToolScalarAngle`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarAngle`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Scalar equal to angular displacement obtained from any angle in VGT.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarAngle
 
 Overview
 --------

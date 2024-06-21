@@ -1,12 +1,12 @@
 SENSOR_ALTITUDE_CROSSING_DIRECTION
 ==================================
 
-.. py:class:: SENSOR_ALTITUDE_CROSSING_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_ALTITUDE_CROSSING_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_ALTITUDE_CROSSING_DIRECTION
 
 Overview
 --------

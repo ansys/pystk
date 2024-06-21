@@ -1,13 +1,13 @@
 IAccessConstraint
 =================
 
-.. py:class:: IAccessConstraint
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraint
 
    object
    
    AgAccessConstraint used to access the AccessConstraint attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraint
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~constraint_name`
-            * - :py:meth:`~is_plugin`
-            * - :py:meth:`~excl_intvl`
-            * - :py:meth:`~constraint_type`
-            * - :py:meth:`~max_time_step`
-            * - :py:meth:`~max_rel_motion`
-            * - :py:meth:`~enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.is_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.excl_intvl`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_rel_motion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.enabled`
 
 
 Import detail

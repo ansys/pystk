@@ -1,13 +1,13 @@
 IAntennaModelApertureCircularCosineSquared
 ==========================================
 
-.. py:class:: IAntennaModelApertureCircularCosineSquared
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared
 
    object
    
    Provide access to the properties and methods defining a circular cosine squared aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelApertureCircularCosineSquared
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_mainlobe_gain`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.compute_mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.beamwidth`
 
 
 Import detail

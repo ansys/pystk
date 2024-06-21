@@ -1,13 +1,13 @@
 VehicleGPSAutoUpdateOnlineSource
 ================================
 
-.. py:class:: VehicleGPSAutoUpdateOnlineSource
+.. py:class:: ansys.stk.core.stkobjects.VehicleGPSAutoUpdateOnlineSource
 
-   Bases: py:obj:`~IVehicleGPSAutoUpdateOnlineSource`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateOnlineSource`
 
    GPS automatic updates using online source (AGI server).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGPSAutoUpdateOnlineSource
 
 Overview
 --------

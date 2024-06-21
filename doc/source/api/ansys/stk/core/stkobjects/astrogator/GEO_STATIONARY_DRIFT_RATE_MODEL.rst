@@ -1,12 +1,12 @@
 GEO_STATIONARY_DRIFT_RATE_MODEL
 ===============================
 
-.. py:class:: GEO_STATIONARY_DRIFT_RATE_MODEL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GEO_STATIONARY_DRIFT_RATE_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GEO_STATIONARY_DRIFT_RATE_MODEL
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IPathPoint
 ==========
 
-.. py:class:: IPathPoint
+.. py:class:: ansys.stk.core.graphics.IPathPoint
 
    object
    
    A path point used with the Path Primitive.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPathPoint
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position`
-            * - :py:meth:`~date`
-            * - :py:meth:`~color`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~outline_color`
-            * - :py:meth:`~outline_translucency`
-            * - :py:meth:`~is_translucent`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.position`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.date`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.color`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.outline_color`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.outline_translucency`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.is_translucent`
 
 
 Import detail
@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: date
     :canonical: ansys.stk.core.graphics.IPathPoint.date
-    :type: IAgDate
+    :type: IDate
 
     A date/time of the path point.
 

@@ -1,13 +1,13 @@
 IClassicalSizeShapePeriod
 =========================
 
-.. py:class:: IClassicalSizeShapePeriod
+.. py:class:: ansys.stk.core.stkobjects.IClassicalSizeShapePeriod
 
    IClassicalSizeShape
    
    Interface for specifying orbit size and shape using Period and Eccentricity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IClassicalSizeShapePeriod
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~period`
-            * - :py:meth:`~eccentricity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapePeriod.period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapePeriod.eccentricity`
 
 
 Import detail

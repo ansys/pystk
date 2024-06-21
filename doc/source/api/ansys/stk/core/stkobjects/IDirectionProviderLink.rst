@@ -1,13 +1,13 @@
 IDirectionProviderLink
 ======================
 
-.. py:class:: IDirectionProviderLink
+.. py:class:: ansys.stk.core.stkobjects.IDirectionProviderLink
 
    object
    
    Provide access to the properties and methods defining an link direction provider.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDirectionProviderLink
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~limits_exceeded_behavior_type`
-            * - :py:meth:`~azimuth_steering_limit_a`
-            * - :py:meth:`~azimuth_steering_limit_b`
-            * - :py:meth:`~elevation_steering_limit_a`
-            * - :py:meth:`~elevation_steering_limit_b`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.limits_exceeded_behavior_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.azimuth_steering_limit_a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.azimuth_steering_limit_b`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.elevation_steering_limit_a`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.elevation_steering_limit_b`
 
 
 Import detail

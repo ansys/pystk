@@ -1,13 +1,13 @@
 IVmGraphics3D
 =============
 
-.. py:class:: IVmGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IVmGraphics3D
 
    object
    
    IAgVmVO Interface for a volumetric object's 3D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGraphics3D
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~visible`
-            * - :py:meth:`~smoothing`
-            * - :py:meth:`~shading`
-            * - :py:meth:`~quality`
-            * - :py:meth:`~grid`
-            * - :py:meth:`~cross_section`
-            * - :py:meth:`~volume`
-            * - :py:meth:`~show_boundary_legend`
-            * - :py:meth:`~show_fill_legend`
-            * - :py:meth:`~boundary_legend`
-            * - :py:meth:`~fill_legend`
-            * - :py:meth:`~volume_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.smoothing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.shading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.quality`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.grid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.volume`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.show_boundary_legend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.show_fill_legend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.boundary_legend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.fill_legend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.volume_type`
 
 
 Import detail
@@ -71,19 +71,19 @@ Property detail
 
 .. py:property:: grid
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.grid
-    :type: IAgVmVOGrid
+    :type: IVmGraphics3DGrid
 
     Get the Grid properties of 3D Graphics window for the volumetric object.
 
 .. py:property:: cross_section
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.cross_section
-    :type: IAgVmVOCrossSection
+    :type: IVmGraphics3DCrossSection
 
     Get the 3D Graphics properties for planar cross-sections through the volumetric grid.
 
 .. py:property:: volume
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.volume
-    :type: IAgVmVOVolume
+    :type: IVmGraphics3DVolume
 
     Get the 3D Graphics properties for Volume.
 
@@ -101,13 +101,13 @@ Property detail
 
 .. py:property:: boundary_legend
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.boundary_legend
-    :type: IAgVmVOLegend
+    :type: IVmGraphics3DLegend
 
     Get the 3D Graphics properties for Volumetric Boundary Legend.
 
 .. py:property:: fill_legend
     :canonical: ansys.stk.core.stkobjects.IVmGraphics3D.fill_legend
-    :type: IAgVmVOLegend
+    :type: IVmGraphics3DLegend
 
     Get the 3D Graphics properties for Volumetric Fill Legend.
 

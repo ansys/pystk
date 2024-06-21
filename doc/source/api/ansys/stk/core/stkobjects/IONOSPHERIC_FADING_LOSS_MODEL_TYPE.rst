@@ -1,12 +1,12 @@
 IONOSPHERIC_FADING_LOSS_MODEL_TYPE
 ==================================
 
-.. py:class:: IONOSPHERIC_FADING_LOSS_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.IONOSPHERIC_FADING_LOSS_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IONOSPHERIC_FADING_LOSS_MODEL_TYPE
 
 Overview
 --------

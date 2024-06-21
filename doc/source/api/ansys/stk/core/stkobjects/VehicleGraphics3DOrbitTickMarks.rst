@@ -1,13 +1,13 @@
 VehicleGraphics3DOrbitTickMarks
 ===============================
 
-.. py:class:: VehicleGraphics3DOrbitTickMarks
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTickMarks
 
-   Bases: py:obj:`~IVehicleGraphics3DOrbitTickMarks`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks`
 
    Tick mark for satellites.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DOrbitTickMarks
 
 Overview
 --------

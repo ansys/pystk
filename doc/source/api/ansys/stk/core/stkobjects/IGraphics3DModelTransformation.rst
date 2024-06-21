@@ -1,13 +1,13 @@
 IGraphics3DModelTransformation
 ==============================
 
-.. py:class:: IGraphics3DModelTransformation
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelTransformation
 
    object
    
    IAgVOModelTrans Interface. Used to modify the transformation value.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DModelTransformation
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~value`
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation.max`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ProfileSeedFiniteManeuver
 =========================
 
-.. py:class:: ProfileSeedFiniteManeuver
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver
 
-   Bases: py:obj:`~IProfileSeedFiniteManeuver`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileSeedFiniteManeuver`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Seed Finite Maneuver profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileSeedFiniteManeuver
 
 Overview
 --------

@@ -1,12 +1,12 @@
 ACCEL_MODE
 ==========
 
-.. py:class:: ACCEL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ACCEL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ACCEL_MODE
 
 Overview
 --------

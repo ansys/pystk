@@ -1,13 +1,13 @@
 IThrusterSetCollection
 ======================
 
-.. py:class:: IThrusterSetCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection
 
    object
    
    The list of thrusters in a thruster set.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IThrusterSetCollection
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.item`
               - Iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.add`
               - Add a new thruster.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.remove`
               - Remove a specified thruster.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.remove_all`
               - Remove all thrusters.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.cut`
               - Copy a thruster to the clipboard and removes the thruster from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.paste`
               - Pastes a thruster from the clipboard into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.insert_copy`
               - Copy a thruster and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.get_item_by_index`
               - Retrieve a thruster from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.get_item_by_name`
               - Retrieve a thruster from the collection by name.
 
     .. tab-item:: Properties
@@ -45,8 +45,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.count`
 
 
 Import detail

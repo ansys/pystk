@@ -1,13 +1,13 @@
 IVehicleGraphics3DPathTickMarks
 ===============================
 
-.. py:class:: IVehicleGraphics3DPathTickMarks
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks
 
    object
    
    Interface for tick marks for 3D trajectory graphics. Tick marks represent milestones at specified intervals along the trajectory in the 3D window.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DPathTickMarks
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_tick_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.set_tick_data_type`
               - Set the type of tick marks to display.
-            * - :py:meth:`~is_tick_data_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.is_tick_data_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~tick_data_type`
-            * - :py:meth:`~tick_data_supported_types`
-            * - :py:meth:`~tick_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data`
 
 
 Import detail
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: tick_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data
-    :type: IAgVeVOTickData
+    :type: IVehicleGraphics3DTickData
 
     Get the tick mark data.
 

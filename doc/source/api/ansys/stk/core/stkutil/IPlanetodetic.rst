@@ -1,13 +1,13 @@
 IPlanetodetic
 =============
 
-.. py:class:: IPlanetodetic
+.. py:class:: ansys.stk.core.stkutil.IPlanetodetic
 
    IPosition
    
    IAgPlanetodetic sets the position using Planetodetic properties.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IPlanetodetic
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPlanetodetic.lat`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPlanetodetic.lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPlanetodetic.altitude`
 
 
 Import detail

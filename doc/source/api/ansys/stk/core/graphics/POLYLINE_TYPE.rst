@@ -1,12 +1,12 @@
 POLYLINE_TYPE
 =============
 
-.. py:class:: POLYLINE_TYPE
+.. py:class:: ansys.stk.core.graphics.POLYLINE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: POLYLINE_TYPE
 
 Overview
 --------

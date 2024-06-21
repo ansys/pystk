@@ -1,13 +1,13 @@
 IObjectCollection
 =================
 
-.. py:class:: IObjectCollection
+.. py:class:: ansys.stk.core.graphics.IObjectCollection
 
    object
    
    A collection of objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IObjectCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IObjectCollection.item`
               - Return an item in the collection at the specified index.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IObjectCollection.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IObjectCollection._NewEnum`
 
 
 Import detail

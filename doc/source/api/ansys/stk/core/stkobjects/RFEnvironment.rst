@@ -1,13 +1,13 @@
 RFEnvironment
 =============
 
-.. py:class:: RFEnvironment
+.. py:class:: ansys.stk.core.stkobjects.RFEnvironment
 
-   Bases: py:obj:`~IRFEnvironment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFEnvironment`
 
    Class defining the RF environment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFEnvironment
 
 Overview
 --------

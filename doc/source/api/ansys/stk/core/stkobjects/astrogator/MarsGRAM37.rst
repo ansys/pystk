@@ -1,13 +1,13 @@
 MarsGRAM37
 ==========
 
-.. py:class:: MarsGRAM37
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MarsGRAM37
 
-   Bases: py:obj:`~IMarsGRAM37`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM37`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Mars-GRAM 3.7 atmospheric propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MarsGRAM37
 
 Overview
 --------

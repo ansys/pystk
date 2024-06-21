@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorReflection
 ===================================
 
-.. py:class:: IVectorGeometryToolVectorReflection
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorReflection
 
    object
    
    A vector (incident vector) reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorReflection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~incoming_vector`
-            * - :py:meth:`~use_opposite_of_selected_vector`
-            * - :py:meth:`~normal_vector`
-            * - :py:meth:`~allow_reflections_on_backside`
-            * - :py:meth:`~scale_factor`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.incoming_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.use_opposite_of_selected_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.normal_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.allow_reflections_on_backside`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.scale_factor`
 
 
 Import detail
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: incoming_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.incoming_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     The reflecting vector.
 
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: normal_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.normal_vector
-    :type: IAgCrdnVectorRefTo
+    :type: IVectorGeometryToolVectorRefTo
 
     The vector defines the reflection surface.
 

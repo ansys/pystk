@@ -1,12 +1,12 @@
 FORMATION_FLYER_STOP_CONDITION
 ==============================
 
-.. py:class:: FORMATION_FLYER_STOP_CONDITION
+.. py:class:: ansys.stk.core.stkobjects.aviator.FORMATION_FLYER_STOP_CONDITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: FORMATION_FLYER_STOP_CONDITION
 
 Overview
 --------

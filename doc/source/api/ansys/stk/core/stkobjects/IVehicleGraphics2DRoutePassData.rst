@@ -1,13 +1,13 @@
 IVehicleGraphics2DRoutePassData
 ===============================
 
-.. py:class:: IVehicleGraphics2DRoutePassData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData
 
    object
    
    Great arc route pass data.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DRoutePassData
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~route`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData.route`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData.route
-    :type: IAgVeGfxLeadTrailData
+    :type: IVehicleGraphics2DLeadTrailData
 
     Leading/trailing route pass data.
 

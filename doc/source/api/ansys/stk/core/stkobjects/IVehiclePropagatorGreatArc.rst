@@ -1,13 +1,13 @@
 IVehiclePropagatorGreatArc
 ==========================
 
-.. py:class:: IVehiclePropagatorGreatArc
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc
 
    IVehiclePropagator
    
    Great arc propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorGreatArc
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.propagate`
               - Propagates the vehicle's path using the specified time interval.
-            * - :py:meth:`~set_altitude_reference_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.set_altitude_reference_type`
               - Specify Waypoint Altitude Reference.
-            * - :py:meth:`~is_altitude_reference_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.is_altitude_reference_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~import_waypoints_from_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.import_waypoints_from_file`
               - Import waypoints from the filename specified.  The filename must be an absolute path.
-            * - :py:meth:`~set_points_specify_time_and_propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.set_points_specify_time_and_propagate`
               - Set waypoints from the array and propagates the route. The array is two-dimensional where each sub-array contains waypoint's Time, Latitude, Longitude, Altitude and Turn Radius. The array must be in non-decreasing order with respect to time.
-            * - :py:meth:`~set_points_specify_velocity_and_propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.set_points_specify_velocity_and_propagate`
               - Set waypoints from the array and propagates the route. The array is two-dimensional where each sub-array contains waypoint's Latitude, Longitude, Altitude, Velocity, Acceleration and Turn Radius.
-            * - :py:meth:`~set_points_smooth_rate_and_propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.set_points_smooth_rate_and_propagate`
               - Set waypoints from the array and propagates the route. The array is two-dimensional where each sub-array contains waypoint's Latitude, Longitude, Altitude, Velocity and Turn Radius.
 
     .. tab-item:: Properties
@@ -41,16 +41,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method`
-            * - :py:meth:`~altitude_reference_type`
-            * - :py:meth:`~altitude_reference_supported_types`
-            * - :py:meth:`~altitude_reference`
-            * - :py:meth:`~arc_granularity`
-            * - :py:meth:`~waypoints`
-            * - :py:meth:`~ephemeris_interval`
-            * - :py:meth:`~default_altitude`
-            * - :py:meth:`~default_rate`
-            * - :py:meth:`~default_turn_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.arc_granularity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.waypoints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.default_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.default_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.default_turn_radius`
 
 
 Import detail
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference
-    :type: IAgVeWayPtAltitudeRef
+    :type: IVehicleWaypointAltitudeReference
 
     Get the altitude reference.
 
@@ -96,13 +96,13 @@ Property detail
 
 .. py:property:: waypoints
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.waypoints
-    :type: IAgVeWaypointsCollection
+    :type: IVehicleWaypointsCollection
 
     Get the waypoints.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

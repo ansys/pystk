@@ -1,13 +1,13 @@
 AccessConstraintCrdnConstellation
 =================================
 
-.. py:class:: AccessConstraintCrdnConstellation
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintCrdnConstellation
 
-   Bases: py:obj:`~IAccessConstraintCrdnConstellation`, py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class related to Vector constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintCrdnConstellation
 
 Overview
 --------

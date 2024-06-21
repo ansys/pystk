@@ -1,13 +1,13 @@
 CentralBodyShapeOblateSpheroid
 ==============================
 
-.. py:class:: CentralBodyShapeOblateSpheroid
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyShapeOblateSpheroid
 
-   Bases: py:obj:`~ICentralBodyShapeOblateSpheroid`, py:obj:`~ICentralBodyShape`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeOblateSpheroid`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
 
    Central Body Shape - Spheroid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CentralBodyShapeOblateSpheroid
 
 Overview
 --------

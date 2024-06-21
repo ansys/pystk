@@ -1,13 +1,13 @@
 DataProviderResultIntervalCollection
 ====================================
 
-.. py:class:: DataProviderResultIntervalCollection
+.. py:class:: ansys.stk.core.stkobjects.DataProviderResultIntervalCollection
 
-   Bases: py:obj:`~IDataProviderResultIntervalCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultIntervalCollection`
 
    Represents a collection of intervals returned by the data providers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderResultIntervalCollection
 
 Overview
 --------

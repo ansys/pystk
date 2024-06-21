@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeFactory
 =================================
 
-.. py:class:: ISpatialAnalysisToolVolumeFactory
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory
 
    object
    
    The factory is used to create instances of volumes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeFactory
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create`
               - Create and registers a volume using specified name and description.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:meth:`~create_volume_combined`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_combined`
               - Create a volume type combined.
-            * - :py:meth:`~create_volume_lighting`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_lighting`
               - Create a volume type lighting.
-            * - :py:meth:`~create_volume_over_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_over_time`
               - Create a volume type over time.
-            * - :py:meth:`~create_volume_from_grid`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_from_grid`
               - Create a volume type from grid.
-            * - :py:meth:`~create_volume_from_calc`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_from_calc`
               - Create a volume type from calc.
-            * - :py:meth:`~create_volume_from_time_satisfaction`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_from_time_satisfaction`
               - Create a volume type from time satisfaction.
-            * - :py:meth:`~create_volume_from_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_from_condition`
               - Create a volume type condition.
-            * - :py:meth:`~create_volume_inview`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory.create_volume_inview`
               - Create a volume type Inview.
 
 

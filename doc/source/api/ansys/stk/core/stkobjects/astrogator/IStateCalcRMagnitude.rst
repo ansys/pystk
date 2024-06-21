@@ -1,13 +1,13 @@
 IStateCalcRMagnitude
 ====================
 
-.. py:class:: IStateCalcRMagnitude
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRMagnitude
 
    object
    
    Properties for an R Mag calculation object. AsStateCalcRMag.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRMagnitude
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_point_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRMagnitude.reference_point_name`
 
 
 Import detail

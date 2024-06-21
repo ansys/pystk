@@ -1,13 +1,13 @@
 ICRLocation
 ===========
 
-.. py:class:: ICRLocation
+.. py:class:: ansys.stk.core.stkobjects.ICRLocation
 
    object
    
    Provide the interface for a location.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICRLocation
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRLocation.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRLocation.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICRLocation.z`
 
 
 Import detail

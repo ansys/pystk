@@ -1,13 +1,13 @@
 MtoAnalysis
 ===========
 
-.. py:class:: MtoAnalysis
+.. py:class:: ansys.stk.core.stkobjects.MtoAnalysis
 
-   Bases: py:obj:`~IMtoAnalysis`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoAnalysis`
 
    MTO Spatial State Info.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoAnalysis
 
 Overview
 --------

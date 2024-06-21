@@ -1,12 +1,12 @@
 BASE_SELECTION
 ==============
 
-.. py:class:: BASE_SELECTION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BASE_SELECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BASE_SELECTION
 
 Overview
 --------

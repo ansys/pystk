@@ -1,13 +1,13 @@
 StateCalcInclination
 ====================
 
-.. py:class:: StateCalcInclination
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcInclination
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcInclination`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInclination`
 
    Inclination Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcInclination
 
 Overview
 --------

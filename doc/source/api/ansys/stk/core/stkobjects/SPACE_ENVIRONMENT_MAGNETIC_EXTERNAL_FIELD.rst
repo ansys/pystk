@@ -1,12 +1,12 @@
 SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD
 =========================================
 
-.. py:class:: SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD
+.. py:class:: ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD
 
 Overview
 --------

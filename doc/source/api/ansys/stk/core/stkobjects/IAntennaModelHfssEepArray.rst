@@ -1,13 +1,13 @@
 IAntennaModelHfssEepArray
 =========================
 
-.. py:class:: IAntennaModelHfssEepArray
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray
 
    object
    
    Provide access to the properties and methods defining an HFSS EEP array antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelHfssEepArray
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~width`
-            * - :py:meth:`~height`
-            * - :py:meth:`~number_of_elements`
-            * - :py:meth:`~supported_beam_direction_provider_types`
-            * - :py:meth:`~beam_direction_provider_type`
-            * - :py:meth:`~beam_direction_provider`
-            * - :py:meth:`~beamformer_type`
-            * - :py:meth:`~beamformer`
-            * - :py:meth:`~element_configuration_type`
-            * - :py:meth:`~element_configuration`
-            * - :py:meth:`~elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.number_of_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.supported_beam_direction_provider_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beam_direction_provider_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beam_direction_provider`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.elements`
 
 
 Import detail
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: beam_direction_provider
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beam_direction_provider
-    :type: IAgDirectionProvider
+    :type: IDirectionProvider
 
     Gets the beam direction provider.
 
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: beamformer
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer
-    :type: IAgBeamformer
+    :type: IBeamformer
 
     Gets the beamformer.
 
@@ -100,13 +100,13 @@ Property detail
 
 .. py:property:: element_configuration
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration
-    :type: IAgElementConfiguration
+    :type: IElementConfiguration
 
     Gets the element configuration.
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.elements
-    :type: IAgElementCollection
+    :type: IElementCollection
 
     Gets the collection of elements.
 

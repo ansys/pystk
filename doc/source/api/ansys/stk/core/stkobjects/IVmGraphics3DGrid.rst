@@ -1,13 +1,13 @@
 IVmGraphics3DGrid
 =================
 
-.. py:class:: IVmGraphics3DGrid
+.. py:class:: ansys.stk.core.stkobjects.IVmGraphics3DGrid
 
    object
    
    IAgVmVO Interface for a volumetric object's 3D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVmGraphics3DGrid
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_grid`
-            * - :py:meth:`~show_grid_points`
-            * - :py:meth:`~point_size`
-            * - :py:meth:`~point_color`
-            * - :py:meth:`~show_grid_lines`
-            * - :py:meth:`~line_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.show_grid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.show_grid_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.point_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.point_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.show_grid_lines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.line_color`
 
 
 Import detail

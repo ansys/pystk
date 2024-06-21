@@ -1,13 +1,13 @@
 AntennaBeamSelectionStrategyMaxGain
 ===================================
 
-.. py:class:: AntennaBeamSelectionStrategyMaxGain
+.. py:class:: ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyMaxGain
 
-   Bases: py:obj:`~IAntennaBeamSelectionStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
 
    Class defining a maximum gain beam selection strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaBeamSelectionStrategyMaxGain
 
 Overview
 --------

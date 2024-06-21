@@ -1,13 +1,13 @@
 IUiApplicationPartnerAccess
 ===========================
 
-.. py:class:: IUiApplicationPartnerAccess
+.. py:class:: ansys.stk.core.uiapplication.IUiApplicationPartnerAccess
 
    object
    
    Access to the application object model for business partners.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: IUiApplicationPartnerAccess
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~grant_partner_access`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplicationPartnerAccess.grant_partner_access`
               - Provide object model root for authorized business partners.
 
 

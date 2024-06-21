@@ -1,13 +1,13 @@
 Element
 =======
 
-.. py:class:: Element
+.. py:class:: ansys.stk.core.stkobjects.Element
 
-   Bases: py:obj:`~IElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IElement`
 
    Class defining a phased array element.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Element
 
 Overview
 --------

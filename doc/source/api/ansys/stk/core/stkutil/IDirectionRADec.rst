@@ -1,13 +1,13 @@
 IDirectionRADec
 ===============
 
-.. py:class:: IDirectionRADec
+.. py:class:: ansys.stk.core.stkutil.IDirectionRADec
 
    IDirection
    
    Interface for Spherical direction (Right Ascension and Declination).
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IDirectionRADec
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~dec`
-            * - :py:meth:`~ra`
-            * - :py:meth:`~magnitude`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionRADec.dec`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionRADec.ra`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDirectionRADec.magnitude`
 
 
 Import detail

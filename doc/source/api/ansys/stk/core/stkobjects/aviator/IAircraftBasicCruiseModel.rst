@@ -1,13 +1,13 @@
 IAircraftBasicCruiseModel
 =========================
 
-.. py:class:: IAircraftBasicCruiseModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel
 
    object
    
    Interface used to access the basic cruise model options for a cruise model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftBasicCruiseModel
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -29,21 +29,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ceiling_altitude`
-            * - :py:meth:`~default_cruise_altitude`
-            * - :py:meth:`~use_aero_prop_fuel`
-            * - :py:meth:`~scale_fuel_flow_by_non_std_density`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~min_airspeed`
-            * - :py:meth:`~max_endurance_airspeed`
-            * - :py:meth:`~max_range_airspeed`
-            * - :py:meth:`~max_airspeed`
-            * - :py:meth:`~max_perf_airspeed`
-            * - :py:meth:`~min_airspeed_fuel_flow`
-            * - :py:meth:`~max_endurance_fuel_flow`
-            * - :py:meth:`~max_range_fuel_flow`
-            * - :py:meth:`~max_airspeed_fuel_flow`
-            * - :py:meth:`~max_perf_airspeed_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.ceiling_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.scale_fuel_flow_by_non_std_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.min_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.max_endurance_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.max_range_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.max_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.max_perf_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.min_airspeed_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.max_endurance_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.max_range_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.max_airspeed_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel.max_perf_airspeed_fuel_flow`
 
 
 Import detail

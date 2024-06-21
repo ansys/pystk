@@ -1,13 +1,13 @@
 SpaceEnvironmentRadiationEnvironment
 ====================================
 
-.. py:class:: SpaceEnvironmentRadiationEnvironment
+.. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment
 
-   Bases: py:obj:`~ISpaceEnvironmentRadiationEnvironment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment`
 
    Radiation Environment model settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SpaceEnvironmentRadiationEnvironment
 
 Overview
 --------

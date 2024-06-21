@@ -1,13 +1,13 @@
 GroundVehicleGraphics3D
 =======================
 
-.. py:class:: GroundVehicleGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.GroundVehicleGraphics3D
 
-   Bases: py:obj:`~IGroundVehicleGraphics3D`, py:obj:`~IGreatArcGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGroundVehicleGraphics3D`, py:obj:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D`
 
    AgGvVOVO Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GroundVehicleGraphics3D
 
 Overview
 --------

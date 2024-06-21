@@ -1,13 +1,13 @@
 AnalysisWorkbenchDerivative
 ===========================
 
-.. py:class:: AnalysisWorkbenchDerivative
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchDerivative
 
-   Bases: py:obj:`~IAnalysisWorkbenchDerivative`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchDerivative`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Represents a base class for derivative definitions.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchDerivative
 
 Overview
 --------

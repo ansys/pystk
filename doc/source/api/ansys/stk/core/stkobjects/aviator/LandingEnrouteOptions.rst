@@ -1,13 +1,13 @@
 LandingEnrouteOptions
 =====================
 
-.. py:class:: LandingEnrouteOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.LandingEnrouteOptions
 
-   Bases: py:obj:`~IEnrouteAndDelayOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions`
 
    Class defining the enroute options in a landing procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: LandingEnrouteOptions
 
 Overview
 --------

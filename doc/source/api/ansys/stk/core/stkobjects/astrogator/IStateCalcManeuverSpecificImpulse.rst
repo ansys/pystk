@@ -1,13 +1,13 @@
 IStateCalcManeuverSpecificImpulse
 =================================
 
-.. py:class:: IStateCalcManeuverSpecificImpulse
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcManeuverSpecificImpulse
 
    object
    
    Properties for a Specific Impulse calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcManeuverSpecificImpulse
 
 Overview
 --------

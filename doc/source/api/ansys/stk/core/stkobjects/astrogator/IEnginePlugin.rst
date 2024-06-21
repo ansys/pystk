@@ -1,13 +1,13 @@
 IEnginePlugin
 =============
 
-.. py:class:: IEnginePlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IEnginePlugin
 
    object
    
    Properties for a Plugin engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IEnginePlugin
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~g`
-            * - :py:meth:`~plugin_identifier`
-            * - :py:meth:`~plugin_config`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEnginePlugin.g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEnginePlugin.plugin_identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEnginePlugin.plugin_config`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.IEnginePlugin.plugin_config
-    :type: IAgVAPluginProperties
+    :type: IPluginProperties
 
     Get the properties of the plugin.
 

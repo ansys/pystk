@@ -1,13 +1,13 @@
 IIonosphericFadingLossModel
 ===========================
 
-.. py:class:: IIonosphericFadingLossModel
+.. py:class:: ansys.stk.core.stkobjects.IIonosphericFadingLossModel
 
    object
    
    Provide access to the properties and methods for an Ionospheric Fading loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IIonosphericFadingLossModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel.type`
 
 
 Import detail

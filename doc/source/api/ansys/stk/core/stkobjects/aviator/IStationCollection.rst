@@ -1,13 +1,13 @@
 IStationCollection
 ==================
 
-.. py:class:: IStationCollection
+.. py:class:: ansys.stk.core.stkobjects.aviator.IStationCollection
 
    object
    
    Interface used to access the list of stations for an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IStationCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~get_internal_fuel_tank_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.get_internal_fuel_tank_by_name`
               - Get the internal fuel tank with the given name.
-            * - :py:meth:`~add_internal_fuel_tank`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.add_internal_fuel_tank`
               - Add an internal fuel tank.
-            * - :py:meth:`~get_payload_station_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.get_payload_station_by_name`
               - Get the payload station with the given name.
-            * - :py:meth:`~add_payload_station`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.add_payload_station`
               - Add a payload station.
-            * - :py:meth:`~contains_station`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.contains_station`
               - Get whether the station list contains an item with the given name.
-            * - :py:meth:`~remove_station_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.remove_station_by_name`
               - Remove an station by name.
-            * - :py:meth:`~remove_at_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.remove_at_index`
               - Remove procedure at the given index.
 
     .. tab-item:: Properties
@@ -43,9 +43,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~station_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IStationCollection.station_names`
 
 
 Import detail

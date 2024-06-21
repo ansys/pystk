@@ -1,13 +1,13 @@
 ISpaceEnvironmentRadEnergyValues
 ================================
 
-.. py:class:: ISpaceEnvironmentRadEnergyValues
+.. py:class:: ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues
 
    object
    
    Energy values for computing electron and proton flux.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISpaceEnvironmentRadEnergyValues
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_default`
-            * - :py:meth:`~custom`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues.use_default`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues.custom`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: custom
     :canonical: ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues.custom
-    :type: IAgSpEnvRadEnergyMethodSpecify
+    :type: ISpaceEnvironmentRadEnergyMethodSpecify
 
     Specify custom energy values that will override the default energy values.
 

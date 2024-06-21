@@ -1,13 +1,13 @@
 RadarDopplerClutterFilters
 ==========================
 
-.. py:class:: RadarDopplerClutterFilters
+.. py:class:: ansys.stk.core.stkobjects.RadarDopplerClutterFilters
 
-   Bases: py:obj:`~IRadarDopplerClutterFilters`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters`
 
    Class defining the properties for doppler clutter filters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarDopplerClutterFilters
 
 Overview
 --------

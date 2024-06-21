@@ -1,13 +1,13 @@
 ShipExportTools
 ===============
 
-.. py:class:: ShipExportTools
+.. py:class:: ansys.stk.core.stkobjects.ShipExportTools
 
-   Bases: py:obj:`~IShipExportTools`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IShipExportTools`
 
    The Ship Export Tools.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ShipExportTools
 
 Overview
 --------

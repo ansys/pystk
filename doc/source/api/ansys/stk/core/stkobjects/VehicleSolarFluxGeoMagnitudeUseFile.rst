@@ -1,13 +1,13 @@
 VehicleSolarFluxGeoMagnitudeUseFile
 ===================================
 
-.. py:class:: VehicleSolarFluxGeoMagnitudeUseFile
+.. py:class:: ansys.stk.core.stkobjects.VehicleSolarFluxGeoMagnitudeUseFile
 
-   Bases: py:obj:`~IVehicleSolarFluxGeoMagnitude`, py:obj:`~IVehicleSolarFluxGeoMagnitudeUseFile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitude`, py:obj:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile`
 
    Class defining the option to load a vehicle's solar flux and/or GeoMag properties from an external file.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSolarFluxGeoMagnitudeUseFile
 
 Overview
 --------

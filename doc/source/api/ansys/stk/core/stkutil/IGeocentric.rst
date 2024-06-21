@@ -1,13 +1,13 @@
 IGeocentric
 ===========
 
-.. py:class:: IGeocentric
+.. py:class:: ansys.stk.core.stkutil.IGeocentric
 
    IPosition
    
    Geocentric Position Type.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IGeocentric
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~lat`
-            * - :py:meth:`~lon`
-            * - :py:meth:`~altitude`
+            * - :py:attr:`~ansys.stk.core.stkutil.IGeocentric.lat`
+            * - :py:attr:`~ansys.stk.core.stkutil.IGeocentric.lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.IGeocentric.altitude`
 
 
 Import detail

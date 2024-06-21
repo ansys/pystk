@@ -1,13 +1,13 @@
 IBeamformerUniform
 ==================
 
-.. py:class:: IBeamformerUniform
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerUniform
 
    object
    
    Provide access to the properties and methods defining a uniform tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerUniform
 
 Overview
 --------

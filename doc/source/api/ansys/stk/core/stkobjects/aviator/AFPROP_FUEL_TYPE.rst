@@ -1,12 +1,12 @@
 AFPROP_FUEL_TYPE
 ================
 
-.. py:class:: AFPROP_FUEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.AFPROP_FUEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AFPROP_FUEL_TYPE
 
 Overview
 --------

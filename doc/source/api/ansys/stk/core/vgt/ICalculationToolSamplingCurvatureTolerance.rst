@@ -1,13 +1,13 @@
 ICalculationToolSamplingCurvatureTolerance
 ==========================================
 
-.. py:class:: ICalculationToolSamplingCurvatureTolerance
+.. py:class:: ansys.stk.core.vgt.ICalculationToolSamplingCurvatureTolerance
 
    object
    
    Curvature tolerance definition includes parameters that determine how scalar data should be sampled based on limits on slope changes between samples.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolSamplingCurvatureTolerance
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_time_step`
-            * - :py:meth:`~maximum_time_step`
-            * - :py:meth:`~step_at_boundaries`
-            * - :py:meth:`~relative_tolerance`
-            * - :py:meth:`~absolute_tolerance`
-            * - :py:meth:`~curvature_tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingCurvatureTolerance.minimum_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingCurvatureTolerance.maximum_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingCurvatureTolerance.step_at_boundaries`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingCurvatureTolerance.relative_tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingCurvatureTolerance.absolute_tolerance`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingCurvatureTolerance.curvature_tolerance`
 
 
 Import detail

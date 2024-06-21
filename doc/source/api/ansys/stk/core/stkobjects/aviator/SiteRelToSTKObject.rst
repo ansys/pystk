@@ -1,13 +1,13 @@
 SiteRelToSTKObject
 ==================
 
-.. py:class:: SiteRelToSTKObject
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteRelToSTKObject
 
-   Bases: py:obj:`~ISiteRelToSTKObject`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteRelToSTKObject`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a Relative to Stationary STK Object site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteRelToSTKObject
 
 Overview
 --------

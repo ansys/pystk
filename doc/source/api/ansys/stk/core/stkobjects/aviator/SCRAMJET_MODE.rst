@@ -1,12 +1,12 @@
 SCRAMJET_MODE
 =============
 
-.. py:class:: SCRAMJET_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.SCRAMJET_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SCRAMJET_MODE
 
 Overview
 --------

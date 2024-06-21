@@ -1,13 +1,13 @@
 EOIRMaterialElementCollection
 =============================
 
-.. py:class:: EOIRMaterialElementCollection
+.. py:class:: ansys.stk.core.stkobjects.EOIRMaterialElementCollection
 
-   Bases: py:obj:`~IEOIRMaterialElementCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRMaterialElementCollection`
 
    Collection of material elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRMaterialElementCollection
 
 Overview
 --------

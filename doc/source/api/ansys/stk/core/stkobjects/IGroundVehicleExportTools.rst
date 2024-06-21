@@ -1,13 +1,13 @@
 IGroundVehicleExportTools
 =========================
 
-.. py:class:: IGroundVehicleExportTools
+.. py:class:: ansys.stk.core.stkobjects.IGroundVehicleExportTools
 
    object
    
    Interface used to define the export to data file options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGroundVehicleExportTools
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_ephemeris_stk_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicleExportTools.get_ephemeris_stk_export_tool`
               - Return the ephemeris export tool.
-            * - :py:meth:`~get_prop_definition_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicleExportTools.get_prop_definition_export_tool`
               - Return the Prop Def export tool.
-            * - :py:meth:`~get_attitude_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicleExportTools.get_attitude_export_tool`
               - Return the attitude export tool.
-            * - :py:meth:`~get_ephemeris_stk_binary_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicleExportTools.get_ephemeris_stk_binary_export_tool`
               - Return an Ephemeris file of the STK Binary ephemeris type for export.
 
 

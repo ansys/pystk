@@ -1,12 +1,12 @@
 HOVER_MODE
 ==========
 
-.. py:class:: HOVER_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.HOVER_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: HOVER_MODE
 
 Overview
 --------

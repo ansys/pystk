@@ -1,13 +1,13 @@
 IBasicManeuverAirspeedOptions
 =============================
 
-.. py:class:: IBasicManeuverAirspeedOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions
 
    object
    
    Interface used to access airspeed options for basic maneuver strategies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverAirspeedOptions
 
 Overview
 --------
@@ -20,24 +20,24 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~airspeed_mode`
-            * - :py:meth:`~min_speed_limits`
-            * - :py:meth:`~max_speed_limits`
-            * - :py:meth:`~maintain_airspeed_type`
-            * - :py:meth:`~specified_airspeed_type`
-            * - :py:meth:`~specified_accel_decel_mode`
-            * - :py:meth:`~specified_airspeed`
-            * - :py:meth:`~specified_accel_decel_g`
-            * - :py:meth:`~accel_g`
-            * - :py:meth:`~decel_g`
-            * - :py:meth:`~accel_mode`
-            * - :py:meth:`~decel_mode`
-            * - :py:meth:`~throttle`
-            * - :py:meth:`~interpolate_init_g`
-            * - :py:meth:`~interpolate_end_g`
-            * - :py:meth:`~interpolate_end_time`
-            * - :py:meth:`~interpolate_stop_at_end_time`
-            * - :py:meth:`~thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.airspeed_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.min_speed_limits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.max_speed_limits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.maintain_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.specified_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.specified_accel_decel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.specified_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.specified_accel_decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.accel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.accel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.decel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.throttle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.interpolate_init_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.interpolate_end_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.interpolate_end_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.interpolate_stop_at_end_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.thrust`
 
 
 Import detail
@@ -155,7 +155,7 @@ Property detail
 
 .. py:property:: thrust
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.thrust
-    :type: IAgAvtrPropulsionThrust
+    :type: IPropulsionThrust
 
     Get the thrust options for the Specify Thrust mode.
 

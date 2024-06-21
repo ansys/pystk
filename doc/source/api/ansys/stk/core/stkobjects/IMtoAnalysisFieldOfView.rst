@@ -1,13 +1,13 @@
 IMtoAnalysisFieldOfView
 =======================
 
-.. py:class:: IMtoAnalysisFieldOfView
+.. py:class:: ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView
 
    object
    
    MTO Field Of View computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoAnalysisFieldOfView
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_any_track_in_fov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.is_any_track_in_fov`
               - Return true if any track is in the field of view of the sensor at the given time.
-            * - :py:meth:`~are_all_tracks_in_fov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.are_all_tracks_in_fov`
               - Return true if all tracks are in the field of view of the sensor at the given time.
-            * - :py:meth:`~is_track_in_fov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.is_track_in_fov`
               - Return true is the track is in the field of view of the sensor at the given time.
-            * - :py:meth:`~compute_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.compute_tracks`
               - Return an array of track ids and boolean values.
-            * - :py:meth:`~compute_all_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.compute_all_tracks`
               - Return an array of track ids and boolean values for all tracks.
-            * - :py:meth:`~are_tracks_in_fov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.are_tracks_in_fov`
               - Return an array of track ids and boolean values.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sensor`
-            * - :py:meth:`~entirety`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.sensor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.entirety`
 
 
 Import detail

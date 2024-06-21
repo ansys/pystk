@@ -1,12 +1,12 @@
 DELAUNAY_L_TYPE
 ===============
 
-.. py:class:: DELAUNAY_L_TYPE
+.. py:class:: ansys.stk.core.stkobjects.DELAUNAY_L_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DELAUNAY_L_TYPE
 
 Overview
 --------

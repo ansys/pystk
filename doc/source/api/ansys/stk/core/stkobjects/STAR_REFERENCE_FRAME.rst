@@ -1,12 +1,12 @@
 STAR_REFERENCE_FRAME
 ====================
 
-.. py:class:: STAR_REFERENCE_FRAME
+.. py:class:: ansys.stk.core.stkobjects.STAR_REFERENCE_FRAME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: STAR_REFERENCE_FRAME
 
 Overview
 --------

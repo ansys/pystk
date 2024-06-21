@@ -1,13 +1,13 @@
 HPOPPluginFunction
 ==================
 
-.. py:class:: HPOPPluginFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.HPOPPluginFunction
 
-   Bases: py:obj:`~IHPOPPluginFunction`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IHPOPPluginFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    HPOP Plugin propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: HPOPPluginFunction
 
 Overview
 --------

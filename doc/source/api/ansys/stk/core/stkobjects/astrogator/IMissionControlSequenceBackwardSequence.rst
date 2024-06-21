@@ -1,13 +1,13 @@
 IMissionControlSequenceBackwardSequence
 =======================================
 
-.. py:class:: IMissionControlSequenceBackwardSequence
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceBackwardSequence
 
    IMissionControlSequenceSequence
    
    Properties for a Backward Sequence segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceBackwardSequence
 
 Overview
 --------

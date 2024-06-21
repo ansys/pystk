@@ -1,13 +1,13 @@
 ConstellationConstraints
 ========================
 
-.. py:class:: ConstellationConstraints
+.. py:class:: ansys.stk.core.stkobjects.ConstellationConstraints
 
-   Bases: py:obj:`~IConstellationConstraints`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IConstellationConstraints`
 
    Class related to the constellation constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ConstellationConstraints
 
 Overview
 --------

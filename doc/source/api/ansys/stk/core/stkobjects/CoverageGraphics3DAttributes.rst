@@ -1,13 +1,13 @@
 CoverageGraphics3DAttributes
 ============================
 
-.. py:class:: CoverageGraphics3DAttributes
+.. py:class:: ansys.stk.core.stkobjects.CoverageGraphics3DAttributes
 
-   Bases: py:obj:`~ICoverageGraphics3DAttributes`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGraphics3DAttributes`
 
    3D animation or static graphics options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageGraphics3DAttributes
 
 Overview
 --------

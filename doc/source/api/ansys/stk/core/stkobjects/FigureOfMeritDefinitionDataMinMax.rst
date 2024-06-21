@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionDataMinMax
 =================================
 
-.. py:class:: FigureOfMeritDefinitionDataMinMax
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataMinMax
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionDataMinMax`, py:obj:`~IFigureOfMeritDefinitionData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
 
    Minimum and maximum data values for navigation accuracy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionDataMinMax
 
 Overview
 --------

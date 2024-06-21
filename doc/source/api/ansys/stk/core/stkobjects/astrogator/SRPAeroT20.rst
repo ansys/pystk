@@ -1,13 +1,13 @@
 SRPAeroT20
 ==========
 
-.. py:class:: SRPAeroT20
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SRPAeroT20
 
-   Bases: py:obj:`~ISRPAeroT20`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISRPAeroT20`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    AeroT20 SRP propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SRPAeroT20
 
 Overview
 --------

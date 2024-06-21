@@ -1,13 +1,13 @@
 IStateCalcVectorDec
 ===================
 
-.. py:class:: IStateCalcVectorDec
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcVectorDec
 
    object
    
    Properties for a Vector Dec calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcVectorDec
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_axes_name`
-            * - :py:meth:`~vector_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorDec.coord_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorDec.vector_name`
 
 
 Import detail

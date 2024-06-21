@@ -1,13 +1,13 @@
 LineTargetPoint
 ===============
 
-.. py:class:: LineTargetPoint
+.. py:class:: ansys.stk.core.stkobjects.LineTargetPoint
 
-   Bases: py:obj:`~ILineTargetPoint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILineTargetPoint`
 
    Line Target Point.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LineTargetPoint
 
 Overview
 --------

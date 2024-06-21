@@ -1,13 +1,13 @@
 ILLAPosition
 ============
 
-.. py:class:: ILLAPosition
+.. py:class:: ansys.stk.core.stkobjects.ILLAPosition
 
    object
    
    Interface to set and retrieve the LLA position type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILLAPosition
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~convert_to`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILLAPosition.convert_to`
               - Change the position representation.
-            * - :py:meth:`~assign`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILLAPosition.assign`
               - Assign a new position.
-            * - :py:meth:`~assign_geocentric`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILLAPosition.assign_geocentric`
               - Assign the position using geocentric representation. Lat uses Latitude Dimension. Lon Uses Longitude Dimension. Rad uses Distance Dimension.
-            * - :py:meth:`~assign_geodetic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILLAPosition.assign_geodetic`
               - Assign the position using geodetic representation.  Lat uses Latitude Dimension. Lon Uses Longitude Dimension. Alt uses Distance Dimension.
 
     .. tab-item:: Properties
@@ -35,7 +35,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILLAPosition.type`
 
 
 Import detail

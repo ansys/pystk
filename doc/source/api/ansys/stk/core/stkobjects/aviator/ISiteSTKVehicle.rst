@@ -1,13 +1,13 @@
 ISiteSTKVehicle
 ===============
 
-.. py:class:: ISiteSTKVehicle
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteSTKVehicle
 
    object
    
    Interface used to access the options for a STK Vehicle site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ISiteSTKVehicle
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKVehicle.get_as_site`
               - Get the site interface.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~object_name`
-            * - :py:meth:`~valid_object_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKVehicle.object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKVehicle.valid_object_names`
 
 
 Import detail

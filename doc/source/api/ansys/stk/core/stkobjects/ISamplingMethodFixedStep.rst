@@ -1,13 +1,13 @@
 ISamplingMethodFixedStep
 ========================
 
-.. py:class:: ISamplingMethodFixedStep
+.. py:class:: ansys.stk.core.stkobjects.ISamplingMethodFixedStep
 
    ISamplingMethodStrategy
    
    Define a fixed time-step sampling method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISamplingMethodFixedStep
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fixed_time_step`
-            * - :py:meth:`~time_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISamplingMethodFixedStep.fixed_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISamplingMethodFixedStep.time_bound`
 
 
 Import detail

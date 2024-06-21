@@ -1,13 +1,13 @@
 IProjectionFactory
 ==================
 
-.. py:class:: IProjectionFactory
+.. py:class:: ansys.stk.core.graphics.IProjectionFactory
 
    object
    
    A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IProjectionFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionFactory.initialize`
               - Initialize a new instance.
-            * - :py:meth:`~initialize_with_data`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionFactory.initialize_with_data`
               - Initialize a new instance.
-            * - :py:meth:`~initialize_from_projection`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjectionFactory.initialize_from_projection`
               - Initialize a new instance from another projection.
 
 

@@ -1,13 +1,13 @@
 IDAFIFItem
 ==========
 
-.. py:class:: IDAFIFItem
+.. py:class:: ansys.stk.core.stkobjects.aviator.IDAFIFItem
 
    object
    
    Interface used to access the options for an DAFIF Item found in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IDAFIFItem
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_value`
               - Get the value of the field with the given name.
-            * - :py:meth:`~get_all_fields`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_all_fields`
               - Get all the field names.
-            * - :py:meth:`~get_all_fields_and_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_all_fields_and_values`
               - Get all the field names along with the corresponding value.
-            * - :py:meth:`~copy_site`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.copy_site`
               - Copy the site to the clipboard.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

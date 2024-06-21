@@ -1,13 +1,13 @@
 AntennaModelDipole
 ==================
 
-.. py:class:: AntennaModelDipole
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelDipole
 
-   Bases: py:obj:`~IAntennaModelDipole`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelDipole`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a dipole antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelDipole
 
 Overview
 --------

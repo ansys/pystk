@@ -1,12 +1,12 @@
 MARKER_TYPE
 ===========
 
-.. py:class:: MARKER_TYPE
+.. py:class:: ansys.stk.core.stkobjects.MARKER_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MARKER_TYPE
 
 Overview
 --------

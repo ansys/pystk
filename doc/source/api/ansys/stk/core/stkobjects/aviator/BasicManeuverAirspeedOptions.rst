@@ -1,13 +1,13 @@
 BasicManeuverAirspeedOptions
 ============================
 
-.. py:class:: BasicManeuverAirspeedOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions
 
-   Bases: py:obj:`~IBasicManeuverAirspeedOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions`
 
    Class defining the airspeed options for basic maneuver strategies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverAirspeedOptions
 
 Overview
 --------

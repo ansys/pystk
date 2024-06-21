@@ -1,13 +1,13 @@
 IStoppingConditionCollection
 ============================
 
-.. py:class:: IStoppingConditionCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection
 
    object
    
    The list of Stopping Conditions.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStoppingConditionCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.add`
               - Add a stopping condition.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.remove`
               - Remove a stopping condition.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.cut`
               - Copy the stopping condition into the clipboard and removes the stopping condition from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.paste`
               - Pastes the stopping condition from the clipboard and inserts into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.insert_copy`
               - Copy the stopping condition and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.get_item_by_index`
               - Retrieve a stopping condition in the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.get_item_by_name`
               - Retrieve a stopping condition in the collection by name.
 
     .. tab-item:: Properties
@@ -43,8 +43,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection.count`
 
 
 Import detail

@@ -1,12 +1,12 @@
 SENSOR_EOIR_BAND_WAVELENGTH_TYPE
 ================================
 
-.. py:class:: SENSOR_EOIR_BAND_WAVELENGTH_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_WAVELENGTH_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_EOIR_BAND_WAVELENGTH_TYPE
 
 Overview
 --------

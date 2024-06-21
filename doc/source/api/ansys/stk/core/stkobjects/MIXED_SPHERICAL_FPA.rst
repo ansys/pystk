@@ -1,12 +1,12 @@
 MIXED_SPHERICAL_FPA
 ===================
 
-.. py:class:: MIXED_SPHERICAL_FPA
+.. py:class:: ansys.stk.core.stkobjects.MIXED_SPHERICAL_FPA
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MIXED_SPHERICAL_FPA
 
 Overview
 --------

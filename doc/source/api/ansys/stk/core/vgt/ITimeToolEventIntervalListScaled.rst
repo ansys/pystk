@@ -1,13 +1,13 @@
 ITimeToolEventIntervalListScaled
 ================================
 
-.. py:class:: ITimeToolEventIntervalListScaled
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalListScaled
 
    object
    
    Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list...
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalListScaled
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~original_intervals`
-            * - :py:meth:`~absolute_increment`
-            * - :py:meth:`~relative_increment`
-            * - :py:meth:`~use_absolute_increment`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListScaled.original_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListScaled.absolute_increment`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListScaled.relative_increment`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListScaled.use_absolute_increment`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: original_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalListScaled.original_intervals
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The original interval list.
 

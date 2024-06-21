@@ -1,13 +1,13 @@
 IIPOPTControl
 =============
 
-.. py:class:: IIPOPTControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IIPOPTControl
 
    object
    
    Properties for control parameters of a IPOPT profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IIPOPTControl
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~initial_value`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~lower_bound`
-            * - :py:meth:`~upper_bound`
-            * - :py:meth:`~scaling_value`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.initial_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.lower_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.upper_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.scaling_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControl.custom_display_unit`
 
 
 Import detail

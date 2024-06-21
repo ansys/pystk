@@ -1,13 +1,13 @@
 VehicleGraphics3DDropLinePositionItem
 =====================================
 
-.. py:class:: VehicleGraphics3DDropLinePositionItem
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem
 
-   Bases: py:obj:`~IVehicleGraphics3DDropLinePositionItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePositionItem`
 
    Drop lines from the vehicle's current position.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DDropLinePositionItem
 
 Overview
 --------

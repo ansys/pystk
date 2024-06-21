@@ -1,13 +1,13 @@
 RadarContinuousWaveAnalysisModeFixedTime
 ========================================
 
-.. py:class:: RadarContinuousWaveAnalysisModeFixedTime
+.. py:class:: ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisModeFixedTime
 
-   Bases: py:obj:`~IRadarContinuousWaveAnalysisModeFixedTime`, py:obj:`~IRadarContinuousWaveAnalysisMode`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeFixedTime`, py:obj:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode`
 
    Class defining the continuous wave fixed time analysis mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarContinuousWaveAnalysisModeFixedTime
 
 Overview
 --------

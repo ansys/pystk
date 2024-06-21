@@ -1,13 +1,13 @@
 IVehicleSpaceEnvironmentVehTemperature
 ======================================
 
-.. py:class:: IVehicleSpaceEnvironmentVehTemperature
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature
 
    object
    
    Vehicle temperature model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpaceEnvironmentVehTemperature
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.compute_temperature`
               - Compute vehicle temperature. Uses DateFormat and Temperature Dimensions.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~earth_albedo`
-            * - :py:meth:`~material_emissivity`
-            * - :py:meth:`~material_absorptivity`
-            * - :py:meth:`~dissipation`
-            * - :py:meth:`~cross_sectional_area`
-            * - :py:meth:`~shape_model`
-            * - :py:meth:`~normal_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.earth_albedo`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.material_emissivity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.material_absorptivity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.dissipation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.cross_sectional_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.shape_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.normal_vector`
 
 
 Import detail

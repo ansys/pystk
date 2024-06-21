@@ -1,13 +1,13 @@
 EOIRShapeGEOComm
 ================
 
-.. py:class:: EOIRShapeGEOComm
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeGEOComm
 
-   Bases: py:obj:`~IEOIRShapeGEOComm`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeGEOComm`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    GEOComm shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeGEOComm
 
 Overview
 --------

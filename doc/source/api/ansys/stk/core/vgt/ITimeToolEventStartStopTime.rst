@@ -1,13 +1,13 @@
 ITimeToolEventStartStopTime
 ===========================
 
-.. py:class:: ITimeToolEventStartStopTime
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventStartStopTime
 
    object
    
    Event is either start or stop time selected from a reference interval.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventStartStopTime
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_start`
-            * - :py:meth:`~reference_event_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventStartStopTime.use_start`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventStartStopTime.reference_event_interval`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: reference_event_interval
     :canonical: ansys.stk.core.vgt.ITimeToolEventStartStopTime.reference_event_interval
-    :type: IAgCrdnEventInterval
+    :type: ITimeToolEventInterval
 
     The reference interval.
 

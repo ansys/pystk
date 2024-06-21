@@ -1,13 +1,13 @@
 MissileExternalAero
 ===================
 
-.. py:class:: MissileExternalAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileExternalAero
 
-   Bases: py:obj:`~IMissileExternalAero`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero`
 
    Class defining the external aerodynamic options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MissileExternalAero
 
 Overview
 --------

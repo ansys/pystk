@@ -1,13 +1,13 @@
 IRunwayHeadingOptions
 =====================
 
-.. py:class:: IRunwayHeadingOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IRunwayHeadingOptions
 
    object
    
    Interface for the Runway Heading Options found in a Takeoff or Landing procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IRunwayHeadingOptions
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~runway_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRunwayHeadingOptions.runway_mode`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVectorGeometryToolPointBPlane
 ==============================
 
-.. py:class:: IVectorGeometryToolPointBPlane
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointBPlane
 
    object
    
    B-Plane point using the selected target body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointBPlane
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_body`
-            * - :py:meth:`~trajectory`
-            * - :py:meth:`~point_type`
-            * - :py:meth:`~direction`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.target_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.trajectory`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.point_type`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.direction`
 
 
 Import detail
@@ -39,13 +39,13 @@ Property detail
 
 .. py:property:: target_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.target_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a target central body.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.trajectory
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a trajectory point.
 

@@ -1,13 +1,13 @@
 AccessConstraintCondition
 =========================
 
-.. py:class:: AccessConstraintCondition
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintCondition
 
-   Bases: py:obj:`~IAccessConstraintCondition`, py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintCondition`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining access constraints in terms of lighting conditions.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintCondition
 
 Overview
 --------

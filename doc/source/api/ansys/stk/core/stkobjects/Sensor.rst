@@ -1,13 +1,13 @@
 Sensor
 ======
 
-.. py:class:: Sensor
+.. py:class:: ansys.stk.core.stkobjects.Sensor
 
-   Bases: py:obj:`~ISensor`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`, py:obj:`~IProvideSpatialInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensor`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`, py:obj:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Class defining the Sensor class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Sensor
 
 Overview
 --------

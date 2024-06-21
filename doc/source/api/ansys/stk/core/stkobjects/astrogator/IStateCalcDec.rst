@@ -1,13 +1,13 @@
 IStateCalcDec
 =============
 
-.. py:class:: IStateCalcDec
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDec
 
    object
    
    Properties for a Declination calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDec
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDec.coord_system_name`
 
 
 Import detail

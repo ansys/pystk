@@ -1,13 +1,13 @@
 ICalculationToolConditionFactory
 ================================
 
-.. py:class:: ICalculationToolConditionFactory
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionFactory
 
    object
    
    The factory creates condition components.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionFactory
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionFactory.create`
               - Create and registers a condition using specified name, description and type.
-            * - :py:meth:`~create_condition_scalar_bounds`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionFactory.create_condition_scalar_bounds`
               - Create a condition placing bounds on specified scalar.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:meth:`~create_condition_combined`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionFactory.create_condition_combined`
               - Create a condition which combines multiple conditions.
-            * - :py:meth:`~create_condition_point_in_volume`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionFactory.create_condition_point_in_volume`
               - Create a condition for point in volume.
 
 

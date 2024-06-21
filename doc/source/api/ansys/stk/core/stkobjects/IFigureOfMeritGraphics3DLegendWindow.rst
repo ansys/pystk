@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics3DLegendWindow
 ====================================
 
-.. py:class:: IFigureOfMeritGraphics3DLegendWindow
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow
 
    object
    
    3D graphics contours legend.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics3DLegendWindow
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible_on_map`
-            * - :py:meth:`~position_on_map`
-            * - :py:meth:`~translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow.is_visible_on_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow.position_on_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow.translucency`
 
 
 Import detail
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: position_on_map
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow.position_on_map
-    :type: IAgFmGfxPositionOnMap
+    :type: IFigureOfMeritGraphics2DPositionOnMap
 
     Position where the contour legend is displayed.
 

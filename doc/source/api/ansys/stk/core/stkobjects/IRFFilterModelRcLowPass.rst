@@ -1,13 +1,13 @@
 IRFFilterModelRcLowPass
 =======================
 
-.. py:class:: IRFFilterModelRcLowPass
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelRcLowPass
 
    object
    
    Provide access to the properties and methods defining a rc low pass RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelRcLowPass
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cutoff_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelRcLowPass.cutoff_frequency`
 
 
 Import detail

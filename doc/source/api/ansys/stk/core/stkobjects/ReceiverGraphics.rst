@@ -1,13 +1,13 @@
 ReceiverGraphics
 ================
 
-.. py:class:: ReceiverGraphics
+.. py:class:: ansys.stk.core.stkobjects.ReceiverGraphics
 
-   Bases: py:obj:`~IReceiverGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverGraphics`
 
    Class defining 2D Graphics properties of a Receiver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceiverGraphics
 
 Overview
 --------

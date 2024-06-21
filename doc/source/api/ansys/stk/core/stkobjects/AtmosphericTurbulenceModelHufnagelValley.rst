@@ -1,13 +1,13 @@
 AtmosphericTurbulenceModelHufnagelValley
 ========================================
 
-.. py:class:: AtmosphericTurbulenceModelHufnagelValley
+.. py:class:: ansys.stk.core.stkobjects.AtmosphericTurbulenceModelHufnagelValley
 
-   Bases: py:obj:`~IAtmosphericTurbulenceModelHufnagelValley`, py:obj:`~IAtmosphericTurbulenceModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelHufnagelValley`, py:obj:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModel`
 
    Class defining a Hufnagel Valley atmospheric turbulence model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AtmosphericTurbulenceModelHufnagelValley
 
 Overview
 --------

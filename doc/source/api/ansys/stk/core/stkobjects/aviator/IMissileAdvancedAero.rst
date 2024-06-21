@@ -1,13 +1,13 @@
 IMissileAdvancedAero
 ====================
 
-.. py:class:: IMissileAdvancedAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero
 
    object
    
    Interface used to access the Advanced aerodynamics options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileAdvancedAero
 
 Overview
 --------
@@ -20,30 +20,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~body_width`
-            * - :py:meth:`~body_height`
-            * - :py:meth:`~body_length`
-            * - :py:meth:`~nose_length`
-            * - :py:meth:`~nose_tip_diameter`
-            * - :py:meth:`~nozzle_diameter`
-            * - :py:meth:`~max_aoa`
-            * - :py:meth:`~min_mach`
-            * - :py:meth:`~wing_count`
-            * - :py:meth:`~wing_span`
-            * - :py:meth:`~wing_surface_area`
-            * - :py:meth:`~wing_leading_edge_sweep_angle`
-            * - :py:meth:`~wing_leading_edge_section_angle`
-            * - :py:meth:`~wing_mean_aero_chord_length`
-            * - :py:meth:`~wing_max_thickness_along_mac`
-            * - :py:meth:`~wing_lift_fraction`
-            * - :py:meth:`~tail_count`
-            * - :py:meth:`~tail_span`
-            * - :py:meth:`~tail_surface_area`
-            * - :py:meth:`~tail_leading_edge_sweep_angle`
-            * - :py:meth:`~tail_leading_edge_section_angle`
-            * - :py:meth:`~tail_mean_aero_chord_length`
-            * - :py:meth:`~tail_max_thickness_along_mac`
-            * - :py:meth:`~tail_lift_fraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.body_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.body_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.body_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.nose_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.nose_tip_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.nozzle_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.max_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.min_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_span`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_surface_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_leading_edge_sweep_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_leading_edge_section_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_mean_aero_chord_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_max_thickness_along_mac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_lift_fraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_span`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_surface_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_leading_edge_sweep_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_leading_edge_section_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_mean_aero_chord_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_max_thickness_along_mac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_lift_fraction`
 
 
 Import detail

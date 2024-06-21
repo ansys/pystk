@@ -1,12 +1,12 @@
 ATMOSPHERIC_ABSORPTION_MODEL_TYPE
 =================================
 
-.. py:class:: ATMOSPHERIC_ABSORPTION_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.ATMOSPHERIC_ABSORPTION_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ATMOSPHERIC_ABSORPTION_MODEL_TYPE
 
 Overview
 --------

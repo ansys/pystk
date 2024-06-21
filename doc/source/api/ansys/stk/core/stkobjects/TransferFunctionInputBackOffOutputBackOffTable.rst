@@ -1,13 +1,13 @@
 TransferFunctionInputBackOffOutputBackOffTable
 ==============================================
 
-.. py:class:: TransferFunctionInputBackOffOutputBackOffTable
+.. py:class:: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable
 
-   Bases: py:obj:`~ITransferFunctionInputBackOffOutputBackOffTable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTable`
 
    Class defining an input back off vs output back off table.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TransferFunctionInputBackOffOutputBackOffTable
 
 Overview
 --------

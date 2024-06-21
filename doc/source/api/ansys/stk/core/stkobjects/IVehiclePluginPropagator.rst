@@ -1,13 +1,13 @@
 IVehiclePluginPropagator
 ========================
 
-.. py:class:: IVehiclePluginPropagator
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePluginPropagator
 
    object
    
    Interface for propagator plugin.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePluginPropagator
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_raw_plugin_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.get_raw_plugin_object`
               - Get a raw pointer to the instance of the plugin.
-            * - :py:meth:`~apply_plugin_changes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.apply_plugin_changes`
               - Apply the changes made to the plugin's configuration.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_plugin`
-            * - :py:meth:`~plugin_name`
-            * - :py:meth:`~plugin_settings`
-            * - :py:meth:`~available_plugins`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.use_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.plugin_settings`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.available_plugins`
 
 
 Import detail
@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: plugin_settings
     :canonical: ansys.stk.core.stkobjects.IVehiclePluginPropagator.plugin_settings
-    :type: IAgVePluginSettings
+    :type: IVehiclePluginSettings
 
     Get the parameters of the selected plugin.
 

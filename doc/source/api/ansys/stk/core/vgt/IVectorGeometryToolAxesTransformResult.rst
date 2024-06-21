@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesTransformResult
 ======================================
 
-.. py:class:: IVectorGeometryToolAxesTransformResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult
 
    object
    
    Contains the results returned with IAgCrdnAxes.TransformFrom method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesTransformResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult.vector`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult.vector
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The output vector in the current axes.
 

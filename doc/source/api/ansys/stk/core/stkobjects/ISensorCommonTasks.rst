@@ -1,13 +1,13 @@
 ISensorCommonTasks
 ==================
 
-.. py:class:: ISensorCommonTasks
+.. py:class:: ansys.stk.core.stkobjects.ISensorCommonTasks
 
    object
    
    The common tasks available for the sensor object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorCommonTasks
 
 Overview
 --------
@@ -20,45 +20,45 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_pattern_simple_conic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_simple_conic`
               - Define the sensor using a simple conic pattern.
-            * - :py:meth:`~set_pattern_complex_conic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_complex_conic`
               - Define the sensor using a complex conic pattern.
-            * - :py:meth:`~set_pattern_eoir`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_eoir`
               - Define the sensor using a EOIR pattern.
-            * - :py:meth:`~set_pattern_half_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_half_power`
               - Define the sensor using a half power pattern.
-            * - :py:meth:`~set_pattern_rectangular`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_rectangular`
               - Define the sensor using a rectangular pattern.
-            * - :py:meth:`~set_pattern_custom`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_custom`
               - Define the sensor using a custom pattern.
-            * - :py:meth:`~set_pattern_sar`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pattern_sar`
               - Define the sensor using a SAR pattern.
-            * - :py:meth:`~set_pointing_fixed_az_el`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_az_el`
               - Set the pointing method to Fixed with an AzEl orientation.
-            * - :py:meth:`~set_pointing_fixed_euler`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_euler`
               - Set the pointing method to Fixed with a Euler Angles orientation.
-            * - :py:meth:`~set_pointing_fixed_quat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_quat`
               - Set the pointing method to Fixed with a Quaternion orientation.
-            * - :py:meth:`~set_pointing_fixed_ypr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_ypr`
               - Set the pointing method to Fixed with a YPR Angles orientation.
-            * - :py:meth:`~set_pointing_fixed_axes_az_el`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_axes_az_el`
               - Set the pointing method to FixedAxes with an AzEl orientation.
-            * - :py:meth:`~set_pointing_fixed_axes_euler`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_axes_euler`
               - Set the pointing method to FixedAxes with a Euler Angles orientation.
-            * - :py:meth:`~set_pointing_fixed_axes_quat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_axes_quat`
               - Set the pointing method to FixedAxes with a Quaternion orientation.
-            * - :py:meth:`~set_pointing_fixed_axes_ypr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_fixed_axes_ypr`
               - Set the pointing method to FixedAxes with a YPR Angles orientation.
-            * - :py:meth:`~set_pointing_3d_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_3d_model`
               - Set the pointing method to 3DModel.
-            * - :py:meth:`~set_pointing_grazing_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_grazing_altitude`
               - Set the pointing method to GrazingAlt.
-            * - :py:meth:`~set_pointing_spinning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_spinning`
               - Set the pointing method to Spinning.
-            * - :py:meth:`~set_pointing_targeted_tracking`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_targeted_tracking`
               - Set the pointing method to Targeted with Tracking.
-            * - :py:meth:`~set_pointing_along_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCommonTasks.set_pointing_along_vector`
               - Set the pointing method to Along Vector.
 
 

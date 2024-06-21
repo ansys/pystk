@@ -1,13 +1,13 @@
 VehicleImpactLocationPoint
 ==========================
 
-.. py:class:: VehicleImpactLocationPoint
+.. py:class:: ansys.stk.core.stkobjects.VehicleImpactLocationPoint
 
-   Bases: py:obj:`~IVehicleImpactLocation`, py:obj:`~IVehicleImpactLocationPoint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleImpactLocation`, py:obj:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint`
 
    Class defining a Missile's impact location.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleImpactLocationPoint
 
 Overview
 --------

@@ -1,12 +1,12 @@
 GOLDEN_SECTION_DESIRED_OPERATION
 ================================
 
-.. py:class:: GOLDEN_SECTION_DESIRED_OPERATION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GOLDEN_SECTION_DESIRED_OPERATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GOLDEN_SECTION_DESIRED_OPERATION
 
 Overview
 --------

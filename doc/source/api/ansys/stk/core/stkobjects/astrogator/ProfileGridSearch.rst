@@ -1,13 +1,13 @@
 ProfileGridSearch
 =================
 
-.. py:class:: ProfileGridSearch
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileGridSearch
 
-   Bases: py:obj:`~IProfileGridSearch`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileGridSearch`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Grid Search profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileGridSearch
 
 Overview
 --------

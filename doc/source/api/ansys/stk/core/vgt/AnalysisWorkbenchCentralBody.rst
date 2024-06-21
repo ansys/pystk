@@ -1,13 +1,13 @@
 AnalysisWorkbenchCentralBody
 ============================
 
-.. py:class:: AnalysisWorkbenchCentralBody
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchCentralBody
 
-   Bases: py:obj:`~IAnalysisWorkbenchCentralBody`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBody`
 
    Represents an central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchCentralBody
 
 Overview
 --------

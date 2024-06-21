@@ -1,12 +1,12 @@
 AIRSPEED_TYPE
 =============
 
-.. py:class:: AIRSPEED_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.AIRSPEED_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AIRSPEED_TYPE
 
 Overview
 --------

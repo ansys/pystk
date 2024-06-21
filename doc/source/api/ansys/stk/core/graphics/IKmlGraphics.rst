@@ -1,13 +1,13 @@
 IKmlGraphics
 ============
 
-.. py:class:: IKmlGraphics
+.. py:class:: ansys.stk.core.graphics.IKmlGraphics
 
    object
    
    Provide loading and unloading of kml documents for a particular central body.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IKmlGraphics
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~load_document`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.load_document`
               - Load a kml document from a uri.
-            * - :py:meth:`~load_document_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.load_document_string`
               - Load a kml document from a Uri.
-            * - :py:meth:`~load`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.load`
               - Load a kml document from a string containing the document.
-            * - :py:meth:`~load_document_async`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.load_document_async`
               - Load a kml document asynchronously from a uri. The document loaded event is raised when the document is loaded.
-            * - :py:meth:`~load_document_async_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.load_document_async_string`
               - Load a kml document asynchronously from a Uri. The document loaded event is raised when the document is loaded.
-            * - :py:meth:`~load_async`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.load_async`
               - Load a kml document asynchronously from a string containing the document. The document loaded event is raised when the document is loaded.
-            * - :py:meth:`~unload`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.unload`
               - Unloads a kml document. All associated visual features will be removed from the Scene. Once a KmlDocument is unloaded, it is no longer valid and will throw when accessing properties or methods.
-            * - :py:meth:`~unload_all`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.unload_all`
               - Unloads all kml documents associated with this central body. All associated visual features will be removed from the Scene. Once a KmlDocument is unloaded, it is no longer valid and will throw when accessing properties or methods.
-            * - :py:meth:`~Subscribe`
+            * - :py:attr:`~Subscribe`
               - """Return an IKmlGraphicsEventHandler that is subscribed to handle events associated with this instance of IKmlGraphics."""
 
     .. tab-item:: Properties
@@ -45,7 +45,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~documents`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.documents`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: documents
     :canonical: ansys.stk.core.graphics.IKmlGraphics.documents
-    :type: IAgStkGraphicsKmlDocumentCollection
+    :type: IKmlDocumentCollection
 
     The collection of kml documents that are currently loaded.
 

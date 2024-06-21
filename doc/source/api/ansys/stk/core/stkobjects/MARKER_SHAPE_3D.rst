@@ -1,12 +1,12 @@
 MARKER_SHAPE_3D
 ===============
 
-.. py:class:: MARKER_SHAPE_3D
+.. py:class:: ansys.stk.core.stkobjects.MARKER_SHAPE_3D
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MARKER_SHAPE_3D
 
 Overview
 --------

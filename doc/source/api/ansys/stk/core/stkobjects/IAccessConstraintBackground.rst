@@ -1,13 +1,13 @@
 IAccessConstraintBackground
 ===========================
 
-.. py:class:: IAccessConstraintBackground
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintBackground
 
    IAccessConstraint
    
    Access Constraint used for Background Constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintBackground
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~background`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintBackground.background`
 
 
 Import detail

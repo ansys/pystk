@@ -1,13 +1,13 @@
 IRadarModeBistaticTransmitterSar
 ================================
 
-.. py:class:: IRadarModeBistaticTransmitterSar
+.. py:class:: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar
 
    object
    
    Provide access to the properties and methods defining a bistatic transmitter sar mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModeBistaticTransmitterSar
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pulse_definition`
-            * - :py:meth:`~modulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar.pulse_definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar.modulator`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar.pulse_definition
-    :type: IAgRadarWaveformSarPulseDefinition
+    :type: IRadarWaveformSarPulseDefinition
 
     Gets the interface for configuring the SAR waveform pulse definition.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar.modulator
-    :type: IAgRadarModulator
+    :type: IRadarModulator
 
     Gets the interface for setting the modulator parameters.
 

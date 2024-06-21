@@ -1,13 +1,13 @@
 IVehicleGraphics3DEllipsoid
 ===========================
 
-.. py:class:: IVehicleGraphics3DEllipsoid
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid
 
    IVehicleGraphics3DProximityAreaObject
    
    Define an ellipsoid around the vehicle object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DEllipsoid
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x_semi_axis_length`
-            * - :py:meth:`~y_semi_axis_length`
-            * - :py:meth:`~z_semi_axis_length`
-            * - :py:meth:`~x_axis_offset`
-            * - :py:meth:`~y_axis_offset`
-            * - :py:meth:`~z_axis_offset`
-            * - :py:meth:`~use_translucency`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~granularity`
-            * - :py:meth:`~reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.x_semi_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.y_semi_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.z_semi_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.x_axis_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.y_axis_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.z_axis_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.use_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.granularity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.reference_frame`
 
 
 Import detail
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid.reference_frame
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     Gets or sets the reference axes that is used to align the ellipsoid.
 

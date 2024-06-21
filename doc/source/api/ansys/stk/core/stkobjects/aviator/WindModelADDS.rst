@@ -1,13 +1,13 @@
 WindModelADDS
 =============
 
-.. py:class:: WindModelADDS
+.. py:class:: ansys.stk.core.stkobjects.aviator.WindModelADDS
 
-   Bases: py:obj:`~IWindModelADDS`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS`
 
    Class defining a wind model using the NOAA ADDS service for a mission.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: WindModelADDS
 
 Overview
 --------

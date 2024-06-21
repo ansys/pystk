@@ -1,13 +1,13 @@
 ITimeToolEventIntervalBetweenTimeInstants
 =========================================
 
-.. py:class:: ITimeToolEventIntervalBetweenTimeInstants
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalBetweenTimeInstants
 
    object
    
    Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalBetweenTimeInstants
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time_instant`
-            * - :py:meth:`~stop_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalBetweenTimeInstants.start_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalBetweenTimeInstants.stop_time_instant`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: start_time_instant
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalBetweenTimeInstants.start_time_instant
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     The start time instant of the interval.
 
 .. py:property:: stop_time_instant
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalBetweenTimeInstants.stop_time_instant
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     The stop time instant of the interval.
 

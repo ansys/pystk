@@ -1,13 +1,13 @@
 IVehicleAttitudeExportTool
 ==========================
 
-.. py:class:: IVehicleAttitudeExportTool
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool
 
    object
    
    Attitude file for the Export Ephemeris/Attitude File Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeExportTool
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_coordinate_axes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.set_coordinate_axes_type`
               - Select the coordinate axes to be used in the file.
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.export`
               - Export the Attitude file.
 
     .. tab-item:: Properties
@@ -31,14 +31,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coordinate_axes_type`
-            * - :py:meth:`~coordinate_axes`
-            * - :py:meth:`~time_period`
-            * - :py:meth:`~include`
-            * - :py:meth:`~version_format`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~supported_coordinate_axes`
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.coordinate_axes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.coordinate_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.include`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.version_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.supported_coordinate_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.central_body_name`
 
 
 Import detail
@@ -60,13 +60,13 @@ Property detail
 
 .. py:property:: coordinate_axes
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.coordinate_axes
-    :type: IAgVeCoordinateAxes
+    :type: IVehicleCoordinateAxes
 
     Selects a custom coordinate axes.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.time_period
-    :type: IAgExportToolTimePeriod
+    :type: IExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeExportTool.step_size
-    :type: IAgExportToolStepSize
+    :type: IExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 

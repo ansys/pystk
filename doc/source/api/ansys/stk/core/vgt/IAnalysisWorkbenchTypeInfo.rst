@@ -1,13 +1,13 @@
 IAnalysisWorkbenchTypeInfo
 ==========================
 
-.. py:class:: IAnalysisWorkbenchTypeInfo
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo
 
    object
    
    Provide information about the type of VGT components.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchTypeInfo
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type_description`
-            * - :py:meth:`~type_name`
-            * - :py:meth:`~short_type_description`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo.type_description`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo.type_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo.short_type_description`
 
 
 Import detail

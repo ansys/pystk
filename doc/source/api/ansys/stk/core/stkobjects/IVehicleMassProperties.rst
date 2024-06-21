@@ -1,13 +1,13 @@
 IVehicleMassProperties
 ======================
 
-.. py:class:: IVehicleMassProperties
+.. py:class:: ansys.stk.core.stkobjects.IVehicleMassProperties
 
    object
    
    Satellite Mass properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleMassProperties
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mass`
-            * - :py:meth:`~inertia`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleMassProperties.mass`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleMassProperties.inertia`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: inertia
     :canonical: ansys.stk.core.stkobjects.IVehicleMassProperties.inertia
-    :type: IAgVeInertia
+    :type: IVehicleInertia
 
     Get the satellite inertia matrix.
 

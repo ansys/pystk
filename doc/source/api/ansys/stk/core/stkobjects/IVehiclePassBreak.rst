@@ -1,13 +1,13 @@
 IVehiclePassBreak
 =================
 
-.. py:class:: IVehiclePassBreak
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePassBreak
 
    object
    
    Satellite Pass Break properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePassBreak
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_pass_numbering_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.set_pass_numbering_type`
               - Set the pass number corresponding to the initial conditions of the satellite.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~definition`
-            * - :py:meth:`~partial_pass_measurement`
-            * - :py:meth:`~coordinate_system`
-            * - :py:meth:`~repeat_ground_track_numbering`
-            * - :py:meth:`~pass_numbering_type`
-            * - :py:meth:`~pass_numbering`
-            * - :py:meth:`~supported_coordinate_systems`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.definition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.partial_pass_measurement`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.repeat_ground_track_numbering`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.pass_numbering_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.pass_numbering`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.supported_coordinate_systems`
 
 
 Import detail
@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.definition
-    :type: IAgVeDefinition
+    :type: IVehicleDefinition
 
     Get the break angle type and, in the case of latitude, the direction at latitiude crossing.
 
@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: repeat_ground_track_numbering
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.repeat_ground_track_numbering
-    :type: IAgVeRepeatGroundTrackNumbering
+    :type: IVehicleRepeatGroundTrackNumbering
 
     Get data on repeat ground track numbering.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: pass_numbering
     :canonical: ansys.stk.core.stkobjects.IVehiclePassBreak.pass_numbering
-    :type: IAgVePassNumbering
+    :type: IVehiclePassNumbering
 
     Get pass numbering data.
 

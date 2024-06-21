@@ -1,12 +1,12 @@
 DEMODULATOR_MODEL_TYPE
 ======================
 
-.. py:class:: DEMODULATOR_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.DEMODULATOR_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DEMODULATOR_MODEL_TYPE
 
 Overview
 --------

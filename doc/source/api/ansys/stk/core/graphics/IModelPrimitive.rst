@@ -1,13 +1,13 @@
 IModelPrimitive
 ===============
 
-.. py:class:: IModelPrimitive
+.. py:class:: ansys.stk.core.graphics.IModelPrimitive
 
    object
    
    The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IModelPrimitive
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~load_with_string_uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.load_with_string_uri`
               - For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
-            * - :py:meth:`~load_with_string_uri_and_up_axis`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.load_with_string_uri_and_up_axis`
               - For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
-            * - :py:meth:`~set_position_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.set_position_cartographic`
               - For convenience. Sets the cartographic position of the model. This also sets position.
 
     .. tab-item:: Properties
@@ -33,11 +33,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~uri_as_string`
-            * - :py:meth:`~scale`
-            * - :py:meth:`~position`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~articulations`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.uri_as_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.scale`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.position`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.orientation`
+            * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.articulations`
 
 
 Import detail
@@ -71,13 +71,13 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.graphics.IModelPrimitive.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Gets or sets the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
 
 .. py:property:: articulations
     :canonical: ansys.stk.core.graphics.IModelPrimitive.articulations
-    :type: IAgStkGraphicsModelArticulationCollection
+    :type: IModelArticulationCollection
 
     Gets the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
 

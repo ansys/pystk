@@ -1,13 +1,13 @@
 BasicManeuverStrategyAileronRoll
 ================================
 
-.. py:class:: BasicManeuverStrategyAileronRoll
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAileronRoll
 
-   Bases: py:obj:`~IBasicManeuverStrategyAileronRoll`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the aileron roll strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyAileronRoll
 
 Overview
 --------

@@ -1,13 +1,13 @@
 SceneManager
 ============
 
-.. py:class:: SceneManager
+.. py:class:: ansys.stk.core.graphics.SceneManager
 
-   Bases: py:obj:`~ISceneManager`
+   Bases: py:obj:`~ansys.stk.core.graphics.ISceneManager`
 
    The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SceneManager
 
 Overview
 --------

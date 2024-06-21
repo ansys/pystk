@@ -1,13 +1,13 @@
 ElementBPlane
 =============
 
-.. py:class:: ElementBPlane
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ElementBPlane
 
-   Bases: py:obj:`~IElementBPlane`, py:obj:`~IElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Bplane elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ElementBPlane
 
 Overview
 --------

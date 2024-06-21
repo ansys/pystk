@@ -1,13 +1,13 @@
 IPowerProcessed
 ===============
 
-.. py:class:: IPowerProcessed
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPowerProcessed
 
    object
    
    Properties for the Processed Power power source component.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPowerProcessed
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~load`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~input_power_source_name`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.load`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.input_power_source_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.control_parameters_available`
 
 
 Import detail

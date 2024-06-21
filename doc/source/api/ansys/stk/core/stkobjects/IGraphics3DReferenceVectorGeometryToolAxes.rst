@@ -1,13 +1,13 @@
 IGraphics3DReferenceVectorGeometryToolAxes
 ==========================================
 
-.. py:class:: IGraphics3DReferenceVectorGeometryToolAxes
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes
 
    IGraphics3DReferenceAnalysisWorkbenchComponent
    
    Configure the visual representation of a Vector Geometry axes component in 3D.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DReferenceVectorGeometryToolAxes
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~draw_at_cb`
-            * - :py:meth:`~axes`
-            * - :py:meth:`~persistence_visible`
-            * - :py:meth:`~duration`
-            * - :py:meth:`~connect`
-            * - :py:meth:`~transparent`
-            * - :py:meth:`~available_axes`
-            * - :py:meth:`~draw_at_point`
-            * - :py:meth:`~point`
-            * - :py:meth:`~available_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.draw_at_cb`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.persistence_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.connect`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.transparent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.available_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.draw_at_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.available_points`
 
 
 Import detail

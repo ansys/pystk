@@ -1,12 +1,12 @@
 EQUINOCTIAL_FORMULATION
 =======================
 
-.. py:class:: EQUINOCTIAL_FORMULATION
+.. py:class:: ansys.stk.core.stkobjects.EQUINOCTIAL_FORMULATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EQUINOCTIAL_FORMULATION
 
 Overview
 --------

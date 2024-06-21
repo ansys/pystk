@@ -1,12 +1,12 @@
 ADDS_FORECAST_TYPE
 ==================
 
-.. py:class:: ADDS_FORECAST_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ADDS_FORECAST_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ADDS_FORECAST_TYPE
 
 Overview
 --------

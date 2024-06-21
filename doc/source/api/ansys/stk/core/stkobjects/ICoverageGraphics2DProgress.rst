@@ -1,13 +1,13 @@
 ICoverageGraphics2DProgress
 ===========================
 
-.. py:class:: ICoverageGraphics2DProgress
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGraphics2DProgress
 
    object
    
    Progress graphics for access calculations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGraphics2DProgress
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DProgress.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DProgress.color`
 
 
 Import detail

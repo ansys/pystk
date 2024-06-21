@@ -1,12 +1,12 @@
 OFFSET_FRAME_TYPE
 =================
 
-.. py:class:: OFFSET_FRAME_TYPE
+.. py:class:: ansys.stk.core.stkobjects.OFFSET_FRAME_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OFFSET_FRAME_TYPE
 
 Overview
 --------

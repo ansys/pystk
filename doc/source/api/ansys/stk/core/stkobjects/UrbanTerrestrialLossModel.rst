@@ -1,13 +1,13 @@
 UrbanTerrestrialLossModel
 =========================
 
-.. py:class:: UrbanTerrestrialLossModel
+.. py:class:: ansys.stk.core.stkobjects.UrbanTerrestrialLossModel
 
-   Bases: py:obj:`~IUrbanTerrestrialLossModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an urban/terrestrial loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: UrbanTerrestrialLossModel
 
 Overview
 --------

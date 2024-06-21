@@ -1,13 +1,13 @@
 RunwayHeadingOptions
 ====================
 
-.. py:class:: RunwayHeadingOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.RunwayHeadingOptions
 
-   Bases: py:obj:`~IRunwayHeadingOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IRunwayHeadingOptions`
 
    Class defining the runway heading options in a takeoff or landing procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: RunwayHeadingOptions
 
 Overview
 --------

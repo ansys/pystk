@@ -1,13 +1,13 @@
 GoldenSectionControl
 ====================
 
-.. py:class:: GoldenSectionControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GoldenSectionControl
 
-   Bases: py:obj:`~IGoldenSectionControl`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionControl`
 
    Control parameters for Golden Section profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GoldenSectionControl
 
 Overview
 --------

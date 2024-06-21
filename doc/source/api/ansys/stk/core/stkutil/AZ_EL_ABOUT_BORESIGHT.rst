@@ -1,12 +1,12 @@
 AZ_EL_ABOUT_BORESIGHT
 =====================
 
-.. py:class:: AZ_EL_ABOUT_BORESIGHT
+.. py:class:: ansys.stk.core.stkutil.AZ_EL_ABOUT_BORESIGHT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: AZ_EL_ABOUT_BORESIGHT
 
 Overview
 --------

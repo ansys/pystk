@@ -1,12 +1,12 @@
 COVERAGE_REGION_ACCESS_ACCEL
 ============================
 
-.. py:class:: COVERAGE_REGION_ACCESS_ACCEL
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_REGION_ACCESS_ACCEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_REGION_ACCESS_ACCEL
 
 Overview
 --------

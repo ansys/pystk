@@ -1,13 +1,13 @@
 ICoverageResolutionDistance
 ===========================
 
-.. py:class:: ICoverageResolutionDistance
+.. py:class:: ansys.stk.core.stkobjects.ICoverageResolutionDistance
 
    ICoverageResolution
    
    Distance: Define the location of the grid coordinates by using the specified distance to determine a latitude/longitude spacing scheme at the equator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageResolutionDistance
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageResolutionDistance.distance`
 
 
 Import detail

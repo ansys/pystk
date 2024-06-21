@@ -1,13 +1,13 @@
 AccessTimeCollection
 ====================
 
-.. py:class:: AccessTimeCollection
+.. py:class:: ansys.stk.core.stkobjects.AccessTimeCollection
 
-   Bases: py:obj:`~IAccessTimeCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessTimeCollection`
 
    Collection of access times.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessTimeCollection
 
 Overview
 --------

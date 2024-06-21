@@ -1,13 +1,13 @@
 IStateCalcCd
 ============
 
-.. py:class:: IStateCalcCd
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcCd
 
    object
    
    Properties for a Cd calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcCd
 
 Overview
 --------

@@ -1,13 +1,13 @@
 FigureOfMeritDefinitionRevisitTime
 ==================================
 
-.. py:class:: FigureOfMeritDefinitionRevisitTime
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionRevisitTime
 
-   Bases: py:obj:`~IFigureOfMeritDefinitionRevisitTime`, py:obj:`~IFigureOfMeritDefinitionResponseTime`, py:obj:`~IFigureOfMeritDefinitionCompute`, py:obj:`~IFigureOfMeritDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionRevisitTime`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Revisit Time Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritDefinitionRevisitTime
 
 Overview
 --------

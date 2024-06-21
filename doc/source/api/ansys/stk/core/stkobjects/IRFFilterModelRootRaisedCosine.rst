@@ -1,13 +1,13 @@
 IRFFilterModelRootRaisedCosine
 ==============================
 
-.. py:class:: IRFFilterModelRootRaisedCosine
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelRootRaisedCosine
 
    object
    
    Provide access to the properties and methods defining a root raised cosine RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelRootRaisedCosine
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~roll_off_factor`
-            * - :py:meth:`~symbol_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelRootRaisedCosine.roll_off_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelRootRaisedCosine.symbol_rate`
 
 
 Import detail

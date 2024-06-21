@@ -1,13 +1,13 @@
 IElementConfiguration
 =====================
 
-.. py:class:: IElementConfiguration
+.. py:class:: ansys.stk.core.stkobjects.IElementConfiguration
 
    object
    
    Provide access to the properties and methods defining an element configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IElementConfiguration
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfiguration.type`
 
 
 Import detail

@@ -1,12 +1,12 @@
 CRDN_INTEGRATION_WINDOW_TYPE
 ============================
 
-.. py:class:: CRDN_INTEGRATION_WINDOW_TYPE
+.. py:class:: ansys.stk.core.vgt.CRDN_INTEGRATION_WINDOW_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_INTEGRATION_WINDOW_TYPE
 
 Overview
 --------

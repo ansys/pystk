@@ -1,12 +1,12 @@
 GRAPHICS_3D_FORMAT
 ==================
 
-.. py:class:: GRAPHICS_3D_FORMAT
+.. py:class:: ansys.stk.core.stkobjects.GRAPHICS_3D_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GRAPHICS_3D_FORMAT
 
 Overview
 --------

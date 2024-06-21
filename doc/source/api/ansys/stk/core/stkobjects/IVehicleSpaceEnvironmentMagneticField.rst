@@ -1,13 +1,13 @@
 IVehicleSpaceEnvironmentMagneticField
 =====================================
 
-.. py:class:: IVehicleSpaceEnvironmentMagneticField
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField
 
    object
    
    Magnetic field model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpaceEnvironmentMagneticField
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_b_field_as_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.compute_b_field_as_array`
               - Compute geomagnetic field in Earth Fixed components, returned as the array (Bx, By, Bz), at the vehicle's location location. Uses DateFormat and MagneticField Dimensions.
-            * - :py:meth:`~compute_dipole_l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.compute_dipole_l`
               - Compute dipole L-shell parameter at the vehicle's location. Uses DateFormat Dimension.
-            * - :py:meth:`~compute_mc_ilwain_l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.compute_mc_ilwain_l`
               - Compute McIlwain L-shell parameter at the vehicle's location. Uses DateFormat Dimension.
-            * - :py:meth:`~compute_b_beq`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.compute_b_beq`
               - Compute B/Beq (i.e., the ratio of the magnetic field at the vehicle's location to the minimum field intensity along the field line thru the location). Uses DateFormat Dimension.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~main_field`
-            * - :py:meth:`~external_field`
-            * - :py:meth:`~igrf_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.main_field`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.external_field`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.igrf_update_rate`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ISurfaceMeshPrimitiveFactory
 ============================
 
-.. py:class:: ISurfaceMeshPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.ISurfaceMeshPrimitiveFactory
 
    object
    
    A triangle mesh primitive for meshes on the surface that need to conform to terrain.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISurfaceMeshPrimitiveFactory
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitiveFactory.initialize`
               - Initialize a default surface mesh primitive. This is equivalent to constructing a surface mesh with a set hint of Frequent and a surface mesh rendering method of Automatic.
-            * - :py:meth:`~initialize_with_set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitiveFactory.initialize_with_set_hint`
               - Initialize a surface mesh primitive with the specified setHint. This is equivalent to constructing a surface mesh with the specified setHint and a surface mesh rendering method of Automatic.
-            * - :py:meth:`~initialize_with_set_hint_and_rendering_method`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitiveFactory.initialize_with_set_hint_and_rendering_method`
               - Initialize a surface mesh primitive with the specified setHint and renderingMethod.
-            * - :py:meth:`~supported`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitiveFactory.supported`
               - Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod.
-            * - :py:meth:`~supported_with_default_rendering_method`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitiveFactory.supported_with_default_rendering_method`
               - Determine whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic.
 
 

@@ -1,13 +1,13 @@
 StateCalcDensity
 ================
 
-.. py:class:: StateCalcDensity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDensity
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDensity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDensity`
 
    Density  Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDensity
 
 Overview
 --------

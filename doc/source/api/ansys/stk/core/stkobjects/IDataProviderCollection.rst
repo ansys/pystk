@@ -1,13 +1,13 @@
 IDataProviderCollection
 =======================
 
-.. py:class:: IDataProviderCollection
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderCollection
 
    object
    
    Represents a collection of data providers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_schema`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.get_schema`
               - Return a string containing the XML representation of the available data providers.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.item`
               - Given an index, returns the element in the collection. If the index is an integer, then method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
-            * - :py:meth:`~get_data_provider_info_from_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.get_data_provider_info_from_path`
               - Return the data provider information specified by the data provider path.
-            * - :py:meth:`~get_data_provider_time_varying_from_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.get_data_provider_time_varying_from_path`
               - Return the time variable data provider specified by the data provider path.
-            * - :py:meth:`~get_data_provider_interval_from_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.get_data_provider_interval_from_path`
               - Return the interval data provider specified by the data provider path.
-            * - :py:meth:`~get_data_provider_fixed_from_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.get_data_provider_fixed_from_path`
               - Return the fixed data provider specified by the data provider path.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.get_item_by_index`
               - Retrieve a data provider from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.get_item_by_name`
               - Retrieve a data provider from the collection by name.
 
     .. tab-item:: Properties
@@ -43,8 +43,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderCollection._NewEnum`
 
 
 Import detail

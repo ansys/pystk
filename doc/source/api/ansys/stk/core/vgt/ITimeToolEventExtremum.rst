@@ -1,13 +1,13 @@
 ITimeToolEventExtremum
 ======================
 
-.. py:class:: ITimeToolEventExtremum
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventExtremum
 
    object
    
    Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventExtremum
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~extremum_type`
-            * - :py:meth:`~calculation`
-            * - :py:meth:`~custom_time_limits`
-            * - :py:meth:`~use_custom_time_limits`
-            * - :py:meth:`~save_data_option`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~convergence`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventExtremum.extremum_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventExtremum.calculation`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventExtremum.custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventExtremum.use_custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventExtremum.save_data_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventExtremum.sampling`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventExtremum.convergence`
 
 
 Import detail
@@ -48,13 +48,13 @@ Property detail
 
 .. py:property:: calculation
     :canonical: ansys.stk.core.vgt.ITimeToolEventExtremum.calculation
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     The scalar calculation.
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ITimeToolEventExtremum.custom_time_limits
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     A custom interval list or a single interval. By default it is set to overall availability of host object. This determines time limits within which global minimum or maximum is sought. The time limits will be used if UseCustomTimeLimits is set to true.
 
@@ -72,13 +72,13 @@ Property detail
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ITimeToolEventExtremum.sampling
-    :type: IAgCrdnSampling
+    :type: IAnalysisWorkbenchSampling
 
     A Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ITimeToolEventExtremum.convergence
-    :type: IAgCrdnConverge
+    :type: IAnalysisWorkbenchConverge
 
     A Convergence definition, which uses time tolerance to determine when time of extremum is found.
 

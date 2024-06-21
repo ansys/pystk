@@ -1,13 +1,13 @@
 IVehicleGraphics3DCovariancePointingContour
 ===========================================
 
-.. py:class:: IVehicleGraphics3DCovariancePointingContour
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour
 
    object
    
    Interface for covariance pointing contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DCovariancePointingContour
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_sigma_scale_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.set_sigma_scale_type`
               - Set the sigma scale type.
-            * - :py:meth:`~is_sigma_scale_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.is_sigma_scale_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.set_attributes_type`
               - Set the graphics attributes type.
-            * - :py:meth:`~is_attributes_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.is_attributes_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -35,15 +35,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sigma_scale_type`
-            * - :py:meth:`~sigma_scale_supported_types`
-            * - :py:meth:`~sigma_scale`
-            * - :py:meth:`~attributes_type`
-            * - :py:meth:`~attributes_supported_types`
-            * - :py:meth:`~attributes`
-            * - :py:meth:`~is_cone_visible`
-            * - :py:meth:`~size`
-            * - :py:meth:`~to_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.sigma_scale_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.sigma_scale_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.sigma_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.attributes_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.is_cone_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.to_object`
 
 
 Import detail
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: sigma_scale
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.sigma_scale
-    :type: IAgVeVOSigmaScale
+    :type: IVehicleGraphics3DSigmaScale
 
     Get the sigma scale.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.attributes
-    :type: IAgVeVOAttributes
+    :type: IVehicleGraphics3DAttributes
 
     Get the graphics attributes.
 
@@ -101,13 +101,13 @@ Property detail
 
 .. py:property:: size
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.size
-    :type: IAgVeVOSize
+    :type: IVehicleGraphics3DSize
 
     Get the size of the contour.
 
 .. py:property:: to_object
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.to_object
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the 'To object' for covariance pointing.
 

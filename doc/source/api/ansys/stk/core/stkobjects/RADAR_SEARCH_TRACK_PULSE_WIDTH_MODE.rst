@@ -1,12 +1,12 @@
 RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE
 ===================================
 
-.. py:class:: RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE
+.. py:class:: ansys.stk.core.stkobjects.RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE
 
 Overview
 --------

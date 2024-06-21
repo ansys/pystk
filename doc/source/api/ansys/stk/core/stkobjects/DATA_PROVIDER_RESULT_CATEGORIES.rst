@@ -1,12 +1,12 @@
 DATA_PROVIDER_RESULT_CATEGORIES
 ===============================
 
-.. py:class:: DATA_PROVIDER_RESULT_CATEGORIES
+.. py:class:: ansys.stk.core.stkobjects.DATA_PROVIDER_RESULT_CATEGORIES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DATA_PROVIDER_RESULT_CATEGORIES
 
 Overview
 --------

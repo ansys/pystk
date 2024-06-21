@@ -1,13 +1,13 @@
 VehicleEOIR
 ===========
 
-.. py:class:: VehicleEOIR
+.. py:class:: ansys.stk.core.stkobjects.VehicleEOIR
 
-   Bases: py:obj:`~IVehicleEOIR`, py:obj:`~IEOIR`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleEOIR`, py:obj:`~ansys.stk.core.stkobjects.IEOIR`
 
    AgVeEOIR interface class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleEOIR
 
 Overview
 --------

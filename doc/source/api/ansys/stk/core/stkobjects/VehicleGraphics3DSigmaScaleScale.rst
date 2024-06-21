@@ -1,13 +1,13 @@
 VehicleGraphics3DSigmaScaleScale
 ================================
 
-.. py:class:: VehicleGraphics3DSigmaScaleScale
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DSigmaScaleScale
 
-   Bases: py:obj:`~IVehicleGraphics3DSigmaScale`, py:obj:`~IVehicleGraphics3DSigmaScaleScale`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScale`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScaleScale`
 
    Sigma scale for direct sizing of covariance pointing contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DSigmaScaleScale
 
 Overview
 --------

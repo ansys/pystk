@@ -1,13 +1,13 @@
 IReceiverModelLaser
 ===================
 
-.. py:class:: IReceiverModelLaser
+.. py:class:: ansys.stk.core.stkobjects.IReceiverModelLaser
 
    object
    
    Provide access to the properties and methods defining a laser receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReceiverModelLaser
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.set_filter`
               - Set the current filter model by name.
-            * - :py:meth:`~set_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.set_demodulator`
               - Set the current demodulator model by name.
-            * - :py:meth:`~set_polarization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.set_polarization_type`
               - Set the current polarization type.
 
     .. tab-item:: Properties
@@ -33,30 +33,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_filter`
-            * - :py:meth:`~supported_filters`
-            * - :py:meth:`~filter`
-            * - :py:meth:`~pre_receive_gains_losses`
-            * - :py:meth:`~pre_demod_gains_losses`
-            * - :py:meth:`~link_margin`
-            * - :py:meth:`~auto_scale_bandwidth`
-            * - :py:meth:`~bandwidth`
-            * - :py:meth:`~auto_select_demodulator`
-            * - :py:meth:`~supported_demodulators`
-            * - :py:meth:`~demodulator`
-            * - :py:meth:`~enable_polarization`
-            * - :py:meth:`~polarization`
-            * - :py:meth:`~auto_track_frequency`
-            * - :py:meth:`~frequency`
-            * - :py:meth:`~antenna_control`
-            * - :py:meth:`~detector_gain`
-            * - :py:meth:`~detector_efficiency`
-            * - :py:meth:`~detector_dark_current`
-            * - :py:meth:`~detector_noise_figure`
-            * - :py:meth:`~detector_noise_temperature`
-            * - :py:meth:`~detector_load_impedance`
-            * - :py:meth:`~use_apd_detector_model`
-            * - :py:meth:`~propagation_loss_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.enable_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.supported_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.pre_receive_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.pre_demod_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.link_margin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.auto_scale_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.auto_select_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.supported_demodulators`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.enable_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.auto_track_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.antenna_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.detector_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.detector_efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.detector_dark_current`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.detector_noise_figure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.detector_noise_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.detector_load_impedance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.use_apd_detector_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelLaser.propagation_loss_models`
 
 
 Import detail
@@ -84,25 +84,25 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.filter
-    :type: IAgRFFilterModel
+    :type: IRFFilterModel
 
     Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.pre_receive_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
 .. py:property:: pre_demod_gains_losses
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.pre_demod_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.link_margin
-    :type: IAgLinkMargin
+    :type: ILinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 
@@ -132,7 +132,7 @@ Property detail
 
 .. py:property:: demodulator
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.demodulator
-    :type: IAgDemodulatorModel
+    :type: IDemodulatorModel
 
     Gets the current demodulator model.
 
@@ -144,7 +144,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.polarization
-    :type: IAgPolarization
+    :type: IPolarization
 
     Gets the polarization.
 
@@ -162,7 +162,7 @@ Property detail
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.antenna_control
-    :type: IAgAntennaControl
+    :type: IAntennaControl
 
     Gets the receiver antenna control.
 
@@ -210,7 +210,7 @@ Property detail
 
 .. py:property:: propagation_loss_models
     :canonical: ansys.stk.core.stkobjects.IReceiverModelLaser.propagation_loss_models
-    :type: IAgLaserPropagationLossModels
+    :type: ILaserPropagationLossModels
 
     This property is deprecated. The laser propagation loss models can be accessed from the LaserEnvironment property.
 

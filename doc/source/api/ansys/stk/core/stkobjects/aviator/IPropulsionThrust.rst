@@ -1,13 +1,13 @@
 IPropulsionThrust
 =================
 
-.. py:class:: IPropulsionThrust
+.. py:class:: ansys.stk.core.stkobjects.aviator.IPropulsionThrust
 
    object
    
    Interface used to access propulsion thrust for basic maneuver strategies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IPropulsionThrust
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_min_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.set_min_airspeed`
               - Set the min airspeed type and value for a thrust model.
-            * - :py:meth:`~set_max_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.set_max_airspeed`
               - Set the max airspeed type and value for a thrust model.
 
     .. tab-item:: Properties
@@ -31,16 +31,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_constant_thrust`
-            * - :py:meth:`~constant_thrust`
-            * - :py:meth:`~boost_thrust`
-            * - :py:meth:`~boost_thrust_time_limit`
-            * - :py:meth:`~sustain_thrust`
-            * - :py:meth:`~sustain_thrust_time_limit`
-            * - :py:meth:`~min_airspeed_type`
-            * - :py:meth:`~min_airspeed`
-            * - :py:meth:`~max_airspeed_type`
-            * - :py:meth:`~max_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.use_constant_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.constant_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.boost_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.boost_thrust_time_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.sustain_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.sustain_thrust_time_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.min_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.min_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.max_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.max_airspeed`
 
 
 Import detail

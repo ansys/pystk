@@ -1,13 +1,13 @@
 ProfileIPOPTOptimizer
 =====================
 
-.. py:class:: ProfileIPOPTOptimizer
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer
 
-   Bases: py:obj:`~IProfileIPOPTOptimizer`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    IPOPT optimizer profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileIPOPTOptimizer
 
 Overview
 --------

@@ -1,12 +1,12 @@
 VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE
 ==================================
 
-.. py:class:: VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE
 
 Overview
 --------

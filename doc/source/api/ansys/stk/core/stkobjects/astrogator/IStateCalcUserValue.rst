@@ -1,13 +1,13 @@
 IStateCalcUserValue
 ===================
 
-.. py:class:: IStateCalcUserValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcUserValue
 
    object
    
    Interface for CAgAsStateCalcUserValue.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcUserValue
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~variable_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcUserValue.variable_name`
 
 
 Import detail

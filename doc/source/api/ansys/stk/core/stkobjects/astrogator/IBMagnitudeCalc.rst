@@ -1,13 +1,13 @@
 IBMagnitudeCalc
 ===============
 
-.. py:class:: IBMagnitudeCalc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBMagnitudeCalc
 
    object
    
    Properties for a BMagnitude calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBMagnitudeCalc
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBMagnitudeCalc.target_body_name`
 
 
 Import detail

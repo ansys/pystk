@@ -1,13 +1,13 @@
 TimeToolEventStartStopTime
 ==========================
 
-.. py:class:: TimeToolEventStartStopTime
+.. py:class:: ansys.stk.core.vgt.TimeToolEventStartStopTime
 
-   Bases: py:obj:`~ITimeToolEventStartStopTime`, py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventStartStopTime`, py:obj:`~ansys.stk.core.vgt.ITimeToolEvent`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Event is either start or stop time selected from a reference interval.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventStartStopTime
 
 Overview
 --------

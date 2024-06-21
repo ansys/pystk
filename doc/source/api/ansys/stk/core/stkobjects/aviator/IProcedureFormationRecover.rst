@@ -1,13 +1,13 @@
 IProcedureFormationRecover
 ==========================
 
-.. py:class:: IProcedureFormationRecover
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover
 
    object
    
    Interface used to access the options for a Formation Recover procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureFormationRecover
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.get_as_procedure`
               - Get the procedure interface.
-            * - :py:meth:`~get_minimum_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.get_minimum_time`
               - Get the minimum time at which formation might be possible. Opt whether to consider previous procedure(s) for the minimum time.
-            * - :py:meth:`~find_first_valid_start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.find_first_valid_start_time`
               - Have Aviator calculate the earliest valid formation time.
 
     .. tab-item:: Properties
@@ -33,25 +33,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~delay_cruise_airspeed_options`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~maximum_time`
-            * - :py:meth:`~formation_point`
-            * - :py:meth:`~interpolate_point_position_vel`
-            * - :py:meth:`~altitude_offset`
-            * - :py:meth:`~fuel_flow_type`
-            * - :py:meth:`~override_fuel_flow_value`
-            * - :py:meth:`~consider_accel_for_fuel_flow`
-            * - :py:meth:`~first_pause`
-            * - :py:meth:`~transition_time`
-            * - :py:meth:`~second_pause`
-            * - :py:meth:`~display_step_time`
-            * - :py:meth:`~flight_mode`
-            * - :py:meth:`~flight_path_angle`
-            * - :py:meth:`~radius_factor`
-            * - :py:meth:`~use_delay`
-            * - :py:meth:`~delay_turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.delay_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.maximum_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.formation_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.interpolate_point_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.fuel_flow_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.override_fuel_flow_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.consider_accel_for_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.first_pause`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.transition_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.second_pause`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.display_step_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.flight_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.use_delay`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.delay_turn_direction`
 
 
 Import detail
@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.enroute_options
-    :type: IAgAvtrEnrouteOptions
+    :type: IEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: delay_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureFormationRecover.delay_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the delay cruise airspeed options.
 

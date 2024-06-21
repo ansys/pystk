@@ -1,13 +1,13 @@
 IAdvancedFixedWingTurbofanBasicABPowerplant
 ===========================================
 
-.. py:class:: IAdvancedFixedWingTurbofanBasicABPowerplant
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABPowerplant
 
    object
    
    Do not use this interface, as it is deprecated. Use IAgAvtrAdvFixedWingTurbofanBasicABProp instead.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingTurbofanBasicABPowerplant
 
 Overview
 --------

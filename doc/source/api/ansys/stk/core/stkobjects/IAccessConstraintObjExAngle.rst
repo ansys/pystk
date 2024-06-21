@@ -1,13 +1,13 @@
 IAccessConstraintObjExAngle
 ===========================
 
-.. py:class:: IAccessConstraintObjExAngle
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintObjExAngle
 
    IAccessConstraint
    
    Access Constraint used for Object Exclusion Angles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintObjExAngle
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add_exclusion_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.add_exclusion_object`
               - Add an exclusion object.
-            * - :py:meth:`~is_object_assigned`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.is_object_assigned`
               - Return true if an exclusion object is assigned.
-            * - :py:meth:`~remove_exclusion_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.remove_exclusion_object`
               - Remove an exclusion object.
 
     .. tab-item:: Properties
@@ -33,9 +33,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~exclusion_angle`
-            * - :py:meth:`~assigned_objects`
-            * - :py:meth:`~available_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.exclusion_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.assigned_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.available_objects`
 
 
 Import detail

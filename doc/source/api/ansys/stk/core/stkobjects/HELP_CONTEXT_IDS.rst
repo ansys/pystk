@@ -1,12 +1,12 @@
 HELP_CONTEXT_IDS
 ================
 
-.. py:class:: HELP_CONTEXT_IDS
+.. py:class:: ansys.stk.core.stkobjects.HELP_CONTEXT_IDS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: HELP_CONTEXT_IDS
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarCrossSectionVolumeGraphics
 ================================
 
-.. py:class:: IRadarCrossSectionVolumeGraphics
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics
 
    object
    
    IAgRadarCrossSectionVolumeGraphics Interface for radar cross section 3D volume properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionVolumeGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.set_resolution`
               - Set the azimuth/elevation ranges and resolution.
-            * - :py:meth:`~set_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.set_num_points`
               - Set the azimuth/elevation ranges and number of points.
 
     .. tab-item:: Properties
@@ -31,23 +31,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~wireframe`
-            * - :py:meth:`~minimum_displayed_rcs`
-            * - :py:meth:`~scale`
-            * - :py:meth:`~azimuth_start`
-            * - :py:meth:`~azimuth_stop`
-            * - :py:meth:`~azimuth_resolution`
-            * - :py:meth:`~azimuth_num_points`
-            * - :py:meth:`~elevation_start`
-            * - :py:meth:`~elevation_stop`
-            * - :py:meth:`~elevation_resolution`
-            * - :py:meth:`~elevation_num_points`
-            * - :py:meth:`~color_method`
-            * - :py:meth:`~start_color`
-            * - :py:meth:`~stop_color`
-            * - :py:meth:`~levels`
-            * - :py:meth:`~relative_to_maximum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.wireframe`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.minimum_displayed_rcs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.azimuth_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.azimuth_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.azimuth_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.azimuth_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.elevation_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.elevation_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.elevation_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.elevation_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.color_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.start_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.stop_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.levels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.relative_to_maximum`
 
 
 Import detail
@@ -153,7 +153,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.levels
-    :type: IAgRadarCrossSectionVolumeLevelCollection
+    :type: IRadarCrossSectionVolumeLevelCollection
 
     Gets the collection of volume levels.
 

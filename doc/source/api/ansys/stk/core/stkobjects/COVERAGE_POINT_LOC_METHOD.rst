@@ -1,12 +1,12 @@
 COVERAGE_POINT_LOC_METHOD
 =========================
 
-.. py:class:: COVERAGE_POINT_LOC_METHOD
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_POINT_LOC_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_POINT_LOC_METHOD
 
 Overview
 --------

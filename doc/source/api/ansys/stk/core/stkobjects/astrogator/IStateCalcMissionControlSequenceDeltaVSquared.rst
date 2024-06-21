@@ -1,13 +1,13 @@
 IStateCalcMissionControlSequenceDeltaVSquared
 =============================================
 
-.. py:class:: IStateCalcMissionControlSequenceDeltaVSquared
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMissionControlSequenceDeltaVSquared
 
    object
    
    Properties for a MCS DeltaV Squared calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMissionControlSequenceDeltaVSquared
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~squared_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMissionControlSequenceDeltaVSquared.squared_type`
 
 
 Import detail

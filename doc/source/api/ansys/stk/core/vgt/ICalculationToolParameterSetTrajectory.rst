@@ -1,13 +1,13 @@
 ICalculationToolParameterSetTrajectory
 ======================================
 
-.. py:class:: ICalculationToolParameterSetTrajectory
+.. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory
 
    object
    
    Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolParameterSetTrajectory
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~point`
-            * - :py:meth:`~reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory.point`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory.reference_system`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory.point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     Get the point for which trajectory representations are computed.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory.reference_system
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     Get the reference system relative to which trajectory representations are computed.
 

@@ -1,13 +1,13 @@
 IAtmosphericTurbulenceModelHufnagelValley
 =========================================
 
-.. py:class:: IAtmosphericTurbulenceModelHufnagelValley
+.. py:class:: ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelHufnagelValley
 
    object
    
    Provide access to a Hufnagel Valley atmospheric turbulence model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAtmosphericTurbulenceModelHufnagelValley
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~nominal_ground_refractive_index_structure_parameter`
-            * - :py:meth:`~wind_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelHufnagelValley.nominal_ground_refractive_index_structure_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelHufnagelValley.wind_speed`
 
 
 Import detail

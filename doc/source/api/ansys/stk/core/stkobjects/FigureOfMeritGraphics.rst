@@ -1,13 +1,13 @@
 FigureOfMeritGraphics
 =====================
 
-.. py:class:: FigureOfMeritGraphics
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics
 
-   Bases: py:obj:`~IFigureOfMeritGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics`
 
    AgFmGfxGraphics Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGraphics
 
 Overview
 --------

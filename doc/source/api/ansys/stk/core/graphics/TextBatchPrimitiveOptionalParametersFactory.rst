@@ -1,13 +1,13 @@
 TextBatchPrimitiveOptionalParametersFactory
 ===========================================
 
-.. py:class:: TextBatchPrimitiveOptionalParametersFactory
+.. py:class:: ansys.stk.core.graphics.TextBatchPrimitiveOptionalParametersFactory
 
-   Bases: py:obj:`~ITextBatchPrimitiveOptionalParametersFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParametersFactory`
 
    Optional per-string and per-batch parameters for text batch primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TextBatchPrimitiveOptionalParametersFactory
 
 Overview
 --------

@@ -1,13 +1,13 @@
 MtoGraphics
 ===========
 
-.. py:class:: MtoGraphics
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics
 
-   Bases: py:obj:`~IMtoGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics`
 
    MTO 2D Graphics.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics
 
 Overview
 --------

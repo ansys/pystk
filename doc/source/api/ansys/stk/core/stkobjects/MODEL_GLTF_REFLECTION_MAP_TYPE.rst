@@ -1,12 +1,12 @@
 MODEL_GLTF_REFLECTION_MAP_TYPE
 ==============================
 
-.. py:class:: MODEL_GLTF_REFLECTION_MAP_TYPE
+.. py:class:: ansys.stk.core.stkobjects.MODEL_GLTF_REFLECTION_MAP_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MODEL_GLTF_REFLECTION_MAP_TYPE
 
 Overview
 --------

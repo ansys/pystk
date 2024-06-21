@@ -1,13 +1,13 @@
 Scenario
 ========
 
-.. py:class:: Scenario
+.. py:class:: ansys.stk.core.stkobjects.Scenario
 
-   Bases: py:obj:`~IScenario`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenario`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the Scenario object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Scenario
 
 Overview
 --------

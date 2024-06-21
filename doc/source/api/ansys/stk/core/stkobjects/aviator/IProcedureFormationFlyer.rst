@@ -1,13 +1,13 @@
 IProcedureFormationFlyer
 ========================
 
-.. py:class:: IProcedureFormationFlyer
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer
 
    object
    
    Interface used to access the options for an enroute procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureFormationFlyer
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_time_step`
-            * - :py:meth:`~max_time_step`
-            * - :py:meth:`~cross_range_close_rate`
-            * - :py:meth:`~initial_close_max_speed_advantage`
-            * - :py:meth:`~stop_condition`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~stop_down_range`
-            * - :py:meth:`~stop_fuel_state`
-            * - :py:meth:`~stop_on_hover`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.min_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.cross_range_close_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.initial_close_max_speed_advantage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_condition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_down_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_fuel_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_on_hover`
 
 
 Import detail

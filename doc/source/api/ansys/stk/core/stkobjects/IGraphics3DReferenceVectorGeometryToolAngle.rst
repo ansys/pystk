@@ -1,13 +1,13 @@
 IGraphics3DReferenceVectorGeometryToolAngle
 ===========================================
 
-.. py:class:: IGraphics3DReferenceVectorGeometryToolAngle
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle
 
    IGraphics3DReferenceAnalysisWorkbenchComponent
    
    Configure the visual representation of a Vector Geometry angle component in 3D.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DReferenceVectorGeometryToolAngle
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~angle_value_visible`
-            * - :py:meth:`~angle_unit_abrv`
-            * - :py:meth:`~show_dihedral_angle_supporting_arcs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle.angle_value_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle.angle_unit_abrv`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle.show_dihedral_angle_supporting_arcs`
 
 
 Import detail

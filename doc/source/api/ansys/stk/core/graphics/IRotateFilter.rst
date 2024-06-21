@@ -1,13 +1,13 @@
 IRotateFilter
 =============
 
-.. py:class:: IRotateFilter
+.. py:class:: ansys.stk.core.graphics.IRotateFilter
 
    object
    
    Rotate the source raster clockwise by the specified angle.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRotateFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~angle`
+            * - :py:attr:`~ansys.stk.core.graphics.IRotateFilter.angle`
 
 
 Import detail

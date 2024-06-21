@@ -1,13 +1,13 @@
 IEventDetectionSubSampling
 ==========================
 
-.. py:class:: IEventDetectionSubSampling
+.. py:class:: ansys.stk.core.stkobjects.IEventDetectionSubSampling
 
    IEventDetectionStrategy
    
    Interface for event detection strategy involving subsampling.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEventDetectionSubSampling
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_convergence`
-            * - :py:meth:`~abs_value_convergence`
-            * - :py:meth:`~rel_value_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling.time_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling.abs_value_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling.rel_value_convergence`
 
 
 Import detail

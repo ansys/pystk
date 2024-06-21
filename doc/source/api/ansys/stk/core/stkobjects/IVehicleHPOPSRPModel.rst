@@ -1,13 +1,13 @@
 IVehicleHPOPSRPModel
 ====================
 
-.. py:class:: IVehicleHPOPSRPModel
+.. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPSRPModel
 
    object
    
    HPOP Solar Radiation Pressure Model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleHPOPSRPModel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.set_model_type`
               - Change the active solar radiation pressure model type.
-            * - :py:meth:`~is_model_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.is_model_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~model_type`
-            * - :py:meth:`~model_supported_types`
-            * - :py:meth:`~model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model
-    :type: IAgSRPModelBase
+    :type: ISRPModelBase
 
     Returns the active solar radiation pressure model.
 

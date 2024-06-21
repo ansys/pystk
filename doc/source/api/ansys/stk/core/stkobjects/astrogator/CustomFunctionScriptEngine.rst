@@ -1,13 +1,13 @@
 CustomFunctionScriptEngine
 ==========================
 
-.. py:class:: CustomFunctionScriptEngine
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CustomFunctionScriptEngine
 
-   Bases: py:obj:`~ICustomFunctionScriptEngine`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICustomFunctionScriptEngine`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Custom Function Script Engine.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CustomFunctionScriptEngine
 
 Overview
 --------

@@ -1,12 +1,12 @@
 VEHICLE_METHOD
 ==============
 
-.. py:class:: VEHICLE_METHOD
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_METHOD
 
 Overview
 --------

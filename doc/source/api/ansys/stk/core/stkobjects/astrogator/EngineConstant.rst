@@ -1,13 +1,13 @@
 EngineConstant
 ==============
 
-.. py:class:: EngineConstant
+.. py:class:: ansys.stk.core.stkobjects.astrogator.EngineConstant
 
-   Bases: py:obj:`~IEngineConstant`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineConstant`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Constant Thrust engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: EngineConstant
 
 Overview
 --------

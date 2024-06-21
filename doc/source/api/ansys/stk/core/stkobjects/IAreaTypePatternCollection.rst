@@ -1,13 +1,13 @@
 IAreaTypePatternCollection
 ==========================
 
-.. py:class:: IAreaTypePatternCollection
+.. py:class:: ansys.stk.core.stkobjects.IAreaTypePatternCollection
 
    object
    
    AgAreaTypePatternCollection used to access the List of coords of the AreaTarget AreaType.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAreaTypePatternCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection.item`
               - Return the lat lon with the Index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection.add`
               - Add a lat lon value. Lat parameter uses Latitude Dimension. Lon parameter uses Longitude Dimension.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection.remove`
               - Remove an Item using a given index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection.remove_all`
               - Remove all the elements of the collection.
-            * - :py:meth:`~insert`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection.insert`
               - Insert a lat lon value (the value is inserted into the specified index without having to remove all elements) Lat parameter uses Latitude Dimension. Lon parameter uses Longitude Dimension.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection.to_array`
               - Return the lat lons as a two dimensional array.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection.count`
 
 
 Import detail

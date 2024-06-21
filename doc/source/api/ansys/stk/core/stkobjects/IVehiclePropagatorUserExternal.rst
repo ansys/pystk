@@ -1,13 +1,13 @@
 IVehiclePropagatorUserExternal
 ==============================
 
-.. py:class:: IVehiclePropagatorUserExternal
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal
 
    IVehiclePropagator
    
    User-external propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorUserExternal
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.propagate`
               - Propagates the vehicle's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
-            * - :py:meth:`~step`
-            * - :py:meth:`~propagator`
-            * - :py:meth:`~file`
-            * - :py:meth:`~vehicle_id`
-            * - :py:meth:`~description`
-            * - :py:meth:`~available_vehicle_ids`
-            * - :py:meth:`~available_propagators`
-            * - :py:meth:`~ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.propagator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.vehicle_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.description`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.available_vehicle_ids`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.available_propagators`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.ephemeris_interval`
 
 
 Import detail
@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

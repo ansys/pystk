@@ -1,13 +1,13 @@
 RadarWaveformBistaticReceiverSearchTrackFixedPRF
 ================================================
 
-.. py:class:: RadarWaveformBistaticReceiverSearchTrackFixedPRF
+.. py:class:: ansys.stk.core.stkobjects.RadarWaveformBistaticReceiverSearchTrackFixedPRF
 
-   Bases: py:obj:`~IRadarWaveformBistaticReceiverSearchTrackFixedPRF`, py:obj:`~IRadarWaveformSearchTrack`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF`, py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformSearchTrack`
 
    Class defining a bistatic receiver fixed PRF waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarWaveformBistaticReceiverSearchTrackFixedPRF
 
 Overview
 --------

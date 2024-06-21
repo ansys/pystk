@@ -1,13 +1,13 @@
 IStateCalcJacobiOsculating
 ==========================
 
-.. py:class:: IStateCalcJacobiOsculating
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiOsculating
 
    object
    
    Properties for an osculating Jacobi integral calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcJacobiOsculating
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~secondary_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiOsculating.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiOsculating.secondary_name`
 
 
 Import detail

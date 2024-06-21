@@ -1,13 +1,13 @@
 IAntennaBeamSelectionStrategyScriptPlugin
 =========================================
 
-.. py:class:: IAntennaBeamSelectionStrategyScriptPlugin
+.. py:class:: ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategyScriptPlugin
 
    object
    
    Provide access to a script plugin beam selection strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaBeamSelectionStrategyScriptPlugin
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategyScriptPlugin.filename`
 
 
 Import detail

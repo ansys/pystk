@@ -1,12 +1,12 @@
 VEHICLE_PREDICTOR_CORRECTOR_SCHEME
 ==================================
 
-.. py:class:: VEHICLE_PREDICTOR_CORRECTOR_SCHEME
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_PREDICTOR_CORRECTOR_SCHEME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_PREDICTOR_CORRECTOR_SCHEME
 
 Overview
 --------

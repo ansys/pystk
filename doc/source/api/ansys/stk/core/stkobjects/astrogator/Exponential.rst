@@ -1,13 +1,13 @@
 Exponential
 ===========
 
-.. py:class:: Exponential
+.. py:class:: ansys.stk.core.stkobjects.astrogator.Exponential
 
-   Bases: py:obj:`~IExponential`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IExponential`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Exponential atmospheric propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: Exponential
 
 Overview
 --------

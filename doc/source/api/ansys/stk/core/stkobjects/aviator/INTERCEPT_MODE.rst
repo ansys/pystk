@@ -1,12 +1,12 @@
 INTERCEPT_MODE
 ==============
 
-.. py:class:: INTERCEPT_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.INTERCEPT_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: INTERCEPT_MODE
 
 Overview
 --------

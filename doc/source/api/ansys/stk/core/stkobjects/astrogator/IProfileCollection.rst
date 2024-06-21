@@ -1,13 +1,13 @@
 IProfileCollection
 ==================
 
-.. py:class:: IProfileCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileCollection
 
    object
    
    Properties for a list of target sequence profiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileCollection
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.add`
               - Add a profile.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.remove`
               - Remove an item from the profile collection.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.remove_all`
               - Remove all profiles from the profile collection.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.cut`
               - Copy the profile into the clipboard and removes profile from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.paste`
               - Pastes the profile from the clipboard and inserts into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.insert_copy`
               - Copy the profile and inserts the copy into the list.
-            * - :py:meth:`~add2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.add2`
               - Add a profile.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.get_item_by_index`
               - Retrieve a profile from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.get_item_by_name`
               - Retrieve a profile from the collection by name.
 
     .. tab-item:: Properties
@@ -47,10 +47,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~available_profiles`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.available_profiles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.provide_runtime_type_info`
 
 
 Import detail
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileCollection.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

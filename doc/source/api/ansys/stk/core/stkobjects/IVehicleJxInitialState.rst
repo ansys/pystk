@@ -1,13 +1,13 @@
 IVehicleJxInitialState
 ======================
 
-.. py:class:: IVehicleJxInitialState
+.. py:class:: ansys.stk.core.stkobjects.IVehicleJxInitialState
 
    object
    
    Initial state interface for J2/J4 perturbation propagators.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleJxInitialState
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ellipse_options`
-            * - :py:meth:`~representation`
-            * - :py:meth:`~propagation_frame`
-            * - :py:meth:`~supported_propagation_frames`
-            * - :py:meth:`~orbit_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.ellipse_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.representation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.propagation_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.supported_propagation_frames`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.orbit_epoch`
 
 
 Import detail
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: representation
     :canonical: ansys.stk.core.stkobjects.IVehicleJxInitialState.representation
-    :type: IAgOrbitState
+    :type: IOrbitState
 
     Representation.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: orbit_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleJxInitialState.orbit_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Get the smart epoch component to configure the orbit state epoch.
 

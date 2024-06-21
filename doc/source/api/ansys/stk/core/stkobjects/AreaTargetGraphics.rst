@@ -1,13 +1,13 @@
 AreaTargetGraphics
 ==================
 
-.. py:class:: AreaTargetGraphics
+.. py:class:: ansys.stk.core.stkobjects.AreaTargetGraphics
 
-   Bases: py:obj:`~IAreaTargetGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAreaTargetGraphics`
 
    Class to define the 2D attributes of an AreaTarget.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AreaTargetGraphics
 
 Overview
 --------

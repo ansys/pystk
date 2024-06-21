@@ -1,13 +1,13 @@
 ProcedureBasicPointToPoint
 ==========================
 
-.. py:class:: ProcedureBasicPointToPoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint
 
-   Bases: py:obj:`~IProcedureBasicPointToPoint`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicPointToPoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a basic point to point procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureBasicPointToPoint
 
 Overview
 --------

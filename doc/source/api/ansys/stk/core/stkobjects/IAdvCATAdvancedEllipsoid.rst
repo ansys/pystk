@@ -1,13 +1,13 @@
 IAdvCATAdvancedEllipsoid
 ========================
 
-.. py:class:: IAdvCATAdvancedEllipsoid
+.. py:class:: ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid
 
    object
    
    Advanced ellipsoid properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAdvCATAdvancedEllipsoid
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scale_factor`
-            * - :py:meth:`~quadratic_in_time_db`
-            * - :py:meth:`~fixed_by_orbit_class_db`
-            * - :py:meth:`~quadratic_by_orbit_class_db`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid.scale_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid.quadratic_in_time_db`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid.fixed_by_orbit_class_db`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid.quadratic_by_orbit_class_db`
 
 
 Import detail

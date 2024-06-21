@@ -1,13 +1,13 @@
 ICoverageBoundsLonLine
 ======================
 
-.. py:class:: ICoverageBoundsLonLine
+.. py:class:: ansys.stk.core.stkobjects.ICoverageBoundsLonLine
 
    ICoverageBounds
    
    Longitude Line:  Create a set of points along a single meridian, useful when the coverage is only expected to vary with latitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageBoundsLonLine
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_latitude`
-            * - :py:meth:`~max_latitude`
-            * - :py:meth:`~longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLonLine.min_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLonLine.max_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLonLine.longitude`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IMtoTrackPointCollection
 ========================
 
-.. py:class:: IMtoTrackPointCollection
+.. py:class:: ansys.stk.core.stkobjects.IMtoTrackPointCollection
 
    object
    
    MTO track point list.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoTrackPointCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.remove_at`
               - Remove an element from the collection using a specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.add`
               - Add a new element to the collection. Time uses DateFormat Dimension.
-            * - :py:meth:`~add_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.add_point`
               - Add a new element to the collection using specified point data. Time uses DateFormat Dimension. Latitude/Longitude use Angle Dimension. Altitude uses Distance Dimension.
-            * - :py:meth:`~load_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.load_points`
               - Load MTO track points.
-            * - :py:meth:`~extend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.extend`
               - Extend the track with the specified point data.
-            * - :py:meth:`~insert_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.insert_point`
               - Insert a point into the track point collection. Uses the time to determine where the point should be inserted. This is slower than AddPoint, AddPoints or Extend.
 
     .. tab-item:: Properties
@@ -43,9 +43,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~recycling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.recycling`
 
 
 Import detail

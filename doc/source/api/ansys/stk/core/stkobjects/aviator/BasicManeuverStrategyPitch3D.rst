@@ -1,13 +1,13 @@
 BasicManeuverStrategyPitch3D
 ============================
 
-.. py:class:: BasicManeuverStrategyPitch3D
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D
 
-   Bases: py:obj:`~IBasicManeuverStrategyPitch3D`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining Pitch 3D strategy for a Basic Maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyPitch3D
 
 Overview
 --------

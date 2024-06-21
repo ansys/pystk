@@ -1,13 +1,13 @@
 TimeToolEventIntervalCollection
 ===============================
 
-.. py:class:: TimeToolEventIntervalCollection
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalCollection
 
-   Bases: py:obj:`~ITimeToolEventIntervalCollection`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollection`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A collection of related interval lists.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalCollection
 
 Overview
 --------

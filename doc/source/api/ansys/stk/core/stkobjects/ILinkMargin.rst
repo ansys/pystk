@@ -1,13 +1,13 @@
 ILinkMargin
 ===========
 
-.. py:class:: ILinkMargin
+.. py:class:: ansys.stk.core.stkobjects.ILinkMargin
 
    object
    
    Provide access to the properties for configuring the link margin computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILinkMargin
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~type`
-            * - :py:meth:`~threshold`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILinkMargin.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILinkMargin.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILinkMargin.threshold`
 
 
 Import detail

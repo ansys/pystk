@@ -1,13 +1,13 @@
 IStateCalcSequenceDeltaVSquared
 ===============================
 
-.. py:class:: IStateCalcSequenceDeltaVSquared
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSequenceDeltaVSquared
 
    object
    
    Properties for a Sequence DeltaV Squared calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSequenceDeltaVSquared
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sequence_name`
-            * - :py:meth:`~squared_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSequenceDeltaVSquared.sequence_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSequenceDeltaVSquared.squared_type`
 
 
 Import detail

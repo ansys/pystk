@@ -1,13 +1,13 @@
 FigureOfMeritGraphics3D
 =======================
 
-.. py:class:: FigureOfMeritGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D
 
-   Bases: py:obj:`~IFigureOfMeritGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D`
 
    Figure of Merit 3D graphics.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGraphics3D
 
 Overview
 --------

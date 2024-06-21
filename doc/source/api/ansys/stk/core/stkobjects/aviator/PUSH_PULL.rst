@@ -1,12 +1,12 @@
 PUSH_PULL
 =========
 
-.. py:class:: PUSH_PULL
+.. py:class:: ansys.stk.core.stkobjects.aviator.PUSH_PULL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PUSH_PULL
 
 Overview
 --------

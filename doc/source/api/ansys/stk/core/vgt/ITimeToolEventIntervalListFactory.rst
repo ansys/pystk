@@ -1,13 +1,13 @@
 ITimeToolEventIntervalListFactory
 =================================
 
-.. py:class:: ITimeToolEventIntervalListFactory
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalListFactory
 
    object
    
    The factory creates event interval lists.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalListFactory
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create`
               - Create and register an interval list using specified name, description, and type.
-            * - :py:meth:`~create_event_interval_list_merged`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create_event_interval_list_merged`
               - Create an interval list by merging two constituent interval lists using specified logical operation.
-            * - :py:meth:`~create_event_interval_list_filtered`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create_event_interval_list_filtered`
               - Create an interval list by filtering intervals from original interval list using specified filtering method.
-            * - :py:meth:`~create_event_interval_list_condition`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create_event_interval_list_condition`
               - Create an interval list containing intervals during which specified condition is satisfied.
-            * - :py:meth:`~create_event_interval_list_scaled`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create_event_interval_list_scaled`
               - Create an interval list defined by scaling every interval in original interval list using either absolute or relative scale.
-            * - :py:meth:`~create_event_interval_list_signaled`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create_event_interval_list_signaled`
               - Create an interval list recorded at the target clock location by performing signal transmission of original interval list between base and target clock locations.
-            * - :py:meth:`~create_event_interval_list_time_offset`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create_event_interval_list_time_offset`
               - Create an interval list defined by shifting the specified reference interval list by a fixed time offset.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:meth:`~create_event_interval_list_file`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create_event_interval_list_file`
               - Create an interval list based on specified interval file.
-            * - :py:meth:`~create_event_interval_list_fixed`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory.create_event_interval_list_fixed`
               - Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval.
 
 

@@ -1,13 +1,13 @@
 ElementSpherical
 ================
 
-.. py:class:: ElementSpherical
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ElementSpherical
 
-   Bases: py:obj:`~IElementSpherical`, py:obj:`~IElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Spherical elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ElementSpherical
 
 Overview
 --------

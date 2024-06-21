@@ -1,13 +1,13 @@
 RFFilterModelSincEnvSinc
 ========================
 
-.. py:class:: RFFilterModelSincEnvSinc
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelSincEnvSinc
 
-   Bases: py:obj:`~IRFFilterModelSincEnvSinc`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelSincEnvSinc`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a Sinc Envelope Sinc filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelSincEnvSinc
 
 Overview
 --------

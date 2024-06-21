@@ -1,13 +1,13 @@
 IProfileSeedFiniteManeuver
 ==========================
 
-.. py:class:: IProfileSeedFiniteManeuver
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileSeedFiniteManeuver
 
    IProfile
    
    Properties for a Seed Finite Maneuver segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileSeedFiniteManeuver
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSeedFiniteManeuver.set_segment`
               - Set the maneuver segment to target.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~segment_name`
-            * - :py:meth:`~leave_all_active_stopping_conditions_active`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSeedFiniteManeuver.segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSeedFiniteManeuver.leave_all_active_stopping_conditions_active`
 
 
 Import detail

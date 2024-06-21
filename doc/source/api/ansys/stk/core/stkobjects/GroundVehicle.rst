@@ -1,13 +1,13 @@
 GroundVehicle
 =============
 
-.. py:class:: GroundVehicle
+.. py:class:: ansys.stk.core.stkobjects.GroundVehicle
 
-   Bases: py:obj:`~IGroundVehicle`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IGreatArcVehicle`, py:obj:`~IProvideSpatialInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGroundVehicle`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IGreatArcVehicle`, py:obj:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Ground vehicle object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: GroundVehicle
 
 Overview
 --------

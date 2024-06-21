@@ -1,13 +1,13 @@
 IProcedureTransitionToForwardFlight
 ===================================
 
-.. py:class:: IProcedureTransitionToForwardFlight
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight
 
    object
    
    Interface used to access the options for a transition to forward flight procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureTransitionToForwardFlight
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_transition_into_wind`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.set_transition_into_wind`
               - Set the option to transition into the wind to true.
-            * - :py:meth:`~set_absolute_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.set_absolute_course`
               - Set the mode to absolute and specify the course and heading reference.
-            * - :py:meth:`~set_relative_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.set_relative_course`
               - Set the mode to relative and specify the heading change.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -35,11 +35,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~transition_course_mode`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~absolute_course`
-            * - :py:meth:`~relative_course`
-            * - :py:meth:`~flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.transition_course_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.absolute_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.relative_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.flight_path_angle`
 
 
 Import detail

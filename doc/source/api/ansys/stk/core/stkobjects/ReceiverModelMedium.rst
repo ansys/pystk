@@ -1,13 +1,13 @@
 ReceiverModelMedium
 ===================
 
-.. py:class:: ReceiverModelMedium
+.. py:class:: ansys.stk.core.stkobjects.ReceiverModelMedium
 
-   Bases: py:obj:`~IReceiverModelMedium`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverModelMedium`, py:obj:`~ansys.stk.core.stkobjects.IReceiverModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a medium receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceiverModelMedium
 
 Overview
 --------

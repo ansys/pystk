@@ -1,13 +1,13 @@
 IVehicleGravity
 ===============
 
-.. py:class:: IVehicleGravity
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGravity
 
    object
    
    Gravity options for covariance matrix.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGravity
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maximum_degree`
-            * - :py:meth:`~maximum_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGravity.maximum_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGravity.maximum_order`
 
 
 Import detail

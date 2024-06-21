@@ -1,13 +1,13 @@
 TimeToolEventArrayFactory
 =========================
 
-.. py:class:: TimeToolEventArrayFactory
+.. py:class:: ansys.stk.core.vgt.TimeToolEventArrayFactory
 
-   Bases: py:obj:`~ITimeToolEventArrayFactory`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory`
 
    The factory creates event arrays.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventArrayFactory
 
 Overview
 --------

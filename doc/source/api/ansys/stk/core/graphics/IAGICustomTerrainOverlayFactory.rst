@@ -1,13 +1,13 @@
 IAGICustomTerrainOverlayFactory
 ===============================
 
-.. py:class:: IAGICustomTerrainOverlayFactory
+.. py:class:: ansys.stk.core.graphics.IAGICustomTerrainOverlayFactory
 
    object
    
    A terrain overlay for handling AGI Cesium Terrain.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IAGICustomTerrainOverlayFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize_with_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IAGICustomTerrainOverlayFactory.initialize_with_string`
               - Initialize an agi custom terrain overlay with the provided values.
 
 

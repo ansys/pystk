@@ -1,13 +1,13 @@
 CommSystemAccessOptions
 =======================
 
-.. py:class:: CommSystemAccessOptions
+.. py:class:: ansys.stk.core.stkobjects.CommSystemAccessOptions
 
-   Bases: py:obj:`~ICommSystemAccessOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions`
 
    Class defining a CommSystem access options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CommSystemAccessOptions
 
 Overview
 --------

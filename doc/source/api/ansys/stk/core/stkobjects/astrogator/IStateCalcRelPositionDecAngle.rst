@@ -1,13 +1,13 @@
 IStateCalcRelPositionDecAngle
 =============================
 
-.. py:class:: IStateCalcRelPositionDecAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle
 
    object
    
    Properties for a Relative Position Declination Angle calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRelPositionDecAngle
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~orbit_plane_source`
-            * - :py:meth:`~element_type`
-            * - :py:meth:`~reference_selection`
-            * - :py:meth:`~reference`
-            * - :py:meth:`~relative_position_type`
-            * - :py:meth:`~sign_convention`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.orbit_plane_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.reference_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.relative_position_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.sign_convention`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.reference
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the reference object.
 

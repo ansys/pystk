@@ -1,13 +1,13 @@
 IEOIRShapeSphere
 ================
 
-.. py:class:: IEOIRShapeSphere
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeSphere
 
    IEOIRShapeObject
    
    A sphere shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeSphere
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeSphere.radius`
 
 
 Import detail

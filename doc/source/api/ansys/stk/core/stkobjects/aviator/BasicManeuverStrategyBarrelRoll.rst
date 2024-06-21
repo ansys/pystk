@@ -1,13 +1,13 @@
 BasicManeuverStrategyBarrelRoll
 ===============================
 
-.. py:class:: BasicManeuverStrategyBarrelRoll
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBarrelRoll
 
-   Bases: py:obj:`~IBasicManeuverStrategyBarrelRoll`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the barrel roll strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyBarrelRoll
 
 Overview
 --------

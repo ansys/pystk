@@ -1,13 +1,13 @@
 IPointBatchPrimitiveOptionalParameters
 ======================================
 
-.. py:class:: IPointBatchPrimitiveOptionalParameters
+.. py:class:: ansys.stk.core.graphics.IPointBatchPrimitiveOptionalParameters
 
    object
    
    Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPointBatchPrimitiveOptionalParameters
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_pixel_sizes`
+            * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitiveOptionalParameters.set_pixel_sizes`
               - Define a collection of pixel sizes, one for each point in the point batch.
 
 

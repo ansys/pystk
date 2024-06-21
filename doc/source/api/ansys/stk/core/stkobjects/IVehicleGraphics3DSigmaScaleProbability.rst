@@ -1,13 +1,13 @@
 IVehicleGraphics3DSigmaScaleProbability
 =======================================
 
-.. py:class:: IVehicleGraphics3DSigmaScaleProbability
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScaleProbability
 
    object
    
    Interface for sigma probability for indirect sizing of covariance pointing contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DSigmaScaleProbability
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~probability`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScaleProbability.probability`
 
 
 Import detail

@@ -1,13 +1,13 @@
 StateCalcUserValue
 ==================
 
-.. py:class:: StateCalcUserValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcUserValue
 
-   Bases: py:obj:`~IStateCalcUserValue`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcUserValue`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcUserValue.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcUserValue
 
 Overview
 --------

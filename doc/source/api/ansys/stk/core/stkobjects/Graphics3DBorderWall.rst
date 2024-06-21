@@ -1,13 +1,13 @@
 Graphics3DBorderWall
 ====================
 
-.. py:class:: Graphics3DBorderWall
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DBorderWall
 
-   Bases: py:obj:`~IGraphics3DBorderWall`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall`
 
    Class defining 3D Graphics border wall properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DBorderWall
 
 Overview
 --------

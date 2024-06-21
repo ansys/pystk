@@ -1,13 +1,13 @@
 DifferentialCorrectorResultCollection
 =====================================
 
-.. py:class:: DifferentialCorrectorResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection
 
-   Bases: py:obj:`~IDifferentialCorrectorResultCollection`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The collection of results for a differential corrector.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DifferentialCorrectorResultCollection
 
 Overview
 --------

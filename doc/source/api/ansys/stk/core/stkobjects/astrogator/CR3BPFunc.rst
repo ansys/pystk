@@ -1,13 +1,13 @@
 CR3BPFunc
 =========
 
-.. py:class:: CR3BPFunc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CR3BPFunc
 
-   Bases: py:obj:`~ICR3BPFunc`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CR3BP Function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CR3BPFunc
 
 Overview
 --------

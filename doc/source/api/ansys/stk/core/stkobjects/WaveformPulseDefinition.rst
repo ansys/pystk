@@ -1,13 +1,13 @@
 WaveformPulseDefinition
 =======================
 
-.. py:class:: WaveformPulseDefinition
+.. py:class:: ansys.stk.core.stkobjects.WaveformPulseDefinition
 
-   Bases: py:obj:`~IWaveformPulseDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition`
 
    Class defining the pulse definition for a rectangular waveform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: WaveformPulseDefinition
 
 Overview
 --------

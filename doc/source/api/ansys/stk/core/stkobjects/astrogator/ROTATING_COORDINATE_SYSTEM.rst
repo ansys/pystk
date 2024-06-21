@@ -1,12 +1,12 @@
 ROTATING_COORDINATE_SYSTEM
 ==========================
 
-.. py:class:: ROTATING_COORDINATE_SYSTEM
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ROTATING_COORDINATE_SYSTEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ROTATING_COORDINATE_SYSTEM
 
 Overview
 --------

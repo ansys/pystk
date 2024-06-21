@@ -1,13 +1,13 @@
 LaunchVehicleGraphics
 =====================
 
-.. py:class:: LaunchVehicleGraphics
+.. py:class:: ansys.stk.core.stkobjects.LaunchVehicleGraphics
 
-   Bases: py:obj:`~ILaunchVehicleGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics`
 
    2D Graphics for a launch vehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LaunchVehicleGraphics
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ITextureMatrixFactory
 =====================
 
-.. py:class:: ITextureMatrixFactory
+.. py:class:: ansys.stk.core.graphics.ITextureMatrixFactory
 
    object
    
    A 4 by 4 matrix applied to a texture coordinate.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextureMatrixFactory
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrixFactory.initialize`
               - Initialize a texture matrix to the identity matrix.
-            * - :py:meth:`~initialize_by_values`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrixFactory.initialize_by_values`
               - Initialize a texture matrix. The subscripts define [row][column].
-            * - :py:meth:`~initialize_with_affine_transform`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrixFactory.initialize_with_affine_transform`
               - Initialize a texture matrix from a matrix. The upper left 2x2 matrix defines rotation and scaling. The top two elements of the last column define translation.
-            * - :py:meth:`~initialize_with_rectangles`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrixFactory.initialize_with_rectangles`
               - Initialize a texture matrix from texture corner points. Normally, a texture is mapped such that the lower left corner is texture coordinate (0, 0), the lower right is (1, 0), the upper right is (1, 1), and the upper left is (0, 1)...
 
 

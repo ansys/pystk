@@ -1,13 +1,13 @@
 CalculationToolParameterSetOrbit
 ================================
 
-.. py:class:: CalculationToolParameterSetOrbit
+.. py:class:: ansys.stk.core.vgt.CalculationToolParameterSetOrbit
 
-   Bases: py:obj:`~ICalculationToolParameterSetOrbit`, py:obj:`~ICalculationToolParameterSet`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSetOrbit`, py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSet`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Orbit parameter set contains various trajectory representations of an orbiting point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolParameterSetOrbit
 
 Overview
 --------

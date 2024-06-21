@@ -1,13 +1,13 @@
 IGraphics3DReferenceVectorGeometryToolPlane
 ===========================================
 
-.. py:class:: IGraphics3DReferenceVectorGeometryToolPlane
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane
 
    IGraphics3DReferenceAnalysisWorkbenchComponent
    
    Configure the visual representation of a Vector Geometry plane component in 3D.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DReferenceVectorGeometryToolPlane
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~axis_labels_visible`
-            * - :py:meth:`~transparent_plane_visible`
-            * - :py:meth:`~size`
-            * - :py:meth:`~transparency`
-            * - :py:meth:`~draw_at_object`
-            * - :py:meth:`~rect_grid_visible`
-            * - :py:meth:`~circ_grid_visible`
-            * - :py:meth:`~plane_grid_spacing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.axis_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.transparent_plane_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.transparency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.draw_at_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.rect_grid_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.circ_grid_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.plane_grid_spacing`
 
 
 Import detail

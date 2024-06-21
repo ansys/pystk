@@ -1,13 +1,13 @@
 IRadarDopplerClutterFilters
 ===========================
 
-.. py:class:: IRadarDopplerClutterFilters
+.. py:class:: ansys.stk.core.stkobjects.IRadarDopplerClutterFilters
 
    object
    
    Provide access to the properties and methods defining a radar doppler clutter filter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarDopplerClutterFilters
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_mainlobe_clutter`
-            * - :py:meth:`~mainlobe_clutter_bandwidth`
-            * - :py:meth:`~enable_sidelobe_clutter`
-            * - :py:meth:`~sidelobe_clutter_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters.enable_mainlobe_clutter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters.mainlobe_clutter_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters.enable_sidelobe_clutter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters.sidelobe_clutter_bandwidth`
 
 
 Import detail

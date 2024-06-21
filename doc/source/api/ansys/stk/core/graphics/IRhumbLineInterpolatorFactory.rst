@@ -1,13 +1,13 @@
 IRhumbLineInterpolatorFactory
 =============================
 
-.. py:class:: IRhumbLineInterpolatorFactory
+.. py:class:: ansys.stk.core.graphics.IRhumbLineInterpolatorFactory
 
    object
    
    The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRhumbLineInterpolatorFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IRhumbLineInterpolatorFactory.initialize`
               - Initialize a default rhumb line interpolator. This is equivalent to constructing a rhumb line interpolator with a central body equal to an instance of earth central body and a granularity of 1 degree.
-            * - :py:meth:`~initialize_with_central_body`
+            * - :py:attr:`~ansys.stk.core.graphics.IRhumbLineInterpolatorFactory.initialize_with_central_body`
               - Initialize a rhumb line interpolator with the specified centralBody and a granularity of 1 degree.
-            * - :py:meth:`~initialize_with_central_body_and_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.IRhumbLineInterpolatorFactory.initialize_with_central_body_and_granularity`
               - Initialize a rhumb line interpolator with the specified centralBody and granularity.
 
 

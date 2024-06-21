@@ -1,13 +1,13 @@
 IVehicleGraphics2DElevationGroundElevation
 ==========================================
 
-.. py:class:: IVehicleGraphics2DElevationGroundElevation
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationGroundElevation
 
    object
    
    Ground elevation interface for vehicle swath.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DElevationGroundElevation
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationGroundElevation.angle`
 
 
 Import detail

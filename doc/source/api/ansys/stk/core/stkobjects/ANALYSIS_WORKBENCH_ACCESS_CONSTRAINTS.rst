@@ -1,12 +1,12 @@
 ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS
 =====================================
 
-.. py:class:: ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS
+.. py:class:: ansys.stk.core.stkobjects.ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS
 
 Overview
 --------

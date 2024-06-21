@@ -1,13 +1,13 @@
 IBrightnessFilterFactory
 ========================
 
-.. py:class:: IBrightnessFilterFactory
+.. py:class:: ansys.stk.core.graphics.IBrightnessFilterFactory
 
    object
    
    Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IBrightnessFilterFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IBrightnessFilterFactory.initialize`
               - Initialize a new instance.
-            * - :py:meth:`~initialize_with_adjustment`
+            * - :py:attr:`~ansys.stk.core.graphics.IBrightnessFilterFactory.initialize_with_adjustment`
               - Initialize a new instance with the adjustment to brightness.
 
 

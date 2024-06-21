@@ -1,13 +1,13 @@
 IImmutableIntervalCollection
 ============================
 
-.. py:class:: IImmutableIntervalCollection
+.. py:class:: ansys.stk.core.stkobjects.IImmutableIntervalCollection
 
    object
    
    IAgImmutableIntervalCollection represents a immutable (read-only) collection of intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IImmutableIntervalCollection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IImmutableIntervalCollection.get_interval`
               - Return start and stop times of the interval at a given index. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IImmutableIntervalCollection.to_array`
               - Return a two-dimensional array of intervals.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IImmutableIntervalCollection.count`
 
 
 Import detail

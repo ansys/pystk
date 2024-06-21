@@ -1,13 +1,13 @@
 IAntennaModelApertureCircularBesselEnvelope
 ===========================================
 
-.. py:class:: IAntennaModelApertureCircularBesselEnvelope
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope
 
    object
    
    Provide access to the properties and methods defining a circular bessel envelope aperture antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelApertureCircularBesselEnvelope
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_mainlobe_gain`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~beamwidth`
-            * - :py:meth:`~function_power`
-            * - :py:meth:`~pedestal_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.compute_mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.function_power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope.pedestal_level`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IStateCalcMagnitudeFieldDipoleL
 ===============================
 
-.. py:class:: IStateCalcMagnitudeFieldDipoleL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMagnitudeFieldDipoleL
 
    object
    
    Interface for AgAsStateCalcMagFieldDipoleL.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMagnitudeFieldDipoleL
 
 Overview
 --------

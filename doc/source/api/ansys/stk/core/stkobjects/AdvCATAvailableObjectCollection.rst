@@ -1,13 +1,13 @@
 AdvCATAvailableObjectCollection
 ===============================
 
-.. py:class:: AdvCATAvailableObjectCollection
+.. py:class:: ansys.stk.core.stkobjects.AdvCATAvailableObjectCollection
 
-   Bases: py:obj:`~IAdvCATAvailableObjectCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection`
 
    Read-only collection of available objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AdvCATAvailableObjectCollection
 
 Overview
 --------

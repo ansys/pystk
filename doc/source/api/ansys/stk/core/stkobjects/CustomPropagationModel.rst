@@ -1,13 +1,13 @@
 CustomPropagationModel
 ======================
 
-.. py:class:: CustomPropagationModel
+.. py:class:: ansys.stk.core.stkobjects.CustomPropagationModel
 
-   Bases: py:obj:`~ICustomPropagationModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICustomPropagationModel`
 
    Class defining a custom propatation model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CustomPropagationModel
 
 Overview
 --------

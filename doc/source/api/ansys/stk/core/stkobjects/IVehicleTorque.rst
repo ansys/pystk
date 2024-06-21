@@ -1,13 +1,13 @@
 IVehicleTorque
 ==============
 
-.. py:class:: IVehicleTorque
+.. py:class:: ansys.stk.core.stkobjects.IVehicleTorque
 
    object
    
    Torque file to use in defining integrated attitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleTorque
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_torque_file`
-            * - :py:meth:`~torque_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTorque.use_torque_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTorque.torque_file`
 
 
 Import detail

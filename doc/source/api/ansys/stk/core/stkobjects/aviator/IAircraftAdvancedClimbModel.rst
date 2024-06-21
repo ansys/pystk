@@ -1,13 +1,13 @@
 IAircraftAdvancedClimbModel
 ===========================
 
-.. py:class:: IAircraftAdvancedClimbModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel
 
    object
    
    Interface used to access the advanced climb model options for a climb model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftAdvancedClimbModel
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_climb_override_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.set_climb_override_airspeed`
               - Set the override airspeed and airspeed type.
-            * - :py:meth:`~set_airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.set_airspeed_limit`
               - Set the airspeed limit and airspeed type below the altitude threshold.
-            * - :py:meth:`~set_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.set_flight_path_angle`
               - Enable the flight path angle limit an set the flight path angle value.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -35,17 +35,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~climb_speed_type`
-            * - :py:meth:`~climb_override_airspeed_type`
-            * - :py:meth:`~climb_override_airspeed`
-            * - :py:meth:`~use_afterburner`
-            * - :py:meth:`~use_airspeed_limit`
-            * - :py:meth:`~altitude_limit`
-            * - :py:meth:`~airspeed_limit_type`
-            * - :py:meth:`~airspeed_limit`
-            * - :py:meth:`~use_flight_path_angle_limit`
-            * - :py:meth:`~flight_path_angle`
-            * - :py:meth:`~compute_delta_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.climb_speed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.climb_override_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.climb_override_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.use_afterburner`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.use_airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.altitude_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.airspeed_limit_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.airspeed_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.use_flight_path_angle_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.compute_delta_altitude`
 
 
 Import detail

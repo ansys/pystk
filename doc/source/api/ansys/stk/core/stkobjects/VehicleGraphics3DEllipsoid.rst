@@ -1,13 +1,13 @@
 VehicleGraphics3DEllipsoid
 ==========================
 
-.. py:class:: VehicleGraphics3DEllipsoid
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid
 
-   Bases: py:obj:`~IVehicleGraphics3DEllipsoid`, py:obj:`~IVehicleGraphics3DProximityAreaObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DEllipsoid`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject`
 
    Define an ellipsoid around the vehicle object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DEllipsoid
 
 Overview
 --------

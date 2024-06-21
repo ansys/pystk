@@ -1,12 +1,12 @@
 SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY
 ==========================================
 
-.. py:class:: SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY
+.. py:class:: ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY
 
 Overview
 --------

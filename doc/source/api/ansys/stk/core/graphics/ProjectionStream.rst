@@ -1,13 +1,13 @@
 ProjectionStream
 ================
 
-.. py:class:: ProjectionStream
+.. py:class:: ansys.stk.core.graphics.ProjectionStream
 
-   Bases: py:obj:`~IProjectionStream`, py:obj:`~IProjection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IProjectionStream`, py:obj:`~ansys.stk.core.graphics.IProjection`
 
    A projection that is updated dynamically at the specified update delta. The class can be used to stream projection data to projection clients, like projected raster overlay...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ProjectionStream
 
 Overview
 --------

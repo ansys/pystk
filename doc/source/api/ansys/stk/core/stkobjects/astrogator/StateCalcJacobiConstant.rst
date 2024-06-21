@@ -1,13 +1,13 @@
 StateCalcJacobiConstant
 =======================
 
-.. py:class:: StateCalcJacobiConstant
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcJacobiConstant
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcJacobiConstant`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiConstant`
 
    Jacobi Constant Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcJacobiConstant
 
 Overview
 --------

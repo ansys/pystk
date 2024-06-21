@@ -1,13 +1,13 @@
 VehicleSpaceEnvironmentMagneticField
 ====================================
 
-.. py:class:: VehicleSpaceEnvironmentMagneticField
+.. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentMagneticField
 
-   Bases: py:obj:`~IVehicleSpaceEnvironmentMagneticField`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField`
 
    Magnetic field settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleSpaceEnvironmentMagneticField
 
 Overview
 --------

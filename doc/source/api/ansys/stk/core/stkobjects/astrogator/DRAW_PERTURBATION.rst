@@ -1,12 +1,12 @@
 DRAW_PERTURBATION
 =================
 
-.. py:class:: DRAW_PERTURBATION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DRAW_PERTURBATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DRAW_PERTURBATION
 
 Overview
 --------

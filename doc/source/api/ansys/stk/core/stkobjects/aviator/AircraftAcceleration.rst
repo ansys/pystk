@@ -1,13 +1,13 @@
 AircraftAcceleration
 ====================
 
-.. py:class:: AircraftAcceleration
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftAcceleration
 
-   Bases: py:obj:`~IAircraftAcceleration`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftAcceleration`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the aircraft acceleration category of an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftAcceleration
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IMissileSimpleAero
 ==================
 
-.. py:class:: IMissileSimpleAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileSimpleAero
 
    object
    
    Interface used to access the Simple aerodynamics options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileSimpleAero
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_max_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.set_max_aoa`
               - Set whether to calculate the Angle of Attack and the corresponding value.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~s_reference`
-            * - :py:meth:`~cl_max`
-            * - :py:meth:`~cd`
-            * - :py:meth:`~calculate_aoa`
-            * - :py:meth:`~max_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.s_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.cl_max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.cd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.calculate_aoa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.max_aoa`
 
 
 Import detail

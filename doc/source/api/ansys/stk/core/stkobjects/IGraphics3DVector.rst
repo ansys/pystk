@@ -1,13 +1,13 @@
 IGraphics3DVector
 =================
 
-.. py:class:: IGraphics3DVector
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DVector
 
    object
    
    Configures the Vector Geometry Tool 3D visualization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DVector
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_crdns`
-            * - :py:meth:`~vector_size_scale`
-            * - :py:meth:`~scale_relative_to_model`
-            * - :py:meth:`~angle_size_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVector.reference_crdns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVector.vector_size_scale`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVector.scale_relative_to_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVector.angle_size_scale`
 
 
 Import detail
@@ -39,7 +39,7 @@ Property detail
 
 .. py:property:: reference_crdns
     :canonical: ansys.stk.core.stkobjects.IGraphics3DVector.reference_crdns
-    :type: IAgVORefCrdnCollection
+    :type: IGraphics3DReferenceAnalysisWorkbenchCollection
 
     Gets a collection that manages the 3D VGT visualizations.
 

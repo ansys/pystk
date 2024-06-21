@@ -1,12 +1,12 @@
 SPACE_ENVIRONMENT_SAA_FLUX_LEVEL
 ================================
 
-.. py:class:: SPACE_ENVIRONMENT_SAA_FLUX_LEVEL
+.. py:class:: ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_SAA_FLUX_LEVEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SPACE_ENVIRONMENT_SAA_FLUX_LEVEL
 
 Overview
 --------

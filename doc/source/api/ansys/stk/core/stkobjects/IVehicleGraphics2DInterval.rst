@@ -1,13 +1,13 @@
 IVehicleGraphics2DInterval
 ==========================
 
-.. py:class:: IVehicleGraphics2DInterval
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DInterval
 
    object
    
    2D Graphics display based on custom intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DInterval
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~graphics_2d_attributes`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DInterval.graphics_2d_attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DInterval.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DInterval.stop_time`
 
 
 Import detail
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: graphics_2d_attributes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DInterval.graphics_2d_attributes
-    :type: IAgVeGfxAttributesBasic
+    :type: IVehicleGraphics2DAttributesBasic
 
     Get the 2D Graphics attributes for the interval.
 

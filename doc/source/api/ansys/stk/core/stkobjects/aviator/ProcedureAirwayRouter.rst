@@ -1,13 +1,13 @@
 ProcedureAirwayRouter
 =====================
 
-.. py:class:: ProcedureAirwayRouter
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter
 
-   Bases: py:obj:`~IProcedureAirwayRouter`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining an Airway Router procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureAirwayRouter
 
 Overview
 --------

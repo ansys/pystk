@@ -1,13 +1,13 @@
 IDistanceDisplayCondition
 =========================
 
-.. py:class:: IDistanceDisplayCondition
+.. py:class:: ansys.stk.core.graphics.IDistanceDisplayCondition
 
    object
    
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IDistanceDisplayCondition
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_distance`
-            * - :py:meth:`~maximum_distance`
-            * - :py:meth:`~minimum_distance_squared`
-            * - :py:meth:`~maximum_distance_squared`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceDisplayCondition.minimum_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceDisplayCondition.maximum_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceDisplayCondition.minimum_distance_squared`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceDisplayCondition.maximum_distance_squared`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IDoublesCollection
 ==================
 
-.. py:class:: IDoublesCollection
+.. py:class:: ansys.stk.core.stkutil.IDoublesCollection
 
    object
    
    Represents a collection of doubles.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IDoublesCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection.item`
               - Return a double at a specified position.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection.add`
               - Add a value to the collection of doubles.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection.remove_at`
               - Remove an element from the collection at a specified position.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection.remove_all`
               - Clear the collection.
-            * - :py:meth:`~to_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection.to_array`
               - Return an array of the elements in the collection.
-            * - :py:meth:`~set_at`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection.set_at`
               - Update an element in the collection at a specified position.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection._NewEnum`
 
 
 Import detail

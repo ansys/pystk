@@ -1,13 +1,13 @@
 AreaTargetCommonTasks
 =====================
 
-.. py:class:: AreaTargetCommonTasks
+.. py:class:: ansys.stk.core.stkobjects.AreaTargetCommonTasks
 
-   Bases: py:obj:`~IAreaTargetCommonTasks`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAreaTargetCommonTasks`
 
    Class defining the Area Target Common class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AreaTargetCommonTasks
 
 Overview
 --------

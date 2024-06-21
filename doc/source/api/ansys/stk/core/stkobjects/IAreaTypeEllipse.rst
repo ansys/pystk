@@ -1,13 +1,13 @@
 IAreaTypeEllipse
 ================
 
-.. py:class:: IAreaTypeEllipse
+.. py:class:: ansys.stk.core.stkobjects.IAreaTypeEllipse
 
    object
    
    AgAreaTypeEllipse used to access the MajorAxis MinorAxis and Bearing of the AreaTarget AreaType.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAreaTypeEllipse
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~semi_minor_axis`
-            * - :py:meth:`~bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypeEllipse.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypeEllipse.semi_minor_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypeEllipse.bearing`
 
 
 Import detail

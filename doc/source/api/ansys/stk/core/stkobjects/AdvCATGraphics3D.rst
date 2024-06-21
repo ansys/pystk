@@ -1,13 +1,13 @@
 AdvCATGraphics3D
 ================
 
-.. py:class:: AdvCATGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.AdvCATGraphics3D
 
-   Bases: py:obj:`~IAdvCATGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATGraphics3D`
 
    AdvCAT VO properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AdvCATGraphics3D
 
 Overview
 --------

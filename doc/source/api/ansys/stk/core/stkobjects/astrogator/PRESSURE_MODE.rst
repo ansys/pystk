@@ -1,12 +1,12 @@
 PRESSURE_MODE
 =============
 
-.. py:class:: PRESSURE_MODE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PRESSURE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PRESSURE_MODE
 
 Overview
 --------

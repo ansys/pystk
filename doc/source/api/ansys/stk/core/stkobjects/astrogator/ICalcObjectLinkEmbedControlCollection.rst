@@ -1,13 +1,13 @@
 ICalcObjectLinkEmbedControlCollection
 =====================================
 
-.. py:class:: ICalcObjectLinkEmbedControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection
 
    object
    
    Collection of link/embed calculation objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICalcObjectLinkEmbedControlCollection
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.add`
               - Add a link/embed calc object to the collection.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.item`
               - Return a link/embed calc object.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.remove`
               - Remove a link/embed calc object from the collection.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.cut`
               - Copy a link/embed calc object to the clipboard and removes the calc object from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.paste`
               - Pastes a link/embed calc object from the clipboard into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.insert_copy`
               - Copy a link/embed calc object and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.get_item_by_index`
               - Retrieve a link/embed calc object found by the index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.get_item_by_name`
               - Retrieve a link/embed calc object found by the name.
 
     .. tab-item:: Properties
@@ -43,8 +43,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.count`
 
 
 Import detail

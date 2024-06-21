@@ -1,12 +1,12 @@
 SENSOR_EOIR_SCAN_MODES
 ======================
 
-.. py:class:: SENSOR_EOIR_SCAN_MODES
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_EOIR_SCAN_MODES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_EOIR_SCAN_MODES
 
 Overview
 --------

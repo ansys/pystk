@@ -1,13 +1,13 @@
 ISensorHalfPowerPattern
 =======================
 
-.. py:class:: ISensorHalfPowerPattern
+.. py:class:: ansys.stk.core.stkobjects.ISensorHalfPowerPattern
 
    object
    
    IAgSnHalfPowerPattern Interface for half power sensors designed to model parabolic antennas.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorHalfPowerPattern
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~frequency`
-            * - :py:meth:`~antenna_diameter`
-            * - :py:meth:`~half_angle`
-            * - :py:meth:`~angular_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern.frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern.antenna_diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern.half_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern.angular_resolution`
 
 
 Import detail

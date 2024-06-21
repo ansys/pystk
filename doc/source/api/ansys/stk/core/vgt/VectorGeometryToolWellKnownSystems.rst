@@ -1,13 +1,13 @@
 VectorGeometryToolWellKnownSystems
 ==================================
 
-.. py:class:: VectorGeometryToolWellKnownSystems
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSystems
 
-   Bases: py:obj:`~IVectorGeometryToolWellKnownSystems`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems`
 
    Well-known coordinate reference systems.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolWellKnownSystems
 
 Overview
 --------

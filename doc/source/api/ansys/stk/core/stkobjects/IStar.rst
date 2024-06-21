@@ -1,13 +1,13 @@
 IStar
 =====
 
-.. py:class:: IStar
+.. py:class:: ansys.stk.core.stkobjects.IStar
 
    object
    
    Provide access to the properties and methods used in defining a star object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStar
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~location_right_ascension`
-            * - :py:meth:`~location_declination`
-            * - :py:meth:`~proper_motion_right_ascension`
-            * - :py:meth:`~proper_motion_declination`
-            * - :py:meth:`~parallax`
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~magnitude`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~access_constraints`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~proper_motion_radial_velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.location_right_ascension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.location_declination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.proper_motion_right_ascension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.proper_motion_declination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.parallax`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.access_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStar.proper_motion_radial_velocity`
 
 
 Import detail
@@ -89,19 +89,19 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IStar.graphics
-    :type: IAgStGraphics
+    :type: IStarGraphics
 
     Get the star's 2D Graphics properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IStar.access_constraints
-    :type: IAgAccessConstraintCollection
+    :type: IAccessConstraintCollection
 
     Get the constraints imposed on the star.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IStar.graphics_3d
-    :type: IAgStVO
+    :type: IStarGraphics3D
 
     Get the star's 3D Graphics properties.
 

@@ -1,13 +1,13 @@
 ISensorRectangularPattern
 =========================
 
-.. py:class:: ISensorRectangularPattern
+.. py:class:: ansys.stk.core.stkobjects.ISensorRectangularPattern
 
    object
    
    IAgSnRectangularPattern Interface for rectangular sensor types typically used with satellites or aircraft for modeling the field of view of instruments such as push broom sensors and star trackers.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorRectangularPattern
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vertical_half_angle`
-            * - :py:meth:`~horizontal_half_angle`
-            * - :py:meth:`~angular_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorRectangularPattern.vertical_half_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorRectangularPattern.horizontal_half_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorRectangularPattern.angular_resolution`
 
 
 Import detail

@@ -1,12 +1,12 @@
 CONTROL_ADVANCED
 ================
 
-.. py:class:: CONTROL_ADVANCED
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_ADVANCED
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_ADVANCED
 
 Overview
 --------

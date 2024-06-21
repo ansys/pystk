@@ -1,12 +1,12 @@
 TURN_DIRECTION
 ==============
 
-.. py:class:: TURN_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.aviator.TURN_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TURN_DIRECTION
 
 Overview
 --------

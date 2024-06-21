@@ -1,12 +1,12 @@
 PREDICTOR_CORRECTOR
 ===================
 
-.. py:class:: PREDICTOR_CORRECTOR
+.. py:class:: ansys.stk.core.stkobjects.astrogator.PREDICTOR_CORRECTOR
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: PREDICTOR_CORRECTOR
 
 Overview
 --------

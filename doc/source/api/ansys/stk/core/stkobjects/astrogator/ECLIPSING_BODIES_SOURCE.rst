@@ -1,12 +1,12 @@
 ECLIPSING_BODIES_SOURCE
 =======================
 
-.. py:class:: ECLIPSING_BODIES_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ECLIPSING_BODIES_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ECLIPSING_BODIES_SOURCE
 
 Overview
 --------

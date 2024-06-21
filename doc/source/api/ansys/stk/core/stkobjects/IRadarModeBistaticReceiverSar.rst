@@ -1,13 +1,13 @@
 IRadarModeBistaticReceiverSar
 =============================
 
-.. py:class:: IRadarModeBistaticReceiverSar
+.. py:class:: ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSar
 
    object
    
    Provide access to the properties and methods defining a bistatic receiver sar mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModeBistaticReceiverSar
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pulse_integration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSar.pulse_integration`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: pulse_integration
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSar.pulse_integration
-    :type: IAgRadarWaveformSarPulseIntegration
+    :type: IRadarWaveformSarPulseIntegration
 
     Gets the interface for configuring the SAR waveform pulse integration.
 

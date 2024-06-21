@@ -1,13 +1,13 @@
 IMtoGraphics3DGlobalTrackOptions
 ================================
 
-.. py:class:: IMtoGraphics3DGlobalTrackOptions
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions
 
    object
    
    Interface for global 3D graphics MTO track options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DGlobalTrackOptions
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~tracks_visible`
-            * - :py:meth:`~labels_visible`
-            * - :py:meth:`~markers_visible`
-            * - :py:meth:`~lines_visible`
-            * - :py:meth:`~points_visible`
-            * - :py:meth:`~optimize_lines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.tracks_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.markers_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.lines_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.points_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.optimize_lines`
 
 
 Import detail

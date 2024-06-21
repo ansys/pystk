@@ -1,13 +1,13 @@
 PerformanceModel
 ================
 
-.. py:class:: PerformanceModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.PerformanceModel
 
-   Bases: py:obj:`~IPerformanceModel`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an unknown performance model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: PerformanceModel
 
 Overview
 --------

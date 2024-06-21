@@ -1,13 +1,13 @@
 VehicleProfileAviator
 =====================
 
-.. py:class:: VehicleProfileAviator
+.. py:class:: ansys.stk.core.stkobjects.VehicleProfileAviator
 
-   Bases: py:obj:`~IVehicleProfileAviator`, py:obj:`~IVehicleAttitudeProfile`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileAviator`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    The profile used for Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleProfileAviator
 
 Overview
 --------

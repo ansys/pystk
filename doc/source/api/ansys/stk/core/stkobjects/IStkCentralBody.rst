@@ -1,13 +1,13 @@
 IStkCentralBody
 ===============
 
-.. py:class:: IStkCentralBody
+.. py:class:: ansys.stk.core.stkobjects.IStkCentralBody
 
    object
    
    A central body interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IStkCentralBody
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~ellipsoid`
-            * - :py:meth:`~vgt`
-            * - :py:meth:`~gravitational_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBody.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBody.ellipsoid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBody.vgt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBody.gravitational_parameter`
 
 
 Import detail
@@ -45,13 +45,13 @@ Property detail
 
 .. py:property:: ellipsoid
     :canonical: ansys.stk.core.stkobjects.IStkCentralBody.ellipsoid
-    :type: IAgStkCentralBodyEllipsoid
+    :type: IStkCentralBodyEllipsoid
 
     The central body ellipsoid.
 
 .. py:property:: vgt
     :canonical: ansys.stk.core.stkobjects.IStkCentralBody.vgt
-    :type: IAgCrdnProvider
+    :type: IAnalysisWorkbenchProvider
 
     Returns the central body's Vector Geometry Tool provider.
 

@@ -1,13 +1,13 @@
 MissionControlSequenceOptions
 =============================
 
-.. py:class:: MissionControlSequenceOptions
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceOptions
 
-   Bases: py:obj:`~IMissionControlSequenceOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions`
 
    The MCS Options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceOptions
 
 Overview
 --------

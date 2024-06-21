@@ -1,13 +1,13 @@
 IPlatformLaserEnvironment
 =========================
 
-.. py:class:: IPlatformLaserEnvironment
+.. py:class:: ansys.stk.core.stkobjects.IPlatformLaserEnvironment
 
    object
    
    Provide access to the properties and methods defining the laser environment for a platform.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPlatformLaserEnvironment
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagation_channel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformLaserEnvironment.propagation_channel`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.IPlatformLaserEnvironment.propagation_channel
-    :type: IAgLaserPropagationChannel
+    :type: ILaserPropagationChannel
 
     Gets the propagation channel.
 

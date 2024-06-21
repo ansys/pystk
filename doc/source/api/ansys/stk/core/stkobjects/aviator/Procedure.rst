@@ -1,13 +1,13 @@
 Procedure
 =========
 
-.. py:class:: Procedure
+.. py:class:: ansys.stk.core.stkobjects.aviator.Procedure
 
-   Bases: py:obj:`~IProcedure`, py:obj:`~IConnect`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`, py:obj:`~ansys.stk.core.stkobjects.aviator.IConnect`
 
    Class defining an unknown procedure type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: Procedure
 
 Overview
 --------

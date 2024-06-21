@@ -1,13 +1,13 @@
 ProcedureFastTimeOptions
 ========================
 
-.. py:class:: ProcedureFastTimeOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureFastTimeOptions
 
-   Bases: py:obj:`~IProcedureFastTimeOptions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions`
 
    Class defining fast operations (without error or constraint checks) for time options for the current procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureFastTimeOptions
 
 Overview
 --------

@@ -1,13 +1,13 @@
 TransmitterModel
 ================
 
-.. py:class:: TransmitterModel
+.. py:class:: ansys.stk.core.stkobjects.TransmitterModel
 
-   Bases: py:obj:`~ITransmitterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a generic transmitter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TransmitterModel
 
 Overview
 --------

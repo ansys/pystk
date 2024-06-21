@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleFindWithRateResult
 ==========================================
 
-.. py:class:: IVectorGeometryToolAngleFindWithRateResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult
 
    object
    
    Contains the results returned with IAgCrdnAngle.FindCoordinatesWithRate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleFindWithRateResult
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~angle`
-            * - :py:meth:`~angle_rate`
-            * - :py:meth:`~vector_from`
-            * - :py:meth:`~vector_to`
-            * - :py:meth:`~vector_about`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.angle`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.angle_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_from`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_to`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_about`
 
 
 Import detail
@@ -59,19 +59,19 @@ Property detail
 
 .. py:property:: vector_from
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_from
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The first of the two vectors the angle is measured.
 
 .. py:property:: vector_to
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_to
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The second of the two vectors the angle is measured.
 
 .. py:property:: vector_about
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult.vector_about
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The vector the angle is rotated about.
 

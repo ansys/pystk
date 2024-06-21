@@ -1,13 +1,13 @@
 VehicleGraphics2DAttributesAccess
 =================================
 
-.. py:class:: VehicleGraphics2DAttributesAccess
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess
 
-   Bases: py:obj:`~IVehicleGraphics2DAttributesAccess`, py:obj:`~IVehicleGraphics2DAttributes`, py:obj:`~IVehicleGraphics2DAttributesDisplayState`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesAccess`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributes`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState`
 
    Vehicle 2D Graphics display based on access intervals.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DAttributesAccess
 
 Overview
 --------

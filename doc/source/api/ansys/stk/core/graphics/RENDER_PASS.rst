@@ -1,12 +1,12 @@
 RENDER_PASS
 ===========
 
-.. py:class:: RENDER_PASS
+.. py:class:: ansys.stk.core.graphics.RENDER_PASS
 
    IntFlag
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RENDER_PASS
 
 Overview
 --------

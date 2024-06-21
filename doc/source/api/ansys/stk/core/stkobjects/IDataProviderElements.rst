@@ -1,13 +1,13 @@
 IDataProviderElements
 =====================
 
-.. py:class:: IDataProviderElements
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderElements
 
    object
    
    Represents a collection of elements in the data provider (for instance ``x``, ``y``, ``z``).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderElements
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElements.item`
               - Return the specific item provided an Index.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElements.get_item_by_index`
               - Return the specific item provided an Index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElements.get_item_by_name`
               - Return the specific item provided a Name.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElements.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElements._NewEnum`
 
 
 Import detail

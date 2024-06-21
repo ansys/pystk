@@ -1,12 +1,12 @@
 VEHICLE_SGP4_AUTO_UPDATE_SOURCE
 ===============================
 
-.. py:class:: VEHICLE_SGP4_AUTO_UPDATE_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SGP4_AUTO_UPDATE_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SGP4_AUTO_UPDATE_SOURCE
 
 Overview
 --------

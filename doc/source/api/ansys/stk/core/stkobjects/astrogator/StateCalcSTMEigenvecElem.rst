@@ -1,13 +1,13 @@
 StateCalcSTMEigenvecElem
 ========================
 
-.. py:class:: StateCalcSTMEigenvecElem
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSTMEigenvecElem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem`
 
    Cartesian STM Eigenvector Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcSTMEigenvecElem
 
 Overview
 --------

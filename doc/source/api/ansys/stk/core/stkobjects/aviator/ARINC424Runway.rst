@@ -1,13 +1,13 @@
 ARINC424Runway
 ==============
 
-.. py:class:: ARINC424Runway
+.. py:class:: ansys.stk.core.stkobjects.aviator.ARINC424Runway
 
-   Bases: py:obj:`~IARINC424Runway`, py:obj:`~IARINC424Item`, py:obj:`~ICatalogRunway`, py:obj:`~ICatalogWaypoint`, py:obj:`~ICatalogItem`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IARINC424Runway`, py:obj:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogRunway`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an ARINC424 Runway.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ARINC424Runway
 
 Overview
 --------

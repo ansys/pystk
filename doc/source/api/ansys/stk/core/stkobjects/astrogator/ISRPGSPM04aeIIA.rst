@@ -1,13 +1,13 @@
 ISRPGSPM04aeIIA
 ===============
 
-.. py:class:: ISRPGSPM04aeIIA
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA
 
    object
    
    Properties for the Bar-Sever GPS Solar Pressure Model 04ae for block IIA.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ISRPGSPM04aeIIA
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~shadow_model`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~eclipsing_bodies`
-            * - :py:meth:`~include_boundary_mitigation`
-            * - :py:meth:`~use_sun_central_body_file_values`
-            * - :py:meth:`~solar_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA.shadow_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA.eclipsing_bodies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA.include_boundary_mitigation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA.use_sun_central_body_file_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA.solar_radius`
 
 
 Import detail
@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.ISRPGSPM04aeIIA.eclipsing_bodies
-    :type: IAgVACentralBodyCollection
+    :type: ICentralBodyCollection
 
     Other eclipsing bodies.
 

@@ -1,12 +1,12 @@
 STM_PERT_VARIABLES
 ==================
 
-.. py:class:: STM_PERT_VARIABLES
+.. py:class:: ansys.stk.core.stkobjects.astrogator.STM_PERT_VARIABLES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: STM_PERT_VARIABLES
 
 Overview
 --------

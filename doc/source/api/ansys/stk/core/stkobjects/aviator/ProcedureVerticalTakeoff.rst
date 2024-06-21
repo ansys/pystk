@@ -1,13 +1,13 @@
 ProcedureVerticalTakeoff
 ========================
 
-.. py:class:: ProcedureVerticalTakeoff
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff
 
-   Bases: py:obj:`~IProcedureVerticalTakeoff`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a vertical takeoff procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureVerticalTakeoff
 
 Overview
 --------

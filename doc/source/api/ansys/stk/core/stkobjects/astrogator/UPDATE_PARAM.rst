@@ -1,12 +1,12 @@
 UPDATE_PARAM
 ============
 
-.. py:class:: UPDATE_PARAM
+.. py:class:: ansys.stk.core.stkobjects.astrogator.UPDATE_PARAM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: UPDATE_PARAM
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVectorGeometryToolPointCBFixedOffset
 =====================================
 
-.. py:class:: IVectorGeometryToolPointCBFixedOffset
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset
 
    object
    
    Point specified by fixed components with respect to central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointCBFixedOffset
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~reference_shape`
-            * - :py:meth:`~position`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.reference_shape`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.position`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.position
-    :type: IAgPosition
+    :type: IPosition
 
     A position of the point fixed on the central body.
 

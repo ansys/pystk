@@ -1,12 +1,12 @@
 FLY_AOA_LEFT_RIGHT
 ==================
 
-.. py:class:: FLY_AOA_LEFT_RIGHT
+.. py:class:: ansys.stk.core.stkobjects.aviator.FLY_AOA_LEFT_RIGHT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: FLY_AOA_LEFT_RIGHT
 
 Overview
 --------

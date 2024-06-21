@@ -1,13 +1,13 @@
 IVehicleWaypointAltitudeReferenceTerrain
 ========================================
 
-.. py:class:: IVehicleWaypointAltitudeReferenceTerrain
+.. py:class:: ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReferenceTerrain
 
    IVehicleWaypointAltitudeReference
    
    Interface for terrain altitude reference.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleWaypointAltitudeReferenceTerrain
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~granularity`
-            * - :py:meth:`~interp_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReferenceTerrain.granularity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReferenceTerrain.interp_method`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IAreaTargetGraphics
 ===================
 
-.. py:class:: IAreaTargetGraphics
+.. py:class:: ansys.stk.core.stkobjects.IAreaTargetGraphics
 
    object
    
    AgATGraphics used to access the 2D Graphics attributes of an AreaTarget interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAreaTargetGraphics
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit`
-            * - :py:meth:`~color`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~centroid_visible`
-            * - :py:meth:`~label_visible`
-            * - :py:meth:`~use_inst_name_label`
-            * - :py:meth:`~boundary_pts_visible`
-            * - :py:meth:`~boundary_style`
-            * - :py:meth:`~boundary_width`
-            * - :py:meth:`~boundary_fill`
-            * - :py:meth:`~boundary_visible`
-            * - :py:meth:`~bounding_rect_visible`
-            * - :py:meth:`~label_name`
-            * - :py:meth:`~label_notes`
-            * - :py:meth:`~boundary_color`
-            * - :py:meth:`~label_color`
-            * - :py:meth:`~centroid_color`
-            * - :py:meth:`~boundary_fill_percent_translucency`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.inherit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.centroid_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_pts_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_fill`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.bounding_rect_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.label_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.label_notes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.label_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.centroid_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_fill_percent_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.is_object_graphics_visible`
 
 
 Import detail
@@ -132,7 +132,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.IAreaTargetGraphics.label_notes
-    :type: IAgLabelNoteCollection
+    :type: ILabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 

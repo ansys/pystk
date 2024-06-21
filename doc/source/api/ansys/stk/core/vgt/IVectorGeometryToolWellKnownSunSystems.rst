@@ -1,13 +1,13 @@
 IVectorGeometryToolWellKnownSunSystems
 ======================================
 
-.. py:class:: IVectorGeometryToolWellKnownSunSystems
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems
 
    object
    
    The Sun's well-known coordinate reference systems.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolWellKnownSunSystems
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fixed`
-            * - :py:meth:`~icrf`
-            * - :py:meth:`~inertial`
-            * - :py:meth:`~j2000`
-            * - :py:meth:`~barycenter`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.fixed`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.icrf`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.inertial`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.j2000`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.barycenter`
 
 
 Import detail
@@ -40,31 +40,31 @@ Property detail
 
 .. py:property:: fixed
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.fixed
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     The Sun's Fixed coordinate system.
 
 .. py:property:: icrf
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.icrf
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     The Sun's International Celestial Reference Frame (ICRF).
 
 .. py:property:: inertial
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.inertial
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     The Sun's Inertial coordinate system (as defined in STK).
 
 .. py:property:: j2000
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.j2000
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     The Sun's J2000 coordinate system.
 
 .. py:property:: barycenter
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunSystems.barycenter
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     The Inertial system at the Sun's barycenter.
 

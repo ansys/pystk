@@ -1,12 +1,12 @@
 BINARY_LOGIC_OPERATION
 ======================
 
-.. py:class:: BINARY_LOGIC_OPERATION
+.. py:class:: ansys.stk.core.graphics.BINARY_LOGIC_OPERATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: BINARY_LOGIC_OPERATION
 
 Overview
 --------

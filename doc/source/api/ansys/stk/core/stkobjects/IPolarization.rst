@@ -1,13 +1,13 @@
 IPolarization
 =============
 
-.. py:class:: IPolarization
+.. py:class:: ansys.stk.core.stkobjects.IPolarization
 
    object
    
    Provide the base interface for the a polarization object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPolarization
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarization.type`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VehicleGraphics2DGroundEllipsesElement
 ======================================
 
-.. py:class:: VehicleGraphics2DGroundEllipsesElement
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement
 
-   Bases: py:obj:`~IVehicleGraphics2DGroundEllipsesElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement`
 
    Ground ellipse 2D graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DGroundEllipsesElement
 
 Overview
 --------

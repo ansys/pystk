@@ -1,13 +1,13 @@
 IVehicleGraphics3DTrajectoryTrackData
 =====================================
 
-.. py:class:: IVehicleGraphics3DTrajectoryTrackData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTrackData
 
    object
    
    Interface for 3D leading/trailing track data for launch vehicles and missiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DTrajectoryTrackData
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit_from_2d`
-            * - :py:meth:`~pass_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTrackData.inherit_from_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTrackData.pass_data`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTrackData.pass_data
-    :type: IAgVeVOTrajectoryPassData
+    :type: IVehicleGraphics3DTrajectoryPassData
 
     Get the 3D leading/trailing track data.
 

@@ -1,13 +1,13 @@
 ICommSystemAccessSamplingMethodAdaptive
 =======================================
 
-.. py:class:: ICommSystemAccessSamplingMethodAdaptive
+.. py:class:: ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodAdaptive
 
    object
    
    Provide access to the properties for a adaptive sampling method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystemAccessSamplingMethodAdaptive
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_time_step`
-            * - :py:meth:`~min_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodAdaptive.max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodAdaptive.min_time_step`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITerrainNormData
 ================
 
-.. py:class:: ITerrainNormData
+.. py:class:: ansys.stk.core.stkobjects.ITerrainNormData
 
    object
    
    Base Interface IAgTerrainNormData. IAgTerrainNormSlopeAzimuth derives from this interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITerrainNormData
 
 Overview
 --------

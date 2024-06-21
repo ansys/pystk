@@ -1,13 +1,13 @@
 LinkMargin
 ==========
 
-.. py:class:: LinkMargin
+.. py:class:: ansys.stk.core.stkobjects.LinkMargin
 
-   Bases: py:obj:`~ILinkMargin`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILinkMargin`
 
    Class defining a link margin computation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LinkMargin
 
 Overview
 --------

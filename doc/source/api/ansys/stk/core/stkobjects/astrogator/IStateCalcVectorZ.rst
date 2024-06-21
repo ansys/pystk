@@ -1,13 +1,13 @@
 IStateCalcVectorZ
 =================
 
-.. py:class:: IStateCalcVectorZ
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcVectorZ
 
    object
    
    Properties for a Vector Z calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcVectorZ
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_axes_name`
-            * - :py:meth:`~vector_name`
-            * - :py:meth:`~unit_dimension`
-            * - :py:meth:`~normalize`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorZ.coord_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorZ.vector_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorZ.unit_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorZ.normalize`
 
 
 Import detail

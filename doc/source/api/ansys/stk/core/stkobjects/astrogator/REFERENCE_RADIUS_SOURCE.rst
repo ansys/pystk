@@ -1,12 +1,12 @@
 REFERENCE_RADIUS_SOURCE
 =======================
 
-.. py:class:: REFERENCE_RADIUS_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.REFERENCE_RADIUS_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: REFERENCE_RADIUS_SOURCE
 
 Overview
 --------

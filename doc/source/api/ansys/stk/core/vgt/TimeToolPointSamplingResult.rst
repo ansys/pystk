@@ -1,13 +1,13 @@
 TimeToolPointSamplingResult
 ===========================
 
-.. py:class:: TimeToolPointSamplingResult
+.. py:class:: ansys.stk.core.vgt.TimeToolPointSamplingResult
 
-   Bases: py:obj:`~ITimeToolPointSamplingResult`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolPointSamplingResult`
 
    Contains tabulated positions and velocities of a point created by Sample method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolPointSamplingResult
 
 Overview
 --------

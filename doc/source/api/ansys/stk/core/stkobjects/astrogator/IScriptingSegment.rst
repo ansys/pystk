@@ -1,13 +1,13 @@
 IScriptingSegment
 =================
 
-.. py:class:: IScriptingSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IScriptingSegment
 
    object
    
    Object properties for scripting options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IScriptingSegment
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~component_name`
-            * - :py:meth:`~attribute`
-            * - :py:meth:`~unit`
-            * - :py:meth:`~available_attribute_values`
-            * - :py:meth:`~read_only_property`
-            * - :py:meth:`~object_name`
-            * - :py:meth:`~available_object_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.component_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.attribute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.available_attribute_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.read_only_property`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.available_object_names`
 
 
 Import detail

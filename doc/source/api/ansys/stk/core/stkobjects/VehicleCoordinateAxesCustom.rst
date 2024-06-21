@@ -1,13 +1,13 @@
 VehicleCoordinateAxesCustom
 ===========================
 
-.. py:class:: VehicleCoordinateAxesCustom
+.. py:class:: ansys.stk.core.stkobjects.VehicleCoordinateAxesCustom
 
-   Bases: py:obj:`~IVehicleCoordinateAxesCustom`, py:obj:`~IVehicleCoordinateAxes`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxesCustom`, py:obj:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxes`
 
    Custom.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleCoordinateAxesCustom
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehiclePropagatorAviator
 ========================
 
-.. py:class:: VehiclePropagatorAviator
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorAviator
 
-   Bases: py:obj:`~IVehiclePropagatorAviator`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorAviator`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the Mission Modler propagator for an Aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorAviator
 
 Overview
 --------

@@ -1,13 +1,13 @@
 StateCalcLonDriftRate
 =====================
 
-.. py:class:: StateCalcLonDriftRate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcLonDriftRate
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcLonDriftRate`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonDriftRate`
 
    LongDriftRate Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcLonDriftRate
 
 Overview
 --------

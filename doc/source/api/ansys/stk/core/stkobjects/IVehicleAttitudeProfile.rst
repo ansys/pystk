@@ -1,13 +1,13 @@
 IVehicleAttitudeProfile
 =======================
 
-.. py:class:: IVehicleAttitudeProfile
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeProfile
 
    object
    
    The base interface that all vehicle attitude profiles are derived from.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeProfile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile.type`
 
 
 Import detail

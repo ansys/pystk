@@ -1,13 +1,13 @@
 OnePointAccessConstraintCollection
 ==================================
 
-.. py:class:: OnePointAccessConstraintCollection
+.. py:class:: ansys.stk.core.stkobjects.OnePointAccessConstraintCollection
 
-   Bases: py:obj:`~IOnePointAccessConstraintCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IOnePointAccessConstraintCollection`
 
    Represents the access constraints for the one point access computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: OnePointAccessConstraintCollection
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAnalysisWorkbenchRefTo
 =======================
 
-.. py:class:: IAnalysisWorkbenchRefTo
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchRefTo
 
    object
    
    A base interface for all VGT component references.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchRefTo
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~path`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo.path`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITimeToolFindTimesResult
 ========================
 
-.. py:class:: ITimeToolFindTimesResult
+.. py:class:: ansys.stk.core.vgt.ITimeToolFindTimesResult
 
    object
    
    Return a collection of intervals and an array of times.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolFindTimesResult
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~intervals`
-            * - :py:meth:`~start`
-            * - :py:meth:`~stop`
-            * - :py:meth:`~times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.start`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.stop`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.times`
 
 
 Import detail
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.ITimeToolFindTimesResult.intervals
-    :type: IAgCrdnIntervalCollection
+    :type: ITimeToolIntervalCollection
 
     A collection of found intervals.
 

@@ -1,13 +1,13 @@
 IVehicleSPICESegment
 ====================
 
-.. py:class:: IVehicleSPICESegment
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSPICESegment
 
    object
    
    Interface for SPICE propagator segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSPICESegment
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~segment_name`
-            * - :py:meth:`~segment_type`
-            * - :py:meth:`~coord_axes`
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.segment_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.coord_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.start_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.stop_time`
 
 
 Import detail

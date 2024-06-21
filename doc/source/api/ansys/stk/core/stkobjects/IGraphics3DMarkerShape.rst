@@ -1,13 +1,13 @@
 IGraphics3DMarkerShape
 ======================
 
-.. py:class:: IGraphics3DMarkerShape
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DMarkerShape
 
    object
    
    AgVOMarkerShape used to access the 3D markerShape attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DMarkerShape
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerShape.style`
 
 
 Import detail

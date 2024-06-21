@@ -1,13 +1,13 @@
 ManeuverOptimalFinitePathBoundaryConditions
 ===========================================
 
-.. py:class:: ManeuverOptimalFinitePathBoundaryConditions
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinitePathBoundaryConditions
 
-   Bases: py:obj:`~IManeuverOptimalFinitePathBoundaryConditions`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions`
 
    Properties of path boundary conditions for optimal finite maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ManeuverOptimalFinitePathBoundaryConditions
 
 Overview
 --------

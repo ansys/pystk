@@ -1,13 +1,13 @@
 StateCalcEccentricity
 =====================
 
-.. py:class:: StateCalcEccentricity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcEccentricity
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcEccentricity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricity`
 
    Eccentricity Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcEccentricity
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ComponentAttrLinkEmbedControl
 =============================
 
-.. py:class:: ComponentAttrLinkEmbedControl
+.. py:class:: ansys.stk.core.stkobjects.ComponentAttrLinkEmbedControl
 
-   Bases: py:obj:`~IComponentLinkEmbedControl`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl`
 
    Attribute based component link/embed control.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ComponentAttrLinkEmbedControl
 
 Overview
 --------

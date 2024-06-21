@@ -1,13 +1,13 @@
 IRotorcraftModel
 ================
 
-.. py:class:: IRotorcraftModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IRotorcraftModel
 
    object
    
    Interface used to access the rotorcraft options in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IRotorcraftModel
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_max_safe_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.set_max_safe_airspeed`
               - Set the maximum safe airspeed and airspeed type.
-            * - :py:meth:`~set_max_safe_translation_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.set_max_safe_translation_speed`
               - Set the maximum safe translation airspeed and airspeed type.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -33,30 +33,30 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_altitude`
-            * - :py:meth:`~default_cruise_altitude`
-            * - :py:meth:`~descent_rate_factor`
-            * - :py:meth:`~max_climb_angle`
-            * - :py:meth:`~climb_at_cruise_airspeed`
-            * - :py:meth:`~max_descent_angle`
-            * - :py:meth:`~min_descent_rate`
-            * - :py:meth:`~max_load_factor`
-            * - :py:meth:`~roll_rate`
-            * - :py:meth:`~pitch_rate`
-            * - :py:meth:`~yaw_rate`
-            * - :py:meth:`~yaw_rate_dot`
-            * - :py:meth:`~max_transition_pitch_angle`
-            * - :py:meth:`~tf_max_flight_path_angle`
-            * - :py:meth:`~tf_terrain_window`
-            * - :py:meth:`~compute_delta_altitude`
-            * - :py:meth:`~max_safe_airspeed`
-            * - :py:meth:`~max_safe_airspeed_type`
-            * - :py:meth:`~max_safe_translation_speed`
-            * - :py:meth:`~max_safe_translation_speed_type`
-            * - :py:meth:`~ignore_fpa_for_climb_descent_transitions`
-            * - :py:meth:`~default_configuration`
-            * - :py:meth:`~aerodynamics`
-            * - :py:meth:`~propulsion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.descent_rate_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_climb_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.climb_at_cruise_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_descent_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.min_descent_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.roll_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.pitch_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.yaw_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.yaw_rate_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_transition_pitch_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.tf_max_flight_path_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.tf_terrain_window`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.compute_delta_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_translation_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_translation_speed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.ignore_fpa_for_climb_descent_transitions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.default_configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.aerodynamics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.propulsion`
 
 
 Import detail
@@ -198,19 +198,19 @@ Property detail
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.default_configuration
-    :type: IAgAvtrConfiguration
+    :type: IConfiguration
 
     Get the aircraft's default configuration as saved in the catalog.
 
 .. py:property:: aerodynamics
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.aerodynamics
-    :type: IAgAvtrRotorcraftAero
+    :type: IRotorcraftAero
 
     Get the aerodynamics interface.
 
 .. py:property:: propulsion
     :canonical: ansys.stk.core.stkobjects.aviator.IRotorcraftModel.propulsion
-    :type: IAgAvtrRotorcraftProp
+    :type: IRotorcraftProp
 
     Get the propulsion interface.
 

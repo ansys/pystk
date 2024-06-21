@@ -1,13 +1,13 @@
 IProjection
 ===========
 
-.. py:class:: IProjection
+.. py:class:: ansys.stk.core.graphics.IProjection
 
    object
    
    A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IProjection
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~position`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~field_of_view_horizontal`
-            * - :py:meth:`~field_of_view_vertical`
-            * - :py:meth:`~near_plane`
-            * - :py:meth:`~far_plane`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.position`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.orientation`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.field_of_view_horizontal`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.field_of_view_vertical`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.near_plane`
+            * - :py:attr:`~ansys.stk.core.graphics.IProjection.far_plane`
 
 
 Import detail
@@ -47,7 +47,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.graphics.IProjection.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Gets or sets the unit quaternion defining the orientation of the projection in the central body's fixed reference frame.
 

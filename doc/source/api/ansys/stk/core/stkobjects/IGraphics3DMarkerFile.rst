@@ -1,13 +1,13 @@
 IGraphics3DMarkerFile
 =====================
 
-.. py:class:: IGraphics3DMarkerFile
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DMarkerFile
 
    object
    
    AgVOMarkerFile used to access the 3D MarkerFile attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DMarkerFile
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~is_transparent`
-            * - :py:meth:`~use_soft_transparency`
-            * - :py:meth:`~file_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile.is_transparent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile.use_soft_transparency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile.file_path`
 
 
 Import detail

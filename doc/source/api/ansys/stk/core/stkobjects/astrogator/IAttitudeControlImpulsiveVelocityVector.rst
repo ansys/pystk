@@ -1,13 +1,13 @@
 IAttitudeControlImpulsiveVelocityVector
 =======================================
 
-.. py:class:: IAttitudeControlImpulsiveVelocityVector
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveVelocityVector
 
    IAttitudeControlImpulsive
    
    Properties for the Velocity Vector attitude control for an Impulsive Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlImpulsiveVelocityVector
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~delta_v_magnitude`
-            * - :py:meth:`~body_constraint_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveVelocityVector.delta_v_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveVelocityVector.body_constraint_vector`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveVelocityVector.body_constraint_vector
-    :type: IAgDirection
+    :type: IDirection
 
     Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 

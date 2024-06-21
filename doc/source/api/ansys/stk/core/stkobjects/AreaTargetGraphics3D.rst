@@ -1,13 +1,13 @@
 AreaTargetGraphics3D
 ====================
 
-.. py:class:: AreaTargetGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.AreaTargetGraphics3D
 
-   Bases: py:obj:`~IAreaTargetGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D`
 
    Class to define the 3D attributes of an AreaTarget.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AreaTargetGraphics3D
 
 Overview
 --------

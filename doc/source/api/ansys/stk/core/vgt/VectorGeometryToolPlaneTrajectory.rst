@@ -1,13 +1,13 @@
 VectorGeometryToolPlaneTrajectory
 =================================
 
-.. py:class:: VectorGeometryToolPlaneTrajectory
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneTrajectory
 
-   Bases: py:obj:`~IVectorGeometryToolPlaneTrajectory`, py:obj:`~IVectorGeometryToolPlane`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPlaneTrajectory
 
 Overview
 --------

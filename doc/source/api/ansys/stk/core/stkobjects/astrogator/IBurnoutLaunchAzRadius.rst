@@ -1,13 +1,13 @@
 IBurnoutLaunchAzRadius
 ======================
 
-.. py:class:: IBurnoutLaunchAzRadius
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzRadius
 
    IBurnout
    
    Properties for a launch azimuth / radius burnout point definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBurnoutLaunchAzRadius
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~azimuth`
-            * - :py:meth:`~down_range_dist`
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzRadius.azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzRadius.down_range_dist`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzRadius.radius`
 
 
 Import detail

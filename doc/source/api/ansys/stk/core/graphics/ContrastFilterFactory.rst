@@ -1,13 +1,13 @@
 ContrastFilterFactory
 =====================
 
-.. py:class:: ContrastFilterFactory
+.. py:class:: ansys.stk.core.graphics.ContrastFilterFactory
 
-   Bases: py:obj:`~IContrastFilterFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IContrastFilterFactory`
 
    Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ContrastFilterFactory
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleInterpolation
 ====================
 
-.. py:class:: VehicleInterpolation
+.. py:class:: ansys.stk.core.stkobjects.VehicleInterpolation
 
-   Bases: py:obj:`~IVehicleInterpolation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleInterpolation`
 
    Class defining interpolation for the HPOP integrator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleInterpolation
 
 Overview
 --------

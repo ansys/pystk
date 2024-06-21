@@ -1,13 +1,13 @@
 MissionControlSequenceSegmentCollection
 =======================================
 
-.. py:class:: MissionControlSequenceSegmentCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceSegmentCollection
 
-   Bases: py:obj:`~IMissionControlSequenceSegmentCollection`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Mission Control Sequence.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequenceSegmentCollection
 
 Overview
 --------

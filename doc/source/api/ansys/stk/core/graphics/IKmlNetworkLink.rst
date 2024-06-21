@@ -1,13 +1,13 @@
 IKmlNetworkLink
 ===============
 
-.. py:class:: IKmlNetworkLink
+.. py:class:: ansys.stk.core.graphics.IKmlNetworkLink
 
    object
    
    A KML network link.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IKmlNetworkLink
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~refresh`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.refresh`
               - Refresh the network link.
 
     .. tab-item:: Properties
@@ -29,17 +29,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~uri`
-            * - :py:meth:`~refresh_mode`
-            * - :py:meth:`~refresh_interval`
-            * - :py:meth:`~view_refresh_mode`
-            * - :py:meth:`~view_refresh_time`
-            * - :py:meth:`~view_bound_scale`
-            * - :py:meth:`~minimum_refresh_period`
-            * - :py:meth:`~cookie`
-            * - :py:meth:`~message`
-            * - :py:meth:`~link_snippet`
-            * - :py:meth:`~expires`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.uri`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.refresh_mode`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.refresh_interval`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.view_refresh_mode`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.view_refresh_time`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.view_bound_scale`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.minimum_refresh_period`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.cookie`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.message`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.link_snippet`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.expires`
 
 
 Import detail

@@ -1,13 +1,13 @@
 CoverageAreaTargetsCollection
 =============================
 
-.. py:class:: CoverageAreaTargetsCollection
+.. py:class:: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection
 
-   Bases: py:obj:`~ICoverageAreaTargetsCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection`
 
    Collection of Area Targets.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageAreaTargetsCollection
 
 Overview
 --------

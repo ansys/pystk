@@ -1,12 +1,12 @@
 SUN_POSITION
 ============
 
-.. py:class:: SUN_POSITION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SUN_POSITION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SUN_POSITION
 
 Overview
 --------

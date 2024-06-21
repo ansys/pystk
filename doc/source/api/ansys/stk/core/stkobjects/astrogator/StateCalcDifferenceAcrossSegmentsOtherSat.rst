@@ -1,13 +1,13 @@
 StateCalcDifferenceAcrossSegmentsOtherSat
 =========================================
 
-.. py:class:: StateCalcDifferenceAcrossSegmentsOtherSat
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceAcrossSegmentsOtherSat
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDifferenceAcrossSegmentsOtherSat`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat`
 
    DifferenceAcrossSegmentsOtherSat Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDifferenceAcrossSegmentsOtherSat
 
 Overview
 --------

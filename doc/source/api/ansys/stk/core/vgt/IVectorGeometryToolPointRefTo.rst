@@ -1,13 +1,13 @@
 IVectorGeometryToolPointRefTo
 =============================
 
-.. py:class:: IVectorGeometryToolPointRefTo
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointRefTo
 
    object
    
    Represents a reference to a VGT point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointRefTo
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_path`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointRefTo.set_path`
               - Set a new point.
-            * - :py:meth:`~set_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointRefTo.set_point`
               - Set a new point.
-            * - :py:meth:`~get_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointRefTo.get_point`
               - Return the actual point object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
-            * - :py:meth:`~has_cyclic_dependency`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointRefTo.has_cyclic_dependency`
               - Test whether the input component and the target component form a cyclic dependency.
 
 

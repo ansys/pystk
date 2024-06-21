@@ -1,12 +1,12 @@
 BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
 ============================================
 
-.. py:class:: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
+.. py:class:: ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcCustomFunction
 ========================
 
-.. py:class:: IStateCalcCustomFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcCustomFunction
 
    object
    
    Properties for a Custom Function calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcCustomFunction
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reset_function_name`
-            * - :py:meth:`~eval_function_name`
-            * - :py:meth:`~unit_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCustomFunction.reset_function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCustomFunction.eval_function_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCustomFunction.unit_dimension`
 
 
 Import detail

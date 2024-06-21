@@ -1,13 +1,13 @@
 TimeToolEventIntervalBetweenTimeInstants
 ========================================
 
-.. py:class:: TimeToolEventIntervalBetweenTimeInstants
+.. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalBetweenTimeInstants
 
-   Bases: py:obj:`~ITimeToolEventIntervalBetweenTimeInstants`, py:obj:`~ITimeToolEventInterval`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalBetweenTimeInstants`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventInterval`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventIntervalBetweenTimeInstants
 
 Overview
 --------

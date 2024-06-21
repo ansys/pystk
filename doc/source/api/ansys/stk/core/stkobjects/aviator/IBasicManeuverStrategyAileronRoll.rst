@@ -1,13 +1,13 @@
 IBasicManeuverStrategyAileronRoll
 =================================
 
-.. py:class:: IBasicManeuverStrategyAileronRoll
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll
 
    object
    
    Interface used to access options for a Aileron Roll Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyAileronRoll
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~flight_path_option`
-            * - :py:meth:`~active_mode`
-            * - :py:meth:`~active_turn_direction`
-            * - :py:meth:`~active_angle`
-            * - :py:meth:`~roll_orientation`
-            * - :py:meth:`~roll_rate_mode`
-            * - :py:meth:`~override_roll_rate`
-            * - :py:meth:`~airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.flight_path_option`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.active_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.active_turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.active_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.roll_orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.roll_rate_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.override_roll_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.airspeed_options`
 
 
 Import detail
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

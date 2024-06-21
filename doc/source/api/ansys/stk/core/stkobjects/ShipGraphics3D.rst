@@ -1,13 +1,13 @@
 ShipGraphics3D
 ==============
 
-.. py:class:: ShipGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.ShipGraphics3D
 
-   Bases: py:obj:`~IShipGraphics3D`, py:obj:`~IGreatArcGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IShipGraphics3D`, py:obj:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D`
 
    3D Graphics attributes for a ship.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ShipGraphics3D
 
 Overview
 --------

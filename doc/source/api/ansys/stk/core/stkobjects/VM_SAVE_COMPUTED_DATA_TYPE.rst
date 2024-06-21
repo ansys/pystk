@@ -1,12 +1,12 @@
 VM_SAVE_COMPUTED_DATA_TYPE
 ==========================
 
-.. py:class:: VM_SAVE_COMPUTED_DATA_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VM_SAVE_COMPUTED_DATA_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_SAVE_COMPUTED_DATA_TYPE
 
 Overview
 --------

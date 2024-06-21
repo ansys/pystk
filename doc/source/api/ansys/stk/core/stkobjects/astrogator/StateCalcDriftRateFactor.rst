@@ -1,13 +1,13 @@
 StateCalcDriftRateFactor
 ========================
 
-.. py:class:: StateCalcDriftRateFactor
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDriftRateFactor
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcDriftRateFactor`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDriftRateFactor`
 
    DriftRateFactor Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDriftRateFactor
 
 Overview
 --------

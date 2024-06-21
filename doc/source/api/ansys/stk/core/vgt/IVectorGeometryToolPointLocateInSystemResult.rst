@@ -1,13 +1,13 @@
 IVectorGeometryToolPointLocateInSystemResult
 ============================================
 
-.. py:class:: IVectorGeometryToolPointLocateInSystemResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult
 
    object
    
    Contains the results returned with IAgCrdnPoint.LocateInSystem method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointLocateInSystemResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~position`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult.position`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult.position
-    :type: IAgCartesian3Vector
+    :type: ICartesian3Vector
 
     The point position in the specified coordinate system.
 

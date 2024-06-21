@@ -1,13 +1,13 @@
 IConnect
 ========
 
-.. py:class:: IConnect
+.. py:class:: ansys.stk.core.stkobjects.aviator.IConnect
 
    object
    
    Interface used to send connect commands to Aviator objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IConnect
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~execute_command`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConnect.execute_command`
               - Send a connect command to an Aviator object.
 
 

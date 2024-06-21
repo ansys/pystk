@@ -1,13 +1,13 @@
 IAircraftAero
 =============
 
-.. py:class:: IAircraftAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftAero
 
    object
    
    Interface used to access the Aerodynamics options for the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftAero
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~aero_strategy`
-            * - :py:meth:`~mode_as_simple`
-            * - :py:meth:`~mode_as_basic_fixed_wing`
-            * - :py:meth:`~mode_as_external`
-            * - :py:meth:`~mode_as_advanced_missile`
-            * - :py:meth:`~lift_factor`
-            * - :py:meth:`~drag_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.aero_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_simple`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_basic_fixed_wing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_external`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_advanced_missile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.lift_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.drag_factor`
 
 
 Import detail
@@ -48,25 +48,25 @@ Property detail
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_simple
-    :type: IAgAvtrAircraftSimpleAero
+    :type: IAircraftSimpleAero
 
     Get the interface for a simple aerodynamics strategy.
 
 .. py:property:: mode_as_basic_fixed_wing
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_basic_fixed_wing
-    :type: IAgAvtrAircraftBasicFixedWingAero
+    :type: IAircraftBasicFixedWingAero
 
     Get the interface for a basic fixed wing aerodynamics strategy.
 
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_external
-    :type: IAgAvtrAircraftExternalAero
+    :type: IAircraftExternalAero
 
     Get the interface for an external file aerodynamics strategy.
 
 .. py:property:: mode_as_advanced_missile
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_advanced_missile
-    :type: IAgAvtrMissileAdvancedAero
+    :type: IMissileAdvancedAero
 
     Get the interface for an advanced missile aerodynamics strategy.
 

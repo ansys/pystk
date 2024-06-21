@@ -1,13 +1,13 @@
 IFigureOfMeritUncertainties
 ===========================
 
-.. py:class:: IFigureOfMeritUncertainties
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritUncertainties
 
    object
    
    Receiver range uncertainty (for Navigation Accuracy FOM).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritUncertainties
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~receiver_range`
-            * - :py:meth:`~asset_list`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritUncertainties.receiver_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritUncertainties.asset_list`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: asset_list
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritUncertainties.asset_list
-    :type: IAgFmAssetListCollection
+    :type: IFigureOfMeritAssetListCollection
 
     Get list of assets for specifying range uncertainty.
 

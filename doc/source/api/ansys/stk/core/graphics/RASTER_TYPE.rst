@@ -1,12 +1,12 @@
 RASTER_TYPE
 ===========
 
-.. py:class:: RASTER_TYPE
+.. py:class:: ansys.stk.core.graphics.RASTER_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RASTER_TYPE
 
 Overview
 --------

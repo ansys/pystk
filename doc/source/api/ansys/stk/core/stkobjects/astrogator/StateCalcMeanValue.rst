@@ -1,13 +1,13 @@
 StateCalcMeanValue
 ==================
 
-.. py:class:: StateCalcMeanValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMeanValue
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcMeanValue`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanValue`
 
    MeanValue Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcMeanValue
 
 Overview
 --------

@@ -1,13 +1,13 @@
 DataProviderResultStatistics
 ============================
 
-.. py:class:: DataProviderResultStatistics
+.. py:class:: ansys.stk.core.stkobjects.DataProviderResultStatistics
 
-   Bases: py:obj:`~IDataProviderResultStatistics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultStatistics`
 
    Class used to compute statistics and time varying extremum on data provider result data sets.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DataProviderResultStatistics
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcDeltaDec
 ==================
 
-.. py:class:: IStateCalcDeltaDec
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaDec
 
    object
    
    Properties for a Delta Declination calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDeltaDec
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_type`
-            * - :py:meth:`~reference_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaDec.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaDec.reference_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaDec.reference_body`
 
 
 Import detail

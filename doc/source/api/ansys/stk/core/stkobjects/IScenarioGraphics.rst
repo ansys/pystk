@@ -1,13 +1,13 @@
 IScenarioGraphics
 =================
 
-.. py:class:: IScenarioGraphics
+.. py:class:: ansys.stk.core.stkobjects.IScenarioGraphics
 
    object
    
    IAgScGraphics Interface for Scenario-level 2D Graphics attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenarioGraphics
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.show_object`
               - Show the object identified by its path in a specified 2D window. Users can specify either a window identifier or a window title or 'all' to show the object in all 2d windows.
-            * - :py:meth:`~show_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.show_objects`
               - Show multiple objects in a specified 2D window. Users can specify either a window identifier or a window title or 'all' to show the objects in all 2d windows.
-            * - :py:meth:`~hide_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.hide_object`
               - Hides the object identified by its path in a specified 2D window. Users can specify either a window identifier or a window title or 'all' to hide the object in all 2d windows.
-            * - :py:meth:`~hide_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.hide_objects`
               - Hides multiple objects in a specified 2D window. Users can specify either a window identifier or a window title or 'all' to hide objects in all 2d windows.
 
     .. tab-item:: Properties
@@ -35,27 +35,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~labels_visible`
-            * - :py:meth:`~sensors_visible`
-            * - :py:meth:`~access_lines_visible`
-            * - :py:meth:`~access_anim_high`
-            * - :py:meth:`~access_stat_high`
-            * - :py:meth:`~gnd_tracks_visible`
-            * - :py:meth:`~gnd_markers_visible`
-            * - :py:meth:`~orbits_visible`
-            * - :py:meth:`~orbit_markers_visible`
-            * - :py:meth:`~elset_num_visible`
-            * - :py:meth:`~centroids_visible`
-            * - :py:meth:`~planet_orbits_visible`
-            * - :py:meth:`~inertial_position_visible`
-            * - :py:meth:`~inertial_position_labels_visible`
-            * - :py:meth:`~sub_planet_points_visible`
-            * - :py:meth:`~sub_planet_labels_visible`
-            * - :py:meth:`~allow_anim_update`
-            * - :py:meth:`~text_outline_style`
-            * - :py:meth:`~text_outline_color`
-            * - :py:meth:`~access_lines_width`
-            * - :py:meth:`~access_line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.sensors_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_lines_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_anim_high`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_stat_high`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.gnd_tracks_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.gnd_markers_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.orbits_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.orbit_markers_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.elset_num_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.centroids_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.planet_orbits_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.inertial_position_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.inertial_position_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.sub_planet_points_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.sub_planet_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.allow_anim_update`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.text_outline_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.text_outline_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_lines_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_line_style`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IVehicleCorrelationListElement
 ==============================
 
-.. py:class:: IVehicleCorrelationListElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleCorrelationListElement
 
    object
    
    Item in Consider Cross Correlation list.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleCorrelationListElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~row`
-            * - :py:meth:`~column`
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement.row`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement.column`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement.value`
 
 
 Import detail

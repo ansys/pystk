@@ -1,13 +1,13 @@
 IDelaunayH
 ==========
 
-.. py:class:: IDelaunayH
+.. py:class:: ansys.stk.core.stkobjects.IDelaunayH
 
    object
    
    Value of Delaunay Variable H, which is the Z component of the orbital angular momentum.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDelaunayH
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~h`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayH.h`
 
 
 Import detail

@@ -1,12 +1,12 @@
 EQUINOCTIAL_SIZE_SHAPE
 ======================
 
-.. py:class:: EQUINOCTIAL_SIZE_SHAPE
+.. py:class:: ansys.stk.core.stkobjects.EQUINOCTIAL_SIZE_SHAPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EQUINOCTIAL_SIZE_SHAPE
 
 Overview
 --------

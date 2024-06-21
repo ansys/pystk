@@ -1,13 +1,13 @@
 ICalculationToolScalarDotProduct
 ================================
 
-.. py:class:: ICalculationToolScalarDotProduct
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarDotProduct
 
    object
    
    Dot product between two vectors.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarDotProduct
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vector_a`
-            * - :py:meth:`~normalize_vector_a`
-            * - :py:meth:`~vector_b`
-            * - :py:meth:`~normalize_vector_b`
-            * - :py:meth:`~dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.vector_a`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.normalize_vector_a`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.vector_b`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.normalize_vector_b`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.dimension`
 
 
 Import detail
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: vector_a
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDotProduct.vector_a
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     First vector.
 
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: vector_b
     :canonical: ansys.stk.core.vgt.ICalculationToolScalarDotProduct.vector_b
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Second vector.
 

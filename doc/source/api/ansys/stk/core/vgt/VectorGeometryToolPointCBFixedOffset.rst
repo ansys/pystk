@@ -1,13 +1,13 @@
 VectorGeometryToolPointCBFixedOffset
 ====================================
 
-.. py:class:: VectorGeometryToolPointCBFixedOffset
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointCBFixedOffset
 
-   Bases: py:obj:`~IVectorGeometryToolPointCBFixedOffset`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolPoint`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
 
    Point specified by fixed components with respect to central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointCBFixedOffset
 
 Overview
 --------

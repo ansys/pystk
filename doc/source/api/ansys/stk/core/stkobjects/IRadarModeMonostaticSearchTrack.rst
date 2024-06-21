@@ -1,13 +1,13 @@
 IRadarModeMonostaticSearchTrack
 ===============================
 
-.. py:class:: IRadarModeMonostaticSearchTrack
+.. py:class:: ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack
 
    object
    
    Provide access to the properties and methods defining a monostatic search/track mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModeMonostaticSearchTrack
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_waveform_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack.set_waveform_type`
               - Set the waveform type.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~waveform`
-            * - :py:meth:`~doppler_clutter_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack.waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack.doppler_clutter_filters`
 
 
 Import detail
@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: waveform
     :canonical: ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack.waveform
-    :type: IAgRadarWaveformSearchTrack
+    :type: IRadarWaveformSearchTrack
 
     Gets the interface for configuring the search/track waveform.
 
 .. py:property:: doppler_clutter_filters
     :canonical: ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack.doppler_clutter_filters
-    :type: IAgRadarDopplerClutterFilters
+    :type: IRadarDopplerClutterFilters
 
     Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 

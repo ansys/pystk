@@ -1,13 +1,13 @@
 IAntennaModelItuS672Circular
 ============================
 
-.. py:class:: IAntennaModelItuS672Circular
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelItuS672Circular
 
    object
    
    Provide access to the properties and methods defining an ITU-R S672-4 circular antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelItuS672Circular
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~efficiency`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~use_mainlobe_model`
-            * - :py:meth:`~override_half_beamwidth`
-            * - :py:meth:`~half_beamwidth`
-            * - :py:meth:`~nearin_sidelobe_level`
-            * - :py:meth:`~farout_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular.use_mainlobe_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular.override_half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular.half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular.nearin_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS672Circular.farout_sidelobe_level`
 
 
 Import detail

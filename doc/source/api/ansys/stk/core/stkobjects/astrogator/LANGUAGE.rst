@@ -1,12 +1,12 @@
 LANGUAGE
 ========
 
-.. py:class:: LANGUAGE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.LANGUAGE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: LANGUAGE
 
 Overview
 --------

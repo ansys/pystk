@@ -1,12 +1,12 @@
 RADAR_MODEL_TYPE
 ================
 
-.. py:class:: RADAR_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.RADAR_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RADAR_MODEL_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IGraphics2DRangeContours
 ========================
 
-.. py:class:: IGraphics2DRangeContours
+.. py:class:: ansys.stk.core.stkobjects.IGraphics2DRangeContours
 
    object
    
    AgGfxRangeContours used to access contours of 2-d object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics2DRangeContours
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~is_fill_visible`
-            * - :py:meth:`~fill_style`
-            * - :py:meth:`~level_attributes`
-            * - :py:meth:`~num_of_decimal_digits`
-            * - :py:meth:`~label_unit`
-            * - :py:meth:`~available_label_units`
-            * - :py:meth:`~fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.is_fill_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.fill_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.level_attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.num_of_decimal_digits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.label_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.available_label_units`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.fill_translucency`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.IGraphics2DRangeContours.level_attributes
-    :type: IAgLevelAttributeCollection
+    :type: ILevelAttributeCollection
 
     The collection of level attributes defining the way in which the range contours are displayed.
 

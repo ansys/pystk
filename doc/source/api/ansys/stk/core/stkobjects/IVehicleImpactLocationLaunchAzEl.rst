@@ -1,13 +1,13 @@
 IVehicleImpactLocationLaunchAzEl
 ================================
 
-.. py:class:: IVehicleImpactLocationLaunchAzEl
+.. py:class:: ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl
 
    object
    
    Launch AzEl interface for missile impact location. All properties on this interface should be set explicitly.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleImpactLocationLaunchAzEl
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~delta_v`
-            * - :py:meth:`~elevation`
-            * - :py:meth:`~azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl.delta_v`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl.elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl.azimuth`
 
 
 Import detail

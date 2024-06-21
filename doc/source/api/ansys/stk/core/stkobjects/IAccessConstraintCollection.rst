@@ -1,13 +1,13 @@
 IAccessConstraintCollection
 ===========================
 
-.. py:class:: IAccessConstraintCollection
+.. py:class:: ansys.stk.core.stkobjects.IAccessConstraintCollection
 
    object
    
    AgAccessConstraintCollection used to access the list of constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessConstraintCollection
 
 Overview
 --------
@@ -20,31 +20,31 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.item`
               - Return an AccessConstraint interface using an index.
-            * - :py:meth:`~add_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.add_constraint`
               - Add a constraint to the Constraint Collection.
-            * - :py:meth:`~remove_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.remove_constraint`
               - Remove a constraint from the collection.
-            * - :py:meth:`~get_active_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.get_active_constraint`
               - Retrieve the active constraint.
-            * - :py:meth:`~is_constraint_active`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.is_constraint_active`
               - Given an AgEAccessConstraints enum, informs the user if the constraint is active.
-            * - :py:meth:`~available_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.available_constraints`
               - Return a rectangular two-dimensional array of available constraints. A row of the array consists of two elements where the first element is a symbolic name of the constraint and the second is a corresponding enumeration value.
-            * - :py:meth:`~is_constraint_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.is_constraint_supported`
               - Is the constraint supported for this object.
-            * - :py:meth:`~is_named_constraint_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.is_named_constraint_supported`
               - Is the named constraint supported for this object.
-            * - :py:meth:`~add_named_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.add_named_constraint`
               - Add a constraint with the given name to the collection.
-            * - :py:meth:`~remove_named_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.remove_named_constraint`
               - Do not use this method, as it is deprecated. Use RemoveNamedConstraintEx instead. Removes a constraint with the given name from the collection.
-            * - :py:meth:`~is_named_constraint_active`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.is_named_constraint_active`
               - Given a constraint name, returns whether the specified constraint is active.
-            * - :py:meth:`~get_active_named_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.get_active_named_constraint`
               - Retrieve an active constraint with the given name.
-            * - :py:meth:`~remove_named_constraint_ex`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.remove_named_constraint_ex`
               - Remove a constraint with the given name from the collection.
 
     .. tab-item:: Properties
@@ -53,11 +53,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~analysis_workbench_constraints`
-            * - :py:meth:`~use_preferred_max_time_step`
-            * - :py:meth:`~preferred_max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.analysis_workbench_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.use_preferred_max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.preferred_max_time_step`
 
 
 Import detail
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: analysis_workbench_constraints
     :canonical: ansys.stk.core.stkobjects.IAccessConstraintCollection.analysis_workbench_constraints
-    :type: IAgAccessCnstrAWBCollection
+    :type: IAccessConstraintAnalysisWorkbenchCollection
 
     Returns a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
 

@@ -1,13 +1,13 @@
 IVectorGeometryToolPlaneFactory
 ===============================
 
-.. py:class:: IVectorGeometryToolPlaneFactory
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneFactory
 
    object
    
    A Factory object to create VGT planes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPlaneFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFactory.create`
               - Create a VGT plane using the specified name, description and type.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFactory.is_type_supported`
               - Return true if the type is supported.
 
 

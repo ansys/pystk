@@ -1,12 +1,12 @@
 EULER_DIRECTION_SEQUENCE
 ========================
 
-.. py:class:: EULER_DIRECTION_SEQUENCE
+.. py:class:: ansys.stk.core.stkutil.EULER_DIRECTION_SEQUENCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: EULER_DIRECTION_SEQUENCE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IBasicManeuverTargetPositionVelNoisyBrgRng
 ==========================================
 
-.. py:class:: IBasicManeuverTargetPositionVelNoisyBrgRng
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng
 
    object
    
    Interface used to access target position and velocity strategy, NoisyBrnRng.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverTargetPositionVelNoisyBrgRng
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~new_random_engine_seed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.new_random_engine_seed`
               - Generate a new random engine seed.
-            * - :py:meth:`~apply_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.apply_position_vel`
               - Apply the current position velocity strategy.
-            * - :py:meth:`~cancel_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.cancel_position_vel`
               - Cancel the current position velocity strategy.
-            * - :py:meth:`~set_base_dyn_state_link_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.set_base_dyn_state_link_name`
               - Set the BaseDynStateLinkName.
 
     .. tab-item:: Properties
@@ -35,10 +35,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~smoothing_constant`
-            * - :py:meth:`~velocity_time_step`
-            * - :py:meth:`~angle_error_std_dev`
-            * - :py:meth:`~range_error_std_dev`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.smoothing_constant`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.velocity_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.angle_error_std_dev`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.range_error_std_dev`
 
 
 Import detail

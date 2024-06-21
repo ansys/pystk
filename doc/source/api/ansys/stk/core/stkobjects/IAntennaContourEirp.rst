@@ -1,13 +1,13 @@
 IAntennaContourEirp
 ===================
 
-.. py:class:: IAntennaContourEirp
+.. py:class:: ansys.stk.core.stkobjects.IAntennaContourEirp
 
    object
    
    IAgAntennaContourEirp Interface for a antenna's eirp contour properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaContourEirp
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.set_resolution`
               - Set the azimuth/elevation ranges and resolution.
-            * - :py:meth:`~set_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.set_num_points`
               - Set the azimuth/elevation ranges and number of points.
 
     .. tab-item:: Properties
@@ -31,15 +31,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~azimuth_start`
-            * - :py:meth:`~azimuth_stop`
-            * - :py:meth:`~azimuth_resolution`
-            * - :py:meth:`~azimuth_num_points`
-            * - :py:meth:`~elevation_start`
-            * - :py:meth:`~elevation_stop`
-            * - :py:meth:`~elevation_resolution`
-            * - :py:meth:`~elevation_num_points`
-            * - :py:meth:`~coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.azimuth_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.azimuth_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.azimuth_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.azimuth_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.elevation_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.elevation_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.elevation_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.elevation_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourEirp.coordinate_system`
 
 
 Import detail

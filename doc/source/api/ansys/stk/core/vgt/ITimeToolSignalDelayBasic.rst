@@ -1,13 +1,13 @@
 ITimeToolSignalDelayBasic
 =========================
 
-.. py:class:: ITimeToolSignalDelayBasic
+.. py:class:: ansys.stk.core.vgt.ITimeToolSignalDelayBasic
 
    object
    
    Signal delay definition determines how long it takes for a signal to propagate from one location to another.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolSignalDelayBasic
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~signal_path_reference_system`
-            * - :py:meth:`~reference_system`
-            * - :py:meth:`~speed_option`
-            * - :py:meth:`~transfer_speed`
-            * - :py:meth:`~time_delay_convergence`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.signal_path_reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.speed_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.transfer_speed`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.time_delay_convergence`
 
 
 Import detail
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.ITimeToolSignalDelayBasic.reference_system
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     Get the custom reference system which is used as a reference for signal path if the signal path reference option is set to Custom.
 

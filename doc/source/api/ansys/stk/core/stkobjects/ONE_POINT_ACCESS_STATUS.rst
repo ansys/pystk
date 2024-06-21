@@ -1,12 +1,12 @@
 ONE_POINT_ACCESS_STATUS
 =======================
 
-.. py:class:: ONE_POINT_ACCESS_STATUS
+.. py:class:: ansys.stk.core.stkobjects.ONE_POINT_ACCESS_STATUS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ONE_POINT_ACCESS_STATUS
 
 Overview
 --------

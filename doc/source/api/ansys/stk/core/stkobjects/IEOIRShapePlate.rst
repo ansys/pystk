@@ -1,13 +1,13 @@
 IEOIRShapePlate
 ===============
 
-.. py:class:: IEOIRShapePlate
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapePlate
 
    IEOIRShapeObject
    
    A plate shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapePlate
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~width`
-            * - :py:meth:`~length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapePlate.width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapePlate.length`
 
 
 Import detail

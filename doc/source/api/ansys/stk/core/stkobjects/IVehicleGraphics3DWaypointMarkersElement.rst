@@ -1,13 +1,13 @@
 IVehicleGraphics3DWaypointMarkersElement
 ========================================
 
-.. py:class:: IVehicleGraphics3DWaypointMarkersElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement
 
    object
    
    3D waypoint interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DWaypointMarkersElement
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_image_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.set_image_file`
               - Set a file name of the image used for the waypoint.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time`
-            * - :py:meth:`~marker_type`
-            * - :py:meth:`~shape`
-            * - :py:meth:`~marker_file`
-            * - :py:meth:`~pixel_size`
-            * - :py:meth:`~is_transparent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.marker_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.marker_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.pixel_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.is_transparent`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IScatteringPointCollection
 ==========================
 
-.. py:class:: IScatteringPointCollection
+.. py:class:: ansys.stk.core.stkobjects.IScatteringPointCollection
 
    object
    
    Represents a collection of scattering points.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScatteringPointCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollection.item`
               - Given an index, returns the element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollection._NewEnum`
 
 
 Import detail

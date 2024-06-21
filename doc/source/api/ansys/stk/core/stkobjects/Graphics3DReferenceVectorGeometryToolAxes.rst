@@ -1,13 +1,13 @@
 Graphics3DReferenceVectorGeometryToolAxes
 =========================================
 
-.. py:class:: Graphics3DReferenceVectorGeometryToolAxes
+.. py:class:: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolAxes
 
-   Bases: py:obj:`~IGraphics3DReferenceVectorGeometryToolAxes`, py:obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~IDisplayTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining a set of reference axes (3D Graphics, Vector Geometry Tool).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Graphics3DReferenceVectorGeometryToolAxes
 
 Overview
 --------

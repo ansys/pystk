@@ -1,13 +1,13 @@
 ICalculationToolParameterSet
 ============================
 
-.. py:class:: ICalculationToolParameterSet
+.. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSet
 
    object
    
    Parameter set contains various sets of scalar computations.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolParameterSet
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calculate`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.calculate`
               - Return results of computing individual scalars within parameter set at the specified time.
-            * - :py:meth:`~calculate_with_derivative`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.calculate_with_derivative`
               - Return results of computing individual scalars and their time derivatives within parameter set at the specified time.
 
     .. tab-item:: Properties
@@ -31,10 +31,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~labels`
-            * - :py:meth:`~dimensions`
-            * - :py:meth:`~scalar_names`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.labels`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.dimensions`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.scalar_names`
 
 
 Import detail

@@ -1,13 +1,13 @@
 StateCalcRelMotion
 ==================
 
-.. py:class:: StateCalcRelMotion
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRelMotion
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelMotion`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion`
 
    Relative Motion Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRelMotion
 
 Overview
 --------

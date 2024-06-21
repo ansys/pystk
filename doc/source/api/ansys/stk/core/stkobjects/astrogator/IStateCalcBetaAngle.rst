@@ -1,13 +1,13 @@
 IStateCalcBetaAngle
 ===================
 
-.. py:class:: IStateCalcBetaAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcBetaAngle
 
    object
    
    Properties for a Beta Angle calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcBetaAngle
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcBetaAngle.central_body_name`
 
 
 Import detail

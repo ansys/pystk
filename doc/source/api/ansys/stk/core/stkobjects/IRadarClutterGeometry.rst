@@ -1,13 +1,13 @@
 IRadarClutterGeometry
 =====================
 
-.. py:class:: IRadarClutterGeometry
+.. py:class:: ansys.stk.core.stkobjects.IRadarClutterGeometry
 
    object
    
    Do not use this interface, as it is deprecated. Use IAgRadarClutter interface instead. Interface which defines a radar's clutter geometry.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarClutterGeometry
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometry.set_model`
               - Do not use this method, as it is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Sets the current clutter geometry model by name.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
-            * - :py:meth:`~supported_models`
-            * - :py:meth:`~model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometry.enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometry.supported_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometry.model`
 
 
 Import detail
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadarClutterGeometry.model
-    :type: IAgRadarClutterGeometryModel
+    :type: IRadarClutterGeometryModel
 
     This property is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets the current clutter geometry model.
 

@@ -1,13 +1,13 @@
 PathPrimitiveFactory
 ====================
 
-.. py:class:: PathPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.PathPrimitiveFactory
 
-   Bases: py:obj:`~IPathPrimitiveFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IPathPrimitiveFactory`
 
    Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: PathPrimitiveFactory
 
 Overview
 --------

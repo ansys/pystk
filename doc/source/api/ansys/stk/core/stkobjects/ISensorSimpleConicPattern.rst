@@ -1,13 +1,13 @@
 ISensorSimpleConicPattern
 =========================
 
-.. py:class:: ISensorSimpleConicPattern
+.. py:class:: ansys.stk.core.stkobjects.ISensorSimpleConicPattern
 
    object
    
    IAgSnSimpleConicPattern Interface for a sensor pattern defined by a simple cone angle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorSimpleConicPattern
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cone_angle`
-            * - :py:meth:`~angular_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSimpleConicPattern.cone_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorSimpleConicPattern.angular_resolution`
 
 
 Import detail

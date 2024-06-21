@@ -1,13 +1,13 @@
 StateCalcSemiMajorAxis
 ======================
 
-.. py:class:: StateCalcSemiMajorAxis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSemiMajorAxis
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcSemiMajorAxis`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSemiMajorAxis`
 
    SemiMajorAxis Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcSemiMajorAxis
 
 Overview
 --------

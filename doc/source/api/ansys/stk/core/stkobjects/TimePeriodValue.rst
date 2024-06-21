@@ -1,13 +1,13 @@
 TimePeriodValue
 ===============
 
-.. py:class:: TimePeriodValue
+.. py:class:: ansys.stk.core.stkobjects.TimePeriodValue
 
-   Bases: py:obj:`~ITimePeriodValue`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITimePeriodValue`
 
    Provide methods and properties to configure a time value.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TimePeriodValue
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRenderingEventArgs
 ===================
 
-.. py:class:: IRenderingEventArgs
+.. py:class:: ansys.stk.core.graphics.IRenderingEventArgs
 
    object
    
    The event is raised when the scene is rendered.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRenderingEventArgs
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time`
-            * - :py:meth:`~time_in_ep_secs`
+            * - :py:attr:`~ansys.stk.core.graphics.IRenderingEventArgs.time`
+            * - :py:attr:`~ansys.stk.core.graphics.IRenderingEventArgs.time_in_ep_secs`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: time
     :canonical: ansys.stk.core.graphics.IRenderingEventArgs.time
-    :type: IAgDate
+    :type: IDate
 
     The time of the rendering event.
 

@@ -1,13 +1,13 @@
 ITimeToolEventArrayFixedTimes
 =============================
 
-.. py:class:: ITimeToolEventArrayFixedTimes
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArrayFixedTimes
 
    object
    
    Array defined by time ordered instants each explicitly specified.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArrayFixedTimes
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_array_times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedTimes.set_array_times`
               - Set array of times.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~array_times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedTimes.array_times`
 
 
 Import detail

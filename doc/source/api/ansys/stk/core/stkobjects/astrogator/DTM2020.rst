@@ -1,13 +1,13 @@
 DTM2020
 =======
 
-.. py:class:: DTM2020
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DTM2020
 
-   Bases: py:obj:`~IDTM2020`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDTM2020`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    DTM 2020 atmospheric propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DTM2020
 
 Overview
 --------

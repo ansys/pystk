@@ -1,13 +1,13 @@
 IAttitudeTransitions
 ====================
 
-.. py:class:: IAttitudeTransitions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAttitudeTransitions
 
    object
    
    Interface used to access the Attitude Transitions options found in the Basic Acceleration Model of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAttitudeTransitions
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~roll_rate`
-            * - :py:meth:`~pitch_rate`
-            * - :py:meth:`~yaw_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAttitudeTransitions.roll_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAttitudeTransitions.pitch_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAttitudeTransitions.yaw_rate`
 
 
 Import detail

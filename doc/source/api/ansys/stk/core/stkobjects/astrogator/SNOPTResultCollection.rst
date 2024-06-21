@@ -1,13 +1,13 @@
 SNOPTResultCollection
 =====================
 
-.. py:class:: SNOPTResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTResultCollection
 
-   Bases: py:obj:`~ISNOPTResultCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISNOPTResultCollection`
 
    SNOPT result collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SNOPTResultCollection
 
 Overview
 --------

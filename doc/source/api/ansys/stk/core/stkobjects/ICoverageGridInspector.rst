@@ -1,13 +1,13 @@
 ICoverageGridInspector
 ======================
 
-.. py:class:: ICoverageGridInspector
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGridInspector
 
    object
    
    Provide access to the Coverage Definition grid inspector properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGridInspector
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~select_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.select_point`
               - Lat param uses Latitude Dimension. Lon param uses Longitude Dimension.
-            * - :py:meth:`~select_region`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.select_region`
               - Select a region.
-            * - :py:meth:`~clear_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.clear_selection`
               - Clear the selected point or region.
-            * - :py:meth:`~get_grid_point_selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.get_grid_point_selection`
               - Return a collection of grid points that allows the user to select points into the grid inspector.
 
     .. tab-item:: Properties
@@ -35,13 +35,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~point_coverage`
-            * - :py:meth:`~point_daily_coverage`
-            * - :py:meth:`~point_prob_of_coverage`
-            * - :py:meth:`~region_coverage`
-            * - :py:meth:`~region_full_coverage`
-            * - :py:meth:`~region_pass_coverage`
-            * - :py:meth:`~message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.point_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.point_daily_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.point_prob_of_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.region_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.region_full_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.region_pass_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.message`
 
 
 Import detail
@@ -57,37 +57,37 @@ Property detail
 
 .. py:property:: point_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.point_coverage
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Accesses for the point selected in the graphics window.
 
 .. py:property:: point_daily_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.point_daily_coverage
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Access times for the point selected in the graphics window.
 
 .. py:property:: point_prob_of_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.point_prob_of_coverage
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Get the probability of coverage for the point selected in the graphics window being achieved as a function of the time past a request for coverage.
 
 .. py:property:: region_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.region_coverage
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Summary of coverage for the region selected in the graphics window.
 
 .. py:property:: region_full_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.region_full_coverage
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Summary of the coverage intervals for the selected region, including access start and end times, duration of each interval and the percentage of the region covered during each pass.
 
 .. py:property:: region_pass_coverage
     :canonical: ansys.stk.core.stkobjects.ICoverageGridInspector.region_pass_coverage
-    :type: IAgDataProviderInfo
+    :type: IDataProviderInfo
 
     Detailed information about the intervals of time when each asset can provide coverage to the selected region.
 

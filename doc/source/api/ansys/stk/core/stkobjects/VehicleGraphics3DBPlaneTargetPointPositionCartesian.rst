@@ -1,13 +1,13 @@
 VehicleGraphics3DBPlaneTargetPointPositionCartesian
 ===================================================
 
-.. py:class:: VehicleGraphics3DBPlaneTargetPointPositionCartesian
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian
 
-   Bases: py:obj:`~IVehicleGraphics3DBPlaneTargetPointPositionCartesian`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionCartesian`
 
    Cartesian.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DBPlaneTargetPointPositionCartesian
 
 Overview
 --------

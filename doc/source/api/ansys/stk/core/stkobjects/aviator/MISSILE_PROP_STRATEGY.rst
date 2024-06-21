@@ -1,12 +1,12 @@
 MISSILE_PROP_STRATEGY
 =====================
 
-.. py:class:: MISSILE_PROP_STRATEGY
+.. py:class:: ansys.stk.core.stkobjects.aviator.MISSILE_PROP_STRATEGY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MISSILE_PROP_STRATEGY
 
 Overview
 --------

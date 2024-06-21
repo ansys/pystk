@@ -1,13 +1,13 @@
 IPathPrimitive
 ==============
 
-.. py:class:: IPathPrimitive
+.. py:class:: ansys.stk.core.graphics.IPathPrimitive
 
    object
    
    Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPathPrimitive
 
 Overview
 --------
@@ -20,29 +20,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.item`
               - Return the point at the given zero-based index.
-            * - :py:meth:`~add_front`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.add_front`
               - Add a path point to the front of the line.
-            * - :py:meth:`~add_range_to_front`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.add_range_to_front`
               - Add the range of path points to the front of the line.
-            * - :py:meth:`~add_back`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.add_back`
               - Add a path point to the back of the line.
-            * - :py:meth:`~add_range_to_back`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.add_range_to_back`
               - Add the range of path points to the back of the line.
-            * - :py:meth:`~remove_front`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.remove_front`
               - Remove a path point to the front of the line.
-            * - :py:meth:`~remove_all_before`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.remove_all_before`
               - Remove all points before index.
-            * - :py:meth:`~remove_back`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.remove_back`
               - Remove a path point to the back of the line.
-            * - :py:meth:`~remove_all_after`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.remove_all_after`
               - Remove all points after index.
-            * - :py:meth:`~front`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.front`
               - Access the path point at the front of the line.
-            * - :py:meth:`~back`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.back`
               - Access the path point at the back of the line.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.clear`
               - Remove all of the points.
 
     .. tab-item:: Properties
@@ -51,18 +51,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~capacity`
-            * - :py:meth:`~update_policy`
-            * - :py:meth:`~polyline_type`
-            * - :py:meth:`~width`
-            * - :py:meth:`~minimum_width_supported`
-            * - :py:meth:`~maximum_width_supported`
-            * - :py:meth:`~display_outline`
-            * - :py:meth:`~outline_width`
-            * - :py:meth:`~per_item_picking_enabled`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~central_body_clipped`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.capacity`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.update_policy`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.polyline_type`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.width`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.minimum_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.maximum_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.display_outline`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.outline_width`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.per_item_picking_enabled`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive._NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.central_body_clipped`
 
 
 Import detail
@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: update_policy
     :canonical: ansys.stk.core.graphics.IPathPrimitive.update_policy
-    :type: IAgStkGraphicsPathPrimitiveUpdatePolicy
+    :type: IPathPrimitiveUpdatePolicy
 
     Gets or sets how the primitive will be updated based on the current animation time.
 

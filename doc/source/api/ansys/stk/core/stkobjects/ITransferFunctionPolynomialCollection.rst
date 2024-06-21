@@ -1,13 +1,13 @@
 ITransferFunctionPolynomialCollection
 =====================================
 
-.. py:class:: ITransferFunctionPolynomialCollection
+.. py:class:: ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection
 
    object
    
    Represents a transfer function polynomial collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransferFunctionPolynomialCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.remove_at`
               - Remove the complex value with the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.add`
               - Add a new coefficient.
-            * - :py:meth:`~insert_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.insert_at`
               - Insert a new coefficient at the supplied index.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionPolynomialCollection._NewEnum`
 
 
 Import detail

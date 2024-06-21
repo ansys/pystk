@@ -1,12 +1,12 @@
 CRDN_SAMPLING_METHOD
 ====================
 
-.. py:class:: CRDN_SAMPLING_METHOD
+.. py:class:: ansys.stk.core.vgt.CRDN_SAMPLING_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SAMPLING_METHOD
 
 Overview
 --------

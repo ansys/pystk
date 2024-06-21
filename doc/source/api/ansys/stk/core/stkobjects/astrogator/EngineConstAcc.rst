@@ -1,13 +1,13 @@
 EngineConstAcc
 ==============
 
-.. py:class:: EngineConstAcc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.EngineConstAcc
 
-   Bases: py:obj:`~IEngineConstAcc`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Constant Acceleration engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: EngineConstAcc
 
 Overview
 --------

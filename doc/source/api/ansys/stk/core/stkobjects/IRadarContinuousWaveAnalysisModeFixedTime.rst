@@ -1,13 +1,13 @@
 IRadarContinuousWaveAnalysisModeFixedTime
 =========================================
 
-.. py:class:: IRadarContinuousWaveAnalysisModeFixedTime
+.. py:class:: ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeFixedTime
 
    object
    
    Interface which defines an continuous wave fixed time analysis.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarContinuousWaveAnalysisModeFixedTime
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fixed_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeFixedTime.fixed_time`
 
 
 Import detail

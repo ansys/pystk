@@ -1,13 +1,13 @@
 IAdvancedFixedWingSubSuperHypersonicProp
 ========================================
 
-.. py:class:: IAdvancedFixedWingSubSuperHypersonicProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp
 
    object
    
    Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingSubSuperHypersonicProp
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~turbine_mode`
-            * - :py:meth:`~turbine_mode_as_turbojet`
-            * - :py:meth:`~turbine_mode_as_turbofan`
-            * - :py:meth:`~ramjet_mode`
-            * - :py:meth:`~ramjet_mode_as_basic`
-            * - :py:meth:`~scramjet_mode`
-            * - :py:meth:`~scramjet_mode_as_basic`
-            * - :py:meth:`~turbine_reference_area`
-            * - :py:meth:`~ramjet_reference_area`
-            * - :py:meth:`~scramjet_reference_area`
-            * - :py:meth:`~max_turbine_compression_temp`
-            * - :py:meth:`~max_turbine_burner_temp`
-            * - :py:meth:`~can_ram_compressor_pressure_ratio`
-            * - :py:meth:`~must_ram_compressor_pressure_ratio`
-            * - :py:meth:`~max_ram_scram_compression_temperature`
-            * - :py:meth:`~max_ram_scram_burner_total_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode_as_turbojet`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode_as_turbofan`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_mode_as_basic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_mode_as_basic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_reference_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.max_turbine_compression_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.max_turbine_burner_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.can_ram_compressor_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.must_ram_compressor_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.max_ram_scram_compression_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.max_ram_scram_burner_total_temperature`
 
 
 Import detail
@@ -57,13 +57,13 @@ Property detail
 
 .. py:property:: turbine_mode_as_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode_as_turbojet
-    :type: IAgAvtrAdvFixedWingTurbojetBasicABProp
+    :type: IAdvancedFixedWingTurbojetBasicABProp
 
     Gets or sets the interface for a Turbojet Basic w/ AB tubrine mode.
 
 .. py:property:: turbine_mode_as_turbofan
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode_as_turbofan
-    :type: IAgAvtrAdvFixedWingTurbofanBasicABProp
+    :type: IAdvancedFixedWingTurbofanBasicABProp
 
     Gets or sets the interface for a Turbojet Basic w/ AB tubrine mode.
 
@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: ramjet_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_mode_as_basic
-    :type: IAgAvtrAdvFixedWingRamjetBasic
+    :type: IAdvancedFixedWingRamjetBasic
 
     Get the interface for a Ramjet - Basic.
 
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: scramjet_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_mode_as_basic
-    :type: IAgAvtrAdvFixedWingScramjetBasic
+    :type: IAdvancedFixedWingScramjetBasic
 
     Get the interface for a Scramjet - Basic.
 

@@ -1,13 +1,13 @@
 ITimeToolFirstIntervalsFilter
 =============================
 
-.. py:class:: ITimeToolFirstIntervalsFilter
+.. py:class:: ansys.stk.core.vgt.ITimeToolFirstIntervalsFilter
 
    object
    
    The filter selects a portion of first intervals.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolFirstIntervalsFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maximum_number_of_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFirstIntervalsFilter.maximum_number_of_intervals`
 
 
 Import detail

@@ -1,12 +1,12 @@
 SCENARIO_REFRESH_DELTA_TYPE
 ===========================
 
-.. py:class:: SCENARIO_REFRESH_DELTA_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SCENARIO_REFRESH_DELTA_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SCENARIO_REFRESH_DELTA_TYPE
 
 Overview
 --------

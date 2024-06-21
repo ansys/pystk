@@ -1,13 +1,13 @@
 ISphericalFPAVertical
 =====================
 
-.. py:class:: ISphericalFPAVertical
+.. py:class:: ansys.stk.core.stkobjects.ISphericalFPAVertical
 
    IFlightPathAngle
    
    Interface for Vertical Flight Path Angle, an element of the Spherical coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISphericalFPAVertical
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISphericalFPAVertical.fpa`
 
 
 Import detail

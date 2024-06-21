@@ -1,12 +1,12 @@
 LOG_MSG_TYPE
 ============
 
-.. py:class:: LOG_MSG_TYPE
+.. py:class:: ansys.stk.core.stkx.LOG_MSG_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: LOG_MSG_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IArcOptions
 ===========
 
-.. py:class:: IArcOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IArcOptions
 
    object
    
    Interface used to access the arc options for a procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IArcOptions
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~turn_direction`
-            * - :py:meth:`~start_bearing`
-            * - :py:meth:`~use_magnetic_heading`
-            * - :py:meth:`~radius`
-            * - :py:meth:`~turn_angle`
-            * - :py:meth:`~join_arc`
-            * - :py:meth:`~exit_arc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.start_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.use_magnetic_heading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.turn_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.join_arc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.exit_arc`
 
 
 Import detail

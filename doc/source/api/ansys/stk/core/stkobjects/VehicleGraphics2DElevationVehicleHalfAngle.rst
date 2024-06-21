@@ -1,13 +1,13 @@
 VehicleGraphics2DElevationVehicleHalfAngle
 ==========================================
 
-.. py:class:: VehicleGraphics2DElevationVehicleHalfAngle
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DElevationVehicleHalfAngle
 
-   Bases: py:obj:`~IVehicleGraphics2DElevation`, py:obj:`~IVehicleGraphics2DElevationVehicleHalfAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevation`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationVehicleHalfAngle`
 
    Half angle for vehicle swath.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DElevationVehicleHalfAngle
 
 Overview
 --------

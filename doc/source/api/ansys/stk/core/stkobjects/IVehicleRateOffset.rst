@@ -1,13 +1,13 @@
 IVehicleRateOffset
 ==================
 
-.. py:class:: IVehicleRateOffset
+.. py:class:: ansys.stk.core.stkobjects.IVehicleRateOffset
 
    object
    
    Rate and offset interface for precession and spin.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleRateOffset
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~rate`
-            * - :py:meth:`~offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRateOffset.rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRateOffset.offset`
 
 
 Import detail

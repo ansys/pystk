@@ -1,13 +1,13 @@
 IMissionControlSequenceSegmentCollection
 ========================================
 
-.. py:class:: IMissionControlSequenceSegmentCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection
 
    object
    
    Properties for a collection of segments.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMissionControlSequenceSegmentCollection
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.item`
               - Return the specified segment(using segment name or index number).
-            * - :py:meth:`~insert`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.insert`
               - Add a segment to the segment collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.remove`
               - Remove a segment; the End segment cannot be deleted.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.remove_all`
               - Remove all segments; the End segment cannot be deleted.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.cut`
               - Copy the segment into the clipboard and removes the segment from the sequence.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.paste`
               - Pastes the segment from the clipboard and inserts in before the given segment name.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.insert_copy`
               - Copy the segment pointer and inserts the copy before the given segment name.
-            * - :py:meth:`~insert_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.insert_by_name`
               - Insert a segment by name to the segment collection.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.get_item_by_index`
               - Retrieve the specified segment(using segment index number).
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.get_item_by_name`
               - Retrieve the specified segment(using segment name).
 
     .. tab-item:: Properties
@@ -47,9 +47,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.provide_runtime_type_info`
 
 
 Import detail
@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

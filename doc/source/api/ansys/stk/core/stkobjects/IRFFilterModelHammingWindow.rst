@@ -1,13 +1,13 @@
 IRFFilterModelHammingWindow
 ===========================
 
-.. py:class:: IRFFilterModelHammingWindow
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelHammingWindow
 
    object
    
    Provide access to the properties and methods defining a Hamming window RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelHammingWindow
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sampling_frequency`
-            * - :py:meth:`~order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelHammingWindow.sampling_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelHammingWindow.order`
 
 
 Import detail

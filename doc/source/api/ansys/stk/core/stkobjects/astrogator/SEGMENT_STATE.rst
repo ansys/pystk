@@ -1,12 +1,12 @@
 SEGMENT_STATE
 =============
 
-.. py:class:: SEGMENT_STATE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SEGMENT_STATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SEGMENT_STATE
 
 Overview
 --------

@@ -1,12 +1,12 @@
 VISIBILITY
 ==========
 
-.. py:class:: VISIBILITY
+.. py:class:: ansys.stk.core.graphics.VISIBILITY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: VISIBILITY
 
 Overview
 --------

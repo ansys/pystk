@@ -1,13 +1,13 @@
 IRFEnvironment
 ==============
 
-.. py:class:: IRFEnvironment
+.. py:class:: ansys.stk.core.stkobjects.IRFEnvironment
 
    object
    
    Provide access to the properties and methods defining the RF environment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFEnvironment
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagation_channel`
-            * - :py:meth:`~supported_contour_rain_outage_percent_values`
-            * - :py:meth:`~contour_rain_outage_percent`
-            * - :py:meth:`~earth_temperature`
-            * - :py:meth:`~supported_active_comm_systems`
-            * - :py:meth:`~active_comm_system`
-            * - :py:meth:`~magnetic_north_pole_latitude`
-            * - :py:meth:`~magnetic_north_pole_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.propagation_channel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.supported_contour_rain_outage_percent_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.contour_rain_outage_percent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.earth_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.supported_active_comm_systems`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.active_comm_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.magnetic_north_pole_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.magnetic_north_pole_longitude`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.IRFEnvironment.propagation_channel
-    :type: IAgPropagationChannel
+    :type: IPropagationChannel
 
     Gets the propagation channel.
 

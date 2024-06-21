@@ -1,12 +1,12 @@
 FEATURE_CODES
 =============
 
-.. py:class:: FEATURE_CODES
+.. py:class:: ansys.stk.core.stkx.FEATURE_CODES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: FEATURE_CODES
 
 Overview
 --------

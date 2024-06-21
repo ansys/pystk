@@ -1,12 +1,12 @@
 THROTTLE_TABLE_OPERATION_MODE
 =============================
 
-.. py:class:: THROTTLE_TABLE_OPERATION_MODE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.THROTTLE_TABLE_OPERATION_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: THROTTLE_TABLE_OPERATION_MODE
 
 Overview
 --------

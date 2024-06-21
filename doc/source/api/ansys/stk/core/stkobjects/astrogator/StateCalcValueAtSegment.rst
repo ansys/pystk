@@ -1,13 +1,13 @@
 StateCalcValueAtSegment
 =======================
 
-.. py:class:: StateCalcValueAtSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcValueAtSegment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegment`
 
    ValueAtSegment Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcValueAtSegment
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ProfileRunOnce
 ==============
 
-.. py:class:: ProfileRunOnce
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileRunOnce
 
-   Bases: py:obj:`~IProfileRunOnce`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileRunOnce`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Run Once profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileRunOnce
 
 Overview
 --------

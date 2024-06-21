@@ -1,13 +1,13 @@
 IGraphics3DMarkerData
 =====================
 
-.. py:class:: IGraphics3DMarkerData
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DMarkerData
 
    object
    
    Base Interface IAgVOMarkerData.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DMarkerData
 
 Overview
 --------

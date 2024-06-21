@@ -1,13 +1,13 @@
 IPropertyInfo
 =============
 
-.. py:class:: IPropertyInfo
+.. py:class:: ansys.stk.core.stkutil.IPropertyInfo
 
    object
    
    Property information.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IPropertyInfo
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_value`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.get_value`
               - Get the value of the property. Use PropertyType to determine the type to cast to.
-            * - :py:meth:`~set_value`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.set_value`
               - Set the value of the property. Use PropertyType to determine the type to cast to.
 
     .. tab-item:: Properties
@@ -31,12 +31,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~property_type`
-            * - :py:meth:`~has_min`
-            * - :py:meth:`~has_max`
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.name`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.property_type`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.has_min`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.has_max`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.min`
+            * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.max`
 
 
 Import detail

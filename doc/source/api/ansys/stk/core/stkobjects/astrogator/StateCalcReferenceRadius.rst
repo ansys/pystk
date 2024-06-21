@@ -1,13 +1,13 @@
 StateCalcReferenceRadius
 ========================
 
-.. py:class:: StateCalcReferenceRadius
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcReferenceRadius
 
-   Bases: py:obj:`~IStateCalcReferenceRadius`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcReferenceRadius`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Reference Radius Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcReferenceRadius
 
 Overview
 --------

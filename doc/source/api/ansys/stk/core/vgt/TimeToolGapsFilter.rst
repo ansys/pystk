@@ -1,13 +1,13 @@
 TimeToolGapsFilter
 ==================
 
-.. py:class:: TimeToolGapsFilter
+.. py:class:: ansys.stk.core.vgt.TimeToolGapsFilter
 
-   Bases: py:obj:`~ITimeToolGapsFilter`, py:obj:`~ITimeToolPruneFilter`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolGapsFilter`, py:obj:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
 
    The filter merges intervals unless they are separated by gaps of at least/most certain duration.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolGapsFilter
 
 Overview
 --------

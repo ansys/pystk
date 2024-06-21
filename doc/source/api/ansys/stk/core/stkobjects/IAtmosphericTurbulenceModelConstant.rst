@@ -1,13 +1,13 @@
 IAtmosphericTurbulenceModelConstant
 ===================================
 
-.. py:class:: IAtmosphericTurbulenceModelConstant
+.. py:class:: ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelConstant
 
    object
    
    Provide access to a constant atmospheric turbulence model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAtmosphericTurbulenceModelConstant
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~constant_refractive_index_structure_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelConstant.constant_refractive_index_structure_parameter`
 
 
 Import detail

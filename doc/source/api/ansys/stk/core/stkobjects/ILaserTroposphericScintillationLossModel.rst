@@ -1,13 +1,13 @@
 ILaserTroposphericScintillationLossModel
 ========================================
 
-.. py:class:: ILaserTroposphericScintillationLossModel
+.. py:class:: ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel
 
    object
    
    Provide access to the properties and methods for a laser tropospheric scintillation loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILaserTroposphericScintillationLossModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.type`
 
 
 Import detail

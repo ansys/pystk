@@ -1,13 +1,13 @@
 StateCalcTrueAnomaly
 ====================
 
-.. py:class:: StateCalcTrueAnomaly
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcTrueAnomaly
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcTrueAnomaly`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueAnomaly`
 
    TrueAnomaly Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcTrueAnomaly
 
 Overview
 --------

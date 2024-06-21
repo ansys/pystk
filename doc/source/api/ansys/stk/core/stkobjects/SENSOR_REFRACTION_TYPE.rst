@@ -1,12 +1,12 @@
 SENSOR_REFRACTION_TYPE
 ======================
 
-.. py:class:: SENSOR_REFRACTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_REFRACTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_REFRACTION_TYPE
 
 Overview
 --------

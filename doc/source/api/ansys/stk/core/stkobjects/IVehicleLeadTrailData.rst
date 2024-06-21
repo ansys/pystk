@@ -1,13 +1,13 @@
 IVehicleLeadTrailData
 =====================
 
-.. py:class:: IVehicleLeadTrailData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLeadTrailData
 
    object
    
    Base interface IAgVeLeadTrailData.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLeadTrailData
 
 Overview
 --------

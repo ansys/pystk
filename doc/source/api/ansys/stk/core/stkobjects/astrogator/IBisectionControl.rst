@@ -1,13 +1,13 @@
 IBisectionControl
 =================
 
-.. py:class:: IBisectionControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IBisectionControl
 
    object
    
    Properties for control parameters of a Bisection Search profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IBisectionControl
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~name`
-            * - :py:meth:`~parent_name`
-            * - :py:meth:`~initial_value`
-            * - :py:meth:`~current_value`
-            * - :py:meth:`~bound_search_step`
-            * - :py:meth:`~use_custom_display_unit`
-            * - :py:meth:`~custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl.parent_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl.initial_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl.current_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl.bound_search_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl.use_custom_display_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl.custom_display_unit`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITerrainOverlayCollection
 =========================
 
-.. py:class:: ITerrainOverlayCollection
+.. py:class:: ansys.stk.core.graphics.ITerrainOverlayCollection
 
    object
    
    A collection of terrain overlay objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITerrainOverlayCollection
 
 Overview
 --------
@@ -20,41 +20,41 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.item`
               - Get the terrain overlay at the specified index.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.contains`
               - Check the presence of a terrain overlay in the collection.
-            * - :py:meth:`~contains_uri_string`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.contains_uri_string`
               - Check the presence of a terrain overlay with the specified Uri in the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.remove`
               - Remove a terrain overlay from the collection.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.clear`
               - Remove all terrain overlay objects from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.add`
               - Add terrainOverlay to the collection.
-            * - :py:meth:`~add_async`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.add_async`
               - Add terrainOverlay to the collection asynchronously.
-            * - :py:meth:`~index_of`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.index_of`
               - Get the index of the specified terrain overlay.
-            * - :py:meth:`~index_of_uri_string`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.index_of_uri_string`
               - Get the index of the terrain overlay with the specified Uri.
-            * - :py:meth:`~add_uri_string`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.add_uri_string`
               - Create a terrain overlay from the uri, which represents a uri, and adds it to the collection.
-            * - :py:meth:`~add_async_uri_string`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.add_async_uri_string`
               - Create a terrain overlay from the uri, which represents a uri, and adds it to the collection asynchronously.
-            * - :py:meth:`~swap`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.swap`
               - Swap the position of two terrain overlay objects.
-            * - :py:meth:`~swap_by_index`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.swap_by_index`
               - Swap the position of two terrain overlay objects at the specified indices.
-            * - :py:meth:`~move`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.move`
               - Move the terrain overlay to the specified position.
-            * - :py:meth:`~move_by_index`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.move_by_index`
               - Move the terrain overlay at the specified index to the specified position.
-            * - :py:meth:`~bring_to_front`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.bring_to_front`
               - Brings the terrain overlay to the front of the collection so it is rendered first or on the bottom.
-            * - :py:meth:`~send_to_back`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.send_to_back`
               - Send the terrain overlay to the back of the collection so it is rendered last or on the top.
-            * - :py:meth:`~Subscribe`
+            * - :py:attr:`~Subscribe`
               - """Return an ITerrainOverlayCollectionEventHandler that is subscribed to handle events associated with this instance of ITerrainOverlayCollection."""
 
     .. tab-item:: Properties
@@ -63,9 +63,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~is_read_only`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.count`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.is_read_only`
+            * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection._NewEnum`
 
 
 Import detail

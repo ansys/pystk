@@ -1,12 +1,12 @@
 STRAIGHT_AHEAD_REFERENCE_FRAME
 ==============================
 
-.. py:class:: STRAIGHT_AHEAD_REFERENCE_FRAME
+.. py:class:: ansys.stk.core.stkobjects.aviator.STRAIGHT_AHEAD_REFERENCE_FRAME
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: STRAIGHT_AHEAD_REFERENCE_FRAME
 
 Overview
 --------

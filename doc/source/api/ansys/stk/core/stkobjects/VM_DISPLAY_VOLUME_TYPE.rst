@@ -1,12 +1,12 @@
 VM_DISPLAY_VOLUME_TYPE
 ======================
 
-.. py:class:: VM_DISPLAY_VOLUME_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VM_DISPLAY_VOLUME_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VM_DISPLAY_VOLUME_TYPE
 
 Overview
 --------

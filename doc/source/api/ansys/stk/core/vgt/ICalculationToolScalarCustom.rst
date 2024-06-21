@@ -1,13 +1,13 @@
 ICalculationToolScalarCustom
 ============================
 
-.. py:class:: ICalculationToolScalarCustom
+.. py:class:: ansys.stk.core.vgt.ICalculationToolScalarCustom
 
    object
    
    A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolScalarCustom
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustom.reload`
               - Reload the file specified with Filename property.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~invalidate_on_exec_error`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustom.filename`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustom.invalidate_on_exec_error`
 
 
 Import detail

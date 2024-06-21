@@ -1,13 +1,13 @@
 ICalculationToolConditionSetEvaluateWithRateResult
 ==================================================
 
-.. py:class:: ICalculationToolConditionSetEvaluateWithRateResult
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateWithRateResult
 
    object
    
    Represents the results returned by ConditionSet.EvaluateWithRate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionSetEvaluateWithRateResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~values`
-            * - :py:meth:`~rates`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateWithRateResult.values`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateWithRateResult.rates`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IConversionUtility
 ==================
 
-.. py:class:: IConversionUtility
+.. py:class:: ansys.stk.core.stkutil.IConversionUtility
 
    object
    
    Provide conversion utilities.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IConversionUtility
 
 Overview
 --------
@@ -20,41 +20,41 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~convert_quantity`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.convert_quantity`
               - Convert the specified quantity value from a given unit to another unit.
-            * - :py:meth:`~convert_date`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.convert_date`
               - Convert the specified date from a given unit to another unit.
-            * - :py:meth:`~convert_quantity_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.convert_quantity_array`
               - Convert the specified quantity values from a given unit to another unit.
-            * - :py:meth:`~convert_date_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.convert_date_array`
               - Convert the specified dates from a given unit to another unit.
-            * - :py:meth:`~new_quantity`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_quantity`
               - Create an IAgQuantity interface with the given dimension, unit and value.
-            * - :py:meth:`~new_date`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_date`
               - Create an IAgDate interface with the given unit and value.
-            * - :py:meth:`~new_position_on_earth`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_position_on_earth`
               - Create an IAgPosition interface with earth as its central body.
-            * - :py:meth:`~convert_position_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.convert_position_array`
               - Convert the specified position values from a given position type to another position type.
-            * - :py:meth:`~new_direction`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_direction`
               - Create an IAgDirection interface.
-            * - :py:meth:`~new_orientation`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_orientation`
               - Create an IAgOrientation interface.
-            * - :py:meth:`~new_orbit_state_on_earth`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_orbit_state_on_earth`
               - Create an IAgOrbitState interface with earth as its central body.
-            * - :py:meth:`~new_position_on_cb`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_position_on_cb`
               - Create an IAgPosition interface using the supplied central body.
-            * - :py:meth:`~new_orbit_state_on_cb`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_orbit_state_on_cb`
               - Create an IAgOrbitState interface using the supplied central body.
-            * - :py:meth:`~query_direction_cosine_matrix`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.query_direction_cosine_matrix`
               - Return a Direction Cosine Matrix (DCM).
-            * - :py:meth:`~query_direction_cosine_matrix_array`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.query_direction_cosine_matrix_array`
               - Return a Direction Cosine Matrix (DCM) as an array.
-            * - :py:meth:`~new_cartesian3_vector`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_cartesian3_vector`
               - Create a cartesian vector.
-            * - :py:meth:`~new_cartesian3_vector_from_direction`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_cartesian3_vector_from_direction`
               - Convert the direction to cartesian vector.
-            * - :py:meth:`~new_cartesian3_vector_from_position`
+            * - :py:attr:`~ansys.stk.core.stkutil.IConversionUtility.new_cartesian3_vector_from_position`
               - Convert the position to cartesian vector.
 
 

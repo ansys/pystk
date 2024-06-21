@@ -1,12 +1,12 @@
 SEGMENT_DIFFERENCE_ORDER
 ========================
 
-.. py:class:: SEGMENT_DIFFERENCE_ORDER
+.. py:class:: ansys.stk.core.stkobjects.astrogator.SEGMENT_DIFFERENCE_ORDER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: SEGMENT_DIFFERENCE_ORDER
 
 Overview
 --------

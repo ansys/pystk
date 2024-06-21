@@ -1,13 +1,13 @@
 IConstellationConstraintObjectRestriction
 =========================================
 
-.. py:class:: IConstellationConstraintObjectRestriction
+.. py:class:: ansys.stk.core.stkobjects.IConstellationConstraintObjectRestriction
 
    IConstellationConstraintRestriction
    
    A restriction interface that is satisfied only when specified number of objects meets the conditions for the chain access.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IConstellationConstraintObjectRestriction
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~number_of_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraintObjectRestriction.number_of_objects`
 
 
 Import detail

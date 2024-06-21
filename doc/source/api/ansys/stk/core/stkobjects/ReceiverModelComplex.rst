@@ -1,13 +1,13 @@
 ReceiverModelComplex
 ====================
 
-.. py:class:: ReceiverModelComplex
+.. py:class:: ansys.stk.core.stkobjects.ReceiverModelComplex
 
-   Bases: py:obj:`~IReceiverModelComplex`, py:obj:`~IReceiverModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverModelComplex`, py:obj:`~ansys.stk.core.stkobjects.IReceiverModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a complex receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceiverModelComplex
 
 Overview
 --------

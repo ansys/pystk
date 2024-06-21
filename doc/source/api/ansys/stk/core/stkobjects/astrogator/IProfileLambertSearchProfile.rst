@@ -1,13 +1,13 @@
 IProfileLambertSearchProfile
 ============================
 
-.. py:class:: IProfileLambertSearchProfile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile
 
    IProfile
    
    Properties for a Lambert Search Profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileLambertSearchProfile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_target_coord_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.set_target_coord_type`
               - Select a target coordinate type.
 
     .. tab-item:: Properties
@@ -29,38 +29,38 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~target_coord_type`
-            * - :py:meth:`~enable_second_maneuver`
-            * - :py:meth:`~enable_target_match_phase`
-            * - :py:meth:`~target_position_x`
-            * - :py:meth:`~target_position_y`
-            * - :py:meth:`~target_position_z`
-            * - :py:meth:`~target_velocity_x`
-            * - :py:meth:`~target_velocity_y`
-            * - :py:meth:`~target_velocity_z`
-            * - :py:meth:`~target_semimajor_axis`
-            * - :py:meth:`~target_eccentricity`
-            * - :py:meth:`~target_inclination`
-            * - :py:meth:`~target_right_ascension_of_ascending_node`
-            * - :py:meth:`~target_argument_of_periapsis`
-            * - :py:meth:`~target_true_anomaly`
-            * - :py:meth:`~enable_write_departure_delay_to_first_propagate`
-            * - :py:meth:`~disable_first_propagate_non_lambert_stop_conditions`
-            * - :py:meth:`~first_propagate_segment`
-            * - :py:meth:`~enable_write_to_first_maneuver`
-            * - :py:meth:`~first_maneuver_segment`
-            * - :py:meth:`~latest_departure_time`
-            * - :py:meth:`~earliest_arrival_time`
-            * - :py:meth:`~latest_arrival_time`
-            * - :py:meth:`~grid_search_time_step`
-            * - :py:meth:`~max_revolutions`
-            * - :py:meth:`~central_body_collision_altitude_padding`
-            * - :py:meth:`~enable_write_duration_to_second_propagate`
-            * - :py:meth:`~disable_second_propagate_non_lambert_stop_conditions`
-            * - :py:meth:`~second_propagate_segment`
-            * - :py:meth:`~enable_write_to_second_maneuver`
-            * - :py:meth:`~second_maneuver_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_coord_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_second_maneuver`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_target_match_phase`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_position_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_position_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_position_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_velocity_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_velocity_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_velocity_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_semimajor_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_eccentricity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_inclination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_right_ascension_of_ascending_node`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_argument_of_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_true_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_write_departure_delay_to_first_propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.disable_first_propagate_non_lambert_stop_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.first_propagate_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_write_to_first_maneuver`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.first_maneuver_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.latest_departure_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.earliest_arrival_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.latest_arrival_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.grid_search_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.max_revolutions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.central_body_collision_altitude_padding`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_write_duration_to_second_propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.disable_second_propagate_non_lambert_stop_conditions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.second_propagate_segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_write_to_second_maneuver`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.second_maneuver_segment`
 
 
 Import detail

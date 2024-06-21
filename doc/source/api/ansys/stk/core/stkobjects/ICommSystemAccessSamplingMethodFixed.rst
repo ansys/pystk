@@ -1,13 +1,13 @@
 ICommSystemAccessSamplingMethodFixed
 ====================================
 
-.. py:class:: ICommSystemAccessSamplingMethodFixed
+.. py:class:: ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodFixed
 
    object
    
    Provide access to the properties for a fixed sampling method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICommSystemAccessSamplingMethodFixed
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fixed_time_step`
-            * - :py:meth:`~time_bound`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodFixed.fixed_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodFixed.time_bound`
 
 
 Import detail

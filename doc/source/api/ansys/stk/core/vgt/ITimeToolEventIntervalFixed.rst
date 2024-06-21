@@ -1,13 +1,13 @@
 ITimeToolEventIntervalFixed
 ===========================
 
-.. py:class:: ITimeToolEventIntervalFixed
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalFixed
 
    object
    
    Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalFixed
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_interval`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixed.set_interval`
               - Set interval's start and stop times.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_time`
-            * - :py:meth:`~stop_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixed.start_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixed.stop_time`
 
 
 Import detail

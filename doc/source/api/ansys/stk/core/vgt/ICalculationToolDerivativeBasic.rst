@@ -1,13 +1,13 @@
 ICalculationToolDerivativeBasic
 ===============================
 
-.. py:class:: ICalculationToolDerivativeBasic
+.. py:class:: ansys.stk.core.vgt.ICalculationToolDerivativeBasic
 
    object
    
    Derivative definition determines how numerical differencing is used to compute derivatives.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolDerivativeBasic
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolDerivativeBasic.time_step`
 
 
 Import detail

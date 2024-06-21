@@ -1,13 +1,13 @@
 IStateCalcSRPArea
 =================
 
-.. py:class:: IStateCalcSRPArea
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSRPArea
 
    object
    
    Properties for an SRPArea calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSRPArea
 
 Overview
 --------

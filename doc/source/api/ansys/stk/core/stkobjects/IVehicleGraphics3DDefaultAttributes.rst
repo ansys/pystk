@@ -1,13 +1,13 @@
 IVehicleGraphics3DDefaultAttributes
 ===================================
 
-.. py:class:: IVehicleGraphics3DDefaultAttributes
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes
 
    object
    
    Default graphics attributes for covariance pointing contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DDefaultAttributes
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes.translucency`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITimeToolInterval
 =================
 
-.. py:class:: ITimeToolInterval
+.. py:class:: ansys.stk.core.vgt.ITimeToolInterval
 
    object
    
    The interface represents an interval.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolInterval
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start`
-            * - :py:meth:`~stop`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolInterval.start`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolInterval.stop`
 
 
 Import detail

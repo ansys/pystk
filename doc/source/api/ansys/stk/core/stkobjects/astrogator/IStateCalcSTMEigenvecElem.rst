@@ -1,13 +1,13 @@
 IStateCalcSTMEigenvecElem
 =========================
 
-.. py:class:: IStateCalcSTMEigenvecElem
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem
 
    object
    
    Properties for an STM Eigenvector element calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcSTMEigenvecElem
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
-            * - :py:meth:`~eigenvector_number`
-            * - :py:meth:`~state_variable`
-            * - :py:meth:`~eigenvector_complex_part`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem.coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem.eigenvector_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem.state_variable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem.eigenvector_complex_part`
 
 
 Import detail

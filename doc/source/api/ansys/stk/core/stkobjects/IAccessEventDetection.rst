@@ -1,13 +1,13 @@
 IAccessEventDetection
 =====================
 
-.. py:class:: IAccessEventDetection
+.. py:class:: ansys.stk.core.stkobjects.IAccessEventDetection
 
    object
    
    Define properties and methods to configure the event detection strategy used in access computations.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAccessEventDetection
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessEventDetection.set_type`
               - Set the event detection type.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessEventDetection.is_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~supported_types`
-            * - :py:meth:`~strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessEventDetection.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessEventDetection.supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessEventDetection.strategy`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: strategy
     :canonical: ansys.stk.core.stkobjects.IAccessEventDetection.strategy
-    :type: IAgEventDetectionStrategy
+    :type: IEventDetectionStrategy
 
     Get the selected event detection strategy.
 

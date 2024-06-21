@@ -1,13 +1,13 @@
 VmGraphics3DActiveGridPoints
 ============================
 
-.. py:class:: VmGraphics3DActiveGridPoints
+.. py:class:: ansys.stk.core.stkobjects.VmGraphics3DActiveGridPoints
 
-   Bases: py:obj:`~IVmGraphics3DActiveGridPoints`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints`
 
    Class defining Active Grid Points for Volumetric Object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmGraphics3DActiveGridPoints
 
 Overview
 --------

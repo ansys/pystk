@@ -1,13 +1,13 @@
 IStateCalcOrbitStateValue
 =========================
 
-.. py:class:: IStateCalcOrbitStateValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue
 
    object
    
    Properties for an Orbit State Value calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcOrbitStateValue
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,15 +33,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
-            * - :py:meth:`~input_coord_system_name`
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
-            * - :py:meth:`~vx`
-            * - :py:meth:`~vy`
-            * - :py:meth:`~vz`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.input_coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.vx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.vy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.vz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.control_parameters_available`
 
 
 Import detail

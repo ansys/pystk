@@ -1,13 +1,13 @@
 DisplayCondition
 ================
 
-.. py:class:: DisplayCondition
+.. py:class:: ansys.stk.core.graphics.DisplayCondition
 
-   Bases: py:obj:`~IDisplayCondition`
+   Bases: py:obj:`~ansys.stk.core.graphics.IDisplayCondition`
 
    When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: DisplayCondition
 
 Overview
 --------

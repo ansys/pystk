@@ -1,13 +1,13 @@
 IVehicleScheduleTimesElement
 ============================
 
-.. py:class:: IVehicleScheduleTimesElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleScheduleTimesElement
 
    object
    
    Parameters for scheduled times for target pointing attitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleScheduleTimesElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start`
-            * - :py:meth:`~stop`
-            * - :py:meth:`~target`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement.start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement.stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement.target`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: target
     :canonical: ansys.stk.core.stkobjects.IVehicleScheduleTimesElement.target
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the target.
 

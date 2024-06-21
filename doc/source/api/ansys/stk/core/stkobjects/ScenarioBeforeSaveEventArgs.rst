@@ -1,13 +1,13 @@
 ScenarioBeforeSaveEventArgs
 ===========================
 
-.. py:class:: ScenarioBeforeSaveEventArgs
+.. py:class:: ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArgs
 
-   Bases: py:obj:`~IScenarioBeforeSaveEventArgs`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs`
 
    Contains information about the changes in the object's state.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScenarioBeforeSaveEventArgs
 
 Overview
 --------

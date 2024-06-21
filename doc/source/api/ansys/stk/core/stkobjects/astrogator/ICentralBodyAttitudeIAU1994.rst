@@ -1,13 +1,13 @@
 ICentralBodyAttitudeIAU1994
 ===========================
 
-.. py:class:: ICentralBodyAttitudeIAU1994
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994
 
    ICentralBodyAttitude
    
    Properties for an IAU1994 attitude definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyAttitudeIAU1994
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~right_ascension`
-            * - :py:meth:`~declination`
-            * - :py:meth:`~right_ascension_rate`
-            * - :py:meth:`~declination_rate`
-            * - :py:meth:`~rotation_offset`
-            * - :py:meth:`~rotation_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.right_ascension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.declination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.right_ascension_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.declination_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.rotation_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.rotation_rate`
 
 
 Import detail

@@ -1,13 +1,13 @@
 Aircraft
 ========
 
-.. py:class:: Aircraft
+.. py:class:: ansys.stk.core.stkobjects.Aircraft
 
-   Bases: py:obj:`~IAircraft`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IGreatArcVehicle`, py:obj:`~IProvideSpatialInfo`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAircraft`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IGreatArcVehicle`, py:obj:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Aircraft object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Aircraft
 
 Overview
 --------

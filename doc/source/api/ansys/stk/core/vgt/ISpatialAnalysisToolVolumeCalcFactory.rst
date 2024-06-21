@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCalcFactory
 =====================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCalcFactory
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory
 
    object
    
    The factory is used to create instances of volume calcs.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCalcFactory
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create`
               - Create and registers a volume calc using specified name and description.
-            * - :py:meth:`~create_volume_calc_altitude`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create_volume_calc_altitude`
               - Create and registers a altitude to location volume calc type using specified name and description.
-            * - :py:meth:`~create_volume_calc_angle_off_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create_volume_calc_angle_off_vector`
               - Create and registers a angle to location volume calc type using specified name and description.
-            * - :py:meth:`~create_volume_calc_file`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create_volume_calc_file`
               - Create and registers a file volume calc type using specified name and description.
-            * - :py:meth:`~create_volume_calc_from_scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create_volume_calc_from_scalar`
               - Create and registers a scalar to location volume calc type using specified name and description.
-            * - :py:meth:`~create_volume_calc_solar_intensity`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create_volume_calc_solar_intensity`
               - Create and registers a solar intensity volume calc type using specified name and description.
-            * - :py:meth:`~create_volume_calc_volume_satisfaction_metric`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create_volume_calc_volume_satisfaction_metric`
               - Create and registers a spatial condition satisfaction metric volume calc type using specified name and description.
-            * - :py:meth:`~create_volume_calc_range`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create_volume_calc_range`
               - Create and registers a distance to location volume calc type using specified name and description.
-            * - :py:meth:`~create_volume_calc_delay_range`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFactory.create_volume_calc_delay_range`
               - Create and registers a distance to location volume calc type using specified name and description.
 
 

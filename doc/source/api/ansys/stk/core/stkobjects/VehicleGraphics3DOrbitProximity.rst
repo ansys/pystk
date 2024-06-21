@@ -1,13 +1,13 @@
 VehicleGraphics3DOrbitProximity
 ===============================
 
-.. py:class:: VehicleGraphics3DOrbitProximity
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity
 
-   Bases: py:obj:`~IVehicleGraphics3DOrbitProximity`, py:obj:`~IVehicleGraphics3DProximity`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitProximity`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximity`
 
    Proximity graphics.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DOrbitProximity
 
 Overview
 --------

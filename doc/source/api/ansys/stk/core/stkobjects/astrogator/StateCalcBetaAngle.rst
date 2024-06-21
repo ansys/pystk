@@ -1,13 +1,13 @@
 StateCalcBetaAngle
 ==================
 
-.. py:class:: StateCalcBetaAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcBetaAngle
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcBetaAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcBetaAngle`
 
    BetaAngle Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcBetaAngle
 
 Overview
 --------

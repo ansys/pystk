@@ -1,13 +1,13 @@
 IVehicleGraphics3DSystemsElement
 ================================
 
-.. py:class:: IVehicleGraphics3DSystemsElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement
 
    IVehicleGraphics3DSystemsElementBase
    
    Element for reference system used for displaying vehicle orbits and trajectories.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DSystemsElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_graphics_3d_window_ids`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement.get_graphics_3d_window_ids`
               - Get the selected 3D Graphics window ids.
-            * - :py:meth:`~set_graphics_3d_window_ids`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement.set_graphics_3d_window_ids`
               - Select the 3D Graphics window ids.
 
     .. tab-item:: Properties
@@ -31,8 +31,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement.is_visible`
 
 
 Import detail

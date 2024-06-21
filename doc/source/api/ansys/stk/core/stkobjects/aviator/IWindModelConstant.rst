@@ -1,13 +1,13 @@
 IWindModelConstant
 ==================
 
-.. py:class:: IWindModelConstant
+.. py:class:: ansys.stk.core.stkobjects.aviator.IWindModelConstant
 
    object
    
    Interface used to access the options for a Constant Bearing/Speed wind model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IWindModelConstant
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~blend_time`
-            * - :py:meth:`~wind_speed`
-            * - :py:meth:`~wind_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant.blend_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant.wind_speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant.wind_bearing`
 
 
 Import detail

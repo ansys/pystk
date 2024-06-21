@@ -1,13 +1,13 @@
 ITimeToolIntervalVectorCollection
 =================================
 
-.. py:class:: ITimeToolIntervalVectorCollection
+.. py:class:: ansys.stk.core.vgt.ITimeToolIntervalVectorCollection
 
    object
    
    A collection of interval collections.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolIntervalVectorCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalVectorCollection.item`
               - Access an element at the specified position.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalVectorCollection.count`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalVectorCollection._NewEnum`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IHPOPPluginFunction
 ===================
 
-.. py:class:: IHPOPPluginFunction
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IHPOPPluginFunction
 
    object
    
    Properties for the HPOP Plugin propagator function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IHPOPPluginFunction
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plugin_identifier`
-            * - :py:meth:`~plugin_config`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IHPOPPluginFunction.plugin_identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IHPOPPluginFunction.plugin_config`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.IHPOPPluginFunction.plugin_config
-    :type: IAgVAPluginProperties
+    :type: IPluginProperties
 
     Get the properties of the selected plugin.
 

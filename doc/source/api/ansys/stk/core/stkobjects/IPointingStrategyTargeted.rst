@@ -1,13 +1,13 @@
 IPointingStrategyTargeted
 =========================
 
-.. py:class:: IPointingStrategyTargeted
+.. py:class:: ansys.stk.core.stkobjects.IPointingStrategyTargeted
 
    object
    
    Provide the interface for a targeted pointing strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPointingStrategyTargeted
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_object`
-            * - :py:meth:`~available_target_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategyTargeted.target_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategyTargeted.available_target_objects`
 
 
 Import detail

@@ -1,12 +1,12 @@
 ROLL_UPRIGHT_INVERTED
 =====================
 
-.. py:class:: ROLL_UPRIGHT_INVERTED
+.. py:class:: ansys.stk.core.stkobjects.aviator.ROLL_UPRIGHT_INVERTED
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ROLL_UPRIGHT_INVERTED
 
 Overview
 --------

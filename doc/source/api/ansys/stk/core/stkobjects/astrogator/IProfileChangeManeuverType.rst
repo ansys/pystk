@@ -1,13 +1,13 @@
 IProfileChangeManeuverType
 ==========================
 
-.. py:class:: IProfileChangeManeuverType
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType
 
    IProfile
    
    Properties for a Change Maneuver Type profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileChangeManeuverType
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~segment`
-            * - :py:meth:`~maneuver_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType.segment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType.maneuver_type`
 
 
 Import detail
@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: segment
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType.segment
-    :type: IAgVAMCSManeuver
+    :type: IMissionControlSequenceManeuver
 
     Gets or sets the targeted maneuver segment.
 

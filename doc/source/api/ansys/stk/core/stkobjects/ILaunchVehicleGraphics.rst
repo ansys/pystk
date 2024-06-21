@@ -1,13 +1,13 @@
 ILaunchVehicleGraphics
 ======================
 
-.. py:class:: ILaunchVehicleGraphics
+.. py:class:: ansys.stk.core.stkobjects.ILaunchVehicleGraphics
 
    object
    
    2D Graphics for a launch vehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILaunchVehicleGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.set_attributes_type`
               - Set the 2D Graphics attributes type.
-            * - :py:meth:`~is_attributes_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.is_attributes_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,23 +31,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~attributes_type`
-            * - :py:meth:`~attributes_supported_types`
-            * - :py:meth:`~attributes`
-            * - :py:meth:`~pass_data`
-            * - :py:meth:`~resolution`
-            * - :py:meth:`~elev_contours`
-            * - :py:meth:`~range_contours`
-            * - :py:meth:`~lighting`
-            * - :py:meth:`~swath`
-            * - :py:meth:`~ground_ellipses`
-            * - :py:meth:`~use_inst_name`
-            * - :py:meth:`~label_notes`
-            * - :py:meth:`~use_inst_name_label`
-            * - :py:meth:`~label_name`
-            * - :py:meth:`~saa`
-            * - :py:meth:`~is_object_graphics_visible`
-            * - :py:meth:`~radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.attributes_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.attributes_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.pass_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.range_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.lighting`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.swath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.ground_ellipses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.use_inst_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.label_notes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.label_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.saa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.radar_cross_section`
 
 
 Import detail
@@ -75,49 +75,49 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.attributes
-    :type: IAgVeGfxAttributes
+    :type: IVehicleGraphics2DAttributes
 
     Get the launch vehicle's 2D Graphics attributes.
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.pass_data
-    :type: IAgVeGfxTrajectoryPassData
+    :type: IVehicleGraphics2DTrajectoryPassData
 
     Get the launch vehicle's 2D trajectory properties.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.resolution
-    :type: IAgVeGfxTrajectoryResolution
+    :type: IVehicleGraphics2DTrajectoryResolution
 
     Get the launch vehicle's 2D resolution properties.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.elev_contours
-    :type: IAgVeGfxElevContours
+    :type: IVehicleGraphics2DElevContours
 
     Get the launch vehicle's 2D elevation contour properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.range_contours
-    :type: IAgGfxRangeContours
+    :type: IGraphics2DRangeContours
 
     Get the launch vehicle's 2D range contour properties.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.lighting
-    :type: IAgVeGfxLighting
+    :type: IVehicleGraphics2DLighting
 
     Get the launch vehicle's 2D lighting properties.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.swath
-    :type: IAgVeGfxSwath
+    :type: IVehicleGraphics2DSwath
 
     Get the launch vehicle's 2D swath properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.ground_ellipses
-    :type: IAgVeGfxGroundEllipsesCollection
+    :type: IVehicleGraphics2DGroundEllipsesCollection
 
     Get the launch vehicle's 2D ground ellipses properties.
 
@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.label_notes
-    :type: IAgLabelNoteCollection
+    :type: ILabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
@@ -147,7 +147,7 @@ Property detail
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.saa
-    :type: IAgVeGfxSAA
+    :type: IVehicleGraphics2DSAA
 
     Get the vehicle's South Atlantic Anomaly Contour properties.
 
@@ -159,7 +159,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ILaunchVehicleGraphics.radar_cross_section
-    :type: IAgRadarCrossSectionGraphics
+    :type: IRadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

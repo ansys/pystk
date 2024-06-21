@@ -1,13 +1,13 @@
 ICompositePrimitiveFactory
 ==========================
 
-.. py:class:: ICompositePrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.ICompositePrimitiveFactory
 
    object
    
    A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICompositePrimitiveFactory
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitiveFactory.initialize`
               - Initialize a default composite primitive.
 
 

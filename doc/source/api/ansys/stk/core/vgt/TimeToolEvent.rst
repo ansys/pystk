@@ -1,13 +1,13 @@
 TimeToolEvent
 =============
 
-.. py:class:: TimeToolEvent
+.. py:class:: ansys.stk.core.vgt.TimeToolEvent
 
-   Bases: py:obj:`~ITimeToolEvent`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEvent`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Define an event (time instant).
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEvent
 
 Overview
 --------

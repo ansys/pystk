@@ -1,13 +1,13 @@
 IVTOLPointCategory
 ==================
 
-.. py:class:: IVTOLPointCategory
+.. py:class:: ansys.stk.core.stkobjects.aviator.IVTOLPointCategory
 
    object
    
    Interface used to access the VTOL Points in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IVTOLPointCategory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~user_vtol_points`
-            * - :py:meth:`~arinc424_helipads`
-            * - :py:meth:`~dafif_helipads`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.user_vtol_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.arinc424_helipads`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.dafif_helipads`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: user_vtol_points
     :canonical: ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.user_vtol_points
-    :type: IAgAvtrUserVTOLPointSource
+    :type: IUserVTOLPointSource
 
     Get the User VTOL Points.
 
 .. py:property:: arinc424_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.arinc424_helipads
-    :type: IAgAvtrARINC424Source
+    :type: IARINC424Source
 
     Get the ARINC-424 helipads.
 
 .. py:property:: dafif_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.dafif_helipads
-    :type: IAgAvtrDAFIFSource
+    :type: IDAFIFSource
 
     Get the DAFIF helipads.
 

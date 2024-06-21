@@ -1,13 +1,13 @@
 FigureOfMeritGridInspector
 ==========================
 
-.. py:class:: FigureOfMeritGridInspector
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGridInspector
 
-   Bases: py:obj:`~IFigureOfMeritGridInspector`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector`
 
    AgFmGridInspector class provides methods to use the grid inspector tool for FOM.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FigureOfMeritGridInspector
 
 Overview
 --------

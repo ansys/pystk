@@ -1,13 +1,13 @@
 IAircraftBasicClimbModel
 ========================
 
-.. py:class:: IAircraftBasicClimbModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel
 
    object
    
    Interface used to access the basic climb model options for a climb model of an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftBasicClimbModel
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.set_airspeed`
               - Set the airspeed type and value.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -31,15 +31,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ceiling_altitude`
-            * - :py:meth:`~airspeed`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~altitude_rate`
-            * - :py:meth:`~use_aero_prop_fuel`
-            * - :py:meth:`~scale_fuel_flow_by_non_std_density`
-            * - :py:meth:`~fuel_flow`
-            * - :py:meth:`~enable_relative_airspeed_tolerance`
-            * - :py:meth:`~relative_airspeed_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.ceiling_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.altitude_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.scale_fuel_flow_by_non_std_density`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.enable_relative_airspeed_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.relative_airspeed_tolerance`
 
 
 Import detail

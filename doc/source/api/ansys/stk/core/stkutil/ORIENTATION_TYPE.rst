@@ -1,12 +1,12 @@
 ORIENTATION_TYPE
 ================
 
-.. py:class:: ORIENTATION_TYPE
+.. py:class:: ansys.stk.core.stkutil.ORIENTATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: ORIENTATION_TYPE
 
 Overview
 --------

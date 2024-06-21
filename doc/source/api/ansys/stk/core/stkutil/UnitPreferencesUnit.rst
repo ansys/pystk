@@ -1,13 +1,13 @@
 UnitPreferencesUnit
 ===================
 
-.. py:class:: UnitPreferencesUnit
+.. py:class:: ansys.stk.core.stkutil.UnitPreferencesUnit
 
-   Bases: py:obj:`~IUnitPreferencesUnit`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IUnitPreferencesUnit`
 
    Object that contains info on the unit.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: UnitPreferencesUnit
 
 Overview
 --------

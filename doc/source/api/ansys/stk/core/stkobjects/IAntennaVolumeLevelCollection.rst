@@ -1,13 +1,13 @@
 IAntennaVolumeLevelCollection
 =============================
 
-.. py:class:: IAntennaVolumeLevelCollection
+.. py:class:: ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection
 
    object
    
    Represents a collection of antenna volume levels.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaVolumeLevelCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection.item`
               - Given an index, returns the element in the collection.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection.contains`
               - Check whether the collection contains an object with the given value.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection.remove`
               - Remove the level with the corresponding value.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection.remove_at`
               - Remove the level with the supplied index.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection.add`
               - Add and returns a new level with the corresponding value.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection.clear`
               - Clear all contour levels from the collection.
-            * - :py:meth:`~get_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection.get_level`
               - Get the level with the specified value.
 
     .. tab-item:: Properties
@@ -41,8 +41,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevelCollection._NewEnum`
 
 
 Import detail

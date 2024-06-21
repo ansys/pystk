@@ -1,13 +1,13 @@
 IFuelTankInternal
 =================
 
-.. py:class:: IFuelTankInternal
+.. py:class:: ansys.stk.core.stkobjects.aviator.IFuelTankInternal
 
    object
    
    Interface used to set an aircraft's internal fuel tank.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IFuelTankInternal
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.set_position`
               - Set the fuel tank's parent relative position.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~capacity`
-            * - :py:meth:`~consumption_order`
-            * - :py:meth:`~initial_fuel_state`
-            * - :py:meth:`~position_x`
-            * - :py:meth:`~position_y`
-            * - :py:meth:`~position_z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.capacity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.consumption_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.initial_fuel_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.position_x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.position_y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.position_z`
 
 
 Import detail

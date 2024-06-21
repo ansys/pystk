@@ -1,13 +1,13 @@
 IVehiclePropagatorSimpleAscent
 ==============================
 
-.. py:class:: IVehiclePropagatorSimpleAscent
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent
 
    IVehiclePropagator
    
    SimpleAscent Propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorSimpleAscent
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.propagate`
               - Propagates the launch vehicle's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~initial_state`
-            * - :py:meth:`~ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.initial_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.ephemeris_interval`
 
 
 Import detail
@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.initial_state
-    :type: IAgVeLvInitialState
+    :type: IVehicleLaunchVehicleInitialState
 
     Get the initial state.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

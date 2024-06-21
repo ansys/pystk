@@ -1,13 +1,13 @@
 StateCalcNegative
 =================
 
-.. py:class:: StateCalcNegative
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcNegative
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcNegative`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcNegative`
 
    Negative Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcNegative
 
 Overview
 --------

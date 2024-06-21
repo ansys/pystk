@@ -1,13 +1,13 @@
 SiteReferenceState
 ==================
 
-.. py:class:: SiteReferenceState
+.. py:class:: ansys.stk.core.stkobjects.aviator.SiteReferenceState
 
-   Bases: py:obj:`~ISiteReferenceState`, py:obj:`~ISite`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteReferenceState`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a Reference State site.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: SiteReferenceState
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarActivity
 ==============
 
-.. py:class:: IRadarActivity
+.. py:class:: ansys.stk.core.stkobjects.IRadarActivity
 
    object
    
    Provide access to the properties and methods defining radar activity.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarActivity
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivity.type`
 
 
 Import detail

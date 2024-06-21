@@ -1,13 +1,13 @@
 ITimeToolPointSamplingResult
 ============================
 
-.. py:class:: ITimeToolPointSamplingResult
+.. py:class:: ansys.stk.core.vgt.ITimeToolPointSamplingResult
 
    object
    
    Contains tabulated positions and velocities of a point created by Sample method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolPointSamplingResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingResult.intervals`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.ITimeToolPointSamplingResult.intervals
-    :type: IAgCrdnPointSamplingIntervalCollection
+    :type: ITimeToolPointSamplingIntervalCollection
 
     A collection of sampling intervals.
 

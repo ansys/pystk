@@ -1,13 +1,13 @@
 VectorGeometryToolPointOnSurface
 ================================
 
-.. py:class:: VectorGeometryToolPointOnSurface
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointOnSurface
 
-   Bases: py:obj:`~IVectorGeometryToolPointOnSurface`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The detic subpoint of the reference point as projected onto the central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointOnSurface
 
 Overview
 --------

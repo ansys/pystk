@@ -1,13 +1,13 @@
 IVehicleGraphics2DElevationsCollection
 ======================================
 
-.. py:class:: IVehicleGraphics2DElevationsCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection
 
    object
    
    Collection for elevation contours. Used by vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DElevationsCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:meth:`~remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.remove_at`
               - Remove an element from the collection using specified index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:meth:`~add_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.add_level`
               - Add a new element to the collection.
-            * - :py:meth:`~add_level_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.add_level_range`
               - Add a range of new levels to the collection.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection._NewEnum`
 
 
 Import detail

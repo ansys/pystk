@@ -1,13 +1,13 @@
 AntennaModelExternal
 ====================
 
-.. py:class:: AntennaModelExternal
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelExternal
 
-   Bases: py:obj:`~IAntennaModelExternal`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelExternal`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a external antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelExternal
 
 Overview
 --------

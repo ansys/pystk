@@ -1,12 +1,12 @@
 VEHICLE_DIRECTION
 =================
 
-.. py:class:: VEHICLE_DIRECTION
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_DIRECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_DIRECTION
 
 Overview
 --------

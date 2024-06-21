@@ -1,12 +1,12 @@
 IV_TIME_SENSE
 =============
 
-.. py:class:: IV_TIME_SENSE
+.. py:class:: ansys.stk.core.stkobjects.IV_TIME_SENSE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IV_TIME_SENSE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IMtoGraphics3DSwapDistances
 ===========================
 
-.. py:class:: IMtoGraphics3DSwapDistances
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances
 
    object
    
    Interface for MTO track 3D swap distances.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DSwapDistances
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_swap_distances`
-            * - :py:meth:`~label_from`
-            * - :py:meth:`~label_to`
-            * - :py:meth:`~model_from`
-            * - :py:meth:`~model_to`
-            * - :py:meth:`~marker_from`
-            * - :py:meth:`~marker_to`
-            * - :py:meth:`~point_from`
-            * - :py:meth:`~point_to`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.use_swap_distances`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.label_from`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.label_to`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.model_from`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.model_to`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.marker_from`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.marker_to`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.point_from`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.point_to`
 
 
 Import detail

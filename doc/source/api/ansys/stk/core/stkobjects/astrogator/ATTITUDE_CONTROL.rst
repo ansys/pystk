@@ -1,12 +1,12 @@
 ATTITUDE_CONTROL
 ================
 
-.. py:class:: ATTITUDE_CONTROL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ATTITUDE_CONTROL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ATTITUDE_CONTROL
 
 Overview
 --------

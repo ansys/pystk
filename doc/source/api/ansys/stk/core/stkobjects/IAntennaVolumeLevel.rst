@@ -1,13 +1,13 @@
 IAntennaVolumeLevel
 ===================
 
-.. py:class:: IAntennaVolumeLevel
+.. py:class:: ansys.stk.core.stkobjects.IAntennaVolumeLevel
 
    object
    
    IAgRadarCrossSectionVolumeLevel Interface for an radar cross section volume level.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaVolumeLevel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
-            * - :py:meth:`~color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevel.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevel.color`
 
 
 Import detail

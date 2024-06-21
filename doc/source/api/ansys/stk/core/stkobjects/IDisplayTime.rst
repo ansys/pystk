@@ -1,13 +1,13 @@
 IDisplayTime
 ============
 
-.. py:class:: IDisplayTime
+.. py:class:: ansys.stk.core.stkobjects.IDisplayTime
 
    object
    
    The display time interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDisplayTime
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_display_status_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTime.set_display_status_type`
               - Set the display status type.
-            * - :py:meth:`~is_display_status_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTime.is_display_status_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~display_status_type`
-            * - :py:meth:`~display_status_supported_types`
-            * - :py:meth:`~display_times_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTime.display_status_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTime.display_status_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTime.display_times_data`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: display_times_data
     :canonical: ansys.stk.core.stkobjects.IDisplayTime.display_times_data
-    :type: IAgDisplayTimesData
+    :type: IDisplayTimesData
 
     Returns the display times data.
 

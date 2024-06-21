@@ -1,13 +1,13 @@
 ICoverageBoundsLatLine
 ======================
 
-.. py:class:: ICoverageBoundsLatLine
+.. py:class:: ansys.stk.core.stkobjects.ICoverageBoundsLatLine
 
    ICoverageBounds
    
    Latitude Line: Create a set of points along a single latitude line, useful when the coverage is only expected to vary with longitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageBoundsLatLine
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_longitude`
-            * - :py:meth:`~stop_longitude`
-            * - :py:meth:`~latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLine.start_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLine.stop_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLine.latitude`
 
 
 Import detail

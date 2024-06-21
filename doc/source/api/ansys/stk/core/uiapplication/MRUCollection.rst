@@ -1,13 +1,13 @@
 MRUCollection
 =============
 
-.. py:class:: MRUCollection
+.. py:class:: ansys.stk.core.uiapplication.MRUCollection
 
-   Bases: py:obj:`~IMRUCollection`
+   Bases: py:obj:`~ansys.stk.core.uiapplication.IMRUCollection`
 
    Provide information about most recently used (MRU) list.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: MRUCollection
 
 Overview
 --------

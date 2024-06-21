@@ -1,13 +1,13 @@
 IElementCartesian
 =================
 
-.. py:class:: IElementCartesian
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementCartesian
 
    IElement
    
    Properties for Cartesian elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementCartesian
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
-            * - :py:meth:`~vx`
-            * - :py:meth:`~vy`
-            * - :py:meth:`~vz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.vx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.vy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.vz`
 
 
 Import detail

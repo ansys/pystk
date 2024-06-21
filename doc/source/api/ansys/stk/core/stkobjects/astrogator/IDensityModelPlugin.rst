@@ -1,13 +1,13 @@
 IDensityModelPlugin
 ===================
 
-.. py:class:: IDensityModelPlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin
 
    object
    
    Properties for the plugin atmospheric density model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IDensityModelPlugin
 
 Overview
 --------
@@ -20,34 +20,34 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~plugin_identifier`
-            * - :py:meth:`~plugin_config`
-            * - :py:meth:`~use_approximate_altitude`
-            * - :py:meth:`~computes_temperature`
-            * - :py:meth:`~computes_pressure`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~atmos_data_source`
-            * - :py:meth:`~f10`
-            * - :py:meth:`~f10_avg`
-            * - :py:meth:`~m10`
-            * - :py:meth:`~m10_avg`
-            * - :py:meth:`~s10`
-            * - :py:meth:`~s10_avg`
-            * - :py:meth:`~y10`
-            * - :py:meth:`~y10_avg`
-            * - :py:meth:`~kp`
-            * - :py:meth:`~dst_d_tc`
-            * - :py:meth:`~atmos_data_geo_magnetic_flux_source`
-            * - :py:meth:`~atmos_data_geo_magnetic_flux_update_rate`
-            * - :py:meth:`~atmos_data_filename`
-            * - :py:meth:`~atmos_aug_data_file`
-            * - :py:meth:`~atmos_aug_dtc_file`
-            * - :py:meth:`~drag_model_type`
-            * - :py:meth:`~drag_model_plugin_name`
-            * - :py:meth:`~drag_model_plugin`
-            * - :py:meth:`~uses_augmented_space_weather`
-            * - :py:meth:`~variable_area_history_file`
-            * - :py:meth:`~n_plate_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.plugin_identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.plugin_config`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.use_approximate_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.computes_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.computes_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.f10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.f10_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.m10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.m10_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.s10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.s10_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.y10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.y10_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.kp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.dst_d_tc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_data_geo_magnetic_flux_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_data_geo_magnetic_flux_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_data_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_aug_data_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_aug_dtc_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.drag_model_plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.drag_model_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.uses_augmented_space_weather`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.variable_area_history_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.n_plate_definition_file`
 
 
 Import detail
@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.plugin_config
-    :type: IAgVAPluginProperties
+    :type: IPluginProperties
 
     Get the properties of the selected plugin.
 
@@ -207,7 +207,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.drag_model_plugin
-    :type: IAgVADragModelPlugin
+    :type: IDragModelPlugin
 
     Drag model plugin properties.
 

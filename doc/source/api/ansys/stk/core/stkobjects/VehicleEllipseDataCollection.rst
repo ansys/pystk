@@ -1,13 +1,13 @@
 VehicleEllipseDataCollection
 ============================
 
-.. py:class:: VehicleEllipseDataCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleEllipseDataCollection
 
-   Bases: py:obj:`~IVehicleEllipseDataCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection`
 
    Ellipse Data Collection.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleEllipseDataCollection
 
 Overview
 --------

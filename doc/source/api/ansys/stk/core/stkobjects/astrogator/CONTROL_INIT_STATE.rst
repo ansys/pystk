@@ -1,12 +1,12 @@
 CONTROL_INIT_STATE
 ==================
 
-.. py:class:: CONTROL_INIT_STATE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_INIT_STATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CONTROL_INIT_STATE
 
 Overview
 --------

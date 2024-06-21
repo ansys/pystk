@@ -1,13 +1,13 @@
 IPickResultCollection
 =====================
 
-.. py:class:: IPickResultCollection
+.. py:class:: ansys.stk.core.graphics.IPickResultCollection
 
    object
    
    A collection of picked objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPickResultCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IPickResultCollection.item`
               - Return a picked object at the specified position in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IPickResultCollection.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IPickResultCollection._NewEnum`
 
 
 Import detail

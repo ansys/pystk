@@ -1,13 +1,13 @@
 AccessConstraintBackground
 ==========================
 
-.. py:class:: AccessConstraintBackground
+.. py:class:: ansys.stk.core.stkobjects.AccessConstraintBackground
 
-   Bases: py:obj:`~IAccessConstraintBackground`, py:obj:`~IAccessConstraint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintBackground`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class related to the Background constraint, which constrains access periods based on whether the Earth is or is not in the background.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AccessConstraintBackground
 
 Overview
 --------

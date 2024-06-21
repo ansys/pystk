@@ -1,12 +1,12 @@
 SET_HINT
 ========
 
-.. py:class:: SET_HINT
+.. py:class:: ansys.stk.core.graphics.SET_HINT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: SET_HINT
 
 Overview
 --------

@@ -1,12 +1,12 @@
 ROLLING_PULL_MODE
 =================
 
-.. py:class:: ROLLING_PULL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.ROLLING_PULL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ROLLING_PULL_MODE
 
 Overview
 --------

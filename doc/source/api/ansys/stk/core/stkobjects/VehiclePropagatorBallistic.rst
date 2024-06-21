@@ -1,13 +1,13 @@
 VehiclePropagatorBallistic
 ==========================
 
-.. py:class:: VehiclePropagatorBallistic
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorBallistic
 
-   Bases: py:obj:`~IVehiclePropagatorBallistic`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the ballistic propagator for a Missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorBallistic
 
 Overview
 --------

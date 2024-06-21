@@ -1,13 +1,13 @@
 IWaveform
 =========
 
-.. py:class:: IWaveform
+.. py:class:: ansys.stk.core.stkobjects.IWaveform
 
    object
    
    Provide access to the properties and methods defining an antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IWaveform
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
-            * - :py:meth:`~frequency_specification`
-            * - :py:meth:`~frequency`
-            * - :py:meth:`~wavelength`
-            * - :py:meth:`~power`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.frequency_specification`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.wavelength`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.power`
 
 
 Import detail

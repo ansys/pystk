@@ -1,13 +1,13 @@
 TimePeriod
 ==========
 
-.. py:class:: TimePeriod
+.. py:class:: ansys.stk.core.stkobjects.TimePeriod
 
-   Bases: py:obj:`~IAccessInterval`, py:obj:`~ITimePeriod`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessInterval`, py:obj:`~ansys.stk.core.stkobjects.ITimePeriod`
 
    Provide methods and properties to configure start and stop times.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TimePeriod
 
 Overview
 --------

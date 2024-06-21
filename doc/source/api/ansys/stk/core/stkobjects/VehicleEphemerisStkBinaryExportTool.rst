@@ -1,13 +1,13 @@
 VehicleEphemerisStkBinaryExportTool
 ===================================
 
-.. py:class:: VehicleEphemerisStkBinaryExportTool
+.. py:class:: ansys.stk.core.stkobjects.VehicleEphemerisStkBinaryExportTool
 
-   Bases: py:obj:`~IVehicleEphemerisStkBinaryExportTool`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkBinaryExportTool`
 
    AgVeEphemerisTypeSTKBinary Class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleEphemerisStkBinaryExportTool
 
 Overview
 --------

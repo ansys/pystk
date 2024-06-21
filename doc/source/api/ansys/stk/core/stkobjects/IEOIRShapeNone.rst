@@ -1,13 +1,13 @@
 IEOIRShapeNone
 ==============
 
-.. py:class:: IEOIRShapeNone
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeNone
 
    IEOIRShapeObject
    
    A none shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeNone
 
 Overview
 --------

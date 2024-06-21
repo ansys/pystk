@@ -1,13 +1,13 @@
 SamplingMethodAdaptive
 ======================
 
-.. py:class:: SamplingMethodAdaptive
+.. py:class:: ansys.stk.core.stkobjects.SamplingMethodAdaptive
 
-   Bases: py:obj:`~ISamplingMethodAdaptive`, py:obj:`~ISamplingMethodStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISamplingMethodAdaptive`, py:obj:`~ansys.stk.core.stkobjects.ISamplingMethodStrategy`
 
    Define an adaptive sampling method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SamplingMethodAdaptive
 
 Overview
 --------

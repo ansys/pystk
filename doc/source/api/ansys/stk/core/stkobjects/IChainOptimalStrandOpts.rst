@@ -1,13 +1,13 @@
 IChainOptimalStrandOpts
 =======================
 
-.. py:class:: IChainOptimalStrandOpts
+.. py:class:: ansys.stk.core.stkobjects.IChainOptimalStrandOpts
 
    object
    
    Chain optimal strand options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainOptimalStrandOpts
 
 Overview
 --------
@@ -20,16 +20,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute`
-            * - :py:meth:`~sampling_time_step`
-            * - :py:meth:`~include_access_edge_times_in_samples`
-            * - :py:meth:`~num_strands_to_store`
-            * - :py:meth:`~type`
-            * - :py:meth:`~link_comparison_type`
-            * - :py:meth:`~strand_comparison_type`
-            * - :py:meth:`~calc_scalar_type`
-            * - :py:meth:`~calc_scalar_name`
-            * - :py:meth:`~calc_scalar_file_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.compute`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.sampling_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.include_access_edge_times_in_samples`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.num_strands_to_store`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.link_comparison_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.strand_comparison_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.calc_scalar_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.calc_scalar_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.calc_scalar_file_name`
 
 
 Import detail

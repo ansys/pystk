@@ -1,13 +1,13 @@
 TriangleMeshPrimitive
 =====================
 
-.. py:class:: TriangleMeshPrimitive
+.. py:class:: ansys.stk.core.graphics.TriangleMeshPrimitive
 
-   Bases: py:obj:`~ITriangleMeshPrimitive`, py:obj:`~IPrimitive`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITriangleMeshPrimitive`, py:obj:`~ansys.stk.core.graphics.IPrimitive`
 
    Render a triangle mesh in the 3D scene. Examples of triangle meshes include polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TriangleMeshPrimitive
 
 Overview
 --------

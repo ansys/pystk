@@ -1,13 +1,13 @@
 IProfileSearchPlugin
 ====================
 
-.. py:class:: IProfileSearchPlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin
 
    IProfile
    
    Properties of a plugin search profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfileSearchPlugin
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~controls`
-            * - :py:meth:`~results`
-            * - :py:meth:`~plugin_config`
-            * - :py:meth:`~plugin_identifier`
-            * - :py:meth:`~scripting_tool`
-            * - :py:meth:`~reset_controls_before_run`
-            * - :py:meth:`~targeter_graphs`
-            * - :py:meth:`~log_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.controls`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.results`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.plugin_config`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.plugin_identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.scripting_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.reset_controls_before_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.targeter_graphs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.log_file`
 
 
 Import detail
@@ -43,19 +43,19 @@ Property detail
 
 .. py:property:: controls
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.controls
-    :type: IAgVASearchPluginControlCollection
+    :type: ISearchPluginControlCollection
 
     Get the selected control parameters.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.results
-    :type: IAgVASearchPluginResultCollection
+    :type: ISearchPluginResultCollection
 
     Get the selected equality constraints.
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.plugin_config
-    :type: IAgVAPluginProperties
+    :type: IPluginProperties
 
     Get the properties of the selected plugin.
 
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.scripting_tool
-    :type: IAgVAScriptingTool
+    :type: IScriptingTool
 
     Returns the Scripting tool for the sequence.
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.targeter_graphs
-    :type: IAgVATargeterGraphCollection
+    :type: ITargeterGraphCollection
 
     Graphs.
 

@@ -1,13 +1,13 @@
 IRadar
 ======
 
-.. py:class:: IRadar
+.. py:class:: ansys.stk.core.stkobjects.IRadar
 
    object
    
    Provide access to the properties and methods defining an Radar object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadar
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.set_model`
               - Set the current radar model by name.
-            * - :py:meth:`~is_refraction_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,15 +31,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_models`
-            * - :py:meth:`~model`
-            * - :py:meth:`~refraction`
-            * - :py:meth:`~refraction_supported_types`
-            * - :py:meth:`~refraction_model`
-            * - :py:meth:`~use_refraction_in_access`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.supported_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.refraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.refraction_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.refraction_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.use_refraction_in_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.rf_environment`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadar.model
-    :type: IAgRadarModel
+    :type: IRadarModel
 
     Gets the current radar model.
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.IRadar.refraction_model
-    :type: IAgRfModelBase
+    :type: IRefractionModelBase
 
     Gets a refraction model.
 
@@ -91,19 +91,19 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.IRadar.graphics_3d
-    :type: IAgRadarVO
+    :type: IRadarGraphics3D
 
     Get the 3D Graphics properties for the radar.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.IRadar.graphics
-    :type: IAgRadarGraphics
+    :type: IRadarGraphics
 
     Get the 2D Graphics properties for the radar.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.IRadar.rf_environment
-    :type: IAgObjectRFEnvironment
+    :type: IObjectRFEnvironment
 
     Gets the object RF Environment settings.
 

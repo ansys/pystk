@@ -1,13 +1,13 @@
 IVectorGeometryToolPointAtTimeInstant
 =====================================
 
-.. py:class:: IVectorGeometryToolPointAtTimeInstant
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant
 
    object
    
    Point fixed relative to reference system based on another point evaluated at specified time instant.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolPointAtTimeInstant
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_time_instant`
-            * - :py:meth:`~source_point`
-            * - :py:meth:`~reference_system`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.reference_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.source_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.reference_system`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.reference_time_instant
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     A reference time instant. Can be any Time event.
 
 .. py:property:: source_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.source_point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     A source point. Can be any VGT point.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.reference_system
-    :type: IAgCrdnSystem
+    :type: IVectorGeometryToolSystem
 
     A reference system. Can be any VGT system.
 

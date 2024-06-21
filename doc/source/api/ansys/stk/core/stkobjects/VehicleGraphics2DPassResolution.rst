@@ -1,13 +1,13 @@
 VehicleGraphics2DPassResolution
 ===============================
 
-.. py:class:: VehicleGraphics2DPassResolution
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DPassResolution
 
-   Bases: py:obj:`~IVehicleGraphics2DPassResolution`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassResolution`
 
    Ground track and orbit resolution for satellites defined in terms of ephemeris steps.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DPassResolution
 
 Overview
 --------

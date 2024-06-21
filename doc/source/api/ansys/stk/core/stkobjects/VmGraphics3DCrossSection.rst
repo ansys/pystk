@@ -1,13 +1,13 @@
 VmGraphics3DCrossSection
 ========================
 
-.. py:class:: VmGraphics3DCrossSection
+.. py:class:: ansys.stk.core.stkobjects.VmGraphics3DCrossSection
 
-   Bases: py:obj:`~IVmGraphics3DCrossSection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSection`
 
    Class defining planar cross-sections through the volumetric grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmGraphics3DCrossSection
 
 Overview
 --------

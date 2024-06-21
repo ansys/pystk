@@ -1,13 +1,13 @@
 ICalculationToolConditionSetGroup
 =================================
 
-.. py:class:: ICalculationToolConditionSetGroup
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionSetGroup
 
    object
    
    Allow accessing and creating condition set components.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionSetGroup
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup.remove`
               - Remove a specified element.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup.item`
               - Return an element by name or at a specified position.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup.get_item_by_index`
               - Retrieve a condition set from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup.get_item_by_name`
               - Retrieve a condition set from the collection by name.
 
     .. tab-item:: Properties
@@ -37,10 +37,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~context`
-            * - :py:meth:`~count`
-            * - :py:meth:`~factory`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup.context`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup.count`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup.factory`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup._NewEnum`
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.context
-    :type: IAgCrdnContext
+    :type: IAnalysisWorkbenchContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSetGroup.factory
-    :type: IAgCrdnConditionSetFactory
+    :type: ICalculationToolConditionSetFactory
 
     Returns a factory object used to create condition set components.
 

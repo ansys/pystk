@@ -1,13 +1,13 @@
 IPctCmpltEventArgs
 ==================
 
-.. py:class:: IPctCmpltEventArgs
+.. py:class:: ansys.stk.core.stkobjects.IPctCmpltEventArgs
 
    object
    
    Represents a structure used by the Percent Complete events.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPctCmpltEventArgs
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~cancel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.cancel`
               - Cancel a lengthy operation.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~canceled`
-            * - :py:meth:`~can_cancel`
-            * - :py:meth:`~percent_completed`
-            * - :py:meth:`~message`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.canceled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.can_cancel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.percent_completed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.message`
 
 
 Import detail

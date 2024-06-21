@@ -1,13 +1,13 @@
 IBasicManeuverStrategyStationkeeping
 ====================================
 
-.. py:class:: IBasicManeuverStrategyStationkeeping
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping
 
    object
    
    Interface used to access options for a Stationkeeping Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyStationkeeping
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_control_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
-            * - :py:meth:`~cancel_tgt_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.cancel_tgt_position_vel`
               - Cancel the position velocity strategies for Station Keeping.
 
     .. tab-item:: Properties
@@ -31,27 +31,27 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~target_name`
-            * - :py:meth:`~valid_target_names`
-            * - :py:meth:`~target_resolution`
-            * - :py:meth:`~max_target_speed_fraction`
-            * - :py:meth:`~rel_bearing`
-            * - :py:meth:`~rel_range`
-            * - :py:meth:`~desired_radius`
-            * - :py:meth:`~turn_direction`
-            * - :py:meth:`~maneuver_factor`
-            * - :py:meth:`~stop_condition`
-            * - :py:meth:`~use_relative_course`
-            * - :py:meth:`~stop_course`
-            * - :py:meth:`~stop_after_turn_count`
-            * - :py:meth:`~stop_after_duration`
-            * - :py:meth:`~stop_after_time`
-            * - :py:meth:`~control_limit_mode`
-            * - :py:meth:`~control_limit_turn_radius`
-            * - :py:meth:`~control_limit_turn_rate`
-            * - :py:meth:`~control_limit_horiz_accel`
-            * - :py:meth:`~compensate_for_coriolis_accel`
-            * - :py:meth:`~position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.target_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.valid_target_names`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.target_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.max_target_speed_fraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.rel_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.rel_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.desired_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.maneuver_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_condition`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.use_relative_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_course`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_after_turn_count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_after_duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_after_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_turn_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_turn_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_horiz_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.position_vel_strategies`
 
 
 Import detail
@@ -187,7 +187,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.position_vel_strategies
-    :type: IAgAvtrBasicManeuverTargetPosVel
+    :type: IBasicManeuverTargetPositionVel
 
     Get the position velocity strategies for Station Keeping.
 

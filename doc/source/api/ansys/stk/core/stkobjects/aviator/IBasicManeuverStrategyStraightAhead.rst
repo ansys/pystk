@@ -1,13 +1,13 @@
 IBasicManeuverStrategyStraightAhead
 ===================================
 
-.. py:class:: IBasicManeuverStrategyStraightAhead
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStraightAhead
 
    object
    
    Interface used to access options for a Straight Ahead Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyStraightAhead
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStraightAhead.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStraightAhead.compensate_for_coriolis_accel`
 
 
 Import detail

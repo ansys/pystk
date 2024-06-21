@@ -1,12 +1,12 @@
 POLARIZATION_TYPE
 =================
 
-.. py:class:: POLARIZATION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.POLARIZATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: POLARIZATION_TYPE
 
 Overview
 --------

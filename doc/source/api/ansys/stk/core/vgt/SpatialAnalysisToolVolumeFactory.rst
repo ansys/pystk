@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeFactory
 ================================
 
-.. py:class:: SpatialAnalysisToolVolumeFactory
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeFactory
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeFactory`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFactory`
 
    The factory is used to create instances of volumes.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeFactory
 
 Overview
 --------

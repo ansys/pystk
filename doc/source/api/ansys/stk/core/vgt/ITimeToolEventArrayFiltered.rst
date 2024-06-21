@@ -1,13 +1,13 @@
 ITimeToolEventArrayFiltered
 ===========================
 
-.. py:class:: ITimeToolEventArrayFiltered
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArrayFiltered
 
    object
    
    Defined by filtering times from original time array according to specified filtering method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArrayFiltered
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~original_time_array`
-            * - :py:meth:`~filter_type`
-            * - :py:meth:`~count`
-            * - :py:meth:`~step`
-            * - :py:meth:`~include_interval_stop_times`
-            * - :py:meth:`~filter_interval_list`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.original_time_array`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.filter_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.count`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.step`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.include_interval_stop_times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.filter_interval_list`
 
 
 Import detail
@@ -41,7 +41,7 @@ Property detail
 
 .. py:property:: original_time_array
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFiltered.original_time_array
-    :type: IAgCrdnEventArray
+    :type: ITimeToolEventArray
 
     The original time array.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: filter_interval_list
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFiltered.filter_interval_list
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The interval list used to filter samples when FilterType is set to Skip Intervals.
 

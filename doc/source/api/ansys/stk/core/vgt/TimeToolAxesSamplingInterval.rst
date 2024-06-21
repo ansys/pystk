@@ -1,13 +1,13 @@
 TimeToolAxesSamplingInterval
 ============================
 
-.. py:class:: TimeToolAxesSamplingInterval
+.. py:class:: ansys.stk.core.vgt.TimeToolAxesSamplingInterval
 
-   Bases: py:obj:`~ITimeToolAxesSamplingInterval`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolAxesSamplingInterval`
 
    The interface represents an interval with the time, orientation and velocity arrays.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolAxesSamplingInterval
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneEvent
 =============================
 
-.. py:class:: IVehicleGraphics3DBPlaneEvent
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent
 
    object
    
    3D BPlane Event.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneEvent
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~event_epoch`
-            * - :py:meth:`~before_event`
-            * - :py:meth:`~after_event`
-            * - :py:meth:`~always_display`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent.event_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent.before_event`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent.after_event`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent.always_display`
 
 
 Import detail

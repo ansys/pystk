@@ -1,13 +1,13 @@
 IVehicleLOPForceModel
 =====================
 
-.. py:class:: IVehicleLOPForceModel
+.. py:class:: ansys.stk.core.stkobjects.IVehicleLOPForceModel
 
    object
    
    Force model interface for LOP propagator.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleLOPForceModel
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_gravity`
-            * - :py:meth:`~third_body_gravity`
-            * - :py:meth:`~drag`
-            * - :py:meth:`~solar_radiation_pressure`
-            * - :py:meth:`~physical_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.central_body_gravity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.third_body_gravity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.drag`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.solar_radiation_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.physical_data`
 
 
 Import detail
@@ -40,31 +40,31 @@ Property detail
 
 .. py:property:: central_body_gravity
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.central_body_gravity
-    :type: IAgVeLOPCentralBodyGravity
+    :type: IVehicleLOPCentralBodyGravity
 
     Get the central body gravity parameters.
 
 .. py:property:: third_body_gravity
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.third_body_gravity
-    :type: IAgVeThirdBodyGravity
+    :type: IVehicleThirdBodyGravity
 
     Get the 3rd body gravity parameters.
 
 .. py:property:: drag
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.drag
-    :type: IAgVeLOPForceModelDrag
+    :type: IVehicleLOPForceModelDrag
 
     Get the atmospheric drag parameters.
 
 .. py:property:: solar_radiation_pressure
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.solar_radiation_pressure
-    :type: IAgVeLOPSolarRadiationPressure
+    :type: IVehicleLOPSolarRadiationPressure
 
     Get the solar radiation pressure parameters.
 
 .. py:property:: physical_data
     :canonical: ansys.stk.core.stkobjects.IVehicleLOPForceModel.physical_data
-    :type: IAgVePhysicalData
+    :type: IVehiclePhysicalData
 
     Get the physical data parameters.
 

@@ -1,13 +1,13 @@
 IStateCalcFuelMass
 ==================
 
-.. py:class:: IStateCalcFuelMass
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcFuelMass
 
    object
    
    Properties for a FuelMass calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcFuelMass
 
 Overview
 --------

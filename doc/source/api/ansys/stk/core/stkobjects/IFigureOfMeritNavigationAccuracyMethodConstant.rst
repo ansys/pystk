@@ -1,13 +1,13 @@
 IFigureOfMeritNavigationAccuracyMethodConstant
 ==============================================
 
-.. py:class:: IFigureOfMeritNavigationAccuracyMethodConstant
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodConstant
 
    IFigureOfMeritNavigationAccuracyMethod
    
    Constant Value method for uncertainty in range measurements for the Navigation Accuracy Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritNavigationAccuracyMethodConstant
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodConstant.value`
 
 
 Import detail

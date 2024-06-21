@@ -1,13 +1,13 @@
 IVehiclePointing
 ================
 
-.. py:class:: IVehiclePointing
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePointing
 
    object
    
    Interface for target pointing attitude profiles, which override the basic attitude profile for a satellite and have a selected axis point in the direction of one or more selected targets, subject to applicable access constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePointing
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_target_pointing`
-            * - :py:meth:`~targets`
-            * - :py:meth:`~target_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.use_target_pointing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.targets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.target_times`
 
 
 Import detail
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: targets
     :canonical: ansys.stk.core.stkobjects.IVehiclePointing.targets
-    :type: IAgVeTargetPointingCollection
+    :type: IVehicleTargetPointingCollection
 
     Get the targets used for the attitude profile.
 
 .. py:property:: target_times
     :canonical: ansys.stk.core.stkobjects.IVehiclePointing.target_times
-    :type: IAgVeTargetTimes
+    :type: IVehicleTargetTimes
 
     Get the target times.
 

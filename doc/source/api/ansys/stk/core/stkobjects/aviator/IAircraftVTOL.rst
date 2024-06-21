@@ -1,13 +1,13 @@
 IAircraftVTOL
 =============
 
-.. py:class:: IAircraftVTOL
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftVTOL
 
    object
    
    Interface used to access the VTOL options for an aircraft in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftVTOL
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_vtol_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOL.get_vtol_by_name`
               - Get the VTOL model with the given name.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOL.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
 

@@ -1,13 +1,13 @@
 IVehicleGraphics2DElevationsElement
 ===================================
 
-.. py:class:: IVehicleGraphics2DElevationsElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement
 
    object
    
    2D Graphics settings for elevation contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DElevationsElement
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~elevation`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~distance_visible`
-            * - :py:meth:`~user_text_visible`
-            * - :py:meth:`~user_text`
-            * - :py:meth:`~label_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.distance_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.user_text_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.user_text`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.label_angle`
 
 
 Import detail

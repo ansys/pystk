@@ -1,13 +1,13 @@
 VehicleGraphics3DWaypointMarkersCollection
 ==========================================
 
-.. py:class:: VehicleGraphics3DWaypointMarkersCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersCollection
 
-   Bases: py:obj:`~IVehicleGraphics3DWaypointMarkersCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersCollection`
 
    Collection of Waypoint Markers .
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DWaypointMarkersCollection
 
 Overview
 --------

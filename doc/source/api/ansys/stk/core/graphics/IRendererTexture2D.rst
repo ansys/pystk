@@ -1,13 +1,13 @@
 IRendererTexture2D
 ==================
 
-.. py:class:: IRendererTexture2D
+.. py:class:: ansys.stk.core.graphics.IRendererTexture2D
 
    object
    
    A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IRendererTexture2D
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~template`
+            * - :py:attr:`~ansys.stk.core.graphics.IRendererTexture2D.template`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: template
     :canonical: ansys.stk.core.graphics.IRendererTexture2D.template
-    :type: IAgStkGraphicsRendererTextureTemplate2D
+    :type: IRendererTextureTemplate2D
 
     Gets a template from which the texture was created.
 

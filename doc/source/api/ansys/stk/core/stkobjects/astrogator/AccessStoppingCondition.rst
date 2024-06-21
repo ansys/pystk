@@ -1,13 +1,13 @@
 AccessStoppingCondition
 =======================
 
-.. py:class:: AccessStoppingCondition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IAccessStoppingCondition`, py:obj:`~IStoppingConditionComponent`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAccessStoppingCondition`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Access stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: AccessStoppingCondition
 
 Overview
 --------

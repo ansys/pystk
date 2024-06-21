@@ -1,13 +1,13 @@
 IUnitPreferencesUnitCollection
 ==============================
 
-.. py:class:: IUnitPreferencesUnitCollection
+.. py:class:: ansys.stk.core.stkutil.IUnitPreferencesUnitCollection
 
    object
    
    Provide access to the Unit collection.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IUnitPreferencesUnitCollection
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection.item`
               - Return the specific item in the collection given a unit identifier or an index.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection.get_item_by_index`
               - Retrieve a unit from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection.get_item_by_name`
               - Retrieve a unit from the collection by name.
 
     .. tab-item:: Properties
@@ -33,8 +33,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection._NewEnum`
 
 
 Import detail

@@ -1,13 +1,13 @@
 CoverageGraphics2DAnimation
 ===========================
 
-.. py:class:: CoverageGraphics2DAnimation
+.. py:class:: ansys.stk.core.stkobjects.CoverageGraphics2DAnimation
 
-   Bases: py:obj:`~ICoverageGraphics2DAnimation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation`
 
    2D animation graphics options for the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageGraphics2DAnimation
 
 Overview
 --------

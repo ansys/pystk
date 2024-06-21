@@ -1,12 +1,12 @@
 RASTER_ORIENTATION
 ==================
 
-.. py:class:: RASTER_ORIENTATION
+.. py:class:: ansys.stk.core.graphics.RASTER_ORIENTATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RASTER_ORIENTATION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 RasterStream
 ============
 
-.. py:class:: RasterStream
+.. py:class:: ansys.stk.core.graphics.RasterStream
 
-   Bases: py:obj:`~IRasterStream`, py:obj:`~IRaster`
+   Bases: py:obj:`~ansys.stk.core.graphics.IRasterStream`, py:obj:`~ansys.stk.core.graphics.IRaster`
 
    A raster, the data of which, is updated dynamically at the specified update delta. The class can be used to stream video and other dynamic raster data to textures and other raster clients...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RasterStream
 
 Overview
 --------

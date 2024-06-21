@@ -1,13 +1,13 @@
 SensorPointingFixed
 ===================
 
-.. py:class:: SensorPointingFixed
+.. py:class:: ansys.stk.core.stkobjects.SensorPointingFixed
 
-   Bases: py:obj:`~ISensorPointing`, py:obj:`~ISensorPointingFixed`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingFixed`
 
    Class defining the fixed pointing type for a Sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorPointingFixed
 
 Overview
 --------

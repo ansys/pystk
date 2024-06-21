@@ -1,13 +1,13 @@
 IAdvancedFixedWingTurbojetBasicABProp
 =====================================
 
-.. py:class:: IAdvancedFixedWingTurbojetBasicABProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp
 
    object
    
    Interface used to access the options for the Turbojet - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAdvancedFixedWingTurbojetBasicABProp
 
 Overview
 --------
@@ -20,20 +20,20 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~can_use_afterburner`
-            * - :py:meth:`~design_altitude`
-            * - :py:meth:`~design_mach`
-            * - :py:meth:`~design_thrust`
-            * - :py:meth:`~afterburner_on`
-            * - :py:meth:`~max_compression_temp`
-            * - :py:meth:`~max_burner_temp`
-            * - :py:meth:`~max_afterburner_temp`
-            * - :py:meth:`~hpc_pressure_ratio`
-            * - :py:meth:`~lpc_pressure_ratio`
-            * - :py:meth:`~efficiencies_and_losses`
-            * - :py:meth:`~fuel_type`
-            * - :py:meth:`~fuel_mode_as_afprop`
-            * - :py:meth:`~fuel_mode_as_cea`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.can_use_afterburner`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.design_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.design_mach`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.design_thrust`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.afterburner_on`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.max_compression_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.max_burner_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.max_afterburner_temp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.hpc_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.lpc_pressure_ratio`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.efficiencies_and_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.fuel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.fuel_mode_as_afprop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.fuel_mode_as_cea`
 
 
 Import detail
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: efficiencies_and_losses
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.efficiencies_and_losses
-    :type: IAgAvtrPropulsionEfficiencies
+    :type: IPropulsionEfficiencies
 
     Get the jet engine's propulsion efficiencies and losses.
 
@@ -121,13 +121,13 @@ Property detail
 
 .. py:property:: fuel_mode_as_afprop
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.fuel_mode_as_afprop
-    :type: IAgAvtrFuelModelKeroseneAFPROP
+    :type: IFuelModelKeroseneAFPROP
 
     Get the interface for a Kerosene - AFPROP fuel mode.
 
 .. py:property:: fuel_mode_as_cea
     :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABProp.fuel_mode_as_cea
-    :type: IAgAvtrFuelModelKeroseneCEA
+    :type: IFuelModelKeroseneCEA
 
     Get the interface for a Kerosene - CEA fuel mode.
 

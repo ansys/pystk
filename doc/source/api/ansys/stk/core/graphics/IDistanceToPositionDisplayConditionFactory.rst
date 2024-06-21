@@ -1,13 +1,13 @@
 IDistanceToPositionDisplayConditionFactory
 ==========================================
 
-.. py:class:: IDistanceToPositionDisplayConditionFactory
+.. py:class:: ansys.stk.core.graphics.IDistanceToPositionDisplayConditionFactory
 
    object
    
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IDistanceToPositionDisplayConditionFactory
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayConditionFactory.initialize`
               - Initialize a default distance to position display condition. With this constructor, an object is always rendered regardless of the camera's distance to the position.
-            * - :py:meth:`~initialize_with_distances`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayConditionFactory.initialize_with_distances`
               - Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
-            * - :py:meth:`~initialize_with_reference_frame_and_distances`
+            * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayConditionFactory.initialize_with_reference_frame_and_distances`
               - Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
 

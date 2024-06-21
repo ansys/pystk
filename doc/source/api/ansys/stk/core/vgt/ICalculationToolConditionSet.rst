@@ -1,13 +1,13 @@
 ICalculationToolConditionSet
 ============================
 
-.. py:class:: ICalculationToolConditionSet
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionSet
 
    object
    
    Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for...
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionSet
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~evaluate`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSet.evaluate`
               - Return an array of results of evaluating continuously varying condition metrics, one for each condition in the set, at the specified time, used for detecting condition crossings.
-            * - :py:meth:`~evaluate_with_rate`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSet.evaluate_with_rate`
               - Return an array of results of evaluating continuously varying condition metrics and their rates of change, one for each condition in the set, at the specified time, used for detecting condition crossings.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSet.type`
 
 
 Import detail

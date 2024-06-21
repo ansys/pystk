@@ -1,13 +1,13 @@
 IVehiclePropagatorBallistic
 ===========================
 
-.. py:class:: IVehiclePropagatorBallistic
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorBallistic
 
    IVehiclePropagator
    
    Ballistic propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorBallistic
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.propagate`
               - Propagates the missile's path using the specified time interval.
-            * - :py:meth:`~set_launch_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.set_launch_type`
               - Set flight parameters type.
-            * - :py:meth:`~is_launch_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.is_launch_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:meth:`~set_impact_location_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.set_impact_location_type`
               - Set the impact location type.
-            * - :py:meth:`~is_impact_location_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.is_impact_location_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -37,14 +37,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~launch_type`
-            * - :py:meth:`~launch_supported_types`
-            * - :py:meth:`~launch`
-            * - :py:meth:`~impact_location_type`
-            * - :py:meth:`~impact_location_supported_types`
-            * - :py:meth:`~impact_location`
-            * - :py:meth:`~ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.launch_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.launch_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.launch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.impact_location_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.impact_location_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.impact_location`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.ephemeris_interval`
 
 
 Import detail
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: launch
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.launch
-    :type: IAgVeLaunch
+    :type: IVehicleLaunch
 
     Get launch parameters.
 
@@ -96,13 +96,13 @@ Property detail
 
 .. py:property:: impact_location
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.impact_location
-    :type: IAgVeImpactLocation
+    :type: IVehicleImpactLocation
 
     Get the impact location.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

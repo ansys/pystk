@@ -1,13 +1,13 @@
 ScenarioGraphics
 ================
 
-.. py:class:: ScenarioGraphics
+.. py:class:: ansys.stk.core.stkobjects.ScenarioGraphics
 
-   Bases: py:obj:`~IScenarioGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenarioGraphics`
 
    Class defining the 2D Graphics properties of a Scenario.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScenarioGraphics
 
 Overview
 --------

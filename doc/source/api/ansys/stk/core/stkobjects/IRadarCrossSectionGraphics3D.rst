@@ -1,13 +1,13 @@
 IRadarCrossSectionGraphics3D
 ============================
 
-.. py:class:: IRadarCrossSectionGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D
 
    object
    
    IAgRadarCrossSectionVO Interface for radar cross section 3D properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionGraphics3D
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_contours`
-            * - :py:meth:`~volume_graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D.show_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D.volume_graphics`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: volume_graphics
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D.volume_graphics
-    :type: IAgRadarCrossSectionVolumeGraphics
+    :type: IRadarCrossSectionVolumeGraphics
 
     Gets the radar cross section volume graphics interface.
 

@@ -1,12 +1,12 @@
 MISSILE_AERO_STRATEGY
 =====================
 
-.. py:class:: MISSILE_AERO_STRATEGY
+.. py:class:: ansys.stk.core.stkobjects.aviator.MISSILE_AERO_STRATEGY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MISSILE_AERO_STRATEGY
 
 Overview
 --------

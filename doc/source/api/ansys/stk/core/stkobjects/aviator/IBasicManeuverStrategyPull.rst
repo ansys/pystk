@@ -1,13 +1,13 @@
 IBasicManeuverStrategyPull
 ==========================
 
-.. py:class:: IBasicManeuverStrategyPull
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull
 
    object
    
    Interface used to access options for a Pull Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyPull
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~active_mode`
-            * - :py:meth:`~active_angle`
-            * - :py:meth:`~pull_g_mode`
-            * - :py:meth:`~override_pull_g`
-            * - :py:meth:`~airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.active_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.active_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.pull_g_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.override_pull_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.airspeed_options`
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

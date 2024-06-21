@@ -1,13 +1,13 @@
 VehicleLaunchLLA
 ================
 
-.. py:class:: VehicleLaunchLLA
+.. py:class:: ansys.stk.core.stkobjects.VehicleLaunchLLA
 
-   Bases: py:obj:`~IVehicleLaunch`, py:obj:`~IVehicleLaunchLLA`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunch`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchLLA`
 
    Class defining geodetic launch latitude, longitude and altitude for a Missile or LaunchVehicle.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleLaunchLLA
 
 Overview
 --------

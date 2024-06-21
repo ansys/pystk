@@ -1,13 +1,13 @@
 IVehicleGraphics3DBearingEllipse
 ================================
 
-.. py:class:: IVehicleGraphics3DBearingEllipse
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse
 
    IVehicleGraphics3DProximityAreaObject
    
    Define an ellipse, relative to a bearing from the North, around the object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBearingEllipse
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bearing`
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~semi_minor_axis`
-            * - :py:meth:`~granularity`
-            * - :py:meth:`~major_axis_offset`
-            * - :py:meth:`~minor_axis_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse.bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse.semi_minor_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse.granularity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse.major_axis_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse.minor_axis_offset`
 
 
 Import detail

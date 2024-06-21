@@ -1,12 +1,12 @@
 CRDN_DISPLAY_AXIS_SELECTOR
 ==========================
 
-.. py:class:: CRDN_DISPLAY_AXIS_SELECTOR
+.. py:class:: ansys.stk.core.vgt.CRDN_DISPLAY_AXIS_SELECTOR
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_DISPLAY_AXIS_SELECTOR
 
 Overview
 --------

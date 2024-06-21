@@ -1,13 +1,13 @@
 IEnrouteTurnDirectionOptions
 ============================
 
-.. py:class:: IEnrouteTurnDirectionOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IEnrouteTurnDirectionOptions
 
    object
    
    Interface used to access the Enroute Turn Direction options for an Aviator procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IEnrouteTurnDirectionOptions
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enroute_first_turn`
-            * - :py:meth:`~enroute_second_turn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteTurnDirectionOptions.enroute_first_turn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteTurnDirectionOptions.enroute_second_turn`
 
 
 Import detail

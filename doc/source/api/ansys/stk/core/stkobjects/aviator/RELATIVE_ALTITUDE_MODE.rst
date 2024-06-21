@@ -1,12 +1,12 @@
 RELATIVE_ALTITUDE_MODE
 ======================
 
-.. py:class:: RELATIVE_ALTITUDE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.RELATIVE_ALTITUDE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: RELATIVE_ALTITUDE_MODE
 
 Overview
 --------

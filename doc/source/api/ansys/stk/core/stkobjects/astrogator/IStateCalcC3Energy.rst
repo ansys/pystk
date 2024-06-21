@@ -1,13 +1,13 @@
 IStateCalcC3Energy
 ==================
 
-.. py:class:: IStateCalcC3Energy
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcC3Energy
 
    object
    
    Properties for a C3 Energy calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcC3Energy
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcC3Energy.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcC3Energy.element_type`
 
 
 Import detail

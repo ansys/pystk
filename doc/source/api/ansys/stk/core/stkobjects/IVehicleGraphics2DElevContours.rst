@@ -1,13 +1,13 @@
 IVehicleGraphics2DElevContours
 ==============================
 
-.. py:class:: IVehicleGraphics2DElevContours
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours
 
    object
    
    General settings regarding display of elevation contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DElevContours
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~is_fill_visible`
-            * - :py:meth:`~fill_style`
-            * - :py:meth:`~num_of_decimal_digits`
-            * - :py:meth:`~elevations`
-            * - :py:meth:`~fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.is_fill_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.fill_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.num_of_decimal_digits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.elevations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.fill_translucency`
 
 
 Import detail
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: elevations
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.elevations
-    :type: IAgVeGfxElevationsCollection
+    :type: IVehicleGraphics2DElevationsCollection
 
     Collection of Levels.
 

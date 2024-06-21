@@ -1,12 +1,12 @@
 CRDN_VOLUME_RESULT_VECTOR_REQUEST
 =================================
 
-.. py:class:: CRDN_VOLUME_RESULT_VECTOR_REQUEST
+.. py:class:: ansys.stk.core.vgt.CRDN_VOLUME_RESULT_VECTOR_REQUEST
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_VOLUME_RESULT_VECTOR_REQUEST
 
 Overview
 --------

@@ -1,13 +1,13 @@
 DemodulatorModelDpsk
 ====================
 
-.. py:class:: DemodulatorModelDpsk
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelDpsk
 
-   Bases: py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a DPSK modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelDpsk
 
 Overview
 --------

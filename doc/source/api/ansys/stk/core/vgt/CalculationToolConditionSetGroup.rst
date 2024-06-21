@@ -1,13 +1,13 @@
 CalculationToolConditionSetGroup
 ================================
 
-.. py:class:: CalculationToolConditionSetGroup
+.. py:class:: ansys.stk.core.vgt.CalculationToolConditionSetGroup
 
-   Bases: py:obj:`~ICalculationToolConditionSetGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup`
 
    Allow accessing and creating condition set components.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolConditionSetGroup
 
 Overview
 --------

@@ -1,13 +1,13 @@
 Catalog
 =======
 
-.. py:class:: Catalog
+.. py:class:: ansys.stk.core.stkobjects.aviator.Catalog
 
-   Bases: py:obj:`~ICatalog`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalog`
 
    Class defining the Aviator Catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: Catalog
 
 Overview
 --------

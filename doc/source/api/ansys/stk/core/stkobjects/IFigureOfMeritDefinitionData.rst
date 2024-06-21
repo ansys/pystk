@@ -1,13 +1,13 @@
 IFigureOfMeritDefinitionData
 ============================
 
-.. py:class:: IFigureOfMeritDefinitionData
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData
 
    object
    
    IAgFmDefinitionData.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritDefinitionData
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleGraphics2DWaypointMarkersCollection
 ===========================================
 
-.. py:class:: IVehicleGraphics2DWaypointMarkersCollection
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersCollection
 
    object
    
    A list of 2D definitions for the vehicle way points.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DWaypointMarkersCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersCollection._NewEnum`
 
 
 Import detail

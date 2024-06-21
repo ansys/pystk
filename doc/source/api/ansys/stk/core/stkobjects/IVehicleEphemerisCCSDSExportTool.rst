@@ -1,13 +1,13 @@
 IVehicleEphemerisCCSDSExportTool
 ================================
 
-.. py:class:: IVehicleEphemerisCCSDSExportTool
+.. py:class:: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool
 
    object
    
    The CCSDS Ephemeris type for the Export Ephemeris/Attitude Tool.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleEphemerisCCSDSExportTool
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.export`
               - Export the ephemeris file.
 
     .. tab-item:: Properties
@@ -29,19 +29,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~originator`
-            * - :py:meth:`~object_id`
-            * - :py:meth:`~object_name`
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~date_format`
-            * - :py:meth:`~ephemeris_format`
-            * - :py:meth:`~time_precision`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~time_period`
-            * - :py:meth:`~reference_frames_supported`
-            * - :py:meth:`~use_satellite_center_and_frame`
-            * - :py:meth:`~time_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.originator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.object_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.date_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.ephemeris_format`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.time_precision`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.time_period`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.reference_frames_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.use_satellite_center_and_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.time_system`
 
 
 Import detail
@@ -105,13 +105,13 @@ Property detail
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.step_size
-    :type: IAgExportToolStepSize
+    :type: IExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool.time_period
-    :type: IAgExportToolTimePeriod
+    :type: IExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 

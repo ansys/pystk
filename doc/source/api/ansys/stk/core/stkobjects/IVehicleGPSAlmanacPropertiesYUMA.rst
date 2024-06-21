@@ -1,13 +1,13 @@
 IVehicleGPSAlmanacPropertiesYUMA
 ================================
 
-.. py:class:: IVehicleGPSAlmanacPropertiesYUMA
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA
 
    IVehicleGPSAlmanacProperties
    
    YUMA almanac properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSAlmanacPropertiesYUMA
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~week_number`
-            * - :py:meth:`~almanac_week`
-            * - :py:meth:`~reference_week`
-            * - :py:meth:`~time_of_almanac`
-            * - :py:meth:`~date_of_almanac`
-            * - :py:meth:`~health`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.week_number`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.almanac_week`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.reference_week`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.time_of_almanac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.date_of_almanac`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.health`
 
 
 Import detail

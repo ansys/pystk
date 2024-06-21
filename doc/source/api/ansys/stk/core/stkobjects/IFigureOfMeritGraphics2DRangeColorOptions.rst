@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DRangeColorOptions
 =========================================
 
-.. py:class:: IFigureOfMeritGraphics2DRangeColorOptions
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions
 
    object
    
    Range color options for contour legend.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DRangeColorOptions
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~direction`
-            * - :py:meth:`~max_squares_per_row`
-            * - :py:meth:`~max_squares_per_column`
-            * - :py:meth:`~color_square_width`
-            * - :py:meth:`~color_square_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.max_squares_per_row`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.max_squares_per_column`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.color_square_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.color_square_height`
 
 
 Import detail

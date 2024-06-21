@@ -1,13 +1,13 @@
 IRFFilterModelFir
 =================
 
-.. py:class:: IRFFilterModelFir
+.. py:class:: ansys.stk.core.stkobjects.IRFFilterModelFir
 
    object
    
    Provide access to the properties and methods defining a FIR RF filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRFFilterModelFir
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sampling_frequency`
-            * - :py:meth:`~numerator_complex_polynomial`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelFir.sampling_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelFir.numerator_complex_polynomial`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: numerator_complex_polynomial
     :canonical: ansys.stk.core.stkobjects.IRFFilterModelFir.numerator_complex_polynomial
-    :type: IAgCRComplexCollection
+    :type: ICRComplexCollection
 
     Gets the numerator complex polynomial.
 

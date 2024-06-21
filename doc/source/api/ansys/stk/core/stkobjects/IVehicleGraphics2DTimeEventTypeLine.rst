@@ -1,13 +1,13 @@
 IVehicleGraphics2DTimeEventTypeLine
 ===================================
 
-.. py:class:: IVehicleGraphics2DTimeEventTypeLine
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine
 
    object
    
    2D Graphics time event: line type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DTimeEventTypeLine
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_offset_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.set_offset_type`
               - Offset direction (left or right).
-            * - :py:meth:`~is_offset_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.is_offset_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,14 +31,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_style`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~unique_id`
-            * - :py:meth:`~offset_type`
-            * - :py:meth:`~offset_supported_types`
-            * - :py:meth:`~offset_pixels`
-            * - :py:meth:`~event_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.unique_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.offset_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.offset_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.offset_pixels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.event_interval`
 
 
 Import detail
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: event_interval
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.event_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Event interval.
 

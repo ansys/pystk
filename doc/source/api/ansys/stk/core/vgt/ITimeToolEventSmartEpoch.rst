@@ -1,13 +1,13 @@
 ITimeToolEventSmartEpoch
 ========================
 
-.. py:class:: ITimeToolEventSmartEpoch
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventSmartEpoch
 
    object
    
    A smart epoch.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventSmartEpoch
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_explicit_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch.set_explicit_time`
               - Set explicit time instant and the smart epoch's state to Explicit.
-            * - :py:meth:`~set_implicit_time`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch.set_implicit_time`
               - Set the reference event and the smart epoch's state to Implicit.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_instant`
-            * - :py:meth:`~reference_event`
-            * - :py:meth:`~state`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch.time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch.reference_event`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch.state`
 
 
 Import detail
@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: reference_event
     :canonical: ansys.stk.core.vgt.ITimeToolEventSmartEpoch.reference_event
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     A reference event object used to compute time instant if the state is set to implicit.
 

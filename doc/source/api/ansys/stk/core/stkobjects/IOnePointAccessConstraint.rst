@@ -1,13 +1,13 @@
 IOnePointAccessConstraint
 =========================
 
-.. py:class:: IOnePointAccessConstraint
+.. py:class:: ansys.stk.core.stkobjects.IOnePointAccessConstraint
 
    object
    
    One Point Access Result.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOnePointAccessConstraint
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~status`
-            * - :py:meth:`~constraint`
-            * - :py:meth:`~value`
-            * - :py:meth:`~object_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessConstraint.status`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessConstraint.constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessConstraint.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessConstraint.object_path`
 
 
 Import detail

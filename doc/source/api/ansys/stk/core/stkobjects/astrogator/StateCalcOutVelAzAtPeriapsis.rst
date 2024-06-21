@@ -1,13 +1,13 @@
 StateCalcOutVelAzAtPeriapsis
 ============================
 
-.. py:class:: StateCalcOutVelAzAtPeriapsis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcOutVelAzAtPeriapsis
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcOutVelAzAtPeriapsis`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOutVelAzAtPeriapsis`
 
    OutVelocityAzAtPeriapsis Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcOutVelAzAtPeriapsis
 
 Overview
 --------

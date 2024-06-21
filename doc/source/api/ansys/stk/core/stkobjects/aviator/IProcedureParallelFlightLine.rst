@@ -1,13 +1,13 @@
 IProcedureParallelFlightLine
 ============================
 
-.. py:class:: IProcedureParallelFlightLine
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine
 
    object
    
    Interface used to access the options for a Parallel Flight Line procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureParallelFlightLine
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,17 +29,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
-            * - :py:meth:`~enroute_turn_direction_options`
-            * - :py:meth:`~procedure_type`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~separation`
-            * - :py:meth:`~offset`
-            * - :py:meth:`~leg_length`
-            * - :py:meth:`~must_level_off`
-            * - :py:meth:`~level_off_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.altitude_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_turn_direction_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.procedure_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.separation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.leg_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.must_level_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.level_off_mode`
 
 
 Import detail
@@ -55,25 +55,25 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.altitude_options
-    :type: IAgAvtrAltitudeOptions
+    :type: IAltitudeOptions
 
     Get the altitude options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_options
-    :type: IAgAvtrEnrouteOptions
+    :type: IEnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedAndProfileOptions
+    :type: ICruiseAirspeedAndProfileOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_turn_direction_options
-    :type: IAgAvtrEnrouteTurnDirectionOptions
+    :type: IEnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 

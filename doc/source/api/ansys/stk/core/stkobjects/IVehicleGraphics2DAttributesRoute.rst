@@ -1,13 +1,13 @@
 IVehicleGraphics2DAttributesRoute
 =================================
 
-.. py:class:: IVehicleGraphics2DAttributesRoute
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRoute
 
    IVehicleGraphics2DAttributesBasic
    
    2D Graphics attributes for aircraft, ships and ground vehicles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DAttributesRoute
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_route_visible`
-            * - :py:meth:`~is_route_marker_visible`
-            * - :py:meth:`~pick_string`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRoute.is_route_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRoute.is_route_marker_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRoute.pick_string`
 
 
 Import detail

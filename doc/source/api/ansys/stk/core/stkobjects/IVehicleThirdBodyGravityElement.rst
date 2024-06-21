@@ -1,13 +1,13 @@
 IVehicleThirdBodyGravityElement
 ===============================
 
-.. py:class:: IVehicleThirdBodyGravityElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement
 
    object
    
    Third-body gravity interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleThirdBodyGravityElement
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~source`
-            * - :py:meth:`~gravity_value`
-            * - :py:meth:`~central_body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement.source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement.gravity_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement.central_body`
 
 
 Import detail

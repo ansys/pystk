@@ -1,13 +1,13 @@
 IVehicleGraphics2DOrbitPassData
 ===============================
 
-.. py:class:: IVehicleGraphics2DOrbitPassData
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData
 
    object
    
    2D Graphics ground track and orbit pass properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DOrbitPassData
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ground_track`
-            * - :py:meth:`~orbit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData.ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData.orbit`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData.ground_track
-    :type: IAgVeGfxLeadTrailData
+    :type: IVehicleGraphics2DLeadTrailData
 
     Ground track display properties.
 
 .. py:property:: orbit
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData.orbit
-    :type: IAgVeGfxLeadTrailData
+    :type: IVehicleGraphics2DLeadTrailData
 
     Orbit pass display properties.
 

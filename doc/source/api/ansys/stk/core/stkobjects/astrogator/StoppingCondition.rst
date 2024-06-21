@@ -1,13 +1,13 @@
 StoppingCondition
 =================
 
-.. py:class:: StoppingCondition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StoppingCondition
 
-   Bases: py:obj:`~IStoppingCondition`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStoppingConditionComponent`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    A stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StoppingCondition
 
 Overview
 --------

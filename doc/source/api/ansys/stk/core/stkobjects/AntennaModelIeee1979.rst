@@ -1,13 +1,13 @@
 AntennaModelIeee1979
 ====================
 
-.. py:class:: AntennaModelIeee1979
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelIeee1979
 
-   Bases: py:obj:`~IAntennaModelIeee1979`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelIeee1979`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a IEEE 1979 antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelIeee1979
 
 Overview
 --------

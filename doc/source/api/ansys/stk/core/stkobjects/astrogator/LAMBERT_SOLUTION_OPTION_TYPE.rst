@@ -1,12 +1,12 @@
 LAMBERT_SOLUTION_OPTION_TYPE
 ============================
 
-.. py:class:: LAMBERT_SOLUTION_OPTION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.LAMBERT_SOLUTION_OPTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: LAMBERT_SOLUTION_OPTION_TYPE
 
 Overview
 --------

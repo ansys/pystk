@@ -1,13 +1,13 @@
 CelestialBodyCollection
 =======================
 
-.. py:class:: CelestialBodyCollection
+.. py:class:: ansys.stk.core.stkobjects.CelestialBodyCollection
 
-   Bases: py:obj:`~ICelestialBodyCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICelestialBodyCollection`
 
    Represents a collection of stars.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CelestialBodyCollection
 
 Overview
 --------

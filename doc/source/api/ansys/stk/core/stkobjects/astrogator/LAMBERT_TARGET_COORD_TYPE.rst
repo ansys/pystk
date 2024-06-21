@@ -1,12 +1,12 @@
 LAMBERT_TARGET_COORD_TYPE
 =========================
 
-.. py:class:: LAMBERT_TARGET_COORD_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.LAMBERT_TARGET_COORD_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: LAMBERT_TARGET_COORD_TYPE
 
 Overview
 --------

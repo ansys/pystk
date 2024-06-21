@@ -1,13 +1,13 @@
 BurnoutCBFCartesian
 ===================
 
-.. py:class:: BurnoutCBFCartesian
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BurnoutCBFCartesian
 
-   Bases: py:obj:`~IBurnoutCBFCartesian`, py:obj:`~IBurnout`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnout`
 
    The burnout state in CBF Cartesian coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BurnoutCBFCartesian
 
 Overview
 --------

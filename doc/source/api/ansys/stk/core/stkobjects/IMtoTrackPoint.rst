@@ -1,13 +1,13 @@
 IMtoTrackPoint
 ==============
 
-.. py:class:: IMtoTrackPoint
+.. py:class:: ansys.stk.core.stkobjects.IMtoTrackPoint
 
    object
    
    The points defined for the selected track.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoTrackPoint
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time`
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~position`
-            * - :py:meth:`~id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.id`
 
 
 Import detail
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.IMtoTrackPoint.position
-    :type: IAgPosition
+    :type: IPosition
 
     Whether to interpolate the track's position between each defined point. The track's marker and label position will be linearly interpolated between the track points for the current animation time.
 

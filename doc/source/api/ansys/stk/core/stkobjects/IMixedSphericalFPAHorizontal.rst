@@ -1,13 +1,13 @@
 IMixedSphericalFPAHorizontal
 ============================
 
-.. py:class:: IMixedSphericalFPAHorizontal
+.. py:class:: ansys.stk.core.stkobjects.IMixedSphericalFPAHorizontal
 
    IFlightPathAngle
    
    Interface for Horizontal Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMixedSphericalFPAHorizontal
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMixedSphericalFPAHorizontal.fpa`
 
 
 Import detail

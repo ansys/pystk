@@ -1,13 +1,13 @@
 ICoverageGraphics3D
 ===================
 
-.. py:class:: ICoverageGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGraphics3D
 
    object
    
    3D graphics options for the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGraphics3D
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~static`
-            * - :py:meth:`~animation`
-            * - :py:meth:`~granularity`
-            * - :py:meth:`~show_at_altitude`
-            * - :py:meth:`~draw_at_altitude_mode`
-            * - :py:meth:`~auto_granularity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.static`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.granularity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.show_at_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.draw_at_altitude_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.auto_granularity`
 
 
 Import detail
@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics3D.static
-    :type: IAgCvVOAttributes
+    :type: ICoverageGraphics3DAttributes
 
     3D static graphics options.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics3D.animation
-    :type: IAgCvVOAttributes
+    :type: ICoverageGraphics3DAttributes
 
     3D animation graphics options.
 

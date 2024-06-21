@@ -1,13 +1,13 @@
 IStateCalcVectorX
 =================
 
-.. py:class:: IStateCalcVectorX
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX
 
    object
    
    Properties for a Vector X calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcVectorX
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_axes_name`
-            * - :py:meth:`~vector_name`
-            * - :py:meth:`~unit_dimension`
-            * - :py:meth:`~normalize`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX.coord_axes_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX.vector_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX.unit_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX.normalize`
 
 
 Import detail

@@ -1,13 +1,13 @@
 AnalysisWorkbenchInterp
 =======================
 
-.. py:class:: AnalysisWorkbenchInterp
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchInterp
 
-   Bases: py:obj:`~IAnalysisWorkbenchInterp`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchInterp`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Represents a base class for interpolation definitions.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchInterp
 
 Overview
 --------

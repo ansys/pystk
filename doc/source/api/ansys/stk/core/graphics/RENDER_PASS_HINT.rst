@@ -1,12 +1,12 @@
 RENDER_PASS_HINT
 ================
 
-.. py:class:: RENDER_PASS_HINT
+.. py:class:: ansys.stk.core.graphics.RENDER_PASS_HINT
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RENDER_PASS_HINT
 
 Overview
 --------

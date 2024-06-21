@@ -1,13 +1,13 @@
 IRadarReceiver
 ==============
 
-.. py:class:: IRadarReceiver
+.. py:class:: ansys.stk.core.stkobjects.IRadarReceiver
 
    object
    
    Interface which defines a radar receiver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarReceiver
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_polarization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.set_polarization_type`
               - Set the current polarization type.
-            * - :py:meth:`~set_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.set_filter`
               - Set the current filter model by name.
-            * - :py:meth:`~set_rf_stc_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.set_rf_stc_type`
               - Set the RF STC Type.
-            * - :py:meth:`~set_if_stc_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.set_if_stc_type`
               - Set the IF STC Type.
 
     .. tab-item:: Properties
@@ -35,28 +35,28 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~antenna_to_lna_line_loss`
-            * - :py:meth:`~lna_gain`
-            * - :py:meth:`~lna_to_receiver_line_loss`
-            * - :py:meth:`~use_rain`
-            * - :py:meth:`~supported_rain_outage_percent_values`
-            * - :py:meth:`~rain_outage_percent`
-            * - :py:meth:`~pre_receive_gains_losses`
-            * - :py:meth:`~enable_polarization`
-            * - :py:meth:`~enable_ortho_polarization`
-            * - :py:meth:`~polarization`
-            * - :py:meth:`~lna_bandwidth`
-            * - :py:meth:`~enable_filter`
-            * - :py:meth:`~supported_filters`
-            * - :py:meth:`~filter`
-            * - :py:meth:`~system_noise_temperature`
-            * - :py:meth:`~enable_rf_stc`
-            * - :py:meth:`~rf_stc`
-            * - :py:meth:`~enable_if_stc`
-            * - :py:meth:`~if_stc`
-            * - :py:meth:`~supported_rf_stc_types`
-            * - :py:meth:`~supported_if_stc_types`
-            * - :py:meth:`~frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.antenna_to_lna_line_loss`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.lna_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.lna_to_receiver_line_loss`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.use_rain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.supported_rain_outage_percent_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.rain_outage_percent`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.pre_receive_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_ortho_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.lna_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.supported_filters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.filter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.system_noise_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_rf_stc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.rf_stc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_if_stc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.if_stc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.supported_rf_stc_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.supported_if_stc_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.frequency`
 
 
 Import detail
@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.pre_receive_gains_losses
-    :type: IAgAdditionalGainLossCollection
+    :type: IAdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.polarization
-    :type: IAgPolarization
+    :type: IPolarization
 
     Gets the polarization.
 
@@ -150,13 +150,13 @@ Property detail
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.filter
-    :type: IAgRFFilterModel
+    :type: IRFFilterModel
 
     Gets the current filter model.
 
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.system_noise_temperature
-    :type: IAgSystemNoiseTemperature
+    :type: ISystemNoiseTemperature
 
     Gets the system noise temperature interface.
 
@@ -168,7 +168,7 @@ Property detail
 
 .. py:property:: rf_stc
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.rf_stc
-    :type: IAgRadarStcAttenuation
+    :type: IRadarStcAttenuation
 
     Gets the RF STC.
 
@@ -180,7 +180,7 @@ Property detail
 
 .. py:property:: if_stc
     :canonical: ansys.stk.core.stkobjects.IRadarReceiver.if_stc
-    :type: IAgRadarStcAttenuation
+    :type: IRadarStcAttenuation
 
     Gets the IF STC.
 

@@ -1,13 +1,13 @@
 IStateCalcPressure
 ==================
 
-.. py:class:: IStateCalcPressure
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcPressure
 
    object
    
    Properties for a Tank Pressure calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcPressure
 
 Overview
 --------

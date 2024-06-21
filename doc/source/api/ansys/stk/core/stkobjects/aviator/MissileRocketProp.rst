@@ -1,13 +1,13 @@
 MissileRocketProp
 =================
 
-.. py:class:: MissileRocketProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileRocketProp
 
-   Bases: py:obj:`~IMissileRocketProp`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileRocketProp`
 
    Class defining the Rocket propulsion options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MissileRocketProp
 
 Overview
 --------

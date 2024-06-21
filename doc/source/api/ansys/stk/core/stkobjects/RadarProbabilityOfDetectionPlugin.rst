@@ -1,13 +1,13 @@
 RadarProbabilityOfDetectionPlugin
 =================================
 
-.. py:class:: RadarProbabilityOfDetectionPlugin
+.. py:class:: ansys.stk.core.stkobjects.RadarProbabilityOfDetectionPlugin
 
-   Bases: py:obj:`~IRadarProbabilityOfDetectionPlugin`, py:obj:`~IRadarProbabilityOfDetection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionPlugin`, py:obj:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection`
 
    Class defining the probability of detection plugin.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarProbabilityOfDetectionPlugin
 
 Overview
 --------

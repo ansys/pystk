@@ -1,13 +1,13 @@
 TakeoffNormal
 =============
 
-.. py:class:: TakeoffNormal
+.. py:class:: ansys.stk.core.stkobjects.aviator.TakeoffNormal
 
-   Bases: py:obj:`~ITakeoffNormal`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal`
 
    Class defining the normal options for a takeoff procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TakeoffNormal
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleProfileCoordinatedTurn
 ==============================
 
-.. py:class:: IVehicleProfileCoordinatedTurn
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfileCoordinatedTurn
 
    IVehicleAttitudeProfile
    
    Coordinated turn attitude profile for aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfileCoordinatedTurn
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileCoordinatedTurn.time_offset`
 
 
 Import detail

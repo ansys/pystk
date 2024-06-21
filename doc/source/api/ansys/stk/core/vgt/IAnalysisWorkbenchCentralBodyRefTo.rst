@@ -1,13 +1,13 @@
 IAnalysisWorkbenchCentralBodyRefTo
 ==================================
 
-.. py:class:: IAnalysisWorkbenchCentralBodyRefTo
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyRefTo
 
    object
    
    Represents a reference to a VGT CentralBody.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchCentralBodyRefTo
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_path`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyRefTo.set_path`
               - Set a new central body using specified path.
-            * - :py:meth:`~set_central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyRefTo.set_central_body`
               - Set a new central body.
-            * - :py:meth:`~get_central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyRefTo.get_central_body`
               - Return a central body or null if the central body is invalid.
 
 

@@ -1,13 +1,13 @@
 IImageCollection
 ================
 
-.. py:class:: IImageCollection
+.. py:class:: ansys.stk.core.graphics.IImageCollection
 
    object
    
    A collection of globe image overlay objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IImageCollection
 
 Overview
 --------
@@ -20,41 +20,41 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.item`
               - Get the globe image overlay at the specified index.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.contains`
               - Check the presence of a globe image overlay in the collection.
-            * - :py:meth:`~contains_uri_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.contains_uri_string`
               - Check the presence of a globe image overlay with the specified Uri in the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.remove`
               - Remove a globe image overlay from the collection.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.clear`
               - Remove all globe image overlay objects from the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.add`
               - Add imageryOverlay to the collection.
-            * - :py:meth:`~add_async`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.add_async`
               - Add imageryOverlay to the collection asynchronously.
-            * - :py:meth:`~index_of`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.index_of`
               - Get the index of the specified globe image overlay.
-            * - :py:meth:`~index_of_uri_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.index_of_uri_string`
               - Get the index of the globe image overlay with the specified Uri.
-            * - :py:meth:`~add_uri_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.add_uri_string`
               - Create a globe overlay from the uri, which represents a uri, and adds it to the collection.
-            * - :py:meth:`~add_async_uri_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.add_async_uri_string`
               - Create a globe image overlay from the uri, which represents a uri, and adds it to the collection asynchronously.
-            * - :py:meth:`~swap`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.swap`
               - Swap the position of two globe image overlay objects.
-            * - :py:meth:`~swap_by_index`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.swap_by_index`
               - Swap the position of two globe image overlay objects at the specified indices.
-            * - :py:meth:`~move`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.move`
               - Move the globe image overlay to the specified position.
-            * - :py:meth:`~move_by_index`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.move_by_index`
               - Move the globe image overlay at the specified index to the specified position.
-            * - :py:meth:`~bring_to_front`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.bring_to_front`
               - Brings the globe image overlay to the front of the collection so it is rendered first or on the bottom.
-            * - :py:meth:`~send_to_back`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.send_to_back`
               - Send the globe image overlay to the back of the collection so it is rendered last or on the top.
-            * - :py:meth:`~Subscribe`
+            * - :py:attr:`~Subscribe`
               - """Return an IImageCollectionEventHandler that is subscribed to handle events associated with this instance of IImageCollection."""
 
     .. tab-item:: Properties
@@ -63,9 +63,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~is_read_only`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.is_read_only`
+            * - :py:attr:`~ansys.stk.core.graphics.IImageCollection._NewEnum`
 
 
 Import detail

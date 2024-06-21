@@ -1,13 +1,13 @@
 ProcedureHover
 ==============
 
-.. py:class:: ProcedureHover
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureHover
 
-   Bases: py:obj:`~IProcedureHover`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureHover`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a hover procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureHover
 
 Overview
 --------

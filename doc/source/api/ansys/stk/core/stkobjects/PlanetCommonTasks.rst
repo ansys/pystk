@@ -1,13 +1,13 @@
 PlanetCommonTasks
 =================
 
-.. py:class:: PlanetCommonTasks
+.. py:class:: ansys.stk.core.stkobjects.PlanetCommonTasks
 
-   Bases: py:obj:`~IPlanetCommonTasks`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPlanetCommonTasks`
 
    Class defining the Planet Common class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: PlanetCommonTasks
 
 Overview
 --------

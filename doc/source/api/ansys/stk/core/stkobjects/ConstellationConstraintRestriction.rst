@@ -1,13 +1,13 @@
 ConstellationConstraintRestriction
 ==================================
 
-.. py:class:: ConstellationConstraintRestriction
+.. py:class:: ansys.stk.core.stkobjects.ConstellationConstraintRestriction
 
-   Bases: py:obj:`~IConstellationConstraintRestriction`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IConstellationConstraintRestriction`
 
    Class related to the constellation constraint restrictions.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ConstellationConstraintRestriction
 
 Overview
 --------

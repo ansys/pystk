@@ -1,13 +1,13 @@
 StateCalcOrbitStateValue
 ========================
 
-.. py:class:: StateCalcOrbitStateValue
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcOrbitStateValue`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue`
 
    OrbitStateValue Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcOrbitStateValue
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ReceivePolarizationLinear
 =========================
 
-.. py:class:: ReceivePolarizationLinear
+.. py:class:: ansys.stk.core.stkobjects.ReceivePolarizationLinear
 
-   Bases: py:obj:`~IPolarizationLinear`, py:obj:`~IPolarization`, py:obj:`~IPolarizationCrossPolLeakage`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarizationLinear`, py:obj:`~ansys.stk.core.stkobjects.IPolarization`, py:obj:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage`
 
    Class defining a linear polarization.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ReceivePolarizationLinear
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehicleSpaceEnvironmentRadDoseRateElement
 ==========================================
 
-.. py:class:: IVehicleSpaceEnvironmentRadDoseRateElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement
 
    object
    
    Dose rate interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSpaceEnvironmentRadDoseRateElement
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~electron_dose_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.electron_dose_rate`
               - Return electron dose rate if it is valid. Uses RadDoseRate Dimension.
-            * - :py:meth:`~electron_bremsstrahlung_dose_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.electron_bremsstrahlung_dose_rate`
               - Return electron bremsstrahlung dose rate if it is valid. Uses RadDoseRate Dimension.
-            * - :py:meth:`~proton_dose_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.proton_dose_rate`
               - Return proton dose rate if it is valid. Uses RadDoseRate Dimension.
-            * - :py:meth:`~total_dose_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.total_dose_rate`
               - Return total dose rate if it is valid. Uses RadDoseRate Dimension.
 
     .. tab-item:: Properties
@@ -35,11 +35,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~shielding_thickness`
-            * - :py:meth:`~is_electron_dose_rate_valid`
-            * - :py:meth:`~is_electron_bremsstrahlung_dose_rate_valid`
-            * - :py:meth:`~is_proton_dose_rate_valid`
-            * - :py:meth:`~is_total_dose_rate_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.shielding_thickness`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.is_electron_dose_rate_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.is_electron_bremsstrahlung_dose_rate_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.is_proton_dose_rate_valid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.is_total_dose_rate_valid`
 
 
 Import detail

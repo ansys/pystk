@@ -1,13 +1,13 @@
 DemodulatorModelQam32
 =====================
 
-.. py:class:: DemodulatorModelQam32
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelQam32
 
-   Bases: py:obj:`~IDemodulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a QAM 32 modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DemodulatorModelQam32
 
 Overview
 --------

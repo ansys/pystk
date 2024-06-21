@@ -1,12 +1,12 @@
 MANEUVER_TYPE
 =============
 
-.. py:class:: MANEUVER_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MANEUVER_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MANEUVER_TYPE
 
 Overview
 --------

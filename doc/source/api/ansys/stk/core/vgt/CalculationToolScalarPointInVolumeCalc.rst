@@ -1,13 +1,13 @@
 CalculationToolScalarPointInVolumeCalc
 ======================================
 
-.. py:class:: CalculationToolScalarPointInVolumeCalc
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarPointInVolumeCalc
 
-   Bases: py:obj:`~ICalculationToolScalarPointInVolumeCalc`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarPointInVolumeCalc`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Scalar value of spatial calculation evaluated along trajectory of point.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarPointInVolumeCalc
 
 Overview
 --------

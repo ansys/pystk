@@ -1,12 +1,12 @@
 MAGNIFICATION_FILTER
 ====================
 
-.. py:class:: MAGNIFICATION_FILTER
+.. py:class:: ansys.stk.core.graphics.MAGNIFICATION_FILTER
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MAGNIFICATION_FILTER
 
 Overview
 --------

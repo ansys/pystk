@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorScalarScaled
 =====================================
 
-.. py:class:: IVectorGeometryToolVectorScalarScaled
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled
 
    object
    
    Scaled version of the input vector using scalar.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorScalarScaled
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_vector`
-            * - :py:meth:`~input_scalar`
-            * - :py:meth:`~scale_factor`
-            * - :py:meth:`~normalize`
-            * - :py:meth:`~dimension_inheritance`
-            * - :py:meth:`~dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.input_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.input_scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.scale_factor`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.normalize`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.dimension_inheritance`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.dimension`
 
 
 Import detail
@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: input_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.input_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     An input vector scaled by the scalar. Can be any VGT vector.
 
 .. py:property:: input_scalar
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.input_scalar
-    :type: IAgCrdnCalcScalar
+    :type: ICalculationToolScalar
 
     A variable scale applied to the input vector. Can be based on any Scalar calculation.
 

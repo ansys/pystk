@@ -1,13 +1,13 @@
 IVehicleWaypointsElement
 ========================
 
-.. py:class:: IVehicleWaypointsElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleWaypointsElement
 
    object
    
    Interface for representing a waypoint in a collection of waypoints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleWaypointsElement
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~speed`
-            * - :py:meth:`~acceleration`
-            * - :py:meth:`~time`
-            * - :py:meth:`~turn_radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.speed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.turn_radius`
 
 
 Import detail

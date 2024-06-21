@@ -1,13 +1,13 @@
 IVehicleGraphics3DAttributesIntervals
 =====================================
 
-.. py:class:: IVehicleGraphics3DAttributesIntervals
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals
 
    object
    
    Interface for 3D graphics based on intervals for covariance pointing contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DAttributesIntervals
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~default_attributes`
-            * - :py:meth:`~intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals.default_attributes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals.intervals`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: default_attributes
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals.default_attributes
-    :type: IAgVeVODefaultAttributes
+    :type: IVehicleGraphics3DDefaultAttributes
 
     Get the default 3D graphics properties.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals.intervals
-    :type: IAgVeVOIntervalsCollection
+    :type: IVehicleGraphics3DIntervalsCollection
 
     Get the 3D graphics properties based on intervals.
 

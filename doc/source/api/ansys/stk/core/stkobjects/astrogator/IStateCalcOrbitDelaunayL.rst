@@ -1,13 +1,13 @@
 IStateCalcOrbitDelaunayL
 ========================
 
-.. py:class:: IStateCalcOrbitDelaunayL
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitDelaunayL
 
    object
    
    Interface for AsStateCalcOrbitDelaunayL.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcOrbitDelaunayL
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body_name`
-            * - :py:meth:`~element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitDelaunayL.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitDelaunayL.element_type`
 
 
 Import detail

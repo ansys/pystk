@@ -1,12 +1,12 @@
 MODEL_TRANSFORMATION_TYPE
 =========================
 
-.. py:class:: MODEL_TRANSFORMATION_TYPE
+.. py:class:: ansys.stk.core.graphics.MODEL_TRANSFORMATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: MODEL_TRANSFORMATION_TYPE
 
 Overview
 --------

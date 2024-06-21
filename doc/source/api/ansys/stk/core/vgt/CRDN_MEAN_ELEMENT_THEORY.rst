@@ -1,12 +1,12 @@
 CRDN_MEAN_ELEMENT_THEORY
 ========================
 
-.. py:class:: CRDN_MEAN_ELEMENT_THEORY
+.. py:class:: ansys.stk.core.vgt.CRDN_MEAN_ELEMENT_THEORY
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_MEAN_ELEMENT_THEORY
 
 Overview
 --------

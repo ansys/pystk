@@ -1,13 +1,13 @@
 IMSISE_1990
 ===========
 
-.. py:class:: IMSISE_1990
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IMSISE_1990
 
    object
    
    Properties for the MSISE 1990 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1990 version, valid range of 0-1000 km.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IMSISE_1990
 
 Overview
 --------
@@ -20,22 +20,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_approximate_altitude`
-            * - :py:meth:`~computes_temperature`
-            * - :py:meth:`~computes_pressure`
-            * - :py:meth:`~sun_position`
-            * - :py:meth:`~atmos_data_source`
-            * - :py:meth:`~f_10_p7`
-            * - :py:meth:`~f_10_p7_avg`
-            * - :py:meth:`~kp`
-            * - :py:meth:`~atmos_data_geo_magnetic_flux_source`
-            * - :py:meth:`~atmos_data_geo_magnetic_flux_update_rate`
-            * - :py:meth:`~atmos_data_filename`
-            * - :py:meth:`~drag_model_type`
-            * - :py:meth:`~drag_model_plugin_name`
-            * - :py:meth:`~drag_model_plugin`
-            * - :py:meth:`~variable_area_history_file`
-            * - :py:meth:`~n_plate_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.use_approximate_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.computes_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.computes_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.f_10_p7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.f_10_p7_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.kp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.atmos_data_geo_magnetic_flux_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.atmos_data_geo_magnetic_flux_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.atmos_data_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.drag_model_plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.drag_model_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.variable_area_history_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMSISE_1990.n_plate_definition_file`
 
 
 Import detail
@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.IMSISE_1990.drag_model_plugin
-    :type: IAgVADragModelPlugin
+    :type: IDragModelPlugin
 
     Drag model plugin properties.
 

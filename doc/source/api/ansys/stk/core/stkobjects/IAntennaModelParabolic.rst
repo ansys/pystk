@@ -1,13 +1,13 @@
 IAntennaModelParabolic
 ======================
 
-.. py:class:: IAntennaModelParabolic
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelParabolic
 
    object
    
    Provide access to the properties and methods defining a parabolic antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelParabolic
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~input_type`
-            * - :py:meth:`~diameter`
-            * - :py:meth:`~beamwidth`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~use_backlobe_as_mainlobe_atten`
-            * - :py:meth:`~efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelParabolic.input_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelParabolic.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelParabolic.beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelParabolic.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelParabolic.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelParabolic.use_backlobe_as_mainlobe_atten`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelParabolic.efficiency`
 
 
 Import detail

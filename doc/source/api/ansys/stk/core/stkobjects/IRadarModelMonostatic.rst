@@ -1,13 +1,13 @@
 IRadarModelMonostatic
 =====================
 
-.. py:class:: IRadarModelMonostatic
+.. py:class:: ansys.stk.core.stkobjects.IRadarModelMonostatic
 
    object
    
    Provide access to the properties and methods defining a monostatic radar model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarModelMonostatic
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.set_mode`
               - Set the current radar mode by name.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_modes`
-            * - :py:meth:`~mode`
-            * - :py:meth:`~transmitter`
-            * - :py:meth:`~receiver`
-            * - :py:meth:`~clutter_geometry`
-            * - :py:meth:`~jamming`
-            * - :py:meth:`~antenna_control`
-            * - :py:meth:`~clutter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.supported_modes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.transmitter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.receiver`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.clutter_geometry`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.jamming`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.antenna_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.clutter`
 
 
 Import detail
@@ -58,43 +58,43 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.mode
-    :type: IAgRadarModeMonostatic
+    :type: IRadarModeMonostatic
 
     Gets the current radar mode.
 
 .. py:property:: transmitter
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.transmitter
-    :type: IAgRadarTransmitter
+    :type: IRadarTransmitter
 
     Gets the radar transmitter.
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.receiver
-    :type: IAgRadarReceiver
+    :type: IRadarReceiver
 
     Gets the radar receiver.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.clutter_geometry
-    :type: IAgRadarClutterGeometry
+    :type: IRadarClutterGeometry
 
     This property is deprecated. Use the Clutter property instead. Gets the radar clutter geometry.
 
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.jamming
-    :type: IAgRadarJamming
+    :type: IRadarJamming
 
     Gets the radar jamming.
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.antenna_control
-    :type: IAgAntennaControl
+    :type: IAntennaControl
 
     Gets the radar antenna control.
 
 .. py:property:: clutter
     :canonical: ansys.stk.core.stkobjects.IRadarModelMonostatic.clutter
-    :type: IAgRadarClutter
+    :type: IRadarClutter
 
     Gets the radar clutter settings.
 

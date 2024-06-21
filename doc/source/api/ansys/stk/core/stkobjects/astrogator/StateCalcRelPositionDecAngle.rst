@@ -1,13 +1,13 @@
 StateCalcRelPositionDecAngle
 ============================
 
-.. py:class:: StateCalcRelPositionDecAngle
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRelPositionDecAngle
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRelPositionDecAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle`
 
    Relative Position Declination Angle objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRelPositionDecAngle
 
 Overview
 --------

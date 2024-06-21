@@ -1,13 +1,13 @@
 VehicleGraphics3DTickDataPoint
 ==============================
 
-.. py:class:: VehicleGraphics3DTickDataPoint
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTickDataPoint
 
-   Bases: py:obj:`~IVehicleGraphics3DTickData`, py:obj:`~IVehicleGraphics3DTickDataPoint`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickData`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataPoint`
 
    Point type tick mark.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DTickDataPoint
 
 Overview
 --------

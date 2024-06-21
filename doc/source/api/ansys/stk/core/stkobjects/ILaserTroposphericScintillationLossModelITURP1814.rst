@@ -1,13 +1,13 @@
 ILaserTroposphericScintillationLossModelITURP1814
 =================================================
 
-.. py:class:: ILaserTroposphericScintillationLossModelITURP1814
+.. py:class:: ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModelITURP1814
 
    object
    
    Provide access to the properties and methods an ITU-R P.1814 laser tropospheric scintillation propagation loss model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ILaserTroposphericScintillationLossModelITURP1814
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_atmospheric_turbulence_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModelITURP1814.set_atmospheric_turbulence_model_type`
               - Set the atmospheric turbulence model type.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~atmospheric_turbulence_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModelITURP1814.atmospheric_turbulence_model`
 
 
 Import detail
@@ -45,7 +45,7 @@ Property detail
 
 .. py:property:: atmospheric_turbulence_model
     :canonical: ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModelITURP1814.atmospheric_turbulence_model
-    :type: IAgAtmosphericTurbulenceModel
+    :type: IAtmosphericTurbulenceModel
 
     Gets the atmospheric turbulence model.
 

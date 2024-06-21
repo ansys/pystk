@@ -1,13 +1,13 @@
 IVehicleGraphics2DPassResolution
 ================================
 
-.. py:class:: IVehicleGraphics2DPassResolution
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DPassResolution
 
    object
    
    Ground track and orbit resolution for satellites defined in terms of ephemeris steps.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DPassResolution
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ground_track`
-            * - :py:meth:`~orbit`
-            * - :py:meth:`~min_ground_track`
-            * - :py:meth:`~min_orbit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassResolution.ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassResolution.orbit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassResolution.min_ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassResolution.min_orbit`
 
 
 Import detail

@@ -1,13 +1,13 @@
 AnalysisWorkbenchTypeInfo
 =========================
 
-.. py:class:: AnalysisWorkbenchTypeInfo
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchTypeInfo
 
-   Bases: py:obj:`~IAnalysisWorkbenchTypeInfo`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo`
 
    VGT component info.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchTypeInfo
 
 Overview
 --------

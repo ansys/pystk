@@ -1,12 +1,12 @@
 SENSOR_LOCATION
 ===============
 
-.. py:class:: SENSOR_LOCATION
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_LOCATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_LOCATION
 
 Overview
 --------

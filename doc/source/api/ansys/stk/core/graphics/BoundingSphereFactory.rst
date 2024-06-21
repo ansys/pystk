@@ -1,13 +1,13 @@
 BoundingSphereFactory
 =====================
 
-.. py:class:: BoundingSphereFactory
+.. py:class:: ansys.stk.core.graphics.BoundingSphereFactory
 
-   Bases: py:obj:`~IBoundingSphereFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IBoundingSphereFactory`
 
    Create bounding spheres.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: BoundingSphereFactory
 
 Overview
 --------

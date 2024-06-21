@@ -1,13 +1,13 @@
 ITextOverlay
 ============
 
-.. py:class:: ITextOverlay
+.. py:class:: ansys.stk.core.graphics.ITextOverlay
 
    object
    
    A rectangular overlay that contains text.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITextOverlay
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~text`
-            * - :py:meth:`~outline_color`
-            * - :py:meth:`~font`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextOverlay.text`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextOverlay.outline_color`
+            * - :py:attr:`~ansys.stk.core.graphics.ITextOverlay.font`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: font
     :canonical: ansys.stk.core.graphics.ITextOverlay.font
-    :type: IAgStkGraphicsGraphicsFont
+    :type: IGraphicsFont
 
     Get the graphics font used to style the text.
 

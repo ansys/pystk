@@ -1,13 +1,13 @@
 AxesPrimitiveFactory
 ====================
 
-.. py:class:: AxesPrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.AxesPrimitiveFactory
 
-   Bases: py:obj:`~IAxesPrimitiveFactory`
+   Bases: py:obj:`~ansys.stk.core.graphics.IAxesPrimitiveFactory`
 
    Render an axes in the 3D scene.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: AxesPrimitiveFactory
 
 Overview
 --------

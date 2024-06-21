@@ -1,13 +1,13 @@
 IMtoGraphics3DMarker
 ====================
 
-.. py:class:: IMtoGraphics3DMarker
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DMarker
 
    object
    
    Interface for MTO 3D graphics marker options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DMarker
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_marker_image_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.set_marker_image_file`
               - Set the marker image file.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~pixel_size`
-            * - :py:meth:`~marker_type`
-            * - :py:meth:`~angle`
-            * - :py:meth:`~x_origin`
-            * - :py:meth:`~y_origin`
-            * - :py:meth:`~marker_data`
-            * - :py:meth:`~rotate_from_north`
-            * - :py:meth:`~orientation_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.pixel_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.marker_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.x_origin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.y_origin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.marker_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.rotate_from_north`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.orientation_mode`
 
 
 Import detail
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: marker_data
     :canonical: ansys.stk.core.stkobjects.IMtoGraphics3DMarker.marker_data
-    :type: IAgVOMarkerData
+    :type: IGraphics3DMarkerData
 
     The MarkerData property.
 

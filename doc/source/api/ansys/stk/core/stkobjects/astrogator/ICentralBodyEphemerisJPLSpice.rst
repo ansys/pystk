@@ -1,13 +1,13 @@
 ICentralBodyEphemerisJPLSpice
 =============================
 
-.. py:class:: ICentralBodyEphemerisJPLSpice
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLSpice
 
    ICentralBodyEphemeris
    
    Properties for the JPL SPICE ephemeris source.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyEphemerisJPLSpice
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~jpl_spice_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLSpice.jpl_spice_id`
 
 
 Import detail

@@ -1,13 +1,13 @@
 CalculationToolParameterSetGroup
 ================================
 
-.. py:class:: CalculationToolParameterSetGroup
+.. py:class:: ansys.stk.core.vgt.CalculationToolParameterSetGroup
 
-   Bases: py:obj:`~ICalculationToolParameterSetGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroup`
 
    Access or create VGT parameter sets associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolParameterSetGroup
 
 Overview
 --------

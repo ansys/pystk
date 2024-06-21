@@ -1,13 +1,13 @@
 Beamformer
 ==========
 
-.. py:class:: Beamformer
+.. py:class:: ansys.stk.core.stkobjects.Beamformer
 
-   Bases: py:obj:`~IBeamformer`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Beamformer
 
 Overview
 --------

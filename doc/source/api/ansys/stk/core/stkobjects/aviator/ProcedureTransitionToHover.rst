@@ -1,13 +1,13 @@
 ProcedureTransitionToHover
 ==========================
 
-.. py:class:: ProcedureTransitionToHover
+.. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover
 
-   Bases: py:obj:`~IProcedureTransitionToHover`, py:obj:`~IProcedure`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToHover`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a transition to hover procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ProcedureTransitionToHover
 
 Overview
 --------

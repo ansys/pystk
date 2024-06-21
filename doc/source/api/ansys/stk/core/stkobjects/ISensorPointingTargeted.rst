@@ -1,13 +1,13 @@
 ISensorPointingTargeted
 =======================
 
-.. py:class:: ISensorPointingTargeted
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingTargeted
 
    object
    
    IAgSnPtTargeted Interface for targeted sensors.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingTargeted
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~boresight`
-            * - :py:meth:`~boresight_data`
-            * - :py:meth:`~enable_access_times`
-            * - :py:meth:`~access_times`
-            * - :py:meth:`~schedule_times`
-            * - :py:meth:`~targets`
-            * - :py:meth:`~available_targets`
-            * - :py:meth:`~advanced`
-            * - :py:meth:`~save_target_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.boresight`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.boresight_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.enable_access_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.access_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.schedule_times`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.targets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.available_targets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.advanced`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.save_target_access`
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: boresight_data
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.boresight_data
-    :type: IAgSnPtTrgtBsight
+    :type: ISensorPointingTargetedBoresight
 
     Get orientation data for the selected boresight type.
 
@@ -62,19 +62,19 @@ Property detail
 
 .. py:property:: access_times
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.access_times
-    :type: IAgAccessTimeCollection
+    :type: IAccessTimeCollection
 
     Get the access periods between the sensor and its target(s).
 
 .. py:property:: schedule_times
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.schedule_times
-    :type: IAgScheduleTimeCollection
+    :type: IScheduleTimeCollection
 
     Get the user-scheduled target times.
 
 .. py:property:: targets
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.targets
-    :type: IAgSnTargetCollection
+    :type: ISensorTargetCollection
 
     Get the collection of objects assigned as targets for the sensor.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.ISensorPointingTargeted.advanced
-    :type: IAgSnAccessAdvanced
+    :type: ISensorAccessAdvanced
 
     Get advanced targeting properties used for access computations.
 

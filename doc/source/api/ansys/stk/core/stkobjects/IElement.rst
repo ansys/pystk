@@ -1,13 +1,13 @@
 IElement
 ========
 
-.. py:class:: IElement
+.. py:class:: ansys.stk.core.stkobjects.IElement
 
    object
    
    Provide access to the properties and methods defining a phased array element.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IElement
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~id`
-            * - :py:meth:`~enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElement.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElement.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElement.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElement.enabled`
 
 
 Import detail

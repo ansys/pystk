@@ -1,13 +1,13 @@
 ISurfacePolygonTriangulatorInitializer
 ======================================
 
-.. py:class:: ISurfacePolygonTriangulatorInitializer
+.. py:class:: ansys.stk.core.graphics.ISurfacePolygonTriangulatorInitializer
 
    object
    
    Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ISurfacePolygonTriangulatorInitializer
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfacePolygonTriangulatorInitializer.compute`
               - Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions. This is equivalent to calling Compute with an altitude of 0, a granularity of 1 degree, and a positionsWindingOrder of compute.
-            * - :py:meth:`~compute_cartographic`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfacePolygonTriangulatorInitializer.compute_cartographic`
               - For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
-            * - :py:meth:`~compute_with_hole`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfacePolygonTriangulatorInitializer.compute_with_hole`
               - Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree.
-            * - :py:meth:`~compute_with_hole_altitude_and_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfacePolygonTriangulatorInitializer.compute_with_hole_altitude_and_granularity`
               - Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions.
-            * - :py:meth:`~compute_with_altitude_and_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfacePolygonTriangulatorInitializer.compute_with_altitude_and_granularity`
               - Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions.
-            * - :py:meth:`~compute_cartographic_with_altitude_and_granularity`
+            * - :py:attr:`~ansys.stk.core.graphics.ISurfacePolygonTriangulatorInitializer.compute_cartographic_with_altitude_and_granularity`
               - For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
 
 

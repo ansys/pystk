@@ -1,13 +1,13 @@
 ICalculationGraphCollection
 ===========================
 
-.. py:class:: ICalculationGraphCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection
 
    object
    
    The list of Calculations Graphs to display.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICalculationGraphCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.add`
               - Add a calculation graph.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.remove`
               - Remove a parameter.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.remove_all`
               - Remove all parameters.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection.count`
 
 
 Import detail

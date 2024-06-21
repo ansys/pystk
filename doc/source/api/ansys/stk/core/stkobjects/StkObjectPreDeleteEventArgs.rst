@@ -1,13 +1,13 @@
 StkObjectPreDeleteEventArgs
 ===========================
 
-.. py:class:: StkObjectPreDeleteEventArgs
+.. py:class:: ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs
 
-   Bases: py:obj:`~IStkObjectPreDeleteEventArgs`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkObjectPreDeleteEventArgs`
 
    Arguments for the OnStkObjectPreDelete event.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkObjectPreDeleteEventArgs
 
 Overview
 --------

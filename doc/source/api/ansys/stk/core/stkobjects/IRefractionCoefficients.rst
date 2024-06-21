@@ -1,13 +1,13 @@
 IRefractionCoefficients
 =======================
 
-.. py:class:: IRefractionCoefficients
+.. py:class:: ansys.stk.core.stkobjects.IRefractionCoefficients
 
    object
    
    Coefficients for a polynomial in time_since_year_start that models the refraction index.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRefractionCoefficients
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~c0`
-            * - :py:meth:`~c1`
-            * - :py:meth:`~c2`
-            * - :py:meth:`~c3`
-            * - :py:meth:`~c4`
-            * - :py:meth:`~c5`
-            * - :py:meth:`~c6`
-            * - :py:meth:`~c7`
-            * - :py:meth:`~c8`
-            * - :py:meth:`~c9`
-            * - :py:meth:`~c10`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c4`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c5`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c6`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c8`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c9`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c10`
 
 
 Import detail

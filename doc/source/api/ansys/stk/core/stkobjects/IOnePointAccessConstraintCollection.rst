@@ -1,13 +1,13 @@
 IOnePointAccessConstraintCollection
 ===================================
 
-.. py:class:: IOnePointAccessConstraintCollection
+.. py:class:: ansys.stk.core.stkobjects.IOnePointAccessConstraintCollection
 
    object
    
    Represents the access constraints for the one point access computation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOnePointAccessConstraintCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessConstraintCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessConstraintCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessConstraintCollection._NewEnum`
 
 
 Import detail

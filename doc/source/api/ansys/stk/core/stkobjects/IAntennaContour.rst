@@ -1,13 +1,13 @@
 IAntennaContour
 ===============
 
-.. py:class:: IAntennaContour
+.. py:class:: ansys.stk.core.stkobjects.IAntennaContour
 
    object
    
    IAgAntennaContour Interface for a antenna's contour properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaContour
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_at_altitude`
-            * - :py:meth:`~altitude`
-            * - :py:meth:`~relative_to_max_gain`
-            * - :py:meth:`~show_labels`
-            * - :py:meth:`~num_label_dec_digits`
-            * - :py:meth:`~line_width`
-            * - :py:meth:`~color_method`
-            * - :py:meth:`~start_color`
-            * - :py:meth:`~stop_color`
-            * - :py:meth:`~type`
-            * - :py:meth:`~levels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.show_at_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.relative_to_max_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.show_labels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.num_label_dec_digits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.color_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.start_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.stop_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.levels`
 
 
 Import detail
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.levels
-    :type: IAgAntennaContourLevelCollection
+    :type: IAntennaContourLevelCollection
 
     Gets the collection of contour levels.
 

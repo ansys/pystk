@@ -1,13 +1,13 @@
 IKmlDocumentCollection
 ======================
 
-.. py:class:: IKmlDocumentCollection
+.. py:class:: ansys.stk.core.graphics.IKmlDocumentCollection
 
    object
    
    A collection of KML documents.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IKmlDocumentCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlDocumentCollection.item`
               - Get an element at the specified position in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlDocumentCollection.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlDocumentCollection._NewEnum`
 
 
 Import detail

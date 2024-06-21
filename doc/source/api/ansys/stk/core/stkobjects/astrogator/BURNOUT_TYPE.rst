@@ -1,12 +1,12 @@
 BURNOUT_TYPE
 ============
 
-.. py:class:: BURNOUT_TYPE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BURNOUT_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BURNOUT_TYPE
 
 Overview
 --------

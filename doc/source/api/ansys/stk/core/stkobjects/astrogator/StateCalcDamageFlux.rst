@@ -1,13 +1,13 @@
 StateCalcDamageFlux
 ===================
 
-.. py:class:: StateCalcDamageFlux
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDamageFlux
 
-   Bases: py:obj:`~IStateCalcDamageFlux`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDamageFlux`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcDamageFlux.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcDamageFlux
 
 Overview
 --------

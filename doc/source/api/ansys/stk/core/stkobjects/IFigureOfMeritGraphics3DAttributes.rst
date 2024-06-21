@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics3DAttributes
 ==================================
 
-.. py:class:: IFigureOfMeritGraphics3DAttributes
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes
 
    object
    
    3D static graphics properties for a Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics3DAttributes
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~point_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes.translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes.point_size`
 
 
 Import detail

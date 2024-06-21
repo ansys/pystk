@@ -1,12 +1,12 @@
 CRDN_EXTREMUM_CONSTANTS
 =======================
 
-.. py:class:: CRDN_EXTREMUM_CONSTANTS
+.. py:class:: ansys.stk.core.vgt.CRDN_EXTREMUM_CONSTANTS
 
    IntFlag
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_EXTREMUM_CONSTANTS
 
 Overview
 --------

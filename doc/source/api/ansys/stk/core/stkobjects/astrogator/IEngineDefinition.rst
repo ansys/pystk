@@ -1,13 +1,13 @@
 IEngineDefinition
 =================
 
-.. py:class:: IEngineDefinition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IEngineDefinition
 
    object
    
    Properties for engine definition for an Ion engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IEngineDefinition
 
 Overview
 --------
@@ -20,29 +20,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~isp_c0`
-            * - :py:meth:`~isp_c1`
-            * - :py:meth:`~isp_c2`
-            * - :py:meth:`~isp_c3`
-            * - :py:meth:`~mass_flow_rate_equation_type`
-            * - :py:meth:`~mass_flow_rate_c0`
-            * - :py:meth:`~mass_flow_rate_c1`
-            * - :py:meth:`~mass_flow_rate_c2`
-            * - :py:meth:`~mass_flow_rate_c3`
-            * - :py:meth:`~mass_flow_rate_equation`
-            * - :py:meth:`~mass_flow_efficiency_c0`
-            * - :py:meth:`~mass_flow_efficiency_c1`
-            * - :py:meth:`~mass_flow_efficiency_c2`
-            * - :py:meth:`~mass_flow_efficiency_c3`
-            * - :py:meth:`~mass_flow_efficiency_independent_var`
-            * - :py:meth:`~mass_flow_efficiency_equation`
-            * - :py:meth:`~power_efficiency_c0`
-            * - :py:meth:`~power_efficiency_c1`
-            * - :py:meth:`~power_efficiency_c2`
-            * - :py:meth:`~power_efficiency_c3`
-            * - :py:meth:`~power_efficiency_independent_var`
-            * - :py:meth:`~power_efficiency_equation`
-            * - :py:meth:`~input_power_source_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.isp_c0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.isp_c1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.isp_c2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.isp_c3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_equation_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_c0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_c1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_c2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_c3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_equation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_c0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_c1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_c2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_c3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_independent_var`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_equation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_c0`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_c1`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_c2`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_c3`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_independent_var`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_equation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.input_power_source_name`
 
 
 Import detail

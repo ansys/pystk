@@ -1,13 +1,13 @@
 IKmlFeatureCollection
 =====================
 
-.. py:class:: IKmlFeatureCollection
+.. py:class:: ansys.stk.core.graphics.IKmlFeatureCollection
 
    object
    
    A collection of KML features.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IKmlFeatureCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeatureCollection.item`
               - Get an element at the specified position in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeatureCollection.count`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeatureCollection._NewEnum`
 
 
 Import detail

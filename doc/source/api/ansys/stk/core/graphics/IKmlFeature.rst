@@ -1,13 +1,13 @@
 IKmlFeature
 ===========
 
-.. py:class:: IKmlFeature
+.. py:class:: ansys.stk.core.graphics.IKmlFeature
 
    object
    
    A KML feature.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IKmlFeature
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~fly_to`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.fly_to`
               - Move the camera to the area encompassing this feature.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_loaded`
-            * - :py:meth:`~display`
-            * - :py:meth:`~content`
-            * - :py:meth:`~name`
-            * - :py:meth:`~description`
-            * - :py:meth:`~snippet`
-            * - :py:meth:`~bounding_sphere`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.is_loaded`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.display`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.content`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.name`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.description`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.snippet`
+            * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.bounding_sphere`
 
 
 Import detail
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.IKmlFeature.bounding_sphere
-    :type: IAgStkGraphicsBoundingSphere
+    :type: IBoundingSphere
 
     The bounding sphere encompassing the area associated with this feature.
 

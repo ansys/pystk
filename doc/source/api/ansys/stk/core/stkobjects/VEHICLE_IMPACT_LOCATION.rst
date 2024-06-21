@@ -1,12 +1,12 @@
 VEHICLE_IMPACT_LOCATION
 =======================
 
-.. py:class:: VEHICLE_IMPACT_LOCATION
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_IMPACT_LOCATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_IMPACT_LOCATION
 
 Overview
 --------

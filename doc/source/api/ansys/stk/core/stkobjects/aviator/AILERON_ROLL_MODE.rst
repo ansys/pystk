@@ -1,12 +1,12 @@
 AILERON_ROLL_MODE
 =================
 
-.. py:class:: AILERON_ROLL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.AILERON_ROLL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AILERON_ROLL_MODE
 
 Overview
 --------

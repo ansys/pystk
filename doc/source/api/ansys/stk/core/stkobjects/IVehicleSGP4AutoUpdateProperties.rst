@@ -1,13 +1,13 @@
 IVehicleSGP4AutoUpdateProperties
 ================================
 
-.. py:class:: IVehicleSGP4AutoUpdateProperties
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties
 
    object
    
    SGP4 Element AutoUpdate properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4AutoUpdateProperties
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~selection`
-            * - :py:meth:`~switch_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties.selection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties.switch_method`
 
 
 Import detail

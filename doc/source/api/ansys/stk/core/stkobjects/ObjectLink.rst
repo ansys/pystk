@@ -1,13 +1,13 @@
 ObjectLink
 ==========
 
-.. py:class:: ObjectLink
+.. py:class:: ansys.stk.core.stkobjects.ObjectLink
 
-   Bases: py:obj:`~IObjectLink`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IObjectLink`
 
    Class defining name of an STK object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ObjectLink
 
 Overview
 --------

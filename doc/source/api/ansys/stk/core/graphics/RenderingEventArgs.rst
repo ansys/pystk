@@ -1,13 +1,13 @@
 RenderingEventArgs
 ==================
 
-.. py:class:: RenderingEventArgs
+.. py:class:: ansys.stk.core.graphics.RenderingEventArgs
 
-   Bases: py:obj:`~IRenderingEventArgs`
+   Bases: py:obj:`~ansys.stk.core.graphics.IRenderingEventArgs`
 
    The event is raised when the scene is rendered.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: RenderingEventArgs
 
 Overview
 --------

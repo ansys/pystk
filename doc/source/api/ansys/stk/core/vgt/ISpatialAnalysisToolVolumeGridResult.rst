@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeGridResult
 ====================================
 
-.. py:class:: ISpatialAnalysisToolVolumeGridResult
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult
 
    object
    
    An interface that generates Volume Grid results.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeGridResult
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~epoch`
-            * - :py:meth:`~size_i`
-            * - :py:meth:`~size_j`
-            * - :py:meth:`~size_k`
-            * - :py:meth:`~volume_metric_data_vector`
-            * - :py:meth:`~volume_metric_position_vector`
-            * - :py:meth:`~volume_metric_native_position_vector`
-            * - :py:meth:`~volume_metric_gradient_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.epoch`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_i`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_j`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_k`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_data_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_position_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_native_position_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_gradient_vector`
 
 
 Import detail

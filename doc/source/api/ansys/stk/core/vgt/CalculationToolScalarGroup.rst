@@ -1,13 +1,13 @@
 CalculationToolScalarGroup
 ==========================
 
-.. py:class:: CalculationToolScalarGroup
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarGroup
 
-   Bases: py:obj:`~ICalculationToolScalarGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarGroup`
 
    Access or create VGT calculation scalars associated with an object or a central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarGroup
 
 Overview
 --------

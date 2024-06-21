@@ -1,13 +1,13 @@
 AircraftBasicFixedWingAero
 ==========================
 
-.. py:class:: AircraftBasicFixedWingAero
+.. py:class:: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingAero
 
-   Bases: py:obj:`~IAircraftBasicFixedWingAero`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingAero`
 
    Class defining the basic fixed wing aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: AircraftBasicFixedWingAero
 
 Overview
 --------

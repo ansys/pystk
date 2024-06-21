@@ -1,13 +1,13 @@
 IVehicleAttitudeRealTimeDataReference
 =====================================
 
-.. py:class:: IVehicleAttitudeRealTimeDataReference
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeRealTimeDataReference
 
    object
    
    Real time attitude data reference.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeRealTimeDataReference
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_profile_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTimeDataReference.set_profile_type`
               - Set realtime data reference profile type.
-            * - :py:meth:`~is_profile_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTimeDataReference.is_profile_type_supported`
               - Get a value indicating whether the specified profile type can be used.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~profile_type`
-            * - :py:meth:`~profile_supported_types`
-            * - :py:meth:`~profile`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTimeDataReference.profile_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTimeDataReference.profile_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTimeDataReference.profile`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: profile
     :canonical: ansys.stk.core.stkobjects.IVehicleAttitudeRealTimeDataReference.profile
-    :type: IAgVeAttProfile
+    :type: IVehicleAttitudeProfile
 
     Returns a data reference profile or null if no data reference profile has yet been selected.
 

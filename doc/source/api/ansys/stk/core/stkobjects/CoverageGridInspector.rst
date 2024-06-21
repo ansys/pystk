@@ -1,13 +1,13 @@
 CoverageGridInspector
 =====================
 
-.. py:class:: CoverageGridInspector
+.. py:class:: ansys.stk.core.stkobjects.CoverageGridInspector
 
-   Bases: py:obj:`~ICoverageGridInspector`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGridInspector`
 
    AgCvGridInspector class provides methods to use the grid inspector tool for coverage definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageGridInspector
 
 Overview
 --------

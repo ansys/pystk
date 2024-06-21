@@ -1,13 +1,13 @@
 IMissileModel
 =============
 
-.. py:class:: IMissileModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IMissileModel
 
    object
    
    Interface used to access the missile options in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IMissileModel
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_climb_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.set_climb_airspeed`
               - Set the missile's climb airspeed and airspeed type.
-            * - :py:meth:`~set_cruise_max_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.set_cruise_max_airspeed`
               - Set the missile's max cruise airspeed and airspeed type.
-            * - :py:meth:`~set_descent_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.set_descent_airspeed`
               - Set the missile's descent airspeed and airspeed type.
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -35,33 +35,33 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~max_load_factor`
-            * - :py:meth:`~maneuver_mode`
-            * - :py:meth:`~maneuver_mode_helper`
-            * - :py:meth:`~attitude_transitions`
-            * - :py:meth:`~ignore_fpa_for_climb_descent_transitions`
-            * - :py:meth:`~climb_airspeed`
-            * - :py:meth:`~climb_airspeed_type`
-            * - :py:meth:`~climb_max_fpa`
-            * - :py:meth:`~climb_min_fpa`
-            * - :py:meth:`~climb_fail_on_insufficient_performance`
-            * - :py:meth:`~cruise_max_airspeed`
-            * - :py:meth:`~cruise_max_airspeed_type`
-            * - :py:meth:`~cruise_default_altitude`
-            * - :py:meth:`~descent_airspeed`
-            * - :py:meth:`~descent_airspeed_type`
-            * - :py:meth:`~descent_max_fpa`
-            * - :py:meth:`~descent_min_fpa`
-            * - :py:meth:`~descent_fail_on_insufficient_performance`
-            * - :py:meth:`~use_total_temp_limit`
-            * - :py:meth:`~total_temp_limit`
-            * - :py:meth:`~use_mach_limit`
-            * - :py:meth:`~mach_limit`
-            * - :py:meth:`~use_eas_limit`
-            * - :py:meth:`~eas_limit`
-            * - :py:meth:`~default_configuration`
-            * - :py:meth:`~aerodynamics`
-            * - :py:meth:`~propulsion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.max_load_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.maneuver_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.maneuver_mode_helper`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.attitude_transitions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.ignore_fpa_for_climb_descent_transitions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.climb_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.climb_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.climb_max_fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.climb_min_fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.climb_fail_on_insufficient_performance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.cruise_max_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.cruise_max_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.cruise_default_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.descent_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.descent_airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.descent_max_fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.descent_min_fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.descent_fail_on_insufficient_performance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.use_total_temp_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.total_temp_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.use_mach_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.mach_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.use_eas_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.eas_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.default_configuration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.aerodynamics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileModel.propulsion`
 
 
 Import detail
@@ -89,13 +89,13 @@ Property detail
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.maneuver_mode_helper
-    :type: IAgAvtrAeroPropManeuverModeHelper
+    :type: IAeroPropManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
 .. py:property:: attitude_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.attitude_transitions
-    :type: IAgAvtrAttitudeTransitions
+    :type: IAttitudeTransitions
 
     Get the attitude transitions interface.
 
@@ -221,19 +221,19 @@ Property detail
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.default_configuration
-    :type: IAgAvtrConfiguration
+    :type: IConfiguration
 
     Get the aircraft's default configuration as saved in the catalog.
 
 .. py:property:: aerodynamics
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.aerodynamics
-    :type: IAgAvtrMissileAero
+    :type: IMissileAero
 
     Get the aerodynamics interface.
 
 .. py:property:: propulsion
     :canonical: ansys.stk.core.stkobjects.aviator.IMissileModel.propulsion
-    :type: IAgAvtrMissileProp
+    :type: IMissileProp
 
     Get the propulsion interface.
 

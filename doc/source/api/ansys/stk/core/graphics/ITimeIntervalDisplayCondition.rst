@@ -1,13 +1,13 @@
 ITimeIntervalDisplayCondition
 =============================
 
-.. py:class:: ITimeIntervalDisplayCondition
+.. py:class:: ansys.stk.core.graphics.ITimeIntervalDisplayCondition
 
    object
    
    Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time .
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ITimeIntervalDisplayCondition
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_time`
-            * - :py:meth:`~maximum_time`
+            * - :py:attr:`~ansys.stk.core.graphics.ITimeIntervalDisplayCondition.minimum_time`
+            * - :py:attr:`~ansys.stk.core.graphics.ITimeIntervalDisplayCondition.maximum_time`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: minimum_time
     :canonical: ansys.stk.core.graphics.ITimeIntervalDisplayCondition.minimum_time
-    :type: IAgDate
+    :type: IDate
 
     Gets or sets the minimum time of the inclusive time interval.
 
 .. py:property:: maximum_time
     :canonical: ansys.stk.core.graphics.ITimeIntervalDisplayCondition.maximum_time
-    :type: IAgDate
+    :type: IDate
 
     Gets or sets the maximum time of the inclusive time interval.
 

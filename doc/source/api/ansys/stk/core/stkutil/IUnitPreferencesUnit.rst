@@ -1,13 +1,13 @@
 IUnitPreferencesUnit
 ====================
 
-.. py:class:: IUnitPreferencesUnit
+.. py:class:: ansys.stk.core.stkutil.IUnitPreferencesUnit
 
    object
    
    Provide info about a unit.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IUnitPreferencesUnit
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~full_name`
-            * - :py:meth:`~abbrv`
-            * - :py:meth:`~id`
-            * - :py:meth:`~dimension`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnit.full_name`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnit.abbrv`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnit.id`
+            * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnit.dimension`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: dimension
     :canonical: ansys.stk.core.stkutil.IUnitPreferencesUnit.dimension
-    :type: IAgUnitPrefsDim
+    :type: IUnitPreferencesDimension
 
     Returns the Dimension for this unit.
 

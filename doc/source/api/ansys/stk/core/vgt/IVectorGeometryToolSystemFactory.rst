@@ -1,13 +1,13 @@
 IVectorGeometryToolSystemFactory
 ================================
 
-.. py:class:: IVectorGeometryToolSystemFactory
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystemFactory
 
    object
    
    A Factory interface to create VGT systems.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolSystemFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFactory.create`
               - Create a VGT system using the specified name, description and type.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFactory.is_type_supported`
               - Return true if the specified system type is supported.
 
 

@@ -1,13 +1,13 @@
 ITimeToolEventArrayFixedStep
 ============================
 
-.. py:class:: ITimeToolEventArrayFixedStep
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArrayFixedStep
 
    object
    
    Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArrayFixedStep
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~bounding_interval_list`
-            * - :py:meth:`~sampling_time_step`
-            * - :py:meth:`~include_interval_edges`
-            * - :py:meth:`~reference_type`
-            * - :py:meth:`~reference_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.bounding_interval_list`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.sampling_time_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.include_interval_edges`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.reference_type`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.reference_time_instant`
 
 
 Import detail
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: bounding_interval_list
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.bounding_interval_list
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The bounding interval list.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.reference_time_instant
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     The reference time instant. Only applicable if the ReferenceType is set to time instant.
 

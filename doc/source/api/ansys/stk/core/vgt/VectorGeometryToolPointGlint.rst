@@ -1,13 +1,13 @@
 VectorGeometryToolPointGlint
 ============================
 
-.. py:class:: VectorGeometryToolPointGlint
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointGlint
 
-   Bases: py:obj:`~IVectorGeometryToolPointGlint`, py:obj:`~IVectorGeometryToolPoint`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointGlint`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Point on central body surface that reflects from source to observer.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPointGlint
 
 Overview
 --------

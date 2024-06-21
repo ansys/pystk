@@ -1,13 +1,13 @@
 TimeToolFirstIntervalsFilter
 ============================
 
-.. py:class:: TimeToolFirstIntervalsFilter
+.. py:class:: ansys.stk.core.vgt.TimeToolFirstIntervalsFilter
 
-   Bases: py:obj:`~ITimeToolFirstIntervalsFilter`, py:obj:`~ITimeToolPruneFilter`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolFirstIntervalsFilter`, py:obj:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
 
    The filter selects a portion of first intervals.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolFirstIntervalsFilter
 
 Overview
 --------

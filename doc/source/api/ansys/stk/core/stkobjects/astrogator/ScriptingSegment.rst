@@ -1,13 +1,13 @@
 ScriptingSegment
 ================
 
-.. py:class:: ScriptingSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingSegment
 
-   Bases: py:obj:`~IScriptingSegment`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Scripting Segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ScriptingSegment
 
 Overview
 --------

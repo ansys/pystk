@@ -1,12 +1,12 @@
 ANTENNA_GRAPHICS_COORDINATE_SYSTEM
 ==================================
 
-.. py:class:: ANTENNA_GRAPHICS_COORDINATE_SYSTEM
+.. py:class:: ansys.stk.core.stkobjects.ANTENNA_GRAPHICS_COORDINATE_SYSTEM
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ANTENNA_GRAPHICS_COORDINATE_SYSTEM
 
 Overview
 --------

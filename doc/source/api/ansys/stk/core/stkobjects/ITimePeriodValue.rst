@@ -1,13 +1,13 @@
 ITimePeriodValue
 ================
 
-.. py:class:: ITimePeriodValue
+.. py:class:: ansys.stk.core.stkobjects.ITimePeriodValue
 
    object
    
    Provide methods and properties to configure a time value.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITimePeriodValue
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~value`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriodValue.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriodValue.type`
 
 
 Import detail

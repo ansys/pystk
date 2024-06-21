@@ -1,12 +1,12 @@
 SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE
 ====================================
 
-.. py:class:: SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE
 
 Overview
 --------

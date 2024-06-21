@@ -1,13 +1,13 @@
 ImageCollection
 ===============
 
-.. py:class:: ImageCollection
+.. py:class:: ansys.stk.core.graphics.ImageCollection
 
-   Bases: py:obj:`~IImageCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IImageCollection`
 
    A collection of globe image overlay objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ImageCollection
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IChainConstraints
 =================
 
-.. py:class:: IChainConstraints
+.. py:class:: ansys.stk.core.stkobjects.IChainConstraints
 
    object
    
    Chain constraints.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IChainConstraints
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_min_angle`
-            * - :py:meth:`~min_angle`
-            * - :py:meth:`~use_max_angle`
-            * - :py:meth:`~max_angle`
-            * - :py:meth:`~use_min_link_time`
-            * - :py:meth:`~min_link_time`
-            * - :py:meth:`~use_load_interval_file`
-            * - :py:meth:`~load_interval_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConstraints.use_min_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConstraints.min_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConstraints.use_max_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConstraints.max_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConstraints.use_min_link_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConstraints.min_link_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConstraints.use_load_interval_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IChainConstraints.load_interval_file`
 
 
 Import detail

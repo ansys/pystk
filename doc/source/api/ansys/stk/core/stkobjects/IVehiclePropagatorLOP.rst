@@ -1,13 +1,13 @@
 IVehiclePropagatorLOP
 =====================
 
-.. py:class:: IVehiclePropagatorLOP
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorLOP
 
    IVehiclePropagator
    
    LOP (Long-Range Orbit Predictor) propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorLOP
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~initial_state`
-            * - :py:meth:`~force_model`
-            * - :py:meth:`~ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.initial_state`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.force_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.ephemeris_interval`
 
 
 Import detail
@@ -54,19 +54,19 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorLOP.initial_state
-    :type: IAgVeInitialState
+    :type: IVehicleInitialState
 
     Get the initial state.
 
 .. py:property:: force_model
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorLOP.force_model
-    :type: IAgVeLOPForceModel
+    :type: IVehicleLOPForceModel
 
     Get the force model parameters.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorLOP.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

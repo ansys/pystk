@@ -1,13 +1,13 @@
 TransmitterGraphics3D
 =====================
 
-.. py:class:: TransmitterGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.TransmitterGraphics3D
 
-   Bases: py:obj:`~ITransmitterGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitterGraphics3D`
 
    Class defining 3D Graphics properties of a Transmitter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TransmitterGraphics3D
 
 Overview
 --------

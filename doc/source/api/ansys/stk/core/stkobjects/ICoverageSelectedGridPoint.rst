@@ -1,13 +1,13 @@
 ICoverageSelectedGridPoint
 ==========================
 
-.. py:class:: ICoverageSelectedGridPoint
+.. py:class:: ansys.stk.core.stkobjects.ICoverageSelectedGridPoint
 
    object
    
    Represents a point selected with the grid inspector.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageSelectedGridPoint
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~latitude`
-            * - :py:meth:`~longitude`
-            * - :py:meth:`~intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageSelectedGridPoint.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageSelectedGridPoint.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageSelectedGridPoint.intervals`
 
 
 Import detail

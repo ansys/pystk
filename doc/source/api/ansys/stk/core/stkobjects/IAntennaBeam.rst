@@ -1,13 +1,13 @@
 IAntennaBeam
 ============
 
-.. py:class:: IAntennaBeam
+.. py:class:: ansys.stk.core.stkobjects.IAntennaBeam
 
    object
    
    Provide access to an antenna beam.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaBeam
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_polarization_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.set_polarization_type`
               - Set the current polarization type.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~id`
-            * - :py:meth:`~active`
-            * - :py:meth:`~frequency`
-            * - :py:meth:`~supported_antenna_models`
-            * - :py:meth:`~antenna_model_name`
-            * - :py:meth:`~antenna_model`
-            * - :py:meth:`~orientation`
-            * - :py:meth:`~enable_polarization`
-            * - :py:meth:`~polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.active`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.supported_antenna_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.antenna_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.antenna_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.enable_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.polarization`
 
 
 Import detail
@@ -83,13 +83,13 @@ Property detail
 
 .. py:property:: antenna_model
     :canonical: ansys.stk.core.stkobjects.IAntennaBeam.antenna_model
-    :type: IAgAntennaModel
+    :type: IAntennaModel
 
     Gets the current antenna model.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.IAntennaBeam.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     Gets the antenna orientation.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.IAntennaBeam.polarization
-    :type: IAgPolarization
+    :type: IPolarization
 
     Gets the polarization.
 

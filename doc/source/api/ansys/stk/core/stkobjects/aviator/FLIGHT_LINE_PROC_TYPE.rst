@@ -1,12 +1,12 @@
 FLIGHT_LINE_PROC_TYPE
 =====================
 
-.. py:class:: FLIGHT_LINE_PROC_TYPE
+.. py:class:: ansys.stk.core.stkobjects.aviator.FLIGHT_LINE_PROC_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: FLIGHT_LINE_PROC_TYPE
 
 Overview
 --------

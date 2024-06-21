@@ -1,13 +1,13 @@
 CoverageAssetListElement
 ========================
 
-.. py:class:: CoverageAssetListElement
+.. py:class:: ansys.stk.core.stkobjects.CoverageAssetListElement
 
-   Bases: py:obj:`~ICoverageAssetListElement`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageAssetListElement`
 
    Coverage asset.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageAssetListElement
 
 Overview
 --------

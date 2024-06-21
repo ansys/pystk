@@ -1,13 +1,13 @@
 IAnalysisWorkbenchCollection
 ============================
 
-.. py:class:: IAnalysisWorkbenchCollection
+.. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchCollection
 
    object
    
    A collection of VGT objects.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IAnalysisWorkbenchCollection
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCollection.contains`
               - Search for a an element with a given name. Returns false if the specified element does not exist.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCollection.item`
               - Retrieve an element of the collection using the name of the element or a position in the collection.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCollection.get_item_by_index`
               - Retrieve an item from the crdn collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCollection.get_item_by_name`
               - Retrieve an item from the crdn collection by name.
 
     .. tab-item:: Properties
@@ -35,8 +35,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCollection.count`
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCollection._NewEnum`
 
 
 Import detail

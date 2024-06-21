@@ -1,13 +1,13 @@
 IGraphics3DOffset
 =================
 
-.. py:class:: IGraphics3DOffset
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DOffset
 
    object
    
    AgVOOffset used to access the 3D offset attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DOffset
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~rotational`
-            * - :py:meth:`~translational`
-            * - :py:meth:`~label`
-            * - :py:meth:`~attach_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffset.rotational`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffset.translational`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffset.label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffset.attach_point`
 
 
 Import detail
@@ -39,25 +39,25 @@ Property detail
 
 .. py:property:: rotational
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffset.rotational
-    :type: IAgVOOffsetRotate
+    :type: IGraphics3DOffsetRotate
 
     Returns the rotational offset attributes.
 
 .. py:property:: translational
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffset.translational
-    :type: IAgVOOffsetTrans
+    :type: IGraphics3DOffsetTransformation
 
     Returns the translational offset attributes.
 
 .. py:property:: label
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffset.label
-    :type: IAgVOOffsetLabel
+    :type: IGraphics3DOffsetLabel
 
     Returns the label offset attributes.
 
 .. py:property:: attach_point
     :canonical: ansys.stk.core.stkobjects.IGraphics3DOffset.attach_point
-    :type: IAgVOOffsetAttach
+    :type: IGraphics3DOffsetAttach
 
     Returns the attach point offset attributes.
 

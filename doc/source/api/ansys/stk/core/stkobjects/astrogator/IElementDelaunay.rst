@@ -1,13 +1,13 @@
 IElementDelaunay
 ================
 
-.. py:class:: IElementDelaunay
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementDelaunay
 
    IElement
    
    Properties for Delaunay elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementDelaunay
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~mean_anomaly`
-            * - :py:meth:`~arg_of_periapsis`
-            * - :py:meth:`~raan`
-            * - :py:meth:`~delaunay_l`
-            * - :py:meth:`~semi_major_axis`
-            * - :py:meth:`~delaunay_g`
-            * - :py:meth:`~semilatus_rectum`
-            * - :py:meth:`~delaunay_h`
-            * - :py:meth:`~inclination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.mean_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.arg_of_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.raan`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.delaunay_l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.delaunay_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.semilatus_rectum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.delaunay_h`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay.inclination`
 
 
 Import detail

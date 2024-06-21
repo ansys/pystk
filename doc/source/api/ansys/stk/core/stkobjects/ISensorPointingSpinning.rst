@@ -1,13 +1,13 @@
 ISensorPointingSpinning
 =======================
 
-.. py:class:: ISensorPointingSpinning
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingSpinning
 
    object
    
    IAgSnPtSpinning Interface for defining the pointing properties of a spinning sensor.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingSpinning
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_clock_angles`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.set_clock_angles`
               - Set both the start and stop clock angles. Start/Stop use Angle Dimension.
 
     .. tab-item:: Properties
@@ -29,14 +29,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~spin_axis_azimuth`
-            * - :py:meth:`~spin_axis_elevation`
-            * - :py:meth:`~spin_axis_cone_angle`
-            * - :py:meth:`~scan_mode`
-            * - :py:meth:`~clock_angle_start`
-            * - :py:meth:`~clock_angle_stop`
-            * - :py:meth:`~spin_rate`
-            * - :py:meth:`~offset_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.spin_axis_azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.spin_axis_elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.spin_axis_cone_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.scan_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.clock_angle_start`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.clock_angle_stop`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.spin_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSpinning.offset_angle`
 
 
 Import detail

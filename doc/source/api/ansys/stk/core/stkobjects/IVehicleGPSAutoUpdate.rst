@@ -1,13 +1,13 @@
 IVehicleGPSAutoUpdate
 =====================
 
-.. py:class:: IVehicleGPSAutoUpdate
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate
 
    object
    
    Interface for GPS AutoUpdate.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGPSAutoUpdate
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~selected_source`
-            * - :py:meth:`~properties`
-            * - :py:meth:`~file_source`
-            * - :py:meth:`~online_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.selected_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.file_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.online_source`
 
 
 Import detail
@@ -45,19 +45,19 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.properties
-    :type: IAgVeGPSAutoUpdateProperties
+    :type: IVehicleGPSAutoUpdateProperties
 
     Get the Automatic Update selection and method.
 
 .. py:property:: file_source
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.file_source
-    :type: IAgVeGPSAutoUpdateFileSource
+    :type: IVehicleGPSAutoUpdateFileSource
 
     A file to be used as the element source.
 
 .. py:property:: online_source
     :canonical: ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.online_source
-    :type: IAgVeGPSAutoUpdateOnlineSource
+    :type: IVehicleGPSAutoUpdateOnlineSource
 
     AGI server to be used as the element source.
 

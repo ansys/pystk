@@ -1,13 +1,13 @@
 IVehiclePropagatorSGP4
 ======================
 
-.. py:class:: IVehiclePropagatorSGP4
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4
 
    IVehiclePropagator
    
    SGP4 propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorSGP4
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.propagate`
               - Propagates the satellite's path using the specified time interval.
 
     .. tab-item:: Properties
@@ -29,13 +29,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~step`
-            * - :py:meth:`~segments`
-            * - :py:meth:`~auto_update_enabled`
-            * - :py:meth:`~auto_update`
-            * - :py:meth:`~common_tasks`
-            * - :py:meth:`~settings`
-            * - :py:meth:`~ephemeris_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.segments`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.auto_update_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.auto_update`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.common_tasks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.settings`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.ephemeris_interval`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.segments
-    :type: IAgVeSGP4SegmentCollection
+    :type: IVehicleSGP4SegmentCollection
 
     Get the element set list.
 
@@ -69,25 +69,25 @@ Property detail
 
 .. py:property:: auto_update
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.auto_update
-    :type: IAgVeSGP4AutoUpdate
+    :type: IVehicleSGP4AutoUpdate
 
     Allows configuring the auto-update parameters and settings.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.common_tasks
-    :type: IAgVePropagatorSGP4CommonTasks
+    :type: IVehiclePropagatorSGP4CommonTasks
 
     Most commonly used tasks such as importing file data, etc.
 
 .. py:property:: settings
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.settings
-    :type: IAgVeSGP4PropagatorSettings
+    :type: IVehicleSGP4PropagatorSettings
 
     Propagator settings.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.ephemeris_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

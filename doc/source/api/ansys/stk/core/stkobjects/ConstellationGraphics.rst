@@ -1,13 +1,13 @@
 ConstellationGraphics
 =====================
 
-.. py:class:: ConstellationGraphics
+.. py:class:: ansys.stk.core.stkobjects.ConstellationGraphics
 
-   Bases: py:obj:`~IConstellationGraphics`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IConstellationGraphics`
 
    2D Graphics properties of the STK Constellation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ConstellationGraphics
 
 Overview
 --------

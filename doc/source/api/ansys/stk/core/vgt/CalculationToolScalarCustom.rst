@@ -1,13 +1,13 @@
 CalculationToolScalarCustom
 ===========================
 
-.. py:class:: CalculationToolScalarCustom
+.. py:class:: ansys.stk.core.vgt.CalculationToolScalarCustom
 
-   Bases: py:obj:`~ICalculationToolScalarCustom`, py:obj:`~ICalculationToolScalar`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarCustom`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolScalarCustom
 
 Overview
 --------

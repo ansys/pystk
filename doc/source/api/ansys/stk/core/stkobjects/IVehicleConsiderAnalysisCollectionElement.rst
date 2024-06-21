@@ -1,13 +1,13 @@
 IVehicleConsiderAnalysisCollectionElement
 =========================================
 
-.. py:class:: IVehicleConsiderAnalysisCollectionElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement
 
    object
    
    Item in Consider Analysis list for HPOP covariance.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleConsiderAnalysisCollectionElement
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~type`
-            * - :py:meth:`~name`
-            * - :py:meth:`~value`
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
-            * - :py:meth:`~vx`
-            * - :py:meth:`~vy`
-            * - :py:meth:`~vz`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.vx`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.vy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.vz`
 
 
 Import detail

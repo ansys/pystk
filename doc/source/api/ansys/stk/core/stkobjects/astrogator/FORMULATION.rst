@@ -1,12 +1,12 @@
 FORMULATION
 ===========
 
-.. py:class:: FORMULATION
+.. py:class:: ansys.stk.core.stkobjects.astrogator.FORMULATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: FORMULATION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeInview
 ===============================
 
-.. py:class:: SpatialAnalysisToolVolumeInview
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeInview
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeInview`, py:obj:`~ISpatialAnalysisToolVolume`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeInview`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An Inview volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeInview
 
 Overview
 --------

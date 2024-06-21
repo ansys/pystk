@@ -1,13 +1,13 @@
 IVectorGeometryToolWellKnownSystems
 ===================================
 
-.. py:class:: IVectorGeometryToolWellKnownSystems
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems
 
    object
    
    Well-known coordinate reference systems.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolWellKnownSystems
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~earth`
-            * - :py:meth:`~sun`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems.earth`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems.sun`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems.earth
-    :type: IAgCrdnWellKnownEarthSystems
+    :type: IVectorGeometryToolWellKnownEarthSystems
 
     Earth's coordinate reference systems.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems.sun
-    :type: IAgCrdnWellKnownSunSystems
+    :type: IVectorGeometryToolWellKnownSunSystems
 
     The Sun's coordinate reference systems.
 

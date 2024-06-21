@@ -1,12 +1,12 @@
 CALC_OBJECT_ORBIT_PLANE_SOURCE
 ==============================
 
-.. py:class:: CALC_OBJECT_ORBIT_PLANE_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_ORBIT_PLANE_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: CALC_OBJECT_ORBIT_PLANE_SOURCE
 
 Overview
 --------

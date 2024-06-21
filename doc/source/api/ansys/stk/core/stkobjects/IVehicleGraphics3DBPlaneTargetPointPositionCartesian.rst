@@ -1,13 +1,13 @@
 IVehicleGraphics3DBPlaneTargetPointPositionCartesian
 ====================================================
 
-.. py:class:: IVehicleGraphics3DBPlaneTargetPointPositionCartesian
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionCartesian
 
    IVehicleGraphics3DBPlaneTargetPointPosition
    
    Cartesian.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DBPlaneTargetPointPositionCartesian
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~b_mul_t`
-            * - :py:meth:`~b_mul_r`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionCartesian.b_mul_t`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionCartesian.b_mul_r`
 
 
 Import detail

@@ -1,13 +1,13 @@
 TerrainOverlay
 ==============
 
-.. py:class:: TerrainOverlay
+.. py:class:: ansys.stk.core.graphics.TerrainOverlay
 
-   Bases: py:obj:`~ITerrainOverlay`, py:obj:`~IGlobeOverlay`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITerrainOverlay`, py:obj:`~ansys.stk.core.graphics.IGlobeOverlay`
 
    A globe overlay which shows terrain.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TerrainOverlay
 
 Overview
 --------

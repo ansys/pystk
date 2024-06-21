@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesFindInAxesResult
 =======================================
 
-.. py:class:: IVectorGeometryToolAxesFindInAxesResult
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesResult
 
    object
    
    Contains the results returned with IAgCrdnAxes.FindInAxes method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesFindInAxesResult
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~orientation`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesResult.orientation`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesResult.orientation
-    :type: IAgOrientation
+    :type: IOrientation
 
     The axes' orientation.
 

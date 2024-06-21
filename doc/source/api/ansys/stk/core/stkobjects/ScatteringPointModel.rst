@@ -1,13 +1,13 @@
 ScatteringPointModel
 ====================
 
-.. py:class:: ScatteringPointModel
+.. py:class:: ansys.stk.core.stkobjects.ScatteringPointModel
 
-   Bases: py:obj:`~IScatteringPointModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a scattering point model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ScatteringPointModel
 
 Overview
 --------

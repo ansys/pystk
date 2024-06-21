@@ -1,13 +1,13 @@
 IAircraftAdvancedAccelerationModel
 ==================================
 
-.. py:class:: IAircraftAdvancedAccelerationModel
+.. py:class:: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel
 
    object
    
    Interface used to access the Advanced Acceleration Model options of an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IAircraftAdvancedAccelerationModel
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_catalog_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~level_turns`
-            * - :py:meth:`~attitude_transitions`
-            * - :py:meth:`~climb_and_descent_transitions`
-            * - :py:meth:`~acceleration_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.level_turns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.attitude_transitions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.climb_and_descent_transitions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.acceleration_mode`
 
 
 Import detail
@@ -48,25 +48,25 @@ Property detail
 
 .. py:property:: level_turns
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.level_turns
-    :type: IAgAvtrLevelTurns
+    :type: ILevelTurns
 
     Get the level turns interface.
 
 .. py:property:: attitude_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.attitude_transitions
-    :type: IAgAvtrAttitudeTransitions
+    :type: IAttitudeTransitions
 
     Get the attitude transitions interface.
 
 .. py:property:: climb_and_descent_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.climb_and_descent_transitions
-    :type: IAgAvtrClimbAndDescentTransitions
+    :type: IClimbAndDescentTransitions
 
     Get the climb and descent transitions interface.
 
 .. py:property:: acceleration_mode
     :canonical: ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.acceleration_mode
-    :type: IAgAvtrAircraftAccelerationMode
+    :type: IAircraftAccelerationMode
 
     Get the acceleration mode interface.
 

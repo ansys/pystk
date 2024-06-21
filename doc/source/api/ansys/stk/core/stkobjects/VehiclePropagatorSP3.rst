@@ -1,13 +1,13 @@
 VehiclePropagatorSP3
 ====================
 
-.. py:class:: VehiclePropagatorSP3
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorSP3
 
-   Bases: py:obj:`~IVehiclePropagatorSP3`, py:obj:`~IVehiclePropagator`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    The SP3 propagator reads .sp3 files of type 'a' and 'c' and allows you to use multiple files in sequence. These files are used to provide precise GPS orbits from the National Geodetic Survey (NGS).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehiclePropagatorSP3
 
 Overview
 --------

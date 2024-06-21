@@ -1,12 +1,12 @@
 DIRECTION_TYPE
 ==============
 
-.. py:class:: DIRECTION_TYPE
+.. py:class:: ansys.stk.core.stkutil.DIRECTION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: DIRECTION_TYPE
 
 Overview
 --------

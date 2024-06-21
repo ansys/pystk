@@ -1,13 +1,13 @@
 IAircraftGraphics
 =================
 
-.. py:class:: IAircraftGraphics
+.. py:class:: ansys.stk.core.stkobjects.IAircraftGraphics
 
    IGreatArcGraphics
    
    2D Graphics for an aircraft.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAircraftGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~elev_contours`
-            * - :py:meth:`~swath`
-            * - :py:meth:`~radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics.swath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics.radar_cross_section`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.IAircraftGraphics.elev_contours
-    :type: IAgVeGfxElevContours
+    :type: IVehicleGraphics2DElevContours
 
     Get the aircraft's 2D elevation contour graphics.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.IAircraftGraphics.swath
-    :type: IAgVeGfxSwath
+    :type: IVehicleGraphics2DSwath
 
     Get the aircraft's 2D swath graphics.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.IAircraftGraphics.radar_cross_section
-    :type: IAgRadarCrossSectionGraphics
+    :type: IRadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

@@ -1,13 +1,13 @@
 VectorGeometryToolVectorProjectAlongVector
 ==========================================
 
-.. py:class:: VectorGeometryToolVectorProjectAlongVector
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorProjectAlongVector
 
-   Bases: py:obj:`~IVectorGeometryToolVectorProjectAlongVector`, py:obj:`~IAnalysisWorkbenchComponent`, py:obj:`~ITimeToolTimeProperties`, py:obj:`~IVectorGeometryToolVector`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    A projection of a source vector in the direction of another vector.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolVectorProjectAlongVector
 
 Overview
 --------

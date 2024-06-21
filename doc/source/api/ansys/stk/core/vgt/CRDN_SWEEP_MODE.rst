@@ -1,12 +1,12 @@
 CRDN_SWEEP_MODE
 ===============
 
-.. py:class:: CRDN_SWEEP_MODE
+.. py:class:: ansys.stk.core.vgt.CRDN_SWEEP_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CRDN_SWEEP_MODE
 
 Overview
 --------

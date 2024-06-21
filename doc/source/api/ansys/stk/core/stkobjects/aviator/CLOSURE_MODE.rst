@@ -1,12 +1,12 @@
 CLOSURE_MODE
 ============
 
-.. py:class:: CLOSURE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.CLOSURE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: CLOSURE_MODE
 
 Overview
 --------

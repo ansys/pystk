@@ -1,13 +1,13 @@
 BeamformerCosineX
 =================
 
-.. py:class:: BeamformerCosineX
+.. py:class:: ansys.stk.core.stkobjects.BeamformerCosineX
 
-   Bases: py:obj:`~IBeamformer`, py:obj:`~IBeamformerCosineX`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`, py:obj:`~ansys.stk.core.stkobjects.IBeamformerCosineX`
 
    Class defining a cosine^X tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BeamformerCosineX
 
 Overview
 --------

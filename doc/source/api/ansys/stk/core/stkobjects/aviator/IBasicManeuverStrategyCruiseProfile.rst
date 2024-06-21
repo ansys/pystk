@@ -1,13 +1,13 @@
 IBasicManeuverStrategyCruiseProfile
 ===================================
 
-.. py:class:: IBasicManeuverStrategyCruiseProfile
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile
 
    object
    
    Interface used to access options for a Cruise Profile Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyCruiseProfile
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~use_default_cruise_altitude`
-            * - :py:meth:`~level_off`
-            * - :py:meth:`~requested_altitude`
-            * - :py:meth:`~cruise_airspeed_options`
-            * - :py:meth:`~stop_after_level_off`
-            * - :py:meth:`~compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile.use_default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile.level_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile.requested_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile.cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile.stop_after_level_off`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile.compensate_for_coriolis_accel`
 
 
 Import detail
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyCruiseProfile.cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the interface for the cruise airspeed options.
 

@@ -1,13 +1,13 @@
 EOIRShapeCylinder
 =================
 
-.. py:class:: EOIRShapeCylinder
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeCylinder
 
-   Bases: py:obj:`~IEOIRShapeCylinder`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeCylinder`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Cylinder shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeCylinder
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStoppingConditionComponent
 ===========================
 
-.. py:class:: IStoppingConditionComponent
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent
 
    object
    
    Properties for a stopping condition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStoppingConditionComponent
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~stopping_condition_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent.stopping_condition_type`
 
 
 Import detail

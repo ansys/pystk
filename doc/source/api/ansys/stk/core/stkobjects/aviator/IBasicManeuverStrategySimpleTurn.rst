@@ -1,13 +1,13 @@
 IBasicManeuverStrategySimpleTurn
 ================================
 
-.. py:class:: IBasicManeuverStrategySimpleTurn
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn
 
    object
    
    Interface used to access options for a Simple Turn Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategySimpleTurn
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_frame`
-            * - :py:meth:`~turn_angle`
-            * - :py:meth:`~turn_radius_factor`
-            * - :py:meth:`~compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn.reference_frame`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn.turn_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn.turn_radius_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn.compensate_for_coriolis_accel`
 
 
 Import detail

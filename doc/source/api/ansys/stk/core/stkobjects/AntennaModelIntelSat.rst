@@ -1,13 +1,13 @@
 AntennaModelIntelSat
 ====================
 
-.. py:class:: AntennaModelIntelSat
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelIntelSat
 
-   Bases: py:obj:`~IAntennaModelIntelSat`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelIntelSat`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a IntelSat antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelIntelSat
 
 Overview
 --------

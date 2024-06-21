@@ -1,13 +1,13 @@
 IProcedureLaunchWaypoint
 ========================
 
-.. py:class:: IProcedureLaunchWaypoint
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint
 
    object
    
    Interface used to access the options for a waypoint launch procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureLaunchWaypoint
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.set_airspeed`
               - Set the launch airspeed.
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -31,16 +31,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~launch_time`
-            * - :py:meth:`~altitude_reference`
-            * - :py:meth:`~launch_altitude`
-            * - :py:meth:`~launch_true_bearing`
-            * - :py:meth:`~launch_elevation`
-            * - :py:meth:`~accel_g`
-            * - :py:meth:`~airspeed_type`
-            * - :py:meth:`~airspeed`
-            * - :py:meth:`~fuel_flow_type`
-            * - :py:meth:`~override_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.launch_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.launch_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.launch_true_bearing`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.launch_elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.accel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.airspeed_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.fuel_flow_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchWaypoint.override_fuel_flow`
 
 
 Import detail

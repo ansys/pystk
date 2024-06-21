@@ -1,13 +1,13 @@
 IElementTargetVectorIncomingAsymptote
 =====================================
 
-.. py:class:: IElementTargetVectorIncomingAsymptote
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote
 
    IElement
    
    Properties for Target Vector Incoming Asymptote elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IElementTargetVectorIncomingAsymptote
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~radius_of_periapsis`
-            * - :py:meth:`~c3_energy`
-            * - :py:meth:`~ra_incoming_asymptote`
-            * - :py:meth:`~declination_incoming_asymptote`
-            * - :py:meth:`~velocity_azimuth_periapsis`
-            * - :py:meth:`~true_anomaly`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote.radius_of_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote.c3_energy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote.ra_incoming_asymptote`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote.declination_incoming_asymptote`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote.velocity_azimuth_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote.true_anomaly`
 
 
 Import detail

@@ -1,13 +1,13 @@
 VehicleAttitudeMaximumSlewAcceleration
 ======================================
 
-.. py:class:: VehicleAttitudeMaximumSlewAcceleration
+.. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration
 
-   Bases: py:obj:`~IVehicleAttitudeMaximumSlewAcceleration`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration`
 
    Define the maximum slew acceleration by entering maximum overall magnitude. You can constrain the slew acceleration in specific directions by selecting one or more Per Axis rates and defining separate maximum rates for those axes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleAttitudeMaximumSlewAcceleration
 
 Overview
 --------

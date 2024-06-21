@@ -1,13 +1,13 @@
 IFigureOfMeritNavigationAccuracyMethodElevationAngle
 ====================================================
 
-.. py:class:: IFigureOfMeritNavigationAccuracyMethodElevationAngle
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodElevationAngle
 
    IFigureOfMeritNavigationAccuracyMethod
    
    Elevation Angle method for uncertainty in range measurements for the Navigation Accuracy Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritNavigationAccuracyMethodElevationAngle
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
-            * - :py:meth:`~file_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodElevationAngle.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodElevationAngle.file_path`
 
 
 Import detail

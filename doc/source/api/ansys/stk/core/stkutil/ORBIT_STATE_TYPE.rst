@@ -1,12 +1,12 @@
 ORBIT_STATE_TYPE
 ================
 
-.. py:class:: ORBIT_STATE_TYPE
+.. py:class:: ansys.stk.core.stkutil.ORBIT_STATE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: ORBIT_STATE_TYPE
 
 Overview
 --------

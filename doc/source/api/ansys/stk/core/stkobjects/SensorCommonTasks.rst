@@ -1,13 +1,13 @@
 SensorCommonTasks
 =================
 
-.. py:class:: SensorCommonTasks
+.. py:class:: ansys.stk.core.stkobjects.SensorCommonTasks
 
-   Bases: py:obj:`~ISensorCommonTasks`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorCommonTasks`
 
    Class defining the Sensor Common class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SensorCommonTasks
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleGraphics3DSystemsCollection
 ==================================
 
-.. py:class:: VehicleGraphics3DSystemsCollection
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection
 
-   Bases: py:obj:`~IVehicleGraphics3DSystemsCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection`
 
    List of Systems.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DSystemsCollection
 
 Overview
 --------

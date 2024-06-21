@@ -1,12 +1,12 @@
 BALLISTIC_3D_CONTROL_MODE
 =========================
 
-.. py:class:: BALLISTIC_3D_CONTROL_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.BALLISTIC_3D_CONTROL_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BALLISTIC_3D_CONTROL_MODE
 
 Overview
 --------

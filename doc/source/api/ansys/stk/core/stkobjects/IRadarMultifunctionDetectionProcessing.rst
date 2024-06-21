@@ -1,13 +1,13 @@
 IRadarMultifunctionDetectionProcessing
 ======================================
 
-.. py:class:: IRadarMultifunctionDetectionProcessing
+.. py:class:: ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing
 
    object
    
    Interface which represents multifunction radar detection processing.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarMultifunctionDetectionProcessing
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_probability_of_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.set_probability_of_detection`
               - Set the probability of detection algorithm by name.
 
     .. tab-item:: Properties
@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_probability_of_detection`
-            * - :py:meth:`~probability_of_detection`
-            * - :py:meth:`~pulse_integration_type`
-            * - :py:meth:`~pulse_integration`
-            * - :py:meth:`~enable_resolution_override`
-            * - :py:meth:`~range_cell_resolution`
-            * - :py:meth:`~azimuth_resolution`
-            * - :py:meth:`~enable_pulse_canceller`
-            * - :py:meth:`~number_of_pulses_to_cancel`
-            * - :py:meth:`~enable_coherent_pulses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.supported_probability_of_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.probability_of_detection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.pulse_integration_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.pulse_integration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.enable_resolution_override`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.range_cell_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.azimuth_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.enable_pulse_canceller`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.number_of_pulses_to_cancel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.enable_coherent_pulses`
 
 
 Import detail
@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: probability_of_detection
     :canonical: ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.probability_of_detection
-    :type: IAgRadarProbabilityOfDetection
+    :type: IRadarProbabilityOfDetection
 
     Gets the interface for setting the probability of detection parameters.
 
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: pulse_integration
     :canonical: ansys.stk.core.stkobjects.IRadarMultifunctionDetectionProcessing.pulse_integration
-    :type: IAgRadarPulseIntegration
+    :type: IRadarPulseIntegration
 
     Gets the interface for setting pulse integration parameters.
 

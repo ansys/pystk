@@ -1,13 +1,13 @@
 IUiWindowsCollection
 ====================
 
-.. py:class:: IUiWindowsCollection
+.. py:class:: ansys.stk.core.uicore.IUiWindowsCollection
 
    object
    
    Provide methods and properties to manage the application's windows.
 
-.. py:currentmodule:: ansys.stk.core.uicore
+.. py:currentmodule:: IUiWindowsCollection
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection.item`
               - Retrieve a window object.
-            * - :py:meth:`~arrange`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection.arrange`
               - Arranges the application windows using the specified style.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection.add`
               - Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection.get_item_by_index`
               - Retrieve a window object by index in collection.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection.get_item_by_name`
               - Retrieve a window object by name of window object.
 
     .. tab-item:: Properties
@@ -37,8 +37,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection.count`
+            * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection._NewEnum`
 
 
 Import detail

@@ -1,13 +1,13 @@
 IDataObjectFiles
 ================
 
-.. py:class:: IDataObjectFiles
+.. py:class:: ansys.stk.core.stkx.IDataObjectFiles
 
    object
    
    Collection of file names.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: IDataObjectFiles
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkx.IDataObjectFiles.item`
               - Get the file name at the specified index (0-based).
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkx.IDataObjectFiles._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkx.IDataObjectFiles.count`
 
 
 Import detail

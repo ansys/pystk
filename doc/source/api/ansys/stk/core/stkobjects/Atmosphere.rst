@@ -1,13 +1,13 @@
 Atmosphere
 ==========
 
-.. py:class:: Atmosphere
+.. py:class:: ansys.stk.core.stkobjects.Atmosphere
 
-   Bases: py:obj:`~IPlatformRFEnvironment`, py:obj:`~IAtmosphere`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment`, py:obj:`~ansys.stk.core.stkobjects.IAtmosphere`
 
    Class defining local atmosphere.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Atmosphere
 
 Overview
 --------

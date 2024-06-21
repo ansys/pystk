@@ -1,13 +1,13 @@
 IRadarMultifunctionWaveformStrategySettings
 ===========================================
 
-.. py:class:: IRadarMultifunctionWaveformStrategySettings
+.. py:class:: ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings
 
    object
    
    Interface which defines a multifunction radar waveform strategy settings.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarMultifunctionWaveformStrategySettings
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~short_range_limit`
-            * - :py:meth:`~medium_range_limit`
-            * - :py:meth:`~long_range_limit`
-            * - :py:meth:`~supported_short_range_waveforms`
-            * - :py:meth:`~supported_medium_range_waveforms`
-            * - :py:meth:`~supported_long_range_waveforms`
-            * - :py:meth:`~supported_ultra_long_range_waveforms`
-            * - :py:meth:`~short_range_default_waveform`
-            * - :py:meth:`~medium_range_default_waveform`
-            * - :py:meth:`~long_range_default_waveform`
-            * - :py:meth:`~ultra_long_range_default_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.short_range_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.medium_range_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.long_range_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.supported_short_range_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.supported_medium_range_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.supported_long_range_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.supported_ultra_long_range_waveforms`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.short_range_default_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.medium_range_default_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.long_range_default_waveform`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.ultra_long_range_default_waveform`
 
 
 Import detail

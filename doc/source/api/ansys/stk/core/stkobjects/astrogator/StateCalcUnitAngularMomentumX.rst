@@ -1,13 +1,13 @@
 StateCalcUnitAngularMomentumX
 =============================
 
-.. py:class:: StateCalcUnitAngularMomentumX
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcUnitAngularMomentumX
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcUnitAngularMomentumX`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcUnitAngularMomentumX`
 
    UnitAngularMomentumX Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcUnitAngularMomentumX
 
 Overview
 --------

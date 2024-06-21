@@ -1,12 +1,12 @@
 VOACAP_COEFFICIENT_DATA_TYPE
 ============================
 
-.. py:class:: VOACAP_COEFFICIENT_DATA_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VOACAP_COEFFICIENT_DATA_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VOACAP_COEFFICIENT_DATA_TYPE
 
 Overview
 --------

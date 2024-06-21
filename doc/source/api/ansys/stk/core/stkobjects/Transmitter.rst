@@ -1,13 +1,13 @@
 Transmitter
 ===========
 
-.. py:class:: Transmitter
+.. py:class:: ansys.stk.core.stkobjects.Transmitter
 
-   Bases: py:obj:`~ITransmitter`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`, py:obj:`~IDisplayTime`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitter`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the transmitter object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: Transmitter
 
 Overview
 --------

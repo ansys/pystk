@@ -1,12 +1,12 @@
 COVERAGE_RESOLUTION
 ===================
 
-.. py:class:: COVERAGE_RESOLUTION
+.. py:class:: ansys.stk.core.stkobjects.COVERAGE_RESOLUTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COVERAGE_RESOLUTION
 
 Overview
 --------

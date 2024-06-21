@@ -1,12 +1,12 @@
 VEHICLE_SLEW_MODE
 =================
 
-.. py:class:: VEHICLE_SLEW_MODE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_SLEW_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_SLEW_MODE
 
 Overview
 --------

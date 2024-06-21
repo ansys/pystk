@@ -1,13 +1,13 @@
 StateCalcPositionDifferenceOtherSegment
 =======================================
 
-.. py:class:: StateCalcPositionDifferenceOtherSegment
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcPositionDifferenceOtherSegment
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcPositionDifferenceOtherSegment`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPositionDifferenceOtherSegment`
 
    PosDifferenceOtherSegment Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcPositionDifferenceOtherSegment
 
 Overview
 --------

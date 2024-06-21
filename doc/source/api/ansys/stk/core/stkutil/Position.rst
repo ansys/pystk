@@ -1,13 +1,13 @@
 Position
 ========
 
-.. py:class:: Position
+.. py:class:: ansys.stk.core.stkutil.Position
 
-   Bases: py:obj:`~ILocationData`, py:obj:`~IPosition`
+   Bases: py:obj:`~ansys.stk.core.stkutil.ILocationData`, py:obj:`~ansys.stk.core.stkutil.IPosition`
 
    The Position class.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Position
 
 Overview
 --------

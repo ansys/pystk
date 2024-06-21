@@ -1,13 +1,13 @@
 ProfileSearchPlugin
 ===================
 
-.. py:class:: ProfileSearchPlugin
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin
 
-   Bases: py:obj:`~IProfileSearchPlugin`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The plugin search profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileSearchPlugin
 
 Overview
 --------

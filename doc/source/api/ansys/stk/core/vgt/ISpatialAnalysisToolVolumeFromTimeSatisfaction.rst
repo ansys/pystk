@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeFromTimeSatisfaction
 ==============================================
 
-.. py:class:: ISpatialAnalysisToolVolumeFromTimeSatisfaction
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromTimeSatisfaction
 
    object
    
    An volume from time satisfaction volume interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeFromTimeSatisfaction
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~time_satisfaction`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromTimeSatisfaction.time_satisfaction`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: time_satisfaction
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromTimeSatisfaction.time_satisfaction
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
 

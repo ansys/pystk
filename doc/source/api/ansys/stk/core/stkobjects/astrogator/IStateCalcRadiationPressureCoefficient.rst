@@ -1,13 +1,13 @@
 IStateCalcRadiationPressureCoefficient
 ======================================
 
-.. py:class:: IStateCalcRadiationPressureCoefficient
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcRadiationPressureCoefficient
 
    object
    
    Properties for a RadiationPressureCoefficient calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcRadiationPressureCoefficient
 
 Overview
 --------

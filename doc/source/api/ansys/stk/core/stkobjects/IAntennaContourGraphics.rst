@@ -1,13 +1,13 @@
 IAntennaContourGraphics
 =======================
 
-.. py:class:: IAntennaContourGraphics
+.. py:class:: ansys.stk.core.stkobjects.IAntennaContourGraphics
 
    object
    
    IAgAntennaContourGraphics Interface for a antenna's contour properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaContourGraphics
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_contour_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGraphics.is_contour_type_supported`
               - Return true if the supplied contour type is supported by this object, false otherwise.
-            * - :py:meth:`~set_contour_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGraphics.set_contour_type`
               - Set the current contour type.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show`
-            * - :py:meth:`~supported_contour_types`
-            * - :py:meth:`~contour`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGraphics.show`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGraphics.supported_contour_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGraphics.contour`
 
 
 Import detail
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: contour
     :canonical: ansys.stk.core.stkobjects.IAntennaContourGraphics.contour
-    :type: IAgAntennaContour
+    :type: IAntennaContour
 
     Gets the current contour type's properties.
 

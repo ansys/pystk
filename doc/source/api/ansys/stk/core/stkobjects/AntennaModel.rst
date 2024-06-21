@@ -1,13 +1,13 @@
 AntennaModel
 ============
 
-.. py:class:: AntennaModel
+.. py:class:: ansys.stk.core.stkobjects.AntennaModel
 
-   Bases: py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a generic antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModel
 
 Overview
 --------

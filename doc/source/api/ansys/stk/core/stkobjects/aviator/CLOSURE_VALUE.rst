@@ -1,12 +1,12 @@
 CLOSURE_VALUE
 =============
 
-.. py:class:: CLOSURE_VALUE
+.. py:class:: ansys.stk.core.stkobjects.aviator.CLOSURE_VALUE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: CLOSURE_VALUE
 
 Overview
 --------

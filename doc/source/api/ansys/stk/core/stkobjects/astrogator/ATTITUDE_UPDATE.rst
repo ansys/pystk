@@ -1,12 +1,12 @@
 ATTITUDE_UPDATE
 ===============
 
-.. py:class:: ATTITUDE_UPDATE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ATTITUDE_UPDATE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ATTITUDE_UPDATE
 
 Overview
 --------

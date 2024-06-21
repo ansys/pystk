@@ -1,13 +1,13 @@
 IFigureOfMeritSatisfaction
 ==========================
 
-.. py:class:: IFigureOfMeritSatisfaction
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction
 
    object
    
    Satisfaction properties for a Figure of Merit.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritSatisfaction
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_satisfaction`
-            * - :py:meth:`~satisfaction_type`
-            * - :py:meth:`~satisfaction_threshold`
-            * - :py:meth:`~invalid_data_indicator`
-            * - :py:meth:`~use_value_range_check`
-            * - :py:meth:`~min_value_range`
-            * - :py:meth:`~max_value_range`
-            * - :py:meth:`~exclude_value_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.enable_satisfaction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.satisfaction_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.satisfaction_threshold`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.invalid_data_indicator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.use_value_range_check`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.min_value_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.max_value_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.exclude_value_range`
 
 
 Import detail

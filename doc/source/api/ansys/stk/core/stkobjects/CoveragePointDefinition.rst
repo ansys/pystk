@@ -1,13 +1,13 @@
 CoveragePointDefinition
 =======================
 
-.. py:class:: CoveragePointDefinition
+.. py:class:: ansys.stk.core.stkobjects.CoveragePointDefinition
 
-   Bases: py:obj:`~ICoveragePointDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoveragePointDefinition`
 
    Point Definition: methods and parameters for specifying the location of points on the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoveragePointDefinition
 
 Overview
 --------

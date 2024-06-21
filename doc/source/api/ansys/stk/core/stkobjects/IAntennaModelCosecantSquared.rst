@@ -1,13 +1,13 @@
 IAntennaModelCosecantSquared
 ============================
 
-.. py:class:: IAntennaModelCosecantSquared
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelCosecantSquared
 
    object
    
    Provide access to the properties and methods defining a cosecant squared antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelCosecantSquared
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sidelobe_type`
-            * - :py:meth:`~cutoff_angle`
-            * - :py:meth:`~azimuth_beamwidth`
-            * - :py:meth:`~mainlobe_gain`
-            * - :py:meth:`~backlobe_gain`
-            * - :py:meth:`~efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.sidelobe_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.cutoff_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.azimuth_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.backlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.efficiency`
 
 
 Import detail

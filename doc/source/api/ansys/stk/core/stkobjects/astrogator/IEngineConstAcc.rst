@@ -1,13 +1,13 @@
 IEngineConstAcc
 ===============
 
-.. py:class:: IEngineConstAcc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IEngineConstAcc
 
    object
    
    Properties for a Constant Acceleration and Isp engine model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IEngineConstAcc
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.enable_control_parameter`
               - Enable the specified control parameter.
-            * - :py:meth:`~disable_control_parameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.disable_control_parameter`
               - Disables the specified control parameter.
-            * - :py:meth:`~is_control_parameter_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.is_control_parameter_enabled`
               - Sees if the specified control is enabled.
 
     .. tab-item:: Properties
@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~g`
-            * - :py:meth:`~acceleration`
-            * - :py:meth:`~isp`
-            * - :py:meth:`~control_parameters_available`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.isp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.control_parameters_available`
 
 
 Import detail

@@ -1,12 +1,12 @@
 SENSOR_EOIR_BAND_SPECTRAL_RSR_UNITS
 ===================================
 
-.. py:class:: SENSOR_EOIR_BAND_SPECTRAL_RSR_UNITS
+.. py:class:: ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SPECTRAL_RSR_UNITS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SENSOR_EOIR_BAND_SPECTRAL_RSR_UNITS
 
 Overview
 --------

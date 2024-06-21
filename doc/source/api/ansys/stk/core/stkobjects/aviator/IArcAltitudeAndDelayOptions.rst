@@ -1,13 +1,13 @@
 IArcAltitudeAndDelayOptions
 ===========================
 
-.. py:class:: IArcAltitudeAndDelayOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions
 
    object
    
    Interface used to access the altitude options for an Arc procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IArcAltitudeAndDelayOptions
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_default_cruise_altitude`
-            * - :py:meth:`~delay_arc_climb_descents`
-            * - :py:meth:`~start_arc_altitude`
-            * - :py:meth:`~stop_arc_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions.use_default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions.delay_arc_climb_descents`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions.start_arc_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions.stop_arc_altitude`
 
 
 Import detail

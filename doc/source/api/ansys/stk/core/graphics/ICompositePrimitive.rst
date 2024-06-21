@@ -1,13 +1,13 @@
 ICompositePrimitive
 ===================
 
-.. py:class:: ICompositePrimitive
+.. py:class:: ansys.stk.core.graphics.ICompositePrimitive
 
    object
    
    A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions...
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ICompositePrimitive
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive.add`
               - Add a primitive to the composite.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive.remove`
               - Remove a primitive from the composite.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive.contains`
               - Determine whether the composite contains a primitive.
-            * - :py:meth:`~clear`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive.clear`
               - Remove all primitives from the composite.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~translucent_primitives_sort_order`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive.count`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive.translucent_primitives_sort_order`
+            * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive._NewEnum`
 
 
 Import detail

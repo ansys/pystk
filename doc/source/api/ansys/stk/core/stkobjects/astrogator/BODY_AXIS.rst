@@ -1,12 +1,12 @@
 BODY_AXIS
 =========
 
-.. py:class:: BODY_AXIS
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BODY_AXIS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BODY_AXIS
 
 Overview
 --------

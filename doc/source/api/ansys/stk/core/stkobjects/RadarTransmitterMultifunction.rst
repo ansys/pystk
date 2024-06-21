@@ -1,13 +1,13 @@
 RadarTransmitterMultifunction
 =============================
 
-.. py:class:: RadarTransmitterMultifunction
+.. py:class:: ansys.stk.core.stkobjects.RadarTransmitterMultifunction
 
-   Bases: py:obj:`~IRadarTransmitterMultifunction`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarTransmitterMultifunction`
 
    Class defining the multifunction radar transmitter.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarTransmitterMultifunction
 
 Overview
 --------

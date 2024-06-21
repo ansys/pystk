@@ -1,13 +1,13 @@
 IPointTargetGraphics3DModel
 ===========================
 
-.. py:class:: IPointTargetGraphics3DModel
+.. py:class:: ansys.stk.core.stkobjects.IPointTargetGraphics3DModel
 
    IGraphics3DModel
    
    AgPtTargetVOModel used to access the 3D model attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IPointTargetGraphics3DModel
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~marker`
-            * - :py:meth:`~is_point_visible`
-            * - :py:meth:`~point_size`
-            * - :py:meth:`~gltf_reflection_map_type`
-            * - :py:meth:`~gltf_image_based`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointTargetGraphics3DModel.marker`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointTargetGraphics3DModel.is_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointTargetGraphics3DModel.point_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointTargetGraphics3DModel.gltf_reflection_map_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPointTargetGraphics3DModel.gltf_image_based`
 
 
 Import detail
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: marker
     :canonical: ansys.stk.core.stkobjects.IPointTargetGraphics3DModel.marker
-    :type: IAgVOMarker
+    :type: IGraphics3DMarker
 
     VO Marker attributes.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.IPointTargetGraphics3DModel.gltf_image_based
-    :type: IAgVOModelGltfImageBased
+    :type: IGraphics3DModelGltfImageBased
 
     Gets the glTF Image Based properties.
 

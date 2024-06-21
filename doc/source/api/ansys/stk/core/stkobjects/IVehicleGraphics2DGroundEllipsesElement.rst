@@ -1,13 +1,13 @@
 IVehicleGraphics2DGroundEllipsesElement
 =======================================
 
-.. py:class:: IVehicleGraphics2DGroundEllipsesElement
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement
 
    object
    
    Ground ellipse 2D graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DGroundEllipsesElement
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ellipse_set_name`
-            * - :py:meth:`~static_graphics_2d`
-            * - :py:meth:`~dynamic_graphics_2d`
-            * - :py:meth:`~interpolate`
-            * - :py:meth:`~is_name_visible`
-            * - :py:meth:`~is_center_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.ellipse_set_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.static_graphics_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.dynamic_graphics_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.interpolate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.is_name_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.is_center_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.line_width`
 
 
 Import detail

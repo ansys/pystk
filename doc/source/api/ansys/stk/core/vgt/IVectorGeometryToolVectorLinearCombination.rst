@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorLinearCombination
 ==========================================
 
-.. py:class:: IVectorGeometryToolVectorLinearCombination
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination
 
    object
    
    Linear combination of two input vectors.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorLinearCombination
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~vector_a`
-            * - :py:meth:`~scale_factor_a`
-            * - :py:meth:`~normalize_vector_a`
-            * - :py:meth:`~vector_b`
-            * - :py:meth:`~scale_factor_b`
-            * - :py:meth:`~normalize_vector_b`
-            * - :py:meth:`~output_dimension_inheritance`
-            * - :py:meth:`~output_dimension`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.vector_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.scale_factor_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.normalize_vector_a`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.vector_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.scale_factor_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.normalize_vector_b`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.output_dimension_inheritance`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.output_dimension`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: vector_a
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.vector_a
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Vector A can be any VGT vector.
 
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: vector_b
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.vector_b
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     Vector B can be any VGT vector.
 

@@ -1,13 +1,13 @@
 DuringAccess
 ============
 
-.. py:class:: DuringAccess
+.. py:class:: ansys.stk.core.stkobjects.DuringAccess
 
-   Bases: py:obj:`~IDisplayTimesData`, py:obj:`~IDuringAccess`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDisplayTimesData`, py:obj:`~ansys.stk.core.stkobjects.IDuringAccess`
 
    Class defining display intervals in terms of access to objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DuringAccess
 
 Overview
 --------

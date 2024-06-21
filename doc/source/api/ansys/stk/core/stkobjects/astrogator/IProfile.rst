@@ -1,13 +1,13 @@
 IProfile
 ========
 
-.. py:class:: IProfile
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IProfile
 
    object
    
    General properties for target sequence profiles.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IProfile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.copy`
               - Make a copy of the profile.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~status`
-            * - :py:meth:`~user_comment`
-            * - :py:meth:`~mode`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.status`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.user_comment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.type`
 
 
 Import detail

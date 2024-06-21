@@ -1,13 +1,13 @@
 SpatialAnalysisToolVolumeCalcAngleOffVector
 ===========================================
 
-.. py:class:: SpatialAnalysisToolVolumeCalcAngleOffVector
+.. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcAngleOffVector
 
-   Bases: py:obj:`~ISpatialAnalysisToolVolumeCalcAngleOffVector`, py:obj:`~ISpatialAnalysisToolVolumeCalc`, py:obj:`~IAnalysisWorkbenchComponent`
+   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalc`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc angle off vector interface.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: SpatialAnalysisToolVolumeCalcAngleOffVector
 
 Overview
 --------

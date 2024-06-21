@@ -1,13 +1,13 @@
 VehicleGraphics3DSigmaScaleProbability
 ======================================
 
-.. py:class:: VehicleGraphics3DSigmaScaleProbability
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DSigmaScaleProbability
 
-   Bases: py:obj:`~IVehicleGraphics3DSigmaScale`, py:obj:`~IVehicleGraphics3DSigmaScaleProbability`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScale`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScaleProbability`
 
    Sigma probability for indirect sizing of covariance pointing contours.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics3DSigmaScaleProbability
 
 Overview
 --------

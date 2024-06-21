@@ -1,13 +1,13 @@
 ICatalogRunway
 ==============
 
-.. py:class:: ICatalogRunway
+.. py:class:: ansys.stk.core.stkobjects.aviator.ICatalogRunway
 
    object
    
    Interface used to access a runway in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ICatalogRunway
 
 Overview
 --------

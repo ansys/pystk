@@ -1,13 +1,13 @@
 MissileExternalProp
 ===================
 
-.. py:class:: MissileExternalProp
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileExternalProp
 
-   Bases: py:obj:`~IMissileExternalProp`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp`
 
    Class defining the External propulsion options for a missile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: MissileExternalProp
 
 Overview
 --------

@@ -1,12 +1,12 @@
 TRACK_MODE_TYPE
 ===============
 
-.. py:class:: TRACK_MODE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.TRACK_MODE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TRACK_MODE_TYPE
 
 Overview
 --------

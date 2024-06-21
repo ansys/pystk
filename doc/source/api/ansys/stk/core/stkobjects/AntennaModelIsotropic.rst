@@ -1,13 +1,13 @@
 AntennaModelIsotropic
 =====================
 
-.. py:class:: AntennaModelIsotropic
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelIsotropic
 
-   Bases: py:obj:`~IAntennaModelIsotropic`, py:obj:`~IAntennaModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelIsotropic`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a isotropic antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AntennaModelIsotropic
 
 Overview
 --------

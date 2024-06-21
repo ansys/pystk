@@ -1,13 +1,13 @@
 ICentralBodyShapeSphere
 =======================
 
-.. py:class:: ICentralBodyShapeSphere
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeSphere
 
    ICentralBodyShape
    
    Properties for the central body sphere shape.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyShapeSphere
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeSphere.radius`
 
 
 Import detail

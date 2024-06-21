@@ -1,13 +1,13 @@
 AtmosphericAbsorptionModelITURP676_9
 ====================================
 
-.. py:class:: AtmosphericAbsorptionModelITURP676_9
+.. py:class:: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676_9
 
-   Bases: py:obj:`~IAtmosphericAbsorptionModelITURP676`, py:obj:`~IAtmosphericAbsorptionModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676`, py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an atmospheric absorption model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: AtmosphericAbsorptionModelITURP676_9
 
 Overview
 --------

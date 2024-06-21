@@ -1,13 +1,13 @@
 IVectorGeometryToolAxesOnSurface
 ================================
 
-.. py:class:: IVectorGeometryToolAxesOnSurface
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface
 
    object
    
    Topocentric axes located at the reference point's projection on the central body.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAxesOnSurface
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~central_body`
-            * - :py:meth:`~reference_point`
-            * - :py:meth:`~use_msl`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.central_body`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.reference_point`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.use_msl`
 
 
 Import detail
@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.central_body
-    :type: IAgCrdnCentralBodyRefTo
+    :type: IAnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.reference_point
-    :type: IAgCrdnPointRefTo
+    :type: IVectorGeometryToolPointRefTo
 
     Specify a reference point.
 

@@ -1,13 +1,13 @@
 IPolylinePrimitiveFactory
 =========================
 
-.. py:class:: IPolylinePrimitiveFactory
+.. py:class:: ansys.stk.core.graphics.IPolylinePrimitiveFactory
 
    object
    
    Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IPolylinePrimitiveFactory
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~initialize`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize`
               - Initialize a default polyline primitive. This is equivalent to constructing a polyline with a set hint of Frequent and a polyline type of LineStrip.
-            * - :py:meth:`~initialize_with_interpolator_and_set_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_interpolator_and_set_hint`
               - Initialize a polyline primitive with the specified interpolator and setHint.
-            * - :py:meth:`~initialize_with_type_and_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_type_and_hint`
               - Initialize a new instance of a polyline primitive with the specified polylineType and setHint.
-            * - :py:meth:`~initialize_with_interpolator`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_interpolator`
               - Initialize a polyline primitive with the specified interpolator. This is equivalent to constructing a polyline with the specified interpolator and a set hint of Frequent.
-            * - :py:meth:`~initialize_with_hint`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_hint`
               - Initialize a new instance of a polyline primitive with the specified set hint. This is equivalent to constructing a polyline with a polyline type of LineStrip and the specified set hint.
-            * - :py:meth:`~initialize_with_type`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory.initialize_with_type`
               - Initialize a polyline primitive with the specified polylineType. This is equivalent to constructing a polyline with the specified polylineType and a set hint of Frequent.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~minimum_width_supported`
-            * - :py:meth:`~maximum_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory.minimum_width_supported`
+            * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory.maximum_width_supported`
 
 
 Import detail

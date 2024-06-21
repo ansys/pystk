@@ -1,12 +1,12 @@
 ATMOSPHERE_MODEL
 ================
 
-.. py:class:: ATMOSPHERE_MODEL
+.. py:class:: ansys.stk.core.stkobjects.aviator.ATMOSPHERE_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ATMOSPHERE_MODEL
 
 Overview
 --------

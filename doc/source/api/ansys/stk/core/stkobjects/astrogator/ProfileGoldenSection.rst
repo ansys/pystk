@@ -1,13 +1,13 @@
 ProfileGoldenSection
 ====================
 
-.. py:class:: ProfileGoldenSection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection
 
-   Bases: py:obj:`~IProfileGoldenSection`, py:obj:`~IProfile`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Golden Section profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ProfileGoldenSection
 
 Overview
 --------

@@ -1,13 +1,13 @@
 VehicleGPSAlmanacPropertiesSEM
 ==============================
 
-.. py:class:: VehicleGPSAlmanacPropertiesSEM
+.. py:class:: ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSEM
 
-   Bases: py:obj:`~IVehicleGPSAlmanacPropertiesSEM`, py:obj:`~IVehicleGPSAlmanacProperties`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties`
 
    SEM almanac properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGPSAlmanacPropertiesSEM
 
 Overview
 --------

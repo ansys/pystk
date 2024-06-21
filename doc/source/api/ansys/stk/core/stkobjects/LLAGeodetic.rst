@@ -1,13 +1,13 @@
 LLAGeodetic
 ===========
 
-.. py:class:: LLAGeodetic
+.. py:class:: ansys.stk.core.stkobjects.LLAGeodetic
 
-   Bases: py:obj:`~ILLAGeodetic`, py:obj:`~ILLAPosition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ILLAGeodetic`, py:obj:`~ansys.stk.core.stkobjects.ILLAPosition`
 
    Geodetic LLA position.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LLAGeodetic
 
 Overview
 --------

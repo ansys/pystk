@@ -1,13 +1,13 @@
 IFigureOfMeritGraphics2DRampColor
 =================================
 
-.. py:class:: IFigureOfMeritGraphics2DRampColor
+.. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRampColor
 
    object
    
    Color ramp method for contours: select start and end colors to define spectrum segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IFigureOfMeritGraphics2DRampColor
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_color`
-            * - :py:meth:`~end_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRampColor.start_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRampColor.end_color`
 
 
 Import detail

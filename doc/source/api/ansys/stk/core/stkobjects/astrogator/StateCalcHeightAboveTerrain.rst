@@ -1,13 +1,13 @@
 StateCalcHeightAboveTerrain
 ===========================
 
-.. py:class:: StateCalcHeightAboveTerrain
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcHeightAboveTerrain
 
-   Bases: py:obj:`~IStateCalcHeightAboveTerrain`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcHeightAboveTerrain`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass AsStateCalcHeightAboveTerrain.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcHeightAboveTerrain
 
 Overview
 --------

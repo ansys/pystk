@@ -1,13 +1,13 @@
 IProcedureEnroute
 =================
 
-.. py:class:: IProcedureEnroute
+.. py:class:: ansys.stk.core.stkobjects.aviator.IProcedureEnroute
 
    object
    
    Interface used to access the options for an enroute procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IProcedureEnroute
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_as_procedure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.get_as_procedure`
               - Get the procedure interface.
 
     .. tab-item:: Properties
@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~altitude_msl_options`
-            * - :py:meth:`~navigation_options`
-            * - :py:meth:`~enroute_options`
-            * - :py:meth:`~enroute_cruise_airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.altitude_msl_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.navigation_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.enroute_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.enroute_cruise_airspeed_options`
 
 
 Import detail
@@ -48,25 +48,25 @@ Property detail
 
 .. py:property:: altitude_msl_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.altitude_msl_options
-    :type: IAgAvtrAltitudeMSLAndLevelOffOptions
+    :type: IAltitudeMSLAndLevelOffOptions
 
     Get the altitude MSL options.
 
 .. py:property:: navigation_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.navigation_options
-    :type: IAgAvtrNavigationOptions
+    :type: INavigationOptions
 
     Get the navigation options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.enroute_options
-    :type: IAgAvtrEnrouteAndDelayOptions
+    :type: IEnrouteAndDelayOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedureEnroute.enroute_cruise_airspeed_options
-    :type: IAgAvtrCruiseAirspeedOptions
+    :type: ICruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 

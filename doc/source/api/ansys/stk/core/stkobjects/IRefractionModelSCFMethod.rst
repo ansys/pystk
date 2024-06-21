@@ -1,13 +1,13 @@
 IRefractionModelSCFMethod
 =========================
 
-.. py:class:: IRefractionModelSCFMethod
+.. py:class:: ansys.stk.core.stkobjects.IRefractionModelSCFMethod
 
    IRefractionModelBase
    
    SCF Method.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRefractionModelSCFMethod
 
 Overview
 --------
@@ -20,14 +20,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min_target_altitude`
-            * - :py:meth:`~use_extrapolation`
-            * - :py:meth:`~ceiling`
-            * - :py:meth:`~atmos_altitude`
-            * - :py:meth:`~knee_bend_factor`
-            * - :py:meth:`~use_refraction_index`
-            * - :py:meth:`~refraction_index`
-            * - :py:meth:`~coefficients`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod.min_target_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod.use_extrapolation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod.ceiling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod.knee_bend_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod.use_refraction_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod.refraction_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod.coefficients`
 
 
 Import detail
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: coefficients
     :canonical: ansys.stk.core.stkobjects.IRefractionModelSCFMethod.coefficients
-    :type: IAgRfCoefficients
+    :type: IRefractionCoefficients
 
     Gets the polynomial coefficients.
 

@@ -1,13 +1,13 @@
 UiApplication
 =============
 
-.. py:class:: UiApplication
+.. py:class:: ansys.stk.core.uiapplication.UiApplication
 
-   Bases: py:obj:`~IUiApplication`, py:obj:`~IUiApplicationPartnerAccess`
+   Bases: py:obj:`~ansys.stk.core.uiapplication.IUiApplication`, py:obj:`~ansys.stk.core.uiapplication.IUiApplicationPartnerAccess`
 
    A root object of the Application Model.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: UiApplication
 
 Overview
 --------

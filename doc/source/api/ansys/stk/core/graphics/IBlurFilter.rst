@@ -1,13 +1,13 @@
 IBlurFilter
 ===========
 
-.. py:class:: IBlurFilter
+.. py:class:: ansys.stk.core.graphics.IBlurFilter
 
    object
    
    Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IBlurFilter
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~method`
+            * - :py:attr:`~ansys.stk.core.graphics.IBlurFilter.method`
 
 
 Import detail

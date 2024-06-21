@@ -1,12 +1,12 @@
 LOGGING_MODE
 ============
 
-.. py:class:: LOGGING_MODE
+.. py:class:: ansys.stk.core.stkx.LOGGING_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: LOGGING_MODE
 
 Overview
 --------

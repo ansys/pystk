@@ -1,13 +1,13 @@
 ICalculationToolEvaluateWithRateResult
 ======================================
 
-.. py:class:: ICalculationToolEvaluateWithRateResult
+.. py:class:: ansys.stk.core.vgt.ICalculationToolEvaluateWithRateResult
 
    object
    
    Represents the results of evaluating a scalar component using IAgCrdnCalcScalar.Evaluate method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolEvaluateWithRateResult
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_valid`
-            * - :py:meth:`~value`
-            * - :py:meth:`~rate`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolEvaluateWithRateResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolEvaluateWithRateResult.value`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolEvaluateWithRateResult.rate`
 
 
 Import detail

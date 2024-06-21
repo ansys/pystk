@@ -1,13 +1,13 @@
 IPropagatorFunctionCollection
 =============================
 
-.. py:class:: IPropagatorFunctionCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection
 
    object
    
    The list of propagator functions - affecting forces that you want to model for orbit propagation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPropagatorFunctionCollection
 
 Overview
 --------
@@ -20,23 +20,23 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.add`
               - Add a function to the collection.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.remove`
               - Remove the specified function from the collection.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.remove_all`
               - Remove all functions from the collection.
-            * - :py:meth:`~cut`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.cut`
               - Copy a propagator function to the clipboard and removes the propagator function from the list.
-            * - :py:meth:`~paste`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.paste`
               - Pastes a propagator function from the clipboard into the list.
-            * - :py:meth:`~insert_copy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.insert_copy`
               - Copy a propagator function and inserts the copy into the list.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.get_item_by_index`
               - Retrieve a propagator function from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.get_item_by_name`
               - Retrieve a propagator function from the collection by name.
 
     .. tab-item:: Properties
@@ -45,8 +45,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection.count`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ICoverageInterval
 =================
 
-.. py:class:: ICoverageInterval
+.. py:class:: ansys.stk.core.stkobjects.ICoverageInterval
 
    object
    
    Coverage interval: the time period over which coverage is computed.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageInterval
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_scenario_interval`
-            * - :py:meth:`~analysis_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageInterval.use_scenario_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageInterval.analysis_interval`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: analysis_interval
     :canonical: ansys.stk.core.stkobjects.ICoverageInterval.analysis_interval
-    :type: IAgCrdnEventIntervalSmartInterval
+    :type: ITimeToolEventIntervalSmartInterval
 
     Get the coverage analysis interval.
 

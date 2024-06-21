@@ -1,12 +1,12 @@
 VEHICLE_CORRELATION_LIST_TYPE
 =============================
 
-.. py:class:: VEHICLE_CORRELATION_LIST_TYPE
+.. py:class:: ansys.stk.core.stkobjects.VEHICLE_CORRELATION_LIST_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VEHICLE_CORRELATION_LIST_TYPE
 
 Overview
 --------

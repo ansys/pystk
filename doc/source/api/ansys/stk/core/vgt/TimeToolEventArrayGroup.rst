@@ -1,13 +1,13 @@
 TimeToolEventArrayGroup
 =======================
 
-.. py:class:: TimeToolEventArrayGroup
+.. py:class:: ansys.stk.core.vgt.TimeToolEventArrayGroup
 
-   Bases: py:obj:`~ITimeToolEventArrayGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup`
 
    Access or create VGT event arrays associated with an object.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: TimeToolEventArrayGroup
 
 Overview
 --------

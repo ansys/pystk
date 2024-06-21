@@ -1,13 +1,13 @@
 BasicAzElMask
 =============
 
-.. py:class:: BasicAzElMask
+.. py:class:: ansys.stk.core.stkobjects.BasicAzElMask
 
-   Bases: py:obj:`~IBasicAzElMask`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IBasicAzElMask`
 
    The Azimuth-Elevation Mask class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: BasicAzElMask
 
 Overview
 --------

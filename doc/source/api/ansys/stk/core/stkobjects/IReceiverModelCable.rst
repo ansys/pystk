@@ -1,13 +1,13 @@
 IReceiverModelCable
 ===================
 
-.. py:class:: IReceiverModelCable
+.. py:class:: ansys.stk.core.stkobjects.IReceiverModelCable
 
    object
    
    Provide access to the properties and methods defining a cable receiver model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IReceiverModelCable
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~ber`
-            * - :py:meth:`~extra_cable_factor`
-            * - :py:meth:`~propagation_speed_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelCable.ber`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelCable.extra_cable_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelCable.propagation_speed_factor`
 
 
 Import detail

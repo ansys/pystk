@@ -1,13 +1,13 @@
 CoverageDefinition
 ==================
 
-.. py:class:: CoverageDefinition
+.. py:class:: ansys.stk.core.stkobjects.CoverageDefinition
 
-   Bases: py:obj:`~ICoverageDefinition`, py:obj:`~IStkObject`, py:obj:`~ILifetimeInformation`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageDefinition`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    The AgCoverageDefinition class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: CoverageDefinition
 
 Overview
 --------

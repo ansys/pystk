@@ -1,13 +1,13 @@
 IARINC424Source
 ===============
 
-.. py:class:: IARINC424Source
+.. py:class:: ansys.stk.core.stkobjects.aviator.IARINC424Source
 
    object
    
    Interface used to access the options for any ARINC424 source in the Aviator catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IARINC424Source
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_arinc424_item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Source.get_arinc424_item`
               - Get the ARINC-424 item with the given name.
-            * - :py:meth:`~get_as_catalog_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Source.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
     .. tab-item:: Properties
@@ -31,9 +31,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_master_data_file`
-            * - :py:meth:`~master_data_filepath`
-            * - :py:meth:`~override_data_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Source.use_master_data_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Source.master_data_filepath`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Source.override_data_filepath`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITimeToolEventIntervalCollectionCondition
 =========================================
 
-.. py:class:: ITimeToolEventIntervalCollectionCondition
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition
 
    object
    
    Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventIntervalCollectionCondition
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~condition_set`
-            * - :py:meth:`~custom_time_limits`
-            * - :py:meth:`~use_custom_time_limits`
-            * - :py:meth:`~save_data_option`
-            * - :py:meth:`~sampling`
-            * - :py:meth:`~convergence`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.condition_set`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.use_custom_time_limits`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.save_data_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.sampling`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.convergence`
 
 
 Import detail
@@ -41,13 +41,13 @@ Property detail
 
 .. py:property:: condition_set
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.condition_set
-    :type: IAgCrdnConditionSet
+    :type: ICalculationToolConditionSet
 
     Get/set the condition set object.
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.custom_time_limits
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     A custom interval list or a single interval. By default it is set to overall availability of host object. This determines time limits within which global minimum or maximum is sought. The time limits will be used if UseCustomTimeLimits is set to true.
 
@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.sampling
-    :type: IAgCrdnSampling
+    :type: IAnalysisWorkbenchSampling
 
     A Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollectionCondition.convergence
-    :type: IAgCrdnConverge
+    :type: IAnalysisWorkbenchConverge
 
     A Convergence definition, which uses time tolerance to determine when time of extremum is found.
 

@@ -1,13 +1,13 @@
 MtoGraphics3DSwapDistances
 ==========================
 
-.. py:class:: MtoGraphics3DSwapDistances
+.. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DSwapDistances
 
-   Bases: py:obj:`~IMtoGraphics3DSwapDistances`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances`
 
    MTO track 3D swap distances.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoGraphics3DSwapDistances
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ILandingEnterDownwindPattern
 ============================
 
-.. py:class:: ILandingEnterDownwindPattern
+.. py:class:: ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern
 
    object
    
    The interface used to access the options for a Downwind Pattern approach mode for a landing procedure. The approach mode must be set to Downwind Pattern to access this interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: ILandingEnterDownwindPattern
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~approach_fix_range`
-            * - :py:meth:`~approach_fix_range_mode`
-            * - :py:meth:`~abeam_distance`
-            * - :py:meth:`~abeam_altitude`
-            * - :py:meth:`~final_turn`
-            * - :py:meth:`~glideslope`
-            * - :py:meth:`~runway_altitude_offset`
-            * - :py:meth:`~use_runway_terrain`
-            * - :py:meth:`~touch_and_go`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.approach_fix_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.approach_fix_range_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.abeam_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.abeam_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.final_turn`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.glideslope`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.runway_altitude_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.use_runway_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern.touch_and_go`
 
 
 Import detail

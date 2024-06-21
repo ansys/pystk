@@ -1,13 +1,13 @@
 IVehicleAttitudeTrendControlAviator
 ===================================
 
-.. py:class:: IVehicleAttitudeTrendControlAviator
+.. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator
 
    object
    
    Trending controls for Aviator attitude.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleAttitudeTrendControlAviator
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~compute_trends`
-            * - :py:meth:`~time_tolerance`
-            * - :py:meth:`~angle_rate_tolerance`
-            * - :py:meth:`~kink_angle`
-            * - :py:meth:`~use_yaw_trend`
-            * - :py:meth:`~use_pitch_trend`
-            * - :py:meth:`~use_roll_trend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.compute_trends`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.time_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.angle_rate_tolerance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.kink_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.use_yaw_trend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.use_pitch_trend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.use_roll_trend`
 
 
 Import detail

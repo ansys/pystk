@@ -1,13 +1,13 @@
 ISpatialAnalysisToolVolumeCalcFile
 ==================================
 
-.. py:class:: ISpatialAnalysisToolVolumeCalcFile
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFile
 
    object
    
    Volumetric data loaded from a specified file - A file with .h5 extension. See STK help.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolVolumeCalcFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reload`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFile.reload`
               - Reload the volume calc file.
 
     .. tab-item:: Properties
@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFile.filename`
 
 
 Import detail

@@ -1,13 +1,13 @@
 ITimeToolEventArrayFactory
 ==========================
 
-.. py:class:: ITimeToolEventArrayFactory
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArrayFactory
 
    object
    
    The factory creates event arrays.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArrayFactory
 
 Overview
 --------
@@ -20,25 +20,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create`
               - Create and register an event array using specified name, description, and type.
-            * - :py:meth:`~create_event_array_extrema`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create_event_array_extrema`
               - Create an event array by determining times of local minimum and/or maximum of specified scalar calculation.
-            * - :py:meth:`~create_event_array_start_stop_times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create_event_array_start_stop_times`
               - Create an event array by taking start and/or stop times of every interval in the specified reference interval list and adding them to array.
-            * - :py:meth:`~create_event_array_merged`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create_event_array_merged`
               - Create an event array by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays.
-            * - :py:meth:`~create_event_array_filtered`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create_event_array_filtered`
               - Create an event array by filtering times from an original time array according to specified filtering method.
-            * - :py:meth:`~create_event_array_fixed_step`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create_event_array_fixed_step`
               - Create an event array using fixed time steps from the specified time reference and adding sampled times to array if they fall within specified bounding interval list.
-            * - :py:meth:`~create_event_array_condition_crossings`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create_event_array_condition_crossings`
               - Create an event array containing times at which the specified condition will change its satisfaction status.
-            * - :py:meth:`~create_event_array_signaled`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create_event_array_signaled`
               - Create an event array recorded at target clock location by performing signal transmission of original time array between base and target clock locations.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:meth:`~create_event_array_fixed_times`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFactory.create_event_array_fixed_times`
               - Create an event array using specified times.
 
 

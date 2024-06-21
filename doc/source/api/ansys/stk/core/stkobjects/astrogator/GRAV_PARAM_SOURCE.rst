@@ -1,12 +1,12 @@
 GRAV_PARAM_SOURCE
 =================
 
-.. py:class:: GRAV_PARAM_SOURCE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.GRAV_PARAM_SOURCE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: GRAV_PARAM_SOURCE
 
 Overview
 --------

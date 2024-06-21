@@ -1,13 +1,13 @@
 IRadarStcAttenuationDecayFactor
 ===============================
 
-.. py:class:: IRadarStcAttenuationDecayFactor
+.. py:class:: ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor
 
    object
    
    Provide access to the properties and methods defining a radar decay factor STC attenuation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarStcAttenuationDecayFactor
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maximum_value`
-            * - :py:meth:`~start_value`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~start_range`
-            * - :py:meth:`~stop_range`
-            * - :py:meth:`~decay_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor.maximum_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor.start_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor.start_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor.stop_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor.decay_factor`
 
 
 Import detail

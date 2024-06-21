@@ -1,13 +1,13 @@
 IOrbitStateSpherical
 ====================
 
-.. py:class:: IOrbitStateSpherical
+.. py:class:: ansys.stk.core.stkobjects.IOrbitStateSpherical
 
    IOrbitState
    
    Spherical coordinate type: defines the path of an orbit using polar coordinates.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IOrbitStateSpherical
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coordinate_system_type`
-            * - :py:meth:`~coordinate_system`
-            * - :py:meth:`~right_ascension`
-            * - :py:meth:`~declination`
-            * - :py:meth:`~radius`
-            * - :py:meth:`~fpa_type`
-            * - :py:meth:`~fpa`
-            * - :py:meth:`~azimuth`
-            * - :py:meth:`~velocity`
-            * - :py:meth:`~supported_coordinate_system_types`
-            * - :py:meth:`~state_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.coordinate_system_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.coordinate_system`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.right_ascension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.declination`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.radius`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.fpa_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.azimuth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.supported_coordinate_system_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateSpherical.state_epoch`
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.IOrbitStateSpherical.coordinate_system
-    :type: IAgOrbitStateCoordinateSystem
+    :type: IOrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: fpa
     :canonical: ansys.stk.core.stkobjects.IOrbitStateSpherical.fpa
-    :type: IAgFlightPathAngle
+    :type: IFlightPathAngle
 
     Get the value of the Vertical or Horizontal Flight Path Angle.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.IOrbitStateSpherical.state_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

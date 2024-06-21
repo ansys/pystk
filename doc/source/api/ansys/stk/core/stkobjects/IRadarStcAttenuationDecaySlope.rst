@@ -1,13 +1,13 @@
 IRadarStcAttenuationDecaySlope
 ==============================
 
-.. py:class:: IRadarStcAttenuationDecaySlope
+.. py:class:: ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope
 
    object
    
    Provide access to the properties and methods defining a radar decay slope STC attenuation.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarStcAttenuationDecaySlope
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~maximum_value`
-            * - :py:meth:`~start_value`
-            * - :py:meth:`~step_size`
-            * - :py:meth:`~start_range`
-            * - :py:meth:`~stop_range`
-            * - :py:meth:`~decay_slope`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.maximum_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.start_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.step_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.start_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.stop_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.decay_slope`
 
 
 Import detail

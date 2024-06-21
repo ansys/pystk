@@ -1,13 +1,13 @@
 ICoverageGraphics
 =================
 
-.. py:class:: ICoverageGraphics
+.. py:class:: ansys.stk.core.stkobjects.ICoverageGraphics
 
    object
    
    2D graphics display options for the coverage grid.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICoverageGraphics
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~static`
-            * - :py:meth:`~animation`
-            * - :py:meth:`~progress`
-            * - :py:meth:`~is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics.static`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics.progress`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics.is_object_graphics_visible`
 
 
 Import detail
@@ -39,19 +39,19 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics.static
-    :type: IAgCvGfxStatic
+    :type: ICoverageGraphics2DStatic
 
     2D static graphics options.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics.animation
-    :type: IAgCvGfxAnimation
+    :type: ICoverageGraphics2DAnimation
 
     2D animation graphics options.
 
 .. py:property:: progress
     :canonical: ansys.stk.core.stkobjects.ICoverageGraphics.progress
-    :type: IAgCvGfxProgress
+    :type: ICoverageGraphics2DProgress
 
     Access progress graphics options.
 

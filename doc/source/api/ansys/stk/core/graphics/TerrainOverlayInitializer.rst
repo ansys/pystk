@@ -1,13 +1,13 @@
 TerrainOverlayInitializer
 =========================
 
-.. py:class:: TerrainOverlayInitializer
+.. py:class:: ansys.stk.core.graphics.TerrainOverlayInitializer
 
-   Bases: py:obj:`~ITerrainOverlayInitializer`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITerrainOverlayInitializer`
 
    A globe overlay which shows terrain.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TerrainOverlayInitializer
 
 Overview
 --------

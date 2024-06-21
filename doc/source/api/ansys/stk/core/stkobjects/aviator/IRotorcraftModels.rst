@@ -1,13 +1,13 @@
 IRotorcraftModels
 =================
 
-.. py:class:: IRotorcraftModels
+.. py:class:: ansys.stk.core.stkobjects.aviator.IRotorcraftModels
 
    object
    
    Interface for the User Rotorcraft Models in the Aviator Catalog.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IRotorcraftModels
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_rotorcraft`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModels.get_rotorcraft`
               - Get the rotorcraft with the given name.
-            * - :py:meth:`~add_rotorcraft`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModels.add_rotorcraft`
               - Create a new rotorcraft with the given name.
-            * - :py:meth:`~get_as_catalog_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModels.get_as_catalog_source`
               - Get the catalog source interface for this object.
 
 

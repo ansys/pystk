@@ -1,13 +1,13 @@
 IDataProviderResultSubSectionCollection
 =======================================
 
-.. py:class:: IDataProviderResultSubSectionCollection
+.. py:class:: ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection
 
    object
    
    Represents a collection of sub-section data elements.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDataProviderResultSubSectionCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection.item`
               - Given an index, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection._NewEnum`
 
 
 Import detail

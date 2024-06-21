@@ -1,13 +1,13 @@
 VectorGeometryToolAngleFactory
 ==============================
 
-.. py:class:: VectorGeometryToolAngleFactory
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleFactory
 
-   Bases: py:obj:`~IVectorGeometryToolAngleFactory`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFactory`
 
    A Factory object to create angles.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolAngleFactory
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ISpatialAnalysisToolGridValuesFixedNumberOfSteps
 ================================================
 
-.. py:class:: ISpatialAnalysisToolGridValuesFixedNumberOfSteps
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps
 
    object
    
    Fixed step grid values.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ISpatialAnalysisToolGridValuesFixedNumberOfSteps
 
 Overview
 --------
@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~min`
-            * - :py:meth:`~max`
-            * - :py:meth:`~number_of_steps`
-            * - :py:meth:`~min_ex`
-            * - :py:meth:`~max_ex`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.min`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.max`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.number_of_steps`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.min_ex`
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.max_ex`
 
 
 Import detail
@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: min_ex
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.min_ex
-    :type: IAgQuantity
+    :type: IQuantity
 
     Minimum coordinate value as IAgQuantity.
 
 .. py:property:: max_ex
     :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.max_ex
-    :type: IAgQuantity
+    :type: IQuantity
 
     Maximum coordinate value as IAgQuantity.
 

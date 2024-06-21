@@ -1,12 +1,12 @@
 STATISTICS
 ==========
 
-.. py:class:: STATISTICS
+.. py:class:: ansys.stk.core.stkobjects.STATISTICS
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: STATISTICS
 
 Overview
 --------

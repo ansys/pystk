@@ -1,13 +1,13 @@
 MtoDefaultGraphics3DTrack
 =========================
 
-.. py:class:: MtoDefaultGraphics3DTrack
+.. py:class:: ansys.stk.core.stkobjects.MtoDefaultGraphics3DTrack
 
-   Bases: py:obj:`~IMtoDefaultGraphics3DTrack`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics3DTrack`
 
    3D graphics properties for default MTO tracks.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MtoDefaultGraphics3DTrack
 
 Overview
 --------

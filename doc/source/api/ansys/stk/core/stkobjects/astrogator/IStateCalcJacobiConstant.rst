@@ -1,13 +1,13 @@
 IStateCalcJacobiConstant
 ========================
 
-.. py:class:: IStateCalcJacobiConstant
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiConstant
 
    object
    
    Properties for a Jacobi Constant calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcJacobiConstant
 
 Overview
 --------

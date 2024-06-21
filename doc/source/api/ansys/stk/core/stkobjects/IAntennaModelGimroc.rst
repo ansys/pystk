@@ -1,13 +1,13 @@
 IAntennaModelGimroc
 ===================
 
-.. py:class:: IAntennaModelGimroc
+.. py:class:: ansys.stk.core.stkobjects.IAntennaModelGimroc
 
    object
    
    Provide access to the properties and methods defining a GIMROC antenna model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IAntennaModelGimroc
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGimroc.filename`
 
 
 Import detail

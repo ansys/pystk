@@ -1,13 +1,13 @@
 MixedSphericalFPAVertical
 =========================
 
-.. py:class:: MixedSphericalFPAVertical
+.. py:class:: ansys.stk.core.stkobjects.MixedSphericalFPAVertical
 
-   Bases: py:obj:`~IMixedSphericalFPAVertical`, py:obj:`~IFlightPathAngle`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IMixedSphericalFPAVertical`, py:obj:`~ansys.stk.core.stkobjects.IFlightPathAngle`
 
    Vertical Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MixedSphericalFPAVertical
 
 Overview
 --------

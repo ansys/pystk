@@ -1,12 +1,12 @@
 VERT_LANDING_MODE
 =================
 
-.. py:class:: VERT_LANDING_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.VERT_LANDING_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: VERT_LANDING_MODE
 
 Overview
 --------

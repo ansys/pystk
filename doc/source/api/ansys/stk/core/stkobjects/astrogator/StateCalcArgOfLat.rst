@@ -1,13 +1,13 @@
 StateCalcArgOfLat
 =================
 
-.. py:class:: StateCalcArgOfLat
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcArgOfLat
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcArgOfLat`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcArgOfLat`
 
    Argument of Latitude Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcArgOfLat
 
 Overview
 --------

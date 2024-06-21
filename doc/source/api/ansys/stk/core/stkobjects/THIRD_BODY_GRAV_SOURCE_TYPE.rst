@@ -1,12 +1,12 @@
 THIRD_BODY_GRAV_SOURCE_TYPE
 ===========================
 
-.. py:class:: THIRD_BODY_GRAV_SOURCE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.THIRD_BODY_GRAV_SOURCE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: THIRD_BODY_GRAV_SOURCE_TYPE
 
 Overview
 --------

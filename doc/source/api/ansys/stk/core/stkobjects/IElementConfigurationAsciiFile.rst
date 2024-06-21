@@ -1,13 +1,13 @@
 IElementConfigurationAsciiFile
 ==============================
 
-.. py:class:: IElementConfigurationAsciiFile
+.. py:class:: ansys.stk.core.stkobjects.IElementConfigurationAsciiFile
 
    object
    
    Provide access to the properties and methods defining a ascii file element configuration.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IElementConfigurationAsciiFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationAsciiFile.filename`
 
 
 Import detail

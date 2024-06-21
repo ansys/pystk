@@ -1,13 +1,13 @@
 ModulatorModelExternalSource
 ============================
 
-.. py:class:: ModulatorModelExternalSource
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelExternalSource
 
-   Bases: py:obj:`~IModulatorModel`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a external source modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ModulatorModelExternalSource
 
 Overview
 --------

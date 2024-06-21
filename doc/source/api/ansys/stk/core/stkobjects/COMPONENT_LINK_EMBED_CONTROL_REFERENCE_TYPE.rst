@@ -1,12 +1,12 @@
 COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE
 ===========================================
 
-.. py:class:: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IStateCalcValueAtSegmentOtherSat
 ================================
 
-.. py:class:: IStateCalcValueAtSegmentOtherSat
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegmentOtherSat
 
    object
    
    Properties for a Value At Segment Across Satellites calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcValueAtSegmentOtherSat
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~calc_object_name`
-            * - :py:meth:`~other_segment_name`
-            * - :py:meth:`~segment_state_to_use`
-            * - :py:meth:`~reference_sat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegmentOtherSat.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegmentOtherSat.other_segment_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegmentOtherSat.segment_state_to_use`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegmentOtherSat.reference_sat`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: reference_sat
     :canonical: ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegmentOtherSat.reference_sat
-    :type: IAgLinkToObject
+    :type: ILinkToObject
 
     Get the Astrogator satellite on which the segment to be compared exists.
 

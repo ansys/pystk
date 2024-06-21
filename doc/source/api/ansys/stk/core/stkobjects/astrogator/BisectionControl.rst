@@ -1,13 +1,13 @@
 BisectionControl
 ================
 
-.. py:class:: BisectionControl
+.. py:class:: ansys.stk.core.stkobjects.astrogator.BisectionControl
 
-   Bases: py:obj:`~IBisectionControl`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBisectionControl`
 
    Control parameters for  Bisection Seacrh Profile.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: BisectionControl
 
 Overview
 --------

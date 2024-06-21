@@ -1,13 +1,13 @@
 IArcAltitudeOptions
 ===================
 
-.. py:class:: IArcAltitudeOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IArcAltitudeOptions
 
    object
    
    Interface used to access the altitude options for an Arc procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IArcAltitudeOptions
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~use_default_cruise_altitude`
-            * - :py:meth:`~start_arc_altitude`
-            * - :py:meth:`~stop_arc_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeOptions.use_default_cruise_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeOptions.start_arc_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeOptions.stop_arc_altitude`
 
 
 Import detail

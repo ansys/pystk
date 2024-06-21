@@ -1,13 +1,13 @@
 IUserVariableDefinitionCollection
 =================================
 
-.. py:class:: IUserVariableDefinitionCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection
 
    object
    
    The list of User Variables accessed through the Driver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IUserVariableDefinitionCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.add`
               - Add a user variable to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.remove`
               - Remove a user variable.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.remove_all`
               - Remove all user variables.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.get_item_by_index`
               - Retrieve a user variable definition in the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.get_item_by_name`
               - Retrieve a user variable definition in the collection by name.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.count`
 
 
 Import detail

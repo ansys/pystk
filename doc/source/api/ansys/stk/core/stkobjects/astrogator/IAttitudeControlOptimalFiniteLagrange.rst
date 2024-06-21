@@ -1,13 +1,13 @@
 IAttitudeControlOptimalFiniteLagrange
 =====================================
 
-.. py:class:: IAttitudeControlOptimalFiniteLagrange
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlOptimalFiniteLagrange
 
    IAttitudeControlOptimalFinite
    
    Properties for the Lagrange Interpolation attitude control for a Optimal Finite Maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlOptimalFiniteLagrange
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~body_constraint_vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlOptimalFiniteLagrange.body_constraint_vector`
 
 
 Import detail
@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlOptimalFiniteLagrange.body_constraint_vector
-    :type: IAgDirection
+    :type: IDirection
 
     Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 

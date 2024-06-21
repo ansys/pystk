@@ -1,13 +1,13 @@
 IScenarioGraphics3D
 ===================
 
-.. py:class:: IScenarioGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.IScenarioGraphics3D
 
    object
    
    Scenario 3D Graphics Attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScenarioGraphics3D
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~available_marker_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.available_marker_types`
               - Retrieve the list of available MarkerTypes.
-            * - :py:meth:`~show_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.show_object`
               - Show the object identified by its path in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to show the object in all 3d windows.
-            * - :py:meth:`~show_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.show_objects`
               - Show multiple objects in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to show the objects in all 3d windows.
-            * - :py:meth:`~hide_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.hide_object`
               - Hides the object identified by its path in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to hide the object in all 3d windows.
-            * - :py:meth:`~hide_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.hide_objects`
               - Hides multiple objects in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to hide objects in all 3d windows.
 
     .. tab-item:: Properties
@@ -37,17 +37,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~chunk_image_cache_size`
-            * - :py:meth:`~is_negative_altitude_allowed`
-            * - :py:meth:`~small_font`
-            * - :py:meth:`~medium_font`
-            * - :py:meth:`~large_font`
-            * - :py:meth:`~surface_reference`
-            * - :py:meth:`~draw_on_terrain`
-            * - :py:meth:`~chunk_terrain_cache_size`
-            * - :py:meth:`~text_outline_style`
-            * - :py:meth:`~text_outline_color`
-            * - :py:meth:`~text_antialiasing_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.chunk_image_cache_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.is_negative_altitude_allowed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.small_font`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.medium_font`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.large_font`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.surface_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.draw_on_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.chunk_terrain_cache_size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.text_outline_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.text_outline_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.text_antialiasing_enabled`
 
 
 Import detail
@@ -75,19 +75,19 @@ Property detail
 
 .. py:property:: small_font
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.small_font
-    :type: IAgSc3dFont
+    :type: IScenario3dFont
 
     Retrieves small font metrics.
 
 .. py:property:: medium_font
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.medium_font
-    :type: IAgSc3dFont
+    :type: IScenario3dFont
 
     Retrieves medium font metrics.
 
 .. py:property:: large_font
     :canonical: ansys.stk.core.stkobjects.IScenarioGraphics3D.large_font
-    :type: IAgSc3dFont
+    :type: IScenario3dFont
 
     Retrieves large font metrics.
 

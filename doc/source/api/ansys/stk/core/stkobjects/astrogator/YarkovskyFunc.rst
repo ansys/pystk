@@ -1,13 +1,13 @@
 YarkovskyFunc
 =============
 
-.. py:class:: YarkovskyFunc
+.. py:class:: ansys.stk.core.stkobjects.astrogator.YarkovskyFunc
 
-   Bases: py:obj:`~IYarkovskyFunc`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Yarkovsky Effect Propagator Function.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: YarkovskyFunc
 
 Overview
 --------

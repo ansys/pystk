@@ -1,13 +1,13 @@
 VehicleGraphics2DRoutePassData
 ==============================
 
-.. py:class:: VehicleGraphics2DRoutePassData
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DRoutePassData
 
-   Bases: py:obj:`~IVehicleGraphics2DRoutePassData`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData`
 
    Great arc route pass data.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DRoutePassData
 
 Overview
 --------

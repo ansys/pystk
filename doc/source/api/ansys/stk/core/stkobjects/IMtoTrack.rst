@@ -1,13 +1,13 @@
 IMtoTrack
 =========
 
-.. py:class:: IMtoTrack
+.. py:class:: ansys.stk.core.stkobjects.IMtoTrack
 
    object
    
    List of MTO tracks with basic information about each.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoTrack
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~interpolate`
-            * - :py:meth:`~id`
-            * - :py:meth:`~points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrack.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrack.interpolate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrack.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrack.points`
 
 
 Import detail
@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: points
     :canonical: ansys.stk.core.stkobjects.IMtoTrack.points
-    :type: IAgMtoTrackPointCollection
+    :type: IMtoTrackPointCollection
 
     Get the collection of MTO track points.
 

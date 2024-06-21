@@ -1,13 +1,13 @@
 UnitPreferencesUnitCollection
 =============================
 
-.. py:class:: UnitPreferencesUnitCollection
+.. py:class:: ansys.stk.core.stkutil.UnitPreferencesUnitCollection
 
-   Bases: py:obj:`~IUnitPreferencesUnitCollection`
+   Bases: py:obj:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection`
 
    Object that contains a collection of IAgUnitPrefsUnit.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: UnitPreferencesUnitCollection
 
 Overview
 --------

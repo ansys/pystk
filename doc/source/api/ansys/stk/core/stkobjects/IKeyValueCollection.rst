@@ -1,13 +1,13 @@
 IKeyValueCollection
 ===================
 
-.. py:class:: IKeyValueCollection
+.. py:class:: ansys.stk.core.stkobjects.IKeyValueCollection
 
    object
    
    A collection of keys and values associated with the keys.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IKeyValueCollection
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.item`
               - Given a key, returns associated element.
-            * - :py:meth:`~contains`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.contains`
               - Determine whether the collection contains the specified key.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.remove_all`
               - Remove all elements.
-            * - :py:meth:`~remove_key`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.remove_key`
               - Remove an element associated with specified key.
-            * - :py:meth:`~set`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.set`
               - Set the value associated with specified key.
-            * - :py:meth:`~get_read_only`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.get_read_only`
               - Given a key, returns read-only flag.
-            * - :py:meth:`~set_read_only`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.set_read_only`
               - Given a key, sets read-only flag.
 
     .. tab-item:: Properties
@@ -41,9 +41,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~keys`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.keys`
 
 
 Import detail

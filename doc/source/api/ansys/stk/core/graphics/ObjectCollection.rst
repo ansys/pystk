@@ -1,13 +1,13 @@
 ObjectCollection
 ================
 
-.. py:class:: ObjectCollection
+.. py:class:: ansys.stk.core.graphics.ObjectCollection
 
-   Bases: py:obj:`~IObjectCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.IObjectCollection`
 
    A collection of objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: ObjectCollection
 
 Overview
 --------

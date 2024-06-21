@@ -1,12 +1,12 @@
 FIGURE_OF_MERIT_METHOD
 ======================
 
-.. py:class:: FIGURE_OF_MERIT_METHOD
+.. py:class:: ansys.stk.core.stkobjects.FIGURE_OF_MERIT_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: FIGURE_OF_MERIT_METHOD
 
 Overview
 --------

@@ -1,13 +1,13 @@
 RadarModeMonostaticSearchTrack
 ==============================
 
-.. py:class:: RadarModeMonostaticSearchTrack
+.. py:class:: ansys.stk.core.stkobjects.RadarModeMonostaticSearchTrack
 
-   Bases: py:obj:`~IRadarModeMonostaticSearchTrack`, py:obj:`~IRadarModeMonostatic`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSearchTrack`, py:obj:`~ansys.stk.core.stkobjects.IRadarModeMonostatic`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a monostatic search/track radar mode.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RadarModeMonostaticSearchTrack
 
 Overview
 --------

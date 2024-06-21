@@ -1,13 +1,13 @@
 IOrientationEulerAngles
 =======================
 
-.. py:class:: IOrientationEulerAngles
+.. py:class:: ansys.stk.core.stkutil.IOrientationEulerAngles
 
    IOrientation
    
    Interface for Euler Angles orientation method.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IOrientationEulerAngles
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~sequence`
-            * - :py:meth:`~a`
-            * - :py:meth:`~b`
-            * - :py:meth:`~c`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationEulerAngles.sequence`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationEulerAngles.a`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationEulerAngles.b`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationEulerAngles.c`
 
 
 Import detail

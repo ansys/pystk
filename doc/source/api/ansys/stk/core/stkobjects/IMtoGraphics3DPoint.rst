@@ -1,13 +1,13 @@
 IMtoGraphics3DPoint
 ===================
 
-.. py:class:: IMtoGraphics3DPoint
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics3DPoint
 
    object
    
    MTO track 3D marker point options interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics3DPoint
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~size`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DPoint.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DPoint.size`
 
 
 Import detail

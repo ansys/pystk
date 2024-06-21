@@ -1,13 +1,13 @@
 ITargeterGraph
 ==============
 
-.. py:class:: ITargeterGraph
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ITargeterGraph
 
    object
    
    Properties for a Targeter Graph.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ITargeterGraph
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~generate_on_run`
-            * - :py:meth:`~user_comment`
-            * - :py:meth:`~show_label_iterations`
-            * - :py:meth:`~show_desired_value`
-            * - :py:meth:`~show_tolerance_band`
-            * - :py:meth:`~independent_variable`
-            * - :py:meth:`~active_controls`
-            * - :py:meth:`~results`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.generate_on_run`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.user_comment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.show_label_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.show_desired_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.show_tolerance_band`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.independent_variable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.active_controls`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.results`
 
 
 Import detail
@@ -86,13 +86,13 @@ Property detail
 
 .. py:property:: active_controls
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraph.active_controls
-    :type: IAgVATargeterGraphActiveControlCollection
+    :type: ITargeterGraphActiveControlCollection
 
     Active Controls.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraph.results
-    :type: IAgVATargeterGraphResultCollection
+    :type: ITargeterGraphResultCollection
 
     Results.
 

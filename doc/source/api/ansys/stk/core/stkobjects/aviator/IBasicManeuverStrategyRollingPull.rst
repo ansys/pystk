@@ -1,13 +1,13 @@
 IBasicManeuverStrategyRollingPull
 =================================
 
-.. py:class:: IBasicManeuverStrategyRollingPull
+.. py:class:: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull
 
    object
    
    Interface used to access options for a Rolling Pull Strategy of a Basic Maneuver Procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IBasicManeuverStrategyRollingPull
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~active_mode`
-            * - :py:meth:`~turn_direction`
-            * - :py:meth:`~angle`
-            * - :py:meth:`~roll_orientation`
-            * - :py:meth:`~roll_rate_mode`
-            * - :py:meth:`~override_roll_rate`
-            * - :py:meth:`~pull_g_mode`
-            * - :py:meth:`~override_pull_g`
-            * - :py:meth:`~airspeed_options`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.active_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.turn_direction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.roll_orientation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.roll_rate_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.override_roll_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.pull_g_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.override_pull_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.airspeed_options`
 
 
 Import detail
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.airspeed_options
-    :type: IAgAvtrBasicManeuverAirspeedOptions
+    :type: IBasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

@@ -1,13 +1,13 @@
 EOIRShapeBox
 ============
 
-.. py:class:: EOIRShapeBox
+.. py:class:: ansys.stk.core.stkobjects.EOIRShapeBox
 
-   Bases: py:obj:`~IEOIRShapeBox`, py:obj:`~IEOIRShapeObject`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeBox`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Box shape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShapeBox
 
 Overview
 --------

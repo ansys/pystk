@@ -1,13 +1,13 @@
 IMtoGraphics2DLine
 ==================
 
-.. py:class:: IMtoGraphics2DLine
+.. py:class:: ansys.stk.core.stkobjects.IMtoGraphics2DLine
 
    object
    
    MTO track line display options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IMtoGraphics2DLine
 
 Overview
 --------
@@ -20,12 +20,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~is_visible`
-            * - :py:meth:`~color`
-            * - :py:meth:`~style`
-            * - :py:meth:`~width`
-            * - :py:meth:`~translucency`
-            * - :py:meth:`~alway_show_entire_line`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.alway_show_entire_line`
 
 
 Import detail

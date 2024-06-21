@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorProjectAlongVector
 ===========================================
 
-.. py:class:: IVectorGeometryToolVectorProjectAlongVector
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector
 
    object
    
    A projection of a source vector in the direction of another vector.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorProjectAlongVector
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~source_vector`
-            * - :py:meth:`~along_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector.source_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector.along_vector`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: source_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector.source_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     A source vector. Can be any VGT vector.
 
 .. py:property:: along_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector.along_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     A vector along which the source vector is projected. Can be any VGT vector.
 

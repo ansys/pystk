@@ -1,13 +1,13 @@
 EOIRShape
 =========
 
-.. py:class:: EOIRShape
+.. py:class:: ansys.stk.core.stkobjects.EOIRShape
 
-   Bases: py:obj:`~IEOIRShape`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShape`
 
    AgEOIRShape class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EOIRShape
 
 Overview
 --------

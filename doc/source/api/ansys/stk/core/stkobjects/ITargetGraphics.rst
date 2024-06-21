@@ -1,13 +1,13 @@
 ITargetGraphics
 ===============
 
-.. py:class:: ITargetGraphics
+.. py:class:: ansys.stk.core.stkobjects.ITargetGraphics
 
    object
    
    IAgTargetGraphics used to access the 2-d graphics properties for a Target object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITargetGraphics
 
 Overview
 --------
@@ -20,19 +20,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~inherit_from_scenario`
-            * - :py:meth:`~color`
-            * - :py:meth:`~marker_style`
-            * - :py:meth:`~label_visible`
-            * - :py:meth:`~az_el_mask`
-            * - :py:meth:`~contours`
-            * - :py:meth:`~use_inst_name_label`
-            * - :py:meth:`~label_name`
-            * - :py:meth:`~label_notes`
-            * - :py:meth:`~marker_color`
-            * - :py:meth:`~label_color`
-            * - :py:meth:`~is_object_graphics_visible`
-            * - :py:meth:`~radar_cross_section`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.inherit_from_scenario`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.label_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.label_notes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.marker_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.label_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics.radar_cross_section`
 
 
 Import detail
@@ -72,13 +72,13 @@ Property detail
 
 .. py:property:: az_el_mask
     :canonical: ansys.stk.core.stkobjects.ITargetGraphics.az_el_mask
-    :type: IAgBasicAzElMask
+    :type: IBasicAzElMask
 
     The graphics az-el mask properties for the facility, place or target.
 
 .. py:property:: contours
     :canonical: ansys.stk.core.stkobjects.ITargetGraphics.contours
-    :type: IAgGfxRangeContours
+    :type: IGraphics2DRangeContours
 
     The range contours properties for the facility, place or target.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.ITargetGraphics.label_notes
-    :type: IAgLabelNoteCollection
+    :type: ILabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ITargetGraphics.radar_cross_section
-    :type: IAgRadarCrossSectionGraphics
+    :type: IRadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

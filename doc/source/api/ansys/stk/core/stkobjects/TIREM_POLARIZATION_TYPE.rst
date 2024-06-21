@@ -1,12 +1,12 @@
 TIREM_POLARIZATION_TYPE
 =======================
 
-.. py:class:: TIREM_POLARIZATION_TYPE
+.. py:class:: ansys.stk.core.stkobjects.TIREM_POLARIZATION_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TIREM_POLARIZATION_TYPE
 
 Overview
 --------

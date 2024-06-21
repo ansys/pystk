@@ -1,13 +1,13 @@
 ComponentDirectory
 ==================
 
-.. py:class:: ComponentDirectory
+.. py:class:: ansys.stk.core.stkobjects.ComponentDirectory
 
-   Bases: py:obj:`~IComponentDirectory`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IComponentDirectory`
 
    Manages all components.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ComponentDirectory
 
 Overview
 --------

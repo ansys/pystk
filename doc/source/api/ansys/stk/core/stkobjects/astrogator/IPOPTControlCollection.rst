@@ -1,13 +1,13 @@
 IPOPTControlCollection
 ======================
 
-.. py:class:: IPOPTControlCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection
 
-   Bases: py:obj:`~IIPOPTControlCollection`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControlCollection`
 
    Properties for the list of IPOPT control parameters.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IPOPTControlCollection
 
 Overview
 --------

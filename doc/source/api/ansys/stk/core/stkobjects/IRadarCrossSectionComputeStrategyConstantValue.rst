@@ -1,13 +1,13 @@
 IRadarCrossSectionComputeStrategyConstantValue
 ==============================================
 
-.. py:class:: IRadarCrossSectionComputeStrategyConstantValue
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyConstantValue
 
    object
    
    Provide access to the properties and methods defining a radar cross section constant value compute Strategy.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarCrossSectionComputeStrategyConstantValue
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~constant_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyConstantValue.constant_value`
 
 
 Import detail

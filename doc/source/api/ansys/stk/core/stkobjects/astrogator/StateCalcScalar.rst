@@ -1,13 +1,13 @@
 StateCalcScalar
 ===============
 
-.. py:class:: StateCalcScalar
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcScalar
 
-   Bases: py:obj:`~IStateCalcScalar`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScalar`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Scalar Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcScalar
 
 Overview
 --------

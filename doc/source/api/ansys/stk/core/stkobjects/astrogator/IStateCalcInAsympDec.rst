@@ -1,13 +1,13 @@
 IStateCalcInAsympDec
 ====================
 
-.. py:class:: IStateCalcInAsympDec
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcInAsympDec
 
    object
    
    Properties for an Incoming Asymptote Dec calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcInAsympDec
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~coord_system_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInAsympDec.coord_system_name`
 
 
 Import detail

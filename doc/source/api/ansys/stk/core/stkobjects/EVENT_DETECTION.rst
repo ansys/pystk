@@ -1,12 +1,12 @@
 EVENT_DETECTION
 ===============
 
-.. py:class:: EVENT_DETECTION
+.. py:class:: ansys.stk.core.stkobjects.EVENT_DETECTION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: EVENT_DETECTION
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IVehiclePropagator
 ==================
 
-.. py:class:: IVehiclePropagator
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagator
 
    object
    
    Base vehicle propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagator
 
 Overview
 --------

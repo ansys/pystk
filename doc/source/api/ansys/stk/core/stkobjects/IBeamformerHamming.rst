@@ -1,13 +1,13 @@
 IBeamformerHamming
 ==================
 
-.. py:class:: IBeamformerHamming
+.. py:class:: ansys.stk.core.stkobjects.IBeamformerHamming
 
    object
    
    Provide access to the properties and methods defining a Hamming tapered beamformer.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IBeamformerHamming
 
 Overview
 --------

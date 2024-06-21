@@ -1,12 +1,12 @@
 SPICE_INTERPOLATION
 ===================
 
-.. py:class:: SPICE_INTERPOLATION
+.. py:class:: ansys.stk.core.stkobjects.SPICE_INTERPOLATION
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SPICE_INTERPOLATION
 
 Overview
 --------

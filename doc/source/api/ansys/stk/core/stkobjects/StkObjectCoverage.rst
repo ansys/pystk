@@ -1,13 +1,13 @@
 StkObjectCoverage
 =================
 
-.. py:class:: StkObjectCoverage
+.. py:class:: ansys.stk.core.stkobjects.StkObjectCoverage
 
-   Bases: py:obj:`~IStkObjectCoverage`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkObjectCoverage`
 
    Class defining object coverage.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkObjectCoverage
 
 Overview
 --------

@@ -1,13 +1,13 @@
 TerrainOverlayCollection
 ========================
 
-.. py:class:: TerrainOverlayCollection
+.. py:class:: ansys.stk.core.graphics.TerrainOverlayCollection
 
-   Bases: py:obj:`~ITerrainOverlayCollection`
+   Bases: py:obj:`~ansys.stk.core.graphics.ITerrainOverlayCollection`
 
    A collection of terrain overlay objects.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: TerrainOverlayCollection
 
 Overview
 --------

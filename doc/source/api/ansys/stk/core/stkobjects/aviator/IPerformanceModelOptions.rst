@@ -1,13 +1,13 @@
 IPerformanceModelOptions
 ========================
 
-.. py:class:: IPerformanceModelOptions
+.. py:class:: ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions
 
    object
    
    Interface used to change the active performance model in a phase for a given model type.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: IPerformanceModelOptions
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~link_to_catalog`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.link_to_catalog`
               - Link to the performance model in the catalog with the given name.
-            * - :py:meth:`~copy_from_catalog`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.copy_from_catalog`
               - Create a copy of the performance model in the catalog with the given name.
-            * - :py:meth:`~create_new`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.create_new`
               - Create a new performance model of the given type.
-            * - :py:meth:`~rename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.rename`
               - Rename the performance model.
-            * - :py:meth:`~delete`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.delete`
               - Delete the performance model.
 
     .. tab-item:: Properties
@@ -37,9 +37,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~is_linked_to_catalog`
-            * - :py:meth:`~properties`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.is_linked_to_catalog`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.properties`
 
 
 Import detail
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.properties
-    :type: IAgAvtrPerformanceModel
+    :type: IPerformanceModel
 
     Get the properties of the performance model.
 

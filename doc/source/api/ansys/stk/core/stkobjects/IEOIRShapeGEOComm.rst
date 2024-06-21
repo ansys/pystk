@@ -1,13 +1,13 @@
 IEOIRShapeGEOComm
 =================
 
-.. py:class:: IEOIRShapeGEOComm
+.. py:class:: ansys.stk.core.stkobjects.IEOIRShapeGEOComm
 
    IEOIRShapeObject
    
    A GEOComm shape interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IEOIRShapeGEOComm
 
 Overview
 --------

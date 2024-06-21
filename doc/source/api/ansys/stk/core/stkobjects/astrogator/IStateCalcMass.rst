@@ -1,13 +1,13 @@
 IStateCalcMass
 ==============
 
-.. py:class:: IStateCalcMass
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcMass
 
    object
    
    Properties for a Total Mass calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcMass
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ITargeterGraphResultCollection
 ==============================
 
-.. py:class:: ITargeterGraphResultCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ITargeterGraphResultCollection
 
    object
    
    Targeter graph results.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ITargeterGraphResultCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResultCollection.item`
               - Allow you to iterate through the collection.
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~_NewEnum`
-            * - :py:meth:`~count`
-            * - :py:meth:`~provide_runtime_type_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResultCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResultCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResultCollection.provide_runtime_type_info`
 
 
 Import detail
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.ITargeterGraphResultCollection.provide_runtime_type_info
-    :type: IAgRuntimeTypeInfo
+    :type: IRuntimeTypeInfo
 
     Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 

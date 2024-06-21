@@ -1,13 +1,13 @@
 VectorGeometryToolPlaneGroup
 ============================
 
-.. py:class:: VectorGeometryToolPlaneGroup
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneGroup
 
-   Bases: py:obj:`~IVectorGeometryToolPlaneGroup`
+   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup`
 
    Represents a VGT Plane component.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: VectorGeometryToolPlaneGroup
 
 Overview
 --------

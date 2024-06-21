@@ -1,13 +1,13 @@
 AnalysisWorkbenchMethodCallAxesTransformResult
 ==============================================
 
-.. py:class:: AnalysisWorkbenchMethodCallAxesTransformResult
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAxesTransformResult
 
-   Bases: py:obj:`~IAnalysisWorkbenchMethodCallResult`, py:obj:`~IVectorGeometryToolAxesTransformResult`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult`
 
    Contains the results returned with IAgCrdnAxes.TransformFrom method.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchMethodCallAxesTransformResult
 
 Overview
 --------

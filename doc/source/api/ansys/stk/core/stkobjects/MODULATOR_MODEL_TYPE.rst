@@ -1,12 +1,12 @@
 MODULATOR_MODEL_TYPE
 ====================
 
-.. py:class:: MODULATOR_MODEL_TYPE
+.. py:class:: ansys.stk.core.stkobjects.MODULATOR_MODEL_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: MODULATOR_MODEL_TYPE
 
 Overview
 --------

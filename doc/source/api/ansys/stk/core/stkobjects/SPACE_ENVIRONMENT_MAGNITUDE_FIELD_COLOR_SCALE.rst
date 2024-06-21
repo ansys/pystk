@@ -1,12 +1,12 @@
 SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE
 =============================================
 
-.. py:class:: SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE
+.. py:class:: ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE
 
 Overview
 --------

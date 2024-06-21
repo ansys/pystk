@@ -1,13 +1,13 @@
 IScheduleTimeCollection
 =======================
 
-.. py:class:: IScheduleTimeCollection
+.. py:class:: ansys.stk.core.stkobjects.IScheduleTimeCollection
 
    object
    
    You can modify the scheduled times by disabling Use Access Times.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IScheduleTimeCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection.add`
               - Add a schedule time item to the collection. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~remove_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection.remove_index`
               - Remove an item given an index.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection.remove_all`
               - Remove all items in the collection.
-            * - :py:meth:`~remove_schedule`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection.remove_schedule`
               - Remove an interval using the interval interface. Start/Stop use DateFormat Dimension.
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection.item`
               - Retrieve and IAgScheduleTime interface given an index.
-            * - :py:meth:`~deconflict`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection.deconflict`
               - Deconflicts the schedule time intervals.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection._NewEnum`
 
 
 Import detail

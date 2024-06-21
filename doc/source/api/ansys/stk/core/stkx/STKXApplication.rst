@@ -1,13 +1,13 @@
 STKXApplication
 ===============
 
-.. py:class:: STKXApplication
+.. py:class:: ansys.stk.core.stkx.STKXApplication
 
-   Bases: py:obj:`~ISTKXApplication`
+   Bases: py:obj:`~ansys.stk.core.stkx.ISTKXApplication`
 
    STK X Application object.
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: STKXApplication
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IAttitudeControlImpulsive
 =========================
 
-.. py:class:: IAttitudeControlImpulsive
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsive
 
    IAttitudeControl
    
    The attitude control of an impulsive maneuver.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IAttitudeControlImpulsive
 
 Overview
 --------

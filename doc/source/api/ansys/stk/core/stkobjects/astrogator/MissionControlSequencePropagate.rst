@@ -1,13 +1,13 @@
 MissionControlSequencePropagate
 ===============================
 
-.. py:class:: MissionControlSequencePropagate
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequencePropagate
 
-   Bases: py:obj:`~IMissionControlSequenceSegment`, py:obj:`~IMissionControlSequencePropagate`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IRuntimeTypeInfoProvider`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Propagate segment.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: MissionControlSequencePropagate
 
 Overview
 --------

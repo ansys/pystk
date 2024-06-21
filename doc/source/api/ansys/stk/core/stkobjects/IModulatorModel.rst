@@ -1,13 +1,13 @@
 IModulatorModel
 ===============
 
-.. py:class:: IModulatorModel
+.. py:class:: ansys.stk.core.stkobjects.IModulatorModel
 
    object
    
    Provide access to the properties and methods defining a modulator model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IModulatorModel
 
 Overview
 --------
@@ -20,18 +20,18 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
-            * - :py:meth:`~enable_signal_psd`
-            * - :py:meth:`~psd_limit_multiplier`
-            * - :py:meth:`~enable_cdma_spread`
-            * - :py:meth:`~chips_per_bit`
-            * - :py:meth:`~spreading_gain`
-            * - :py:meth:`~auto_scale_bandwidth`
-            * - :py:meth:`~symmetric_bandwidth`
-            * - :py:meth:`~upper_bandwidth_limit`
-            * - :py:meth:`~lower_bandwidth_limit`
-            * - :py:meth:`~bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.enable_signal_psd`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.psd_limit_multiplier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.enable_cdma_spread`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.chips_per_bit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.spreading_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.auto_scale_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.symmetric_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.upper_bandwidth_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.lower_bandwidth_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.bandwidth`
 
 
 Import detail

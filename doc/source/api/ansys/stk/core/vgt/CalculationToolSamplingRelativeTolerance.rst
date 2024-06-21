@@ -1,13 +1,13 @@
 CalculationToolSamplingRelativeTolerance
 ========================================
 
-.. py:class:: CalculationToolSamplingRelativeTolerance
+.. py:class:: ansys.stk.core.vgt.CalculationToolSamplingRelativeTolerance
 
-   Bases: py:obj:`~ICalculationToolSamplingRelativeTolerance`, py:obj:`~ICalculationToolSamplingMethod`
+   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance`, py:obj:`~ansys.stk.core.vgt.ICalculationToolSamplingMethod`
 
    Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: CalculationToolSamplingRelativeTolerance
 
 Overview
 --------

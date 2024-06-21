@@ -1,13 +1,13 @@
 ISensorGraphics3D
 =================
 
-.. py:class:: ISensorGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.ISensorGraphics3D
 
    object
    
    IAgSnVO Interface for a sensor's 3D Graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorGraphics3D
 
 Overview
 --------
@@ -20,29 +20,29 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~boresight_marker_visible`
-            * - :py:meth:`~radial_lines_visible`
-            * - :py:meth:`~translucent_lines_visible`
-            * - :py:meth:`~percent_translucency`
-            * - :py:meth:`~projection_type`
-            * - :py:meth:`~space_projection`
-            * - :py:meth:`~targeting`
-            * - :py:meth:`~enable_const_ext_length`
-            * - :py:meth:`~enable_range_constraint`
-            * - :py:meth:`~pulse`
-            * - :py:meth:`~vertex_offset`
-            * - :py:meth:`~data_displays`
-            * - :py:meth:`~vector`
-            * - :py:meth:`~fill_visible`
-            * - :py:meth:`~fill_translucency`
-            * - :py:meth:`~inherit_from_2d`
-            * - :py:meth:`~is_targeted`
-            * - :py:meth:`~space_projection_intervals`
-            * - :py:meth:`~target_projection_intervals`
-            * - :py:meth:`~fill_resolution`
-            * - :py:meth:`~persist_projected_lines_in_space`
-            * - :py:meth:`~persist_partial_central_body_intersection_lines`
-            * - :py:meth:`~projection_time_dependency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.boresight_marker_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.radial_lines_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.translucent_lines_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.percent_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.projection_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.space_projection`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.targeting`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.enable_const_ext_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.enable_range_constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.pulse`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.vertex_offset`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.data_displays`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.vector`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.fill_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.fill_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.inherit_from_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.is_targeted`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.space_projection_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.target_projection_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.fill_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.persist_projected_lines_in_space`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.persist_partial_central_body_intersection_lines`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3D.projection_time_dependency`
 
 
 Import detail
@@ -112,25 +112,25 @@ Property detail
 
 .. py:property:: pulse
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.pulse
-    :type: IAgSnVOPulse
+    :type: ISensorGraphics3DPulse
 
     Get the sensor's Pulse properties.
 
 .. py:property:: vertex_offset
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.vertex_offset
-    :type: IAgSnVOOffset
+    :type: ISensorGraphics3DOffset
 
     Get the sensor's Vertex Offset properties.
 
 .. py:property:: data_displays
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.data_displays
-    :type: IAgVODataDisplayCollection
+    :type: IGraphics3DDataDisplayCollection
 
     Get the sensor's Data Display properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.vector
-    :type: IAgVOVector
+    :type: IGraphics3DVector
 
     Get the sensor's Vector properties.
 
@@ -160,13 +160,13 @@ Property detail
 
 .. py:property:: space_projection_intervals
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.space_projection_intervals
-    :type: IAgSnVOSpaceProjectionCollection
+    :type: ISensorGraphics3DSpaceProjectionCollection
 
     Returns time dependent space projection list.
 
 .. py:property:: target_projection_intervals
     :canonical: ansys.stk.core.stkobjects.ISensorGraphics3D.target_projection_intervals
-    :type: IAgSnVOTargetProjectionCollection
+    :type: ISensorGraphics3DTargetProjectionCollection
 
     Returns time dependent target projection list.
 

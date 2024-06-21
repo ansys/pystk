@@ -1,13 +1,13 @@
 IVehiclePropagatorRealtime
 ==========================
 
-.. py:class:: IVehiclePropagatorRealtime
+.. py:class:: ansys.stk.core.stkobjects.IVehiclePropagatorRealtime
 
    IVehiclePropagator
    
    Realtime propagator interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehiclePropagatorRealtime
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~propagate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.propagate`
               - Set the vehicle's propagator to Realtime.
-            * - :py:meth:`~is_look_ahead_propagator_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.is_look_ahead_propagator_supported`
               - Return whether the specified look ahead propagator is supported.
 
     .. tab-item:: Properties
@@ -31,13 +31,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~duration`
-            * - :py:meth:`~interpolation_order`
-            * - :py:meth:`~look_ahead_propagator`
-            * - :py:meth:`~supported_look_ahead_propagators`
-            * - :py:meth:`~time_step`
-            * - :py:meth:`~timeout_gap`
-            * - :py:meth:`~point_builder`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.duration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.interpolation_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.look_ahead_propagator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.supported_look_ahead_propagators`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.timeout_gap`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.point_builder`
 
 
 Import detail
@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: duration
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.duration
-    :type: IAgVeDuration
+    :type: IVehicleDuration
 
     Get look ahead/look behind duration values.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: point_builder
     :canonical: ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.point_builder
-    :type: IAgVeRealtimePointBuilder
+    :type: IVehicleRealtimePointBuilder
 
     Gets a object to create ephemeris data for a vehicle by sending it point by point.
 

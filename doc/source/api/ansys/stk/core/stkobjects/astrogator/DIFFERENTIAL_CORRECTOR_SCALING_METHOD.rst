@@ -1,12 +1,12 @@
 DIFFERENTIAL_CORRECTOR_SCALING_METHOD
 =====================================
 
-.. py:class:: DIFFERENTIAL_CORRECTOR_SCALING_METHOD
+.. py:class:: ansys.stk.core.stkobjects.astrogator.DIFFERENTIAL_CORRECTOR_SCALING_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: DIFFERENTIAL_CORRECTOR_SCALING_METHOD
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IJpeg2000WriterInitializer
 ==========================
 
-.. py:class:: IJpeg2000WriterInitializer
+.. py:class:: ansys.stk.core.graphics.IJpeg2000WriterInitializer
 
    object
    
    Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IJpeg2000WriterInitializer
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~write_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IJpeg2000WriterInitializer.write_string`
               - Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image must be in the image, as in a GeoTIFF.
-            * - :py:meth:`~write_extent_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IJpeg2000WriterInitializer.write_extent_string`
               - Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary.
-            * - :py:meth:`~write_extent_and_sub_extent_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IJpeg2000WriterInitializer.write_extent_and_sub_extent_string`
               - Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary.
-            * - :py:meth:`~write_extent_and_sub_extent_transparent_color_string`
+            * - :py:attr:`~ansys.stk.core.graphics.IJpeg2000WriterInitializer.write_extent_and_sub_extent_transparent_color_string`
               - Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary.
 
 

@@ -1,13 +1,13 @@
 IStereoscopic
 =============
 
-.. py:class:: IStereoscopic
+.. py:class:: ansys.stk.core.graphics.IStereoscopic
 
    object
    
    Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled.
 
-.. py:currentmodule:: ansys.stk.core.graphics
+.. py:currentmodule:: IStereoscopic
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~display_mode`
-            * - :py:meth:`~projection_mode`
-            * - :py:meth:`~projection_distance`
-            * - :py:meth:`~eye_separation_factor`
+            * - :py:attr:`~ansys.stk.core.graphics.IStereoscopic.display_mode`
+            * - :py:attr:`~ansys.stk.core.graphics.IStereoscopic.projection_mode`
+            * - :py:attr:`~ansys.stk.core.graphics.IStereoscopic.projection_distance`
+            * - :py:attr:`~ansys.stk.core.graphics.IStereoscopic.eye_separation_factor`
 
 
 Import detail

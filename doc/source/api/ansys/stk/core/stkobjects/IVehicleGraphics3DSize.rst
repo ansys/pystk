@@ -1,13 +1,13 @@
 IVehicleGraphics3DSize
 ======================
 
-.. py:class:: IVehicleGraphics3DSize
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DSize
 
    object
    
    3D graphics vector size interface.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics3DSize
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~scale_to_attitude_sphere`
-            * - :py:meth:`~scale_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSize.scale_to_attitude_sphere`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSize.scale_value`
 
 
 Import detail

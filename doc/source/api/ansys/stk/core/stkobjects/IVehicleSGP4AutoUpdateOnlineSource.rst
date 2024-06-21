@@ -1,13 +1,13 @@
 IVehicleSGP4AutoUpdateOnlineSource
 ==================================
 
-.. py:class:: IVehicleSGP4AutoUpdateOnlineSource
+.. py:class:: ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateOnlineSource
 
    object
    
    Interface to configure the SGP4 automatic updates using online source (AGI server).
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleSGP4AutoUpdateOnlineSource
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~preview`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateOnlineSource.preview`
               - Preview the elements.
 
 

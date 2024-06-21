@@ -1,12 +1,12 @@
 TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES
 ===============================================
 
-.. py:class:: TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES
+.. py:class:: ansys.stk.core.stkobjects.TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES
 
 Overview
 --------

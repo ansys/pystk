@@ -1,13 +1,13 @@
 IVehicleDuration
 ================
 
-.. py:class:: IVehicleDuration
+.. py:class:: ansys.stk.core.stkobjects.IVehicleDuration
 
    object
    
    Look ahead and look behind duration options.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleDuration
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~look_ahead`
-            * - :py:meth:`~look_behind`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDuration.look_ahead`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDuration.look_behind`
 
 
 Import detail

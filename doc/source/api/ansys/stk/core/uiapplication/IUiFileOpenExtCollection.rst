@@ -1,13 +1,13 @@
 IUiFileOpenExtCollection
 ========================
 
-.. py:class:: IUiFileOpenExtCollection
+.. py:class:: ansys.stk.core.uiapplication.IUiFileOpenExtCollection
 
    object
    
    Multiple file open collection.
 
-.. py:currentmodule:: ansys.stk.core.uiapplication
+.. py:currentmodule:: IUiFileOpenExtCollection
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection.item`
               - Get the file at the specified index.
 
     .. tab-item:: Properties
@@ -29,8 +29,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection.count`
+            * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection._NewEnum`
 
 
 Import detail

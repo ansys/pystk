@@ -1,13 +1,13 @@
 ICelestialBodyInfo
 ==================
 
-.. py:class:: ICelestialBodyInfo
+.. py:class:: ansys.stk.core.stkobjects.ICelestialBodyInfo
 
    object
    
    The interface represents information associated with a celestial body.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ICelestialBodyInfo
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~get_last_computed_direction_in_icrf`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.get_last_computed_direction_in_icrf`
               - Return the last computed direction vector in ICRF.
 
     .. tab-item:: Properties
@@ -29,16 +29,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~identifier`
-            * - :py:meth:`~catalog_name`
-            * - :py:meth:`~ra`
-            * - :py:meth:`~dec`
-            * - :py:meth:`~parallax`
-            * - :py:meth:`~velocity`
-            * - :py:meth:`~visual_magnitude`
-            * - :py:meth:`~bminus_v`
-            * - :py:meth:`~effective_temperature`
-            * - :py:meth:`~magnitude_to_irradiance_conversion_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.identifier`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.catalog_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.ra`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.dec`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.parallax`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.velocity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.visual_magnitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.bminus_v`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.effective_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.magnitude_to_irradiance_conversion_factor`
 
 
 Import detail

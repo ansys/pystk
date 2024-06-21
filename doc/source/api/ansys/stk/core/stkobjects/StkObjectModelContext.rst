@@ -1,13 +1,13 @@
 StkObjectModelContext
 =====================
 
-.. py:class:: StkObjectModelContext
+.. py:class:: ansys.stk.core.stkobjects.StkObjectModelContext
 
-   Bases: py:obj:`~IStkObjectModelContext`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkObjectModelContext`
 
    AgStkObjectModelContext class provides methods to create instance of AgStkObjectRoot class.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: StkObjectModelContext
 
 Overview
 --------

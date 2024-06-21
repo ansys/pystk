@@ -1,13 +1,13 @@
 AnalysisWorkbenchInstance
 =========================
 
-.. py:class:: AnalysisWorkbenchInstance
+.. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchInstance
 
-   Bases: py:obj:`~IAnalysisWorkbenchContext`, py:obj:`~IAnalysisWorkbenchInstance`
+   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchContext`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchInstance`
 
    Enable to obtain information about the parent object that owns the VGT component.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: AnalysisWorkbenchInstance
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IDisplayTimesData
 =================
 
-.. py:class:: IDisplayTimesData
+.. py:class:: ansys.stk.core.stkobjects.IDisplayTimesData
 
    object
    
    Base Interface IAgDisplayTimesData. IAgIntervalCollection, IAgDuringAccess and IAgDisplayTimesTimeComponent derive from this.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IDisplayTimesData
 
 Overview
 --------

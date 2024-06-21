@@ -1,13 +1,13 @@
 IVectorGeometryToolVectorFixedAtTimeInstant
 ===========================================
 
-.. py:class:: IVectorGeometryToolVectorFixedAtTimeInstant
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtTimeInstant
 
    object
    
    Vector fixed relative to reference axes based on another vector evaluated at specified time instant.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolVectorFixedAtTimeInstant
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~reference_time_instant`
-            * - :py:meth:`~source_vector`
-            * - :py:meth:`~reference_axes`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtTimeInstant.reference_time_instant`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtTimeInstant.source_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtTimeInstant.reference_axes`
 
 
 Import detail
@@ -38,19 +38,19 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtTimeInstant.reference_time_instant
-    :type: IAgCrdnEvent
+    :type: ITimeToolEvent
 
     A reference time instant. Can be any Time event.
 
 .. py:property:: source_vector
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtTimeInstant.source_vector
-    :type: IAgCrdnVector
+    :type: IVectorGeometryToolVector
 
     A source vector. Can be any VGT vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtTimeInstant.reference_axes
-    :type: IAgCrdnAxes
+    :type: IVectorGeometryToolAxes
 
     A reference axes. Can be any VGT axes.
 

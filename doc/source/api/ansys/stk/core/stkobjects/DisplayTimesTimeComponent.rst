@@ -1,13 +1,13 @@
 DisplayTimesTimeComponent
 =========================
 
-.. py:class:: DisplayTimesTimeComponent
+.. py:class:: ansys.stk.core.stkobjects.DisplayTimesTimeComponent
 
-   Bases: py:obj:`~IDisplayTimesData`, py:obj:`~IDisplayTimesTimeComponent`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IDisplayTimesData`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTimesTimeComponent`
 
    Provide methods to configure the display times using Timeline API components.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DisplayTimesTimeComponent
 
 Overview
 --------

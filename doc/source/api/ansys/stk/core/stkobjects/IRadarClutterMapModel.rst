@@ -1,13 +1,13 @@
 IRadarClutterMapModel
 =====================
 
-.. py:class:: IRadarClutterMapModel
+.. py:class:: ansys.stk.core.stkobjects.IRadarClutterMapModel
 
    object
    
    Do not use this interface, as it is deprecated. Use IAgScatteringPointModel interface instead. Provides access to the properties and methods defining a radar clutter map model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarClutterMapModel
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~name`
-            * - :py:meth:`~type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapModel.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapModel.type`
 
 
 Import detail

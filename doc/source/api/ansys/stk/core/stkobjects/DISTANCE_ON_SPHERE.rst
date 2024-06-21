@@ -1,12 +1,12 @@
 DISTANCE_ON_SPHERE
 ==================
 
-.. py:class:: DISTANCE_ON_SPHERE
+.. py:class:: ansys.stk.core.stkobjects.DISTANCE_ON_SPHERE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: DISTANCE_ON_SPHERE
 
 Overview
 --------

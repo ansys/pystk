@@ -1,13 +1,13 @@
 ITimeToolEventArrayStartStopTimes
 =================================
 
-.. py:class:: ITimeToolEventArrayStartStopTimes
+.. py:class:: ansys.stk.core.vgt.ITimeToolEventArrayStartStopTimes
 
    object
    
    Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list...
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ITimeToolEventArrayStartStopTimes
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~start_stop_option`
-            * - :py:meth:`~reference_intervals`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayStartStopTimes.start_stop_option`
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayStartStopTimes.reference_intervals`
 
 
 Import detail
@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.vgt.ITimeToolEventArrayStartStopTimes.reference_intervals
-    :type: IAgCrdnEventIntervalList
+    :type: ITimeToolEventIntervalList
 
     The reference interval list.
 

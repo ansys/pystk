@@ -1,12 +1,12 @@
 NOISE_TEMP_COMPUTE_TYPE
 =======================
 
-.. py:class:: NOISE_TEMP_COMPUTE_TYPE
+.. py:class:: ansys.stk.core.stkobjects.NOISE_TEMP_COMPUTE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: NOISE_TEMP_COMPUTE_TYPE
 
 Overview
 --------

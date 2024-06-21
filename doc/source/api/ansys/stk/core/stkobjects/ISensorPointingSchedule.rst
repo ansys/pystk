@@ -1,13 +1,13 @@
 ISensorPointingSchedule
 =======================
 
-.. py:class:: ISensorPointingSchedule
+.. py:class:: ansys.stk.core.stkobjects.ISensorPointingSchedule
 
    object
    
    IAgSnPtSchedule is a placeholder interface to handle Sensor Schedule pointing type. Use Point path/to/sensor Schedule connect command to control scheduled sensor pointing.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorPointingSchedule
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSchedule.enabled`
 
 
 Import detail

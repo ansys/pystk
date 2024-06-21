@@ -1,12 +1,12 @@
 LINE_STYLE
 ==========
 
-.. py:class:: LINE_STYLE
+.. py:class:: ansys.stk.core.stkx.LINE_STYLE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkx
+.. py:currentmodule:: LINE_STYLE
 
 Overview
 --------

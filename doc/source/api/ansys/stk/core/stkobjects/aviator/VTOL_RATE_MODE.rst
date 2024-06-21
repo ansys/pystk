@@ -1,12 +1,12 @@
 VTOL_RATE_MODE
 ==============
 
-.. py:class:: VTOL_RATE_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.VTOL_RATE_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: VTOL_RATE_MODE
 
 Overview
 --------

@@ -1,13 +1,13 @@
 StateCalcRadiationPressureArea
 ==============================
 
-.. py:class:: StateCalcRadiationPressureArea
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRadiationPressureArea
 
-   Bases: py:obj:`~IComponentInfo`, py:obj:`~ICloneable`, py:obj:`~IStateCalcRadiationPressureArea`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadiationPressureArea`
 
    RadPressureArea Calc objects.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: StateCalcRadiationPressureArea
 
 Overview
 --------

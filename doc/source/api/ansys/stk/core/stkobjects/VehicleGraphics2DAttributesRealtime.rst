@@ -1,13 +1,13 @@
 VehicleGraphics2DAttributesRealtime
 ===================================
 
-.. py:class:: VehicleGraphics2DAttributesRealtime
+.. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRealtime
 
-   Bases: py:obj:`~IVehicleGraphics2DAttributesRealtime`, py:obj:`~IVehicleGraphics2DAttributes`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRealtime`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributes`
 
    2D Graphics attributes for a vehicle based on real time data state.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleGraphics2DAttributesRealtime
 
 Overview
 --------

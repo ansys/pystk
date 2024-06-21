@@ -1,13 +1,13 @@
 IGraphics3DOffsetRotate
 =======================
 
-.. py:class:: IGraphics3DOffsetRotate
+.. py:class:: ansys.stk.core.stkobjects.IGraphics3DOffsetRotate
 
    object
    
    AgVOOffsetRotate used to access the 3D Rotational attributes.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IGraphics3DOffsetRotate
 
 Overview
 --------
@@ -20,10 +20,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~enable`
-            * - :py:meth:`~x`
-            * - :py:meth:`~y`
-            * - :py:meth:`~z`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate.enable`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate.x`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate.y`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate.z`
 
 
 Import detail

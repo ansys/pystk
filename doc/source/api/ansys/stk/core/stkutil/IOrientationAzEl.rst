@@ -1,13 +1,13 @@
 IOrientationAzEl
 ================
 
-.. py:class:: IOrientationAzEl
+.. py:class:: ansys.stk.core.stkutil.IOrientationAzEl
 
    IOrientation
    
    Interface for AzEl orientation method.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: IOrientationAzEl
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~azimuth`
-            * - :py:meth:`~elevation`
-            * - :py:meth:`~about_boresight`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationAzEl.azimuth`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationAzEl.elevation`
+            * - :py:attr:`~ansys.stk.core.stkutil.IOrientationAzEl.about_boresight`
 
 
 Import detail

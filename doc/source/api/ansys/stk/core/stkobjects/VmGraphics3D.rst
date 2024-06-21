@@ -1,13 +1,13 @@
 VmGraphics3D
 ============
 
-.. py:class:: VmGraphics3D
+.. py:class:: ansys.stk.core.stkobjects.VmGraphics3D
 
-   Bases: py:obj:`~IVmGraphics3D`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3D`
 
    Class defining 3D graphics properties of volumetric object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VmGraphics3D
 
 Overview
 --------

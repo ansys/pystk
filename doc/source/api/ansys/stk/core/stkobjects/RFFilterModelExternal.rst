@@ -1,13 +1,13 @@
 RFFilterModelExternal
 =====================
 
-.. py:class:: RFFilterModelExternal
+.. py:class:: ansys.stk.core.stkobjects.RFFilterModelExternal
 
-   Bases: py:obj:`~IRFFilterModelExternal`, py:obj:`~IRFFilterModel`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelExternal`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a external filter model.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: RFFilterModelExternal
 
 Overview
 --------

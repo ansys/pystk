@@ -1,13 +1,13 @@
 ICalculationToolConditionPointInVolume
 ======================================
 
-.. py:class:: ICalculationToolConditionPointInVolume
+.. py:class:: ansys.stk.core.vgt.ICalculationToolConditionPointInVolume
 
    object
    
    Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: ICalculationToolConditionPointInVolume
 
 Overview
 --------
@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~point`
-            * - :py:meth:`~constraint`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionPointInVolume.point`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionPointInVolume.constraint`
 
 
 Import detail
@@ -37,13 +37,13 @@ Property detail
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionPointInVolume.point
-    :type: IAgCrdnPoint
+    :type: IVectorGeometryToolPoint
 
     Get the trajectory point from the condition.
 
 .. py:property:: constraint
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionPointInVolume.constraint
-    :type: IAgCrdnVolume
+    :type: ISpatialAnalysisToolVolume
 
     Get the volume constraint on trajectory point.
 

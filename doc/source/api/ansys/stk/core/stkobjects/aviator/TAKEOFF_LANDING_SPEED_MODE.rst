@@ -1,12 +1,12 @@
 TAKEOFF_LANDING_SPEED_MODE
 ==========================
 
-.. py:class:: TAKEOFF_LANDING_SPEED_MODE
+.. py:class:: ansys.stk.core.stkobjects.aviator.TAKEOFF_LANDING_SPEED_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: TAKEOFF_LANDING_SPEED_MODE
 
 Overview
 --------

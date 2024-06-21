@@ -1,13 +1,13 @@
 IVehicleProfilePrecessingSpin
 =============================
 
-.. py:class:: IVehicleProfilePrecessingSpin
+.. py:class:: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin
 
    IVehicleAttitudeProfile
    
    Precessing Spin attitude profile, in which the spin axis of the satellite specified in the body frame is offset through the nutation angle away from the angular momentum direction specified in the inertial frame.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleProfilePrecessingSpin
 
 Overview
 --------
@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~body`
-            * - :py:meth:`~inertial_precession`
-            * - :py:meth:`~precession`
-            * - :py:meth:`~spin`
-            * - :py:meth:`~nutation_angle`
-            * - :py:meth:`~reference_axes`
-            * - :py:meth:`~smart_epoch`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.body`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.inertial_precession`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.precession`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.spin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.nutation_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.reference_axes`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.smart_epoch`
 
 
 Import detail
@@ -42,25 +42,25 @@ Property detail
 
 .. py:property:: body
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.body
-    :type: IAgDirection
+    :type: IDirection
 
     Get the spin axis in the body frame.
 
 .. py:property:: inertial_precession
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.inertial_precession
-    :type: IAgDirection
+    :type: IDirection
 
     Get the precession in the inertial frame.
 
 .. py:property:: precession
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.precession
-    :type: IAgVeRateOffset
+    :type: IVehicleRateOffset
 
     Get the precession rate and offset.
 
 .. py:property:: spin
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.spin
-    :type: IAgVeRateOffset
+    :type: IVehicleRateOffset
 
     Get the spin rate and offset.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.IVehicleProfilePrecessingSpin.smart_epoch
-    :type: IAgCrdnEventSmartEpoch
+    :type: ITimeToolEventSmartEpoch
 
     Get the epoch of the attitude profile.
 

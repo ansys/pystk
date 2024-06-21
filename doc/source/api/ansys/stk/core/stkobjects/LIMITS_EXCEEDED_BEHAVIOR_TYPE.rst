@@ -1,12 +1,12 @@
 LIMITS_EXCEEDED_BEHAVIOR_TYPE
 =============================
 
-.. py:class:: LIMITS_EXCEEDED_BEHAVIOR_TYPE
+.. py:class:: ansys.stk.core.stkobjects.LIMITS_EXCEEDED_BEHAVIOR_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: LIMITS_EXCEEDED_BEHAVIOR_TYPE
 
 Overview
 --------

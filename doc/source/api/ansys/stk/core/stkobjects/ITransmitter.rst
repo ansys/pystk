@@ -1,13 +1,13 @@
 ITransmitter
 ============
 
-.. py:class:: ITransmitter
+.. py:class:: ansys.stk.core.stkobjects.ITransmitter
 
    object
    
    Provide access to the properties and methods defining an Transmitter object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ITransmitter
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~set_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.set_model`
               - Set the current transmitter model by name.
-            * - :py:meth:`~is_refraction_type_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
     .. tab-item:: Properties
@@ -31,16 +31,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~supported_models`
-            * - :py:meth:`~model`
-            * - :py:meth:`~refraction`
-            * - :py:meth:`~refraction_supported_types`
-            * - :py:meth:`~refraction_model`
-            * - :py:meth:`~use_refraction_in_access`
-            * - :py:meth:`~graphics_3d`
-            * - :py:meth:`~graphics`
-            * - :py:meth:`~rf_environment`
-            * - :py:meth:`~laser_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.supported_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.refraction`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.refraction_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.refraction_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.use_refraction_in_access`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.graphics_3d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.graphics`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.rf_environment`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.laser_environment`
 
 
 Import detail
@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.ITransmitter.model
-    :type: IAgTransmitterModel
+    :type: ITransmitterModel
 
     Gets the current transmitter model.
 
@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.ITransmitter.refraction_model
-    :type: IAgRfModelBase
+    :type: IRefractionModelBase
 
     Gets a refraction model.
 
@@ -92,25 +92,25 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ITransmitter.graphics_3d
-    :type: IAgTransmitterVO
+    :type: ITransmitterGraphics3D
 
     Get the 3D Graphics properties for the transmitter.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ITransmitter.graphics
-    :type: IAgTransmitterGraphics
+    :type: ITransmitterGraphics
 
     Get the 2D Graphics properties for the transmitter.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.ITransmitter.rf_environment
-    :type: IAgObjectRFEnvironment
+    :type: IObjectRFEnvironment
 
     Gets the object RF environment settings.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.ITransmitter.laser_environment
-    :type: IAgObjectLaserEnvironment
+    :type: IObjectLaserEnvironment
 
     Gets the object laser environment settings.
 

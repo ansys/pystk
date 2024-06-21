@@ -1,13 +1,13 @@
 VehicleCovariance
 =================
 
-.. py:class:: VehicleCovariance
+.. py:class:: ansys.stk.core.stkobjects.VehicleCovariance
 
-   Bases: py:obj:`~IVehicleCovariance`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleCovariance`
 
    Class defining HPOP covariance.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: VehicleCovariance
 
 Overview
 --------

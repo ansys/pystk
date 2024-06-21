@@ -1,13 +1,13 @@
 ICentralBodyCollection
 ======================
 
-.. py:class:: ICentralBodyCollection
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection
 
    object
    
    The list of central bodies.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ICentralBodyCollection
 
 Overview
 --------
@@ -20,17 +20,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.item`
               - Allow you to iterate through the collection.
-            * - :py:meth:`~add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.add`
               - Add a central body to the collection.
-            * - :py:meth:`~remove`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.remove`
               - Remove a central body from the collection.
-            * - :py:meth:`~remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.remove_all`
               - Remove all central bodies from the collection.
-            * - :py:meth:`~get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.get_item_by_index`
               - Retrieve a central body from the collection by index.
-            * - :py:meth:`~get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.get_item_by_name`
               - Retrieve a central body from the collection by name.
 
     .. tab-item:: Properties
@@ -39,8 +39,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~count`
-            * - :py:meth:`~_NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection._NewEnum`
 
 
 Import detail

@@ -1,13 +1,13 @@
 Spherical
 =========
 
-.. py:class:: Spherical
+.. py:class:: ansys.stk.core.stkutil.Spherical
 
-   Bases: py:obj:`~ISpherical`, py:obj:`~IPosition`
+   Bases: py:obj:`~ansys.stk.core.stkutil.ISpherical`, py:obj:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining spherical position.
 
-.. py:currentmodule:: ansys.stk.core.stkutil
+.. py:currentmodule:: Spherical
 
 Overview
 --------

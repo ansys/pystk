@@ -1,13 +1,13 @@
 ThrusterSet
 ===========
 
-.. py:class:: ThrusterSet
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ThrusterSet
 
-   Bases: py:obj:`~IThrusterSet`, py:obj:`~IComponentInfo`, py:obj:`~ICloneable`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IThrusterSet`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Thruster Set.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: ThrusterSet
 
 Overview
 --------

@@ -1,13 +1,13 @@
 IRadarMultipathGraphics
 =======================
 
-.. py:class:: IRadarMultipathGraphics
+.. py:class:: ansys.stk.core.stkobjects.IRadarMultipathGraphics
 
    object
    
    IAgRadarMultipathGraphics Interface for a radar's multipath graphics properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IRadarMultipathGraphics
 
 Overview
 --------
@@ -20,15 +20,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~show_xmt_to_tgt_grp`
-            * - :py:meth:`~xmt_to_tgt_grp_color`
-            * - :py:meth:`~xmt_to_tgt_grp_marker_style`
-            * - :py:meth:`~show_rcv_to_tgt_grp`
-            * - :py:meth:`~rcv_to_tgt_grp_color`
-            * - :py:meth:`~rcv_to_tgt_grp_marker_style`
-            * - :py:meth:`~show_xmt_to_rcv_grp`
-            * - :py:meth:`~xmt_to_rcv_grp_color`
-            * - :py:meth:`~xmt_to_rcv_grp_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.show_xmt_to_tgt_grp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.xmt_to_tgt_grp_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.xmt_to_tgt_grp_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.show_rcv_to_tgt_grp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.rcv_to_tgt_grp_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.rcv_to_tgt_grp_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.show_xmt_to_rcv_grp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.xmt_to_rcv_grp_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultipathGraphics.xmt_to_rcv_grp_marker_style`
 
 
 Import detail

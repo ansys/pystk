@@ -1,13 +1,13 @@
 EngineDefinition
 ================
 
-.. py:class:: EngineDefinition
+.. py:class:: ansys.stk.core.stkobjects.astrogator.EngineDefinition
 
-   Bases: py:obj:`~IEngineDefinition`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition`
 
    Engine definition.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: EngineDefinition
 
 Overview
 --------

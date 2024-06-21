@@ -1,13 +1,13 @@
 IVectorGeometryToolAngleFactory
 ===============================
 
-.. py:class:: IVectorGeometryToolAngleFactory
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleFactory
 
    object
    
    A Factory object to create angles.
 
-.. py:currentmodule:: ansys.stk.core.vgt
+.. py:currentmodule:: IVectorGeometryToolAngleFactory
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~create`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFactory.create`
               - Create a VGT angle using specified name, description and type.
-            * - :py:meth:`~is_type_supported`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFactory.is_type_supported`
               - Return true if the type is supported.
 
 

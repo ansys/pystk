@@ -1,13 +1,13 @@
 BasicManeuverStrategyGlideProfile
 =================================
 
-.. py:class:: BasicManeuverStrategyGlideProfile
+.. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile
 
-   Bases: py:obj:`~IBasicManeuverStrategyGlideProfile`, py:obj:`~IBasicManeuverStrategy`
+   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Glide profile strategy for a basic maneuver procedure.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+.. py:currentmodule:: BasicManeuverStrategyGlideProfile
 
 Overview
 --------

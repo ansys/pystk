@@ -1,13 +1,13 @@
 IStateCalcDensity
 =================
 
-.. py:class:: IStateCalcDensity
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IStateCalcDensity
 
    object
    
    Properties for a Fuel Density calculation object.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+.. py:currentmodule:: IStateCalcDensity
 
 Overview
 --------

@@ -1,13 +1,13 @@
 ISensorEOIRBand
 ===============
 
-.. py:class:: ISensorEOIRBand
+.. py:class:: ansys.stk.core.stkobjects.ISensorEOIRBand
 
    object
    
    IAgSnEOIRBand Interface for defining the individual band properties.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: ISensorEOIRBand
 
 Overview
 --------
@@ -20,61 +20,61 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:meth:`~band_name`
-            * - :py:meth:`~render_band`
-            * - :py:meth:`~calculating_parameters`
-            * - :py:meth:`~horizontal_half_angle`
-            * - :py:meth:`~vertical_half_angle`
-            * - :py:meth:`~horizontal_pixels`
-            * - :py:meth:`~vertical_pixels`
-            * - :py:meth:`~horizontal_pp`
-            * - :py:meth:`~vertical_pp`
-            * - :py:meth:`~horizontal_ifov`
-            * - :py:meth:`~vertical_ifov`
-            * - :py:meth:`~low_band_edge_wl`
-            * - :py:meth:`~high_band_edge_wl`
-            * - :py:meth:`~num_intervals`
-            * - :py:meth:`~fnumber`
-            * - :py:meth:`~long_d_focus`
-            * - :py:meth:`~eff_focal_l`
-            * - :py:meth:`~image_quality`
-            * - :py:meth:`~entrance_p_dia`
-            * - :py:meth:`~wavelength`
-            * - :py:meth:`~wavelength_type`
-            * - :py:meth:`~integration_time`
-            * - :py:meth:`~saturation_mode`
-            * - :py:meth:`~dynamic_range`
-            * - :py:meth:`~dynamic_range_mode`
-            * - :py:meth:`~nei`
-            * - :py:meth:`~sei`
-            * - :py:meth:`~sensitivities`
-            * - :py:meth:`~saturations`
-            * - :py:meth:`~spatial_input_mode`
-            * - :py:meth:`~spectral_shape`
-            * - :py:meth:`~system_relative_spectral_response_file`
-            * - :py:meth:`~rsr_units`
-            * - :py:meth:`~optical_input_mode`
-            * - :py:meth:`~rms_wavefront_error`
-            * - :py:meth:`~optical_quality_data_file`
-            * - :py:meth:`~optical_transmission_mode`
-            * - :py:meth:`~optical_transmission`
-            * - :py:meth:`~optical_transmission_spectral_response_file`
-            * - :py:meth:`~optical_quality_data_file_spatial_sampling`
-            * - :py:meth:`~optical_quality_data_file_frequency_sampling`
-            * - :py:meth:`~rad_param_level`
-            * - :py:meth:`~simulate_quantization`
-            * - :py:meth:`~qe_mode`
-            * - :py:meth:`~quantization_mode`
-            * - :py:meth:`~qe_value`
-            * - :py:meth:`~detector_fill_factor`
-            * - :py:meth:`~read_noise`
-            * - :py:meth:`~dark_current`
-            * - :py:meth:`~detector_full_well_capacity`
-            * - :py:meth:`~bit_depth`
-            * - :py:meth:`~qss`
-            * - :py:meth:`~qe_file`
-            * - :py:meth:`~spatial_auto_rebalance`
-            * - :py:meth:`~optical_auto_rebalance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.band_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.render_band`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.calculating_parameters`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.horizontal_half_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.vertical_half_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.horizontal_pixels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.vertical_pixels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.horizontal_pp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.vertical_pp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.horizontal_ifov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.vertical_ifov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.low_band_edge_wl`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.high_band_edge_wl`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.num_intervals`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.fnumber`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.long_d_focus`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.eff_focal_l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.image_quality`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.entrance_p_dia`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.wavelength`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.wavelength_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.integration_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.saturation_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.dynamic_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.dynamic_range_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.nei`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.sei`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.sensitivities`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.saturations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.spatial_input_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.spectral_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.system_relative_spectral_response_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.rsr_units`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_input_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.rms_wavefront_error`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_quality_data_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_transmission_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_transmission`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_transmission_spectral_response_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_quality_data_file_spatial_sampling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_quality_data_file_frequency_sampling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.rad_param_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.simulate_quantization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.qe_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.quantization_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.qe_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.detector_fill_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.read_noise`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.dark_current`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.detector_full_well_capacity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.bit_depth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.qss`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.qe_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.spatial_auto_rebalance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_auto_rebalance`
 
 
 Import detail
@@ -252,13 +252,13 @@ Property detail
 
 .. py:property:: sensitivities
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.sensitivities
-    :type: IAgSnEOIRSensitivityCollection
+    :type: ISensorEOIRSensitivityCollection
 
     Get the collection of Sensitivity time-value pairs.
 
 .. py:property:: saturations
     :canonical: ansys.stk.core.stkobjects.ISensorEOIRBand.saturations
-    :type: IAgSnEOIRSaturationCollection
+    :type: ISensorEOIRSaturationCollection
 
     Get the collection of Saturation time-value pairs.
 

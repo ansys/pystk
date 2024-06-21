@@ -1,13 +1,13 @@
 IVehicleGraphics2DTimeEventType
 ===============================
 
-.. py:class:: IVehicleGraphics2DTimeEventType
+.. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventType
 
    object
    
    Base Interface IAgVeGfxTimeEventType. IAgVeGfxTimeEventTypeLine, IAgVeGfxTimeEventTypeMarker and IAgVeGfxTimeEventTypeText derive from this.
 
-.. py:currentmodule:: ansys.stk.core.stkobjects
+.. py:currentmodule:: IVehicleGraphics2DTimeEventType
 
 Overview
 --------
