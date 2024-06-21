@@ -43,7 +43,7 @@ def to_numpy_array(results: "DataProviderResultDataSetCollection") -> "ndarray":
     results_arr = numpy.array([])
 
     # create numpy array from row formatted dataset elements
-    row_elements = results.ToArray()
+    row_elements = results.to_array()
     unshaped_elements_arr = numpy.array(row_elements)
 
     # get unique element names and unique element count
@@ -72,7 +72,7 @@ def to_pandas_dataframe(results: "DataProviderResultDataSetCollection", index_el
         # Slice element names list to get unique column names in the order that they appear in the DataSet. This
         # ensures that the order of the unique column names is maintained when they are used as columns in the
         # new DataFrame.
-        unique_element_names = results.ElementNames[0:num_unique_elements]
+        unique_element_names = results.element_names[0:num_unique_elements]
 
         # normalize element names to mitigate errors working and comparing DataFrame column names as column names are
         # case sensitive
@@ -114,7 +114,7 @@ def to_pandas_dataframe(results: "DataProviderResultDataSetCollection", index_el
 def _get_unique_element_names(results: "DataProviderResultDataSetCollection") -> Set:
     """Return a unique set of element names as a set."""
 
-    unique_element_names = set(results.ElementNames)
+    unique_element_names = set(results.element_names)
 
     return unique_element_names
 
