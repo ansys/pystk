@@ -252,6 +252,62 @@ You can remove a container using:
 tox -f docker-rm-{centos,ubuntu,windows}_container-{py39,py310}
 ```
 
+## Contributing examples
+
+### General guidelines
+
+- Start the example with an explanation of the main topic. For example, if you are discussing a certain orbital maneuver, explain what that maneuver entails. Similarly, if an example is centered around satellite coverage, provide an explanation of what coverage is. Try to use as many relevant keywords as possible in this section to optimize for Search Engine Optimization.
+- The second section of the example should be a problem statement. This statement should include all of the parameters needed in the example, as well as a description of what the example aims to determine. Write this section in an imperative form.
+- Include an explanation with each code cell. In a Jupyter notebook, this entails adding a markdown cell before each code cell. The explanations should be included before, not after, the corresponding code.
+- The examples are built with the documentation and included in the help. As part of the build process, screenshots of the STK Engine 2D and 3D graphics are inserted in the document. You do not need to include the screenshots yourself. However, do include the graphics widgets (2D or 3D) at points in your example. When the documentation is built, a screenshot of the widget will be inserted in its place.
+    - These widgets are included in `ansys.stk.core.stkengine.experimental.jupyterwidgets`
+    - To include a 2D widget run:
+
+        ```python
+        from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget
+
+        map_plotter = MapWidget(root, 640, 480)
+
+        map_plotter.show()
+        ```
+
+    - To include a 3D widget run:
+
+        ```python
+        from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+
+        globe_plotter = GlobeWidget(root, 640, 480)
+
+        globe_plotter.show()
+        ```
+
+    - At any point where a screenshot should appear, show the plotter.
+- As part of the documentation build process, screenshots of any graphs that are included will also be inserted. At any point where a screenshot of a graph should appear, show the graph using `matplotlib` or another Python plotting library.
+- Designate a fixed time frame for the scenario. This ensures that the scenario will be consistent every time the documentation builds, and will not change per build based on the current date.
+
+### Set-up
+
+#### Create a branch
+To start contributing, create a branch off of the PySTK repository. The branch name must follow [PyAnsys conventions](https://dev.docs.pyansys.com/how-to/contributing.html#branch-naming).
+
+#### Edit examples.rst
+
+When adding an example, add the file name to `doc/source/examples.rst`. This file defines how the examples section of the documentation is built. Each `.. nbgallery::` section corresponds to a thumbnail gallery. Add the path to your example (e.g. `examples/hohmann-transfer`) under the gallery that corresponds to your example type. For example, add examples depicting orbital maneuvers under the `Orbital maneuvers` thumbnail gallery. If your example does not correspond to any of the existing galleries, add a new heading (with `=================` under the text), caption, and gallery.
+
+#### Edit pyproject.toml
+
+If your example requires any dependencies that are not already present in the `doc` section of `pyproject.toml`, add a line in this section with the dependency. Use the version of the dependency on your machine, as dependency bot will update it automatically.
+
+### Style conventions
+- Follow the [PyAnsys guidelines](https://dev.docs.pyansys.com/doc-style/index.html#documentation-style):
+    - Write headings in sentence case.
+    - Use present tense.
+- Avoid first-person pronoun usage, and minimize use of second-person pronouns. Instead, use the imperative voice.
+- Use LaTeX format for things such as latitude and longitude coordinates, angles, and orbital parameters.
+- Insert 2 blank lines between import statements and the first instruction after.
+- Use inline highlights for paths to objects and the names of interfaces, classes, methods, properties, and enumerations.
+- Imports should be sorted in 3 groups: standard library, third party, and local packages. Within those groups, use alphabetical order.
+
 ## Additional documentation
 
 For additional documentation refer to the
