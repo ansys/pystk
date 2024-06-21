@@ -4904,14 +4904,14 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             eoirPattern.jitter_data_file_spatial_sampling = 100
 
-        eoirPattern.jitter_data_file_frequency_sampling = 0.01
-        Assert.assertEqual(0.01, eoirPattern.jitter_data_file_frequency_sampling)
-        eoirPattern.jitter_data_file_frequency_sampling = 10000
-        Assert.assertEqual(10000, eoirPattern.jitter_data_file_frequency_sampling)
+        eoirPattern.jitter_data_file_frequency_sampling = 0.0001
+        Assert.assertEqual(0.0001, eoirPattern.jitter_data_file_frequency_sampling)
+        eoirPattern.jitter_data_file_frequency_sampling = 1000000.0
+        Assert.assertEqual(1000000.0, eoirPattern.jitter_data_file_frequency_sampling)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            eoirPattern.jitter_data_file_frequency_sampling = 0.001
+            eoirPattern.jitter_data_file_frequency_sampling = 1e-05
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            eoirPattern.jitter_data_file_frequency_sampling = 10001
+            eoirPattern.jitter_data_file_frequency_sampling = 10000000.0
 
         eoirPattern.jitter_type = SENSOR_EOIR_JITTER_TYPES.PSF_FILE
         Assert.assertEqual(SENSOR_EOIR_JITTER_TYPES.PSF_FILE, eoirPattern.jitter_type)
@@ -4924,14 +4924,14 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             eoirPattern.jitter_data_file = "bogus"
 
-        eoirPattern.jitter_data_file_spatial_sampling = 0.0001
-        Assert.assertEqual(0.0001, eoirPattern.jitter_data_file_spatial_sampling)
-        eoirPattern.jitter_data_file_spatial_sampling = 100
-        Assert.assertEqual(100, eoirPattern.jitter_data_file_spatial_sampling)
+        eoirPattern.jitter_data_file_spatial_sampling = 1e-06
+        Assert.assertEqual(1e-06, eoirPattern.jitter_data_file_spatial_sampling)
+        eoirPattern.jitter_data_file_spatial_sampling = 10000
+        Assert.assertEqual(10000, eoirPattern.jitter_data_file_spatial_sampling)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            eoirPattern.jitter_data_file_spatial_sampling = 1e-05
+            eoirPattern.jitter_data_file_spatial_sampling = 1e-07
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            eoirPattern.jitter_data_file_spatial_sampling = 101
+            eoirPattern.jitter_data_file_spatial_sampling = 10001
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             eoirPattern.jitter_data_file_frequency_sampling = 100
@@ -4950,14 +4950,14 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             eoirPattern.jitter_data_file_spatial_sampling = 100
 
-        eoirPattern.jitter_data_file_frequency_sampling = 0.01
-        Assert.assertEqual(0.01, eoirPattern.jitter_data_file_frequency_sampling)
-        eoirPattern.jitter_data_file_frequency_sampling = 10000
-        Assert.assertEqual(10000, eoirPattern.jitter_data_file_frequency_sampling)
+        eoirPattern.jitter_data_file_frequency_sampling = 0.0001
+        Assert.assertEqual(0.0001, eoirPattern.jitter_data_file_frequency_sampling)
+        eoirPattern.jitter_data_file_frequency_sampling = 1000000.0
+        Assert.assertEqual(1000000.0, eoirPattern.jitter_data_file_frequency_sampling)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            eoirPattern.jitter_data_file_frequency_sampling = 0.001
+            eoirPattern.jitter_data_file_frequency_sampling = 1e-05
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            eoirPattern.jitter_data_file_frequency_sampling = 10001
+            eoirPattern.jitter_data_file_frequency_sampling = 10000000.0
 
     def Test_AgSnEOIRBandCollection(self, bandColl: "SensorEOIRBandCollection"):
         Assert.assertEqual(1, bandColl.count)
@@ -5006,7 +5006,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("Value would invalidate")):
             band.horizontal_half_angle = 0.1
         with pytest.raises(Exception, match=RegexSubstringMatch("Value would invalidate")):
-            band.horizontal_half_angle = 83
+            band.horizontal_half_angle = 89
         band.horizontal_half_angle = 45  # back to default
         Assert.assertEqual(45, band.horizontal_half_angle)
 
@@ -5023,7 +5023,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("Value would invalidate")):
             band.vertical_half_angle = 0.1
         with pytest.raises(Exception, match=RegexSubstringMatch("Value would invalidate")):
-            band.vertical_half_angle = 83
+            band.vertical_half_angle = 89.5
         band.vertical_half_angle = 45  # back to default
         Assert.assertEqual(45, band.vertical_half_angle)
 
@@ -5038,7 +5038,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("Value would invalidate")):
             band.horizontal_pp = 0.1
         with pytest.raises(Exception, match=RegexSubstringMatch("Value would invalidate")):
-            band.horizontal_pp = 83
+            band.horizontal_pp = 1000000
         band.horizontal_pp = 1718.75  # back to default
 
         band.vertical_pp = 300
@@ -5052,7 +5052,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("Value would invalidate")):
             band.vertical_pp = 0.1
         with pytest.raises(Exception, match=RegexSubstringMatch("Value would invalidate")):
-            band.vertical_pp = 83
+            band.vertical_pp = 1000000
         band.vertical_pp = 1718.75  # back to default
 
         band.spatial_input_mode = SENSOR_EOIR_BAND_SPATIAL_INPUT_MODE.FO_VAND_NUM_PIX
@@ -5103,7 +5103,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             band.horizontal_pixels = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            band.horizontal_pixels = 1025
+            band.horizontal_pixels = 6001
 
         band.vertical_pixels = 1
         Assert.assertAlmostEqual(1, float(band.vertical_pixels), delta=0.001)
@@ -5118,7 +5118,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             band.vertical_pixels = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            band.vertical_pixels = 1025
+            band.vertical_pixels = 6001
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             band.horizontal_pp = 0
@@ -5139,7 +5139,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             band.horizontal_pixels = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            band.horizontal_pixels = 1025
+            band.horizontal_pixels = 6001
 
         band.vertical_pixels = 1
         Assert.assertAlmostEqual(1, float(band.vertical_pixels), delta=0.001)
@@ -5152,7 +5152,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             band.vertical_pixels = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            band.vertical_pixels = 1025
+            band.vertical_pixels = 6001
 
         band.horizontal_pp = 1
         Assert.assertAlmostEqual(1, float(band.horizontal_pp), delta=0.001)
@@ -5349,14 +5349,14 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             band.optical_quality_data_file_spatial_sampling = 5
 
-        band.optical_quality_data_file_frequency_sampling = 0.0001
-        Assert.assertEqual(0.0001, band.optical_quality_data_file_frequency_sampling)
-        band.optical_quality_data_file_frequency_sampling = 10
-        Assert.assertEqual(10, band.optical_quality_data_file_frequency_sampling)
+        band.optical_quality_data_file_frequency_sampling = 1e-06
+        Assert.assertEqual(1e-06, band.optical_quality_data_file_frequency_sampling)
+        band.optical_quality_data_file_frequency_sampling = 1000
+        Assert.assertEqual(1000, band.optical_quality_data_file_frequency_sampling)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            band.optical_quality_data_file_frequency_sampling = 1e-05
+            band.optical_quality_data_file_frequency_sampling = 1e-07
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            band.optical_quality_data_file_frequency_sampling = 11
+            band.optical_quality_data_file_frequency_sampling = 1001
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             band.long_d_focus = 0
@@ -5372,14 +5372,14 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             band.optical_quality_data_file = "bogus"
 
-        band.optical_quality_data_file_spatial_sampling = 0.1
-        Assert.assertEqual(0.1, band.optical_quality_data_file_spatial_sampling)
-        band.optical_quality_data_file_spatial_sampling = 10000
-        Assert.assertEqual(10000, band.optical_quality_data_file_spatial_sampling)
+        band.optical_quality_data_file_spatial_sampling = 0.001
+        Assert.assertEqual(0.001, band.optical_quality_data_file_spatial_sampling)
+        band.optical_quality_data_file_spatial_sampling = 1000000.0
+        Assert.assertEqual(1000000.0, band.optical_quality_data_file_spatial_sampling)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            band.optical_quality_data_file_spatial_sampling = 0.01
+            band.optical_quality_data_file_spatial_sampling = 0.0001
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            band.optical_quality_data_file_spatial_sampling = 10001
+            band.optical_quality_data_file_spatial_sampling = 1000001
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             band.optical_quality_data_file_frequency_sampling = 0.0001
