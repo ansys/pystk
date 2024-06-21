@@ -241,6 +241,19 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, "TestChain"), Chain
         )
 
+        newChain.max_strand_depth = 2
+        Assert.assertEqual(2, newChain.max_strand_depth)
+        newChain.max_strand_depth = 20
+        Assert.assertEqual(20, newChain.max_strand_depth)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            newChain.max_strand_depth = 1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            newChain.max_strand_depth = 21
+
+        self.Test_IAgChConnectionCollection(newChain.connections)
+
+        self.Test_IAgChOptimalStrandOpts(newChain.optimal_strand_opts)
+
         place1: "IStkObject" = TestBase.Application.current_scenario.children["Place1"]
         place1Xmtr1: "IStkObject" = place1.children["Transmitter1"]
 
@@ -260,7 +273,9 @@ class EarlyBoundTests(TestBase):
         satellite4Receiver4: "IStkObject" = satellite4.children["Receiver4"]
 
         newChain.start_object = place1Xmtr1
+        Assert.assertEqual("Transmitter1", newChain.start_object.instance_name)
         newChain.end_object = place2Rcvr2
+        Assert.assertEqual("Receiver1", newChain.end_object.instance_name)
 
         # Uplink connections
         newChain.connections.add(place1Xmtr1, satellite2Receiver2, 0, 1)
@@ -289,6 +304,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 3)
 
         # Optimal Strands
+
         # Optimal Strands Compute
         TestBase.logger.WriteLine4(
             "\tThe current value of OptimalStrandOpts.Compute is: {0}", newChain.optimal_strand_opts.compute
@@ -592,6 +608,258 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.CHAIN, "TestChain")
 
         TestBase.logger.WriteLine("----- THE CHAIN ADVANCED ROUTING USING SATELLITE COLLECTION TEST ----- END -----")
+
+    # endregion
+
+    # region Test_IAgChConnectionCollection
+    def Test_IAgChConnectionCollection(self, connColl: "ChainConnectionCollection"):
+        Assert.assertEqual(0, connColl.count)
+
+        place1: "IStkObject" = TestBase.Application.current_scenario.children["Place1"]
+        place1Xmtr1: "IStkObject" = place1.children["Transmitter1"]
+
+        place2: "IStkObject" = TestBase.Application.current_scenario.children["Place2"]
+        place2Rcvr2: "IStkObject" = place2.children["Receiver1"]
+
+        satellite2: "IStkObject" = TestBase.Application.current_scenario.children["Satellite2"]
+        satellite2Xmtr2: "IStkObject" = satellite2.children["Transmitter2"]
+        satellite2Receiver2: "IStkObject" = satellite2.children["Receiver2"]
+
+        satellite3: "IStkObject" = TestBase.Application.current_scenario.children["Satellite3"]
+        satellite3Xmtr3: "IStkObject" = satellite3.children["Transmitter3"]
+        satellite3Receiver3: "IStkObject" = satellite3.children["Receiver3"]
+
+        satellite4: "IStkObject" = TestBase.Application.current_scenario.children["Satellite4"]
+        satellite4Xmtr4: "IStkObject" = satellite4.children["Transmitter4"]
+        satellite4Receiver4: "IStkObject" = satellite4.children["Receiver4"]
+
+        chConn: "ChainConnection" = connColl.add(place1Xmtr1, satellite2Receiver2, 0, 1)
+        self.Test_IAgChConnection(chConn)
+        connColl.remove(place1Xmtr1, satellite2Receiver2)
+        Assert.assertEqual(0, connColl.count)
+
+        connColl.add(place1Xmtr1, satellite2Receiver2, 0, 1)
+        connColl.add(place1Xmtr1, satellite3Receiver3, 0, 1)
+        connColl.add(place1Xmtr1, satellite4Receiver4, 0, 1)
+        with pytest.raises(Exception, match=RegexSubstringMatch("already exists")):
+            connColl.add(place1Xmtr1, satellite2Receiver2, 0, 1)
+        Assert.assertEqual(3, connColl.count)
+
+        Assert.assertEqual("Receiver2", connColl[0].to_object.instance_name)
+        Assert.assertEqual("Receiver3", connColl[1].to_object.instance_name)
+        Assert.assertEqual("Receiver4", connColl[2].to_object.instance_name)
+
+        count: int = 0
+        chConnection: "ChainConnection"
+        for chConnection in connColl:
+            count += 1
+            Assert.assertTrue(("Receiver" in chConnection.to_object.instance_name))
+
+        Assert.assertEqual(3, count)
+
+        chConnX: "ChainConnection" = connColl.item_by_from_to_objects(place1Xmtr1, satellite3Receiver3)
+        Assert.assertEqual("Receiver3", chConnX.to_object.instance_name)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("not found")):
+            connColl.item_by_from_to_objects(place1Xmtr1, place1Xmtr1)
+
+        connColl.remove_at(1)
+        Assert.assertEqual(2, connColl.count)
+        Assert.assertEqual("Receiver2", connColl[0].to_object.instance_name)
+        Assert.assertEqual("Receiver4", connColl[1].to_object.instance_name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
+            connColl.remove_at(3)
+
+        connColl.remove(place1Xmtr1, satellite2Receiver2)
+        Assert.assertEqual(1, connColl.count)
+        Assert.assertEqual("Receiver4", connColl[0].to_object.instance_name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("not found")):
+            connColl.remove(place1Xmtr1, satellite3Receiver3)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Subset or Constellation")):
+            connColl.add_with_parent_restriction(
+                place1Xmtr1, satellite2Receiver2, 0, 2, CHAIN_PARENT_PLATFORM_RESTRICTION.SAME
+            )
+
+        connColl.clear()
+        Assert.assertEqual(0, connColl.count)
+
+    # endregion
+
+    # region Test_IAgChConnection
+    def Test_IAgChConnection(self, chConn: "ChainConnection"):
+        # Initial State
+        Assert.assertEqual("Transmitter1", chConn.from_object.instance_name)
+        Assert.assertEqual("Receiver2", chConn.to_object.instance_name)
+        Assert.assertEqual(0, chConn.min_num_uses)
+        Assert.assertEqual(1, chConn.max_num_uses)
+        Assert.assertEqual(CHAIN_PARENT_PLATFORM_RESTRICTION.NONE, chConn.parent_platform_restriction)
+
+        # Make changes
+        chConn.from_object = TestBase.Application.current_scenario.children["Satellite2"].children["Transmitter2"]
+        Assert.assertEqual("Transmitter2", chConn.from_object.instance_name)
+        chConn.to_object = TestBase.Application.current_scenario.children["Satellite3"].children["Receiver3"]
+        Assert.assertEqual("Receiver3", chConn.to_object.instance_name)
+        chConn.min_num_uses = 2
+        Assert.assertEqual(2, chConn.min_num_uses)
+        chConn.max_num_uses = 3
+        Assert.assertEqual(3, chConn.max_num_uses)
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            chConn.parent_platform_restriction = CHAIN_PARENT_PLATFORM_RESTRICTION.SAME
+
+        # Restore to initial
+        chConn.from_object = TestBase.Application.current_scenario.children["Place1"].children["Transmitter1"]
+        chConn.to_object = TestBase.Application.current_scenario.children["Satellite2"].children["Receiver2"]
+        chConn.min_num_uses = 0
+        chConn.max_num_uses = 1
+
+    # endregion
+
+    # region Test_IAgChOptimalStrandOpts
+    def Test_IAgChOptimalStrandOpts(self, optStrandOpts: "ChainOptimalStrandOpts"):
+        optStrandOpts.compute = False
+        Assert.assertFalse(optStrandOpts.compute)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_type = (
+                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_SUM
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.strand_comparison_type = CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MIN
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            optStrandOpts.sampling_time_step = 0.001
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.include_access_edge_times_in_samples = True
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.num_strands_to_store = 1
+
+        optStrandOpts.compute = True
+        Assert.assertTrue(optStrandOpts.compute)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_UNKNOWN
+
+        optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE
+        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE, optStrandOpts.type)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_type = (
+                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
+
+        optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY
+        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY, optStrandOpts.type)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_type = (
+                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
+
+        optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR
+        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR, optStrandOpts.type)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            optStrandOpts.calc_scalar_type = (
+                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_UNKNOWN
+            )
+
+        optStrandOpts.calc_scalar_type = (
+            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+        )
+        Assert.assertEqual(
+            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME,
+            optStrandOpts.calc_scalar_type,
+        )
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+
+        optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        Assert.assertEqual("From-To-AER(Body).Cartesian.Magnitude", optStrandOpts.calc_scalar_name)
+
+        optStrandOpts.calc_scalar_type = (
+            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_FILE
+        )
+        Assert.assertEqual(
+            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_FILE,
+            optStrandOpts.calc_scalar_type,
+        )
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+            optStrandOpts.calc_scalar_file_name = "Bogus"
+        optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+        Assert.assertEqual("My_CS.awb", optStrandOpts.calc_scalar_file_name)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_UNKNOWN
+
+        optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
+        Assert.assertEqual(
+            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN, optStrandOpts.link_comparison_type
+        )
+        optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MAX
+        Assert.assertEqual(
+            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MAX, optStrandOpts.link_comparison_type
+        )
+        optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_SUM
+        Assert.assertEqual(
+            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_SUM, optStrandOpts.link_comparison_type
+        )
+
+        optStrandOpts.strand_comparison_type = CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MIN
+        Assert.assertEqual(
+            CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MIN, optStrandOpts.strand_comparison_type
+        )
+        optStrandOpts.strand_comparison_type = CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MAX
+        Assert.assertEqual(
+            CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MAX, optStrandOpts.strand_comparison_type
+        )
+
+        optStrandOpts.sampling_time_step = 0.001
+        Assert.assertEqual(0.001, optStrandOpts.sampling_time_step)
+        optStrandOpts.sampling_time_step = 10000000000
+        Assert.assertEqual(10000000000, optStrandOpts.sampling_time_step)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            optStrandOpts.sampling_time_step = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            optStrandOpts.sampling_time_step = 100000000000
+
+        optStrandOpts.include_access_edge_times_in_samples = False
+        Assert.assertFalse(optStrandOpts.include_access_edge_times_in_samples)
+        optStrandOpts.include_access_edge_times_in_samples = True
+        Assert.assertTrue(optStrandOpts.include_access_edge_times_in_samples)
+
+        optStrandOpts.num_strands_to_store = 1
+        Assert.assertEqual(1, optStrandOpts.num_strands_to_store)
+        optStrandOpts.num_strands_to_store = 100
+        Assert.assertEqual(100, optStrandOpts.num_strands_to_store)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            optStrandOpts.num_strands_to_store = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            optStrandOpts.num_strands_to_store = 101
 
     # endregion
 
