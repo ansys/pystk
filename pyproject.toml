@@ -54,7 +54,6 @@ doc = [
 visualization = [
     "jupyter-rfb==0.4.4",
     "numpy==2.0.0",
-    "jupyter-rfb==0.4.4",
     "Pillow==10.3.0",
     "simplejpeg==1.7.4",
     "sidecar==0.7.0"
