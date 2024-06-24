@@ -25,7 +25,7 @@ services:
 
   stk-python3.9:
     image: ansys/stk:dev-centos7-python3.9
-    depends_on:
+    depends_on: 
       - stk-pybase 
     container_name: stk-python3.9
     build: 
@@ -43,6 +43,19 @@ services:
     container_name: stk-python3.10
     build: 
       context: ./stk-engine-py310
+      args:
+        baseImage: ansys/stk:dev-centos7
+        basePythonImage: ansys/stk:dev-centos7-pybase
+    environment:
+      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
+
+  stk-python3.11:
+    image: ansys/stk:dev-centos7-python3.11
+    depends_on: 
+      - stk-pybase 
+    container_name: stk-python3.11
+    build: 
+      context: ./stk-engine-py311
       args:
         baseImage: ansys/stk:dev-centos7
         basePythonImage: ansys/stk:dev-centos7-pybase
