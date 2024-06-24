@@ -1,0 +1,50 @@
+IVectorGeometryToolSystemTransformResult
+========================================
+
+.. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult
+
+   object
+   
+   Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods.
+
+.. py:currentmodule:: IVectorGeometryToolSystemTransformResult
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult.is_valid`
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult.vector`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import IVectorGeometryToolSystemTransformResult
+
+
+Property detail
+---------------
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult.is_valid
+    :type: bool
+
+    True indicates the method call was successful.
+
+.. py:property:: vector
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult.vector
+    :type: ICartesian3Vector
+
+    The transformed vector.
+
+
