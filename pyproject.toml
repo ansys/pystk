@@ -52,10 +52,10 @@ doc = [
     "matplotlib==3.9.0"
 ]
 visualization = [
-    "numpy==1.26.4",
     "jupyter-rfb==0.4.4",
+    "numpy==2.0.0",
     "Pillow==10.3.0",
-    "simplejpeg==1.7.2",
+    "simplejpeg==1.7.4",
     "sidecar==0.7.0"
 ]
 vulnerabilities = [
