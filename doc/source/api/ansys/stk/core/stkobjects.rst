@@ -17,7 +17,7 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:obj: ansys.stk.core.stkobjects.aviator
+            * - :py:obj:ansys.stk.core.stkobjects.aviator
 
     .. tab-item:: Submodules
 
@@ -25,7 +25,7 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:mod: ansys.stk.core.stkobjects.astrogator
+            * - :py:mod:ansys.stk.core.stkobjects.astrogator
 
              
     .. tab-item:: Interfaces

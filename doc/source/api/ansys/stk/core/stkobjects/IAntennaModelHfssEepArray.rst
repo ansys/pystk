@@ -28,7 +28,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beam_direction_provider`
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer_type`
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer`
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration_type`
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration`
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.elements`
 
@@ -92,15 +91,9 @@ Property detail
 
     Gets the beamformer.
 
-.. py:property:: element_configuration_type
-    :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration_type
-    :type: ELEMENT_CONFIGURATION_TYPE
-
-    Gets the element configuration type.
-
 .. py:property:: element_configuration
     :canonical: ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration
-    :type: IElementConfiguration
+    :type: IElementConfigurationHfssEepFile
 
     Gets the element configuration.
 

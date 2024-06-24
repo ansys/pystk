@@ -17,7 +17,7 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:mod: ansys.stk.core.stkobjects.aviator.matlab
+            * - :py:mod:ansys.stk.core.stkobjects.aviator.matlab
 
              
     .. tab-item:: Interfaces

@@ -173,13 +173,13 @@ Overview
               - Coordinate Point Metric constraint.
 
             * - :py:attr:`~CENTROID_AZIMUTH_ANGLE`
-              - Centroid Azimuth Angle constraint.
+              - Do not use this enumeration, as it is deprecated. Centroid Azimuth Angle constraint.
 
             * - :py:attr:`~CENTROID_RANGE`
-              - Centroid Range constraint.
+              - Do not use this enumeration, as it is deprecated. Centroid Range constraint.
 
             * - :py:attr:`~CENTROID_SUN_ELEVATION_ANGLE`
-              - Centroid Sun Elevation Angle constraint.
+              - Do not use this enumeration, as it is deprecated. Centroid Sun Elevation Angle constraint.
 
             * - :py:attr:`~COLLECTION_ANGLE`
               - Collection Angle constraint.

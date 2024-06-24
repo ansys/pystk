@@ -49,7 +49,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection._NewEnum`
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.max_time_step`
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.max_rel_motion`
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.enabled`
 
 
 Import detail
@@ -110,12 +109,6 @@ Property detail
     :type: float
 
     Maximum relative motion used in adaptive sampling.
-
-.. py:property:: enabled
-    :canonical: ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.enabled
-    :type: bool
-
-    Indicates whether the constraint should be considered (true) or ignored (false) in access computations.
 
 
 Method detail
@@ -221,8 +214,6 @@ Method detail
     :Returns:
 
         :obj:`~IAccessConstraintZone`
-
-
 
 
 

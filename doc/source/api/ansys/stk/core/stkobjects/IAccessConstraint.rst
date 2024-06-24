@@ -26,7 +26,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_type`
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_time_step`
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_rel_motion`
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.enabled`
 
 
 Import detail
@@ -75,11 +74,5 @@ Property detail
     :type: float
 
     Maximum relative motion used in adaptive sampling.
-
-.. py:property:: enabled
-    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.enabled
-    :type: bool
-
-    Indicates whether the constraint should be considered (true) or ignored (false) in access computations.
 
 
