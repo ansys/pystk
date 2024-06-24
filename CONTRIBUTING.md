@@ -1,5 +1,28 @@
 # Contributing
 
+#### Table of Contents
+* [Using Tox for testing and development](#using-tox-for-testing-and-development)
+  + [Installing Tox](#installing-tox)
+  + [Listing Tox environments](#listing-tox-environments)
+  + [Building the STK container images with Tox](#building-the-stk-container-images-with-tox)
+  + [Running an STK container with Tox](#running-an-stk-container-with-tox)
+  + [Executing a command inside an STK container with Tox](#executing-a-command-inside-an-stk-container-with-tox)
+    - [CentOS](#centos)
+    - [Ubuntu](#ubuntu)
+    - [Windows](#windows)
+  + [Launching Jupyter Lab with Tox](#launching-jupyter-lab-with-tox)
+  + [Troubleshooting an STK container in UI mode with Tox](#troubleshooting-an-stk-container-in-ui-mode-with-tox)
+  + [Stopping an STK container with Tox](#stopping-an-stk-container-with-tox)
+  + [Removing an STK container with Tox](#removing-an-stk-container-with-tox)
+* [Contributing examples](#contributing-examples)
+  + [General guidelines](#general-guidelines)
+  + [Set-up](#set-up)
+    - [Create a branch](#create-a-branch)
+    - [Edit examples.rst](#edit-examplesrst)
+    - [Edit pyproject.toml](#edit-pyprojecttoml)
+  + [Style conventions](#style-conventions)
+* [Additional documentation](#additional-documentation)
+
 ## Using Tox for testing and development
 
 [Tox](https://tox.wiki) is a powerful tool that simplifies and automates the
@@ -9,7 +32,7 @@ development tasks in a consistent and reproducible manner. Tox is particularly
 useful for ensuring that your project works seamlessly on different Python
 versions, interpreters, and platforms.
 
-## Installing Tox
+### Installing Tox
 
 To install Tox, you can use the following command:
 
@@ -23,7 +46,7 @@ You can verify the installation by running:
 tox --version
 ```
 
-## Listing Tox environments
+### Listing Tox environments
 
 The configuration for Tox is stored in [the tox.ini file](https://github.com/ansys-internal/pystk/blob/main/tox.ini). 
 This file contains various environments. Environments are a collection of
@@ -35,10 +58,10 @@ To list all Tox environments, you can use the following command:
 tox list
 ```
 
-## Building the STK container images with Tox
+### Building the STK container images with Tox
 
 Use the following commands to build the images for your target distribution:
-- **centos**
+- **CentOS**
     ```console
     tox -e docker-build-centos_images
     ```
@@ -55,7 +78,7 @@ Use the following commands to build the images for your target distribution:
     ansys/stk    dev-centos7              bf55f684403c   6 minutes ago    2.37GB
     centos       7                        f87a3c43c945   10 minutes ago   205MB
     ```
-- **ubuntu**
+- **Ubuntu**
     ```console
     tox -e docker-build-ubuntu_images
     ```
@@ -91,7 +114,7 @@ Use the following commands to build the images for your target distribution:
     ```
 
 
-## Running an STK container with Tox
+### Running an STK container with Tox
 
 Once the images are built, you can create a new container targeting a specific Python version using the following command:
 
@@ -110,7 +133,7 @@ use, for instance:
 - `tox -f docker-run-ubuntu_container-py39` will start a Ubuntu container configured with Python 3.9.
 - `tox -f docker-run-windows_container-py310` will start a Windows container configured with Python 3.10.
 
-## Executing a command inside an STK container with Tox
+### Executing a command inside an STK container with Tox
 
 After building the images and running a container, you can execute a command inside the container using:
 
@@ -125,7 +148,7 @@ tox -f docker-exec-centos_container-py310 -- ls -la
 ```
 
 Here are a few additional examples:
-### centOS
+#### CentOS
 - Starting a interactive shell inside the container:
     ```console
     tox -f docker-exec-centos_container-py310 -- /bin/bash
@@ -154,7 +177,7 @@ Here are a few additional examples:
     ```console
     tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
-### ubuntu
+#### Ubuntu
 - Starting a interactive shell inside the container:
     ```console
     tox -f docker-exec-ubuntu_container-py310 -- /bin/bash
@@ -183,7 +206,7 @@ Here are a few additional examples:
     ```console
     tox -f docker-exec-ubuntu_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
-### Windows
+#### Windows
 - Starting a interactive shell inside the container:
     ```console
     tox -f docker-exec-windows_container-py310 -- cmd
@@ -213,7 +236,7 @@ Here are a few additional examples:
     tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude PluginTests -vv
     ```
 
-## Launching Jupyter Lab with Tox
+### Launching Jupyter Lab with Tox
 
 After building the images and running a container, you can also start Jupyter Lab inside the container using:
 
@@ -226,7 +249,7 @@ use, for instance `tox -f docker-lab-centos_container-py310` will start a CentOS
 
 Once Jupyter Lab is running, use your browser to navigate to http://127.0.0.1:8888/lab?token=pystk.
 
-## Troubleshooting an STK container in UI mode with Tox 
+### Troubleshooting an STK container in UI mode with Tox 
 
 After building the images and running a container, you can also start a desktop manager inside the container. This provides access to the X graphical user interface. This is particularly useful to troubleshoot any issue arising inside the container. A use case is debugging the graphics tests, as STK's 2D and 3D graphics are rendered inside the container using `xvfb` which is not visible by default.
 
@@ -240,7 +263,7 @@ Once the container is ready, use your browser to navigate to http://127.0.0.1:88
 
 In addition to running the UI, this configuration also enables `sudo` for the stk user (password identical as user name), so you can install any additional debugging tools required (for instance `gdb` or `valgrind`).
 
-## Stopping an STK container with Tox
+### Stopping an STK container with Tox
 
 You can stop a running container using:
 
@@ -248,7 +271,7 @@ You can stop a running container using:
 tox -f docker-stop-{centos,ubuntu,windows}_container-{py38,py39,py310}
 ```
 
-## Removing an STK container with Tox
+### Removing an STK container with Tox
 
 You can remove a container using:
 
