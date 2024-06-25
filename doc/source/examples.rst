@@ -10,6 +10,7 @@ This series of tutorials explains basic examples involving STK objects using Pyt
 
     examples/facility-to-satellite-access
     examples/satellite-coverage-calculator
+    examples/coverage-around-place
 
 
 Orbital maneuvers
