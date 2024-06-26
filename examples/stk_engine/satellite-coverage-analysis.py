@@ -1,4 +1,4 @@
-# # Satellite coverage around a place calculator
+# # Satellite coverage analysis
 
 # This tutorial demonstrates how to calculate satellite coverage around a location, including access constraints, using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/CoverageToolWizard.htm).
 
@@ -132,9 +132,11 @@ satellite.propagator.propagate()
 
 # ## Insert a sensor
 
-# Insert a sensor on the satellite:
+# The satellite has a fixed sensor with a simple conic pattern. This sensor looks down on Earth, and can see any location in its field of view. This sensor is used to image the satellite graveyard.
 
-sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR,"SatelliteSensor")
+# First, insert a sensor on the satellite. The sensor will be inserted with a fixed sensor type by default.
+
+sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR, "SatelliteSensor")
 
 # Then, set the sensor's type to a simple conic sensor with a $45^\circ$ half angle and an angular resolution of $1^\circ$:
 
@@ -158,15 +160,21 @@ point_nemo.position.assign_geodetic(-48.87, -123.39, 0)
 
 # ## Insert a coverage definition
 
-# Use a coverage definition to calculate satellite coverage around Point Nemo. First, insert the definition:
+# Use a coverage definition to calculate satellite coverage around Point Nemo. The coverage definition represents the satellite graveyard. This definition is used to calculate how much of the satellite graveyard the sensor on the imaging satellite can see at any time.
+
+# First, insert the coverage definition:
 
 sat_grave_coverage = scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "SatelliteGraveyard")
 
-# The coverage definition should consist of an ellipse around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, a bearing of $45^\circ$, and a latitude/longitude point granularity of $2^\circ$. To set the coverage definition to these bounds, use a Connect command:
+# The coverage definition should represent the satellite graveyard, which consists of an ellipse around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, a bearing of $45^\circ$. The definition will have a latitude/longitude point granularity of $2^\circ$.
+
+# To set the coverage definition's bounds to the elliptical area around Point Nemo, use a Connect command:
 
 root.execute_command("Cov */CoverageDefinition/SatelliteGraveyard Grid AreaOfInterest Custom ObjectCenteredEllipse Place/PointNemo Bearing 45.0 SemiMajorAxis 2688000 SemiMinorAxis 2688000")
 
-# Finally, configure the coverage definition's grid point granularity. Set the grid's resolution to use a latitude/longitude resolution:
+# Finally, configure the coverage definition's grid point granularity. The grid point granularity presents a trade-off between computational workload and accuracy of results. A higher granularity provides higher accuracy at the cost of a higher workload. For this example, set the resolution to $2^\circ$ latitude/longitude.
+
+# First, set the grid's resolution to use a latitude/longitude resolution:
 
 # +
 from ansys.stk.core.stkobjects import COVERAGE_RESOLUTION
@@ -186,23 +194,23 @@ globe_plotter.show()
 
 # ## Compute coverage
 
-# Assign the satellite's sensor as an asset on the coverage:
+# It is necessary to determine how much of the satellite graveyard can be seen by the satellite's sensor at different times. To do so, first assign the satellite's sensor as an asset on the coverage:
 
 sat_grave_coverage.asset_list.add(sensor.path)
 
-# Compute the accesses:
+# Then, compute the accesses between the coverage area and the sensor:
 
 sat_grave_coverage.compute_accesses()
 
 # ## Analyze the results with a Figure of Merit
 
-# Use a Figure of Merit to assess the quality of coverage over the coverage definition.
+# Use a Figure of Merit to assess the quality of coverage over the coverage definition. The Figure of Merit must register when the coverage definition's area is covered by the satellite, so the Figure of Merit's definition type should be simple coverage.
 
-# Insert a Figure of Merit:
+# First, insert a Figure of Merit:
 
 figure_of_merit = sat_grave_coverage.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "Coverage")
 
-# Set the Figure of Merit's definition type to simple coverage:
+# Then, set the Figure of Merit's definition type to simple coverage:
 
 # +
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_DEFINITION_TYPE
@@ -297,7 +305,7 @@ from ansys.stk.core.stkobjects import CONSTRAINT_LIGHTING
 lighting_constraint.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN
 # -
 
-# Point Nemo now contains the constraint that must be applied to the entire grid. Use a Connect command to set Point Nemo as the grid constraint:
+# Point Nemo now contains the constraint that must be applied to the entire grid. Use a Connect command to set Point Nemo as the grid constraint for the entire coverage definition:
 
 root.execute_command("Cov */CoverageDefinition/SatelliteGraveyard Grid GridConstraint Place UsePointAltitudeType Place/PointNemo")
 
