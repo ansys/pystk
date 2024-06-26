@@ -1,29 +1,16 @@
-STATE
+State
 =====
 
-.. py:class:: ansys.stk.core.stkobjects.astrogator.STATE
+.. py:class:: ansys.stk.core.stkobjects.astrogator.State
 
-   IntEnum
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IState`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
+   The orbit state.
 
-.. py:currentmodule:: STATE
+.. py:currentmodule:: State
 
 Overview
 --------
-
-.. tab-set::
-
-    .. tab-item:: Members
-        
-        .. list-table::
-            :header-rows: 0
-            :widths: auto
-
-            * - :py:attr:`~ENABLED`
-              - Enabled - the segment stops the run of the MCS.
-
-            * - :py:attr:`~DISABLED`
-              - Disabled - the MCS ignores this segment and continues to run.
 
 
 Import detail
@@ -31,6 +18,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import STATE
+    from ansys.stk.core.stkobjects.astrogator import State
+
 
 

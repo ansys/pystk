@@ -115,8 +115,8 @@ Detail
     :maxdepth: 1
     :hidden:
 
-    ≔ OPEN_LOG_FILE_MODE<uiapplication/OPEN_LOG_FILE_MODE>
-    ≔ UI_LOG_MSG_TYPE<uiapplication/UI_LOG_MSG_TYPE>
-    ≔ APP_CONSTANTS<uiapplication/APP_CONSTANTS>
-    ≔ APP_ERROR_CODES<uiapplication/APP_ERROR_CODES>
+    ≔ OPEN_LOG_FILE_MODE<uiapplication/OPEN_LOG_FILE_MODE_enum>
+    ≔ UI_LOG_MSG_TYPE<uiapplication/UI_LOG_MSG_TYPE_enum>
+    ≔ APP_CONSTANTS<uiapplication/APP_CONSTANTS_enum>
+    ≔ APP_ERROR_CODES<uiapplication/APP_ERROR_CODES_enum>
 

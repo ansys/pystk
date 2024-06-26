@@ -130,9 +130,9 @@ Detail
     :maxdepth: 1
     :hidden:
 
-    ≔ WINDOW_SERVICE<uicore/WINDOW_SERVICE>
-    ≔ WINDOW_STATE<uicore/WINDOW_STATE>
-    ≔ ARRANGE_STYLE<uicore/ARRANGE_STYLE>
-    ≔ DOCK_STYLE<uicore/DOCK_STYLE>
-    ≔ FLOAT_STATE<uicore/FLOAT_STATE>
+    ≔ WINDOW_SERVICE<uicore/WINDOW_SERVICE_enum>
+    ≔ WINDOW_STATE<uicore/WINDOW_STATE_enum>
+    ≔ ARRANGE_STYLE<uicore/ARRANGE_STYLE_enum>
+    ≔ DOCK_STYLE<uicore/DOCK_STYLE_enum>
+    ≔ FLOAT_STATE<uicore/FLOAT_STATE_enum>
 
