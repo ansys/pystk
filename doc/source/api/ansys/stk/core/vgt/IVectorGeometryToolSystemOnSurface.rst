@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.azimuth_angle`
+              - An angle by which the topocentric axes is rotated.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.use_msl`
+              - Specify whether to use the Mean Sea Level as the reference shape.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemOnSurface.position`
+              - Specify the position of the system's origin.
 
 
 Import detail

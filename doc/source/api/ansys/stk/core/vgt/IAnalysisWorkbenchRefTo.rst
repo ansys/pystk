@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo.path`
+              - Returns a path to the referenced VGT component.
 
 
 Import detail

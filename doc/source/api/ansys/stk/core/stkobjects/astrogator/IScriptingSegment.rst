@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.component_name`
+              - Gets or sets the name of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.attribute`
+              - Gets or sets the name of the attribute.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.unit`
+              - Gets or sets the unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.available_attribute_values`
+              - Returns a list of available attribute values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.read_only_property`
+              - True if it is a read-only property.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.object_name`
+              - Gets or sets the profile/segment that contains the attribute.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingSegment.available_object_names`
+              - Returns a list of available profile/segment names.
 
 
 Import detail

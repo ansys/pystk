@@ -30,16 +30,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.enroute_turn_direction_options`
+              - Get the enroute turn direction options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.procedure_type`
+              - Gets or sets the procedure methodology used to calculate the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.orientation`
+              - Gets or sets the placement of the procedure with respect to the previous flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.separation`
+              - Gets or sets the distance between the flight line and the previous flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.offset`
+              - Gets or sets the distance from the end of the previous procedure to the beginning of the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.leg_length`
+              - Gets or sets the length of the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.must_level_off`
+              - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureParallelFlightLine.level_off_mode`
+              - Gets or sets the level off mode. This is only used when the must level off option is on.
 
 
 Import detail

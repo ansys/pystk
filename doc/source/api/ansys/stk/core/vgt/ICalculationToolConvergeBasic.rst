@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic.sense`
+              - Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic.time_tolerance`
+              - Get the time tolerance which determines the time accuracy of the converged value.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic.absolute_tolerance`
+              - Get the absolute tolerance which determines the distance between the value and the boundaries within which the value is considered converged.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConvergeBasic.relative_tolerance`
+              - Get the relative tolerance which determines the relative distance between the value and the boundaries within which the value is considered converged.
 
 
 Import detail

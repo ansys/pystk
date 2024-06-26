@@ -36,8 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.maneuver_type`
+              - Get the maneuver type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.maneuver`
+              - Get the Maneuver properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceManeuver.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

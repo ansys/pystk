@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IRubberBandPickInfoData.obj_paths`
+              - List of object paths selected.
 
 
 Import detail

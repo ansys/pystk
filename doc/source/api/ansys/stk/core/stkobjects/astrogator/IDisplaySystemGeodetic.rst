@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeodetic.latitude`
+              - Gets or sets the latitude of the launch location. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeodetic.longitude`
+              - Gets or sets the longitude of the launch location. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDisplaySystemGeodetic.altitude`
+              - Gets or sets the altitude of the launch location. Uses Distance Dimension.
 
 
 Import detail

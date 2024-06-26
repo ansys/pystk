@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.graphics`
+              - Get the ground vehicle's 2D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.graphics_3d`
+              - Get the ground vehicle's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.export_tools`
+              - Returns the IAgGvExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.atmosphere`
+              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.radar_clutter_map`
+              - Returns the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.radar_cross_section`
+              - Returns the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.laser_environment`
+              - Gets the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.rf_environment`
+              - Gets the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.lighting_max_step_terrain`
+              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.lighting_max_step_central_body_shape`
+              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGroundVehicle.get_eoir`
+              - Get the EOIR properties of the gound vehicle.
 
 
 Import detail

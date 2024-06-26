@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileEOIR.shapes`
+              - Property used to access the shape collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileEOIR.stage`
+              - Property used to access missile stage interface.
 
 
 Import detail

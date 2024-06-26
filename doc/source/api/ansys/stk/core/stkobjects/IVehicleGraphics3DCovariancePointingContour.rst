@@ -36,14 +36,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.sigma_scale_type`
+              - Opt whether to size the contour indirectly by specifying a probability or directly by specifying a scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.sigma_scale_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.sigma_scale`
+              - Get the sigma scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.attributes_type`
+              - Get the graphics attributes type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.attributes_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.attributes`
+              - Get the graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.is_cone_visible`
+              - Opt whether to display a cone connecting the center of the current object with the contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.size`
+              - Get the size of the contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariancePointingContour.to_object`
+              - Get the 'To object' for covariance pointing.
 
 
 Import detail

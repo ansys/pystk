@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin.plugin_name`
+              - Get the selected plugin's name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin.plugin_config`
+              - Get the properties of the selected plugin.
 
 
 Import detail

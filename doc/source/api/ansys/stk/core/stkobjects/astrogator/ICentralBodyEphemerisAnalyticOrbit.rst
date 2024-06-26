@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.epoch`
+              - Gets or sets the epoch. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.semi_major_axis`
+              - Gets or sets the semi-major axis; one-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.semi_major_axis_rate`
+              - Gets or sets the semi-major axis rate of change. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.eccentricity`
+              - Gets or sets the eccentricity; the ratio of the distance between the two foci of the ellipse and its major axis. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.eccentricity_rate`
+              - Gets or sets the eccentricity rate of change. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.inclination`
+              - Gets or sets the inclination; the angle from the Z axis of the inertial coordinate system to the orbit angular velocity vector. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.inclination_rate`
+              - Gets or sets the inclination rate of change. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.raan`
+              - Gets or sets the right ascension; the angle from the X axis of the inertial coordinate system to the point where the orbit crosses the X-Y plane in the +Z direction. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.raan_rate`
+              - Gets or sets the right ascension rate of change. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.arg_of_periapsis`
+              - Gets or sets the argument of periapsis; The angle measured in direction of the body's orbital motion, and in the orbit plane, from the ascending node to the periapsis of the orbit. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.arg_of_periapsis_rate`
+              - Gets or sets the argument of periapsis rate of change. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.mean_longitude`
+              - Gets or sets the mean longitude; the sum of the Right Ascension of the Ascending Node, the Argument of Periapsis and the Mean Anomaly. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit.mean_longitude_rate`
+              - Gets or sets the mean longitude rate of change. Uses AngleRate Dimension.
 
 
 Import detail

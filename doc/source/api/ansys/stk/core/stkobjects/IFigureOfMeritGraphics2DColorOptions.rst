@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions.background`
+              - This property is deprecated. Background color of legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions.text`
+              - This property is deprecated. Text color of legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions.background_color`
+              - Background color of legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DColorOptions.text_color`
+              - Text color of legend.
 
 
 Import detail

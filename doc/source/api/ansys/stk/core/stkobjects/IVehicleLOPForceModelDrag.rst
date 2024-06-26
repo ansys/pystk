@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag.use`
+              - Opt whether to use drag parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag.cd`
+              - Gets or sets the atmospheric drag coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag.advanced`
+              - Get the advanced drag parameters.
 
 
 Import detail

@@ -36,21 +36,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.target_name`
+              - Gets or sets the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.valid_target_names`
+              - Returns the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.target_resolution`
+              - Gets or sets the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.use_stop_time_to_go`
+              - Get the option to specify a time to go stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.stop_time_to_go`
+              - Get the stop time from the target at which the maneuver will stop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.use_stop_slant_range`
+              - Get the option to specify a range from target stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.stop_slant_range`
+              - Get the range from the target at which the maneuver will stop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.function_name`
+              - Gets or sets the name of the MATLAB function.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.check_for_errors`
+              - Gets or sets the option to check the function for errors.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.display_output`
+              - Gets or sets the option to display the output from the MATLAB function.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.closure_mode`
+              - Gets or sets the closure mode for the guidance strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.hobs_max_angle`
+              - Gets or sets the closure high off boresight max angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.hobs_angle_tol`
+              - Gets or sets the closure high off boresight angle tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.compute_tas_dot`
+              - Gets or sets the option to allow MATLAB to compute the true airspeed for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.airspeed_options`
+              - Get the airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance.position_vel_strategies`
+              - Get the position velocity strategies for MATLAB 3D Guidance.
 
 
 Import detail

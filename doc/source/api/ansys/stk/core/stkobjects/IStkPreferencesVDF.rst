@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesVDF.save_scenario_as_vdf`
+              - Gets or sets the SaveScenarioAsVDF property determines whether a scenario will be saved as a scenario file or as a VDF file when the Save method is called. If a VDF file is loaded, then the SaveScenarioAsVDF property has no effect when Save is called.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesVDF.base_directory`
+              - Gets or sets the Base Directory where VDF file is extracted.
 
 
 Import detail

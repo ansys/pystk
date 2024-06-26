@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegment.calc_object_name`
+              - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegment.other_segment_name`
+              - Gets or sets the segment to be compared against.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcValueAtSegment.segment_state_to_use`
+              - Gets or sets the segment state to use in the calculation.
 
 
 Import detail

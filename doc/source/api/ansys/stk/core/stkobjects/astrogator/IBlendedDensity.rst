@@ -32,10 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.density_blending_altitude_range`
+              - Gets or sets the blending range (distance dimension), begins at lower bound of upper model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.atm_density_model_name`
+              - Returns the name of the embedded nominal atmospheric model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.low_altitude_atm_density_model_name`
+              - Returns the name of the embedded low altitude atmospheric model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.use_approx_altitude`
+              - True if using approximate altitude formula (enforced on embedded models).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity.lower_bound_upper_atm_model`
+              - Get the lowest valid altitude of the upper atmospheric density model.
 
 
 Import detail

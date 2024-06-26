@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled.original_interval`
+              - The original interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled.absolute_increment`
+              - The absolute increment value which creates a interval by expanding (or shortening if negative) the original interval by shifting its start/stop times equally by half of specified increment value.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled.relative_increment`
+              - The relative increment value from which absolute increment is obtained by multiplying relative value by interval duration...
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled.use_absolute_increment`
+              - Specify whether to use absolute or relative increment.
 
 
 Import detail

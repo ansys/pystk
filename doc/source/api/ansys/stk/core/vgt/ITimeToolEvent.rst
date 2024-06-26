@@ -32,10 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.type`
+              - Return the type of time instant.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.today`
+              - Return time instant that corresponds to today's GMT midnight.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.tomorrow`
+              - Return time instant that corresponds to tomorrow's GMT midnight.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.noon_today`
+              - Return time instant that corresponds to today's GMT noon.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEvent.noon_tomorrow`
+              - Return time instant that corresponds to tomorrow's GMT noon.
 
 
 Import detail

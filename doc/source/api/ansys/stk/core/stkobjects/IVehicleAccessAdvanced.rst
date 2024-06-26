@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAccessAdvanced.use_light_time_delay`
+              - Opt whether light time delay is applied when computing accesses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAccessAdvanced.time_sense`
+              - Signal sense of the clock host.
 
 
 Import detail

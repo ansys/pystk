@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintTimeSlipRange.launch_window_start`
+              - Launch Window Start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintTimeSlipRange.launch_window_end`
+              - Launch Window End time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintTimeSlipRange.range`
+              - Range of the launch window. When available, uses Distance Dimension.
 
 
 Import detail

@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.time`
+              - Get the time of the waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.marker_type`
+              - Get the marker type of the waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.shape`
+              - Gets or sets the shape of the waypoint marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.marker_file`
+              - Gets or sets the path and file name of the image used for the waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.pixel_size`
+              - Gets or sets the pixel size of the waypoint marker. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement.is_transparent`
+              - Opt whether to use the color of the lower left pixel of the image as the transparent color if an image file is being used.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesCustomScript.reference_axes`
+              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesCustomScript.filename`
+              - Can be MATLAB (.m or .dll) or VB Script (.vbs) script file.
 
 
 Import detail

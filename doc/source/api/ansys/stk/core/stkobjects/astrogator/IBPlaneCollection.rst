@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection._NewEnum`
+              - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection.count`
+              - Get the number of active BPlanes.
 
 
 Import detail

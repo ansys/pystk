@@ -36,10 +36,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.type`
+              - Returns a type of the axes object.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.labels`
+              - Returns an object that allows modifying the axes labels.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.x`
+              - Returns the X axis of the component.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.y`
+              - Returns the Y axis of the component.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.z`
+              - Returns the Z axis of the component.
 
 
 Import detail

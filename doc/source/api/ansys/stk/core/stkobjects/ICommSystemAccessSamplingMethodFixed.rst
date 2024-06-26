@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodFixed.fixed_time_step`
+              - Specifies the fixed step size for the fixed step control.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodFixed.time_bound`
+              - Controls alignment of samples with a UTC time grid. Using proper time bound can improve computational performance if the ephemeris lies on a fixed UTC time grid. The time bound determines the reference time for taking fixed step samples.
 
 
 Import detail

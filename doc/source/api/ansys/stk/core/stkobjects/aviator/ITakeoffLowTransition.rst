@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition.use_runway_terrain`
+              - Opt whether to use terrain data to define the runway's ground level attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition.runway_altitude_offset`
+              - Gets or sets the altitude offset above the ground level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffLowTransition.hold_on_deck`
+              - Gets or sets the duration the aircraft will wait before beginning the takeoff.
 
 
 Import detail

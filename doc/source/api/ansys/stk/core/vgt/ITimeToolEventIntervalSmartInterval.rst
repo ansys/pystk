@@ -52,8 +52,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.reference_interval`
+              - The reference interval used to compute start/stop times of this interval if the state of the interval is set to implicit.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.duration_as_string`
+              - The duration of the interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalSmartInterval.state`
+              - A state of the smart interval.
 
 
 Import detail

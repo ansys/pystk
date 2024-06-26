@@ -38,13 +38,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway.router`
+              - Gets or sets the router used to provide available airways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway.airway_id`
+              - Gets or sets the airway ID.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway.sequence`
+              - Gets or sets the direction the aircraft will fly the route.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway.entry_id`
+              - Gets or sets the ID of the entry waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirway.exit_id`
+              - Gets or sets the ID of the exit waypoint.
 
 
 Import detail

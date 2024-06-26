@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmAdvanced.automatic_recompute`
+              - Automatically recompute data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmAdvanced.save_computed_data_type`
+              - Get save computed data type. A member of the AgEVmSaveComputedDataType enumeration.
 
 
 Import detail

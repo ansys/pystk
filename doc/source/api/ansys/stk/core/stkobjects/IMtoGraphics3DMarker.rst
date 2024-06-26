@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.pixel_size`
+              - The pixel size of the marker (markers do not resize as the window size is changed). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.marker_type`
+              - Specify a 3D marker type to represent the object at the specified threshold. A member of the AgEMarkerType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.angle`
+              - The angle representing the amount of rotation of the marker. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.x_origin`
+              - The horizontal point of origin for the marker (left, center or right).
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.y_origin`
+              - The vertical point of origin for the marker (top, center or bottom).
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.marker_data`
+              - The MarkerData property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.rotate_from_north`
+              - Opt whether to set the rotation angle relative to north. (By default, the rotation angle is relative to the screen.).
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker.orientation_mode`
+              - Controls the rotation of the marker.
 
 
 Import detail

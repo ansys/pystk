@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax.min_value`
+              - Minimum value: minimum uncertainty at each point over the entire coverage interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax.max_value`
+              - Maximum value: maximum uncertainty at each point over the entire coverage interval.
 
 
 Import detail

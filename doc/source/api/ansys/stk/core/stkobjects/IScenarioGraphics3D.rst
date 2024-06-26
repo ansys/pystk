@@ -38,16 +38,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.chunk_image_cache_size`
+              - Chunk image cache size (MB). The texture cache temporarily stores chunk imagery for the globe. You may need to increase the size of the cache if all specified terrain cannot be loaded at the same time or the terrain is blurry.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.is_negative_altitude_allowed`
+              - Specify whether to allow negative altitudes for great arc vehicles and for facilities, places and targets.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.small_font`
+              - Retrieves small font metrics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.medium_font`
+              - Retrieves medium font metrics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.large_font`
+              - Retrieves large font metrics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.surface_reference`
+              - Opt to display the globe's surface at the mean sea level (MSL) or at the central body's reference ellipsoid (WGS84).
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.draw_on_terrain`
+              - If true, lines drawn on the globe such as those that define area and line targets, range rings, vehicle paths, map details, etc. will conform to the terrain on the globe. Otherwise, if terrain is present, the lines may go under or float over the terrain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.chunk_terrain_cache_size`
+              - Chunk terrain cache size (MB).
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.text_outline_style`
+              - Default text outline style.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.text_outline_color`
+              - Default text outline color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics3D.text_antialiasing_enabled`
+              - True if the text anti-aliasing is turned on.
 
 
 Import detail

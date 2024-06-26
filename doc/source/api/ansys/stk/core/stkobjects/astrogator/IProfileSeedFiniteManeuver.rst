@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSeedFiniteManeuver.segment_name`
+              - Gets or sets the targeted maneuver segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSeedFiniteManeuver.leave_all_active_stopping_conditions_active`
+              - If true, all active stopping conditions on the seeded maneuver will remain active during run.
 
 
 Import detail

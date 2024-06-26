@@ -21,24 +21,43 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.inherit`
+              - Specify whether inheritable 2D Graphics attributes of the area target are inherited from Scenario-level settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.color`
+              - The color in which the area target's boundary, centroid and label are displayed in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.marker_style`
+              - The style of the marker for the area target's centroid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.centroid_visible`
+              - Specify whether to display the centroid of the area target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.label_visible`
+              - Specify whether to display the label of the area target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.use_inst_name_label`
+              - Specify whether to use the name of the area target (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_pts_visible`
+              - Specify whether the individual perimeter points used to define the boundary of an area target are marked along the area target's boundary.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_style`
+              - The style in which the area target's boundary displays.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_width`
+              - The width of the line with which the area target's boundary displays.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_fill`
+              - Specify whether to display the region covered by the area target as a filled area.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_visible`
+              - Specify whether to display the area target's boundary.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.bounding_rect_visible`
+              - Specify whether to construct a rectangle using the outermost boundaries defined for the area target and display it around the actual region covered by the area target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.label_name`
+              - The user-specified name to use as a label for the area target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.label_notes`
+              - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_color`
+              - Color in which the area target boundary is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.label_color`
+              - Color in which the area target label is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.centroid_color`
+              - Color in which the area target centroid is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.boundary_fill_percent_translucency`
+              - Specify the percent translucency of the region covered by the area target. Translucency ranges from 0 to 100 percent, where 100 percent is invisible. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the area target are visible.
 
 
 Import detail

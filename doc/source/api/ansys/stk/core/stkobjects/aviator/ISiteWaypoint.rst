@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint.latitude`
+              - Gets or sets the waypoint latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint.longitude`
+              - Gets or sets the waypoint longitude.
 
 
 Import detail

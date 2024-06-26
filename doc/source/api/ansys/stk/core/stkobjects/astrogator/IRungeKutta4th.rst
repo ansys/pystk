@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4th.initial_step`
+              - Gets or sets the initial step. Uses time dimension.
 
 
 Import detail

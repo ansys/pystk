@@ -32,13 +32,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.b1950`
+              - The input values are in the B1950 coordinate frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.ecf`
+              - Origin is at the center of the Earth and axes which are fixed to the Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.eci`
+              - Origin is at the center of the Earth and axes which are fixed in inertial space. The inertial coordinate system is J2000.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.llahps`
+              - Lat & Lon are entered in Lat & Lon units. Alt is in Distance unit. Heading & Pitch are in degrees. Speed is in Distance/Time. Heading is entered as degrees from North and is the rotation about the Z-axis; Pitch is the rotation about the Y-axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.lla`
+              - The LLA measures <Alt> from the surface of the Earth, or 0.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.agl_lla`
+              - The AGL_LLA considers terrain at the specified location when measuring <Alt>.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.msl_lla`
+              - The MSL_LLA considers mean sea level at the specified location when measuring <Alt>.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRealtimePointBuilder.utm`
+              - Valid values for ZoneStr are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in distance units. LonRate and LatRate are entered in degrees/second. AltRate is entered in units/second.
 
 
 Import detail

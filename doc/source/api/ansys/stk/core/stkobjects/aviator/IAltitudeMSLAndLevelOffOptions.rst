@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.msl_altitude`
+              - Get the MSL altitude. Can only be used when the option to use the default cruise altitude is off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.must_level_off`
+              - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLAndLevelOffOptions.level_off_mode`
+              - Gets or sets the level off mode. This is only used when the must level off option is on.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_10.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_10.enable_depolarization_loss`
+              - Gets or sets the option to user de-polarization loss.
 
 
 Import detail

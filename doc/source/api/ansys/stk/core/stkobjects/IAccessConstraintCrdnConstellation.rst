@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.enable_min`
+              - Enables the Min property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.enable_max`
+              - Enables the Max property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.min`
+              - Min value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.max`
+              - Max value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.reference`
+              - Reference value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCrdnConstellation.available_references`
+              - Returns an array of available References.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity.axes`
+              - Specify the axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity.reference_axes`
+              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngularVelocity.differencing_time_step`
+              - Time step used in numerical evaluation of derivatives using central differencing.
 
 
 Import detail

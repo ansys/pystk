@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.bearing_mode`
+              - Gets or sets the bearing reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.bearing`
+              - Gets or sets the bearing to define the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure.range`
+              - Gets or sets the range from the previous procedure.
 
 
 Import detail

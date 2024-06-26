@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLonLine.min_latitude`
+              - Minimum latitude used to define the longitude line. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLonLine.max_latitude`
+              - Maximum latitude used to define the longitude line. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLonLine.longitude`
+              - Longitude of the meridian defining the longitude line. Uses Longitude Dimension.
 
 
 Import detail

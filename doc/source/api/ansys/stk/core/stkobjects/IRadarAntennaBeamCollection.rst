@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection.count`
+              - Returns the number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection._NewEnum`
+              - Returns an enumerator for the collection.
 
 
 Import detail

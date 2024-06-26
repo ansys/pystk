@@ -64,8 +64,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.count`
+              - Gets the number of terrain overlay objects in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection.is_read_only`
+              - Gets whether or not the collection is read only.
             * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayCollection._NewEnum`
+              - Constructs an iterator that can be used to iterate the collection.
 
 
 Import detail

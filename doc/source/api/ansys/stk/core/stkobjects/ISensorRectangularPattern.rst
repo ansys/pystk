@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorRectangularPattern.vertical_half_angle`
+              - The angle from the boresight (Z) direction to the edge of the sensor in the YZ plane of the sensor's coordinate system. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorRectangularPattern.horizontal_half_angle`
+              - The angle from the boresight (Z) direction to the edge of the sensor in the XZ plane of the sensor's coordinate system. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorRectangularPattern.angular_resolution`
+              - Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
 
 
 Import detail

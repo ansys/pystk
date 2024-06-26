@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTime.display_status_type`
+              - Returns the Display Status type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTime.display_status_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDisplayTime.display_times_data`
+              - Returns the display times data.
 
 
 Import detail

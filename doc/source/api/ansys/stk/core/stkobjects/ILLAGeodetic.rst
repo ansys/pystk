@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILLAGeodetic.lat`
+              - Latitude: angle above the x-y plane. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILLAGeodetic.lon`
+              - Longitude: angle in x-y plane from x towards y. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILLAGeodetic.altitude`
+              - Altitude measured along the normal to the surface of an ellipsoid defined with reference to the central body. Uses Distance Dimension.
 
 
 Import detail

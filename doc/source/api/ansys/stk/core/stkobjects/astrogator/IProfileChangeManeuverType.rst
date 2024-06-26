@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType.segment`
+              - Gets or sets the targeted maneuver segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeManeuverType.maneuver_type`
+              - Gets or sets the new maneuver type for the targeted segment.
 
 
 Import detail

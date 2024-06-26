@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel.value`
+              - Set the value for a Spatial Calculation Boundary/Fill Level.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel.color`
+              - Set the color of a Spatial Calculation Boundary/Fill Level.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel.translucency`
+              - Set the percent Translucency for a Spatial Calculation Boundary/Fill Level.
 
 
 Import detail

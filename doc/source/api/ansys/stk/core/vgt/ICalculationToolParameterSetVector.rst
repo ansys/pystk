@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetVector.vector`
+              - Get the vector for which representations are computed.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetVector.reference_axes`
+              - Get the reference axes relative to which representations are computed.
 
 
 Import detail

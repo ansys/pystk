@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorModelAttach.pointable_element_name`
+              - Specify a pointable element of the 3D model associated with the object.
 
 
 Import detail

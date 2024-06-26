@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IDataObject.files`
+              - Returns a collection of filenames.
 
 
 Import detail

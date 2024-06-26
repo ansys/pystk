@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem.coord_system_name`
+              - Gets or sets the coordinate system within which the element is defined.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem.eigenvector_number`
+              - Gets or sets the number identifying one of the six Eigenvectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem.state_variable`
+              - Gets or sets the variable identifying the component within an Eigenvector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenvecElem.eigenvector_complex_part`
+              - Whether this value represents the real or imaginary part of an Eigenvector element.
 
 
 Import detail

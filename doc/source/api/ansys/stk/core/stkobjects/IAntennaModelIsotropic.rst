@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelIsotropic.mainlobe_gain`
+              - Gets the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelIsotropic.efficiency`
+              - Gets or sets the efficiency.
 
 
 Import detail

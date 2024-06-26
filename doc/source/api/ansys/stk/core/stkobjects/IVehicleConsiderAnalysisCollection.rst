@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
 
 
 Import detail

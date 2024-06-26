@@ -46,18 +46,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.central_body_name`
+              - Primary central body for the three-body system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.secondary_body_name`
+              - Secondary Body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.initial_epoch`
+              - Date and time for system construction.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.ideal_orbit_radius`
+              - Orbital radius of the idealized secondary definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.ideal_secondary_name`
+              - Name to be used for the idealized secondary.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.mass_parameter`
+              - Get the mass parameter computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.characteristic_distance`
+              - Get the characteristic distance computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.characteristic_time`
+              - Get the characteristic time computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.characteristic_velocity`
+              - Get the characteristic velocity computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.characteristic_acceleration`
+              - Get the characteristic acceleration computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.rotating_system_choice`
+              - Get the rotating coordinate system and associated calculation objects to interact with.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.associated_objects`
+              - Get the list of associated objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPSetup.include_stm`
+              - Get whether or not the STM propagator function is included on the propagator.
 
 
 Import detail

@@ -46,7 +46,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection._NewEnum`
+              - A property that allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.count`
+              - Get the number of thrusters in the set.
 
 
 Import detail

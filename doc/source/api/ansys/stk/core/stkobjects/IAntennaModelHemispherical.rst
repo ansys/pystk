@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHemispherical.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHemispherical.mainlobe_gain`
+              - Gets the mainlobe gain.
 
 
 Import detail

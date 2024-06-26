@@ -21,21 +21,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.compute_type`
+              - Gets or sets the system noise temperature compute type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.constant_noise_temperature`
+              - Gets or sets the constant system noise temperature value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_earth`
+              - Gets or sets the flag to use noise due to the earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_sun`
+              - Gets or sets the flag to use noise due to the sun.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_atmosphere`
+              - Gets or sets the flag to use noise due to the atmosphere.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_urban_terrestrial`
+              - Gets or sets the flag to use noise due to the urban/terrestrial.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_rain`
+              - Gets or sets the flag to use noise due to the rain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_clouds_fog`
+              - Gets or sets the flag to use noise due to the clouds and fog.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_tropo_scint`
+              - Gets or sets the flag to use noise due to the tropospheric scintillation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_cosmic_background`
+              - Gets or sets the flag to use noise due to the cosmic background.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.inherit_scenario_earth_temperature`
+              - Gets or sets the flag to inherit the scenairo earth temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.local_earth_temperature`
+              - Gets or sets the local earth temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.other_noise_temperature`
+              - Gets or sets additional misc. noise temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_external`
+              - Gets or sets the flag to use noise due to an external source.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.external_noise_file`
+              - Gets or sets the external noise file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaNoiseTemperature.use_iono_fading`
+              - Gets or sets the flag to use noise due to the ionospheric fading.
 
 
 Import detail

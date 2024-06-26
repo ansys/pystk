@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeRadius.apogee_radius`
+              - Measured from the center of the Earth to the point of maximum radius in the orbit. You can set it together with PerigeeRadius using the SetSizeShapeRadius(ApogeeRadius, PerigeeRadius) method. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeRadius.perigee_radius`
+              - Measured from the center of the Earth to the point of minimum radius in the orbit. You can set it together with ApogeeRadius using the SetSizeShapeRadius(ApogeeRadius, PerigeeRadius) method. Uses Distance Dimension.
 
 
 Import detail

@@ -56,6 +56,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.orientation_type`
+              - Returns the orientation method currently being used.
 
 
 Import detail

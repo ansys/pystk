@@ -30,17 +30,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.start_time`
+              - Gets or sets the start time of the reference state.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.latitude`
+              - Gets or sets the waypoint latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.longitude`
+              - Gets or sets the waypoint longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.msl_altitude`
+              - Get the MSL altitude. Can only be used when the option to use the default cruise altitude is off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.performance_mode`
+              - Gets or sets the type of motion the aircraft is engaged in.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.reference_frame`
+              - Gets or sets the reference frame the aircraft will use.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.fuel_flow`
+              - Gets or sets the rate of fuel consumption.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_forward_flight`
+              - Get the forward flight options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_takeoff_landing`
+              - Get the takeoff and landing options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_hover`
+              - Get the hover options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureReferenceState.mode_as_weight_on_wheels`
+              - Get the weight on wheels options.
 
 
 Import detail

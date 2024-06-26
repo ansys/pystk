@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPObjectCollection._NewEnum`
+              - A property that allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPObjectCollection.count`
+              - Get the number of associated objects in the set.
 
 
 Import detail

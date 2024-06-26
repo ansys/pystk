@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalResult.interval`
+              - An interval.
 
 
 Import detail

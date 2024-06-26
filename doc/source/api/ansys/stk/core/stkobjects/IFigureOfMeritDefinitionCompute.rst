@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_type`
+              - Type of compute option to be used for navigation accuracy.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_supported_types`
+              - Compute supported types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute`
+              - Compute.
 
 
 Import detail

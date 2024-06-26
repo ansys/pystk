@@ -21,19 +21,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.node_index`
+              - Get the index of the node in the array of nodes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.time`
+              - Get the time associated with the node.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.mass`
+              - Get the mass at the node.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.azimuth`
+              - Get the azimuth of the steering angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.elevation`
+              - Get the elevation of the steering angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.direction_cos_x`
+              - Get the first component of the steering unit vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.direction_cos_y`
+              - Get the second component of the steering unit vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.direction_cos_z`
+              - Get the third component of the steering unit vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.position_x`
+              - Get the X component of the position vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.position_y`
+              - Get the Y component of the position vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.position_z`
+              - Get the Z component of the position vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.vel_x`
+              - Get the X component of the velocity vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.vel_y`
+              - Get the Y component of the velocity vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeElement.vel_z`
+              - Get the Z component of the velocity vector.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies.technology_level`
+              - Gets or sets the technology level of the jet engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies.intake_type`
+              - Gets or sets the jet engine intake type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies.turbine_type`
+              - Gets or sets the jet engine turbine type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionEfficiencies.exhaust_nozzle_type`
+              - Gets or sets the jet engine exhaust nozzle type.
 
 
 Import detail

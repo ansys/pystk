@@ -34,15 +34,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.use`
+              - Opt whether to take account of atmospheric drag.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.atmospheric_density_model`
+              - Select the atmospheric density model to be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.solar_flux_geo_magnitude_type`
+              - Get the method for specifying solar and geomagnetic flux.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.solar_flux_geo_magnitude`
+              - Solar and geomagnetic flux.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.drag_model_type`
+              - Returns a type of the active drag model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.drag_model_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.drag_model`
+              - Returns the active drag model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.low_altitude_atmospheric_density_model`
+              - This property is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.blending_range`
+              - Atmospheric blending range: measured from the lower extent of the upper atmospheric model. Uses distance dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDrag.low_altitude_atmos_density_model`
+              - Select the low altitude atmospheric density model to be used.
 
 
 Import detail

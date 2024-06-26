@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelRaisedCosine.roll_off_factor`
+              - Gets or sets the roll off factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelRaisedCosine.symbol_rate`
+              - Gets or sets the symbol rate.
 
 
 Import detail

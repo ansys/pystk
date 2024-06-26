@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioEarthData.eop_filename`
+              - Filename of an EOP file (.dat) located in the DynamicEarthData directory or an EOP file (.txt) provided by CelesTrak, which can be downloaded from http://celestrak.org/SpaceData/.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioEarthData.eop_start_time`
+              - Start time of the EOP data. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioEarthData.eop_stop_time`
+              - Stop time of the EOP data. Uses DateFormat Dimension.
 
 
 Import detail

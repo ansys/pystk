@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.method_type`
+              - Type of method used to specify range uncertainty.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.method`
+              - Range uncertainty method.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement.asset`
+              - Asset used in specifying range uncertainty.
 
 
 Import detail

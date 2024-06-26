@@ -21,20 +21,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.use_approximate_altitude`
+              - True if using approximate altitude formula.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.computes_temperature`
+              - Flag indicates whether this model computes temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.computes_pressure`
+              - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.sun_position`
+              - Gets or sets the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.data_directory`
+              - Path to the data directory.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.namelist_file`
+              - Full path of namelist file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.density_type`
+              - Low, mean, high or randomly perturbed density type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.atmos_data_source`
+              - Gets or sets the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.f_10_p7`
+              - Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.atmos_data_filename`
+              - Gets or sets the atmospheric model data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.drag_model_type`
+              - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.drag_model_plugin_name`
+              - Gets or sets the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.drag_model_plugin`
+              - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.variable_area_history_file`
+              - Drag variable area history file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMarsGRAM2010.n_plate_definition_file`
+              - Drag N-Plate definition file.
 
 
 Import detail

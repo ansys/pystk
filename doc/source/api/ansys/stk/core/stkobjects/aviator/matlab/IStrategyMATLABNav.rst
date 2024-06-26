@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav.function_name`
+              - Gets or sets the name of the MATLAB function.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav.check_for_errors`
+              - Gets or sets the option to check the function for errors.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav.display_output`
+              - Gets or sets the option to display the output from the MATLAB function.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation.time_step`
+              - Gets or sets the value to be used during the sampling of the dynamic definition for use in the static definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation.calc_scalar`
+              - Reference Scalar Calculation component.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation.should_update_accesses`
+              - Update Accesses computed outside Coverage.
 
 
 Import detail

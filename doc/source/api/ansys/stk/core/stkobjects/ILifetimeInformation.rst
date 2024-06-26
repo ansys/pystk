@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILifetimeInformation.has_been_deleted`
+              - Determine if the object has been deleted or has become invalid due to some other modifications to its internal state.
 
 
 Import detail

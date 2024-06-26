@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.point_a`
+              - Specify a point A.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.point_b`
+              - Specify a point B.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.reference_point`
+              - Specify a reference point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTriad.rotation_offset`
+              - Specify an angle measured from X (Axis 1) away from Y (Axis 2).
 
 
 Import detail

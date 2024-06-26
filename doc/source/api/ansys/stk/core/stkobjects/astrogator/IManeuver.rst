@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.attitude_control_type`
+              - Determines the attitude parameters available for you to specify.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.attitude_control`
+              - Get the attitude control properties collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.propulsion_method`
+              - Get the propulsion type to be modeled.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuver.propulsion_method_value`
+              - Get the specific engine model or thruster set to be used for the maneuver.
 
 
 Import detail

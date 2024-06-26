@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInterpolation.method`
+              - Gets or sets the interpolation method.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInterpolation.graphics_3d_pmu`
+              - Gets or sets the gravitational parameter used by the VOP method, in the range 1.993002209e+14 to 7.972008836e+14 for Earth based vehicles. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInterpolation.order`
+              - Interpolation order. Dimensionless.
 
 
 Import detail

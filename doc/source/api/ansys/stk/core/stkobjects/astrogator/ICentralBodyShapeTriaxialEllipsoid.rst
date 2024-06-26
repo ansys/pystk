@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid.semi_major_axis`
+              - Gets or sets the semi-major axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid.semi_mid_axis`
+              - Gets or sets the semi-mid axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid.semi_minor_axis`
+              - Gets or sets the semi-minor axis. Uses Distance Dimension.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeGoalSNR.snr`
+              - Gets or sets the goal SNR.
 
 
 Import detail

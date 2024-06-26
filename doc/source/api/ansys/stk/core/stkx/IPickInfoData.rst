@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.obj_path`
+              - Path of the STK object picked if any (or empty string).
             * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.lat`
+              - Latitude of point clicked (if available).
             * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.lon`
+              - Longitude of point clicked (if available).
             * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.altitude`
+              - Altitude of point clicked (if available).
             * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.is_obj_path_valid`
+              - Indicate if the ObjPath property is valid.
             * - :py:attr:`~ansys.stk.core.stkx.IPickInfoData.is_lat_lon_altitude_valid`
+              - Indicate if the Lat/Lon/Alt properties are valid.
 
 
 Import detail

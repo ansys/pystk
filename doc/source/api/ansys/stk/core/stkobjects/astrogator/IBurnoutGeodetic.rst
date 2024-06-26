@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic.latitude`
+              - Gets or sets the latitude of the spacecraft burnout. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic.longitude`
+              - Gets or sets the longitude of the spacecraft burnout. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic.altitude`
+              - Gets or sets the altitude of the spacecraft burnout. Uses Distance Dimension.
 
 
 Import detail

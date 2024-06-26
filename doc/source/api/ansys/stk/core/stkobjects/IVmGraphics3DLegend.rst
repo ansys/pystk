@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.position_x`
+              - Set the x value for the pixel location for the upper left corner of the legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.position_y`
+              - Set the y value for the pixel location for the upper left corner of the legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.translucency`
+              - Set the percent Translucency for the legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.background_color`
+              - Set the color of the legend background.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.title`
+              - Set the text to appear at the top of the legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.decimal_digits`
+              - Set the precision, or number of digits that should display to the right of the decimal point, with which real numbers should display.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.notation`
+              - Set the legend numeric notation. A member of the AgEVmLegendNumericNotation enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.text_color`
+              - Set the color of the legend text.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.level_order`
+              - Set the legend numeric notation. A member of the AgEVmLevelOrder enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.max_color_squares`
+              - Set the number of colors per row or column depending on the selected LevelOrder. Number between 1 and 1000.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.color_square_width`
+              - Set the width of the individual color band. Number between 1 and 100.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend.color_square_height`
+              - Set the height of the individual color band. Number between 1 and 100.
 
 
 Import detail

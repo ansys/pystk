@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.position`
+              - The point position in the specified coordinate system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult.velocity`
+              - The point velocity in the specified coordinate system.
 
 
 Import detail

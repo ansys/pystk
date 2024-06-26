@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.user_waypoints`
+              - Get the User Waypoints.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.user_runways`
+              - Get the User Runways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.user_vtol_points`
+              - Get the User VTOL Points.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.arinc424_airports`
+              - Get the ARINC-424 airports.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.arinc424_helipads`
+              - Get the ARINC-424 helipads.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.arinc424_navaids`
+              - Get the ARINC-424 navaids.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.arinc424_runways`
+              - Get the ARINC-424 runways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.arinc424_waypoints`
+              - Get the ARINC-424 waypoints.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.dafif_helipads`
+              - Get the DAFIF helipads.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.dafif_runways`
+              - Get the DAFIF runways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWaypointCategory.dafif_waypoints`
+              - Get the DAFIF waypoints.
 
 
 Import detail

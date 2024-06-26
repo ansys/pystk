@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcC3Energy.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcC3Energy.element_type`
+              - Gets or sets the element type - osculating or a mean type.
 
 
 Import detail

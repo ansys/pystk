@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPencilBeam.mainlobe_gain`
+              - Gets or sets the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPencilBeam.sidelobe_gain`
+              - Gets or sets the sidelobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPencilBeam.beamwidth`
+              - Gets the computed beamwidth.
 
 
 Import detail

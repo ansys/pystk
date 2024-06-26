@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.original_intervals`
+              - The original interval list.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.filter_factory`
+              - Get the prune filter factory.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered.filter`
+              - The pruning filter.
 
 
 Import detail

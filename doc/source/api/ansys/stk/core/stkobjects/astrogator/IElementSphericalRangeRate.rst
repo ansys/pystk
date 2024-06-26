@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.right_ascension`
+              - Defined as the angle from the X axis to the projection of the satellite position vector in the equatorial plane measured as positive in the direction of the Y axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.declination`
+              - Defined as the angle between the satellite position vector and the inertial equatorial plane measured as positive toward the positive inertial Z axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.range`
+              - The magnitude of the satellite position vector. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.right_ascension_rate`
+              - The rate of change of the right ascension. Uses Angle Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.declination_rate`
+              - The rate of change of the declination. Uses Angle Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate.range_rate`
+              - The rate of change of the range. Uses Rate Dimension.
 
 
 Import detail

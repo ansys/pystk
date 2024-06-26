@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelCable.ber`
+              - Gets or sets the BER.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelCable.extra_cable_factor`
+              - Gets or sets the extra cable factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelCable.propagation_speed_factor`
+              - Gets or sets the propagation speed factor.
 
 
 Import detail

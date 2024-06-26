@@ -34,15 +34,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.propagator_name`
+              - Gets or sets the propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.stopping_conditions`
+              - Get the list of stopping conditions defined for the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.min_propagation_time`
+              - Gets or sets the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.max_propagation_time`
+              - Gets or sets the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.enable_max_propagation_time`
+              - If true, the maximum propagation time is enforced.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.enable_warning_message`
+              - If true, Astrogator will issue a warning message if propagation is stopped by the Maximum Propagation Time parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.override_max_propagation_time`
+              - Override Maximum Propagation Time - if there is a duration or epoch stopping condition that occurs after the maximum propagation time, ignore the maximum propagation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.should_stop_for_initially_surpassed_epoch_stopping_conditions`
+              - Stop immediately if propagation begins beyond an active epoch stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequencePropagate.should_reinitialize_stm_at_start_of_segment_propagation`
+              - If this segment is propagating the state transition matrix, reset it to the identity matrix at the start of the segment.
 
 
 Import detail

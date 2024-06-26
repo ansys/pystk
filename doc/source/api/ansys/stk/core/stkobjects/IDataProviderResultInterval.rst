@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultInterval.start_time`
+              - Returns the start time of the interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultInterval.stop_time`
+              - Returns the stop time of the interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultInterval.data_sets`
+              - Returns a collection of data sets within the interval.
 
 
 Import detail

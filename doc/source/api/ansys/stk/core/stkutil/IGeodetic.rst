@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IGeodetic.lat`
+              - Latitude. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IGeodetic.lon`
+              - Longitude. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IGeodetic.altitude`
+              - Altitude. Dimension depends on context.
 
 
 Import detail

@@ -40,7 +40,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection._NewEnum`
+              - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection.count`
+              - Returns the size of the collection.
 
 
 Import detail

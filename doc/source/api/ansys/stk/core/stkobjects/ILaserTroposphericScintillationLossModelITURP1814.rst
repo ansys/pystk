@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModelITURP1814.atmospheric_turbulence_model`
+              - Gets the atmospheric turbulence model.
 
 
 Import detail

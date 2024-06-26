@@ -42,16 +42,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.enable`
+              - Enables swath.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.color`
+              - Gets or sets the color in which swath graphics are displayed in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.line_style`
+              - Gets or sets the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.line_width`
+              - Gets or sets the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.time_interval_count`
+              - Number of Time Intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.minimum_step`
+              - Gets or sets the minimum step size for the adaptive step size of swath computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.maximum_step`
+              - Gets or sets the maximum step size for the adaptive step size of swath computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.use_maximum_cone`
+              - Whether to perform swath computations based on the maximum cone that encompasses the sensor pattern instead of actual pattern. Setting this option may result in a more informative swath with a superior appearance.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.scattering_tolerance`
+              - Determines the angle with respect to the swath line within which candidate points are considered for possible connection to it.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.curvature_tolerance`
+              - Controls the adaptive step size of swath computation and ensures that neighboring samples adequately capture the curvature of the swath line.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISwath.computational_method`
+              - Select the Analytical or Numerical Computaional Method for generating swaths.
 
 
 Import detail

@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection._NewEnum`
+              - Function to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginResultCollection.count`
+              - Size of the collection.
 
 
 Import detail

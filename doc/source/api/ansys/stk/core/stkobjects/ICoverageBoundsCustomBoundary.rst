@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomBoundary.region_files`
+              - File containing user-defined points defining a specific grid region.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomBoundary.boundary_objects`
+              - A list of STK Objects to be used as part of the coverage area.
 
 
 Import detail

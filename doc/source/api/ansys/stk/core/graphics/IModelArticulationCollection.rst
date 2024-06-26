@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IModelArticulationCollection.count`
+              - Gets the number of articulations in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IModelArticulationCollection._NewEnum`
+              - Returns the enumerator for this collection.
 
 
 Import detail

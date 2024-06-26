@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate.angle`
+              - Specify an angle. The angle vector will be perpendicular to the plane in which the angle is defined.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate.differencing_time_step`
+              - Time step used in numerical evaluation of derivatives using central differencing.
 
 
 Import detail

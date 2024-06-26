@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayGOverSQRTmu.g_over_sqrt_mu`
+              - Gets or sets the value of G/SQRT(mu). Dimensionless.
 
 
 Import detail

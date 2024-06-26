@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.reference_system`
+              - A reference (coordinate) system. Can be any VGT system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.point`
+              - A point which velocity this vector represents. Can be any VGT point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorVelocityAcceleration.differencing_time_step`
+              - Time step used in numerical evaluation of derivatives using central differencing.
 
 
 Import detail

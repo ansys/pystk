@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition.satisfaction`
+              - Satisfaction criteria for the Figure of Merit.
 
 
 Import detail

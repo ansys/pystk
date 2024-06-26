@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.inertial_position_visible`
+              - Display the inertial position of the star, i.e. its position on the celestial sphere.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.sub_star_point_visible`
+              - Display the location at which the star is overhead on the globe.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.inherit_from_2d_graphics_2d`
+              - Specify whether star properties set for 2D Graphics are used in the 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.position_label_visible`
+              - Display a label on the globe at the inertial position of the star.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics3D.sub_star_label_visible`
+              - Display a label at the location at which the star is overhead.
 
 
 Import detail

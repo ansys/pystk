@@ -32,18 +32,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_type`
+              - Get the 2D Graphics attributes type for the vehicle: basic, access intervals, custom intervals, or real time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes`
+              - Get the vehicle's 2D Graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.pass_data`
+              - Get the vehicle's 2D route graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.waypoint_marker`
+              - Get the vehicle's 2D waypoint marker graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.resolution`
+              - Get the vehicle's 2D resolution graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.range_contours`
+              - Get the vehicle's 2D range contour graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.lighting`
+              - Get the vehicle's 2D lighting graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.ground_ellipses`
+              - Get the vehicle's 2D ground ellipses graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.label_notes`
+              - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.use_inst_name_label`
+              - Specify whether to use the name of the vehicle (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.label_name`
+              - The user-specified name to use as a label for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the vehicle are visible.
 
 
 Import detail

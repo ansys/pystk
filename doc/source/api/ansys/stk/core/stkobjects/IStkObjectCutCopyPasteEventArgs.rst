@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs.selected_object_path`
+              - Selected Object path that is being cut, copied or pasted.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs.object_paths`
+              - Returns an array of object paths that are cut, copied or pasted.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs.pasted_object_paths`
+              - Returns an array of object paths that are being pasted. The new object paths corresposnd to the old paths at the same array location in ObjectPaths array.
 
 
 Import detail

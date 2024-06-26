@@ -34,16 +34,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.frequency`
+              - Gets or sets the carrier frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.data_rate`
+              - Gets or sets the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.eirp`
+              - Gets or sets the EIRP.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.polarization`
+              - Gets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.post_transmit_gains_losses`
+              - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.supported_modulators`
+              - Gets an array of supported modulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelSimple.modulator`
+              - Gets the current modulator model.
 
 
 Import detail

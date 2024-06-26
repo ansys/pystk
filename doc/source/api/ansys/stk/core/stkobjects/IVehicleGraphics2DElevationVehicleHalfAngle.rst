@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationVehicleHalfAngle.angle`
+              - Half angle relative to nadir. Range 0-90. Uses Angle Dimension.
 
 
 Import detail

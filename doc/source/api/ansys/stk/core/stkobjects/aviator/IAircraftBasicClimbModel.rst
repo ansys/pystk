@@ -32,14 +32,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.ceiling_altitude`
+              - Gets or sets the ceiling altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.airspeed`
+              - Get the airsepeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.altitude_rate`
+              - Gets or sets the altitude rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.use_aero_prop_fuel`
+              - Gets or sets whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.scale_fuel_flow_by_non_std_density`
+              - Gets or sets whether to scale fuel flow by non std density.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.fuel_flow`
+              - Gets or sets the Sea Level Fuel Flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.enable_relative_airspeed_tolerance`
+              - Gets or sets whether to enable relative airspeed tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicClimbModel.relative_airspeed_tolerance`
+              - Gets or sets the relative airspeed tolerance.
 
 
 Import detail

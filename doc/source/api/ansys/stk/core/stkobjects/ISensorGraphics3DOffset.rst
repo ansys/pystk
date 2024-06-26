@@ -32,13 +32,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.inherit_from_parent_obj`
+              - Opt whether to use the position offset from the parent object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.enable_translational`
+              - Opt whether to specify the sensor projection starting point position offset in the parent object's body frame in the X, Y and Z directions.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.x`
+              - Offset in the X direction. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.y`
+              - Offset in the Y direction. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.z`
+              - Offset in the Z direction. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.enable_attach_point`
+              - Enable the use of an attach point, i.e. the place from which the sensor cone emits. If this feature is not used, the sensor cone origin is the center of the parent model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.attach_point_name`
+              - Name of the attach point.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DOffset.available_attach_points`
+              - Returns available attach points.
 
 
 Import detail

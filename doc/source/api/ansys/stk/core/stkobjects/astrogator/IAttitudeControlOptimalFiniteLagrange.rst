@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlOptimalFiniteLagrange.body_constraint_vector`
+              - Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 
 
 Import detail

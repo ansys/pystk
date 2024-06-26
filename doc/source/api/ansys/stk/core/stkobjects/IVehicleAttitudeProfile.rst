@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile.type`
+              - Get profile type.
 
 
 Import detail

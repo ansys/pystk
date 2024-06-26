@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLineOfNodes.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLineOfNodes.reference_point`
+              - Specify a reference point.
 
 
 Import detail

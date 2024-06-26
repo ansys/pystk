@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToSTKObject.object_name`
+              - Gets or sets the object name to link to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToSTKObject.valid_object_names`
+              - Returns the valid object names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToSTKObject.bearing`
+              - Gets or sets the bearing from the STK object.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToSTKObject.use_magnetic_bearing`
+              - Gets or sets the option to use a magnetic bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRelToSTKObject.range`
+              - Gets or sets the range from the STK object.
 
 
 Import detail

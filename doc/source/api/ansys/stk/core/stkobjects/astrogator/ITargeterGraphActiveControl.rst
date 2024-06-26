@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.name`
+              - Get the name of the active control.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.parent_name`
+              - Get the segment or component to which the element belongs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.show_graph_value`
+              - Show the value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.line_color`
+              - Line Color.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.point_style`
+              - Point Style.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl.y_axis`
+              - Select whether to display the control's value range on the left or right side of the graph.
 
 
 Import detail

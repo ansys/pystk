@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCylindrical.reference_system`
+              - Get the reference system in which cylindrical parameters are computed.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCylindrical.theta_coordinates`
+              - Returns theta Coordinates parameters for the Theta system.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCylindrical.radius_coordinates`
+              - Returns radius Coordinates parameters for the Radius system.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCylindrical.height_coordinates`
+              - Returns height Coordinates parameters for the Height system.
 
 
 Import detail

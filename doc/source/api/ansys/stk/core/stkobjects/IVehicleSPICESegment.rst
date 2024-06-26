@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.segment_name`
+              - Get the segment name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.segment_type`
+              - Get the segment type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.coord_axes`
+              - Get the coordinate axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.central_body`
+              - Get the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.start_time`
+              - Get the start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSPICESegment.stop_time`
+              - Get the stop time. Uses DateFormat Dimension.
 
 
 Import detail

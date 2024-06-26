@@ -34,13 +34,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRunway.altitude`
+              - Gets or sets the runway altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRunway.latitude`
+              - Gets or sets the runway latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRunway.longitude`
+              - Gets or sets the runway longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRunway.length`
+              - Gets or sets the length of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRunway.altitude_reference`
+              - Gets or sets the altitude reference for the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRunway.low_end_heading`
+              - Gets or sets the low end heading of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRunway.high_end_heading`
+              - Gets or sets the high end heading of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteRunway.is_magnetic`
+              - Opt whether to use a magnetic heading for the runway heading.
 
 
 Import detail

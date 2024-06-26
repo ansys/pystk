@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingResult.intervals`
+              - A collection of sampling intervals.
 
 
 Import detail

@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.latitude`
+              - Measured in degrees from -90.0 deg to +90.0 deg. The geodetic latitude of a point is the angle between the normal to the reference ellipsoid and the equatorial plane. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.longitude`
+              - Measured in degrees from -360.0 deg to +360.0 deg. The longitude of a point is the angle between the projection of the position vector in the equatorial plane and the prime meridian. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.altitude`
+              - Measured along an outward normal to the surface of the ellipsoid. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.radius_magnitude`
+              - Measured from the center of the Earth. Specified as distance above or below the reference ellipsoid. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.latitude_rate`
+              - Gets or sets the rate of change of the satellite's latitude. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.longitude_rate`
+              - Gets or sets the rate of change of the satellite's longitude. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.altitude_rate`
+              - Gets or sets the rate of change of the altitude. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic.radius_rate`
+              - Gets or sets the rate of change of the radius. Uses Rate Dimension.
 
 
 Import detail

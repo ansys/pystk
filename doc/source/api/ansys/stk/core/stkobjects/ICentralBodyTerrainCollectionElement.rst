@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.central_body`
+              - Name of central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollectionElement.terrain_collection`
+              - Terrain collection.
 
 
 Import detail

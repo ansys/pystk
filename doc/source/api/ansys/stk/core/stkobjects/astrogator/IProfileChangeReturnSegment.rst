@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeReturnSegment.segment_name`
+              - Gets or sets the targeted return segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeReturnSegment.state`
+              - Gets or sets the new state for the targeted return segment.
 
 
 Import detail

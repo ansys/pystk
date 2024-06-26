@@ -50,24 +50,43 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.back_color`
+              - The background color of the control.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.picture`
+              - The splash logo graphic to be displayed in the control.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.win_id`
+              - Window identifier (for Connect commands).
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.application`
+              - Reference to the STK X application object.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.no_logo`
+              - If true, the splash logo is not shown.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.ole_drop_mode`
+              - How the control handles drop operations.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.vendor_id`
+              - This property is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.mouse_mode`
+              - Whether this control responds to mouse events.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.ready_state`
+              - Returns/sets the background color of the control.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.advanced_pick_mode`
+              - If true, sets the advance pick mode.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.in_zoom_mode`
+              - Returns true if in zoom in mode.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.show_progress_image`
+              - The animated progress image type.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_x_offset`
+              - The horizontal X offset for animated progress image.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_y_offset`
+              - The vertical Y offset for animated progress image.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_file`
+              - The complete image file name/path for animated progress image.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_x_origin`
+              - The X origin alignment for animated progress image.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.progress_image_y_origin`
+              - The Y origin alignment for animated progress image.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.picture_from_file`
+              - Gets or sets the splash logo graphic file to be displayed in the control.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAx2DCntrl.pan_mode_enabled`
+              - Enables/disables pan mode for map control.
 
 
 Import detail

@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.trajectory_type`
+              - Specifies the arrow type used to represent the geometric element.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.ra_dec_visible`
+              - Displays right-ascension and declination values with the selected point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.ra_dec_unit_abrv`
+              - Right Ascension Declination Unit Abrv.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.magnitude_visible`
+              - If selected, the magnitude value is displayed on the selected geometric element.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.magnitude_unit_abrv`
+              - The Magnitude Unit abrv.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.cartesian_visible`
+              - If selected, the cartesian value is displayed on the selected geometric element.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.cartesian_unit_abrv`
+              - Cartesian Unit Abrv uses Distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.system`
+              - The name of the system used to define the coordinate frame associated with the selected RefCrdn.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.size`
+              - Gets or sets the size of the selected geometric plane or point. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPoint.available_systems`
+              - Returns an array of available Systems.
 
 
 Import detail

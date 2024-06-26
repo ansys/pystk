@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionSignaled.original_collection`
+              - The original interval list collection.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionSignaled.signal_sense`
+              - The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionSignaled.base_clock_location`
+              - The base clock location, which is a point from VGT.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionSignaled.target_clock_location`
+              - The target clock location, which is a point from VGT.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollectionSignaled.signal_delay`
+              - The Signal delay definition, which includes signal transmission, time delay convergence and signal path reference system.
 
 
 Import detail

@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalProp.filepath`
+              - Get the filepath for the external aero file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingExternalProp.is_valid`
+              - Check whether the filepath is valid.
 
 
 Import detail

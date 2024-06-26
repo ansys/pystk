@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRunwayHeadingOptions.runway_mode`
+              - Gets or sets the runway heading that the aircraft will use.
 
 
 Import detail

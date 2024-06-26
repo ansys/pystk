@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies.available_eclipsing_bodies`
+              - Gets the available eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipsingBodies.assigned_eclipsing_bodies`
+              - Gets the assigned eclipsing bodies.
 
 
 Import detail

@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSignaled.original_time_instant`
+              - The original time instant.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSignaled.signal_sense`
+              - The direction of the signal, whether you are Transmitting or Receiving from the BaseClockLocation.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSignaled.base_clock_location`
+              - The base clock location, which is a point from VGT.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSignaled.target_clock_location`
+              - The target clock location, which is a point from VGT.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSignaled.signal_delay`
+              - The Signal delay definition, which includes signal transmission, time delay convergence and signal path reference system.
 
 
 Import detail

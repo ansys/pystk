@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCone.radius`
+              - Property used to access the radius dimension of a cone shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCone.height`
+              - Property used to access the height dimension of a cone shape.
 
 
 Import detail

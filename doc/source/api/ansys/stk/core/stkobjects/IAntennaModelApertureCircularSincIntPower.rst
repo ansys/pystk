@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.compute_mainlobe_gain`
+              - Gets or sets the option for computing the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.mainlobe_gain`
+              - Gets or sets the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.backlobe_gain`
+              - Gets or sets the backlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.use_backlobe_as_mainlobe_atten`
+              - Gets or sets the option for using the back lobe gain as a main lobe gain attenuation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.input_type`
+              - Gets or sets the input type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.beamwidth`
+              - Gets or sets the beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularSincIntPower.function_power`
+              - Gets or sets the function power.
 
 
 Import detail

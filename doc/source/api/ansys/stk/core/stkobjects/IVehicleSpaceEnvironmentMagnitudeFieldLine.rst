@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.is_2d_visible`
+              - Flag to show magnetic field line.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.is_3d_visible`
+              - Flag to show magnetic field line.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.color`
+              - Magnetic field line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.line_style`
+              - Magnetic field line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.line_width`
+              - Magnetic field line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagnitudeFieldLine.label_visible`
+              - Is the L-shell label visible?
 
 
 Import detail

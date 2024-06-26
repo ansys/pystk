@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISolarActivityConfigurationSolarFlux.solar_flux`
+              - Gets or sets the solar flux.
 
 
 Import detail

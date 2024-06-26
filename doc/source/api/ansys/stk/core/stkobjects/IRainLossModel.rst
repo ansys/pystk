@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModel.name`
+              - Gets the rain loss model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModel.type`
+              - Gets the rain loss model type enumeration.
 
 
 Import detail

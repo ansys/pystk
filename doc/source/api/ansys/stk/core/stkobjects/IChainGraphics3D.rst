@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics3D.data_display`
+              - Get the chains's 3D data display properties.
 
 
 Import detail

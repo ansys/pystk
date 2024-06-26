@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.mainlobe_gain`
+              - Gets or sets the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.use_mainlobe_model`
+              - Gets or sets the option for enabling the mainlobe model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.override_half_beamwidth`
+              - Gets or sets the option for overriding the half beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.half_beamwidth`
+              - Gets or sets the half beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.nearin_sidelobe_mask_cross_point`
+              - Gets or sets the near in sidelobe mask cross point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R13.farout_sidelobe_level`
+              - Gets or sets the far out sidelobe level.
 
 
 Import detail

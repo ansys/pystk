@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IConstantDisplayCondition.display`
+              - Gets or sets the value the display condition evaluates to.
 
 
 Import detail

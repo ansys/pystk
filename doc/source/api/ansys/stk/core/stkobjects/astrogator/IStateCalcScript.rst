@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript.calc_arguments`
+              - Get the arguments to be applied to the function.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript.inline_func`
+              - Gets or sets the expression to be applied as a function.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript.unit_dimension`
+              - Gets or sets the unit dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScript.calc_arguments_link_embed`
+              - Get the arguments to be applied to the function.
 
 
 Import detail

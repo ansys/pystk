@@ -34,9 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2DFactory.nearest_clamp_to_edge`
+              - Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2DFactory.nearest_repeat`
+              - Gets a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2DFactory.linear_clamp_to_edge`
+              - Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureFilter2DFactory.linear_repeat`
+              - Gets a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat.
 
 
 Import detail

@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISceneCollection.count`
+              - Total number of scenes in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneCollection._NewEnum`
+
 
 
 Import detail

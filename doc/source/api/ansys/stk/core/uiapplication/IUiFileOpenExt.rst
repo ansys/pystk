@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExt.file_name`
+              - Gets/sets the multiple file open collection.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExt.filter_description`
+              - Gets/sets the file open dialog filter description.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExt.filter_pattern`
+              - Gets/sets the file open dialog filter pattern.
 
 
 Import detail

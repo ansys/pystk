@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.compute_mainlobe_gain`
+              - Gets or sets the option for computing the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.mainlobe_gain`
+              - Gets or sets the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.backlobe_gain`
+              - Gets or sets the backlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.use_backlobe_as_mainlobe_atten`
+              - Gets or sets the option for using the back lobe gain as a main lobe gain attenuation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.input_type`
+              - Gets or sets the input type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.beamwidth`
+              - Gets or sets the beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquaredPedestal.pedestal_level`
+              - Gets or sets the pedestal level.
 
 
 Import detail

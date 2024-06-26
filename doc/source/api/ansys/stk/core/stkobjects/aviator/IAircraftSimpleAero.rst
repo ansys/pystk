@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.operating_mode`
+              - Gets or sets the mode option to treat the aircraft as a helicopter or a fixed wing aircraft when calculating the aircraft's attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.s_reference`
+              - Gets or sets the reference surface area of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.cl_max`
+              - Gets or sets the max coefficient of lift.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftSimpleAero.cd`
+              - Gets or sets the coefficient of drag.
 
 
 Import detail

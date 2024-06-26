@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchContext.is_template`
+              - Returns whether the current instance is a VGT template.
 
 
 Import detail

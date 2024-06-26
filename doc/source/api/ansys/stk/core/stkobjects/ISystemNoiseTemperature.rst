@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature.compute_type`
+              - Gets or sets the system noise temperature compute type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature.constant_noise_temperature`
+              - Gets or sets the constant system noise temperature value.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature.antenna_to_lna_line_temperature`
+              - Gets or sets the antenna to LNA line temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature.lna_to_receiver_line_temperature`
+              - Gets or sets the LNA to receiver line temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature.lna_noise_figure`
+              - Gets or sets the LNA noise figure.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature.lna_temperature`
+              - Gets or sets the LNA temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature.antenna_noise_temperature`
+              - Gets the interface for setting the antenna noise temperature parameters.
 
 
 Import detail

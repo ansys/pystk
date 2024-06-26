@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.enable_default_save`
+              - Save the articulation value as the default for all future sessions using this model. The articulation value is saved with the object and not with the model or articulation files.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.lod_count`
+              - Specify the level of detail (LOD) for defining articulations, where 0 is the finest level of detail and 1 is the coarsest model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.read_artic_file_on_load`
+              - Read the articulation file when MTO object is loaded.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic.save_artic_file_on_save`
+              - Save the articulations to the articulation file when MTO object is saved.
 
 
 Import detail

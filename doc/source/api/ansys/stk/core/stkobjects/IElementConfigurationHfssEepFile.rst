@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationHfssEepFile.filename`
+              - Gets or sets the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationHfssEepFile.defined_frequencies`
+              - Gets the frequencies defined in the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationHfssEepFile.gain_type`
+              - Gets or sets the gain type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationHfssEepFile.defined_power_value`
+              - Gets the Defined Power Value for the selected GainType.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationHfssEepFile.user_gain_factor`
+              - Gets or sets the User Gain Factor.
 
 
 Import detail

@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.x`
+              - X position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.y`
+              - Y position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.z`
+              - Z position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.vx`
+              - Vx velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.vy`
+              - Vy velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian.vz`
+              - Vz velocity component. Uses Rate Dimension.
 
 
 Import detail

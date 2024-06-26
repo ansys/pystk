@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.show`
+              - Opt whether to display graphics for the radar object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.show_boresight`
+              - Opt whether to display boresight graphics for the radar's antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.boresight_color`
+              - The color in which boresight graphics display.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.boresight_marker_style`
+              - The marker style used to represent the boresight graphically.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.contour_graphics`
+              - Gets the radar's antenna contour graphics interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.access`
+              - Gets the radar's access graphics interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics.multipath`
+              - Gets the radar's multipath graphics interface.
 
 
 Import detail

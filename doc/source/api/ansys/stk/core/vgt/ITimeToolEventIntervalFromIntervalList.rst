@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.reference_intervals`
+              - The reference interval list.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.interval_selection`
+              - The method used to select an interval from the reference interval list.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFromIntervalList.interval_number`
+              - An interval number. Applicable only if IntervalSelection is IntervalSelectionFromStart or IntervalSelectionFromEnd.
 
 
 Import detail

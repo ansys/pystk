@@ -34,16 +34,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.wireframe`
+              - Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.render_back_then_front_faces`
+              - Gets or sets whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.lighting`
+              - Gets or sets whether the primitive is lit.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.triangle_winding_order`
+              - Gets or sets the orientation of front-facing triangles. This is used in combination with cull face for culling.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.cull_face`
+              - Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.shade_model`
+              - Gets or sets the shading model for the mesh.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.texture`
+              - Gets or sets the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.texture_filter`
+              - Gets or sets the filter used for the texture associated with this triangle mesh.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.set_hint`
+              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.central_body_clipped`
+              - Gets or sets whether individual points will be clipped by the central body.
             * - :py:attr:`~ansys.stk.core.graphics.ITriangleMeshPrimitive.two_sided_lighting`
+              - Gets or sets whether the primitive's translucent geometry will be lit from both sides of the surface.
 
 
 Import detail

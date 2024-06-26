@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.start_time`
+              - Gets the animation's start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.stop_time`
+              - Gets the animation's stop time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.duration`
+              - A time duration. The value is a relative duration (i.e. \"+1 day\", \"+1 hour\").
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.use_analysis_start_time`
+              - Whether the animation start time is the same as the analysis's start time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod.use_analysis_stop_time`
+              - Whether the animation stop time is the same as the analysis's stop time.
 
 
 Import detail

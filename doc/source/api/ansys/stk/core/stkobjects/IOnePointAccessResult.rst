@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResult.access_satisfied`
+              - Indicates whether all constraints are satisfied at this time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResult.time`
+              - Get the time of evaluation of the constraints in a IAgOnePtAccess Compute request.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccessResult.constraints`
+              - List of constraints evaluated at this time.
 
 
 Import detail

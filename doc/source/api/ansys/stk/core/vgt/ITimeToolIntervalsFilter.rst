@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalsFilter.duration_kind`
+              - Choose a duration type (at least/at most).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalsFilter.interval_duration`
+              - The interval duration.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassShowPasses.first_pass`
+              - Beginning pass number. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassShowPasses.last_pass`
+              - End pass number. Dimensionless.
 
 
 Import detail

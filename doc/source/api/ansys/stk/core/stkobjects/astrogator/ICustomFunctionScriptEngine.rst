@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICustomFunctionScriptEngine.script_filename`
+              - Gets or sets the file containing the function to call.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICustomFunctionScriptEngine.file_extension_name`
+              - Gets or sets the file extension.
 
 
 Import detail

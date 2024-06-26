@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfiguration.type`
+              - Gets the element configuration type enumeration.
 
 
 Import detail

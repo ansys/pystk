@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.origin`
+              - Specify the vector's origin point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.destination`
+              - Specify the vector's destination point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.apparent`
+              - Controls whether to take a light speed delay into account.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.ignore_aberration`
+              - Set to true if you do not want to calculate the aberration correction. This property is read-only if Apparent is set to false.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.signal_sense`
+              - Specify a sense of signal transmission. This property is read-only if Apparent is set to false.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDisplacement.reference_system`
+              - Specify a frame in which the light time delay is computed. This property is read-only if Apparent is set to false.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverImpulsive.update_mass`
+              - True if the mass of the spacecraft will be updated on the basis of fuel usage.
 
 
 Import detail

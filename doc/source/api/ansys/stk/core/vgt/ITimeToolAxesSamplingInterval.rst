@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingInterval.times`
+              - A time array associated with the interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingInterval.quaternions`
+              - An array of 4-tuples each tuple representing the orientation of the axes as a quaternion (q1,q2,q3,q4).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingInterval.velocities`
+              - An array of angular velocities.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingInterval.start`
+              - The start time of the interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolAxesSamplingInterval.stop`
+              - The stop time of the interval.
 
 
 Import detail

@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.current_value`
+              - Gets or sets the current value of the transformation. The current value of the transformation will be reflected in the geometry of the model primitive that it is associated with.
             * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.minimum_value`
+              - Gets the minimum value of the transformation.
             * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.maximum_value`
+              - Gets the maximum value of the transformation.
             * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.default_value`
+              - Gets the default value of the transformation. The current value property of the transformation will have this value when the model primitive is initialized.
             * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.range`
+              - Gets the value range of the transformation. Equivalent to the difference of the maximum value and minimum value properties.
             * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.name`
+              - Gets the name of the transformation.
             * - :py:attr:`~ansys.stk.core.graphics.IModelTransformation.type`
+              - Gets the model transformation type associated with the transformation.
 
 
 Import detail

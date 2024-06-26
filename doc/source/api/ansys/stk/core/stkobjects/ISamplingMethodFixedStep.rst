@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISamplingMethodFixedStep.fixed_time_step`
+              - Fixed sampling time step. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISamplingMethodFixedStep.time_bound`
+              - Duration used to align sample times with UTC. Uses Time Dimension.
 
 
 Import detail

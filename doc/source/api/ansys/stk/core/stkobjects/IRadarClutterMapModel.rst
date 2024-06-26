@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapModel.name`
+              - This property is deprecated. Use Name on IAgScatteringPointModel instead. Gets the radar clutter map model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapModel.type`
+              - This property is deprecated. Use Type on IAgScatteringPointModel instead. Gets the radar clutter map model type enumeration.
 
 
 Import detail

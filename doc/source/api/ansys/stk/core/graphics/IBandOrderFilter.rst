@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IBandOrderFilter.band_order`
+              - Gets or sets the raster format indicating the desired order of the bands in the source raster.
             * - :py:attr:`~ansys.stk.core.graphics.IBandOrderFilter.maintain_raster_format`
+              - Gets or sets a value indicating whether to maintain the source raster's format after the filter is applied. When true, the source raster's format is maintained after swizzling.
 
 
 Import detail

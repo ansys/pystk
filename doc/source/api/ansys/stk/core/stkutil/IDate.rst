@@ -38,10 +38,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IDate.ole_date`
+              - Gets or sets the current time in OLE DATE Format.
             * - :py:attr:`~ansys.stk.core.stkutil.IDate.whole_days`
+              - Gets or sets the Julian Day Number of the date of interest.
             * - :py:attr:`~ansys.stk.core.stkutil.IDate.sec_into_day`
+              - Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0.
             * - :py:attr:`~ansys.stk.core.stkutil.IDate.whole_days_utc`
+              - Gets or sets the UTC Day Number of the date of interest.
             * - :py:attr:`~ansys.stk.core.stkutil.IDate.sec_into_day_utc`
+              - Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0.
 
 
 Import detail

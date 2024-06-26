@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingFixedStep.time_step`
+              - Get the fixed time step.
 
 
 Import detail

@@ -32,10 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.is_visible`
+              - Whether the Target Point is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.color`
+              - Gets or sets the color of the Target Point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position_type`
+              - Get the position type of the BPlane target point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint.position`
+              - Returns the BPlane target point position.
 
 
 Import detail

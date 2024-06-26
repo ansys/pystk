@@ -21,33 +21,61 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.plugin_identifier`
+              - Gets or sets the plugin name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.plugin_config`
+              - Get the properties of the selected plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.use_approximate_altitude`
+              - True if using approximate altitude formula.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.computes_temperature`
+              - Flag indicates whether this model computes temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.computes_pressure`
+              - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.sun_position`
+              - Gets or sets the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_data_source`
+              - Gets or sets the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.f10`
+              - Solar Flux (F10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.f10_avg`
+              - Average solar Flux (F10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.m10`
+              - Solar Flux (M10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.m10_avg`
+              - Average solar Flux (M10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.s10`
+              - Solar Flux (S10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.s10_avg`
+              - Average solar Flux (S10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.y10`
+              - Solar Flux (Y10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.y10_avg`
+              - Average solar Flux (Y10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.kp`
+              - Geomagnetic Index (Kp). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.dst_d_tc`
+              - Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_data_geo_magnetic_flux_source`
+              - Whether to use Kp or Ap data from the flux file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_data_geo_magnetic_flux_update_rate`
+              - Gets or sets the update rate for geomagnetic flux values from the flux file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_data_filename`
+              - Gets or sets the atmospheric model data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_aug_data_file`
+              - Gets or sets the atmospheric model augmented data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.atmos_aug_dtc_file`
+              - Gets or sets the atmospheric model augmented geomagnetic data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.drag_model_type`
+              - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.drag_model_plugin_name`
+              - Gets or sets the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.drag_model_plugin`
+              - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.uses_augmented_space_weather`
+              - Flag indicates whether this model uses augmented flux data.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.variable_area_history_file`
+              - Drag variable area history file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin.n_plate_definition_file`
+              - Drag N-Plate definition file.
 
 
 Import detail

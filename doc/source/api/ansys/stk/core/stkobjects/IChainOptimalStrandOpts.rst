@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.compute`
+              - Compute optimal strands.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.sampling_time_step`
+              - Time step used to sample optimal strand metric when computing optimal strands.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.include_access_edge_times_in_samples`
+              - Include all chain connection access pairs when computing sample times for optimal strands.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.num_strands_to_store`
+              - Maximum number of objects in all strands for the Chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.type`
+              - Optimal path type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.link_comparison_type`
+              - Optimal path comparison type (min, max or sum) used when comparing connections of a strand when computing an overall value of the metric for a strand.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.strand_comparison_type`
+              - Optimal path comparison type (min or max) used when comparing strands.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.calc_scalar_type`
+              - Optimal path AWB calculation scalar type used when the optiml path type is set to use a calculation scalar.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.calc_scalar_name`
+              - Optimal path AWB calculation scalar to evaluate to determine optimal strands.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainOptimalStrandOpts.calc_scalar_file_name`
+              - Optimal path AWB calculation scalar file (.awb) to evaluate to determine optimal strands.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderAsciiFile.enabled`
+              - Gets or set the option for enabling steering.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderAsciiFile.filename`
+              - Gets or sets the steering ascii file.
 
 
 Import detail

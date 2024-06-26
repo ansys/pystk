@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerMvdr.constraint`
+              - Gets or sets the constraint.
 
 
 Import detail

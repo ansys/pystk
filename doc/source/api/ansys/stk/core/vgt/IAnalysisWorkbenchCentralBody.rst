@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBody.name`
+              - A name of the central body.
 
 
 Import detail

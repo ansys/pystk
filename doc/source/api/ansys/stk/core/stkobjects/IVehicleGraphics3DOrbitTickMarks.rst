@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.time_between_ticks`
+              - Time between tick marks: the time elapsed between each milestone indicated by a tick mark along the satellite's path. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.ground_track`
+              - Get the ground track tick marks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTickMarks.orbit`
+              - Get the orbit track tick marks.
 
 
 Import detail

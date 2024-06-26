@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScalar.scalar_name`
+              - Gets or sets the scalar name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScalar.unit_dimension`
+              - Gets or sets the unit dimension.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisFile.filename`
+              - Gets or sets the ephemeris file name.
 
 
 Import detail

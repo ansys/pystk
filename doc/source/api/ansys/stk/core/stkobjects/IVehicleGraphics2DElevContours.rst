@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.is_visible`
+              - Opt whether to display elevation contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.is_fill_visible`
+              - Opt whether to display a fill over the area within the contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.fill_style`
+              - Gets or sets the type of fill to display.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.num_of_decimal_digits`
+              - Number of decimal digits. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.elevations`
+              - Collection of Levels.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevContours.fill_translucency`
+              - Specify the fill translucency percentage of the area within the contours. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
 
 
 Import detail

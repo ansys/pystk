@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProvider.name`
+              - Gets the scattering point provider name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProvider.point_provider_type`
+              - Gets the scattering point provider type enumeration.
 
 
 Import detail

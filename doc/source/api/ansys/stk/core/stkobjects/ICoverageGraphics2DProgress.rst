@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DProgress.is_visible`
+              - Show Access Progress: specify whether to highlight the grid regions and points as accesses are being computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DProgress.color`
+              - Progress graphics color.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTime.start_time`
+              - Start time of the scheduled access period. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTime.stop_time`
+              - Stop time of the scheduled access period. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTime.target`
+              - Object to which there is access during the scheduled period.
 
 
 Import detail

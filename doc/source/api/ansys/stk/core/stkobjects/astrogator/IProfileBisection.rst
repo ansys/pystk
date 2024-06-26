@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileBisection.control_parameters`
+              - Get the list of control parameters defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileBisection.results`
+              - Get the list of results defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileBisection.targeter_graphs`
+              - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileBisection.scripting_tool`
+              - Returns the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileBisection.reset_controls_before_run`
+              - Reset controls before each run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileBisection.maximum_iterations`
+              - Gets or sets the maximum number of iterations allowed.
 
 
 Import detail

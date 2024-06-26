@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment.calc_object_name`
+              - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment.other_segment_name`
+              - Gets or sets the segment to be compared against.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment.segment_state_to_use`
+              - Gets or sets the segment state to use in the calculation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceOtherSegment.difference_order`
+              - Gets or sets the order of the difference calculation.
 
 
 Import detail

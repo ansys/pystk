@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uicore.IUiToolbar.id`
+              - The identity.
             * - :py:attr:`~ansys.stk.core.uicore.IUiToolbar.caption`
+              - The caption.
             * - :py:attr:`~ansys.stk.core.uicore.IUiToolbar.visible`
+              - The visibility.
             * - :py:attr:`~ansys.stk.core.uicore.IUiToolbar.float_state`
+              - The float state.
 
 
 Import detail

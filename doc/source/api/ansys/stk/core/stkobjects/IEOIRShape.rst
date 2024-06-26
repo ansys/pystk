@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.shape_type`
+              - Property used to access the shape type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.mesh_file`
+              - Property used to access the mesh file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.shape_object`
+              - Property used to access the shape object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.dimension_a`
+              - Property used to access the A dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.dimension_b`
+              - Property used to access the B dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.dimension_c`
+              - Property used to access the C dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_specification_type`
+              - Property used to access the shape material specification type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_map_file`
+              - Property used to access the material map file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_element_index`
+              - Property used to access the currently selected material element index.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_elements_count`
+              - Property used to access the number of material elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.material_elements`
+              - Property used to access the material element collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShape.target_signature_file`
+              - Property used to access the target signature file.
 
 
 Import detail

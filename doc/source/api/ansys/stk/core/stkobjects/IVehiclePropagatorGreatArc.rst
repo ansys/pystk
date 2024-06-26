@@ -42,15 +42,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.method`
+              - Compute waypoints.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference_type`
+              - Reference altitude for waypoints.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.altitude_reference`
+              - Get the altitude reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.arc_granularity`
+              - Gets or sets the frequency of interpolated points. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.waypoints`
+              - Get the waypoints.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.default_altitude`
+              - Gets or sets the default altitude used when the first waypoint is added. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.default_rate`
+              - Gets or sets the default rate used when the first waypoint is added. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGreatArc.default_turn_radius`
+              - Gets or sets the default turn radius used when the first waypoint is added. Uses Distance Dimension.
 
 
 Import detail

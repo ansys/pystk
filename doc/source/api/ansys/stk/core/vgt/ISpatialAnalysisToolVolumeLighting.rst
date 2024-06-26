@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting.eclipsing_bodies`
+              - A custom list of eclipsing bodies. This list is used if UseObjectEclipsingBodies is set to false.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting.use_object_eclipsing_bodies`
+              - When true, configure eclipsing bodies list based on that of parent STK Object.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeLighting.lighting_conditions`
+              - Sets/Returns the lighting conditions.
 
 
 Import detail

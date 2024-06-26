@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.smoothing_constant`
+              - Gets or sets the smoothing constant property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.velocity_time_step`
+              - Gets or sets the velocity time step property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.angle_error_std_dev`
+              - Gets or sets the angle error standard deviation property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng.range_error_std_dev`
+              - Gets or sets the range error standard deviation property.
 
 
 Import detail

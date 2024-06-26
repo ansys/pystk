@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhase.procedures`
+              - Returns the procedure collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPhase.name`
+              - Gets or sets the name of the phase.
 
 
 Import detail

@@ -36,12 +36,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.method`
+              - Calculate dilution of precision.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.supported_methods`
+              - Supported DOP methods.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.type`
+              - Compute options for the DOP Figure of Merit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.supported_types`
+              - Supported compute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.time_step`
+              - Gets or sets the value to be used during the sampling of the dynamic definition for use in the static definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.type_data`
+              - DOP type data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.invalid_value_action`
+              - Controls consideration of time samples usage for computing navigation solution.
 
 
 Import detail

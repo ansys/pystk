@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleResult.angle`
+              - The computed angle. The value of the angle is in \"AngleUnit\" dimension.
 
 
 Import detail

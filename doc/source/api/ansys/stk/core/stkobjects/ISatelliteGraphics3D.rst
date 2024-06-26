@@ -21,23 +21,41 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.model`
+              - Get the satellite's Model properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.orbit_systems`
+              - Get the satellite's OrbitSystem properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.proximity`
+              - Get the satellite's Proximity properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.elev_contours`
+              - Get the satellite's Elevation Contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.saa`
+              - Get the satellite's South Atlantic Anomaly Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.covariance_pointing_contour`
+              - Get the satellite's Covariance Pointing Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.pass_method`
+              - Get the satellite's Pass properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.offsets`
+              - Get the satellite's Offsets properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.range_contours`
+              - Get the satellite's Range Contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.covariance`
+              - Get the satellite's Covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.vector`
+              - Get the satellite's Vector properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.data_display`
+              - Get the satellite's Data Display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.model_pointing`
+              - Get the satellite's Model Pointing properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.drop_lines`
+              - Get the satellite's Droplines properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.b_planes`
+              - Gets the BPlane.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.vapor_trail`
+              - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.velocity_covariance`
+              - Get the satellite's 3D velocity covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3D.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

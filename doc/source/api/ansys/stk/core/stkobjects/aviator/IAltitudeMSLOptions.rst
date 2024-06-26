@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLOptions.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeMSLOptions.msl_altitude`
+              - Gets or sets the MSL altitude. Can only be used when the option to use the default cruise altitude is off.
 
 
 Import detail

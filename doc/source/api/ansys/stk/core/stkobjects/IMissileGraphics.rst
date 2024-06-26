@@ -32,21 +32,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.attributes_type`
+              - Type of display: basic, during access intervals, during custom intervals, or real time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.attributes_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.attributes`
+              - Get the 2D Graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.pass_data`
+              - Get the 2D trajectory graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.resolution`
+              - Get the resolution graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.elev_contours`
+              - Get the elevation contours graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.ground_ellipses`
+              - Get the ground ellipses graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.range_contours`
+              - Get the range contour graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.lighting`
+              - Get the lighting graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.swath`
+              - Get the swath graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.label_notes`
+              - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.use_inst_name_label`
+              - Specify whether to use the name of the missile (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.label_name`
+              - The user-specified name to use as a label for the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.saa`
+              - Get the missile's South Atlantic Anomaly Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the missile are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

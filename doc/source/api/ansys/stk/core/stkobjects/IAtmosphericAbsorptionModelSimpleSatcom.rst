@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelSimpleSatcom.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelSimpleSatcom.water_vapor_concentration`
+              - Gets or sets the water vapor concentration.
 
 
 Import detail

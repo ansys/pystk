@@ -38,8 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityCollection.available_third_body_names`
+              - Gets the available third bodies. The return result is a collection of strings representing names of the central bodies that can be used as third body.
 
 
 Import detail

@@ -34,6 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFactory.available_axes_plugin_display_names`
+              - An array of display names associated with available axes plugins. The elements of the array are strings. Display names are used to create VGT axes based on COM plugins using CreateAxesPluginFromDisplayName method.
 
 
 Import detail

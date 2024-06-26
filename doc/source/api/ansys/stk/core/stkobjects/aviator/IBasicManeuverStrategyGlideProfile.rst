@@ -32,17 +32,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.hold_initial_airspeed`
+              - Select whether to maintain the airspeed of the aircraft at the beginning of the procedure throughout the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.airspeed`
+              - Get the airspeed the aircraft will attempt to achieve and maintain if the hold initial airspeed option is not enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.min_g`
+              - Gets or sets the minimum load factor the aircraft can withstand.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.max_g`
+              - Gets or sets the maximum load factor the aircraft can withstand.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.max_speed_limits`
+              - Gets or sets the options of what the procedure will do if the aircraft has exceeded the maximum speed limits.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_mode`
+              - Gets or sets the powered cruise mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_throttle`
+              - Gets or sets the powered cruise throttle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.powered_cruise_thrust_model`
+              - Get the powered cruise thrust model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.glide_speed_control_mode`
+              - Get the glide speed control mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyGlideProfile.glide_speed_control_altitude`
+              - Get the glide speed altitude when using the altitude control mode.
 
 
 Import detail

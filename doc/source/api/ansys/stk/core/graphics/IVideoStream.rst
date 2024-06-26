@@ -40,21 +40,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.uri`
+              - Gets the uri of the video.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.playback`
+              - Gets or sets the video playback mode of the video.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.frame_rate`
+              - Gets or sets the frame rate of the video when the playback property is set to real time. If this property is not set, the internal framerate of the video is used.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.interval_start_time`
+              - Gets or sets the scene manager time at which the video will begin playing when the playback property is set to time interval.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.interval_end_time`
+              - Gets or sets the scene manager time at which the video will stop playing when the playback property is set to time interval.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.start_time`
+              - Gets or sets the start time of the video in seconds. Changing the start time property also changes the start frame property to the frame in the video that corresponds to the specified time.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.end_time`
+              - Gets or sets the end time of the video in seconds. Changing the end time property also changes the end frame property to the frame in the video that corresponds to the specified time.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.start_frame`
+              - Gets or sets the start frame of the video. Changing the start frame property also changes the start time property to the time in the video that corresponds to the specified frame.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.end_frame`
+              - Gets or sets the end frame of the video. Changing the end frame property also changes the end time property to the time in the video that corresponds to the specified frame.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.loop`
+              - Gets or sets whether the video will loop when it reaches its last frame when the playback property is set to real time.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.is_playing`
+              - Gets whether or not the video is playing. Use the play, pause, stop, and Reset methods to control the playback of the video when the playback property is set to real time.
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.packet_acquirement_yield_time`
+              - Gets or sets the thread processing yield time for asynchronous streaming of video over common protocols like udp. Setting a high value may increase performance, but may cause frames or packets to drop, effecting visual quality...
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.packet_buffer_limit`
+              - Gets or sets a value indicating the buffering limit for packets when processing a video stream...
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.allow_frame_drop`
+              - Gets or sets a value indicating if frames should be dropped if video processing can not keep up with a video stream. If this is set to false, the video quality may degrade when the processing load is too high...
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.enable_audio`
+              - Gets or sets a value indicating if the encoded audio stream should be synchronized to video playback If this is set to false, the audio stream will be disabled...
             * - :py:attr:`~ansys.stk.core.graphics.IVideoStream.audio_uri`
+              - Gets the uri of the audio.
 
 
 Import detail

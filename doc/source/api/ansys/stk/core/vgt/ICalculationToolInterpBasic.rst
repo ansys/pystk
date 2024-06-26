@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolInterpBasic.type`
+              - Get the interpolation type, which can be Lagrange or Hermite interpolation. See STK help on interpolation for further details.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolInterpBasic.order`
+              - Get the interpolation order, which determines the order of interpolation polynomial and is related to how many samples are used during interpolation. See STK help on interpolation for further details.
 
 
 Import detail

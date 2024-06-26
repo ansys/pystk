@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayHOverSQRTmu.h_over_sqrt_mu`
+              - Gets or sets the value of H/SQRT(mu). Dimensionless.
 
 
 Import detail

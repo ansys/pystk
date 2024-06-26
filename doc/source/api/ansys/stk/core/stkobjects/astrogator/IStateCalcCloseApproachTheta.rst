@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachTheta.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachTheta.reference_selection`
+              - Gets or sets the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachTheta.reference`
+              - Get the reference object.
 
 
 Import detail

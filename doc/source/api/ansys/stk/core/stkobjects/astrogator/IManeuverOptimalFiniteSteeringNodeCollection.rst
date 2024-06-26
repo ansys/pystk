@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeCollection._NewEnum`
+              - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSteeringNodeCollection.count`
+              - Returns the size of the collection.
 
 
 Import detail

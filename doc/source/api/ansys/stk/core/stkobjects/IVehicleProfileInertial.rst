@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileInertial.inertial`
+              - Get inertial axes.
 
 
 Import detail

@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.enable_min`
+              - Enables the Min property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.enable_max`
+              - Enables the Max property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.min`
+              - Min value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.max`
+              - Max value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbench.reference`
+              - Reference value for the access constraint.
 
 
 Import detail

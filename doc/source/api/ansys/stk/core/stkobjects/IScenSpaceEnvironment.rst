@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment.radiation_environment`
+              - Gets the radiation environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment.graphics_3d`
+              - Gets the 3D Graphics settings.
 
 
 Import detail

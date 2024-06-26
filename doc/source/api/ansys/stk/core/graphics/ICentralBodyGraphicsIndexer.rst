@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.earth`
+              - Gets the central body graphics for the planet Earth. This is equivalent to passing a central body equal to an instance of earth central body to the indexer.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.moon`
+              - Gets the central body graphics for the Moon.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer.sun`
+              - Gets the central body graphics for the Sun.
 
 
 Import detail

@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.orbit_plane_source`
+              - Selection of the satellite that will generate the orbit plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.element_type`
+              - Choice of osculating or mean elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.reference_selection`
+              - Gets or sets the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.reference`
+              - Get the reference object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.relative_position_type`
+              - Gets or sets the type of the relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionDecAngle.sign_convention`
+              - Gets or sets the sign of the angle when the relative position has a positive component along the orbit normal.
 
 
 Import detail

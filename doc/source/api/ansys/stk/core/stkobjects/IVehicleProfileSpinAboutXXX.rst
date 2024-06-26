@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX.rate`
+              - Gets or sets the spin rate in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX.offset`
+              - Gets or sets the initial spin offset as an angular measure of the difference between the satellite orientation at the offset epoch and the orientation achieved by orienting the spin axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX.smart_epoch`
+              - Epoch of the offset.
 
 
 Import detail

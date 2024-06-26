@@ -48,9 +48,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.main_sequence`
+              - Get the Mission Control Sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.options`
+              - Get the Mission Control Sequence options.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.auto_sequence`
+              - Get the Automatic Sequences.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence.calculation_graphs`
+              - Get the calculation graphs.
 
 
 Import detail

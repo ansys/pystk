@@ -38,10 +38,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.volume_grid_definition_type`
+              - Get Volume Grid definition type. A member of the AgEVmDefinitionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.volume_grid_definition`
+              - Get Volume Grid definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.volume_analysis_interval`
+              - Get Volume Analysis Interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.advanced`
+              - Get Advanced options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVolumetric.graphics_3d`
+              - Get the 3D Graphics properties for the volumetric object.
 
 
 Import detail

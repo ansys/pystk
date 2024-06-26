@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement.source`
+              - Source of 3rd-body gravity data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement.gravity_value`
+              - Gravity value (if the source is user-specified. Uses Gravity Parameter Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravityElement.central_body`
+              - Name of the central body.
 
 
 Import detail

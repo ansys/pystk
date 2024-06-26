@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult.position`
+              - The point position in the specified coordinate system.
 
 
 Import detail

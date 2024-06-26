@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled.origin_point`
+              - Specify a point of origin.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled.reference_axes`
+              - Specify a reference axes.
 
 
 Import detail

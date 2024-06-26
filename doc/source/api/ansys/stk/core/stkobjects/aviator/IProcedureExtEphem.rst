@@ -32,19 +32,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.ephemeris_file`
+              - Set the ephemeris filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.ephemeris_file_duration`
+              - Get the ephemeris file duration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.use_start_duration`
+              - Set whether to use Start and Duration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.start_time`
+              - Set the start time.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.duration`
+              - Set the duration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.flight_mode`
+              - Get the flight mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.use_shift_rotate`
+              - Set whether to use Shift/Rotate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.shift_time`
+              - Get the shift time.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.latitude`
+              - Get the waypoint latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.longitude`
+              - Get the waypoint longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.altitude`
+              - Get the altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.course`
+              - Get the course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.course_mode`
+              - Get the course mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem.altitude_mode`
+              - Get the alt mode.
 
 
 Import detail

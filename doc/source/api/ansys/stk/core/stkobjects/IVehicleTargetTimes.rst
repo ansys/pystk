@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetTimes.use_access_times`
+              - Opt whether to use access times as target times; otherwise, scheduled times are used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetTimes.access_times`
+              - Get the access times.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetTimes.schedule_times`
+              - Get the scheduled times.
 
 
 Import detail

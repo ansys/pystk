@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGraphics.show`
+              - Opt whether to display volume graphics for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGraphics.supported_contour_types`
+              - Gets an array of the supported contour types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGraphics.contour`
+              - Gets the current contour type's properties.
 
 
 Import detail

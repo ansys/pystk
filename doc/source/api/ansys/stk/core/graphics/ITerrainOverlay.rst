@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlay.altitude_offset`
+              - Gets or sets the value from which to offset the terrain height.
             * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlay.altitude_scale`
+              - Gets or sets the value from which to scale the terrain height.
             * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlay.supported`
+              - Gets whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects.
 
 
 Import detail

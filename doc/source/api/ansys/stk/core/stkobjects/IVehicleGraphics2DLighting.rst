@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.sunlight`
+              - Get the display options for regions of sunlight.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.penumbra`
+              - Get the display options for regions of penumbra.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.umbra`
+              - Get the display options for regions of umbra.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.is_sun_light_penumbra_visible`
+              - Opt whether to show the dividing line between regions of sunlight and penumbra at the current altitude of the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.is_penumbra_umbra_visible`
+              - Opt whether to show the dividing line between regions of penumbra and umbra at the current altitude of the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting.is_solar_specular_reflection_point_visible`
+              - Opt whether to draw the solar specular reflection point on the surface of the globe as a white '*'.
 
 
 Import detail

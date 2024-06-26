@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellation.objects`
+              - Get the collection of objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellation.constraints`
+              - Get the constellation's constraints.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellation.graphics`
+              - Constellation's 2D graphics settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellation.routing`
+              - Constellation's routing settings.
 
 
 Import detail

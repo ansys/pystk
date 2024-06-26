@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDemodulatorModelScriptPlugin.filename`
+              - Gets or sets the external filename.
 
 
 Import detail

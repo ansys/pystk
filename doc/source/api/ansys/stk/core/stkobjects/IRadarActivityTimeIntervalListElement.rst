@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.active`
+              - Gets or sets whether or not the time component is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.start`
+              - Gets or sets the interval start time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.stop`
+              - Gets or sets the interval start time.
 
 
 Import detail

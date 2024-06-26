@@ -42,8 +42,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingCollection.available_targets`
+              - Returns an array of available targets.
 
 
 Import detail

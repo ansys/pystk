@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRouteResolution.route`
+              - Route resolution in terms of the ephemeris step. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRouteResolution.min_route`
+              - Minimum route resolution in terms of the ephemeris step. Uses Time Dimension.
 
 
 Import detail

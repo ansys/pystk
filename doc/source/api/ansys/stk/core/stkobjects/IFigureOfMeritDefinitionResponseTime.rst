@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime.min_assets`
+              - Minimum number of for computing Response Time Figure of Merit.
 
 
 Import detail

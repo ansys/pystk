@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.is_visible`
+              - Opt whether to use a model to represent the track in the 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.filename`
+              - Gets or sets the name of the track model file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.scale_value`
+              - Gets or sets the exponential scaling value for the track model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.initial_bearing`
+              - Gets or sets the initial bearing of the model, relative to north. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.z_points_nadir`
+              - Opt whether to have the Z axis point to nadir (to orient it as an aircraft) or not (to orient it as a surface vehicle).
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.articulation`
+              - Configures the model articulations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DModel.file_path`
+              - Get the full path and file name of the track model file.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSar.pulse_integration`
+              - Gets the interface for configuring the SAR waveform pulse integration.
 
 
 Import detail

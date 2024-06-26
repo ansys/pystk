@@ -32,6 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVector.type`
+              - Returns a type of the vector object.
 
 
 Import detail

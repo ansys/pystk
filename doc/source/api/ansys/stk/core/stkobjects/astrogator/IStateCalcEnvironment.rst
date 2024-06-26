@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEnvironment.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEnvironment.atmos_model_name`
+              - Gets or sets the atmospheric density model of the component.
 
 
 Import detail

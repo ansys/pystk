@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.back_color`
+              - The background color of the control.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.picture`
+              - The splash logo graphic to be displayed in the control.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.no_logo`
+              - If true, the splash logo is not shown.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.vendor_id`
+              - This property is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.ready_state`
+              - Returns the ready state of the control.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.application`
+              - Reference to the STK X application object.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.control_mode`
+              - The Graphics control mode.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.picture_from_file`
+              - Gets or sets the splash logo graphic file to be displayed in the control.
             * - :py:attr:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl.win_id`
+              - Window identifier (for Connect commands).
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysis.position`
+              - Returns a spatial state of the mto at specified time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysis.range`
+              - Returns the range from an Mto track to another object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysis.field_of_view`
+              - Returns the field of view from an Mto track to a sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysis.visibility`
+              - Returns the visibility from an Mto track to another object.
 
 
 Import detail

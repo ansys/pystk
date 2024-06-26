@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection.count`
+              - Returns the number of time component elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListCollection._NewEnum`
+              - Returns an enumerator for the collection.
 
 
 Import detail

@@ -36,25 +36,45 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.airspeed`
+              - Get the goal airspeed for the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.altitude_rate`
+              - Gets or sets the rate at which the aircraft will climb or descend.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.flight_path_angle`
+              - Gets or sets the initial pitch angle of the flight path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.tas_dot`
+              - Get the true airspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.groundspeed_dot`
+              - Get the groundspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.longitudinal_accel_type`
+              - Get the mode to specify the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.heading`
+              - Gets or sets the direction the aircraft is pointing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.heading_is_magnetic`
+              - Opt whether to specify the heading using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.course`
+              - Gets or sets the direction the aircraft is traveling.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.course_is_magnetic`
+              - Opt whether to specify the course using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.heading_dot`
+              - Get the heading rate of change.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.course_dot`
+              - Get the course rate of change.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.lateral_accel_type`
+              - Get the mode to specify the lateral acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.roll_angle`
+              - Gets or sets the aircraft's bank angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.aoa`
+              - Gets or sets the aircraft's angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.sideslip`
+              - Gets or sets the aircraft's yaw angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.pitch_rate`
+              - Get the aircraft's pitch rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.push_pull_g`
+              - Get the G force on the aircraft resulting from its attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateTakeoffLandingOptions.attitude_rate_type`
+              - Get the mode to specify the vertical attitude rate.
 
 
 Import detail

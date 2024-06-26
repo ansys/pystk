@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDefinition.break_angle_type`
+              - Latitude or longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDefinition.break_angle`
+              - Value of latitude or longitude used for defining pass break.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDefinition.direction`
+              - Descending or ascending.
 
 
 Import detail

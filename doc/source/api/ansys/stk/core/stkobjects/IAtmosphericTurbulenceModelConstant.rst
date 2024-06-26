@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelConstant.constant_refractive_index_structure_parameter`
+              - Gets or sets the constant refractive index structure parameter value.
 
 
 Import detail

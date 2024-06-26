@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeOptions.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeOptions.altitude_reference`
+              - Gets or sets the altitude reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAltitudeOptions.altitude`
+              - Gets or sets the altitude for the procedure.
 
 
 Import detail

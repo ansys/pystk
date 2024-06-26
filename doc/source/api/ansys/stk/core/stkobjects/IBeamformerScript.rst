@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerScript.filename`
+              - Gets or sets the filename.
 
 
 Import detail

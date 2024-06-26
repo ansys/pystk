@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D.enable_label_max_viewing_dist`
+              - Use the maximum viewing distance for displaying the area target label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D.label_max_viewing_dist`
+              - Specify the maximum distance (distance from the viewer's eye position in 3D to the centroid) at which the area target label is displayed. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D.fill_interior`
+              - Display the area target as a filled polygon indicating the portion of the globe that the area target covers.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D.percent_translucency_interior`
+              - The translucency percent of the filled area, where 100 percent is invisible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D.border_wall`
+              - Retrieve the border wall properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D.vector`
+              - Gets Vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTargetGraphics3D.fill_granularity`
+              - Allows the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
 
 
 Import detail

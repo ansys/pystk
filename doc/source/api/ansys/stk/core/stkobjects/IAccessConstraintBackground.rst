@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintBackground.background`
+              - Background for the access constraint.
 
 
 Import detail

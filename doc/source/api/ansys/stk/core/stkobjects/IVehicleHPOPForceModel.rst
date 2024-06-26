@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModel.central_body_gravity`
+              - Get the central body gravity properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModel.solar_radiation_pressure`
+              - Get the solar radiation pressure properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModel.drag`
+              - Get the atmospheric drag properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModel.third_body_gravity`
+              - Get the 3rd-body gravity properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModel.more_options`
+              - Get the additional force model options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModel.eclipsing_bodies`
+              - Get the eclipsing bodies.
 
 
 Import detail

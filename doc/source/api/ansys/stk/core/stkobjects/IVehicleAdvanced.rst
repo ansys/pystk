@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.atmospheric_density_model`
+              - This property is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.use_osculating_altitude`
+              - Opt whether to use osculating altitude, which uses a short period variation due to J2 perturbations when calculating altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.max_drag_altitude`
+              - Maximum drag altitude, above which drag calculations are not considered. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.density_weighing_factor`
+              - Gets or sets the scale factor to be used during density calculations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.exp_dens_model_params`
+              - Get the exponential density modeling parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAdvanced.atmos_density_model`
+              - Atmospheric density model.
 
 
 Import detail

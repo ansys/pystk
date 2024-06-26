@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILinkMargin.enable`
+              - Gets or set the option for computing link margin.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILinkMargin.type`
+              - Gets or sets the link margin type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILinkMargin.threshold`
+              - Gets or sets the link margin threshold.
 
 
 Import detail

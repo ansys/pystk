@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolIntegralBasic.type`
+              - Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolIntegralBasic.tolerance`
+              - Get the tolerance which determines how accurate integral is computed by finding relative difference between refined and unrefined integral evaluations. Only available if Adaptive Lobatto is selected as the integral type.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolIntegralBasic.maximum_iterations`
+              - Get the number of iteration which determines how many refinement iterations are allowed. Only available if Adaptive Lobatto is selected as the integral type.
 
 
 Import detail

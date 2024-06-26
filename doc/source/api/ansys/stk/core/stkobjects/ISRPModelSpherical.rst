@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelSpherical.cr`
+              - Solar radiation pressure coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelSpherical.area_mass_ratio`
+              - Gets or sets the area-to-mass ratio to be used in SRP calculations. Uses AreaPerMass Dimension.
 
 
 Import detail

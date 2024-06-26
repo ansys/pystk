@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IClouds.show`
+              - Gets or sets whether clouds are rendered.
             * - :py:attr:`~ansys.stk.core.graphics.IClouds.clouds_uri`
+              - The URI of the clouds index file. A cloud index file is an ascii file that contains a time-ordered list of images that display over the globe.
             * - :py:attr:`~ansys.stk.core.graphics.IClouds.roundness`
+              - The roundness of the clouds.
             * - :py:attr:`~ansys.stk.core.graphics.IClouds.altitude`
+              - The altitude of the clouds.
             * - :py:attr:`~ansys.stk.core.graphics.IClouds.is_valid`
+              - Returns whether or not the clouds file is valid.
 
 
 Import detail

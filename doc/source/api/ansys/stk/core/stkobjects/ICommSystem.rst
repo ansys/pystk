@@ -30,19 +30,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.transmitters`
+              - Gets the transmitter collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.receivers`
+              - Gets the receiver collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.interference_sources`
+              - Gets the interference source collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.calculate_interference`
+              - Gets or sets the option for calculating interference.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.reference_bandwidth`
+              - Gets or sets the reference bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.constraining_role`
+              - Gets or sets the constraining role.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.time_period`
+              - Allows configuring the time period.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.step_size`
+              - Gets or sets the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.save_mode`
+              - Gets or sets the save mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.access_options`
+              - Get the access options.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.link_selection_criteria`
+              - Get the link selection criteria.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.graphics`
+              - Get the 2D Graphics properties for the CommSystem.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.graphics_3d`
+              - Get the 3D Graphics properties for the CommSystem.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystem.include_receiver_interference_emitters`
+              - Gets or sets whether the emitters from each receiver is included in their interference computation.
 
 
 Import detail

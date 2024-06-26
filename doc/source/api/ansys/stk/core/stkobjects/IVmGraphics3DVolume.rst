@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DVolume.active_grid_points`
+              - Get Active Grid Points values for Volume property in the 3D Graphics properties for Volumetric object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DVolume.spatial_calculation_levels`
+              - Get Spatial Calculation Levels for Volume property in the 3D Graphics properties for Volumetric object.
 
 
 Import detail

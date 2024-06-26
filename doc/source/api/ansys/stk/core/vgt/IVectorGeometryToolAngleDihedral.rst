@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.from_vector`
+              - Specify a first vector to measure the angle.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.to_vector`
+              - Specify a second vector to measure the angle.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.pole_about`
+              - Specify a vector about.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.counter_clockwise_rotation`
+              - Specify whether the rotation is counter-clockwise.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleDihedral.signed_angle`
+              - Specify whether the axis of rotation for the angle is aligned with Positive or Negative direction of the about vector.
 
 
 Import detail

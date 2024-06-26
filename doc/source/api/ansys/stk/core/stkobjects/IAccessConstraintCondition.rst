@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCondition.condition`
+              - Condition uses the AgECnstrLighting enum.
 
 
 Import detail

@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.frequency_transfer_function_polynomial`
+              - Gets the frequency transfer function polynomial collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_type`
+              - Gets or sets the power back off transfer function type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_linear_scale`
+              - Gets or sets the option to enable power back off linear scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_polynomial`
+              - Gets the power back off transfer function polynomial collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_table`
+              - Gets the power back off transfer function table.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.enable_c_over_im`
+              - Gets or sets the option to enable C/Im.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_type`
+              - Gets or sets the C/Im transfer function type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_linear_scale`
+              - Gets or sets the option to enable C/Im linear scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_polynomial`
+              - Gets the C/Im transfer function polynomial collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_table`
+              - Gets the C/Im transfer function table.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.saturated_flux_density`
+              - Gets or sets the saturated flux density.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModel.operational_mode`
+              - Gets or sets the operational mode.
 
 
 Import detail

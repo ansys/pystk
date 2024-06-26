@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorRA.coord_axes_name`
+              - Gets or sets the coordinate axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorRA.vector_name`
+              - Gets or sets the vector.
 
 
 Import detail

@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.category`
+              - Returns a value representing the category of the result.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.value`
+              - Returns the reference to the object containing the actual results returned by the data provider. The type of the object returned depends on the category. The categories currently defined are: Interval, SubSection and TextMessage.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.sections`
+              - Returns a collection of sections.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.intervals`
+              - Returns a collection of intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.data_sets`
+              - Returns a collection of Datasets.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResult.message`
+              - Returns the message returned with the result.
 
 
 Import detail

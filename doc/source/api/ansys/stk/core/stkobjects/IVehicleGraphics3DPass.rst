@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPass.track_data`
+              - Get the leading/trailing ground and orbit track data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPass.tick_marks`
+              - Get the tick mark data.
 
 
 Import detail

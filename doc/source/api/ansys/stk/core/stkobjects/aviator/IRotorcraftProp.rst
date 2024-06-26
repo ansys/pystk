@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp.powerplant_type`
+              - Gets or sets the rotorcraft's powerplant type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp.max_sl_power`
+              - Gets or sets the maximum power at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp.max_sl_fuel_flow`
+              - Gets or sets the maximum fuel flow at sea level.
 
 
 Import detail

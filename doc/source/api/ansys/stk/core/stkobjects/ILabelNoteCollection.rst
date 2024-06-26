@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNoteCollection.count`
+              - Number of label notes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNoteCollection._NewEnum`
+              - Enumerates through the LabelNotes.
 
 
 Import detail

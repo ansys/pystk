@@ -38,6 +38,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFactory.available_vector_plugin_display_names`
+              - An array of display names associated with available vector plugins. The elements of the array are strings. Display names are used to create VGT vectors based on COM plugins using CreateVectorPluginFromDisplayName method.
 
 
 Import detail

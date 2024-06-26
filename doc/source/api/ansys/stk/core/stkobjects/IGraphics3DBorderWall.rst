@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.use_border_wall`
+              - Display the border for the area target as a solid or translucent wall that extends from the lower edge altitude to the upper edge altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.upper_edge_altitude_reference`
+              - Reference used in defining the upper edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.upper_edge_height`
+              - Height of the upper edge of the border wall.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.lower_edge_altitude_reference`
+              - Reference used in defining the lower edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.lower_edge_height`
+              - Height of the lower edge of the border wall.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.use_wall_translucency`
+              - Display the border wall at the specified translucency percentage.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.wall_translucency`
+              - Gets or sets the border wall's translucency percentage, where 100% = invisible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.use_line_translucency`
+              - Display the lines at the upper and lower edges of the border wall at the specified translucency percentage.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DBorderWall.line_translucency`
+              - Gets or sets the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
 
 
 Import detail

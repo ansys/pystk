@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_vdf`
+              - Configures STK VDF preferences.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_connect`
+              - Configures STK connect preferences.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferences.stk_preferences_python_plugins`
+              - Configures STK Python plugin preferences.
 
 
 Import detail

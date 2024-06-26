@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayG.g`
+              - Gets or sets the value of Delaunay G. Dimensionless.
 
 
 Import detail

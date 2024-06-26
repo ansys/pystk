@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamTransmit.power`
+              - Gets or sets the beam power.
 
 
 Import detail

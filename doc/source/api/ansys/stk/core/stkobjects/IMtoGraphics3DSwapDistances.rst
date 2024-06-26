@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.use_swap_distances`
+              - Opt whether to set swap distances.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.label_from`
+              - Specify the minimum distance from the viewer reference point at which the track label is visible. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.label_to`
+              - Specify the maximum distance from the viewer reference point at which the track label is visible. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.model_from`
+              - Specify the minimum distance from the viewer reference point at which the track model is visible. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.model_to`
+              - Specify the maximum distance from the viewer reference point at which the track model is visible. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.marker_from`
+              - Specify the minimum distance from the viewer reference point at which the track marker is visible. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.marker_to`
+              - Specify the maximum distance from the viewer reference point at which the track marker is visible. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.point_from`
+              - Specify the minimum distance from the viewer reference point at which the track point is visible. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DSwapDistances.point_to`
+              - Specify the maximum distance from the viewer reference point at which the track point is visible. Uses Distance Dimension.
 
 
 Import detail

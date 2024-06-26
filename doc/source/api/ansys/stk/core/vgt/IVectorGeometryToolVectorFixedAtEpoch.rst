@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch.epoch`
+              - Specify an epoch.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch.source_vector`
+              - Specify a source vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch.reference_axes`
+              - Specify a reference axes.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes.use_pre_fade`
+              - Opt whether to display the track before the time of its first point. Otherwise, the track will always be displayed when the current animation time is before the first point's time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes.pre_fade_time`
+              - Gets or sets the amount of time before the start time that the track will appear. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes.use_post_fade`
+              - Opt whether to display the track after the last point's stop time. Otherwise, the track will always be displayed when the current animation time is after the last point's time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes.post_fade_time`
+              - Gets or sets the amount of time after the stop time that the line will continue to appear. Uses Time Dimension.
 
 
 Import detail

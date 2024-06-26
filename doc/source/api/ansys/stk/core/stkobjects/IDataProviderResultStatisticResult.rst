@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultStatisticResult.value`
+              - Value of the statistic computed. Uses the dimension of the data set used to compute the time varying extremum.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTwoVector.reference_vector`
+              - Specify a reference vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTwoVector.vector2`
+              - Specify a Normal vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTwoVector.reference_point`
+              - Specify a reference point.
 
 
 Import detail

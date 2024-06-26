@@ -32,14 +32,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.is_error_ignored`
+              - Returns whether the invalid certificate error is ignored.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.serial_number`
+              - Certificate's serial number.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.issuer`
+              - The provider who issued the certificate.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.subject`
+              - Certificate's subject field.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.valid_date`
+              - Certificate's valid date.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.expiration_date`
+              - Certificate's expiration date.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.is_expired`
+              - Whether the certificate is expired.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.pem_data`
+              - Certificate's PEM data encoded as base-64.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs.handled`
+              - Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
 
 
 Import detail

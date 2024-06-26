@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.granularity`
+              - Gets the granularity used when the triangulation was computed. Lower granularities are more precise but create more triangles.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.boundary_indices`
+              - Gets indices into positions that define the boundary positions that surround the mesh. The indices returned consider the three components of a position (x, y, and z) as a single array element...
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.boundary_positions`
+              - Gets the boundary positions that surround the mesh. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.boundary_positions_winding_order`
+              - Gets the winding order of boundary positions.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult.boundary_polyline_type`
+              - Gets the polyline type of boundary positions.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorAzElMaskFile.filename`
+              - Path and filename of Az-El mask file (.aem) or body mask file (.bmsk).
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorAzElMaskFile.boresight_axis`
+              - Boresight Axis, calculated using the body-fixed coordinates of the sensor's parent object.
 
 
 Import detail

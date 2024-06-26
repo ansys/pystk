@@ -42,10 +42,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.name`
+              - Gets or sets the name of the catalog item.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.description`
+              - Get the description of the catalog item.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.is_read_only`
+              - Get whether the catalog item is read only.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.child_names`
+              - Get the child names of the catalog item.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.child_types`
+              - Get the child types.
 
 
 Import detail

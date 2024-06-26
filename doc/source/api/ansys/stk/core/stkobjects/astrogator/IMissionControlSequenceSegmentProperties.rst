@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.display_coordinate_system`
+              - Gets or sets the coordinate system that will be used in the segment summary report.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.color`
+              - Gets or sets the display color of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.update_animation_time_after_run`
+              - If true, Astrogator will set the animation time to the final epoch of the segment when the segment finishes running.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.b_planes`
+              - Get the B-Plane or B-Planes to which the epoch, position, and velocity of the segment's final state will be applied, according to the B-Plane's definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties.last_run_code`
+              - Get the last run code returned by the segment.
 
 
 Import detail

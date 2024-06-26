@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.inherit_from_scenario`
+              - Opt whether sensor 2D graphics are to be inherited from Scenario-level settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.enable`
+              - If not inherited from Scenario-level settings, opt whether to display sensor 2D graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.color`
+              - The color in which sensor graphics display.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.line_style`
+              - Select the line style in which sensor 2D graphics display from the AgELineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.line_width`
+              - Select the line width in which sensor 2D graphics display from the AgELineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.enable_boresight_graphics_2d`
+              - Opt whether to display boresight graphics for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.boresight_color`
+              - The color in which boresight graphics display.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.boresight_marker_style`
+              - The marker style used to represent the boresight graphically.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.projection`
+              - Get the 2D Projection properties of the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.fill_visible`
+              - Opt whether to display the region covered by the sensor footprint as a filled area.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.percent_translucency`
+              - Specify the percent translucency of the sensor projection. Translucency ranges from 0 to 100 percent, where 100 percent is invisible. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the sensor are visible.
 
 
 Import detail

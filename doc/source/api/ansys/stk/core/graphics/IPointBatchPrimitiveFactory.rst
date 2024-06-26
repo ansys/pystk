@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitiveFactory.minimum_pixel_size_supported`
+              - Gets the minimum pixel size supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitiveFactory.maximum_pixel_size_supported`
+              - Gets the maximum pixel size supported by the video card.
 
 
 Import detail

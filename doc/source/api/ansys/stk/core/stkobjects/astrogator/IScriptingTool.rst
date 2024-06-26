@@ -34,11 +34,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.enable`
+              - If true, the scripting tool is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.segment_properties`
+              - Returns the collection of the segment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.calc_objects`
+              - Returns the collection of the calculation objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.parameters`
+              - Returns the collection of parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.language_type`
+              - Gets or sets the scripting language being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool.pre_iterate`
+              - If true, the sequence will run once before executing the script.
 
 
 Import detail

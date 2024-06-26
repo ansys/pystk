@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceStop.enabled`
+              - If true, the segment will stop the execution of the MCS.
 
 
 Import detail

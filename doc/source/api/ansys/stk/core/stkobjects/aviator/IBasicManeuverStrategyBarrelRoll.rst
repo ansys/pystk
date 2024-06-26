@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.helix_angle`
+              - Gets or sets the helix angle for the barrel roll. The angle that the aircraft travels around the velocity vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.helix_angle_mode`
+              - Gets or sets the helix angle mode for the barrel roll.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.top_load_factor`
+              - Gets or sets the load factor at the top of the loop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.bottom_load_factor`
+              - Gets or sets the load factor at the bottom of the loop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.torsion_angle`
+              - Gets or sets the torsion angle for the barrel roll. The angle of the turn from the aircraft's velocity vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.hold_init_tas`
+              - Gets or sets the option to hold the initial true airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.top_airspeed`
+              - Get the speed at the top of the loop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBarrelRoll.bottom_airspeed`
+              - Get the speed at the bottom of the loop.
 
 
 Import detail

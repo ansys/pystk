@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.supported_modes`
+              - Gets an array of supported mode names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.mode`
+              - Gets the current radar mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.transmitter`
+              - Gets the radar transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.bistatic_receivers`
+              - Gets the bistatic receiver collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticTransmitter.antenna_control`
+              - Gets the radar antenna control.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties.selection`
+              - Whether Automatic Update is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateProperties.switch_method`
+              - When to switch between element sets.
 
 
 Import detail

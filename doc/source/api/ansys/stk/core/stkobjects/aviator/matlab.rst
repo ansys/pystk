@@ -64,8 +64,6 @@ Object Model components to support the MATLAB strategies found in the Basic Mane
 MATLAB strategies allow the users to utilize MATLAB
 Aerospace Toolbox functions to define the force modeling of the aircraft.
 
-Detail
-------
 
 .. py:currentmodule:: ansys.stk.core.stkobjects.aviator.matlab
 

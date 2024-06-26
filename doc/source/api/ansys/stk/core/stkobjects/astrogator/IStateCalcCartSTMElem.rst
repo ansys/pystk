@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem.coord_system_name`
+              - Gets or sets the coordinate system within which the element is defined.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem.final_var`
+              - Gets or sets the final variation variable.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCartSTMElem.init_var`
+              - Gets or sets the initial variation variable.
 
 
 Import detail

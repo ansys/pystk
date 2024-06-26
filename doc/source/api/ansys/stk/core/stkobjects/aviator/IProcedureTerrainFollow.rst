@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.altitude_agl`
+              - Gets or sets the altitude above ground level the aircraft will fly.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.navigation_options`
+              - Get the navigation options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.terrain_following_airspeed_options`
+              - Get the terrain following airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.reduce_turn_radii`
+              - Option to use the minimum speed to compute the turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTerrainFollow.turn_factor`
+              - Gets or sets the maximum turn radius factor.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeSphere.radius`
+              - Property used to access the radius dimension of a sphere shape.
 
 
 Import detail

@@ -32,16 +32,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.supported_models`
+              - Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.model`
+              - Gets the current antenna model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.orientation`
+              - Gets the antenna orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.refraction`
+              - Refraction method, a member of the AgESnRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.refraction_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.refraction_model`
+              - Gets a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.use_refraction_in_access`
+              - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.graphics_3d`
+              - Get the 3D Graphics properties for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.graphics`
+              - Get the 2D Graphics properties for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.rf_environment`
+              - Gets the object RF environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntenna.laser_environment`
+              - Gets the object laser environment settings.
 
 
 Import detail

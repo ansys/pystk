@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData.route`
+              - Leading/trailing route pass data.
 
 
 Import detail

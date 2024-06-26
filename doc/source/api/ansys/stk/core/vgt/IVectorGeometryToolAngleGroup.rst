@@ -38,9 +38,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.context`
+              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.count`
+              - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleGroup.factory`
+              - Returns a Factory object used to create custom angles.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleGroup._NewEnum`
+              - Returns a COM enumerator.
 
 
 Import detail

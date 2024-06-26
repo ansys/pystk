@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.spin_vector`
+              - Specify a spin vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.reference_axes`
+              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.epoch`
+              - Specify an epoch at which the axes are aligned with the reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.initial_offset`
+              - Specify an additional rotational offset.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesSpinning.spin_rate`
+              - Specify a spin rate the axes spins about the spin vector.
 
 
 Import detail

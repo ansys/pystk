@@ -2916,8 +2916,6 @@ Description
 
 Object Model components specifically designed to support STK Astrogator.
 
-Detail
-------
 
 .. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
 

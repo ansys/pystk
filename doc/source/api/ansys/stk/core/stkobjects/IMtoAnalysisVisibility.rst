@@ -40,10 +40,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.use_terrain`
+              - Indicate whether to use terrain instead of line of sight. Default is Terrain Off.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.entirety`
+              - Visibility Entirety.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.object_interval`
+              - Use Extended to use the last point of the ephemeris span of the object for times past the last point. Default is Normal.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.object_data`
+              - If the Object to which range will be computed is an MTO, use this option to specify the track that will be used to compute that range. By default the MTO's ComputeTrack will be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility.stk_object_path`
+              - Gets or sets the object used for the visibility computation.
 
 
 Import detail

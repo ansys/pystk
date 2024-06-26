@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement.name`
+              - Get the name of the reference system.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement.is_visible`
+              - Controls whether the reference system is visible.
 
 
 Import detail

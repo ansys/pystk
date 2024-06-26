@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArray.type`
+              - Return the type of time array.
 
 
 Import detail

@@ -30,33 +30,61 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.coord_system_name`
+              - Gets or sets the coordinate system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_coord_type`
+              - Get the target coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.enable_second_maneuver`
+              - Enable to calculate second maneuver at destination.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_position_x`
+              - Gets or sets the X component of the target position for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_position_y`
+              - Gets or sets the Y component of the target position for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_position_z`
+              - Gets or sets the Z component of the target position for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_velocity_x`
+              - Gets or sets the X component of the target velocity for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_velocity_y`
+              - Gets or sets the Y component of the target velocity for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_velocity_z`
+              - Gets or sets the Z component of the target velocity for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_semimajor_axis`
+              - Gets or sets the target semimajor axis for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_eccentricity`
+              - Gets or sets the target eccentricity for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_inclination`
+              - Gets or sets the target inclination for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_right_ascension_of_ascending_node`
+              - Gets or sets the target right ascension of the ascending node for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_argument_of_periapsis`
+              - Gets or sets the target argument of periapsis for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.target_true_anomaly`
+              - Gets or sets the target true anomaly for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.solution_option`
+              - Lambert solution calculation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.time_of_flight`
+              - Gets or sets the time of flight between departure and arrival for the Lambert solution.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.revolutions`
+              - Gets or sets the number of revolutions. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.orbital_energy`
+              - Gets or sets the orbital energy for the Lambert solution.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.direction_of_motion`
+              - Gets or sets the direction of motion (long or short) for the Lambert solution.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.central_body_collision_altitude_padding`
+              - Gets or sets the minimum altitude below which the Lambert algorithm will consider the spacecraft to have hit the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.enable_write_to_first_maneuver`
+              - Set this to true to write the Delta-V solution from Lambert at the start of the transfer to the linked maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.first_maneuver_segment`
+              - Gets or sets the first maneuver segment to manipulate that occurs at the start of the transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.enable_write_duration_to_propagate`
+              - Set this to true to write the Lambert duration of transfer to the 'LambertDuration' stopping condition in the linked propagate segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.disable_non_lambert_propagate_stop_conditions`
+              - Set this to true to disable all non-LambertDuration stopping conditions in the propagate segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.propagate_segment`
+              - Gets or sets the propagate segment to manipulate that contains the transfer duration.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.enable_write_to_second_maneuver`
+              - Set this to true to write the Delta-V solution from Lambert at the end of the transfer to the linked maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile.second_maneuver_segment`
+              - Gets or sets the second maneuver segment to manipulate that occurs at the end of the transfer.
 
 
 Import detail

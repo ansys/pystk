@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.orbit_marker`
+              - Define the display of the marker to represent the selected vehicle while traveling along its actual orbit, separate from that of its ground track. The orbit is the actual path that a vehicle follows.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.ground_marker`
+              - Define the display of the marker to represent the vehicle's position along its ground track, separate from that of its orbit. The ground track of a vehicle is the portion of the central body's surface that it covers while traveling along its track.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.solar_panels_point_at_sun`
+              - The model's solar panels are defaulted to point toward the sun.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.is_point_visible`
+              - Whether the point that is shown at certain viewing distances to represent an object, is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.point_size`
+              - A size of the point (in pixels). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.gltf_reflection_map_type`
+              - Gets or sets the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel.gltf_image_based`
+              - Gets glTF Image Based properties.
 
 
 Import detail

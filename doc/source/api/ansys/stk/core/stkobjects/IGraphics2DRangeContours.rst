@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.is_visible`
+              - Display range contours representing the various regions of the surface that can see an object at the specified level.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.is_fill_visible`
+              - Display the range contours as a filled polygon on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.fill_style`
+              - Gets or sets the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.level_attributes`
+              - The collection of level attributes defining the way in which the range contours are displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.num_of_decimal_digits`
+              - Number of decimal digits.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.label_unit`
+              - Gets or sets the display units on the 2d map.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.available_label_units`
+              - Get the available units for the LabelUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics2DRangeContours.fill_translucency`
+              - Specify the fill translucency percentage of the polygon on the surface of the central body. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
 
 
 Import detail

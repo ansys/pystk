@@ -36,13 +36,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.coord_system_name`
+              - Gets or sets the coordinate system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.orbit_epoch`
+              - Gets or sets the orbit epoch. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.spacecraft_parameters`
+              - Get the spacecraft  parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.fuel_tank`
+              - Get the fuel tank parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.element_type`
+              - Get the coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.element`
+              - Get the elements of the selected coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceInitialState.user_variables`
+              - Interface used to modify user variables for the initial state segment.
 
 
 Import detail

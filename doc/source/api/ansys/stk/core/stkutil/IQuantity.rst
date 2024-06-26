@@ -38,8 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.dimension`
+              - Gets the name of the dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.unit`
+              - Get the current Unit abbreviation.
             * - :py:attr:`~ansys.stk.core.stkutil.IQuantity.value`
+              - Gets or sets the current value.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectChangedEventArgs.path`
+              - Object file path.
 
 
 Import detail

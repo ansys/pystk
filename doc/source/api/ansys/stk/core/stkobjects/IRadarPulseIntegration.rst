@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegration.type`
+              - Gets the waveform type enumeration.
 
 
 Import detail

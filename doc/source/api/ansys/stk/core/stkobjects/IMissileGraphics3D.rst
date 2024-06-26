@@ -21,22 +21,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.model`
+              - Get the missile's 3D model graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.proximity`
+              - Get the missile's 3D proximity graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.elev_contours`
+              - Get the missile's 3D elevation contour graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.covariance_pointing_contour`
+              - Get the missile's 3D covariance pointing graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.trajectory_systems`
+              - Get the missile's 3D trajectory frame graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.trajectory`
+              - Get the missile's 3D trajectory graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.offsets`
+              - Get the missile's 3D offsets graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.range_contours`
+              - Get the missile's 3D range contour graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.covariance`
+              - Get the missile's 3D covariance graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.vector`
+              - Get the missile's 3D vector graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.data_display`
+              - Get the missile's 3D data display graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.model_pointing`
+              - Use to point parts of a facility or vehicle model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.drop_lines`
+              - Returns an interface allowing to configure vehicle's drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.vapor_trail`
+              - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.saa`
+              - Get the missile's South Atlantic Anomaly Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.velocity_covariance`
+              - Get the missile's 3D velocity covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMissileGraphics3D.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

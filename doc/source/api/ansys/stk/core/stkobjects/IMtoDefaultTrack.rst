@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultTrack.name`
+              - Gets or sets the name assigned to the track.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultTrack.interpolate`
+              - Opt whether the track's position will be linearly interpolated between points, or will only be displayed at the defined points at the defined times.
 
 
 Import detail

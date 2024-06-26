@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayLOverSQRTmu.l_over_sqrt_mu`
+              - Value of L/SQRT(mu). Dimensionless.
 
 
 Import detail

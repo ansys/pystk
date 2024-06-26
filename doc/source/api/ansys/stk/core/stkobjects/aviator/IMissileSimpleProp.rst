@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp.max_thrust`
+              - Gets or sets the maximum thrust of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp.fuel_flow`
+              - Gets or sets the fuel flow at max thrust.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp.no_thrust_when_no_fuel`
+              - Opt to have no thrust if the fuel is empty.
 
 
 Import detail

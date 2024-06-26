@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimeCollection.count`
+              - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimeCollection._NewEnum`
+              - Enumerates the elements in the collection.
 
 
 Import detail

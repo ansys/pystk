@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITextOverlay.text`
+              - Sets the Text to be rendered to an overlay. Newline characters ('\n') will mark the start of the next line in the text.
             * - :py:attr:`~ansys.stk.core.graphics.ITextOverlay.outline_color`
+              - Gets or sets the text's outline color.
             * - :py:attr:`~ansys.stk.core.graphics.ITextOverlay.font`
+              - Get the graphics font used to style the text.
 
 
 Import detail

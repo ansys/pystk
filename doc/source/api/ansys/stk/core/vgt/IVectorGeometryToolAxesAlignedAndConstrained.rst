@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAlignedAndConstrained.alignment_reference_vector`
+              - Specify an alignment reference vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAlignedAndConstrained.constraint_reference_vector`
+              - Specify a constraint reference vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAlignedAndConstrained.alignment_direction`
+              - Specify a desired alignment direction and the applicable parameters.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAlignedAndConstrained.constraint_direction`
+              - Specify a desired constraint direction and the applicable parameters.
 
 
 Import detail

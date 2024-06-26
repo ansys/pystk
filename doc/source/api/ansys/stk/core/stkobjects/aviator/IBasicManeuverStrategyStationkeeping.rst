@@ -32,26 +32,47 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.target_name`
+              - Gets or sets the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.valid_target_names`
+              - Returns the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.target_resolution`
+              - Gets or sets the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.max_target_speed_fraction`
+              - Gets or sets the maximum speed relative to the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.rel_bearing`
+              - Gets or sets the bearing relative to the target that the aircraft will hold.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.rel_range`
+              - Gets or sets the range from the target where the aircraft will hold.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.desired_radius`
+              - Gets or sets the goal radius of the holding circle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.turn_direction`
+              - Define if the aircraft turns left or right into the holding circle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.maneuver_factor`
+              - Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_condition`
+              - Gets or sets the stopping condition for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.use_relative_course`
+              - Option to use a relative course as opposed to an absolute course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_course`
+              - Gets or sets the course stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_after_turn_count`
+              - Gets or sets the number of turns stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_after_duration`
+              - Gets or sets the duration stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.stop_after_time`
+              - Gets or sets the time stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_mode`
+              - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_turn_radius`
+              - Get the specified turn radius for a control limit mode of specify min turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_turn_rate`
+              - Get the specified turn rate for a control limit mode of specify max turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.control_limit_horiz_accel`
+              - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping.position_vel_strategies`
+              - Get the position velocity strategies for Station Keeping.
 
 
 Import detail

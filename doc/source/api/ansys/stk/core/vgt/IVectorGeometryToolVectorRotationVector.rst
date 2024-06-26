@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorRotationVector.axes`
+              - Specify the axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorRotationVector.reference_axes`
+              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorRotationVector.force_minimum_rotation`
+              - Insures that the rotation angle will be between 0 and pi. If the angle is increasing at pi, then the axis direction will be negated to keep phi less than pi.
 
 
 Import detail

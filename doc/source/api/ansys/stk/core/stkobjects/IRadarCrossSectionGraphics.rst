@@ -32,26 +32,47 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.show`
+              - Opt whether to display graphics for the radar cross section.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.frequency`
+              - Gets or sets the frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.polarization`
+              - Gets or sets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.show_at_altitude`
+              - Enables the ability to view the contours at a set altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.altitude`
+              - Gets or sets the altitude to view the contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.relative_to_max_gain`
+              - Gets or sets the contours value represents the gain value relative to the maximum.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.show_labels`
+              - Gets or sets the option for showing contour labels.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.num_label_dec_digits`
+              - Gets or sets the integer number of decimal places to display in the contour label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.line_width`
+              - Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.color_method`
+              - Color method for contours (color ramp or explicit).
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.start_color`
+              - Gets or sets the color ramp start color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.stop_color`
+              - Gets or sets the color ramp stop color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.levels`
+              - Gets the collection of contour levels.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.azimuth_start`
+              - Gets the azimuth start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.azimuth_stop`
+              - Gets the azimuth stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.azimuth_resolution`
+              - Gets the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.azimuth_num_points`
+              - Gets the number of azimuth points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.elevation_start`
+              - Gets the elevation start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.elevation_stop`
+              - Gets the elevation stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.elevation_resolution`
+              - Gets the elevation resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics.elevation_num_points`
+              - Gets the number of elevation points.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointing3DModel.attach_name`
+              - Name of the element of the 3D model along which the sensor points.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointing3DModel.available_elements`
+              - Get the available elements of the 3D model.
 
 
 Import detail

@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DArticulationFile.filename`
+              - Path and file name of articulation file.
 
 
 Import detail

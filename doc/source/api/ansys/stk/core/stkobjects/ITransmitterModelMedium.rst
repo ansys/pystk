@@ -34,17 +34,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.frequency`
+              - Gets or sets the carrier frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.data_rate`
+              - Gets or sets the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.power`
+              - Gets or sets the power.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.antenna_gain`
+              - Gets or sets the antenna gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.polarization`
+              - Gets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.post_transmit_gains_losses`
+              - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.supported_modulators`
+              - Gets an array of supported modulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMedium.modulator`
+              - Gets the current modulator model.
 
 
 Import detail

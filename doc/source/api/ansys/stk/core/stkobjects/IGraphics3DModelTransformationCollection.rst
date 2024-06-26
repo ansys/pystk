@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection.count`
+              - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection._NewEnum`
+              - Enumerates the elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformationCollection.name`
+              - Name of the Model Transformation.
 
 
 Import detail

@@ -21,29 +21,53 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.body_width`
+              - Gets or sets the missile body's width.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.body_height`
+              - Gets or sets the missile body's height.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.body_length`
+              - Gets or sets the missile body's length.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.nose_length`
+              - Gets or sets the missile nose's length.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.nose_tip_diameter`
+              - Gets or sets the missile nose's diameter at the tip.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.nozzle_diameter`
+              - Gets or sets the diameter of the missile's nozzle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.max_aoa`
+              - Gets or sets the missile's maximum angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.min_mach`
+              - Gets or sets the minimum mach number of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_count`
+              - Gets or sets the number of wings on the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_span`
+              - Gets or sets the span of one of the missile's wings.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_surface_area`
+              - Gets or sets the area of one of the missile's wings.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_leading_edge_sweep_angle`
+              - Gets or sets the leading edge weep angle of the wings.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_leading_edge_section_angle`
+              - Gets or sets the leading edge section angle of the wings.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_mean_aero_chord_length`
+              - Gets or sets the mean chord length of one of the missile's wings.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_max_thickness_along_mac`
+              - Gets or sets the max thickness of the wing along the mean aerodynamic chord.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.wing_lift_fraction`
+              - Gets or sets the lift fraction of the wing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_count`
+              - Gets or sets the number of tails on the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_span`
+              - Gets or sets the span of one of the missile's tails.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_surface_area`
+              - Gets or sets the area of one of the missile's tails.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_leading_edge_sweep_angle`
+              - Gets or sets the leading edge weep angle of the tails.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_leading_edge_section_angle`
+              - Gets or sets the leading edge section angle of the tails.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_mean_aero_chord_length`
+              - Gets or sets the mean chord length of one of the missile's tails.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_max_thickness_along_mac`
+              - Gets or sets the max thickness of the tail along the mean aerodynamic chord.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAdvancedAero.tail_lift_fraction`
+              - Gets or sets the lift fraction of the tail.
 
 
 Import detail

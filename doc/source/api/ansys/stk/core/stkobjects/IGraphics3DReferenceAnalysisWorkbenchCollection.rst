@@ -40,8 +40,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.count`
+              - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection._NewEnum`
+              - Enumerates through the vector collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchCollection.available_crdns`
+              - Get a list of available VGT elements that can be added to the collection.
 
 
 Import detail

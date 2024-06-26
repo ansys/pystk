@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection.count`
+              - Returns the number of chosen objects in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
 
 
 Import detail

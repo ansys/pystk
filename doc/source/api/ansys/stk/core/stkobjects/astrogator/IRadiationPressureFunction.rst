@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.include_albedo`
+              - True if including accelerations derived from albedo (reflected sunlight radiation from the central body).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.include_thermal_radiation_pressure`
+              - True if including accelerations derived from thermal radiation pressure from the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.ground_reflection_model_filename`
+              - A file containing a ground reflection model used for albedo and thermal radiation pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.central_body_name`
+              - Name of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.override_segment_settings`
+              - True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.rad_pressure_coeff`
+              - Coefficient, Ck, for use with radiation pressure computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction.rad_pressure_area`
+              - Area to be used for radiation pressure computations. Small area dimension.
 
 
 Import detail

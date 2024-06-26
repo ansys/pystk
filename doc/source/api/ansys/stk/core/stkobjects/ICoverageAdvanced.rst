@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.data_retention`
+              - Data retention options can be all data or static data only.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.auto_recompute`
+              - Opt whether to have STK automatically recompute accesses every time an object on which the coverage definition depends is updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.save_mode`
+              - Specify whether accesses are saved with the coverage definition and, if not, whether they are recomputed on load.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.region_access_acceleration`
+              - Controls the use of region access computations to speedup overall coverage computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.enable_light_time_delay`
+              - Specify whether to take light time delay into account in the coverage computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.event_detection`
+              - Get the event detection strategy used in access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.sampling`
+              - Get the sampling strategy used in access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.n_assets_satisfaction_threshold`
+              - Number of assets for a valid access, per satisfaction type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAdvanced.n_assets_satisfaction_type`
+              - Used to restrict accesses satisfying specified type.
 
 
 Import detail

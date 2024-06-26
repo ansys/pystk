@@ -36,8 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection._NewEnum`
+              - Enumerates through the collection of points.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection.count`
+              - Returns the number of latitude-longitude pairs.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPointCollection.anchor_point`
+              - Specify the anchor point. Dimensionless.
 
 
 Import detail

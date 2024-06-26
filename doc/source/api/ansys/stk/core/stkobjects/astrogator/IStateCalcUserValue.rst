@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcUserValue.variable_name`
+              - Name of the user variable.
 
 
 Import detail

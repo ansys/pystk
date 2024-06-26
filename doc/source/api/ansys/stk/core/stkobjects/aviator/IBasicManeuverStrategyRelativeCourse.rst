@@ -32,24 +32,43 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.target_name`
+              - Gets or sets the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.valid_target_names`
+              - Returns the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.target_resolution`
+              - Gets or sets the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.use_relative_course`
+              - Gets or sets the option to specify a relative course as opposed to a true course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.course`
+              - Gets or sets the course value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.in_track`
+              - Gets or sets the in track offset from the center of the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.cross_track`
+              - Gets or sets the cross track offset from the center of the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.maneuver_factor`
+              - Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.use_approach_turn_mode`
+              - Gets or sets the option to fly the base leg of the maneuver with a constant radius turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.control_limit_mode`
+              - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.control_limit_turn_radius`
+              - Get the specified turn radius for a control limit mode of specify min turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.control_limit_turn_rate`
+              - Get the specified turn rate for a control limit mode of specify max turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.control_limit_horiz_accel`
+              - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.closure_mode`
+              - Gets or sets the closure mode for the guidance strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.downrange_offset`
+              - Gets or sets the downrange offset for the closure options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.hobs_max_angle`
+              - Gets or sets the closure high off boresight max angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.hobs_angle_tol`
+              - Gets or sets the closure high off boresight angle tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse.position_vel_strategies`
+              - Get the position velocity strategies for Relative Course.
 
 
 Import detail

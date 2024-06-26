@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.visible`
+              - Controls whether to display the vapor trail in the 3D window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.max_num_of_puffs`
+              - Maximum number of puffs trailing the vapor source. A higher number represents a longer vapor trail. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.density`
+              - Vapor density for a puff. A higher number produces denser looking vapor.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.radius`
+              - True scale size for a puff. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.color`
+              - Color of the vapor trail.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.use_attach_point`
+              - If the model file for the object has attach points, use this attribute and the AttachPointName attribute to specify the point where the vapor trail should be attached. Otherwise the vapor trail will be attached to the center of the model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.attach_point_name`
+              - The name of the point on the object's model where the vapor trail will be attached.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.image_file`
+              - Image file used to display the vapor trail.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.available_attach_points`
+              - Gets a list of available attach points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail.display_interval`
+              - Defines a display interval of the vapor trail in the 3D window.
 
 
 Import detail

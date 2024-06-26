@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.bearing`
+              - Gets or sets the bearing value, relative to North. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.origin_latitude`
+              - Specifies the latitude for the origin of the line of bearing. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.origin_longitude`
+              - Specifies the longitude for the origin of the line of bearing. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.origin_altitude`
+              - Specifies the altitude for the origin of the line of bearing. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.length`
+              - Gets or sets the length of the line of bearing. The value must be greater than 0. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.bearing_error`
+              - Gets or sets the margin of error in either direction of the Line of Bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.error_color`
+              - Gets or sets the color of the bearing error lines. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLineOfBearing.error_line_width`
+              - Gets or sets the line width of the bearing error lines.
 
 
 Import detail

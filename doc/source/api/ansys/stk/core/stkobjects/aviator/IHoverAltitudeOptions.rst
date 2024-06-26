@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions.altitude_reference`
+              - Gets or sets the altitude reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions.altitude`
+              - Gets or sets the altitude for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IHoverAltitudeOptions.final_altitude_rate`
+              - Gets or sets the altitude rate of the aircraft at the end of the procedure.
 
 
 Import detail

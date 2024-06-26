@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.central_body`
+              - The central body used in defining the planet object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.auto_rename`
+              - Specify whether the object should automatically be renamed to have the same name as the selected central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.radius`
+              - The radius of the selected central body. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.ephem_source`
+              - The ephemeris source for the selected central body. A member of the AgEEphemSourceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.available_central_bodies`
+              - Returns an array of all available Central Bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.available_ephem_source_types`
+              - Returns an array of all available Ephemeris Source Types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionCentralBody.jplde_version`
+              - Returns a JPL DE Version.
 
 
 Import detail

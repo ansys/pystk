@@ -34,6 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogSource.child_names`
+              - Returns the child names.
 
 
 Import detail

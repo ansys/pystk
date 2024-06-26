@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.attitude_update`
+              - How and when the attitude will be updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.reference_axes_name`
+              - Ref Axes - the reference axes to be used in modeling this maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteAttitude.orientation`
+              - Get the orientation of the attitude.
 
 
 Import detail

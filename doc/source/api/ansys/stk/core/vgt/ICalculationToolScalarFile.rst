@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.filename`
+              - The path to an ASCII file with .csc extension.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.file_interpolation_type`
+              - The interpolation method used with the data.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.file_interpolation_order`
+              - The interpolation order used with the interpolation method to interrogate the data.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFile.use_native_file_interpolation_settings`
+              - Flag indicating whether the interpolation method and order settings specified within the file, if any, will be honored.
 
 
 Import detail

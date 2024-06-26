@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs.document`
+              - Gets the KML document associated with the load event.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs.exception`
+              - Returns an error message, if an error occurred while loading the KML; otherwise an empty string.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes.reference_axes`
+              - The reference axes with respect to which the sensor is pointed. The sensor's body axes or any axes dependent upon the sensor's body axes are invalid; all other axes are valid choices for the reference axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes.orientation`
+              - Get the sensor's orientation properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes.available_axes`
+              - Get the available Reference Axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes.use_reference_axes_flipped_about_x`
+              - Use the specified ReferenceAxes, after flipping it 180 deg about its x-axis, as the sensor's body axes. Setting is only available for Facility, Target, Place objects and defaults to true for such objects.
 
 
 Import detail

@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.is_visible`
+              - Opt whether to display contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.contour_type`
+              - Contour display method (block fill or smooth fill).
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.color_method`
+              - Color method for contours (color ramp or explicit).
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.ramp_color`
+              - Color ramp colors.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.level_attributes`
+              - Contour level display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.legend`
+              - Contour legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.show_up_to_max_only`
+              - FOM values greater than max contour level are drawn as transparent.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.show_contour_lines`
+              - Show Contour Lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.line_width`
+              - Contour Lines width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.use_static_contours`
+              - Use static contour settings for animation contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.line_style`
+              - Contour lines style.
 
 
 Import detail

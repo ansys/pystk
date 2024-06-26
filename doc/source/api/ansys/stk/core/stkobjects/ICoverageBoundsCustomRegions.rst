@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.region_files`
+              - File containing user-defined points defining a specific grid region.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.area_targets`
+              - Area target to be used as part of the coverage area.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.check_for_holes`
+              - Check for holes in custom region.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions.small_region_algorithm`
+              - Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
 
 
 Import detail

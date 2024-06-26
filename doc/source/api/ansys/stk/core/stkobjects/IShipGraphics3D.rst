@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IShipGraphics3D.proximity`
+              - Get the ship's 3D proximity properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IShipGraphics3D.drop_lines`
+              - Returns an interface allowing to configure vehicle's drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IShipGraphics3D.vapor_trail`
+              - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IShipGraphics3D.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

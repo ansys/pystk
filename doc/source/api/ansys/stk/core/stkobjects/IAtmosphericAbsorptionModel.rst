@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel.name`
+              - Gets the atmospheric absorption model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel.type`
+              - Gets the atmospheric absorption model type enumeration.
 
 
 Import detail

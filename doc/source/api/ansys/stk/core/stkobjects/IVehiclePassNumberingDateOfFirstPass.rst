@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass.first_pass_num`
+              - Gets or sets the number at which pass numbering begins. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass.pass_data_epoch`
+              - Get the start time of the first pass.
 
 
 Import detail

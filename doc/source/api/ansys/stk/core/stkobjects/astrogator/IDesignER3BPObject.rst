@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPObject.object_name`
+              - Get the associated object name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPObject.object_type`
+              - Get the associated object type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPObject.object_depends_on`
+              - Get the associated object depends on.
 
 
 Import detail

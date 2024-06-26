@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBDotTCalc.target_body_name`
+              - Gets or sets the target body for B-plane computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBDotTCalc.reference_vector_name`
+              - Gets or sets the reference vector to use to define the B-plane.
 
 
 Import detail

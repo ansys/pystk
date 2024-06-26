@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisPlanetary.planetary_filename`
+              - Gets or sets the planetary ephemeris file name.
 
 
 Import detail

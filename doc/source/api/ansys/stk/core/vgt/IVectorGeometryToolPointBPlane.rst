@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.target_body`
+              - Specify a target central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.trajectory`
+              - Specify a trajectory point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.point_type`
+              - Specify a point type.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointBPlane.direction`
+              - Specify a direction (incoming or outgoing).
 
 
 Import detail

@@ -30,12 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.name`
+              - Gets or sets the name of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.capacity`
+              - Gets or sets the capacity of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.consumption_order`
+              - Gets or sets the consumption order of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.initial_fuel_state`
+              - Gets or sets the initial fuel state of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.position_x`
+              - Get the X value of the fuel tank's parent relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.position_y`
+              - Get the Y value of the fuel tank's parent relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankInternal.position_z`
+              - Get the Z value of the fuel tank's parent relative position.
 
 
 Import detail

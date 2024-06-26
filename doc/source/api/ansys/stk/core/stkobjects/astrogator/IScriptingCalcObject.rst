@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.component_name`
+              - Gets or sets the name of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.calc_object_name`
+              - Gets or sets the name of the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.calc_object`
+              - Gets or sets the calculation object type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObject.unit`
+              - Gets or sets the unit.
 
 
 Import detail

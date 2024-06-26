@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcSolarIntensity.eclipsing_bodies`
+              - A custom list of eclipsing bodies. This list is used if UseObjectEclipsingBodies is set to false.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcSolarIntensity.use_object_eclipsing_bodies`
+              - When true, configure eclipsing bodies list based on that of parent STK Object.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeOptions.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeOptions.start_arc_altitude`
+              - Gets or sets the altitude at the beginning of the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeOptions.stop_arc_altitude`
+              - Gets or sets the altitude at the end of the arc.
 
 
 Import detail

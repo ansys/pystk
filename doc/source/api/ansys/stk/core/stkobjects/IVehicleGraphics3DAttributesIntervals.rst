@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals.default_attributes`
+              - Get the default 3D graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesIntervals.intervals`
+              - Get the 3D graphics properties based on intervals.
 
 
 Import detail

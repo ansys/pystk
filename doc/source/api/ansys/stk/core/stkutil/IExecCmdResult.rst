@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IExecCmdResult.count`
+              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.IExecCmdResult._NewEnum`
+              - Returns an object that can be used to iterate through all the strings in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.IExecCmdResult.is_succeeded`
+              - Indicates whether the object contains valid results.
 
 
 Import detail

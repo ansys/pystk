@@ -74,6 +74,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFactory.available_calc_scalar_plugin_display_names`
+              - An array of display names associated with available scalar calculation plugins. The elements of the array are strings. Display names are used to create Calc scalars based on COM plugins using CreateCalcScalarPluginFromDisplayName method.
 
 
 Import detail

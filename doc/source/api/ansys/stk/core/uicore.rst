@@ -93,8 +93,6 @@ Description
 
 The STK UI Core library is a COM library containing classes, interfaces and enumerations for the Application Object Model.
 
-Detail
-------
 
 .. py:currentmodule:: ansys.stk.core.uicore
 

@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFile.filename`
+              - The path of an external file that contains the volume calc data.
 
 
 Import detail

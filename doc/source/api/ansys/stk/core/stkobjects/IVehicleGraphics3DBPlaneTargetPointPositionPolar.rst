@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar.b_magnitude`
+              - Gets or sets the magnitude of B vector. For more information see \"B-Plane Targeting\". Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar.theta`
+              - Gets or sets the angle of B vector measured in the B-plane from T vector toward R vector. Uses Angle Dimension.
 
 
 Import detail

@@ -21,20 +21,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.altitude_mode`
+              - Gets or sets the altitude mode of the autopilot - vertical plane strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.absolute_altitude`
+              - Gets or sets the absolute altitude for the specify altitude mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.relative_altitude_change`
+              - Gets or sets the relative altitude change for the specify altitude change mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.altitude_rate`
+              - Gets or sets the altitude rate for the specify altitude rate mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.fpa`
+              - Gets or sets the flight path angle for the specify wind frame flight path angle mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.altitude_control_mode`
+              - Gets or sets the altitude control mode for the hold initial altitude, specify altitude, and specify altitude change modes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.control_altitude_rate_value`
+              - Gets or sets the altitude rate control value for the hold initial altitude, specify altitude, and specify altitude change modes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.control_fpa_value`
+              - Gets or sets the control flight path angle value for the hold initial altitude, specify altitude, and specify altitude change modes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.control_limit_mode`
+              - Gets or sets the control limits mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.max_pitch_rate`
+              - Gets or sets the max pitch rate for the control limits.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.fly_ballistic`
+              - Gets or sets the option to fly a ballistic trajectory when the performance is insufficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.damping_ratio`
+              - Gets or sets the damping ratio of the control law.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.airspeed_options`
+              - Get the airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf.stop_when_conditions_met`
+              - Stop when conditions are met.
 
 
 Import detail

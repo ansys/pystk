@@ -34,8 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.x`
+              - X coordinate.
             * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.y`
+              - Y coordinate.
             * - :py:attr:`~ansys.stk.core.stkutil.ICartesian3Vector.z`
+              - Z coordinate.
 
 
 Import detail

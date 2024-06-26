@@ -36,16 +36,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.climb_speed_type`
+              - Gets or sets the mode to calculate the aircraft's airspeed while climbing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.climb_override_airspeed_type`
+              - Get the override airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.climb_override_airspeed`
+              - Get the override airsepeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.use_afterburner`
+              - Opt to use the engine's afterburner when climbing if available.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.use_airspeed_limit`
+              - Opt to limit the airspeed below a specified altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.altitude_limit`
+              - Gets or sets the altitude threshold, below which the airspeed limit will be applied.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.airspeed_limit_type`
+              - Get the airspeed limit type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.airspeed_limit`
+              - Get the airsepeed limit below the altitude threshold.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.use_flight_path_angle_limit`
+              - Opt to limit the flight path angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.flight_path_angle`
+              - Get the flight path angle limit.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedClimbModel.compute_delta_altitude`
+              - Gets or sets the maximum change in altitude in a computed segment before the data is sampled again.
 
 
 Import detail

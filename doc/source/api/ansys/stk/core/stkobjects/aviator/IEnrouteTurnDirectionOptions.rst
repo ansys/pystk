@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteTurnDirectionOptions.enroute_first_turn`
+              - Option for the first turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteTurnDirectionOptions.enroute_second_turn`
+              - Option for the second turn.
 
 
 Import detail

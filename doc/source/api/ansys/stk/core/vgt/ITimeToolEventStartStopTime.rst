@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventStartStopTime.use_start`
+              - Indicates whether to use start (true) or stop (false).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventStartStopTime.reference_event_interval`
+              - The reference interval.
 
 
 Import detail

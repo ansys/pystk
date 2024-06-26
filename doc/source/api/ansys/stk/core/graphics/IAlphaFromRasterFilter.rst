@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IAlphaFromRasterFilter.raster`
+              - Gets or sets the raster that the source raster will use to derive an alpha band.
 
 
 Import detail

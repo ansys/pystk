@@ -34,13 +34,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.data_providers`
+              - Returns the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.start_time`
+              - Gets or sets the start time of object coverage. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.stop_time`
+              - Gets or sets the stop time of object coverage. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.assets`
+              - Get the asset list collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.figure_of_merit`
+              - Get the figure of merit on the object coverage.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.access_interval`
+              - The object coverage's access interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.use_object_times`
+              - Use object interval times.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCoverage.is_coverage_configuration_saved`
+              - Save the single-object coverage definitions when the scenario is saved to disk, if a compute has been done.
 
 
 Import detail

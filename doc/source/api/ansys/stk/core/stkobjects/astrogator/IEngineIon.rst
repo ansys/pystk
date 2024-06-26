@@ -34,14 +34,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.g`
+              - Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.input_power_source_name`
+              - Gets or sets the object that computes the power input to the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.min_required_power`
+              - Gets or sets the minimum power required for engine to produce thrust. Uses Power Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.max_input_power`
+              - Gets or sets the maximum power that can be used by engine to produce thrust. Uses Power Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.percent_degradation_per_year`
+              - Gets or sets the degradation factor is ((1-x%/yr)^(timeSinceRefEpoch)).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.reference_epoch`
+              - Gets or sets the date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.percent_throttle`
+              - Gets or sets the percentage of available thrust to use (100 is full on, 0 is off). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.engine_definition`
+              - Get the engine definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineIon.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

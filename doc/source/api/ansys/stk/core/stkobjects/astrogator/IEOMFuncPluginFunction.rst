@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEOMFuncPluginFunction.plugin_identifier`
+              - Gets or sets the plugin name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEOMFuncPluginFunction.plugin_config`
+              - Get the properties of the selected plugin.
 
 
 Import detail

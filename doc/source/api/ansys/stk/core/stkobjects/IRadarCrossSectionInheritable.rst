@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionInheritable.inherit`
+              - Gets or set the option to inherit the radar cross section from the scenario object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionInheritable.supported_models`
+              - Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionInheritable.model`
+              - Gets the current RCS model.
 
 
 Import detail

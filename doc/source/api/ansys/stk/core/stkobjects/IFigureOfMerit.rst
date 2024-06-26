@@ -38,11 +38,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.definition_type`
+              - Definition type for the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.definition_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.definition`
+              - Definition properties of the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.graphics`
+              - 2D graphics properties of the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.graphics_3d`
+              - 3D graphics properties of the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMerit.grid_inspector`
+              - Get the Grid inspector tool.
 
 
 Import detail

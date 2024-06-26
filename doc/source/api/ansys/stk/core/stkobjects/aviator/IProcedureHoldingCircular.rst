@@ -32,20 +32,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.profile_mode`
+              - Gets or sets the mode defines how the aircraft will perform the holding pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.level_off_mode`
+              - Gets or sets the mode for the level off maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.bearing`
+              - Gets or sets the bearing of the holding point from the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.use_magnetic_heading`
+              - Gets or sets the option to use a magnetic heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.range`
+              - Gets or sets the distance to the holding point from the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.diameter`
+              - Gets or sets the diameter of the holding pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.use_alternate_entry_points`
+              - Gets or sets the option to enter the holding pattern from an alternate point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.turn_direction`
+              - Gets or sets the turn direction to enter the holding pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.turns`
+              - Gets or sets the number of full turns.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.refuel_dump_mode`
+              - Gets or sets the mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.hold_cruise_airspeed_options`
+              - Get the hold cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingCircular.enroute_turn_direction_options`
+              - Get the enroute turn direction options.
 
 
 Import detail

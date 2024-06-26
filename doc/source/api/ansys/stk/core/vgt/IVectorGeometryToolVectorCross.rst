@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross.from_method`
+              - Specify one of the two vectors which define the vector cross product.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross.to`
+              - Specify the second of the two vectors which define the vector cross product.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross.is_normalized`
+              - Whether to convert the cross product of two vectors to a unit vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross.dimension`
+              - Returns a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
 
 
 Import detail

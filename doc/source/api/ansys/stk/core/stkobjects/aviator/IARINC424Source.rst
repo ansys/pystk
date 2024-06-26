@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Source.use_master_data_file`
+              - Opt whether to use the master data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Source.master_data_filepath`
+              - Gets or sets the master data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Source.override_data_filepath`
+              - Gets or sets the file path to the data overriding the mader data file.
 
 
 Import detail

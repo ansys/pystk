@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.id`
+              - Gets or sets the antenna beam identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.active`
+              - Gets or sets the beam active flag.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.frequency`
+              - Gets or sets the beam frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.supported_antenna_models`
+              - Gets an array of supported antenna model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.antenna_model_name`
+              - Gets or sets the current antenna model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.antenna_model`
+              - Gets the current antenna model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.orientation`
+              - Gets the antenna orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.polarization`
+              - Gets the polarization.
 
 
 Import detail

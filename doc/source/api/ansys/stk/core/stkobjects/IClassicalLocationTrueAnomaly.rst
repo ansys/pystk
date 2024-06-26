@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationTrueAnomaly.value`
+              - Value of True Anomaly: angle from the eccentricity vector (points toward perigee) to the satellite position vector, measured in the direction of satellite motion and in the orbit plane.Uses Angle Dimension.
 
 
 Import detail

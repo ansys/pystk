@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.is_ground_track_visible`
+              - Opt whether to show the satellite's ground track.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.is_ground_marker_visible`
+              - Opt whether to show the satellite's ground marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.is_orbit_visible`
+              - Opt whether to show the satellite's orbit track.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.is_orbit_marker_visible`
+              - Opt whether to show the satellite's orbit marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesOrbit.pick_string`
+              - String displayed after instance name when the vehicle line is picked in 2D or 3D.
 
 
 Import detail

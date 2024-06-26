@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.bounding_interval_list`
+              - The bounding interval list.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.sampling_time_step`
+              - The sampling time step.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.include_interval_edges`
+              - Specify whether to include interval edges.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.reference_type`
+              - Specify the time reference from which fixed sampling time steps are taken. Note: selecting Start/Stop of each Interval resets the time reference for each interval, whereas other types maintain single reference for entire array.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedStep.reference_time_instant`
+              - The reference time instant. Only applicable if the ReferenceType is set to time instant.
 
 
 Import detail

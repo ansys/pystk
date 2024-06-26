@@ -50,8 +50,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.interval_list_or_interval_a`
+              - The interval list or interval A.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.interval_list_or_interval_b`
+              - The interval list or interval B.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListMerged.merge_operation`
+              - The merge operation.
 
 
 Import detail

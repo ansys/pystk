@@ -36,13 +36,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.grid`
+              - Definition of the coverage grid.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.point_definition`
+              - Location of points on the coverage grid.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.asset_list`
+              - List of assets to use in coverage computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.advanced`
+              - Advanced properties of the coverage definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.interval`
+              - Coverage interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.graphics`
+              - 2D Graphics properties of the coverage definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.graphics_3d`
+              - 3D Graphics properties of the coverage definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageDefinition.grid_inspector`
+              - Get the grid inspector tool.
 
 
 Import detail

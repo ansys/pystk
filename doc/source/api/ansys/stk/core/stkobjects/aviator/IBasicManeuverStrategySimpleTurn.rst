@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn.reference_frame`
+              - Gets or sets the reference frame for the simple turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn.turn_angle`
+              - Gets or sets the turn angle for the simple turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn.turn_radius_factor`
+              - Gets or sets the turn radius factor for the simple turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
 Import detail

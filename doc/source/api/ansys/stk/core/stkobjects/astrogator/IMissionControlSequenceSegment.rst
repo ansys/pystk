@@ -32,11 +32,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.type`
+              - Returns the type of segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.properties`
+              - Returns the properties of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.initial_state`
+              - Get the initial state of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.final_state`
+              - Get the final state of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.results`
+              - Get the results of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.exec_summary`
+              - Get the segment summary report.
 
 
 Import detail

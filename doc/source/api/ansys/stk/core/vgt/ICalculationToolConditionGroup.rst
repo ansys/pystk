@@ -38,9 +38,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionGroup.context`
+              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionGroup.count`
+              - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionGroup.factory`
+              - Returns a factory object used to create calc scalar components.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionGroup._NewEnum`
+              - Returns a COM enumerator.
 
 
 Import detail

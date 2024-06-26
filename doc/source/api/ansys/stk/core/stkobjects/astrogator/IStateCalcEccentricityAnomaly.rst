@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityAnomaly.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityAnomaly.element_type`
+              - Gets or sets the element type.
 
 
 Import detail

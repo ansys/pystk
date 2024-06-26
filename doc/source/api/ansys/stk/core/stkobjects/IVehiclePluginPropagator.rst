@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.use_plugin`
+              - Opt whether to use a plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.plugin_name`
+              - Gets or sets the complete name of the plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.plugin_settings`
+              - Get the parameters of the selected plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePluginPropagator.available_plugins`
+              - Get the list of all the available plugins.
 
 
 Import detail

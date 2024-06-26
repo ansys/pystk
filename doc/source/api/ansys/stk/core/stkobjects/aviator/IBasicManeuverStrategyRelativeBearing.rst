@@ -32,16 +32,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.target_name`
+              - Gets or sets the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.valid_target_names`
+              - Returns the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.target_resolution`
+              - Gets or sets the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.rel_bearing`
+              - Gets or sets the relative bearing angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.min_range`
+              - Gets or sets the range from the target at which the aircraft will stop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.control_limit_mode`
+              - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.control_limit_turn_radius`
+              - Get the specified turn radius for a control limit mode of specify min turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.control_limit_turn_rate`
+              - Get the specified turn rate for a control limit mode of specify max turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.control_limit_horiz_accel`
+              - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeBearing.position_vel_strategies`
+              - Get the position velocity strategies for Relative Bearing.
 
 
 Import detail

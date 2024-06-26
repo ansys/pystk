@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.use`
+              - Opt whether to take SRP into account.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.shadow_model`
+              - Type of shadow to be used in determining the lighting condition for the satellite - cylincrical, dual cone, or none.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.use_boundary_mitigation`
+              - Opt whether to correct the state of the satellite after crossing a shadow boundary for errors that may have been introduced by the sudden change in the SRP which occurred during the integration step.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressure.srp_model`
+              - Returns a solar radiation pressure model.
 
 
 Import detail

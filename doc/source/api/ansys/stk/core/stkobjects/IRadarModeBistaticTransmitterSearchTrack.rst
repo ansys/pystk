@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack.waveform`
+              - Gets the interface for configuring the search/track waveform.
 
 
 Import detail

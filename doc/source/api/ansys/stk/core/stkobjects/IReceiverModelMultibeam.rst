@@ -32,26 +32,47 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.pre_receive_gains_losses`
+              - Gets the collection of additional pre-receive gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.pre_demod_gains_losses`
+              - Gets the collection of additional pre-demod gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.link_margin`
+              - Gets the interface for configuring the link margin computation parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.auto_scale_bandwidth`
+              - Gets or set the auto scale bandwidth option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.bandwidth`
+              - Gets or set the bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.auto_select_demodulator`
+              - Gets or set the auto select demodulator option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.supported_demodulators`
+              - Gets an array of supported demodulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.demodulator`
+              - Gets the current demodulator model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.use_rain`
+              - Gets or sets the option for computing rain loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.supported_rain_outage_percent_values`
+              - Gets an array of supported rain outage percent values.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.rain_outage_percent`
+              - Gets or sets the rain outage percent.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.auto_track_frequency`
+              - Gets or set the auto track frequency option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.antenna_to_lna_line_loss`
+              - Gets or sets the antenna to LNA line loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.lna_gain`
+              - Gets or sets the LNA gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.lna_to_receiver_line_loss`
+              - Gets or sets the LNA to receiver line loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.system_noise_temperature`
+              - Gets the system noise temperature interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.antenna_system`
+              - Gets the antenna system.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelMultibeam.interference`
+              - Gets the radio frequency interference.
 
 
 Import detail

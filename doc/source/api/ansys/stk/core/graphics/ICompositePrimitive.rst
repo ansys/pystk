@@ -36,8 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive.count`
+              - Gets the number of primitives in the composite.
             * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive.translucent_primitives_sort_order`
+              - Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
             * - :py:attr:`~ansys.stk.core.graphics.ICompositePrimitive._NewEnum`
+              - Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
 
 
 Import detail

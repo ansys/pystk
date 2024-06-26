@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelTwoRay.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelTwoRay.loss_factor`
+              - Gets or sets the loss factor.
 
 
 Import detail

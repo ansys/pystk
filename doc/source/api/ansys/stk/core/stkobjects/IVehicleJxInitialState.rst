@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.ellipse_options`
+              - Options for modeling elliptical motion.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.representation`
+              - Representation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.propagation_frame`
+              - Gets or sets the propagation frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.supported_propagation_frames`
+              - Returns supported propagation frames.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleJxInitialState.orbit_epoch`
+              - Get the smart epoch component to configure the orbit state epoch.
 
 
 Import detail

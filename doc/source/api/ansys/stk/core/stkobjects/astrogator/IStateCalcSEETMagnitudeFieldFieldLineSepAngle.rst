@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSEETMagnitudeFieldFieldLineSepAngle.target_object`
+              - Get the reference object.
 
 
 Import detail

@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.arc_options`
+              - Get the arc options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.arc_cruise_airspeed_options`
+              - Get the arc cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.enroute_turn_direction_options`
+              - Get the enroute turn direction options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.fly_cruise_airspeed_profile`
+              - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcPointToPoint.vertical_plane_options`
+              - Get the vertical plane options.
 
 
 Import detail

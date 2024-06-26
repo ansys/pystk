@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.launch`
+              - Get the geocentric or geodetic launch position coordinates.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.burnout_vel`
+              - Burnout velocity, i.e. the velocity of the vehicle at the stop time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.burnout`
+              - Get the geocentric or geodetic burnout position coordinates.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState.trajectory_epoch`
+              - Get the smart epoch component to access the trajectory epoch.
 
 
 Import detail

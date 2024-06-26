@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile.file`
+              - Path and name of flux/Ap file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile.geomag_flux_update_rate`
+              - Select a  method for updating the geomagnetic flux update rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeUseFile.geomag_flux_src`
+              - Select a  method for updating the geomagnetic flux update rate.
 
 
 Import detail

@@ -32,15 +32,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.supported_models`
+              - Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.model`
+              - Gets the current transmitter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.refraction`
+              - Refraction method, a member of the AgESnRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.refraction_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.refraction_model`
+              - Gets a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.use_refraction_in_access`
+              - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.graphics_3d`
+              - Get the 3D Graphics properties for the transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.graphics`
+              - Get the 2D Graphics properties for the transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.rf_environment`
+              - Gets the object RF environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitter.laser_environment`
+              - Gets the object laser environment settings.
 
 
 Import detail

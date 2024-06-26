@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.trajectory_point`
+              - Specify a trajectory point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.reference_system`
+              - Specify a reference system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory.trajectory_axes_type`
+              - Specify a type of the trajectory's coordinate frame.
 
 
 Import detail

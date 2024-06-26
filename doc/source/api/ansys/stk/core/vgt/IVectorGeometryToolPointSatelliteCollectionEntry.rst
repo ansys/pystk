@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointSatelliteCollectionEntry.entry_name`
+              - Specify a satellite collection entry name.
 
 
 Import detail

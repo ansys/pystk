@@ -32,28 +32,51 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.pressure_mode`
+              - Gets or sets the pressure mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.thrust_efficiency`
+              - Gets or sets the fraction of ideal thrust applied. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.thrust_efficiency_mode`
+              - Thrust - the calculations that are effected by the thrust efficiency value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.number_of_nodes`
+              - Number of nodes to discretize collocation problem into.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_guess_file_name`
+              - File containing ephemeris for nodes that serve as an initial guess.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.seed_method`
+              - Initial seed method.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.node_status_message`
+              - A message that indicates what nodes are currently held by the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.run_mode`
+              - Run mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.halt_mission_control_sequence_when_no_convergence`
+              - Halt MCS and discard result if optimization is unsuccessful.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.discretization_strategy`
+              - Discretization Strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.working_variables`
+              - Working Variables.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.scaling_options`
+              - Scaling Options.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.enable_unit_vector_controls`
+              - Enable unit vector for thrust direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.thrust_axes`
+              - Label reflecting coordinate axes for the thrust vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.snopt_optimizer`
+              - SNOPT Optimizer Options.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_boundary_conditions`
+              - Initial Boundary Conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.final_boundary_conditions`
+              - Final Boundary Conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.path_boundary_conditions`
+              - Path Boundary Conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.log_file_name`
+              - Log file name for optimal finite maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.export_format`
+              - Format for exporting collocation control variables.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.steering_nodes`
+              - Get the list of steering nodes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.initial_guess_interpolation_method`
+              - Guess interpolation method.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite.should_reinitialize_stm_at_start_of_segment_propagation`
+              - If this segment is propagating the state transition matrix, reset it to the identity matrix at the start of the segment.
 
 
 Import detail

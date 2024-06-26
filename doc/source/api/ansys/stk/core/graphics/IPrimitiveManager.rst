@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.count`
+              - Gets the number of primitives in the manager.
             * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.precision_exponent`
+              - This property is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis...
             * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager.translucent_primitives_sort_order`
+              - Gets or sets the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality...
             * - :py:attr:`~ansys.stk.core.graphics.IPrimitiveManager._NewEnum`
+              - Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
 
 
 Import detail

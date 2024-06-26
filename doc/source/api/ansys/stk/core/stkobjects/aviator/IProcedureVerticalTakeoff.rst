@@ -32,12 +32,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.altitude_above_point`
+              - Gets or sets the altitude the aircraft will takeoff to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.final_altitude_rate`
+              - Gets or sets the altitude rate at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.altitude_offset`
+              - Gets or sets the altitude offset from the site to begin the vertical takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.heading`
+              - Get the heading for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.use_magnetic_heading`
+              - Get the option to use a magnetic heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.heading_into_wind`
+              - Gets or sets the option to define the heading according to the wind direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff.hold_on_deck`
+              - Gets or sets the duration the aircraft will wait before beginning the takeoff.
 
 
 Import detail

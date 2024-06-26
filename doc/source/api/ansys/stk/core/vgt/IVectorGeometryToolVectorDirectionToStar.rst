@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDirectionToStar.selected_star`
+              - A fully qualified path to a Star object.
 
 
 Import detail

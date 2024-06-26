@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteFile.filename`
+              - Gets or sets the attitude file to use.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteFile.file_time_offset`
+              - Gets or sets the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteFile.full_filename`
+              - Get the full path and name of the attitude file to use.
 
 
 Import detail

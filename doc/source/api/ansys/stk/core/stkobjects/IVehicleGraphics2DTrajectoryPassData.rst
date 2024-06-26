@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryPassData.ground_track`
+              - Ground track display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryPassData.trajectory`
+              - Trajectory display properties.
 
 
 Import detail

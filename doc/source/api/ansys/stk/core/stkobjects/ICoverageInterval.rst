@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageInterval.use_scenario_interval`
+              - Use the scenario time period as the coverage interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageInterval.analysis_interval`
+              - Get the coverage analysis interval.
 
 
 Import detail

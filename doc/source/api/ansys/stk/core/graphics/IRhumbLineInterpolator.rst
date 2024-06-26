@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRhumbLineInterpolator.central_body`
+              - Gets or sets the central body used when interpolating with interpolate.
             * - :py:attr:`~ansys.stk.core.graphics.IRhumbLineInterpolator.granularity`
+              - Gets or sets the granularity used when interpolating with interpolate. Lower granularities are more precise but create more positions.
 
 
 Import detail

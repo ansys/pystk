@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITilesetCollection3D.count`
+              - Get the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITilesetCollection3D._NewEnum`
+              - Enumerates through the collection.
 
 
 Import detail

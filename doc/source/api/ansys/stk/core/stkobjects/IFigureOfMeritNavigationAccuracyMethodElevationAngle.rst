@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodElevationAngle.filename`
+              - Name of file used to import a table of elevation-dependent uncertainty data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodElevationAngle.file_path`
+              - Full file name and path used to import a table of elevation-dependent uncertainty data.
 
 
 Import detail

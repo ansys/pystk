@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker.is_waypoint_markers_visible`
+              - Opt whether to display a marker in the 2D Graphics window at each waypoint along the vehicle's route.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker.is_turn_markers_visible`
+              - If a turn radius is specified for the waypoint, opt whether to display tic marks at the beginning and end of the turn, together with a mark representing the center point of the turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarker.waypoint_markers`
+              - Get the collection of waypoint markers.
 
 
 Import detail

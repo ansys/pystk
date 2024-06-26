@@ -30,12 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.interpolation_order`
+              - An interpolation order of 1 specifies linear interpolation and is appropriate for closely spaced data or data with significant jitter. Higher interpolation orders yield more accurate interpolation when the data is smooth and continuous.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.interpolation_method`
+              - By default, the SP3 propagator uses the standard Lagrange interpolation scheme, interpolating position and velocity separately. Some files may be configured to allow the Hermitian interpolation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.interpolate_across_boundaries`
+              - Whether to interpolate across file boundaries. If this option is set, STK will interpolate ephemeris steps according to the user-defined Step Size between the end of one SP3 file and the beginning of the next.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.extrapolate1_past_end`
+              - Extrapolate 1 step beyond last data point. If this option is selected, STK will calculate an additional ephemeris step beyond the last data point provided by the SP3 file(s) assigned to the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.satellite_identifier`
+              - Gets or sets a selected satellite identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.files`
+              - Access and manipulate the collection of SP3 files. You can add multiple files to a single satellite object and - if there are no gaps between the files - the whole ephemeris will be propagated in sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3.available_identifiers`
+              - An array of available satellite identifiers.
 
 
 Import detail

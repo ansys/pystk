@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerRaisedCosine.p`
+              - Gets or sets the raised cosine roll-off factor.
 
 
 Import detail

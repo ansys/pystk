@@ -30,37 +30,69 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.coord_system_name`
+              - Gets or sets the coordinate system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_coord_type`
+              - Get the target coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_second_maneuver`
+              - Enable to calculate second maneuver at destination.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_target_match_phase`
+              - Set this to true if the satellite should match the phase of the orbit at the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_position_x`
+              - Gets or sets the X component of the target position for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_position_y`
+              - Gets or sets the Y component of the target position for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_position_z`
+              - Gets or sets the Z component of the target position for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_velocity_x`
+              - Gets or sets the X component of the target velocity for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_velocity_y`
+              - Gets or sets the Y component of the target velocity for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_velocity_z`
+              - Gets or sets the Z component of the target velocity for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_semimajor_axis`
+              - Gets or sets the target semimajor axis for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_eccentricity`
+              - Gets or sets the target eccentricity for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_inclination`
+              - Gets or sets the target inclination for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_right_ascension_of_ascending_node`
+              - Gets or sets the target right ascension of the ascending node for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_argument_of_periapsis`
+              - Gets or sets the target argument of periapsis for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.target_true_anomaly`
+              - Gets or sets the target true anomaly for the end of the Lambert transfer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_write_departure_delay_to_first_propagate`
+              - Set this to true to write the departure delay duration before the Lambert transfer to the 'LambertDuration' stopping condition in the first linked propagate segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.disable_first_propagate_non_lambert_stop_conditions`
+              - Set this to true to disable all non-LambertDuration stopping conditions in the first propagate segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.first_propagate_segment`
+              - Gets or sets the propagate segment to manipulate that contains the departure delay.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_write_to_first_maneuver`
+              - Set this to true to write the Delta-V solution from Lambert at the start of the transfer to the linked maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.first_maneuver_segment`
+              - Gets or sets the first maneuver segment to manipulate that occurs at the start of the transfer. It is visible when you select Write Initial Inertial Delta-V to Maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.latest_departure_time`
+              - Gets or sets the latest time from the start of the target sequence for the first Lambert maneuver to occur.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.earliest_arrival_time`
+              - Gets or sets the earliest time from the start of the target sequence that the satellite should arrive at its destination.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.latest_arrival_time`
+              - Gets or sets the latest time from the start of the target sequence that the satellite should arrive at its destination.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.grid_search_time_step`
+              - Gets or sets the time step between Lambert evaluations for searching over both the departure window and arrival window of time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.max_revolutions`
+              - Gets or sets the maximum number of revolutions for the Lambert solution.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.central_body_collision_altitude_padding`
+              - Gets or sets the minimum altitude below which the Lambert algorithm will consider the spacecraft to have hit the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_write_duration_to_second_propagate`
+              - Set this to true to write the Lambert duration of transfer to the 'LambertDuration' stopping condition in the second linked propagate segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.disable_second_propagate_non_lambert_stop_conditions`
+              - Set this to true to disable all non-LambertDuration stopping conditions in the second propagate segment. This is visible when you select Write Flight Duration to Second Propagate.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.second_propagate_segment`
+              - Gets or sets the propagate segment to manipulate that contains the transfer duration. It is visible when you select Write Flight Duration to Second Propagate.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.enable_write_to_second_maneuver`
+              - Set this to true to write the Delta-V solution from Lambert at the end of the transfer to the linked maneuver. It is visible when you select Calculate Second Maneuver At Destination .
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertSearchProfile.second_maneuver_segment`
+              - Gets or sets the second maneuver segment to manipulate that occurs at the end of the transfer. It is visible when you select Write Final Inertial Delta-V to Maneuver.
 
 
 Import detail

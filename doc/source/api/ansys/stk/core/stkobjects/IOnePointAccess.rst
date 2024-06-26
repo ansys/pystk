@@ -34,11 +34,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.summary_option`
+              - Summary option that specifies the level of detail to provide in the computed results.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.start_time`
+              - Gets or sets the start time. Uses current animation time if none is entered.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.stop_time`
+              - Gets or sets the stop time. Uses current animation time if none is entered.  Set this to the same value as StartTime to report at a single time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.step_size`
+              - Gets or sets the step size. Default is 60 seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.output_to_file`
+              - Whether to output to a file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOnePointAccess.output_file`
+              - If set to do so, results will be output to a file with this name.
 
 
 Import detail

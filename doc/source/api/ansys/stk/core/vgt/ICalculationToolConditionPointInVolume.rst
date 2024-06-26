@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionPointInVolume.point`
+              - Get the trajectory point from the condition.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionPointInVolume.constraint`
+              - Get the volume constraint on trajectory point.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems.earth`
+              - Earth's coordinate reference systems.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems.sun`
+              - The Sun's coordinate reference systems.
 
 
 Import detail

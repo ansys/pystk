@@ -32,11 +32,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_type`
+              - Pass display option: show all or those in a user-specified range.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.pass_method`
+              - Get the pass property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.visible_sides`
+              - Gets or sets the visible sides option for the pass: ascending, descending, both or none.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.is_pass_labels_visible`
+              - Opt whether to display pass numbers at the pass break locations in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPasses.is_path_labels_visible`
+              - Opt whether to display path numbers within a repeating ground track sequence at the pass break locations in the 2D Graphics window.
 
 
 Import detail

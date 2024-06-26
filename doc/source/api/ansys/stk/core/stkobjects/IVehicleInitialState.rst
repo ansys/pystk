@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInitialState.representation`
+              - Representation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInitialState.propagation_frame`
+              - This property is deprecated. Use Two-body, J2 and J4 propagators to configure propagation frame. The propagation frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInitialState.supported_propagation_frames`
+              - This property is deprecated. Use Two-body, J2 and J4 propagators to get a list of supported propagation frames. Returns supported propagation frames.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInitialState.orbit_epoch`
+              - Get the smart epoch component to configure the orbit state epoch.
 
 
 Import detail

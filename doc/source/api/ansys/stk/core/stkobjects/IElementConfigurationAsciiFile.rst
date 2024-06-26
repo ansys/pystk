@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationAsciiFile.filename`
+              - Gets or sets the file.
 
 
 Import detail

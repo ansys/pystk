@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.min`
+              - Minimum coordinate value.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.max`
+              - Maximum coordinate value.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.include_min_max`
+              - Flag indicating whether to include minimum and maximum coordinate values in the defined set of values.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.reference_value`
+              - Reference coordinate value from which steps are taken.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedStep.step`
+              - Step between subsequent coordinate values.
 
 
 Import detail

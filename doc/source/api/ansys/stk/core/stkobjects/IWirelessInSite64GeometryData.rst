@@ -21,19 +21,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.filename`
+              - Gets or sets the geometry data filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.projection_horizontal_datum`
+              - Gets or sets the projection / horizontal datum.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.supported_building_height_data_attributes`
+              - Get an array of supported building height data attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.building_height_data_attribute`
+              - Get or sets the building height data attribute.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.building_height_reference_method`
+              - Gets or sets the building height reference method.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.building_height_unit`
+              - Gets or sets the building height unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.override_geometry_tile_origin`
+              - Gets or sets the option for overriding the geometry tile origin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.geometry_tile_origin_latitude`
+              - Gets or sets the geometry tile origin latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.geometry_tile_origin_longitude`
+              - Gets or sets the geometry tile origin longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.use_terrain_data`
+              - Gets or sets the option for using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.terrain_extent_min_latitude`
+              - Gets the terrain extent min latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.terrain_extent_max_latitude`
+              - Gets the terrain extent max latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.terrain_extent_min_longitude`
+              - Gets the terrain extent min longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData.terrain_extent_max_longitude`
+              - Gets the terrain extent max longitude.
 
 
 Import detail

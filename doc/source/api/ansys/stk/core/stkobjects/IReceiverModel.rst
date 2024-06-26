@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModel.name`
+              - Gets the receiver model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModel.type`
+              - Gets the receiver model type enumeration.
 
 
 Import detail

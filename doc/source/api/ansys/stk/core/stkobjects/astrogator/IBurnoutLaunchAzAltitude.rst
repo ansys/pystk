@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzAltitude.azimuth`
+              - Gets or sets the azimuth of the launch trajectory. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzAltitude.down_range_dist`
+              - Gets or sets the downrange distance of the spacecraft from launch at burnout. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutLaunchAzAltitude.altitude_radius`
+              - Gets or sets the altitude of the spacecraft at burnout. Uses Distance Dimension.
 
 
 Import detail

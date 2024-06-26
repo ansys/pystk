@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressureOptions.method_to_compute_sun_position`
+              - Specifies the direction of the Sun for SRP computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSolarRadiationPressureOptions.atmos_altitude_of_earth_shape_for_eclipse`
+              - Atmospheric altitude for the shape of the Earth for eclipses. Uses Distance Dimension.
 
 
 Import detail

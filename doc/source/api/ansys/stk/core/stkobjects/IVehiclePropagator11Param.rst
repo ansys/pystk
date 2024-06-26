@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11Param.parameter_files`
+              - Returns a collection of 11-Parameter satellite definitions.
 
 
 Import detail

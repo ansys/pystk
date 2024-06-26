@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalTimeOffset.reference_interval`
+              - The reference interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalTimeOffset.time_offset`
+              - The time offset value.
 
 
 Import detail

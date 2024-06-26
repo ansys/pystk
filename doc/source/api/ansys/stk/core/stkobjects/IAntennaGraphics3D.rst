@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics3D.vector`
+              - Get the antenna's Vector properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics3D.show_boresight`
+              - Opt whether to display boresight graphics for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics3D.show_contours`
+              - Opt whether to display contour graphics for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics3D.volume_graphics`
+              - Gets the antenna volume graphics interface.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVector.reference_crdns`
+              - Gets a collection that manages the 3D VGT visualizations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVector.vector_size_scale`
+              - The size scale of the geometric elements. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVector.scale_relative_to_model`
+              - Controls whether to scale the geometric elements relative to an object scale with the object's model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DVector.angle_size_scale`
+              - The angle size scale. Dimensionless.
 
 
 Import detail

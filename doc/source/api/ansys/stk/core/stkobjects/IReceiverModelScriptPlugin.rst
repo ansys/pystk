@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelScriptPlugin.filename`
+              - Gets or sets the script plugin filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelScriptPlugin.link_margin`
+              - Gets the interface for configuring the link margin computation parameters.
 
 
 Import detail

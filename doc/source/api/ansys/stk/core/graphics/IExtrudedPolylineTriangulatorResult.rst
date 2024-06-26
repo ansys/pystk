@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorResult.top_boundary_positions`
+              - Gets the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorResult.bottom_boundary_positions`
+              - Gets the boundary positions along the bottom of the extrusion. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorResult.boundary_positions_winding_order`
+              - Gets the winding order of top boundary positions and bottom boundary positions.
 
 
 Import detail

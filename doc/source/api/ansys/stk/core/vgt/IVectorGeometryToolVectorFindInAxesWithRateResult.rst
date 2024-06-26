@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.vector`
+              - The vector in a specified axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult.rate`
+              - The vector rate in a specified axes.
 
 
 Import detail

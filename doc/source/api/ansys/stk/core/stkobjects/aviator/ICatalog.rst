@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalog.aircraft_category`
+              - Get the aircraft category.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalog.runway_category`
+              - Get the runway category.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalog.airport_category`
+              - Get the airport category.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalog.navaid_category`
+              - Get the navaid category.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalog.vtol_point_category`
+              - Get the vtol point category.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalog.waypoint_category`
+              - Get the waypoint category.
 
 
 Import detail

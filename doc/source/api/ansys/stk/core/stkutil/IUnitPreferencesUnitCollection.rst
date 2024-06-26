@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection.count`
+              - Returns the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection._NewEnum`
+              - Returns an enumeration of AgUnitPrefsUnit.
 
 
 Import detail

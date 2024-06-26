@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.data_path`
+              - Gets or sets the DAFIF data path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.effective_date`
+              - Get the effective date of the DAFIF catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.expiration_date`
+              - Get the expiration date of the DAFIF catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource.spec_revision`
+              - Get the DAFIF edition.
 
 
 Import detail

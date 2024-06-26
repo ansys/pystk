@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.level_turns`
+              - Get the level turns interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.attitude_transitions`
+              - Get the attitude transitions interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.climb_and_descent_transitions`
+              - Get the climb and descent transitions interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedAccelerationModel.acceleration_mode`
+              - Get the acceleration mode interface.
 
 
 Import detail

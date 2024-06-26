@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.max_aoa`
+              - Gets or sets the maximum angle of attack possible.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.transonic_min_mach`
+              - Gets or sets the minimum speed at which the aircraft begins to experience air compression.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.transonic_max_mach`
+              - Gets or sets the maximum speed, below supersonic, at which the aircraft begins to experience air compression.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.super_hyper_mach_transition`
+              - Gets or sets the minimum speed at which the air flow will be treated as hypersonic.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.leading_edge_frontal_area_ratio`
+              - Gets or sets the frontal face thickness of the aircraft's wings at their leading edge.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.subsonic_aspect_ratio`
+              - Gets or sets the aircraft's wingspan squared divided by the wing area.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.transonic_mach_drag_factor`
+              - Gets or sets the factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicAero.wave_drag_factor`
+              - Gets or sets the scalar value that models drag produced by shock waves at or near the aircraft's critical Mach number.
 
 
 Import detail

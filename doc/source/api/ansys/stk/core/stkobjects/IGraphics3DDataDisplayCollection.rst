@@ -40,8 +40,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayCollection.available_data`
+              - Gets the available data.
 
 
 Import detail

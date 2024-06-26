@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetAttach.enable`
+              - Opt whether to attach the line to a specific point on the object. Otherwise, the line is attached to the center of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetAttach.attach_point_name`
+              - Name of the attach point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetAttach.available_attach_points`
+              - Returns available attach points.
 
 
 Import detail

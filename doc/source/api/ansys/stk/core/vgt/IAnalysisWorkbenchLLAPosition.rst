@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchLLAPosition.latitude`
+              - Specify a latitude angle.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchLLAPosition.longitude`
+              - Specify a longitude angle.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchLLAPosition.altitude`
+              - Specify an altitude value.
 
 
 Import detail

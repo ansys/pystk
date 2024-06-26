@@ -34,16 +34,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.step_size`
+              - Gets or sets the time interval between calculated ephemeris output points. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.hold_frame_name`
+              - Hold Frame - the reference frame of the Hold segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.enable_hold_attitude`
+              - Enable Hold Altitude - if true, the spacecraft's attitude is fixed within the hold frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.stopping_conditions`
+              - Get the stopping conditions defined for the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.min_propagation_time`
+              - Minimum Propagation Time - the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.max_propagation_time`
+              - Maximum Propagation Time - the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.enable_max_propagation_time`
+              - Enable Maximum Propagation Time - if true, the maximum propagation time will be enforced.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.enable_warning_message`
+              - If true, Astrogator will issue a warning message if propagation is stopped by the Maximum Propagation Time parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.override_max_propagation_time`
+              - Override Maximum Propagation Time - if there is a duration or epoch stopping condition that occurs after the maximum propagation time, ignore the maximum propagation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceHold.should_stop_for_initially_surpassed_epoch_stopping_conditions`
+              - Stop immediately if propagation begins beyond an active epoch stopping condition.
 
 
 Import detail

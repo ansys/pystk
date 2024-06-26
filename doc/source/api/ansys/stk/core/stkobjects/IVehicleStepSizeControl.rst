@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl.method`
+              - Fixed step or relative error.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl.error_tolerance`
+              - If the method is relative error. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl.min_step_size`
+              - If the method is relative error. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl.max_step_size`
+              - If the method is relative error. Uses Time Dimension.
 
 
 Import detail

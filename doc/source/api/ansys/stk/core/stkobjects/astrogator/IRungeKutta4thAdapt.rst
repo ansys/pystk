@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.initial_step`
+              - Gets or sets the initial step. Uses time dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.use_fixed_step`
+              - True if running in fixed-step mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.use_max_step`
+              - Whether or not to enforce the maximum step.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.use_min_step`
+              - Whether or not to enforce the minimum step.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.max_step`
+              - Gets or sets the maximum step size to allow (absolute value). Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.min_step`
+              - Gets or sets the minimum step size to allow (absolute value). Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.max_rel_err`
+              - Gets or sets the maximum relative error used to control step size. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.max_abs_err`
+              - Gets or sets the maximum absolute error; Also used if relative scale is too small. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.high_safety_coefficient`
+              - Gets or sets the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.low_safety_coefficient`
+              - Gets or sets the 'safety' coefficient used to increase step size if the error is too low. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.error_control`
+              - Gets or sets the error control method.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IRungeKutta4thAdapt.max_iterations`
+              - Gets or sets the maximum iterations. Dimensionless.
 
 
 Import detail

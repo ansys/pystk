@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTrackData.inherit_from_2d`
+              - Opt whether to inherit the 3D leading/trailing track data from 2D graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitTrackData.pass_data`
+              - Get the 3D leading/trailing track data.
 
 
 Import detail

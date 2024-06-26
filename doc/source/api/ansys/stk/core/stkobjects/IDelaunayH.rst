@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayH.h`
+              - Gets or sets the value of Delaunay H. Dimensionless.
 
 
 Import detail

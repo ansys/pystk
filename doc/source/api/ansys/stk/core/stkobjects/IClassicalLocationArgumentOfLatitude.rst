@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude.value`
+              - Value of Argument of Latitude: sum of True Anomaly and Argument of Perigee. Uses Angle Dimension.
 
 
 Import detail

@@ -21,22 +21,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.model`
+              - Get the launch vehicle's 3D model properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.trajectory_systems`
+              - Get the launch vehicle's 3D trajectory frame properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.proximity`
+              - Get the launch vehicle's 3D proximity properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.elev_contours`
+              - Get the launch vehicle's 3D elevation contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.covariance_pointing_contour`
+              - Get the launch vehicle's 3D covariance pointing properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.trajectory`
+              - Get the launch vehicle's 3D trajectory properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.offsets`
+              - Get the launch vehicle's 3D offsets properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.range_contours`
+              - Get the launch vehicle's 3D range contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.covariance`
+              - Get the launch vehicle's 3D covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.vector`
+              - Get the launch vehicle's 3D vector properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.data_display`
+              - Get the launch vehicle's 3D data display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.model_pointing`
+              - Use to point parts of a launch vehicle's model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.drop_lines`
+              - Returns an interface allowing to configure launch vehicle's drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.vapor_trail`
+              - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.saa`
+              - Get the launch vehicle's South Atlantic Anomaly Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.velocity_covariance`
+              - Get the launch vehicle's 3D velocity covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics3D.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

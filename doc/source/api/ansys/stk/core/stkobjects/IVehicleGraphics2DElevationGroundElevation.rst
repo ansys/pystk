@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationGroundElevation.angle`
+              - Ground elevation angle as measured from the ground to the vehicle. Range 0-90. Uses Angle Dimension.
 
 
 Import detail

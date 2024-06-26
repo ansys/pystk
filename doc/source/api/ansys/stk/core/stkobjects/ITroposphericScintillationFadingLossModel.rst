@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModel.name`
+              - Gets the TropoSpheric Scintillation Fading loss model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModel.type`
+              - Gets the TropoSpheric Scintillation Fading loss model type enumeration.
 
 
 Import detail

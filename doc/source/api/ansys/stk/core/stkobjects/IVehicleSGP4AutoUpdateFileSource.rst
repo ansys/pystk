@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateFileSource.filename`
+              - Gets or sets the name of the source file containing GP data (either TLEs or CCSDS OMM content).
 
 
 Import detail

@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.saa_contour`
+              - SAA Contour settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.magnetic_field`
+              - Magnetic Field settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.veh_temperature`
+              - Vehicle Temperature settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.particle_flux`
+              - Particle Flux settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.radiation`
+              - Radiation settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment.graphics`
+              - Graphics settings.
 
 
 Import detail

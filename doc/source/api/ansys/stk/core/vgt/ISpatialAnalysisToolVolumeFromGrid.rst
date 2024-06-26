@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid.edge_type`
+              - Sets/Returns the edge type.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromGrid.volume_grid`
+              - Sets/Returns the volume grid for bounding.
 
 
 Import detail

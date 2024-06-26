@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.inherit`
+              - Specify whether inheritable 2D Graphics attributes are inherited from Scenario-level settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.color`
+              - The color in which the planet's marker, label and orbit path (if any) are displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.sub_planet_label_visible`
+              - Specify whether a label displays for the point on the Earth directly below the planet.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.position_label_visible`
+              - Specify whether a label displays for the inertial position of the planet. This option affects only the perspective and orthographic map projections.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.marker_style`
+              - The style of the marker representing the planet.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.inertial_position_visible`
+              - Specify whether the position of the planet displays in the 2D Graphics window in the Central-Body Inertial (CBI) coordinate frame. This option affects only the perspective and orthographic map projections.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.sub_planet_point_visible`
+              - Specify whether the point on the Earth directly below the planet displays in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.orbit_visible`
+              - Specify whether the planet's orbit path displays. This option affects only the perspective and orthographic map projections.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.orbit_display`
+              - The factor used in determining how much of the orbit displays. A member of the AgEPlOrbitDisplayType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.orbit_display_data`
+              - If time is used to determine how much of the orbit displays, specify a time value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.line_style`
+              - The type of line to represent the object's pattern or tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.line_width`
+              - The width of the line to represent the object's pattern or tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the planet are visible.
 
 
 Import detail

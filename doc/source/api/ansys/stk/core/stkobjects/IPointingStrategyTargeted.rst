@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategyTargeted.target_object`
+              - Gets or sets the pointing target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategyTargeted.available_target_objects`
+              - Gets or the available pointing targets.
 
 
 Import detail

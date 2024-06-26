@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionXYZ.x`
+              - X component. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionXYZ.y`
+              - Y component. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionXYZ.z`
+              - Z component. Dimensionless.
 
 
 Import detail

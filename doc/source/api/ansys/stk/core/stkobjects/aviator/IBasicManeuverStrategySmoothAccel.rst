@@ -21,20 +21,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.turn_direction`
+              - Gets or sets the roll turn direction for a Smooth Accel basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.roll_rate_mode`
+              - Gets or sets the roll rate mode for a Smooth Accel basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.override_roll_rate`
+              - Gets or sets the roll rate override value for the Smooth Accel basic maneuver strategy. The roll rate mode must be set to override to access this property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.roll_rate_dot`
+              - Gets or sets the rate of change of the roll rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.control_roll_angle`
+              - Gets or sets the option to define a goal value for the aircraft's roll angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.roll_angle`
+              - Gets or sets the goal value for the roll angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.load_factor_mode`
+              - Gets or sets the load factor mode for the Smooth Accel basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.override_load_factor`
+              - Gets or sets the load factor override value for the smooth accel. The load factor mode must be set to override to access this property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.load_factor_dot`
+              - Gets or sets the rate of change of the load factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.control_pitch_angle`
+              - Gets or sets the option to define a goal value for the aircraft's pitch angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.pitch_angle`
+              - Gets or sets the goal value for the pitch angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.stop_conditions`
+              - Gets or sets the stop condition for the Smooth Accel basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.stop_on_roll_angle`
+              - Gets or sets the option to stop the maneuver if the specified roll angle is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.stop_on_pitch_angle`
+              - Gets or sets the option to stop the maneuver if the specified pitch angle is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySmoothAccel.airspeed_options`
+              - Get the airspeed options.
 
 
 Import detail

@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.use_local_time_offset`
+              - Opt whether to use a local time offset from GMT.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.local_time_offset`
+              - The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.auto_centroid`
+              - Opt whether to have the centroid automatically computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.position`
+              - Get the position of the area target centroid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.access_constraints`
+              - Get the constraints imposed on the area target. Basic constraints for area targets apply to all points within or along the area target. If the constraint is satisfied for at least one point, access to the area target is considered valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.graphics`
+              - Get the area target's 2D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.graphics_3d`
+              - Get the area target's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.area_type`
+              - The method for defining the area target boundary. A member of the AgEAreaType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.area_type_data`
+              - Get the data defining the boundary with the selected method.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.use_terrain_data`
+              - Opt whether to use terrain data for altitude updates.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.allow_object_access`
+              - Opt whether access to the object is constrained with respect to the entire object, as opposed to any part of it.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTarget.common_tasks`
+              - Common tasks associated with AreaTargets.
 
 
 Import detail

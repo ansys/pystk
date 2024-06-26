@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorOutgoingAsymptote.radius_of_periapsis`
+              - Radius of Periapsis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorOutgoingAsymptote.c3_energy`
+              - C3Energy (Rate Squared).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorOutgoingAsymptote.ra_outgoing_asymptote`
+              - Right Ascension of Incoming Asymptote. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorOutgoingAsymptote.declination_outgoing_asymptote`
+              - Declination of Incoming Asymptote. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorOutgoingAsymptote.velocity_azimuth_periapsis`
+              - Velocity Azimuth at Periapsis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorOutgoingAsymptote.true_anomaly`
+              - True Anomaly. Uses Angle Dimension.
 
 
 Import detail

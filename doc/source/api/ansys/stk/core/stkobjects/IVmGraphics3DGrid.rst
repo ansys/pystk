@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.show_grid`
+              - Show/hide grid in 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.show_grid_points`
+              - Show/hide grid points in 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.point_size`
+              - Set the grid point size. Valid value is between 1 and 20.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.point_color`
+              - Set the color of the grid points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.show_grid_lines`
+              - Show/hide grid lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DGrid.line_color`
+              - Set the color of the grid line.
 
 
 Import detail

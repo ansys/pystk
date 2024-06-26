@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.translucency`
+              - Gets or sets the translucency value for the image. The translucency is between 0 and 1, where 0 is fully opaque and 1 is invisible.
             * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.use_altitude_based_translucency`
+              - Gets or sets whether to use altitude to determine the translucency value for the image or not. If <see langword='false' />, the translucency value is used...
             * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.altitude_based_translucency_lower_translucency`
+              - Gets or sets the lower translucency value for the image when use altitude based translucency is set to <see langword='true' />...
             * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.altitude_based_translucency_upper_translucency`
+              - Gets or sets the upper translucency value for the image when use altitude based translucency is set to <see langword='true' />...
             * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.altitude_based_translucency_lower_altitude`
+              - Gets or sets the lower altitude bound used to calculate translucency for the image when use altitude based translucency is set to <see langword='true' />...
             * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.altitude_based_translucency_upper_altitude`
+              - Gets or sets the upper altitude bound used to calculate translucency for the image when use altitude based translucency is set to <see langword='true' />...
             * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlay.more_than_one_image_globe_overlay_supported`
+              - Gets whether or not the video card allows for more than one image globe overlay globe image overlay to be added.
 
 
 Import detail

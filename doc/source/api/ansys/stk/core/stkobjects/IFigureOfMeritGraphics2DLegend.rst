@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.color_options`
+              - Color options for contour legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.text_options`
+              - Text options for contour legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.range_color_options`
+              - Range color options for contour legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.graphics_2d_window`
+              - Get the 2D graphics window on which the legend is to display.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegend.graphics_3d_window`
+              - Get the 3D graphics window on which the legend is to display.
 
 
 Import detail

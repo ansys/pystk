@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.axis_labels_visible`
+              - Displays labels for the selected axis. Only available for planes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.transparent_plane_visible`
+              - If enabled, the plane is see-through; otherwise it is opaque. Only available for planes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.size`
+              - Gets or sets the size of the selected geometric plane or point. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.transparency`
+              - Use the slide control to set the transparency of the plane. Transparency can be adjusted from 0 to 100 percent, where 100 percent is completely invisible. Only available for planes. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.draw_at_object`
+              - Only available for geometric elements relating to objects. If selected, the geometric element is drawn at the central body or object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.rect_grid_visible`
+              - If enabled the rectangle grid is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.circ_grid_visible`
+              - If enabled the circle grid is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolPlane.plane_grid_spacing`
+              - Spacing between grid points. Uses Distance Dimension.
 
 
 Import detail

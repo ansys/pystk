@@ -42,13 +42,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.count`
+              - Number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.constraint_name`
+              - Gets the constraint name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.is_plugin`
+              - Returns true if the access constraint is a plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.excl_intvl`
+              - Gets or sets the ExclInterval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.constraint_type`
+              - Gets the constraint type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection._NewEnum`
+              - Enumerate the IAgAccessCnstrZone interfaces.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.max_time_step`
+              - Maximum time step used in adaptive sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintExclZonesCollection.max_rel_motion`
+              - Maximum relative motion used in adaptive sampling.
 
 
 Import detail

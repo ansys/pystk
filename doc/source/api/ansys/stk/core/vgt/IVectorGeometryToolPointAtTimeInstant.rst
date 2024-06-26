@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.reference_time_instant`
+              - A reference time instant. Can be any Time event.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.source_point`
+              - A source point. Can be any VGT point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointAtTimeInstant.reference_system`
+              - A reference system. Can be any VGT system.
 
 
 Import detail

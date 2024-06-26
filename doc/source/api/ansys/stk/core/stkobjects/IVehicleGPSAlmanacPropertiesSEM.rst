@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.avg_ura`
+              - Get the satellite 'average' URA number, with the URA number as defined in the ICD-GPS-200. This is not an item in the raw almanac file, but is based on the average URA value transmitted by this satellite in its subframe 1 data sets.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.almanac_week`
+              - Get the week number from the reference week.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.reference_week`
+              - Gets or sets the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.time_of_almanac`
+              - Get the almanac reference time (Time of Appilcability) for all almanacs in the file per ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.date_of_almanac`
+              - Get the almanac reference date for all almanacs in the file per ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSEM.health`
+              - Get the satellite health code as defined in the ICD-GPS-200 expressed in integer form. 0=healthy.
 
 
 Import detail

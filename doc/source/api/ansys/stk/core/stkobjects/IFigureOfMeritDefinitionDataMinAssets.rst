@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinAssets.min_assets`
+              - Minimum number of assets used in calculating navigation accuracy.
 
 
 Import detail

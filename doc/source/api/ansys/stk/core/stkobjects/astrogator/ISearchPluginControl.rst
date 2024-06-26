@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.control_name`
+              - Get the name of the control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.current_value`
+              - Get the current value of the control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.parent_segment_name`
+              - Get the parent segment of the control parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.initial_value`
+              - Get the initial value of the control parameter. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.plugin_identifier`
+              - Get the plugin identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.plugin_config`
+              - Get the properties of the selected plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.dimension`
+              - Get the dimension of the values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.use_custom_display_unit`
+              - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.custom_display_unit`
+              - Gets or sets the unit in which the value will be displayed in the GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl.values`
+              - List of values of this independent variable at each iteration, including nominal run. Dimension depends on context.
 
 
 Import detail

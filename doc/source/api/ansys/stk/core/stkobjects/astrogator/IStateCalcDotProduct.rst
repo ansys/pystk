@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDotProduct.vector1_name`
+              - Gets or sets the first vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDotProduct.vector2_name`
+              - Gets or sets the second vector.
 
 
 Import detail

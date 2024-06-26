@@ -32,16 +32,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.launch_time`
+              - Gets or sets the launch time of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.position_point_name`
+              - Gets or sets the name of the point used for the launch position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.direction_vec_name`
+              - Gets or sets the name of the vector used for the launch direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.attitude_mode`
+              - Gets or sets the attitude mode during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.specify_launch_airspeed`
+              - Opt to specify a minimum launch speed the aircraft will accelerate to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.accel_g`
+              - Gets or sets the acceleration of the aircraft during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.airspeed`
+              - Get the goal airspeed for the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.fuel_flow_type`
+              - Gets or sets the fuel flow type of the aircraft during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.override_fuel_flow`
+              - Gets or sets the fuel flow value for a fuel flow type set to Override.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunch.true_course_hint`
+              - Gets or sets the true course used when the vehicle's direction vector is set to Zenith.
 
 
 Import detail

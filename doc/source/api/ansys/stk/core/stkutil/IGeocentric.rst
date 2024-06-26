@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IGeocentric.lat`
+              - Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IGeocentric.lon`
+              - Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IGeocentric.altitude`
+              - Dimension depends on context.
 
 
 Import detail

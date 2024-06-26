@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLagrangeLibration.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLagrangeLibration.point_type`
+              - Specify a lagrange point (L1, L2, etc.).
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointLagrangeLibration.secondary_central_bodies`
+              - Specify multiple secondary central bodies.
 
 
 Import detail

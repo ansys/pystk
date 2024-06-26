@@ -36,28 +36,51 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.propagator_type`
+              - Get the type of propagator used to define the satellite's orbit.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.propagator`
+              - Get information for the propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.attitude_type`
+              - Get the type of the satellite's attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.attitude_supported_types`
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.attitude`
+              - Get the Attitude properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.mass_properties`
+              - Get the Mass properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.pass_break`
+              - Get the Pass Break properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.ground_ellipses`
+              - Get the Ground Ellipses properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.graphics`
+              - Get the 2D Graphics properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.graphics_3d`
+              - Get the 3D Graphics properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.access_constraints`
+              - Get the constraints imposed on the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.eclipse_bodies`
+              - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.propagator_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.export_tools`
+              - Returns the IAgSaExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.space_environment`
+              - Get the SpaceEnvironment properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.reference_vehicle`
+              - Get the reference vehicle of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.radar_clutter_map`
+              - Returns the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.radar_cross_section`
+              - Returns the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.use_terrain_in_lighting_computations`
+              - Opt whether to compute lighting using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.lighting_max_step`
+              - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.lighting_max_step_terrain`
+              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.lighting_max_step_central_body_shape`
+              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatellite.get_eoir`
+              - Get the EOIR properties of the satellite.
 
 
 Import detail

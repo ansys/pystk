@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.heading_change`
+              - Gets or sets the direction in which the aircraft will begin the weave pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.max_num_cycles`
+              - Gets or sets the number of times the aircraft will fly the pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.max_distance`
+              - Gets or sets the maximum ground distance the aircraft will travel while performing the weave cyces.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.control_limit_mode`
+              - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.control_limit_turn_radius`
+              - Get the specified turn radius for a control limit mode of specify min turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.control_limit_turn_rate`
+              - Get the specified turn rate for a control limit mode of specify max turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.control_limit_horiz_accel`
+              - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyWeave.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
 Import detail

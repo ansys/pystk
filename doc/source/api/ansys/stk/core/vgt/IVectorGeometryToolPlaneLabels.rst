@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneLabels.x_axis_label`
+              - Specify an X axis label.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneLabels.y_axis_label`
+              - Specify a Y axis label.
 
 
 Import detail

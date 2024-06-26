@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.ellipse_set_name`
+              - Name of the ellipse set.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.static_graphics_2d`
+              - Opt whether to display static graphics: all ellipses are displayed in the graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.dynamic_graphics_2d`
+              - Opt whether to display dynamic graphics: an ellipse is interpolated between all specified ellipses, linearly interpolating semimajor/minor axes and bearings. Position is interpolated between the ellipses with the closest times to the animation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.interpolate`
+              - Opt whether to interpolate between time points or the last known size and orientation for dynamic graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.is_name_visible`
+              - Opt whether to display the name of the ellipse set at the center of each ellipse in the ellipse set.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.is_center_visible`
+              - Opt whether to display the point marker for each ellipse in the ellipse set.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.color`
+              - Color of the ellipse set name and ellipse graphics for all ellipses in the set.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DGroundEllipsesElement.line_width`
+              - Line width of ellipses in the set.
 
 
 Import detail

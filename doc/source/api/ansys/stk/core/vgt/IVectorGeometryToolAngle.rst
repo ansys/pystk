@@ -36,6 +36,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngle.type`
+              - Returns a type of the angle object.
 
 
 Import detail

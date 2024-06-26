@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.enable_light_time_delay`
+              - Specify whether to take light time delay into account in the computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.time_light_delay_convergence`
+              - Gets or sets the tolerance used when iterating to determine the light time delay. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.aberration_type`
+              - Gets or sets the model of aberration to be used in access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.event_detection_type`
+              - Gets or sets the event detection type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.event_detection`
+              - Gets the event detection algorithm.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.sampling_method_type`
+              - Gets or sets the sampling method type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessOptions.sampling_method`
+              - Gets the sampling method.
 
 
 Import detail

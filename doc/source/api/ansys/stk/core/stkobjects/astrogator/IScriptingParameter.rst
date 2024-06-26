@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.name`
+              - Gets or sets the parameter name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.param_value`
+              - Gets or sets the parameter value.  Set in Object Model unit preference for selected dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.unit`
+              - Gets or sets the parameter's unit that is used to represent ParamValue during the scripting tool script execution. ParamValue is set in Object Model unit preference for selected dimension and not this unit. As with other units configurable in the desktop environment for STK, this unit is separate (and may differ) from the Object Model unit preference.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.type`
+              - Gets or sets the parameter's type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.inherit_value`
+              - If true, parameter value will be inherited from previous profile's value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.user_comment`
+              - Gets or sets the parameter's comment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.dimension`
+              - Gets or sets the parameter's dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.enumeration_choices`
+              - Get the collection of enumerations to use when parameter type is eVAScriptingParameterTypeEnumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.use_min_value`
+              - If true, a minimum value will be enforced for the parameter value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.min_value`
+              - Gets or sets the minimum value permitted for the parameter value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.use_max_value`
+              - If true, a maximum value will be enforced for the parameter value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameter.max_value`
+              - Gets or sets the maximum value permitted for the parameter value.
 
 
 Import detail

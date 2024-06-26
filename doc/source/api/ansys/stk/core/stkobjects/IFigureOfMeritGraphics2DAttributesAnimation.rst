@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributesAnimation.accumulation`
+              - Accumulation method to control the sense and persistence of the animation graphics.
 
 
 Import detail

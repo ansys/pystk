@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.use_light_time_delay`
+              - Flag indicating whether to include minimum and maximum coordinate values in the defined set of values.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.time_delay_convergence`
+              - Set light Time Delay Convergence.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.aberration_type`
+              - Method used to Aberration Type.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.clock_host`
+              - Indicates whether object1 or object2 of an Access instance holds the clock for Access times.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay.time_sense`
+              - Indicates whether apparent position is computed in a transmit or receive sense.
 
 
 Import detail

@@ -32,15 +32,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.supported_models`
+              - Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.model`
+              - Gets the current receiver model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.refraction`
+              - Refraction method, a member of the AgESnRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.refraction_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.refraction_model`
+              - Gets a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.use_refraction_in_access`
+              - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.graphics_3d`
+              - Get the 3D Graphics properties for the receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.graphics`
+              - Get the 2D Graphics properties for the receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.rf_environment`
+              - Gets the object RF environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiver.laser_environment`
+              - Gets the object laser environment settings.
 
 
 Import detail

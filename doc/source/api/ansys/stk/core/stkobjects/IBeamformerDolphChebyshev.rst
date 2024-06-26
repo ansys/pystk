@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerDolphChebyshev.sidelobe_level`
+              - Gets or sets the sidelobe level relative to the maximum gain.
 
 
 Import detail

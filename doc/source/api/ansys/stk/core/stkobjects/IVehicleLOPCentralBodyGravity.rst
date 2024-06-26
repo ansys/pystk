@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPCentralBodyGravity.max_degree`
+              - Gets or sets the maximum degree of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPCentralBodyGravity.max_order`
+              - Gets or sets the maximum order of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless.
 
 
 Import detail

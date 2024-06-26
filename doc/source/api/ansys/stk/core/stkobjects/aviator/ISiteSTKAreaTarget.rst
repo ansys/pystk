@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget.object_name`
+              - Gets or sets the object name to link to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget.valid_object_names`
+              - Returns the valid object names.
 
 
 Import detail

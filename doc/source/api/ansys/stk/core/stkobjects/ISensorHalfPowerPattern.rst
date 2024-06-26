@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern.frequency`
+              - The antenna's frequency in GHz. Uses Frequency Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern.antenna_diameter`
+              - The diameter of the antenna dish. Uses SmallDistanceUnit Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern.half_angle`
+              - Get the half angle of the cone for, calculated on the basis of the Frequency and AntennaDiameter properties. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern.angular_resolution`
+              - Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
 
 
 Import detail

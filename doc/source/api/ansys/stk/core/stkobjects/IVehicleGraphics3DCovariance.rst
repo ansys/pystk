@@ -36,11 +36,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.sigma_scale_type`
+              - Get the sigma scale type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.sigma_scale_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.sigma_scale`
+              - Get the sigma scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.attributes_type`
+              - Get the position ellipsoid attributes type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.attributes_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DCovariance.attributes`
+              - Get the position ellipsoid graphics attributes.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISolarActivityConfiguration.type`
+              - Gets the solar activity configuration enumeration.
 
 
 Import detail

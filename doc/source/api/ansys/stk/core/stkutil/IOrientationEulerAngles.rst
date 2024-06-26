@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationEulerAngles.sequence`
+              - Euler rotation sequence. Must be set before A,B,C values. Otherwise the current A,B,C values will be converted to the Sequence specified.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationEulerAngles.a`
+              - Euler A angle. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationEulerAngles.b`
+              - Euler b angle. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationEulerAngles.c`
+              - Euler C angle. Uses Angle Dimension.
 
 
 Import detail

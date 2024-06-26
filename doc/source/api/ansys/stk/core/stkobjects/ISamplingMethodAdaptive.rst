@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISamplingMethodAdaptive.max_time_step`
+              - Maximum sampling step size used in access calculations. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISamplingMethodAdaptive.min_time_step`
+              - Minimum sampling step size used in access calculations. Uses Time Dimension.
 
 
 Import detail

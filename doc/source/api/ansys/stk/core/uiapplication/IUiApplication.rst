@@ -50,22 +50,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.personality`
+              - Returns a reference to the currently loaded personality.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.visible`
+              - Gets/sets whether the main window is visible.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.user_control`
+              - Gets/sets whether the application is user controlled.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.windows`
+              - Returns a collection of windows.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.height`
+              - Gets/sets a height of the main window.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.width`
+              - Gets/sets a width of the main window.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.left`
+              - Gets/sets a vertical coordinate of the main window.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.top`
+              - Gets/sets a horizontal coordinate of the main window.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.window_state`
+              - Gets/sets the state of the main window.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.mru_list`
+              - Returns a collection most recently used files.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.path`
+              - Returns the complete path to the application, excluding the final separator and name of the application. Read-only String.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.hwnd`
+              - Returns an HWND handle associated with the application main window.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.message_pending_delay`
+              - Gets/Sets message-pending delay for server busy dialog (in milliseconds).
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.personality2`
+              - Returns an new instance of the root object of the STK Object Model.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.log_file`
+              - Gets the current log files full path.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.display_alerts`
+              - Set to true to display certain alerts and messages. Otherwise false. The default value is True.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplication.process_id`
+              - Gets process id for the current instance.
 
 
 Import detail

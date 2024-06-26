@@ -34,26 +34,47 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.target_name`
+              - Gets or sets the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.valid_target_names`
+              - Returns the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.target_resolution`
+              - Gets or sets the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.use_counter_turn_logic`
+              - Gets or sets the option to improve performance when flying with a target on a straight and level flight path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.enable_collision_avoidance`
+              - Get the option to enable collision avoidance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.cpa`
+              - Get the minimum distance between this aircraft and the target aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.relative_bearing`
+              - Gets or sets the bearing relative to the target the aircraft will achieve and maintain.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.relative_range`
+              - Gets or sets the range to the target the aircraft will achieve and maintain.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.altitude_split`
+              - Gets or sets the altitude difference between the aircraft and target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.maneuver_factor`
+              - Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.use_perf_model_limits`
+              - Gets or sets the option to derive the control limits of the aircraft from the applicable performance model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.altitude_rate_control`
+              - Gets or sets the rate at which the aircraft will change altitude to achieve or maintain the ALtitude Split.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.min_load_factor_g`
+              - Gets or sets the minimum load factor the aircraft can bear while maneuvering in formation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.max_load_factor_g`
+              - Gets or sets the maximum load factor the aircraft can bear while maneuvering in formation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.max_speed_advantage`
+              - Gets or sets the limit to the airspeed difference between the aircraft and target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.airspeed_control_mode`
+              - Gets or sets the method to define the aircraft's acceleration performance in formation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.accel_decel_g`
+              - Gets or sets the aircraft's specified acceleration rate for an airspeed control mode set to override.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.use_separate_airspeed_control`
+              - Get the option to control how fine the control is over the airspeed adjustments in formation flight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.airspeed_factor`
+              - Get the maneuver factor, a dimensionless factor defining how fine the control is over airspeed adjustments in formation flight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.stop_condition`
+              - Gets or sets the stopping condition for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRendezvous.position_vel_strategies`
+              - Get the position velocity strategies for Rendezvous.
 
 
 Import detail

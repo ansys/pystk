@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.asset_status`
+              - Gets or sets the current status of the coverage asset (active or not).
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.grouping`
+              - Opt whether to consider the members of a constellation as a group or as separate entities.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.object_name`
+              - Name of the object assigned as a coverage asset.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.sub_asset_list`
+              - Returns the sub assets for this asset.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.required`
+              - Flag sets whether Asset is required for all valid access intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAssetListElement.use_const_constraints`
+              - Flag determines whether constellation constraints are considered.
 
 
 Import detail

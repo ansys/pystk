@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.from_axes`
+              - Specify an axes to rotate from.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.to_axes`
+              - Specify an axes to rotate to.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleRotation.reference_direction`
+              - Specify a rotation direction.
 
 
 Import detail

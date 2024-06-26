@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes.templates`
+              - Returns the 3D BPlane templates collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanes.instances`
+              - Returns the 3D BPlane Instance collection.
 
 
 Import detail

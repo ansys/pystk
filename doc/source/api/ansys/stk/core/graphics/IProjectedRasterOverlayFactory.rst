@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IProjectedRasterOverlayFactory.supported`
+              - Gets whether or not the video card supports the projected raster overlay.
 
 
 Import detail

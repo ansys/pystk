@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IKmlContainer.children`
+              - The collection of kml features that are children of this container.
 
 
 Import detail

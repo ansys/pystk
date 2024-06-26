@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.x`
+              - The scalar argument X.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.unit_x`
+              - The unit used to interpret numerical values of scalar argument X.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.a`
+              - The constant coefficient A.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.y`
+              - The scalar argument Y.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.unit_y`
+              - The unit used to interpret numerical values of scalar argument Y.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.b`
+              - The constant coefficient B.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.c`
+              - The constant coefficient C.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.output_dimension_inheritance`
+              - Specifies whether the output dimension is inherited or explicitly specified using OutputDimension.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.output_dimension`
+              - The output dimension. Use any of STK supported dimensions. This value will be used if OutputDimensionInheritance is false.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.available_functions`
+              - The available functions. A function(x,y) uses some combination of two scalar arguments x and y as well as one to three constant coefficients a, b, c.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.selected_function`
+              - The selected function.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction2Var.output_unit`
+              - The unit for the selected dimension. The unit is not used for internal computations or reporting/graphing but is needed to unambiguously interpret units of associated coefficients.
 
 
 Import detail

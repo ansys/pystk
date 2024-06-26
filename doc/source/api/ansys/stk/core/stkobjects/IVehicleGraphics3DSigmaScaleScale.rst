@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSigmaScaleScale.scale_value`
+              - Scale: the contour is sized directly by specifying the scale. Dimensionless.
 
 
 Import detail

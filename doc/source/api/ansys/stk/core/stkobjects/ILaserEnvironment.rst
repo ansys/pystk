@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserEnvironment.propagation_channel`
+              - Gets the propagation channel.
 
 
 Import detail

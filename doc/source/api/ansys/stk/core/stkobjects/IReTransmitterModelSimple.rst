@@ -32,12 +32,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelSimple.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelSimple.polarization`
+              - Gets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelSimple.post_transmit_gains_losses`
+              - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelSimple.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelSimple.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelSimple.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelSimple.saturated_eirp`
+              - Gets or sets the saturated eirp.
 
 
 Import detail

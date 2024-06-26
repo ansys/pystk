@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX.coord_axes_name`
+              - Gets or sets the coordinate axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX.vector_name`
+              - Gets or sets the vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX.unit_dimension`
+              - Gets or sets the unit dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorX.normalize`
+              - If true, return the normalized magnitude.
 
 
 Import detail

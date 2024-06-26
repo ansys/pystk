@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IExecMultiCmdResult.count`
+              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IExecMultiCmdResult._NewEnum`
+              - Returns an object that can be used to iterate through all the objects in the collection.
 
 
 Import detail

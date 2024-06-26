@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesElement.level`
+              - Gets or sets the contour level for which graphics properties are being defined.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesElement.color`
+              - Gets or sets the color assigned to the given contour level.
 
 
 Import detail

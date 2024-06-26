@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.min`
+              - Minimum altitude above the facility, place or target from which the sensor projects. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.max`
+              - Maximum altitude above the facility, place or target from which the sensor projects. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.number_of_steps`
+              - Step count. Determines the interval between sensor projections. For a specified min/max altitude: the step count determines the number and altitude of projections to be displayed. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.projects_thru_crossing`
+              - Specify whether the sensor's field-of-view will extend beyond specified crossings.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.altitude_crossing_sides`
+              - Indicates which crossings are computed and displayed in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.direction`
+              - Indicates the direction in which the sensor's field of view crosses the specified altitude.
 
 
 Import detail

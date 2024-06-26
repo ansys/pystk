@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCustomMesh.max_dimension`
+              - Property used to access the maximum dimension of a custom mesh shape.
 
 
 Import detail

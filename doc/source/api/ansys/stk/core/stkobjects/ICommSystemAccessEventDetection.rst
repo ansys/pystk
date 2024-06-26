@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetection.type`
+              - Gets the access event detection type.
 
 
 Import detail

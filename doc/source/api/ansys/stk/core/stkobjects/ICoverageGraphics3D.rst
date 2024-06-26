@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.static`
+              - 3D static graphics options.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.animation`
+              - 3D animation graphics options.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.granularity`
+              - Fill Granularity: sampling distance between points used when grid points are filled. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.show_at_altitude`
+              - Show Graphics at Altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.draw_at_altitude_mode`
+              - Draw at Altitude Polygon Mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics3D.auto_granularity`
+              - Auto Compute Fill Granularity.
 
 
 Import detail

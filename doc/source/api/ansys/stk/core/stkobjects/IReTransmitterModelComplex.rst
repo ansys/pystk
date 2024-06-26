@@ -32,13 +32,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex.polarization`
+              - Gets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex.post_transmit_gains_losses`
+              - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex.saturated_power`
+              - Gets or sets the saturated power.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReTransmitterModelComplex.antenna_control`
+              - Gets the receiver antenna control.
 
 
 Import detail

@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection.count`
+              - Returns the number of scattering point provider elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection._NewEnum`
+              - Returns an enumerator for the collection.
 
 
 Import detail

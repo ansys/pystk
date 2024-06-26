@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarPointInVolumeCalc.trajectory_point`
+              - Trajectory point.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarPointInVolumeCalc.spatial_calculation`
+              - Spatial Calculation.
 
 
 Import detail

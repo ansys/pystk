@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.third_body_name`
+              - Gets or sets the selected third body model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.ephem_source`
+              - Source for the third body's ephemeris.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.mode`
+              - Get the third body gravity mode. The IAgComponentInfo object returned by this property can be cast to IAgVAGravityFieldFunction or IAgVAPointMassFunction depending on the selected ModeType.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.mode_type`
+              - Get the third body gravity mode type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction.ephemeris_source_warning`
+              - Returns a warning message if the Ephemeris source and the gravity are not compatible.
 
 
 Import detail

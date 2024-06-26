@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.color`
+              - Marker color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.marker_style`
+              - Marker style.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.unique_id`
+              - Gets or sets the Unique ID is a unique identifier for each time event. The default is TimeEvent<number>. The unique ID is required when modifying time event data using the Graphics TimeEvent Connect command.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker.event_interval`
+              - Event interval.
 
 
 Import detail

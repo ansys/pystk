@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelChebyshev.order`
+              - Gets or sets the filter order.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelChebyshev.cutoff_frequency`
+              - Gets or sets the filter cut off frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelChebyshev.ripple`
+              - Gets or sets the ripple.
 
 
 Import detail

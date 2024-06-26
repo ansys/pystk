@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionNonCFAR.probability_of_false_alarm`
+              - Gets or sets the probability of false alarm.
 
 
 Import detail

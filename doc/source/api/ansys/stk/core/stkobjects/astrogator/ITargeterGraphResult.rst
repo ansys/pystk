@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.name`
+              - Get the name of the result.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.parent_name`
+              - Get the segment or component for which this result has been selected.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.show_desired_value`
+              - Show the desired value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.line_color`
+              - Line Color.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.point_style`
+              - Point Style.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.y_axis`
+              - Select whether to display the result's value range on the left or right side of the graph.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.graph_option`
+              - Graph option.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphResult.show_tolerance_band`
+              - Show the tolerance band.
 
 
 Import detail

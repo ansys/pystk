@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.supported_block_types`
+              - Gets an array of supported block types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.block_type`
+              - Gets or sets the block type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.max_gain`
+              - Gets the maximum gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsGlobal.beamwidth`
+              - Gets the beamwidth.
 
 
 Import detail

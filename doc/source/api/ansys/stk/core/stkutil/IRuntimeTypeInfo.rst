@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IRuntimeTypeInfo.properties`
+              - Get the collection of properties.
             * - :py:attr:`~ansys.stk.core.stkutil.IRuntimeTypeInfo.is_collection`
+              - Determines if the interface is a collection.
             * - :py:attr:`~ansys.stk.core.stkutil.IRuntimeTypeInfo.count`
+              - If the interface is a collection, returns the collection count.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintGroundTrack.direction`
+              - Ground track direction.
 
 
 Import detail

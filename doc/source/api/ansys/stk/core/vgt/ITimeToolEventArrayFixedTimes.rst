@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedTimes.array_times`
+              - The array of times.
 
 
 Import detail

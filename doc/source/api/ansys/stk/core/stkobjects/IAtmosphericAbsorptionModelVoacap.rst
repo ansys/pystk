@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.sunspot_number`
+              - This property is deprecated. The Sunspot Number Solar Activity Configuration should be used instead.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.multipath_power_tolerance`
+              - Gets or sets the multipath power tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.multipath_delay_tolerance`
+              - Gets or sets the multipath delay tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.compute_alternate_frequencies`
+              - Gets or sets the indicator to compute alternate frequencies.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.coefficient_data_type`
+              - Gets or sets the coefficient data type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.use_day_of_month_average`
+              - Gets or sets the indicator to use day of month average.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.solar_activity_configuration_type`
+              - Gets or sets the solar activity configuration enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelVoacap.solar_activity_configuration`
+              - Gets or sets the solar activity configuration.
 
 
 Import detail

@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DLabelSwapDistance.distance_value`
+              - Distance at which one level of detail is swapped for another. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DLabelSwapDistance.distance_level`
+              - Gets Distance Level.
 
 
 Import detail

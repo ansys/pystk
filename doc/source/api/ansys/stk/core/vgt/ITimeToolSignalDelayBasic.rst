@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.signal_path_reference_system`
+              - Get the type of signal path reference system which can be set to use STK Access default (see STK Help for further details), Solar system barycenter inertial reference, central body inertial reference or custom reference system...
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.reference_system`
+              - Get the custom reference system which is used as a reference for signal path if the signal path reference option is set to Custom.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.speed_option`
+              - Get the speed option which determines whether to use the speed of light or a custom speed value.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.transfer_speed`
+              - Get the signal propagation speed value which is used if the speed option is set to Custom.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSignalDelayBasic.time_delay_convergence`
+              - Get the time delay convergence which determines the accuracy of computed propagation time between the two locations.
 
 
 Import detail

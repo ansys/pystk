@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.use_out_of_date_filter`
+              - Flag to specify if Out of Date Filter is Used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.out_of_date_pad`
+              - Out Of Date TLE Pad.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.use_apogee_perigee_filter`
+              - Flag to specify if Out of Apogee/Perigee Filter is Used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.apogee_perigee_pad`
+              - Apogee/Perigee Pad.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.use_orbit_path_filter`
+              - Flag to specify if Out of Path Filter is Used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.orbit_path_pad`
+              - Orbit Path Pad.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.use_time_filter`
+              - Flag to specify if Out of Time Filter is Used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATPreFilters.time_distance_pad`
+              - Time Distance Pad.
 
 
 Import detail

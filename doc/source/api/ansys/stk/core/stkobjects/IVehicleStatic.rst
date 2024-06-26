@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStatic.satellite_mass`
+              - A value for the satellite's mass to be used in atmospheric drag and solar radiation pressure calculations. Uses Mass Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStatic.inc_relativistic_acc`
+              - Models the effects of general relativity in accordance with IERS Technical Note 32, IERS Conventions (2003).
 
 
 Import detail

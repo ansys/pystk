@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorOrbitAngularMomentum.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorOrbitAngularMomentum.reference_point`
+              - Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorOrbitAngularMomentum.mean_element_type`
+              - Specify the mean element theory type for approximating motion.
 
 
 Import detail

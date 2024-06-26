@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.visible`
+              - Display volumetric object including Grid, Volume, and Cross Sections in 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.smoothing`
+              - Enables to smooth out the volume and surface boundaries using interpolation between grid points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.shading`
+              - Enables to add shading to the boundary surface. Shading slows down animation but generates helpful lighting effects based on surfaces.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.quality`
+              - Sets/gets the quality of the graphics display.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.grid`
+              - Get the Grid properties of 3D Graphics window for the volumetric object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.cross_section`
+              - Get the 3D Graphics properties for planar cross-sections through the volumetric grid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.volume`
+              - Get the 3D Graphics properties for Volume.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.show_boundary_legend`
+              - Enables/disables boundary legends in 3D Graphics window for Volumetric object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.show_fill_legend`
+              - Enables/disables fill legends in 3D Graphics window for Volumetric object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.boundary_legend`
+              - Get the 3D Graphics properties for Volumetric Boundary Legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.fill_legend`
+              - Get the 3D Graphics properties for Volumetric Fill Legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3D.volume_type`
+              - Sets/gets the graphics volume display type.
 
 
 Import detail

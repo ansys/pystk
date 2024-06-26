@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc.secondary_name`
+              - Gets or sets the secondary body  which should be consistently defined with CR3BP model definitions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc.ephemeris_epoch`
+              - Get the epoch from which the eccentricity value is reported from the secondary.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc.eccentricity`
+              - Get the eccentricity at the reference epoch for the secondary's orbit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc.mass_parameter`
+              - Get the mass parameter computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc.characteristic_distance`
+              - Get the characteristic distance computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc.characteristic_time`
+              - Get the characteristic time computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc.characteristic_velocity`
+              - Get the characteristic velocity computed from the primary and secondary bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICR3BPFunc.characteristic_acceleration`
+              - Get the characteristic acceleration computed from the primary and secondary bodies.
 
 
 Import detail

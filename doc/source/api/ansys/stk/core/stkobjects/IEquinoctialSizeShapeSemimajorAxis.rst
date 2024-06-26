@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeSemimajorAxis.semi_major_axis`
+              - Half the length of the major axis of the orbital ellipse. Uses Distance Dimension.
 
 
 Import detail

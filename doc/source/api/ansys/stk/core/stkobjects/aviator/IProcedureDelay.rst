@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.altitude_mode`
+              - Gets or sets the mode for handling the altitude of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.altitude`
+              - Gets or sets the requested altitude of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.cruise_airspeed_options`
+              - Get the interface for the cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.turn_direction`
+              - Gets or sets the turn direction of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureDelay.turn_radius_factor`
+              - Gets or sets the turn radius factor.
 
 
 Import detail

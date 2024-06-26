@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTableRow.input_back_off`
+              - Gets or sets the input back off.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffCOverImTableRow.c_over_im`
+              - Gets or sets the C/Im value.
 
 
 Import detail

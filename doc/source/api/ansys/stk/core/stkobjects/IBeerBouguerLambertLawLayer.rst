@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer.top_height`
+              - Gets or sets the height of the top of the layer.
             * - :py:attr:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer.extinction_coefficient`
+              - Gets or sets the extinction coefficient.
 
 
 Import detail

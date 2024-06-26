@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.reference_axis`
+              - Gets or sets the polarization reference axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.tilt_angle`
+              - Gets or sets the polarization tilt angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.axial_ratio`
+              - Gets or sets the polarization axial ratio.
 
 
 Import detail

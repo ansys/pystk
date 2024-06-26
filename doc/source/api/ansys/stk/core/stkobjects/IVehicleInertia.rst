@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.ixx`
+              - Moment of Inertia about the X body axis. Uses MomentOfInertia Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.iyy`
+              - Moment of Inertia about the Y body axis. Uses MomentOfInertia Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.izz`
+              - Moment of Inertia about the Z body axis. Uses MomentOfInertia Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.ixy`
+              - Product of Inertia between the X and Y body axes. Uses MomentOfInertia Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.ixz`
+              - Product of Inertia between the X and Z body axes. Uses MomentOfInertia Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleInertia.iyz`
+              - Product of Inertia between the Y and Z body axes. Uses MomentOfInertia Dimension.
 
 
 Import detail

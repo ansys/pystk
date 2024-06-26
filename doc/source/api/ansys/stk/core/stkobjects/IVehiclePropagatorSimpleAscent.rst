@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.initial_state`
+              - Get the initial state.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSimpleAscent.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
 
 
 Import detail

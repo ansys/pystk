@@ -32,11 +32,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.name`
+              - Get the name of the property.
             * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.property_type`
+              - Get the type of property.
             * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.has_min`
+              - Determine if the property has a minimum value.
             * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.has_max`
+              - Determine if the property has a maximum value.
             * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.min`
+              - Get the minimum value of this property. Use PropertyType to determine the type to cast to.
             * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfo.max`
+              - Get the maximum value of this property. Use PropertyType to determine the type to cast to.
 
 
 Import detail

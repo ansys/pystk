@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationSwathHalfWidth.distance`
+              - Half width distance, specifying the swath limits as a distance away from the subsatellite point as measured along the surface of the central body. Range 0-infinity. Uses Distance Dimension.
 
 
 Import detail

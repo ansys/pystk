@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesResult.positions`
+              - Gets the positions of the computed shape. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesResult.positions_winding_order`
+              - Gets the winding order of positions.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceShapesResult.polyline_type`
+              - Gets the polyline type of positions.
 
 
 Import detail

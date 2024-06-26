@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.is_region_visible`
+              - Specify whether the boundary of each coverage region displays in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.is_points_visible`
+              - Specify whether each grid point is shown in the 2D Graphics window as coverage computations are completed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.is_labels_visible`
+              - Specify whether the name of each coverage region displays in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.color`
+              - Gets or sets the color in which regions and points display in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.fill_points`
+              - Specify whether coverage points or regions display as filled polygons in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.marker_style`
+              - Choose a marker to represent each point in the grid.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DStatic.fill_translucency`
+              - Specify the fill translucency percentage for the grid. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
 
 
 Import detail

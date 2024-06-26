@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventEpoch.epoch`
+              - An explicit date/time, set using any STK date format.
 
 
 Import detail

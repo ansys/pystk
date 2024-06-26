@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoice.name`
+              - Name of the enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoice.value`
+              - Integer value of the enumeration.
 
 
 Import detail

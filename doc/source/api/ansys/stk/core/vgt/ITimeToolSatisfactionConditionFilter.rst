@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSatisfactionConditionFilter.condition`
+              - Gets or sets the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSatisfactionConditionFilter.duration_kind`
+              - Choose a duration type (at least/at most).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolSatisfactionConditionFilter.interval_duration`
+              - A duration of time the condition must be satisfied.
 
 
 Import detail

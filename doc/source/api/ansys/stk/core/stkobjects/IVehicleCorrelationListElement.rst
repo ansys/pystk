@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement.row`
+              - Consider parameter for row.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement.column`
+              - Consider parameter for column.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement.value`
+              - Cross correlation value. Dimensionless.
 
 
 Import detail

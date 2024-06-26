@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.compute_mainlobe_gain`
+              - Gets or sets the option for computing the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.mainlobe_gain`
+              - Gets or sets the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.backlobe_gain`
+              - Gets or sets the backlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.use_backlobe_as_mainlobe_atten`
+              - Gets or sets the option for using the back lobe gain as a main lobe gain attenuation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.input_type`
+              - Gets or sets the input type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.x_dimension`
+              - Gets or sets the x dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.y_dimension`
+              - Gets or sets the y dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.x_beamwidth`
+              - Gets or sets the x beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.y_beamwidth`
+              - Gets or sets the y beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularSincRealPower.function_power`
+              - Gets or sets the function power.
 
 
 Import detail

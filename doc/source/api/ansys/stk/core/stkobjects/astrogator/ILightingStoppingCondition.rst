@@ -32,15 +32,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.max_trip_times`
+              - Rhe maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.repeat_count`
+              - Gets or sets the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.constraints`
+              - Further conditions that must be met in order for the stopping condition to be deemed satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.before_conditions`
+              - A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.inherited`
+              - Condition Inherited by Automatic Sequences - if true, the stopping condition will be applied to any automatic sequences activated within the same segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.sequence`
+              - Gets or sets the automatic sequence to trigger if the highlighted stopping condition is satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.condition`
+              - Specifies the direction from which the stopping condition value must be achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.eclipsing_bodies_list_source`
+              - Eclipsing Bodies List Source.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.eclipsing_bodies`
+              - Returns a list of user selected eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ILightingStoppingCondition.available_eclipsing_bodies`
+              - Returns a list of available eclipsing bodies.
 
 
 Import detail

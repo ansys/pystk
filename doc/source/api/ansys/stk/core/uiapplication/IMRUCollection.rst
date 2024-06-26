@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uiapplication.IMRUCollection.count`
+              - Gets the total count of MRUs in the collection.
             * - :py:attr:`~ansys.stk.core.uiapplication.IMRUCollection._NewEnum`
+              - Enumerates through the MRU collection.
 
 
 Import detail

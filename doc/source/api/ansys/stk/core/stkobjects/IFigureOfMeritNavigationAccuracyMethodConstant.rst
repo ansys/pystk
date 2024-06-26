@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethodConstant.value`
+              - Value of uncertainty in range measurements.
 
 
 Import detail

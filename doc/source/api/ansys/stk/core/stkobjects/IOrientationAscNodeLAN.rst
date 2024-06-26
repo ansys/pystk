@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrientationAscNodeLAN.value`
+              - Value of Longitude of Ascending Node.
 
 
 Import detail

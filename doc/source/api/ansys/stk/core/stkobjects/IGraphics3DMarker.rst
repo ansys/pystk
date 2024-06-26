@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarker.pixel_size`
+              - The pixel size of the marker. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarker.visible`
+              - Display a marker in the 3D Graphics window at the object position for the object once a specified detail threshold has been crossed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarker.marker_type`
+              - Specify a 3D marker type to represent the object at the specified threshold. Setting the type with the enum eImageFile is invalid, use SetMarkerImageFile instead.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarker.angle`
+              - The angle representing the amount of rotation of the marker. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarker.x_origin`
+              - The horizontal point of origin for the marker (left, center or right).
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarker.y_origin`
+              - The vertical point of origin for the marker (top, center or bottom.).
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarker.marker_data`
+              - The MarkerData property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarker.orientation_mode`
+              - Controls the rotation of the marker.
 
 
 Import detail

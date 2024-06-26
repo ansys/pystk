@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelExternal.override_bandwidth_limits`
+              - Gets or sets option to override the bandwidth limits.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelExternal.filename`
+              - Gets or sets the external filename.
 
 
 Import detail

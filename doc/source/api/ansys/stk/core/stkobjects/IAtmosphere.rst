@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphere.inherit_atmos_absorption_model`
+              - This property is deprecated. Use the PropagationChannel property to enable or disable the atmospheric absorption model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphere.supported_local_atmos_absorption_models`
+              - This property is deprecated. Use the PropagationChannel property to determine the supported atmospheric absorption models.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphere.local_atmos_absorption_model`
+              - This property is deprecated. Use the PropagationChannel property to get the atmospheric absorption model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphere.enable_local_rain_data`
+              - Gets or sets the option for enabling local rain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphere.local_rain_iso_height`
+              - Gets or sets the local rain iso height.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphere.local_rain_rate`
+              - Gets or sets the local rain rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphere.local_surface_temperature`
+              - This property is deprecated. Gets or sets the local surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphere.propagation_channel`
+              - Gets the propagation channel.
 
 
 Import detail

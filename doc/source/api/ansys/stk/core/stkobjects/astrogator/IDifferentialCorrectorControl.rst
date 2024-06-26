@@ -21,21 +21,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.enable`
+              - If true, the variable is being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.name`
+              - Get the name of the parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.final_value`
+              - Get the value of the independent variable after the last targeter run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.last_update`
+              - Get the amount by which the value of the independent variable changed during the last targeter run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.parent_name`
+              - Get the name of the segment to which the parameter belongs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.initial_value`
+              - Get the nominal value of the element selected as a parameter. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.perturbation`
+              - Get the value to be used in calculating numerical derivatives. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.correction`
+              - Get the amount by which the nominal value of the parameter should be corrected to achieve the selected goals. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.tolerance`
+              - Gets or sets the smallest update to the parameter to be made before the targeter stops. Only used if the convergence criteria is set to 'Either equality constraints or last control parameter updates within tolerance'. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.max_step`
+              - Gets or sets the maximum increment to make to the value of the parameter in any one step. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.scaling_method`
+              - Allows better numerical behavior if the parameters have very different magnitudes. The same scaling method is applied to all parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.scaling_value`
+              - Applies to the Specified Value scaling method. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.dimension`
+              - Dimension of the constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.use_custom_display_unit`
+              - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.custom_display_unit`
+              - Gets or sets the unit in which the value will be displayed in the GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl.values`
+              - List of values of this independent variable at each iteration, including nominal run. Dimension depends on context.
 
 
 Import detail

@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp.filepath`
+              - Get the filepath for the external prop file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp.no_thrust_when_no_fuel`
+              - Opt to have no thrust if the fuel is empty.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalProp.is_valid`
+              - Check whether the filepath is valid.
 
 
 Import detail

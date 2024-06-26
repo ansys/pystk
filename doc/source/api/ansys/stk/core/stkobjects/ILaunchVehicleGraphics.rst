@@ -32,22 +32,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.attributes_type`
+              - Get the 2D Graphics attributes type: basic, access intervals, custom intervals, or real time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.attributes_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.attributes`
+              - Get the launch vehicle's 2D Graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.pass_data`
+              - Get the launch vehicle's 2D trajectory properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.resolution`
+              - Get the launch vehicle's 2D resolution properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.elev_contours`
+              - Get the launch vehicle's 2D elevation contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.range_contours`
+              - Get the launch vehicle's 2D range contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.lighting`
+              - Get the launch vehicle's 2D lighting properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.swath`
+              - Get the launch vehicle's 2D swath properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.ground_ellipses`
+              - Get the launch vehicle's 2D ground ellipses properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.use_inst_name`
+              - Opt whether to use the instance name as the label.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.label_notes`
+              - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.use_inst_name_label`
+              - Specify whether to use the name of the launch vehicle (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.label_name`
+              - The user-specified name to use as a label for the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.saa`
+              - Get the vehicle's South Atlantic Anomaly Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the launch vehicle are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicleGraphics.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

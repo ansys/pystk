@@ -38,13 +38,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.lead_data_type`
+              - Lead data type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.lead_data_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.lead_data`
+              - Lead data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.trail_data_type`
+              - Trail data type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.trail_data_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.trail_data`
+              - Trail data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.has_lead_data`
+              - Determine whether the leading display option has value data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLeadTrailData.has_trail_data`
+              - Determine whether the trailing display option has value data.
 
 
 Import detail

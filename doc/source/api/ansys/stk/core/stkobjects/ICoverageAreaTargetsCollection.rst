@@ -38,8 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageAreaTargetsCollection.available_area_targets`
+              - Gets the available area targets.
 
 
 Import detail

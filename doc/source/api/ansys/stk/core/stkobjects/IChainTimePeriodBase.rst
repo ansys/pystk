@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainTimePeriodBase.type`
+              - Get the option used for setting the chain's time period.
 
 
 Import detail

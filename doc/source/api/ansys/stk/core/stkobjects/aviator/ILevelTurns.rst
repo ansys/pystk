@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_mode`
+              - Get the turn mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_g`
+              - Get the TurnG.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.bank_angle`
+              - Get the bank angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_acceleration`
+              - Get the turn acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_radius`
+              - Get the turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.turn_rate`
+              - Get the turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.maneuver_mode`
+              - Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILevelTurns.maneuver_mode_helper`
+              - Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
 
 Import detail

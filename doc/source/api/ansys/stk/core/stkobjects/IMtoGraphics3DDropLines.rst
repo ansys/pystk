@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DDropLines.position`
+              - Get a list of droplines from the MTO's current positions.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DDropLines.ephemeris`
+              - Get a list of droplines at intervals along the MTO's ephemeris.
 
 
 Import detail

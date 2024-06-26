@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventTimeOffset.reference_time_instant`
+              - The reference time instant.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventTimeOffset.time_offset2`
+              - The time offset from the ReferenceTimeInstant. The value is in \'TimeUnit\' dimension.
 
 
 Import detail

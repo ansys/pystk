@@ -30,24 +30,43 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.max_time_of_flight`
+              - Get the max time of flight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.use_max_time_of_flight`
+              - Get whether to use max time of flight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.stop_fuel_state`
+              - Get the stop fuel state value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.use_stop_fuel_state`
+              - Get whether to use stop fuel state.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.max_downrange`
+              - Get the max down range.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.use_max_downrange`
+              - Get whether to use max down range.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.altitude_limit_mode`
+              - Get the altitude limit mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.terrain_impact_mode`
+              - Get the terrain impact mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.terrain_impact_time_offset`
+              - Get the terrain impact time offset.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.navigation_strategy_type`
+              - Get the navigation strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.navigation`
+              - Get the interface for the navigation strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.profile_strategy_type`
+              - Get the profile strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.profile`
+              - Get the interface for the profile strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.flight_mode`
+              - Gets or sets the type of performance model  that the aircraft will use to fly the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.fuel_flow_type`
+              - Gets or sets the source used to calculate the fuel flow for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.override_fuel_flow_value`
+              - Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.scale_fuel_flow`
+              - Opt whether to scale the fuel flow based on the aircraft's actual attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.attitude_blend_time`
+              - Gets or sets the amount of time that the aircraft will spend transitioning from the attitude of the previous maneuver to the attitude at the beginning of the current maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver.control_time_constant`
+              - A smoothing constant for the performance of control surfaces.
 
 
 Import detail

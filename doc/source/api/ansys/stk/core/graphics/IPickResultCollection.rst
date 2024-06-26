@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPickResultCollection.count`
+              - A total number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IPickResultCollection._NewEnum`
+
 
 
 Import detail

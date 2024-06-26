@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection._NewEnum`
+              - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection.count`
+              - Returns the size of the collection.
 
 
 Import detail

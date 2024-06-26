@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod.method_type`
+              - Grid values method type.
 
 
 Import detail

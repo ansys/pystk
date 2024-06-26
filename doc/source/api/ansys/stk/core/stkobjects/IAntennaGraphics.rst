@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics.show`
+              - Opt whether to display graphics for the antenna object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics.show_boresight`
+              - Opt whether to display boresight graphics for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics.boresight_color`
+              - The color in which boresight graphics display.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics.boresight_marker_style`
+              - The marker style used to represent the boresight graphically.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaGraphics.contour_graphics`
+              - Gets the antenna contour graphics interface.
 
 
 Import detail

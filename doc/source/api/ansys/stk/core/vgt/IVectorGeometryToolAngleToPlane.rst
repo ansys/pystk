@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.reference_vector`
+              - Specify a reference vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.reference_plane`
+              - Specify a reference plane.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane.signed`
+              - Controls whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive.
 
 
 Import detail

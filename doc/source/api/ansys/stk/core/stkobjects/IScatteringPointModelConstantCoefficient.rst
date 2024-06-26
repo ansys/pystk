@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelConstantCoefficient.constant_coefficient`
+              - Gets the constant coefficient value.
 
 
 Import detail

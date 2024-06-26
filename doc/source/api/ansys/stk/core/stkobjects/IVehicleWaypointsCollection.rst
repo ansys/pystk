@@ -42,7 +42,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
 
 
 Import detail

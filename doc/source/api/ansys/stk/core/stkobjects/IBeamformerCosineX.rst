@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformerCosineX.x`
+              - Gets or sets the cosine exponent.
 
 
 Import detail

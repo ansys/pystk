@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody.assigned_obstructions`
+              - This property is deprecated. Use AssignedObstructions on IAgAccessCnstrCbObstruction instead. Gets the Assigned Obstructions.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody.available_obstructions`
+              - This property is deprecated. Use AvailableObstructions on IAgAccessCnstrCbObstruction instead. Gets the Available Obstructions.
 
 
 Import detail

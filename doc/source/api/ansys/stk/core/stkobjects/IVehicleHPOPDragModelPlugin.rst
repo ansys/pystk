@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin.plugin_name`
+              - Gets or sets the complete name of the plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin.plugin_settings`
+              - Get the parameters of the selected plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin.available_plugins`
+              - Get the list of all the available plugins.
 
 
 Import detail

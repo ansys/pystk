@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAccelerationMode.accel_mode`
+              - Opt whether to override the acceleration or deceleration of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAccelerationMode.accel_g`
+              - Gets or sets the rate of acceleration or deceleration of the aircraft if the accleeration mode is set to override.
 
 
 Import detail

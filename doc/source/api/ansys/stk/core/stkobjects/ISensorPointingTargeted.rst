@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.boresight`
+              - The targeted sensor's boresight type, a member of the AgESnPtTrgtBsightType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.boresight_data`
+              - Get orientation data for the selected boresight type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.enable_access_times`
+              - Opt whether to use periods of access between the sensor and its target(s) as target times.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.access_times`
+              - Get the access periods between the sensor and its target(s).
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.schedule_times`
+              - Get the user-scheduled target times.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.targets`
+              - Get the collection of objects assigned as targets for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.available_targets`
+              - Get the collection of objects available as targets for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.advanced`
+              - Get advanced targeting properties used for access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargeted.save_target_access`
+              - Whether to Save Target Access.
 
 
 Import detail

@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.distance`
+              - The Volume Calc range distance types.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.reference_point`
+              - The Volume Calc Range reference point.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.reference_plane`
+              - The Volume Calc Range reference plane.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.along_vector`
+              - The Volume Calc Range Along Vector.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.speed_type`
+              - The Volume Calc range speed types.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcDelayRange.speed`
+              - The Volume Calc range speed value.
 
 
 Import detail

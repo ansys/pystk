@@ -21,19 +21,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.prf_mode`
+              - Gets or sets the prf mode enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.prf`
+              - Gets or sets the pulse repetition frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.unambiguous_range`
+              - Gets or sets the unambiguous range.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.range_resolution_mode`
+              - Gets or sets the range resolution mode enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.range_resolution`
+              - Gets or sets the range resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.bandwidth`
+              - Gets or sets the bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.pcr_mode`
+              - Gets or sets the pulse compression ratio mode enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.pcr`
+              - Gets or sets the pulse compression ratio.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.pulse_width`
+              - Gets or sets the pulse width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.scene_depth`
+              - Gets or sets the scene depth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.fm_chirp_rate`
+              - Gets or sets the FM chirp rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.range_broadening_factor`
+              - Gets or sets the range broadening factor. This property is read only for monostatic radar systems.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.if_bandwidth`
+              - Gets or sets the IF bandwidth. This property is read only for monostatic radar systems.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSarPulseDefinition.number_of_pulses`
+              - Gets or sets the number of pulses.
 
 
 Import detail

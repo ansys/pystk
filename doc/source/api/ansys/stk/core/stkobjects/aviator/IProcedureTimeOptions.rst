@@ -34,14 +34,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.start_time_enabled`
+              - Check to see if the start time is enabled for this procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.use_start_time`
+              - Opt whether to set a start time for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.start_time`
+              - Start time for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.interrupt_time_enabled`
+              - Check to see if the interrupt time is enabled for this procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.use_interrupt_time`
+              - Opt whether to set an interrupt time for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.interrupt_time`
+              - Interrupt time for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.stop_time_enabled`
+              - Check to see if the stop time is enabled for this procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.use_stop_time`
+              - Opt whether to set a stop  time for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTimeOptions.stop_time`
+              - Stop time for the procedure.
 
 
 Import detail

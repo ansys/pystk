@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevel.value`
+              - Get the contour level value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevel.color`
+              - Gets or sets the contour level color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourLevel.line_style`
+              - Select the line style, displayed for the contour level, from the AgELineStyle enumeration.
 
 
 Import detail

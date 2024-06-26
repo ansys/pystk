@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiOsculating.central_body_name`
+              - Gets or sets the primary central body of the three-body system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiOsculating.secondary_name`
+              - Gets or sets the secondary central body of the three-body system.
 
 
 Import detail

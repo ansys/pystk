@@ -30,16 +30,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.mode`
+              - Gets or sets the calculation mode for the Aero/Prop maneuver mode helper.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.flight_mode`
+              - Gets or sets the performance flight mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.use_afterburner`
+              - Opt whether to use the afterburner if it is possible.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_weight`
+              - Gets or sets the reference weight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_altitude`
+              - Gets or sets the reference altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_airspeed`
+              - Get the reference airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_airspeed_type`
+              - Get the reference airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.reference_load_factor`
+              - Gets or sets the reference load factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.estimated_ps`
+              - Get the estimated specific excess power.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.control_authority`
+              - Gets or sets the control authority of how much to factor a turn over push/pull.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAeroPropManeuverModeHelper.status_msg`
+              - Get the status message in the message window.
 
 
 Import detail

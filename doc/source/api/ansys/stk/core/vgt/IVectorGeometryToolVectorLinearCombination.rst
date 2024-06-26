@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.vector_a`
+              - Vector A can be any VGT vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.scale_factor_a`
+              - Scale factor for vector A.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.normalize_vector_a`
+              - Whether to normalize vector A.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.vector_b`
+              - Vector B can be any VGT vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.scale_factor_b`
+              - Scale factor for vector B.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.normalize_vector_b`
+              - Whether to normalize vector B.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.output_dimension_inheritance`
+              - Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLinearCombination.output_dimension`
+              - A dimension to interpret the output vector.
 
 
 Import detail

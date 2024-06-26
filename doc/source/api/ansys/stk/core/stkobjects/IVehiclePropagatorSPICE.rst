@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.spice`
+              - Name of SPICE file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.body_name`
+              - Body name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.segments`
+              - Get the segment list.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.available_body_names`
+              - Gets a list of available body names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSPICE.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
 
 
 Import detail

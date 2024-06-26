@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant.name`
+              - Gets or sets the name of the wind model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant.blend_time`
+              - Gets or sets the blend time to transition from the previous wind model if one exists.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant.wind_speed`
+              - Gets or sets the constant wind speed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant.wind_bearing`
+              - Gets or sets the wind's true bearing.
 
 
 Import detail

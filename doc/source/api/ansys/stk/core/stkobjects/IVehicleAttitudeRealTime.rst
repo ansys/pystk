@@ -40,9 +40,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.look_ahead_method`
+              - Look ahead method can be extrapolate or hold.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.duration`
+              - Get look ahead/look behind duration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.data_reference`
+              - Returns a reference attitude profile for incoming attitude data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeRealTime.block_factor`
+              - A block factor used to help size allocated memory used to hold the history.
 
 
 Import detail

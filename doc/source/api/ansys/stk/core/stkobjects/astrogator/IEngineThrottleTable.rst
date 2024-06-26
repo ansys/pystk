@@ -34,13 +34,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.throttle_table_filename`
+              - A file containing the engine performance data in the tabular format.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.operation_mode_definition`
+              - The engine operation mode definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.regression_polynomial_degree`
+              - The degree of the regression polynomial. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.g`
+              - The gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.input_power_source_name`
+              - The object that computes the power input to the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.percent_degradation_per_year`
+              - The degradation factor is ((1-x%/yr)^(timeSinceRefEpoch)).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.reference_epoch`
+              - The date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineThrottleTable.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

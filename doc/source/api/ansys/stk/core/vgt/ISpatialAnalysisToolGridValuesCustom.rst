@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesCustom.values`
+              - Custom set of coordinate values.
 
 
 Import detail

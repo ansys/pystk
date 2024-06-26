@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.prop_strategy`
+              - Gets or sets the propulsion strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_simple`
+              - Get the interface for a simple propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_basic_fixed_wing`
+              - Get the interface for a basic fixed wing propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_external`
+              - Get the interface for an external file propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.lift_factor`
+              - Gets or sets the scalar value applied to the lift for parametric analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.drag_factor`
+              - Gets or sets the scalar value applied to the drag for parametric analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_ramjet`
+              - Get the interface for a Ramjet propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_turbojet`
+              - Get the interface for a Turbojet propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftProp.mode_as_rocket`
+              - Get the interface for a Rocket propulsion strategy.
 
 
 Import detail

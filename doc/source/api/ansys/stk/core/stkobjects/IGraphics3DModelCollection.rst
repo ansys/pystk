@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection.count`
+              - Number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelCollection._NewEnum`
+              - Enumerates through the collection.
 
 
 Import detail

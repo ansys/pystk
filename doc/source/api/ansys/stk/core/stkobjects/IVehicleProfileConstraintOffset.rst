@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileConstraintOffset.constraint_offset`
+              - Value of offset angle. Uses Angle Dimension.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4PropagatorSettings.use_sgp4_one_point_interpolation`
+              - Whether to use SGP4 1Point Interpolation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4PropagatorSettings.use_sgp4_one_point_validation`
+              - Whether to use SGP4 1Point Validation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4PropagatorSettings.use_sgp4_one_point_warning`
+              - Whether to generate SGP4 1Point warnings.
 
 
 Import detail

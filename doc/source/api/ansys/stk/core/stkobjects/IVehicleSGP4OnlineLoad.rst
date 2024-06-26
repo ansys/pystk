@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.load_newest`
+              - Use this is you want to grab the latest segment with the given SSC number.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.start_time`
+              - Start time to look for segments. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4OnlineLoad.stop_time`
+              - Stop time to look for segments. Uses DateFormat Dimension.
 
 
 Import detail

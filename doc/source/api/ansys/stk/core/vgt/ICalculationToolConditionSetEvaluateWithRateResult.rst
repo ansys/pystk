@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateWithRateResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateWithRateResult.values`
+              - Computed values.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetEvaluateWithRateResult.rates`
+              - Computed rates.
 
 
 Import detail

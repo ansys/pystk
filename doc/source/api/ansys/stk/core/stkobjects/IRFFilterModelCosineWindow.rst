@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelCosineWindow.sampling_frequency`
+              - Gets or sets the sampling frequency.
 
 
 Import detail

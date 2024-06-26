@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.inherit_from_scenario`
+              - Inheritable graphics attributes are inherited from the Scenario object instead of being set locally for the facility, place or target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.color`
+              - The color in which the marker and label for the object is displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.marker_style`
+              - The style of the marker representing the object in the 2D Graphics window. A member of the MarkerStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.label_visible`
+              - Display the label for the facility, place or target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.az_el_mask`
+              - The graphics az-el mask properties for the facility, place or target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.contours`
+              - The range contours properties for the facility, place or target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.use_inst_name_label`
+              - Use the name of the object as the label for the facility, place or target.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.label_name`
+              - Use a user-specified name as the label for the facility, place or target. This does not have to correspond to the name of the object in the Object Browser.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.label_notes`
+              - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.marker_color`
+              - The color in which the marker for the object is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.label_color`
+              - The color in which the label for the object is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the facility are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionPR.pitch`
+              - Pitch angle. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionPR.roll`
+              - Roll angle. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionPR.sequence`
+              - PR direction sequence. Must be set before Pitch,Roll values. Otherwise the current Pitch,Roll values will be converted to the Sequence specified.
 
 
 Import detail

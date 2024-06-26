@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245.mainlobe_gain`
+              - Gets or sets the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245.polarization_advantage`
+              - Gets or sets the option for enabling polarization advantage.
 
 
 Import detail

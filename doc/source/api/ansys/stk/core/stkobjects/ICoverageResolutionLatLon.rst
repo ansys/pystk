@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageResolutionLatLon.lat_lon`
+              - Gets or sets the latitude/longitude value used to define grid resolution. Uses Angle Dimension.
 
 
 Import detail

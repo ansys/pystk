@@ -32,12 +32,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.altitude_above_point`
+              - Gets or sets the altitude the aircraft will takeoff to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.final_altitude_rate`
+              - Gets or sets the altitude rate at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.altitude_offset`
+              - Gets or sets the altitude offset from the site to begin the vertical takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.heading_mode`
+              - Gets or sets the mode to define the heading during the landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.heading`
+              - Get the heading for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.use_magnetic_heading`
+              - Get the option to use a magnetic heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalLanding.radius_factor`
+              - Gets or sets the radius factor for turns performed while translating to the hover point.
 
 
 Import detail

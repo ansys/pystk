@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IBrightnessFilter.adjustment`
+              - Gets or sets the brightness adjustment value for the filter. The value must be between -1 and 1, corresponding to least bright to most bright.
 
 
 Import detail

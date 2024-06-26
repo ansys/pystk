@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPower.power_source_name`
+              - Gets or sets the power source.
 
 
 Import detail

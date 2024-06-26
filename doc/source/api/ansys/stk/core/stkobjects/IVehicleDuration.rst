@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDuration.look_ahead`
+              - Look ahead duration: STK calculates attitude at a future point in time defined by adding the look ahead duration to the time of the most current data point. Uses Time Dimension. Valid value is between 1.0 and 1000000.0 seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleDuration.look_behind`
+              - Look behind duration: specifies how long the temporary data points are to be stored by subtracting the look behind duration from the time of the most current data point. Uses Time Dimension.
 
 
 Import detail

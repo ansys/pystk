@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingSchedule.enabled`
+              - Whether scheduled sensor pointing is enabled.
 
 
 Import detail

@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.is_visible`
+              - Opt whether to display time event graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.time_event_type`
+              - Type of time event graphics: line, marker or text.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.time_event_type_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsElement.time_event_type_data`
+              - Time event data.
 
 
 Import detail

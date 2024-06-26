@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPSolarRadiationPressure.use`
+              - Opt whether to use SRP.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPSolarRadiationPressure.cp`
+              - Gets or sets the solar radiation pressure coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPSolarRadiationPressure.atmos_height`
+              - Height of atmosphere blockage used when calculating shadow entry and exit in solar radiation computations. Uses Distance Dimension.
 
 
 Import detail

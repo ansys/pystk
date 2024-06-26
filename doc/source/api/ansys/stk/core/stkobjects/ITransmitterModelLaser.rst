@@ -34,17 +34,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.frequency`
+              - Gets or sets the carrier frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.data_rate`
+              - Gets or sets the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.power`
+              - Gets or sets the power.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.antenna_control`
+              - Gets the receiver antenna control.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.polarization`
+              - Gets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.post_transmit_gains_losses`
+              - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.supported_modulators`
+              - Gets an array of supported modulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelLaser.modulator`
+              - Gets the current modulator model.
 
 
 Import detail

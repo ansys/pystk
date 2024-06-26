@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes.earth`
+              - Earth's well-known axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes.sun`
+              - The Sun's well-known axes.
 
 
 Import detail

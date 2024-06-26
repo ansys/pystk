@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrientationAscNodeRAAN.value`
+              - Value of Right Ascension of Ascending Node. Uses Angle Dimension.
 
 
 Import detail

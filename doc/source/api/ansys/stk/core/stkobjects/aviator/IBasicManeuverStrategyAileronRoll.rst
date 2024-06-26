@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.flight_path_option`
+              - Gets or sets the flight path option.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.active_mode`
+              - Gets or sets the aileron roll mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.active_turn_direction`
+              - Gets or sets the roll turn direction for the active roll mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.active_angle`
+              - Gets or sets the roll angle for the active roll mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.roll_orientation`
+              - Gets or sets the orientation to roll to for the roll to orientation mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.roll_rate_mode`
+              - Gets or sets the roll rate mode for the aileron roll.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.override_roll_rate`
+              - Gets or sets the roll rate override value for the aileron roll turn. The roll rate mode must be set to override to access this property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAileronRoll.airspeed_options`
+              - Get the airspeed options.
 
 
 Import detail

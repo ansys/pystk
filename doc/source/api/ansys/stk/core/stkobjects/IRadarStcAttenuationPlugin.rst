@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationPlugin.plugin_configuration`
+              - Gets the plugin configuration interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationPlugin.raw_plugin_object`
+              - Gets the raw plugin IUnknown interface.
 
 
 Import detail

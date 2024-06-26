@@ -34,8 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.active`
+              - If true, the stopping condition is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionElement.properties`
+              - Get the properties available to the stopping condition.
 
 
 Import detail

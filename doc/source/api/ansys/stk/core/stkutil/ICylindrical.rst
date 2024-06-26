@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.ICylindrical.radius`
+              - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkutil.ICylindrical.z`
+              - Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.ICylindrical.lon`
+              - Dimension depends on context.
 
 
 Import detail

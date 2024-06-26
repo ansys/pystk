@@ -36,31 +36,57 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.start_time`
+              - Scenario start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.stop_time`
+              - Scenario stop time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.epoch`
+              - Scenario epoch. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.animation`
+              - Scenario animation settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.earth_data`
+              - Scenario Earth Data settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.graphics`
+              - Scenario 2D Graphics settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.gen_dbs`
+              - Scenario database settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.sat_no_orbit_warning`
+              - Specify whether to display a warning when a satellite orbit intersects the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.msl_no_orbit_warning`
+              - Specify whether to display a warning when a missile trajectory does not impact the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.graphics_3d`
+              - Scenario 3D Graphics settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.aircraft_wgs84_warning`
+              - Specify when to display the aircraft mission modeler WGS84 warning.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.msl_stop_time_warning`
+              - Generate a message that warns the user if the missile achieves orbit (and give the perigee) or impacts the surface (and give the interval after missile's stop time).
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.terrain`
+              - Returns a list of central bodies and their terrains.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.component_directory`
+              - Get the component directory interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.scenario_files`
+              - Returns list of scenario files.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.is_dirty`
+              - Specify whether scenario needs to be saved.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.use_analysis_start_time_for_epoch`
+              - Whether the scenario Epoch is the same as the scenario's StartTime.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.space_environment`
+              - Scenario SpaceEnvironment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.scene_manager`
+              - A scene manager.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.analysis_interval`
+              - Allows the user to configure the scenario's analysis time period.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.analysis_epoch`
+              - Allows the user to configure the scenario's analysis epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.radar_clutter_map`
+              - Returns the global radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.radar_cross_section`
+              - Returns the global radar cross section.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.rf_environment`
+              - Returns the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.tilesets`
+              - Returns a list of 3D Tilesets used for Analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario.laser_environment`
+              - Returns the laser environment.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics3D.vector`
+              - Get the radar's Vector properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics3D.show_boresight`
+              - Opt whether to display boresight graphics for the radar's antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics3D.show_contours`
+              - Opt whether to display contour graphics for the radar's antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarGraphics3D.volume`
+              - Gets the radar's antenna volume graphics interface.
 
 
 Import detail

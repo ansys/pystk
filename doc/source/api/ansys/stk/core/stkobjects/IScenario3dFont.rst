@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.name`
+              - Gets or sets the font name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.point_size`
+              - Font size in points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.bold`
+              - Specify whether the font is bold.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.italic`
+              - Specify whether the font is italic.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenario3dFont.available_fonts`
+              - Names of fonts installed in the system.
 
 
 Import detail

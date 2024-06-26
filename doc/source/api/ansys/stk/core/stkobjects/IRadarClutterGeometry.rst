@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometry.enabled`
+              - This property is deprecated. Use Enabled on IAgRadarClutter instead. Gets or sets whether clutter geometry is enabled or disabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometry.supported_models`
+              - This property is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometry.model`
+              - This property is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets the current clutter geometry model.
 
 
 Import detail

@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_id`
+              - Type of component (vector, axes, angle, plane, point). A member of the AgEGeometricElemType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.name`
+              - Get the name of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.visible`
+              - Whether component is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.color`
+              - Color of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.label_visible`
+              - Is the label for the component visible?
 
 
 Import detail

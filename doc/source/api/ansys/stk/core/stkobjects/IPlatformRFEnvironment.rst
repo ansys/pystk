@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.enable_local_rain_data`
+              - Gets or sets the option for enabling local rain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_iso_height`
+              - Gets or sets the local rain iso height.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_rate`
+              - Gets or sets the local rain rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_surface_temperature`
+              - Gets or sets the local surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.propagation_channel`
+              - Gets the propagation channel.
 
 
 Import detail

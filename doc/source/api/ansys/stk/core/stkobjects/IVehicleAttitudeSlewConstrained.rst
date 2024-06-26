@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.maximum_slew_time`
+              - Limits the maximum slew rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.slew_timing_between_targets`
+              - Choose an event within the window of opportunity to trigger each slew, or select Optimal to change attitude whenever the slew can be performed most efficiently.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.maximum_slew_rate`
+              - Configure how to constrain the slew rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained.maximum_slew_acceleration`
+              - Configure how to constrain the slew acceleration.
 
 
 Import detail

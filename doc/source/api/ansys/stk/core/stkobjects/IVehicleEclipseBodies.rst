@@ -36,8 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.use_customized_list`
+              - Property used to specify whether or not to use the customized list of central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.available_central_bodies`
+              - Returns an array of available Central Bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEclipseBodies.assigned_central_bodies`
+              - Returns an array of all assigned central bodies.
 
 
 Import detail

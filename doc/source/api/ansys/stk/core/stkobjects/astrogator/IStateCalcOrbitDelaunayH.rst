@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitDelaunayH.central_body_name`
+              - Central Body used for calculation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitDelaunayH.element_type`
+              - Choice of osculating or mean elements.
 
 
 Import detail

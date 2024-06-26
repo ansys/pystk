@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes.use_lead_trail`
+              - Opt whether to use lead and trail times.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes.lead_time`
+              - Gets or sets the time of the interpolated track route that will be displayed ahead of the track. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes.trail_time`
+              - Gets or sets the time of the interpolated track route that will be displayed behind the track. Uses Time Dimension.
 
 
 Import detail

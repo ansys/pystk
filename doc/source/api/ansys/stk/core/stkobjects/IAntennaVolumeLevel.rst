@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevel.value`
+              - Get the volume level value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeLevel.color`
+              - Gets or sets the volume level color.
 
 
 Import detail

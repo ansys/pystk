@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite.pressure_mode`
+              - Gets or sets the pressure mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite.thrust_efficiency`
+              - Gets or sets the thrust efficiency value. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite.thrust_efficiency_mode`
+              - Thrust - the calculations that are effected by the thrust efficiency value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinite.propagator`
+              - Get the propagator.
 
 
 Import detail

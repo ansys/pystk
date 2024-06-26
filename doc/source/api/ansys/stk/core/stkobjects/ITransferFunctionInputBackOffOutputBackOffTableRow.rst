@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTableRow.input_back_off`
+              - Gets or sets the input back off.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransferFunctionInputBackOffOutputBackOffTableRow.output_back_off`
+              - Gets or sets the output back off.
 
 
 Import detail

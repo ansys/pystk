@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.limits_exceeded_behavior_type`
+              - Gets or sets the Limits Exceeded Behavior type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.azimuth_steering_limit_a`
+              - Gets or sets Azimuth Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.azimuth_steering_limit_b`
+              - Gets or sets Azimuth Steering Limit B.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.elevation_steering_limit_a`
+              - Gets or sets Elevation Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderLink.elevation_steering_limit_b`
+              - Gets or sets Elevation Steering Limit B.
 
 
 Import detail

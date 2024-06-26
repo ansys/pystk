@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics.static`
+              - Get the static graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics.animation`
+              - Get the animation graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the Figure of Merit are visible.
 
 
 Import detail

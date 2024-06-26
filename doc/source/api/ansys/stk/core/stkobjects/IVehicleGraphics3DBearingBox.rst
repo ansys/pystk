@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.bearing`
+              - Gets or sets the bearing value, relative to North. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.length`
+              - Indicates the length of the box, along the bearing. The value must be greater than 0. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.width`
+              - Indicates the width of the box, across the bearing. The value must be greater than 0. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.height`
+              - Indicates the Height of the box. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.length_offset`
+              - Gets or sets the distance to offset the box (forward or backward) along the bearing. A positive LengthOffset value moves the box forward. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.width_offset`
+              - Gets or sets the distance to offset the box (left or right) along the bearing. A positive value moves the box to the right. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.height_offset`
+              - Gets or sets the distance to offset the box (up or down). A positive value moves the box down, towards the ground. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.use_translucency`
+              - Specifies a translucency of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingBox.translucency`
+              - Gets or sets the translucency of the object. Valid values are 0 - 100, where 0 is opaque and 100 is transparent. Dimensionless.
 
 
 Import detail

@@ -30,17 +30,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.propulsion_mode`
+              - Gets or sets the option of whether to specify net thrust or net power.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.propeller_count`
+              - Gets or sets the number of propellers.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.propeller_diameter`
+              - Gets or sets the propeller diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.propeller_rpm`
+              - Gets or sets the propeller RPM.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.min_power_thrust`
+              - Gets or sets the minimum power/thrust depending on the propulsion mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.min_fuel_flow`
+              - Gets or sets the fuel flow for the minimum thrust/power setting.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.max_power_thrust`
+              - Gets or sets the maximum power/thrust depending on the propulsion mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.max_fuel_flow`
+              - Gets or sets the fuel flow for the maximum thrust/power setting.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.max_thrust_accel`
+              - Gets or sets the rate at which the aircraft speeds up at max throttle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.min_thrust_decel`
+              - Gets or sets the rate at which the aircraft slows down at minimum throttle setting.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.use_density_scaling`
+              - Opt whether to scale the accel/decel performance by the density ratio.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicFixedWingProp.density_ratio_exponent`
+              - Get the relative impace of atmospheric density on the aircraft's performance.
 
 
 Import detail

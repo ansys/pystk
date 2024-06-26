@@ -32,13 +32,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.data_rate`
+              - Gets or sets the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.post_transmit_gains_losses`
+              - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.supported_modulators`
+              - Gets an array of supported modulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.modulator`
+              - Gets the current modulator model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelMultibeam.antenna_system`
+              - Gets the antenna system.
 
 
 Import detail

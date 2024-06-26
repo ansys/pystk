@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.model`
+              - Get the vehicle's 3D model properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.route`
+              - Get the vehicle's 3D route properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.offsets`
+              - Get the vehicle's 3D offsets properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.range_contours`
+              - Get the vehicle's 3D range contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.covariance`
+              - Get the vehicle's 3D covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.vector`
+              - Get the vehicle's 3D vector properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.data_display`
+              - Get the vehicle's 3D data display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.model_pointing`
+              - Use to point parts of a facility or vehicle model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics3D.velocity_covariance`
+              - Get the vehicle's 3D velocity covariance properties.
 
 
 Import detail

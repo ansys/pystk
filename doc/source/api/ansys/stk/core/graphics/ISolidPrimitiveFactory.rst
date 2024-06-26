@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitiveFactory.minimum_silhouette_width_supported`
+              - Gets the minimum silhouette width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.ISolidPrimitiveFactory.maximum_silhouette_width_supported`
+              - Gets the maximum silhouette width, in pixels, supported by the video card.
 
 
 Import detail

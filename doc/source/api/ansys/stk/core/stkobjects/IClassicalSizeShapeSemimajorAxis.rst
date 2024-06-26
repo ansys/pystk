@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeSemimajorAxis.semi_major_axis`
+              - Half the length of the major (longest) axis of the orbital ellipse. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeSemimajorAxis.eccentricity`
+              - Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
 
 
 Import detail

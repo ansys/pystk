@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.tracks_visible`
+              - Opt whether to display MTO graphics in the 3D graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.labels_visible`
+              - Opt whether to display MTO track labels in the 3D graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.markers_visible`
+              - Opt whether to display MTO track markers in the 3D graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.lines_visible`
+              - Opt whether to display MTO track lines in the 3D graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.points_visible`
+              - Opt whether to display MTO track points in the 3D graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions.optimize_lines`
+              - Opt whether interpolated route lines will be displayed with higher accuracy. This can be very resource intensive and may degrade performance, but will improve visual quality.
 
 
 Import detail

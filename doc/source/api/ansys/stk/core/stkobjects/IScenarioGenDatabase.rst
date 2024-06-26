@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.type`
+              - The type of objects in the database.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.default_database`
+              - The default database file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.default_direction`
+              - The default directory of the database file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.enable_aux_database`
+              - Enable the auxiliary database.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabase.aux_database`
+              - The auxiliary database file.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridConstrained.reference_grid`
+              - Get the reference system in which spherical parameters are computed.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridConstrained.constraint`
+              - Get the volume constraint on the grid.
 
 
 Import detail

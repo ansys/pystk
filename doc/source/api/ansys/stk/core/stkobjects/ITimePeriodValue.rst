@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriodValue.value`
+              - A time value. The value can be a string or a double.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriodValue.type`
+              - A time value type.
 
 
 Import detail

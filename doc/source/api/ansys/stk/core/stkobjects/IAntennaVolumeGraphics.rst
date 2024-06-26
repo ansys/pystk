@@ -32,23 +32,41 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.show`
+              - Opt whether to display volume graphics for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.wireframe`
+              - Enables the ability to view the volume as a wireframe.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.gain_offset`
+              - Gets or sets the gain offset value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.gain_scale`
+              - Gets or sets the gain scale value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.azimuth_start`
+              - Gets the azimuth start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.azimuth_stop`
+              - Gets the azimuth stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.azimuth_resolution`
+              - Gets the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.azimuth_num_points`
+              - Gets the number of azimuth points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.elevation_start`
+              - Gets the elevation start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.elevation_stop`
+              - Gets the elevation stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.elevation_resolution`
+              - Gets the elevation resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.elevation_num_points`
+              - Gets the number of elevation points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.color_method`
+              - Color method for volume levels (color ramp or explicit).
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.start_color`
+              - Gets or sets the color ramp start color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.stop_color`
+              - Gets or sets the color ramp stop color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.levels`
+              - Gets the collection of volume levels.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.relative_to_maximum`
+              - Gets or sets the contours value represents the gain value relative to the maximum.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics.coordinate_system`
+              - Gets or sets the coordinate system for defining the resolution of the antenna graphics.
 
 
 Import detail

@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.directions`
+              - Gets the beam steering list.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.enabled`
+              - Gets or set the option for enabling steering.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.limits_exceeded_behavior_type`
+              - Gets or sets the Limits Exceeded Behavior type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.use_default_direction`
+              - Gets or set the option to use default direction when there are zero objects in the field of view.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.azimuth_steering_limit_a`
+              - Gets or sets Azimuth Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.azimuth_steering_limit_b`
+              - Gets or sets Azimuth Steering Limit B.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.elevation_steering_limit_a`
+              - Gets or sets Elevation Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderObject.elevation_steering_limit_b`
+              - Gets or sets Elevation Steering Limit B.
 
 
 Import detail

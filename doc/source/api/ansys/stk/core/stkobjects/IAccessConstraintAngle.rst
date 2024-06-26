@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAngle.angle`
+              - Angle value for the constraint.
 
 
 Import detail

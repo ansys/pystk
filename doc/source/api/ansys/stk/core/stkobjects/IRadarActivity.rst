@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivity.type`
+              - Gets the activity times type.
 
 
 Import detail

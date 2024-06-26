@@ -34,10 +34,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.enable`
+              - If true, the scripting tool will be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.segment_properties`
+              - Returns the collection of the segment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.calc_objects`
+              - Returns the collection of the calc objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.parameters`
+              - Returns the collection of parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool.language_type`
+              - Gets or sets the scripting language being used.
 
 
 Import detail

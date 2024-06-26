@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaSystem.antenna_beams`
+              - Gets the antenna beam collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaSystem.beam_selection_strategy`
+              - Gets the beam selection strategy.
 
 
 Import detail

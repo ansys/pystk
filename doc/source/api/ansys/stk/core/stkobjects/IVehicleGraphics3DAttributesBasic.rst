@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.is_visible`
+              - Opt to display the selected graphics properties instead of using those defined in terms of intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.color`
+              - Gets or sets the line color used when UseCustomColor is true.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.line_width`
+              - Gets or sets the line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.translucency`
+              - Gets or sets the translucency. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DAttributesBasic.use_custom_color`
+              - Use custom color for lines if true, otherwise use the vehicle color for the line color.
 
 
 Import detail

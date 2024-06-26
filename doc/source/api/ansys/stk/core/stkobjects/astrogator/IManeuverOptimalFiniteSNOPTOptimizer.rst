@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.objective`
+              - Objective.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.max_major_iterations`
+              - Gets or sets the maximum number of major iterations allowed.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.tolerance_on_major_feasibility`
+              - Specifies how accurately the nonlinear constraints should be satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.tolerance_on_major_optimality`
+              - Specifies the final accuracy of the dual variables.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.max_minor_iterations`
+              - Gets or sets the maximum number of iterations for the QP subproblem allowed during a single major iteration.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.tolerance_on_minor_feasibility`
+              - Gets or sets the tolerance which the QP subproblem must meet before being considered feasible.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.options_filename`
+              - If used, the associated SNOPT specifications file may define any of the various SNOPT options. Options in the file that conflict with options specified elsewhere will take precedence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.provide_runtime_type_info`
+              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.use_console_monitor`
+              - Whether to use the out-of-process console monitor for the optimizer.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.allow_internal_primal_infeasibility_measure_normalization`
+              - Whether to allow internal normalization of the primal infeasibility measure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer.snopt_scaling`
+              - SNOPT scaling option.
 
 
 Import detail

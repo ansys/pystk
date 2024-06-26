@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.coordinate_system_type`
+              - Gets or sets the coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.coordinate_system`
+              - Get the coordinate system and coordinate epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.latitude`
+              - Measured from -90.0 deg to +90.0 deg. The geodetic latitude of a point is the angle between (1) the normal to the reference ellipsoid that passes through the satellite position and (2) the equatorial plane. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.longitude`
+              - Measured from -180.0 deg to +360.0 deg. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.altitude`
+              - Gets or sets the object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.fpa_type`
+              - Gets or sets the Flight Path Angle type can be Vertical or Horizontal.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.fpa`
+              - Value of Vertical or Horizontal Flight Path Angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.azimuth`
+              - Azimuth the angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.velocity`
+              - Gets or sets the magnitude of the inertial velocity vector. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.supported_coordinate_system_types`
+              - Returns an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateMixedSpherical.state_epoch`
+              - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 
 
 Import detail

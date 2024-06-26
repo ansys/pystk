@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessSampling.type`
+              - Type of sampling method used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessSampling.supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessSampling.strategy`
+              - Sampling method strategy.
 
 
 Import detail

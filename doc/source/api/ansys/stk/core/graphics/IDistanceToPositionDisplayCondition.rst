@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.minimum_distance`
+              - Gets or sets the minimum distance of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.minimum_distance_squared`
+              - Gets the squared minimum distance of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.maximum_distance`
+              - Gets or sets the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance.
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.maximum_distance_squared`
+              - Gets the squared maximum distance of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.position`
+              - Gets or sets the position used to compute the distance from the camera. The array contains the components of the position arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition.reference_frame`
+              - Gets or sets the reference frame that position is defined in.
 
 
 Import detail

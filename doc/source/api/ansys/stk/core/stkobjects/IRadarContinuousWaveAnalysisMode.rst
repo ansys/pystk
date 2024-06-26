@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode.type`
+              - Gets the analysis type enumeration.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DProjectionElement.time`
+              - Time used together with distance to compute the space projection. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DProjectionElement.distance`
+              - Distance used together with time to compute the space projection. Uses Distance Dimension.
 
 
 Import detail

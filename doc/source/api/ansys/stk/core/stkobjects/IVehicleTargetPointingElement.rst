@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.target`
+              - Get a reference to the targeted object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.aligned_vector`
+              - Get the aligned vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.constrained_vector`
+              - Get the constrained vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.constrained_vector_reference`
+              - Gets or sets the reference for the constrained vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.available_constrained_vectors`
+              - Returns the available constrained vectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.latitude`
+              - Get the LLA position's latitude. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.longitude`
+              - Get the LLA position's longitude. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.altitude`
+              - Get the LLA position's altitude. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement.intervals`
+              - Returns a list of scheduled time intervals for the current target.
 
 
 Import detail

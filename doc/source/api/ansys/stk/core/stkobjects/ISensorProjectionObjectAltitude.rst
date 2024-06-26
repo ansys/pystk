@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionObjectAltitude.exclude_horizon_arcs`
+              - Specify whether to exclude horizon arcs.
 
 
 Import detail

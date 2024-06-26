@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.reference_type`
+              - Gets or sets the component reference type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.component`
+              - Get the component interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentLinkEmbedControl.supported_components`
+              - Gets the list of supported component names.
 
 
 Import detail

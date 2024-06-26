@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo.type_description`
+              - Return the type description.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo.type_name`
+              - Return the type name.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo.short_type_description`
+              - Return the short type description.
 
 
 Import detail

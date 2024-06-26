@@ -2128,8 +2128,6 @@ The geometric elements can be used to transform between coordinate
 systems, compute first and second derivatives, or perform other types of
 analysis.
 
-Detail
-------
 
 .. py:currentmodule:: ansys.stk.core.vgt
 

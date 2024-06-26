@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.reference_point`
+              - Specify a reference point which will serve as the starting location for the line along which the grazing point will be computed.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.direction_vector`
+              - Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGrazing.altitude`
+              - The point of closest approach to the central body surface occurs at the specified altitude.
 
 
 Import detail

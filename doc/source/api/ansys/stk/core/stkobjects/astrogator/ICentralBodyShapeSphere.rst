@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeSphere.radius`
+              - Gets or sets the radius. Uses Distance Dimension.
 
 
 Import detail

@@ -44,7 +44,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection._NewEnum`
+              - A property that allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IConstraintCollection.count`
+              - Returns the size of the collection.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.name`
+              - Gets the model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.type`
+              - Gets the model type enumeration.
 
 
 Import detail

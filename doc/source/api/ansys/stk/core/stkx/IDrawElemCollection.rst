@@ -36,8 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection.count`
+              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection._NewEnum`
+              - Returns an object that can be used to iterate through all the strings in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemCollection.visible`
+              - Show or hide all the elements.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAgeOfData.min_assets`
+              - Minimum number of assets for computing time between the end of a coverage interval and the current time Figure of Merit.
 
 
 Import detail

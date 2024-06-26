@@ -34,12 +34,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.g`
+              - Gets or sets the earth surface gravity acceleration for Isp conversions. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.eval_function_name`
+              - Gets or sets the EvalFunction - custom function to call at every thrust evaluation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.post_function_name`
+              - Gets or sets the PostFunction - custom function to call after all propagation ends.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.pre_function_name`
+              - Gets or sets the PreFunction - custom function to call before any propagation begins.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.seg_start_function_name`
+              - Gets or sets the SegStartFunction - custom function to call at the beginning of each segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.update_function_name`
+              - Gets or sets the UpdateFunction - custom function to call at the beginning of each integration step.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineCustom.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

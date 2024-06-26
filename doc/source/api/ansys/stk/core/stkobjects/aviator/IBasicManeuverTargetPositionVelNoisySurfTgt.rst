@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.measurement_time_step`
+              - Gets or sets the measurement time step property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.position_cep`
+              - Gets or sets the position CEP property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.course_error`
+              - Gets or sets the course error property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisySurfTgt.speed_error`
+              - Gets or sets the speed error property.
 
 
 Import detail

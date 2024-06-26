@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes.is_visible`
+              - Opt whether to display coverage data for all points based on evaluation over the entire coverage interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes.translucency`
+              - Percentage translucency of the static graphics when grid points are filled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes.point_size`
+              - Gets or sets the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
 
 
 Import detail

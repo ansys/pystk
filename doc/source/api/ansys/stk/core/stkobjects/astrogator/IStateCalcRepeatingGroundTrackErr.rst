@@ -34,9 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.reference_longitude`
+              - Gets or sets the longitude at the equator to be used as a reference for the repeating ground track. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.repeat_count`
+              - Gets or sets the number of orbits before the ground track repeats over the same longitude. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRepeatingGroundTrackErr.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

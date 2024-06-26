@@ -46,22 +46,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.parent`
+              - Returns the parent object or null if the object has become orphaned. The exception is AgStkObjectRoot object which is a topmost element and does not have a parent.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.path`
+              - Returns the object path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.instance_name`
+              - A name of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.class_type`
+              - Returns a class type of the object (i.e. eAircraft, eFacility etc.).
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.class_name`
+              - Returns a class name of the object (i.e. Aircraft, Facility.).
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.children`
+              - Returns a collection of direct descendants of the current object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.root`
+              - Returns the Root object or null.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.data_providers`
+              - Returns the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.short_description`
+              - The short description of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.long_description`
+              - A long description of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.has_children`
+              - Returns true if the object has direct descendants.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_coverage`
+              - Returns an IAgStkObjectCoverage object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.access_constraints`
+              - Get the constraints imposed on the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_files`
+              - Returns the list of files that constitute an object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.vgt`
+              - Returns an instance of Vector Geometry Tool provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.central_body_name`
+              - The object's central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.metadata`
+              - Gets the object's metadata. Metadata is a collection of keys and their associated values.
 
 
 Import detail

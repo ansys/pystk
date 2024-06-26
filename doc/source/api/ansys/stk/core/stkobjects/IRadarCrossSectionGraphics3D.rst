@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D.show_contours`
+              - Option for displaying radar cross section contour graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D.volume_graphics`
+              - Gets the radar cross section volume graphics interface.
 
 
 Import detail

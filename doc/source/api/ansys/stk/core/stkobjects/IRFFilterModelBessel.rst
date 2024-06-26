@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelBessel.order`
+              - Gets or sets the filter order.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelBessel.cutoff_frequency`
+              - Gets or sets the filter cut off frequency.
 
 
 Import detail

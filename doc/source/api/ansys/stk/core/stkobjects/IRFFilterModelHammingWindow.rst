@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelHammingWindow.sampling_frequency`
+              - Gets or sets the sampling frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelHammingWindow.order`
+              - Gets or sets the filter order.
 
 
 Import detail

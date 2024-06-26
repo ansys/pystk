@@ -21,21 +21,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c0`
+              - C0 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c1`
+              - C1 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c2`
+              - C2 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c3`
+              - C3 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c4`
+              - C4 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c5`
+              - C5 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c6`
+              - C6 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.c7`
+              - C7 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.e4`
+              - E4 exponent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.e5`
+              - E5 exponent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.e6`
+              - E6 exponent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.e7`
+              - E7 exponent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.b7`
+              - B7 base. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.k0`
+              - K0 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.k1`
+              - K1 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelThrustCoefficients.reference_temp`
+              - Reference temperature for data. Uses Temperature Dimension.
 
 
 Import detail

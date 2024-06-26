@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant.reference_system`
+              - Specify a reference system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneQuadrant.quadrant`
+              - Specify a quadrant.
 
 
 Import detail

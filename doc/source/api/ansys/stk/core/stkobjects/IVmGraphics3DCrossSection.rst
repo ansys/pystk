@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSection.show`
+              - Show or hide the cross sections in 3D window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSection.opacity`
+              - Set the opacity multiplier which is used to incrementally increase the opacity of the cross-sections. Valid value is greater or equal to 1.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSection.planes`
+              - Access and manipulate the collection of cross section planes for Volumetric object.
 
 
 Import detail

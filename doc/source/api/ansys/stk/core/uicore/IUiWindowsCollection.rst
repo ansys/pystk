@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection.count`
+              - Returns a total number of window objects in the collection.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindowsCollection._NewEnum`
+              - Enumerates the windows in the collection.
 
 
 Import detail

@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISequenceFilter.continue_on_failure`
+              - Gets or sets whether to continue applying filters in the sequence regardless of individual filter failures. When set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied.
             * - :py:attr:`~ansys.stk.core.graphics.ISequenceFilter.count`
+              - Gets the number of filters in the collection.
 
 
 Import detail

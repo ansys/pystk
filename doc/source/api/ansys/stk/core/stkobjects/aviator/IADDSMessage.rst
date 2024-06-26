@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.start_time`
+              - Valid start time for the ADDS message.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.stop_time`
+              - Valid stop time for the ADDS message.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.message_time`
+              - Get the message time for the ADDS message.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.type`
+              - Get the ADDS message type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessage.source`
+              - Get the ADDS message source.
 
 
 Import detail

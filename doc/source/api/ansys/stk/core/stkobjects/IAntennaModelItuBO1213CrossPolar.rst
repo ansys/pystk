@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CrossPolar.mainlobe_gain`
+              - Gets or sets the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CrossPolar.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CrossPolar.diameter`
+              - Gets or sets the diameter.
 
 
 Import detail

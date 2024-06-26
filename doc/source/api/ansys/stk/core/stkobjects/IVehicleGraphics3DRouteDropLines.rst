@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines.position`
+              - Get the list of droplines from the vehicle's current positions.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRouteDropLines.route`
+              - Get the list of droplines at intervals along the vehicle's route.
 
 
 Import detail

@@ -36,19 +36,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.reference_frame`
+              - Gets or sets the reference frame the aircraft will use.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.altitude`
+              - Gets or sets the aircraft's altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.downrange`
+              - Gets or sets the ground distance from the beginning of the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.airspeed`
+              - Gets or sets the aircraft's airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.vertical_velocity_mode`
+              - Get the option to specify the flight path angle or the altitude rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.flight_path_angle`
+              - Get the initial pitch angle of the flight path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.altitude_rate`
+              - Get the constant rate at which the aircraft will climb or descend.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.use_stop_at_altitude_rate`
+              - Get the option to stop the maneuver if a specified altitude rate is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.stop_altitude_rate`
+              - Get the altitude rate stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.use_stop_at_airspeed`
+              - Get the option to stop the maneuver if a specified airspeed is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.stop_airspeed`
+              - Get the airspeed stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.stop_airspeed_type`
+              - Get the airspeed type for the airspeed stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyBezier.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
 Import detail

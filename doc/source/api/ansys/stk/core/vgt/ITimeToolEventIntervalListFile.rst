@@ -32,6 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFile.filename`
+              - The path of an external file that contains the time interval list.
 
 
 Import detail

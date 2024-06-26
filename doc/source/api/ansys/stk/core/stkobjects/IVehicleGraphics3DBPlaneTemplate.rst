@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.name`
+              - Gets or sets the name of the template.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.description`
+              - Gets or sets the description of the template.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.central_body`
+              - Gets or sets the template's central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.available_central_bodies`
+              - Gets a list of available central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.reference_vector`
+              - Gets or sets the template's reference vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.available_vectors`
+              - Gets a list of available vectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.is_cartesian_grid_visible`
+              - Whether the Cartesian grid is displayed with the template.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.is_polar_grid_visible`
+              - Whether the Polar grid is displayed with the template.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.grid_spacing`
+              - Gets or sets the distance between grid lines. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplate.display_elements`
+              - Returns the 3D BPlane template display collection.
 
 
 Import detail

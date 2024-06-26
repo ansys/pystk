@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion.min_latitude`
+              - Minimum latitude for defining a grid using lat-lon region.  Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion.max_latitude`
+              - Maximum latitude for defining a grid using lat-lon bounds. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion.min_longitude`
+              - Minimum longitude for defining a grid using lat-lon region.  Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLonRegion.max_longitude`
+              - Maximum longitude for defining a grid using lat-lon region. Uses Longitude Dimension.
 
 
 Import detail

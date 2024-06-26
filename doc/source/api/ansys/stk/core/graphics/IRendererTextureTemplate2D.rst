@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRendererTextureTemplate2D.internal_format`
+              - Gets an internal format of the texture.
             * - :py:attr:`~ansys.stk.core.graphics.IRendererTextureTemplate2D.width`
+              - Gets a width of the texture in texels.
             * - :py:attr:`~ansys.stk.core.graphics.IRendererTextureTemplate2D.height`
+              - Gets a height of the texture in texels.
 
 
 Import detail

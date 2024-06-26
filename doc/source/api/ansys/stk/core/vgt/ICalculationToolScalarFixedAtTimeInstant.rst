@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFixedAtTimeInstant.input_scalar`
+              - The input scalar component.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFixedAtTimeInstant.reference_time_instant`
+              - The reference time instant.
 
 
 Import detail

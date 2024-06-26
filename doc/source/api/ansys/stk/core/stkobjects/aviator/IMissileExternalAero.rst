@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.filepath`
+              - Get the filepath for the external aero file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.reference_area`
+              - Gets or sets the area of the lifting surface of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.can_set_reference_area`
+              - Check whether you can set the reference area or whether it is specified in the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileExternalAero.is_valid`
+              - Check whether the filepath is valid.
 
 
 Import detail

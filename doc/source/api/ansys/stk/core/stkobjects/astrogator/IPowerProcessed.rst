@@ -34,9 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.load`
+              - Gets or sets the power diverted from power source and unavailable to PPU. Uses Power Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.efficiency`
+              - Gets or sets the efficiency of the PPU unit. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.input_power_source_name`
+              - Gets or sets the source of power available to PPU.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerProcessed.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

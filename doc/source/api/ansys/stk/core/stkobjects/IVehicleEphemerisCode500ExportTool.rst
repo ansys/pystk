@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.sat_id`
+              - Gets or sets the identifying number for the satellite ephemeris being created. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.step_size`
+              - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisCode500ExportTool.time_period`
+              - Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 
 Import detail

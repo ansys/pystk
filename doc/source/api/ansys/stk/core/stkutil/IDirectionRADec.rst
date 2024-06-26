@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionRADec.dec`
+              - Declination: angle above the x-y plane. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionRADec.ra`
+              - Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionRADec.magnitude`
+              - A unitless value that represents magnitude.
 
 
 Import detail

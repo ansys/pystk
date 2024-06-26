@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustom.filename`
+              - A path to MATLAB (.m or .dll), Perl or VBScript file.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustom.invalidate_on_exec_error`
+              - Specifies InvalidOnExecError flag for a custom scalar.
 
 
 Import detail

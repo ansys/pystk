@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.level`
+              - Contour level.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.color`
+              - Color in which contours at the given level are displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.line_style`
+              - The style of the line representing contours at the given level. A member of the AgELineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.line_width`
+              - The width of the line representing contours at the given level.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.label_visible`
+              - Display a label identifying the given contour level.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.user_text_visible`
+              - Whether the user-specified text is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.label_angle`
+              - The angle from the contour at which the label is displayed. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttribute.user_text`
+              - User-specified text that can be displayed with the contour.
 
 
 Import detail

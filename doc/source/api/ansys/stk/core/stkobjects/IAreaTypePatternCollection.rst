@@ -40,7 +40,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection._NewEnum`
+              - Enumerates through patterns collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePatternCollection.count`
+              - Returns the number of lat lons.
 
 
 Import detail

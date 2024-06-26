@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISolarActivityConfigurationSunspotNumber.sunspot_number`
+              - Gets or sets the sunspot number.
 
 
 Import detail

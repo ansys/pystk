@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.use_target_pointing`
+              - Opt whether to use a target pointing attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.targets`
+              - Get the targets used for the attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePointing.target_times`
+              - Get the target times.
 
 
 Import detail

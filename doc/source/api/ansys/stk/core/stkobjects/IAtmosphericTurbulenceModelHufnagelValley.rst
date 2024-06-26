@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelHufnagelValley.nominal_ground_refractive_index_structure_parameter`
+              - Gets or sets the refractive index structure parameter value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelHufnagelValley.wind_speed`
+              - Gets or sets the wind speed value.
 
 
 Import detail

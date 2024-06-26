@@ -32,25 +32,45 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.vectors`
+              - Returns a group of vectors.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.points`
+              - Returns a group of points.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.angles`
+              - Returns a group of angles.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.axes`
+              - Returns a group of axes.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.planes`
+              - Returns a group of planes.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.systems`
+              - Returns a group of systems.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.well_known_systems`
+              - Returns well-known systems.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.well_known_axes`
+              - Returns well-known axes.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.events`
+              - Returns a group of events.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.event_intervals`
+              - Returns a group of event intervals.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.calc_scalars`
+              - Returns a group of calc scalars.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.event_arrays`
+              - Returns a group of event arrays.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.event_interval_lists`
+              - Returns a group of event interval lists.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.event_interval_collections`
+              - Returns a group of event interval collections.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.parameter_sets`
+              - Access, add new or remove existing parameter set components.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.conditions`
+              - Returns a group of condition objects.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.condition_sets`
+              - Returns a group of condition set objects.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.volume_grids`
+              - Returns a group of volume grid objects.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.volumes`
+              - Returns a group of volume objects.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider.volume_calcs`
+              - Returns a group of volume calc objects.
 
 
 Import detail

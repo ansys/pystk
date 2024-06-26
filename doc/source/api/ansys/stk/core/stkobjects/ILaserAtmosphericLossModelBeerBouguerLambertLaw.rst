@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModelBeerBouguerLambertLaw.enable_evenly_spaced_heights`
+              - Gets the option for enabling evenly spaced layer heights.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModelBeerBouguerLambertLaw.maximum_altitude`
+              - Gets the maximum altitude of the atmosphere.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModelBeerBouguerLambertLaw.atmosphere_layers`
+              - Gets the atmosphere layer collection.
 
 
 Import detail

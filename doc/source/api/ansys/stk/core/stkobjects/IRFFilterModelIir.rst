@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelIir.sampling_frequency`
+              - Gets or sets the sampling frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelIir.numerator_complex_polynomial`
+              - Gets the numerator complex polynomial.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelIir.denominator_complex_polynomial`
+              - Gets the denominator complex polynomial.
 
 
 Import detail

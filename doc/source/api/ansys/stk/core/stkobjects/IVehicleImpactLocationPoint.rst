@@ -36,11 +36,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact_type`
+              - Get the impact type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.impact`
+              - Get the impact point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control_type`
+              - Get the flight parameter type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationPoint.launch_control`
+              - Get the flight parameters.
 
 
 Import detail

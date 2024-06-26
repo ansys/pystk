@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.path`
+              - Scenario file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.continue_save`
+              - The status to allow/disallow continue saving.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.save_as`
+              - Saving as user-specified file type and filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.vdf_save`
+              - Saving as VDF.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioBeforeSaveEventArgs.sdf_save`
+              - Saving to SDF.
 
 
 Import detail

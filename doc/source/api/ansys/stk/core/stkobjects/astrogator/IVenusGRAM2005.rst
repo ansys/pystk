@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.use_approximate_altitude`
+              - True if using approximate altitude formula.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.computes_temperature`
+              - Flag indicates whether this model computes temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.computes_pressure`
+              - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.data_directory`
+              - Path to the data directory.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.namelist_file`
+              - Full path of namelist file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.density_type`
+              - Low, mean, high or randomly perturbed density type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_type`
+              - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_plugin_name`
+              - Gets or sets the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.drag_model_plugin`
+              - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.variable_area_history_file`
+              - Drag variable area history file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IVenusGRAM2005.n_plate_definition_file`
+              - Drag N-Plate definition file.
 
 
 Import detail

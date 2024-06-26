@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.prf_mode`
+              - Gets or sets the prf mode enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.prf`
+              - Gets or sets the pulse repetition frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.unambiguous_range`
+              - Gets or sets the unambiguous range.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.unambiguous_velocity`
+              - Gets or sets the unambiguous velocity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.pulse_width_mode`
+              - Gets or sets the pulse width mode enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.pulse_width`
+              - Gets or sets the pulse width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.duty_factor`
+              - Gets or sets the duty factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformPulseDefinition.number_of_pulses`
+              - Gets or sets the number of pulses.
 
 
 Import detail

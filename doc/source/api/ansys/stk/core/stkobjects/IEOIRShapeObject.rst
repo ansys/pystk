@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeObject.type`
+              - Property used to access the shape type.
 
 
 Import detail

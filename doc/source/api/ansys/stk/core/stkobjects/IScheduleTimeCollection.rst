@@ -40,7 +40,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection.count`
+              - The number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScheduleTimeCollection._NewEnum`
+              - Enumerates through the collection.
 
 
 Import detail

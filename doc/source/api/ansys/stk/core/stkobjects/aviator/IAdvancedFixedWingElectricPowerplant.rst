@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant.max_power`
+              - Gets or sets the maximum power of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant.propeller_count`
+              - Gets or sets the number of propellers.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingElectricPowerplant.propeller_diameter`
+              - Gets or sets the propeller diameter.
 
 
 Import detail

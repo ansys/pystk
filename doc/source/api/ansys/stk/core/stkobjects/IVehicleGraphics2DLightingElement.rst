@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.visible`
+              - Opt whether to display the orbit and/or ground track in the color assigned to the specified lighting condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.color`
+              - Gets or sets the color of the line that will mark the region representing the selected lighting condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.marker_style`
+              - Gets or sets the object marker while the vehicle is within a particular region representing the selected lighting condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.line_style`
+              - Gets or sets the type of line that will mark the region representing the selected lighting condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement.line_width`
+              - Gets or sets the width of the line that will mark the region representing the selected lighting condition.
 
 
 Import detail

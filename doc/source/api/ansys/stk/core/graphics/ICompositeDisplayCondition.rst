@@ -54,9 +54,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.count`
+              - Gets the number of display conditions in the composite.
             * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.capacity`
+              - Gets the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
             * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition.logic_operation`
+              - Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
             * - :py:attr:`~ansys.stk.core.graphics.ICompositeDisplayCondition._NewEnum`
+              - Returns an enumerator that iterates through the collection.
 
 
 Import detail

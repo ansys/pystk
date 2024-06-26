@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSar.pulse_definition`
+              - Gets the interface for configuring the SAR waveform pulse definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSar.modulator`
+              - Gets the interface for setting the modulator parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeMonostaticSar.pulse_integration`
+              - Gets the interface for configuring the SAR waveform pulse integration.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics.elev_contours`
+              - Get the aircraft's 2D elevation contour graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics.swath`
+              - Get the aircraft's 2D swath graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

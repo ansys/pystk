@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IBeamformer.type`
+              - Gets the beamformer type enumeration.
 
 
 Import detail

@@ -32,22 +32,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.show`
+              - Opt whether to display volume graphics for the radar cross section.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.wireframe`
+              - Enables the ability to view the volume as a wireframe.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.minimum_displayed_rcs`
+              - Gets or sets the minimum displayed radar cross section value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.scale`
+              - Gets or sets the scale value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.azimuth_start`
+              - Gets the azimuth start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.azimuth_stop`
+              - Gets the azimuth stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.azimuth_resolution`
+              - Gets the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.azimuth_num_points`
+              - Gets the number of azimuth points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.elevation_start`
+              - Gets the elevation start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.elevation_stop`
+              - Gets the elevation stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.elevation_resolution`
+              - Gets the elevation resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.elevation_num_points`
+              - Gets the number of elevation points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.color_method`
+              - Color method for contours (color ramp or explicit).
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.start_color`
+              - Gets or sets the color ramp start color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.stop_color`
+              - Gets or sets the color ramp stop color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.levels`
+              - Gets the collection of volume levels.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeGraphics.relative_to_maximum`
+              - Gets or sets the contours value represents the gain value relative to the maximum.
 
 
 Import detail

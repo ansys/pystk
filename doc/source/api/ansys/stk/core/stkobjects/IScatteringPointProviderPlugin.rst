@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.plugin_configuration`
+              - Gets the plugin configuration interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.raw_plugin_object`
+              - Gets the raw plugin IUnknown interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPlugin.scattering_point_model`
+              - Gets the link/embed controller for managing the default scattering point model component.
 
 
 Import detail

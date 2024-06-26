@@ -44,10 +44,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.mode`
+              - Animation mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.current_time`
+              - Current animation time. In Epoch seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.step`
+              - Get animation time step.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.animation_options`
+              - Animation options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.high_speed`
+              - Controls the animation speed.
 
 
 Import detail

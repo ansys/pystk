@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.min_time_step`
+              - Get Min time Step.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.max_time_step`
+              - Get Max time Step.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.cross_range_close_rate`
+              - Get Cross Range close rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.initial_close_max_speed_advantage`
+              - Get Initial Close Max Speed Advantage.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_condition`
+              - Get Stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_time`
+              - Get stop time.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_down_range`
+              - Get stop downrange.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_fuel_state`
+              - Get stop fuel state.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer.stop_on_hover`
+              - Set Stop on hover mode.
 
 
 Import detail

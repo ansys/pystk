@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelDipole.length`
+              - Gets or sets the length.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelDipole.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelDipole.length_to_wavelength_ratio`
+              - Gets or sets the length-to-wavelength ratio.
 
 
 Import detail

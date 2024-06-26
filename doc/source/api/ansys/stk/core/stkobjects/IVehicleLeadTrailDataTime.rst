@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataTime.time`
+              - Amount of leading or trailing vehicle pass to display, in terms of time required to traverse it. Uses Time Dimension.
 
 
 Import detail

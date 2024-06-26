@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteThrustVector.attitude_update`
+              - How and when the attitude will be updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteThrustVector.thrust_axes_name`
+              - Gets or sets the thrust axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteThrustVector.body_constraint_vector`
+              - Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteThrustVector.thrust_vector`
+              - Defines the thrust vector in the reference axes.
 
 
 Import detail

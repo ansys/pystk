@@ -42,10 +42,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection._NewEnum`
+              - Enumerates through the components.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.count`
+              - Get the number of components available.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.folder_count`
+              - Get the number of folders available.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.available_folders`
+              - Returns an array of Folder names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfoCollection.folder_name`
+              - Get the current folder's name.
 
 
 Import detail

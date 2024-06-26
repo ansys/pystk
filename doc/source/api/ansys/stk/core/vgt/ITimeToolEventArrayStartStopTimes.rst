@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayStartStopTimes.start_stop_option`
+              - The edge type. At least one of the two edge types must be selected.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayStartStopTimes.reference_intervals`
+              - The reference interval list.
 
 
 Import detail

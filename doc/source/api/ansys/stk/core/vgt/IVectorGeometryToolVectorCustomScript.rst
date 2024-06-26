@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCustomScript.reference_axes`
+              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCustomScript.script_file`
+              - Specify a script file.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCustomScript.initialization_script_file`
+              - Specify an initialization script file (optional). The initialization script is run once, at the beginning of the calculation.
 
 
 Import detail

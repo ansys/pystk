@@ -38,13 +38,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.launch_type`
+              - Get flight parameters type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.launch_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.launch`
+              - Get launch parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.impact_location_type`
+              - Get impact location type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.impact_location_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.impact_location`
+              - Get the impact location.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorBallistic.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
 
 
 Import detail

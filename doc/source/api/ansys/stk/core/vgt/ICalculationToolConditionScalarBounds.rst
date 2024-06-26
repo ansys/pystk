@@ -48,7 +48,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.scalar`
+              - Get the scalar calculation from the condition.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionScalarBounds.operation`
+              - Get the operation from the condition that determines how the bounds are considered. The operation can be set to define satisfaction when the scalar is above minimum, below maximum, between minimum and maximum or outside minimum and maximum.
 
 
 Import detail

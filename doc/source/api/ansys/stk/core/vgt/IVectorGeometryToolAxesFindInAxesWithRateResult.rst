@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.angular_velocity`
+              - Axes' angular velocity.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult.orientation`
+              - The axes' orientation.
 
 
 Import detail

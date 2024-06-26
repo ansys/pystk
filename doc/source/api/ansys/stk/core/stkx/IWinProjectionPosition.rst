@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IWinProjectionPosition.x_position`
+              - Projected window X position.
             * - :py:attr:`~ansys.stk.core.stkx.IWinProjectionPosition.y_position`
+              - Projected window Y position.
             * - :py:attr:`~ansys.stk.core.stkx.IWinProjectionPosition.is_win_projection_position_valid`
+              - Indicates if the returned projected position is valid or not.
 
 
 Import detail

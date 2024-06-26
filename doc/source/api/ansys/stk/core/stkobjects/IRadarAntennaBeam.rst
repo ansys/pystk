@@ -34,11 +34,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.id`
+              - Gets or sets the antenna beam identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.pointing_strategy`
+              - Gets the pointing strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.gain`
+              - Gets or sets the antenna mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.beam_width`
+              - Gets or sets the antenna beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.activity`
+              - Gets the activity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarAntennaBeam.waveform_selection_strategy`
+              - Gets the waveform selection strategy.
 
 
 Import detail

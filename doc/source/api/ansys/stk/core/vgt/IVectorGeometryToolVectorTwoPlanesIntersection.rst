@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection.plane_a`
+              - Specify the first of the two planes which intersection defines the vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorTwoPlanesIntersection.plane_b`
+              - Specify the second of the two planes which intersection defines the vector.
 
 
 Import detail

@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot.well_known_systems`
+              - Returns the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.).
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot.well_known_axes`
+              - Returns the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.).
 
 
 Import detail

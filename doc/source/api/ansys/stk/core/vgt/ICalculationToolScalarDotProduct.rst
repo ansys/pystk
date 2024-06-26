@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.vector_a`
+              - First vector.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.normalize_vector_a`
+              - Whether to normalize vector A.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.vector_b`
+              - Second vector.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.normalize_vector_b`
+              - Whether to normalize vector B.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct.dimension`
+              - Returns a unit of measure, i.e. 'Angle', 'Distance', etc.
 
 
 Import detail

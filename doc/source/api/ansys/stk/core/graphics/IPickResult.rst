@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPickResult.objects`
+              - Gets a collection of objects that were on the pick stack for the picked object.
             * - :py:attr:`~ansys.stk.core.graphics.IPickResult.depth`
+              - Gets the depth of the picked location in the 3D scene.
             * - :py:attr:`~ansys.stk.core.graphics.IPickResult.position`
+              - Gets the position of the picked location in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
 
 
 Import detail

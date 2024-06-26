@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.input_type`
+              - Gets or sets the input type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.beamwidth`
+              - Gets or sets the beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.mainlobe_gain`
+              - Gets or sets the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.backlobe_gain`
+              - Gets or sets the back-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.use_backlobe_as_mainlobe_atten`
+              - Gets or sets the use back-lobe gain as main-lobe attenuation flag.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGaussian.efficiency`
+              - Gets or sets the efficiency.
 
 
 Import detail

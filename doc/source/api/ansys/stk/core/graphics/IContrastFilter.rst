@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IContrastFilter.adjustment`
+              - Gets or sets the contrast adjustment value for the filter. The value must be between -1 and 1, corresponding to least contrast to most contrast.
 
 
 Import detail

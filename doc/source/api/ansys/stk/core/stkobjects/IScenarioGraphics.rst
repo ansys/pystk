@@ -36,26 +36,47 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.labels_visible`
+              - Specify whether to show labels of objects on the 2D map (general).
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.sensors_visible`
+              - Specify whether to show sensors on the 2D map.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_lines_visible`
+              - Specify whether to display lines during animation between objects participating in an access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_anim_high`
+              - Specify whether to display access animation highlights, i.e. boxes around objects participating in an access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_stat_high`
+              - Specify whether to display access static highlights, i.e. thick lines overlying the ground track of a vehicle during access periods.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.gnd_tracks_visible`
+              - Specify whether to display vehicle ground tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.gnd_markers_visible`
+              - Specify whether to display vehicle ground markers.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.orbits_visible`
+              - Specify whether to display satellite orbits and trajectories of missiles and launch vehicles.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.orbit_markers_visible`
+              - Specify whether to display satellite orbit markers and missile and launch vehicle trajectory markers.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.elset_num_visible`
+              - Specify whether to display satellite elset numbers.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.centroids_visible`
+              - Specify whether to display area target centroids.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.planet_orbits_visible`
+              - Specify whether to display planetary orbits.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.inertial_position_visible`
+              - Specify whether to display the inertial positions of planets.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.inertial_position_labels_visible`
+              - Specify whether to display labels at the inertial positions of planets.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.sub_planet_points_visible`
+              - Specify whether to display sub-planet points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.sub_planet_labels_visible`
+              - Specify whether to display labels for sub-planet points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.allow_anim_update`
+              - Specify whether to allow animation updates.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.text_outline_style`
+              - Default text outline style.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.text_outline_color`
+              - Default text outline color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_lines_width`
+              - Line width of lines between objects participating in an access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGraphics.access_line_style`
+              - Line style of lines between objects participating in an access.
 
 
 Import detail

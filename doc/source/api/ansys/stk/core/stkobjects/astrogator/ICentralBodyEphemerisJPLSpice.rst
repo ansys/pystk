@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLSpice.jpl_spice_id`
+              - Gets or sets the SPICE file name.
 
 
 Import detail

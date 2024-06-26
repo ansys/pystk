@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.count`
+              - Returns a number of elements in collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection._NewEnum`
+              - Returns an enumerator for the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.row_count`
+              - Returns the number of rows in the dataset collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSetCollection.element_names`
+              - Returns the element names.
 
 
 Import detail

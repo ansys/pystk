@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition_type`
+              - Definition type for the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.definition`
+              - Definition properties of the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit.graphics`
+              - 2D graphics properties of the FOM.
 
 
 Import detail

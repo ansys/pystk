@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.name`
+              - Gets the waveform name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.type`
+              - Gets the waveform type enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.frequency_specification`
+              - Gets or sets the frequency specification.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.frequency`
+              - Gets or sets the frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.wavelength`
+              - Gets or sets the wavelength.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.power`
+              - Gets the power.
 
 
 Import detail

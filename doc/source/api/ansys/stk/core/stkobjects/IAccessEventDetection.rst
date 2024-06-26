@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessEventDetection.type`
+              - Get the type of event detection (e.g., with or without subsampling).
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessEventDetection.supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessEventDetection.strategy`
+              - Get the selected event detection strategy.
 
 
 Import detail

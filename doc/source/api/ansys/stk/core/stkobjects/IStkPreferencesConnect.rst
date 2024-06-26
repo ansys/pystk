@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.allow_connect`
+              - Gets or sets the connection allowed property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.allow_async`
+              - Asynchronous allowed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.max_connections`
+              - Max number of simultaneous connections.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.poll_period`
+              - Period between port polls in msec.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.socket`
+              - TCP/IP Socket Port.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.acknowledge_message_receipt`
+              - Gets or sets the initial connect Acknowledge mode state.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.error_notify_mode`
+              - Gets or sets the initial connect Error Notify mode state.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.wildcard_ignore_nack`
+              - Ignore Backs when Wildcards used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.verbose`
+              - Gets or sets the initial connect Verbose mode state.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.allow_logging`
+              - Allow for command logging.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.log_file`
+              - File for logging commands.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesConnect.allow_ext_connect`
+              - Allow connections from other machines.
 
 
 Import detail

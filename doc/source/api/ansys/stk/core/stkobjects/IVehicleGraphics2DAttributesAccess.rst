@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesAccess.access_objects`
+              - Returns the collection of objects used for the access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesAccess.during_access`
+              - Returns the collection of gfx attributes used during the access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesAccess.no_access`
+              - Returns the collection of gfx attributes used when there is no access.
 
 
 Import detail

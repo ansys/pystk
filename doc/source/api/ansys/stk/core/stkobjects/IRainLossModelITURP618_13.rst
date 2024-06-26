@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_13.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_13.enable_depolarization_loss`
+              - Gets or sets the option to user de-polarization loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_13.enable_itu_1510`
+              - Gets or sets the option to use surface temperatures from ITU-R P.1510.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_13.use_annual_itu_1510`
+              - Gets or sets the option to use the annual average surface temperature for ITU-R P.1510.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelITURP618_13.itu_1510_month`
+              - Gets or sets the month for ITU-R P.1510 Surface Temperatures.
 
 
 Import detail

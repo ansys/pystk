@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISRPModelBase.type`
+              - Returns the type of the solar radiation pressure model.
 
 
 Import detail

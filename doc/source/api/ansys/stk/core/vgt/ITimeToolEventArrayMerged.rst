@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayMerged.time_array_a`
+              - The first time array.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayMerged.time_array_b`
+              - The second time array.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement.enabled`
+              - Gets or sets whether or not the scattering point provider is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollectionElement.scattering_point_provider`
+              - Gets the link/embed controller for managing the scattering point provider component.
 
 
 Import detail

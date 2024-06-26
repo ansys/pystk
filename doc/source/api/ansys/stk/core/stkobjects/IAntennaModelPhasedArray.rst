@@ -21,24 +21,43 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.backlobe_suppression`
+              - Gets or sets the backlobe suppression.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.include_element_factor`
+              - Gets or sets the option to include the element factor in the gain response.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.element_factor_exponent`
+              - Gets or sets the raised cosine exponent for the element factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.width`
+              - Gets the array width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.height`
+              - Gets the array height.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.number_of_elements`
+              - Gets the number of array elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.supported_beam_direction_provider_types`
+              - Gets an array of valid beam direction provider types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beam_direction_provider_type`
+              - Gets or sets the beam direction provider type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beam_direction_provider`
+              - Gets the beam direction provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.supported_null_direction_provider_types`
+              - Gets an array of valid null direction provider types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.null_direction_provider_type`
+              - Gets or sets the null direction provider type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.null_direction_provider`
+              - Gets the null direction provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beamformer_type`
+              - Gets or sets beamformer type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.beamformer`
+              - Gets the beamformer.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.element_configuration_type`
+              - Gets or sets the element configuration type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.element_configuration`
+              - Gets the element configuration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.elements`
+              - Gets the collection of elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.show_grid`
+              - Gets or sets the option to show the grid in the antenna's element viewport GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelPhasedArray.show_labels`
+              - Gets or sets the option to show the labels in the antenna's element viewport GUI.
 
 
 Import detail

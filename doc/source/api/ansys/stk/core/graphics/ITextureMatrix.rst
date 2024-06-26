@@ -21,21 +21,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m11`
+              - Gets the element in the first row, first column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m12`
+              - Gets the element in the first row, second column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m13`
+              - Gets the element in the first row, third column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m14`
+              - Gets the element in the first row, fourth column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m21`
+              - Gets the element in the second row, first column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m22`
+              - Gets the element in the second row, second column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m23`
+              - Gets the element in the second row, third column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m24`
+              - Gets the element in the second row, fourth column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m31`
+              - Gets the element in the third row, first column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m32`
+              - Gets the element in the third row, second column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m33`
+              - Gets the element in the third row, third column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m34`
+              - Gets the element in the third row, fourth column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m41`
+              - Gets the element in the fourth row, first column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m42`
+              - Gets the element in the fourth row, second column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m43`
+              - Gets the element in the fourth row, third column.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureMatrix.m44`
+              - Gets the element in the fourth row, fourth column.
 
 
 Import detail

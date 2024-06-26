@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.name`
+              - Gets the modulator model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.type`
+              - Gets the modulator model type enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.enable_signal_psd`
+              - Gets or sets the option for modeling signal PSD.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.psd_limit_multiplier`
+              - Gets or sets the PSD limit multiplier.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.enable_cdma_spread`
+              - Gets or sets the option for modeling CDMA spread.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.chips_per_bit`
+              - Gets or sets the chips per bit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.spreading_gain`
+              - Gets the spreading gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.auto_scale_bandwidth`
+              - Gets or sets the option for auto scaling the bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.symmetric_bandwidth`
+              - Gets or sets the option for specifying symmetric bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.upper_bandwidth_limit`
+              - Gets or sets the upper bandwidth limit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.lower_bandwidth_limit`
+              - Gets or sets the lower bandwidth limit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.bandwidth`
+              - Gets or sets the filter bandwidth.
 
 
 Import detail

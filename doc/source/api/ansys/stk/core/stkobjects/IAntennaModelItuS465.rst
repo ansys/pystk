@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS465.mainlobe_gain`
+              - Gets or sets the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS465.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS465.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS465.use_mainlobe_model`
+              - Gets or sets the option for enabling the mainlobe model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS465.sidelobe_mask_level`
+              - Gets or sets the sidelobe mask level.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS465.coordinated_prior1993`
+              - Gets or sets whether or not the antenna was coordinated prior to 1993.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS465.sidelobe_relative_to_mainlobe`
+              - Gets or set the flag indicating that the sidelobe mask level is relative to the mainlobe level.
 
 
 Import detail

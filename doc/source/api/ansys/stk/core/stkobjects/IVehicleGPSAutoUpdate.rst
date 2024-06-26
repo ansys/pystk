@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.selected_source`
+              - Gets or sets the source type for element updates.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.properties`
+              - Get the Automatic Update selection and method.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.file_source`
+              - A file to be used as the element source.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdate.online_source`
+              - AGI server to be used as the element source.
 
 
 Import detail

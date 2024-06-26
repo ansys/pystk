@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISphericalFPAHorizontal.fpa`
+              - Horizontal Flight Path Angle: the complement of the angle between the inertial velocity vector and the radius vector. Uses Angle Dimension.
 
 
 Import detail

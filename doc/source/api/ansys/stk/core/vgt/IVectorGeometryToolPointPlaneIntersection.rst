@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneIntersection.direction_vector`
+              - Specify a direction vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneIntersection.reference_plane`
+              - Specify a reference plane.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneIntersection.origin_point`
+              - Specify the origin point.
 
 
 Import detail

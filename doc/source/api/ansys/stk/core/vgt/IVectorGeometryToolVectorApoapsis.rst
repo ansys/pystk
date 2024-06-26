@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.reference_point`
+              - Specify a reference point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorApoapsis.mean_element_type`
+              - Specify the mean element theory type for approximating motion.
 
 
 Import detail

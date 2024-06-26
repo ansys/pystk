@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent.event_epoch`
+              - Gets or sets the event epoch. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent.before_event`
+              - Gets or sets the duration before the event that the B-Plane will be displayed. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent.after_event`
+              - Gets or sets the duration after the event that the B-Plane will be displayed. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneEvent.always_display`
+              - Whether the B-Plane will be displayed throughout the scenario's animation.
 
 
 Import detail

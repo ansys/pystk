@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolDerivativeBasic.time_step`
+              - Get the time step used for numerical evaluation of derivatives using central differencing.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetAttitude.axes`
+              - Get the axes for which attitude representations are computed.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetAttitude.reference_axes`
+              - Get the reference axes relative to which attitude representations are computed.
 
 
 Import detail

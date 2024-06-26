@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions.cruise_speed_type`
+              - Gets or sets the method for determining the aircraft's airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions.other_airspeed_type`
+              - Get the airspeed type for the other airspeed option.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions.other_airspeed`
+              - Get the airspeed for the other airspeed option.
 
 
 Import detail

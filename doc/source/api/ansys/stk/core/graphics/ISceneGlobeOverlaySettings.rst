@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings.anti_alias_imagery`
+              - Gets or sets a value indicating whether or not imagery is anti-aliased.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings.terrain_mesh_pixel_error`
+              - Gets or sets the pixel error for terrain meshes. This is the number of pixels that the rendered terrain is different from the actual terrain data. The default is 2.0 pixels.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings.imagery_pixel_error`
+              - Gets or sets the pixel error for imagery. This is the number of pixels that the rendered imagery is different from the actual imagery data. The default is 1.0 pixel.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings.projected_raster_model_projection`
+              - Gets or sets whether projected raster globe overlays will also project onto models.
 
 
 Import detail

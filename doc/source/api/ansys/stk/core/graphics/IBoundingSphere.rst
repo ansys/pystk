@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IBoundingSphere.center`
+              - A center of the bounding sphere. The center point is specified as one-dimensional array with three elements corresponding to (X,Y,Z) cartesian coordinates.
             * - :py:attr:`~ansys.stk.core.graphics.IBoundingSphere.radius`
+              - A radius of the bounding sphere.
 
 
 Import detail

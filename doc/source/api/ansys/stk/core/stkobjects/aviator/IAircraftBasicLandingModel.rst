@@ -32,11 +32,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.landing_speed`
+              - Get the landing speed of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.landing_speed_type`
+              - Get the landing speed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.sea_level_ground_roll`
+              - Gets or sets the distance the aircraft travels along the ground while decelerating to a stop at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.use_aero_prop_fuel`
+              - Gets or sets whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.scale_fuel_flow_by_non_std_density`
+              - Gets or sets whether to scale fuel flow by non std density.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicLandingModel.fuel_flow`
+              - Gets or sets the Sea Level Fuel Flow.
 
 
 Import detail

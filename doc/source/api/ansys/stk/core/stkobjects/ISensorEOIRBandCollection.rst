@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection.count`
+              - The number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBandCollection._NewEnum`
+              - Enumerates through the collection.
 
 
 Import detail

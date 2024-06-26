@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessSeparation.min_max_data`
+              - Minimum and maximum time intervals for determining if two or more coverage intervals occur within a specified time interval.
 
 
 Import detail

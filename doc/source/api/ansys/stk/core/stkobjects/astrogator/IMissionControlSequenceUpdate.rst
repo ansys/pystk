@@ -44,7 +44,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceUpdate.user_variables`
+              - Interface used to modify user variables for the update segment.
 
 
 Import detail

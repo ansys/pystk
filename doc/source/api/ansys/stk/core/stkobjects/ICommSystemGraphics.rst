@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.show`
+              - Opt whether to display graphics for the commsystem object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.show_desired_links`
+              - Enable the desired links line graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.desired_links_color`
+              - The desired links line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.desired_links_line_style`
+              - Select the line style in which desired links line graphics display from the AgELineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.desired_links_line_width`
+              - Select the line width in which desired links line graphics display from the AgELineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.show_interference_links`
+              - Enable the interference links line graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.interference_links_color`
+              - The interference links line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.interference_links_line_style`
+              - Select the line style in which interference links line graphics display from the AgELineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.interference_links_line_width`
+              - Select the line width in which interference links line graphics display from the AgELineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.show_primary_interferer_link`
+              - Enable the primary interferer link line graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.primary_interferer_link_color`
+              - The primary interferer link line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.primary_interferer_link_line_style`
+              - Select the line style in which the primary interferer link line graphics display from the AgELineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics.primary_interferer_link_line_width`
+              - Select the line width in which the primary interferer link line graphics display from the AgELineWidth enumeration.
 
 
 Import detail

@@ -42,20 +42,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.computation_mode`
+              - Models that are to be included when modeling radiation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.flux_status`
+              - Info concerning the ability to compute flux values given the computation mode and Scenario's energy values that have been set.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.dose_channel`
+              - Measure of the linear energy transfer to model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.use_nuclear_attenuation`
+              - Flag to model nuclear attenuation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.detector_type`
+              - Detector material.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.shielding_thicknesses`
+              - Get the shielding thicknesses. Dose and dose rate can be computed for each thickness.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.ap_source`
+              - Mode for computing 15 day average Ap.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.ap`
+              - Ap 15-day average value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.flux_file`
+              - Flux file containing Ap values.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.include_nuclear_atten_neutrons`
+              - Flag to include neutrons in nuclear attenuation model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.detector_geometry`
+              - Detector geometry used by CRRES and NASA models.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.use_model_epoch`
+              - Flag to use model's epoch for magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.shift_saa`
+              - Flag to shift the SAA based on the model's epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.dose_integration_step`
+              - Gets or sets the sampling step used for integrating dose. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadiation.dose_report_step`
+              - Gets or sets the stepsize to use for dose related data providers. Uses Time Dimension.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLR.lat`
+              - Geocentric impact latitude. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLR.lon`
+              - Geocentric impact longitude. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLLR.radius`
+              - Geocentric impact radius. Uses Distance Dimension.
 
 
 Import detail

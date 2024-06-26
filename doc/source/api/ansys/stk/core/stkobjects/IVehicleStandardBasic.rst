@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStandardBasic.profile_type`
+              - Get basic attitude profile type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStandardBasic.profile_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleStandardBasic.profile`
+              - Returns the profile interface.
 
 
 Import detail

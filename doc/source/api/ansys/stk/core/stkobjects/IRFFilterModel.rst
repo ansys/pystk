@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.name`
+              - Gets the filter model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.type`
+              - Gets the filter model type enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.upper_bandwidth_limit`
+              - Gets or sets the upper bandwidth limit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.lower_bandwidth_limit`
+              - Gets or sets the lower bandwidth limit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.bandwidth`
+              - Gets the filter bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModel.insertion_loss`
+              - Gets or sets the insertion loss.
 
 
 Import detail

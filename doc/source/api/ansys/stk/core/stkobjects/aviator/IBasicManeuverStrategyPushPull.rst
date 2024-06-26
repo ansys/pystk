@@ -34,21 +34,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.reference_frame`
+              - Gets or sets the reference frame the aircraft will use.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.push_pull`
+              - Gets or sets the option to push over or pull up.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.push_pull_g`
+              - Gets or sets the G force of the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.accel_mode`
+              - Gets or sets the option to accelerate, decelerate, or maintain the current airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.accel_decel_g`
+              - Gets or sets the specific G force rate to accelerate/decelerate at.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.maintain_airspeed_type`
+              - Gets or sets the airspeed type for the maintain airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.maintain_airspeed`
+              - Get the airspeed to maintain.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_flight_path_angle`
+              - Gets or sets the flight path angle the maneuver will stop at if achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.use_stop_at_altitude`
+              - Get the option to stop the maneuver if a specified altitude is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_altitude`
+              - Get the altitude stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.use_stop_at_altitude_rate`
+              - Get the option to stop the maneuver if a specified altitude rate is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_altitude_rate`
+              - Get the altitude rate stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.use_stop_at_airspeed`
+              - Get the option to stop the maneuver if a specified airspeed is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_airspeed`
+              - Get the airspeed stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.stop_airspeed_type`
+              - Get the airspeed type for the airspeed stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPushPull.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
 Import detail

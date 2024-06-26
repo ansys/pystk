@@ -30,16 +30,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.central_body`
+              - Central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.reference_point`
+              - A reference point. Can be any point from VGT.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.direction_vector`
+              - A direction vector. Can be any vector from VGT.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.intersection_surface`
+              - An intersection surface.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.altitude`
+              - An altitude.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.use_range_constraint`
+              - Whether to use range constraint.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.minimum_range`
+              - A minimum range. An exception is thrown if the value exceeds the MaximumRange. Applicable only if the range constraint is not used.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.maximum_range`
+              - A maximum range. An exception is thrown if the value is less than the MinimumRange. Applicable only if the range constraint is not used.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.use_minimum_range`
+              - Whether the minimum range is used. Applicable only if the range constraint is not used.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.use_maximum_range`
+              - Whether the maximum range is used. Applicable only if the range constraint is not used.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCentBodyIntersect.allow_intersection_from_below`
+              - Whether intersection is computed when reference point is inside the surface. Applicable when the surface is not defined by terrain.
 
 
 Import detail

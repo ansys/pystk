@@ -46,7 +46,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventFactory.today`
+              - Returns Today time instant.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventFactory.tomorrow`
+              - Returns Tomorrow time instant.
 
 
 Import detail

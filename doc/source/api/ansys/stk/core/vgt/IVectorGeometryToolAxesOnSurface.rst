@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.reference_point`
+              - Specify a reference point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesOnSurface.use_msl`
+              - Specify whether the reference shape is at the Mean Sea Level.
 
 
 Import detail

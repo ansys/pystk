@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingResult.intervals`
+              - A collection of sampling intervals.
 
 
 Import detail

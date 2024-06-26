@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaFromMaster.calc_object_name`
+              - Gets or sets the calculation object of interest.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaFromMaster.reference_selection`
+              - Gets or sets the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaFromMaster.reference`
+              - Get the reference object.
 
 
 Import detail

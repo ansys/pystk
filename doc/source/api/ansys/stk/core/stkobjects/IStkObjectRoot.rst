@@ -76,15 +76,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.unit_preferences`
+              - Provides access to the Global Unit table.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.current_scenario`
+              - Returns a Scenario object or null if no scenario has been loaded yet.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.isolated`
+              - Returns whether the instance is isolated.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.conversion_utility`
+              - Returns the conversion utility interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.std_military2525_b_symbols`
+              - Returns the interface that enables creating 2525b symbols.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.available_features`
+              - Allows the user to inquiry about the available features.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.vgt_root`
+              - Returns an instance of VGT root object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.central_bodies`
+              - Returns a collection of available central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.notification_filter`
+              - Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectRoot.stk_preferences`
+              - Configures STK preferences.
 
 
 Import detail

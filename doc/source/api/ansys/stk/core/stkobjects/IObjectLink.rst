@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLink.name`
+              - Returns STK object name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLink.path`
+              - Returns STK object path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLink.type`
+              - Returns STK object type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectLink.linked_object`
+              - Returns the STK object associated with the instance.
 
 
 Import detail

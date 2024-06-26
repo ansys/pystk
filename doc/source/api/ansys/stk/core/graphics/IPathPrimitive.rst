@@ -52,17 +52,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.count`
+              - Returns the number of points.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.capacity`
+              - Returns the capacity that was set during object construction. The capacity is the amount of memory reserved for storing the points on the path. This will be automatically updated when adding/removing points.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.update_policy`
+              - Gets or sets how the primitive will be updated based on the current animation time.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.polyline_type`
+              - Gets or sets how the primitive interprets the positions.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.width`
+              - Gets or sets the line width, in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.minimum_width_supported`
+              - Gets the minimum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.maximum_width_supported`
+              - Gets the maximum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.display_outline`
+              - Gets or sets whether an outline is rendered around the line.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.outline_width`
+              - Gets or sets the width, in pixels, of the outline around the line.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.per_item_picking_enabled`
+              - Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive._NewEnum`
+              - Returns an enumerator that iterates through the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitive.central_body_clipped`
+              - Gets or sets whether the polyline will be clipped by the central body.
 
 
 Import detail

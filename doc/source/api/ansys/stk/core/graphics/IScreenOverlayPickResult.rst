@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResult.position`
+              - Gets the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResult.control_position`
+              - Gets the position that was picked within the overall globe control. This is essentially the same position that was passed to pick screen overlays. The array represents the picked position and has a size of 4...
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayPickResult.overlay`
+              - Gets the screen overlay that was picked.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListElement.active`
+              - Gets or sets whether or not the time component is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentListElement.component`
+              - Gets or sets the desired time component.
 
 
 Import detail

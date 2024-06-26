@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.time`
+              - Time of the ellipse. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.custom_position`
+              - Opt whether to specify a custom position for the center of the ellipse. Otherwise the object's center is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.latitude`
+              - Gets or sets the latitude of the center of the ellipse. Read-only unless you opt to specify a custom position. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.longitude`
+              - Gets or sets the longitude of the center of the ellipse. Read-only unless you opt to specify a custom position. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.semi_major_axis`
+              - Gets or sets the semimajor axis of the ellipse. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.semi_minor_axis`
+              - Gets or sets the semiminor axis of the ellipse. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement.bearing`
+              - Gets or sets the bearing of the ellipse: the angle, measured in an easterly direction, between the major axis and the local North direction. Uses Angle Dimension.
 
 
 Import detail

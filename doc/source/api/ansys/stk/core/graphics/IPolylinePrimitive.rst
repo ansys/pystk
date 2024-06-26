@@ -74,17 +74,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.width`
+              - Gets or sets the line width, in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.minimum_width_supported`
+              - Gets the minimum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.maximum_width_supported`
+              - Gets the maximum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.position_interpolator`
+              - Gets the position interpolator applied to positions passed to Set, SetCartographic, SetSubset, and SetSubsetCartographic methods. When this property is null, linear interpolation is used.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.polyline_type`
+              - Gets how the polyline interprets the positions passed to Set methods.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.set_hint`
+              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.display_outline`
+              - Gets or sets whether an outline is rendered around the polyline.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.outline_color`
+              - Gets or sets the outline's color.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.outline_translucency`
+              - Gets or sets the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.outline_width`
+              - Gets or sets the width, in pixels, of the outline around the polyline.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.per_item_picking_enabled`
+              - Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
             * - :py:attr:`~ansys.stk.core.graphics.IPolylinePrimitive.central_body_clipped`
+              - Gets or sets whether the polyline will be clipped by the central body.
 
 
 Import detail

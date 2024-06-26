@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravity.use_solar_gravity`
+              - Opt whether to use solar gravity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleThirdBodyGravity.use_lunar_gravity`
+              - Opt whether to use lunar gravity.
 
 
 Import detail

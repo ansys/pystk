@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes.is_visible`
+              - Opt whether to show the graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes.color`
+              - Gets or sets the line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes.line_width`
+              - Gets or sets the line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDefaultAttributes.translucency`
+              - Gets or sets the translucency. Dimensionless.
 
 
 Import detail

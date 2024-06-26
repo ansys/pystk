@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryDropLines.position`
+              - Get the list of droplines from the vehicle's current positions.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryDropLines.trajectory`
+              - Get the list of droplines at intervals along the vehicle's trajectory.
 
 
 Import detail

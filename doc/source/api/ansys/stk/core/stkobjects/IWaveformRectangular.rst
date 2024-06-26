@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformRectangular.pulse_definition`
+              - Gets the pulse definition parameters.
 
 
 Import detail

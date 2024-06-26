@@ -21,23 +21,41 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.advanced_ellipsoid`
+              - Get AdvCAT advanced ellipsoid properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.pre_filters`
+              - Get AdvCAT filter settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.use_log_file`
+              - Use the log file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.log_file_name`
+              - Name of the Log File.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.use_correlation_file`
+              - Flag to specify Use of Correlation File.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.correlation_file`
+              - Correlation File Path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.use_cross_reference_db`
+              - Flag to specify Use of Cross Reference Database.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.cross_reference_db`
+              - Cross Reference Database Path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.use_ssc_hard_body_radius_file`
+              - Flag to specify Use of SSC Reference File.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.ssc_hard_body_radius_file`
+              - SSC Reference File Path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.show_msg_in_msg_viewer`
+              - Flag to specify whether to write messages to message viewer.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.force_repropagation_on_load`
+              - Flag to force repropagation on load.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.compute_on_load`
+              - Flag to force compute on load.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.allow_partial_ephemeris`
+              - Flag to allow computation even when ephemeris does not completely overlap analysis interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.remove_secondary_by_ssc`
+              - Removes from cosniseration any secondary whose SSC number is the same as the primary.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.max_sample_step_size`
+              - Maximum step size used in sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.min_sample_step_size`
+              - Minimum step size used in sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvanced.conjunction_type`
+              - Mode for computing events involving conjunction TCA.
 
 
 Import detail

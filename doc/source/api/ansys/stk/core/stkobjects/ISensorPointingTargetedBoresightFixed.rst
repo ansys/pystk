@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightFixed.orientation`
+              - Get the orientation of the sensor.
 
 
 Import detail

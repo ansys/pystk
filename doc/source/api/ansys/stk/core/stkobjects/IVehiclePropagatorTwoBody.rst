@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.initial_state`
+              - Get the initial state.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.propagation_frame`
+              - Gets or sets the propagation frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorTwoBody.supported_propagation_frames`
+              - Returns supported propagation frames.
 
 
 Import detail

@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch.time_instant`
+              - Represents the time instant if the state is set to explicit.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch.reference_event`
+              - A reference event object used to compute time instant if the state is set to implicit.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch.state`
+              - State of the event.
 
 
 Import detail

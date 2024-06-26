@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelIeee1979.filename`
+              - Gets or sets the user antenna data filename.
 
 
 Import detail

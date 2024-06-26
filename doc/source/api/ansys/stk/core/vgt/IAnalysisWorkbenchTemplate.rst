@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchTemplate.class_name`
+              - Returns a class name (i.e. 'Satellite', 'Facility', etc.).
 
 
 Import detail

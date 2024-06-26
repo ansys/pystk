@@ -30,16 +30,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.uri`
+              - Gets the uri of the network link.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.refresh_mode`
+              - Gets or sets the refresh mode of the network link. The refresh mode specifies a time-based refresh policy for this link.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.refresh_interval`
+              - Gets or sets the interval duration at which this network link will refresh, when refresh mode is set to on interval.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.view_refresh_mode`
+              - Gets or sets the view refresh mode of the network link. The view refresh mode specifies the refresh policy for the when the camera's view changes.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.view_refresh_time`
+              - Gets or sets the duration after camera view movement stops that this network link will refresh, when view refresh mode is set to on stop.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.view_bound_scale`
+              - Gets or sets the value that scales the bounding box defining the view associated with this network link. A value less than 1.0 specifies to use less than the full view (screen). A value greater than 1...
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.minimum_refresh_period`
+              - Gets the duration that is the minimum allowed time between refreshes of this network link.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.cookie`
+              - Gets the cookie string associated with this network link.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.message`
+              - Gets the message string associated with this network link.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.link_snippet`
+              - Gets the link snippet associated with this network link.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlNetworkLink.expires`
+              - Gets the string specifying the date/time this network should expire and be refreshed.
 
 
 Import detail

@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_visible`
+              - Specifies whether to show the proximity area object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.color`
+              - Specifies a line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_width`
+              - Specifies a line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_label_visible`
+              - Specifies whether to display a label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_text_visible`
+              - Specifies whether to display a text.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.text`
+              - Specifies a text.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_style`
+              - Specifies a line style type.
 
 
 Import detail

@@ -48,8 +48,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.count`
+              - Returns the number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection._NewEnum`
+              - Returns an enumerator for the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.supported_child_types`
+              - Returns the available objects that can be added to this object.
 
 
 Import detail

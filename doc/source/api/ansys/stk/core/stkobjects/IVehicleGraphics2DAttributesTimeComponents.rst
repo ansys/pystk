@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents.default`
+              - Default 2D attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents.time_components`
+              - A collection of time components and their 2D attributes.
 
 
 Import detail

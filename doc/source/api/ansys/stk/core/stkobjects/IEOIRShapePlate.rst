@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapePlate.width`
+              - Property used to access the radius dimension of a plate shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapePlate.length`
+              - Property used to access the height dimension of a plate shape.
 
 
 Import detail

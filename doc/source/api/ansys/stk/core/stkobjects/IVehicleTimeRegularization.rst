@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization.use`
+              - Opt whether to integrate the orbit with respect to regularized time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization.exponent`
+              - Exponent used in the regularization equation. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization.steps_per_orbit`
+              - Integration steps per orbit. Dimensionless.
 
 
 Import detail

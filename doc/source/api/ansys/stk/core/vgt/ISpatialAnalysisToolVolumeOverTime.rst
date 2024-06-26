@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.duration_type`
+              - Sets/Returns the lighting conditions.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.reference_volume`
+              - Sets/Returns the reference volume.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.reference_intervals`
+              - The reference interval list for the over time volume.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.start_offset`
+              - Set the offset with respect to current time to define the start of the sliding window, used when over time volume is set to Sliding Window.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeOverTime.stop_offset`
+              - Set the offset with respect to current time to define the stop of the sliding window, used when over time volume is set to Sliding Window.
 
 
 Import detail

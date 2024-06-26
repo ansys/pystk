@@ -38,29 +38,53 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.objects`
+              - This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.auto_recompute`
+              - Opt to have STK automatically recompute accesses each time that an object on which the chain depends is updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.time_period_type`
+              - Get the option used to specify the time period for the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.time_period`
+              - Get the time period for the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.data_save_mode`
+              - Specify the mode for saving or recomputing accesses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.access_intervals_file`
+              - Name of the .int file containing the strand access intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.enable_light_time_delay`
+              - Specify whether to take light time delay into account in the computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.max_time_step`
+              - Gets or sets the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.time_convergence`
+              - Gets or sets the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.constraints`
+              - Get the constraints applicable to the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.graphics`
+              - Get the 2D graphics properties of the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.graphics_3d`
+              - Get the 3D graphics properties of the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.event_detection`
+              - Event detection strategy used for access calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.sampling`
+              - Sampling method used for access calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.detect_events_based_on_samples_only`
+              - Flags control whether event times are computed just using the sampling or by sub-sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.const_constraints_mode`
+              - Constellation constraints mode, apply to strands or per instance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.keep_empty_strands`
+              - Allow strands with no access intervals to included in reports.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.allow_dup_objs_in_strands`
+              - Allow a strand to contain an object more than once.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.cov_asset_mode`
+              - When Computing Coverage and the Chain is used as a coverage asset, append the grid instance to the end of the chain or update the grid instance inside the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.start_object`
+              - Start object for the Chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.end_object`
+              - End object for the Chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.max_strand_depth`
+              - Maximum number of objects in all strands for the Chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.connections`
+              - Get the collection of connections in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChain.optimal_strand_opts`
+              - Optimal strands settings for the Chain.
 
 
 Import detail

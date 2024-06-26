@@ -36,44 +36,83 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.position`
+              - Gets or sets the position of the overlay relative to its parent. The array represents the position of the overlay and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.pinning_position`
+              - Gets or sets the pinning position of the overlay, relative to the overlay, which determines the point on the overlay that corresponds to the position property. The array represents the pinning position of the overlay and has a size of 4...
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.x`
+              - Gets or sets the X position of the overlay relative to its parent. The unit in which the position is defined is specified by the x unit property. The position is measured horizontally from the origin, which is, by default, the lower-left corner.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.x_unit`
+              - Gets or sets the unit of the x property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.y`
+              - Gets or sets the Y position of the overlay relative to its parent. The unit in which the position is defined is specified by the y unit property. The position is measured vertically from the origin, which is, by default, the lower-left corner.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.y_unit`
+              - Gets or sets the unit of the y property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.size`
+              - Gets or sets the size of the overlay. The array elements represent the size of the overlay in the order width, height, width screen overlay unit, height screen overlay unit.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.width`
+              - Gets or sets the width of the overlay. The unit in which the width is defined is specified by the width unit property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.width_unit`
+              - Gets or sets the unit of the width property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.height`
+              - Gets or sets the height of the overlay. The unit in which the height is defined is specified by the height unit property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.height_unit`
+              - Gets or sets the unit of the height property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.minimum_size`
+              - Gets or sets the minimum size of the overlay. The overlay will never be smaller than this size, even if the overlay's size is specified as a percentage of its parent and its parent is very small...
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.maximum_size`
+              - Gets or sets the maximum size of the overlay. The overlay will never be larger than this size, even if the overlay's size is specified as a percentage of its parent and its parent is very large...
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.bounds`
+              - Gets the bounds of the overlay relative to its parent. The array contains the properties defining the bounds in the order left x location, top y location, width, height.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.border_color`
+              - Gets or sets the overlay's border color. By default, the border color is white. However, also by default, the overlay has a border size of 0.0 so the border is not displayed.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.border_size`
+              - Gets or sets the size of the overlay's border. By default, this is 0.0 so the border is not displayed.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.border_translucency`
+              - Gets or sets the translucency of the overlay border. Translucency is a value between 0.0 and 1.0, where 0.0 is completely opaque and 1.0 is completely transparent.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.translation_x`
+              - Gets or sets the value with which the overlay will be translated from the X value of the position property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.translation_y`
+              - Gets or sets the value with which the overlay will be translated from the Y value of the position property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.rotation_angle`
+              - Gets or sets the counter-clockwise rotation of the overlay. The overlay is rotated around the point specified by the rotation point property.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.rotation_point`
+              - Gets or sets the point that the overlay is rotated around when the rotation angle property has a value other than 0.0. The array contains seven elements defining the properties of the rotation point...
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.scale`
+              - Gets or sets the fractional value used to scale the overlay's size property. A value greater than 1.0 will make the overlay larger while a value less than 1.0 will make it smaller.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.flip_x`
+              - Gets or sets whether the overlay will be flipped along its X axis.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.flip_y`
+              - Gets or sets whether the overlay will be flipped along its Y axis.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.origin`
+              - Gets or sets the origin from which the overlay's position is defined. By default, the value of this property is bottom left...
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.pinning_origin`
+              - Gets or sets the origin of the pinning position property, relative to the overlay...
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.parent`
+              - Gets the overlay's parent. This may be another overlay if this overlay was added to that overlay's overlays collection. Or, it may be the screen overlay manager if this overlay was added to the scene manager'sscreen overlays collection.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.translucency`
+              - Gets or sets the overlay's translucency. Translucency is a value between 0.0 and 1.0, where 0.0 is completely opaque and 1.0 is completely transparent.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.color`
+              - Gets or sets the overlay's color. By default, the overlay is white.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.picking_enabled`
+              - Gets or sets a value indicating whether or not picking on the overlay is enabled. If picking is disabled, this overlay will never show up in the result of PickScreenOverlay, even if it occupies the specified pick position.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.clip_to_parent`
+              - Gets or sets a value indicating whether or not the overlay will be clipped by the bounds of its parent. If this property is <see langword='false' />, part of this overlay may be visible outside of its parent's bounds.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.display`
+              - Gets or sets if this overlay and the collection of overlays that are contained within this overlay should be rendered.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.control_position`
+              - Gets the position of the overlay in coordinates relative to the overall globe control. The array represents the position of the overlay and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.control_size`
+              - Gets the size of the overlay in coordinates relative to the overall globe control. The elements are in the order width, height, width screen overlay unit, height screen overlay unit.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.control_bounds`
+              - Gets the bounds of the overlay in coordinates relative to the overall globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.display_condition`
+              - Gets or sets the display condition that determines if the overlay should be rendered. Both this and display must evaluate to true for the overlay to be rendered.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.overlays`
+              - Gets the collection of overlays that are contained within this overlay.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.padding`
+              - Gets or sets the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom.
             * - :py:attr:`~ansys.stk.core.graphics.IOverlay.tag`
+              - Gets or sets custom value associated with this primitive.
 
 
 Import detail

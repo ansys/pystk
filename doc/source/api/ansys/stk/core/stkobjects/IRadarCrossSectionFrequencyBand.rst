@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.minimum_frequency`
+              - Gets or sets the frequency band minimum frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.maximum_frequency`
+              - Gets or sets the frequency band maximum frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.swerling_case`
+              - Gets or sets the band Swerling case.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.supported_compute_strategies`
+              - Gets an array of supported compute strategy names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBand.compute_strategy`
+              - Gets the current compute strategy.
 
 
 Import detail

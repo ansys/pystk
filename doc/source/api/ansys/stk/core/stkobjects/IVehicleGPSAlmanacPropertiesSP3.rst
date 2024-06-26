@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3.almanac_week`
+              - Get the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3.time_of_almanac`
+              - Get the almanac reference time (Time of Appilcability) for all almanacs in the file per ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesSP3.date_of_almanac`
+              - Get the almanac reference date for all almanacs in the file per ICD-GPS-200.
 
 
 Import detail

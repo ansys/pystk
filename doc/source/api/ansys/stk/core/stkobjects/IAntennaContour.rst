@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.show_at_altitude`
+              - Enables the ability to view the contours at a set altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.altitude`
+              - Gets or sets the altitude to view the contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.relative_to_max_gain`
+              - The contours value represents the gain value relative to the maximum.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.show_labels`
+              - Gets or sets the option for showing contour labels.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.num_label_dec_digits`
+              - Gets or sets the integer number of decimal places to display in the contour label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.line_width`
+              - Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.color_method`
+              - Color method for contours (color ramp or explicit).
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.start_color`
+              - The color ramp start color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.stop_color`
+              - The color ramp stop color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.type`
+              - Gets the contour type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.levels`
+              - Gets the collection of contour levels.
 
 
 Import detail

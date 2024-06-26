@@ -36,25 +36,45 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.use_local_time_offset`
+              - Opt whether to use a local time offset from GMT.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.local_time_offset`
+              - The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.use_terrain`
+              - Opt whether to set altitude automatically by using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.graphics`
+              - Get the 2D Graphics properties of the facility.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.position`
+              - Get the position of the facility.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.terrain_norm`
+              - Set the normal to the local terrain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.terrain_norm_data`
+              - Data used in specifying terrain slope.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.graphics_3d`
+              - Get the 3D Graphics properties of the facility.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.access_constraints`
+              - Get the constraints imposed on the facility.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.height_above_ground`
+              - Height of facility above its model of the ground. Height is measured along the normal to surface defined by reference ellipsoid of the central body. Facility models the ground as an ellipsoid passing through the ground position. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.altitude_reference`
+              - Gets or sets the altitude reference of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.atmosphere`
+              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.radar_clutter_map`
+              - Returns the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.radar_cross_section`
+              - Returns the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.save_terrain_mask_data_in_binary`
+              - Save terrain az-el mask data in binary.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.lighting_obstruction_model`
+              - Gets or sets the obstruction model used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.lighting_max_step`
+              - Gets or sets the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.laser_environment`
+              - Gets the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.rf_environment`
+              - Gets the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacility.max_range_when_computing_az_el_mask`
+              - Gets or sets the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
 
 
 Import detail

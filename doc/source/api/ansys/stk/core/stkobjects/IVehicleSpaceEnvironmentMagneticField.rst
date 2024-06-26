@@ -36,8 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.main_field`
+              - Gets or sets the main magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.external_field`
+              - External magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField.igrf_update_rate`
+              - Duration between updates of IGRF magnetic field model coefficients. Uses Time Dimension.
 
 
 Import detail

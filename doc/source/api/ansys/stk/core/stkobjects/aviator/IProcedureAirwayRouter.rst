@@ -38,14 +38,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.router`
+              - Gets or sets the router used to provide available airways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.optimize_for_wind`
+              - Opt to account for the wind when calculating the most efficient route.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.bounding_box_pad`
+              - Gets or sets the maximum distance beyond the bounding box that a waypoint will be considered for the final route.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.max_waypoint_range`
+              - Gets or sets the maximum distance from the end of the previous procedure that an airway waypoint will be considered.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.entry_exit_and_or`
+              - Define how the two Entry/Exit Waypoint constraints will be considered.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAirwayRouter.max_waypoint_count`
+              - Gets or sets the maximum number of airway waypoints that the procedure will consider for each segment.
 
 
 Import detail

@@ -21,23 +21,41 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.thrust_axes_name`
+              - Gets or sets the thrust axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.body_constraint_vector`
+              - Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az0`
+              - Azimuth constant term (dimension: angle).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az1`
+              - Azimuth linear term (dimension: angle/time).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az2`
+              - Azimuth quadratic term (dimension: angle/time^2).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az3`
+              - Azimuth cubic term (dimension: angle/time^3).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az4`
+              - Azimuth quartic term (dimension: angle/time^4).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az_a`
+              - Azimuth sine term amplitude (dimension: angle).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az_f`
+              - Azimuth sine term frequency (dimension: angle/time).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.az_p`
+              - Azimuth sine term phase (dimension: angle).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el0`
+              - Elevation constant term (dimension: angle).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el1`
+              - Elevation linear term (dimension: angle/time).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el2`
+              - Elevation quadratic term (dimension: angle/time^2).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el3`
+              - Elevation cubic term (dimension: angle/time^3).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el4`
+              - Elevation quartic term (dimension: angle/time^4).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el_a`
+              - Elevation sine term amplitude (dimension: angle).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el_f`
+              - Elevation sine term frequency (dimension: angle/time).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying.el_p`
+              - Elevation sine term phase (dimension: angle).
 
 
 Import detail

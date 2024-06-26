@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.week_number`
+              - Get the week number from the reference week.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.almanac_week`
+              - Get the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.reference_week`
+              - Gets or sets the reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.time_of_almanac`
+              - Get the almanac reference time (Time of Appilcability) for all almanacs in the file per ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.date_of_almanac`
+              - Get the almanac reference date for all almanacs in the file per ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA.health`
+              - Get the satellite health code as defined in the ICD-GPS-200 expressed in integer form. 0=healthy.
 
 
 Import detail

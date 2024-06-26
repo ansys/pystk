@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyScriptPlugin.filename`
+              - Gets or sets the script filename.
 
 
 Import detail

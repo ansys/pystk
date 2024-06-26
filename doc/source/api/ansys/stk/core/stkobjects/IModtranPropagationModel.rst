@@ -30,17 +30,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.supported_aerosol_models`
+              - Gets an array of supported aerosol model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.aerosol_model_type`
+              - Gets or sets the aerosol model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.visibility`
+              - Gets or sets the visibility.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.relative_humidity`
+              - Gets or sets the relative humidity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.cloud_model_type`
+              - Gets or sets the cloud model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.override_cloud_thickness`
+              - Gets or set the option for overriding the cloud thickness.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.cloud_thickness`
+              - Gets or sets the cloud thickness value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.override_cloud_altitude`
+              - Gets or set the option for overriding the cloud altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.cloud_altitude`
+              - Gets or sets the cloud altitude value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.write_start_time`
+              - Gets or sets the time to start writing MODTRAN output files.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranPropagationModel.write_num_time_steps`
+              - Gets or sets the number of time steps to write MODTRAN output files.
 
 
 Import detail

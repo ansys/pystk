@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourSpectralFluxDensity.azimuth_resolution`
+              - Gets the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourSpectralFluxDensity.elevation_resolution`
+              - Gets the elevation resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourSpectralFluxDensity.max_elevation`
+              - Gets the maximum elevation.
 
 
 Import detail

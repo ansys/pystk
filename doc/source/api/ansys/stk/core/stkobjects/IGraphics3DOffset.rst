@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffset.rotational`
+              - Returns the rotational offset attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffset.translational`
+              - Returns the translational offset attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffset.label`
+              - Returns the label offset attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffset.attach_point`
+              - Returns the attach point offset attributes.
 
 
 Import detail

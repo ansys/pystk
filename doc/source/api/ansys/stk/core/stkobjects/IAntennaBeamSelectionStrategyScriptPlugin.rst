@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategyScriptPlugin.filename`
+              - Gets or sets the script filename.
 
 
 Import detail

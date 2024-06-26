@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.enable_satisfaction`
+              - Specify whether to apply the graphical properties of the figure of merit only when a chosen satisfaction criterion is met.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.satisfaction_type`
+              - Gets or sets the relationship to the specified threshold that must be achieved to satisfy the Figure of Merit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.satisfaction_threshold`
+              - Gets or sets the threshold for satisfying the Figure of Merit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.invalid_data_indicator`
+              - A value to indicate when contouring is invalid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.use_value_range_check`
+              - Enable FOM Values Limits for computing Statistics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.min_value_range`
+              - Gets or sets the Min Value in the range.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.max_value_range`
+              - Gets or sets the Max Value in the range.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction.exclude_value_range`
+              - Exclude Value Range.
 
 
 Import detail

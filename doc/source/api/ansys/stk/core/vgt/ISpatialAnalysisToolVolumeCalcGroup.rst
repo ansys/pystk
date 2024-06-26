@@ -38,9 +38,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcGroup.context`
+              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcGroup.count`
+              - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcGroup.factory`
+              - Returns a factory object used to create volume calc components.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcGroup._NewEnum`
+              - Returns a COM enumerator.
 
 
 Import detail

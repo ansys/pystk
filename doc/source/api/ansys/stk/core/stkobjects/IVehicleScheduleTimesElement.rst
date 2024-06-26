@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement.start`
+              - Start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement.stop`
+              - Stop time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement.target`
+              - Get the target.
 
 
 Import detail

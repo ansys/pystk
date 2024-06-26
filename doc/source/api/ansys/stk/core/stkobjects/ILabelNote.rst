@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNote.note`
+              - Note property.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNote.note_visible`
+              - Property specifying when the note is displayed. A member of the AgENoteShowType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNote.label_visible`
+              - Property specifying whether the label is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILabelNote.intervals`
+              - Intervals during which the note is displayed. This property is used if the corresponding value is selected for the NoteVisible property.
 
 
 Import detail

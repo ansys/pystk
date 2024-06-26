@@ -46,24 +46,43 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.pattern_type`
+              - Criterion for defining the sensor pattern. A member of the AgESnPattern enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.pattern`
+              - Get data defining the sensor pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.pointing_type`
+              - The sensor's pointing type. A member of the AgESnPointing enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.pointing`
+              - Get pointing data for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.az_el_mask`
+              - Get the az-el mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.az_el_mask_data`
+              - Get az-el mask data for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.focal_length`
+              - Focal length used in defining sensor resolution. Uses SmallDistanceUnit Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.detector_pitch`
+              - Detector pitch used in defining senor resolution. Uses SmallDistanceUnit Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.refraction`
+              - Refraction method, a member of the AgESnRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.graphics`
+              - Get the 2D Graphics properties for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.graphics_3d`
+              - Get the 3D Graphics properties for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.location_type`
+              - The location type being used by the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.location_data`
+              - Get location data for the sensor. The sensor's center point is invalid; all other points are valid choices for the location data.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.access_constraints`
+              - Get constraints imposed on the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.swath`
+              - Get the sensor's swath.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.refraction_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.refraction_model`
+              - Gets a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.use_refraction_in_access`
+              - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensor.common_tasks`
+              - Returns an interface that exposes common tasks.
 
 
 Import detail

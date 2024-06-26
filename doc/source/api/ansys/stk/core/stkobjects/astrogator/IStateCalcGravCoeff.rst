@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.gravity_filename`
+              - Source for the gravity coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.coefficient_type`
+              - Coefficient type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.degree`
+              - Degree of the coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.order`
+              - Order of the coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff.normalization_type`
+              - Normalization type.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGeodeticSizeRadius.radius`
+              - Measured from the center of the Earth. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGeodeticSizeRadius.rate`
+              - Rate of change in radius. Uses Rate Dimension.
 
 
 Import detail

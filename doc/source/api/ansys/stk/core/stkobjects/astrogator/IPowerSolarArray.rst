@@ -34,19 +34,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.area`
+              - Gets or sets the solar array panel area. Uses Area Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.concentration`
+              - Gets or sets the solar array concentrator factor. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.cell_efficiency_percent`
+              - Gets or sets the cell efficiency in producing output power from incident sunlight. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.array_efficiency_percent`
+              - Gets or sets the array efficiency in producing output power from a collection of cells. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.percent_degradation_per_year`
+              - Gets or sets the percent degradation per year; degradation factor is (1-x%/yr)^(timeSinceRefEpoch). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.reference_epoch`
+              - Gets or sets the date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.inclination_to_sun_line`
+              - Gets or sets the angle between the panel normal vector to the apparent sun line. Uses AngleUnit Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c0`
+              - Gets or sets the ThermalModel.C0 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c1`
+              - Gets or sets the ThermalModel.C1 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c2`
+              - Gets or sets the ThermalModel.C2 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c3`
+              - Gets or sets the ThermalModel.C3 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.c4`
+              - Gets or sets the ThermalModel.C4 coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.approximation_formula`
+              - Get the thermal factor as function of distance (in AU) to Sun.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElements.count`
+              - Returns number of elements for this data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElements._NewEnum`
+              - Returns enum of AgDataPrvElement object.
 
 
 Import detail

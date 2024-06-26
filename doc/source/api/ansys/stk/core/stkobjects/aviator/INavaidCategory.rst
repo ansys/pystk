@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavaidCategory.arinc424_navaids`
+              - Get the ARINC-424 navaids.
 
 
 Import detail

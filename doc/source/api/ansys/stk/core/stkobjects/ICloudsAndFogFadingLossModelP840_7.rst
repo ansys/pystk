@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.cloud_ceiling`
+              - Gets or sets the cloud ceiling.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.cloud_layer_thickness`
+              - Gets or sets the cloud layer thickness.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.cloud_temperature`
+              - Gets or sets the cloud temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.cloud_liquid_water_density`
+              - Gets or sets the cloud liquid water density.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.liquid_water_density_choice`
+              - Gets or sets the cloud liquid water density Choice.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.liquid_water_percent_annual_exceeded`
+              - Gets or sets the Liquid water % Annual Exceeded.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.liquid_water_percent_monthly_exceeded`
+              - Gets or sets the Liquid water % Monthly Exceeded.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.average_data_month`
+              - Gets or sets the month, (1 - 12) of the year, used to get average liquid water data.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModelP840_7.use_rain_height_as_cloud_layer_thickness`
+              - Gets or sets the use rain height as cloud layer thickness.
 
 
 Import detail

@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.id`
+              - Returns the ID of the dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.name`
+              - Returns the current Dimension's full name.
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.available_units`
+              - Returns collection of Units.
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimension.current_unit`
+              - Returns the current unit for this dimension.
 
 
 Import detail

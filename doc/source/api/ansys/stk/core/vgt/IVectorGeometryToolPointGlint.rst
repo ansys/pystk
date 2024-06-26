@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGlint.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGlint.source_point`
+              - Specify a source point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointGlint.observer_point`
+              - Specify an observer point.
 
 
 Import detail

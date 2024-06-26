@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IObjectRFEnvironment.propagation_channel`
+              - Gets the propagation channel.
 
 
 Import detail

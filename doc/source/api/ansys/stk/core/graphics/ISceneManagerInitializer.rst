@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISceneManagerInitializer.primitives`
+              - Gets the primitive manager, which is used to add primitives to your scenes.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneManagerInitializer.screen_overlays`
+              - Gets the screen overlay manager, which is used to add screen overlays to your scenes.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneManagerInitializer.textures`
+              - Gets the texture 2d factory, which can be used to create textures from various sources.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneManagerInitializer.globe_overlay_settings`
+              - Gets the globe overlay settings, which are used to set global settings for all globe overlays.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneManagerInitializer.scenes`
+              - Gets a read-only collection of scenes that are associated with the scene manager.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneManagerInitializer.frame_rate`
+              - Gets the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>.
 
 
 Import detail

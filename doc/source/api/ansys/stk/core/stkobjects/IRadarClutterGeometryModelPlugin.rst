@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModelPlugin.plugin_configuration`
+              - This property is deprecated. Use PluginConfiguration on IAgScatteringPointProviderPlugin instead. Gets the plugin configuration interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModelPlugin.raw_plugin_object`
+              - This property is deprecated. Use RawPluginObject on IAgScatteringPointProviderPlugin instead. Gets the raw plugin IUnknown interface.
 
 
 Import detail

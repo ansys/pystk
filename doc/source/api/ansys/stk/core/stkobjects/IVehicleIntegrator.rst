@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.integration_model`
+              - Integration method to be used in propagating the orbit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.use_graphics_3d_p`
+              - Opt whether to use VOP, a variation of parameters in universal variables formulation of the equations of motion. Valid in combination with the RKF7(8) and Burlirsch-Stoer integration methods.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.predictor_corrector_scheme`
+              - Predictor corrector scheme (valid for Gauss-Jackson method only): method for updating acceleration components after corrector has converged.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.step_size_control`
+              - Get the method of integration step size control.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.time_regularization`
+              - Get the time regularization parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.interpolation`
+              - Get the interpolation parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.report_ephem_on_fixed_time_step`
+              - Opt whether ephemeris is to be reported on a fixed time step.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.do_not_propagate_below_altitude`
+              - Altitude below which to stop propagation. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegrator.allow_position_vel_cov_interpolation`
+              - Get whether to allow pos-vel covariance interpolation.
 
 
 Import detail

@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.reference_type`
+              - Gets or sets the antenna control reference type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.supported_linked_antenna_objects`
+              - Gets an array of available antenna objects that this object can link to and use.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.linked_antenna_object`
+              - Gets or sets the linked antenna object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.supported_embedded_models`
+              - Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.embedded_model`
+              - Gets the current antenna model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaControl.embedded_model_orientation`
+              - Gets or sets the antenna orientation.
 
 
 Import detail

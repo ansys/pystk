@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection.count`
+              - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection._NewEnum`
+              - Returns a COM enumerator.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFirstIntervalsFilter.maximum_number_of_intervals`
+              - Maximum number of intervals.
 
 
 Import detail

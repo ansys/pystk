@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixed.start_time`
+              - The start time of the interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixed.stop_time`
+              - The stop time of the interval.
 
 
 Import detail

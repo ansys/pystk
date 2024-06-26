@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintZone.min_lon`
+              - Minimum Longitude value. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintZone.min_lat`
+              - Minimum Latitude value. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintZone.max_lon`
+              - Maximum Longitude value. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintZone.max_lat`
+              - Maximum Latitude. Uses Latitude Dimension.
 
 
 Import detail

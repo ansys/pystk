@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePattern.lat`
+              - Latitude of a point used in defining an area target as a pattern. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypePattern.lon`
+              - Longitude of a point used in defining an area target as a pattern. Uses Longitude Dimension.
 
 
 Import detail

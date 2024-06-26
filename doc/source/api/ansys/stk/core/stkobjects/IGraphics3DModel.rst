@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.visible`
+              - Display one or several models in the 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.scale_value`
+              - Specify the absolute scaling value for the object. The model scale is an exponential scale. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold`
+              - Gets the detail threshold attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_data`
+              - Gets the model data property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_type`
+              - Gets or sets the model type property. A member of the AgEModelType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.articulation`
+              - Articulation property.
 
 
 Import detail

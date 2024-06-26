@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.combine_operation`
+              - Sets/Returns volume combined operation.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCombined.condition_count`
+              - Returns the spatial condition vector size.
 
 
 Import detail

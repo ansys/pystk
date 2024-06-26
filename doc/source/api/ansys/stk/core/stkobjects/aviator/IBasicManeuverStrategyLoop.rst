@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.loop_angle`
+              - Gets or sets the loop angle for maneuver. The total change in pitch angle the aircraft flies.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.loop_angle_mode`
+              - Gets or sets the loop angle mode for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.top_load_factor`
+              - Gets or sets the load factor at the top of the loop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.bottom_load_factor`
+              - Gets or sets the load factor at the bottom of the loop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.hold_init_tas`
+              - Gets or sets the option to hold the initial true airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.top_airspeed`
+              - Get the speed at the top of the loop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLoop.bottom_airspeed`
+              - Get the speed at the bottom of the loop.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceReturn.return_control_to_parent_sequence`
+              - Gets or sets the state of the segment.
 
 
 Import detail

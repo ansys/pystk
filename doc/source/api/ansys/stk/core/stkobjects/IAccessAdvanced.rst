@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.aberration_type`
+              - Model used for including aberration in apparent direction computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.time_delay_convergence`
+              - Time delay convergence tolerance. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.event_detection`
+              - Event detection strategy used in access calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessAdvanced.sampling`
+              - Sampling method used in access calculations.
 
 
 Import detail

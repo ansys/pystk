@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.filename`
+              - Gets or sets the scattering points filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.default_scattering_point_model`
+              - Gets the link/embed controller for managing the default scattering point model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile.scattering_points`
+              - Gets the collection of scattering points.
 
 
 Import detail

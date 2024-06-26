@@ -40,11 +40,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.action`
+              - Whether to run the sequence nominally or using profiles.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.when_profiles_finish`
+              - When Profiles Converge - the action to be carried out if targeting has converged.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.continue_on_failure`
+              - Continue if profiles don't converge - if true, the target sequence continues if a profile fails to converge; otherwise, the MCS will stop upon the failure of a search profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.segments`
+              - Returns the segments contained within the target sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.profiles`
+              - Returns the profiles used within the target sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceTargetSequence.reset_inner_targeters`
+              - If true, inner target sequences will have their profiles reset before each run.
 
 
 Import detail

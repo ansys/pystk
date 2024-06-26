@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.name`
+              - Gets the typeface name of the font.
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.size`
+              - Gets the size of the font.
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.bold`
+              - Gets a value that indicates whether this font is bold.
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.italic`
+              - Gets a value that indicates whether this font is italic.
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.underline`
+              - Gets a value that indicates whether this font is underlined.
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.strikeout`
+              - Gets a value that indicates whether this font has a horizontal line through its characters.
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.outline`
+              - Gets a value that indicates whether this font has an outline around its characters.
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.style`
+              - Gets the font style enumeration that contains the style for this font. This does not include the outline property.
             * - :py:attr:`~ansys.stk.core.graphics.IGraphicsFont.antialias`
+              - Gets a value that indicates whether this font is antialiased.
 
 
 Import detail

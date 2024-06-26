@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.average_time_choice`
+              - Gets or sets the TropoScintillation average fade time choice.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.compute_deep_fade`
+              - This property is deprecated. The ComputeDeepFade property should not be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.fade_outage`
+              - This property is deprecated. Use the FadeExceeded property.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.percent_time_refractivity_gradient`
+              - Gets or sets the percentage of time that the refractivity gradient is less than -100 N units / km.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_12.fade_exceeded`
+              - Gets or sets the fade exceeded percent.
 
 
 Import detail

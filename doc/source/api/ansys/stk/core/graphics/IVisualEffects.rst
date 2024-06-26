@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IVisualEffects.lens_flare_enabled`
+              - Gets or sets whether or not the lens flare effect is enabled.
             * - :py:attr:`~ansys.stk.core.graphics.IVisualEffects.vignette_enabled`
+              - Gets or sets whether or not the vignette effect is enabled. This simulates light being blocked by the lens hood, resulting in a slight darkening at the perimeter of the 3D Window.
             * - :py:attr:`~ansys.stk.core.graphics.IVisualEffects.vignette_strength`
+              - Sets the strength of the vignette effect, values between [0.001 and 5.0], with larger values resulting in more pronounced darkening around the perimeter of the 3D window.
 
 
 Import detail

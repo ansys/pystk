@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.right_ascension`
+              - Gets or sets the right ascension; the angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spin axis -- the angle  in the drawing below. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.declination`
+              - Gets or sets the declination; the angle from the X-Y plane of the coordinate system to the spin axis vector. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.right_ascension_rate`
+              - Gets or sets the right ascension rate; the rate of change in the right ascension. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.declination_rate`
+              - Gets or sets the declination rate; the rate of change in the declination. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.rotation_offset`
+              - Gets or sets the rotation offset; the angle from the inertially fixed reference direction to the body-fixed prime meridian (0 deg longitude) at the time of epoch. Uses AngleUnit Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeIAU1994.rotation_rate`
+              - Gets or sets the rotation rate; the rate of the central body's rotation. Uses AngleRate Dimension.
 
 
 Import detail

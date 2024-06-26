@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem.type`
+              - Get the coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCoordinateSystem.coordinate_system_epoch`
+              - Smart epoch component representing the coordinate epoch. Disabled for coordinate systems with pre-established epochs (e.g. J2000, B1950).
 
 
 Import detail

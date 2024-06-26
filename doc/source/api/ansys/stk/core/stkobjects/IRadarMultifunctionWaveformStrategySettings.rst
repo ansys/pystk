@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.short_range_limit`
+              - Gets or sets the short range limit value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.medium_range_limit`
+              - Gets or sets the medium range limit value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.long_range_limit`
+              - Gets or sets the long range limit value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.supported_short_range_waveforms`
+              - Gets an array of supported short range waveform names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.supported_medium_range_waveforms`
+              - Gets an array of supported medium range waveform names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.supported_long_range_waveforms`
+              - Gets an array of supported long range waveform names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.supported_ultra_long_range_waveforms`
+              - Gets an array of supported ultra long range waveform names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.short_range_default_waveform`
+              - Gets or sets the short range default waveform.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.medium_range_default_waveform`
+              - Gets or sets the medium range default waveform.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.long_range_default_waveform`
+              - Gets or sets the long range default waveform.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarMultifunctionWaveformStrategySettings.ultra_long_range_default_waveform`
+              - Gets or sets the ultra long range default waveform.
 
 
 Import detail

@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.use_translucency`
+              - Specifies a translucency of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.translucency`
+              - Gets or sets the translucency of the object. Valid values are 0 - 100, where 0 is opaque and 100 is transparent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.reference_frame`
+              - Gets or sets the reference axes that is used to align the ellipsoid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.x_axis_length`
+              - Indicates how far along the velocity vector the box extends. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.y_axis_length`
+              - Indicates how far along the orbit normal the box extends. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.z_axis_length`
+              - Indicates how far along the orbit plane the box extends. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.x_offset`
+              - Gets or sets the distance to offset the box (forward or backward) along the velocity vector. A positive value moves the box forward along the velocity vector. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.y_offset`
+              - Gets or sets the distance to offset the box (left or right) along the velocity vector. A positive value moves the box right along the vector 90 degrees clockwise from the velocity vector. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox.z_offset`
+              - Gets or sets the distance to offset the box (up or down). A positive value moves the box down, towards the ground. Uses Distance Dimension.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAttitude.delta_v_magnitude`
+              - Gets or sets the size of the delta-V to be applied along the X axis - as defined by the selected axes and rotation. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAttitude.reference_axes_name`
+              - Ref Axes - the reference axes to be used in modeling this maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveAttitude.orientation`
+              - Get the orientation of the attitude.
 
 
 Import detail

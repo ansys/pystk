@@ -36,19 +36,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.time_period`
+              - Get the time period for the close approach analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.threshold`
+              - Distance threshold.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.use_range_measure`
+              - Enable/disable use range measure.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.display_ack_when_done`
+              - Enable/disable displaying acknowledgement when done.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.primary_default_class`
+              - Determine Ellipsoid Sizing method class.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.advanced`
+              - Get AdvCAT advanced properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.graphics_3d`
+              - Get AdvCAT advanced properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.primary_default_tangential`
+              - Primary default value for Semi-major Axes Size along A.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.primary_default_cross_track`
+              - Primary default value for Semi-major Axes Size along B.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.primary_default_normal`
+              - Primary default value for Semi-major Axes Size along C.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.secondary_default_class`
+              - Determine Ellipsoid Sizing method class.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.secondary_default_tangential`
+              - Secondary default value for Semi-major Axes Size along A.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.secondary_default_cross_track`
+              - Secondary default value for Semi-major Axes Size along B.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCAT.secondary_default_normal`
+              - Secondary default value for Semi-major Axes Size along C.
 
 
 Import detail

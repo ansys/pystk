@@ -34,13 +34,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.enabled`
+              - Opt whether to use an external attitude file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.start_time`
+              - Get the start time for the external attitude data. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.stop_time`
+              - Get the stop time for the external attitude data. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.filename`
+              - External (.a) file name containing attitude data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.file_path`
+              - External (.a) full file name and path containing attitude data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.override`
+              - Opt whether to override times contained in the external file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.attitude_start_epoch`
+              - If overriding the times contained in the external file, specifies the time of the first attitude point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeExternal.message_level`
+              - Message level used to report messages during file loading.
 
 
 Import detail

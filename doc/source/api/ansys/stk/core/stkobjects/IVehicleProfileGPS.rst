@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileGPS.model_type`
+              - Gets or sets the GPS attitude model type.
 
 
 Import detail

@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.position`
+              - Gets or sets the cartesian defining the position of the projection in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.orientation`
+              - Gets or sets the unit quaternion defining the orientation of the projection in the central body's fixed reference frame.
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.field_of_view_horizontal`
+              - Gets or sets the horizontal field of view associated with the projection.
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.field_of_view_vertical`
+              - Gets or sets the vertical field of view associated with the projection.
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.near_plane`
+              - Gets or sets the near plane associated with the projection.
             * - :py:attr:`~ansys.stk.core.graphics.IProjection.far_plane`
+              - Gets or sets the far plane associated with the projection.
 
 
 Import detail

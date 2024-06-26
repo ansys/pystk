@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.delta_v_magnitude`
+              - Gets or sets the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.filename`
+              - Gets or sets the attitude file to use.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.file_time_offset`
+              - Gets or sets the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.full_filename`
+              - Get the full path and name of the attitude file to use.
 
 
 Import detail

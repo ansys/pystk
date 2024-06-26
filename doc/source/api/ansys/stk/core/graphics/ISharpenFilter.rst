@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISharpenFilter.method`
+              - Gets or sets the method used to sharpen the source raster.
 
 
 Import detail

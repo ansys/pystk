@@ -36,6 +36,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ICameraVideoRecording.is_recording`
+              - Gets if recording is occurring or not.
 
 
 Import detail

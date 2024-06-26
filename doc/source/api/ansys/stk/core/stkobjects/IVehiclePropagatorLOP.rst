@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.initial_state`
+              - Get the initial state.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.force_model`
+              - Get the force model parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorLOP.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
 
 
 Import detail

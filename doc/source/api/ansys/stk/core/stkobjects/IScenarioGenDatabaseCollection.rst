@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabaseCollection.count`
+              - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScenarioGenDatabaseCollection._NewEnum`
+              - Enumerates the elements in the collection.
 
 
 Import detail

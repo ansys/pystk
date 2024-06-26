@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.body`
+              - Get the spin axis in the body frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.inertial`
+              - Get the spin axis in the inertial frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.rate`
+              - Spin rate: specified in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.offset`
+              - Initial spin offset: an angular measure of the difference between the satellite orientation at the offset epoch from the orientation achieved by orienting the spin axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning.smart_epoch`
+              - Epoch of the offset.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataPoint.size`
+              - Point size of tick mark. Dimensionless.
 
 
 Import detail

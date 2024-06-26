@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.intervals`
+              - A collection of found intervals.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.start`
+              - The start time of the entire interval span.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.stop`
+              - The stop time of the entire interval span.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.times`
+              - An array of found times.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedTimeOfFlight.time_of_flight`
+              - Fixed time of flight: duration of the vehicle's flight. Uses Time Dimension.
 
 
 Import detail

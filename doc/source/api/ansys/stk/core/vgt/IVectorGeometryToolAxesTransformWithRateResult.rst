@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.vector`
+              - The output vector in the current axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult.velocity`
+              - The vector velocity.
 
 
 Import detail

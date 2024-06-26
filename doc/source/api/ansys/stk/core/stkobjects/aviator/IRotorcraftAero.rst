@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.rotor_count`
+              - Gets or sets the number of rotors.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.rotor_diameter`
+              - Gets or sets the diameter of the rotor.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.blades_per_rotor`
+              - Gets or sets the number of blades on each rotor.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.blade_chord`
+              - Gets or sets the chord length of the blade.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.rotor_tip_mach`
+              - Gets or sets the Mach number of the advancing blade tip.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.fuselage_flat_plate_area`
+              - Gets or sets the flat plate area for the fuselage.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.tail_rotor_offset`
+              - Gets or sets the offset of the tail rotor.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.tail_rotor_diameter`
+              - Gets or sets the diameter of the tail rotor.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.blade_profile_drag_cd0`
+              - Gets or sets the drag coefficient when the rotor disc does not generate any lift.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.blade_profile_drag_k`
+              - Gets or sets the induced drag coefficient, which accounts for how lift generation impacts drag.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero.induced_power_correction_factor`
+              - Gets or sets the slop factor that accounts for losses.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGravity.maximum_degree`
+              - Maximum degree to use in the gravity field when propagating the state error covariance matrix. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGravity.maximum_order`
+              - Maximum order to use in the gravity field when propagating the state error covariance matrix. Dimensionless.
 
 
 Import detail

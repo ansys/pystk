@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions.use_default_cruise_altitude`
+              - Opt whether to use the default cruise altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions.delay_arc_climb_descents`
+              - Delay the climb/descend such that the stop arc altitude will be achieved by the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions.start_arc_altitude`
+              - Gets or sets the altitude at the beginning of the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcAltitudeAndDelayOptions.stop_arc_altitude`
+              - Gets or sets the altitude at the end of the arc.
 
 
 Import detail

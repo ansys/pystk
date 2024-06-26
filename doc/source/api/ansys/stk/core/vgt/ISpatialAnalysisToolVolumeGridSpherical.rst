@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridSpherical.reference_system`
+              - Get the reference system in which spherical parameters are computed.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridSpherical.azimuth_coordinates`
+              - Returns azimuth coordinates parameters for the spherical volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridSpherical.elevation_coordinates`
+              - Returns elevation coordinates parameters for the spherical volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridSpherical.range_coordinates`
+              - Returns range coordinates parameters for the spherical volume grid.
 
 
 Import detail

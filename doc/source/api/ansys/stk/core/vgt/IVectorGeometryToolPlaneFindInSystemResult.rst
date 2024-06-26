@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.origin_position`
+              - The position of the plane's center point in the specified coordinate system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.x_axis`
+              - X-axis vector in the specified reference system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult.y_axis`
+              - Y-axis vector in the specified reference system.
 
 
 Import detail

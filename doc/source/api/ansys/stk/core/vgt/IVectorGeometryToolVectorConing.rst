@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.about_vector`
+              - Specify a vector around which the the reference vector is revolved.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.reference_vector`
+              - Specify a reference vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.start_clock_angle`
+              - Specify a start angle.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.stop_clock_angle`
+              - Specify a stop angle.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.start_epoch`
+              - Specify an epoch at which the coning vector is aligned with the reference vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.clock_angle_rate`
+              - Specify a rotation rate.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorConing.mode`
+              - Specify either unidirectional or bidirectional mode.
 
 
 Import detail

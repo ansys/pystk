@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IObjPathCollection.count`
+              - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IObjPathCollection._NewEnum`
+              - Returns an object that can be used to iterate through all the object paths in the collection.
 
 
 Import detail

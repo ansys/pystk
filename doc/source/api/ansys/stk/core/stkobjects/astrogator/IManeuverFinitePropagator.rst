@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.propagator_name`
+              - Gets or sets the propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.stopping_conditions`
+              - Get the stopping conditions list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.min_propagation_time`
+              - Minimum Propagation Time - the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.max_propagation_time`
+              - Maximum Propagation Time - the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.enable_max_propagation_time`
+              - Enable Maximum Propagation Time - apply the maximum propagation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.enable_warning_message`
+              - Issue a warning message if propagation is stopped by the Maximum Propagation Time parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.enable_center_burn`
+              - Gets or sets the option to start the maneuver half the time before the previous segment ended. This property is only available for use with a duration stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.bias`
+              - Gets or sets the value by which to adjust the centering of the burn. A positive value will center the burn after the previous segment ends by the amount specified in the Burn Center Bias field. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.override_max_propagation_time`
+              - Override Maximum Propagation Time - if there is a duration or epoch stopping condition that occurs after the maximum propagation time, ignore the maximum propagation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.should_stop_for_initially_surpassed_epoch_stopping_conditions`
+              - Stop immediately if propagation begins beyond an active epoch stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator.should_reinitialize_stm_at_start_of_segment_propagation`
+              - If this segment is propagating the state transition matrix, reset it to the identity matrix at the start of the segment.
 
 
 Import detail

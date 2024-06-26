@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBody.name`
+              - A name of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBody.ellipsoid`
+              - The central body ellipsoid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBody.vgt`
+              - Returns the central body's Vector Geometry Tool provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBody.gravitational_parameter`
+              - The gravitational parameter of the central body in distance units cubed per time units squared (i.e. m^3*s^-2).
 
 
 Import detail

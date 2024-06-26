@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStage.flight_type`
+              - Property used to access the flight type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRStage.plume`
+              - Property used to access the stage plume.
 
 
 Import detail

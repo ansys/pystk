@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderScript.members`
+              - Gets the members list.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProviderScript.filename`
+              - Gets or sets the filename.
 
 
 Import detail

@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack.waveform`
+              - Gets the interface for configuring the search/track waveform.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiverSearchTrack.doppler_clutter_filters`
+              - Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 
 
 Import detail

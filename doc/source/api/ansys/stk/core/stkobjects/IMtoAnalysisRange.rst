@@ -40,11 +40,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.lower_limit`
+              - Gets or sets the lower range limit in Distance Units.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.upper_limit`
+              - Gets or sets the upper range limit in Distance Units.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.object_interval`
+              - Use Extended to use the last point of the ephemeris span of the object for times past the last point. Default is Normal.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.object_data`
+              - If the Object to which range will be computed is an MTO, use this option to specify the track that will be used to compute that range. By default the MTO's ComputeTrack will be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.stk_object_path`
+              - Gets or sets the object to which range is being computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisRange.entirety`
+              - Range Entirety.
 
 
 Import detail

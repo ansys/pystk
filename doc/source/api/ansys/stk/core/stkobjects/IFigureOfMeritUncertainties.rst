@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritUncertainties.receiver_range`
+              - Receiver range uncertainty value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritUncertainties.asset_list`
+              - Get list of assets for specifying range uncertainty.
 
 
 Import detail

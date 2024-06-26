@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IGlobeImageOverlayAddCompleteEventArgs.overlay`
+              - The overlay object that was added earlier using AddAsync.
 
 
 Import detail

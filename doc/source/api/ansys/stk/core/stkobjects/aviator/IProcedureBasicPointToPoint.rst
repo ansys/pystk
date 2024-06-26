@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicPointToPoint.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicPointToPoint.navigation_options`
+              - Get the navigation options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicPointToPoint.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicPointToPoint.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicPointToPoint.vertical_plane_options`
+              - Get the vertical plane options.
 
 
 Import detail

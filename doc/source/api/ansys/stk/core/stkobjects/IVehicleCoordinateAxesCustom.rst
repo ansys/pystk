@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxesCustom.reference_axes_name`
+              - Gets or sets the specified reference axes.
 
 
 Import detail

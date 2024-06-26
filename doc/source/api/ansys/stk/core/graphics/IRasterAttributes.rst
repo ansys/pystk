@@ -30,15 +30,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.format`
+              - Gets the raster format associated with the attributes.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.type`
+              - Gets the raster type associated with the attributes.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.orientation`
+              - Gets the raster orientation associated with the attributes.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.byte_length`
+              - Gets the size of the raster data in bytes.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.width`
+              - Gets the width of the raster in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.height`
+              - Gets the height of the raster in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.pixel_aspect_ratio`
+              - Gets the pixel aspect ratio of the raster.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.row_alignment`
+              - Gets the row alignment of the raster data in bytes.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.number_of_bands`
+              - Gets the number of bands comprising the raster.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterAttributes.row_stride`
+              - Gets the stride or scan/row width in bytes of the raster data.
 
 
 Import detail

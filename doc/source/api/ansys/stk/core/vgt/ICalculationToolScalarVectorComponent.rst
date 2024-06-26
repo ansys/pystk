@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.input_vector`
+              - Vector.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.reference_axes`
+              - Axes used to resolve the vector's components.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarVectorComponent.component`
+              - The component of the vector to return as the value of the scalar.
 
 
 Import detail

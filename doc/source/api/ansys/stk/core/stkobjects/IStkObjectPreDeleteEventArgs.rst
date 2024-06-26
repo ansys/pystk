@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectPreDeleteEventArgs.path`
+              - Object path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectPreDeleteEventArgs.continue_method`
+              - The status to continue or stop the object deletion.
 
 
 Import detail

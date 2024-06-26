@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcNegative.calc_object_name`
+              - Gets or sets the calculation  object.
 
 
 Import detail

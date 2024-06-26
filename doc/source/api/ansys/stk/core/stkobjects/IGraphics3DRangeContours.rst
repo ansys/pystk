@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.is_visible`
+              - Display the contour cone's projection on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.translucent_lines`
+              - Make the contour cone translucent at the specified percentage.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.percent_translucency`
+              - Gets or sets the translucency of the contour cone's projection on the surface of the central body, where 100% = invisible. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.border_wall`
+              - Retrieve the border wall properties of the range contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DRangeContours.label_swap_distance`
+              - Interface to control the level of detail in labels and other screen objects at specified distances.
 
 
 Import detail

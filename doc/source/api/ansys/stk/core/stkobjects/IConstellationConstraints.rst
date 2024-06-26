@@ -32,11 +32,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.from_parent_constraint`
+              - Constrain accesses for constellation objects when used in a chain by parent relationships when in the 'from' access position.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.to_parent_constraint`
+              - Constrain accesses for constellation objects when used in a chain by parent relationships when in the 'to' access position.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.from_restriction_type`
+              - Gets the current restriction type when in the from access position.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.from_restriction`
+              - Returns a restriction corresponding to the restriction type when in the from access position.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.to_restriction_type`
+              - Gets the current restriction type when in the to access position.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraints.to_restriction`
+              - Returns a restriction corresponding to the restriction type when in the to access position.
 
 
 Import detail

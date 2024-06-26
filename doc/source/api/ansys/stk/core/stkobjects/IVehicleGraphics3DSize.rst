@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSize.scale_to_attitude_sphere`
+              - Opt whether to scale the size of the vector to the attitude sphere.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSize.scale_value`
+              - A scale value for the vector (either absolute or relative to the model scale). Dimensionless.
 
 
 Import detail

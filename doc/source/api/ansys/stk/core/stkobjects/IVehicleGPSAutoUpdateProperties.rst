@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.selection`
+              - Whether Automatic Update is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.switch_method`
+              - When to switch between element sets.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties.week_reference_epoch`
+              - Week reference epoch.
 
 
 Import detail

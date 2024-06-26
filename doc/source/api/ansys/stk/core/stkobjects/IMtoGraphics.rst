@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics.tracks`
+              - Get the collection of MTO 2D graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics.default_track`
+              - Get the default track 2D graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics.global_track_options`
+              - Get the 2D graphics global settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the MTO are visible.
 
 
 Import detail

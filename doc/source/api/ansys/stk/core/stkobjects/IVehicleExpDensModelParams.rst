@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams.reference_density`
+              - Gets or sets the reference density. Uses Density Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams.reference_height`
+              - Gets or sets the reference height. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams.scale_height`
+              - Gets or sets the scale height. Uses Distance Dimension.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IElement.x`
+              - Gets the x position, in wavelengths.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElement.y`
+              - Gets the y position, in wavelengths.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElement.id`
+              - Gets the element Id.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElement.enabled`
+              - Gets or set whether or not the element is enabled.
 
 
 Import detail

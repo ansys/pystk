@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator.avtr_mission`
+              - Get the Aviator mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator.auto_recalculate`
+              - Opt whether to have the propagator auto recalculate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator.avtr_catalog`
+              - Get the Aviator catalog.
 
 
 Import detail

@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.compute_covariance`
+              - Opt whether to compute covariance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.frame`
+              - Frame in which covariance is input.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.representation`
+              - Get the representation for the covariance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.gravity`
+              - Get the gravity parameters for the covariance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.position_velocity`
+              - Get the covariance matrix.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.include_consider_analysis`
+              - Opt whether to include Consider Analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.consider_analysis_list`
+              - Get the Consider Analysis list.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.include_consider_cross_correlation`
+              - Opt whether to include Consider Cross Correlation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCovariance.correlation_list`
+              - Get the Consider Cross Correlation list.
 
 
 Import detail

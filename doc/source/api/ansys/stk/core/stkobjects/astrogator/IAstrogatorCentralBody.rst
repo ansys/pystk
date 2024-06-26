@@ -84,16 +84,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.gravitational_param`
+              - Gets or sets the gravitational parameter to be used. Uses Gravity Parameter Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.parent_name`
+              - Gets or sets the parent of this central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.children`
+              - Get the children of this central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_gravity_model_name`
+              - Get the gravity model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_gravity_model_data`
+              - Get the gravity model parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_shape_name`
+              - Get the shape of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_shape_data`
+              - Get the parameters of the central body shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_attitude_name`
+              - Get the attitude of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_attitude_data`
+              - Get the parameters of the central body attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_ephemeris_name`
+              - Get the ephemeris of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAstrogatorCentralBody.default_ephemeris_data`
+              - Get the parameters of the central body ephemeris.
 
 
 Import detail

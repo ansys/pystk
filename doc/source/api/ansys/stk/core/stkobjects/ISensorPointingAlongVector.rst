@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.alignment_vector`
+              - The alignment vector for along vector sensor pointing alignment.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.available_alignment_vectors`
+              - Get the available Alignment Vectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.constraint_vector`
+              - The constraint vector for along vector sensor pointing alignment.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.available_constraint_vectors`
+              - Get the available Constraint Vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector.clock_angle_offset`
+              - The clock angle offset for along vector sensor pointing alignment.It is an optional value that is entered in degrees, between -360.0 and 360.0.
 
 
 Import detail

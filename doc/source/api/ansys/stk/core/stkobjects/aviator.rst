@@ -17,7 +17,7 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:mod:ansys.stk.core.stkobjects.aviator.matlab
+            * - :py:mod:`~ansys.stk.core.stkobjects.aviator.matlab`
 
              
     .. tab-item:: Interfaces
@@ -1904,8 +1904,6 @@ Description
 
 Object Model components specifically designed to support STK Aviator.
 
-Detail
-------
 
 .. py:currentmodule:: ansys.stk.core.stkobjects.aviator
 

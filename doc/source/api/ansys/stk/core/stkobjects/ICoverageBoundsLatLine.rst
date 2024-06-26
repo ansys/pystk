@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLine.start_longitude`
+              - Longitude at which the latitude line begins. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLine.stop_longitude`
+              - Longitude at which the latitude line ends. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageBoundsLatLine.latitude`
+              - Latitude of the latitude line. Uses Latitude Dimension.
 
 
 Import detail

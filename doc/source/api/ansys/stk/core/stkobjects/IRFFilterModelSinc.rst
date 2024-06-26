@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelSinc.cutoff_frequency`
+              - Gets or sets the analog filter cut off frequency.
 
 
 Import detail

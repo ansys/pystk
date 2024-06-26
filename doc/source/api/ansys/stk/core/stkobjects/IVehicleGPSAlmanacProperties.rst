@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties.type`
+              - Gets a type of the almanac.
 
 
 Import detail

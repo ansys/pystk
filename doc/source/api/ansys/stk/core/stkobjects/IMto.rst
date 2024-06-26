@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMto.tracks`
+              - Get the collection of MTO tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMto.default_track`
+              - Get the default MTO track.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMto.global_track_options`
+              - Get the global MTO track options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMto.graphics`
+              - Get the MTO's 2D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMto.graphics_3d`
+              - Get the MTO's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMto.analysis`
+              - Get the MTO's spatial state.
 
 
 Import detail

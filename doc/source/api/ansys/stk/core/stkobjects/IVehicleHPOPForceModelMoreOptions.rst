@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions.drag`
+              - Get the additional atmospheric drag options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions.solar_radiation_pressure`
+              - Get the additional solar radiation pressure options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions.static`
+              - Get the static force model options concerning satellite mass and relativistic accelerations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions.solid_tides`
+              - Get the solid tides options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions.ocean_tides`
+              - Get the ocean tides options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions.radiation_pressure`
+              - Get the radiation pressure options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelMoreOptions.plugin_propagator`
+              - Get the plugin propagator parameters.
 
 
 Import detail

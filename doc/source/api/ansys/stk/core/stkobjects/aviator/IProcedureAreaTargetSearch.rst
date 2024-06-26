@@ -32,16 +32,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.procedure_type`
+              - Gets or sets the procedure methodology used to calculate the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.max_separation`
+              - Gets or sets the maximum distance between the parallel flight lines of the search pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.course_mode`
+              - Gets or sets the mode to determine the course of the search pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.first_leg_retrograde`
+              - Gets or sets the option to fly the first leg of the search pattern on the reverse heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.centroid_true_course`
+              - Gets or sets the specific course of the search pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.fly_cruise_airspeed_profile`
+              - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.must_level_off`
+              - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureAreaTargetSearch.level_off_mode`
+              - Gets or sets the level off mode. This is only used when the must level off option is on.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintGrazingAltitude.compute_beyond_tgt`
+              - Determines if positions beyond target object are considered in grazing altitude calculation.
 
 
 Import detail

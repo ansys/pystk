@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.inherit_track_data_from_2d`
+              - Opt whether to inherit from 2D route graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.track_data`
+              - Get the leading/trailing route data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DRoute.waypoint_markers`
+              - Get the waypoint markers data.
 
 
 Import detail

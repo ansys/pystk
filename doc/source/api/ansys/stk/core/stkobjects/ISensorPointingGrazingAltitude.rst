@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingGrazingAltitude.azimuth_offset`
+              - The azimuth offset, defining the plane in the parent object's body-fixed frame in which the sensor boresight lies. It is the angle between the X axis and the azimuth vector in the XY plane. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingGrazingAltitude.grazing_altitude`
+              - The altitude at which the boresight vector grazes the central body. Uses Distance Dimension.
 
 
 Import detail

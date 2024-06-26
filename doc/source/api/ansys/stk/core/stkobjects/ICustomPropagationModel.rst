@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICustomPropagationModel.enable`
+              - Gets or sets the option to use the custom model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICustomPropagationModel.filename`
+              - Gets or sets the custom model filename.
 
 
 Import detail

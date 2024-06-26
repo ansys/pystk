@@ -64,8 +64,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.count`
+              - Gets the number of globe overlay objects in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IImageCollection.is_read_only`
+              - Gets whether or not the collection is read only.
             * - :py:attr:`~ansys.stk.core.graphics.IImageCollection._NewEnum`
+              - Constructs an iterator that can be used to iterate the collection.
 
 
 Import detail

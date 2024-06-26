@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayContainer.overlays`
+              - Gets the collection of overlays that are contained within this overlay.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayContainer.padding`
+              - Gets or sets the padding surrounding the overlays that are contained within this overlay. The array contains the components of the padding arranged in the order left, top, right, bottom.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayContainer.display`
+              - Gets or sets if this overlay and the collection of overlays that are contained within this overlay should be rendered.
 
 
 Import detail

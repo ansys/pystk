@@ -32,13 +32,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.data_provider`
+              - The name of the data provider.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.element_name`
+              - The name of the data element within the data provider.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.group`
+              - A group name the data element is a part of. If the element is not a part of a group, the property will return an empty string.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.interpolation`
+              - Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.sampling`
+              - Relative tolerance uses a combination of relative and absolute changes in scalar values between samples. Curvature tolerance also uses changes in slope between samples.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.use_samples`
+              - If set to true, selected data provider is presampled over its entire availability span using sampling method specified in Advanced options...
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.save_data_option`
+              - Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDataElement.invalid_data_indicator`
+              - Sets the value to display in a report or graph when the actual value is not a valid real number.
 
 
 Import detail

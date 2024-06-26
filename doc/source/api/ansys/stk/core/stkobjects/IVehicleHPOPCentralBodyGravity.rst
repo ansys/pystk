@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.file`
+              - Name of gravity (.grv) file, an ASCII file containing the Central Body geopotential model coefficients.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.max_degree`
+              - Maximum degree of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.max_order`
+              - Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.use_ocean_tides`
+              - Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.solid_tide_type`
+              - Solid Tide Type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPCentralBodyGravity.use_secular_variations`
+              - Opt whether to include or ignore secular variations defined by the gravity field model.
 
 
 Import detail

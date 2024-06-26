@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.name`
+              - Gets or sets the name of the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.status`
+              - Gets or sets the status of the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.user_comment`
+              - A user comment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.mode`
+              - Gets or sets the profile's mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.type`
+              - Return the current profile type.
 
 
 Import detail

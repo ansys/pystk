@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationLinear.num_elements`
+              - Gets or sets the number of elements on the perimiter of the circle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationLinear.spacing`
+              - Gets or sets the spacing between adjacent elements in wavelengths.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationLinear.tilt_angle`
+              - Gets or sets the tilt angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationLinear.max_look_angle`
+              - Gets the maximum look angle.
 
 
 Import detail

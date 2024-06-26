@@ -34,8 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICentralBodyTerrainCollection.total_cache_size`
+              - Total cache size (not individual terrain sources) for the analytical terrain in the scenario. Dimensionless.
 
 
 Import detail

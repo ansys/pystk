@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.scale`
+              - A scale value for the velocity ellipsoid size. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.attributes_type`
+              - Get the velocity ellipsoid attributes type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.attributes_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance.attributes`
+              - Get the velocity ellipsoid graphics attributes.
 
 
 Import detail

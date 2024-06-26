@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.set_from_initial_guess`
+              - Set initial boundary conditions from initial guess.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.a`
+              - Bound limits for element a.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.h`
+              - Bound limits for element h.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.k`
+              - Bound limits for element k.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.p`
+              - Bound limits for element p.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.q`
+              - Bound limits for element q.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.l`
+              - Bound limits for element L.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteInitialBoundaryConditions.provide_runtime_type_info`
+              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate.enable`
+              - Specify the model rotation in the object body frame's X, Y and Z directions.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate.x`
+              - Rotation about the X axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate.y`
+              - Rotation about the Y axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetRotate.z`
+              - Rotation about the Z axis. Uses Angle Dimension.
 
 
 Import detail

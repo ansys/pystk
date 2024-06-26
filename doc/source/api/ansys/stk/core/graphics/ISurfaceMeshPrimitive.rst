@@ -36,13 +36,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture`
+              - Gets or sets the texture applied to this primitive when rendering.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.wireframe`
+              - Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.triangle_winding_order`
+              - Gets the orientation of front-facing triangles in the mesh.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.set_hint`
+              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.rendering_method`
+              - Gets the rendering method used to render the mesh.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture_filter`
+              - Gets or sets the filter used when a texture is applied to this primitive.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.texture_matrix`
+              - Gets or sets the matrix used to transform texture coordinates when a texture is applied to this primitive.
             * - :py:attr:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive.transparent_texture_border`
+              - Gets or set the boolean that defines if the color obtained from texture coordinates beyond the texture border should be considered transparent or not. This is typically used in conjunction with the a texture matrix.
 
 
 Import detail

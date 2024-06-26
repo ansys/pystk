@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection.count`
+              - Returns the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILevelAttributeCollection._NewEnum`
+              - Enumerates through IAgLevelAttributeCollection.
 
 
 Import detail

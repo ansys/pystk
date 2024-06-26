@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection.count`
+              - Gets the total count of files in the collection.
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection._NewEnum`
+              - Enumerates through the file collection.
 
 
 Import detail

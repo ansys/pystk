@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.name`
+              - Gets or sets the name of the payload station.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.position_x`
+              - Get the X value of the payload station's parent relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.position_y`
+              - Get the Y value of the payload station's parent relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPayloadStation.position_z`
+              - Get the Z value of the payload station's parent relative position.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyAnsysCsvFile.filename`
+              - Gets or sets the Ansys HFSS exported primary polarization RCS data CSV formatted filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyAnsysCsvFile.file2_name`
+              - Gets or sets the Ansys HFSS exported orthogonal polarization RCS data CSV formatted filename.
 
 
 Import detail

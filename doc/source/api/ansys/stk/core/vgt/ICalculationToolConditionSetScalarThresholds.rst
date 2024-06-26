@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.scalar`
+              - The input scalar calculation.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.thresholds`
+              - The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.threshold_labels`
+              - The input threshold values, flags indicating whether to include conditions above the highest and below the lowest threhsolds, and corresponding labels.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.include_above_highest_threshold`
+              - The threshold indicates whether to include conditions above the highest threhsold.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSetScalarThresholds.include_below_lowest_threshold`
+              - The threshold indicates whether to include conditions below the lowest threhsolds.
 
 
 Import detail

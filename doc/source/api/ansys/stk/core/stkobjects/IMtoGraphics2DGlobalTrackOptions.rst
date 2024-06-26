@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DGlobalTrackOptions.tracks_visible`
+              - Opt whether to display or hide 2D graphics tracks for the MTO.
 
 
 Import detail

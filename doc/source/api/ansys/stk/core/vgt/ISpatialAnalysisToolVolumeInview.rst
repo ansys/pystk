@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeInview.constraint_object`
+              - A constraint object of the access.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeInview.light_time_delay`
+              - Returns Light Time Delay options parameters.
 
 
 Import detail

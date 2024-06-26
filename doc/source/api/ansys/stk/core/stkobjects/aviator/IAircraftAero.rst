@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.aero_strategy`
+              - Gets or sets the aerodynamic strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_simple`
+              - Get the interface for a simple aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_basic_fixed_wing`
+              - Get the interface for a basic fixed wing aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_external`
+              - Get the interface for an external file aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.mode_as_advanced_missile`
+              - Get the interface for an advanced missile aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.lift_factor`
+              - Gets or sets the scalar value applied to the lift for parametric analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAero.drag_factor`
+              - Gets or sets the scalar value applied to the drag for parametric analysis.
 
 
 Import detail

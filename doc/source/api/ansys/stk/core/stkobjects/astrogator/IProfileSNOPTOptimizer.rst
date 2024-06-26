@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.control_parameters`
+              - Get the list of control parameters defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.results`
+              - Get the list of results defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.targeter_graphs`
+              - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.scripting_tool`
+              - Returns the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.reset_controls_before_run`
+              - Reset controls before each run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.max_major_iterations`
+              - Gets or sets the maximum number of major iterations allowed.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.tolerance_on_major_feasibility`
+              - Specifies how accurately the nonlinear constraints should be satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.tolerance_on_major_optimality`
+              - Specifies the final accuracy of the dual variables.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.max_minor_iterations`
+              - Gets or sets the maximum number of iterations for the QP subproblem allowed during a single major iteration.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.tolerance_on_minor_feasibility`
+              - Gets or sets the tolerance which the QP subproblem must meet before being considered feasible.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.tolerance_on_minor_optimality`
+              - Undocumented in the SNOPT literature, and included here for completeness in terms of tolerance options.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.options_filename`
+              - If used, the associated SNOPT specifications file may define any of the various SNOPT options. Options in the file that conflict with options specified elsewhere will take precedence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer.allow_internal_primal_infeasibility_measure_normalization`
+              - Whether to allow internal normalization of the primal infeasibility measure.
 
 
 Import detail

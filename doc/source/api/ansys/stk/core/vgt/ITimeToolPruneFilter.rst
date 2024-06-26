@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPruneFilter.filter_type`
+              - Returns a type of the filter.
 
 
 Import detail

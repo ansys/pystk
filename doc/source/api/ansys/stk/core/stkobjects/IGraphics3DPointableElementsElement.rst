@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.pointing_name`
+              - Name of a movable element associated with a pointing parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.assigned_target_object`
+              - Get the assigned target for the pointable element.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement.intervals`
+              - Gets a collection of intervals during which an 3d model part points towards selected targets.
 
 
 Import detail

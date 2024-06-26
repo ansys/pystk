@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection.count`
+              - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSectionCollection._NewEnum`
+              - Returns an enumerator for the collection.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISphericalFPAVertical.fpa`
+              - Vertical Flight Path Angle: the angle between the inertial velocity vector and the radius vector. Uses Angle Dimension.
 
 
 Import detail

@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.compute_from_initial_guess`
+              - Compute path boundary conditions from initial guess.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.a`
+              - Bound limits for element a.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.h`
+              - Bound limits for element h.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.k`
+              - Bound limits for element k.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.p`
+              - Bound limits for element p.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.q`
+              - Bound limits for element q.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.l`
+              - Bound limits for element L.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.lower_bound_azimuth`
+              - Thrust direction azimuth lower bound along the path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.upper_bound_azimuth`
+              - Thrust direction azimuth upper bound along the path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.lower_bound_elevation`
+              - Thrust direction elevation lower bound along the path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.upper_bound_elevation`
+              - Thrust direction elevation upper bound along the path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinitePathBoundaryConditions.provide_runtime_type_info`
+              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Import detail

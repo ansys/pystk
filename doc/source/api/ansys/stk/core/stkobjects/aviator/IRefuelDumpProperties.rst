@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_mode`
+              - Get the RefuelDumpMode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_mode_value`
+              - Get the RefuelDumpModeValue if applicable.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_rate`
+              - Gets or sets the RefuelDump rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.refuel_dump_time_offset`
+              - Gets or sets the RefuelDump time offset.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.can_use_end_of_enroute_segment_as_epoch`
+              - Can use end of enroute segment as the epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRefuelDumpProperties.use_end_of_enroute_segment_as_epoch`
+              - Use end of enroute segment as the epoch.
 
 
 Import detail

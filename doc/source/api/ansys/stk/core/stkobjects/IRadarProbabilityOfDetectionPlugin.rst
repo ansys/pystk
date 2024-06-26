@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionPlugin.plugin_configuration`
+              - Gets the plugin configuration interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionPlugin.raw_plugin_object`
+              - Gets the raw plugin IUnknown interface.
 
 
 Import detail

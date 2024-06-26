@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection.source_point`
+              - Specify a source point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection.reference_plane`
+              - Specify a reference plane.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase.type`
+              - An attitude slew mode.
 
 
 Import detail

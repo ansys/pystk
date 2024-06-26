@@ -30,15 +30,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.transmitter`
+              - Gets the radar transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.receiver`
+              - Gets the radar receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.clutter_geometry`
+              - This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.jamming`
+              - Gets the radar jamming.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.location`
+              - Gets the radar location object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.detection_processing`
+              - Gets the radar detection processing object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.pointing_strategy`
+              - Gets the pointing strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.antenna_beams`
+              - Gets the antenna beams collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.waveform_strategy_settings`
+              - Gets the waveform selection strategy settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMultifunction.clutter`
+              - Gets the radar clutter settings.
 
 
 Import detail

@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.model`
+              - Returns the 3D model properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.offsets`
+              - Returns the 3D offsets properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.range_contours`
+              - Returns the 3D range contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.data_displays`
+              - Returns the 3D data display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.vector`
+              - Returns the 3D vectorector properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.az_el_mask`
+              - Returns the 3D AzElMask properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.model_pointing`
+              - Returns 3D model pointing properties used to point parts of a target model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.aou_label_swap_distance`
+              - Area of uncertainty label swap distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.vapor_trail`
+              - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetGraphics3D.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

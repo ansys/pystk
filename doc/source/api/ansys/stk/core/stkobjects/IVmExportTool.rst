@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.export_data_format_type`
+              - Volumetric data export format type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.volume_grid_export_type`
+              - Volumetric data export format type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.include_grid_point_cartesian`
+              - Include grid point cartesian coordinates.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.include_grid_point_native`
+              - Include grid point native coordinates.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmExportTool.include_grid_reference`
+              - Include grid point native coordinates.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters.enable_mainlobe_clutter`
+              - Option for enabling/disabling the mainlobe clutter filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters.mainlobe_clutter_bandwidth`
+              - Gets or sets the mainlobe filter bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters.enable_sidelobe_clutter`
+              - Option for enabling/disabling the sidelobe clutter filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarDopplerClutterFilters.sidelobe_clutter_bandwidth`
+              - Gets or sets the sidelobe filter bandwidth.
 
 
 Import detail

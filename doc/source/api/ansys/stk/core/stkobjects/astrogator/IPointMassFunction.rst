@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPointMassFunction.grav_source`
+              - Gets or sets the source for the third body's gravitational parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPointMassFunction.mu`
+              - Gets or sets the gravitational parameter. Uses Gravity Param Dimension.
 
 
 Import detail

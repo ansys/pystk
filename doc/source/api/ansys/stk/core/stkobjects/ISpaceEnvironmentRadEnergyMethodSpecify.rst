@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyMethodSpecify.electron_energies`
+              - Electron energies being considered.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyMethodSpecify.proton_energies`
+              - Proton energies being considered.
 
 
 Import detail

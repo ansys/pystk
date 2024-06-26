@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.is_visible`
+              - Opt whether to show the plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.longitude`
+              - Center longitude of the plane at the initial condition of the satellite at epoch. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.north_south`
+              - Angular length of the plane from North to South. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.east_west`
+              - Angular length of the plane from East to West. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.radius`
+              - Gets or sets the radius from the center of the Earth to the center of the plane. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DGeoBox.color`
+              - Color of the lines defining the plane.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.compute_gain`
+              - Gets or sets the option for computing gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.max_gain`
+              - Gets or sets the maximum gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.area`
+              - Gets or sets the area.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.efficiency`
+              - Gets or sets the area.
 
 
 Import detail

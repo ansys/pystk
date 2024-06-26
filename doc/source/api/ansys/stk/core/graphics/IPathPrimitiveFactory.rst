@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitiveFactory.minimum_width_supported`
+              - Gets the minimum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitiveFactory.maximum_width_supported`
+              - Gets the maximum width, in pixels, supported by the video card.
 
 
 Import detail

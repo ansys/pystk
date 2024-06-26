@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.is_visible`
+              - Show graphics: highlight each point on the 2D map that meets the specified Satisfaction criterion (if Satisfaction is enabled) or the default Satisfaction criterion (if Satisfaction is disabled).
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.color`
+              - Color in which points display on the 2D map.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.fill_points`
+              - Opt whether coverage points display as filled polygons on the 2D map.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.marker_style`
+              - Choose a marker to represent each point in the grid that meets satisfaction criteria.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.contours`
+              - Coverage contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.fill_translucency`
+              - Specify the percent translucency of filled polygons on the 2D map. Translucency ranges from 0 to 100 percent, where 100 percent is invisible. Dimensionless.
 
 
 Import detail

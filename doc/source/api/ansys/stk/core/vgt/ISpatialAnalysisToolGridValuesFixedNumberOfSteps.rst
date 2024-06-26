@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.min`
+              - This property is deprecated. Use MinEx.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.max`
+              - This property is deprecated. Use MaxEx.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.number_of_steps`
+              - The number of steps between coordinate values.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.min_ex`
+              - Minimum coordinate value as IAgQuantity.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps.max_ex`
+              - Maximum coordinate value as IAgQuantity.
 
 
 Import detail

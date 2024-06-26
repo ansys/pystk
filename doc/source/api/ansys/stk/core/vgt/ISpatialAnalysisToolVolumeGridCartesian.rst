@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian.reference_system`
+              - Get the reference system in which Cartesian parameters are computed.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian.x_coordinates`
+              - Returns X Coordinates parameters for the Cartesian system.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian.y_coordinates`
+              - Returns Y Coordinates parameters for the Cartesian system.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridCartesian.z_coordinates`
+              - Returns Z Coordinates parameters for the Cartesian system.
 
 
 Import detail

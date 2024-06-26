@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProvider.type`
+              - Gets the direction provider type enumeration.
 
 
 Import detail

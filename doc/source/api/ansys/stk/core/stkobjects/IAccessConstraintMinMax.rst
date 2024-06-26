@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax.enable_min`
+              - Enable the Min property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax.enable_max`
+              - Enable the Max property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax.min`
+              - Min value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax.max`
+              - Max value for the access constrain.
 
 
 Import detail

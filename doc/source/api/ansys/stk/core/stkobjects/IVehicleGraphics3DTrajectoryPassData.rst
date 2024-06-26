@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryPassData.ground_track`
+              - Get the 3D ground track data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryPassData.trajectory`
+              - Get the 3D trajectory data.
 
 
 Import detail

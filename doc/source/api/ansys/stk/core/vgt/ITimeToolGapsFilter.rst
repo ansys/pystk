@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolGapsFilter.duration_kind`
+              - Choose a duration type (at least/at most).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolGapsFilter.gap_duration`
+              - Duration of the gap.
 
 
 Import detail

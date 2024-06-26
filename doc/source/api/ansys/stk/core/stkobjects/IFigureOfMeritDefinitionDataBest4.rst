@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4.best4_metric`
+              - Gets or sets the minimization metric for the best 4 computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4.best4_metric_supported_types`
+              - Best 4 supported types.
 
 
 Import detail

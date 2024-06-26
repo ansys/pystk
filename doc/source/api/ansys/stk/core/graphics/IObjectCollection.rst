@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IObjectCollection.count`
+              - A total number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IObjectCollection._NewEnum`
+
 
 
 Import detail

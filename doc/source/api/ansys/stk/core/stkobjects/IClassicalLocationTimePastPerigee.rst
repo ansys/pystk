@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationTimePastPerigee.value`
+              - Value of Time Past Perigee: elapsed time since the last perigee passage based on assumed two-body motion. Uses Time Dimension.
 
 
 Import detail

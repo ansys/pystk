@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.times`
+              - A time array associated with the interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.positions`
+              - An array of 3-tuples each tuple representing the point's cartesian position (x,y,z).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.velocities`
+              - An array of velocities.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.start`
+              - The start time of the interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval.stop`
+              - The stop time of the interval.
 
 
 Import detail

@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.type`
+              - Get the type of parameter set.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.labels`
+              - Get the labels identifying hierarchy of representations within parameter set.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.dimensions`
+              - Get the names identifying types of dimensions of individual scalars within parameter set.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSet.scalar_names`
+              - Get the names identifying individual scalars within parameter set.
 
 
 Import detail

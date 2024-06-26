@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.active_mode`
+              - Gets or sets the autopilot - horizontal plane mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.active_heading_course_value`
+              - Gets or sets the heading/course angle or rate for the active mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.damping_ratio`
+              - Gets or sets the damping ratio of the control law.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_mode`
+              - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_turn_radius`
+              - Get the specified turn radius for a control limit mode of specify min turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_turn_rate`
+              - Get the specified turn rate for a control limit mode of specify max turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.control_limit_horiz_accel`
+              - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotNav.stop_when_conditions_met`
+              - Stop when conditions are met.
 
 
 Import detail

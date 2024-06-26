@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.reference_central_body`
+              - Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.latitude_coordinates`
+              - Returns latitude Coordinates parameters for the Theta system.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.longitude_coordinates`
+              - Returns longtitude Coordinates parameters for the Radius system.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.altitude_coordinates`
+              - Returns altitude parameters for the Height system.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridLatLonAlt.auto_fit_bounds`
+              - Specify whether to use the auto fit bounds. Set to true to use the auto fit bounds..
 
 
 Import detail

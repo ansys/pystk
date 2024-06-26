@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.controls`
+              - Get the selected control parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.results`
+              - Get the selected equality constraints.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.plugin_config`
+              - Get the properties of the selected plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.plugin_identifier`
+              - Get the plugin identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.scripting_tool`
+              - Returns the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.reset_controls_before_run`
+              - Reset controls before each run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.targeter_graphs`
+              - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileSearchPlugin.log_file`
+              - Name of the log file for this profile.
 
 
 Import detail

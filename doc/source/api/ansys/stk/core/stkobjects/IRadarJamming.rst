@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarJamming.enabled`
+              - Gets or sets whether the jamming is enabled or disabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarJamming.jammers`
+              - Gets the jammers collection.
 
 
 Import detail

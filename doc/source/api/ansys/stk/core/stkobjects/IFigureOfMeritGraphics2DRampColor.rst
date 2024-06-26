@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRampColor.start_color`
+              - Start color for color ramp method.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRampColor.end_color`
+              - End color for color ramp method.
 
 
 Import detail

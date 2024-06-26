@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelPulsedSignal.pulse_width`
+              - Gets or sets the pulse width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelPulsedSignal.pulse_period`
+              - Gets or sets the pulse period.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelPulsedSignal.number_of_pulses`
+              - Gets or sets the number of pulses.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ISolidTriangulatorResult.outline_indices`
+              - Gets indices into positions that define the positions outlining the solid. The indices returned consider the three components of a position (x, y, and z) as a single array element...
             * - :py:attr:`~ansys.stk.core.graphics.ISolidTriangulatorResult.outline_positions`
+              - Gets the positions outlining the solid. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.ISolidTriangulatorResult.outline_polyline_type`
+              - Gets the polyline type of outline indices and outline positions.
             * - :py:attr:`~ansys.stk.core.graphics.ISolidTriangulatorResult.closed`
+              - Gets whether the solid is closed. For example, a box with six faces is closed. If one face is removed, the box is open.
 
 
 Import detail

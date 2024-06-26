@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.aerosol_model_type`
+              - Gets or sets the aerosol model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.visibility`
+              - Gets or sets the visibility.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.relative_humidity`
+              - Gets or sets the relative humidity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModtranLookupTablePropagationModel.supported_aerosol_models`
+              - Gets an array of supported aerosol model names.
 
 
 Import detail

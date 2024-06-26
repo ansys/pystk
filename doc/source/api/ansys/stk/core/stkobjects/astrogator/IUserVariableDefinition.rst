@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinition.unit_dimension`
+              - Gets or sets the dimension of the user variable.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinition.variable_name`
+              - Gets or sets the name of the user variable.
 
 
 Import detail

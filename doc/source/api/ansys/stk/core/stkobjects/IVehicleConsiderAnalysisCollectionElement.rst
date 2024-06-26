@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.type`
+              - Parameter type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.name`
+              - Get the consider parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.value`
+              - Self-covariance value of the consider parameter. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.x`
+              - X position covariance.Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.y`
+              - Y position covariance. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.z`
+              - Z position covariance. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.vx`
+              - X velocity covariance. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.vy`
+              - Y velocity covariance. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollectionElement.vz`
+              - Z velocity covariance. Dimensionless.
 
 
 Import detail

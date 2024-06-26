@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.color`
+              - Color in which the star's marker and label are displayed in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.inherit`
+              - Specify whether display of label is inherited from the Scenario-level setting.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.marker_style`
+              - The style of the star's marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.label_visible`
+              - Specify whether the star's label is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStarGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the star are visible.
 
 
 Import detail

@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.is_visible`
+              - Opt whether to display South Atlantic Anomaly contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.use_vehicle_altitude`
+              - Opt whether to display South Atlantic Anomaly contours at the satellite's altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.altitude`
+              - Altitude at which South Atlantic Anomaly contours are to display. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.is_fill_visible`
+              - Opt whether to display a fill in the region within the South Atlantic Anomaly contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSAA.translucency`
+              - Percent translucency (0 to 100) for South Atlantic Anomaly contours if contours are filled. Dimensionless.
 
 
 Import detail

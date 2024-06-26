@@ -36,10 +36,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.origin`
+              - Gets or sets the per-batch origin, which is applied to each string in the text batch.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.eye_offset`
+              - Gets or sets the per-batch eye offset, which is applied to each string in the text batch. The array contains the components of the offset arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.pixel_offset`
+              - Gets or sets the per-batch pixel offset, which is applied to each string in the text batch. The array contains one x pixel offset followed by one y pixel offset.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.maximum_string_length`
+              - Gets or sets the maximum length of each string in the text batch.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters.screen_space_rendering`
+              - Gets or sets a flag that informs the CTextBatchPrimitive to use rendering optimized for screen space text.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILocationVectorGeometryToolPoint.point_path`
+              - Location based upon a Vector Geometry Tool Point.
 
 
 Import detail

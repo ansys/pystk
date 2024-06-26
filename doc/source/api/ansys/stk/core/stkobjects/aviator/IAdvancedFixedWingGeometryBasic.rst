@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryBasic.aspect_ratio`
+              - Get the aspect ratio of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingGeometryBasic.wing_sweep`
+              - Gets or sets the wing sweep of the aircraft.
 
 
 Import detail

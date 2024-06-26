@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData.ground_track`
+              - Get the 3D ground track data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitPassData.orbit`
+              - Get the 3D orbit track data.
 
 
 Import detail

@@ -30,15 +30,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.start_time`
+              - Gets or sets the start time of ephemeris interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.stop_time`
+              - Gets or sets the stop time of ephemeris interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.propagator`
+              - Propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.file`
+              - Name of user-external file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.vehicle_id`
+              - Vehicle ID.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.description`
+              - Description.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.available_vehicle_ids`
+              - Get available IDs.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.available_propagators`
+              - Get available propagators.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
 
 
 Import detail

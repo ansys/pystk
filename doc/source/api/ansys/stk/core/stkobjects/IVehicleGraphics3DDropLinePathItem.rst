@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.type`
+              - Get the option for where to end the drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.is_visible`
+              - Opt whether to display the drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.use_2d_color`
+              - Opt whether to use the color in the vehicle's 2D attributes for the drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.color`
+              - Gets or sets the color of the drop lines (if the 2D graphics color is not used).
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.line_width`
+              - Gets or sets the width of the drop line from orbit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.interval`
+              - Gets or sets the time interval between drop lines. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DDropLinePathItem.line_style`
+              - Gets or sets the line style of the drop line.
 
 
 Import detail

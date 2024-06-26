@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.supported_calculation_methods`
+              - Gets an array of supported calculation methods.
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.calculation_method`
+              - Gets or sets the calculation method.
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.enable_ground_reflection`
+              - Gets or sets the option enabling the ground reflection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModelWirelessInSite64.geometry_data`
+              - Gets the geometry data.
 
 
 Import detail

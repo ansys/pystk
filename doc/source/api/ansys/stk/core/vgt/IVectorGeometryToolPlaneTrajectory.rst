@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.point`
+              - Specify a trajectory point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.reference_system`
+              - Specify a reference system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneTrajectory.rotation_offset`
+              - Specify an angle measured from X (Axis 1) away from Y (Axis 2).
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval.coord_system_name`
+              - Gets or sets the coordinate system within which the element is defined.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval.eigenvalue_number`
+              - Gets or sets the number identifying one of the six Eigenvalues.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval.eigenvalue_complex_part`
+              - Whether this value represents the real or imaginary part of the Eigenvalue.
 
 
 Import detail

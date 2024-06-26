@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.lattice_type`
+              - Gets or sets the lattice type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.num_sides`
+              - Gets or sets the number of polygon sides.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.equilateral`
+              - Gets or sets the option for evenly spacing adjacent elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.num_elements_x`
+              - Gets or sets the number of elements in the x direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.num_elements_y`
+              - Gets or sets the number of elements in the y direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.spacing_x`
+              - Gets or sets the spacing of the elements in the x direction, in wavelengths.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.spacing_y`
+              - Gets or sets the spacing of the elements in the y direction, in wavelengths.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.max_look_angle_el`
+              - Gets the maximum look angle in the x direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.max_look_angle_az`
+              - Gets the maximum look angle in the y direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon.spacing_unit`
+              - Gets or sets the spacing unit.
 
 
 Import detail

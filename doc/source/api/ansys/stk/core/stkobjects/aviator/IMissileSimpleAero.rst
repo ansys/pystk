@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.s_reference`
+              - Gets or sets the area of the lifting surface of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.cl_max`
+              - Gets or sets the max coefficient of lift.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.cd`
+              - Gets or sets the coefficient of drag.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.calculate_aoa`
+              - Opt to allow Aviator to calculate the Angle of Attack. Otherwise, the value will be 0 by default.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleAero.max_aoa`
+              - Get the missile's maximum angle of attack.
 
 
 Import detail

@@ -32,6 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsSpecialElement.is_visible`
+              - Controls whether the reference system is visible.
 
 
 Import detail

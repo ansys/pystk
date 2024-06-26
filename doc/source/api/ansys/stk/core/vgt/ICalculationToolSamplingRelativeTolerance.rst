@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.minimum_time_step`
+              - Get the minimum allowed time step.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.maximum_time_step`
+              - Get the maximum allowed time step.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.step_at_boundaries`
+              - Get the step taken at boundaries of discontinuity or availability.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.relative_tolerance`
+              - Get the relative tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step relative to the sampled values.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingRelativeTolerance.absolute_tolerance`
+              - Get the absolute tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step.
 
 
 Import detail

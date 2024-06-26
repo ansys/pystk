@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLDesignExplorerOptimizer.jplde_filename`
+              - Gets or sets the DE file name.
 
 
 Import detail

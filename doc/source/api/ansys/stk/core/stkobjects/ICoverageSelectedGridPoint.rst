@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageSelectedGridPoint.latitude`
+              - Latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageSelectedGridPoint.longitude`
+              - Longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageSelectedGridPoint.intervals`
+              - Returns a jagged array of access intervals. The elements are single-dimension arrays containing interval's start and stop times.
 
 
 Import detail

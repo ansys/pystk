@@ -34,8 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.name`
+              - Gets or sets the component name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.user_comment`
+              - Gets or sets the user comment for this component.
             * - :py:attr:`~ansys.stk.core.stkobjects.IComponentInfo.description`
+              - Get the description for this component.
 
 
 Import detail

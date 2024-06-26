@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration.reference_time_instant`
+              - The reference time instant.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration.start_offset`
+              - The start time offset value.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration.stop_offset`
+              - The stop time offset value.
 
 
 Import detail

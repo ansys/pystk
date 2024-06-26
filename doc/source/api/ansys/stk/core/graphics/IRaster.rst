@@ -42,8 +42,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRaster.attributes`
+              - Gets the raster attributes that define the raster data.
             * - :py:attr:`~ansys.stk.core.graphics.IRaster.width`
+              - Gets the width of the raster in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.IRaster.height`
+              - Gets the height of the raster in pixels.
 
 
 Import detail

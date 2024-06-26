@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.position`
+              - A position vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.velocity`
+              - A velocity vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.rate`
+              - Rate of change.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult.orientation`
+              - Orientation.
 
 
 Import detail

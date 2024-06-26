@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_x`
+              - The CBF x component of the spacecraft burnout location. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_y`
+              - The CBF y component of the spacecraft burnout location. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_z`
+              - The CBF z component of the spacecraft burnout location. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vx`
+              - The CBF x component of the spacecraft burnout velocity. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vy`
+              - The CBF y component of the spacecraft burnout velocity. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vz`
+              - The CBF z component of the spacecraft burnout velocity. Uses Rate Dimension.
 
 
 Import detail

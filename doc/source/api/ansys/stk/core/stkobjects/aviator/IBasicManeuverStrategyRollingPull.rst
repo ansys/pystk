@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.active_mode`
+              - Gets or sets the active mode for the rolling pull basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.turn_direction`
+              - Gets or sets the turn direction for the active mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.angle`
+              - Gets or sets the angle value for the active mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.roll_orientation`
+              - Gets or sets the orientation to roll to for the roll to orientation mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.roll_rate_mode`
+              - Gets or sets the roll rate mode for the rolling pull.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.override_roll_rate`
+              - Gets or sets the roll rate override value. The roll rate mode must be set to override to access this property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.pull_g_mode`
+              - Gets or sets the pull G mode for a rolling pull.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.override_pull_g`
+              - Gets or sets the pull G override value. The pull G mode must be set to override to access this property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRollingPull.airspeed_options`
+              - Get the airspeed options.
 
 
 Import detail

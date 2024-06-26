@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLR.lat`
+              - Geocentric launch latitude. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLR.lon`
+              - Geocentric launch longitude. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchLLR.radius`
+              - Geocentric launch radius. Uses Distance Dimension.
 
 
 Import detail

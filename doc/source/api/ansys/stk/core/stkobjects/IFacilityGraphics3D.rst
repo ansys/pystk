@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.model`
+              - Returns Model properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.offsets`
+              - Returns Offsets properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.range_contours`
+              - Returns Range Contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.data_displays`
+              - Returns DataDisplays collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.vector`
+              - Returns a vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.az_el_mask`
+              - Returns the AzElMask property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.model_pointing`
+              - Returns ModelPointing properties used to point parts of a facility model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.aou_label_swap_distance`
+              - Area of uncertainty label swap distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.vapor_trail`
+              - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFacilityGraphics3D.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

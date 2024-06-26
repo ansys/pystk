@@ -32,15 +32,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.use_constant_thrust`
+              - Gets or sets the option to use a constant thrust for a thrust model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.constant_thrust`
+              - Gets or sets the constant thrust value for a thrust model set to Constant Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.boost_thrust`
+              - Gets or sets the boost thrust value for a thrust model set to Boost/Sustain Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.boost_thrust_time_limit`
+              - Gets or sets the boost thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.sustain_thrust`
+              - Gets or sets the sustain thrust value for a thrust model set to Boost/Sustain Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.sustain_thrust_time_limit`
+              - Gets or sets the sustain thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.min_airspeed_type`
+              - Get the min airspeed type for a thrust model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.min_airspeed`
+              - Get the min airspeed for a thrust model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.max_airspeed_type`
+              - Get the max airspeed type for a thrust model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPropulsionThrust.max_airspeed`
+              - Get the max airspeed for a thrust model.
 
 
 Import detail

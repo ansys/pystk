@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyConstantValue.constant_value`
+              - Gets or sets the constant RCS value.
 
 
 Import detail

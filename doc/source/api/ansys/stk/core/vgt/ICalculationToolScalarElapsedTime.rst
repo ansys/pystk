@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarElapsedTime.reference_time_instant`
+              - The reference time instant.
 
 
 Import detail

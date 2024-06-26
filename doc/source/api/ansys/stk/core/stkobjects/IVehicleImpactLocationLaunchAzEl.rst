@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl.delta_v`
+              - Fixed Delta V. Uses Rate Dimension. If this property is set, please set the other properties of this interface explicitly.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl.elevation`
+              - Launch elevation. Uses Angle Dimension. If this property is set, please set the other properties of this interface explicitly.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleImpactLocationLaunchAzEl.azimuth`
+              - Launch azimuth. Uses Angle Dimension. If this property is set, please set the other properties of this interface explicitly.
 
 
 Import detail

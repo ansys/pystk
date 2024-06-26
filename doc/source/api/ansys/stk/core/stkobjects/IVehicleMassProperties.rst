@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleMassProperties.mass`
+              - Gets or sets the satellite mass. Uses Mass Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleMassProperties.inertia`
+              - Get the satellite inertia matrix.
 
 
 Import detail

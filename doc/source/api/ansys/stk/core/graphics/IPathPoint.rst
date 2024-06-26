@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.position`
+              - A path point position as a one-dimensional array of three elements corresponding to (X,Y,Z) cartesian coordinates.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.date`
+              - A date/time of the path point.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.color`
+              - The path point color.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.translucency`
+              - The path point translucency.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.outline_color`
+              - The path point outline color.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.outline_translucency`
+              - The path point outline translucency.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPoint.is_translucent`
+              - Whether the path point is translucent.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics.static`
+              - 2D static graphics options.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics.animation`
+              - 2D animation graphics options.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics.progress`
+              - Access progress graphics options.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the coverage definition are visible.
 
 
 Import detail

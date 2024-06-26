@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorAviator.avtr_propagator`
+              - Aviator propagator object.
 
 
 Import detail

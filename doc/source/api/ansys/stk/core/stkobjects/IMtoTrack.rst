@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrack.name`
+              - Gets or sets the name assigned to the track.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrack.interpolate`
+              - Opt whether the track's position will be linearly interpolated between points, or will only be displayed at the defined points at the defined times.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrack.id`
+              - Get the identification number of the track.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrack.points`
+              - Get the collection of MTO track points.
 
 
 Import detail

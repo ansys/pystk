@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategyFixed.orientation`
+              - Gets the fixed orientation.
 
 
 Import detail

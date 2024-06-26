@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.incoming_vector`
+              - The reflecting vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.use_opposite_of_selected_vector`
+              - When set to false, resets the direction of the Incident Vector to default.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.normal_vector`
+              - The vector defines the reflection surface.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.allow_reflections_on_backside`
+              - Controls whether to reflect the indicent vector on both sides of the plane.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorReflection.scale_factor`
+              - The vector's scale factor.
 
 
 Import detail

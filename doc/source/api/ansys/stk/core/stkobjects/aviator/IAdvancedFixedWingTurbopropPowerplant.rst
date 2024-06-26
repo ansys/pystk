@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant.max_sea_level_static_power`
+              - Gets or sets the maximum static power of the engine at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant.propeller_count`
+              - Gets or sets the number of propellers.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant.propeller_diameter`
+              - Gets or sets the propeller diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant.fuel_flow`
+              - Gets or sets the engine's fuel flow at max power.
 
 
 Import detail

@@ -21,88 +21,171 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.box_triangulator`
+              - Access global methods and properties of BoxTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.cylinder_triangulator`
+              - Access global methods and properties of CylinderTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.ellipsoid_triangulator`
+              - Access global methods and properties of EllipsoidTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.extruded_polyline_triangulator`
+              - Access global methods and properties of ExtrudedPolylineTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.surface_extent_triangulator`
+              - Access global methods and properties of SurfaceExtentTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.surface_polygon_triangulator`
+              - Access global methods and properties of SurfacePolygonTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.surface_shapes`
+              - Access global methods and properties of SurfaceShapes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.agi_processed_image_globe_overlay`
+              - Access global methods and properties of AGIProcessedImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.agi_processed_terrain_overlay`
+              - Access global methods and properties of AGIProcessedTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.agi_roam_image_globe_overlay`
+              - Access global methods and properties of AGIRoamImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.custom_image_globe_overlay_plugin_activator`
+              - Access global methods and properties of CustomImageGlobeOverlayPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.geospatial_image_globe_overlay`
+              - Access global methods and properties of GeospatialImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.projected_raster_overlay`
+              - Access global methods and properties of ProjectedRasterOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.projection`
+              - Access global methods and properties of Projection (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.altitude_display_condition`
+              - Access global methods and properties of AltitudeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.composite_display_condition`
+              - Access global methods and properties of CompositeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.composite_primitive`
+              - Access global methods and properties of CompositePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.constant_display_condition`
+              - Access global methods and properties of ConstantDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.distance_display_condition`
+              - Access global methods and properties of DistanceDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.distance_to_globe_overlay_display_condition`
+              - Access global methods and properties of DistanceToGlobeOverlayDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.distance_to_position_display_condition`
+              - Access global methods and properties of DistanceToPositionDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.distance_to_primitive_display_condition`
+              - Access global methods and properties of DistanceToPrimitiveDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.duration_path_primitive_update_policy`
+              - Access global methods and properties of DurationPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.globe_image_overlay`
+              - Access global methods and properties of GlobeImageOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.graphics_font`
+              - Access global methods and properties of GraphicsFont (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.great_arc_interpolator`
+              - Access global methods and properties of GreatArcInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.alpha_from_luminance_filter`
+              - Access global methods and properties of AlphaFromLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.alpha_from_pixel_filter`
+              - Access global methods and properties of AlphaFromPixelFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.alpha_from_raster_filter`
+              - Access global methods and properties of AlphaFromRasterFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.band_extract_filter`
+              - Access global methods and properties of BandExtractFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.band_order_filter`
+              - Access global methods and properties of BandOrderFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.blur_filter`
+              - Access global methods and properties of BlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.brightness_filter`
+              - Access global methods and properties of BrightnessFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.color_to_luminance_filter`
+              - Access global methods and properties of ColorToLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.contrast_filter`
+              - Access global methods and properties of ContrastFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.convolution_filter`
+              - Access global methods and properties of ConvolutionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.edge_detect_filter`
+              - Access global methods and properties of EdgeDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.filtering_raster_stream`
+              - Access global methods and properties of FilteringRasterStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.flip_filter`
+              - Access global methods and properties of FlipFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.gamma_correction_filter`
+              - Access global methods and properties of GammaCorrectionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.gaussian_blur_filter`
+              - Access global methods and properties of GaussianBlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.gradient_detect_filter`
+              - Access global methods and properties of GradientDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.jpeg2000_writer`
+              - Access global methods and properties of Jpeg2000Writer (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.levels_filter`
+              - Access global methods and properties of LevelsFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.projection_raster_stream_plugin_activator`
+              - Access global methods and properties of ProjectionRasterStreamPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.raster`
+              - Access global methods and properties of Raster (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.raster_attributes`
+              - Access global methods and properties of RasterAttributes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.rotate_filter`
+              - Access global methods and properties of RotateFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.sequence_filter`
+              - Access global methods and properties of SequenceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.sharpen_filter`
+              - Access global methods and properties of SharpenFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.video_stream`
+              - Access global methods and properties of VideoStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.marker_batch_primitive`
+              - Access global methods and properties of MarkerBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.marker_batch_primitive_optional_parameters`
+              - Access global methods and properties of MarkerBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.maximum_count_path_primitive_update_policy`
+              - Access global methods and properties of MaximumCountPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.model_primitive`
+              - Access global methods and properties of ModelPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.path_primitive`
+              - Access global methods and properties of PathPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.pixel_size_display_condition`
+              - Access global methods and properties of PixelSizeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.point_batch_primitive`
+              - Access global methods and properties of PointBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.polyline_primitive`
+              - Access global methods and properties of PolylinePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.raster_image_globe_overlay`
+              - Access global methods and properties of RasterImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.rhumb_line_interpolator`
+              - Access global methods and properties of RhumbLineInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.scene_display_condition`
+              - Access global methods and properties of SceneDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.scene_manager`
+              - Access global methods and properties of SceneManager (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.screen_overlay`
+              - Access global methods and properties of ScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.solid_primitive`
+              - Access global methods and properties of SolidPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.surface_mesh_primitive`
+              - Access global methods and properties of SurfaceMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.terrain_overlay`
+              - Access global methods and properties of TerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.text_batch_primitive`
+              - Access global methods and properties of TextBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.text_batch_primitive_optional_parameters`
+              - Access global methods and properties of TextBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.texture_matrix`
+              - Access global methods and properties of TextureMatrix (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.texture_screen_overlay`
+              - Access global methods and properties of TextureScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.time_interval_display_condition`
+              - Access global methods and properties of TimeIntervalDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.triangle_mesh_primitive`
+              - Access global methods and properties of TriangleMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.triangle_mesh_primitive_optional_parameters`
+              - Access global methods and properties of TriangleMeshPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.texture_filter_2d`
+              - Factory creates texture filters.
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.bounding_sphere`
+              - Factory creates bounding spheres.
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.path_point`
+              - Factory creates path points.
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.text_overlay`
+              - Access global methods and properties of TextOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.agi_custom_terrain_overlay`
+              - Access global methods and properties of AGICustomTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.axes_primitive`
+              - Access global methods and properties of AxesPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.vector_primitive`
+              - Access global methods and properties of VectorPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.polyline_primitive_optional_parameters`
+              - Access global methods and properties of PolylinePrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
             * - :py:attr:`~ansys.stk.core.graphics.IFactoryAndInitializers.point_batch_primitive_optional_parameters`
+              - Access global methods and properties of PointBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 
 Import detail

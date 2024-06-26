@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRunwayCategory.user_runways`
+              - Get the user runways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRunwayCategory.arinc424_runways`
+              - Get the ARINC-424 runways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRunwayCategory.dafif_runways`
+              - Get the DAFIF runways.
 
 
 Import detail

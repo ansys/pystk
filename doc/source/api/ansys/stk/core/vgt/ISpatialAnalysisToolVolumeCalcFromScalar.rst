@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcFromScalar.scalar`
+              - The Volume calc scalar to location Type.
 
 
 Import detail

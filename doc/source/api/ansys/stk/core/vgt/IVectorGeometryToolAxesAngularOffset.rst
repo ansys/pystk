@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.spin_vector`
+              - Specify a spin vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.rotation_angle`
+              - Specify a rotational angle.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.reference_axes`
+              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAngularOffset.fixed_offset_angle`
+              - Specify an additional rotational offset.
 
 
 Import detail

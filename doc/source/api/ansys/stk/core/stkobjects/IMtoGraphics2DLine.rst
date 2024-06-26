@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.is_visible`
+              - Opt whether to display a line between all track points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.color`
+              - Select the color in which the track line will be displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.style`
+              - Select the style of the line between track points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.width`
+              - Select the width of the line between track points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.translucency`
+              - Select the translucency of the line between track points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine.alway_show_entire_line`
+              - Opt whether to always show the entire line independent of the animation time.
 
 
 Import detail

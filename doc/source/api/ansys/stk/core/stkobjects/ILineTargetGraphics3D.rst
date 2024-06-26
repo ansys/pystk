@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D.enable_label_max_viewing_dist`
+              - Use the maximum viewing distance for displaying the line target label.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D.label_max_viewing_dist`
+              - Specify the maximum distance at which the line target label is displayed. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D.border_wall`
+              - Retrieve the border wall properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D.vector`
+              - Get the vector.
 
 
 Import detail

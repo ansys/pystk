@@ -30,16 +30,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.object_name`
+              - Gets or sets the object name to link to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.valid_object_names`
+              - Returns the valid object names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.min_time`
+              - Gets the earliest time that the object is available as a site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.waypoint_time`
+              - Gets or sets the time at which the object's position will be used as a waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.minimize_site_proc_time_diff`
+              - Gets or sets the mode to minimize the time difference between the procedure and site times.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.max_time`
+              - Get the latest time that the object is available as a site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.offset_mode`
+              - Gets or sets the mode to offset the site location relative from the STK Object.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.bearing`
+              - Gets or sets the bearing offset of the site location relative to the object's position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.use_magnetic_bearing`
+              - Gets or sets the option to use a magnetic heading for the bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.range`
+              - Gets or sets the range offset of the site location relative to the object's position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSTKObjectWaypoint.vgt_point`
+              - Gets or sets the reference VGT Point.
 
 
 Import detail

@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInfo.name`
+              - Returns a name of the data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInfo.type`
+              - Returns a type of the data provider.
 
 
 Import detail

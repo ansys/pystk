@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.filename`
+              - Get the file name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.start_time`
+              - Get the start time of the ephemeris interval. Uses DateFormat dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.stop_time`
+              - Get the stop time of the ephemeris interval. Uses DateFormat dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.reference_time`
+              - Get the reference time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.step_size`
+              - Get the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.agency`
+              - Get the agency identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.orbit_type`
+              - Get the orbit size type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3File.available_identifiers`
+              - A two-dimensional array of available satellite identifiers and their common names. Each array element contains the satellite identifier and its common name (if one is available).
 
 
 Import detail

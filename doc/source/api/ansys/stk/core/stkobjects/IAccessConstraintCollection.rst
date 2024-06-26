@@ -54,10 +54,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.count`
+              - Returns the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection._NewEnum`
+              - Enumerate the AccessConstraint items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.analysis_workbench_constraints`
+              - Returns a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.use_preferred_max_time_step`
+              - Flag indicating that the preferred max time step should be used in access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCollection.preferred_max_time_step`
+              - Maximum time step to be considered in access computations. New access computations consider this value when determining a suitable maximum step size.
 
 
 Import detail

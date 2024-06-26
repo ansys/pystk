@@ -34,9 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.g`
+              - Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.acceleration`
+              - Gets or sets the acceleration for this engine. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.isp`
+              - Gets or sets the specific impulse for this engine. Uses SpecificImpulse Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineConstAcc.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

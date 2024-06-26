@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolStepSize.value`
+              - Step size value. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolStepSize.step_size_type`
+              - Step Size Type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolStepSize.time_array`
+              - Gets or sets the time array component for the vehicle.
 
 
 Import detail

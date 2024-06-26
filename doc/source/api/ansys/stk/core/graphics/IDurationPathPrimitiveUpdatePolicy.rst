@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicy.duration`
+              - Gets or sets the maximum duration that a point will lie on the line.
             * - :py:attr:`~ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicy.remove_location`
+              - Gets or sets where the positions on the path are removed from.
 
 
 Import detail

@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection._NewEnum`
+              - Returns a COM enumerator object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection.count`
+              - Returns the number of points in the selection.
 
 
 Import detail

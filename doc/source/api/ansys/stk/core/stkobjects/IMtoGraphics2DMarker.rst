@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DMarker.is_visible`
+              - Opt whether to display the track marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DMarker.color`
+              - Select the color in which the track marker will be displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics2DMarker.style`
+              - Select a marker style.
 
 
 Import detail

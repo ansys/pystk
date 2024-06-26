@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.initial_step`
+              - Gets or sets the initial step. Uses time dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.max_corrector_rel_err`
+              - Gets or sets the maximum relative error between corrector iterations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.corrector_mode`
+              - Gets or sets the Predictor Corrector scheme.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.max_corrector_iterations`
+              - Gets or sets the maximum corrector iterations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.single_step_integrator`
+              - Get the stopping integrator; a single-step integrator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator.single_step_integrator_type`
+              - Get the stopping integrator type.
 
 
 Import detail

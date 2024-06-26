@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTorque.use_torque_file`
+              - Opt whether to use an external torque file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleTorque.torque_file`
+              - Name of external torque (.tq) file. Torque files define a time-ordered list of body-fixed torques to be applied to the satellite.
 
 
 Import detail

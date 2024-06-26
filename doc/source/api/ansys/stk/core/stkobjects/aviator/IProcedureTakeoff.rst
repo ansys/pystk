@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.runway_heading_options`
+              - Get the runway heading options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_normal`
+              - Get the interface for a normal takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_departure_point`
+              - Get the interface for a departure point takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.mode_as_low_transition`
+              - Get the interface for a low transition takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTakeoff.takeoff_mode`
+              - Gets or sets the type of takeoff the aircraft will perform.
 
 
 Import detail

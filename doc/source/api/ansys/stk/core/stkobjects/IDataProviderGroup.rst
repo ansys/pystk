@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderGroup.group`
+              - Returns a collection of data providers in the group.
 
 
 Import detail

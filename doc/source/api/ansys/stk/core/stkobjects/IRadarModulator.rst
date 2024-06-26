@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModulator.use_signal_psd`
+              - Options for enabling signal psd analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModulator.psd_limit_multiplier`
+              - Gets or sets the PSD limit multiplier.
 
 
 Import detail

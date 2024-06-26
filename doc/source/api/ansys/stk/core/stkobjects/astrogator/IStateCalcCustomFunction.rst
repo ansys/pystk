@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCustomFunction.reset_function_name`
+              - Gets or sets the custom function called before computing, before each segment runs, and before reporting.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCustomFunction.eval_function_name`
+              - Gets or sets the custom function used to calculate this object's value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCustomFunction.unit_dimension`
+              - Gets or sets the unit dimension.
 
 
 Import detail

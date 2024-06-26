@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarVectorMagnitude.input_vector`
+              - Specify any vector in VGT. Note that its magnitude is reference axes independent which is why it is not specified.
 
 
 Import detail

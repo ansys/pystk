@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation.is_satisfaction_visible`
+              - Show Satisfaction: display graphics for regions of the grid that satisfy multiple figure of merit satisfaction criteria simultaneously during animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation.color`
+              - Color of the animation graphics display.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation.fill_translucency`
+              - Specify the fill translucency percentage for the animation graphics display. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
 
 
 Import detail

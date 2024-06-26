@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteOptions.use_max_speed_turns`
+              - Opt whether to use the max speed turns.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IEnrouteOptions.max_turn_radius_factor`
+              - Gets or sets the maximum turn radius factor.
 
 
 Import detail

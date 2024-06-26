@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGroundEllipseElement.ellipse_name`
+              - Gets or sets the name of the ground ellipse.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGroundEllipseElement.ellipse_data`
+              - Get the ground ellipse data.
 
 
 Import detail

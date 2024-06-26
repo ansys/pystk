@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDemodulatorModel.name`
+              - Gets the demodulator model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDemodulatorModel.type`
+              - Gets the demodulator model type enumeration.
 
 
 Import detail

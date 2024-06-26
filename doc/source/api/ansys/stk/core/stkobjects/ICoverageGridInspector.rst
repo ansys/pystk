@@ -36,12 +36,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.point_coverage`
+              - Accesses for the point selected in the graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.point_daily_coverage`
+              - Access times for the point selected in the graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.point_prob_of_coverage`
+              - Get the probability of coverage for the point selected in the graphics window being achieved as a function of the time past a request for coverage.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.region_coverage`
+              - Summary of coverage for the region selected in the graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.region_full_coverage`
+              - Summary of the coverage intervals for the selected region, including access start and end times, duration of each interval and the percentage of the region covered during each pass.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.region_pass_coverage`
+              - Detailed information about the intervals of time when each asset can provide coverage to the selected region.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGridInspector.message`
+              - Retrieves the message when a point or region is selected.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCylinder.radius`
+              - Property used to access the radius dimension of a cylinder shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCylinder.height`
+              - Property used to access the height dimension of a cylinder shape.
 
 
 Import detail

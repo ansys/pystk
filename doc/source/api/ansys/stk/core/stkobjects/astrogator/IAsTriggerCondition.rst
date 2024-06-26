@@ -32,11 +32,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.criteria`
+              - Gets or sets the criteria to be applied to the desired value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.calc_object`
+              - Gets or sets the calculation object to perform calculation to evaluate condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.calc_object_name`
+              - Gets or sets the name of the calculation object to perform calculation to evaluate condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.value`
+              - Gets or sets the value to satisfy the condition. Dimension depends on CalcObject.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.tolerance`
+              - How closely the test parameter must approximate the desired value for the constraint. Dimension depends on CalcObject.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition.use_absolute_value`
+              - Whether or not to take the absolute value of the calculation.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInertialDeltaVz.coord_axes_name`
+              - Gets or sets the coordinate axes.
 
 
 Import detail

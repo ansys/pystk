@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitudeRotationCoefficientsFile.filename`
+              - Gets or sets the name of the rotation coefficients file.
 
 
 Import detail

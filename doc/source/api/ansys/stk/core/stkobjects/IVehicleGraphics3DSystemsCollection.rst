@@ -40,10 +40,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.supported_systems`
+              - Returns a list of element types that can be added to the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.inertial_by_window`
+              - Gets the Inertial By Window System.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsCollection.fixed_by_window`
+              - Gets the Fixed By Window System.
 
 
 Import detail

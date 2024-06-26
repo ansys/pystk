@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.mainlobe_gain`
+              - Gets or sets the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.use_mainlobe_model`
+              - Gets or sets the option for enabling the mainlobe model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.sidelobe_mask_level`
+              - Gets or sets the sidelobe mask level.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS580.sidelobe_relative_to_mainlobe`
+              - Gets or set the flag indicating that the sidelobe mask level is relative to the mainlobe level.
 
 
 Import detail

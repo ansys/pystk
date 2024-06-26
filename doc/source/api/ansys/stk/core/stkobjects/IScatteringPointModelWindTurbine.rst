@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.blade_length`
+              - Gets the turbine blade length.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.blade_rotation`
+              - Gets the turbine blade rotation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.wind_direction`
+              - Gets the wind direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.blade_scattering_cross_section`
+              - Gets the turbine blade scattering cross section.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine.structure_scattering_cross_section`
+              - Gets the turbine structure scattering cross section.
 
 
 Import detail

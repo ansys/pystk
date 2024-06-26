@@ -30,31 +30,57 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.wing_area`
+              - Gets or sets the total surface area of the wing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.flaps_area`
+              - Gets or sets the total surface area of the flaps.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.speedbrakes_area`
+              - Gets or sets the total surface area of the speedbrakes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.max_altitude`
+              - Gets or sets the maximum altitude of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.max_mach`
+              - Gets or sets the maximum mach number of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.max_eas`
+              - Gets or sets the maximum equivalent airspeed of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.min_load_factor`
+              - Gets or sets the minimum load factor the aircraft can bear.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.max_load_factor`
+              - Gets or sets the maximum load factor the aircraft can bear.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.use_max_temperature_limit`
+              - Gets or sets the option to limit the maximum speed of the aircraft so the specified temperature is not exceeded.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.max_temperature`
+              - Gets or sets the maximum total temperature limit of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.cache_aero_data`
+              - Gets or sets the option to store intermediate results for aerodynamics calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.cache_fuel_flow`
+              - Gets or sets the option to store intermediate results for fuel flow calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.aero_strategy`
+              - Gets or sets the aerodynamic strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.aero_mode_as_external`
+              - Get the interface for an Extern File Aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.aero_mode_as_subsonic`
+              - Get the interface for a Subsonic Aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.aero_mode_as_sub_super_hypersonic`
+              - Get the interface for a Sub/Super/Hypersonic Aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.aero_mode_as_supersonic`
+              - Get the interface for a Supersonic Aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_strategy`
+              - Gets or sets the powerplant strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_mode_as_electric`
+              - Get the interface for an Electric Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_mode_as_external`
+              - Get the interface for an External Prop File Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_mode_as_piston`
+              - Get the interface for a Piston Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_mode_as_turboprop`
+              - Get the interface for a Turboprop Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_mode_as_empirical_jet_engine`
+              - Get the interface for an Empirical Jet Engine Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_mode_as_basic_turbofan`
+              - Get the interface for a Turbofan - Basic w/ AB Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_mode_as_basic_turbojet`
+              - Get the interface for a Turbojet - Basic w/ AB Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool.powerplant_mode_as_sub_super_hypersonic`
+              - Get the interface for a Sub/Super/Hypersoinc Powerplant strategy.
 
 
 Import detail

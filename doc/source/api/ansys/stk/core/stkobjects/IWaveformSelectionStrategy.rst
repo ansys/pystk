@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy.type`
+              - Gets the waveform selection strategy type.
 
 
 Import detail

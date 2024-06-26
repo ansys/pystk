@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModel.name`
+              - Gets the radar clutter map model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModel.type`
+              - Gets the radar clutter map model type enumeration.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria.type`
+              - Gets the link selection criteria type.
 
 
 Import detail

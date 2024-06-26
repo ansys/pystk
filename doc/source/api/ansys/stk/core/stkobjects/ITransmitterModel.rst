@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModel.name`
+              - Gets the transmitter model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModel.type`
+              - Gets the transmitter model type enumeration.
 
 
 Import detail

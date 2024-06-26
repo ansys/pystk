@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.slew_mode_type`
+              - Select an attitude slew mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.slew_mode_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTargetSlew.slew_mode`
+              - Returns a currently selected attitude slew configuration.
 
 
 Import detail

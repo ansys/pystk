@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.supported_modes`
+              - Gets an array of supported mode names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.mode`
+              - Gets the current radar mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.receiver`
+              - Gets the radar receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.clutter_geometry`
+              - This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.jamming`
+              - Gets the radar jamming.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.bistatic_transmitters`
+              - Gets the bistatic transmitter collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.antenna_control`
+              - Gets the radar antenna control.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelBistaticReceiver.clutter`
+              - Gets the radar clutter settings.
 
 
 Import detail

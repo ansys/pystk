@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction.fraction`
+              - Fraction of single leading or trailing vehicle pass to display. Dimensionless.
 
 
 Import detail

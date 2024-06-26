@@ -36,10 +36,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.shielding_thickness`
+              - Shielding thickness at which the dose rate information was computed. Uses RadiationShieldThickness Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.is_electron_dose_rate_valid`
+              - Flag to indicate that the electron dose rate value is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.is_electron_bremsstrahlung_dose_rate_valid`
+              - Flag to indicate that the electron bremsstrahlung dose rate value is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.is_proton_dose_rate_valid`
+              - Flag to indicate that the proton dose rate value is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement.is_total_dose_rate_valid`
+              - Flag to indicate that the total dose rate value is valid.
 
 
 Import detail

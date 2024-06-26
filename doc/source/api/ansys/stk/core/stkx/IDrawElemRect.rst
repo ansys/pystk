@@ -30,12 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemRect.left`
+              - The x-coordinate of the left edge of this rectangle.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemRect.right`
+              - The x-coordinate of the right edge of this rectangle.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemRect.top`
+              - The y-coordinate of the top edge of this rectangle.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemRect.bottom`
+              - The y-coordinate of the bottom edge of this rectangle.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemRect.color`
+              - Color of the rectangle.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemRect.line_width`
+              - Specifies the width of the line.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElemRect.line_style`
+              - Specifies the style of the line.
 
 
 Import detail

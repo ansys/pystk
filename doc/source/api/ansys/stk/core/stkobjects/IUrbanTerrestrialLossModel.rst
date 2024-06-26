@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel.name`
+              - Gets the Urban Terrestrial loss model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IUrbanTerrestrialLossModel.type`
+              - Gets the Urban Terrestrial loss model type enumeration.
 
 
 Import detail

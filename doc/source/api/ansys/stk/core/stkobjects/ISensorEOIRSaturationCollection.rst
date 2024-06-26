@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection.count`
+              - The number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection._NewEnum`
+              - Enumerates through the collection.
 
 
 Import detail

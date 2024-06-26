@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.spatial_condition`
+              - A spatial condition for satisfaction metric.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.satisfaction_metric`
+              - Spatial condition satisfaction metric types.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.accumulation_type`
+              - Spatial condition satisfaction accumulation types.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.duration_type`
+              - Spatial condition satisfaction duration types.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.filter`
+              - Spatial condition satisfaction duration types.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.maximum_number_of_intervals`
+              - Spatial condition satisfaction Maximum number of intervals.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.use_minimum_duration`
+              - Spatial condition satisfaction enable minimum duration.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.use_maximum_duration`
+              - Spatial condition satisfaction enable maximum duration.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.minimum_duration_time`
+              - Spatial condition satisfaction minimum duration time.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric.maximum_duration_time`
+              - Spatial condition satisfaction maximum duration time.
 
 
 Import detail

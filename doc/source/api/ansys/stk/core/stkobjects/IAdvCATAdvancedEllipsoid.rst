@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid.scale_factor`
+              - Ellipsoid Scaling Factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid.quadratic_in_time_db`
+              - Quadratic Database Path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid.fixed_by_orbit_class_db`
+              - Fixed by Orbit Class Database Path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAdvancedEllipsoid.quadratic_by_orbit_class_db`
+              - Quadratics by Orbit Class Database Path.
 
 
 Import detail

@@ -30,12 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.earth_albedo`
+              - Gets or sets the Earth's albedo. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.material_emissivity`
+              - Gets or sets the material emissivity. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.material_absorptivity`
+              - Gets or sets the material absorptivity. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.dissipation`
+              - Gets or sets the internal dissipation. Uses Power Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.cross_sectional_area`
+              - Area used in thermal model. For plate, equals its surface area; for spehere, equals pi*radius^2. Uses SmallArea Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.shape_model`
+              - Thermal shape model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentVehTemperature.normal_vector`
+              - Plate normal vector.
 
 
 Import detail

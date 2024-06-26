@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetTransformation.enable`
+              - Specify the model translation in the object body frame's X, Y and Z directions.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetTransformation.x`
+              - Translation in the X direction. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetTransformation.y`
+              - Translation in the Y direction. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DOffsetTransformation.z`
+              - Translation in the Z direction. Uses Distance Dimension.
 
 
 Import detail

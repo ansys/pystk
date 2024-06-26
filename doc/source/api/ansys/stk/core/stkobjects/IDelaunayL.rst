@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDelaunayL.l`
+              - Value of Delaunay L. Dimensionless.
 
 
 Import detail

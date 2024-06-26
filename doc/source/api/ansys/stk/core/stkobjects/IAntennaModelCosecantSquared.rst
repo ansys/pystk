@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.sidelobe_type`
+              - Gets the Cosecant Squared antenna sidelobe type enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.cutoff_angle`
+              - Gets or sets the cutoff angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.azimuth_beamwidth`
+              - Gets or sets the azimuth beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.mainlobe_gain`
+              - Gets or sets the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.backlobe_gain`
+              - Gets or sets the sidelobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelCosecantSquared.efficiency`
+              - Gets or sets the efficiency.
 
 
 Import detail

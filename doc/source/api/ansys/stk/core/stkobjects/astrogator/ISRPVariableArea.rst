@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.atmos_altitude`
+              - Gets or sets the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.shadow_model`
+              - Gets or sets the shadow model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.sun_position`
+              - Gets or sets the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.eclipsing_bodies`
+              - Other eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.mean_flux`
+              - Gets or sets the mean solar flux at 1 au (W/m^2).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.luminosity`
+              - Gets or sets the luminosity of sun. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.solar_force_method`
+              - Gets or sets the solar force method.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.include_boundary_mitigation`
+              - True if shadow boundary mitigation should be performed; the state of the satellite after crossing a shadow boundary will be corrected for errors possibly caused by the sudden change in SRP which occurred during the integration step.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.use_sun_central_body_file_values`
+              - True if solar values should come from the Sun.cb file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.solar_radius`
+              - Gets or sets the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ISRPVariableArea.variable_area_history_file`
+              - Full path of the variable area history file.
 
 
 Import detail

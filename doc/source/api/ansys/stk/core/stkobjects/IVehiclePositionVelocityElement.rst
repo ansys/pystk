@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.x`
+              - X collection. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.y`
+              - Y collection. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.z`
+              - Z collection. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.vx`
+              - Vx collection. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.vy`
+              - Vy collection. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePositionVelocityElement.vz`
+              - Vz collection. Dimensionless.
 
 
 Import detail

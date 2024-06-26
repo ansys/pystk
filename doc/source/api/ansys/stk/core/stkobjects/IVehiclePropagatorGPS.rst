@@ -30,12 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.prn`
+              - Gets or sets the satellite PRN number per ICD-GPS-200. This is a required data item as it is the GPS user's primary means of identifying GPS satellites. It is equivalent to the space vehicle identification (SVID) number of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.available_prns`
+              - Returns an array of available satellite Ids.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.auto_update_enabled`
+              - Whether automatic update is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.auto_update`
+              - Allows configuring the auto-update parameters and settings. AutoUpdateEnabled must be set to true in order to be able to change the auto-update properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.specify_catalog`
+              - Specify a catalog. AutoUpdateEnabled must be set to false in order to select an almanac.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
 
 
 Import detail

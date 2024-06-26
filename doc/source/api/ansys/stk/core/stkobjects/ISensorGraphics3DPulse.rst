@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.pulse_visible`
+              - Enable display of pulses in the sensor's projection. If not enabled, the sensor projection is displayed as a transparent, homogeneous color.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.amplitude`
+              - Amplitude, the transparent/opaque ratio of the pulses. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.length`
+              - Pulse length, how much physical space a given pulse occupies. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.style`
+              - Select an available sine or box style from the AgESnVOPulseStyle enumeration. Box styles display a very sharp transition from enabled to disabled for the sensor's modulation, while the Sine styles display a smooth transition.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.enable_smooth`
+              - Opt whether to enable averaging of pixels over the range of the pulse to achieve smoother, better viewing quality.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.presel_freq`
+              - Select a frequency option from the AgESnVOPulseFrequencyPreset enumeration. Here, frequency refers to the rate at which pulses occur.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.freq_value`
+              - If ePulseFrequencyCustom is selected for the PreselFreq property, specify the custom frequency value. Uses Frequency Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse.freq_reverse_direction`
+              - Opt whether to have the sensor pulse in a direction opposite from that which is set. This is useful if you want pulsing to display in the same direction as usual but pulsing is faster than the animation step.
 
 
 Import detail

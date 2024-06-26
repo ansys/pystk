@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration.magnitude`
+              - Gets or sets the maximum overall magnitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration.per_axis_x_accel_enabled`
+              - Whether to constrain the slew acceleration along the direction of X axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration.per_axis_y_accel_enabled`
+              - Whether to constrain the slew acceleration along the direction of Y axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration.per_axis_z_accel_enabled`
+              - Whether to constrain the slew acceleration along the direction of Z axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration.per_axis_x_accel`
+              - Constraint the slew acceleration along the direction of X axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration.per_axis_y_accel`
+              - Constraint the slew acceleration along the direction of Y axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeMaximumSlewAcceleration.per_axis_z_accel`
+              - Constraint the slew acceleration along the direction of Z axis.
 
 
 Import detail

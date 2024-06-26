@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.is_visible`
+              - Controls whether the element is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.name`
+              - Returns the element name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.color`
+              - Specifies the element color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.scale_factor`
+              - Specifies the element scale factor. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTemplateDisplayElement.is_label_visible`
+              - Specifies whether the element label is visible.
 
 
 Import detail

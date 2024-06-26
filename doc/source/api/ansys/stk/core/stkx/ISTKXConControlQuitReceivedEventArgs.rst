@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXConControlQuitReceivedEventArgs.acknowledge`
+              - Indicates whether or not to acknowledge the connect command.
 
 
 Import detail

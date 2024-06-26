@@ -32,14 +32,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.azimuth_start`
+              - Gets the azimuth start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.azimuth_stop`
+              - Gets the azimuth stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.azimuth_resolution`
+              - Gets the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.azimuth_num_points`
+              - Gets the number of azimuth points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.elevation_start`
+              - Gets the elevation start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.elevation_stop`
+              - Gets the elevation stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.elevation_resolution`
+              - Gets the elevation resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.elevation_num_points`
+              - Gets the number of elevation points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContourGain.coordinate_system`
+              - Gets or sets the coordinate system for defining the resolution of the antenna graphics.
 
 
 Import detail

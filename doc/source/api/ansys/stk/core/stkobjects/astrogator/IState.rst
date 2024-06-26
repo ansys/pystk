@@ -32,22 +32,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.element_type`
+              - Get the element type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.element`
+              - Returns the currently selected element type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.epoch`
+              - Gets or sets the epoch of the Orbit State. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.coord_system_name`
+              - Get the coordinate system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.dry_mass`
+              - Gets or sets the mass of the spacecraft exclusive of propellant. Uses Mass Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.fuel_mass`
+              - Gets or sets the mass of the spacecraft propellant. Uses Mass Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.drag_area`
+              - Gets or sets the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Uses SmallArea Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.srp_area`
+              - Gets or sets the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Uses SmallArea Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.tank_pressure`
+              - Gets or sets the fuel tank pressure. Uses Pressure Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.tank_temperature`
+              - Gets or sets the temperature of the fuel tank. Uses Temperature Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.fuel_density`
+              - Gets or sets the density of the fuel tank. Uses SmallDensity Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.cr`
+              - Gets or sets the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.cd`
+              - Gets or sets the dimensionless drag coefficient associated with the drag area. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.radiation_pressure_coeff`
+              - Gets or sets the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.radiation_pressure_area`
+              - Gets or sets the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Uses Small Area Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.k1`
+              - If you are using a non-spherical SRP model, this field defines the model's GPS solar radiation pressure K1 (scale) value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IState.k2`
+              - If you are using a non-spherical SRP model, this field defines the model's GPS solar radiation pressure K2 (scale) value. Dimensionless.
 
 
 Import detail

@@ -21,28 +21,51 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.isp_c0`
+              - Gets or sets the constant coefficient (C0). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.isp_c1`
+              - Gets or sets the linear coefficient (C1). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.isp_c2`
+              - Gets or sets the quadratic coefficient (C2). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.isp_c3`
+              - Gets or sets the cubic coefficient (C3). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_equation_type`
+              - Gets or sets the independent variable for the mass flow rate equation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_c0`
+              - Gets or sets the constant coefficient (C0). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_c1`
+              - Gets or sets the linear coefficient (C1). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_c2`
+              - Gets or sets the quadratic coefficient (C2). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_c3`
+              - Gets or sets the cubic coefficient (C3). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_rate_equation`
+              - Get the equation for mass flow rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_c0`
+              - Gets or sets the constant coefficient (C0). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_c1`
+              - Gets or sets the linear coefficient (C1). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_c2`
+              - Gets or sets the quadratic coefficient (C2). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_c3`
+              - Gets or sets the cubic coefficient (C3). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_independent_var`
+              - Gets or sets the independent variable for the mass flow efficiency equation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.mass_flow_efficiency_equation`
+              - Get the equation for mass flow efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_c0`
+              - Gets or sets the constant coefficient (C0). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_c1`
+              - Gets or sets the linear coefficient (C1). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_c2`
+              - Gets or sets the quadratic coefficient (C2). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_c3`
+              - Gets or sets the cubic coefficient (C3). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_independent_var`
+              - Gets or sets the independent variable for the power efficiency equation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.power_efficiency_equation`
+              - Get the equation for power efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineDefinition.input_power_source_name`
+              - Object that computes the power input to the engine.
 
 
 Import detail

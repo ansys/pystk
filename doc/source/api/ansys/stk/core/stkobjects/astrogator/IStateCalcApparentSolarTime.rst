@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcApparentSolarTime.central_body_name`
+              - Gets or sets the central body of the component.
 
 
 Import detail

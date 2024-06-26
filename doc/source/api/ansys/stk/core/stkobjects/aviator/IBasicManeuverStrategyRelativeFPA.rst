@@ -38,20 +38,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.fpa`
+              - Gets or sets the flight path angle for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.anchor_altitude_offset`
+              - Gets or sets the goal height above or below the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.maneuver_factor`
+              - Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.control_limit_mode`
+              - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.control_limit_pitch_rate`
+              - Get the specified pitch rate for a control limit mode of specify max pitch rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.airspeed_options`
+              - Get the airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.min_absolute_altitude`
+              - Get the minimum absolute altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.use_min_absolute_altitude`
+              - Get the option to specify a minimum absolute altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.max_absolute_altitude`
+              - Get the maximum absolute altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.use_max_absolute_altitude`
+              - Get the option to specify a maximum absolute altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.min_altitude_rel_anchor`
+              - Get the minimum altitude offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.use_min_altitude_rel_anchor`
+              - Get the option to specify a minimum altitude offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.max_altitude_rel_anchor`
+              - Get the maximum altitude offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.use_max_altitude_rel_anchor`
+              - Get the option to specify a maximum altitude offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeFPA.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
 Import detail

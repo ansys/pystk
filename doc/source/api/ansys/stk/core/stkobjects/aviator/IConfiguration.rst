@@ -36,19 +36,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.empty_weight`
+              - Gets or sets the empty weight of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.max_landing_weight`
+              - Gets or sets the max landing weight of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.base_drag_index`
+              - Gets or sets the base drag index of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.empty_cgx`
+              - Get the X value of the aircraft's Empty CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.empty_cgy`
+              - Get the Y value of the aircraft's Empty CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.empty_cgz`
+              - Get the Z value of the aircraft's Empty CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_weight`
+              - Get the total weight of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_weight_max_fuel`
+              - Get the total weight of the aircraft with all fuel tanks full.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_drag_index`
+              - Get the total drag index of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_cgx`
+              - Get the X value of the aircraft's Total CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_cgy`
+              - Get the Y value of the aircraft's Total CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_cgz`
+              - Get the Z value of the aircraft's Total CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.total_capacity`
+              - Get the total fuel capacity of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConfiguration.initial_fuel_state`
+              - Get the initial fuel state of the aircraft.
 
 
 Import detail

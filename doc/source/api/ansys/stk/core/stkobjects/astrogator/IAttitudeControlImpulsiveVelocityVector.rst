@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveVelocityVector.delta_v_magnitude`
+              - Gets or sets the size of the delta-V to be applied to the orbit along the velocity vector. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveVelocityVector.body_constraint_vector`
+              - Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
 
 
 Import detail

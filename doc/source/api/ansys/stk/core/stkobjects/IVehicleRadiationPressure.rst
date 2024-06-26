@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.file`
+              - File containing parameters defining a ground reflection model that defines albedo and emissivity properties of the central body surface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.ck`
+              - Coefficient of radiation pressure reflectivity of the satellite. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.area_mass_ratio`
+              - Area exposed to radiation pressure (nominally along the radial direction) divided by the mass. Uses AreaPerMass Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.include_albedo`
+              - Opt whether to consider albedo effects (i.e., radiation pressure caused by sunlight reflected off the lit part of the central body).
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure.include_thermal`
+              - Opt whether to consider thermal radiation pressure effects (i.e., radiation pressure caused by blackbody heat radiation of the central body).
 
 
 Import detail

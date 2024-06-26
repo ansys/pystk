@@ -34,6 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.file`
+              - File name.
 
 
 Import detail

@@ -38,19 +38,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IScene.camera`
+              - Gets the camera associated with the scene, which affects the view that is rendered by the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.lighting`
+              - Gets the lighting associated with the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.show_sunshine`
+              - Gets or sets whether sunshine is rendered by the Sun central body. Sunshine renders a halo effect around the sun when it is viewed in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.central_bodies`
+              - Gets the central body graphics for a specified central body.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.background_color`
+              - Gets or sets the background color of the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.shade_sky_based_on_altitude`
+              - Gets or sets whether the sky will be shaded based on camera altitude. When shade sky based on altitude is set to true, the sky will become more blue as the Camera gets closer to the surface of the central body.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.show_stars`
+              - Gets or sets whether stars are shown or hidden in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.globe_overlay_settings`
+              - Gets the scene globe overlay settings for the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.scene_id`
+              - Returns the scene identifier.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.show_water_surface`
+              - Gets or sets whether water surface on earth is shown or hidden in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.anti_aliasing`
+              - Gets or sets the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.visual_effects`
+              - Gets the visual  effects associated with the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.clouds`
+              - Gets the clouds for the scene.
             * - :py:attr:`~ansys.stk.core.graphics.IScene.show_star_labels`
+              - Gets or sets whether stars labels are shown or hidden in the scene.
 
 
 Import detail

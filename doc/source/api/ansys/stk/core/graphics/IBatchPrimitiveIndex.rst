@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IBatchPrimitiveIndex.index`
+              - The index of the item contained by the Primitive.
             * - :py:attr:`~ansys.stk.core.graphics.IBatchPrimitiveIndex.primitive`
+              - The Primitive that contains the item at the Index specified.
 
 
 Import detail

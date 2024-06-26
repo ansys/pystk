@@ -32,6 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPluginProperties.available_properties`
+              - Returns an array of all available properties.
 
 
 Import detail

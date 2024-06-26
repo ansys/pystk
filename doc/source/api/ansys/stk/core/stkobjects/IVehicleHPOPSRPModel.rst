@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model_type`
+              - Returns a type of the active solar radiation pressure model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel.model`
+              - Returns the active solar radiation pressure model.
 
 
 Import detail

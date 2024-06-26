@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.compute_mainlobe_gain`
+              - Gets or sets the option for computing the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.mainlobe_gain`
+              - Gets or sets the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.backlobe_gain`
+              - Gets or sets the backlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.use_backlobe_as_mainlobe_atten`
+              - Gets or sets the option for using the back lobe gain as a main lobe gain attenuation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.input_type`
+              - Gets or sets the input type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.x_dimension`
+              - Gets or sets the x dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.y_dimension`
+              - Gets or sets the y dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.x_beamwidth`
+              - Gets or sets the x beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureRectangularUniform.y_beamwidth`
+              - Gets or sets the y beamwidth.
 
 
 Import detail

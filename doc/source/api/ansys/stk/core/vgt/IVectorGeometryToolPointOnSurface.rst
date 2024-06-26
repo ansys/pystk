@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.central_body`
+              - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.reference_point`
+              - Specify a reference point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.reference_shape`
+              - Specify a reference shape.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointOnSurface.surface_type`
+              - Specify a surface type.
 
 
 Import detail

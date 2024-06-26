@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.altitude_msl_options`
+              - Get the altitude MSL options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.navigation_options`
+              - Get the navigation options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureEnroute.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
 
 
 Import detail

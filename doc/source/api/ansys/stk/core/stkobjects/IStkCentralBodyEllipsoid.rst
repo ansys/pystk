@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.a`
+              - An equatorial radius along the x-axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.b`
+              - An equatorial radius along the y-axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.c`
+              - The polar radius along z-axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.mean_radius`
+              - A mean radius of the central body (a+b+c)/3.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyEllipsoid.volumetric_radius`
+              - A volumetric radius of the central body (a*b*c)^(1/3).
 
 
 Import detail

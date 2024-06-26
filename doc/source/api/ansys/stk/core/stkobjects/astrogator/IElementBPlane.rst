@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.right_ascension_of_b_plane`
+              - Right Ascension of the B-Plane Normal.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.declination_of_b_plane`
+              - Declination of the B-Plane Normal.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_dot_r_first_b_vector`
+              - B vector dotted with R vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_dot_t_second_b_vector`
+              - B vector dotted with T vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.hyperbolic_turning_angle`
+              - Hyperbolic turning angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.orbital_c3_energy`
+              - Orbital C3 Energy.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.hyperbolic_v_infinity`
+              - Hyperbolic V infinity.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.semi_major_axis`
+              - Semi-major axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_dot_t_first_b_vector`
+              - B vector dotted with T vector used as the first quantity to define the B vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_theta_first_b_vector`
+              - Angle between the B vector and T vector used as the first quantity to define the B vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_dot_r_second_b_vector`
+              - B vector dotted with T vector used as the second quantity to define the B vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.b_magnitude_second_b_vector`
+              - Magnitude of the B vector used as the second quantity to define the B vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane.true_anomaly`
+              - True Anomaly.
 
 
 Import detail

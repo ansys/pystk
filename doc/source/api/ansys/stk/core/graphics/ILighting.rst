@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ILighting.enabled`
+              - Gets or sets whether or not lighting is enabled.
             * - :py:attr:`~ansys.stk.core.graphics.ILighting.ambient_intensity`
+              - Gets or sets the ambient intensity throughout the scene.
             * - :py:attr:`~ansys.stk.core.graphics.ILighting.diffuse_intensity`
+              - Gets or sets the diffuse intensity from the sun.
             * - :py:attr:`~ansys.stk.core.graphics.ILighting.night_lights_intensity`
+              - Gets or sets the overall brightness for the night light's image overlay, night overlay.
 
 
 Import detail

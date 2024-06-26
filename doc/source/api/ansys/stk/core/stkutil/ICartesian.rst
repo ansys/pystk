@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.ICartesian.x`
+              - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkutil.ICartesian.y`
+              - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkutil.ICartesian.z`
+              - Dimension depends on context.
 
 
 Import detail

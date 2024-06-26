@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuation.type`
+              - Gets the STC type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuation.name`
+              - Gets the radar STC string name.
 
 
 Import detail

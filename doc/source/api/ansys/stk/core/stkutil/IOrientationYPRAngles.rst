@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationYPRAngles.sequence`
+              - YPR sequence. Must be set before Yaw,Pitch,Roll values. Otherwise the current Yaw,Pitch,Roll values will be converted to the Sequence specified.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationYPRAngles.yaw`
+              - Yaw angle. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationYPRAngles.pitch`
+              - Pitch angle. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationYPRAngles.roll`
+              - Roll angle. Uses Angle Dimension.
 
 
 Import detail

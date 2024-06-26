@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolEvaluateWithRateResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolEvaluateWithRateResult.value`
+              - Computed scalar value.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolEvaluateWithRateResult.rate`
+              - A rate of change of the computed scalar value.
 
 
 Import detail

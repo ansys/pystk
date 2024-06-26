@@ -36,6 +36,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILLAPosition.type`
+              - Returns the position type currently being used.
 
 
 Import detail

@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.from_object`
+              - From object for a connection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.to_object`
+              - To object for a connection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.min_num_uses`
+              - Gets or sets the minimum number of uses for a connection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.max_num_uses`
+              - Gets or sets the maximum number of uses for a connection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainConnection.parent_platform_restriction`
+              - Gets or sets the parent platform restriction for a connection.
 
 
 Import detail

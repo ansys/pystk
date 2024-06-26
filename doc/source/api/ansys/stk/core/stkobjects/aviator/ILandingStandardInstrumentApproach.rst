@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.approach_altitude`
+              - Gets or sets the aircraft's altitude at the Initial Approach Fix Range.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.level_off_mode`
+              - Gets or sets the level off mode. This is only used when the must level off option is on.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.approach_fix_range`
+              - Gets or sets the range from the reference point of the runway at which the aircraft begins its landing approach.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.approach_fix_range_mode`
+              - Gets or sets the reference point on the runway for the Approach Fix Range.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.glideslope`
+              - Gets or sets the angle from the horizontal on which the aircraft descends to touchdown.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.runway_altitude_offset`
+              - Gets or sets the altitude offset above the ground level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.use_runway_terrain`
+              - Opt whether to use terrain data to define the runway's ground level attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach.touch_and_go`
+              - Opt whether to perform a Touch and Go landing. The procedure will stop at wheels down and can be immediately followed by a takeoff procedure.
 
 
 Import detail

@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.angle`
+              - The Volume Calc Angle Off Vector Type.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_plane`
+              - The Volume Calc Angle Off Vector reference plane.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_point`
+              - The Volume Calc Angle Off Vector reference point.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.reference_vector`
+              - The Volume Calc Angle Off Vector reference vector.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAngleOffVector.about_vector`
+              - The Volume Calc Angle Off Vector reference about vector.
 
 
 Import detail

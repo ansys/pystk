@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.user_vtol_points`
+              - Get the User VTOL Points.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.arinc424_helipads`
+              - Get the ARINC-424 helipads.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IVTOLPointCategory.dafif_helipads`
+              - Get the DAFIF helipads.
 
 
 Import detail

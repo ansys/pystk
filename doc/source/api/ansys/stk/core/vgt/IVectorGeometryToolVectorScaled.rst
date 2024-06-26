@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScaled.reference_vector`
+              - A vector being scaled.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScaled.scale`
+              - A scaling multiple.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScaled.is_normalized`
+              - Controls whether to convert the reference vector to a unit vector before scalling.
 
 
 Import detail

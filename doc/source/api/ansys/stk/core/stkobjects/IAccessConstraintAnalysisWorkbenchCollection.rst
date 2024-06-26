@@ -40,7 +40,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection.count`
+              - Number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection._NewEnum`
+              - Enumerate the IAgAccessCnstrAWB interfaces.
 
 
 Import detail

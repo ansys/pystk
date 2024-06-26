@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelGltfImageBased.filename`
+              - Path and filename of the glTF image based file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelGltfImageBased.file_path`
+              - Absolute path and filename of the glTF image based file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelGltfImageBased.reflection_reference_frame`
+              - Gets or sets the system used to orient an environment map around a glTF model.
 
 
 Import detail

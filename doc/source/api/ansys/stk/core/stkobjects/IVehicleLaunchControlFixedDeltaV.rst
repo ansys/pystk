@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaV.delta_v`
+              - Fixed Delta V: the instantaneous thrust to be applied to the vehicle being launched. Uses Rate Dimension.
 
 
 Import detail

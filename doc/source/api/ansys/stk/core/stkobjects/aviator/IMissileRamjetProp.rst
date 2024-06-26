@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.design_mach`
+              - Gets or sets the mach number design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.design_altitude`
+              - Gets or sets the altitude design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.design_thrust`
+              - Gets or sets the thrust design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.engine_temp`
+              - Gets or sets the maximum temperature that the engine material can support.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.fuel_heating_value`
+              - Gets or sets the heating value of the fuel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.inlet_pressure_ratio`
+              - Gets or sets the pressure ratio from the inlet exit to the entrance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.burner_pressure_ratio`
+              - Gets or sets the pressure ratio from the burner exit to the entrance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.nozzle_pressure_ratio`
+              - Gets or sets the pressure ratio from the nozzle exit to the entrance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.p_0over_p9`
+              - Gets or sets the pressure ratio from ambient conditions to the engine exit.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.burner_efficiency`
+              - Gets or sets the efficiency of the burner.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp.no_thrust_when_no_fuel`
+              - Opt to have no thrust if the fuel is empty.
 
 
 Import detail

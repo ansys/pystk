@@ -56,15 +56,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.set_hint`
+              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.bounding_sphere_scale`
+              - Gets or sets the scale applied to the radius of this primitive's bounding sphere.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.font`
+              - Gets the font used to render the text batch.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.outline_color`
+              - Gets or sets the text's outline color.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.outline_translucency`
+              - Gets or sets the text's outline translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.align_to_pixel`
+              - Gets or sets whether the screen space position of each string is aligned to a pixel.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.distance_display_condition_per_string`
+              - Gets or sets a distance display condition that is evaluated per string in the text batch during rendering. This is different than display condition, which is evaluated once for the entire text batch...
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.per_item_picking_enabled`
+              - Gets or sets whether individual text indices will be included in the pick results returned from the scene's Pick method. Each text index that is picked will be returned as a batch primitive index.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.texture_filter`
+              - Gets or sets the filter used to filter the texture-based font.
             * - :py:attr:`~ansys.stk.core.graphics.ITextBatchPrimitive.render_in_screen_space`
+              - Gets or sets whether the primitive is positioned and rendered in screen space coordinates.
 
 
 Import detail

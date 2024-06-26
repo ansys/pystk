@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy.type`
+              - Gets the beam selection strategy type.
 
 
 Import detail

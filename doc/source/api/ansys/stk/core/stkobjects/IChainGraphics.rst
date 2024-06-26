@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics.static`
+              - Get the chain's 2D static graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics.animation`
+              - Get the chain's 3D graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the chain are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainGraphics.is_object_graphics_visible_in_2d`
+              - Specify whether graphics attributes of the chain are visible in 2D Windows.
 
 
 Import detail

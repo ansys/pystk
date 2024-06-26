@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.assigned_obstructions`
+              - Gets the Assigned Obstructions.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction.available_obstructions`
+              - Gets the Available Obstructions.
 
 
 Import detail

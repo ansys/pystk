@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.is_visible`
+              - Opt whether to display tick marks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data_type`
+              - Get the type of tick marks to display.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPathTickMarks.tick_data`
+              - Get the tick mark data.
 
 
 Import detail

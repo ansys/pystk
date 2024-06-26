@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.time`
+              - Time of the waypoint. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.is_visible`
+              - Opt whether to show the waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.is_label_visible`
+              - Opt whether to display a label for the waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.label`
+              - Content of the waypoint label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.use_veh_color`
+              - Opt whether to set the waypoint color to the color of the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.color`
+              - Color of the waypoint marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement.marker_style`
+              - Style of the waypoint marker.
 
 
 Import detail

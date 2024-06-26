@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.default`
+              - Get the default attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.intervals`
+              - Get the custom intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesCustom.preemptive_intervals`
+              - Opt whether the hiding of graphics for a given interval affects that interval alone or causes the entire path display for that vehicle to disappear when you animate through the selected interval.
 
 
 Import detail

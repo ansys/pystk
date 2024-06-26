@@ -36,8 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.altitude`
+              - Gets or sets the VTOL Point altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.latitude`
+              - Gets or sets the VTOL Point latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint.longitude`
+              - Gets or sets the VTOL Point longitude.
 
 
 Import detail

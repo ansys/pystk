@@ -36,6 +36,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFactory.available_point_plugin_display_names`
+              - An array of display names associated with available point plugins. The elements of the array are strings. Display names are used to create VGT points based on COM plugins using CreatePointPluginFromDisplayName method.
 
 
 Import detail

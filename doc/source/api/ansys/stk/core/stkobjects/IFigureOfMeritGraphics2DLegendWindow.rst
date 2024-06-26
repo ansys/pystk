@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow.is_visible_on_map`
+              - Opt whether to display the legend on the 2D map.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow.position_on_map`
+              - Get the position of the contour legend on the 2D map in pixel coordinates.
 
 
 Import detail

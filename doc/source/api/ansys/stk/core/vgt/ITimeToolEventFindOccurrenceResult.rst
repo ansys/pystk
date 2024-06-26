@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventFindOccurrenceResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventFindOccurrenceResult.epoch`
+              - The epoch at which the event occurs.
 
 
 Import detail

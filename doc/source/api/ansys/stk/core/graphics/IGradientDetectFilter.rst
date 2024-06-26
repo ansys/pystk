@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IGradientDetectFilter.method`
+              - Gets or sets the method used to detect gradients in the source raster.
 
 
 Import detail

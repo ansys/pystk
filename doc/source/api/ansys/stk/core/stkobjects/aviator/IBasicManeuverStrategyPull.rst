@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.active_mode`
+              - Gets or sets the pull mode for the pull basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.active_angle`
+              - Gets or sets the pull angle for the active mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.pull_g_mode`
+              - Gets or sets the pull G mode for a pull basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.override_pull_g`
+              - Gets or sets the pull G override value. The pull G mode must be set to override to access this property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPull.airspeed_options`
+              - Get the airspeed options.
 
 
 Import detail

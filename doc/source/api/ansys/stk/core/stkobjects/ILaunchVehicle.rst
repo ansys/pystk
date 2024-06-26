@@ -36,27 +36,49 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.trajectory_type`
+              - Get the propagator type used by the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.trajectory_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.trajectory`
+              - Get the launch vehicle's trajectory properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.attitude_type`
+              - Get the type of attitude profile used by the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.attitude_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.attitude`
+              - Get the launch vehicle's attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.graphics`
+              - Get the launch vehicle's 2D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.graphics_3d`
+              - Get the launch vehicle's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.ground_ellipses`
+              - Get the launch vehicle's ground ellipses properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.access_constraints`
+              - Get the constraints imposed on the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.export_tools`
+              - Returns the IAgLvExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.space_environment`
+              - Returns the launch vehicle's SpaceEnvironment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.atmosphere`
+              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.radar_clutter_map`
+              - Returns the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.radar_cross_section`
+              - Returns the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.eclipse_bodies`
+              - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.use_terrain_in_lighting_computations`
+              - Opt whether to compute lighting using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.lighting_max_step`
+              - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.laser_environment`
+              - Gets the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.rf_environment`
+              - Gets the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.lighting_max_step_terrain`
+              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaunchVehicle.lighting_max_step_central_body_shape`
+              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
 
 Import detail

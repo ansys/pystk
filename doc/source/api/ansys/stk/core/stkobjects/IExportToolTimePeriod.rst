@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolTimePeriod.start`
+              - Gets or sets the start time of export interval. Uses DateFormate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolTimePeriod.stop`
+              - Gets or sets the stop time of export interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IExportToolTimePeriod.time_period_type`
+              - Specifies the time period type to use.
 
 
 Import detail

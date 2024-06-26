@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.calc_object_name`
+              - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.other_segment_name`
+              - Gets or sets the segment to be compared against.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.segment_state_to_use`
+              - Gets or sets the segment state to use in the calculation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.difference_order`
+              - Gets or sets the order of the difference calculation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifferenceAcrossSegmentsOtherSat.reference_sat`
+              - Get the Astrogator satellite on which the segment to be compared exists.
 
 
 Import detail

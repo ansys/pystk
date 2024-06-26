@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.inherit_from_2d_graphics_2d`
+              - Specify whether planet properties set for 2D Graphics are used in the 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.inertial_position_visible`
+              - Display the position of the planet as a point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.sub_planet_point_visible`
+              - Display the location at which the planet is overhead on the globe.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.position_label_visible`
+              - Display a label at the inertial position of the planet.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.sub_planet_label_visible`
+              - Display a label on the globe at the location at which the planet is overhead.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetGraphics3D.orbit_visible`
+              - Display the planet's orbit around its parent object in the 3D graphics window as defined in 2D Graphics for that planet. For instance, the Moon orbits around the Sun.
 
 
 Import detail

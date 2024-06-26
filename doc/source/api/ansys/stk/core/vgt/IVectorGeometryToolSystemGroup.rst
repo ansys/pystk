@@ -38,10 +38,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.context`
+              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.count`
+              - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.factory`
+              - Returns a Factory object used to create custom VGT systems.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemGroup._NewEnum`
+              - Returns a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystemGroup.common_tasks`
+              - Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
 
 
 Import detail

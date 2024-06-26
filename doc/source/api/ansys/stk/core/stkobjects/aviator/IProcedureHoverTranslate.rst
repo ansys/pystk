@@ -36,15 +36,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.heading_mode`
+              - Gets or sets the heading mode for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.final_heading_mode`
+              - Get the mode to define the heading at the end of the hover.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.absolute_course`
+              - Get the absolute course for the heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.relative_course`
+              - Get the relative heading change.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.use_magnetic_heading`
+              - Get the option to use a magnetic heading for the heading course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.final_heading_rate`
+              - Gets or sets the options to define the heading rate of the aircraft at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.final_course_mode`
+              - Gets or sets the mode to specify the final course at the end of the hover.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.smooth_translation_mode`
+              - Gets or sets the translation mode of the aircraft at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoverTranslate.radius_factor`
+              - Gets or sets the turn radius factor.
 
 
 Import detail

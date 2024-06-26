@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingMethod.method_type`
+              - A sampling method type.
 
 
 Import detail

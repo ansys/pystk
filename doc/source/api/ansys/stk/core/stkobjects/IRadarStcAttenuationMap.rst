@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationMap.filename`
+              - Gets or sets the map filename.
 
 
 Import detail

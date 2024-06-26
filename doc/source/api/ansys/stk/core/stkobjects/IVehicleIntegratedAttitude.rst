@@ -32,13 +32,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.start_time`
+              - Start time for the attitude file. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.stop_time`
+              - Stop time for the attitude file. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.epoch`
+              - Epoch of the attitude file. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.orientation`
+              - Get the initial orientation of the satellite in the Earth Inertial (ECI) frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.wx`
+              - Body fixed wx rate: initial angular velocity rate about the satellite's X axis. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.wy`
+              - Body fixed wy rate:  initial angular velocity rate about the satellite's Y axis. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.wz`
+              - Body fixed wz rate:  initial angular velocity rate about the satellite's Z axis. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleIntegratedAttitude.torque`
+              - Get the external torque data.
 
 
 Import detail

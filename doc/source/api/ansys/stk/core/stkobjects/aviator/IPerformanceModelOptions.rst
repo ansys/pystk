@@ -38,8 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.name`
+              - Get the name of the performance model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.is_linked_to_catalog`
+              - Get whether the performance model is linked to the catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IPerformanceModelOptions.properties`
+              - Get the properties of the performance model.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGeodeticSizeAltitude.altitude`
+              - Measured along an outward normal to the surface of the ellipsoid. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGeodeticSizeAltitude.rate`
+              - Rate of change of altitude. Uses Rate Dimension.
 
 
 Import detail

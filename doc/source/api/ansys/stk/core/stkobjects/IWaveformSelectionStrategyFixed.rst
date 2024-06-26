@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyFixed.supported_waveforms`
+              - Gets an array of supported waveform names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyFixed.fixed_waveform`
+              - Gets or sets the fixed waveform.
 
 
 Import detail

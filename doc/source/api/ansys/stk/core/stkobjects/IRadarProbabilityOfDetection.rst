@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection.name`
+              - Gets the probability of detection algorithm name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection.type`
+              - Gets the probability of detection type.
 
 
 Import detail

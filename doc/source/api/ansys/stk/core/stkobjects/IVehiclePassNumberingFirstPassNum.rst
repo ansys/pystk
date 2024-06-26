@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassNumberingFirstPassNum.first_pass_num`
+              - Gets or sets the number at which pass numbering begins. Dimensionless.
 
 
 Import detail

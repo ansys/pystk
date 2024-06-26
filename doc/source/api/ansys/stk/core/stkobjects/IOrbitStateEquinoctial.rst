@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.coordinate_system_type`
+              - Gets or sets the coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.coordinate_system`
+              - Get the coordinate system and coordinate epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.size_shape_type`
+              - Gets or sets the orbit size option can be Mean Motion or Semimajor Axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.size_shape`
+              - Get the value of Mean Motion or Semimajor Axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.h`
+              - H/K collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.k`
+              - H/K collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.p`
+              - P/Q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.q`
+              - P/Q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.mean_longitude`
+              - Specifies a satellite's position within its orbit at epoch and equals the sum of the classical RAAN, Argument of Perigee, and Mean Anomaly. Uses Angle dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.formulation`
+              - Gets or sets the Formulation can be Retrograde or Posigrade.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.supported_coordinate_system_types`
+              - Returns an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateEquinoctial.state_epoch`
+              - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 
 
 Import detail

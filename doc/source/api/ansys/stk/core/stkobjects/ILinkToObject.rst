@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.name`
+              - Returns a name of linked object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.linked_object`
+              - Dereferences the link and returns the linked object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.available_objects`
+              - Returns a list of available objects that can be linked to.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILinkToObject.is_intrinsic`
+              - Returns true if the link references an intrinsic object, otherwise returns false.
 
 
 Import detail

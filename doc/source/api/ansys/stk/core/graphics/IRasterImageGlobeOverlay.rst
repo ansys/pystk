@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRasterImageGlobeOverlay.use_transparent_color`
+              - Gets or sets whether transparent color should be used.
             * - :py:attr:`~ansys.stk.core.graphics.IRasterImageGlobeOverlay.transparent_color`
+              - Gets or sets the color that will become transparent.
 
 
 Import detail

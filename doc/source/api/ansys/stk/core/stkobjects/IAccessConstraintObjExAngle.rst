@@ -34,8 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.exclusion_angle`
+              - Exclusion Angle value. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.assigned_objects`
+              - Returns a safearray of assigned objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintObjExAngle.available_objects`
+              - Returns a safearray of available objects.
 
 
 Import detail

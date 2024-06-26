@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentList.time_components`
+              - Gets the time components collection.
 
 
 Import detail

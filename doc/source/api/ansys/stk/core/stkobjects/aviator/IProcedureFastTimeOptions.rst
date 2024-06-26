@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions.start_time`
+              - Start time for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFastTimeOptions.stop_time`
+              - Stop time for the procedure.
 
 
 Import detail

@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.design_altitude`
+              - Gets or sets the altitude design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.design_mach`
+              - Gets or sets the mach number design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.design_thrust`
+              - Gets or sets the thrust design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.max_compression_temp`
+              - Gets or sets the maximum temperature at the compressor stage.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.max_burner_temp`
+              - Gets or sets the maximum temperature at the combustion stage.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.fuel_type`
+              - Gets or sets the jet engine's fuel type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.fuel_mode_as_afprop`
+              - Get the interface for a Kerosene - AFPROP fuel mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.fuel_mode_as_cea`
+              - Get the interface for a Kerosene - CEA fuel mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingRamjetBasic.efficiencies_and_losses`
+              - Get the jet engine's propulsion efficiencies and losses.
 
 
 Import detail

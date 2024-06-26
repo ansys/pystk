@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryProximity.control_box`
+              - Get the control box parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryProximity.bearing_box`
+              - Get the bearing box parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryProximity.bearing_ellipse`
+              - Get the bearing ellipse parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryProximity.line_of_bearing`
+              - Get the line of bearing parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryProximity.aou_label_swap_distance`
+              - Area of uncertainty label swap distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryProximity.ellipsoid`
+              - Defines the ellipsoid parameters.
 
 
 Import detail

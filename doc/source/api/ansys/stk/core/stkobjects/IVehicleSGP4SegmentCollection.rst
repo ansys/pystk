@@ -36,13 +36,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.count`
+              - Gets the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection._NewEnum`
+              - Enumerates the elements of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.load_method_type`
+              - File Load Type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.load_method`
+              - File Load Data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.routine_type`
+              - Gets or sets whether a routine type being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.available_routines`
+              - An array of strings returning all available routine types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.max_tle_limit`
+              - Max number of elements. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSGP4SegmentCollection.ssc_number`
+              - Catalog number of the spacecraft. Note that any changes to the SSCNumber will reset the element set collection. Importing elements from file or online storage will also reset the SSCNumber.
 
 
 Import detail

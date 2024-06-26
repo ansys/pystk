@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITileset3D.name`
+              - Name of the 3DTileset.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITileset3D.source_type`
+              - Source type of the 3DTileset. A member of the AgE3DTilesetSourceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITileset3D.uri`
+              - URI of the 3DTileset asset.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITileset3D.reference_frame`
+              - Reference Frame (VGT System) of the 3DTileset.
 
 
 Import detail

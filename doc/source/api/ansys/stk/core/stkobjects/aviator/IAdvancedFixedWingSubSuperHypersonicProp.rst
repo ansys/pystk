@@ -21,21 +21,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode`
+              - Gets or sets the turbine operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode_as_turbojet`
+              - Gets or sets the interface for a Turbojet Basic w/ AB tubrine mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_mode_as_turbofan`
+              - Gets or sets the interface for a Turbojet Basic w/ AB tubrine mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_mode`
+              - Gets or sets the ramjet operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_mode_as_basic`
+              - Get the interface for a Ramjet - Basic.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_mode`
+              - Gets or sets the scramjet operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_mode_as_basic`
+              - Get the interface for a Scramjet - Basic.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.turbine_reference_area`
+              - Get the reference area used for the turbine operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.ramjet_reference_area`
+              - Get the reference area used for the ramjet operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.scramjet_reference_area`
+              - Get the reference area used for the scramjet operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.max_turbine_compression_temp`
+              - Gets or sets the maximum temperature at the compressor stage in the turbine operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.max_turbine_burner_temp`
+              - Gets or sets the maximum temperature at the combustion stage in the turbine operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.can_ram_compressor_pressure_ratio`
+              - Can Ram compressor pressure ratio.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.must_ram_compressor_pressure_ratio`
+              - Must Ram compressor pressure ratio.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.max_ram_scram_compression_temperature`
+              - Gets or sets the maximum temperature at the compressor stage in the Ramjet or Scramjet operating mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubSuperHypersonicProp.max_ram_scram_burner_total_temperature`
+              - Gets or sets the maximum temperature at the combustion stage in the Ramjet or Scramjet operating mode.
 
 
 Import detail

@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.method_type`
+              - Grid values method type.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridCoordinateDefinition.grid_values_method`
+              - Sets/Returns the grid values interface.
 
 
 Import detail

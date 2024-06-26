@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelCable.data_rate`
+              - Gets or sets the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelCable.chips_per_bit`
+              - Gets or sets the chips/bit.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelCable.spreading_gain`
+              - Gets the spreading gain.
 
 
 Import detail

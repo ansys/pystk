@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection.count`
+              - Returns the number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplexCollection._NewEnum`
+              - Returns an enumerator for the collection.
 
 
 Import detail

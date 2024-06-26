@@ -32,18 +32,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.launch_time`
+              - Gets or sets the launch time of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.coord_frame`
+              - Gets or sets the reference coordinate frame for the dyn state launch procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.bearing_reference`
+              - Gets or sets the bearing reference for the dyn state launch procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.launch_bearing`
+              - Gets or sets the launch direction bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.launch_elevation`
+              - Gets or sets the launch direction elevation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.attitude_mode`
+              - Gets or sets the attitude mode during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.specify_launch_airspeed`
+              - Opt to specify a minimum launch speed the aircraft will accelerate to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.accel_g`
+              - Gets or sets the acceleration of the aircraft during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.airspeed`
+              - Get the goal airspeed for the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.fuel_flow_type`
+              - Gets or sets the fuel flow type of the aircraft during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.override_fuel_flow`
+              - Gets or sets the fuel flow value for a fuel flow type set to Override.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState.true_course_hint`
+              - Gets or sets the true course used when the vehicle's direction vector is set to Zenith.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftCategory.aircraft_models`
+              - Get the user aircraft models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftCategory.missile_models`
+              - Get the user missile models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftCategory.rotorcraft_models`
+              - Get the user rotorcraft models.
 
 
 Import detail

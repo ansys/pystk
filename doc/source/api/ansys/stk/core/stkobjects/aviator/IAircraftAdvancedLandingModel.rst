@@ -34,11 +34,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.landing_speed_mode`
+              - Gets or sets the mode to calculate the aircraft's speed at wheels down.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.stall_speed_ratio`
+              - Get the ratio of the airspeed to the stall speed at wheels down.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.angle_of_attack`
+              - Get the Angle of Attack at wheels down.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.flaps`
+              - Gets or sets the extension of the flaps during the landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.speedbrakes`
+              - Gets or sets the extension of the speedbrakes during the landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedLandingModel.braking_decel_g`
+              - Gets or sets the deceleration rate, in G, when braking.
 
 
 Import detail

@@ -34,10 +34,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.region_figure_of_merit`
+              - Retrieves the Region FOM data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.region_satisfaction`
+              - Retrieves the Region Satisfaction data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.point_figure_of_merit`
+              - Retrieves the Point FOM data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.point_satisfaction`
+              - Retrieves the Point Satisfaction data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGridInspector.message`
+              - Retrieves the message when a point or region is selected.
 
 
 Import detail

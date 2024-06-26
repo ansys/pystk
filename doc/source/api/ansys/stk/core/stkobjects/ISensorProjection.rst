@@ -38,16 +38,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.persistence`
+              - Length of time the sensor's footprint remains visible during animation. Used to display sensor footprints for a specified period of time so that you can determine quickly and easily whether coverage requirements are being met. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.forward_persistence`
+              - Specify whether persistence is to apply in a forward animation direction only.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.project_at_altitude_object`
+              - The altitude of the object to which the sensor is projected (if this option for setting projection distance is selected).
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.intersection_type`
+              - The type of intersections to be shown. A member of the AgEIntersectionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.distance_type`
+              - The criterion used for determining the projection distance. A member of the AgESnProjectionDistanceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.distance_data`
+              - Value of the criterion used for determining the projection distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.fill_persistence`
+              - Specify whether to display the sensor's footprints as filled areas on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.use_constraints`
+              - Specify whether to evaluate the effect of various constraints on visibility along all possible lines of sight within the field of view.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.show_on_2d_map`
+              - Show Projection on 2D map.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.use_distance`
+              - Opt whether the sensor's field-of-view crossings at specified distances are to be computed and displayed in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjection.display_times_hides_persistance`
+              - Specify whether to allow display times to affect the sensor's persistence on/off state.
 
 
 Import detail

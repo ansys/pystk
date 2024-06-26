@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.line_of_site_jitter`
+              - The standard deviation of the Gaussian model LineOfSiteJitter for the sensor in angular space for the specified integration time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.processing_level`
+              - The tap point output ProcessingLevel for the sensor specifying the stage in the imaging pipeline to produce simulated images and output files.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.use_motion_blur`
+              - The status flag for determining if the sensor should apply coarse motion blur to the simulated images or not.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.bands`
+              - Get the collection of Bands for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_type`
+              - Type of jitter specification.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_data_file`
+              - Jitter description data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_data_file_spatial_sampling`
+              - Jitter data file spatial sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.jitter_data_file_frequency_sampling`
+              - Jitter data file frequency sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.along_scan_smear_rate`
+              - Gets or sets the along-scan smear rate of the EOIR sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.across_scan_smear_rate`
+              - Gets or sets the across-scan smear rate of the EOIR sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRPattern.scan_mode`
+              - Type of scan mode specification.
 
 
 Import detail

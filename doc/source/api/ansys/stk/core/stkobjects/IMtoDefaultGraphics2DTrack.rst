@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.is_visible`
+              - Opt whether the track will be displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.color`
+              - Select the color in which the track will be displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.label_visible`
+              - Opt whether the track label will be displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.label_color`
+              - Select the color in which the track label will be displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.marker`
+              - Get the display properties for the track marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.line`
+              - Get the display properties for the track line.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.fade_times`
+              - Get the fade times data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.lead_trail_times`
+              - Get the lead/trail times data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack.range_contours`
+              - Get the MTO's 2D range contour graphics.
 
 
 Import detail

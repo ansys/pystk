@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow.is_visible_on_map`
+              - Opt whether to display a contour legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow.position_on_map`
+              - Position where the contour legend is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow.translucency`
+              - Translucency of the contour legend display.
 
 
 Import detail

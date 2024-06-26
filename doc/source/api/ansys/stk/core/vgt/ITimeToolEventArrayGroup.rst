@@ -38,9 +38,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.context`
+              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.count`
+              - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup.factory`
+              - Returns a Factory object used to create event arrays.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup._NewEnum`
+              - Returns a COM enumerator.
 
 
 Import detail

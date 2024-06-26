@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentGraphics.magnitude_field_line`
+              - Graphics settings for showing magnetic field lines.
 
 
 Import detail

@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.satisfaction_crossing`
+              - The direction of interest for satisfaction crossing.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.condition`
+              - The condition component.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.custom_time_limits`
+              - Specify the interval list within which satisfaction crossing times are sought. The default is set to overall availability of host object. The time limits will be used if UseCustomTimeLimits is set to true.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.use_custom_time_limits`
+              - Indicate whether to use specified custom time limits (see CustomTimeLimits).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.save_data_option`
+              - Determine if computed satisfaction crossing times are saved/loaded, or recomputed on load if necessary.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.sampling`
+              - The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayConditionCrossings.convergence`
+              - The Convergence definition, which uses time tolerance to determine when crossing times are found.
 
 
 Import detail

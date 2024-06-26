@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSequenceDeltaV.sequence_name`
+              - Gets or sets the sequence whose DeltaV's are to be summed.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel.name`
+              - Gets the model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel.type`
+              - Gets the model type enumeration.
 
 
 Import detail

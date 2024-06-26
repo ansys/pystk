@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRendererTexture2D.template`
+              - Gets a template from which the texture was created.
 
 
 Import detail

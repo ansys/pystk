@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriod.start_time`
+              - Gets a start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriod.stop_time`
+              - Gets a stop time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITimePeriod.duration`
+              - A time duration. The value is a relative duration (i.e. \"+1 day\", \"+1 hour\").
 
 
 Import detail

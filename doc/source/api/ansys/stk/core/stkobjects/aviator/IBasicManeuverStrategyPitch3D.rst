@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.control_mode`
+              - Gets or sets the control mode for the pitch 3D strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.command_fpa`
+              - Gets or sets the commanded flight path angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.control_fpa_dot`
+              - Gets or sets the flight path angle rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.stop_when_fpa_achieved`
+              - Stop when the commanded flight path angle is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.airspeed_options`
+              - Get the airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D.wind_force_effective_area`
+              - Gets or sets the vehicle's wind force effective area.
 
 
 Import detail

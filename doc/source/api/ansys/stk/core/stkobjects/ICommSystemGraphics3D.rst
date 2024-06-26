@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics3D.show_desired_links`
+              - Enable the desired links line graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics3D.show_interference_links`
+              - Enable the interference links line graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemGraphics3D.show_primary_interferer_link`
+              - Enable the primary interferer link line graphics.
 
 
 Import detail

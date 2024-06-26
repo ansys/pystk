@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac.filename`
+              - Almanac file name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSSpecifyAlmanac.properties`
+              - Gets the almanac properties.
 
 
 Import detail

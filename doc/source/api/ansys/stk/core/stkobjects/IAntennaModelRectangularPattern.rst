@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern.mainlobe_gain`
+              - Gets or sets the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern.theta_angle`
+              - Gets or sets the theta angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern.phi_angle`
+              - Gets or sets the phi angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelRectangularPattern.sidelobe_gain`
+              - Gets or sets the side-lobe gain.
 
 
 Import detail

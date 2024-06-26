@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLongitude.longitude`
+              - Gets or sets the value of the longitude crossing at which a new pass will begin. Uses Longitude Dimension.
 
 
 Import detail

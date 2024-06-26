@@ -36,10 +36,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.earth`
+              - Returns the Earth central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.sun`
+              - Returns the Sun central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.moon`
+              - Returns the Moon central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection.count`
+              - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection._NewEnum`
+              - Enumerates the elements in the collection.
 
 
 Import detail

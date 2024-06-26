@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_standard_instrument_approach`
+              - Get the interface for a standard instrument approach landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_intercept_glideslope`
+              - Get the interface for an intercept glideslope landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.mode_as_enter_downwind_pattern`
+              - Get the interface for a downwind pattern landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.runway_heading_options`
+              - Get the runway heading options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_turn_direction_options`
+              - Get the enroute turn direction options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.vertical_plane_options`
+              - Get the vertical plane options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureLanding.approach_mode`
+              - Gets or sets the type of landing the aircraft will perform.
 
 
 Import detail

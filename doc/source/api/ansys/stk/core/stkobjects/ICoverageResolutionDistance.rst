@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageResolutionDistance.distance`
+              - Gets or sets the distance used to define grid resolution. Uses Distance Dimension.
 
 
 Import detail

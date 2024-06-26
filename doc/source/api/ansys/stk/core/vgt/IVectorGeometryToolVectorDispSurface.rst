@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.origin_point`
+              - An origin point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.destination_point`
+              - Destination point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.surface_central_body`
+              - Gets or sets the surface central body property.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDispSurface.differencing_time_step`
+              - Time step used in displacement on surface vector. (derivatives using central differencing).
 
 
 Import detail

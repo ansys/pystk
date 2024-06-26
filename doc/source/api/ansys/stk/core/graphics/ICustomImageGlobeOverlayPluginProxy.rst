@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginProxy.custom_image_globe_overlay`
+              - Returns a custom image globe overlay.
             * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginProxy.is_custom_image_globe_overlay_supported`
+              - Returns true if custom image globe overlays are supported.
             * - :py:attr:`~ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginProxy.real_plugin_object`
+              - Returns a pointer to plugin object's IUnknown interface.
 
 
 Import detail

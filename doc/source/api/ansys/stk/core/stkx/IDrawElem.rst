@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElem.visible`
+              - Show or hide the element.
 
 
 Import detail

@@ -21,20 +21,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.epoch`
+              - Epoch time on which the ephemeris is based.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.filename`
+              - 11-Parameter file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.satellite_identification`
+              - Satellite identification.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.nominal_longitude`
+              - GEO satellite's reference longitude. Uses LongitudeUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lm0`
+              - Mean longitude (East of Greenwich).
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lm1`
+              - Drift rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lm2`
+              - Drift acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lonc`
+              - Longitude oscillation: amplitude (cosine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lonc1`
+              - Longitude oscilation: rate of change (cosine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lons`
+              - Longitude oscillation: amplitude (sine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lons1`
+              - Longitude oscilation: rate of change (sine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.latc`
+              - Latitude oscillation: amplitude (cosine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.latc1`
+              - Latitude oscillation: rate of change (cosine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lats`
+              - Latitude oscillation: amplitude (sine term). Uses AngleUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptor.lats1`
+              - Latitude oscillation: rate of change (sine term). Uses AngleUnit.
 
 
 Import detail

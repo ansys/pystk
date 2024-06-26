@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.vector`
+              - Specify a base vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.reference_axes`
+              - Specify a reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.differencing_time_step`
+              - Time step used in numerical evaluation of derivatives using central differencing.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorDerivative.force_use_of_numerical_differences`
+              - Force the use of numerical differences even if the derivative can be computed analytically.
 
 
 Import detail

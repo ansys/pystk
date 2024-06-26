@@ -38,9 +38,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.context`
+              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.count`
+              - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup.factory`
+              - Returns a Factory object used to create custom planes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup._NewEnum`
+              - Returns a COM enumerator.
 
 
 Import detail

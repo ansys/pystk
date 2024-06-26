@@ -32,6 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPluginSettings.available_properties`
+              - Available properties.
 
 
 Import detail

@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.use_approximate_altitude`
+              - True if using approximate altitude formula.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.computes_temperature`
+              - Flag indicates whether this model computes temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.computes_pressure`
+              - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.drag_model_type`
+              - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.drag_model_plugin_name`
+              - Gets or sets the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.drag_model_plugin`
+              - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.variable_area_history_file`
+              - Drag variable area history file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IUS_Standard_Atmosphere.n_plate_definition_file`
+              - Drag N-Plate definition file.
 
 
 Import detail

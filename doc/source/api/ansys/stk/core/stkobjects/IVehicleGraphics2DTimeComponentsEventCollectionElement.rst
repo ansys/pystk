@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.use_color_ramp`
+              - Whether the color ramp is used. Setting this property has no effect if the color ramp is not supported.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_start_color`
+              - The start color of the color ramp. Setting this property has no effect if the color ramp is not supported.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.color_ramp_end_color`
+              - The end color of the color ramp. Setting this property has no effect if the color ramp is not supported.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.umbra`
+              - Configure the appearance of the orbit track, the marker, etc. when the vehicle isn't in sunlight at all.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.penumbra`
+              - Configure the appearance of the orbit track, the marker, etc. when the vehicle is only partially in sunlight.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement.sunlight`
+              - Configure the appearance of the orbit track, the marker, etc. when the vehicle is in complete sunlight.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcHeightAboveTerrain.central_body_name`
+              - Central Body used for calculation.
 
 
 Import detail

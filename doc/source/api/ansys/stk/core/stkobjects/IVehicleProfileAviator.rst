@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileAviator.trending_controls`
+              - Get the attitude trending controls.
 
 
 Import detail

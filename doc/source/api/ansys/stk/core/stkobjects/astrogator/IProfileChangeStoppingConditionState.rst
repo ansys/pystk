@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState.segment_name`
+              - Gets or sets the segment that contains the targeted stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState.state`
+              - Gets or sets the new state of the targeted stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStoppingConditionState.trigger_name`
+              - Gets or sets the name of the targeted stopping condition.
 
 
 Import detail

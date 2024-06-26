@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointModelAttach.pointable_element_name`
+              - Specify a model attachment point.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointModelAttach.use_scale`
+              - Specify whether to use the model scale.
 
 
 Import detail

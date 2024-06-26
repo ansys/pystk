@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeAltitude.apogee_altitude`
+              - Measured from the 'surface' of the Earth to the point of maximum radius in the orbit. For this value, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapeAltitude.perigee_altitude`
+              - Measured from the 'surface' of the Earth to the point of minimum radius in the orbit. For this value, the surface of the Earth is modeled as a sphere whose radius equals the equatorial radius of the Earth. Uses Distance Dimension.
 
 
 Import detail

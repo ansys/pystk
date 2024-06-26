@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthSystems.fixed`
+              - Earth's Fixed coordinate system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthSystems.icrf`
+              - Earth's ICRF.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthSystems.inertial`
+              - Earth's Inertial coordinate system (as defined in STK).
 
 
 Import detail

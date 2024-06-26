@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifference.calc_object_name`
+              - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDifference.difference_order`
+              - Gets or sets the order of the difference calculation.
 
 
 Import detail

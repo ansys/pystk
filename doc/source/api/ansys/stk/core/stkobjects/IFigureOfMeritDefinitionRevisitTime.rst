@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionRevisitTime.end_gap_option`
+              - Controls consideration of gaps at ends of the analysis interval.
 
 
 Import detail

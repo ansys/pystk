@@ -36,8 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation.name`
+              - Gets the name of the articulation.
             * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation.count`
+              - Gets the number of transformations in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IModelArticulation._NewEnum`
+              - Returns the enumerator for this collection.
 
 
 Import detail

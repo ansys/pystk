@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeLevel.value`
+              - Get the volume level value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionVolumeLevel.color`
+              - Gets or sets the volume level color.
 
 
 Import detail

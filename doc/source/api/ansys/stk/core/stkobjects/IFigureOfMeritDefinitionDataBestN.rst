@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.best_n`
+              - Navigation accuracy based on the specified number of satellites that yields the minimum GDOP.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.best_n_metric`
+              - Gets or sets the minimization metric for the best N computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBestN.best_n_metric_supported_types`
+              - Best N supported types.
 
 
 Import detail

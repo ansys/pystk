@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.surface_temperature`
+              - Gets or sets the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.surface_humidity`
+              - Gets or sets the surface humidity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.surface_conductivity`
+              - Gets or sets the surface conductivity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.surface_refractivity`
+              - Gets or sets the surface refractivity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.relative_permittivity`
+              - Gets or sets the relative permittivity.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.override_terrain_sample_resolution`
+              - Gets or sets the option for overriding available terrain sample resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.terrain_sample_resolution`
+              - Gets or sets the terrain sample resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem.polarization_type`
+              - Gets or sets the polarization type.
 
 
 Import detail

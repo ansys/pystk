@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.max_rel_motion_factor`
+              - Gets or sets the maximum motion allowed between sampling points.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.state_cache_time_interval`
+              - Gets or sets the time interval used to store the state information.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.time_resolution`
+              - Gets or sets the tolerance for resolving time calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.max_iterations`
+              - Gets or sets the maximum number of iterations per time step Aviator will attempt.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.max_bad_steps`
+              - Gets or sets the maximum number of bad steps Aviator will allow before ceasing calculation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.integrator_type`
+              - Gets or sets the integrator type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions.integrator_type_string`
+              - Gets or sets the integrator type as a string value. Use this for custom integrators.
 
 
 Import detail

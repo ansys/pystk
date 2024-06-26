@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8.compute_deep_fade`
+              - Gets or sets the option for computing deep fade.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8.fade_outage`
+              - Gets or sets the fade outage percent.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8.percent_time_refractivity_gradient`
+              - Gets or sets the percentage of time the refractivity is gradient is less than -100 N units / km.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModelP618_8.surface_temperature`
+              - Gets or sets the surface temperature.
 
 
 Import detail

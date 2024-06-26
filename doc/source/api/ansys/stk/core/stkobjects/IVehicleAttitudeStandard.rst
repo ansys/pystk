@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeStandard.type`
+              - Get the standard attitude profile type.
 
 
 Import detail

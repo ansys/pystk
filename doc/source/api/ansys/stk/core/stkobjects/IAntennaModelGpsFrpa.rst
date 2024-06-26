@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelGpsFrpa.efficiency`
+              - Gets or sets the efficiency.
 
 
 Import detail

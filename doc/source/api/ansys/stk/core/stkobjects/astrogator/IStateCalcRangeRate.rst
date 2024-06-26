@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRangeRate.coord_system_name`
+              - The coordinate system within which the element is defined.
 
 
 Import detail

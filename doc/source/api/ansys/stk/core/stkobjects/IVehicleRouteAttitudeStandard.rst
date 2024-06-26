@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard.basic`
+              - Get the basic attitude properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard.external`
+              - Get the precomputed (external) attitude properties.
 
 
 Import detail

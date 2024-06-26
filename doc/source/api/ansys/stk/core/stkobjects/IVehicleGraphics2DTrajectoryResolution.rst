@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution.ground_track`
+              - Ground track resolution in terms of the ephemeris step. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution.trajectory`
+              - Trajectory resolution in terms of the ephemeris step. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution.min_ground_track`
+              - Minimum ground track resolution defined in terms of the ephemeris step. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTrajectoryResolution.min_trajectory`
+              - Minimum trajectory resolution defined in terms of the ephemeris step. Uses Time Dimension.
 
 
 Import detail

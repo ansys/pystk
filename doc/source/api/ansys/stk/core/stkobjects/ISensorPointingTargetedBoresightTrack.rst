@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.about_boresight`
+              - The orientation of the antenna's X and Y axes with respect to the parent's reference frame. (The Z axis always coincides with its boresight direction and is unambiguously defined by the azimuth and elevation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.track_mode`
+              - The antenna orientation option for the sensor. A member of the AgETrackModeType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.constraint_vector_for_up_vector_boresight`
+              - Gets or sets the constraint vector for UpVector boresight type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.available_constraint_vectors`
+              - Get the available constraint vectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingTargetedBoresightTrack.clock_angle_offset_for_up_vector_boresight`
+              - Gets or sets the clock angle offset for UpVector boresight type. It is an optional value measured in the Sensor Body axes xy-plane, positive about the boresight, locating the direction closest to the ConstraintVector from the Sensor Body x-axis.
 
 
 Import detail

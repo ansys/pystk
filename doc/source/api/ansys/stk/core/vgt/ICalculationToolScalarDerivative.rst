@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDerivative.scalar`
+              - The input scalar component used to compute the derivative.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDerivative.differencing_time_step`
+              - The time step used, if necessary, in numerical evaluation of derivatives using central differencing.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarDerivative.force_use_of_numerical_differences`
+              - Force the use of numerical differences even if the derivative can be computed analytically.
 
 
 Import detail

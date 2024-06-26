@@ -30,17 +30,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.fly_cruise_airspeed_profile`
+              - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.flight_line_airspeed_options`
+              - Get the flight line airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_turn_direction_options`
+              - Get the enroute turn direction options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.procedure_type`
+              - Gets or sets the procedure methodology used to calculate the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.outbound_course`
+              - Gets or sets the outbound course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.use_magnetic_heading`
+              - Gets or sets the option to use a magnetic heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.leg_length`
+              - Gets or sets the length of the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.must_level_off`
+              - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureFlightLine.level_off_mode`
+              - Gets or sets the level off mode. This is only used when the must level off option is on.
 
 
 Import detail

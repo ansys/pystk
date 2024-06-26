@@ -44,8 +44,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection.recycling`
+              - Recycling is used for optimizing performance in iterative modification or addition of elements in a particular collection (see Remarks section for this property).
 
 
 Import detail

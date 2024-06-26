@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaRA.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaRA.reference_type`
+              - Gets or sets the central body's reference type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDeltaRA.reference_body`
+              - Gets or sets the reference body of the component. Read only when the ReferenceType is eVACalcObjectCentralBodyReferenceParent.
 
 
 Import detail

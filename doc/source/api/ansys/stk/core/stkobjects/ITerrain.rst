@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.location`
+              - Location of the terrain contained in the terrain data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.file_type`
+              - Type of terrain data file. A member of the AgETerrainFileType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.sw_latitude`
+              - Latitude of the southwest corner of the terrain contained in the terrain data file. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.sw_longitude`
+              - Longitude of the southwest corner of the terrain contained in the terrain data file. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.ne_latitude`
+              - Latitude of the northeast corner of the terrain contained in the terrain data file. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.ne_longitude`
+              - Latitude of the northeast corner of the terrain contained in the terrain data file. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.resolution`
+              - Resolution of the terrain data. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITerrain.use_terrain`
+              - Whether to use the terrain.
 
 
 Import detail

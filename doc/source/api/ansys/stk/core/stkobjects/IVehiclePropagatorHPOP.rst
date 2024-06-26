@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.initial_state`
+              - Get the satellite's initial state.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.force_model`
+              - Get the force model parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.integrator`
+              - Get the integrator parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.covariance`
+              - Get the covariance parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
 
 
 Import detail

@@ -32,20 +32,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.profile_mode`
+              - Gets or sets the mode defines how the aircraft will perform the holding pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.level_off_mode`
+              - Gets or sets the mode for the level off maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.bearing`
+              - Gets or sets the bearing of the holding point from the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.use_magnetic_heading`
+              - Gets or sets the option to use a magnetic heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.range`
+              - Gets or sets the distance to the holding point from the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.length`
+              - Gets or sets the distance between the centers of the pattern's arcs.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.width`
+              - Gets or sets the width of the holding pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.entry_maneuver`
+              - Defines how the aircraft will enter the holding pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.turns`
+              - Gets or sets the number of full turns.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.refuel_dump_mode`
+              - Gets or sets the mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.hold_cruise_airspeed_options`
+              - Get the hold cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack.enroute_turn_direction_options`
+              - Get the enroute turn direction options.
 
 
 Import detail

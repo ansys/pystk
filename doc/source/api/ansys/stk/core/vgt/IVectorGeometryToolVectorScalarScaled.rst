@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.input_vector`
+              - An input vector scaled by the scalar. Can be any VGT vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.input_scalar`
+              - A variable scale applied to the input vector. Can be based on any Scalar calculation.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.scale_factor`
+              - A constant scale applied to the input vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.normalize`
+              - Whether to normalize the input vector before applying constant and variable scales.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.dimension_inheritance`
+              - Whether or not to inherit dimension from the input vector or the scalar.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled.dimension`
+              - A dimension assigned to the output vector.
 
 
 Import detail

@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.cruise_speed_type`
+              - Gets or sets the method for determining the aircraft's airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed_type`
+              - Get the airspeed type for the other airspeed option.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed`
+              - Get the airspeed for the other airspeed option.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.fly_cruise_airspeed_profile`
+              - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
 
 
 Import detail

@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.nav_mode`
+              - Gets or sets the navigation mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.arrive_on_course`
+              - Gets or sets the aircraft will start or arrive at the procedure site with the specified course. The nav mode must be set to Arrive on Course to set this value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.use_magnetic_heading`
+              - Opt whether to use a magnetic heading to arrive on course. The nav mode must be set to Arrive on Course to set this value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.enroute_first_turn`
+              - Option for the first turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.INavigationOptions.enroute_second_turn`
+              - Option for the second turn.
 
 
 Import detail

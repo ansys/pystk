@@ -34,8 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesPlugin.prog_id`
+              - A programmatic ID associated with the component.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesPlugin.display_name`
+              - Plugin's Display Name associated with the COM plugin.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesPlugin.available_properties`
+              - An array of names of the properties that can be used to configure the plugin.
 
 
 Import detail

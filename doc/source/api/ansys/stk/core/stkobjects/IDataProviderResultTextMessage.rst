@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage.count`
+              - Returns a number of strings in the message.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage._NewEnum`
+              - Returns a string enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage.messages`
+              - Returns an array of strings in the message.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage.is_failure`
+              - Determines if the message represents a failure notification.
 
 
 Import detail

@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.elevation_type`
+              - Ground elevation, swath half width or vehicle half angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.elevation_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.elevation`
+              - Get the elevation value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath.options`
+              - Options for swath display.
 
 
 Import detail

@@ -30,12 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.name`
+              - Gets or sets the name of the wind model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.blend_time`
+              - Gets or sets the blend time to transition from the previous wind model if one exists.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.msg_interpolation_type`
+              - Gets or sets the message interpolation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.msg_extrapolation_type`
+              - Gets or sets the message extrapolation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.missing_msg_type`
+              - Gets or sets the missing message type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.interp_blend_time`
+              - Gets or sets the blend time to transition from the previous wind condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModelADDS.messages`
+              - Get the messages from the current forecast.
 
 
 Import detail

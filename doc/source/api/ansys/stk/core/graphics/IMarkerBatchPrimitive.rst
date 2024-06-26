@@ -64,25 +64,45 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.size_source`
+              - Gets the source used for the size of markers in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.sort_order`
+              - Gets the order in which markers in the marker batch are sorted before rendering.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.set_hint`
+              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.rendering_method`
+              - Gets the rendering method used to render the marker batch.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.render_pass`
+              - Gets or sets the pass during which the marker batch is rendered.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.bounding_sphere_scale`
+              - Gets or sets the scale applied to the radius of this primitive's bounding sphere.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.distance_display_condition_per_marker`
+              - Gets or sets a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch...
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.texture`
+              - Gets or sets the per-batch texture, which is applied to each marker in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.size_unit`
+              - Gets or sets the unit that each marker's size is defined in.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.size`
+              - Gets or sets the per-batch size, which is applied to each marker in the batch. The array contains one width followed by one height.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.origin`
+              - Gets or sets the per-batch origin, which is applied to each marker in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.pixel_offset`
+              - Gets or sets the per-batch pixel offset, which is applied to each marker in the batch. The array contains one x pixel offset followed by one y pixel offset.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.eye_offset`
+              - Gets or sets the per-batch eye offset, which is applied to each marker in the batch. The array contains the components of the eye offset in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.rotation`
+              - Gets or sets the per-batch rotation angle which is applied to each marker in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.texture_coordinate`
+              - Gets or sets the per-batch texture coordinate, which is applied to each marker in the batch. The array contains the texture coordinates arranged in the order s, t, p, q.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.wireframe`
+              - Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.per_item_picking_enabled`
+              - Gets or sets whether individual marker indices will be included in the pick results returned from the scene's Pick method. Each marker index that is picked will be returned as a batch primitive index.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.texture_filter`
+              - Gets or sets the filter used for per-marker or per-batch textures.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.clamp_to_pixel`
+              - Gets or sets whether the screen space position of each marker is clamped to a pixel.
             * - :py:attr:`~ansys.stk.core.graphics.IMarkerBatchPrimitive.central_body_clipped`
+              - Gets or sets whether the markers are clipped by the central body.
 
 
 Import detail

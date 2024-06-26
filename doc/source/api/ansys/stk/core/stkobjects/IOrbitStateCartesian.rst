@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.coordinate_system_type`
+              - Coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.coordinate_system`
+              - Get the coordinate system and epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.x_position`
+              - X position component.Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.y_position`
+              - Y position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.z_position`
+              - Z position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.x_velocity`
+              - X velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.y_velocity`
+              - Y velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.z_velocity`
+              - Z velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.supported_coordinate_system_types`
+              - Returns an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateCartesian.state_epoch`
+              - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 
 
 Import detail

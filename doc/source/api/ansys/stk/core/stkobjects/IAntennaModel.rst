@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.name`
+              - Gets the antenna model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.type`
+              - Gets the antenna model type enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.design_frequency`
+              - Gets the antenna design frequency.
 
 
 Import detail

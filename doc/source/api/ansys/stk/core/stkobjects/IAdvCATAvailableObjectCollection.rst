@@ -32,6 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection.count`
+              - Number of items in the collection.
 
 
 Import detail

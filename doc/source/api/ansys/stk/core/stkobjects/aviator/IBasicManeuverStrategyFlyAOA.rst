@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.turn_direction`
+              - Gets or sets the roll turn direction for a Fly AOA basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.roll_rate_mode`
+              - Gets or sets the roll rate mode for a Fly AOA basic maneuver strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.override_roll_rate`
+              - Gets or sets the roll rate override value for the Fly AOA basic maneuver strategy. The roll rate mode must be set to override to access this property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.roll_rate_dot`
+              - Gets or sets the rate of change of the roll rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.control_roll_angle`
+              - Gets or sets the option to define a goal value for the aircraft's roll angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.roll_angle`
+              - Gets or sets the goal value for the roll angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.stop_on_roll_angle`
+              - Gets or sets the option to stop the maneuver if the specified roll angle is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.aoa`
+              - Gets or sets the angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyFlyAOA.airspeed_options`
+              - Get the airspeed options.
 
 
 Import detail

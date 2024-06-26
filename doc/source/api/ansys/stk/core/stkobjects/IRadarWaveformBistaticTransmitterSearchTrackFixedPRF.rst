@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF.pulse_definition`
+              - Gets the interface for setting the pulse definition parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackFixedPRF.modulator`
+              - Gets the interface for setting the modulator parameters.
 
 
 Import detail

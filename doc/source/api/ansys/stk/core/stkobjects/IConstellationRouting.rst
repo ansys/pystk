@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationRouting.use_routing_file`
+              - Opt to use a .routing file to when the constellation is used in a Chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationRouting.routing_file`
+              - Gets or sets the name of the .routing file used when the Constellation is in a chain.
 
 
 Import detail

@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.qualified_path`
+              - A fully qualified path of a time component.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement.priority`
+              - Priority indicates the order of a time component when resolving the overlapping intervals during rendering.
 
 
 Import detail

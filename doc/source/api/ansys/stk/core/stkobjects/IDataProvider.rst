@@ -32,11 +32,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.elements`
+              - Returns a collection of elements associated with a DataProvider or a SubDataProvider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data`
+              - The string associated with the current PreData parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.allow_user_interface`
+              - When set to true the data provider will display a user interface to select/enter the pre-data required.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.is_valid`
+              - Returns whether the data provider is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data_required`
+              - Returns whether the data provider requires pre data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data_description`
+              - Returns a description of the required pre data.
 
 
 Import detail

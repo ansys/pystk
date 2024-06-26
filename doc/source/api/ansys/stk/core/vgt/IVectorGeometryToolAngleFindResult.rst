@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.is_valid`
+              - Indicates whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.angle`
+              - The computed angle. The value of the angle is in \"AngleUnit\" dimension.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_from`
+              - The first of the two vectors the angle is measured.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_to`
+              - The second of the two vectors the angle is measured.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult.vector_about`
+              - The vector the angle is rotated about.
 
 
 Import detail

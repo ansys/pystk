@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.temperature_model`
+              - Property used to access the temperature model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.body_temperature`
+              - Property used to access the body temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.temperature_file`
+              - Property used to access the temperature file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.reflectance`
+              - Property used to access the reflectance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.material`
+              - Property used to access the material.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.reflectance_file`
+              - Property used to access the reflectance file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.material_element_label`
+              - Property used to access the material element label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.available_materials`
+              - Property used to access the available materials.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.data_provider`
+              - Property used to access the DataProvider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRMaterialElement.available_data_providers`
+              - Property used to access the available data providers.
 
 
 Import detail

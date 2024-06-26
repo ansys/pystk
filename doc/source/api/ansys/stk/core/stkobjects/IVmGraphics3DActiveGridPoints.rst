@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.show_active_inactive_boundary`
+              - Show or hide the Active/Inactive Boundary.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.active_inactive_boundary_color`
+              - Set the color of the Active/Inactive Boundary.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.active_inactive_boundary_translucency`
+              - Set the percent Translucency for Active/Inactive Boundary.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.show_active_inactive_fill`
+              - Show or hide the Active/Inactive Fill.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.inactive_fill_color`
+              - Set the color of the Inactive Fill.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.inactive_fill_translucency`
+              - Set the percent Translucency for Inactive Fill.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.active_fill_color`
+              - Set the color of the Active Fill.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DActiveGridPoints.active_fill_translucency`
+              - Set the percent Translucency for Active Fill.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData.ground_track`
+              - Ground track display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DOrbitPassData.orbit`
+              - Orbit pass display properties.
 
 
 Import detail

@@ -21,21 +21,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.use_scalar`
+              - Specify whether to use the input scalar calculation or the time elapsed from the input time instant. Set to true to use the scalar.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.input_scalar`
+              - The input scalar calculation (used if UseScalar is true). The UseScalar property should be set to true before this property can be set.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.input_time`
+              - The input time instant (used if UseScalar is false).
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.input_unit`
+              - The input time unit to interpret input time.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.a`
+              - The constant coefficient A.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.b`
+              - The constant coefficient B.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.c`
+              - The constant coefficient C.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.d`
+              - The constant coefficient D.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.coefficients`
+              - The array of constant coefficients, whose dimension and units are determined by those of input and output.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.selected_function`
+              - The function which will use the input scalar or time instant in some combination with the constant coefficients A, B, C, D.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.available_functions`
+              - Get the available function names.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.inherit_dimension_from_input`
+              - Specify whether to inherit the output dimension from the input scalar or time instant.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.output_dimension`
+              - The output dimension. Use any of STK supported dimensions. This value will be used if InheritDimensionFromInput is false. The InheritDimensionFromInput property should be set to false before this property can be fixed.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.output_unit`
+              - Specify a unit for the selected output dimension. This is not used for internal computations or reporting/graphing but is needed to unambiguously interpret units of associated coefficients.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.sampling`
+              - The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarFunction.convergence`
+              - The Convergence definition, which uses time tolerance to determine when time of extremum is found.
 
 
 Import detail

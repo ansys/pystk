@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IKmlDocument.uri`
+              - Gets the uri of the document.
 
 
 Import detail

@@ -21,21 +21,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.draw_at_cb`
+              - Only available for geometric elements relating to objects. If selected, the geometric element is drawn at the central body or object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.ra_dec_visible`
+              - Displays right-ascension and declination values with the selected vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.ra_dec_unit_abrv`
+              - Right Ascension Declination Unit Abrv.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.magnitude_visible`
+              - If selected, the magnitude value is displayed on the selected geometric element.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.magnitude_dimension`
+              - The Magnitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.magnitude_unit_abrv`
+              - Magnitude's current unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.persistence_visible`
+              - Successively displays geometric elements over the specified duration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.duration`
+              - The length of time during which the geometric element is visible. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.connect`
+              - Specifies the method used for connecting geometric elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.transparent`
+              - If selected, earlier occurrences of a geometric element display fade over time so that it is drawn as completely filled at the most recent animation time and fades as the animation moves forward.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.axes`
+              - The name of the axes or system used to define the coordinate frame associated with the selected vector or axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.draw_at_point`
+              - If selected, the geometric element is drawn at the selected point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.point`
+              - Displays a point at the current animation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.true_scale`
+              - If the Scale Relative to Model is selected, the scale of the model is multiplied by the scale of the vector. If the Scale Relative to Model is not selected, you can set the size of the geometric elements independent of the model scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.available_axes`
+              - Returns a safearray of available axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolVector.available_points`
+              - Returns a safearray of available points.
 
 
 Import detail

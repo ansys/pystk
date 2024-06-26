@@ -32,14 +32,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.groundspeed`
+              - Gets or sets the aircraft's speed relative to the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.tas_dot`
+              - Get the true airspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.groundspeed_dot`
+              - Get the groundspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.longitudinal_accel_type`
+              - Get the mode to specify the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.heading`
+              - Gets or sets the direction the aircraft is pointing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.heading_is_magnetic`
+              - Opt whether to specify the heading using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.heading_dot`
+              - Get the heading rate of change.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.course_dot`
+              - Get the course rate of change.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IReferenceStateWeightOnWheelsOptions.lateral_accel_type`
+              - Get the mode to specify the lateral acceleration.
 
 
 Import detail

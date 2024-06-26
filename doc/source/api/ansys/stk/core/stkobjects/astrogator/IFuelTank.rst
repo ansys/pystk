@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_pressure`
+              - Gets or sets the fuel tank pressure. Uses Pressure Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_volume`
+              - Gets or sets the volume of the fuel tank. Uses SmallVolume Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_temperature`
+              - Gets or sets the temperature of the fuel tank. Uses Temperature Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.fuel_density`
+              - Gets or sets the density of the fuel. Uses SmallDensity Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.fuel_mass`
+              - Gets or sets the mass of the spacecraft propellant. Uses Mass Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IFuelTank.maximum_fuel_mass`
+              - Gets or sets the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Uses Mass Dimension.
 
 
 Import detail

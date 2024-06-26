@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.command_station_path`
+              - Instance path for the commanding object. NONE can be used to clear the commanding object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.receive_station_path`
+              - Instance path for the receiving object. NONE can be used to clear the receiving object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.command_prep_time`
+              - Amount of time in seconds required for command preparation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.commanding_time`
+              - Amount of time in seconds required for transmission of the prepared command from the CommandStation to the assets.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.pre_collection_time`
+              - Amount of time in seconds required from receipt of commanding until a collection can be performed by the assets.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.collection_time`
+              - Amount of time in seconds required for data collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.post_collection_time`
+              - Amount of time in seconds required from asset collection until data can be transmitted to the ReceiveStation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.downlink_time`
+              - Amount of time in seconds required for transmission of the collected data from the assets to the ReceiveStation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.allow_forward_crosslink`
+              - Determines if a single cross-link between assets is allowed to be used to minimize the response time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemAgeOfData.time_step`
+              - Gets or sets the value in seconds to be used during the computation of satisfaction intervals.
 
 
 Import detail

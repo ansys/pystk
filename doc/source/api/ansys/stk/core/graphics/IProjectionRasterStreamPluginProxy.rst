@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.raster_stream`
+              - Returns a raster stream.
             * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.projection_stream`
+              - Returns a projection stream.
             * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.is_raster_stream_supported`
+              - Returns true if the raster streaming is supported.
             * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.is_projection_stream_supported`
+              - Returns true if the projection streaming is supported.
             * - :py:attr:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy.real_plugin_object`
+              - Returns a pointer to plugin object's IUnknown interface.
 
 
 Import detail

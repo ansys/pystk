@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile.filename`
+              - Display a 2D image to represent the object at the specified threshold.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile.is_transparent`
+              - Use the color of the upper right pixel of the image as the transparent color if an image file is being used. No pixels of that color in the image are drawn.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile.use_soft_transparency`
+              - Whether to use soft transparency.  Soft transparency shows smoother edges for images with a transparency channel.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerFile.file_path`
+              - Full file path and name to display a 2D image to represent the object at the specified threshold.
 
 
 Import detail

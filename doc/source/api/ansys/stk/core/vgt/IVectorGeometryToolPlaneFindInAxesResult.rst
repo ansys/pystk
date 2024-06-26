@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult.x_axis`
+              - X-axis vector in the specified reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult.y_axis`
+              - Y-axis vector in the specified reference axes.
 
 
 Import detail

@@ -34,29 +34,53 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_altitude`
+              - Gets or sets the maximum altitude at which the rotorcraft is capable of operating.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.default_cruise_altitude`
+              - Gets or sets the rotorcraft's default cruising altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.descent_rate_factor`
+              - Gets or sets the descent rate of the rotorcraft as a factor multiplied by the altitude change rate calculated at zero throttle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_climb_angle`
+              - Gets or sets the maximum pitch angle of the rotorcraft's flight path while climbing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.climb_at_cruise_airspeed`
+              - Select to define the climbing airspeed of the rotorcraft using the cruise airspeed of the current procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_descent_angle`
+              - Gets or sets the maximum pitch angle of the rotorcraft's flight path while descending.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.min_descent_rate`
+              - Gets or sets the minimum rate at which the aircraft will descend once established in a steady descent.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_load_factor`
+              - Gets or sets the maximum load factor that the aircraft can bear while maneuvering in formation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.roll_rate`
+              - Gets or sets the standard roll rate of the rotorcraft in a turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.pitch_rate`
+              - Gets or sets the pitch rate when transitioning between attitude modes or procedures.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.yaw_rate`
+              - Gets or sets the yaw rate when transitioning between attitude modes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.yaw_rate_dot`
+              - Gets or sets the rate of change of the yaw rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_transition_pitch_angle`
+              - Gets or sets the maximum pitch angle of the flight path when transitioning between forward flight and hovering.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.tf_max_flight_path_angle`
+              - Gets or sets the maximum pitch angle of the flight path when the rotorcraft is engaged in terrain following flight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.tf_terrain_window`
+              - Gets or sets the time interval over which terrain points are sampled when the rotorcraft is engaged in terrain following flight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.compute_delta_altitude`
+              - Gets or sets the maximum change in altitude in a computed segment before the data is sampled again.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_airspeed`
+              - Get the maximum cruising airspeed of the rotorcraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_airspeed_type`
+              - Get the maximum safe airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_translation_speed`
+              - Get the maximum translation speed of the rotorcraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.max_safe_translation_speed_type`
+              - Get the maximum safe translation speed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.ignore_fpa_for_climb_descent_transitions`
+              - Opt to ignore load factor limits when pushing over or pulling up.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.default_configuration`
+              - Get the aircraft's default configuration as saved in the catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.aerodynamics`
+              - Get the aerodynamics interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IRotorcraftModel.propulsion`
+              - Get the propulsion interface.
 
 
 Import detail

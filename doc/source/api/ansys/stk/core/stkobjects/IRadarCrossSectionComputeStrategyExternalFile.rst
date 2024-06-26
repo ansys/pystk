@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyExternalFile.filename`
+              - Gets or sets the external rcs data filename.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.distance`
+              - The Volume Calc range distance types.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.reference_point`
+              - The Volume Calc Range reference point.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.reference_plane`
+              - The Volume Calc Range reference plane.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcRange.along_vector`
+              - The Volume Calc Range Along Vector.
 
 
 Import detail

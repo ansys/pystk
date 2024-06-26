@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.compute_trends`
+              - Flag controlling whether trends in the attitude angles should be detected and included as trending control times.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.time_tolerance`
+              - Minimum time allowed between each trending control time. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.angle_rate_tolerance`
+              - Minimum angle rate used to detect an increasing/decreasing trend. Rates lower than this treat the angle trend as flat. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.kink_angle`
+              - Minimum angle between the linear trends in the samples that indicates sufficient rate change to warrant creation of a trending control time. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.use_yaw_trend`
+              - Flag controlling whether yaw is considered when computing trends in attitude angles.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.use_pitch_trend`
+              - Flag controlling whether pitch is considered when computing trends in attitude angles.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleAttitudeTrendControlAviator.use_roll_trend`
+              - Flag controlling whether roll is considered when computing trends in attitude angles.
 
 
 Import detail

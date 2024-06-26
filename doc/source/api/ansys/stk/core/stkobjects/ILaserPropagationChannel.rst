@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.enable_atmospheric_loss_model`
+              - Gets or set the option for computing atmospheric absorption propagation loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.atmospheric_loss_model`
+              - Gets the laser atmospheric absorption loss model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.enable_tropospheric_scintillation_loss_model`
+              - Gets or set the option for computing tropospheric scintillation propagation loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserPropagationChannel.tropospheric_scintillation_loss_model`
+              - Gets the laser propagation loss model.
 
 
 Import detail

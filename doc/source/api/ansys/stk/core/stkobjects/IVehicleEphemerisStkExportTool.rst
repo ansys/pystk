@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.coordinate_system`
+              - Gets or sets the coordinate system in which to express the ephemeris.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.central_body_name`
+              - Gets or sets the central body of the coordinate system in which to express the ephemeris.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.version_format`
+              - Provides the option to generate files compatible with prior versions of STK.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.include_interp`
+              - Include or ignore interpolation boundaries.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.time_period`
+              - Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.step_size`
+              - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.covariance_type`
+              - Choose to export position covariance (3x3), position/velocity covariance (6x6), or no covariance information. CovarianceType is valid only if the vehicle has ephemeris with covariance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleEphemerisStkExportTool.use_vehicle_central_body`
+              - Uses vehicle's central body.
 
 
 Import detail

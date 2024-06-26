@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.central_body_gravity`
+              - Get the central body gravity parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.third_body_gravity`
+              - Get the 3rd body gravity parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.drag`
+              - Get the atmospheric drag parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.solar_radiation_pressure`
+              - Get the solar radiation pressure parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLOPForceModel.physical_data`
+              - Get the physical data parameters.
 
 
 Import detail

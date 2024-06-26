@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.analysis_mode_type`
+              - Gets or sets the analysis type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.analysis_mode`
+              - Gets the interface for setting analysis parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.probability_of_false_alarm`
+              - Gets or sets the probability of false alarm.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackContinuous.modulator`
+              - Gets the interface for setting the modulator parameters.
 
 
 Import detail

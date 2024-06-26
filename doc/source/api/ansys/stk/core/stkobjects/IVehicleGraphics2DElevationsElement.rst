@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.elevation`
+              - Elevation level. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.color`
+              - Contour color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.line_style`
+              - Contour line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.line_width`
+              - Contour line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.distance_visible`
+              - Distance visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.user_text_visible`
+              - Show User Defined Text on Contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.user_text`
+              - Opt whether to display user defined text for the contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsElement.label_angle`
+              - Gets or sets the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
 
 
 Import detail

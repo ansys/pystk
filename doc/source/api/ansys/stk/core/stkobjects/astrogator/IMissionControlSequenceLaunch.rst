@@ -38,23 +38,41 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.central_body_name`
+              - Gets or sets the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.step_size`
+              - Gets or sets the time interval between calculated ephemeris output points. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.pre_launch_time`
+              - Gets or sets the amount of time before the spacecraft's launch that it will be created in the scenario. The vehicle will remain at the launch position until beginning of the launch epoch. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.epoch`
+              - Gets or sets the date and time of the launch. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.initial_acceleration`
+              - Gets or sets the initial acceleration, for the Quartic Motion Ascent Type. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.spacecraft_parameters`
+              - Satellite Properties - the spacecraft's physical properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.fuel_tank`
+              - Get the spacecraft's fuel tank properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.display_system_type`
+              - Get the launch coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.display_system`
+              - Gets the current Display System.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.ascent_type`
+              - Gets or sets the order of the spline used to generate the motion along the ellipse.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.time_of_flight`
+              - Gets or sets the time of flight (the time from launch to burnout). Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout_type`
+              - Get the burnout type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout`
+              - Get the burnout point definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.burnout_velocity`
+              - Get the burnout velocity definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.use_previous_segment_state`
+              - If true, the previous segment state is used to define the launch location parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.set_met_epoch`
+              - If true, the Mission Elapsed Time epoch will be set to the launch epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceLaunch.user_variables`
+              - Interface used to modify user variables for the launch segment.
 
 
 Import detail

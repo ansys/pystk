@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.heading_mode`
+              - Gets or sets the heading mode for the lighter than air hover.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.relative_heading`
+              - Gets or sets the relative heading for the relative to start heading mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.absolute_heading`
+              - Gets or sets the absolute heading for the absolute heading mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.use_magnetic_heading`
+              - Gets or sets the option to use a magentic heading for the absolute heading mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.heading_rate`
+              - Gets or sets the maximum heading rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.altitude_mode`
+              - Gets or sets the altitude mode for the lighter than air hover.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.absolute_altitude`
+              - Gets or sets the absolute altitude for the Specify Altitude mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.relative_altitude_change`
+              - Gets or sets the relative altitude change for the Specify Altitude Change mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.control_altitude_rate`
+              - Gets or sets the controlled altitude rate for the Specify Altitude or Specify Altitude Change mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.altitude_rate`
+              - Gets or sets the altitude rate for the Specify Altitude Rate mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.parachute_area`
+              - Gets or sets the parachute area for the Parachute mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover.parachute_cd`
+              - Gets or sets the parachute drag coefficient for the Parachute mode.
 
 
 Import detail

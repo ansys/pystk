@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.compute_mainlobe_gain`
+              - Gets or sets the option for computing the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.mainlobe_gain`
+              - Gets or sets the mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.backlobe_gain`
+              - Gets or sets the backlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.use_backlobe_as_mainlobe_atten`
+              - Gets or sets the option for using the back lobe gain as a main lobe gain attenuation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.input_type`
+              - Gets or sets the input type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularCosineSquared.beamwidth`
+              - Gets or sets the beamwidth.
 
 
 Import detail

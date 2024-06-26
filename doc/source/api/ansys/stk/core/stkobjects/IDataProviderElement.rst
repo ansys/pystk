@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElement.name`
+              - Returns a name of the element.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElement.type`
+              - Returns a type of the element.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderElement.dimension_name`
+              - Returns the dimension of the element.
 
 
 Import detail

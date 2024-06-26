@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.time`
+              - Get the time at which the point occurs. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.latitude`
+              - Gets or sets the latitude of the point. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.longitude`
+              - Gets or sets the longitude of the point. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.altitude`
+              - Gets or sets the altitude of the point. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.position`
+              - Whether to interpolate the track's position between each defined point. The track's marker and label position will be linearly interpolated between the track points for the current animation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoTrackPoint.id`
+              - Get the ID number assigned to the track. This field is auto-populated in numeric sequential order, and cannot be modified.
 
 
 Import detail

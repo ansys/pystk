@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindowMapObject.map_id`
+              - A unique identifier associated with the window that can be used with Connect to control the 2D map.
 
 
 Import detail

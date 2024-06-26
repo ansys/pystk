@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.mainlobe_gain`
+              - Gets or sets the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.major_dimension`
+              - Gets or sets the major dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.minor_dimension`
+              - Gets or sets the minor dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.use_mainlobe_model`
+              - Gets or sets the option for enabling the mainlobe model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.override_half_beamwidth`
+              - Gets or sets the option for overriding the half beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.half_beamwidth`
+              - Gets or sets the half beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.nearin_sidelobe_level`
+              - Gets or sets the near in sidelobe level.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelItuS1528R12Rectangular.farout_sidelobe_level`
+              - Gets or sets the far out sidelobe level.
 
 
 Import detail

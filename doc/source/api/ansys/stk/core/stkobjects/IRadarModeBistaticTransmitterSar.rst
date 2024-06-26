@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar.pulse_definition`
+              - Gets the interface for configuring the SAR waveform pulse definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar.modulator`
+              - Gets the interface for setting the modulator parameters.
 
 
 Import detail

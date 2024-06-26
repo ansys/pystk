@@ -60,26 +60,47 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.position`
+              - Gets or sets the position of the camera. The array contains the components of the position arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.reference_point`
+              - Gets or sets the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.direction`
+              - Gets or sets the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.up_vector`
+              - Gets or sets the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.distance`
+              - Gets or sets the distance the camera position is from the reference point.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.axes`
+              - Gets or sets camera's axes of rotation.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.constrained_up_axis`
+              - Gets or sets the axis to constrain the up vector to.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.allow_rotation_over_constrained_up_axis`
+              - Gets or sets whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.lock_view_direction`
+              - Gets or sets whether the camera's direction is locked.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.field_of_view`
+              - Gets or sets field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal...
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.horizontal_field_of_view`
+              - Gets the horizontal field of view.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.vertical_field_of_view`
+              - Gets the vertical field of view.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.near_plane`
+              - Gets or sets the distance from the camera to the near plane.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.far_plane`
+              - Gets or sets the distance from the camera to the far plane.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.far_near_plane_ratio`
+              - Gets or sets the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower...
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.distance_per_radius`
+              - Returns the distance that the Camera's Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.snapshot`
+              - Gets the camera snapshot settings.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.video_recording`
+              - Gets the camera video recorder.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.pixel_size_per_distance`
+              - Gets the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.position_reference_frame`
+              - Gets the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes.
             * - :py:attr:`~ansys.stk.core.graphics.ICamera.reference_point_reference_frame`
+              - Gets the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes.
 
 
 Import detail

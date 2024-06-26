@@ -30,17 +30,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.point_location_method`
+              - Specify the location of points on the coverage grid.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.point_file_list`
+              - List of point file locations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.grid_class`
+              - Class of object used to define grid points.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.use_grid_seed`
+              - Select an object instance for the grid seed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.use_object_as_seed`
+              - Use the selected object as the grid seed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.altitude_method`
+              - Specify the height of a grid point.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.altitude`
+              - Height of the grid point. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.seed_instance`
+              - Specify the object instance to use as a grid seed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.available_seeds`
+              - Available object instances to use as a grid seed.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.ground_altitude_method`
+              - Specify the height of a grid point.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.ground_altitude`
+              - Height of the grid point. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoveragePointDefinition.point_altitude_method`
+              - Custom point altitude method specifies whether to use the altitude values in the point file (.*pt) or override them using the altitude at a point on terrain.
 
 
 Import detail

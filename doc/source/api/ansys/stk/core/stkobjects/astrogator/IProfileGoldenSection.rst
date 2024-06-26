@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.targeter_graphs`
+              - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.scripting_tool`
+              - Returns the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.controls`
+              - Get the list of control parameters defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.results`
+              - Get the list of results defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.max_iterations`
+              - Gets or sets the number of complete iterations of the profile to try before stopping. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.log_file`
+              - Name of the log file for this profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGoldenSection.enable_display_status`
+              - If true, a page will appear during the targeting run to report the status of the targeting effort in terms of proximity to the desired value for each dependent variable in the profile.
 
 
 Import detail

@@ -40,9 +40,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.count`
+              - Returns the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.mission_elapsed_time`
+              - The MissionElapsedTime.
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection.julian_date_offset`
+              - The JulianDateOffset.
             * - :py:attr:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection._NewEnum`
+              - Returns a collection of IAgUnitPrefsDim.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult.is_valid`
+              - True indicates the method call was successful.
 
 
 Import detail

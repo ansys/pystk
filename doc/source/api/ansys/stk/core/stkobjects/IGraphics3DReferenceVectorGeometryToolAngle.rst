@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle.angle_value_visible`
+              - If selected, select a unit from the drop-down menu. Only available for angles.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle.angle_unit_abrv`
+              - The angle unit abbreviation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle.show_dihedral_angle_supporting_arcs`
+              - Select to show dihedral angle supporting arcs. Only available for angles.
 
 
 Import detail

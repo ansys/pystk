@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeFixedTime.fixed_time`
+              - Gets or sets the fixed time value.
 
 
 Import detail

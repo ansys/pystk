@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.takeoff_climb_angle`
+              - Gets or sets the angle at which the aircraft will climb from the procedure site to the departure point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.departure_altitude`
+              - Gets or sets the aircraft's altitude when it departs the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.use_runway_terrain`
+              - Opt whether to use terrain data to define the runway's ground level attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.runway_altitude_offset`
+              - Gets or sets the altitude offset above the ground level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ITakeoffNormal.hold_on_deck`
+              - Gets or sets the duration the aircraft will wait before beginning the takeoff.
 
 
 Import detail

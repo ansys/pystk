@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointProviderSinglePoint.scattering_point_model`
+              - Gets the link/embed controller for managing the scattering point model component.
 
 
 Import detail

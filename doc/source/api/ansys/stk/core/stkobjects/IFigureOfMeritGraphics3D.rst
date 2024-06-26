@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.static`
+              - Get the static graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.animation`
+              - Get the animation graphics:.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.granularity`
+              - Fill granularity: the sampling distance between points used when grid points are filled and smooth contours are not used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3D.pixels_per_deg`
+              - Gets or sets the number of pixels used in one degree in the temporary file created when smooth contours are used.
 
 
 Import detail

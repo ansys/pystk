@@ -46,7 +46,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection._NewEnum`
+              - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection.count`
+              - Returns the size of the collection.
 
 
 Import detail

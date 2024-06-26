@@ -38,8 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.count`
+              - Gets the number of screen overlays in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.is_read_only`
+              - Gets a value indicating whether the collection is read-only.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase._NewEnum`
+              - Returns an enumerator that iterates through the collection.
 
 
 Import detail

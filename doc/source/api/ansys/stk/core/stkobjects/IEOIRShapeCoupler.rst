@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCoupler.radius1`
+              - Property used to access the first radius dimension of a coupler shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCoupler.height`
+              - Property used to access the height dimension of a coupler shape.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEOIRShapeCoupler.radius2`
+              - Property used to access the second radius dimension of a coupler shape.
 
 
 Import detail

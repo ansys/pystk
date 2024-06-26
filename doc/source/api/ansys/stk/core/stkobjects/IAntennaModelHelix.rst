@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.diameter`
+              - Gets or sets the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.efficiency`
+              - Gets or sets the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.backlobe_gain`
+              - Gets or sets the back lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.turn_spacing`
+              - Gets or sets the turn spacing.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.number_of_turns`
+              - Gets or sets the number of turns.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHelix.use_backlobe_as_mainlobe_atten`
+              - Gets or sets the option for using the back lobe gain as a main lobe gain attenuation.
 
 
 Import detail

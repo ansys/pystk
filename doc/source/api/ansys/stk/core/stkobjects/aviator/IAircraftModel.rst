@@ -30,16 +30,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.perf_model_types`
+              - Get the types of performance models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.acceleration`
+              - Get the acceleration interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.climb`
+              - Get the climb interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.cruise`
+              - Get the cruise interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.descent`
+              - Get the descent interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.landing`
+              - Get the landing interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.takeoff`
+              - Get the takeoff interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.default_configuration`
+              - Get the aircraft's default configuration as saved in the catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.advanced_fixed_wing_tool`
+              - Get the Advanced Fixed Wing Tool for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.vtol`
+              - Get the VTOL interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftModel.terrain_follow`
+              - Get the TerrainFollow interface.
 
 
 Import detail

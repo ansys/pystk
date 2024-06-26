@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.original_time_array`
+              - The original time array.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.filter_type`
+              - Skip Time Steps filter type omits from filtered time array any times that fall within specified time step of last accepted time sample. Skip Count filter type omits specified number of time samples since last accepted time sample...
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.count`
+              - Specify the number of times skipped between accepted samples when FilterType is set to Skip Count...
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.step`
+              - The number of steps skipped between accepted samples when FilterType is set to Skip Time Steps.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.include_interval_stop_times`
+              - If set to true, includes stop times of each interval from original time array.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayFiltered.filter_interval_list`
+              - The interval list used to filter samples when FilterType is set to Skip Intervals.
 
 
 Import detail

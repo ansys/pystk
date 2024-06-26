@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.origin_position`
+              - The position of the plane's center point in the specified coordinate system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.origin_velocity`
+              - The rate of change of the position of the plane's center point in the specified coordinate system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.x_axis`
+              - X-axis vector in the specified reference system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.x_axis_rate`
+              - A rate of change of the X-axis vector in the specified reference system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.y_axis`
+              - Y-axis vector in the specified reference system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult.y_axis_rate`
+              - A rate of change of the Y-axis vector in the specified reference system.
 
 
 Import detail

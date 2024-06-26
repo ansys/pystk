@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalCollection.count`
+              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolIntervalCollection._NewEnum`
+              - Returns a COM enumerator.
 
 
 Import detail

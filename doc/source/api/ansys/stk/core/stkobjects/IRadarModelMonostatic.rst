@@ -30,13 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.supported_modes`
+              - Gets an array of supported mode names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.mode`
+              - Gets the current radar mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.transmitter`
+              - Gets the radar transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.receiver`
+              - Gets the radar receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.clutter_geometry`
+              - This property is deprecated. Use the Clutter property instead. Gets the radar clutter geometry.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.jamming`
+              - Gets the radar jamming.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.antenna_control`
+              - Gets the radar antenna control.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModelMonostatic.clutter`
+              - Gets the radar clutter settings.
 
 
 Import detail

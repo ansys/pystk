@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileCoordinatedTurn.time_offset`
+              - Offset used to shift all basic attitude segments in time. Uses Time Dimension.
 
 
 Import detail

@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection._NewEnum`
+              - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.count`
+              - Returns the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection.provide_runtime_type_info`
+              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Import detail

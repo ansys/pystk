@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRainLossModelCrane1982.surface_temperature`
+              - Gets or sets the surface temperature.
 
 
 Import detail

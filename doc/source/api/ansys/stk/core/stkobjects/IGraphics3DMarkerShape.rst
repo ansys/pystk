@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DMarkerShape.style`
+              - The 2D marker type that represents the object in the 3D Graphics window. A member of the AgE3dMarkerShape enumeration.
 
 
 Import detail

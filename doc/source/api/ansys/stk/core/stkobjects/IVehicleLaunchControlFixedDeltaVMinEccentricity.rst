@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedDeltaVMinEccentricity.delta_v_min`
+              - Fixed Delta V minimum eccentricity. Uses Rate Dimension.
 
 
 Import detail

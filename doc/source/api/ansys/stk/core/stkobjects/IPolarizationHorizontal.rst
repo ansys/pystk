@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationHorizontal.reference_axis`
+              - Gets or sets the polarization reference axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationHorizontal.tilt_angle`
+              - Gets the polarization tilt angle.
 
 
 Import detail

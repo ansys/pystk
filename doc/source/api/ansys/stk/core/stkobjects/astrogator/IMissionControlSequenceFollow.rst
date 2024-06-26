@@ -34,18 +34,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.leader`
+              - Get the leader object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.x_offset`
+              - Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the X axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.y_offset`
+              - Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the Y axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.z_offset`
+              - Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the Z axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.separation_conditions`
+              - If separation conditions are specified, the list of separation conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.spacecraft_parameters`
+              - Get the spacecraft's physical properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.fuel_tank`
+              - Get the spacecraft's fuel tank properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.joining_type`
+              - Gets or sets the joining type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.separation_type`
+              - Gets or sets the separation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.spacecraft_and_fuel_tank_type`
+              - Gets or sets the spacecraft snd fuel tank configuration type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.joining_conditions`
+              - If joining conditions are specified, the list of joining conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceFollow.user_variables`
+              - Interface used to modify user variables for the follow segment.
 
 
 Import detail

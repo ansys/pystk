@@ -34,12 +34,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.prop_filepath`
+              - Get the filepath for the prop file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.is_valid`
+              - Check if the prop file is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.can_set_accel_decel`
+              - Check whether you can set the acceleration and deceleration values or whether they are specified in the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.max_thrust_accel`
+              - Gets or sets the rate at which the aircraft speeds up at max throttle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.min_thrust_decel`
+              - Gets or sets the rate at which the aircraft slows down at minimum throttle setting.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.use_density_scaling`
+              - Opt whether to scale the accel/decel performance by the density ratio.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp.density_ratio_exponent`
+              - Get the relative impace of atmospheric density on the aircraft's performance.
 
 
 Import detail

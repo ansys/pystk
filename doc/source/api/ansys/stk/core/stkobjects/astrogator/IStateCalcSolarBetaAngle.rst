@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.orbit_plane_source`
+              - Selection of the satellite that will generate the orbit plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.element_type`
+              - Choice of osculating or mean elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.reference_selection`
+              - Gets or sets the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.reference`
+              - Get the reference object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.sun_position`
+              - Gets or sets the type of the Sun location.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle.sign_convention`
+              - Gets or sets the sign of the angle when the relative position has a positive component along the orbit normal.
 
 
 Import detail

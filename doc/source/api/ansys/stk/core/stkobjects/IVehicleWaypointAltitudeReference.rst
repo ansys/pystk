@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReference.type`
+              - Gets the altitude reference type.
 
 
 Import detail

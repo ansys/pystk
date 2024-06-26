@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBandCollection.count`
+              - Returns the number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBandCollection._NewEnum`
+              - Returns an enumerator for the collection.
 
 
 Import detail

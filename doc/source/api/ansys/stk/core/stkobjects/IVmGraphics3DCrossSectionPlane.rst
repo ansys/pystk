@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGraphics3DCrossSectionPlane.plane`
+              - Get the cross section plane.
 
 
 Import detail

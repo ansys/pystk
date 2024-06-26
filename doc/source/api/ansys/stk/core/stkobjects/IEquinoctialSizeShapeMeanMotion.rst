@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeMeanMotion.mean_motion`
+              - Gets or sets the average angular rate of the satellite based on 2-body motion. Uses AngleRate Dimension.
 
 
 Import detail

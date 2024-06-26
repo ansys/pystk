@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeEnterManually.daily_f107`
+              - Daily F10.7: daily Ottawa 10.7 cm solar flux value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeEnterManually.average_f107`
+              - Average F10.7: 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolarFluxGeoMagnitudeEnterManually.geomagnetic_index`
+              - Geomagnetic Index (Kp): planetary geomagnetic flux index. Dimensionless.
 
 
 Import detail

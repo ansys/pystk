@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation.name`
+              - The Name property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation.value`
+              - The Value property. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation.min`
+              - The Min property. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation.max`
+              - The Max property. Dimensionless.
 
 
 Import detail

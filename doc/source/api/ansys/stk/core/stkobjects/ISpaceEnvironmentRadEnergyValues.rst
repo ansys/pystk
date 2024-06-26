@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues.use_default`
+              - Use default energy values.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues.custom`
+              - Specify custom energy values that will override the default energy values.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector.source_vector`
+              - A source vector. Can be any VGT vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorProjectAlongVector.along_vector`
+              - A vector along which the source vector is projected. Can be any VGT vector.
 
 
 Import detail

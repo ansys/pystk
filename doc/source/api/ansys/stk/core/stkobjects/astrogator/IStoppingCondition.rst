@@ -32,21 +32,37 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.trip`
+              - Gets or sets the desired value - the value at which the condition will be satisfied. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.tolerance`
+              - Gets or sets the desired tolerance for achieving the stopping condition. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.repeat_count`
+              - Gets or sets the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.inherited`
+              - Condition Inherited by Automatic Sequences - if true, the stopping condition will be applied to any automatic sequences activated within the same segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.max_trip_times`
+              - Gets or sets the maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.coord_system`
+              - Gets or sets the coordinate system. The default coordinate system of a stopping condition is Earth Inertial.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.sequence`
+              - Gets or sets the automatic sequence to trigger if the highlighted stopping condition is satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.constraints`
+              - Further conditions that must be met in order for the stopping condition to be deemed satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object_name`
+              - User Calc Object - a User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object`
+              - A User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.central_body_name`
+              - Gets or sets the central body. The default central body of a stopping condition is the Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.criterion`
+              - Specifies the direction from which the stopping condition value must be achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.before_conditions`
+              - A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.dimension`
+              - Get the dimension of the stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.reference_point`
+              - Gets or sets the reference point used for calculation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingCondition.user_calc_object_link_embed_control`
+              - Gets the link / embed controller for managing the user calc. object.
 
 
 Import detail

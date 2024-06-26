@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateFileSource.filename`
+              - Gets or sets the name of the source file.
 
 
 Import detail

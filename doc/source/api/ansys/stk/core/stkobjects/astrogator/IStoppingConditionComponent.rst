@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent.stopping_condition_type`
+              - Get the type of stopping condition.
 
 
 Import detail

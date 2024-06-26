@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins.access_constraint_paths`
+              - Returns a list of paths to Python access constraint plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins.ephemeris_file_reader_paths`
+              - Returns a list of paths to Python ephemeris file reader plugin.
 
 
 Import detail

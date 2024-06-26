@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangePropagator.segment_name`
+              - Gets or sets the name of the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangePropagator.propagator_name`
+              - Gets or sets the new propagator's name.
 
 
 Import detail

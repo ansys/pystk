@@ -36,16 +36,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_type`
+              - Get the propagator type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route`
+              - Get the route properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type`
+              - Get the type of attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude`
+              - Get the  attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses`
+              - Get the  ground ellipses properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.access_constraints`
+              - Get the constraints imposed on the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.eclipse_bodies`
+              - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.use_terrain_in_lighting_computations`
+              - Opt whether to compute lighting using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_max_step`
+              - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 
 Import detail

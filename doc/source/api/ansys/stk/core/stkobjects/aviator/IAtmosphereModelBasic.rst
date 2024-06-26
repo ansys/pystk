@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.name`
+              - Gets or sets the name of the atmosphere model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.basic_model_type`
+              - Gets or sets the type of basic atmosphere.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.use_non_standard_atmosphere`
+              - Opt whether to use non standard atmosphere conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.temperature`
+              - Gets or sets the sea-level temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.pressure`
+              - Gets or sets the sea-level pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModelBasic.density_altitude`
+              - Get the sea-level density altitude.
 
 
 Import detail

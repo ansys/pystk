@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.direction`
+              - Direction and level order for layout of color squares.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.max_squares_per_row`
+              - Maximum number of color squares per row.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.max_squares_per_column`
+              - Maximum number of color squares per column.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.color_square_width`
+              - Color square width in pixels.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DRangeColorOptions.color_square_height`
+              - Color square height in pixels.
 
 
 Import detail

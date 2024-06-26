@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRotateFilter.angle`
+              - Gets or sets the counterclockwise rotation angle.
 
 
 Import detail

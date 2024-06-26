@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITimeIntervalDisplayCondition.minimum_time`
+              - Gets or sets the minimum time of the inclusive time interval.
             * - :py:attr:`~ansys.stk.core.graphics.ITimeIntervalDisplayCondition.maximum_time`
+              - Gets or sets the maximum time of the inclusive time interval.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICRLocation.x`
+              - Gets or sets the X value.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICRLocation.y`
+              - Gets or sets the Y value.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICRLocation.z`
+              - Gets or sets the Z value.
 
 
 Import detail

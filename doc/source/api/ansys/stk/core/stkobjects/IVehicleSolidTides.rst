@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolidTides.inc_time_dep_solid_tides`
+              - Time-dependent solid tide effects: opt whether to account for the secondary contribution from certain effects of loading the crust and core.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolidTides.min_amplitude`
+              - Minimum tidal amplitude to include in the computation. Uses SmallDistanceUnit Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSolidTides.truncate_solid_tides`
+              - True if solid tide terms (including permanent tide) won't be included beyond the degree and order selected for the gravity model.
 
 
 Import detail

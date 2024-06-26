@@ -46,14 +46,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.f_10_p7_source`
+              - Mode for computing 13-month average F10.7.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.f_10_p7`
+              - F10.7 value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.material`
+              - Vehicle material.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.area`
+              - Area exposed to particles. Uses SmallArea Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.pit_depth`
+              - Pit depth in the material that indicates damage. Uses SmallDistance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.use_sporadic_meteors`
+              - Flag to model sporadic meteors.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.material_density`
+              - Density of the user-defined material.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.tensile_strength`
+              - Tensile strength of the user-defined material in MPa.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux.flux_file`
+              - Flux file containing F10.7 values.
 
 
 Import detail

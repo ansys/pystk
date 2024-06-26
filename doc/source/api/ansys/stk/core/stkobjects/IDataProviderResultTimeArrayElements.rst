@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements.valid`
+              - Returns true if the result is valid, false otherwise.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeArrayElements.count`
+              - Get the number of arrays in the result.
 
 
 Import detail

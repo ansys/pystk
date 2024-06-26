@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.color`
+              - Gets or sets the color of the central body in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.specular_color`
+              - Gets or sets the specular color of the central body in the scene. The specular color is associated with the specular overlay.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.shininess`
+              - Gets or sets the shininess of the central body in the scene. The shininess affects the size and brightness of specular reflection associated with the specular overlay.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.show_imagery`
+              - Gets or sets whether the imagery for central body in the scene is shown or hidden.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.show`
+              - Gets or sets whether the central body is shown or hidden in the scene. This only affects the central body itself, not the primitives that are associated with it.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.show_label`
+              - Gets or sets whether a label with the name of the central body should be rendered in the scene when the camera is at certain distance away from the central body.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.altitude_offset`
+              - Gets or sets the altitude that all terrain and imagery will be offset from the surface of the central body in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.base_overlay`
+              - Gets or sets the base globe image overlay associated with the central body in the scene. The base overlay is always rendered before any other imagery...
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.night_overlay`
+              - Gets or sets the night globe image overlay associated with the central body in the scene. The night overlay is displayed only on parts of the central body that are not in sun light...
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.specular_overlay`
+              - Gets or sets the specular globe image overlay associated with the central body in the scene. The specular overlay is displayed only in the specular highlight of the central body.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.terrain`
+              - Gets the collection of terrain overlay associated with the central body in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.imagery`
+              - Gets the collection of imagery associated with the central body in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.ICentralBodyGraphics.kml`
+              - Gets the kml graphics associated with the central body in the scene.
 
 
 Import detail

@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.width`
+              - Gets the array width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.height`
+              - Gets the array height.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.number_of_elements`
+              - Gets the number of array elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.supported_beam_direction_provider_types`
+              - Gets an array of valid beam direction provider types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beam_direction_provider_type`
+              - Gets or sets the beam direction provider type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beam_direction_provider`
+              - Gets the beam direction provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer_type`
+              - Gets or sets beamformer type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.beamformer`
+              - Gets the beamformer.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.element_configuration`
+              - Gets the element configuration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray.elements`
+              - Gets the collection of elements.
 
 
 Import detail

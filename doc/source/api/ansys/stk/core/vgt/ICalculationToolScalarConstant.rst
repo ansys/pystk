@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarConstant.value`
+              - A value which can be in any STK supported unit available for selected dimension.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarConstant.dimension`
+              - The dimension of the constant value, this can be any of the STK supported dimensions.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem.reference`
+              - Specify a reference system.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointFixedInSystem.fixed_point`
+              - Specify the point's position. The position is relative with respect to the specified reference system.
 
 
 Import detail

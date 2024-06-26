@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.point1`
+              - Starting point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.point2`
+              - Terminating point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.surface_central_body`
+              - Central body on which the surface distance between points is to be calculated.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarSurfaceDistanceBetweenPoints.differencing_time_step`
+              - Time step used in numerical evaluation of scalar calculation time rate of change (derivatives using central differencing).
 
 
 Import detail

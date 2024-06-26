@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.is_visible`
+              - Opt whether to display elevation angle contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.is_cones_visible`
+              - Opt whether to display elevation angle contours as filled cones in space.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.translucency`
+              - Translucency of elevation contour cone. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.fill`
+              - Opt whether to display elevation angle contours as a filled polygon on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DElevContours.fill_translucency`
+              - Translucency of the filled polygon. Dimensionless.
 
 
 Import detail

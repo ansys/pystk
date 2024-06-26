@@ -40,17 +40,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.data_providers`
+              - Returns the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.access_time_period`
+              - Specifies the time period option. A member of the AgEAccessTimeType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.graphics`
+              - Gets the Graphics properties for the Access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.advanced`
+              - Gets the Advanced properties for the Access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.data_displays`
+              - Gets the VO Data Display Collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.computed_access_interval_times`
+              - Returns a list of the computed access interval times.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.access_time_period_data`
+              - Returns an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.vgt`
+              - Gets a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.save_computed_data`
+              - Flag indicating whether to save computed data with the Access instance.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.base`
+              - Base object used in the access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.target`
+              - Target object used in the access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkAccess.name`
+              - Name of the access.
 
 
 Import detail

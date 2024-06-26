@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplex.real`
+              - Gets or sets the real part of the complex number.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICRComplex.imaginary`
+              - Gets or sets the imaginary part of the complex number.
 
 
 Import detail

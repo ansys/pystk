@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessageCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IADDSMessageCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
 
 
 Import detail

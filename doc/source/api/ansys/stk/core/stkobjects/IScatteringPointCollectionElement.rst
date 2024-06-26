@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement.latitude`
+              - Gets the scattering points latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement.longitude`
+              - Gets the scattering points longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement.altitude`
+              - Gets the scattering points altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement.scattering_point_model`
+              - Gets the scattering point's scattering model component name.
 
 
 Import detail

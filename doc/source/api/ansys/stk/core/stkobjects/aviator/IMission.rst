@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.phases`
+              - Get the mission phases.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.vehicle`
+              - Gets or sets the vehicle used in the mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.configuration`
+              - Get the aircraft's configuration for the mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.wind_model`
+              - Get the mission wind model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.atmosphere_model`
+              - Get the mission atmosphere model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMission.is_valid`
+              - Check whether the mission is valid. Calling this property will propagate the mission.
 
 
 Import detail

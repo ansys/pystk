@@ -21,16 +21,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c0`
+              - Gets or sets the coefficient C0. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c1`
+              - Gets or sets the coefficient C1. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c2`
+              - Gets or sets the coefficient C2. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c3`
+              - Gets or sets the coefficient C3. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c4`
+              - Gets or sets the coefficient C4. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c5`
+              - Gets or sets the coefficient C5. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c6`
+              - Gets or sets the coefficient C6. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c7`
+              - Gets or sets the coefficient C7. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c8`
+              - Gets or sets the coefficient C8. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c9`
+              - Gets or sets the coefficient C9. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRefractionCoefficients.c10`
+              - Gets or sets the coefficient C10. Dimensionless.
 
 
 Import detail

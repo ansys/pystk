@@ -1539,8 +1539,6 @@ polylines, text batches, screen overlays, scene lighting, and raster and
 projection streaming. STK Graphics is available in STK, using UI plugins, as
 well as in STK Engine custom applications.
 
-Detail
-------
 
 .. py:currentmodule:: ansys.stk.core.graphics
 

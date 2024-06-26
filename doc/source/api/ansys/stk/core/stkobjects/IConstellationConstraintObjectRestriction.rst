@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IConstellationConstraintObjectRestriction.number_of_objects`
+              - A number of objects that must be satisfied to meet conditions for the chain access. Dimensionless.
 
 
 Import detail

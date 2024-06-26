@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionEuler.b`
+              - Euler B angle. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionEuler.c`
+              - Euler C angle. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IDirectionEuler.sequence`
+              - Euler direction sequence.  Must be set before B,C values. Otherwise the B,C values will converted to the Sequence specified.
 
 
 Import detail

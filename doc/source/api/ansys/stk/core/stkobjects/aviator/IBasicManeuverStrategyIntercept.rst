@@ -36,25 +36,45 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.target_name`
+              - Gets or sets the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.valid_target_names`
+              - Returns the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.target_resolution`
+              - Gets or sets the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.use_stop_time_to_go`
+              - Get the option to specify a time to go stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.stop_time_to_go`
+              - Get the stop time from the target at which the maneuver will stop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.use_stop_slant_range`
+              - Get the option to specify a range from target stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.stop_slant_range`
+              - Get the range from the target at which the maneuver will stop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.intercept_mode`
+              - Gets or sets the intercept mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.target_aspect`
+              - Gets or sets the angle relative to the target that the aircraft should maintain until intercept.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.lateral_separation`
+              - Gets or sets the distance from the target that the aircraft will guide to before intercepting.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.maneuver_factor`
+              - Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_mode`
+              - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_turn_radius`
+              - Get the specified turn radius for a control limit mode of specify min turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_turn_rate`
+              - Get the specified turn rate for a control limit mode of specify max turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.control_limit_horiz_accel`
+              - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.closure_mode`
+              - Gets or sets the closure mode for the guidance strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.hobs_max_angle`
+              - Gets or sets the closure high off boresight max angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.hobs_angle_tol`
+              - Gets or sets the closure high off boresight angle tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept.position_vel_strategies`
+              - Get the position velocity strategies for Intercept.
 
 
 Import detail

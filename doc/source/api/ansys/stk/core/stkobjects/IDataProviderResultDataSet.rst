@@ -32,10 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.element_name`
+              - Returns a name of the dataset.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.element_type`
+              - Returns a type of elements of the dataset. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.dimension_name`
+              - Returns the dimension of elements of the dataset.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.count`
+              - Returns a number of elements in the dataset. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet.statistics`
+              - Returns an interface for computing statistics on the results.
 
 
 Import detail

@@ -319,8 +319,6 @@ The
 types provided by STK Util are used indirectly through methods and properties
 in the STK X and STK Objects libraries.
 
-Detail
-------
 
 .. py:currentmodule:: ansys.stk.core.stkutil
 

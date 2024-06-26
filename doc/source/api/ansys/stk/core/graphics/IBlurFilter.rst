@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IBlurFilter.method`
+              - Gets or sets the method used to blur the source raster.
 
 
 Import detail

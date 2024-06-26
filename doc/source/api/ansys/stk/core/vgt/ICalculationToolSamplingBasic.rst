@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingBasic.sampling_method`
+              - Get the sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolSamplingBasic.method_factory`
+              - Creates sampling definitions, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 
 
 Import detail

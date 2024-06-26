@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory.point`
+              - Get the point for which trajectory representations are computed.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetTrajectory.reference_system`
+              - Get the reference system relative to which trajectory representations are computed.
 
 
 Import detail

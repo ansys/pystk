@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions.title`
+              - Legend title.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions.num_decimal_digits`
+              - Number of decimal digits to use in range values in legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DTextOptions.floating_point_format`
+              - Text format for floating point numbers.
 
 
 Import detail

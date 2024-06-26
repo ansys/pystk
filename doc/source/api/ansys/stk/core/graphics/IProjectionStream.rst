@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IProjectionStream.update_delta`
+              - Gets or sets the update delta of the projection stream in seconds. The update delta defines the interval at which the Update method will be called...
 
 
 Import detail

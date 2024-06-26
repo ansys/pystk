@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.operation`
+              - Get the operation from the condition that determines how the bounds are considered. The operation can be set to define satisfaction when the scalar is above minimum, below maximum, between minimum and maximum or outside minimum and maximum.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCalc.volume_calc`
+              - Get the volume calc from the bounds.
 
 
 Import detail

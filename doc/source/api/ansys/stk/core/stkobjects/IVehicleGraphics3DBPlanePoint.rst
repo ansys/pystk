@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.name`
+              - Gets or sets the name of B-Plane point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.b_mul_t`
+              - Gets or sets the value of BdotT (Cartesian). Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.b_mul_r`
+              - Gets or sets the value of BdotR (Cartesian). Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.b_magnitude`
+              - Gets or sets the value of BMag (polar). Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePoint.theta`
+              - Gets or sets the value of Theta (polar). Uses Angle Dimension.
 
 
 Import detail

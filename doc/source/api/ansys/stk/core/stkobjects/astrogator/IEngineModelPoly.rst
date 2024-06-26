@@ -34,9 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.g`
+              - Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.thrust_coefficients`
+              - Get the thrust Coefficients.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.isp_coefficients`
+              - Get the Isp Coefficients.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IEngineModelPoly.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

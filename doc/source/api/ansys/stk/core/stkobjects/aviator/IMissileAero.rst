@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAero.aero_strategy`
+              - Gets or sets the aerodynamic strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_simple`
+              - Get the interface for a simple aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_external`
+              - Get the interface for an external file aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IMissileAero.mode_as_advanced`
+              - Get the interface for an advanced aerodynamics strategy.
 
 
 Import detail

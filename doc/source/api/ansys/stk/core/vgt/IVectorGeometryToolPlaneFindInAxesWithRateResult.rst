@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.is_valid`
+              - True indicates the method call was successful.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.x_axis`
+              - X-axis vector in the specified reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.x_axis_rate`
+              - The rate of change of X-axis vector in the specified reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.y_axis`
+              - Y-axis vector in the specified reference axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult.y_axis_rate`
+              - The rate of change of Y-axis vector in the specified reference axes.
 
 
 Import detail

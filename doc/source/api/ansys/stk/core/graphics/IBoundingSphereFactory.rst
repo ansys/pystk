@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IBoundingSphereFactory.maximum_radius_bounding_sphere`
+              - Gets the bounding sphere of maximum possible radius.
 
 
 Import detail

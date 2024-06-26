@@ -36,10 +36,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.transition_course_mode`
+              - Get the mode to specify the course of the transition maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.use_magnetic_heading`
+              - Get the option to use a magnetic heading for the course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.absolute_course`
+              - Get the absolute course for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.relative_course`
+              - Get the relative course for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureTransitionToForwardFlight.flight_path_angle`
+              - Gets or sets the pitch angle of the flight path at the end of the procedure.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLoss.gain`
+              - Gets or sets the gain/loss value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdditionalGainLoss.identifier`
+              - Gets or sets the gain/loss identifier.
 
 
 Import detail

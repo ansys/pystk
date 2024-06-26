@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uicore.IUiToolbarCollection.count`
+              - Returns a total number of toolbars in the collection.
             * - :py:attr:`~ansys.stk.core.uicore.IUiToolbarCollection._NewEnum`
+              - Enumerates the toolbars in the collection.
 
 
 Import detail

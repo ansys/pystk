@@ -30,17 +30,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.minimum_time`
+              - Get the minimum time at which formation might be possible.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.start_time`
+              - Gets or sets the time at which the formation begins.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.maximum_time`
+              - Get the maximum time at which formation might be possible.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.formation_point`
+              - Gets or sets the position that the aircraft will be locked onto while in formation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.interpolate_point_position_vel`
+              - Gets or sets the option to use interpolation to determine the formation point's speed and position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.duration`
+              - Gets or sets the duration of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.use_max_point_stop_time`
+              - Opt to limit the duration to the maximum possible time if the duration exceeds the time limit.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.fuel_flow_type`
+              - Gets or sets the source used to calculate the fuel flow for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.override_fuel_flow_value`
+              - Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.consider_accel_for_fuel_flow`
+              - Gets or sets the option to calculate the fuel flow rate according to the acceleration of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.flight_mode`
+              - Gets or sets the type of performance model that the aircraft will use to fly the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureVGTPoint.display_step_time`
+              - Gets or sets the time interval at which ephemeris is generated for display purposes.
 
 
 Import detail

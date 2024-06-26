@@ -32,12 +32,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.color`
+              - Text color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.text`
+              - Text.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.unique_id`
+              - User-defined unique ID.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.offset_type`
+              - Offset direction: left or right.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.offset_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.offset_pixels`
+              - Offsets the position of the text to the right or the left of the ground track.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeText.event_interval`
+              - Event interval.
 
 
 Import detail

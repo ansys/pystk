@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromTimeSatisfaction.time_satisfaction`
+              - The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
 
 
 Import detail

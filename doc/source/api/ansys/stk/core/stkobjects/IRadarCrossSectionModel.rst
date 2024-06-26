@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionModel.name`
+              - Gets the radar cross section model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionModel.frequency_bands`
+              - Gets the RCS frequency band collection.
 
 
 Import detail

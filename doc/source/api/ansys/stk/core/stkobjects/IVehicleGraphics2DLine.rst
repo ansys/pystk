@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLine.style`
+              - Line style to use in displaying vehicle tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLine.width`
+              - Line width to use in displaying vehicle tracks.
 
 
 Import detail

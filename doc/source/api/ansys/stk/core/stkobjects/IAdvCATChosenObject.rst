@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.name`
+              - Get the chosen object name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.ellipsoid_class`
+              - Determine Ellipsoid Sizing method class.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.tangential`
+              - Semi-major Axes Size along A.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.cross_track`
+              - Semi-major Axes Size along B.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.normal`
+              - Semi-major Axes Size along C.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.type`
+              - Get the File Type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.hard_body_radius`
+              - Used in prob of collision.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.number_id`
+              - An IRON or other numeric id.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAdvCATChosenObject.string_id`
+              - A VEID, or other character id.
 
 
 Import detail

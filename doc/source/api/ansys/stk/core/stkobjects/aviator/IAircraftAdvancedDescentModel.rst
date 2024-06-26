@@ -34,15 +34,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_speed_type`
+              - Gets or sets the mode to calculate the aircraft's airspeed while descending .
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_stall_speed_ratio`
+              - Gets or sets the ratio of the airspeed upon leaving the ground to the stall speed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_override_airspeed_type`
+              - Get the override airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.descent_override_airspeed`
+              - Get the override airsepeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.speedbrakes`
+              - Gets or sets the extension of the speedbrakes during the landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.use_airspeed_limit`
+              - Opt to limit the airspeed below a specified altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.altitude_limit`
+              - Gets or sets the altitude threshold, below which the airspeed limit will be applied.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.airspeed_limit_type`
+              - Get the airspeed limit type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.airspeed_limit`
+              - Get the airsepeed limit below the altitude threshold.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel.compute_delta_altitude`
+              - Gets or sets the maximum change in altitude in a computed segment before the data is sampled again.
 
 
 Import detail

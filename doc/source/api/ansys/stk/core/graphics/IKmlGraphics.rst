@@ -46,6 +46,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IKmlGraphics.documents`
+              - The collection of kml documents that are currently loaded.
 
 
 Import detail

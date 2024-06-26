@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayCondition.minimum_altitude`
+              - Gets or sets the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
             * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayCondition.maximum_altitude`
+              - Gets or sets the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude.
             * - :py:attr:`~ansys.stk.core.graphics.IAltitudeDisplayCondition.central_body`
+              - Gets or sets the central body to which the altitude is relative.
 
 
 Import detail

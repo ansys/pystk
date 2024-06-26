@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.volume_grid`
+              - The volume grid for spatial calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.use_spatial_calculation`
+              - Flag controls whether spatial calculation is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.spatial_calculation`
+              - The volume grid for spatial calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.available_volume_grids`
+              - Get the available Volume Grids.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmGridSpatialCalculation.available_spatial_calculations`
+              - Get the available Spatial Calculations.
 
 
 Import detail

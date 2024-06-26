@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypeEllipse.semi_major_axis`
+              - Semimajor axis, i.e. half the length of the ellipse's long axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypeEllipse.semi_minor_axis`
+              - Semiminor axis, i.e. half the length of the ellipse's short axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAreaTypeEllipse.bearing`
+              - The angle, measured in an easterly direction, between the major axis of the ellipse and the local North direction. Uses Angle Dimension.
 
 
 Import detail

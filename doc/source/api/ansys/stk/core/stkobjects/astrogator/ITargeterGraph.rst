@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.name`
+              - Gets or sets the name of the graph.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.generate_on_run`
+              - Generate the graph while MCS is being run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.user_comment`
+              - User Comment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.show_label_iterations`
+              - Label each of the points on the graph labeled according to its iteration number.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.show_desired_value`
+              - Show the desired equality constraint value(s) on the graph. Not applicable to SNOPT and IPOPT search profiles.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.show_tolerance_band`
+              - Show the tolerance band on the graph. Not applicable to SNOPT and IPOPT search profiles.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.independent_variable`
+              - Select the graph's X axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.active_controls`
+              - Active Controls.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraph.results`
+              - Results.
 
 
 Import detail

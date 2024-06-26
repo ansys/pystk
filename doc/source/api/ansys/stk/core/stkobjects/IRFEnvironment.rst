@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.propagation_channel`
+              - Gets the propagation channel.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.supported_contour_rain_outage_percent_values`
+              - Gets an array of supported contour rain outage percent values.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.contour_rain_outage_percent`
+              - Gets or sets the contour rain outage percent.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.earth_temperature`
+              - Gets or sets the earth temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.supported_active_comm_systems`
+              - Gets an array of supported active CommSystem objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.active_comm_system`
+              - Gets or sets the active CommSystem object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.magnetic_north_pole_latitude`
+              - Gets or sets magnetic north pole latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFEnvironment.magnetic_north_pole_longitude`
+              - Gets or sets magnetic north pole longitude.
 
 
 Import detail

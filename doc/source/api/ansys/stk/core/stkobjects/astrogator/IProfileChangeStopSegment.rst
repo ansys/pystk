@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment.segment_name`
+              - Gets or sets the targeted stop segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeStopSegment.state`
+              - Gets or sets the new state of the targeted stop segment.
 
 
 Import detail

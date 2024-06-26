@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGrid.bounds_type`
+              - Type of bounds used to define the coverage region.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGrid.bounds`
+              - Get the coverage region.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGrid.resolution_type`
+              - Type of criterion used to define grid resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageGrid.resolution`
+              - Grid resolution.
 
 
 Import detail

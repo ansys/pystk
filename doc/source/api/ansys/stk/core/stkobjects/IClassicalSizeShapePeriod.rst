@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapePeriod.period`
+              - Gets or sets the duration of one orbit, based on assumed two-body motion. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalSizeShapePeriod.eccentricity`
+              - Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
 
 
 Import detail

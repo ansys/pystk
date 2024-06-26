@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSAA.is_visible`
+              - Opt whether to display South Atlantic Anomaly contours.
 
 
 Import detail

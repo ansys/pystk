@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenVectors.from_vector`
+              - Specify the first of the two vectors the angle is measured.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenVectors.to_vector`
+              - Specify the second of the two vectors the angle is measured.
 
 
 Import detail

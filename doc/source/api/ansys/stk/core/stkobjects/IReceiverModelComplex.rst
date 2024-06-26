@@ -34,29 +34,53 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.pre_receive_gains_losses`
+              - Gets the collection of additional pre-receive gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.pre_demod_gains_losses`
+              - Gets the collection of additional pre-demod gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.link_margin`
+              - Gets the interface for configuring the link margin computation parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.auto_scale_bandwidth`
+              - Gets or set the auto scale bandwidth option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.bandwidth`
+              - Gets or set the bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.auto_select_demodulator`
+              - Gets or set the auto select demodulator option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.supported_demodulators`
+              - Gets an array of supported demodulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.demodulator`
+              - Gets the current demodulator model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.use_rain`
+              - Gets or sets the option for computing rain loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.supported_rain_outage_percent_values`
+              - Gets an array of supported rain outage percent values.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.rain_outage_percent`
+              - Gets or sets the rain outage percent.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.polarization`
+              - Gets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.auto_track_frequency`
+              - Gets or set the auto track frequency option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.frequency`
+              - Gets or set the frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.antenna_control`
+              - Gets the receiver antenna control.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.antenna_to_lna_line_loss`
+              - Gets or sets the antenna to LNA line loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.lna_gain`
+              - Gets or sets the LNA gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.lna_to_receiver_line_loss`
+              - Gets or sets the LNA to receiver line loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.system_noise_temperature`
+              - Gets the system noise temperature interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IReceiverModelComplex.interference`
+              - Gets the radio frequency interference.
 
 
 Import detail

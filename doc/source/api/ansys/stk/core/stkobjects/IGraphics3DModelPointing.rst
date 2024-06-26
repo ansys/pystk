@@ -34,6 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing.pointable_elements`
+              - Get the list of pointable model elements.
 
 
 Import detail

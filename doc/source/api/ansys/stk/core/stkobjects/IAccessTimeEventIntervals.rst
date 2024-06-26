@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessTimeEventIntervals.list_of_intervals`
+              - A list of timeline intervals used to define a list of allowed access intervals.
 
 
 Import detail

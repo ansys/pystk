@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionCartesian.b_mul_t`
+              - Gets or sets the value of a dot product of vector B and unit vector T. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionCartesian.b_mul_r`
+              - Gets or sets the value of a dot product of vector B and unit vector R. Uses Distance Dimension.
 
 
 Import detail

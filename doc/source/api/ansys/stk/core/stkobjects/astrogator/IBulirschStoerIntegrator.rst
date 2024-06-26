@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.initial_step`
+              - Gets or sets the initial step. Uses time dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.use_fixed_step`
+              - True if running in fixed-step mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.use_max_step`
+              - Whether or not to enforce the maximum step.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.use_min_step`
+              - Whether or not to enforce the minimum step.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.max_step`
+              - Gets or sets the maximum step size to allow (absolute value). Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.min_step`
+              - Gets or sets the minimum step size to allow (absolute value). Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.max_rel_err`
+              - Gets or sets the maximum relative error used to control step size. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.max_sequences`
+              - Gets or sets the maximum number of sequences. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.max_iterations`
+              - Gets or sets the maximum number of iterations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.tolerance`
+              - Gets or sets the error tolerance for step size control. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.first_safety_coefficient`
+              - Gets or sets the first safety coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator.second_safety_coefficient`
+              - Gets or sets the second safety coefficient. Dimensionless.
 
 
 Import detail

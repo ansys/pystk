@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDuringAccess.display_intervals`
+              - Gets the display intervals property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDuringAccess.access_objects`
+              - Gets the access objects property.
 
 
 Import detail

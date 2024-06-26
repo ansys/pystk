@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling.time_convergence`
+              - Time convergence value used in access computations. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling.abs_value_convergence`
+              - Use absolute convergence value for access. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling.rel_value_convergence`
+              - Use relative convergence value for access. Dimensionless.
 
 
 Import detail

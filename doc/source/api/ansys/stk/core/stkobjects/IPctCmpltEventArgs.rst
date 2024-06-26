@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.canceled`
+              - Returns whether the lengthy operation has been canceled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.can_cancel`
+              - Returns whether the lengthy operation can be canceled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.percent_completed`
+              - Returns the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs.message`
+              - Gets a progress message.
 
 
 Import detail

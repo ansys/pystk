@@ -36,26 +36,47 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.target_name`
+              - Gets or sets the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.valid_target_names`
+              - Returns the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.target_resolution`
+              - Gets or sets the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.relative_altitude_mode`
+              - Gets or sets the mode to define the hold objective for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.elevation_angle`
+              - Gets or sets the goal elevation angle from the target to the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.altitude_offset`
+              - Gets or sets the goal altitude offset from the target to the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.airspeed_offset_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.airspeed_offset`
+              - Get the airspeed offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.use_tgt_aspect_for_airspeed`
+              - Gets or sets the option to use the target aspect to compute the enforced airspeed difference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.use_perf_model_limits`
+              - Gets or sets the option to use the performance model limits for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.range_for_equal_speed`
+              - Gets or sets the range at which the aircraft will achieve the same airspeed as the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.range_to_transition_speed`
+              - Gets or sets the range at which the aircraft will begin to slow down to match the speed of the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.min_altitude`
+              - Gets or sets the minimum altitude boundary for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.max_altitude`
+              - Gets or sets the maximum altitude boundary for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.min_airspeed`
+              - Get the minimum airspeed limit for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.min_airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.max_airspeed`
+              - Get the maximum airspeed limit for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.max_airspeed_type`
+              - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.stop_condition`
+              - Gets or sets the stopping condition for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.compensate_for_coriolis_accel`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude.position_vel_strategies`
+              - Get the position velocity strategies for Rel Speed Alt.
 
 
 Import detail

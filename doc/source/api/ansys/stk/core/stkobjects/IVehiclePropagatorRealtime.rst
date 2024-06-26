@@ -32,12 +32,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.duration`
+              - Get look ahead/look behind duration values.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.interpolation_order`
+              - The interpolation order. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.look_ahead_propagator`
+              - A name of the lookahead propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.supported_look_ahead_propagators`
+              - Returns an array of supported lookahead propagators.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.time_step`
+              - Specify the interval between computed ephemeris output points. Valid value is between 0.1 and 9999.0 seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.timeout_gap`
+              - Specify the time after which look ahead values are considered to be \"stale\" (that is, the data has dropped out). Valid value is between 1.0 and 1000000.0 seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime.point_builder`
+              - Gets a object to create ephemeris data for a vehicle by sending it point by point.
 
 
 Import detail

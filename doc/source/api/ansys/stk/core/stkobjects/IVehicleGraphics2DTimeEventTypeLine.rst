@@ -32,13 +32,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.color`
+              - Line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.line_style`
+              - Line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.line_width`
+              - Line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.unique_id`
+              - User-defined unique ID.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.offset_type`
+              - Offset direction (left or right).
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.offset_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.offset_pixels`
+              - Offset amount in pixels. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeLine.event_interval`
+              - Event interval.
 
 
 Import detail

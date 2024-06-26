@@ -36,7 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCentralBodies.available_central_bodies`
+              - Returns an array of available Central Bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleCentralBodies.assigned_central_bodies`
+              - Returns an array of all assigned central bodies.
 
 
 Import detail

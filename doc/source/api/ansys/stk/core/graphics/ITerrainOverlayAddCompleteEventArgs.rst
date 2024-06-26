@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITerrainOverlayAddCompleteEventArgs.overlay`
+              - The terrain overlay being displayed for the first time.
 
 
 Import detail

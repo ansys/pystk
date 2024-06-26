@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneAFPROP.subtype`
+              - Gets or sets the fuel subtype.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneAFPROP.specific_energy`
+              - Gets or sets the specific energy of the jet fuel.
 
 
 Import detail

@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained.aligned_vector`
+              - Get the aligned vector pair. Vectors dependent on the satellite's body axes are invalid for this attitude profile; all other vectors are valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained.constrained_vector`
+              - Get the constrained vector pair. Vectors dependent on the satellite's body axes are invalid for this attitude profile; all other vectors are valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained.displayed_aligned_vector_type`
+              - Aligned vector type displayed on GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained.displayed_constrained_vector_type`
+              - Constrained vector type displayed on GUI.
 
 
 Import detail

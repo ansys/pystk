@@ -32,14 +32,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.supported_models`
+              - Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.model`
+              - Gets the current radar model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.refraction`
+              - Refraction method, a member of the AgESnRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.refraction_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.refraction_model`
+              - Gets a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.use_refraction_in_access`
+              - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.graphics_3d`
+              - Get the 3D Graphics properties for the radar.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.graphics`
+              - Get the 2D Graphics properties for the radar.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadar.rf_environment`
+              - Gets the object RF Environment settings.
 
 
 Import detail

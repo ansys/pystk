@@ -34,14 +34,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.calc_object_name`
+              - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.input_coord_system_name`
+              - Gets or sets the coordinate system of the input state.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.x`
+              - Gets or sets the x position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.y`
+              - Gets or sets the y position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.z`
+              - Gets or sets the z position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.vx`
+              - Gets or sets the x velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.vy`
+              - Gets or sets the y velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.vz`
+              - Gets or sets the z velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitStateValue.control_parameters_available`
+              - Returns whether or not the control parameters can be set.
 
 
 Import detail

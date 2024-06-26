@@ -21,60 +21,115 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.band_name`
+              - Gets or sets the name of the band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.render_band`
+              - Band render flag.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.calculating_parameters`
+              - Flag to set if input parameters are currently being calculated and entered into the object model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.horizontal_half_angle`
+              - Half the horizontal angular extent of the rectangular EOIR sensor bands field-of-view.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.vertical_half_angle`
+              - Half the vertical angular extent of the rectangular EOIR sensor bands field-of-view.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.horizontal_pixels`
+              - Gets or sets the number of pixels or samples distributed evenly across the horizontal dimension of the rectangular EOIR sensor bands focal plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.vertical_pixels`
+              - Gets or sets the number of pixels or samples distributed evenly across the vertical dimension of the rectangular EOIR sensor bands focal plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.horizontal_pp`
+              - Gets or sets the spacing between pixels or samples along the horizontal dimension of the rectangular EOIR sensor bands focal plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.vertical_pp`
+              - Gets or sets the spacing between pixels or samples along the vertical dimension of the rectangular EOIR sensor bands focal plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.horizontal_ifov`
+              - Get the horizontal angular extent of a single individual pixels field-of-view for this sensor band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.vertical_ifov`
+              - Get the vertical angular extent of a single individual pixels field-of-view for this sensor band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.low_band_edge_wl`
+              - Gets or sets the cut-on spectral wavelength of the current sensor band at least one nanometer less than the cut-off value.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.high_band_edge_wl`
+              - Gets or sets the cut-off spectral wavelength of the current sensor band at least one nanometer greater than the cut-on value.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.num_intervals`
+              - Gets or sets the number of oversampled spectral intervals to discretely simulate for this sensor band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.fnumber`
+              - Gets or sets the F-Number ratio of the system, the effective focal length divided by the clear aperture diameter for this sensor band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.long_d_focus`
+              - Gets or sets the amount of defocus along the optical axis between the ideal image focal plane and the actual detector focal plane for the current sensor band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.eff_focal_l`
+              - Gets or sets the effective focal length of the current sensor band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.image_quality`
+              - Discrete level of optical image quality. Aberrations are modeled based on a RMS wavefront error.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.entrance_p_dia`
+              - Diameter of the single lens equivalent optical prescription.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.wavelength`
+              - Gets or sets the wavelength in the sensors spectral band to use for diffraction modeling calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.wavelength_type`
+              - Gets or sets the relative position within the sensors spectral band to use as the reference wavelength for diffraction modeling calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.integration_time`
+              - Gets or sets the time interval over which radiant signal is collected before generating an image.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.saturation_mode`
+              - Gets or sets the radiant energy units for saturation and sensitivity, Irradiance better suited for observing point sources or Radiance better suited for resolved images.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.dynamic_range`
+              - Get the ratio of the brightest signal to the noise floor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.dynamic_range_mode`
+              - Unlimited allowing pixels to measure any amount of radiant signal without limit or Simulate Saturation where pixels can only measure up to the specified saturation level of radiant signal.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.nei`
+              - Noise equivalent irradiance or radiance for the current sensor band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.sei`
+              - Saturation equivalent irradiance or radiance for the current sensor band.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.sensitivities`
+              - Get the collection of Sensitivity time-value pairs.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.saturations`
+              - Get the collection of Saturation time-value pairs.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.spatial_input_mode`
+              - Spatial parameter input mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.spectral_shape`
+              - Overall system spectral shape designation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.system_relative_spectral_response_file`
+              - System relative spectral response file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.rsr_units`
+              - System custom RSR units.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_input_mode`
+              - Optical parameter input mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.rms_wavefront_error`
+              - Gets or sets the RMS wavefront error of the optical system.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_quality_data_file`
+              - Optical quality describing data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_transmission_mode`
+              - Optical transmission input mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_transmission`
+              - Band effective optical transmission.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_transmission_spectral_response_file`
+              - Optical spectral transmission data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_quality_data_file_spatial_sampling`
+              - Optical quality data file spatial sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_quality_data_file_frequency_sampling`
+              - Optical quality data file frequency sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.rad_param_level`
+              - Radiometric parameter input level.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.simulate_quantization`
+              - Simulate quantization effects of the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.qe_mode`
+              - Quantum efficiency input mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.quantization_mode`
+              - Quantization input mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.qe_value`
+              - Band effective detector quantum efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.detector_fill_factor`
+              - Gets or sets the effective fill factor of photosensitive surface area to the total detector surface area.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.read_noise`
+              - Gets or sets the read noise from the detectors in electrons.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.dark_current`
+              - Gets or sets the dark current noise rate from the detectors in electrons-per-second-per-detector.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.detector_full_well_capacity`
+              - Gets or sets the full-well capacity of the detectors in electrons-per-detector.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.bit_depth`
+              - Gets or sets the number of bits to encode the digital signal with.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.qss`
+              - Gets or sets the quantization step size of the digital output signal.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.qe_file`
+              - Spectral quantum efficiency data file for the detectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.spatial_auto_rebalance`
+              - Spatial parameter auto rebalance.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRBand.optical_auto_rebalance`
+              - Spatial parameter auto rebalance.
 
 
 Import detail

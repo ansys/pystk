@@ -32,7 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollection.type`
+              - Return the type of collection of interval lists.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollection.labels`
+              - Get the labels associated with the interval lists in the collection.
 
 
 Import detail

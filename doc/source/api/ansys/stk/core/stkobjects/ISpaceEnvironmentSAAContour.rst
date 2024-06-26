@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour.channel`
+              - Energy level for SAA protons.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour.flux_level`
+              - Flux level for SAA contour.
 
 
 Import detail

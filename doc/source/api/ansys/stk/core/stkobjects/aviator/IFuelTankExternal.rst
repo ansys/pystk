@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.name`
+              - Gets or sets the name of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.empty_weight`
+              - Gets or sets the empty weight of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.capacity`
+              - Gets or sets the capacity of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.initial_fuel_state`
+              - Gets or sets the initial fuel state of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.consumption_order`
+              - Gets or sets the consumption order of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal.drag_index`
+              - Gets or sets the drag index of the fuel tank.
 
 
 Import detail

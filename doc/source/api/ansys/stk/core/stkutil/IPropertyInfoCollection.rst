@@ -34,7 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfoCollection._NewEnum`
+              - Enumerates through the properties.
             * - :py:attr:`~ansys.stk.core.stkutil.IPropertyInfoCollection.count`
+              - Get the number of properties available.
 
 
 Import detail

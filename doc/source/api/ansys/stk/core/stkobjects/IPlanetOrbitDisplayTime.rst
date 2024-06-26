@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetOrbitDisplayTime.time`
+              - Display time of the planet's orbit. Uses Time Dimension.
 
 
 Import detail

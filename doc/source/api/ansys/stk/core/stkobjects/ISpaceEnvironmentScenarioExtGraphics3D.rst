@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentScenarioExtGraphics3D.magnetic_field`
+              - 3D Graphics settings for the Geomagnetic field.
 
 
 Import detail

@@ -32,9 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.script_type`
+              - Script type allowed {JScript | Matlab | VBScript}.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.value_function`
+              - The Value function to be evaluated.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.derivative_function`
+              - The Derivative function to be evaluated.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalarCustomInline.dimension`
+              - Dimension name.
 
 
 Import detail

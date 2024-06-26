@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorPointingExternal.filename`
+              - Path and file name of the sensor pointing (.sp) file.
 
 
 Import detail

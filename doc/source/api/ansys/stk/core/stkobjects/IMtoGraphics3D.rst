@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3D.tracks`
+              - Get the collection of MTO 3D graphics settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3D.default_track`
+              - Get the default track 3D graphics settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3D.global_track_options`
+              - Get the MTO global track 3D options.
 
 
 Import detail

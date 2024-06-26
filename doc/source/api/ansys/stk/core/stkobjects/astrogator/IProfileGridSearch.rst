@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGridSearch.targeter_graphs`
+              - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGridSearch.scripting_tool`
+              - Returns the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGridSearch.controls`
+              - Get the list of control parameters defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGridSearch.results`
+              - Get the list of results defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGridSearch.log_file`
+              - Name of the log file for this profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGridSearch.enable_display_status`
+              - If true, a page will appear during the targeting run to report the status of the targeting effort in terms of proximity to the desired value for each dependent variable in the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileGridSearch.should_generate_graph`
+              - If true, a plot is automatically generate the selected result value versus the control value for the grid search when the profile runs.
 
 
 Import detail

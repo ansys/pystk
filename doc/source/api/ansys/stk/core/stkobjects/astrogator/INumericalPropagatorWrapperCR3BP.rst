@@ -30,9 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapperCR3BP.central_body_name`
+              - Gets or sets the central body for Propagation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapperCR3BP.propagator_functions`
+              - Get the list of propagator functions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapperCR3BP.numerical_integrator`
+              - Get the numerical integrator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.INumericalPropagatorWrapperCR3BP.numerical_integrator_type`
+              - Get the numerical integrator type.
 
 
 Import detail

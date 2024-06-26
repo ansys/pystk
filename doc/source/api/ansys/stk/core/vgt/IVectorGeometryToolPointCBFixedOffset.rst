@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.central_body`
+              - Get the central body.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.reference_shape`
+              - Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPointCBFixedOffset.position`
+              - A position of the point fixed on the central body.
 
 
 Import detail

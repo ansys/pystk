@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleLaunchControlFixedApogeeAltitude.apogee_altitude`
+              - Fixed apogee altitude: the vehicle's maximum altitude. Uses Distance Dimension.
 
 
 Import detail

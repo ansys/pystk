@@ -32,10 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.type`
+              - Return the type of interval.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.label_start_description`
+              - The start description.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.label_stop_description`
+              - The stop description.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.label_start`
+              - A label associated with the interval start.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventInterval.label_stop`
+              - A label associated with the interval stop.
 
 
 Import detail

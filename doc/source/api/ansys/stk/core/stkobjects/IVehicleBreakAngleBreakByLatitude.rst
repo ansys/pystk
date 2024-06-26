@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLatitude.latitude`
+              - Gets or sets the value of the latitude crossing at which a new pass begins. Uses Latitude Dimension.
 
 
 Import detail

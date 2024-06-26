@@ -42,8 +42,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection._NewEnum`
+              - Returns an enumerator containing the keys in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IKeyValueCollection.keys`
+              - Returns an array of keys of the collection.
 
 
 Import detail

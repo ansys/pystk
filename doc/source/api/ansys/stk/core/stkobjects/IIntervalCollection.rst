@@ -46,6 +46,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IIntervalCollection.count`
+              - Number of items in the collection.
 
 
 Import detail

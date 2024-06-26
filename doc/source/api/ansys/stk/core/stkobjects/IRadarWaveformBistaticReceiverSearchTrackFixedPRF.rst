@@ -30,15 +30,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.supported_probability_of_detection`
+              - Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.probability_of_detection`
+              - Gets the interface for setting the probability of detection parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.pulse_integration_type`
+              - Gets or sets the pulse integration type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.pulse_integration`
+              - Gets the interface for setting pulse integration parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.enable_resolution_override`
+              - Gets or sets the flag for overriding the computed range and azimuth resolution values.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.range_cell_resolution`
+              - Gets or sets the overriding range cell resolution value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.azimuth_resolution`
+              - Gets or sets the overriding azimuth resolution value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.enable_pulse_canceller`
+              - Gets or sets the flag for enabling pulse cancellation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.number_of_pulses_to_cancel`
+              - Gets or sets the number of pulses to cancel.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticReceiverSearchTrackFixedPRF.enable_coherent_pulses`
+              - Gets or sets the flag for modeling coherent pulses.
 
 
 Import detail

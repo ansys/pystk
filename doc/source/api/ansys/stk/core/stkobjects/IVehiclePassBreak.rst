@@ -30,12 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.definition`
+              - Get the break angle type and, in the case of latitude, the direction at latitiude crossing.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.partial_pass_measurement`
+              - Gets or sets the method for calculating partial passes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.coordinate_system`
+              - Gets or sets the coordinate system in which latitude and longitude are to be measured.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.repeat_ground_track_numbering`
+              - Get data on repeat ground track numbering.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.pass_numbering_type`
+              - Get the criterion for pass numbering.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.pass_numbering`
+              - Get pass numbering data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePassBreak.supported_coordinate_systems`
+              - Returns supported coordinate systems.
 
 
 Import detail

@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.crres_proton_activity`
+              - Activity level for CRRES proton model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.crres_radiation_activity`
+              - Activity level for CRRES radiation model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.nasa_energy_values`
+              - Proton and electron energies for the NASA models.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment.nasa_models_activity`
+              - Activity level for the NASA models.
 
 
 Import detail

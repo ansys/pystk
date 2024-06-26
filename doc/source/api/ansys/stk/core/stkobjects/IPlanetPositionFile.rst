@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionFile.filename`
+              - Path and filename of the planetary ephemeris file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanetPositionFile.file_path`
+              - Full Path and filename of the planetary ephemeris file.
 
 
 Import detail

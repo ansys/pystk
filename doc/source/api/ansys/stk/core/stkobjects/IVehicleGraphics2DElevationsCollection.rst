@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DElevationsCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
 
 
 Import detail

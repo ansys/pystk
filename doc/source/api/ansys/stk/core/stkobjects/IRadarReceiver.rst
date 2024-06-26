@@ -36,27 +36,49 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.antenna_to_lna_line_loss`
+              - Gets or sets the antenna to LNA line loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.lna_gain`
+              - Gets or sets the LNA gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.lna_to_receiver_line_loss`
+              - Gets or sets the LNA to receiver line loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.use_rain`
+              - Gets or sets the option for computing rain loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.supported_rain_outage_percent_values`
+              - Gets an array of supported rain outage percent values.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.rain_outage_percent`
+              - Gets or sets the rain outage percent.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.pre_receive_gains_losses`
+              - Gets the collection of additional pre-receive gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_ortho_polarization`
+              - Gets or sets the option for enabling the orthogonal polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.polarization`
+              - Gets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.lna_bandwidth`
+              - Gets or sets the LNA bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.supported_filters`
+              - Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.filter`
+              - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.system_noise_temperature`
+              - Gets the system noise temperature interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_rf_stc`
+              - Gets or sets whether the RF STC is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.rf_stc`
+              - Gets the RF STC.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.enable_if_stc`
+              - Gets or sets whether the IF STC is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.if_stc`
+              - Gets the IF STC.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.supported_rf_stc_types`
+              - Gets the RF STC Types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.supported_if_stc_types`
+              - Gets the IF STC Types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarReceiver.frequency`
+              - Gets or sets the receiver center frequency.
 
 
 Import detail

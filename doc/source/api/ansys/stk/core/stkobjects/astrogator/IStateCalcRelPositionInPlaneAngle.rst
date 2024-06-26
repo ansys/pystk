@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.orbit_plane_source`
+              - Selection of the satellite that will generate the orbit plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.element_type`
+              - Choice of osculating or mean elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.reference_selection`
+              - Gets or sets the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.reference`
+              - Get the reference object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.relative_position_type`
+              - Gets or sets the type of the relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.counter_clockwise_rotation`
+              - Sets sign of the angle for counterclockwise rotation about orbit normal.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelPositionInPlaneAngle.reference_direction`
+              - Direction that establishes the zero value when projected into the orbit plane.
 
 
 Import detail

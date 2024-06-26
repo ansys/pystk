@@ -40,7 +40,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.sensor`
+              - Gets or sets the assigned sensor object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisFieldOfView.entirety`
+              - Field Of View Entirety.
 
 
 Import detail

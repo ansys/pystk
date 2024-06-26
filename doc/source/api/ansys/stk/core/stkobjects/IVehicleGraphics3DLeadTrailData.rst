@@ -36,12 +36,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.lead_data_type`
+              - Get display option for the leading portion of the vehicle's tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.trail_data_type`
+              - Get display option for the trailing portion of the vehicle's tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.lead_data`
+              - Get the display value (time or percent) for the leading portion of the vehicle's tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.trail_data`
+              - Get the display value (time or percent) for the trailing portion of the vehicle's tracks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.has_lead_data`
+              - Determine whether the leading display option has value data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.has_trail_data`
+              - Determine whether the trailing display option has value data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.supported_data_types`
+              - Returns an array of valid choices.
 
 
 Import detail

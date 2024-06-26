@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDragOptions.use_approx_altitude`
+              - Opt whether to have the drag model use an approximate expression to determine altitude, instead of finding the exact altitude, when computing density.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleHPOPForceModelDragOptions.use_apparent_sun_position`
+              - Opt whether to use the apparent position of the sun; otherwise, the true position of the sun is used.
 
 
 Import detail

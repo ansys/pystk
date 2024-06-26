@@ -32,8 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel.atmosphere_model_type_string`
+              - Gets or sets the atmosphere model type as a string value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel.atmosphere_model_source`
+              - Gets or sets the atmosphere model source.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel.mode_as_basic`
+              - Get the options for a Basic Atmosphere model.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRenderingEventArgs.time`
+              - The time of the rendering event.
             * - :py:attr:`~ansys.stk.core.graphics.IRenderingEventArgs.time_in_ep_secs`
+              - The time of the rendering event (in STK's scenario epoch units).
 
 
 Import detail

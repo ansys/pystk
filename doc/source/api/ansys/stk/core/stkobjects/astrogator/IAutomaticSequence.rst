@@ -30,8 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.name`
+              - Gets or sets the name of the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.user_comment`
+              - Gets or sets the user comment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequence.sequence`
+              - Returns the segment collection of the sequence.
 
 
 Import detail

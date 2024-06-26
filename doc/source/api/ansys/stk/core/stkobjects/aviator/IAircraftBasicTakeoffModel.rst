@@ -34,14 +34,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.takeoff_speed`
+              - Get the speed to which the aircraft accelerates on its ground roll for takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.takeoff_speed_type`
+              - Get the takeoff speed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.sea_level_ground_roll`
+              - Gets or sets the distance the aircraft travels along the ground while accelerationg to takeoff at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.departure_speed`
+              - Get the aircraft's speed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.departure_speed_type`
+              - Get the departure speed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.use_aero_prop_fuel`
+              - Gets or sets whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.scale_fuel_flow_by_non_std_density`
+              - Gets or sets whether to scale fuel flow by non std density.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.accel_fuel_flow`
+              - Gets or sets the aircraft's fuel flow rate while accelerating during takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicTakeoffModel.departure_fuel_flow`
+              - Gets or sets the aircraft's fuel flow rate at departure speed.
 
 
 Import detail

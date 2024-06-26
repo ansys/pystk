@@ -48,17 +48,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.enable_connect`
+              - Enable or disable TCP/IP connect command processing (default: disabled).
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.connect_port`
+              - Specify TCP/IP port to be used by Connect (default: 5001).
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.host_id`
+              - Returns the Host ID.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.registration_id`
+              - Returns the Registration ID.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.version`
+              - Returns the version number.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.vendor_id`
+              - This property is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.log_file_full_name`
+              - Returns full path and log file name.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.logging_mode`
+              - Controls the log file generation, and if the log file is deleted or not on application exit.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.connect_max_connections`
+              - Specify the maximum number of Connect connections to allow.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.no_graphics`
+              - Start engine with or without graphics (default: engine starts with graphics.).
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.show_sla_if_not_accepted`
+              - Shows the Software License Agreement dialog if not already accepted.
             * - :py:attr:`~ansys.stk.core.stkx.ISTKXApplication.use_hook`
+              - Start engine with or without message hook setup (default: engine starts with message hook setup.).
 
 
 Import detail

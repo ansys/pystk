@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics3D.proximity`
+              - Get the aircraft's 3D proximity properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics3D.elev_contours`
+              - Get the aircraft's 3D elevation contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics3D.covariance_pointing_contour`
+              - Get the aircraft's 3D covariance pointing properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics3D.drop_lines`
+              - Returns an interface allowing to configure vehicle's drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics3D.vapor_trail`
+              - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAircraftGraphics3D.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

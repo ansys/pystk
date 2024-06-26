@@ -34,6 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoAnalysisPosition.altitude_reference`
+              - Specify the altitude reference. Default is Ellipsoid.
 
 
 Import detail

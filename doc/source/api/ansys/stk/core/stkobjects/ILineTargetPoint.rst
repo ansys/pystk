@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPoint.lat`
+              - Latitude of a point used in defining a line target. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetPoint.lon`
+              - Longitude of a point used in defining a line target. Uses Longitude Dimension.
 
 
 Import detail

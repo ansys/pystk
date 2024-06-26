@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IRasterStream.update_delta`
+              - Gets or sets the update delta of the raster stream in seconds. The update delta defines the interval at which the Update method will be called. The default update delta is 0, which will call the Update method every time the scene manager time changes...
 
 
 Import detail

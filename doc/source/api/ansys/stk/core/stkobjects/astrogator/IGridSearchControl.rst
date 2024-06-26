@@ -21,14 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.enable`
+              - If true, the variable is being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.name`
+              - Get the name of the parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.parent_name`
+              - Get the name of the segment to which the parameter belongs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.current_value`
+              - Get the value of the independent variable after the last targeter run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.lower_bound`
+              - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.upper_bound`
+              - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.use_custom_display_unit`
+              - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.custom_display_unit`
+              - Gets or sets the unit in which the value will be displayed in the GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IGridSearchControl.step`
+              - Specifies the step size to use when evaluating the grid search. Dimension depends on context.
 
 
 Import detail

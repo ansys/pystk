@@ -21,23 +21,41 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.airspeed_mode`
+              - Gets or sets the active airspeed mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.min_speed_limits`
+              - Gets or sets the minimum speed limit type to enforce.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.max_speed_limits`
+              - Gets or sets the maximum speed limit type to enforce.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.maintain_airspeed_type`
+              - Gets or sets the airspeed type option in the Maintain Current Airspeed mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.specified_airspeed_type`
+              - Gets or sets the airspeed type option in the Maintain Specified Airspeed mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.specified_accel_decel_mode`
+              - Gets or sets the accel/decel mode for the Maintain Specified Airspeed mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.specified_airspeed`
+              - Gets or sets the airspeed for the Maintain Specified Airspeed mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.specified_accel_decel_g`
+              - Gets or sets the accel/decel G for the Maintain Specified Airspeed mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.accel_g`
+              - Gets or sets the accel G for the Accelerate at mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.decel_g`
+              - Gets or sets the decel G for the Decelerate at mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.accel_mode`
+              - Gets or sets the accel mode for the Accelerate at mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.decel_mode`
+              - Gets or sets the accel mode for the Decelerate at mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.throttle`
+              - Gets or sets the throttle setting for the Accel/Decel using Aero/Propulsion at mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.interpolate_init_g`
+              - Gets or sets the initial G for the Interpolate Accel/Decel over Interval mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.interpolate_end_g`
+              - Gets or sets the end G for the Interpolate Accel/Decel over Interval mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.interpolate_end_time`
+              - Gets or sets the end time for the Interpolate Accel/Decel over Interval mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.interpolate_stop_at_end_time`
+              - Gets or sets the option to stop at the end time for the Interpolate Accel/Decel over Interval mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverAirspeedOptions.thrust`
+              - Get the thrust options for the Specify Thrust mode.
 
 
 Import detail

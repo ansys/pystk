@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.semi_major_axis`
+              - Half the length of the major axis of the orbital ellipse. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.mean_motion`
+              - Gets or sets the average angular rate of the satellite based on 2 body motion. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.h`
+              - h/k collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.k`
+              - h/k collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.p`
+              - p/q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.q`
+              - p/q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.mean_longitude`
+              - Specifies a satellite's position within its orbit at epoch and equals the sum of the classical Right Ascension of the Ascending Node, Argument of Perigee, and Mean Anomaly. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IElementEquinoctial.formulation`
+              - Retrograde, which has its singularity at an inclination of 0 deg. Posigrade, which has its singularity at an inclination of 180 deg.
 
 
 Import detail

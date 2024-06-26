@@ -30,6 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmExternalFile.filename`
+              - Path and file name of volume external file.
 
 
 Import detail

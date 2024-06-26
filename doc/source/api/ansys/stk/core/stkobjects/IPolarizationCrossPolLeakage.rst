@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage.cross_pol_leakage`
+              - Gets or sets the polarization cross pol leakage.
 
 
 Import detail

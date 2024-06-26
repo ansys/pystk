@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.maximum_value`
+              - Gets or sets the maximum value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.start_value`
+              - Gets or sets the start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.step_size`
+              - Gets or sets the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.start_range`
+              - Gets or sets the start range.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.stop_range`
+              - Gets or sets the stop range.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope.decay_slope`
+              - Gets or sets the decay slope.
 
 
 Import detail

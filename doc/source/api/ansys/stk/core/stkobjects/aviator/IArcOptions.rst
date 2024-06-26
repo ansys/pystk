@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.turn_direction`
+              - Gets or sets the turn direction to the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.start_bearing`
+              - Gets or sets the bearing from the site to the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.use_magnetic_heading`
+              - Gets or sets the option to use a magnetic heading for the start bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.radius`
+              - Gets or sets the radius of the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.turn_angle`
+              - Gets or sets the length of the arc the aircraft will fly.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.join_arc`
+              - Gets or sets the method to join the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IArcOptions.exit_arc`
+              - Gets or sets the method to exit the arc.
 
 
 Import detail

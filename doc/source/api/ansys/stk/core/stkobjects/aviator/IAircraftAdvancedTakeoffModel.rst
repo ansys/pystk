@@ -36,13 +36,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.takeoff_speed_mode`
+              - Gets or sets the mode to calculate the aircraft's airspeed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.stall_speed_ratio`
+              - Get the ratio of the airspeed to the stall speed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.angle_of_attack`
+              - Get the Angle of Attack upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.flaps`
+              - Gets or sets the extension of the flaps during takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.departure_speed_mode`
+              - Gets or sets the mode to calculate the airspeed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.departure_speed_limit`
+              - Get the aircraft's maximum airspeed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.departure_speed_limit_type`
+              - Get the departure speed limim type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedTakeoffModel.use_afterburner`
+              - Opt whether to use the afterburner if it is possible.
 
 
 Import detail

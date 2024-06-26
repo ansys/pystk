@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICoverageResolutionArea.area`
+              - Gets or sets the area used to define grid resolution. Use Area Dimension.
 
 
 Import detail

@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.extremum_type`
+              - The extremum type of interest (either minimum or maximum) for scalar calculation.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.is_global`
+              - Indicates whether to perform local or global search. The default is false.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.calculation`
+              - The scalar calculation.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.custom_time_limits`
+              - A custom interval list or a single interval. It is by default set to overall availability of host object. This determines time limits within extrema are sought. The time limits will be used if UseCustomTimeLimits is set to true.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.use_custom_time_limits`
+              - Indicate whether to use specified custom time limits (see CustomTimeLimits).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.save_data_option`
+              - Specify whether computed times of extrema are saved/loaded, otherwise it is recomputed on load if necessary.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.sampling`
+              - The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventArrayExtrema.convergence`
+              - The Convergence definition, which uses time tolerance to determine when times of extrema are found.
 
 
 Import detail

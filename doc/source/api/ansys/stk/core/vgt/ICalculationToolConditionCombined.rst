@@ -40,7 +40,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.combine_operation`
+              - Get the operation from the condition that determines how the conditions are combined. The operation can be set to AND, OR, XOR, MINUS.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionCombined.condition_count`
+              - Gets the number of conditions in the combined condition.
 
 
 Import detail

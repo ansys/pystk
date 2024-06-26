@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceDisplayCondition.minimum_distance`
+              - Gets or sets the minimum distance of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceDisplayCondition.maximum_distance`
+              - Gets or sets the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance.
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceDisplayCondition.minimum_distance_squared`
+              - Gets the squared minimum distance of the inclusive distance interval.
             * - :py:attr:`~ansys.stk.core.graphics.IDistanceDisplayCondition.maximum_distance_squared`
+              - Gets the squared maximum distance of the inclusive distance interval.
 
 
 Import detail

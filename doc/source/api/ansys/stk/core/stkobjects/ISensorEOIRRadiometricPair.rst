@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRRadiometricPair.integration_time`
+              - Integration Time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorEOIRRadiometricPair.equivalent_value`
+              - Sensitivity or Saturation Equivalent value.
 
 
 Import detail

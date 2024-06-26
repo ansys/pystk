@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteBounds.lower_bound`
+              - Lower bound for a boundary element.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteBounds.upper_bound`
+              - Upper bound for a boundary element.
 
 
 Import detail

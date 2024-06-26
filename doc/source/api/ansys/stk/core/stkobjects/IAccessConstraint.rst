@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_name`
+              - Property used to access the constraint name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.is_plugin`
+              - Returns true if the access constraint is a plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.excl_intvl`
+              - Exclude Time Intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_type`
+              - Property used to access the constraint type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_time_step`
+              - Maximum time step used in adaptive sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_rel_motion`
+              - Maximum relative motion used in adaptive sampling.
 
 
 Import detail

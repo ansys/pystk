@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRateOffset.rate`
+              - Rate of precession or spin. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRateOffset.offset`
+              - Initial offset of precession. Uses Angle Dimension.
 
 
 Import detail

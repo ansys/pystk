@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelFile.filename`
+              - Path and filename of the model file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelFile.file_path`
+              - Absolute path and filename of the model file.
 
 
 Import detail

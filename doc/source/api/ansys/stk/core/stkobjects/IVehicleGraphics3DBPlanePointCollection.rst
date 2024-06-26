@@ -36,9 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection.point_color`
+              - Whether to display the first point in the same color as the other points.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlanePointCollection.first_point_color`
+              - Gets or sets the specified color of the first point, if different from the others.
 
 
 Import detail

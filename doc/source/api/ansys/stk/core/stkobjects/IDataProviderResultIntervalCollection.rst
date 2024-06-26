@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultIntervalCollection.count`
+              - Returns a number of elements in collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultIntervalCollection._NewEnum`
+              - Returns an enumerator for the collection.
 
 
 Import detail

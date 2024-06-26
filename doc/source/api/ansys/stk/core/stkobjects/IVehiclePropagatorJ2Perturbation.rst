@@ -30,10 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.initial_state`
+              - Get the initial state.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.propagation_frame`
+              - Gets or sets the propagation frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ2Perturbation.supported_propagation_frames`
+              - Returns supported propagation frames.
 
 
 Import detail

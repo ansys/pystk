@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals.filename`
+              - Name of file containing the intervals data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals.action_type`
+              - This property is deprecated. Use ExclIntvl instead to determine whether intervals are to be excluded or not. The action type (include or exclude).
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals.intervals`
+              - Gets the collection of intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals.file_path`
+              - Full path and name of file containing the intervals data.
 
 
 Import detail

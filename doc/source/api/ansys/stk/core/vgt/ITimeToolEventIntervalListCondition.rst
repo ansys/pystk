@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.condition`
+              - The condition component.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.custom_time_limits`
+              - The interval list or single interval within which intervals of satisfaction are sought. The specified value is used if UseCustomTimeLimits is true. The default is set to overall availability of host object...
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.use_custom_time_limits`
+              - Indicate whether to use specified custom time limits (see CustomTimeLimits).
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.save_data_option`
+              - Determine if computed intervals of satisfaction are saved/loaded, or recomputed on load if necessary.
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.sampling`
+              - The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition.convergence`
+              - The Convergence definition, which uses time tolerance to determine when times for intervals of satisfaction are found.
 
 
 Import detail

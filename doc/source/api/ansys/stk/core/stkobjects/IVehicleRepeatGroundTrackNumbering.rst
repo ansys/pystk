@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRepeatGroundTrackNumbering.first_path_num`
+              - Path numbers are incremented concurrently with pass numbers, but are limited to a range of 1 to the number of revolutions in the repeat cycle. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRepeatGroundTrackNumbering.revs_to_repeat`
+              - Once the path number reaches the number of revolutions in the repeat cycle, the next path number is 1. Dimensionless.
 
 
 Import detail

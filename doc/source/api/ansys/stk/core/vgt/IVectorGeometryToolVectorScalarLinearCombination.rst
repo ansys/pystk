@@ -21,17 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.vector_a`
+              - Vector A can be any VGT vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scale_factor_a`
+              - Scale factor for vector A.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.normalize_vector_a`
+              - Whether to normalize vector A.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.use_scale_from_scalar_a`
+              - Whether to use a scale from scalar A.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.use_scale_from_scalar_b`
+              - Whether to use a scale from scalar B.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scalar_a`
+              - Scalar scale A. Can be any Scalar calculation.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scalar_b`
+              - Scalar scale B. Can be any Scalar calculation.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.vector_b`
+              - Vector B can be any VGT vector.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.scale_factor_b`
+              - Scale factor for vector B.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.normalize_vector_b`
+              - Whether to normalize vector B.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.output_dimension_inheritance`
+              - Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarLinearCombination.output_dimension`
+              - A dimension to interpret the output vector.
 
 
 Import detail

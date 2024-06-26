@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.draw_at_cb`
+              - Only available for geometric elements relating to objects. If selected, the geometric element is drawn at the central body or object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.axes`
+              - The name of the axes or system used to define the coordinate frame associated with the selected vector or axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.persistence_visible`
+              - Successively displays geometric elements over the specified duration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.duration`
+              - The length of time during which the geometric element is visible. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.connect`
+              - Specifies the method used for connecting geometric elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.transparent`
+              - If selected, earlier occurrences of a geometric element display fade over time so that it is drawn as completely filled at the most recent animation time and fades as the animation moves forward.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.available_axes`
+              - Returns an array of available Axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.draw_at_point`
+              - If selected, the geometric element is drawn at the selected point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.point`
+              - Displays a point at the current animation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAxes.available_points`
+              - Returns a safearray of available points.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DPoint.is_visible`
+              - Opt whether to display the track point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DPoint.size`
+              - Gets or sets the size of the track point in pixels. Dimensionless.
 
 
 Import detail

@@ -30,14 +30,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.start_time`
+              - Get the start time of ephemeris interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.stop_time`
+              - Get the stop time of ephemeris interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.filename`
+              - Name of external file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.override`
+              - Opt whether to override times contained in the external file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.file_format`
+              - Ephemeris file format.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.ephemeris_start_epoch`
+              - If overriding the times contained in the external file, specify the time of the first ephemeris point.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.limit_ephemeris_to_scenario_interval`
+              - Limit ephemeris for analysis to the Scenario Interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal.message_level`
+              - Message level used to report messages during file loading.
 
 
 Import detail

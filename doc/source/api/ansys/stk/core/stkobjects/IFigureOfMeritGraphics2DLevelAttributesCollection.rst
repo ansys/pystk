@@ -38,7 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesCollection.count`
+              - Returns the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesCollection._NewEnum`
+              - Returns an enumerator that can iterate through the collection.
 
 
 Import detail

@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks.time_between_ticks`
+              - Time between tick marks: the time elapsed between each milestone indicated by a tick mark along the vehicle's path. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks.ground_track`
+              - Get the ground track tick marks.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks.trajectory`
+              - Get the trajectory tick marks.
 
 
 Import detail

@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.analysis_interval`
+              - The volume analysis interval or interval list.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.evaluation_of_spatial_calc_type`
+              - Get evaluation of spatial calculation type. A member of the AgEVmSpatialCalcEvalType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.time_array`
+              - The time array when Evaluation of spatial calculation at times from time array is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.step_size`
+              - Gets or sets the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.available_analysis_intervals`
+              - Get the available analysis intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVmAnalysisInterval.available_times_from_time_array`
+              - Get the available times from time array.
 
 
 Import detail

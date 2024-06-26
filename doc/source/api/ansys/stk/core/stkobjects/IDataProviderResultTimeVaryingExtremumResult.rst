@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult.value`
+              - Value of the time varying extremum computed. Uses the dimension of the data set used to compute the time varying extremum.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult.time`
+              - Get the time when the value occurred. Use this time with the Exec methods to retrieve other element values when the statistics occurred. Uses DateFormat Dimension.
 
 
 Import detail

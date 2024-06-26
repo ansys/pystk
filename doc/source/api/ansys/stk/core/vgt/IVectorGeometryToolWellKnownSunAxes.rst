@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunAxes.fixed`
+              - Sun's Fixed axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunAxes.icrf`
+              - Sun's ICRF.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunAxes.inertial`
+              - Sun's Inertial axes (as defined in STK).
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunAxes.j2000`
+              - The Sun's J2000 axes.
 
 
 Import detail

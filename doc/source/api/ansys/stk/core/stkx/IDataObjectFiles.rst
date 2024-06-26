@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.IDataObjectFiles._NewEnum`
+              - Returns an object that can be used to iterate through all the file names in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IDataObjectFiles.count`
+              - Number of file names contained in the collection.
 
 
 Import detail

@@ -48,9 +48,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection._NewEnum`
+              - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.count`
+              - Returns the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.available_profiles`
+              - Returns a list of available profiles.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfileCollection.provide_runtime_type_info`
+              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Import detail

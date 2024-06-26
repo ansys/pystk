@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutter.enabled`
+              - Gets or sets whether clutter is enabled or disabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutter.scattering_point_provider_list`
+              - Gets the link/embed controller for managing the scattering point provider list component.
 
 
 Import detail

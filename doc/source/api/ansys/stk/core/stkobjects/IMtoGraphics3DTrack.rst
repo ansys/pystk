@@ -21,15 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.is_visible`
+              - Opt whether to display the track in the 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.marker`
+              - Get the track's 3D marker properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.point`
+              - Get the track's 3D point properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.model`
+              - Get the track's 3D model properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.label`
+              - Get the track's 3D label properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.swap_distances`
+              - Get the track's 3D swap distance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.range_contours`
+              - Get the MTO's 3D range contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.drop_lines`
+              - Returns an interface allowing you to configure the MTO's drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.id`
+              - Get the identification number of the track. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack.should_fade_over_trail_time`
+              - Controls whether trailing line fades over trail time.
 
 
 Import detail

@@ -30,11 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.altitude_options`
+              - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.arc_options`
+              - Get the arc options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.arc_cruise_airspeed_options`
+              - Get the arc cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.enroute_options`
+              - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.enroute_cruise_airspeed_options`
+              - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute.enroute_turn_direction_options`
+              - Get the enroute turn direction options.
 
 
 Import detail

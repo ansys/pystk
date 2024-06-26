@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.origin_at_master`
+              - True if the origin is at the reference satellite, false if the origin is at the current satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.reference_selection`
+              - Gets or sets the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelMotion.reference`
+              - Get the reference object.
 
 
 Import detail

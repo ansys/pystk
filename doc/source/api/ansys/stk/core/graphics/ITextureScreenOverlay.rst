@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlay.texture`
+              - Gets or sets the texture (image) to be drawn on the overlay. Textures can be obtained from textures.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlay.texture_filter`
+              - Gets or sets the filter used for the texture associated with this overlay.
             * - :py:attr:`~ansys.stk.core.graphics.ITextureScreenOverlay.maintain_aspect_ratio`
+              - Gets or sets a value indicating whether the aspect ratio of the texture screen overlay is maintained or not.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSection.title`
+              - Returns a title of the sub-section.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderResultSubSection.intervals`
+              - Returns a collection of intervals within the sub-section.
 
 
 Import detail

@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine.length`
+              - Length of tick mark line. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine.line_width`
+              - Width of tick mark line.
 
 
 Import detail

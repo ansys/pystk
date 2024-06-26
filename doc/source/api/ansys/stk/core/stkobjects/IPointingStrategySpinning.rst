@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategySpinning.spin_axes_orientation`
+              - Gets the spin axes orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategySpinning.cone_angle`
+              - Gets the cone angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategySpinning.spin_rate`
+              - Gets the spin rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategySpinning.initial_offset_angle`
+              - Gets the initial offset angle.
 
 
 Import detail

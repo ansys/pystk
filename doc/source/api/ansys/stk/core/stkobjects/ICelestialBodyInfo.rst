@@ -30,15 +30,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.identifier`
+              - Gets the identification of the star as per star catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.catalog_name`
+              - Gets a name of the star catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.ra`
+              - Right ascention. Use the \"Angle\" dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.dec`
+              - Declination. Use the \"Angle\" dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.parallax`
+              - Trigonometric parallax. Use the \"Angle\" dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.velocity`
+              - Radial velocity.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.visual_magnitude`
+              - Visual magnitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.bminus_v`
+              - Johnson B-V color index.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.effective_temperature`
+              - Star's effective temperature. Use the \"Temperature\" dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICelestialBodyInfo.magnitude_to_irradiance_conversion_factor`
+              - Magnitude to irradiance conversion factor is not given directly in any catalog. This factor converts the Planck function radiance to a rescaled irradiance at Earth's distance from the star. Unitless.
 
 
 Import detail

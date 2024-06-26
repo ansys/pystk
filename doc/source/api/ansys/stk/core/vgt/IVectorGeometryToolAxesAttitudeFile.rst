@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAttitudeFile.filename`
+              - Specify a path to a file. The file must exist. Specifying an invalid path will generate an exception.
 
 
 Import detail

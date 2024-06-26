@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.fixed`
+              - Earth's Fixed axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.icrf`
+              - Earth's ICRF axes.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.inertial`
+              - Earth's Inertial axes (as defined in STK).
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthAxes.j2000`
+              - The Earth's J2000 axes.
 
 
 Import detail

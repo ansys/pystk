@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCustomPattern.filename`
+              - Path and file name of the custom sensor pattern file.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCustomPattern.angular_resolution`
+              - Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorCustomPattern.use_native_resolution`
+              - Controls pattern subsampling.
 
 
 Import detail

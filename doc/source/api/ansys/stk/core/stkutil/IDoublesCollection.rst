@@ -40,7 +40,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection.count`
+              - Returns the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.IDoublesCollection._NewEnum`
+              - Returns a collection enumerator.
 
 
 Import detail

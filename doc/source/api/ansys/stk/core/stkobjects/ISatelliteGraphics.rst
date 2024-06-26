@@ -32,24 +32,43 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.attributes_type`
+              - Type of 2D Graphics attributes: basic, access intervals or custom intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.attributes_supported_types`
+              - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.attributes`
+              - Get the satellite's 2D Graphics Attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.time_events`
+              - Get the satellite's TimeEvents properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.passes`
+              - Get the pass display settings of the satellite's Pass properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.pass_data`
+              - Get the leading/trailing ground track and orbit settings of the satellite's Pass properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.resolution`
+              - Get the path resolution settings of the satellite's Pass properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.elev_contours`
+              - Get the satellite's Elevation Contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.saa`
+              - Get the satellite's South Atlantic Anomaly Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.range_contours`
+              - Get the satellite's Range Contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.lighting`
+              - Get the satellite's Lighting properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.swath`
+              - Get the satellite's Swath properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.ground_ellipses`
+              - Get the satellite's Ground Ellipses properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.label_notes`
+              - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.ground_track_central_body_display`
+              - Gets the ground track display central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.use_inst_name_label`
+              - Specify whether to use the name of the satellite (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.label_name`
+              - The user-specified name to use as a label for the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the satellite are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISatelliteGraphics.radar_cross_section`
+              - Gets the radar cross section graphics interface.
 
 
 Import detail

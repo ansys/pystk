@@ -38,18 +38,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.kind`
+              - Returns the component kind.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.category`
+              - Allows the user to access or change the component category (Folder).
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.name`
+              - Returns the component name.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.description`
+              - Returns the component description.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.path`
+              - Returns the component's fully qualified path (ie. \"CentralBody/Earth Body\", etc.).
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_duplicable`
+              - Returns whether the VGT component can be duplicated.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context`
+              - Returns the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_info`
+              - Returns the component type information.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.qualified_path`
+              - An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. \"CentralBody/Earth Body Vector\", etc.).
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_valid`
+              - Returns whether the component is valid.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_ready`
+              - Returns whether the component is ready. The component is ready if it's been fully initialized.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_read_only`
+              - Returns whether the component is modifiable.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.embedded_components`
+              - Returns a collection of embedded components.
 
 
 Import detail

@@ -32,6 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolCondition.type`
+              - Returns the type of condition.
 
 
 Import detail

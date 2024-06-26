@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.pulse_number`
+              - Gets or sets the pulse number.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.integrator_type`
+              - Gets or sets the integrator type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.constant_efficiency`
+              - Gets or sets the constant efficiency value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.exponent_on_pulse_number`
+              - Gets or set the exponent on pulse number value.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarPulseIntegrationFixedNumberOfPulses.non_coherent_integration`
+              - Gets or sets the non-coherent integration flag.
 
 
 Import detail

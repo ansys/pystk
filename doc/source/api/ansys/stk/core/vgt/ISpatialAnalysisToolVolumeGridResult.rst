@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.epoch`
+              - Epoch of returned volumetric data.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_i`
+              - Number of grid point coordinates representing first dimension of volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_j`
+              - Number of grid point coordinates representing second dimension of volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_k`
+              - Number of grid point coordinates representing third dimension of volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_data_vector`
+              - Vector of scalar values representing volumetric data.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_position_vector`
+              - Vector of Cartesian coordinates of all volume grid points.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_native_position_vector`
+              - Vector of native coordinates of all volume grid points.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_gradient_vector`
+              - Vector of Cartesian coordinates representing gradient vectors at all volume grid points.
 
 
 Import detail

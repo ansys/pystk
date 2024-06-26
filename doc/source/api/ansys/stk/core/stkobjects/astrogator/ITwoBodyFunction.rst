@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction.grav_source`
+              - Gets or sets the source for the gravitational parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction.mu`
+              - Gets or sets the gravitational parameter. Uses Gravity Param Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ITwoBodyFunction.min_radius_percent`
+              - Gets or sets the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
 
 
 Import detail

@@ -32,17 +32,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.frequency_specification`
+              - Gets or sets the frequency specification.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.frequency`
+              - Gets or sets the frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.wavelength`
+              - Gets or sets the wavelength.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.power`
+              - Gets or sets the power.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.post_transmit_gains_losses`
+              - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.enable_polarization`
+              - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.enable_ortho_polarization`
+              - Gets or sets the option for enabling the orthogonal polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.polarization`
+              - Gets the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.power_amp_bandwidth`
+              - Gets or sets the power amplifier bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.enable_filter`
+              - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.supported_filters`
+              - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarTransmitter.filter`
+              - Gets the current filter model.
 
 
 Import detail

@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAirportCategory.arinc424_airports`
+              - Get the ARINC-424 airports.
 
 
 Import detail

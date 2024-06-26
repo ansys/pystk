@@ -30,7 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPathPointCollection.count`
+              - A total number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IPathPointCollection._NewEnum`
+
 
 
 Import detail

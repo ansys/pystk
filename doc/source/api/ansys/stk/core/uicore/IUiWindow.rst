@@ -36,16 +36,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.caption`
+              - Gets or sets the window caption. Can only be set within UI plugins for the non unique windows they own.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.window_state`
+              - The window state.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.height`
+              - The window height.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.width`
+              - The window width.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.left`
+              - The window horizontal position.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.top`
+              - The window vertical position.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.dock_style`
+              - The window docking style.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.no_wb_close`
+              - Whether to close the window when the application workbook is loaded/closed.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.un_pinned`
+              - The window's pinned state.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.supports_pinning`
+              - Returns whether the window supports pinning.
             * - :py:attr:`~ansys.stk.core.uicore.IUiWindow.toolbars`
+              - Returns the window's toolbar collection.
 
 
 Import detail

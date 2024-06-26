@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod.type`
+              - Gets the access sampling method type.
 
 
 Import detail

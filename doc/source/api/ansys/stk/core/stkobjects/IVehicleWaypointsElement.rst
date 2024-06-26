@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.latitude`
+              - Latitude of the waypoint. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.longitude`
+              - Longitude of the waypoint. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.altitude`
+              - Altitude of the waypoint. Changes in altitude take effect linearly between two waypoints. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.speed`
+              - Velocity of the vehicle from the current waypoint to the next. A change in velocity occurs immediately at the waypoint. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.acceleration`
+              - Rate of increase (if positive) or decrease (if negative) in the velocity of the vehicle. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.time`
+              - Time at which the vehicle is at the waypoint. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement.turn_radius`
+              - Curvature of the arc between the current waypoint and the next waypoint. A smaller turn radius produces a sharper curve in the arc. Uses Distance Dimension.
 
 
 Import detail

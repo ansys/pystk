@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IChainUserSpecifiedTimePeriod.time_interval`
+              - Allows configuring the time interval.
 
 
 Import detail

@@ -36,11 +36,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.enable_default_save`
+              - Save the articulation value as the default for all future sessions using this model. The articulation value is saved with the object and not with the model or articulation files.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.lod_count`
+              - Specify the level of detail (LOD) for defining articulations, where 0 is the finest level of detail and 1 is the coarsest model.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.use_object_color_for_model`
+              - Set Model Color to facility color if color articulation exists.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.save_artic_file_on_save`
+              - Save articulation file associated with the model when the object is saved.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.use_articulation_file`
+              - Use the articulation from the specified file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic.graphics_3d_articulation_file`
+              - Interface to specify articulation file.
 
 
 Import detail

@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.compass_directions_visible`
+              - Display of compass directions on the outline of the mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.altitude_labels_visible`
+              - Display of altitude labels.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.numb_altitude_labels`
+              - The number of altitude labels to display on the outline of the mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.interior_translucency`
+              - The translucency of the mask, where 1 = completely invisible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.line_translucency`
+              - The translucency of the outline of the mask, where 1 = completely invisible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DAzElMask.label_swap_distance`
+              - Interface to control the level of detail in labels and other screen objects at specified distances.
 
 
 Import detail

@@ -21,12 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.reference_central_body`
+              - Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.along_bearing_coordinates`
+              - Returns AlongBearing Coordinates parameters for the surface bearing.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.cross_bearing_coordinates`
+              - Returns CrossBearing Coordinates parameters for the surface bearing.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.altitude_coordinates`
+              - Returns altitude Coordinates parameters for the surface bearing.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.auto_fit_bounds`
+              - Specify whether to use the auto fit bounds. Set to true to use the auto fit bounds..
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.bearing_angle`
+              - Specify the Bearing Angle.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt.reference_location`
+              - Get lat/lon for reference location.
 
 
 Import detail

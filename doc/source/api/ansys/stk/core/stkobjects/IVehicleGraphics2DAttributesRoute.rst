@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRoute.is_route_visible`
+              - Opt whether to show the vehicle's route.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRoute.is_route_marker_visible`
+              - Opt whether to show the vehicle's route marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesRoute.pick_string`
+              - String displayed after instance name when the vehicle line is picked in 2D or 3D.
 
 
 Import detail

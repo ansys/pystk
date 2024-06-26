@@ -21,13 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.alpha`
+              - Yarkovsky effect alpha constant. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.r0`
+              - Heliocentric sublimation distance. Uses distance dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.nm`
+              - Yarkovsky effect m exponent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.nn`
+              - Yarkovsky effect n exponent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.nk`
+              - Yarkovsky effect k exponent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.a1`
+              - Radial acceleration multiplier. Uses acceleration dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.a2`
+              - Velocity tangent acceleration multiplier. Uses acceleration dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IYarkovskyFunc.a3`
+              - Orbit normal acceleration multiplier. Uses acceleration dimension.
 
 
 Import detail

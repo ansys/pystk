@@ -21,8 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.ISpherical.lat`
+              - Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.ISpherical.lon`
+              - Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.ISpherical.radius`
+              - Dimension depends on context.
 
 
 Import detail

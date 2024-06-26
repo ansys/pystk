@@ -21,11 +21,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanet.graphics`
+              - Get the planet's 2D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanet.access_constraints`
+              - Get the constraints imposed on the planet.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanet.graphics_3d`
+              - Get the planet's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanet.position_source`
+              - The criterion for defining the planet. A member of the AgEPlPositionSourceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanet.position_source_data`
+              - Get definitional data for the planet.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlanet.common_tasks`
+              - Common Tasks associated with the planet.
 
 
 Import detail

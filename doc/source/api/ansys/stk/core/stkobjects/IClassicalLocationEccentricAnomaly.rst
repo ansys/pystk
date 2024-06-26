@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationEccentricAnomaly.value`
+              - Value of Eccentric Anomaly: angle measured with origin at center of ellipse from direction of perigee to point on a circumscribing circle from which a line perpendicular to Semimajor Axis intersects position of satellite on ellipse. Uses Angle Dimension.
 
 
 Import detail

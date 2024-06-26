@@ -32,10 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.wind_model_type`
+              - Gets or sets the wind model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.wind_model_type_string`
+              - Gets or sets the wind model type as a string value. Use this for custom models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.wind_model_source`
+              - Gets or sets the wind model source.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.mode_as_constant`
+              - Get the options for a Constant Bearing/Speed wind model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IWindModel.mode_as_adds`
+              - Get the options for a NOAA ADDS Service wind model.
 
 
 Import detail

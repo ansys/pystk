@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.coordinate_system_type`
+              - Gets or sets the coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.coordinate_system`
+              - Get the coordinate system and coordinate epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.l_type`
+              - Option for Delaunay L (default or L/SQRT(mu).
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.l`
+              - Value of L or L/SQRT(mu).
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.h_type`
+              - Option for Delaunay H (default or H/SQRT(mu).
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.h`
+              - Value of H or H/SQRT(mu).
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.g_type`
+              - Option for Delaunay G (default or G/SQRT(mu).
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.g`
+              - Value of G or G/SQRT(mu).
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.supported_coordinate_system_types`
+              - Returns an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.mean_anomaly`
+              - Mean Anomaly (l). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.arg_of_periapsis`
+              - Argument of periapsis (g). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.raan`
+              - RAAN (h). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IOrbitStateDelaunay.state_epoch`
+              - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 
 
 Import detail

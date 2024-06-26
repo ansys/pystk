@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.satellite_orbit_normal_type`
+              - Choice of osculating or mean elements for describing the orbit plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.reference_satellite_orbit_normal_type`
+              - Choice of osculating or mean elements for describing the orbit plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.reference_selection`
+              - Gets or sets the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelativeInclination.reference`
+              - Get the reference object.
 
 
 Import detail

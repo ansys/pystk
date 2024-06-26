@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelGaussianWindow.sampling_frequency`
+              - Gets or sets the sampling frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRFFilterModelGaussianWindow.order`
+              - Gets or sets the filter order.
 
 
 Import detail

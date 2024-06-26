@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationTimePastAN.value`
+              - Value of Time Past Ascending Node: elapsed time since the last ascending node crossing based on assumed two-body motion. Uses Time Dimension.
 
 
 Import detail

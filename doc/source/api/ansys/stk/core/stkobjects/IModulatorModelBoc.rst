@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelBoc.subcarrier_frequency`
+              - Gets or sets the subcarrier frequency.
 
 
 Import detail

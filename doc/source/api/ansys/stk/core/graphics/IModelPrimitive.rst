@@ -34,10 +34,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.uri_as_string`
+              - Gets the URI of the file used to load the file.
             * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.scale`
+              - Gets or sets the linear scale used to increase or decrease the size of the rendered model.
             * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.position`
+              - Gets or sets the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.orientation`
+              - Gets or sets the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
             * - :py:attr:`~ansys.stk.core.graphics.IModelPrimitive.articulations`
+              - Gets the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
 
 
 Import detail

@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.is_ground_track_visible`
+              - Opt whether to show the vehicle's ground track.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.is_ground_marker_visible`
+              - Opt whether to show the vehicle's ground marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.is_trajectory_visible`
+              - Opt whether to show the vehicle's trajectory path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.is_trajectory_marker_visible`
+              - Opt whether to show the vehicle's trajectory marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTrajectory.pick_string`
+              - String displayed after instance name when the vehicle line is picked in 2D or 3D.
 
 
 Import detail

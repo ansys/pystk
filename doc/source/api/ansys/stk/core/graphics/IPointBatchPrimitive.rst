@@ -58,16 +58,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.display_outline`
+              - Gets or sets whether an outline is rendered around each point in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.outline_color`
+              - Gets or sets the outline's color.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.outline_translucency`
+              - Gets or sets the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.outline_width`
+              - Gets or sets the size, in pixels, of the outline around each point in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.pixel_size`
+              - Gets or sets the size, in pixels, of each point in the point batch.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.minimum_pixel_size_supported`
+              - Gets the minimum pixel size supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.maximum_pixel_size_supported`
+              - Gets the maximum pixel size supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.distance_display_condition_per_point`
+              - Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.set_hint`
+              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.per_item_picking_enabled`
+              - Gets or sets whether individual point indices will be included in the pick results returned from the scene's Pick method. Each point index that is picked will be returned as a batch primitive index.
             * - :py:attr:`~ansys.stk.core.graphics.IPointBatchPrimitive.central_body_clipped`
+              - Gets or sets whether individual points will be clipped by the central body.
 
 
 Import detail

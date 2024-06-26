@@ -21,6 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformBistaticTransmitterSearchTrackContinuous.modulator`
+              - Gets the interface for setting the modulator parameters.
 
 
 Import detail

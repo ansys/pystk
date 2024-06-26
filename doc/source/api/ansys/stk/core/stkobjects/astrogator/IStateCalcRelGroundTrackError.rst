@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.direction`
+              - Gets or sets the direction to search for the desired value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.signed`
+              - True if signed based on RxV.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.reference_selection`
+              - Gets or sets the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRelGroundTrackError.reference`
+              - Get the reference object.
 
 
 Import detail

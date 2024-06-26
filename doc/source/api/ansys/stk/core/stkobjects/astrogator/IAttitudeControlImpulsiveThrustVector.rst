@@ -36,15 +36,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.thrust_axes_name`
+              - Gets or sets the thrust axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.body_constraint_vector`
+              - Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.allow_negative_spherical_magnitude`
+              - True if the spherical magnitude should be allowed to be less than zero.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.coord_type`
+              - Gets or sets the coordinate representation for the DeltaV.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.x`
+              - Gets or sets the Cartesian X component of the impulsive DeltaV (dimension: SmallDistance/Time).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.y`
+              - Gets or sets the Cartesian Y component of the impulsive DeltaV (dimension: SmallDistance/Time).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.z`
+              - Gets or sets the Cartesian Z component of the impulsive DeltaV (dimension: SmallDistance/Time).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.azimuth`
+              - Gets or sets the spherical Azimuth angle of the impulsive DeltaV (dimension: Angle).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.elevation`
+              - Gets or sets the spherical Elevation angle of the impulsive DeltaV (dimension: Angle).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveThrustVector.magnitude`
+              - Gets or sets the spherical Magnitude of the impulsive DeltaV (dimension: SmallDistance/Time).
 
 
 Import detail

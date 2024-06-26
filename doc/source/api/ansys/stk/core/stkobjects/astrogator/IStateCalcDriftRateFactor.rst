@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDriftRateFactor.central_body_name`
+              - Gets or sets the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDriftRateFactor.drift_rate_model`
+              - Gets or sets the gravity model used to compute drift rate.
 
 
 Import detail

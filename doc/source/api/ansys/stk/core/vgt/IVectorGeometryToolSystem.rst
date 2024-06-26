@@ -34,6 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystem.type`
+              - Returns a type of the system object.
 
 
 Import detail

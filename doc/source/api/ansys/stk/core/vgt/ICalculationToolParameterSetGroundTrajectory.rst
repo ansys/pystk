@@ -21,7 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroundTrajectory.location`
+              - Get the point for which ground trajectory representations are computed.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolParameterSetGroundTrajectory.central_body`
+              - Get the central body relative to which ground trajectory representations are computed. Both the central body reference shape and its CBF (central body centered fixed) system are used by this parameter set.
 
 
 Import detail

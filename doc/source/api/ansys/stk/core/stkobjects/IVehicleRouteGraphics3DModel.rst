@@ -21,10 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel.route_marker`
+              - Represents the vehicle while traveling along its route.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel.is_point_visible`
+              - Whether the point that is shown at certain viewing distances to represent an object, is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel.point_size`
+              - A size of the point (in pixels). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel.gltf_reflection_map_type`
+              - Gets or sets the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleRouteGraphics3DModel.gltf_image_based`
+              - Gets the glTF Image Based properties.
 
 
 Import detail

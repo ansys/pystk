@@ -21,9 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.central_body`
+              - Get the central body for the volume calc. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume calc.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.shape_model`
+              - The Volume Calc Altitude Reference Type.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.use_custom_reference`
+              - Whether to use custom reference.
             * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcAltitude.reference_point`
+              - A reference point. Can be any point from VGT.
 
 
 Import detail

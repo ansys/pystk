@@ -21,18 +21,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.label_name`
+              - Gets or sets the label name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.bounding_rect_visible`
+              - A bounding rectangle is displayed using the outermost points defined for the line target as its reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.line_width`
+              - Line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.line_style`
+              - Line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.line_pts_visible`
+              - Gets or sets the individual points used to define the line target are marked along the line. The point currently selected in the Path list is accented with a square.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.use_inst_name_label`
+              - Use the label name instance.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.label_visible`
+              - Show the label; the Inherit property must be false or this property will be read-only.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.label_color`
+              - Label color.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.marker_style`
+              - Marker style.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.color`
+              - Line Color.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.inherit`
+              - Inherit 2D graphics properties from the scenario.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.label_notes`
+              - Get the label notes collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILineTargetGraphics.is_object_graphics_visible`
+              - Specify whether graphics attributes of the line target are visible.
 
 
 Import detail

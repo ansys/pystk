@@ -30,12 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.step`
+              - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.segments`
+              - Get the element set list.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.auto_update_enabled`
+              - Whether automatic update is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.auto_update`
+              - Allows configuring the auto-update parameters and settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.common_tasks`
+              - Most commonly used tasks such as importing file data, etc.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.settings`
+              - Propagator settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4.ephemeris_interval`
+              - Get the propagator's ephemeris interval.
 
 
 Import detail
