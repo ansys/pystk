@@ -7,7 +7,7 @@ on:
       - "v*.*.*"
 
 env:
-  MAIN_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.11'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
