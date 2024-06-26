@@ -198,6 +198,7 @@ jobs:
           steps.build-doc-with-api.outcome == 'success' ||
           steps.build-doc-minimum.outcome == 'success'
         run: |
+          cp -r gh-pages/version/dev/_images/* doc/_build/html/_images
           cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
