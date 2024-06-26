@@ -7,8 +7,11 @@ USER root
 RUN set -e; \
 
     # Install basic development utilities
+    # Install devtoolset-10 to install later version of gcc needed for Python 3.11
+    # (https://github.com/python/cpython/issues/94825)
     yum groupinstall -y development; \
-    yum -y install gcc make tar wget; \
+    yum install -y centos-release-scl; \
+    yum -y install devtoolset-10 make tar wget; \
 
     # Install OpenSSL 1.1 dependencies
     yum -y install perl-core pcre-devel; \
@@ -27,8 +30,8 @@ RUN set -e; \
    wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.1w.tar.gz; \
    tar -xzvf openssl-1.1.1w.tar.gz; \
    cd openssl-1.1.1w; \
-   ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic; \
-   make && make install; \
+   scl enable devtoolset-10 "./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic"; \
+   scl enable devtoolset-10 "make && make install"; \
    echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" > /etc/profile.d/openssl.sh; \
    echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" >> .bashrc
 
