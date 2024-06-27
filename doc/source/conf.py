@@ -39,6 +39,7 @@ html_theme_options = {
     "github_url": "https://github.com/ansys-internal/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
+    "use_edit_page_button": True,
     "additional_breadcrumbs": [
         ("PyAnsys", "https://docs.pyansys.com/"),
     ],
