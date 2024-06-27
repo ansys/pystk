@@ -13,7 +13,7 @@ This series of tutorials explains basic examples involving STK objects using Pyt
 Coverage examples
 =================
 
-This series of tutorials explains different ways to calculate coverage using Python and PySTK.
+This series of tutorials explains different ways to calculate satellite coverage using Python and PySTK.
 
 .. nbgallery::
 
