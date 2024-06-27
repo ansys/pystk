@@ -263,7 +263,7 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
             stringify_func=(lambda file: file.name),
     ):
         destination_file = SOURCE_EXAMPLES / file.name
-        destination_file.write_text(file.read_text())
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
 def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
