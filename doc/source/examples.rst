@@ -9,8 +9,16 @@ This series of tutorials explains basic examples involving STK objects using Pyt
 .. nbgallery::
 
     examples/facility-to-satellite-access
-    examples/satellite-coverage-calculator
 
+Coverage examples
+=================
+
+This series of tutorials explains different ways to calculate satellite coverage using Python and PySTK.
+
+.. nbgallery::
+
+    examples/satellite-coverage-calculator
+    examples/satellite-coverage-analysis
 
 Orbital maneuvers
 =================
