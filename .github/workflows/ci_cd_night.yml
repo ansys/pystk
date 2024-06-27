@@ -109,6 +109,8 @@ jobs:
         exclude:
           - is-weekly-run: true
             python: "3.9"
+          - is-weekly-run: true
+            python: "3.10"
       fail-fast: false
     steps:
 
