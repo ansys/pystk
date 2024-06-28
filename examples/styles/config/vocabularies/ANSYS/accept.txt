@@ -1,8 +1,0 @@
-apoapsis
-Astrogator
-ephemerides
-Hohmann
-Keplerian
-periapsis
-prograde
-targetters
