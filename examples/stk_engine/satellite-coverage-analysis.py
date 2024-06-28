@@ -166,7 +166,7 @@ point_nemo.position.assign_geodetic(-48.87, -123.39, 0)
 
 sat_grave_coverage = scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "SatelliteGraveyard")
 
-# The coverage definition should represent the satellite graveyard, which consists of an ellipse around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, a bearing of $45^\circ$. The definition havs a latitude/longitude point granularity of $2^\circ$.
+# The coverage definition should represent the satellite graveyard, which consists of an ellipse around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, a bearing of $45^\circ$. The definition has a latitude/longitude point granularity of $2^\circ$.
 
 # To set the coverage definition's bounds to the elliptical area around Point Nemo, use a Connect command:
 
