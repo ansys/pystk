@@ -1,4 +1,4 @@
-# # Satellite Coverage Analysis
+# # Satellite coverage analysis
 
 # This tutorial demonstrates how to calculate satellite coverage around a location, including access constraints, using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/CoverageToolWizard.htm).
 

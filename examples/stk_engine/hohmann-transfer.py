@@ -1,4 +1,4 @@
-# # Hohmann Transfer
+# # Hohmann transfer
 #
 # This tutorial provides a practical example on how to solve a Hohmann transfer problem using Python.
 #

@@ -1,6 +1,6 @@
 .. _building_stk_images:
 
-Building STK Images
+Building STK images
 ###################
 
 PySTK provides various `Dockerfiles`_ to build `Docker images`_ that
