@@ -71,6 +71,9 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
+      - name: "Checkout project"
+        uses: actions/checkout@v4
+
       - name: "Collect desired files"
         run: |
           FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
@@ -78,6 +81,7 @@ jobs:
 
       - uses: ansys/actions/doc-style@v6
         with: 
+          checkout: false
           files: ${{ env.VALE_FILES }}
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
