@@ -1,2 +1,2 @@
-User guide
+User Guide
 ##########

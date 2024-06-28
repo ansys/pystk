@@ -1,4 +1,4 @@
-# # Satellite coverage area calculator
+# # Satellite Coverage Area Calculator
 #
 # This tutorial demonstrates how to calculate satellite coverage using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/GetStart_7_Coverage.htm).
 #
@@ -38,7 +38,7 @@ globe_plotter = GlobeWidget(root, 640, 480)
 globe_plotter.show()
 # -
 
-# A 2D graphics window can be created in order to better visualize the satellite coverage area:
+# A 2D graphics window can be created to better visualize the satellite coverage area:
 
 # +
 from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget
@@ -179,11 +179,11 @@ access_by_latitude = tropics.data_providers.item("Coverage by Latitude")
 asset_data_provider_results = access_by_asset.exec()
 latitude_data_provider_results = access_by_latitude.exec()
 
-# Convert the results to pandas dataframes or numpy arrays to better understand the data:
+# Convert the results to pandas ``dataframes`` or numpy arrays to better understand the data:
 
 # **Which satellite achieved a higher average coverage of the tropics region?**
 
-# Converting to a pandas dataframe makes the answer clear:
+# Converting to a pandas ``dataframe`` makes the answer clear:
 
 asset_data_provider_results.data_sets.to_pandas_dataframe()
 
@@ -227,7 +227,7 @@ plt.show()
 
 # ### Set the graphics
 
-# The Figure of Merit object has its own graphics which the Coverage Definition graphics interferes with. So, disable the Show Regions and Show Points options of the Coverage Definition:
+# The Figure of Merit object has its own graphics which the Coverage Definition graphics interferes with. Thus, turn off the Show Regions and Show Points options of the Coverage Definition:
 
 tropics.graphics.static.is_region_visible = False
 tropics.graphics.static.is_points_visible = False
@@ -280,7 +280,7 @@ coverage.graphics.static.is_visible = True
 coverage.graphics.static.fill_points = False
 coverage.graphics.static.marker_style = "Circle"
 
-# View the figure of merit using the 3d graphics window:
+# View the figure of merit using the 3D graphics window:
 
 globe_plotter.show()
 

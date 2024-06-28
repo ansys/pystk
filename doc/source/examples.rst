@@ -1,7 +1,7 @@
 Examples
 ########
 
-Basic examples
+Basic Examples
 ==============
 
 This series of tutorials explains basic examples involving STK objects using Python and PySTK.
@@ -10,7 +10,7 @@ This series of tutorials explains basic examples involving STK objects using Pyt
 
     examples/facility-to-satellite-access
 
-Coverage examples
+Coverage Examples
 =================
 
 This series of tutorials explains different ways to calculate satellite coverage using Python and PySTK.
@@ -20,7 +20,7 @@ This series of tutorials explains different ways to calculate satellite coverage
     examples/satellite-coverage-calculator
     examples/satellite-coverage-analysis
 
-Orbital maneuvers
+Orbital Maneuvers
 =================
 
 This series of tutorials explain how to model and simulate orbital maneuvers using Python and PySTK.

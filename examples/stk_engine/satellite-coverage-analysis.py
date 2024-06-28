@@ -1,10 +1,10 @@
-# # Satellite coverage analysis
+# # Satellite Coverage Analysis
 
 # This tutorial demonstrates how to calculate satellite coverage around a location, including access constraints, using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/CoverageToolWizard.htm).
 
 # ## Problem statement
 
-# The satellite graveyard is a location in the Pacific Ocean around a position known as Point Nemo, located at a latitude of $-48.87^\circ$ degrees and a longitude of $-123.39^\circ$ degrees. At $2688$ km away from any coastline, Point Nemo is a good location for disposing of inactive satellites. The satellite graveyard is modeled as an elliptical region around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, and a bearing of $45^\circ$. A satellite flies over the globe with an on-board sensor with the aim of surveilling the satellite graveyard. The satellite has a J2Pertubation propagator, with an orbit with a semimajor axis of $6852.45$ km, an eccentricity of $0$, an inclination of $98^\circ$, an argument of perigee of $0^\circ$, a RAAN of $150.34^\circ$, and a true anomaly of $0^\circ$. The sensor is a simple conic sensor with a $45^\circ$ half angle and an angular resolution of $1^\circ$.
+# The satellite graveyard is a location in the Pacific Ocean around a position known as Point Nemo, located at a latitude of $-48.87^\circ$ degrees and a longitude of $-123.39^\circ$ degrees. At $2688$ km away from any coastline, Point Nemo is a good location for disposing of inactive satellites. The satellite graveyard is modeled as an elliptical region around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, and a bearing of $45^\circ$. A satellite flies over the globe with an on-board sensor with the aim of surveilling the satellite graveyard. The satellite has a J2Pertubation propagator, with an orbit with a semi-major axis of $6852.45$ km, an eccentricity of $0$, an inclination of $98^\circ$, an argument of perigee of $0^\circ$, a RAAN of $150.34^\circ$, and a true anomaly of $0^\circ$. The sensor is a simple conic sensor with a $45^\circ$ half angle and an angular resolution of $1^\circ$.
 #
 #
 # Determine how well the satellite covers this region. Additionally, determine how well the satellite covers the region if it collects ground imagery, requiring illumination of the surface of the Earth.
@@ -80,7 +80,7 @@ from ansys.stk.core.stkobjects import ORBIT_STATE_TYPE
 orbit = propagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
 # -
 
-# Use the returned `IOrbitStateClassical` object to set the `size_shape_type` property. This property designates which pair of elements describe the orbit. Set the `size_shape_type` to Semimajor Axis and Eccentricity: 
+# Use the returned `IOrbitStateClassical` object to set the `size_shape_type` property. This property designates which pair of elements describe the orbit. Set the `size_shape_type` to Semi-major Axis and Eccentricity: 
 
 # +
 from ansys.stk.core.stkobjects import CLASSICAL_SIZE_SHAPE
@@ -89,7 +89,7 @@ from ansys.stk.core.stkobjects import CLASSICAL_SIZE_SHAPE
 orbit.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS
 # -
 
-# Set the orbit's semimajor axis to $6852.45$ km and it's eccentricity to $0$:
+# Set the orbit's semi-major axis to $6852.45$ km and it's eccentricity to $0$:
 
 orbit.size_shape.semi_major_axis = 6852.45
 orbit.size_shape.eccentricity = 0
@@ -134,7 +134,7 @@ satellite.propagator.propagate()
 
 # The satellite has a fixed sensor with a simple conic pattern. This sensor looks down on Earth, and can see any location in its field of view. This sensor is used to image the satellite graveyard.
 
-# First, insert a sensor on the satellite. The sensor will be inserted with a fixed sensor type by default.
+# First, insert a sensor on the satellite. The sensor has a fixed sensor type by default.
 
 sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR, "SatelliteSensor")
 
@@ -166,7 +166,7 @@ point_nemo.position.assign_geodetic(-48.87, -123.39, 0)
 
 sat_grave_coverage = scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "SatelliteGraveyard")
 
-# The coverage definition should represent the satellite graveyard, which consists of an ellipse around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, a bearing of $45^\circ$. The definition will have a latitude/longitude point granularity of $2^\circ$.
+# The coverage definition should represent the satellite graveyard, which consists of an ellipse around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, a bearing of $45^\circ$. The definition havs a latitude/longitude point granularity of $2^\circ$.
 
 # To set the coverage definition's bounds to the elliptical area around Point Nemo, use a Connect command:
 
@@ -223,7 +223,7 @@ figure_of_merit.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVER
 
 # Find the overall percent satisfaction of the Figure of Merit using the Satisfied by Time report. The last percent accumulation coverage value corresponds to the overall percent satisfaction. 
 
-# Select the Figure of Merit's Satisfied by Time report and convert it to a pandas dataframe:
+# Select the Figure of Merit's Satisfied by Time report and convert it to a pandas ``dataframe``:
 
 satisfied_by_time_df = figure_of_merit.data_providers.item("Satisfied by Time").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
 
@@ -276,7 +276,7 @@ figure_of_merit.graphics.animation.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_AC
 figure_of_merit.graphics.animation.is_visible = True
 # -
 
-# Now, animate the scenario. The satellite's sensor will add color to the region along its path when the sensor passes over the grid points.
+# Now, animate the scenario. The satellite's sensor colors the region along its path when the sensor passes over the grid points.
 
 root.rewind()
 
@@ -311,7 +311,7 @@ root.execute_command("Cov */CoverageDefinition/SatelliteGraveyard Grid GridConst
 
 # ## Analyze the results
 
-# Select the Figure of Merit's Satisfied by Time report and convert it to a pandas dataframe:
+# Select the Figure of Merit's Satisfied by Time report and convert it to a pandas ``dataframe``:
 
 satisfied_by_time_lighting_df = figure_of_merit.data_providers.item("Satisfied by Time").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
 

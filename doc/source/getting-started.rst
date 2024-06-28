@@ -1,4 +1,4 @@
-Getting started
+Getting Started
 ###############
 
 To run PySTK, you must have a licensed copy of `STK`_.

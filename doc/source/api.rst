@@ -1,4 +1,4 @@
-API reference
+API Reference
 =============
 
 This page contains the ``ansys-stk-core`` API reference.
