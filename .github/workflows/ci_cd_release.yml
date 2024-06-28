@@ -31,21 +31,38 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
   doc-style:
-    name: "Doc style ${{ matrix.folder }}"
+    name: "Doc style"
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        folder: ["doc", "examples"]
-      fail-fast: false
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
+      - name: "Checkout project"
+        uses: actions/checkout@v4
+
+      - name: "Install jq"
+        run: |
+          # Used to format Vale input as a JSON-formatted list of files
+          sudo apt install -y jq
+
+      - name: "Collect desired files"
+        run: |
+          # Find all .rst files excluding those in doc/source/api/
+          RST_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
+          
+          # Find all .py files inside the examples/ directory, excluding those with an underscore
+          PY_FILES=$(find examples -type f -name "*.py" ! -name "*_*")
+          
+          # Combine both file lists and convert them to a JSON array
+          VALE_FILES=$(echo -e "$RST_FILES\n$PY_FILES" | jq -R . | jq -s .)
+          echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
+
       - uses: ansys/actions/doc-style@v6
         with: 
-          files: ${{ matrix.folder }}
-          vale-config: ${{ matrix.folder }}/.vale.ini
+          checkout: false
+          files: "${{ env.VALE_FILES }}"
+          vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
 
   doc-build:
