@@ -79,6 +79,10 @@ jobs:
           FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
           echo "FILES=$(echo $FILES)" >> $GITHUB_ENV
 
+      - name: "List desired files"
+        run: |
+          echo "${{ env.FILES }}"
+
       - uses: ansys/actions/doc-style@v6
         with: 
           checkout: false
