@@ -74,15 +74,19 @@ jobs:
       - name: "Checkout project"
         uses: actions/checkout@v4
 
+      - name: "Install jq"
+        run: |
+          sudo apt install -y jq
+
       - name: "Collect desired files"
         run: |
-          VALE_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
+          VALE_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
       - uses: ansys/actions/doc-style@v6
         with: 
           checkout: false
-          files: ${{ env.VALE_FILES }}
+          files: "${{ env.VALE_FILES }}"
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
 
