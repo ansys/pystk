@@ -201,7 +201,7 @@ for i in range(0, access_intervals.count):
     elevation_values = data_provider_result.data_sets.get_data_set_by_name("Elevation").get_values()
     range_values = data_provider_result.data_sets.get_data_set_by_name("Range").get_values()
 
-# Alternately, convert the data provider data sets to a pandas ``dataframe`` or numpy darray:
+# Alternately, convert the data provider data sets to a pandas ``dataframe`` or numpy array:
 
 aer_df = data_provider_result.data_sets.to_pandas_dataframe()
 aer_df
