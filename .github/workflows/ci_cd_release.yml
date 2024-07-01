@@ -55,7 +55,10 @@ jobs:
           PY_FILES=$(find examples -type f -name "*.py" ! -name "*_*")
           
           # Combine both file lists and convert them to a JSON array
-          VALE_FILES=$(echo -e "$RST_FILES\n$PY_FILES" | jq -R . | jq -s .)
+          # TODO: include Python files too. See Vale issue
+          # https://github.com/errata-ai/vale/issues/858
+          # VALE_FILES=$(echo -e "$RST_FILES\n$PY_FILES" | jq -R . | jq -s .)
+          VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
       - uses: ansys/actions/doc-style@v6
