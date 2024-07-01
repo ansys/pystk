@@ -80,7 +80,7 @@ from ansys.stk.core.stkobjects import ORBIT_STATE_TYPE
 orbit = propagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
 # -
 
-# Use the returned `IOrbitStateClassical` object to set the `size_shape_type` property. This property designates which pair of elements describe the orbit. Set the `size_shape_type` to Semi-major Axis and Eccentricity: 
+# Use the returned ``IOrbitStateClassical`` object to set the ``size_shape_type`` property. This property designates which pair of elements describe the orbit. Set the ``size_shape_type`` to Semi-major Axis and Eccentricity: 
 
 # +
 from ansys.stk.core.stkobjects import CLASSICAL_SIZE_SHAPE
