@@ -69,7 +69,7 @@ satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION
 propagator = satellite.propagator
 # -
 
-# The satellite has an orbit with a semimajor axis of $6852.45$ km, an eccentricity of $0$, an inclination of $98^\circ$, an argument of perigee of $0^\circ$, a RAAN of $150.34^\circ$, and a true anomaly of $0^\circ$.
+# The satellite has an orbit with a semi-major axis of $6852.45$ km, an eccentricity of $0$, an inclination of $98^\circ$, an argument of perigee of $0^\circ$, a RAAN of $150.34^\circ$, and a true anomaly of $0^\circ$.
 
 # First, set the orbit's coordinate type to classical:
 
