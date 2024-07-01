@@ -16,6 +16,7 @@ LOD
 lod
 Nemo
 numpy
+STK
 PySTK
 periapsis
 prograde

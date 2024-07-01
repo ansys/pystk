@@ -28,7 +28,7 @@ print(f"Using {stk.version}")
 
 # Create an STK scenario using the STK Root object:
 
-# **Note:** There can be only one scenario open at a time.
+# **Note:** there can be only one scenario open at a time.
 
 root = stk.new_object_root()
 root.new_scenario("SatelliteAccessScenario")
@@ -134,7 +134,7 @@ access_constraint.max = 40
 
 # ### Add a satellite using the SPG4 propagator
 
-# **Note:** This portion requires internet access.
+# **Note:** this portion requires internet access.
 
 # First, create the satellite using online data for the International Space Station (SSN number 25544):
 
@@ -285,9 +285,9 @@ boresight_vector = facility.graphics_3d.vector.reference_crdns.add(GEOMETRIC_ELE
 facility.graphics_3d.vector.vector_size_scale = 4.0
 # -
 
-# **Note:** All vectors on the single object are the same size. To modify the vector’s appearance, it is necessary to set the global vector properties.
+# **Note:** all vectors on the single object are the same size. To modify the vector’s appearance, it is necessary to set the global vector properties.
 
-# **Note:** The add method requires an object type as an enumeration and a fully qualified path to the Analysis Workbench object. The path consists of the path to the parent object, the object name, and the object type (``"Facility/MyFacility FromTo Vector"``).
+# **Note:** the add method requires an object type as an enumeration and a fully qualified path to the Analysis Workbench object. The path consists of the path to the parent object, the object name, and the object type (``"Facility/MyFacility FromTo Vector"``).
 
 # STK reports times of the local minimum, so get the vector between objects and calculate the vector’s magnitude for each local minimum time:
 

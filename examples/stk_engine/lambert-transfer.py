@@ -17,7 +17,7 @@
 #
 # ## Problem statement
 #
-# Find the Lambert transfer between Earth and Mars starting on August 1, 2005 and ending on March 1, 2006. Assume that the only force acting on the spacecraft is the gravitational force of the Sun. Assume both Earth and Mars are virtual points. Positions of the planets can be obtained using the default ephemerides files provided in STK. Compute the required $\Delta v$ for each impulse of the maneuver.
+# Find the Lambert transfer between Earth and Mars starting on August 1, 2005, and ending on March 1, 2006. Assume that the only force acting on the spacecraft is the gravitational force of the Sun. Assume both Earth and Mars are virtual points. Positions of the planets can be obtained using the default ephemerides files provided in STK. Compute the required $\Delta v$ for each impulse of the maneuver.
 
 # ## Launch a new STK instance
 #

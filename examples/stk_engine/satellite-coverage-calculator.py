@@ -187,7 +187,7 @@ latitude_data_provider_results = access_by_latitude.exec()
 
 asset_data_provider_results.data_sets.to_pandas_dataframe()
 
-# **Answer:** PolarSat achieved higher average coverage of the tropics region with an average coverage percentage of 2.704572194409824.
+# **Answer:** the satellite ``PolarSat`` achieved higher average coverage of the tropics region with an average coverage percentage of 2.704572194409824.
 
 # Or, convert to a numpy array:
 
@@ -199,7 +199,7 @@ latitude_df = latitude_data_provider_results.data_sets.to_pandas_dataframe()
 
 latitude_df
 
-# **Answer:** Coverage was worse near the equator.
+# **Answer:** coverage was worse near the equator.
 
 # It is also possible to visualize the data in graph form:
 
