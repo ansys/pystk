@@ -1,6 +1,6 @@
 # # Sensors and access
 
-# This tutorial demonstrates how to use different types of sensors to analyze access using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/index.htm#training/IntroSensors.htm).
+# This tutorial demonstrates how to use different types of sensors to analyze access using Python and PySTK. It is inspired by [this training](https://help.agi.com/stk/Content/training/IntroSensors.htm).
 
 # ## What are sensors?
 
