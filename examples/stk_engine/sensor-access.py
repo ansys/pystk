@@ -370,7 +370,7 @@ map_plotter.show()
 
 # From the projection on the map, it is clear that the fixed sensor can access the flight along its route. Now, determine how long the sensor can access the flight for.
 
-# Create an access between the sensor and the aicraft:
+# Create an access between the sensor and the aircraft:
 
 radar_dome_access = radar_dome_sensor.get_access(aircraft.path)
 
@@ -520,7 +520,7 @@ sweeping_access_df
 
 # The sweeping radar is able to access the aircraft 635 times during the aircraft's flight, as indicated by the 635 rows in the dataframe.
 
-# Now, use the dataframe to convert the duration column to numeric form and calculate the average duration of access between the sensor and the aicraft:
+# Now, use the dataframe to convert the duration column to numeric form and calculate the average duration of access between the sensor and the aircraft:
 
 # +
 import pandas as pd
