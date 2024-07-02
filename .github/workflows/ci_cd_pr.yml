@@ -109,7 +109,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
     # needs: doc-style
     needs: branch-name-style
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
 
       - name: "Checkout the project"
