@@ -108,6 +108,12 @@ templates_path = ["_templates"]
 exclude_examples = ["solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
+# Ignore warnings
+suppress_warnings = [
+    # TODO: ignore the warnings for more than one target found for cross-reference
+    "ref.python"
+]
+
 # The suffix(es) of source filenames
 source_suffix = {
     ".rst": "restructuredtext",
