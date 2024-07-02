@@ -17,11 +17,11 @@
 #
 # ## Problem statement
 #
-# Find the Lambert transfer between Earth and Mars starting on August 1, 2005 and ending on March 1, 2006. Assume that the only force acting on the spacecraft is the gravitational force of the Sun. Assume both Earth and Mars are virtual points. Positions of the planets can be obtained using the default ephemerides files provided in STK. Compute the required $\Delta v$ for each impulse of the maneuver.
+# Find the Lambert transfer between Earth and Mars starting on August 1, 2005, and ending on March 1, 2006. Assume that the only force acting on the spacecraft is the gravitational force of the Sun. Assume both Earth and Mars are virtual points. Positions of the planets can be obtained using the default ephemerides files provided in STK. Compute the required $\Delta v$ for each impulse of the maneuver.
 
 # ## Launch a new STK instance
 #
-# Start by launching a new STK instance. In this example, STKEngine is used with graphics (noGraphics mode set to False). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
+# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``noGraphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -83,7 +83,7 @@ for planet_name, color in planet_names_and_colors.items():
     planet.graphics.color = color
 # -
 
-# Retrieve the instances created for each planet. These will be used later for finding the start and final state vectors at the desired epoch:
+# Retrieve the instances created for each planet. These are used later for finding the start and final state vectors at the desired epoch:
 
 earth, mars = [scenario.children[planet] for planet in planet_names_and_colors]
 
@@ -104,7 +104,7 @@ scenario.graphics.sub_planet_points_visible = False
 scenario.graphics.sub_planet_labels_visible = False
 # -
 
-# Finally, the camera position is updated to provite a better overview of the scene with the planets orbiting the Sun.
+# Finally, the camera position is updated to provide a better overview of the scene with the planets orbiting the Sun.
 
 plotter.camera.position = [402322147.89965045, -554001077.0502352, 31332205.857333962]
 plotter.show()

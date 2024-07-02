@@ -1,4 +1,4 @@
-# # Access between facility and satellite calculator
+# # Access Between Facility and Satellite Calculator
 
 # This tutorial demonstrates how to calculate access between a facility and a satellite using PySTK. It is inspired by [this tutorial](https://help.agi.com/stkdevkit/Content/stkObjects/ObjectModelTutorial.html).
 
@@ -28,7 +28,7 @@ print(f"Using {stk.version}")
 
 # Create an STK scenario using the STK Root object:
 
-# **Note:** There can be only one scenario open at a time.
+# **Note:** there can be only one scenario open at a time.
 
 root = stk.new_object_root()
 root.new_scenario("SatelliteAccessScenario")
@@ -84,7 +84,9 @@ print(f"{latitude = }", f"{longitude = }", f"{altitude = }", sep="\n")
 
 # ### Change the facility label
 
-# The STK Object Model follows the logic of the STK desktop application. For example, to change the label for the facility, the IFacility interface contains the ``graphics`` property, which in turn contains the ``label_name`` property. To change the label, the “Use Instance Name as Label” property must first be disabled.
+# <!-- Google.WordList.application = off -->
+# The STK Object Model follows the logic of the STK desktop application. For example, to change the label for the facility, the `IFacility` interface contains the ``graphics`` property, which in turn contains the `label_name` property. To change the label, the “Use Instance Name as Label” property must first be set to ``False``.
+# <!-- Google.WordList.application = on -->
 
 facility.graphics.use_inst_name_label = False
 facility.graphics.label_name = "Philadelphia Facility"
@@ -116,7 +118,7 @@ sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 
 # #### Add access constraints to the sensor
 
-# The ``access_constraints`` property of the sensor holds an ``AccessConstraintCollection``, which has an ``add_constraint`` method. Use this method to add a range constraint using the ``ACCESS_CONSTRAINTS`` enum.
+# The ``access_constraints`` property of the sensor holds an ``AccessConstraintCollection``, which has an ``add_constraint`` method. Use this method to add a range constraint using the ``ACCESS_CONSTRAINTS`` enumeration.
 
 # Add an access constraint to the sensor defining a maximum range of 40 km:
 
@@ -134,7 +136,7 @@ access_constraint.max = 40
 
 # ### Add a satellite using the SPG4 propagator
 
-# **Note:** This portion requires internet access.
+# **Note:** this portion requires internet access.
 
 # First, create the satellite using online data for the International Space Station (SSN number 25544):
 
@@ -201,7 +203,7 @@ for i in range(0, access_intervals.count):
     elevation_values = data_provider_result.data_sets.get_data_set_by_name("Elevation").get_values()
     range_values = data_provider_result.data_sets.get_data_set_by_name("Range").get_values()
 
-# Alternately, convert the data provider data sets to a pandas dataframe or numpy array:
+# Alternately, convert the data provider data sets to a pandas ``dataframe`` or numpy array:
 
 aer_df = data_provider_result.data_sets.to_pandas_dataframe()
 aer_df
@@ -263,7 +265,7 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 
 # ### Create a vector between the satellite and facility objects
 
-# AGI introduced the Vector Geometry Tool (VGT) with STK 9. In STK 10, VGT became part of the Analysis Workbench that also includes the Time Tool and Calculation Tool. To keep the interface clean and to maintain backward compatibility, all Analysis Workbench functionality is located in the ``vgt`` property of the ``IStkObject`` interface.
+# AGI introduced the Vector Geometry Tool (VGT) with STK 9. In STK 10, VGT became part of the Analysis Workbench that also includes the Time Tool and Calculation Tool. To keep the interface clean and to maintain backward compatibility, all Analysis Workbench capability is located in the ``vgt`` property of the ``IStkObject`` interface.
 
 # Create a vector between the satellite and facility objects:
 
@@ -285,9 +287,9 @@ boresight_vector = facility.graphics_3d.vector.reference_crdns.add(GEOMETRIC_ELE
 facility.graphics_3d.vector.vector_size_scale = 4.0
 # -
 
-# **Note:** All vectors on the single object are the same size. So, in order to modify the vector’s appearance, it is necessary to set the global vector properties.
+# **Note:** all vectors on the single object are the same size. To modify the vector’s appearance, it is necessary to set the global vector properties.
 
-# **Note:** The add method requires an object type as an enumeration and a fully qualified path to the Analysis Workbench object. The path consists of the path to the parent object, the object name, and the object type (``"Facility/MyFacility FromTo Vector"``).
+# **Note:** the add method requires an object type as an enumeration and a fully qualified path to the Analysis Workbench object. The path consists of the path to the parent object, the object name, and the object type (``"Facility/MyFacility FromTo Vector"``).
 
 # STK reports times of the local minimum, so get the vector between objects and calculate the vector’s magnitude for each local minimum time:
 
