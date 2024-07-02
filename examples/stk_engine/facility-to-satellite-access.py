@@ -84,7 +84,9 @@ print(f"{latitude = }", f"{longitude = }", f"{altitude = }", sep="\n")
 
 # ### Change the facility label
 
-# The STK Object Model follows the logic of the STK desktop app. For example, to change the label for the facility, the ``IFacility`` interface contains the ``graphics`` property, which in turn contains the ``label_name`` property. To change the label, the “Use Instance Name as Label” property must first be set to ``False``.
+# <!-- Google.WordList.application = off -->
+# The STK Object Model follows the logic of the STK desktop application. For example, to change the label for the facility, the `IFacility` interface contains the ``graphics`` property, which in turn contains the `label_name` property. To change the label, the “Use Instance Name as Label” property must first be set to ``False``.
+# <!-- Google.WordList.application = on -->
 
 facility.graphics.use_inst_name_label = False
 facility.graphics.label_name = "Philadelphia Facility"
