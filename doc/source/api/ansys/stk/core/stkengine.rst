@@ -14,7 +14,7 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:obj:`~ansys.stk.core.experimental`
+            * - :py:obj:`~ansys.stk.core.stkengine.experimental`
 
 
     .. tab-item:: Submodules
@@ -23,7 +23,7 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:obj:`~ansys.stk.core.tkcontrols`
+            * - :py:obj:`~ansys.stk.core.stkengine.tkcontrols`
 
 
     .. tab-item:: Classes
@@ -32,10 +32,10 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~STKEngineApplication`
+            * - :py:class:`~ansys.stk.core.stkengine.STKEngineApplication`
               - Interact with STK Engine.
 
-            * - :py:class:`~STKEngine`
+            * - :py:class:`~ansys.stk.core.stkengine.STKEngine`
               - Initialize and manage the STK Engine application.
 
 
@@ -45,7 +45,7 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~STK_ENGINE_TIMER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkengine.STK_ENGINE_TIMER_TYPE`
               - Specify the timer implementation to use.
 
 

@@ -21,7 +21,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.start_application
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.start_application`
               - Create a new STK Desktop application instance.  
                 
                 Specify visible = True to show the application window.
@@ -33,7 +33,7 @@ Overview
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 grpc_desktop_options passes extra command line options to UiApplication.
                 Only available on Windows.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application`
               - Attach to an existing STK Desktop instance. 
                 
                 Specify the Process ID (PID) in case multiple processes are open.
@@ -42,11 +42,11 @@ Overview
                 grpc_port is the integral port number that the gRPC server is using.
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 Only available on Windows.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.release_all
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.release_all`
               - Release all handles from Python to STK Desktop applications.
                 
                 Not applicable to gRPC connections.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.create_thread_marshaller`
               - Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
                 
                 Not applicable to gRPC connections.

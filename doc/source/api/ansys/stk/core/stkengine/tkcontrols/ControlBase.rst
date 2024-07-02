@@ -21,7 +21,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkengine.tkcontrols.ControlBase.destroy
+            * - :py:attr:`~ansys.stk.core.stkengine.tkcontrols.ControlBase.destroy`
               - Occurs before the frame is destroyed.
 
 Import detail

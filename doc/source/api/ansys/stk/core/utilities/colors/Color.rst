@@ -21,9 +21,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.utilities.colors.Color.from_rgb
+            * - :py:attr:`~ansys.stk.core.utilities.colors.Color.from_rgb`
               - Create a new Color from R, G, B values.
-            * - :py:attr:`~ansys.stk.core.utilities.colors.Color.get_rgb
+            * - :py:attr:`~ansys.stk.core.utilities.colors.Color.get_rgb`
               - Return the R, G, B representation of this color.
 
 Import detail

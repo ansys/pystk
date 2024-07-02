@@ -19,11 +19,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkdesktop.ThreadMarshaller.get_marshalled_to_current_thread
+            * - :py:attr:`~ansys.stk.core.stkdesktop.ThreadMarshaller.get_marshalled_to_current_thread`
               - Return an instance of the original stk_object that may be used on the current thread. May only be called once.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.ThreadMarshaller.initialize_thread
+            * - :py:attr:`~ansys.stk.core.stkdesktop.ThreadMarshaller.initialize_thread`
               - Must be called on the destination thread prior to calling GetMarshalledToCurrentThread().
-            * - :py:attr:`~ansys.stk.core.stkdesktop.ThreadMarshaller.release_thread
+            * - :py:attr:`~ansys.stk.core.stkdesktop.ThreadMarshaller.release_thread`
               - Call in the destination thread after all calls to STK are finished.
 
 Import detail

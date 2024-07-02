@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.AsyncioTimerManager.terminate
+            * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.AsyncioTimerManager.terminate`
 
 Import detail
 -------------

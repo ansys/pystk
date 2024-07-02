@@ -14,24 +14,24 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~AsyncioTimerManager`
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.AsyncioTimerManager`
 
-            * - :py:class:`~RemoteFrameBufferHostVTable`
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.RemoteFrameBufferHostVTable`
               - Structure of the vtable for IRemoteFrameBufferHost.
 
-            * - :py:class:`~RemoteFrameBufferHost`
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.RemoteFrameBufferHost`
               - Implements IRemoteFrameBufferHost.
 
-            * - :py:class:`~WidgetBase`
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase`
               - Base class for Jupyter controls.
 
-            * - :py:class:`~GlobeWidget`
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.GlobeWidget`
               - The 3D Globe widget for jupyter.
 
-            * - :py:class:`~MapWidget`
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.MapWidget`
               - The 2D Map widget for jupyter.
 
-            * - :py:class:`~GfxAnalysisWidget`
+            * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.GfxAnalysisWidget`
               - The Graphics Analysis widget for jupyter.
 
 

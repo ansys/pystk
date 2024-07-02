@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.utilities.colors._ColorsImpl.from_rgb
+            * - :py:attr:`~ansys.stk.core.utilities.colors._ColorsImpl.from_rgb`
 
 Import detail
 -------------

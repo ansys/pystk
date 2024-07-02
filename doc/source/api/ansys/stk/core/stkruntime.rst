@@ -14,10 +14,10 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~STKRuntimeApplication`
+            * - :py:class:`~ansys.stk.core.stkruntime.STKRuntimeApplication`
               - Interact with STK Runtime.
 
-            * - :py:class:`~STKRuntime`
+            * - :py:class:`~ansys.stk.core.stkruntime.STKRuntime`
               - Connect to STKRuntime using gRPC.
 
 

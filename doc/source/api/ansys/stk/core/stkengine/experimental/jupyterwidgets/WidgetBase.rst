@@ -21,8 +21,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.handle_event
-            * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.get_frame
+            * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.handle_event`
+            * - :py:attr:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.WidgetBase.get_frame`
 
 Import detail
 -------------

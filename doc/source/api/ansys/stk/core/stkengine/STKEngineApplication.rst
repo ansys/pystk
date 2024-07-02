@@ -23,19 +23,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.new_object_root
+            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.new_object_root`
               - Create a new object model root for the STK Engine application.
-            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.new_object_model_context
+            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.new_object_model_context`
               - Create a new object model context for the STK Engine application.
-            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.SetGrpcOptions
+            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.SetGrpcOptions`
               - Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
                 
                 Available options include:
                 { "raise exceptions with STK Engine" : bool }. Set to false to suppress exceptions when
                 using SetGrpcOptions and NewGrpcCallBatcher with STK Engine.
-            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.NewGrpcCallBatcher
+            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.NewGrpcCallBatcher`
               - Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
-            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.shutdown
+            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.shutdown`
               - Shut down the STK Engine application.
 
 Import detail

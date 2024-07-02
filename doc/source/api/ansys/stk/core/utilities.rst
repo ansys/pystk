@@ -14,10 +14,10 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:obj:`~ansys.stk.core.colors`
-            * - :py:obj:`~ansys.stk.core.comobject`
-            * - :py:obj:`~ansys.stk.core.exceptions`
-            * - :py:obj:`~ansys.stk.core.grpcutilities`
+            * - :py:obj:`~ansys.stk.core.utilities.colors`
+            * - :py:obj:`~ansys.stk.core.utilities.comobject`
+            * - :py:obj:`~ansys.stk.core.utilities.exceptions`
+            * - :py:obj:`~ansys.stk.core.utilities.grpcutilities`
 
 
 

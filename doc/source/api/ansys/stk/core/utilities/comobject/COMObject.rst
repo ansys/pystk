@@ -23,7 +23,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.utilities.comobject.COMObject.get_pointer
+            * - :py:attr:`~ansys.stk.core.utilities.comobject.COMObject.get_pointer`
               - Return the COM object pointer as a ctypes.c_void_p.
 
 Import detail

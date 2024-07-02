@@ -14,7 +14,7 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~GrpcCallBatcher`
+            * - :py:class:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher`
               - A class used to batch together API calls to optimize performance.
 
 

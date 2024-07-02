@@ -14,7 +14,7 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:obj:`~ansys.stk.core.stkengine.jupyterwidgets`
+            * - :py:obj:`~ansys.stk.core.stkengine.experimental.jupyterwidgets`
 
 
 

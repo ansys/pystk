@@ -14,18 +14,18 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~NativeContainerMethods`
+            * - :py:class:`~ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods`
 
-            * - :py:class:`~ControlBase`
+            * - :py:class:`~ansys.stk.core.stkengine.tkcontrols.ControlBase`
               - Base class for Tkinter controls.
 
-            * - :py:class:`~GlobeControl`
+            * - :py:class:`~ansys.stk.core.stkengine.tkcontrols.GlobeControl`
               - The 3D Globe control for Tkinter.
 
-            * - :py:class:`~MapControl`
+            * - :py:class:`~ansys.stk.core.stkengine.tkcontrols.MapControl`
               - The 2D Map control for Tkinter.
 
-            * - :py:class:`~GfxAnalysisControl`
+            * - :py:class:`~ansys.stk.core.stkengine.tkcontrols.GfxAnalysisControl`
               - The Graphics Analysis control for Tkinter.
 
 

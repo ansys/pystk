@@ -14,15 +14,15 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~Color`
+            * - :py:class:`~ansys.stk.core.utilities.colors.Color`
               - An opaque color representation that can be used with the STK Object Model.
 
-            * - :py:class:`~ColorRGBA`
+            * - :py:class:`~ansys.stk.core.utilities.colors.ColorRGBA`
               - A variably translucent color representation that can be used with certain methods in the STK Object Model.
 
-            * - :py:class:`~_ColorsImpl`
+            * - :py:class:`~ansys.stk.core.utilities.colors._ColorsImpl`
 
-            * - :py:class:`~Colors`
+            * - :py:class:`~ansys.stk.core.utilities.colors.Colors`
               - A factory for creating Color objects that may be used with the STK object model.
 
 

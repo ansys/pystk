@@ -21,7 +21,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkengine.STKEngine.start_application
+            * - :py:attr:`~ansys.stk.core.stkengine.STKEngine.start_application`
               - Initialize STK Engine in-process and return the instance.
                 
                 Must only be used once per Python process.

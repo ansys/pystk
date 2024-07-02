@@ -24,11 +24,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_root
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_root`
               - May be used to obtain an Object Model Root from a running STK Engine application.
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_model_context
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_model_context`
               - May be used to obtain an Object Model Context from a running STK Engine application.
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.SetGrpcOptions
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.SetGrpcOptions`
               - Set advanced-usage options for the gRPC client.
                 
                 Available options include:
@@ -37,13 +37,13 @@ Overview
                 { "disable batching" : bool }. Disable all batching operations.
                 { "release batch size" : int }. Number of interfaces to be garbage collected before 
                 sending the entire batch to STK to be released. Default value is 12.
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.NewGrpcCallBatcher
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.NewGrpcCallBatcher`
               - Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
                 
                 max_batch is the maximum number of calls to batch together.
                 Set disable_batching=True to disable batching operations for this batcher.
                 See grpcutilities module for more information.
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.shutdown
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.shutdown`
               - Shut down the STKRuntime application.
 
 Import detail

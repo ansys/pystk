@@ -21,10 +21,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.alpha
+            * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.alpha`
               - Alpha ranges between 0 (fully translucent) and 255 (fully opaque).
-            * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.alpha
-            * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.color
+            * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.alpha`
+            * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.color`
               - The Color value that contains R, G, B values.
 
 Import detail

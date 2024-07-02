@@ -24,11 +24,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.root
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.root`
               - Get the object model root associated with this instance of STK Desktop application.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_object_model_context
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_object_model_context`
               - Create a new object model context for the STK Desktop application.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.SetGrpcOptions
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.SetGrpcOptions`
               - Set advanced-usage options for the gRPC client.
                 
                 Available options include:
@@ -37,14 +37,14 @@ Overview
                 { "disable batching" : bool }. Disable all batching operations.
                 { "release batch size" : int }. Number of interfaces to be garbage collected before 
                 sending the entire batch to STK to be released. Default value is 12.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.NewGrpcCallBatcher
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.NewGrpcCallBatcher`
               - Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
                 
                 If gRPC is not active, the batcher will be disabled.
                 max_batch is the maximum number of calls to batch together.
                 Set disable_batching=True to disable batching operations for this batcher.
                 See grpcutilities module for more information.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.shutdown
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.shutdown`
               - Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication()).
 
 Import detail

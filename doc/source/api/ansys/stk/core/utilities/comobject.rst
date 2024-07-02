@@ -14,7 +14,7 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~COMObject`
+            * - :py:class:`~ansys.stk.core.utilities.comobject.COMObject`
               - Holds a raw COM pointer.
 
 

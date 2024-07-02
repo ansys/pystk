@@ -21,7 +21,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntime.start_application
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntime.start_application`
               - Create a new STK Runtime instance and attach to the remote host.  
                 
                 grpc_host is the IP address or DNS name of the gRPC server.
@@ -29,7 +29,7 @@ Overview
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 Specify userControl = True to return the application to the user's control 
                 (the application remains open) after terminating the Python API connection.
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntime.attach_to_application
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntime.attach_to_application`
               - Attach to STKRuntime.
                 
                 grpc_host is the IP address or DNS name of the gRPC server.

@@ -14,31 +14,31 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~STKInitializationError`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.STKInitializationError`
               - Raised in STKDesktop and STKEngine when unable to initialize or attach to STK.
 
-            * - :py:class:`~STKInvalidCastError`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.STKInvalidCastError`
               - Raised when attempting to cast an object to an unsupported interface or class type.
 
-            * - :py:class:`~STKRuntimeError`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.STKRuntimeError`
               - Raised when an STK method call fails.
 
-            * - :py:class:`~STKAttributeError`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.STKAttributeError`
               - Raised when attempting to set an unrecognized attribute within the STK API.
 
-            * - :py:class:`~STKEventsAPIError`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.STKEventsAPIError`
               - Raised when attempting to assign to an STK Event rather than using operator += or -=.
 
-            * - :py:class:`~STKPluginMethodNotImplementedError`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.STKPluginMethodNotImplementedError`
               - Raised when a plugin method is called by STK that was not implemented by the user.
 
-            * - :py:class:`~STKInvalidTimerError`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.STKInvalidTimerError`
               - Raised when attempting to use an engine timer that cannot be implemented.
 
-            * - :py:class:`~STKColorError`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.STKColorError`
               - Raised when a problem is encountered with color classes.
 
-            * - :py:class:`~GrpcUtilitiesException`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.GrpcUtilitiesException`
               - Raised when using gRPC utilities in an unsupported manner.
 
 

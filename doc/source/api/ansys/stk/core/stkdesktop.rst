@@ -14,12 +14,12 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~ThreadMarshaller`
+            * - :py:class:`~ansys.stk.core.stkdesktop.ThreadMarshaller`
 
-            * - :py:class:`~STKDesktopApplication`
+            * - :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication`
               - Interact with an STK Desktop application.
 
-            * - :py:class:`~STKDesktop`
+            * - :py:class:`~ansys.stk.core.stkdesktop.STKDesktop`
               - Create, initialize, and manage STK Desktop application instances.
 
 

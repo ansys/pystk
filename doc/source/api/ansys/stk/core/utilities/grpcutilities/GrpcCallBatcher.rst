@@ -59,13 +59,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.start_batching
+            * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.start_batching`
               - Explicitly start batching until stop_batching() is called.
-            * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.execute_batch
+            * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.execute_batch`
               - Explicitly execute any queued batch commands.
-            * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.stop_batching
+            * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.stop_batching`
               - Explicitly stop batching.
-            * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.create_future
+            * - :py:attr:`~ansys.stk.core.utilities.grpcutilities.GrpcCallBatcher.create_future`
               - Create an object of type future_type that supports batching operations.
                 
                 source_obj is an STK Object Model type, e.g. StkObjectRoot.
