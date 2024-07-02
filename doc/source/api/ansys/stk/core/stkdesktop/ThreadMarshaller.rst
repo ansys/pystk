@@ -5,6 +5,8 @@ ThreadMarshaller
 
    object
 
+   Automate multiple STK instances from one Python script using threads.
+
 .. py:currentmodule:: ThreadMarshaller
 
 

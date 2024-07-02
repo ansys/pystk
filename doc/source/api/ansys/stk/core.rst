@@ -26,6 +26,8 @@ Summary
             :widths: auto
         
             * - :py:mod:`~ansys.stk.core.graphics`
+            * - :py:mod:`~ansys.stk.core.stkdesktop`
+            * - :py:mod:`~ansys.stk.core.stkruntime`
             * - :py:mod:`~ansys.stk.core.stkutil`
             * - :py:mod:`~ansys.stk.core.stkx`
             * - :py:mod:`~ansys.stk.core.uiapplication`

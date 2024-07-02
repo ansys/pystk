@@ -5,6 +5,8 @@ AsyncioTimerManager
 
    object
 
+   Provide timer support for animation in jupyter notebooks.
+
 .. py:currentmodule:: AsyncioTimerManager
 
 

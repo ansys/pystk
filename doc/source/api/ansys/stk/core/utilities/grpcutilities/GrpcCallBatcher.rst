@@ -23,12 +23,16 @@ GrpcCallBatcher
    do not have a return value. Call chaining will interrupt a batch request
    because of the get-property command within the chain. E.g.:
 
+   .. code-block:: python
+
        root.CurrentScenario.ShortDescription = short_description
        root.CurrentScenario.LongDescription = long_description
 
    will not be batched together because the call to `CurrentScenario` will
    get the scenario via an API call. These commands may be batched by 
    factoring out the call chaining:
+
+   .. code-block:: python
 
        scen = root.CurrentScenario
        scen.ShortDescription = short_description
@@ -37,6 +41,8 @@ GrpcCallBatcher
    This class may be used via the explicit commands or by using the "with" 
    statement to batch together the commands within the statement block.
    e.g.
+
+   .. code-block:: python
 
        call_batcher = stk.NewGrpcCallBatcher()
        with call_batcher:

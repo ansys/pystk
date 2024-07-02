@@ -15,6 +15,7 @@ Summary
             :widths: auto
 
             * - :py:class:`~ansys.stk.core.stkdesktop.ThreadMarshaller`
+              - Automate multiple STK instances from one Python script using threads.
 
             * - :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication`
               - Interact with an STK Desktop application.

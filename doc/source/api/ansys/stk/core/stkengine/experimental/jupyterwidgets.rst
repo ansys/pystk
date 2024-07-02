@@ -15,6 +15,7 @@ Summary
             :widths: auto
 
             * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.AsyncioTimerManager`
+              - Provide timer support for animation in jupyter notebooks.
 
             * - :py:class:`~ansys.stk.core.stkengine.experimental.jupyterwidgets.RemoteFrameBufferHostVTable`
               - Structure of the vtable for IRemoteFrameBufferHost.

@@ -20,8 +20,6 @@ Summary
             * - :py:class:`~ansys.stk.core.utilities.colors.ColorRGBA`
               - A variably translucent color representation that can be used with certain methods in the STK Object Model.
 
-            * - :py:class:`~ansys.stk.core.utilities.colors._ColorsImpl`
-
             * - :py:class:`~ansys.stk.core.utilities.colors.Colors`
               - A factory for creating Color objects that may be used with the STK object model.
 
@@ -45,7 +43,6 @@ Color is the color object type and Colors is the factory for creating Color obje
 
      Color<colors/Color>
      ColorRGBA<colors/ColorRGBA>
-     _ColorsImpl<colors/_ColorsImpl>
      Colors<colors/Colors>
 
 
