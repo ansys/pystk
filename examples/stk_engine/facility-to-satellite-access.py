@@ -116,7 +116,7 @@ sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 
 # #### Add access constraints to the sensor
 
-# The ``access_constraints`` property of the sensor holds an ``AccessConstraintCollection``, which has an ``add_constraint`` method. Use this method to add a range constraint using the ``ACCESS_CONSTRAINTS``.
+# The ``access_constraints`` property of the sensor holds an ``AccessConstraintCollection``, which has an ``add_constraint`` method. Use this method to add a range constraint using the ``ACCESS_CONSTRAINTS`` enumeration.
 
 # Add an access constraint to the sensor defining a maximum range of 40 km:
 
