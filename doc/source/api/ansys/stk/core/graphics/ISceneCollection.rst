@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.graphics.ISceneCollection.count`
               - Total number of scenes in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.ISceneCollection._NewEnum`
-
+              - Return an enumerator that iterates through the collection.
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.graphics.ISceneCollection._NewEnum
     :type: EnumeratorProxy
 
-
+    Return an enumerator that iterates through the collection.
 
 
 Method detail

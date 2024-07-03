@@ -1998,6 +1998,7 @@ class IPathPointCollection(object):
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _NewEnum(self) -> EnumeratorProxy:
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(IPathPointCollection._metadata, IPathPointCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -2071,6 +2072,7 @@ class IObjectCollection(object):
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _NewEnum(self) -> EnumeratorProxy:
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(IObjectCollection._metadata, IObjectCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -2144,6 +2146,7 @@ class ISceneCollection(object):
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _NewEnum(self) -> EnumeratorProxy:
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(ISceneCollection._metadata, ISceneCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -2292,6 +2295,7 @@ class IScreenOverlayPickResultCollection(object):
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _NewEnum(self) -> EnumeratorProxy:
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(IScreenOverlayPickResultCollection._metadata, IScreenOverlayPickResultCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -2443,6 +2447,7 @@ class IPickResultCollection(object):
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _NewEnum(self) -> EnumeratorProxy:
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(IPickResultCollection._metadata, IPickResultCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -2614,6 +2619,7 @@ class IKmlDocumentCollection(object):
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _NewEnum(self) -> EnumeratorProxy:
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(IKmlDocumentCollection._metadata, IKmlDocumentCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -2687,6 +2693,7 @@ class IKmlFeatureCollection(object):
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
     def _NewEnum(self) -> EnumeratorProxy:
+        """Return an enumerator that iterates through the collection."""
         return self._intf.get_property(IKmlFeatureCollection._metadata, IKmlFeatureCollection._get__NewEnum_metadata)
 
     __getitem__ = item

@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.graphics.IPickResultCollection.count`
               - A total number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IPickResultCollection._NewEnum`
-
+              - Return an enumerator that iterates through the collection.
 
 
 Import detail
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.graphics.IPickResultCollection._NewEnum
     :type: EnumeratorProxy
 
-
+    Return an enumerator that iterates through the collection.
 
 
 Method detail

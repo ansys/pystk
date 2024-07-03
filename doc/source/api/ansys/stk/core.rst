@@ -63,6 +63,8 @@ Detail
     :hidden:
 
     🗎 graphics<core/graphics>
+    🗎 stkdesktop<core/stkdesktop>
+    🗎 stkruntime<core/stkruntime>
     🗎 stkutil<core/stkutil>
     🗎 stkx<core/stkx>
     🗎 uiapplication<core/uiapplication>
