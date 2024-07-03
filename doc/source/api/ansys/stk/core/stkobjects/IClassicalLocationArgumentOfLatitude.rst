@@ -1,0 +1,44 @@
+IClassicalLocationArgumentOfLatitude
+====================================
+
+.. py:class:: ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude
+
+   IClassicalLocation
+   
+   Interface for Argument of Latitude, used in specifying the spacecraft's location within its orbit at epoch.
+
+.. py:currentmodule:: IClassicalLocationArgumentOfLatitude
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude.value`
+              - Value of Argument of Latitude: sum of True Anomaly and Argument of Perigee. Uses Angle Dimension.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IClassicalLocationArgumentOfLatitude
+
+
+Property detail
+---------------
+
+.. py:property:: value
+    :canonical: ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude.value
+    :type: float
+
+    Value of Argument of Latitude: sum of True Anomaly and Argument of Perigee. Uses Angle Dimension.
+
+

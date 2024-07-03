@@ -1,0 +1,76 @@
+ITimeToolFindTimesResult
+========================
+
+.. py:class:: ansys.stk.core.vgt.ITimeToolFindTimesResult
+
+   object
+   
+   Return a collection of intervals and an array of times.
+
+.. py:currentmodule:: ITimeToolFindTimesResult
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.is_valid`
+              - Indicates whether the result object is valid.
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.intervals`
+              - A collection of found intervals.
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.start`
+              - The start time of the entire interval span.
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.stop`
+              - The stop time of the entire interval span.
+            * - :py:attr:`~ansys.stk.core.vgt.ITimeToolFindTimesResult.times`
+              - An array of found times.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import ITimeToolFindTimesResult
+
+
+Property detail
+---------------
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.vgt.ITimeToolFindTimesResult.is_valid
+    :type: bool
+
+    Indicates whether the result object is valid.
+
+.. py:property:: intervals
+    :canonical: ansys.stk.core.vgt.ITimeToolFindTimesResult.intervals
+    :type: ITimeToolIntervalCollection
+
+    A collection of found intervals.
+
+.. py:property:: start
+    :canonical: ansys.stk.core.vgt.ITimeToolFindTimesResult.start
+    :type: typing.Any
+
+    The start time of the entire interval span.
+
+.. py:property:: stop
+    :canonical: ansys.stk.core.vgt.ITimeToolFindTimesResult.stop
+    :type: typing.Any
+
+    The stop time of the entire interval span.
+
+.. py:property:: times
+    :canonical: ansys.stk.core.vgt.ITimeToolFindTimesResult.times
+    :type: list
+
+    An array of found times.
+
+

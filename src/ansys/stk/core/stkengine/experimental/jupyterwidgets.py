@@ -32,6 +32,7 @@ DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
 
 
 class AsyncioTimerManager(object):
+    """Provide timer support for animation in jupyter notebooks."""
 
     class TimerInfo(object):
         def __init__(self, id, milliseconds, TIMERPROC, callbackData):

@@ -1,0 +1,100 @@
+ISpatialAnalysisToolVolumeGridResult
+====================================
+
+.. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult
+
+   object
+   
+   An interface that generates Volume Grid results.
+
+.. py:currentmodule:: ISpatialAnalysisToolVolumeGridResult
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.epoch`
+              - Epoch of returned volumetric data.
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_i`
+              - Number of grid point coordinates representing first dimension of volume grid.
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_j`
+              - Number of grid point coordinates representing second dimension of volume grid.
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_k`
+              - Number of grid point coordinates representing third dimension of volume grid.
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_data_vector`
+              - Vector of scalar values representing volumetric data.
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_position_vector`
+              - Vector of Cartesian coordinates of all volume grid points.
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_native_position_vector`
+              - Vector of native coordinates of all volume grid points.
+            * - :py:attr:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_gradient_vector`
+              - Vector of Cartesian coordinates representing gradient vectors at all volume grid points.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import ISpatialAnalysisToolVolumeGridResult
+
+
+Property detail
+---------------
+
+.. py:property:: epoch
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.epoch
+    :type: typing.Any
+
+    Epoch of returned volumetric data.
+
+.. py:property:: size_i
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_i
+    :type: int
+
+    Number of grid point coordinates representing first dimension of volume grid.
+
+.. py:property:: size_j
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_j
+    :type: int
+
+    Number of grid point coordinates representing second dimension of volume grid.
+
+.. py:property:: size_k
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.size_k
+    :type: int
+
+    Number of grid point coordinates representing third dimension of volume grid.
+
+.. py:property:: volume_metric_data_vector
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_data_vector
+    :type: list
+
+    Vector of scalar values representing volumetric data.
+
+.. py:property:: volume_metric_position_vector
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_position_vector
+    :type: list
+
+    Vector of Cartesian coordinates of all volume grid points.
+
+.. py:property:: volume_metric_native_position_vector
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_native_position_vector
+    :type: list
+
+    Vector of native coordinates of all volume grid points.
+
+.. py:property:: volume_metric_gradient_vector
+    :canonical: ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridResult.volume_metric_gradient_vector
+    :type: list
+
+    Vector of Cartesian coordinates representing gradient vectors at all volume grid points.
+
+

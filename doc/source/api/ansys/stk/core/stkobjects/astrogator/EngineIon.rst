@@ -1,0 +1,24 @@
+EngineIon
+=========
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.EngineIon
+
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineIon`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+
+   Ion Engine engine model.
+
+.. py:currentmodule:: EngineIon
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import EngineIon
+
+
+

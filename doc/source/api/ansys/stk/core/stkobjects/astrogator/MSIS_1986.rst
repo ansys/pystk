@@ -1,0 +1,24 @@
+MSIS_1986
+=========
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.MSIS_1986
+
+   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMSIS_1986`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+
+   MSIS 1986 atmospheric propagator function.
+
+.. py:currentmodule:: MSIS_1986
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import MSIS_1986
+
+
+
