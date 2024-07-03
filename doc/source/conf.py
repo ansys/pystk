@@ -58,7 +58,6 @@ html_css_files = [
 
 # Sphinx extensions
 extensions = [
-    "enum_tools.autoenum",
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
@@ -110,8 +109,10 @@ exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/gene
 
 # Ignore warnings
 suppress_warnings = [
+    # TODO: ignore duplicated object description
+    "autodoc",
     # TODO: ignore the warnings for more than one target found for cross-reference
-    "ref.python"
+    "ref.python",
 ]
 
 # The suffix(es) of source filenames
