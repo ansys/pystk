@@ -109,8 +109,6 @@ exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/gene
 
 # Ignore warnings
 suppress_warnings = [
-    # TODO: ignore duplicated object description
-    "autodoc",
     # TODO: ignore the warnings for more than one target found for cross-reference
     "ref.python",
 ]
