@@ -308,7 +308,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
             stringify_func=(lambda x: x.name),
     ):
         destination_file = OUTPUT_EXAMPLES / file.name
-        destination_file.write_text(file.read_text())
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
     
 
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
