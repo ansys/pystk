@@ -3,7 +3,7 @@ StateCalcJacobiOsculating
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcJacobiOsculating
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiOsculating`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcJacobiOsculating`
 
    Osculating Jacobi Integral Calc objects.
 

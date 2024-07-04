@@ -3,7 +3,7 @@ AirportCategory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AirportCategory
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAirportCategory`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAirportCategory`
 
    Class defining the airport category in the Aviator catalog.
 

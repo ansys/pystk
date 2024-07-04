@@ -3,7 +3,7 @@ VectorGeometryToolAxesPlugin
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesPlugin
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesPlugin`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesPlugin`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`
 
    A VGT axes plugin.
 

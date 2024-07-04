@@ -3,7 +3,7 @@ OnePointAccess
 
 .. py:class:: ansys.stk.core.stkobjects.OnePointAccess
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IOnePointAccess`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IOnePointAccess`
 
    One Point Access.
 

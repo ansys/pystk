@@ -3,7 +3,7 @@ FigureOfMeritAssetListElement
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritAssetListElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListElement`
 
    Asset list item (for Navigation Accuracy FOM).
 

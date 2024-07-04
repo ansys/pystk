@@ -3,7 +3,7 @@ ChainConnectionCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ChainConnectionCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainConnectionCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IChainConnectionCollection`
 
    Class defining a collection of Chain connections.
 

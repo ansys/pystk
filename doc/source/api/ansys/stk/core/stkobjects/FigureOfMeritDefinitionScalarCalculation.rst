@@ -3,7 +3,7 @@ FigureOfMeritDefinitionScalarCalculation
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionScalarCalculation`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Scalar Calculation Figure of Merit.
 

@@ -3,7 +3,7 @@ PointMassFunction
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.PointMassFunction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPointMassFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IPointMassFunction`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Point Mass function.
 

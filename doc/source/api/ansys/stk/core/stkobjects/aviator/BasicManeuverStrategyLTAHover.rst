@@ -3,7 +3,7 @@ BasicManeuverStrategyLTAHover
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyLTAHover`, :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the lighter than air hover strategy for a basic maneuver procedure.
 

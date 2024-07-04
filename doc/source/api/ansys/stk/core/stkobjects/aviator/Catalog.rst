@@ -3,7 +3,7 @@ Catalog
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.Catalog
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalog`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalog`
 
    Class defining the Aviator Catalog.
 

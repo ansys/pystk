@@ -3,7 +3,7 @@ KmlFeatureCollection
 
 .. py:class:: ansys.stk.core.graphics.KmlFeatureCollection
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IKmlFeatureCollection`
+   Bases: :py:class:`~ansys.stk.core.graphics.IKmlFeatureCollection`
 
    A collection of KML features.
 

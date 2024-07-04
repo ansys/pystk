@@ -3,7 +3,7 @@ VectorGeometryToolPointPlugin
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointPlugin
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlugin`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlugin`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
 
    A VGT point plugin.
 

@@ -3,7 +3,7 @@ ElementGeodetic
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementGeodetic
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementGeodetic`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Geodetic elements.
 

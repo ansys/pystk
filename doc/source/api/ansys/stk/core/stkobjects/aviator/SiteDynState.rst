@@ -3,7 +3,7 @@ SiteDynState
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteDynState
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteDynState`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteDynState`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a Dyn State site.
 

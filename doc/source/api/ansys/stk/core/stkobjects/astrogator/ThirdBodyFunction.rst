@@ -3,7 +3,7 @@ ThirdBodyFunction
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IThirdBodyFunction`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    ThirdBody propagator function.
 

@@ -3,7 +3,7 @@ DifferentialCorrectorResult
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResult`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Differential Corrector equality constraints.
 

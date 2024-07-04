@@ -3,7 +3,7 @@ Cartesian3Vector
 
 .. py:class:: ansys.stk.core.stkutil.Cartesian3Vector
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.ICartesian3Vector`
+   Bases: :py:class:`~ansys.stk.core.stkutil.ICartesian3Vector`
 
    A 3-D cartesian vector.
 

@@ -3,7 +3,7 @@ StkAccessGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.StkAccessGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkAccessGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkAccessGraphics`
 
    Class defining 2D Graphics for Access.
 

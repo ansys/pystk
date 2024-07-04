@@ -3,7 +3,7 @@ StateCalcCurvilinearRelMotion
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelMotion
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCurvilinearRelMotion`
 
    Curvilinear Relative Motion objects.
 

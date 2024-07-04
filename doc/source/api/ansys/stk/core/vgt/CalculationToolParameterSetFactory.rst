@@ -3,7 +3,7 @@ CalculationToolParameterSetFactory
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolParameterSetFactory
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolParameterSetFactory`
 
    The factory is used to create instances of available parameter set types.
 

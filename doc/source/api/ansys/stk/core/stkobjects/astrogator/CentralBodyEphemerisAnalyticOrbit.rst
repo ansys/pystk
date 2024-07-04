@@ -3,7 +3,7 @@ CentralBodyEphemerisAnalyticOrbit
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisAnalyticOrbit
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisAnalyticOrbit`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
 
    Central Body Ephemeris - Analytic Orbit.
 

@@ -3,7 +3,7 @@ VectorGeometryToolAngleToPlane
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleToPlane
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngleToPlane`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An angle between a vector and a plane.
 

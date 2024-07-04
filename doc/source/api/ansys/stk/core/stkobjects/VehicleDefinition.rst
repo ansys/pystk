@@ -3,7 +3,7 @@ VehicleDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleDefinition
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleDefinition`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleDefinition`
 
    Pass break definition properties.
 

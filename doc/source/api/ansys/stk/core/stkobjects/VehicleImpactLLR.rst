@@ -3,7 +3,7 @@ VehicleImpactLLR
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleImpactLLR
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleImpact`, py:obj:`~ansys.stk.core.stkobjects.IVehicleImpactLLR`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleImpact`, :py:class:`~ansys.stk.core.stkobjects.IVehicleImpactLLR`
 
    Class defining geocentric impact latitude, longitude and radius for a Missile.
 

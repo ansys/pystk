@@ -3,7 +3,7 @@ MissileModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IAviatorVehicle`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileModel`, :py:class:`~ansys.stk.core.stkobjects.aviator.IAviatorVehicle`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining a missile in Aviator.
 

@@ -3,7 +3,7 @@ VehicleGPSAutoUpdateFileSource
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGPSAutoUpdateFileSource
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateFileSource`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateFileSource`
 
    GPS automatic updates using almanac file(s).
 

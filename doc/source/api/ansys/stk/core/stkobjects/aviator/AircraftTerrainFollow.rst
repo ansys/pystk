@@ -3,7 +3,7 @@ AircraftTerrainFollow
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftTerrainFollow
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollow`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftTerrainFollow`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the TerrainFollow category of an Aviator aircraft.
 

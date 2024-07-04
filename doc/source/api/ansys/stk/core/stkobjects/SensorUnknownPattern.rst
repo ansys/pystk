@@ -3,7 +3,7 @@ SensorUnknownPattern
 
 .. py:class:: ansys.stk.core.stkobjects.SensorUnknownPattern
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPattern`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPattern`
 
    Unsupported/unknown sensor pattern.
 

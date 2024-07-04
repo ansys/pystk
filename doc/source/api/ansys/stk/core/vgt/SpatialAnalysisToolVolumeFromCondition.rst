@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeFromCondition
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeFromCondition
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCondition`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeFromCondition`, :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume from conditioninterface.
 

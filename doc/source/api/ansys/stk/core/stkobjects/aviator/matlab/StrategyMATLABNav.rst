@@ -3,7 +3,7 @@ StrategyMATLABNav
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABNav
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav`, py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav`, :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IBasicManeuverStrategy`
 
    Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure.
 

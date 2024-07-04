@@ -3,7 +3,7 @@ TransmitterModelComplex
 
 .. py:class:: ansys.stk.core.stkobjects.TransmitterModelComplex
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitterModelComplex`, py:obj:`~ansys.stk.core.stkobjects.ITransmitterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelComplex`, :py:class:`~ansys.stk.core.stkobjects.ITransmitterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a complex transmitter model.
 

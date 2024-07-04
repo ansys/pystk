@@ -3,7 +3,7 @@ StateCalcGravCoeff
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGravCoeff`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Gravity Coefficient Calc objects.
 

@@ -3,7 +3,7 @@ StateCalcSolarInPlaneAngle
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSolarInPlaneAngle
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarInPlaneAngle`
 
    Solar In Plane Angle objects.
 

@@ -3,7 +3,7 @@ Graphics3DModelArtic
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DModelArtic
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelArtic`
 
    Class defining 3D model articulations.
 

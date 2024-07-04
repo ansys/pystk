@@ -3,7 +3,7 @@ TransmitterModelMedium
 
 .. py:class:: ansys.stk.core.stkobjects.TransmitterModelMedium
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitterModelMedium`, py:obj:`~ansys.stk.core.stkobjects.ITransmitterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelMedium`, :py:class:`~ansys.stk.core.stkobjects.ITransmitterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a medium transmitter model.
 

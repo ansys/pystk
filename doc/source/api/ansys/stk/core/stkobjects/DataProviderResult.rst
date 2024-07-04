@@ -3,7 +3,7 @@ DataProviderResult
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResult
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResult`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderResult`
 
    Results returned by the data provider.
 

@@ -3,7 +3,7 @@ VehiclePropDefinitionExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropDefinitionExportTool
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropDefinitionExportTool`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropDefinitionExportTool`
 
    AgVeExternalFileAttitude Class.
 

@@ -3,7 +3,7 @@ TimeToolLastIntervalsFilter
 
 .. py:class:: ansys.stk.core.vgt.TimeToolLastIntervalsFilter
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolLastIntervalsFilter`, py:obj:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolLastIntervalsFilter`, :py:class:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
 
    The filter selects a portion of last intervals.
 

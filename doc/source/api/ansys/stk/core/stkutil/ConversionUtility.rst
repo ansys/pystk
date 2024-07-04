@@ -3,7 +3,7 @@ ConversionUtility
 
 .. py:class:: ansys.stk.core.stkutil.ConversionUtility
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IConversionUtility`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IConversionUtility`
 
    Object that contains a unit conversion utility.
 

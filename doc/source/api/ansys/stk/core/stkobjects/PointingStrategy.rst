@@ -3,7 +3,7 @@ PointingStrategy
 
 .. py:class:: ansys.stk.core.stkobjects.PointingStrategy
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IPointingStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IPointingStrategy`
 
    Class defining a pointing strategy.
 

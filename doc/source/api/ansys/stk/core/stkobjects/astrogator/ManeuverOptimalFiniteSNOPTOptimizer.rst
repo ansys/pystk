@@ -3,7 +3,7 @@ ManeuverOptimalFiniteSNOPTOptimizer
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteSNOPTOptimizer`
 
    Properties of SNOPT Optimizer options for optimal finite maneuver.
 

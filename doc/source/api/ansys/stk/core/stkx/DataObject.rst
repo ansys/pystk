@@ -3,7 +3,7 @@ DataObject
 
 .. py:class:: ansys.stk.core.stkx.DataObject
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IDataObject`
+   Bases: :py:class:`~ansys.stk.core.stkx.IDataObject`
 
    Data Object for OLE drag & drop operations.
 

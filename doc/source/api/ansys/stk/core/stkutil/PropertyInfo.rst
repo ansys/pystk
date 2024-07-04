@@ -3,7 +3,7 @@ PropertyInfo
 
 .. py:class:: ansys.stk.core.stkutil.PropertyInfo
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IPropertyInfo`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IPropertyInfo`
 
    Property Information coclass.
 

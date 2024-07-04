@@ -3,7 +3,7 @@ AnalysisWorkbenchCentralBody
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchCentralBody
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBody`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBody`
 
    Represents an central body.
 

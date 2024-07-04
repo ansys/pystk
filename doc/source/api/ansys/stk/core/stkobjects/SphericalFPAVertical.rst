@@ -3,7 +3,7 @@ SphericalFPAVertical
 
 .. py:class:: ansys.stk.core.stkobjects.SphericalFPAVertical
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISphericalFPAVertical`, py:obj:`~ansys.stk.core.stkobjects.IFlightPathAngle`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISphericalFPAVertical`, :py:class:`~ansys.stk.core.stkobjects.IFlightPathAngle`
 
    Vertical Flight Path Angle, an element of the Spherical coordinate type.
 

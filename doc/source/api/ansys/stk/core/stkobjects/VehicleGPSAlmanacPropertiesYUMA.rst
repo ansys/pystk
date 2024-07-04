@@ -3,7 +3,7 @@ VehicleGPSAlmanacPropertiesYUMA
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesYUMA
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacPropertiesYUMA`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties`
 
    YUMA almanac properties.
 

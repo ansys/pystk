@@ -3,7 +3,7 @@ CalculationGraphCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICalculationGraphCollection`
 
    Calculation Graph Collection.
 

@@ -3,7 +3,7 @@ AircraftBasicAccelerationModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftBasicAccelerationModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicAccelerationModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicAccelerationModel`, :py:class:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the basic acceleration performance model for an Aviator aircraft.
 

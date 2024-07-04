@@ -3,7 +3,7 @@ ProfileSNOPTOptimizer
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfileSNOPTOptimizer`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    SNOPT optimizer profile.
 

@@ -3,7 +3,7 @@ EnrouteTurnDirectionOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.EnrouteTurnDirectionOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IEnrouteTurnDirectionOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IEnrouteTurnDirectionOptions`
 
    Class defining the enroute turn direction options in a procedure.
 

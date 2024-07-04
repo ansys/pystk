@@ -3,7 +3,7 @@ ReceiverGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.ReceiverGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiverGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IReceiverGraphics`
 
    Class defining 2D Graphics properties of a Receiver.
 

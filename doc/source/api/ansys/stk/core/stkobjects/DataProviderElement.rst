@@ -3,7 +3,7 @@ DataProviderElement
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderElement`
 
    Class defining a data provider element.
 

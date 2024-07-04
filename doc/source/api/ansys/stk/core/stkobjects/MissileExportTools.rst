@@ -3,7 +3,7 @@ MissileExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.MissileExportTools
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMissileExportTools`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMissileExportTools`
 
    The Missile Export Tools.
 

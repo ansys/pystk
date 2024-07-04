@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectory
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectory`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectory`
 
    AgLvVOTrajectory Class.
 

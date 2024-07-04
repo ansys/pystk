@@ -3,7 +3,7 @@ SRPModelGPS
 
 .. py:class:: ansys.stk.core.stkobjects.SRPModelGPS
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISRPModelGPS`, py:obj:`~ansys.stk.core.stkobjects.ISRPModelBase`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISRPModelGPS`, :py:class:`~ansys.stk.core.stkobjects.ISRPModelBase`
 
    GPS Solar Radiation Pressure Model.
 

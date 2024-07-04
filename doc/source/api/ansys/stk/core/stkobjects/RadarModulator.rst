@@ -3,7 +3,7 @@ RadarModulator
 
 .. py:class:: ansys.stk.core.stkobjects.RadarModulator
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModulator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarModulator`
 
    Class defining a radar modulator.
 

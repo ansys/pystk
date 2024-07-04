@@ -3,7 +3,7 @@ SensorEOIRBand
 
 .. py:class:: ansys.stk.core.stkobjects.SensorEOIRBand
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorEOIRBand`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRBand`
 
    Class defining an EOIR band.
 

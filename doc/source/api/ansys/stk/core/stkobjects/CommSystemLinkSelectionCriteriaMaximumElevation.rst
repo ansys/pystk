@@ -3,7 +3,7 @@ CommSystemLinkSelectionCriteriaMaximumElevation
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystemLinkSelectionCriteriaMaximumElevation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria`
 
    Class defining a CommSystem link selection criteria.
 

@@ -3,7 +3,7 @@ Chain
 
 .. py:class:: ansys.stk.core.stkobjects.Chain
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IChain`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IChain`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    AgChain Class is used to access the methods and properties of the STK Chain Object.
 

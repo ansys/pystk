@@ -3,7 +3,7 @@ RadarCrossSectionComputeStrategy
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategy
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 

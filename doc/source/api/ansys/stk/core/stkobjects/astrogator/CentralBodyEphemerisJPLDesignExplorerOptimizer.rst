@@ -3,7 +3,7 @@ CentralBodyEphemerisJPLDesignExplorerOptimizer
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisJPLDesignExplorerOptimizer
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLDesignExplorerOptimizer`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisJPLDesignExplorerOptimizer`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
 
    Central Body Ephemeris - JPL DE.
 

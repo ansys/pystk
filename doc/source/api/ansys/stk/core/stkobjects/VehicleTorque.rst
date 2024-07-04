@@ -3,7 +3,7 @@ VehicleTorque
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTorque
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleTorque`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleTorque`
 
    Torque file to use in defining integrated attitude.
 

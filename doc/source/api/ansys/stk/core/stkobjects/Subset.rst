@@ -3,7 +3,7 @@ Subset
 
 .. py:class:: ansys.stk.core.stkobjects.Subset
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISubset`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISubset`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    The AgSubset class.
 

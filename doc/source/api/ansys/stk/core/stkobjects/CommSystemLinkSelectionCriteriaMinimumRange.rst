@@ -3,7 +3,7 @@ CommSystemLinkSelectionCriteriaMinimumRange
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystemLinkSelectionCriteriaMinimumRange
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria`
 
    Class defining a CommSystem link selection criteria.
 

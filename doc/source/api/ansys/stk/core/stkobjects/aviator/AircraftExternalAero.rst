@@ -3,7 +3,7 @@ AircraftExternalAero
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftExternalAero
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalAero`
 
    Class defining the external file aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 

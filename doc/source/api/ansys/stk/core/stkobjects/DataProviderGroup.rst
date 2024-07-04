@@ -3,7 +3,7 @@ DataProviderGroup
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderGroup
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderInfo`, py:obj:`~ansys.stk.core.stkobjects.IDataProviderGroup`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderInfo`, :py:class:`~ansys.stk.core.stkobjects.IDataProviderGroup`
 
    Group of sub data providers (e.g. ``Cartesian Position`` on Satellites).
 

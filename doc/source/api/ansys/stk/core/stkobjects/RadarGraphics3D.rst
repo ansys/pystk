@@ -3,7 +3,7 @@ RadarGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.RadarGraphics3D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarGraphics3D`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarGraphics3D`
 
    Class defining 3D Graphics properties of a Radar.
 

@@ -3,7 +3,7 @@ CoverageRegionFilesCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageRegionFilesCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageRegionFilesCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageRegionFilesCollection`
 
    Collection of Region Files.
 

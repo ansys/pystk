@@ -3,7 +3,7 @@ CentralBodyShapeOblateSpheroid
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyShapeOblateSpheroid
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeOblateSpheroid`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeOblateSpheroid`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
 
    Central Body Shape - Spheroid.
 

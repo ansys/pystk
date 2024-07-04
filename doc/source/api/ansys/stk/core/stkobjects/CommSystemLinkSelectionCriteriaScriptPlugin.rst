@@ -3,7 +3,7 @@ CommSystemLinkSelectionCriteriaScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystemLinkSelectionCriteriaScriptPlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteriaScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteriaScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria`
 
    Class defining a CommSystem link selection criteria.
 

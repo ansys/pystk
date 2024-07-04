@@ -3,7 +3,7 @@ CommSystemAccessEventDetectionSubsample
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystemAccessEventDetectionSubsample
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetectionSubsample`, py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetectionSubsample`, :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetection`
 
    Class defining a CommSystem access options.
 

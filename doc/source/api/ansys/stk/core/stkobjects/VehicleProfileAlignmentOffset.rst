@@ -3,7 +3,7 @@ VehicleProfileAlignmentOffset
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleProfileAlignmentOffset
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileAlignmentOffset`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileAlignmentOffset`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Alignment offset for various attitude profiles.
 

@@ -3,7 +3,7 @@ EOIRStage
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRStage
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRStage`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRStage`
 
    Stage base class.
 

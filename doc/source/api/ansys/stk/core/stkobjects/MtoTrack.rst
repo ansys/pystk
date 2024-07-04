@@ -3,7 +3,7 @@ MtoTrack
 
 .. py:class:: ansys.stk.core.stkobjects.MtoTrack
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoTrack`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoTrack`
 
    List of MTO tracks with basic information about each.
 

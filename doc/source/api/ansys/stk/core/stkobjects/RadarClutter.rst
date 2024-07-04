@@ -3,7 +3,7 @@ RadarClutter
 
 .. py:class:: ansys.stk.core.stkobjects.RadarClutter
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarClutter`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarClutter`
 
    Class defining a radar clutter.
 

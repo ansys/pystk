@@ -3,7 +3,7 @@ VehicleSPICESegment
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSPICESegment
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSPICESegment`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSPICESegment`
 
    SPICE propagator segment.
 

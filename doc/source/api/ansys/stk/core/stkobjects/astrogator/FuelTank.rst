@@ -3,7 +3,7 @@ FuelTank
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.FuelTank
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IFuelTank`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IFuelTank`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Fuel Tank parameters.
 

@@ -3,7 +3,7 @@ TimeToolEventInterval
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventInterval
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventInterval`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A single time interval.
 

@@ -3,7 +3,7 @@ WindModelConstant
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.WindModelConstant
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IWindModelConstant`
 
    Class defining a constant bearing/speed wind model for a mission.
 

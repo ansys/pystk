@@ -3,7 +3,7 @@ HarrisPriester
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.HarrisPriester
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IHarrisPriester`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IHarrisPriester`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Harris-Priester atmospheric propagator function.
 

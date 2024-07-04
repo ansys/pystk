@@ -3,7 +3,7 @@ BurnoutVelocity
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IBurnoutVelocity`
 
    The burnout velocity.
 

@@ -3,7 +3,7 @@ Satellite
 
 .. py:class:: ansys.stk.core.stkobjects.Satellite
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISatellite`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISatellite`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Satellite properties.
 

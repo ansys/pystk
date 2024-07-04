@@ -3,7 +3,7 @@ UiFileOpenExtCollection
 
 .. py:class:: ansys.stk.core.uiapplication.UiFileOpenExtCollection
 
-   Bases: py:obj:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection`
+   Bases: :py:class:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection`
 
    Multiple file open collection.
 

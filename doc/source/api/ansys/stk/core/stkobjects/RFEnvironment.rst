@@ -3,7 +3,7 @@ RFEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.RFEnvironment
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFEnvironment`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFEnvironment`
 
    Class defining the RF environment.
 

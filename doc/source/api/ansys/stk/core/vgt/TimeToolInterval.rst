@@ -3,7 +3,7 @@ TimeToolInterval
 
 .. py:class:: ansys.stk.core.vgt.TimeToolInterval
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolInterval`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInterval`
 
    Represents an interval.
 

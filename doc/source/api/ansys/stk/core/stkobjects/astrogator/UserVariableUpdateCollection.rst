@@ -3,7 +3,7 @@ UserVariableUpdateCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection`
 
    User Variable Update Collection.
 

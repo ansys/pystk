@@ -3,7 +3,7 @@ ProcedureVerticalTakeoff
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureVerticalTakeoff`, :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a vertical takeoff procedure.
 

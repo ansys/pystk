@@ -3,7 +3,7 @@ SiteSTKStaticObject
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteSTKStaticObject
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteSTKStaticObject`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteSTKStaticObject`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a STK Static Object site.
 

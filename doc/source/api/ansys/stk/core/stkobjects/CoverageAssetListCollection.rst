@@ -3,7 +3,7 @@ CoverageAssetListCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageAssetListCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageAssetListCollection`
 
    Asset List.
 

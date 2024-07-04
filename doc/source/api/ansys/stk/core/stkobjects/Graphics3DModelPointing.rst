@@ -3,7 +3,7 @@ Graphics3DModelPointing
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DModelPointing
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelPointing`
 
    List of pointable model elements.
 

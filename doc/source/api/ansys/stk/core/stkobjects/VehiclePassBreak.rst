@@ -3,7 +3,7 @@ VehiclePassBreak
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePassBreak
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePassBreak`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePassBreak`
 
    Satellite Pass Break properties.
 

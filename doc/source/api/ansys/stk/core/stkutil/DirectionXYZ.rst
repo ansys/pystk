@@ -3,7 +3,7 @@ DirectionXYZ
 
 .. py:class:: ansys.stk.core.stkutil.DirectionXYZ
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IDirectionXYZ`, py:obj:`~ansys.stk.core.stkutil.IDirection`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IDirectionXYZ`, :py:class:`~ansys.stk.core.stkutil.IDirection`
 
    Cartesian direction.
 

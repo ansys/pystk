@@ -3,7 +3,7 @@ UiFileOpenExt
 
 .. py:class:: ansys.stk.core.uiapplication.UiFileOpenExt
 
-   Bases: py:obj:`~ansys.stk.core.uiapplication.IUiFileOpenExt`
+   Bases: :py:class:`~ansys.stk.core.uiapplication.IUiFileOpenExt`
 
    Access to file open dialog that allows multiple file specifications.
 

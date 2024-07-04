@@ -3,7 +3,7 @@ DemodulatorModelFsk
 
 .. py:class:: ansys.stk.core.stkobjects.DemodulatorModelFsk
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a FSK modulator model.
 

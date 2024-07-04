@@ -3,7 +3,7 @@ FigureOfMeritUncertainties
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritUncertainties
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritUncertainties`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritUncertainties`
 
    Receiver range uncertainty (for Navigation Accuracy FOM).
 

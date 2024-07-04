@@ -3,7 +3,7 @@ VehicleImpactLLA
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleImpactLLA
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleImpact`, py:obj:`~ansys.stk.core.stkobjects.IVehicleImpactLLA`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleImpact`, :py:class:`~ansys.stk.core.stkobjects.IVehicleImpactLLA`
 
    Class defining geodetic impact latitude, longitude and altitude for a Missile.
 

@@ -3,7 +3,7 @@ VmGraphics3DLegend
 
 .. py:class:: ansys.stk.core.stkobjects.VmGraphics3DLegend
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DLegend`
 
    Class defining Boundary/Fill legend for volumetric object.
 

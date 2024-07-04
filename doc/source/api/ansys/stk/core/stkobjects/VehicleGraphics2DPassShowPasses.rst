@@ -3,7 +3,7 @@ VehicleGraphics2DPassShowPasses
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DPassShowPasses
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPass`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassShowPasses`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPass`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DPassShowPasses`
 
    Beginning and end pass numbers to display.
 

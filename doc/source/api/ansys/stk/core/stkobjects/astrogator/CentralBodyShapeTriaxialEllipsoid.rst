@@ -3,7 +3,7 @@ CentralBodyShapeTriaxialEllipsoid
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyShapeTriaxialEllipsoid
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeTriaxialEllipsoid`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
 
    Central Body Shape - Triaxial Ellipsoid.
 

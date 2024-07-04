@@ -3,7 +3,7 @@ StateCalcSTMEigenval
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenval
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSTMEigenval`
 
    Cartesian STM Eigenvalues Calc objects.
 

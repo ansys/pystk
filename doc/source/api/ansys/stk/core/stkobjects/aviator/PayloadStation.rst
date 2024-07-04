@@ -3,7 +3,7 @@ PayloadStation
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.PayloadStation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IPayloadStation`, py:obj:`~ansys.stk.core.stkobjects.aviator.IStation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IPayloadStation`, :py:class:`~ansys.stk.core.stkobjects.aviator.IStation`
 
    Class defining a payload station for an Aviator aircraft.
 

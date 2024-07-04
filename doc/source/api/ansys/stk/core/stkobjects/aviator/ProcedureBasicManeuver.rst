@@ -3,7 +3,7 @@ ProcedureBasicManeuver
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureBasicManeuver`, :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a Basic Maneuver procedure.
 

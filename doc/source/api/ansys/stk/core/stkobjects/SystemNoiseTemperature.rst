@@ -3,7 +3,7 @@ SystemNoiseTemperature
 
 .. py:class:: ansys.stk.core.stkobjects.SystemNoiseTemperature
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISystemNoiseTemperature`
 
    Class defining system noise temperature.
 

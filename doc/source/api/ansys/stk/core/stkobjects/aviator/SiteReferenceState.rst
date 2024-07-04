@@ -3,7 +3,7 @@ SiteReferenceState
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteReferenceState
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteReferenceState`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteReferenceState`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a Reference State site.
 

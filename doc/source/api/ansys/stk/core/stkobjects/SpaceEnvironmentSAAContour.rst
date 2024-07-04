@@ -3,7 +3,7 @@ SpaceEnvironmentSAAContour
 
 .. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentSAAContour
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentSAAContour`
 
    SAA settings.
 

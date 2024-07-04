@@ -3,7 +3,7 @@ BisectionResult
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BisectionResult
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IBisectionResult`
 
    Result parameters for Bisection profile.
 

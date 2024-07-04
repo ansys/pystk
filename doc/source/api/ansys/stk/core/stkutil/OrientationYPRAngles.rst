@@ -3,7 +3,7 @@ OrientationYPRAngles
 
 .. py:class:: ansys.stk.core.stkutil.OrientationYPRAngles
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationYPRAngles`, py:obj:`~ansys.stk.core.stkutil.IOrientation`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IOrientationYPRAngles`, :py:class:`~ansys.stk.core.stkutil.IOrientation`
 
    Yaw-Pitch Roll (YPR) Angles orientation system.
 

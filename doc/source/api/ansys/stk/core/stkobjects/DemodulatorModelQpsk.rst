@@ -3,7 +3,7 @@ DemodulatorModelQpsk
 
 .. py:class:: ansys.stk.core.stkobjects.DemodulatorModelQpsk
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a QPSK modulator model.
 

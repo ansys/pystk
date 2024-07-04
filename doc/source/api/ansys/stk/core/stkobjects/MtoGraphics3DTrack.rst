@@ -3,7 +3,7 @@ MtoGraphics3DTrack
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DTrack
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DTrack`
 
    3D graphics properties for MTO tracks.
 

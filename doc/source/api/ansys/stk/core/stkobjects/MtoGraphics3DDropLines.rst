@@ -3,7 +3,7 @@ MtoGraphics3DDropLines
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DDropLines
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DDropLines`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DDropLines`
 
    MTO droplines.
 

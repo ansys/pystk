@@ -3,7 +3,7 @@ EOIRMaterialElementCollection
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRMaterialElementCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRMaterialElementCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRMaterialElementCollection`
 
    Collection of material elements.
 

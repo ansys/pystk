@@ -3,7 +3,7 @@ StateCalcDamageMassFlux
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDamageMassFlux
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDamageMassFlux`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDamageMassFlux`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcDamageMassFlux.
 

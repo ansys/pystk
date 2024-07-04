@@ -3,7 +3,7 @@ DemodulatorModel
 
 .. py:class:: ansys.stk.core.stkobjects.DemodulatorModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a demodulator model.
 

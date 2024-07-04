@@ -3,7 +3,7 @@ DuringAccess
 
 .. py:class:: ansys.stk.core.stkobjects.DuringAccess
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDisplayTimesData`, py:obj:`~ansys.stk.core.stkobjects.IDuringAccess`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDisplayTimesData`, :py:class:`~ansys.stk.core.stkobjects.IDuringAccess`
 
    Class defining display intervals in terms of access to objects.
 

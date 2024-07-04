@@ -3,7 +3,7 @@ RadarAccessGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.RadarAccessGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarAccessGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarAccessGraphics`
 
    Class defining access graphics properties of a Radar.
 

@@ -3,7 +3,7 @@ VehicleAttitudeSlewFixedRate
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedRate
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewFixedRate`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
 
    Fixed rate slew.
 

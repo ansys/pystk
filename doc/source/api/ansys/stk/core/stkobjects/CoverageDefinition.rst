@@ -3,7 +3,7 @@ CoverageDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageDefinition
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageDefinition`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageDefinition`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    The AgCoverageDefinition class.
 

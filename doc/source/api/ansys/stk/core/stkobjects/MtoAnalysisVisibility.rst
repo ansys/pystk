@@ -3,7 +3,7 @@ MtoAnalysisVisibility
 
 .. py:class:: ansys.stk.core.stkobjects.MtoAnalysisVisibility
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoAnalysisVisibility`
 
    MTO Visibility Computation.
 

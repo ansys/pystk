@@ -3,7 +3,7 @@ TargeterGraphActiveControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.TargeterGraphActiveControl
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ITargeterGraphActiveControl`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Targeter Graph Active Control.
 

@@ -3,7 +3,7 @@ VehicleHPOPDragModelPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin`, py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin`, :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
 
    Plugin Drag Model.
 

@@ -3,7 +3,7 @@ Graphics3DPointableElementsElement
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DPointableElementsElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DPointableElementsElement`
 
    Pointable elements for 3D model pointing.
 

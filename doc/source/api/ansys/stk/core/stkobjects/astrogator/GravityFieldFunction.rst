@@ -3,7 +3,7 @@ GravityFieldFunction
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IGravityFieldFunction`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Gravity Field gravity propagator function.
 

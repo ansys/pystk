@@ -3,7 +3,7 @@ RadarCrossSectionComputeStrategyPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyPlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyPlugin`, py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyPlugin`, :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 

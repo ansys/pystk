@@ -3,7 +3,7 @@ FacilityGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.FacilityGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFacilityGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFacilityGraphics`
 
    2D Graphics properties of a Facility.
 

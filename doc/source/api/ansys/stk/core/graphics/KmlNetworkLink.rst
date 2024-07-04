@@ -3,7 +3,7 @@ KmlNetworkLink
 
 .. py:class:: ansys.stk.core.graphics.KmlNetworkLink
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IKmlNetworkLink`, py:obj:`~ansys.stk.core.graphics.IKmlFeature`
+   Bases: :py:class:`~ansys.stk.core.graphics.IKmlNetworkLink`, :py:class:`~ansys.stk.core.graphics.IKmlFeature`
 
    A KML network link.
 

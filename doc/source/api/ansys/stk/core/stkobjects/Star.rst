@@ -3,7 +3,7 @@ Star
 
 .. py:class:: ansys.stk.core.stkobjects.Star
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IStar`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStar`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the Star object.
 

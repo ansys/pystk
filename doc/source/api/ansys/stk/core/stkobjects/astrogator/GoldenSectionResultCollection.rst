@@ -3,7 +3,7 @@ GoldenSectionResultCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GoldenSectionResultCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IGoldenSectionResultCollection`
 
    Properties for the list of Golden Section result parameters.
 

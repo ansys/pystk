@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DLevelAttributesCollection
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLevelAttributesCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLevelAttributesCollection`
 
    Collection of Level Attributes.
 

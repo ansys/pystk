@@ -3,7 +3,7 @@ TimeToolEventIntervalSignaled
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalSignaled
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalSignaled`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventInterval`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalSignaled`, :py:class:`~ansys.stk.core.vgt.ITimeToolEventInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations.
 

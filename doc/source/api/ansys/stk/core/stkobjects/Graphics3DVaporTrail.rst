@@ -3,7 +3,7 @@ Graphics3DVaporTrail
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DVaporTrail
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DVaporTrail`
 
    Vapor trail attributes.
 

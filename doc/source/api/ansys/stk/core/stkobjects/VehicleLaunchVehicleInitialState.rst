@@ -3,7 +3,7 @@ VehicleLaunchVehicleInitialState
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleLaunchVehicleInitialState
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleLaunchVehicleInitialState`
 
    Class defining launch vehicle initial state.
 

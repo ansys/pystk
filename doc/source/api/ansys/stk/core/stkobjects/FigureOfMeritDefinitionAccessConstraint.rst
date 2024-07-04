@@ -3,7 +3,7 @@ FigureOfMeritDefinitionAccessConstraint
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAccessConstraint`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Access Constraint Figure of Merit.
 

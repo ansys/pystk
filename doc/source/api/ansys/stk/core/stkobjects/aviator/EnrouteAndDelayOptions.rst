@@ -3,7 +3,7 @@ EnrouteAndDelayOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.EnrouteAndDelayOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions`
 
    Class defining the enroute and delay options in a procedure.
 

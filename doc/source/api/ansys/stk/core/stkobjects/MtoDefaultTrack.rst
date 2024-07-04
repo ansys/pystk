@@ -3,7 +3,7 @@ MtoDefaultTrack
 
 .. py:class:: ansys.stk.core.stkobjects.MtoDefaultTrack
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoDefaultTrack`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoDefaultTrack`
 
    Default MTO track.
 

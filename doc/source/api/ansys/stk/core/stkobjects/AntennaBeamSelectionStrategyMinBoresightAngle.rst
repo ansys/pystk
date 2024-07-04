@@ -3,7 +3,7 @@ AntennaBeamSelectionStrategyMinBoresightAngle
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyMinBoresightAngle
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
 
    Class defining a minimum boresight angle beam selection strategy.
 

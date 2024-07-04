@@ -3,7 +3,7 @@ VehicleLOPCentralBodyGravity
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleLOPCentralBodyGravity
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLOPCentralBodyGravity`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleLOPCentralBodyGravity`
 
    Class defining gravity options for the LOP propagator.
 

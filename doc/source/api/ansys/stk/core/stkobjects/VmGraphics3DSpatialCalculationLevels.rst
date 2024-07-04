@@ -3,7 +3,7 @@ VmGraphics3DSpatialCalculationLevels
 
 .. py:class:: ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevels
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevels`
 
    Class defining Spatial Calculation Levels for Volumetric Object.
 

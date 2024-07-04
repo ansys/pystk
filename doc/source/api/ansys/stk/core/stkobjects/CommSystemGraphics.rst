@@ -3,7 +3,7 @@ CommSystemGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystemGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICommSystemGraphics`
 
    Class defining 2D Graphics properties of a CommSystem.
 

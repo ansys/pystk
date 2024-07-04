@@ -3,7 +3,7 @@ FigureOfMeritGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics`
 
    AgFmGfxGraphics Class.
 

@@ -3,7 +3,7 @@ ARINC424Navaid
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ARINC424Navaid
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogNavaid`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogNavaid`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an ARINC424 Navaid.
 

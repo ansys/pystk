@@ -3,7 +3,7 @@ SolarActivityConfigurationSolarFlux
 
 .. py:class:: ansys.stk.core.stkobjects.SolarActivityConfigurationSolarFlux
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISolarActivityConfigurationSolarFlux`, py:obj:`~ansys.stk.core.stkobjects.ISolarActivityConfiguration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISolarActivityConfigurationSolarFlux`, :py:class:`~ansys.stk.core.stkobjects.ISolarActivityConfiguration`
 
    Class defining the solar flux configuration.
 

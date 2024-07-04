@@ -3,7 +3,7 @@ StateCalcGeodeticMeanRightAscension
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcGeodeticMeanRightAscension
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGeodeticMeanRightAscension`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcGeodeticMeanRightAscension`
 
    GeodeticMeanRightAscension Calc objects.
 

@@ -3,7 +3,7 @@ ElementConfigurationPolygon
 
 .. py:class:: ansys.stk.core.stkobjects.ElementConfigurationPolygon
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon`, py:obj:`~ansys.stk.core.stkobjects.IElementConfiguration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon`, :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
 
    Class defining a polygon element configuration.
 

@@ -3,7 +3,7 @@ CalculationOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.CalculationOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ICalculationOptions`
 
    Class defining the calculation options for a procedure or phase.
 

@@ -3,7 +3,7 @@ FigureOfMeritAssetListCollection
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritAssetListCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritAssetListCollection`
 
    List of assets available for specifying range uncertainty (for Navigation Accuracy FOM).
 

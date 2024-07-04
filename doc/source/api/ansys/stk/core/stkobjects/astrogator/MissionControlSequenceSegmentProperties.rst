@@ -3,7 +3,7 @@ MissionControlSequenceSegmentProperties
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceSegmentProperties
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentProperties`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Segment Properties.
 

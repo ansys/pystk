@@ -3,7 +3,7 @@ AdvCATChosenObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAdvCATChosenObjectCollection`
 
    The chosen object collection.
 

@@ -3,7 +3,7 @@ SphericalFPAHorizontal
 
 .. py:class:: ansys.stk.core.stkobjects.SphericalFPAHorizontal
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISphericalFPAHorizontal`, py:obj:`~ansys.stk.core.stkobjects.IFlightPathAngle`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISphericalFPAHorizontal`, :py:class:`~ansys.stk.core.stkobjects.IFlightPathAngle`
 
    Horizontal Flight Path Angle, an element of the Spherical coordinate type.
 

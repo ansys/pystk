@@ -3,7 +3,7 @@ SensorEOIRRadiometricPair
 
 .. py:class:: ansys.stk.core.stkobjects.SensorEOIRRadiometricPair
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorEOIRRadiometricPair`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRRadiometricPair`
 
    Class defining an Sensitivities item.
 

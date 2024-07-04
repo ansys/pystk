@@ -3,7 +3,7 @@ VehiclePropagatorUserExternal
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorUserExternal
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorUserExternal`, :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the user-external propagator.
 

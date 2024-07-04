@@ -3,7 +3,7 @@ Constellation
 
 .. py:class:: ansys.stk.core.stkobjects.Constellation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IConstellation`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IConstellation`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class represents the STK Constellation.
 

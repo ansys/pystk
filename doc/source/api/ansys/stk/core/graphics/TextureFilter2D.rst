@@ -3,7 +3,7 @@ TextureFilter2D
 
 .. py:class:: ansys.stk.core.graphics.TextureFilter2D
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ITextureFilter2D`
+   Bases: :py:class:`~ansys.stk.core.graphics.ITextureFilter2D`
 
    A texture filter.
 

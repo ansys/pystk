@@ -3,7 +3,7 @@ Jacchia_1970
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.Jacchia_1970
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1970`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IJacchia_1970`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Jacchia_1970 atmospheric propagator function.
 

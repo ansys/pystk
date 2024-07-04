@@ -3,7 +3,7 @@ ADDSMessage
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ADDSMessage
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IADDSMessage`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IADDSMessage`
 
    Class defining a message from the NOAA ADDS service.
 

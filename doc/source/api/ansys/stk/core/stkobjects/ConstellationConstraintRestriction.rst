@@ -3,7 +3,7 @@ ConstellationConstraintRestriction
 
 .. py:class:: ansys.stk.core.stkobjects.ConstellationConstraintRestriction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IConstellationConstraintRestriction`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IConstellationConstraintRestriction`
 
    Class related to the constellation constraint restrictions.
 

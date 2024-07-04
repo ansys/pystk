@@ -3,7 +3,7 @@ Texture2DFactory
 
 .. py:class:: ansys.stk.core.graphics.Texture2DFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ITexture2DFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.ITexture2DFactory`
 
    A factory for creating texture 2d objects from various sources.
 

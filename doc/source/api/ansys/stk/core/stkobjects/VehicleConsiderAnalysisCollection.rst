@@ -3,7 +3,7 @@ VehicleConsiderAnalysisCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleConsiderAnalysisCollection`
 
    The Consider Analysis list for HPOP covariance.
 

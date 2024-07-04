@@ -3,7 +3,7 @@ Draw2DElemCollection
 
 .. py:class:: ansys.stk.core.stkx.Draw2DElemCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IDrawElemCollection`
+   Bases: :py:class:`~ansys.stk.core.stkx.IDrawElemCollection`
 
    Collection of elements to draw on map control.
 

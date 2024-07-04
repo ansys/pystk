@@ -3,7 +3,7 @@ StkPreferences
 
 .. py:class:: ansys.stk.core.stkobjects.StkPreferences
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkPreferences`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkPreferences`
 
    Allow configuring STK preferences.
 

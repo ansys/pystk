@@ -3,7 +3,7 @@ VehicleCoordinateAxesCustom
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleCoordinateAxesCustom
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxesCustom`, py:obj:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxes`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxesCustom`, :py:class:`~ansys.stk.core.stkobjects.IVehicleCoordinateAxes`
 
    Custom.
 

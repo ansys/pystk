@@ -3,7 +3,7 @@ DistanceToGlobeOverlayDisplayConditionFactory
 
 .. py:class:: ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayConditionFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayConditionFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayConditionFactory`
 
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay...
 

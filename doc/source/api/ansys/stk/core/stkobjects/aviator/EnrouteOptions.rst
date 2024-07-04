@@ -3,7 +3,7 @@ EnrouteOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.EnrouteOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IEnrouteOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IEnrouteOptions`
 
    Class defining the enroute options in a procedure.
 

@@ -3,7 +3,7 @@ RotorcraftProp
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.RotorcraftProp
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IRotorcraftProp`
 
    Class defining the propulsion options for a rotorcraft.
 

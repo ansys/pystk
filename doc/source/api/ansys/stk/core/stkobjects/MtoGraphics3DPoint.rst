@@ -3,7 +3,7 @@ MtoGraphics3DPoint
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DPoint
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DPoint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DPoint`
 
    MTO track 3D marker point options.
 

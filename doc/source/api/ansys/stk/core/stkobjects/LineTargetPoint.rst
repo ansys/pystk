@@ -3,7 +3,7 @@ LineTargetPoint
 
 .. py:class:: ansys.stk.core.stkobjects.LineTargetPoint
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILineTargetPoint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILineTargetPoint`
 
    Line Target Point.
 

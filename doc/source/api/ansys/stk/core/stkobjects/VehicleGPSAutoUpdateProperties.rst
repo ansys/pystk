@@ -3,7 +3,7 @@ VehicleGPSAutoUpdateProperties
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGPSAutoUpdateProperties
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAutoUpdateProperties`
 
    GPS AutoUpdate properties.
 

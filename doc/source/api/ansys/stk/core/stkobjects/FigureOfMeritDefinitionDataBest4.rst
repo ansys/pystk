@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataBest4
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataBest4`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
 
    Navigation accuracy based on best 4 satellites.
 

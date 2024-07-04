@@ -3,7 +3,7 @@ VehicleProfileSpinning
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleProfileSpinning
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileSpinning`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Spinning attitude profile.
 

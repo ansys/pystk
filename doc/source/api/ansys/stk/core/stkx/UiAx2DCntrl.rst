@@ -3,7 +3,7 @@ UiAx2DCntrl
 
 .. py:class:: ansys.stk.core.stkx.UiAx2DCntrl
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IUiAx2DCntrl`
+   Bases: :py:class:`~ansys.stk.core.stkx.IUiAx2DCntrl`
 
    AGI Map control.
 

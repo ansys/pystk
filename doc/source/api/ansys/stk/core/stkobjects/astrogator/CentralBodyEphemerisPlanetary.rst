@@ -3,7 +3,7 @@ CentralBodyEphemerisPlanetary
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisPlanetary
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisPlanetary`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisPlanetary`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
 
    Central Body Ephemeris - Planetary.
 

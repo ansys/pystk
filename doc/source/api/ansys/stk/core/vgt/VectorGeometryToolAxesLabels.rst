@@ -3,7 +3,7 @@ VectorGeometryToolAxesLabels
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesLabels
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLabels`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesLabels`
 
    Allow configuring the VGT axes labels.
 

@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataMinMax
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataMinMax
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinMax`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
 
    Minimum and maximum data values for navigation accuracy.
 

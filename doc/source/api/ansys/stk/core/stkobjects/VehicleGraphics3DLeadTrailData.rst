@@ -3,7 +3,7 @@ VehicleGraphics3DLeadTrailData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData`
 
    AgLvVOTrajectory2 Class.
 

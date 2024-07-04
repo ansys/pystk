@@ -3,7 +3,7 @@ VehicleGraphics2DWaypointMarkersElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DWaypointMarkersElement`
 
    2D Graphics properties of element of waypoint collection.
 

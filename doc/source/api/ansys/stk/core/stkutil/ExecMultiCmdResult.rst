@@ -3,7 +3,7 @@ ExecMultiCmdResult
 
 .. py:class:: ansys.stk.core.stkutil.ExecMultiCmdResult
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IExecMultiCmdResult`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IExecMultiCmdResult`
 
    Collection of objects returned by the ExecuteMultipleCommands.
 

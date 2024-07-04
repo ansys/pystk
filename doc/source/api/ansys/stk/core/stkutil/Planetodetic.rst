@@ -3,7 +3,7 @@ Planetodetic
 
 .. py:class:: ansys.stk.core.stkutil.Planetodetic
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IPlanetodetic`, py:obj:`~ansys.stk.core.stkutil.IPosition`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IPlanetodetic`, :py:class:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining Planetodetic position.
 

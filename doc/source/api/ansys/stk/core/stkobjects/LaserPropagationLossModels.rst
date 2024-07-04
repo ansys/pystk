@@ -3,7 +3,7 @@ LaserPropagationLossModels
 
 .. py:class:: ansys.stk.core.stkobjects.LaserPropagationLossModels
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels`, py:obj:`~ansys.stk.core.stkobjects.ILaserPropagationChannel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILaserPropagationLossModels`, :py:class:`~ansys.stk.core.stkobjects.ILaserPropagationChannel`
 
    Class defining the properties for laser propagatoin models.
 

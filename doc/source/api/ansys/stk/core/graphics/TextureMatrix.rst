@@ -3,7 +3,7 @@ TextureMatrix
 
 .. py:class:: ansys.stk.core.graphics.TextureMatrix
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ITextureMatrix`
+   Bases: :py:class:`~ansys.stk.core.graphics.ITextureMatrix`
 
    A 4 by 4 matrix applied to a texture coordinate.
 

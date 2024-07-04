@@ -3,7 +3,7 @@ CoverageAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageAdvanced
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageAdvanced`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageAdvanced`
 
    Advanced Properties.
 

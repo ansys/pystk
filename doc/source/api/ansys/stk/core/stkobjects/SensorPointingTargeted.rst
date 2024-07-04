@@ -3,7 +3,7 @@ SensorPointingTargeted
 
 .. py:class:: ansys.stk.core.stkobjects.SensorPointingTargeted
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingTargeted`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`, :py:class:`~ansys.stk.core.stkobjects.ISensorPointingTargeted`
 
    Class defining the targeted pointing type for a Sensor.
 

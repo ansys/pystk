@@ -3,7 +3,7 @@ ProcedureArcEnroute
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureArcEnroute
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureArcEnroute`, :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a arc enroute procedure.
 

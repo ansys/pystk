@@ -3,7 +3,7 @@ OrbitState
 
 .. py:class:: ansys.stk.core.stkobjects.OrbitState
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Class defining orbit state.
 

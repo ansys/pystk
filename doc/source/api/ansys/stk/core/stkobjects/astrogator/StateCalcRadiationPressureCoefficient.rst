@@ -3,7 +3,7 @@ StateCalcRadiationPressureCoefficient
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRadiationPressureCoefficient
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadiationPressureCoefficient`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadiationPressureCoefficient`
 
    RadiationPressureCoefficient Calc objects.
 

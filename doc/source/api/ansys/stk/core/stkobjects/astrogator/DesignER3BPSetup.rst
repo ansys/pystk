@@ -3,7 +3,7 @@ DesignER3BPSetup
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPSetup`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    ER3BP Setup Tool.
 

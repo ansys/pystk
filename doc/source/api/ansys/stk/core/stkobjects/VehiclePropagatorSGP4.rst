@@ -3,7 +3,7 @@ VehiclePropagatorSGP4
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorSGP4
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSGP4`, :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the SGP4 propagator.
 

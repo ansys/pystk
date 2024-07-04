@@ -3,7 +3,7 @@ UnitPreferencesDimensionCollection
 
 .. py:class:: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection`
 
    Object that contains a collection of dimensions.
 

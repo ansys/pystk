@@ -3,7 +3,7 @@ StkPreferencesPythonPlugins
 
 .. py:class:: ansys.stk.core.stkobjects.StkPreferencesPythonPlugins
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkPreferencesPythonPlugins`
 
    Allow configuring Python plugin preferences.
 

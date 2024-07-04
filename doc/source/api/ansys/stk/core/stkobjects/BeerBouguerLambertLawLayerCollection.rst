@@ -3,7 +3,7 @@ BeerBouguerLambertLawLayerCollection
 
 .. py:class:: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayerCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayerCollection`
 
    Class defining collection of Beer-Bouguer-Lamber Law atmosphere layers.
 

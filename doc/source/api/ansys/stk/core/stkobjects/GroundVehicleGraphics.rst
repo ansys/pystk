@@ -3,7 +3,7 @@ GroundVehicleGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.GroundVehicleGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGroundVehicleGraphics`, py:obj:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGroundVehicleGraphics`, :py:class:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
 
    2D Graphics properties for ground vehicles.
 

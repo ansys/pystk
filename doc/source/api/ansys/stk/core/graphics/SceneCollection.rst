@@ -3,7 +3,7 @@ SceneCollection
 
 .. py:class:: ansys.stk.core.graphics.SceneCollection
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ISceneCollection`
+   Bases: :py:class:`~ansys.stk.core.graphics.ISceneCollection`
 
    A collection of scenes.
 

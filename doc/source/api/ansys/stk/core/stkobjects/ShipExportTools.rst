@@ -3,7 +3,7 @@ ShipExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.ShipExportTools
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IShipExportTools`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IShipExportTools`
 
    The Ship Export Tools.
 

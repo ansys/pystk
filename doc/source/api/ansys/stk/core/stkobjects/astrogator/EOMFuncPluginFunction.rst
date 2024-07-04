@@ -3,7 +3,7 @@ EOMFuncPluginFunction
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEOMFuncPluginFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IEOMFuncPluginFunction`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    EOM Function Plugin propagator function.
 

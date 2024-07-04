@@ -3,7 +3,7 @@ AccessConstraintAngle
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintAngle
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintAngle`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintAngle`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining Angle constraints, limiting access to intervals during which the selected angle is within the specified minimum and maximum limits.
 

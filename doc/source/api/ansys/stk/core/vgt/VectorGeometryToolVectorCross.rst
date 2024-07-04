@@ -3,7 +3,7 @@ VectorGeometryToolVectorCross
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorCross
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCross`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The vector cross product of two vectors.
 

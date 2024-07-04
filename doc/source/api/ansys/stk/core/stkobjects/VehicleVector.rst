@@ -3,7 +3,7 @@ VehicleVector
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleVector
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleVector`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleVector`
 
    Aligned and Constrained attitude profile.
 

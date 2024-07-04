@@ -3,7 +3,7 @@ StateCalcUnitAngularMomentumY
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcUnitAngularMomentumY
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcUnitAngularMomentumY`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcUnitAngularMomentumY`
 
    UnitAngularMomentumY Calc objects.
 

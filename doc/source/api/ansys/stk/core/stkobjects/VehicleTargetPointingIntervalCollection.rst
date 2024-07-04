@@ -3,7 +3,7 @@ VehicleTargetPointingIntervalCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleTargetPointingIntervalCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleTargetPointingIntervalCollection`
 
    Represents a collection of scheduled targeting intervals.
 

@@ -3,7 +3,7 @@ SensorPointingAlongVector
 
 .. py:class:: ansys.stk.core.stkobjects.SensorPointingAlongVector
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`, :py:class:`~ansys.stk.core.stkobjects.ISensorPointingAlongVector`
 
    Class defining the along vector pointing type for a Sensor.
 

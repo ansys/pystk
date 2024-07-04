@@ -3,7 +3,7 @@ RFInterference
 
 .. py:class:: ansys.stk.core.stkobjects.RFInterference
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFInterference`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFInterference`
 
    Class defining radar jamming.
 

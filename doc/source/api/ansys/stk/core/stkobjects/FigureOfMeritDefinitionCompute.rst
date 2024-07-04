@@ -3,7 +3,7 @@ FigureOfMeritDefinitionCompute
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionCompute
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Compute options for navigation accuracy.
 

@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectoryTrackData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTrackData
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTrackData`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTrackData`
 
    3D leading/trailing track data for launch vehicles and missiles.
 

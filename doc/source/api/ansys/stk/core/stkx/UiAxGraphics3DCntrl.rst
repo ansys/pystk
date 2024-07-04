@@ -3,7 +3,7 @@ UiAxGraphics3DCntrl
 
 .. py:class:: ansys.stk.core.stkx.UiAxGraphics3DCntrl
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl`
+   Bases: :py:class:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl`
 
    AGI Globe control.
 

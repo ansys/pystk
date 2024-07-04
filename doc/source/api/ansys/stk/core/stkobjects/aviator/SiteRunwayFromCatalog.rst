@@ -3,7 +3,7 @@ SiteRunwayFromCatalog
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteRunwayFromCatalog
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteRunwayFromCatalog`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteRunwayFromCatalog`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a runway from catalog site.
 

@@ -3,7 +3,7 @@ CommSystemAccessSamplingMethodFixed
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystemAccessSamplingMethodFixed
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodFixed`, py:obj:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethodFixed`, :py:class:`~ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod`
 
    Class defining a CommSystem access options.
 

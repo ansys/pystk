@@ -3,7 +3,7 @@ UiAxGraphics2DAnalysisCntrl
 
 .. py:class:: ansys.stk.core.stkx.UiAxGraphics2DAnalysisCntrl
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl`
+   Bases: :py:class:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl`
 
    AGI Graphics Analysis Control.
 

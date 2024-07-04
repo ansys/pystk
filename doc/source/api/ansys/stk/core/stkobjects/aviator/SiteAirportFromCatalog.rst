@@ -3,7 +3,7 @@ SiteAirportFromCatalog
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteAirportFromCatalog
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteAirportFromCatalog`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteAirportFromCatalog`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a airport from catalog site.
 

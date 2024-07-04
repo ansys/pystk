@@ -3,7 +3,7 @@ OrbitStateClassical
 
 .. py:class:: ansys.stk.core.stkobjects.OrbitStateClassical
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitStateClassical`, py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IOrbitStateClassical`, :py:class:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Classical (Keplerian) coordinate type.
 

@@ -3,7 +3,7 @@ RadarStcAttenuationDecaySlope
 
 .. py:class:: ansys.stk.core.stkobjects.RadarStcAttenuationDecaySlope
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecaySlope`
 
    Class defining an radar decay slope stc.
 

@@ -3,7 +3,7 @@ VehicleEphemerisCCSDSExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleEphemerisCCSDSExportTool`
 
    AgVeEphemerisTypeCCSDS Class.
 

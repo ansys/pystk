@@ -3,7 +3,7 @@ IPOPTResult
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTResult
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IIPOPTResult`
 
    Properties for objecvtive and constraints of a IPOPT profile.
 

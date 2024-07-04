@@ -3,7 +3,7 @@ CompositePrimitiveFactory
 
 .. py:class:: ansys.stk.core.graphics.CompositePrimitiveFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ICompositePrimitiveFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.ICompositePrimitiveFactory`
 
    A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions...
 

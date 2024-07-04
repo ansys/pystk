@@ -3,7 +3,7 @@ ClassicalLocationTimePastPerigee
 
 .. py:class:: ansys.stk.core.stkobjects.ClassicalLocationTimePastPerigee
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalLocationTimePastPerigee`, py:obj:`~ansys.stk.core.stkobjects.IClassicalLocation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationTimePastPerigee`, :py:class:`~ansys.stk.core.stkobjects.IClassicalLocation`
 
    Time Past Perigee, used in specifying the spacecraft's location within its orbit at epoch.
 

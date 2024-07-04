@@ -3,7 +3,7 @@ Graphics3DDataDisplayElement
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DDataDisplayElement`
 
    Class defining 3D Graphics data display element.
 

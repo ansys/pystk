@@ -3,7 +3,7 @@ RadarModeBistaticTransmitterSearchTrack
 
 .. py:class:: ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSearchTrack
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack`, py:obj:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitter`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSearchTrack`, :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitter`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a bistatic transmitter search/track radar mode.
 

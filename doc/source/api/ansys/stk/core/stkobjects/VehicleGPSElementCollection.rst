@@ -3,7 +3,7 @@ VehicleGPSElementCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGPSElementCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSElementCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSElementCollection`
 
    A collection of GPS elements.
 

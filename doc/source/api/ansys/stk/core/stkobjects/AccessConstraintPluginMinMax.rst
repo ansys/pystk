@@ -3,7 +3,7 @@ AccessConstraintPluginMinMax
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintPluginMinMax
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintPluginMinMax`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintPluginMinMax`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class related to defining access plugin constraints in terms of minimum and/or maximum values.
 

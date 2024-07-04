@@ -3,7 +3,7 @@ StoppingConditionCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStoppingConditionCollection`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The stopping conditions collection.
 

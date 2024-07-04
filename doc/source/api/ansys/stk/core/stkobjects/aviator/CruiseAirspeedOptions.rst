@@ -3,7 +3,7 @@ CruiseAirspeedOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.CruiseAirspeedOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedOptions`
 
    Class defining the cruise airspeed options in a procedure.
 

@@ -3,7 +3,7 @@ VehiclePropagatorHPOP
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorHPOP
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorHPOP`, :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the High Precision Orbit Propagator (HPOP).
 

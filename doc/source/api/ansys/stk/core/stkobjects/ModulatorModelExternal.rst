@@ -3,7 +3,7 @@ ModulatorModelExternal
 
 .. py:class:: ansys.stk.core.stkobjects.ModulatorModelExternal
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModelExternal`, py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModelExternal`, :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a external modulator model.
 

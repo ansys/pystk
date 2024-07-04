@@ -3,7 +3,7 @@ LevelTurns
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.LevelTurns
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ILevelTurns`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ILevelTurns`
 
    Class defining the level turns options for an acceleration performance model of an Aviator aircraft.
 

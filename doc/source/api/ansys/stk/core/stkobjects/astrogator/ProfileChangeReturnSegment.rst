@@ -3,7 +3,7 @@ ProfileChangeReturnSegment
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeReturnSegment`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfileChangeReturnSegment`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Change Return Segment profile.
 

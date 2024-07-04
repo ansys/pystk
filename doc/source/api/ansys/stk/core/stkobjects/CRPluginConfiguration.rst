@@ -3,7 +3,7 @@ CRPluginConfiguration
 
 .. py:class:: ansys.stk.core.stkobjects.CRPluginConfiguration
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICRPluginConfiguration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICRPluginConfiguration`
 
    Class defining plugin configuration.
 

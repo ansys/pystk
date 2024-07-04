@@ -3,7 +3,7 @@ VehiclePassNumberingDateOfFirstPass
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePassNumberingDateOfFirstPass
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePassNumberingDateOfFirstPass`
 
    Date of first pass for pass numbering.
 

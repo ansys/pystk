@@ -3,7 +3,7 @@ AircraftExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.AircraftExportTools
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAircraftExportTools`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAircraftExportTools`
 
    The Aircraft Export Tools.
 

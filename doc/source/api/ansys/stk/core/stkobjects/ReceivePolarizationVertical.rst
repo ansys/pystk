@@ -3,7 +3,7 @@ ReceivePolarizationVertical
 
 .. py:class:: ansys.stk.core.stkobjects.ReceivePolarizationVertical
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IPolarizationVertical`, py:obj:`~ansys.stk.core.stkobjects.IPolarization`, py:obj:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IPolarizationVertical`, :py:class:`~ansys.stk.core.stkobjects.IPolarization`, :py:class:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage`
 
    Class defining a receive vertical polarization.
 

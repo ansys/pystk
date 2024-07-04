@@ -3,7 +3,7 @@ LaunchVehicleExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.LaunchVehicleExportTools
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILaunchVehicleExportTools`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILaunchVehicleExportTools`
 
    The LaunchVehicle Export Tools.
 

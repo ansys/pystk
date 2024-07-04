@@ -3,7 +3,7 @@ SensorGraphics3DProjectionElement
 
 .. py:class:: ansys.stk.core.stkobjects.SensorGraphics3DProjectionElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorGraphics3DProjectionElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3DProjectionElement`
 
    Represents elements of the space and target projection collections.
 

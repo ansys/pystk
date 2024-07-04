@@ -3,7 +3,7 @@ CalculationToolConditionSetFactory
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionSetFactory
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConditionSetFactory`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolConditionSetFactory`
 
    The factory creates condition set components.
 

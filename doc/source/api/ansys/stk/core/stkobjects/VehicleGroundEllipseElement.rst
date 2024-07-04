@@ -3,7 +3,7 @@ VehicleGroundEllipseElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGroundEllipseElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGroundEllipseElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGroundEllipseElement`
 
    Ground ellipse.
 

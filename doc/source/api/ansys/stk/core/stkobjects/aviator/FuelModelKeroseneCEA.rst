@@ -3,7 +3,7 @@ FuelModelKeroseneCEA
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.FuelModelKeroseneCEA
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneCEA`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneCEA`
 
    Class defining the Kerosense - CEA fuel type for a thermodynamic jet engine model.
 

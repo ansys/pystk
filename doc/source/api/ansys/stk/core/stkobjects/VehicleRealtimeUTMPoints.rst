@@ -3,7 +3,7 @@ VehicleRealtimeUTMPoints
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleRealtimeUTMPoints
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleRealtimeUTMPoints`
 
    Add one ephemeris point.
 

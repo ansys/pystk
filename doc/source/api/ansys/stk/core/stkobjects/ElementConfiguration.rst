@@ -3,7 +3,7 @@ ElementConfiguration
 
 .. py:class:: ansys.stk.core.stkobjects.ElementConfiguration
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IElementConfiguration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
 
    Class defining an element configuration.
 

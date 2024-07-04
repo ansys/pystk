@@ -3,7 +3,7 @@ StkAccess
 
 .. py:class:: ansys.stk.core.stkobjects.StkAccess
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IStkAccess`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IStkAccess`
 
    Class defining Access.
 

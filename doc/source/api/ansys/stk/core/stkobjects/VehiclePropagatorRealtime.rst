@@ -3,7 +3,7 @@ VehiclePropagatorRealtime
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorRealtime
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorRealtime`, :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Realtime propagator.
 

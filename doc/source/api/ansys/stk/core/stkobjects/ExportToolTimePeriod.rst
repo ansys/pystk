@@ -3,7 +3,7 @@ ExportToolTimePeriod
 
 .. py:class:: ansys.stk.core.stkobjects.ExportToolTimePeriod
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IExportToolTimePeriod`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IExportToolTimePeriod`
 
    Specify Time Period.
 

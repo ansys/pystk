@@ -3,7 +3,7 @@ ModulatorModelScriptPluginIdealPsd
 
 .. py:class:: ansys.stk.core.stkobjects.ModulatorModelScriptPluginIdealPsd
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModelScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModelScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a ideal PSD script plugin modulator model.
 

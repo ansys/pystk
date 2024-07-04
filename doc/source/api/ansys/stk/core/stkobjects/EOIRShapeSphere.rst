@@ -3,7 +3,7 @@ EOIRShapeSphere
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeSphere
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeSphere`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeSphere`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Sphere shape class.
 

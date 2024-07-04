@@ -3,7 +3,7 @@ TimeToolEventIntervalList
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalList
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An ordered list of time intervals.
 

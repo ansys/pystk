@@ -3,7 +3,7 @@ EOIRShape
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShape
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShape`
 
    AgEOIRShape class.
 

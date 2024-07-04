@@ -3,7 +3,7 @@ Planetocentric
 
 .. py:class:: ansys.stk.core.stkutil.Planetocentric
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IPlanetocentric`, py:obj:`~ansys.stk.core.stkutil.IPosition`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IPlanetocentric`, :py:class:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining Planetocentric position.
 

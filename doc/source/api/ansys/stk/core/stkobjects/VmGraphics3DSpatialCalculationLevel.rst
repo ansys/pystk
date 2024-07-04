@@ -3,7 +3,7 @@ VmGraphics3DSpatialCalculationLevel
 
 .. py:class:: ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DSpatialCalculationLevel`
 
    Class defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 

@@ -3,7 +3,7 @@ ElementSphericalRangeRate
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementSphericalRangeRate
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementSphericalRangeRate`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Spherical Range Rate elements.
 

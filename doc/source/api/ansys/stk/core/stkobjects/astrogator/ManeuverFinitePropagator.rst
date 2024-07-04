@@ -3,7 +3,7 @@ ManeuverFinitePropagator
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IManeuverFinitePropagator`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Propagation for a finite maneuver.
 

@@ -3,7 +3,7 @@ AxesPrimitive
 
 .. py:class:: ansys.stk.core.graphics.AxesPrimitive
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IAxesPrimitive`, py:obj:`~ansys.stk.core.graphics.IPrimitive`
+   Bases: :py:class:`~ansys.stk.core.graphics.IAxesPrimitive`, :py:class:`~ansys.stk.core.graphics.IPrimitive`
 
    Render an axes in the 3D scene.
 

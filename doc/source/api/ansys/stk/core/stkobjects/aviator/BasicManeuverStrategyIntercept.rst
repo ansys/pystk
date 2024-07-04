@@ -3,7 +3,7 @@ BasicManeuverStrategyIntercept
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyIntercept`, :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Intercept strategy for a basic maneuver procedure.
 

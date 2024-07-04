@@ -3,7 +3,7 @@ ScriptingCalcObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingCalcObjectCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IScriptingCalcObjectCollection`
 
    Calc Object Collection.
 

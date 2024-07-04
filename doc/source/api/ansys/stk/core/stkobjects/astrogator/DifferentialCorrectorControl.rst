@@ -3,7 +3,7 @@ DifferentialCorrectorControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControl
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorControl`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Control Parameters for a Target Sequence.
 

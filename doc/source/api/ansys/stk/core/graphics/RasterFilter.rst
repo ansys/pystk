@@ -3,7 +3,7 @@ RasterFilter
 
 .. py:class:: ansys.stk.core.graphics.RasterFilter
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IRasterFilter`
+   Bases: :py:class:`~ansys.stk.core.graphics.IRasterFilter`
 
    A filter for processing raster datasets. RasterFilter is the base class for all raster filters...
 

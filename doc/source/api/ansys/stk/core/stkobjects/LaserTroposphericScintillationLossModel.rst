@@ -3,7 +3,7 @@ LaserTroposphericScintillationLossModel
 
 .. py:class:: ansys.stk.core.stkobjects.LaserTroposphericScintillationLossModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an laser tropospheric scintillation loss model.
 

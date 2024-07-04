@@ -3,7 +3,7 @@ SearchPluginControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SearchPluginControl
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ISearchPluginControl`
 
    Control parameters for a plugin search profile.
 

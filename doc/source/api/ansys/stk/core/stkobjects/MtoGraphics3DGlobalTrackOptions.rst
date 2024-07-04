@@ -3,7 +3,7 @@ MtoGraphics3DGlobalTrackOptions
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DGlobalTrackOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DGlobalTrackOptions`
 
    Global 3D graphics MTO track options.
 

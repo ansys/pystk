@@ -3,7 +3,7 @@ State
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.State
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IState`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IState`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The orbit state.
 

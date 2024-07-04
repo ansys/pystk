@@ -3,7 +3,7 @@ ProcedureHoldingRacetrack
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureHoldingRacetrack
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureHoldingRacetrack`, :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a holding racetrack procedure.
 

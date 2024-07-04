@@ -3,7 +3,7 @@ SensorProjectionObjectAltitude
 
 .. py:class:: ansys.stk.core.stkobjects.SensorProjectionObjectAltitude
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDisplayDistance`, py:obj:`~ansys.stk.core.stkobjects.ISensorProjectionObjectAltitude`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDisplayDistance`, :py:class:`~ansys.stk.core.stkobjects.ISensorProjectionObjectAltitude`
 
    Class defining projection altitude options for object altitude for a sensor.
 

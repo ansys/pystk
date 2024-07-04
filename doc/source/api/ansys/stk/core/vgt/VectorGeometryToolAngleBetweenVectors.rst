@@ -3,7 +3,7 @@ VectorGeometryToolAngleBetweenVectors
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleBetweenVectors
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenVectors`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngleBetweenVectors`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An angle between two vectors.
 

@@ -3,7 +3,7 @@ ClassicalLocationEccentricAnomaly
 
 .. py:class:: ansys.stk.core.stkobjects.ClassicalLocationEccentricAnomaly
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalLocationEccentricAnomaly`, py:obj:`~ansys.stk.core.stkobjects.IClassicalLocation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationEccentricAnomaly`, :py:class:`~ansys.stk.core.stkobjects.IClassicalLocation`
 
    Eccentric Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 

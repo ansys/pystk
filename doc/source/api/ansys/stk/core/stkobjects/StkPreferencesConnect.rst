@@ -3,7 +3,7 @@ StkPreferencesConnect
 
 .. py:class:: ansys.stk.core.stkobjects.StkPreferencesConnect
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkPreferencesConnect`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkPreferencesConnect`
 
    Allow configuring connect preferences.
 

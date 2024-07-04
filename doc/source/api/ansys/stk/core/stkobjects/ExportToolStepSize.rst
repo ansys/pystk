@@ -3,7 +3,7 @@ ExportToolStepSize
 
 .. py:class:: ansys.stk.core.stkobjects.ExportToolStepSize
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IExportToolStepSize`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IExportToolStepSize`
 
    AgStepSize Class.
 

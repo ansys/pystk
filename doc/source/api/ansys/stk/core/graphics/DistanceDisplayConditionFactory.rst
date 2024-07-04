@@ -3,7 +3,7 @@ DistanceDisplayConditionFactory
 
 .. py:class:: ansys.stk.core.graphics.DistanceDisplayConditionFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IDistanceDisplayConditionFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IDistanceDisplayConditionFactory`
 
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object.
 

@@ -3,7 +3,7 @@ VectorGeometryToolSystemGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemGroup
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolSystemGroup`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystemGroup`
 
    Access or create VGT systems associated with an object or a central body.
 

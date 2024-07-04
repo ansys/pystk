@@ -3,7 +3,7 @@ FuelModelKeroseneAFPROP
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.FuelModelKeroseneAFPROP
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneAFPROP`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IFuelModelKeroseneAFPROP`
 
    Class defining the Kerosense - AFPROP fuel type for a thermodynamic jet engine model.
 

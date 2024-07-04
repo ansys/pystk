@@ -3,7 +3,7 @@ OrientationAzEl
 
 .. py:class:: ansys.stk.core.stkutil.OrientationAzEl
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationAzEl`, py:obj:`~ansys.stk.core.stkutil.IOrientation`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IOrientationAzEl`, :py:class:`~ansys.stk.core.stkutil.IOrientation`
 
    AzEl orientation method.
 

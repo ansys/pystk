@@ -3,7 +3,7 @@ VehicleGraphics2DLightingElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLightingElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLightingElement`
 
    Lighting condition properties.
 

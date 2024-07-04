@@ -3,7 +3,7 @@ RadarStcAttenuationMapElevationRange
 
 .. py:class:: ansys.stk.core.stkobjects.RadarStcAttenuationMapElevationRange
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuationMap`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationMap`
 
    Class defining an radar stc elevation-range map.
 

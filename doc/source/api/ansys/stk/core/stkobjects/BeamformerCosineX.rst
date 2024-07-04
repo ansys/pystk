@@ -3,7 +3,7 @@ BeamformerCosineX
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerCosineX
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`, py:obj:`~ansys.stk.core.stkobjects.IBeamformerCosineX`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`, :py:class:`~ansys.stk.core.stkobjects.IBeamformerCosineX`
 
    Class defining a cosine^X tapered beamformer.
 

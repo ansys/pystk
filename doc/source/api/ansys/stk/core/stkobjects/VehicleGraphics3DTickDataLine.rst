@@ -3,7 +3,7 @@ VehicleGraphics3DTickDataLine
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTickDataLine
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickData`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickData`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTickDataLine`
 
    Line type tick marks.
 

@@ -3,7 +3,7 @@ StateCalcManeuverSpecificImpulse
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcManeuverSpecificImpulse
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcManeuverSpecificImpulse`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcManeuverSpecificImpulse`
 
    ManeuverSpecificImpulse Calc objects.
 

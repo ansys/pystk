@@ -3,7 +3,7 @@ EOIRShapeBox
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeBox
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeBox`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeBox`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Box shape class.
 

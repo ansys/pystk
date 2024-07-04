@@ -3,7 +3,7 @@ SensorPointingFixedAxes
 
 .. py:class:: ansys.stk.core.stkobjects.SensorPointingFixedAxes
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`, :py:class:`~ansys.stk.core.stkobjects.ISensorPointingFixedAxes`
 
    Class defining the fixed in axes pointing type for a Sensor.
 

@@ -3,7 +3,7 @@ RadarContinuousWaveAnalysisModeGoalSNR
 
 .. py:class:: ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisModeGoalSNR
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeGoalSNR`, py:obj:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisModeGoalSNR`, :py:class:`~ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode`
 
    Class defining the continuous wave goal SNR analysis mode.
 

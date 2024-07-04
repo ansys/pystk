@@ -3,7 +3,7 @@ VehicleGraphics3DWaypointMarkersElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DWaypointMarkersElement`
 
    3D waypoint.
 

@@ -3,7 +3,7 @@ VerticalPlaneOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.VerticalPlaneOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IVerticalPlaneOptions`
 
    Class defining the vertical plane options in a procedure.
 

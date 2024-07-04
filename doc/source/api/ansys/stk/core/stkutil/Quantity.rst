@@ -3,7 +3,7 @@ Quantity
 
 .. py:class:: ansys.stk.core.stkutil.Quantity
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IQuantity`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IQuantity`
 
    Object that contains a quantity.
 

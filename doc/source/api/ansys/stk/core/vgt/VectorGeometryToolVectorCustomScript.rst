@@ -3,7 +3,7 @@ VectorGeometryToolVectorCustomScript
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorCustomScript
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCustomScript`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorCustomScript`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Customized vector components defined with respect to reference axes.
 

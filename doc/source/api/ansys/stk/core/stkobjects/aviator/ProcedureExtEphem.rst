@@ -3,7 +3,7 @@ ProcedureExtEphem
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureExtEphem`, :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining an ExtEphem procedure.
 

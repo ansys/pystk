@@ -3,7 +3,7 @@ VehicleGraphics2DTimeEventsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventsCollection`
 
    A satellite's time events collection.
 

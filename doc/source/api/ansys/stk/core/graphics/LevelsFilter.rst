@@ -3,7 +3,7 @@ LevelsFilter
 
 .. py:class:: ansys.stk.core.graphics.LevelsFilter
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ILevelsFilter`, py:obj:`~ansys.stk.core.graphics.IRasterFilter`
+   Bases: :py:class:`~ansys.stk.core.graphics.ILevelsFilter`, :py:class:`~ansys.stk.core.graphics.IRasterFilter`
 
    Adjusts the band levels of the source raster linearly.
 

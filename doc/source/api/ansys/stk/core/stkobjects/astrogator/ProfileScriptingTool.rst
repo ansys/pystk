@@ -3,7 +3,7 @@ ProfileScriptingTool
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfileScriptingTool`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Scripting Tool profile.
 

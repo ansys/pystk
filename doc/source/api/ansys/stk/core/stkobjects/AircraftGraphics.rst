@@ -3,7 +3,7 @@ AircraftGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.AircraftGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAircraftGraphics`, py:obj:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAircraftGraphics`, :py:class:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
 
    2D Graphics for an aircraft.
 

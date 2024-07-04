@@ -3,7 +3,7 @@ ScriptingTool
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingTool
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IScriptingTool`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Scripting Tool.
 

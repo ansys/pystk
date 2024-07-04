@@ -3,7 +3,7 @@ Cylindrical
 
 .. py:class:: ansys.stk.core.stkutil.Cylindrical
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.ICylindrical`, py:obj:`~ansys.stk.core.stkutil.IPosition`
+   Bases: :py:class:`~ansys.stk.core.stkutil.ICylindrical`, :py:class:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining cylindrical position.
 

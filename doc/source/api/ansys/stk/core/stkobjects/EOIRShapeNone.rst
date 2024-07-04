@@ -3,7 +3,7 @@ EOIRShapeNone
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeNone
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeNone`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeNone`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    None shape class.
 

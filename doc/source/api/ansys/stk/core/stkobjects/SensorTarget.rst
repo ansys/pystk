@@ -3,7 +3,7 @@ SensorTarget
 
 .. py:class:: ansys.stk.core.stkobjects.SensorTarget
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorTarget`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorTarget`
 
    Class defining a Sensor target.
 

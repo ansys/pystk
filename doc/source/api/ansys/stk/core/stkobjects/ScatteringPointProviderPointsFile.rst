@@ -3,7 +3,7 @@ ScatteringPointProviderPointsFile
 
 .. py:class:: ansys.stk.core.stkobjects.ScatteringPointProviderPointsFile
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile`, py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProvider`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderPointsFile`, :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProvider`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a scattring point provider where the points are defined in an ascii text file.
 

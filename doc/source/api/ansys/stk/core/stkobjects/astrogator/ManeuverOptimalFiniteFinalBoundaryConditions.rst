@@ -3,7 +3,7 @@ ManeuverOptimalFiniteFinalBoundaryConditions
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteFinalBoundaryConditions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFiniteFinalBoundaryConditions`
 
    Properties of final boundary conditions for optimal finite maneuver.
 

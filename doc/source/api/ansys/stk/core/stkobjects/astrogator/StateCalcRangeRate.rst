@@ -3,7 +3,7 @@ StateCalcRangeRate
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRangeRate
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRangeRate`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRangeRate`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    RangeRate Calc objects.
 

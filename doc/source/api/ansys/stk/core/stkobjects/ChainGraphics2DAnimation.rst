@@ -3,7 +3,7 @@ ChainGraphics2DAnimation
 
 .. py:class:: ansys.stk.core.stkobjects.ChainGraphics2DAnimation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IChainGraphics2DAnimation`
 
    2D Animation graphics for a chain.
 

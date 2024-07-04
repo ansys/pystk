@@ -3,7 +3,7 @@ AnalysisWorkbenchTypeInfo
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchTypeInfo
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchTypeInfo`
 
    VGT component info.
 

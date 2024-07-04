@@ -3,7 +3,7 @@ DataProviderResultDataSet
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultDataSet
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultDataSet`
 
    Represents a dataset in the collection of datasets returned by the data providers.
 

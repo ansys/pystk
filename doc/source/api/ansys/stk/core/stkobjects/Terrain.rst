@@ -3,7 +3,7 @@ Terrain
 
 .. py:class:: ansys.stk.core.stkobjects.Terrain
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ITerrain`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ITerrain`
 
    Class defining terrain data for a Scenario.
 

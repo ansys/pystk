@@ -3,7 +3,7 @@ AdvancedFixedWingTurbojetBasicABPowerplant
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbojetBasicABPowerplant
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABPowerplant`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbojetBasicABPowerplant`
 
    Do not use this class, as it is deprecated. Use AgAvtrAdvFixedWingTurbojetBasicABProp instead.
 

@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownAxes
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownAxes
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownAxes`
 
    Represents well-known VGT Axes.
 

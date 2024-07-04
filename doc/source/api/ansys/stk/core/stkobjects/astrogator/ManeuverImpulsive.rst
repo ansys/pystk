@@ -3,7 +3,7 @@ ManeuverImpulsive
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverImpulsive
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverImpulsive`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuver`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IManeuverImpulsive`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IManeuver`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Impulsive Maneuver.
 

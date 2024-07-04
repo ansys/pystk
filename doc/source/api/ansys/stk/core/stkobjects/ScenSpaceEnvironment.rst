@@ -3,7 +3,7 @@ ScenSpaceEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.ScenSpaceEnvironment
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScenSpaceEnvironment`
 
    SpaceEnvironment settings.
 

@@ -3,7 +3,7 @@ VehiclePropagatorJ4Perturbation
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorJ4Perturbation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ4Perturbation`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorJ4Perturbation`, :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the J4 perturbation propagator.
 

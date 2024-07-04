@@ -3,7 +3,7 @@ VehicleGraphics3DPass
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DPass
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPass`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DPass`
 
    3D pass for satellites.
 

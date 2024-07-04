@@ -3,7 +3,7 @@ AntennaBeamSelectionStrategyAggregate
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyAggregate
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
 
    Class defining a aggregated beam selection strategy.
 

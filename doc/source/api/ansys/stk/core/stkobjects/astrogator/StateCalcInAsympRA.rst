@@ -3,7 +3,7 @@ StateCalcInAsympRA
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcInAsympRA
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInAsympRA`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInAsympRA`
 
    InAsymptoteRA Calc objects.
 

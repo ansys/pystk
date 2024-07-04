@@ -3,7 +3,7 @@ RadarStcAttenuation
 
 .. py:class:: ansys.stk.core.stkobjects.RadarStcAttenuation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`
 
    Class defining an radar stc.
 

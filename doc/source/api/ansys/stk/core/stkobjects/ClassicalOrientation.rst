@@ -3,7 +3,7 @@ ClassicalOrientation
 
 .. py:class:: ansys.stk.core.stkobjects.ClassicalOrientation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalOrientation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalOrientation`
 
    Orbit orientation in the Classical (Keplerian) system.
 

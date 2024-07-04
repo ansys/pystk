@@ -3,7 +3,7 @@ ModulatorModelQam256
 
 .. py:class:: ansys.stk.core.stkobjects.ModulatorModelQam256
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a QAM 256 modulator model.
 

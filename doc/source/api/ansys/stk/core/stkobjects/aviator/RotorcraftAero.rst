@@ -3,7 +3,7 @@ RotorcraftAero
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.RotorcraftAero
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IRotorcraftAero`
 
    Class defining the aerodynamic options for a rotorcraft.
 

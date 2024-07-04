@@ -3,7 +3,7 @@ BurnoutGeodetic
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BurnoutGeodetic
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnout`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeodetic`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IBurnout`
 
    The geodetic burnout point.
 

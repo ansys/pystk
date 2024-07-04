@@ -3,7 +3,7 @@ ComponentDirectory
 
 .. py:class:: ansys.stk.core.stkobjects.ComponentDirectory
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IComponentDirectory`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IComponentDirectory`
 
    Manages all components.
 

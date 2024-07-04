@@ -3,7 +3,7 @@ UserVariableUpdate
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdate`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IUserVariableUpdate`
 
    User Variable Update.
 

@@ -3,7 +3,7 @@ TimeToolEventEpoch
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventEpoch
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventEpoch`, py:obj:`~ansys.stk.core.vgt.ITimeToolEvent`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventEpoch`, :py:class:`~ansys.stk.core.vgt.ITimeToolEvent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Event set at specified date/time.
 

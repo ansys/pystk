@@ -3,7 +3,7 @@ SiteWaypoint
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteWaypoint
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteWaypoint`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a waypoint site.
 

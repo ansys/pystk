@@ -3,7 +3,7 @@ VectorGeometryToolPlaneGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneGroup
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneGroup`
 
    Represents a VGT Plane component.
 

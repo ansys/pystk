@@ -3,7 +3,7 @@ MtoGlobalTrackOptions
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGlobalTrackOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGlobalTrackOptions`
 
    Global MTO track options.
 

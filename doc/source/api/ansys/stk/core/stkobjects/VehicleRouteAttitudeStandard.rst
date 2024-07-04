@@ -3,7 +3,7 @@ VehicleRouteAttitudeStandard
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleRouteAttitudeStandard
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeStandard`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitude`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleRouteAttitudeStandard`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeStandard`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitude`
 
    Standard attitude profile for aircraft.
 

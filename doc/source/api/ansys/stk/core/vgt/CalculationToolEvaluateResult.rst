@@ -3,7 +3,7 @@ CalculationToolEvaluateResult
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolEvaluateResult
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolEvaluateResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolEvaluateResult`
 
    Represents the results of evaluating a scalar component.
 

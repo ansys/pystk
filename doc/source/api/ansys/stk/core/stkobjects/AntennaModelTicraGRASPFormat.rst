@@ -3,7 +3,7 @@ AntennaModelTicraGRASPFormat
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaModelTicraGRASPFormat
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelTicraGRASPFormat`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModelTicraGRASPFormat`, :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an antenna pattern Ticra GRASP model.
 

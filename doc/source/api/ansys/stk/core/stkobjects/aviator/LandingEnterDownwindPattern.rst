@@ -3,7 +3,7 @@ LandingEnterDownwindPattern
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.LandingEnterDownwindPattern
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ILandingEnterDownwindPattern`
 
    Class defining the enter downwind pattern options for a landing procedure.
 

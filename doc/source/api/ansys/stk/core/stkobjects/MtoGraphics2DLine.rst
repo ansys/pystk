@@ -3,7 +3,7 @@ MtoGraphics2DLine
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DLine
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DLine`
 
    MTO track line display options.
 

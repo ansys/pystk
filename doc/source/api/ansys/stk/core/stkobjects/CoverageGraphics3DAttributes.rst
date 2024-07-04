@@ -3,7 +3,7 @@ CoverageGraphics3DAttributes
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics3DAttributes
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGraphics3DAttributes`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageGraphics3DAttributes`
 
    3D animation or static graphics options.
 

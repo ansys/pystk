@@ -3,7 +3,7 @@ EOIRShapeCollection
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCollection`
 
    Collection of shapes.
 

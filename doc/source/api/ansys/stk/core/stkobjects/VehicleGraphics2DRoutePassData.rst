@@ -3,7 +3,7 @@ VehicleGraphics2DRoutePassData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DRoutePassData
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DRoutePassData`
 
    Great arc route pass data.
 

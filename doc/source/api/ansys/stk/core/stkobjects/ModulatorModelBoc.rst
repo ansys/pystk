@@ -3,7 +3,7 @@ ModulatorModelBoc
 
 .. py:class:: ansys.stk.core.stkobjects.ModulatorModelBoc
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModelBoc`, py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModelBoc`, :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a BOC modulator model.
 

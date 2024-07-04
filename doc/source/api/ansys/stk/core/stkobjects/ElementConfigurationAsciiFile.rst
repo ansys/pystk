@@ -3,7 +3,7 @@ ElementConfigurationAsciiFile
 
 .. py:class:: ansys.stk.core.stkobjects.ElementConfigurationAsciiFile
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IElementConfigurationAsciiFile`, py:obj:`~ansys.stk.core.stkobjects.IElementConfiguration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationAsciiFile`, :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
 
    Class defining a ascii file element configuration.
 

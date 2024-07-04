@@ -3,7 +3,7 @@ ElementDelaunay
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementDelaunay
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementDelaunay`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Delaunay elements.
 

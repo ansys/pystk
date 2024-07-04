@@ -3,7 +3,7 @@ MissileSimpleProp
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileSimpleProp
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileSimpleProp`
 
    Class defining the Simple propulsion options for a missile.
 

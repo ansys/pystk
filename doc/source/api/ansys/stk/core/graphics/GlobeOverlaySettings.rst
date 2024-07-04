@@ -3,7 +3,7 @@ GlobeOverlaySettings
 
 .. py:class:: ansys.stk.core.graphics.GlobeOverlaySettings
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IGlobeOverlaySettings`
+   Bases: :py:class:`~ansys.stk.core.graphics.IGlobeOverlaySettings`
 
    Settings used by globe overlay objects. These setting affect all scenes.
 

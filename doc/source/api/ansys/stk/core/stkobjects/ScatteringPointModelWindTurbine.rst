@@ -3,7 +3,7 @@ ScatteringPointModelWindTurbine
 
 .. py:class:: ansys.stk.core.stkobjects.ScatteringPointModelWindTurbine
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine`, py:obj:`~ansys.stk.core.stkobjects.IScatteringPointModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScatteringPointModelWindTurbine`, :py:class:`~ansys.stk.core.stkobjects.IScatteringPointModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a wind turbine scattering point model.
 

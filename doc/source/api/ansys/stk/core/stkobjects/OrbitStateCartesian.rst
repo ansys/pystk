@@ -3,7 +3,7 @@ OrbitStateCartesian
 
 .. py:class:: ansys.stk.core.stkobjects.OrbitStateCartesian
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitStateCartesian`, py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IOrbitStateCartesian`, :py:class:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Cartesian coordinate type.
 

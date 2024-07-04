@@ -3,7 +3,7 @@ PathCollection
 
 .. py:class:: ansys.stk.core.stkobjects.PathCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IPathCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IPathCollection`
 
    Allow adding and removing of paths.
 

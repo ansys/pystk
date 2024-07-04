@@ -3,7 +3,7 @@ TimeToolEventSmartEpoch
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventSmartEpoch
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch`, py:obj:`~ansys.stk.core.vgt.ITimeToolEvent`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventSmartEpoch`, :py:class:`~ansys.stk.core.vgt.ITimeToolEvent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A smart epoch.
 

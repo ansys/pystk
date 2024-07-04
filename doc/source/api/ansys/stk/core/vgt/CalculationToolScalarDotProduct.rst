@@ -3,7 +3,7 @@ CalculationToolScalarDotProduct
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarDotProduct
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalarDotProduct`, :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Dot product between two vectors.
 

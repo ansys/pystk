@@ -3,7 +3,7 @@ TextOverlayFactory
 
 .. py:class:: ansys.stk.core.graphics.TextOverlayFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ITextOverlayFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.ITextOverlayFactory`
 
    A rectangular overlay that contains text.
 

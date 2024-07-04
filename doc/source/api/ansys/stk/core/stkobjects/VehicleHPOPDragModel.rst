@@ -3,7 +3,7 @@ VehicleHPOPDragModel
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPDragModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
 
    HPOP Drag Model Base CoClass.
 

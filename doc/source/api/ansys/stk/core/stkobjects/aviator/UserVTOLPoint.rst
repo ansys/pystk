@@ -3,7 +3,7 @@ UserVTOLPoint
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.UserVTOLPoint
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogVTOLPoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IUserVTOLPoint`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogVTOLPoint`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the user VTOL Point in the Aviator catalog.
 

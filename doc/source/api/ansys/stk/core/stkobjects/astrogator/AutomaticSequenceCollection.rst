@@ -3,7 +3,7 @@ AutomaticSequenceCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IAutomaticSequenceCollection`
 
    Automatic Sequence Collection.
 

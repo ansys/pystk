@@ -3,7 +3,7 @@ CommSystem
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystem
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICommSystem`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICommSystem`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining a CommSystem object.
 

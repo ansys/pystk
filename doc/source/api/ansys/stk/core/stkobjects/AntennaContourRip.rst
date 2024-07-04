@@ -3,7 +3,7 @@ AntennaContourRip
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaContourRip
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaContour`, py:obj:`~ansys.stk.core.stkobjects.IAntennaContourRip`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaContour`, :py:class:`~ansys.stk.core.stkobjects.IAntennaContourRip`
 
    Class defining an antenna rip contour properties.
 

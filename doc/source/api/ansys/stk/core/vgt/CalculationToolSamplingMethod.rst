@@ -3,7 +3,7 @@ CalculationToolSamplingMethod
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolSamplingMethod
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolSamplingMethod`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolSamplingMethod`
 
    A sampling method.
 

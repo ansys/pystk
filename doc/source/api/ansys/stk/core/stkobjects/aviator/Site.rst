@@ -3,7 +3,7 @@ Site
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.Site
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteUnknown`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteUnknown`
 
    Class defining an unknown site type.
 

@@ -3,7 +3,7 @@ VehicleTargetTimes
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTargetTimes
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleTargetTimes`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleTargetTimes`
 
    Target times for target pointing attitude.
 

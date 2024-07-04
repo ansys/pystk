@@ -3,7 +3,7 @@ VehicleWaypointAltitudeReference
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleWaypointAltitudeReference
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReference`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReference`
 
    Altitude references.
 

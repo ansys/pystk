@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridBearingAlt
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridBearingAlt
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGridBearingAlt`, :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume grid bearing alt (Surface Bearing) interface.
 

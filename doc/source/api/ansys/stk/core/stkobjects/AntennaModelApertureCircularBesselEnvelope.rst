@@ -3,7 +3,7 @@ AntennaModelApertureCircularBesselEnvelope
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaModelApertureCircularBesselEnvelope
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModelApertureCircularBesselEnvelope`, :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a circular bessel envelope aperture antenna model.
 

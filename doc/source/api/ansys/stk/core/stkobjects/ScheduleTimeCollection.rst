@@ -3,7 +3,7 @@ ScheduleTimeCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ScheduleTimeCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScheduleTimeCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScheduleTimeCollection`
 
    Collection of user-scheduled access times.
 

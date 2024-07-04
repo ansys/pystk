@@ -3,7 +3,7 @@ BasicManeuverStrategyRelativeCourse
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelativeCourse`, :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Relative Course strategy for a basic maneuver procedure.
 

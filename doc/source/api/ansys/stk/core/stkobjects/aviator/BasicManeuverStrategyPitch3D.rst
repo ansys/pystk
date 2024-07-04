@@ -3,7 +3,7 @@ BasicManeuverStrategyPitch3D
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyPitch3D`, :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining Pitch 3D strategy for a Basic Maneuver procedure.
 

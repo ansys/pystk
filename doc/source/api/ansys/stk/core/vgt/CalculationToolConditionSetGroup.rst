@@ -3,7 +3,7 @@ CalculationToolConditionSetGroup
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionSetGroup
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolConditionSetGroup`
 
    Allow accessing and creating condition set components.
 

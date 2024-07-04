@@ -3,7 +3,7 @@ ElementBPlane
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementBPlane
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementBPlane`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Bplane elements.
 

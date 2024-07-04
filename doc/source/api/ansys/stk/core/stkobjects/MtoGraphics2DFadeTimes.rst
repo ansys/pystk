@@ -3,7 +3,7 @@ MtoGraphics2DFadeTimes
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DFadeTimes
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DFadeTimes`
 
    MTO track fade times.
 

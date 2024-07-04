@@ -3,7 +3,7 @@ StkObjectRoot
 
 .. py:class:: ansys.stk.core.stkobjects.StkObjectRoot
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkObjectRoot`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IAnimation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObjectRoot`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IAnimation`
 
    Top-level object in the Object Model Hierarchy.
 

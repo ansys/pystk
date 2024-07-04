@@ -3,7 +3,7 @@ SolidPrimitive
 
 .. py:class:: ansys.stk.core.graphics.SolidPrimitive
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ISolidPrimitive`, py:obj:`~ansys.stk.core.graphics.IPrimitive`
+   Bases: :py:class:`~ansys.stk.core.graphics.ISolidPrimitive`, :py:class:`~ansys.stk.core.graphics.IPrimitive`
 
    Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid...
 

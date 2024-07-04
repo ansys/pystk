@@ -3,7 +3,7 @@ Spherical
 
 .. py:class:: ansys.stk.core.stkutil.Spherical
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.ISpherical`, py:obj:`~ansys.stk.core.stkutil.IPosition`
+   Bases: :py:class:`~ansys.stk.core.stkutil.ISpherical`, :py:class:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining spherical position.
 

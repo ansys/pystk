@@ -3,7 +3,7 @@ AtmosphereModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AtmosphereModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAtmosphereModel`
 
    Class defining the atmosphere model for a mission, scenario, or procedure.
 

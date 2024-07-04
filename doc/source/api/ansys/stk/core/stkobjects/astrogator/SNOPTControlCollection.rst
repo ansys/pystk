@@ -3,7 +3,7 @@ SNOPTControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection`
 
    SNOPT control collection.
 

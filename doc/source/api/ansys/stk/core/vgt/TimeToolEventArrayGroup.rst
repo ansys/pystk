@@ -3,7 +3,7 @@ TimeToolEventArrayGroup
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventArrayGroup
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventArrayGroup`
 
    Access or create VGT event arrays associated with an object.
 

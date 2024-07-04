@@ -3,7 +3,7 @@ AdvCATAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATAdvanced
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATAdvanced`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAdvCATAdvanced`
 
    AdvCAT advanced properties.
 

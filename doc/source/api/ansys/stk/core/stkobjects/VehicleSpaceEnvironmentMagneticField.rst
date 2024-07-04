@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentMagneticField
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentMagneticField
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentMagneticField`
 
    Magnetic field settings.
 

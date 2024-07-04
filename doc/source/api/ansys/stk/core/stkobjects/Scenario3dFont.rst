@@ -3,7 +3,7 @@ Scenario3dFont
 
 .. py:class:: ansys.stk.core.stkobjects.Scenario3dFont
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenario3dFont`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScenario3dFont`
 
    Font properties for Scenario 3D Graphics.
 

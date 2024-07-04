@@ -3,7 +3,7 @@ ProcedureSuperProcedure
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureSuperProcedure
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureSuperProcedure`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureSuperProcedure`, :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a super procedure.
 

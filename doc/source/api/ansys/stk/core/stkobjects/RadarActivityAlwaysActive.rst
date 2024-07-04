@@ -3,7 +3,7 @@ RadarActivityAlwaysActive
 
 .. py:class:: ansys.stk.core.stkobjects.RadarActivityAlwaysActive
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarActivity`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarActivity`
 
    Class defining radar always active activity.
 

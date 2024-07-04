@@ -3,7 +3,7 @@ LandingStandardInstrumentApproach
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ILandingStandardInstrumentApproach`
 
    Class defining the standard instrument approach options for a landing procedure.
 

@@ -3,7 +3,7 @@ AccessConstraintCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintCollection`
 
    Collection of access constraints.
 

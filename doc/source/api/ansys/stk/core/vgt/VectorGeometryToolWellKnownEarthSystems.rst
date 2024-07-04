@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownEarthSystems
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthSystems`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownEarthSystems`
 
    Well-known Earth's coordinate systems.
 

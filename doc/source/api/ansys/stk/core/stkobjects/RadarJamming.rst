@@ -3,7 +3,7 @@ RadarJamming
 
 .. py:class:: ansys.stk.core.stkobjects.RadarJamming
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarJamming`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarJamming`
 
    Class defining radar jamming.
 

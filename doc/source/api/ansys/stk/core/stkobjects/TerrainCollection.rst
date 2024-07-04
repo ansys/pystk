@@ -3,7 +3,7 @@ TerrainCollection
 
 .. py:class:: ansys.stk.core.stkobjects.TerrainCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ITerrainCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ITerrainCollection`
 
    Collection of terrain data files available in the Scenario for visualization and analysis.
 

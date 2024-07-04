@@ -3,7 +3,7 @@ StateCalcLonOfPeriapsis
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcLonOfPeriapsis
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfPeriapsis`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcLonOfPeriapsis`
 
    LonOfPeriapsis Calc objects.
 

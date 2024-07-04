@@ -3,7 +3,7 @@ AccessConstraintZone
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintZone
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintZone`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintZone`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining the Exclusion Zone constraint.
 
