@@ -233,7 +233,7 @@ globe_plotter.show()
 
 # First, insert a sensor on the satellite. By default, the sensor's type is fixed.
 
-fixed_sat_sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR,"FixedSatelliteSensor")
+fixed_sat_sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR, "FixedSatelliteSensor")
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $45^\circ$ and an angular resolution of $1^\circ$:
 
@@ -274,7 +274,7 @@ fixed_sat_access.data_providers.item("Access Data").exec(scenario.start_time, sc
 
 # First, insert a sensor on the satellite:
 
-moving_sat_sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR,"MovingSatelliteSensor")
+moving_sat_sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR, "MovingSatelliteSensor")
 
 # The sensor is inserted as a fixed sensor by default, so set the sensor's pointing type to targeted: 
 
@@ -320,7 +320,7 @@ moving_sat_access.data_providers.item("Access Data").exec(scenario.start_time, s
 
 # First, add a sensor to the radar site. The sensor is inserted as a fixed sensor by default.
 
-radar_dome_sensor = radar_site.children.new(STK_OBJECT_TYPE.SENSOR,"RadarDome")
+radar_dome_sensor = radar_site.children.new(STK_OBJECT_TYPE.SENSOR, "RadarDome")
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $90^\circ$ and an angular resolution of $1^\circ$:
 
@@ -337,7 +337,7 @@ radar_dome_sensor.common_tasks.set_pattern_simple_conic(90, 1)
 from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
 
 
-dome_range_constraint = radar_dome_sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.RANGE )
+dome_range_constraint = radar_dome_sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.RANGE)
 # -
 
 # Then, set the constraint to have a maximum range of $150$ km:
@@ -476,7 +476,7 @@ radar_sweep_sensor.pointing.spin_axis_cone_angle = 55
 
 # First, add a range constraint to the sweeping sensor:
 
-sweep_range_constraint =  radar_sweep_sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.RANGE )
+sweep_range_constraint =  radar_sweep_sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.RANGE)
 
 # Then, configure the constraint to a maximum range of $150$ km:
 
