@@ -33,6 +33,8 @@ tests = [
     "pytest-cov==5.0.0",
     "pytz==2024.1",
     "parameterized==0.9.0",
+    "pandas==2.2.2",
+    "numpy==2.0.0"
 ]
 doc = [
     "ansys-sphinx-theme==0.16.6",
