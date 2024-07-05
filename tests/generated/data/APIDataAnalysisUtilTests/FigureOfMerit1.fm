@@ -1,0 +1,123 @@
+stk.v.12.0
+WrittenBy    STK_v12.2.0
+
+BEGIN FigureOfMerit
+
+    Name		 FigureOfMerit1
+
+    BEGIN FomDefinition
+
+
+        BEGIN SimpleCoverage
+
+        END SimpleCoverage
+        ApplySatisfaction		 No
+        SatisfactionType		 Above
+        SatisfactionThreshold		  0.0000000000000000e+00
+        NotExecutedValue		  0.0000000000000000e+00
+        UseFOMValueRangeCheck		 0
+        ExcludeValuesInRange		 0
+        FOMValueRangeMin		  0.0000000000000000e+00
+        FOMValueRangeMax		  0.0000000000000000e+00
+
+    END FomDefinition
+
+    BEGIN SavedValues
+        FileName		 FigureOfMerit1.fmv
+    END SavedValues
+
+    BEGIN Extensions
+
+        BEGIN ExternData
+        END ExternData
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+        BEGIN Graphics
+
+            BEGIN Attributes
+
+                StaticColor		 #ff00ff
+                StaticColorRampStartColor		 #ff0000
+                StaticColorRampEndColor		 #ff00ff
+                StaticMarkerStyle		 3
+                AnimationColor		 #ffff00
+                AnimColorRampStartColor		 #ffff00
+                AnimColorRampEndColor		 #0000ff
+                AnimationMarkerStyle		 2
+                ObjectCovMarkerStyle		 0
+                ObjectCovLineStyle		 0
+                ObjectCovLineWidth		 1
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Show		 Yes
+                ShowStatic		 Yes
+                ShowAnim		 Yes
+                ShowStaticContours		 No
+                ShowAnimContours		 No
+                ShareContours		 No
+                StaticFillPoints		 Yes
+                AnimFillPoints		 Yes
+                StaticColorRamp		 Yes
+                AnimColorRamp		 Yes
+                StaticContourType		 Block
+                AnimContourType		 Block
+                StaticShowUpToMax		 No
+                DynShowUpToMax		 No
+                StaticTranslucent		 Yes
+                StaticTranslucency		 0.5
+                StaticShowLines		 No
+                StaticCntrLinesStyle		 0
+                StaticCntrLinesWidth		 1
+                DynamicTranslucent		 Yes
+                DynamicTranslucency		 0.7
+                DynamicShowLines		 No
+                DynamicCntrLinesStyle		 0
+                DynamicCntrLinesWidth		 1
+                NNSampleSizeMode		 Medium
+                MaxNumSearchPixels		 512
+                BEGIN StaticLegend
+                    DrawLegendOnMap		 No
+                    XPixelLocation		 5
+                    YPixelLocation		 5
+                    Orientation		 HorizMinToMax
+                    MaxPerRow		 20
+                    ColorPixelWidth		 40
+                    ColorPixelHeight		 20
+                    TextColor		 #ffffff
+                    BackgroundColor		 #000000
+                    Title		 Simple Coverage - Static Contours
+                    Format		 %.1f
+                END StaticLegend
+                BEGIN DynamicLegend
+                    DrawLegendOnMap		 No
+                    XPixelLocation		 5
+                    YPixelLocation		 5
+                    Orientation		 HorizMinToMax
+                    MaxPerRow		 20
+                    ColorPixelWidth		 40
+                    ColorPixelHeight		 20
+                    TextColor		 #ffffff
+                    BackgroundColor		 #000000
+                    Title		 Simple Coverage - Dynamic Contours
+                    Format		 %.1f
+                END DynamicLegend
+                AccumulationType		 CurrentOnly
+
+            END Graphics
+        END Graphics
+
+        BEGIN VO
+        END VO
+
+    END Extensions
+
+END FigureOfMerit
+
