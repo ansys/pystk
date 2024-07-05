@@ -1,0 +1,14 @@
+VO_V120		
+ShowStaticContours		 Yes
+ShowAnimContours		 Yes
+StaticSize		 2
+AnimSize		 3
+InlayDataPixelsPerDegree		 3
+ShowStaticContourLegend		 No
+StaticXPixelLocation		 5
+StaticYPixelLocation		 5
+StaticBckGndTranslucency		 0
+ShowAnimContourLegend		 No
+AnimXPixelLocation		 5
+AnimYPixelLocation		 5
+AnimBckGndTranslucency		 0.5
